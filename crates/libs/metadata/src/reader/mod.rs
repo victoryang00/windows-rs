@@ -1058,6 +1058,34 @@ impl<'a> Reader<'a> {
         self.cfg_add_attributes(&mut cfg, self.type_def_attributes(row));
         cfg
     }
+    pub fn type_def_cfg_crate(&self, row: TypeDef, generics: &[Type]) -> Cfg {
+        fn collect(reader:&Reader, methods: impl Iterator<Item = MethodDef>, cfg: &mut Cfg) {
+            for method in methods {
+                reader.method_def_cfg_combine(method, cfg);
+            }
+        }
+        let mut cfg = Cfg::default();
+        self.type_def_cfg_combine(row, generics, &mut cfg);
+        let kind = self.type_def_kind(row);
+        if self.type_def_flags(row).winrt() {
+            if kind != TypeKind::Class || self.type_def_extends(row) != TypeName::Attribute {
+                collect(self, self.type_def_methods(row), &mut cfg);
+                for interface in self.type_interfaces(&Type::TypeDef((row, generics.to_vec()))) {
+                    if let Type::TypeDef((row, _)) = &interface.ty {
+                        collect(self, self.type_def_methods(*row), &mut cfg);
+                    }
+                }
+            }
+        } else {
+            collect(self, self.type_def_methods(row), &mut cfg);
+            for interface in self.type_def_vtables(row) {
+                if let Type::TypeDef((row, _)) = interface {
+                    collect(self, self.type_def_methods(row), &mut cfg);
+                }
+            }
+        }
+        cfg
+    }
     pub fn type_def_cfg_impl(&self, def: TypeDef, generics: &[Type]) -> Cfg {
         let mut cfg = Cfg::default();
 
