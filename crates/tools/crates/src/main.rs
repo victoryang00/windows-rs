@@ -1,8 +1,12 @@
+use std::collections::*;
+use metadata::reader::*;
+use std::fmt::Write;
+
 fn main() {
-    let files = vec![metadata::reader::File::new("crates/libs/metadata/default/Windows.winmd").unwrap(), metadata::reader::File::new("crates/libs/metadata/default/Windows.Win32.winmd").unwrap(), metadata::reader::File::new("crates/libs/metadata/default/Windows.Win32.Interop.winmd").unwrap()];
-    let reader = &metadata::reader::Reader::new(&files);
-    let root = reader.tree("Windows").expect("`Windows` namespace not found");
-    let mut map = std::collections::BTreeMap::<&str, std::collections::BTreeSet<&str>>::new();
+    let files = vec![File::new("crates/libs/metadata/default/Windows.winmd").unwrap(), File::new("crates/libs/metadata/default/Windows.Win32.winmd").unwrap(), File::new("crates/libs/metadata/default/Windows.Win32.Interop.winmd").unwrap()];
+    let reader = &Reader::new(&files);
+    let root = reader.tree("Windows").unwrap();
+    let mut map = BTreeMap::<&str, BTreeSet<&str>>::new();
     for tree in root.flatten() {
         let set = map.entry(tree.namespace).or_default();
         if let Some(types) = reader.namespace_types(tree.namespace) {
@@ -16,12 +20,40 @@ fn main() {
             }
         }
     }
-    for (count, (namespace, types)) in map.iter().enumerate() {
-        if !types.is_empty() {
-            println!("\n{} {}", count, namespace);
-            for name in types {
-                println!("    {}", name);
-            }
+    let mut cycles = BTreeSet::<String>::new();
+    for namespace in map.keys() {
+        let mut path = Vec::new();
+        cycle(&map, namespace, &mut path, &mut cycles);
+    }
+    for cycle in cycles {
+        println!("{}", cycle);
+    }
+}
+
+fn cycle<'a>(map: &BTreeMap<&'a str, BTreeSet<&'a str>>, next: &'a str, path: &mut Vec<&'a str>, cycles: &mut BTreeSet<String>) -> usize {
+    path.push(next);
+    for dependency in &map[path[path.len() - 1]] {
+        if let Some(pos) = path.iter().position(|path| path == dependency) {
+            path.push(dependency);
+            cycles.insert(format_cycle(path));
+            path.pop();
+            return path.len() - pos;
+        }
+        let pop = cycle(map, dependency, path, cycles);
+        if pop > 0 {
+            return pop - 1;
         }
     }
+    path.pop();
+    0
+}
+
+fn format_cycle(path: &[&str]) -> String {
+    let mut result = String::new();
+    for ns in path {
+        write!(result, "{} -> ", ns).unwrap();
+    }
+    result.truncate(result.len() - 4);
+    result.push('\n');
+    result
 }
