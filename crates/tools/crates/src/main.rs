@@ -1,6 +1,5 @@
 use metadata::reader::*;
 use std::collections::*;
-use std::io::Write;
 
 fn main() {
     let files = vec![File::new("crates/libs/metadata/default/Windows.winmd").unwrap(), File::new("crates/libs/metadata/default/Windows.Win32.winmd").unwrap(), File::new("crates/libs/metadata/default/Windows.Win32.Interop.winmd").unwrap()];
@@ -25,8 +24,9 @@ fn main() {
 }
 
 fn build(reader: &Reader, root: &str, namespaces: &[&str], sys: bool) {
-    let name = if sys { format!("windows-sys-{}", root.to_lowercase().replace(".", "-")) } else { format!("windows-{}", root.to_lowercase().replace(".", "-")) };
-    println!("** {} **", name);
+    let name = if sys { "windows-sys" } else { "windows" };
+    let name = format!("{}-{}", name, root.to_lowercase().replace(".", "-"));
+    println!("{}", name);
     let mut path = std::path::PathBuf::from("crates/generated");
     path.push(&name);
     std::fs::create_dir_all(&path).unwrap();
