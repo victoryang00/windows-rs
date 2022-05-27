@@ -12,6 +12,7 @@ rust-version = "1.46"
 
 [dependencies]
 windows-sys-core = { path = "../../libs/windows-sys-core",  version = "0.37.0" }
+windows-sys-win32-foundation = { path = "../windows-sys-win32-foundation", version = "0.37.0", optional = true }
 
 [features]
 default = []

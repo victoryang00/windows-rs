@@ -55,8 +55,8 @@ extern "system" {
     pub fn GetModuleFileNameA(hmodule: super::super::Foundation::HINSTANCE, lpfilename: ::windows_sys_core::PSTR, nsize: u32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetModuleFileNameW(hmodule: super::super::Foundation::HINSTANCE, lpfilename: ::windows_sys_core::PWSTR, nsize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetModuleHandleA(lpmodulename: ::windows_sys_core::PCSTR) -> super::super::Foundation::HINSTANCE;
+    #[cfg(feature = "windows-sys-win32-foundation")]
+    pub fn GetModuleHandleA(lpmodulename: ::windows_sys_core::PCSTR) -> ::windows_sys_win32_foundation::HINSTANCE;
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetModuleHandleExA(dwflags: u32, lpmodulename: ::windows_sys_core::PCSTR, phmodule: *mut super::super::Foundation::HINSTANCE) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]

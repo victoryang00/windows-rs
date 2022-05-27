@@ -635,8 +635,8 @@ extern "system" {
     pub fn UpdateColors(hdc: HDC) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn UpdateWindow(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ValidateRect(hwnd: super::super::Foundation::HWND, lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "windows-sys-win32-foundation")]
+    pub fn ValidateRect(hwnd: windows_sys_win32_foundation::HWND, lprect: *const windows_sys_win32_foundation::RECT) -> windows_sys_win32_foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn ValidateRgn(hwnd: super::super::Foundation::HWND, hrgn: HRGN) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]

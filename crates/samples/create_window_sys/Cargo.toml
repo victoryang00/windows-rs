@@ -3,6 +3,10 @@ name = "sample_create_window_sys"
 version = "0.0.0"
 edition = "2018"
 
+#
+# Before:
+#
+
 [dependencies.windows-sys]
 path = "../../libs/sys"
 features = [
@@ -11,3 +15,26 @@ features = [
     "Win32_System_LibraryLoader",
     "Win32_UI_WindowsAndMessaging",
 ]
+
+#
+# After:
+#
+
+[dependencies.foundation]
+package = "windows-sys-win32-foundation"
+path = "../../generated/windows-sys-win32-foundation"
+
+[dependencies.graphics]
+package = "windows-sys-win32-graphics"
+path = "../../generated/windows-sys-win32-graphics"
+features = ["Gdi", "windows-sys-win32-foundation"]
+
+[dependencies.system]
+package = "windows-sys-win32-system"
+path = "../../generated/windows-sys-win32-system"
+features = ["LibraryLoader", "windows-sys-win32-foundation"]
+
+[dependencies.ui]
+package = "windows-sys-win32-ui"
+path = "../../generated/windows-sys-win32-ui"
+features = ["WindowsAndMessaging", "windows-sys-win32-foundation", "windows-sys-win32-graphics"]
