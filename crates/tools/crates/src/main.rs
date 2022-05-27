@@ -1,59 +1,80 @@
-use std::collections::*;
 use metadata::reader::*;
-use std::fmt::Write;
+use std::collections::*;
+use std::io::Write;
 
 fn main() {
     let files = vec![File::new("crates/libs/metadata/default/Windows.winmd").unwrap(), File::new("crates/libs/metadata/default/Windows.Win32.winmd").unwrap(), File::new("crates/libs/metadata/default/Windows.Win32.Interop.winmd").unwrap()];
     let reader = &Reader::new(&files);
     let root = reader.tree("Windows").unwrap();
-    let mut map = BTreeMap::<&str, BTreeSet<&str>>::new();
+    let mut crates = BTreeMap::<String, Vec<&str>>::new();
     for tree in root.flatten() {
-        let set = map.entry(tree.namespace).or_default();
-        if let Some(types) = reader.namespace_types(tree.namespace) {
-            for def in types {
-                for def in reader.type_def_cfg_crate(def, &[]).types.values().flatten() {
-                    let name = reader.type_def_type_name(*def);
-                    if !name.namespace.is_empty() && name.namespace != tree.namespace {
-                        set.insert(name.namespace);
-                    }
-                }
+        let split: Vec<&str> = tree.namespace.split('.').collect();
+        if split.get(1) == Some(&"Win32") {
+            if let Some(name) = split.get(2) {
+                crates.entry(format!("Win32.{}", name)).or_default().push(tree.namespace);
             }
+        } else if let Some(name) = split.get(1) {
+            crates.entry(name.to_string()).or_default().push(tree.namespace);
         }
     }
-    let mut cycles = BTreeSet::<String>::new();
-    for namespace in map.keys() {
-        let mut path = Vec::new();
-        cycle(&map, namespace, &mut path, &mut cycles);
-    }
-    for cycle in cycles {
-        println!("{}", cycle);
+    let _ = std::fs::remove_dir_all("crates/generated");
+    for (name, namespaces) in crates {
+        build(reader, &name, &namespaces, true);
+        build(reader, &name, &namespaces, false);
     }
 }
 
-fn cycle<'a>(map: &BTreeMap<&'a str, BTreeSet<&'a str>>, next: &'a str, path: &mut Vec<&'a str>, cycles: &mut BTreeSet<String>) -> usize {
-    path.push(next);
-    for dependency in &map[path[path.len() - 1]] {
-        if let Some(pos) = path.iter().position(|path| path == dependency) {
-            path.push(dependency);
-            cycles.insert(format_cycle(path));
-            path.pop();
-            return path.len() - pos;
-        }
-        let pop = cycle(map, dependency, path, cycles);
-        if pop > 0 {
-            return pop - 1;
-        }
-    }
+fn build(reader: &Reader, root: &str, namespaces: &[&str], sys: bool) {
+    let name = if sys { format!("windows-sys-{}", root.to_lowercase().replace(".", "-")) } else { format!("windows-{}", root.to_lowercase().replace(".", "-")) };
+    println!("** {} **", name);
+    let mut path = std::path::PathBuf::from("crates/generated");
+    path.push(&name);
+    std::fs::create_dir_all(&path).unwrap();
+    path.push("Cargo.toml");
+
+    std::fs::write(
+        &path,
+        format!(
+            r#"
+[package]
+name = "{}"
+version = "0.22.6"
+authors = ["Microsoft"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+description = "Rust for Windows"
+repository = "https://github.com/microsoft/windows-rs"
+readme = "../../../.github/readme.md"
+rust-version = "1.46"
+"#,
+            name
+        ),
+    )
+    .unwrap();
+
     path.pop();
-    0
-}
+    path.push("src");
+    std::fs::create_dir_all(&path).unwrap();
+    path.push("lib.rs");
+    std::fs::write(&path, "").unwrap();
 
-fn format_cycle(path: &[&str]) -> String {
-    let mut result = String::new();
-    for ns in path {
-        write!(result, "{} -> ", ns).unwrap();
-    }
-    result.truncate(result.len() - 4);
-    result.push('\n');
-    result
+    path.pop();
+    path.pop();
+
+    // loop {
+    //     let mut cmd = std::process::Command::new("cargo");
+    //     cmd.current_dir(&path);
+    //     cmd.arg("publish");
+    //     cmd.arg("--allow-dirty");
+    //     let output = cmd.output().unwrap();
+
+    //     if output.status.success() {
+    //         break;
+    //     } else {
+    //         std::io::stdout().write_all(&output.stdout).unwrap();
+    //         std::io::stderr().write_all(&output.stderr).unwrap();
+    //         println!("Waiting to retry...");
+    //         std::thread::sleep(std::time::Duration::from_secs(60*6));
+    //     }
+    // }
 }
