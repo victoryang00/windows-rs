@@ -1,30 +1,30 @@
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct AudioMediaFrame(::windows::core::IUnknown);
+pub struct AudioMediaFrame(::windows_core::IUnknown);
 impl AudioMediaFrame {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn FrameReference(&self) -> ::windows::core::Result<MediaFrameReference> {
+    pub fn FrameReference(&self) -> ::windows_core::Result<MediaFrameReference> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).FrameReference)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FrameReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Media_MediaProperties\"`*"]
     #[cfg(feature = "Media_MediaProperties")]
-    pub fn AudioEncodingProperties(&self) -> ::windows::core::Result<super::super::MediaProperties::AudioEncodingProperties> {
+    pub fn AudioEncodingProperties(&self) -> ::windows_core::Result<super::super::MediaProperties::AudioEncodingProperties> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).AudioEncodingProperties)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::MediaProperties::AudioEncodingProperties>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).AudioEncodingProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::MediaProperties::AudioEncodingProperties>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn GetAudioFrame(&self) -> ::windows::core::Result<super::super::AudioFrame> {
+    pub fn GetAudioFrame(&self) -> ::windows_core::Result<super::super::AudioFrame> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetAudioFrame)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::AudioFrame>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetAudioFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::AudioFrame>(result__)
         }
     }
 }
@@ -44,81 +44,81 @@ impl ::core::fmt::Debug for AudioMediaFrame {
         f.debug_tuple("AudioMediaFrame").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for AudioMediaFrame {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.AudioMediaFrame;{a3a9feff-8021-441b-9a46-e7f0137b7981})");
+unsafe impl ::windows_core::RuntimeType for AudioMediaFrame {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.AudioMediaFrame;{a3a9feff-8021-441b-9a46-e7f0137b7981})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for AudioMediaFrame {
+unsafe impl ::windows_core::Interface for AudioMediaFrame {
     type Vtable = IAudioMediaFrame_Vtbl;
-    const IID: ::windows::core::GUID = <IAudioMediaFrame as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IAudioMediaFrame as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for AudioMediaFrame {
+impl ::windows_core::RuntimeName for AudioMediaFrame {
     const NAME: &'static str = "Windows.Media.Capture.Frames.AudioMediaFrame";
 }
-impl ::core::convert::From<AudioMediaFrame> for ::windows::core::IUnknown {
+impl ::core::convert::From<AudioMediaFrame> for ::windows_core::IUnknown {
     fn from(value: AudioMediaFrame) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&AudioMediaFrame> for ::windows::core::IUnknown {
+impl ::core::convert::From<&AudioMediaFrame> for ::windows_core::IUnknown {
     fn from(value: &AudioMediaFrame) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for AudioMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for AudioMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a AudioMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a AudioMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<AudioMediaFrame> for ::windows::core::IInspectable {
+impl ::core::convert::From<AudioMediaFrame> for ::windows_core::IInspectable {
     fn from(value: AudioMediaFrame) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&AudioMediaFrame> for ::windows::core::IInspectable {
+impl ::core::convert::From<&AudioMediaFrame> for ::windows_core::IInspectable {
     fn from(value: &AudioMediaFrame) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for AudioMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for AudioMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a AudioMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a AudioMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for AudioMediaFrame {}
 unsafe impl ::core::marker::Sync for AudioMediaFrame {}
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct BufferMediaFrame(::windows::core::IUnknown);
+pub struct BufferMediaFrame(::windows_core::IUnknown);
 impl BufferMediaFrame {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn FrameReference(&self) -> ::windows::core::Result<MediaFrameReference> {
+    pub fn FrameReference(&self) -> ::windows_core::Result<MediaFrameReference> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).FrameReference)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FrameReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn Buffer(&self) -> ::windows::core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn Buffer(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Buffer)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Buffer)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
         }
     }
 }
@@ -138,113 +138,113 @@ impl ::core::fmt::Debug for BufferMediaFrame {
         f.debug_tuple("BufferMediaFrame").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for BufferMediaFrame {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.BufferMediaFrame;{b5b153c7-9b84-4062-b79c-a365b2596854})");
+unsafe impl ::windows_core::RuntimeType for BufferMediaFrame {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.BufferMediaFrame;{b5b153c7-9b84-4062-b79c-a365b2596854})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for BufferMediaFrame {
+unsafe impl ::windows_core::Interface for BufferMediaFrame {
     type Vtable = IBufferMediaFrame_Vtbl;
-    const IID: ::windows::core::GUID = <IBufferMediaFrame as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IBufferMediaFrame as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for BufferMediaFrame {
+impl ::windows_core::RuntimeName for BufferMediaFrame {
     const NAME: &'static str = "Windows.Media.Capture.Frames.BufferMediaFrame";
 }
-impl ::core::convert::From<BufferMediaFrame> for ::windows::core::IUnknown {
+impl ::core::convert::From<BufferMediaFrame> for ::windows_core::IUnknown {
     fn from(value: BufferMediaFrame) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&BufferMediaFrame> for ::windows::core::IUnknown {
+impl ::core::convert::From<&BufferMediaFrame> for ::windows_core::IUnknown {
     fn from(value: &BufferMediaFrame) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for BufferMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for BufferMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a BufferMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a BufferMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<BufferMediaFrame> for ::windows::core::IInspectable {
+impl ::core::convert::From<BufferMediaFrame> for ::windows_core::IInspectable {
     fn from(value: BufferMediaFrame) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&BufferMediaFrame> for ::windows::core::IInspectable {
+impl ::core::convert::From<&BufferMediaFrame> for ::windows_core::IInspectable {
     fn from(value: &BufferMediaFrame) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for BufferMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for BufferMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a BufferMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a BufferMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for BufferMediaFrame {}
 unsafe impl ::core::marker::Sync for BufferMediaFrame {}
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct DepthMediaFrame(::windows::core::IUnknown);
+pub struct DepthMediaFrame(::windows_core::IUnknown);
 impl DepthMediaFrame {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn FrameReference(&self) -> ::windows::core::Result<MediaFrameReference> {
+    pub fn FrameReference(&self) -> ::windows_core::Result<MediaFrameReference> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).FrameReference)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FrameReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn VideoMediaFrame(&self) -> ::windows::core::Result<VideoMediaFrame> {
+    pub fn VideoMediaFrame(&self) -> ::windows_core::Result<VideoMediaFrame> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).VideoMediaFrame)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrame>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).VideoMediaFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrame>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn DepthFormat(&self) -> ::windows::core::Result<DepthMediaFrameFormat> {
+    pub fn DepthFormat(&self) -> ::windows_core::Result<DepthMediaFrameFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).DepthFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DepthMediaFrameFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).DepthFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DepthMediaFrameFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Media_Devices_Core\"`, `\"Perception_Spatial\"`*"]
     #[cfg(all(feature = "Media_Devices_Core", feature = "Perception_Spatial"))]
-    pub fn TryCreateCoordinateMapper<'a, Param0: ::windows::core::IntoParam<'a, super::super::Devices::Core::CameraIntrinsics>, Param1: ::windows::core::IntoParam<'a, super::super::super::Perception::Spatial::SpatialCoordinateSystem>>(&self, cameraintrinsics: Param0, coordinatesystem: Param1) -> ::windows::core::Result<super::super::Devices::Core::DepthCorrelatedCoordinateMapper> {
+    pub fn TryCreateCoordinateMapper<'a, Param0: ::windows_core::IntoParam<'a, super::super::Devices::Core::CameraIntrinsics>, Param1: ::windows_core::IntoParam<'a, super::super::super::Perception::Spatial::SpatialCoordinateSystem>>(&self, cameraintrinsics: Param0, coordinatesystem: Param1) -> ::windows_core::Result<super::super::Devices::Core::DepthCorrelatedCoordinateMapper> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).TryCreateCoordinateMapper)(::windows::core::Interface::as_raw(this), cameraintrinsics.into_param().abi(), coordinatesystem.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Devices::Core::DepthCorrelatedCoordinateMapper>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).TryCreateCoordinateMapper)(::windows_core::Interface::as_raw(this), cameraintrinsics.into_param().abi(), coordinatesystem.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Devices::Core::DepthCorrelatedCoordinateMapper>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn MaxReliableDepth(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IDepthMediaFrame2>(self)?;
+    pub fn MaxReliableDepth(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IDepthMediaFrame2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).MaxReliableDepth)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).MaxReliableDepth)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn MinReliableDepth(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IDepthMediaFrame2>(self)?;
+    pub fn MinReliableDepth(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IDepthMediaFrame2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).MinReliableDepth)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).MinReliableDepth)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
 }
@@ -264,80 +264,80 @@ impl ::core::fmt::Debug for DepthMediaFrame {
         f.debug_tuple("DepthMediaFrame").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for DepthMediaFrame {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.DepthMediaFrame;{47135e4f-8549-45c0-925b-80d35efdb10a})");
+unsafe impl ::windows_core::RuntimeType for DepthMediaFrame {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.DepthMediaFrame;{47135e4f-8549-45c0-925b-80d35efdb10a})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for DepthMediaFrame {
+unsafe impl ::windows_core::Interface for DepthMediaFrame {
     type Vtable = IDepthMediaFrame_Vtbl;
-    const IID: ::windows::core::GUID = <IDepthMediaFrame as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IDepthMediaFrame as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for DepthMediaFrame {
+impl ::windows_core::RuntimeName for DepthMediaFrame {
     const NAME: &'static str = "Windows.Media.Capture.Frames.DepthMediaFrame";
 }
-impl ::core::convert::From<DepthMediaFrame> for ::windows::core::IUnknown {
+impl ::core::convert::From<DepthMediaFrame> for ::windows_core::IUnknown {
     fn from(value: DepthMediaFrame) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&DepthMediaFrame> for ::windows::core::IUnknown {
+impl ::core::convert::From<&DepthMediaFrame> for ::windows_core::IUnknown {
     fn from(value: &DepthMediaFrame) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for DepthMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for DepthMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a DepthMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a DepthMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<DepthMediaFrame> for ::windows::core::IInspectable {
+impl ::core::convert::From<DepthMediaFrame> for ::windows_core::IInspectable {
     fn from(value: DepthMediaFrame) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&DepthMediaFrame> for ::windows::core::IInspectable {
+impl ::core::convert::From<&DepthMediaFrame> for ::windows_core::IInspectable {
     fn from(value: &DepthMediaFrame) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for DepthMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for DepthMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a DepthMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a DepthMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for DepthMediaFrame {}
 unsafe impl ::core::marker::Sync for DepthMediaFrame {}
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct DepthMediaFrameFormat(::windows::core::IUnknown);
+pub struct DepthMediaFrameFormat(::windows_core::IUnknown);
 impl DepthMediaFrameFormat {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn VideoFormat(&self) -> ::windows::core::Result<VideoMediaFrameFormat> {
+    pub fn VideoFormat(&self) -> ::windows_core::Result<VideoMediaFrameFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).VideoFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrameFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).VideoFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrameFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn DepthScaleInMeters(&self) -> ::windows::core::Result<f64> {
+    pub fn DepthScaleInMeters(&self) -> ::windows_core::Result<f64> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).DepthScaleInMeters)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
+            (::windows_core::Interface::vtable(this).DepthScaleInMeters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
 }
@@ -357,646 +357,646 @@ impl ::core::fmt::Debug for DepthMediaFrameFormat {
         f.debug_tuple("DepthMediaFrameFormat").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for DepthMediaFrameFormat {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.DepthMediaFrameFormat;{c312cf40-d729-453e-8780-2e04f140d28e})");
+unsafe impl ::windows_core::RuntimeType for DepthMediaFrameFormat {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.DepthMediaFrameFormat;{c312cf40-d729-453e-8780-2e04f140d28e})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for DepthMediaFrameFormat {
+unsafe impl ::windows_core::Interface for DepthMediaFrameFormat {
     type Vtable = IDepthMediaFrameFormat_Vtbl;
-    const IID: ::windows::core::GUID = <IDepthMediaFrameFormat as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IDepthMediaFrameFormat as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for DepthMediaFrameFormat {
+impl ::windows_core::RuntimeName for DepthMediaFrameFormat {
     const NAME: &'static str = "Windows.Media.Capture.Frames.DepthMediaFrameFormat";
 }
-impl ::core::convert::From<DepthMediaFrameFormat> for ::windows::core::IUnknown {
+impl ::core::convert::From<DepthMediaFrameFormat> for ::windows_core::IUnknown {
     fn from(value: DepthMediaFrameFormat) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&DepthMediaFrameFormat> for ::windows::core::IUnknown {
+impl ::core::convert::From<&DepthMediaFrameFormat> for ::windows_core::IUnknown {
     fn from(value: &DepthMediaFrameFormat) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for DepthMediaFrameFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for DepthMediaFrameFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a DepthMediaFrameFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a DepthMediaFrameFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<DepthMediaFrameFormat> for ::windows::core::IInspectable {
+impl ::core::convert::From<DepthMediaFrameFormat> for ::windows_core::IInspectable {
     fn from(value: DepthMediaFrameFormat) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&DepthMediaFrameFormat> for ::windows::core::IInspectable {
+impl ::core::convert::From<&DepthMediaFrameFormat> for ::windows_core::IInspectable {
     fn from(value: &DepthMediaFrameFormat) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for DepthMediaFrameFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for DepthMediaFrameFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a DepthMediaFrameFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a DepthMediaFrameFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for DepthMediaFrameFormat {}
 unsafe impl ::core::marker::Sync for DepthMediaFrameFormat {}
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAudioMediaFrame(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IAudioMediaFrame {
+pub struct IAudioMediaFrame(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAudioMediaFrame {
     type Vtable = IAudioMediaFrame_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa3a9feff_8021_441b_9a46_e7f0137b7981);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa3a9feff_8021_441b_9a46_e7f0137b7981);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAudioMediaFrame_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Media_MediaProperties")]
-    pub AudioEncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub AudioEncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Media_MediaProperties"))]
     AudioEncodingProperties: usize,
-    pub GetAudioFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetAudioFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IBufferMediaFrame(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IBufferMediaFrame {
+pub struct IBufferMediaFrame(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IBufferMediaFrame {
     type Vtable = IBufferMediaFrame_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb5b153c7_9b84_4062_b79c_a365b2596854);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb5b153c7_9b84_4062_b79c_a365b2596854);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IBufferMediaFrame_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
-    pub Buffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Buffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Buffer: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IDepthMediaFrame(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IDepthMediaFrame {
+pub struct IDepthMediaFrame(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IDepthMediaFrame {
     type Vtable = IDepthMediaFrame_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x47135e4f_8549_45c0_925b_80d35efdb10a);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x47135e4f_8549_45c0_925b_80d35efdb10a);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDepthMediaFrame_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub VideoMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub DepthFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub VideoMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub DepthFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(all(feature = "Media_Devices_Core", feature = "Perception_Spatial"))]
-    pub TryCreateCoordinateMapper: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cameraintrinsics: ::windows::core::RawPtr, coordinatesystem: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub TryCreateCoordinateMapper: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cameraintrinsics: ::windows_core::RawPtr, coordinatesystem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Media_Devices_Core", feature = "Perception_Spatial")))]
     TryCreateCoordinateMapper: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IDepthMediaFrame2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IDepthMediaFrame2 {
+pub struct IDepthMediaFrame2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IDepthMediaFrame2 {
     type Vtable = IDepthMediaFrame2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6cca473d_c4a4_4176_b0cd_33eae3b35aa3);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6cca473d_c4a4_4176_b0cd_33eae3b35aa3);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDepthMediaFrame2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub MaxReliableDepth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
-    pub MinReliableDepth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub MaxReliableDepth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
+    pub MinReliableDepth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IDepthMediaFrameFormat(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IDepthMediaFrameFormat {
+pub struct IDepthMediaFrameFormat(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IDepthMediaFrameFormat {
     type Vtable = IDepthMediaFrameFormat_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc312cf40_d729_453e_8780_2e04f140d28e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc312cf40_d729_453e_8780_2e04f140d28e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDepthMediaFrameFormat_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub VideoFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub DepthScaleInMeters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub VideoFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub DepthScaleInMeters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInfraredMediaFrame(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IInfraredMediaFrame {
+pub struct IInfraredMediaFrame(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInfraredMediaFrame {
     type Vtable = IInfraredMediaFrame_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3fd13503_004b_4f0e_91ac_465299b41658);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3fd13503_004b_4f0e_91ac_465299b41658);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInfraredMediaFrame_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub VideoMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub IsIlluminated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub VideoMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub IsIlluminated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameArrivedEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameArrivedEventArgs {
+pub struct IMediaFrameArrivedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameArrivedEventArgs {
     type Vtable = IMediaFrameArrivedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0b430add_a490_4435_ada1_9affd55239f7);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0b430add_a490_4435_ada1_9affd55239f7);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameArrivedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameFormat(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameFormat {
+pub struct IMediaFrameFormat(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameFormat {
     type Vtable = IMediaFrameFormat_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x71902b4e_b279_4a97_a9db_bd5a2fb78f39);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x71902b4e_b279_4a97_a9db_bd5a2fb78f39);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameFormat_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub MajorType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub Subtype: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub MajorType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub Subtype: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Media_MediaProperties")]
-    pub FrameRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub FrameRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Media_MediaProperties"))]
     FrameRate: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
-    pub VideoFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub VideoFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameFormat2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameFormat2 {
+pub struct IMediaFrameFormat2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameFormat2 {
     type Vtable = IMediaFrameFormat2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x63856340_5e87_4c10_86d1_6df097a6c6a8);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x63856340_5e87_4c10_86d1_6df097a6c6a8);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameFormat2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Media_MediaProperties")]
-    pub AudioEncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub AudioEncodingProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Media_MediaProperties"))]
     AudioEncodingProperties: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameReader(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameReader {
+pub struct IMediaFrameReader(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameReader {
     type Vtable = IMediaFrameReader_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe4c94395_2028_48ed_90b0_d1c1b162e24c);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe4c94395_2028_48ed_90b0_d1c1b162e24c);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameReader_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub FrameArrived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows::core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub FrameArrived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FrameArrived: usize,
     #[cfg(feature = "Foundation")]
-    pub RemoveFrameArrived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub RemoveFrameArrived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveFrameArrived: usize,
-    pub TryAcquireLatestFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub TryAcquireLatestFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub StartAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub StartAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     StartAsync: usize,
     #[cfg(feature = "Foundation")]
-    pub StopAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub StopAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     StopAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameReader2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameReader2 {
+pub struct IMediaFrameReader2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameReader2 {
     type Vtable = IMediaFrameReader2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x871127b3_8531_4050_87cc_a13733cf3e9b);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x871127b3_8531_4050_87cc_a13733cf3e9b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameReader2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub SetAcquisitionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MediaFrameReaderAcquisitionMode) -> ::windows::core::HRESULT,
-    pub AcquisitionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MediaFrameReaderAcquisitionMode) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub SetAcquisitionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MediaFrameReaderAcquisitionMode) -> ::windows_core::HRESULT,
+    pub AcquisitionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MediaFrameReaderAcquisitionMode) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameReference(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameReference {
+pub struct IMediaFrameReference(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameReference {
     type Vtable = IMediaFrameReference_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf6b88641_f0dc_4044_8dc9_961cedd05bad);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf6b88641_f0dc_4044_8dc9_961cedd05bad);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameReference_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub SourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MediaFrameSourceKind) -> ::windows::core::HRESULT,
-    pub Format: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub SourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MediaFrameSourceKind) -> ::windows_core::HRESULT,
+    pub Format: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub SystemRelativeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SystemRelativeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SystemRelativeTime: usize,
     #[cfg(feature = "Foundation")]
-    pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::TimeSpan) -> ::windows::core::HRESULT,
+    pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Duration: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
-    pub BufferMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub VideoMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub BufferMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub VideoMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Perception_Spatial")]
-    pub CoordinateSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CoordinateSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Perception_Spatial"))]
     CoordinateSystem: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameReference2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameReference2 {
+pub struct IMediaFrameReference2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameReference2 {
     type Vtable = IMediaFrameReference2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xddbc3ecc_d5b2_49ef_836a_947d989b80c1);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xddbc3ecc_d5b2_49ef_836a_947d989b80c1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameReference2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub AudioMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub AudioMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameSource(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameSource {
+pub struct IMediaFrameSource(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameSource {
     type Vtable = IMediaFrameSource_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd6782953_90db_46a8_8add_2aa884a8d253);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd6782953_90db_46a8_8add_2aa884a8d253);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameSource_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Info: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub Controller: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Info: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub Controller: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub SupportedFormats: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SupportedFormats: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     SupportedFormats: usize,
-    pub CurrentFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CurrentFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub SetFormatAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SetFormatAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetFormatAsync: usize,
     #[cfg(feature = "Foundation")]
-    pub FormatChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows::core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub FormatChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FormatChanged: usize,
     #[cfg(feature = "Foundation")]
-    pub RemoveFormatChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub RemoveFormatChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveFormatChanged: usize,
     #[cfg(feature = "Media_Devices_Core")]
-    pub TryGetCameraIntrinsics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub TryGetCameraIntrinsics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Media_Devices_Core"))]
     TryGetCameraIntrinsics: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameSourceController(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameSourceController {
+pub struct IMediaFrameSourceController(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameSourceController {
     type Vtable = IMediaFrameSourceController_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6d076635_316d_4b8f_b7b6_eeb04a8c6525);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6d076635_316d_4b8f_b7b6_eeb04a8c6525);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameSourceController_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub GetPropertyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetPropertyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetPropertyAsync: usize,
     #[cfg(feature = "Foundation")]
-    pub SetPropertyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, propertyvalue: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SetPropertyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, propertyvalue: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetPropertyAsync: usize,
     #[cfg(feature = "Media_Devices")]
-    pub VideoDeviceController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub VideoDeviceController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Media_Devices"))]
     VideoDeviceController: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameSourceController2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameSourceController2 {
+pub struct IMediaFrameSourceController2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameSourceController2 {
     type Vtable = IMediaFrameSourceController2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xefc49fd4_fcf2_4a03_b4e4_ac9628739bee);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xefc49fd4_fcf2_4a03_b4e4_ac9628739bee);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameSourceController2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub GetPropertyByExtendedIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, extendedPropertyId_array_size: u32, extendedpropertyid: *const u8, maxpropertyvaluesize: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetPropertyByExtendedIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, extendedPropertyId_array_size: u32, extendedpropertyid: *const u8, maxpropertyvaluesize: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetPropertyByExtendedIdAsync: usize,
     #[cfg(feature = "Foundation")]
-    pub SetPropertyByExtendedIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, extendedPropertyId_array_size: u32, extendedpropertyid: *const u8, propertyValue_array_size: u32, propertyvalue: *const u8, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SetPropertyByExtendedIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, extendedPropertyId_array_size: u32, extendedpropertyid: *const u8, propertyValue_array_size: u32, propertyvalue: *const u8, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetPropertyByExtendedIdAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameSourceController3(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameSourceController3 {
+pub struct IMediaFrameSourceController3(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameSourceController3 {
     type Vtable = IMediaFrameSourceController3_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1f0cf815_2464_4651_b1e8_4a82dbdb54de);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1f0cf815_2464_4651_b1e8_4a82dbdb54de);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameSourceController3_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Media_Devices")]
-    pub AudioDeviceController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub AudioDeviceController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Media_Devices"))]
     AudioDeviceController: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameSourceGetPropertyResult(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameSourceGetPropertyResult {
+pub struct IMediaFrameSourceGetPropertyResult(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameSourceGetPropertyResult {
     type Vtable = IMediaFrameSourceGetPropertyResult_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x088616c2_3a64_4bd5_bd2b_e7c898d2f37a);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x088616c2_3a64_4bd5_bd2b_e7c898d2f37a);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameSourceGetPropertyResult_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MediaFrameSourceGetPropertyStatus) -> ::windows::core::HRESULT,
-    pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MediaFrameSourceGetPropertyStatus) -> ::windows_core::HRESULT,
+    pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameSourceGroup(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameSourceGroup {
+pub struct IMediaFrameSourceGroup(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameSourceGroup {
     type Vtable = IMediaFrameSourceGroup_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7f605b87_4832_4b5f_ae3d_412faab37d34);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7f605b87_4832_4b5f_ae3d_412faab37d34);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameSourceGroup_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub SourceInfos: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SourceInfos: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     SourceInfos: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameSourceGroupStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameSourceGroupStatics {
+pub struct IMediaFrameSourceGroupStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameSourceGroupStatics {
     type Vtable = IMediaFrameSourceGroupStatics_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1c48bfc5_436f_4508_94cf_d5d8b7326445);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1c48bfc5_436f_4508_94cf_d5d8b7326445);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameSourceGroupStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Collections")]
-    pub FindAllAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub FindAllAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     FindAllAsync: usize,
     #[cfg(feature = "Foundation")]
-    pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FromIdAsync: usize,
-    pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameSourceInfo(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameSourceInfo {
+pub struct IMediaFrameSourceInfo(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameSourceInfo {
     type Vtable = IMediaFrameSourceInfo_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x87bdc9cd_4601_408f_91cf_038318cd0af3);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x87bdc9cd_4601_408f_91cf_038318cd0af3);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameSourceInfo_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub MediaStreamType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::MediaStreamType) -> ::windows::core::HRESULT,
-    pub SourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MediaFrameSourceKind) -> ::windows::core::HRESULT,
-    pub SourceGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub MediaStreamType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::MediaStreamType) -> ::windows_core::HRESULT,
+    pub SourceKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MediaFrameSourceKind) -> ::windows_core::HRESULT,
+    pub SourceGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Enumeration")]
-    pub DeviceInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub DeviceInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Enumeration"))]
     DeviceInformation: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
     #[cfg(feature = "Perception_Spatial")]
-    pub CoordinateSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CoordinateSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Perception_Spatial"))]
     CoordinateSystem: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameSourceInfo2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameSourceInfo2 {
+pub struct IMediaFrameSourceInfo2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameSourceInfo2 {
     type Vtable = IMediaFrameSourceInfo2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x195a7855_6457_42c6_a769_19b65bd32e6e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x195a7855_6457_42c6_a769_19b65bd32e6e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameSourceInfo2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub ProfileId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub ProfileId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub VideoProfileMediaDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub VideoProfileMediaDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     VideoProfileMediaDescription: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMediaFrameSourceInfo3(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMediaFrameSourceInfo3 {
+pub struct IMediaFrameSourceInfo3(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMediaFrameSourceInfo3 {
     type Vtable = IMediaFrameSourceInfo3_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xca824ab6_66ea_5885_a2b6_26c0eeec3c7b);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xca824ab6_66ea_5885_a2b6_26c0eeec3c7b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMediaFrameSourceInfo3_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(all(feature = "Devices_Enumeration", feature = "UI_WindowManagement"))]
-    pub GetRelativePanel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displayregion: ::windows::core::RawPtr, result__: *mut super::super::super::Devices::Enumeration::Panel) -> ::windows::core::HRESULT,
+    pub GetRelativePanel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displayregion: ::windows_core::RawPtr, result__: *mut super::super::super::Devices::Enumeration::Panel) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Devices_Enumeration", feature = "UI_WindowManagement")))]
     GetRelativePanel: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMultiSourceMediaFrameArrivedEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMultiSourceMediaFrameArrivedEventArgs {
+pub struct IMultiSourceMediaFrameArrivedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMultiSourceMediaFrameArrivedEventArgs {
     type Vtable = IMultiSourceMediaFrameArrivedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x63115e01_cf51_48fd_aab0_6d693eb48127);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x63115e01_cf51_48fd_aab0_6d693eb48127);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMultiSourceMediaFrameArrivedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMultiSourceMediaFrameReader(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMultiSourceMediaFrameReader {
+pub struct IMultiSourceMediaFrameReader(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMultiSourceMediaFrameReader {
     type Vtable = IMultiSourceMediaFrameReader_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8d144402_f763_488d_98f2_b437bcf075e7);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8d144402_f763_488d_98f2_b437bcf075e7);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMultiSourceMediaFrameReader_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub FrameArrived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows::core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub FrameArrived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FrameArrived: usize,
     #[cfg(feature = "Foundation")]
-    pub RemoveFrameArrived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub RemoveFrameArrived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveFrameArrived: usize,
-    pub TryAcquireLatestFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub TryAcquireLatestFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub StartAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub StartAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     StartAsync: usize,
     #[cfg(feature = "Foundation")]
-    pub StopAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub StopAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     StopAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMultiSourceMediaFrameReader2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMultiSourceMediaFrameReader2 {
+pub struct IMultiSourceMediaFrameReader2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMultiSourceMediaFrameReader2 {
     type Vtable = IMultiSourceMediaFrameReader2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xef5c8abd_fc5c_4c6b_9d81_3cb9cc637c26);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xef5c8abd_fc5c_4c6b_9d81_3cb9cc637c26);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMultiSourceMediaFrameReader2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub SetAcquisitionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MediaFrameReaderAcquisitionMode) -> ::windows::core::HRESULT,
-    pub AcquisitionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MediaFrameReaderAcquisitionMode) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub SetAcquisitionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MediaFrameReaderAcquisitionMode) -> ::windows_core::HRESULT,
+    pub AcquisitionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MediaFrameReaderAcquisitionMode) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMultiSourceMediaFrameReference(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMultiSourceMediaFrameReference {
+pub struct IMultiSourceMediaFrameReference(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMultiSourceMediaFrameReference {
     type Vtable = IMultiSourceMediaFrameReference_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x21964b1a_7fe2_44d6_92e5_298e6d2810e9);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x21964b1a_7fe2_44d6_92e5_298e6d2810e9);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMultiSourceMediaFrameReference_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub TryGetFrameReferenceBySourceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourceid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub TryGetFrameReferenceBySourceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IVideoMediaFrame(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IVideoMediaFrame {
+pub struct IVideoMediaFrame(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IVideoMediaFrame {
     type Vtable = IVideoMediaFrame_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00dd4ccb_32bd_4fe1_a013_7cc13cf5dbcf);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00dd4ccb_32bd_4fe1_a013_7cc13cf5dbcf);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVideoMediaFrame_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub VideoFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub FrameReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub VideoFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Graphics_Imaging")]
-    pub SoftwareBitmap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SoftwareBitmap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_Imaging"))]
     SoftwareBitmap: usize,
     #[cfg(feature = "Graphics_DirectX_Direct3D11")]
-    pub Direct3DSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Direct3DSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
     Direct3DSurface: usize,
     #[cfg(feature = "Media_Devices_Core")]
-    pub CameraIntrinsics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CameraIntrinsics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Media_Devices_Core"))]
     CameraIntrinsics: usize,
-    pub InfraredMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub DepthMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetVideoFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub InfraredMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub DepthMediaFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetVideoFrame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IVideoMediaFrameFormat(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IVideoMediaFrameFormat {
+pub struct IVideoMediaFrameFormat(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IVideoMediaFrameFormat {
     type Vtable = IVideoMediaFrameFormat_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x46027fc0_d71b_45c7_8f14_6d9a0ae604e4);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x46027fc0_d71b_45c7_8f14_6d9a0ae604e4);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVideoMediaFrameFormat_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub MediaFrameFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub DepthFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub Width: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
-    pub Height: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub MediaFrameFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub DepthFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub Width: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
+    pub Height: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct InfraredMediaFrame(::windows::core::IUnknown);
+pub struct InfraredMediaFrame(::windows_core::IUnknown);
 impl InfraredMediaFrame {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn FrameReference(&self) -> ::windows::core::Result<MediaFrameReference> {
+    pub fn FrameReference(&self) -> ::windows_core::Result<MediaFrameReference> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).FrameReference)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FrameReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn VideoMediaFrame(&self) -> ::windows::core::Result<VideoMediaFrame> {
+    pub fn VideoMediaFrame(&self) -> ::windows_core::Result<VideoMediaFrame> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).VideoMediaFrame)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrame>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).VideoMediaFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrame>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn IsIlluminated(&self) -> ::windows::core::Result<bool> {
+    pub fn IsIlluminated(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsIlluminated)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsIlluminated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
 }
@@ -1016,65 +1016,65 @@ impl ::core::fmt::Debug for InfraredMediaFrame {
         f.debug_tuple("InfraredMediaFrame").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InfraredMediaFrame {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.InfraredMediaFrame;{3fd13503-004b-4f0e-91ac-465299b41658})");
+unsafe impl ::windows_core::RuntimeType for InfraredMediaFrame {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.InfraredMediaFrame;{3fd13503-004b-4f0e-91ac-465299b41658})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for InfraredMediaFrame {
+unsafe impl ::windows_core::Interface for InfraredMediaFrame {
     type Vtable = IInfraredMediaFrame_Vtbl;
-    const IID: ::windows::core::GUID = <IInfraredMediaFrame as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IInfraredMediaFrame as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for InfraredMediaFrame {
+impl ::windows_core::RuntimeName for InfraredMediaFrame {
     const NAME: &'static str = "Windows.Media.Capture.Frames.InfraredMediaFrame";
 }
-impl ::core::convert::From<InfraredMediaFrame> for ::windows::core::IUnknown {
+impl ::core::convert::From<InfraredMediaFrame> for ::windows_core::IUnknown {
     fn from(value: InfraredMediaFrame) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InfraredMediaFrame> for ::windows::core::IUnknown {
+impl ::core::convert::From<&InfraredMediaFrame> for ::windows_core::IUnknown {
     fn from(value: &InfraredMediaFrame) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for InfraredMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InfraredMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a InfraredMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InfraredMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<InfraredMediaFrame> for ::windows::core::IInspectable {
+impl ::core::convert::From<InfraredMediaFrame> for ::windows_core::IInspectable {
     fn from(value: InfraredMediaFrame) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InfraredMediaFrame> for ::windows::core::IInspectable {
+impl ::core::convert::From<&InfraredMediaFrame> for ::windows_core::IInspectable {
     fn from(value: &InfraredMediaFrame) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for InfraredMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InfraredMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a InfraredMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InfraredMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for InfraredMediaFrame {}
 unsafe impl ::core::marker::Sync for InfraredMediaFrame {}
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct MediaFrameArrivedEventArgs(::windows::core::IUnknown);
+pub struct MediaFrameArrivedEventArgs(::windows_core::IUnknown);
 impl MediaFrameArrivedEventArgs {}
 impl ::core::clone::Clone for MediaFrameArrivedEventArgs {
     fn clone(&self) -> Self {
@@ -1092,115 +1092,115 @@ impl ::core::fmt::Debug for MediaFrameArrivedEventArgs {
         f.debug_tuple("MediaFrameArrivedEventArgs").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameArrivedEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs;{0b430add-a490-4435-ada1-9affd55239f7})");
+unsafe impl ::windows_core::RuntimeType for MediaFrameArrivedEventArgs {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs;{0b430add-a490-4435-ada1-9affd55239f7})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for MediaFrameArrivedEventArgs {
+unsafe impl ::windows_core::Interface for MediaFrameArrivedEventArgs {
     type Vtable = IMediaFrameArrivedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = <IMediaFrameArrivedEventArgs as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IMediaFrameArrivedEventArgs as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for MediaFrameArrivedEventArgs {
+impl ::windows_core::RuntimeName for MediaFrameArrivedEventArgs {
     const NAME: &'static str = "Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs";
 }
-impl ::core::convert::From<MediaFrameArrivedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<MediaFrameArrivedEventArgs> for ::windows_core::IUnknown {
     fn from(value: MediaFrameArrivedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameArrivedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<&MediaFrameArrivedEventArgs> for ::windows_core::IUnknown {
     fn from(value: &MediaFrameArrivedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for MediaFrameArrivedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for MediaFrameArrivedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a MediaFrameArrivedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a MediaFrameArrivedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<MediaFrameArrivedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<MediaFrameArrivedEventArgs> for ::windows_core::IInspectable {
     fn from(value: MediaFrameArrivedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameArrivedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<&MediaFrameArrivedEventArgs> for ::windows_core::IInspectable {
     fn from(value: &MediaFrameArrivedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for MediaFrameArrivedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for MediaFrameArrivedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a MediaFrameArrivedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a MediaFrameArrivedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for MediaFrameArrivedEventArgs {}
 unsafe impl ::core::marker::Sync for MediaFrameArrivedEventArgs {}
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct MediaFrameFormat(::windows::core::IUnknown);
+pub struct MediaFrameFormat(::windows_core::IUnknown);
 impl MediaFrameFormat {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn MajorType(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn MajorType(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).MajorType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).MajorType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn Subtype(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Subtype(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Subtype)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Subtype)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Media_MediaProperties\"`*"]
     #[cfg(feature = "Media_MediaProperties")]
-    pub fn FrameRate(&self) -> ::windows::core::Result<super::super::MediaProperties::MediaRatio> {
+    pub fn FrameRate(&self) -> ::windows_core::Result<super::super::MediaProperties::MediaRatio> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).FrameRate)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::MediaProperties::MediaRatio>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FrameRate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::MediaProperties::MediaRatio>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows::core::Result<super::super::super::Foundation::Collections::IMapView<::windows::core::GUID, ::windows::core::IInspectable>> {
+    pub fn Properties(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Properties)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows::core::GUID, ::windows::core::IInspectable>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn VideoFormat(&self) -> ::windows::core::Result<VideoMediaFrameFormat> {
+    pub fn VideoFormat(&self) -> ::windows_core::Result<VideoMediaFrameFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).VideoFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrameFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).VideoFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrameFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Media_MediaProperties\"`*"]
     #[cfg(feature = "Media_MediaProperties")]
-    pub fn AudioEncodingProperties(&self) -> ::windows::core::Result<super::super::MediaProperties::AudioEncodingProperties> {
-        let this = &::windows::core::Interface::cast::<IMediaFrameFormat2>(self)?;
+    pub fn AudioEncodingProperties(&self) -> ::windows_core::Result<super::super::MediaProperties::AudioEncodingProperties> {
+        let this = &::windows_core::Interface::cast::<IMediaFrameFormat2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).AudioEncodingProperties)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::MediaProperties::AudioEncodingProperties>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).AudioEncodingProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::MediaProperties::AudioEncodingProperties>(result__)
         }
     }
 }
@@ -1220,124 +1220,124 @@ impl ::core::fmt::Debug for MediaFrameFormat {
         f.debug_tuple("MediaFrameFormat").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameFormat {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameFormat;{71902b4e-b279-4a97-a9db-bd5a2fb78f39})");
+unsafe impl ::windows_core::RuntimeType for MediaFrameFormat {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameFormat;{71902b4e-b279-4a97-a9db-bd5a2fb78f39})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for MediaFrameFormat {
+unsafe impl ::windows_core::Interface for MediaFrameFormat {
     type Vtable = IMediaFrameFormat_Vtbl;
-    const IID: ::windows::core::GUID = <IMediaFrameFormat as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IMediaFrameFormat as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for MediaFrameFormat {
+impl ::windows_core::RuntimeName for MediaFrameFormat {
     const NAME: &'static str = "Windows.Media.Capture.Frames.MediaFrameFormat";
 }
-impl ::core::convert::From<MediaFrameFormat> for ::windows::core::IUnknown {
+impl ::core::convert::From<MediaFrameFormat> for ::windows_core::IUnknown {
     fn from(value: MediaFrameFormat) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameFormat> for ::windows::core::IUnknown {
+impl ::core::convert::From<&MediaFrameFormat> for ::windows_core::IUnknown {
     fn from(value: &MediaFrameFormat) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for MediaFrameFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for MediaFrameFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a MediaFrameFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a MediaFrameFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<MediaFrameFormat> for ::windows::core::IInspectable {
+impl ::core::convert::From<MediaFrameFormat> for ::windows_core::IInspectable {
     fn from(value: MediaFrameFormat) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameFormat> for ::windows::core::IInspectable {
+impl ::core::convert::From<&MediaFrameFormat> for ::windows_core::IInspectable {
     fn from(value: &MediaFrameFormat) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for MediaFrameFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for MediaFrameFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a MediaFrameFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a MediaFrameFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for MediaFrameFormat {}
 unsafe impl ::core::marker::Sync for MediaFrameFormat {}
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct MediaFrameReader(::windows::core::IUnknown);
+pub struct MediaFrameReader(::windows_core::IUnknown);
 impl MediaFrameReader {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Close(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).Close)(::windows::core::Interface::as_raw(this)).ok() }
+    pub fn Close(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn FrameArrived<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<MediaFrameReader, MediaFrameArrivedEventArgs>>>(&self, handler: Param0) -> ::windows::core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn FrameArrived<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<MediaFrameReader, MediaFrameArrivedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows::core::Interface::vtable(this).FrameArrived)(::windows::core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            (::windows_core::Interface::vtable(this).FrameArrived)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn RemoveFrameArrived<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows::core::Result<()> {
+    pub fn RemoveFrameArrived<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemoveFrameArrived)(::windows::core::Interface::as_raw(this), token.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).RemoveFrameArrived)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn TryAcquireLatestFrame(&self) -> ::windows::core::Result<MediaFrameReference> {
+    pub fn TryAcquireLatestFrame(&self) -> ::windows_core::Result<MediaFrameReference> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).TryAcquireLatestFrame)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).TryAcquireLatestFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn StartAsync(&self) -> ::windows::core::Result<super::super::super::Foundation::IAsyncOperation<MediaFrameReaderStartStatus>> {
+    pub fn StartAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<MediaFrameReaderStartStatus>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).StartAsync)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MediaFrameReaderStartStatus>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).StartAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MediaFrameReaderStartStatus>>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn StopAsync(&self) -> ::windows::core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn StopAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).StopAsync)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).StopAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn SetAcquisitionMode(&self, value: MediaFrameReaderAcquisitionMode) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IMediaFrameReader2>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetAcquisitionMode)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetAcquisitionMode(&self, value: MediaFrameReaderAcquisitionMode) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IMediaFrameReader2>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetAcquisitionMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn AcquisitionMode(&self) -> ::windows::core::Result<MediaFrameReaderAcquisitionMode> {
-        let this = &::windows::core::Interface::cast::<IMediaFrameReader2>(self)?;
+    pub fn AcquisitionMode(&self) -> ::windows_core::Result<MediaFrameReaderAcquisitionMode> {
+        let this = &::windows_core::Interface::cast::<IMediaFrameReader2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<MediaFrameReaderAcquisitionMode>::zeroed();
-            (::windows::core::Interface::vtable(this).AcquisitionMode)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReaderAcquisitionMode>(result__)
+            (::windows_core::Interface::vtable(this).AcquisitionMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReaderAcquisitionMode>(result__)
         }
     }
 }
@@ -1357,84 +1357,84 @@ impl ::core::fmt::Debug for MediaFrameReader {
         f.debug_tuple("MediaFrameReader").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameReader {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameReader;{e4c94395-2028-48ed-90b0-d1c1b162e24c})");
+unsafe impl ::windows_core::RuntimeType for MediaFrameReader {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameReader;{e4c94395-2028-48ed-90b0-d1c1b162e24c})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for MediaFrameReader {
+unsafe impl ::windows_core::Interface for MediaFrameReader {
     type Vtable = IMediaFrameReader_Vtbl;
-    const IID: ::windows::core::GUID = <IMediaFrameReader as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IMediaFrameReader as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for MediaFrameReader {
+impl ::windows_core::RuntimeName for MediaFrameReader {
     const NAME: &'static str = "Windows.Media.Capture.Frames.MediaFrameReader";
 }
-impl ::core::convert::From<MediaFrameReader> for ::windows::core::IUnknown {
+impl ::core::convert::From<MediaFrameReader> for ::windows_core::IUnknown {
     fn from(value: MediaFrameReader) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameReader> for ::windows::core::IUnknown {
+impl ::core::convert::From<&MediaFrameReader> for ::windows_core::IUnknown {
     fn from(value: &MediaFrameReader) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for MediaFrameReader {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for MediaFrameReader {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a MediaFrameReader {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a MediaFrameReader {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<MediaFrameReader> for ::windows::core::IInspectable {
+impl ::core::convert::From<MediaFrameReader> for ::windows_core::IInspectable {
     fn from(value: MediaFrameReader) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameReader> for ::windows::core::IInspectable {
+impl ::core::convert::From<&MediaFrameReader> for ::windows_core::IInspectable {
     fn from(value: &MediaFrameReader) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for MediaFrameReader {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for MediaFrameReader {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a MediaFrameReader {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a MediaFrameReader {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Foundation")]
 impl ::core::convert::TryFrom<MediaFrameReader> for super::super::super::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: MediaFrameReader) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: MediaFrameReader) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation")]
 impl ::core::convert::TryFrom<&MediaFrameReader> for super::super::super::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &MediaFrameReader) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &MediaFrameReader) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::super::Foundation::IClosable> for MediaFrameReader {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for MediaFrameReader {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::super::Foundation::IClosable> for &MediaFrameReader {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &MediaFrameReader {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for MediaFrameReader {}
@@ -1458,7 +1458,7 @@ impl ::core::default::Default for MediaFrameReaderAcquisitionMode {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MediaFrameReaderAcquisitionMode {
+unsafe impl ::windows_core::Abi for MediaFrameReaderAcquisitionMode {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MediaFrameReaderAcquisitionMode {
@@ -1466,10 +1466,10 @@ impl ::core::fmt::Debug for MediaFrameReaderAcquisitionMode {
         f.debug_tuple("MediaFrameReaderAcquisitionMode").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameReaderAcquisitionMode {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Media.Capture.Frames.MediaFrameReaderAcquisitionMode;i4)");
+unsafe impl ::windows_core::RuntimeType for MediaFrameReaderAcquisitionMode {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Media.Capture.Frames.MediaFrameReaderAcquisitionMode;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -1495,7 +1495,7 @@ impl ::core::default::Default for MediaFrameReaderStartStatus {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MediaFrameReaderStartStatus {
+unsafe impl ::windows_core::Abi for MediaFrameReaderStartStatus {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MediaFrameReaderStartStatus {
@@ -1503,97 +1503,97 @@ impl ::core::fmt::Debug for MediaFrameReaderStartStatus {
         f.debug_tuple("MediaFrameReaderStartStatus").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameReaderStartStatus {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Media.Capture.Frames.MediaFrameReaderStartStatus;i4)");
+unsafe impl ::windows_core::RuntimeType for MediaFrameReaderStartStatus {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Media.Capture.Frames.MediaFrameReaderStartStatus;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct MediaFrameReference(::windows::core::IUnknown);
+pub struct MediaFrameReference(::windows_core::IUnknown);
 impl MediaFrameReference {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Close(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).Close)(::windows::core::Interface::as_raw(this)).ok() }
+    pub fn Close(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn SourceKind(&self) -> ::windows::core::Result<MediaFrameSourceKind> {
+    pub fn SourceKind(&self) -> ::windows_core::Result<MediaFrameSourceKind> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<MediaFrameSourceKind>::zeroed();
-            (::windows::core::Interface::vtable(this).SourceKind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceKind>(result__)
+            (::windows_core::Interface::vtable(this).SourceKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceKind>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn Format(&self) -> ::windows::core::Result<MediaFrameFormat> {
+    pub fn Format(&self) -> ::windows_core::Result<MediaFrameFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Format)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Format)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn SystemRelativeTime(&self) -> ::windows::core::Result<super::super::super::Foundation::IReference<super::super::super::Foundation::TimeSpan>> {
+    pub fn SystemRelativeTime(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<super::super::super::Foundation::TimeSpan>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).SystemRelativeTime)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<super::super::super::Foundation::TimeSpan>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).SystemRelativeTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<super::super::super::Foundation::TimeSpan>>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Duration(&self) -> ::windows::core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Duration(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows::core::Interface::vtable(this).Duration)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows::core::Result<super::super::super::Foundation::Collections::IMapView<::windows::core::GUID, ::windows::core::IInspectable>> {
+    pub fn Properties(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Properties)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows::core::GUID, ::windows::core::IInspectable>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn BufferMediaFrame(&self) -> ::windows::core::Result<BufferMediaFrame> {
+    pub fn BufferMediaFrame(&self) -> ::windows_core::Result<BufferMediaFrame> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).BufferMediaFrame)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BufferMediaFrame>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).BufferMediaFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BufferMediaFrame>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn VideoMediaFrame(&self) -> ::windows::core::Result<VideoMediaFrame> {
+    pub fn VideoMediaFrame(&self) -> ::windows_core::Result<VideoMediaFrame> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).VideoMediaFrame)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrame>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).VideoMediaFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrame>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Perception_Spatial\"`*"]
     #[cfg(feature = "Perception_Spatial")]
-    pub fn CoordinateSystem(&self) -> ::windows::core::Result<super::super::super::Perception::Spatial::SpatialCoordinateSystem> {
+    pub fn CoordinateSystem(&self) -> ::windows_core::Result<super::super::super::Perception::Spatial::SpatialCoordinateSystem> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CoordinateSystem)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Perception::Spatial::SpatialCoordinateSystem>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CoordinateSystem)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Perception::Spatial::SpatialCoordinateSystem>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn AudioMediaFrame(&self) -> ::windows::core::Result<AudioMediaFrame> {
-        let this = &::windows::core::Interface::cast::<IMediaFrameReference2>(self)?;
+    pub fn AudioMediaFrame(&self) -> ::windows_core::Result<AudioMediaFrame> {
+        let this = &::windows_core::Interface::cast::<IMediaFrameReference2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).AudioMediaFrame)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioMediaFrame>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).AudioMediaFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AudioMediaFrame>(result__)
         }
     }
 }
@@ -1613,156 +1613,156 @@ impl ::core::fmt::Debug for MediaFrameReference {
         f.debug_tuple("MediaFrameReference").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameReference {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameReference;{f6b88641-f0dc-4044-8dc9-961cedd05bad})");
+unsafe impl ::windows_core::RuntimeType for MediaFrameReference {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameReference;{f6b88641-f0dc-4044-8dc9-961cedd05bad})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for MediaFrameReference {
+unsafe impl ::windows_core::Interface for MediaFrameReference {
     type Vtable = IMediaFrameReference_Vtbl;
-    const IID: ::windows::core::GUID = <IMediaFrameReference as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IMediaFrameReference as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for MediaFrameReference {
+impl ::windows_core::RuntimeName for MediaFrameReference {
     const NAME: &'static str = "Windows.Media.Capture.Frames.MediaFrameReference";
 }
-impl ::core::convert::From<MediaFrameReference> for ::windows::core::IUnknown {
+impl ::core::convert::From<MediaFrameReference> for ::windows_core::IUnknown {
     fn from(value: MediaFrameReference) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameReference> for ::windows::core::IUnknown {
+impl ::core::convert::From<&MediaFrameReference> for ::windows_core::IUnknown {
     fn from(value: &MediaFrameReference) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for MediaFrameReference {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for MediaFrameReference {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a MediaFrameReference {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a MediaFrameReference {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<MediaFrameReference> for ::windows::core::IInspectable {
+impl ::core::convert::From<MediaFrameReference> for ::windows_core::IInspectable {
     fn from(value: MediaFrameReference) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameReference> for ::windows::core::IInspectable {
+impl ::core::convert::From<&MediaFrameReference> for ::windows_core::IInspectable {
     fn from(value: &MediaFrameReference) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for MediaFrameReference {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for MediaFrameReference {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a MediaFrameReference {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a MediaFrameReference {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Foundation")]
 impl ::core::convert::TryFrom<MediaFrameReference> for super::super::super::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: MediaFrameReference) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: MediaFrameReference) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation")]
 impl ::core::convert::TryFrom<&MediaFrameReference> for super::super::super::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &MediaFrameReference) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &MediaFrameReference) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::super::Foundation::IClosable> for MediaFrameReference {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for MediaFrameReference {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::super::Foundation::IClosable> for &MediaFrameReference {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &MediaFrameReference {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for MediaFrameReference {}
 unsafe impl ::core::marker::Sync for MediaFrameReference {}
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct MediaFrameSource(::windows::core::IUnknown);
+pub struct MediaFrameSource(::windows_core::IUnknown);
 impl MediaFrameSource {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn Info(&self) -> ::windows::core::Result<MediaFrameSourceInfo> {
+    pub fn Info(&self) -> ::windows_core::Result<MediaFrameSourceInfo> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Info)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceInfo>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Info)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceInfo>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn Controller(&self) -> ::windows::core::Result<MediaFrameSourceController> {
+    pub fn Controller(&self) -> ::windows_core::Result<MediaFrameSourceController> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Controller)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceController>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Controller)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceController>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SupportedFormats(&self) -> ::windows::core::Result<super::super::super::Foundation::Collections::IVectorView<MediaFrameFormat>> {
+    pub fn SupportedFormats(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<MediaFrameFormat>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).SupportedFormats)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<MediaFrameFormat>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).SupportedFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<MediaFrameFormat>>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn CurrentFormat(&self) -> ::windows::core::Result<MediaFrameFormat> {
+    pub fn CurrentFormat(&self) -> ::windows_core::Result<MediaFrameFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CurrentFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CurrentFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn SetFormatAsync<'a, Param0: ::windows::core::IntoParam<'a, MediaFrameFormat>>(&self, format: Param0) -> ::windows::core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn SetFormatAsync<'a, Param0: ::windows_core::IntoParam<'a, MediaFrameFormat>>(&self, format: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).SetFormatAsync)(::windows::core::Interface::as_raw(this), format.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).SetFormatAsync)(::windows_core::Interface::as_raw(this), format.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn FormatChanged<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<MediaFrameSource, ::windows::core::IInspectable>>>(&self, handler: Param0) -> ::windows::core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn FormatChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<MediaFrameSource, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows::core::Interface::vtable(this).FormatChanged)(::windows::core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            (::windows_core::Interface::vtable(this).FormatChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn RemoveFormatChanged<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows::core::Result<()> {
+    pub fn RemoveFormatChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemoveFormatChanged)(::windows::core::Interface::as_raw(this), token.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).RemoveFormatChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Media_Devices_Core\"`*"]
     #[cfg(feature = "Media_Devices_Core")]
-    pub fn TryGetCameraIntrinsics<'a, Param0: ::windows::core::IntoParam<'a, MediaFrameFormat>>(&self, format: Param0) -> ::windows::core::Result<super::super::Devices::Core::CameraIntrinsics> {
+    pub fn TryGetCameraIntrinsics<'a, Param0: ::windows_core::IntoParam<'a, MediaFrameFormat>>(&self, format: Param0) -> ::windows_core::Result<super::super::Devices::Core::CameraIntrinsics> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).TryGetCameraIntrinsics)(::windows::core::Interface::as_raw(this), format.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Devices::Core::CameraIntrinsics>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).TryGetCameraIntrinsics)(::windows_core::Interface::as_raw(this), format.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Devices::Core::CameraIntrinsics>(result__)
         }
     }
 }
@@ -1782,118 +1782,118 @@ impl ::core::fmt::Debug for MediaFrameSource {
         f.debug_tuple("MediaFrameSource").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameSource {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameSource;{d6782953-90db-46a8-8add-2aa884a8d253})");
+unsafe impl ::windows_core::RuntimeType for MediaFrameSource {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameSource;{d6782953-90db-46a8-8add-2aa884a8d253})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for MediaFrameSource {
+unsafe impl ::windows_core::Interface for MediaFrameSource {
     type Vtable = IMediaFrameSource_Vtbl;
-    const IID: ::windows::core::GUID = <IMediaFrameSource as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IMediaFrameSource as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for MediaFrameSource {
+impl ::windows_core::RuntimeName for MediaFrameSource {
     const NAME: &'static str = "Windows.Media.Capture.Frames.MediaFrameSource";
 }
-impl ::core::convert::From<MediaFrameSource> for ::windows::core::IUnknown {
+impl ::core::convert::From<MediaFrameSource> for ::windows_core::IUnknown {
     fn from(value: MediaFrameSource) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameSource> for ::windows::core::IUnknown {
+impl ::core::convert::From<&MediaFrameSource> for ::windows_core::IUnknown {
     fn from(value: &MediaFrameSource) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for MediaFrameSource {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for MediaFrameSource {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a MediaFrameSource {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a MediaFrameSource {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<MediaFrameSource> for ::windows::core::IInspectable {
+impl ::core::convert::From<MediaFrameSource> for ::windows_core::IInspectable {
     fn from(value: MediaFrameSource) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameSource> for ::windows::core::IInspectable {
+impl ::core::convert::From<&MediaFrameSource> for ::windows_core::IInspectable {
     fn from(value: &MediaFrameSource) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for MediaFrameSource {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for MediaFrameSource {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a MediaFrameSource {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a MediaFrameSource {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for MediaFrameSource {}
 unsafe impl ::core::marker::Sync for MediaFrameSource {}
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct MediaFrameSourceController(::windows::core::IUnknown);
+pub struct MediaFrameSourceController(::windows_core::IUnknown);
 impl MediaFrameSourceController {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetPropertyAsync<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, propertyid: Param0) -> ::windows::core::Result<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceGetPropertyResult>> {
+    pub fn GetPropertyAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyid: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceGetPropertyResult>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetPropertyAsync)(::windows::core::Interface::as_raw(this), propertyid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceGetPropertyResult>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetPropertyAsync)(::windows_core::Interface::as_raw(this), propertyid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceGetPropertyResult>>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn SetPropertyAsync<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>, Param1: ::windows::core::IntoParam<'a, ::windows::core::IInspectable>>(&self, propertyid: Param0, propertyvalue: Param1) -> ::windows::core::Result<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceSetPropertyStatus>> {
+    pub fn SetPropertyAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(&self, propertyid: Param0, propertyvalue: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceSetPropertyStatus>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).SetPropertyAsync)(::windows::core::Interface::as_raw(this), propertyid.into_param().abi(), propertyvalue.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceSetPropertyStatus>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).SetPropertyAsync)(::windows_core::Interface::as_raw(this), propertyid.into_param().abi(), propertyvalue.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceSetPropertyStatus>>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Media_Devices\"`*"]
     #[cfg(feature = "Media_Devices")]
-    pub fn VideoDeviceController(&self) -> ::windows::core::Result<super::super::Devices::VideoDeviceController> {
+    pub fn VideoDeviceController(&self) -> ::windows_core::Result<super::super::Devices::VideoDeviceController> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).VideoDeviceController)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::VideoDeviceController>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).VideoDeviceController)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::VideoDeviceController>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetPropertyByExtendedIdAsync<'a, Param1: ::windows::core::IntoParam<'a, super::super::super::Foundation::IReference<u32>>>(&self, extendedpropertyid: &[u8], maxpropertyvaluesize: Param1) -> ::windows::core::Result<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceGetPropertyResult>> {
-        let this = &::windows::core::Interface::cast::<IMediaFrameSourceController2>(self)?;
+    pub fn GetPropertyByExtendedIdAsync<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::IReference<u32>>>(&self, extendedpropertyid: &[u8], maxpropertyvaluesize: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceGetPropertyResult>> {
+        let this = &::windows_core::Interface::cast::<IMediaFrameSourceController2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetPropertyByExtendedIdAsync)(::windows::core::Interface::as_raw(this), extendedpropertyid.len() as u32, ::core::mem::transmute(extendedpropertyid.as_ptr()), maxpropertyvaluesize.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceGetPropertyResult>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetPropertyByExtendedIdAsync)(::windows_core::Interface::as_raw(this), extendedpropertyid.len() as u32, ::core::mem::transmute(extendedpropertyid.as_ptr()), maxpropertyvaluesize.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceGetPropertyResult>>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn SetPropertyByExtendedIdAsync(&self, extendedpropertyid: &[u8], propertyvalue: &[u8]) -> ::windows::core::Result<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceSetPropertyStatus>> {
-        let this = &::windows::core::Interface::cast::<IMediaFrameSourceController2>(self)?;
+    pub fn SetPropertyByExtendedIdAsync(&self, extendedpropertyid: &[u8], propertyvalue: &[u8]) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceSetPropertyStatus>> {
+        let this = &::windows_core::Interface::cast::<IMediaFrameSourceController2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).SetPropertyByExtendedIdAsync)(::windows::core::Interface::as_raw(this), extendedpropertyid.len() as u32, ::core::mem::transmute(extendedpropertyid.as_ptr()), propertyvalue.len() as u32, ::core::mem::transmute(propertyvalue.as_ptr()), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceSetPropertyStatus>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).SetPropertyByExtendedIdAsync)(::windows_core::Interface::as_raw(this), extendedpropertyid.len() as u32, ::core::mem::transmute(extendedpropertyid.as_ptr()), propertyvalue.len() as u32, ::core::mem::transmute(propertyvalue.as_ptr()), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceSetPropertyStatus>>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Media_Devices\"`*"]
     #[cfg(feature = "Media_Devices")]
-    pub fn AudioDeviceController(&self) -> ::windows::core::Result<super::super::Devices::AudioDeviceController> {
-        let this = &::windows::core::Interface::cast::<IMediaFrameSourceController3>(self)?;
+    pub fn AudioDeviceController(&self) -> ::windows_core::Result<super::super::Devices::AudioDeviceController> {
+        let this = &::windows_core::Interface::cast::<IMediaFrameSourceController3>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).AudioDeviceController)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::AudioDeviceController>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).AudioDeviceController)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::AudioDeviceController>(result__)
         }
     }
 }
@@ -1913,80 +1913,80 @@ impl ::core::fmt::Debug for MediaFrameSourceController {
         f.debug_tuple("MediaFrameSourceController").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameSourceController {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameSourceController;{6d076635-316d-4b8f-b7b6-eeb04a8c6525})");
+unsafe impl ::windows_core::RuntimeType for MediaFrameSourceController {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameSourceController;{6d076635-316d-4b8f-b7b6-eeb04a8c6525})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for MediaFrameSourceController {
+unsafe impl ::windows_core::Interface for MediaFrameSourceController {
     type Vtable = IMediaFrameSourceController_Vtbl;
-    const IID: ::windows::core::GUID = <IMediaFrameSourceController as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IMediaFrameSourceController as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for MediaFrameSourceController {
+impl ::windows_core::RuntimeName for MediaFrameSourceController {
     const NAME: &'static str = "Windows.Media.Capture.Frames.MediaFrameSourceController";
 }
-impl ::core::convert::From<MediaFrameSourceController> for ::windows::core::IUnknown {
+impl ::core::convert::From<MediaFrameSourceController> for ::windows_core::IUnknown {
     fn from(value: MediaFrameSourceController) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameSourceController> for ::windows::core::IUnknown {
+impl ::core::convert::From<&MediaFrameSourceController> for ::windows_core::IUnknown {
     fn from(value: &MediaFrameSourceController) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for MediaFrameSourceController {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for MediaFrameSourceController {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a MediaFrameSourceController {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a MediaFrameSourceController {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<MediaFrameSourceController> for ::windows::core::IInspectable {
+impl ::core::convert::From<MediaFrameSourceController> for ::windows_core::IInspectable {
     fn from(value: MediaFrameSourceController) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameSourceController> for ::windows::core::IInspectable {
+impl ::core::convert::From<&MediaFrameSourceController> for ::windows_core::IInspectable {
     fn from(value: &MediaFrameSourceController) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for MediaFrameSourceController {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for MediaFrameSourceController {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a MediaFrameSourceController {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a MediaFrameSourceController {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for MediaFrameSourceController {}
 unsafe impl ::core::marker::Sync for MediaFrameSourceController {}
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct MediaFrameSourceGetPropertyResult(::windows::core::IUnknown);
+pub struct MediaFrameSourceGetPropertyResult(::windows_core::IUnknown);
 impl MediaFrameSourceGetPropertyResult {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn Status(&self) -> ::windows::core::Result<MediaFrameSourceGetPropertyStatus> {
+    pub fn Status(&self) -> ::windows_core::Result<MediaFrameSourceGetPropertyStatus> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<MediaFrameSourceGetPropertyStatus>::zeroed();
-            (::windows::core::Interface::vtable(this).Status)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceGetPropertyStatus>(result__)
+            (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceGetPropertyStatus>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn Value(&self) -> ::windows::core::Result<::windows::core::IInspectable> {
+    pub fn Value(&self) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).Value)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::IInspectable>(result__)
+            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
 }
@@ -2006,58 +2006,58 @@ impl ::core::fmt::Debug for MediaFrameSourceGetPropertyResult {
         f.debug_tuple("MediaFrameSourceGetPropertyResult").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameSourceGetPropertyResult {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult;{088616c2-3a64-4bd5-bd2b-e7c898d2f37a})");
+unsafe impl ::windows_core::RuntimeType for MediaFrameSourceGetPropertyResult {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult;{088616c2-3a64-4bd5-bd2b-e7c898d2f37a})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for MediaFrameSourceGetPropertyResult {
+unsafe impl ::windows_core::Interface for MediaFrameSourceGetPropertyResult {
     type Vtable = IMediaFrameSourceGetPropertyResult_Vtbl;
-    const IID: ::windows::core::GUID = <IMediaFrameSourceGetPropertyResult as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IMediaFrameSourceGetPropertyResult as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for MediaFrameSourceGetPropertyResult {
+impl ::windows_core::RuntimeName for MediaFrameSourceGetPropertyResult {
     const NAME: &'static str = "Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult";
 }
-impl ::core::convert::From<MediaFrameSourceGetPropertyResult> for ::windows::core::IUnknown {
+impl ::core::convert::From<MediaFrameSourceGetPropertyResult> for ::windows_core::IUnknown {
     fn from(value: MediaFrameSourceGetPropertyResult) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameSourceGetPropertyResult> for ::windows::core::IUnknown {
+impl ::core::convert::From<&MediaFrameSourceGetPropertyResult> for ::windows_core::IUnknown {
     fn from(value: &MediaFrameSourceGetPropertyResult) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for MediaFrameSourceGetPropertyResult {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for MediaFrameSourceGetPropertyResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a MediaFrameSourceGetPropertyResult {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a MediaFrameSourceGetPropertyResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<MediaFrameSourceGetPropertyResult> for ::windows::core::IInspectable {
+impl ::core::convert::From<MediaFrameSourceGetPropertyResult> for ::windows_core::IInspectable {
     fn from(value: MediaFrameSourceGetPropertyResult) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameSourceGetPropertyResult> for ::windows::core::IInspectable {
+impl ::core::convert::From<&MediaFrameSourceGetPropertyResult> for ::windows_core::IInspectable {
     fn from(value: &MediaFrameSourceGetPropertyResult) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for MediaFrameSourceGetPropertyResult {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for MediaFrameSourceGetPropertyResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a MediaFrameSourceGetPropertyResult {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a MediaFrameSourceGetPropertyResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for MediaFrameSourceGetPropertyResult {}
@@ -2085,7 +2085,7 @@ impl ::core::default::Default for MediaFrameSourceGetPropertyStatus {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MediaFrameSourceGetPropertyStatus {
+unsafe impl ::windows_core::Abi for MediaFrameSourceGetPropertyStatus {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MediaFrameSourceGetPropertyStatus {
@@ -2093,68 +2093,68 @@ impl ::core::fmt::Debug for MediaFrameSourceGetPropertyStatus {
         f.debug_tuple("MediaFrameSourceGetPropertyStatus").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameSourceGetPropertyStatus {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus;i4)");
+unsafe impl ::windows_core::RuntimeType for MediaFrameSourceGetPropertyStatus {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct MediaFrameSourceGroup(::windows::core::IUnknown);
+pub struct MediaFrameSourceGroup(::windows_core::IUnknown);
 impl MediaFrameSourceGroup {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Id(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn DisplayName(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn DisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).DisplayName)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).DisplayName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SourceInfos(&self) -> ::windows::core::Result<super::super::super::Foundation::Collections::IVectorView<MediaFrameSourceInfo>> {
+    pub fn SourceInfos(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<MediaFrameSourceInfo>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).SourceInfos)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<MediaFrameSourceInfo>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).SourceInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<MediaFrameSourceInfo>>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindAllAsync() -> ::windows::core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<MediaFrameSourceGroup>>> {
+    pub fn FindAllAsync() -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<MediaFrameSourceGroup>>> {
         Self::IMediaFrameSourceGroupStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).FindAllAsync)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<MediaFrameSourceGroup>>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FindAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<MediaFrameSourceGroup>>>(result__)
         })
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn FromIdAsync<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(id: Param0) -> ::windows::core::Result<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceGroup>> {
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(id: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceGroup>> {
         Self::IMediaFrameSourceGroupStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).FromIdAsync)(::windows::core::Interface::as_raw(this), id.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceGroup>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), id.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MediaFrameSourceGroup>>(result__)
         })
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn GetDeviceSelector() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn GetDeviceSelector() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IMediaFrameSourceGroupStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).GetDeviceSelector)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).GetDeviceSelector)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc(hidden)]
-    pub fn IMediaFrameSourceGroupStatics<R, F: FnOnce(&IMediaFrameSourceGroupStatics) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<MediaFrameSourceGroup, IMediaFrameSourceGroupStatics> = ::windows::core::FactoryCache::new();
+    pub fn IMediaFrameSourceGroupStatics<R, F: FnOnce(&IMediaFrameSourceGroupStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<MediaFrameSourceGroup, IMediaFrameSourceGroupStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
@@ -2174,149 +2174,149 @@ impl ::core::fmt::Debug for MediaFrameSourceGroup {
         f.debug_tuple("MediaFrameSourceGroup").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameSourceGroup {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameSourceGroup;{7f605b87-4832-4b5f-ae3d-412faab37d34})");
+unsafe impl ::windows_core::RuntimeType for MediaFrameSourceGroup {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameSourceGroup;{7f605b87-4832-4b5f-ae3d-412faab37d34})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for MediaFrameSourceGroup {
+unsafe impl ::windows_core::Interface for MediaFrameSourceGroup {
     type Vtable = IMediaFrameSourceGroup_Vtbl;
-    const IID: ::windows::core::GUID = <IMediaFrameSourceGroup as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IMediaFrameSourceGroup as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for MediaFrameSourceGroup {
+impl ::windows_core::RuntimeName for MediaFrameSourceGroup {
     const NAME: &'static str = "Windows.Media.Capture.Frames.MediaFrameSourceGroup";
 }
-impl ::core::convert::From<MediaFrameSourceGroup> for ::windows::core::IUnknown {
+impl ::core::convert::From<MediaFrameSourceGroup> for ::windows_core::IUnknown {
     fn from(value: MediaFrameSourceGroup) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameSourceGroup> for ::windows::core::IUnknown {
+impl ::core::convert::From<&MediaFrameSourceGroup> for ::windows_core::IUnknown {
     fn from(value: &MediaFrameSourceGroup) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for MediaFrameSourceGroup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for MediaFrameSourceGroup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a MediaFrameSourceGroup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a MediaFrameSourceGroup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<MediaFrameSourceGroup> for ::windows::core::IInspectable {
+impl ::core::convert::From<MediaFrameSourceGroup> for ::windows_core::IInspectable {
     fn from(value: MediaFrameSourceGroup) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameSourceGroup> for ::windows::core::IInspectable {
+impl ::core::convert::From<&MediaFrameSourceGroup> for ::windows_core::IInspectable {
     fn from(value: &MediaFrameSourceGroup) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for MediaFrameSourceGroup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for MediaFrameSourceGroup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a MediaFrameSourceGroup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a MediaFrameSourceGroup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for MediaFrameSourceGroup {}
 unsafe impl ::core::marker::Sync for MediaFrameSourceGroup {}
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct MediaFrameSourceInfo(::windows::core::IUnknown);
+pub struct MediaFrameSourceInfo(::windows_core::IUnknown);
 impl MediaFrameSourceInfo {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Id(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn MediaStreamType(&self) -> ::windows::core::Result<super::MediaStreamType> {
+    pub fn MediaStreamType(&self) -> ::windows_core::Result<super::MediaStreamType> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::MediaStreamType>::zeroed();
-            (::windows::core::Interface::vtable(this).MediaStreamType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::MediaStreamType>(result__)
+            (::windows_core::Interface::vtable(this).MediaStreamType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::MediaStreamType>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn SourceKind(&self) -> ::windows::core::Result<MediaFrameSourceKind> {
+    pub fn SourceKind(&self) -> ::windows_core::Result<MediaFrameSourceKind> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<MediaFrameSourceKind>::zeroed();
-            (::windows::core::Interface::vtable(this).SourceKind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceKind>(result__)
+            (::windows_core::Interface::vtable(this).SourceKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceKind>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn SourceGroup(&self) -> ::windows::core::Result<MediaFrameSourceGroup> {
+    pub fn SourceGroup(&self) -> ::windows_core::Result<MediaFrameSourceGroup> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).SourceGroup)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceGroup>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).SourceGroup)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameSourceGroup>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Devices_Enumeration\"`*"]
     #[cfg(feature = "Devices_Enumeration")]
-    pub fn DeviceInformation(&self) -> ::windows::core::Result<super::super::super::Devices::Enumeration::DeviceInformation> {
+    pub fn DeviceInformation(&self) -> ::windows_core::Result<super::super::super::Devices::Enumeration::DeviceInformation> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).DeviceInformation)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Enumeration::DeviceInformation>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).DeviceInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Enumeration::DeviceInformation>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows::core::Result<super::super::super::Foundation::Collections::IMapView<::windows::core::GUID, ::windows::core::IInspectable>> {
+    pub fn Properties(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Properties)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows::core::GUID, ::windows::core::IInspectable>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Perception_Spatial\"`*"]
     #[cfg(feature = "Perception_Spatial")]
-    pub fn CoordinateSystem(&self) -> ::windows::core::Result<super::super::super::Perception::Spatial::SpatialCoordinateSystem> {
+    pub fn CoordinateSystem(&self) -> ::windows_core::Result<super::super::super::Perception::Spatial::SpatialCoordinateSystem> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CoordinateSystem)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Perception::Spatial::SpatialCoordinateSystem>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CoordinateSystem)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Perception::Spatial::SpatialCoordinateSystem>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn ProfileId(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
-        let this = &::windows::core::Interface::cast::<IMediaFrameSourceInfo2>(self)?;
+    pub fn ProfileId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
+        let this = &::windows_core::Interface::cast::<IMediaFrameSourceInfo2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).ProfileId)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).ProfileId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn VideoProfileMediaDescription(&self) -> ::windows::core::Result<super::super::super::Foundation::Collections::IVectorView<super::MediaCaptureVideoProfileMediaDescription>> {
-        let this = &::windows::core::Interface::cast::<IMediaFrameSourceInfo2>(self)?;
+    pub fn VideoProfileMediaDescription(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<super::MediaCaptureVideoProfileMediaDescription>> {
+        let this = &::windows_core::Interface::cast::<IMediaFrameSourceInfo2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).VideoProfileMediaDescription)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<super::MediaCaptureVideoProfileMediaDescription>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).VideoProfileMediaDescription)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<super::MediaCaptureVideoProfileMediaDescription>>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Devices_Enumeration\"`, `\"UI_WindowManagement\"`*"]
     #[cfg(all(feature = "Devices_Enumeration", feature = "UI_WindowManagement"))]
-    pub fn GetRelativePanel<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::UI::WindowManagement::DisplayRegion>>(&self, displayregion: Param0) -> ::windows::core::Result<super::super::super::Devices::Enumeration::Panel> {
-        let this = &::windows::core::Interface::cast::<IMediaFrameSourceInfo3>(self)?;
+    pub fn GetRelativePanel<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::UI::WindowManagement::DisplayRegion>>(&self, displayregion: Param0) -> ::windows_core::Result<super::super::super::Devices::Enumeration::Panel> {
+        let this = &::windows_core::Interface::cast::<IMediaFrameSourceInfo3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Devices::Enumeration::Panel>::zeroed();
-            (::windows::core::Interface::vtable(this).GetRelativePanel)(::windows::core::Interface::as_raw(this), displayregion.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Enumeration::Panel>(result__)
+            (::windows_core::Interface::vtable(this).GetRelativePanel)(::windows_core::Interface::as_raw(this), displayregion.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Enumeration::Panel>(result__)
         }
     }
 }
@@ -2336,58 +2336,58 @@ impl ::core::fmt::Debug for MediaFrameSourceInfo {
         f.debug_tuple("MediaFrameSourceInfo").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameSourceInfo {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameSourceInfo;{87bdc9cd-4601-408f-91cf-038318cd0af3})");
+unsafe impl ::windows_core::RuntimeType for MediaFrameSourceInfo {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MediaFrameSourceInfo;{87bdc9cd-4601-408f-91cf-038318cd0af3})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for MediaFrameSourceInfo {
+unsafe impl ::windows_core::Interface for MediaFrameSourceInfo {
     type Vtable = IMediaFrameSourceInfo_Vtbl;
-    const IID: ::windows::core::GUID = <IMediaFrameSourceInfo as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IMediaFrameSourceInfo as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for MediaFrameSourceInfo {
+impl ::windows_core::RuntimeName for MediaFrameSourceInfo {
     const NAME: &'static str = "Windows.Media.Capture.Frames.MediaFrameSourceInfo";
 }
-impl ::core::convert::From<MediaFrameSourceInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<MediaFrameSourceInfo> for ::windows_core::IUnknown {
     fn from(value: MediaFrameSourceInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameSourceInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<&MediaFrameSourceInfo> for ::windows_core::IUnknown {
     fn from(value: &MediaFrameSourceInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for MediaFrameSourceInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for MediaFrameSourceInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a MediaFrameSourceInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a MediaFrameSourceInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<MediaFrameSourceInfo> for ::windows::core::IInspectable {
+impl ::core::convert::From<MediaFrameSourceInfo> for ::windows_core::IInspectable {
     fn from(value: MediaFrameSourceInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MediaFrameSourceInfo> for ::windows::core::IInspectable {
+impl ::core::convert::From<&MediaFrameSourceInfo> for ::windows_core::IInspectable {
     fn from(value: &MediaFrameSourceInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for MediaFrameSourceInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for MediaFrameSourceInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a MediaFrameSourceInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a MediaFrameSourceInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for MediaFrameSourceInfo {}
@@ -2416,7 +2416,7 @@ impl ::core::default::Default for MediaFrameSourceKind {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MediaFrameSourceKind {
+unsafe impl ::windows_core::Abi for MediaFrameSourceKind {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MediaFrameSourceKind {
@@ -2424,10 +2424,10 @@ impl ::core::fmt::Debug for MediaFrameSourceKind {
         f.debug_tuple("MediaFrameSourceKind").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameSourceKind {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Media.Capture.Frames.MediaFrameSourceKind;i4)");
+unsafe impl ::windows_core::RuntimeType for MediaFrameSourceKind {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Media.Capture.Frames.MediaFrameSourceKind;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -2454,7 +2454,7 @@ impl ::core::default::Default for MediaFrameSourceSetPropertyStatus {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MediaFrameSourceSetPropertyStatus {
+unsafe impl ::windows_core::Abi for MediaFrameSourceSetPropertyStatus {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MediaFrameSourceSetPropertyStatus {
@@ -2462,16 +2462,16 @@ impl ::core::fmt::Debug for MediaFrameSourceSetPropertyStatus {
         f.debug_tuple("MediaFrameSourceSetPropertyStatus").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MediaFrameSourceSetPropertyStatus {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus;i4)");
+unsafe impl ::windows_core::RuntimeType for MediaFrameSourceSetPropertyStatus {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct MultiSourceMediaFrameArrivedEventArgs(::windows::core::IUnknown);
+pub struct MultiSourceMediaFrameArrivedEventArgs(::windows_core::IUnknown);
 impl MultiSourceMediaFrameArrivedEventArgs {}
 impl ::core::clone::Clone for MultiSourceMediaFrameArrivedEventArgs {
     fn clone(&self) -> Self {
@@ -2489,124 +2489,124 @@ impl ::core::fmt::Debug for MultiSourceMediaFrameArrivedEventArgs {
         f.debug_tuple("MultiSourceMediaFrameArrivedEventArgs").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MultiSourceMediaFrameArrivedEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs;{63115e01-cf51-48fd-aab0-6d693eb48127})");
+unsafe impl ::windows_core::RuntimeType for MultiSourceMediaFrameArrivedEventArgs {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs;{63115e01-cf51-48fd-aab0-6d693eb48127})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for MultiSourceMediaFrameArrivedEventArgs {
+unsafe impl ::windows_core::Interface for MultiSourceMediaFrameArrivedEventArgs {
     type Vtable = IMultiSourceMediaFrameArrivedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = <IMultiSourceMediaFrameArrivedEventArgs as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IMultiSourceMediaFrameArrivedEventArgs as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for MultiSourceMediaFrameArrivedEventArgs {
+impl ::windows_core::RuntimeName for MultiSourceMediaFrameArrivedEventArgs {
     const NAME: &'static str = "Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs";
 }
-impl ::core::convert::From<MultiSourceMediaFrameArrivedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<MultiSourceMediaFrameArrivedEventArgs> for ::windows_core::IUnknown {
     fn from(value: MultiSourceMediaFrameArrivedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MultiSourceMediaFrameArrivedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<&MultiSourceMediaFrameArrivedEventArgs> for ::windows_core::IUnknown {
     fn from(value: &MultiSourceMediaFrameArrivedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for MultiSourceMediaFrameArrivedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for MultiSourceMediaFrameArrivedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a MultiSourceMediaFrameArrivedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a MultiSourceMediaFrameArrivedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<MultiSourceMediaFrameArrivedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<MultiSourceMediaFrameArrivedEventArgs> for ::windows_core::IInspectable {
     fn from(value: MultiSourceMediaFrameArrivedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MultiSourceMediaFrameArrivedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<&MultiSourceMediaFrameArrivedEventArgs> for ::windows_core::IInspectable {
     fn from(value: &MultiSourceMediaFrameArrivedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for MultiSourceMediaFrameArrivedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for MultiSourceMediaFrameArrivedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a MultiSourceMediaFrameArrivedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a MultiSourceMediaFrameArrivedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for MultiSourceMediaFrameArrivedEventArgs {}
 unsafe impl ::core::marker::Sync for MultiSourceMediaFrameArrivedEventArgs {}
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct MultiSourceMediaFrameReader(::windows::core::IUnknown);
+pub struct MultiSourceMediaFrameReader(::windows_core::IUnknown);
 impl MultiSourceMediaFrameReader {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Close(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).Close)(::windows::core::Interface::as_raw(this)).ok() }
+    pub fn Close(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn FrameArrived<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<MultiSourceMediaFrameReader, MultiSourceMediaFrameArrivedEventArgs>>>(&self, handler: Param0) -> ::windows::core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn FrameArrived<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<MultiSourceMediaFrameReader, MultiSourceMediaFrameArrivedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows::core::Interface::vtable(this).FrameArrived)(::windows::core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            (::windows_core::Interface::vtable(this).FrameArrived)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn RemoveFrameArrived<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows::core::Result<()> {
+    pub fn RemoveFrameArrived<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemoveFrameArrived)(::windows::core::Interface::as_raw(this), token.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).RemoveFrameArrived)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn TryAcquireLatestFrame(&self) -> ::windows::core::Result<MultiSourceMediaFrameReference> {
+    pub fn TryAcquireLatestFrame(&self) -> ::windows_core::Result<MultiSourceMediaFrameReference> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).TryAcquireLatestFrame)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MultiSourceMediaFrameReference>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).TryAcquireLatestFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MultiSourceMediaFrameReference>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn StartAsync(&self) -> ::windows::core::Result<super::super::super::Foundation::IAsyncOperation<MultiSourceMediaFrameReaderStartStatus>> {
+    pub fn StartAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<MultiSourceMediaFrameReaderStartStatus>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).StartAsync)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MultiSourceMediaFrameReaderStartStatus>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).StartAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<MultiSourceMediaFrameReaderStartStatus>>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn StopAsync(&self) -> ::windows::core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn StopAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).StopAsync)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).StopAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn SetAcquisitionMode(&self, value: MediaFrameReaderAcquisitionMode) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IMultiSourceMediaFrameReader2>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetAcquisitionMode)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetAcquisitionMode(&self, value: MediaFrameReaderAcquisitionMode) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IMultiSourceMediaFrameReader2>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetAcquisitionMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn AcquisitionMode(&self) -> ::windows::core::Result<MediaFrameReaderAcquisitionMode> {
-        let this = &::windows::core::Interface::cast::<IMultiSourceMediaFrameReader2>(self)?;
+    pub fn AcquisitionMode(&self) -> ::windows_core::Result<MediaFrameReaderAcquisitionMode> {
+        let this = &::windows_core::Interface::cast::<IMultiSourceMediaFrameReader2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<MediaFrameReaderAcquisitionMode>::zeroed();
-            (::windows::core::Interface::vtable(this).AcquisitionMode)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReaderAcquisitionMode>(result__)
+            (::windows_core::Interface::vtable(this).AcquisitionMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReaderAcquisitionMode>(result__)
         }
     }
 }
@@ -2626,84 +2626,84 @@ impl ::core::fmt::Debug for MultiSourceMediaFrameReader {
         f.debug_tuple("MultiSourceMediaFrameReader").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MultiSourceMediaFrameReader {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader;{8d144402-f763-488d-98f2-b437bcf075e7})");
+unsafe impl ::windows_core::RuntimeType for MultiSourceMediaFrameReader {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader;{8d144402-f763-488d-98f2-b437bcf075e7})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for MultiSourceMediaFrameReader {
+unsafe impl ::windows_core::Interface for MultiSourceMediaFrameReader {
     type Vtable = IMultiSourceMediaFrameReader_Vtbl;
-    const IID: ::windows::core::GUID = <IMultiSourceMediaFrameReader as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IMultiSourceMediaFrameReader as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for MultiSourceMediaFrameReader {
+impl ::windows_core::RuntimeName for MultiSourceMediaFrameReader {
     const NAME: &'static str = "Windows.Media.Capture.Frames.MultiSourceMediaFrameReader";
 }
-impl ::core::convert::From<MultiSourceMediaFrameReader> for ::windows::core::IUnknown {
+impl ::core::convert::From<MultiSourceMediaFrameReader> for ::windows_core::IUnknown {
     fn from(value: MultiSourceMediaFrameReader) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MultiSourceMediaFrameReader> for ::windows::core::IUnknown {
+impl ::core::convert::From<&MultiSourceMediaFrameReader> for ::windows_core::IUnknown {
     fn from(value: &MultiSourceMediaFrameReader) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for MultiSourceMediaFrameReader {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for MultiSourceMediaFrameReader {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a MultiSourceMediaFrameReader {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a MultiSourceMediaFrameReader {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<MultiSourceMediaFrameReader> for ::windows::core::IInspectable {
+impl ::core::convert::From<MultiSourceMediaFrameReader> for ::windows_core::IInspectable {
     fn from(value: MultiSourceMediaFrameReader) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MultiSourceMediaFrameReader> for ::windows::core::IInspectable {
+impl ::core::convert::From<&MultiSourceMediaFrameReader> for ::windows_core::IInspectable {
     fn from(value: &MultiSourceMediaFrameReader) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for MultiSourceMediaFrameReader {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for MultiSourceMediaFrameReader {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a MultiSourceMediaFrameReader {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a MultiSourceMediaFrameReader {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Foundation")]
 impl ::core::convert::TryFrom<MultiSourceMediaFrameReader> for super::super::super::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: MultiSourceMediaFrameReader) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: MultiSourceMediaFrameReader) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation")]
 impl ::core::convert::TryFrom<&MultiSourceMediaFrameReader> for super::super::super::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &MultiSourceMediaFrameReader) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &MultiSourceMediaFrameReader) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::super::Foundation::IClosable> for MultiSourceMediaFrameReader {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for MultiSourceMediaFrameReader {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::super::Foundation::IClosable> for &MultiSourceMediaFrameReader {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &MultiSourceMediaFrameReader {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for MultiSourceMediaFrameReader {}
@@ -2730,7 +2730,7 @@ impl ::core::default::Default for MultiSourceMediaFrameReaderStartStatus {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MultiSourceMediaFrameReaderStartStatus {
+unsafe impl ::windows_core::Abi for MultiSourceMediaFrameReaderStartStatus {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MultiSourceMediaFrameReaderStartStatus {
@@ -2738,29 +2738,29 @@ impl ::core::fmt::Debug for MultiSourceMediaFrameReaderStartStatus {
         f.debug_tuple("MultiSourceMediaFrameReaderStartStatus").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MultiSourceMediaFrameReaderStartStatus {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Media.Capture.Frames.MultiSourceMediaFrameReaderStartStatus;i4)");
+unsafe impl ::windows_core::RuntimeType for MultiSourceMediaFrameReaderStartStatus {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Media.Capture.Frames.MultiSourceMediaFrameReaderStartStatus;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct MultiSourceMediaFrameReference(::windows::core::IUnknown);
+pub struct MultiSourceMediaFrameReference(::windows_core::IUnknown);
 impl MultiSourceMediaFrameReference {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Close(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).Close)(::windows::core::Interface::as_raw(this)).ok() }
+    pub fn Close(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn TryGetFrameReferenceBySourceId<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, sourceid: Param0) -> ::windows::core::Result<MediaFrameReference> {
+    pub fn TryGetFrameReferenceBySourceId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, sourceid: Param0) -> ::windows_core::Result<MediaFrameReference> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).TryGetFrameReferenceBySourceId)(::windows::core::Interface::as_raw(this), sourceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).TryGetFrameReferenceBySourceId)(::windows_core::Interface::as_raw(this), sourceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
         }
     }
 }
@@ -2780,157 +2780,157 @@ impl ::core::fmt::Debug for MultiSourceMediaFrameReference {
         f.debug_tuple("MultiSourceMediaFrameReference").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MultiSourceMediaFrameReference {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MultiSourceMediaFrameReference;{21964b1a-7fe2-44d6-92e5-298e6d2810e9})");
+unsafe impl ::windows_core::RuntimeType for MultiSourceMediaFrameReference {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.MultiSourceMediaFrameReference;{21964b1a-7fe2-44d6-92e5-298e6d2810e9})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for MultiSourceMediaFrameReference {
+unsafe impl ::windows_core::Interface for MultiSourceMediaFrameReference {
     type Vtable = IMultiSourceMediaFrameReference_Vtbl;
-    const IID: ::windows::core::GUID = <IMultiSourceMediaFrameReference as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IMultiSourceMediaFrameReference as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for MultiSourceMediaFrameReference {
+impl ::windows_core::RuntimeName for MultiSourceMediaFrameReference {
     const NAME: &'static str = "Windows.Media.Capture.Frames.MultiSourceMediaFrameReference";
 }
-impl ::core::convert::From<MultiSourceMediaFrameReference> for ::windows::core::IUnknown {
+impl ::core::convert::From<MultiSourceMediaFrameReference> for ::windows_core::IUnknown {
     fn from(value: MultiSourceMediaFrameReference) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MultiSourceMediaFrameReference> for ::windows::core::IUnknown {
+impl ::core::convert::From<&MultiSourceMediaFrameReference> for ::windows_core::IUnknown {
     fn from(value: &MultiSourceMediaFrameReference) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for MultiSourceMediaFrameReference {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for MultiSourceMediaFrameReference {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a MultiSourceMediaFrameReference {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a MultiSourceMediaFrameReference {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<MultiSourceMediaFrameReference> for ::windows::core::IInspectable {
+impl ::core::convert::From<MultiSourceMediaFrameReference> for ::windows_core::IInspectable {
     fn from(value: MultiSourceMediaFrameReference) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&MultiSourceMediaFrameReference> for ::windows::core::IInspectable {
+impl ::core::convert::From<&MultiSourceMediaFrameReference> for ::windows_core::IInspectable {
     fn from(value: &MultiSourceMediaFrameReference) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for MultiSourceMediaFrameReference {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for MultiSourceMediaFrameReference {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a MultiSourceMediaFrameReference {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a MultiSourceMediaFrameReference {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Foundation")]
 impl ::core::convert::TryFrom<MultiSourceMediaFrameReference> for super::super::super::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: MultiSourceMediaFrameReference) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: MultiSourceMediaFrameReference) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation")]
 impl ::core::convert::TryFrom<&MultiSourceMediaFrameReference> for super::super::super::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &MultiSourceMediaFrameReference) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &MultiSourceMediaFrameReference) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::super::Foundation::IClosable> for MultiSourceMediaFrameReference {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for MultiSourceMediaFrameReference {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::super::Foundation::IClosable> for &MultiSourceMediaFrameReference {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &MultiSourceMediaFrameReference {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for MultiSourceMediaFrameReference {}
 unsafe impl ::core::marker::Sync for MultiSourceMediaFrameReference {}
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct VideoMediaFrame(::windows::core::IUnknown);
+pub struct VideoMediaFrame(::windows_core::IUnknown);
 impl VideoMediaFrame {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn FrameReference(&self) -> ::windows::core::Result<MediaFrameReference> {
+    pub fn FrameReference(&self) -> ::windows_core::Result<MediaFrameReference> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).FrameReference)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FrameReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameReference>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn VideoFormat(&self) -> ::windows::core::Result<VideoMediaFrameFormat> {
+    pub fn VideoFormat(&self) -> ::windows_core::Result<VideoMediaFrameFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).VideoFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrameFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).VideoFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VideoMediaFrameFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Graphics_Imaging\"`*"]
     #[cfg(feature = "Graphics_Imaging")]
-    pub fn SoftwareBitmap(&self) -> ::windows::core::Result<super::super::super::Graphics::Imaging::SoftwareBitmap> {
+    pub fn SoftwareBitmap(&self) -> ::windows_core::Result<super::super::super::Graphics::Imaging::SoftwareBitmap> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).SoftwareBitmap)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::Imaging::SoftwareBitmap>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).SoftwareBitmap)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::Imaging::SoftwareBitmap>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Graphics_DirectX_Direct3D11\"`*"]
     #[cfg(feature = "Graphics_DirectX_Direct3D11")]
-    pub fn Direct3DSurface(&self) -> ::windows::core::Result<super::super::super::Graphics::DirectX::Direct3D11::IDirect3DSurface> {
+    pub fn Direct3DSurface(&self) -> ::windows_core::Result<super::super::super::Graphics::DirectX::Direct3D11::IDirect3DSurface> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Direct3DSurface)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::DirectX::Direct3D11::IDirect3DSurface>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Direct3DSurface)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::DirectX::Direct3D11::IDirect3DSurface>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`, `\"Media_Devices_Core\"`*"]
     #[cfg(feature = "Media_Devices_Core")]
-    pub fn CameraIntrinsics(&self) -> ::windows::core::Result<super::super::Devices::Core::CameraIntrinsics> {
+    pub fn CameraIntrinsics(&self) -> ::windows_core::Result<super::super::Devices::Core::CameraIntrinsics> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CameraIntrinsics)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Core::CameraIntrinsics>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CameraIntrinsics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Core::CameraIntrinsics>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn InfraredMediaFrame(&self) -> ::windows::core::Result<InfraredMediaFrame> {
+    pub fn InfraredMediaFrame(&self) -> ::windows_core::Result<InfraredMediaFrame> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).InfraredMediaFrame)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InfraredMediaFrame>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).InfraredMediaFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InfraredMediaFrame>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn DepthMediaFrame(&self) -> ::windows::core::Result<DepthMediaFrame> {
+    pub fn DepthMediaFrame(&self) -> ::windows_core::Result<DepthMediaFrame> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).DepthMediaFrame)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DepthMediaFrame>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).DepthMediaFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DepthMediaFrame>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn GetVideoFrame(&self) -> ::windows::core::Result<super::super::VideoFrame> {
+    pub fn GetVideoFrame(&self) -> ::windows_core::Result<super::super::VideoFrame> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetVideoFrame)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::VideoFrame>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetVideoFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::VideoFrame>(result__)
         }
     }
 }
@@ -2950,96 +2950,96 @@ impl ::core::fmt::Debug for VideoMediaFrame {
         f.debug_tuple("VideoMediaFrame").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for VideoMediaFrame {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.VideoMediaFrame;{00dd4ccb-32bd-4fe1-a013-7cc13cf5dbcf})");
+unsafe impl ::windows_core::RuntimeType for VideoMediaFrame {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.VideoMediaFrame;{00dd4ccb-32bd-4fe1-a013-7cc13cf5dbcf})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for VideoMediaFrame {
+unsafe impl ::windows_core::Interface for VideoMediaFrame {
     type Vtable = IVideoMediaFrame_Vtbl;
-    const IID: ::windows::core::GUID = <IVideoMediaFrame as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IVideoMediaFrame as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for VideoMediaFrame {
+impl ::windows_core::RuntimeName for VideoMediaFrame {
     const NAME: &'static str = "Windows.Media.Capture.Frames.VideoMediaFrame";
 }
-impl ::core::convert::From<VideoMediaFrame> for ::windows::core::IUnknown {
+impl ::core::convert::From<VideoMediaFrame> for ::windows_core::IUnknown {
     fn from(value: VideoMediaFrame) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&VideoMediaFrame> for ::windows::core::IUnknown {
+impl ::core::convert::From<&VideoMediaFrame> for ::windows_core::IUnknown {
     fn from(value: &VideoMediaFrame) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for VideoMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for VideoMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a VideoMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a VideoMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<VideoMediaFrame> for ::windows::core::IInspectable {
+impl ::core::convert::From<VideoMediaFrame> for ::windows_core::IInspectable {
     fn from(value: VideoMediaFrame) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&VideoMediaFrame> for ::windows::core::IInspectable {
+impl ::core::convert::From<&VideoMediaFrame> for ::windows_core::IInspectable {
     fn from(value: &VideoMediaFrame) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for VideoMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for VideoMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a VideoMediaFrame {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a VideoMediaFrame {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for VideoMediaFrame {}
 unsafe impl ::core::marker::Sync for VideoMediaFrame {}
 #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
 #[repr(transparent)]
-pub struct VideoMediaFrameFormat(::windows::core::IUnknown);
+pub struct VideoMediaFrameFormat(::windows_core::IUnknown);
 impl VideoMediaFrameFormat {
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn MediaFrameFormat(&self) -> ::windows::core::Result<MediaFrameFormat> {
+    pub fn MediaFrameFormat(&self) -> ::windows_core::Result<MediaFrameFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).MediaFrameFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).MediaFrameFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MediaFrameFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn DepthFormat(&self) -> ::windows::core::Result<DepthMediaFrameFormat> {
+    pub fn DepthFormat(&self) -> ::windows_core::Result<DepthMediaFrameFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).DepthFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DepthMediaFrameFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).DepthFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DepthMediaFrameFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn Width(&self) -> ::windows::core::Result<u32> {
+    pub fn Width(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Width)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Width)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Media_Capture_Frames\"`*"]
-    pub fn Height(&self) -> ::windows::core::Result<u32> {
+    pub fn Height(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Height)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Height)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
 }
@@ -3059,58 +3059,58 @@ impl ::core::fmt::Debug for VideoMediaFrameFormat {
         f.debug_tuple("VideoMediaFrameFormat").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for VideoMediaFrameFormat {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.VideoMediaFrameFormat;{46027fc0-d71b-45c7-8f14-6d9a0ae604e4})");
+unsafe impl ::windows_core::RuntimeType for VideoMediaFrameFormat {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Media.Capture.Frames.VideoMediaFrameFormat;{46027fc0-d71b-45c7-8f14-6d9a0ae604e4})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for VideoMediaFrameFormat {
+unsafe impl ::windows_core::Interface for VideoMediaFrameFormat {
     type Vtable = IVideoMediaFrameFormat_Vtbl;
-    const IID: ::windows::core::GUID = <IVideoMediaFrameFormat as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IVideoMediaFrameFormat as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for VideoMediaFrameFormat {
+impl ::windows_core::RuntimeName for VideoMediaFrameFormat {
     const NAME: &'static str = "Windows.Media.Capture.Frames.VideoMediaFrameFormat";
 }
-impl ::core::convert::From<VideoMediaFrameFormat> for ::windows::core::IUnknown {
+impl ::core::convert::From<VideoMediaFrameFormat> for ::windows_core::IUnknown {
     fn from(value: VideoMediaFrameFormat) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&VideoMediaFrameFormat> for ::windows::core::IUnknown {
+impl ::core::convert::From<&VideoMediaFrameFormat> for ::windows_core::IUnknown {
     fn from(value: &VideoMediaFrameFormat) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for VideoMediaFrameFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for VideoMediaFrameFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a VideoMediaFrameFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a VideoMediaFrameFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<VideoMediaFrameFormat> for ::windows::core::IInspectable {
+impl ::core::convert::From<VideoMediaFrameFormat> for ::windows_core::IInspectable {
     fn from(value: VideoMediaFrameFormat) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&VideoMediaFrameFormat> for ::windows::core::IInspectable {
+impl ::core::convert::From<&VideoMediaFrameFormat> for ::windows_core::IInspectable {
     fn from(value: &VideoMediaFrameFormat) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for VideoMediaFrameFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for VideoMediaFrameFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a VideoMediaFrameFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a VideoMediaFrameFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for VideoMediaFrameFormat {}

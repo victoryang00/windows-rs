@@ -16,12 +16,12 @@ impl ::core::fmt::Debug for OPERATION_END_PARAMETERS {
         f.debug_struct("OPERATION_END_PARAMETERS").field("Version", &self.Version).field("OperationId", &self.OperationId).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for OPERATION_END_PARAMETERS {
+unsafe impl ::windows_core::Abi for OPERATION_END_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for OPERATION_END_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPERATION_END_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPERATION_END_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for OPERATION_END_PARAMETERS {}
@@ -47,7 +47,7 @@ impl ::core::default::Default for OPERATION_END_PARAMETERS_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for OPERATION_END_PARAMETERS_FLAGS {
+unsafe impl ::windows_core::Abi for OPERATION_END_PARAMETERS_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for OPERATION_END_PARAMETERS_FLAGS {
@@ -100,7 +100,7 @@ impl ::core::default::Default for OPERATION_START_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for OPERATION_START_FLAGS {
+unsafe impl ::windows_core::Abi for OPERATION_START_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for OPERATION_START_FLAGS {
@@ -154,12 +154,12 @@ impl ::core::fmt::Debug for OPERATION_START_PARAMETERS {
         f.debug_struct("OPERATION_START_PARAMETERS").field("Version", &self.Version).field("OperationId", &self.OperationId).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for OPERATION_START_PARAMETERS {
+unsafe impl ::windows_core::Abi for OPERATION_START_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for OPERATION_START_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPERATION_START_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPERATION_START_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for OPERATION_START_PARAMETERS {}

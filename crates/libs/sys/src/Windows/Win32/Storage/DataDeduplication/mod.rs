@@ -57,7 +57,7 @@ pub const DEDUP_PT_AvgChunkSizeBytes: DEDUP_SET_PARAM_TYPE = 3i32;
 pub const DEDUP_PT_InvariantChunking: DEDUP_SET_PARAM_TYPE = 4i32;
 #[doc = "*Required features: `\"Win32_Storage_DataDeduplication\"`*"]
 pub const DEDUP_PT_DisableStrongHashComputation: DEDUP_SET_PARAM_TYPE = 5i32;
-pub const DedupBackupSupport: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1943450285, data2: 10628, data3: 18197, data4: [178, 227, 146, 76, 20, 151, 68, 221] };
+pub const DedupBackupSupport: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1943450285, data2: 10628, data3: 18197, data4: [178, 227, 146, 76, 20, 151, 68, 221] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_DataDeduplication\"`*"]
 pub struct DedupChunk {
@@ -90,7 +90,7 @@ pub type DedupCompressionAlgorithm = i32;
 pub const DedupCompressionAlgorithm_Unknonwn: DedupCompressionAlgorithm = 0i32;
 #[doc = "*Required features: `\"Win32_Storage_DataDeduplication\"`*"]
 pub const DedupCompressionAlgorithm_Xpress: DedupCompressionAlgorithm = 1i32;
-pub const DedupDataPort: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2400219655, data2: 6185, data3: 18610, data4: [166, 75, 230, 31, 142, 13, 154, 203] };
+pub const DedupDataPort: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2400219655, data2: 6185, data3: 18610, data4: [166, 75, 230, 31, 142, 13, 154, 203] };
 #[doc = "*Required features: `\"Win32_Storage_DataDeduplication\"`*"]
 pub type DedupDataPortManagerOption = i32;
 #[doc = "*Required features: `\"Win32_Storage_DataDeduplication\"`*"]

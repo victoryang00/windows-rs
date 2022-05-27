@@ -1,5 +1,5 @@
 use core::convert::TryInto;
-use windows::core::*;
+use windows_core::*;
 use windows::Foundation::Collections::*;
 use windows::Foundation::*;
 

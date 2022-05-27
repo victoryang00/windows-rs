@@ -1,7 +1,7 @@
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub struct CLASSIC_EVENT_ID {
-    pub EventGuid: ::windows::core::GUID,
+    pub EventGuid: ::windows_core::GUID,
     pub Type: u8,
     pub Reserved: [u8; 7],
 }
@@ -16,12 +16,12 @@ impl ::core::fmt::Debug for CLASSIC_EVENT_ID {
         f.debug_struct("CLASSIC_EVENT_ID").field("EventGuid", &self.EventGuid).field("Type", &self.Type).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CLASSIC_EVENT_ID {
+unsafe impl ::windows_core::Abi for CLASSIC_EVENT_ID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CLASSIC_EVENT_ID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CLASSIC_EVENT_ID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CLASSIC_EVENT_ID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CLASSIC_EVENT_ID {}
@@ -30,8 +30,8 @@ impl ::core::default::Default for CLASSIC_EVENT_ID {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const CLSID_TraceRelogger: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7b40792d_05ff_44c4_9058_f440c71f17d4);
-pub const CTraceRelogger: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7b40792d_05ff_44c4_9058_f440c71f17d4);
+pub const CLSID_TraceRelogger: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7b40792d_05ff_44c4_9058_f440c71f17d4);
+pub const CTraceRelogger: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7b40792d_05ff_44c4_9058_f440c71f17d4);
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
 pub unsafe fn CloseTrace(tracehandle: u64) -> u32 {
@@ -49,12 +49,12 @@ pub unsafe fn CloseTrace(tracehandle: u64) -> u32 {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ControlTraceA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES, controlcode: EVENT_TRACE_CONTROL) -> u32 {
+pub unsafe fn ControlTraceA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES, controlcode: EVENT_TRACE_CONTROL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ControlTraceA(tracehandle: u64, instancename: ::windows::core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES, controlcode: EVENT_TRACE_CONTROL) -> u32;
+            fn ControlTraceA(tracehandle: u64, instancename: ::windows_core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES, controlcode: EVENT_TRACE_CONTROL) -> u32;
         }
         ::core::mem::transmute(ControlTraceA(::core::mem::transmute(tracehandle), instancename.into_param().abi(), ::core::mem::transmute(properties), ::core::mem::transmute(controlcode)))
     }
@@ -64,12 +64,12 @@ pub unsafe fn ControlTraceA<'a, Param1: ::windows::core::IntoParam<'a, ::windows
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ControlTraceW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES, controlcode: EVENT_TRACE_CONTROL) -> u32 {
+pub unsafe fn ControlTraceW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES, controlcode: EVENT_TRACE_CONTROL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ControlTraceW(tracehandle: u64, instancename: ::windows::core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES, controlcode: EVENT_TRACE_CONTROL) -> u32;
+            fn ControlTraceW(tracehandle: u64, instancename: ::windows_core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES, controlcode: EVENT_TRACE_CONTROL) -> u32;
         }
         ::core::mem::transmute(ControlTraceW(::core::mem::transmute(tracehandle), instancename.into_param().abi(), ::core::mem::transmute(properties), ::core::mem::transmute(controlcode)))
     }
@@ -79,7 +79,7 @@ pub unsafe fn ControlTraceW<'a, Param1: ::windows::core::IntoParam<'a, ::windows
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateTraceInstanceId<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(reghandle: Param0, instinfo: *mut EVENT_INSTANCE_INFO) -> u32 {
+pub unsafe fn CreateTraceInstanceId<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(reghandle: Param0, instinfo: *mut EVENT_INSTANCE_INFO) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -93,12 +93,12 @@ pub unsafe fn CreateTraceInstanceId<'a, Param0: ::windows::core::IntoParam<'a, s
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn CveEventWrite<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(cveid: Param0, additionaldetails: Param1) -> i32 {
+pub unsafe fn CveEventWrite<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(cveid: Param0, additionaldetails: Param1) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CveEventWrite(cveid: ::windows::core::PCWSTR, additionaldetails: ::windows::core::PCWSTR) -> i32;
+            fn CveEventWrite(cveid: ::windows_core::PCWSTR, additionaldetails: ::windows_core::PCWSTR) -> i32;
         }
         ::core::mem::transmute(CveEventWrite(cveid.into_param().abi(), additionaldetails.into_param().abi()))
     }
@@ -130,7 +130,7 @@ impl ::core::default::Default for DECODING_SOURCE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DECODING_SOURCE {
+unsafe impl ::windows_core::Abi for DECODING_SOURCE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DECODING_SOURCE {
@@ -142,7 +142,7 @@ impl ::core::fmt::Debug for DECODING_SOURCE {
 pub const DIAG_LOGGER_NAMEA: &str = "DiagLog";
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub const DIAG_LOGGER_NAMEW: &str = "DiagLog";
-pub const DefaultTraceSecurityGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0811c1af_7a07_4a06_82ed_869455cdf713);
+pub const DefaultTraceSecurityGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0811c1af_7a07_4a06_82ed_869455cdf713);
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -164,7 +164,7 @@ impl ::core::default::Default for ENABLECALLBACK_ENABLED_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ENABLECALLBACK_ENABLED_STATE {
+unsafe impl ::windows_core::Abi for ENABLECALLBACK_ENABLED_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ENABLECALLBACK_ENABLED_STATE {
@@ -178,7 +178,7 @@ pub struct ENABLE_TRACE_PARAMETERS {
     pub Version: u32,
     pub EnableProperty: u32,
     pub ControlFlags: u32,
-    pub SourceId: ::windows::core::GUID,
+    pub SourceId: ::windows_core::GUID,
     pub EnableFilterDesc: *mut EVENT_FILTER_DESCRIPTOR,
     pub FilterDescCount: u32,
 }
@@ -193,12 +193,12 @@ impl ::core::fmt::Debug for ENABLE_TRACE_PARAMETERS {
         f.debug_struct("ENABLE_TRACE_PARAMETERS").field("Version", &self.Version).field("EnableProperty", &self.EnableProperty).field("ControlFlags", &self.ControlFlags).field("SourceId", &self.SourceId).field("EnableFilterDesc", &self.EnableFilterDesc).field("FilterDescCount", &self.FilterDescCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ENABLE_TRACE_PARAMETERS {
+unsafe impl ::windows_core::Abi for ENABLE_TRACE_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ENABLE_TRACE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENABLE_TRACE_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENABLE_TRACE_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ENABLE_TRACE_PARAMETERS {}
@@ -213,7 +213,7 @@ pub struct ENABLE_TRACE_PARAMETERS_V1 {
     pub Version: u32,
     pub EnableProperty: u32,
     pub ControlFlags: u32,
-    pub SourceId: ::windows::core::GUID,
+    pub SourceId: ::windows_core::GUID,
     pub EnableFilterDesc: *mut EVENT_FILTER_DESCRIPTOR,
 }
 impl ::core::marker::Copy for ENABLE_TRACE_PARAMETERS_V1 {}
@@ -227,12 +227,12 @@ impl ::core::fmt::Debug for ENABLE_TRACE_PARAMETERS_V1 {
         f.debug_struct("ENABLE_TRACE_PARAMETERS_V1").field("Version", &self.Version).field("EnableProperty", &self.EnableProperty).field("ControlFlags", &self.ControlFlags).field("SourceId", &self.SourceId).field("EnableFilterDesc", &self.EnableFilterDesc).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ENABLE_TRACE_PARAMETERS_V1 {
+unsafe impl ::windows_core::Abi for ENABLE_TRACE_PARAMETERS_V1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ENABLE_TRACE_PARAMETERS_V1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENABLE_TRACE_PARAMETERS_V1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENABLE_TRACE_PARAMETERS_V1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ENABLE_TRACE_PARAMETERS_V1 {}
@@ -265,12 +265,12 @@ impl ::core::clone::Clone for ETW_BUFFER_CONTEXT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for ETW_BUFFER_CONTEXT {
+unsafe impl ::windows_core::Abi for ETW_BUFFER_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ETW_BUFFER_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_BUFFER_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_BUFFER_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ETW_BUFFER_CONTEXT {}
@@ -291,12 +291,12 @@ impl ::core::clone::Clone for ETW_BUFFER_CONTEXT_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for ETW_BUFFER_CONTEXT_0 {
+unsafe impl ::windows_core::Abi for ETW_BUFFER_CONTEXT_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ETW_BUFFER_CONTEXT_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_BUFFER_CONTEXT_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_BUFFER_CONTEXT_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ETW_BUFFER_CONTEXT_0 {}
@@ -322,12 +322,12 @@ impl ::core::fmt::Debug for ETW_BUFFER_CONTEXT_0_0 {
         f.debug_struct("ETW_BUFFER_CONTEXT_0_0").field("ProcessorNumber", &self.ProcessorNumber).field("Alignment", &self.Alignment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ETW_BUFFER_CONTEXT_0_0 {
+unsafe impl ::windows_core::Abi for ETW_BUFFER_CONTEXT_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ETW_BUFFER_CONTEXT_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_BUFFER_CONTEXT_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_BUFFER_CONTEXT_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ETW_BUFFER_CONTEXT_0_0 {}
@@ -361,7 +361,7 @@ impl ::core::default::Default for ETW_COMPRESSION_RESUMPTION_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ETW_COMPRESSION_RESUMPTION_MODE {
+unsafe impl ::windows_core::Abi for ETW_COMPRESSION_RESUMPTION_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ETW_COMPRESSION_RESUMPTION_MODE {
@@ -413,12 +413,12 @@ impl ::core::fmt::Debug for ETW_PMC_COUNTER_OWNER {
         f.debug_struct("ETW_PMC_COUNTER_OWNER").field("OwnerType", &self.OwnerType).field("ProfileSource", &self.ProfileSource).field("OwnerTag", &self.OwnerTag).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ETW_PMC_COUNTER_OWNER {
+unsafe impl ::windows_core::Abi for ETW_PMC_COUNTER_OWNER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ETW_PMC_COUNTER_OWNER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_PMC_COUNTER_OWNER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_PMC_COUNTER_OWNER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ETW_PMC_COUNTER_OWNER {}
@@ -445,12 +445,12 @@ impl ::core::fmt::Debug for ETW_PMC_COUNTER_OWNERSHIP_STATUS {
         f.debug_struct("ETW_PMC_COUNTER_OWNERSHIP_STATUS").field("ProcessorNumber", &self.ProcessorNumber).field("NumberOfCounters", &self.NumberOfCounters).field("CounterOwners", &self.CounterOwners).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ETW_PMC_COUNTER_OWNERSHIP_STATUS {
+unsafe impl ::windows_core::Abi for ETW_PMC_COUNTER_OWNERSHIP_STATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ETW_PMC_COUNTER_OWNERSHIP_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_PMC_COUNTER_OWNERSHIP_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_PMC_COUNTER_OWNERSHIP_STATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ETW_PMC_COUNTER_OWNERSHIP_STATUS {}
@@ -482,7 +482,7 @@ impl ::core::default::Default for ETW_PMC_COUNTER_OWNER_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ETW_PMC_COUNTER_OWNER_TYPE {
+unsafe impl ::windows_core::Abi for ETW_PMC_COUNTER_OWNER_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ETW_PMC_COUNTER_OWNER_TYPE {
@@ -515,7 +515,7 @@ impl ::core::default::Default for ETW_PROCESS_HANDLE_INFO_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ETW_PROCESS_HANDLE_INFO_TYPE {
+unsafe impl ::windows_core::Abi for ETW_PROCESS_HANDLE_INFO_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ETW_PROCESS_HANDLE_INFO_TYPE {
@@ -544,7 +544,7 @@ impl ::core::default::Default for ETW_PROVIDER_TRAIT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ETW_PROVIDER_TRAIT_TYPE {
+unsafe impl ::windows_core::Abi for ETW_PROVIDER_TRAIT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ETW_PROVIDER_TRAIT_TYPE {
@@ -577,8 +577,8 @@ pub const ETW_STRING_TYPE_VALUE: u32 = 2u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub struct ETW_TRACE_PARTITION_INFORMATION {
-    pub PartitionId: ::windows::core::GUID,
-    pub ParentId: ::windows::core::GUID,
+    pub PartitionId: ::windows_core::GUID,
+    pub ParentId: ::windows_core::GUID,
     pub QpcOffsetFromRoot: i64,
     pub PartitionType: u32,
 }
@@ -593,12 +593,12 @@ impl ::core::fmt::Debug for ETW_TRACE_PARTITION_INFORMATION {
         f.debug_struct("ETW_TRACE_PARTITION_INFORMATION").field("PartitionId", &self.PartitionId).field("ParentId", &self.ParentId).field("QpcOffsetFromRoot", &self.QpcOffsetFromRoot).field("PartitionType", &self.PartitionType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ETW_TRACE_PARTITION_INFORMATION {
+unsafe impl ::windows_core::Abi for ETW_TRACE_PARTITION_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ETW_TRACE_PARTITION_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_TRACE_PARTITION_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_TRACE_PARTITION_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ETW_TRACE_PARTITION_INFORMATION {}
@@ -612,8 +612,8 @@ impl ::core::default::Default for ETW_TRACE_PARTITION_INFORMATION {
 pub struct ETW_TRACE_PARTITION_INFORMATION_V2 {
     pub QpcOffsetFromRoot: i64,
     pub PartitionType: u32,
-    pub PartitionId: ::windows::core::PWSTR,
-    pub ParentId: ::windows::core::PWSTR,
+    pub PartitionId: ::windows_core::PWSTR,
+    pub ParentId: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for ETW_TRACE_PARTITION_INFORMATION_V2 {}
 impl ::core::clone::Clone for ETW_TRACE_PARTITION_INFORMATION_V2 {
@@ -626,12 +626,12 @@ impl ::core::fmt::Debug for ETW_TRACE_PARTITION_INFORMATION_V2 {
         f.debug_struct("ETW_TRACE_PARTITION_INFORMATION_V2").field("QpcOffsetFromRoot", &self.QpcOffsetFromRoot).field("PartitionType", &self.PartitionType).field("PartitionId", &self.PartitionId).field("ParentId", &self.ParentId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ETW_TRACE_PARTITION_INFORMATION_V2 {
+unsafe impl ::windows_core::Abi for ETW_TRACE_PARTITION_INFORMATION_V2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ETW_TRACE_PARTITION_INFORMATION_V2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_TRACE_PARTITION_INFORMATION_V2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ETW_TRACE_PARTITION_INFORMATION_V2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ETW_TRACE_PARTITION_INFORMATION_V2 {}
@@ -675,7 +675,7 @@ impl ::core::default::Default for EVENTSECURITYOPERATION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EVENTSECURITYOPERATION {
+unsafe impl ::windows_core::Abi for EVENTSECURITYOPERATION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EVENTSECURITYOPERATION {
@@ -706,12 +706,12 @@ impl ::core::clone::Clone for EVENT_DATA_DESCRIPTOR {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_DATA_DESCRIPTOR {
+unsafe impl ::windows_core::Abi for EVENT_DATA_DESCRIPTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_DATA_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_DATA_DESCRIPTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_DATA_DESCRIPTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_DATA_DESCRIPTOR {}
@@ -732,12 +732,12 @@ impl ::core::clone::Clone for EVENT_DATA_DESCRIPTOR_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_DATA_DESCRIPTOR_0 {
+unsafe impl ::windows_core::Abi for EVENT_DATA_DESCRIPTOR_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_DATA_DESCRIPTOR_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_DATA_DESCRIPTOR_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_DATA_DESCRIPTOR_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_DATA_DESCRIPTOR_0 {}
@@ -764,12 +764,12 @@ impl ::core::fmt::Debug for EVENT_DATA_DESCRIPTOR_0_0 {
         f.debug_struct("EVENT_DATA_DESCRIPTOR_0_0").field("Type", &self.Type).field("Reserved1", &self.Reserved1).field("Reserved2", &self.Reserved2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_DATA_DESCRIPTOR_0_0 {
+unsafe impl ::windows_core::Abi for EVENT_DATA_DESCRIPTOR_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_DATA_DESCRIPTOR_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_DATA_DESCRIPTOR_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_DATA_DESCRIPTOR_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_DATA_DESCRIPTOR_0_0 {}
@@ -808,12 +808,12 @@ impl ::core::fmt::Debug for EVENT_DESCRIPTOR {
         f.debug_struct("EVENT_DESCRIPTOR").field("Id", &self.Id).field("Version", &self.Version).field("Channel", &self.Channel).field("Level", &self.Level).field("Opcode", &self.Opcode).field("Task", &self.Task).field("Keyword", &self.Keyword).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_DESCRIPTOR {
+unsafe impl ::windows_core::Abi for EVENT_DESCRIPTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_DESCRIPTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_DESCRIPTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_DESCRIPTOR {}
@@ -862,12 +862,12 @@ impl ::core::fmt::Debug for EVENT_EXTENDED_ITEM_EVENT_KEY {
         f.debug_struct("EVENT_EXTENDED_ITEM_EVENT_KEY").field("Key", &self.Key).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_EXTENDED_ITEM_EVENT_KEY {
+unsafe impl ::windows_core::Abi for EVENT_EXTENDED_ITEM_EVENT_KEY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_EXTENDED_ITEM_EVENT_KEY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_EVENT_KEY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_EVENT_KEY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_EXTENDED_ITEM_EVENT_KEY {}
@@ -881,7 +881,7 @@ impl ::core::default::Default for EVENT_EXTENDED_ITEM_EVENT_KEY {
 pub struct EVENT_EXTENDED_ITEM_INSTANCE {
     pub InstanceId: u32,
     pub ParentInstanceId: u32,
-    pub ParentGuid: ::windows::core::GUID,
+    pub ParentGuid: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for EVENT_EXTENDED_ITEM_INSTANCE {}
 impl ::core::clone::Clone for EVENT_EXTENDED_ITEM_INSTANCE {
@@ -894,12 +894,12 @@ impl ::core::fmt::Debug for EVENT_EXTENDED_ITEM_INSTANCE {
         f.debug_struct("EVENT_EXTENDED_ITEM_INSTANCE").field("InstanceId", &self.InstanceId).field("ParentInstanceId", &self.ParentInstanceId).field("ParentGuid", &self.ParentGuid).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_EXTENDED_ITEM_INSTANCE {
+unsafe impl ::windows_core::Abi for EVENT_EXTENDED_ITEM_INSTANCE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_EXTENDED_ITEM_INSTANCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_INSTANCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_INSTANCE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_EXTENDED_ITEM_INSTANCE {}
@@ -924,12 +924,12 @@ impl ::core::fmt::Debug for EVENT_EXTENDED_ITEM_PEBS_INDEX {
         f.debug_struct("EVENT_EXTENDED_ITEM_PEBS_INDEX").field("PebsIndex", &self.PebsIndex).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_EXTENDED_ITEM_PEBS_INDEX {
+unsafe impl ::windows_core::Abi for EVENT_EXTENDED_ITEM_PEBS_INDEX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_EXTENDED_ITEM_PEBS_INDEX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_PEBS_INDEX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_PEBS_INDEX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_EXTENDED_ITEM_PEBS_INDEX {}
@@ -954,12 +954,12 @@ impl ::core::fmt::Debug for EVENT_EXTENDED_ITEM_PMC_COUNTERS {
         f.debug_struct("EVENT_EXTENDED_ITEM_PMC_COUNTERS").field("Counter", &self.Counter).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_EXTENDED_ITEM_PMC_COUNTERS {
+unsafe impl ::windows_core::Abi for EVENT_EXTENDED_ITEM_PMC_COUNTERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_EXTENDED_ITEM_PMC_COUNTERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_PMC_COUNTERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_PMC_COUNTERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_EXTENDED_ITEM_PMC_COUNTERS {}
@@ -984,12 +984,12 @@ impl ::core::fmt::Debug for EVENT_EXTENDED_ITEM_PROCESS_START_KEY {
         f.debug_struct("EVENT_EXTENDED_ITEM_PROCESS_START_KEY").field("ProcessStartKey", &self.ProcessStartKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_EXTENDED_ITEM_PROCESS_START_KEY {
+unsafe impl ::windows_core::Abi for EVENT_EXTENDED_ITEM_PROCESS_START_KEY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_EXTENDED_ITEM_PROCESS_START_KEY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_PROCESS_START_KEY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_PROCESS_START_KEY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_EXTENDED_ITEM_PROCESS_START_KEY {}
@@ -1001,7 +1001,7 @@ impl ::core::default::Default for EVENT_EXTENDED_ITEM_PROCESS_START_KEY {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub struct EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID {
-    pub RelatedActivityId: ::windows::core::GUID,
+    pub RelatedActivityId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID {}
 impl ::core::clone::Clone for EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID {
@@ -1014,12 +1014,12 @@ impl ::core::fmt::Debug for EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID {
         f.debug_struct("EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID").field("RelatedActivityId", &self.RelatedActivityId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID {
+unsafe impl ::windows_core::Abi for EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID {}
@@ -1046,12 +1046,12 @@ impl ::core::fmt::Debug for EVENT_EXTENDED_ITEM_STACK_KEY32 {
         f.debug_struct("EVENT_EXTENDED_ITEM_STACK_KEY32").field("MatchId", &self.MatchId).field("StackKey", &self.StackKey).field("Padding", &self.Padding).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_EXTENDED_ITEM_STACK_KEY32 {
+unsafe impl ::windows_core::Abi for EVENT_EXTENDED_ITEM_STACK_KEY32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_EXTENDED_ITEM_STACK_KEY32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_STACK_KEY32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_STACK_KEY32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_EXTENDED_ITEM_STACK_KEY32 {}
@@ -1077,12 +1077,12 @@ impl ::core::fmt::Debug for EVENT_EXTENDED_ITEM_STACK_KEY64 {
         f.debug_struct("EVENT_EXTENDED_ITEM_STACK_KEY64").field("MatchId", &self.MatchId).field("StackKey", &self.StackKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_EXTENDED_ITEM_STACK_KEY64 {
+unsafe impl ::windows_core::Abi for EVENT_EXTENDED_ITEM_STACK_KEY64 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_EXTENDED_ITEM_STACK_KEY64 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_STACK_KEY64>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_STACK_KEY64>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_EXTENDED_ITEM_STACK_KEY64 {}
@@ -1108,12 +1108,12 @@ impl ::core::fmt::Debug for EVENT_EXTENDED_ITEM_STACK_TRACE32 {
         f.debug_struct("EVENT_EXTENDED_ITEM_STACK_TRACE32").field("MatchId", &self.MatchId).field("Address", &self.Address).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_EXTENDED_ITEM_STACK_TRACE32 {
+unsafe impl ::windows_core::Abi for EVENT_EXTENDED_ITEM_STACK_TRACE32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_EXTENDED_ITEM_STACK_TRACE32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_STACK_TRACE32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_STACK_TRACE32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_EXTENDED_ITEM_STACK_TRACE32 {}
@@ -1139,12 +1139,12 @@ impl ::core::fmt::Debug for EVENT_EXTENDED_ITEM_STACK_TRACE64 {
         f.debug_struct("EVENT_EXTENDED_ITEM_STACK_TRACE64").field("MatchId", &self.MatchId).field("Address", &self.Address).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_EXTENDED_ITEM_STACK_TRACE64 {
+unsafe impl ::windows_core::Abi for EVENT_EXTENDED_ITEM_STACK_TRACE64 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_EXTENDED_ITEM_STACK_TRACE64 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_STACK_TRACE64>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_STACK_TRACE64>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_EXTENDED_ITEM_STACK_TRACE64 {}
@@ -1169,12 +1169,12 @@ impl ::core::fmt::Debug for EVENT_EXTENDED_ITEM_TS_ID {
         f.debug_struct("EVENT_EXTENDED_ITEM_TS_ID").field("SessionId", &self.SessionId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_EXTENDED_ITEM_TS_ID {
+unsafe impl ::windows_core::Abi for EVENT_EXTENDED_ITEM_TS_ID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_EXTENDED_ITEM_TS_ID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_TS_ID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_EXTENDED_ITEM_TS_ID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_EXTENDED_ITEM_TS_ID {}
@@ -1210,7 +1210,7 @@ impl ::core::default::Default for EVENT_FIELD_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_FIELD_TYPE {
+unsafe impl ::windows_core::Abi for EVENT_FIELD_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EVENT_FIELD_TYPE {
@@ -1236,12 +1236,12 @@ impl ::core::fmt::Debug for EVENT_FILTER_DESCRIPTOR {
         f.debug_struct("EVENT_FILTER_DESCRIPTOR").field("Ptr", &self.Ptr).field("Size", &self.Size).field("Type", &self.Type).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_FILTER_DESCRIPTOR {
+unsafe impl ::windows_core::Abi for EVENT_FILTER_DESCRIPTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_FILTER_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_FILTER_DESCRIPTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_FILTER_DESCRIPTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_FILTER_DESCRIPTOR {}
@@ -1274,13 +1274,13 @@ impl ::core::fmt::Debug for EVENT_FILTER_EVENT_ID {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EVENT_FILTER_EVENT_ID {
+unsafe impl ::windows_core::Abi for EVENT_FILTER_EVENT_ID {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVENT_FILTER_EVENT_ID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_FILTER_EVENT_ID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_FILTER_EVENT_ID>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1317,13 +1317,13 @@ impl ::core::fmt::Debug for EVENT_FILTER_EVENT_NAME {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EVENT_FILTER_EVENT_NAME {
+unsafe impl ::windows_core::Abi for EVENT_FILTER_EVENT_NAME {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVENT_FILTER_EVENT_NAME {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_FILTER_EVENT_NAME>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_FILTER_EVENT_NAME>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1355,12 +1355,12 @@ impl ::core::fmt::Debug for EVENT_FILTER_HEADER {
         f.debug_struct("EVENT_FILTER_HEADER").field("Id", &self.Id).field("Version", &self.Version).field("Reserved", &self.Reserved).field("InstanceId", &self.InstanceId).field("Size", &self.Size).field("NextOffset", &self.NextOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_FILTER_HEADER {
+unsafe impl ::windows_core::Abi for EVENT_FILTER_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_FILTER_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_FILTER_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_FILTER_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_FILTER_HEADER {}
@@ -1393,13 +1393,13 @@ impl ::core::fmt::Debug for EVENT_FILTER_LEVEL_KW {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EVENT_FILTER_LEVEL_KW {
+unsafe impl ::windows_core::Abi for EVENT_FILTER_LEVEL_KW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVENT_FILTER_LEVEL_KW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_FILTER_LEVEL_KW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_FILTER_LEVEL_KW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1450,10 +1450,10 @@ pub struct EVENT_HEADER {
     pub ThreadId: u32,
     pub ProcessId: u32,
     pub TimeStamp: i64,
-    pub ProviderId: ::windows::core::GUID,
+    pub ProviderId: ::windows_core::GUID,
     pub EventDescriptor: EVENT_DESCRIPTOR,
     pub Anonymous: EVENT_HEADER_0,
-    pub ActivityId: ::windows::core::GUID,
+    pub ActivityId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for EVENT_HEADER {}
 impl ::core::clone::Clone for EVENT_HEADER {
@@ -1461,12 +1461,12 @@ impl ::core::clone::Clone for EVENT_HEADER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_HEADER {
+unsafe impl ::windows_core::Abi for EVENT_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_HEADER {}
@@ -1487,12 +1487,12 @@ impl ::core::clone::Clone for EVENT_HEADER_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_HEADER_0 {
+unsafe impl ::windows_core::Abi for EVENT_HEADER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_HEADER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_HEADER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_HEADER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_HEADER_0 {}
@@ -1518,12 +1518,12 @@ impl ::core::fmt::Debug for EVENT_HEADER_0_0 {
         f.debug_struct("EVENT_HEADER_0_0").field("KernelTime", &self.KernelTime).field("UserTime", &self.UserTime).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_HEADER_0_0 {
+unsafe impl ::windows_core::Abi for EVENT_HEADER_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_HEADER_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_HEADER_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_HEADER_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_HEADER_0_0 {}
@@ -1552,12 +1552,12 @@ impl ::core::fmt::Debug for EVENT_HEADER_EXTENDED_DATA_ITEM {
         f.debug_struct("EVENT_HEADER_EXTENDED_DATA_ITEM").field("Reserved1", &self.Reserved1).field("ExtType", &self.ExtType).field("Anonymous", &self.Anonymous).field("DataSize", &self.DataSize).field("DataPtr", &self.DataPtr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_HEADER_EXTENDED_DATA_ITEM {
+unsafe impl ::windows_core::Abi for EVENT_HEADER_EXTENDED_DATA_ITEM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_HEADER_EXTENDED_DATA_ITEM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_HEADER_EXTENDED_DATA_ITEM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_HEADER_EXTENDED_DATA_ITEM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_HEADER_EXTENDED_DATA_ITEM {}
@@ -1582,12 +1582,12 @@ impl ::core::fmt::Debug for EVENT_HEADER_EXTENDED_DATA_ITEM_0 {
         f.debug_struct("EVENT_HEADER_EXTENDED_DATA_ITEM_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_HEADER_EXTENDED_DATA_ITEM_0 {
+unsafe impl ::windows_core::Abi for EVENT_HEADER_EXTENDED_DATA_ITEM_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_HEADER_EXTENDED_DATA_ITEM_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_HEADER_EXTENDED_DATA_ITEM_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_HEADER_EXTENDED_DATA_ITEM_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_HEADER_EXTENDED_DATA_ITEM_0 {}
@@ -1687,7 +1687,7 @@ impl ::core::default::Default for EVENT_INFO_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_INFO_CLASS {
+unsafe impl ::windows_core::Abi for EVENT_INFO_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EVENT_INFO_CLASS {
@@ -1716,12 +1716,12 @@ impl ::core::clone::Clone for EVENT_INSTANCE_HEADER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_INSTANCE_HEADER {
+unsafe impl ::windows_core::Abi for EVENT_INSTANCE_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_INSTANCE_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_INSTANCE_HEADER {}
@@ -1742,12 +1742,12 @@ impl ::core::clone::Clone for EVENT_INSTANCE_HEADER_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_INSTANCE_HEADER_0 {
+unsafe impl ::windows_core::Abi for EVENT_INSTANCE_HEADER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_INSTANCE_HEADER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_INSTANCE_HEADER_0 {}
@@ -1773,12 +1773,12 @@ impl ::core::fmt::Debug for EVENT_INSTANCE_HEADER_0_0 {
         f.debug_struct("EVENT_INSTANCE_HEADER_0_0").field("HeaderType", &self.HeaderType).field("MarkerFlags", &self.MarkerFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_INSTANCE_HEADER_0_0 {
+unsafe impl ::windows_core::Abi for EVENT_INSTANCE_HEADER_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_INSTANCE_HEADER_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_INSTANCE_HEADER_0_0 {}
@@ -1799,12 +1799,12 @@ impl ::core::clone::Clone for EVENT_INSTANCE_HEADER_1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_INSTANCE_HEADER_1 {
+unsafe impl ::windows_core::Abi for EVENT_INSTANCE_HEADER_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_INSTANCE_HEADER_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_INSTANCE_HEADER_1 {}
@@ -1831,12 +1831,12 @@ impl ::core::fmt::Debug for EVENT_INSTANCE_HEADER_1_0 {
         f.debug_struct("EVENT_INSTANCE_HEADER_1_0").field("Type", &self.Type).field("Level", &self.Level).field("Version", &self.Version).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_INSTANCE_HEADER_1_0 {
+unsafe impl ::windows_core::Abi for EVENT_INSTANCE_HEADER_1_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_INSTANCE_HEADER_1_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_1_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_1_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_INSTANCE_HEADER_1_0 {}
@@ -1858,12 +1858,12 @@ impl ::core::clone::Clone for EVENT_INSTANCE_HEADER_2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_INSTANCE_HEADER_2 {
+unsafe impl ::windows_core::Abi for EVENT_INSTANCE_HEADER_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_INSTANCE_HEADER_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_INSTANCE_HEADER_2 {}
@@ -1889,12 +1889,12 @@ impl ::core::fmt::Debug for EVENT_INSTANCE_HEADER_2_0 {
         f.debug_struct("EVENT_INSTANCE_HEADER_2_0").field("KernelTime", &self.KernelTime).field("UserTime", &self.UserTime).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_INSTANCE_HEADER_2_0 {
+unsafe impl ::windows_core::Abi for EVENT_INSTANCE_HEADER_2_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_INSTANCE_HEADER_2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_2_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_INSTANCE_HEADER_2_0 {}
@@ -1920,12 +1920,12 @@ impl ::core::fmt::Debug for EVENT_INSTANCE_HEADER_2_1 {
         f.debug_struct("EVENT_INSTANCE_HEADER_2_1").field("EventId", &self.EventId).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_INSTANCE_HEADER_2_1 {
+unsafe impl ::windows_core::Abi for EVENT_INSTANCE_HEADER_2_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_INSTANCE_HEADER_2_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_2_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_HEADER_2_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_INSTANCE_HEADER_2_1 {}
@@ -1956,13 +1956,13 @@ impl ::core::fmt::Debug for EVENT_INSTANCE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EVENT_INSTANCE_INFO {
+unsafe impl ::windows_core::Abi for EVENT_INSTANCE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVENT_INSTANCE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_INSTANCE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1991,12 +1991,12 @@ impl ::core::clone::Clone for EVENT_MAP_ENTRY {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_MAP_ENTRY {
+unsafe impl ::windows_core::Abi for EVENT_MAP_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_MAP_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_MAP_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_MAP_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_MAP_ENTRY {}
@@ -2017,12 +2017,12 @@ impl ::core::clone::Clone for EVENT_MAP_ENTRY_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_MAP_ENTRY_0 {
+unsafe impl ::windows_core::Abi for EVENT_MAP_ENTRY_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_MAP_ENTRY_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_MAP_ENTRY_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_MAP_ENTRY_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_MAP_ENTRY_0 {}
@@ -2046,12 +2046,12 @@ impl ::core::clone::Clone for EVENT_MAP_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_MAP_INFO {
+unsafe impl ::windows_core::Abi for EVENT_MAP_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_MAP_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_MAP_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_MAP_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_MAP_INFO {}
@@ -2072,12 +2072,12 @@ impl ::core::clone::Clone for EVENT_MAP_INFO_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_MAP_INFO_0 {
+unsafe impl ::windows_core::Abi for EVENT_MAP_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_MAP_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_MAP_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_MAP_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_MAP_INFO_0 {}
@@ -2106,12 +2106,12 @@ impl ::core::clone::Clone for EVENT_PROPERTY_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_PROPERTY_INFO {
+unsafe impl ::windows_core::Abi for EVENT_PROPERTY_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_PROPERTY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_PROPERTY_INFO {}
@@ -2133,12 +2133,12 @@ impl ::core::clone::Clone for EVENT_PROPERTY_INFO_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_PROPERTY_INFO_0 {
+unsafe impl ::windows_core::Abi for EVENT_PROPERTY_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_PROPERTY_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_PROPERTY_INFO_0 {}
@@ -2165,12 +2165,12 @@ impl ::core::fmt::Debug for EVENT_PROPERTY_INFO_0_0 {
         f.debug_struct("EVENT_PROPERTY_INFO_0_0").field("InType", &self.InType).field("OutType", &self.OutType).field("CustomSchemaOffset", &self.CustomSchemaOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_PROPERTY_INFO_0_0 {
+unsafe impl ::windows_core::Abi for EVENT_PROPERTY_INFO_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_PROPERTY_INFO_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_PROPERTY_INFO_0_0 {}
@@ -2197,12 +2197,12 @@ impl ::core::fmt::Debug for EVENT_PROPERTY_INFO_0_1 {
         f.debug_struct("EVENT_PROPERTY_INFO_0_1").field("InType", &self.InType).field("OutType", &self.OutType).field("MapNameOffset", &self.MapNameOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_PROPERTY_INFO_0_1 {
+unsafe impl ::windows_core::Abi for EVENT_PROPERTY_INFO_0_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_PROPERTY_INFO_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_0_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_PROPERTY_INFO_0_1 {}
@@ -2229,12 +2229,12 @@ impl ::core::fmt::Debug for EVENT_PROPERTY_INFO_0_2 {
         f.debug_struct("EVENT_PROPERTY_INFO_0_2").field("StructStartIndex", &self.StructStartIndex).field("NumOfStructMembers", &self.NumOfStructMembers).field("padding", &self.padding).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_PROPERTY_INFO_0_2 {
+unsafe impl ::windows_core::Abi for EVENT_PROPERTY_INFO_0_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_PROPERTY_INFO_0_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_0_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_0_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_PROPERTY_INFO_0_2 {}
@@ -2255,12 +2255,12 @@ impl ::core::clone::Clone for EVENT_PROPERTY_INFO_1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_PROPERTY_INFO_1 {
+unsafe impl ::windows_core::Abi for EVENT_PROPERTY_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_PROPERTY_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_PROPERTY_INFO_1 {}
@@ -2281,12 +2281,12 @@ impl ::core::clone::Clone for EVENT_PROPERTY_INFO_2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_PROPERTY_INFO_2 {
+unsafe impl ::windows_core::Abi for EVENT_PROPERTY_INFO_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_PROPERTY_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_PROPERTY_INFO_2 {}
@@ -2307,12 +2307,12 @@ impl ::core::clone::Clone for EVENT_PROPERTY_INFO_3 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_PROPERTY_INFO_3 {
+unsafe impl ::windows_core::Abi for EVENT_PROPERTY_INFO_3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_PROPERTY_INFO_3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_PROPERTY_INFO_3 {}
@@ -2337,12 +2337,12 @@ impl ::core::fmt::Debug for EVENT_PROPERTY_INFO_3_0 {
         f.debug_struct("EVENT_PROPERTY_INFO_3_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_PROPERTY_INFO_3_0 {
+unsafe impl ::windows_core::Abi for EVENT_PROPERTY_INFO_3_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_PROPERTY_INFO_3_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_3_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_PROPERTY_INFO_3_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_PROPERTY_INFO_3_0 {}
@@ -2368,12 +2368,12 @@ impl ::core::clone::Clone for EVENT_RECORD {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_RECORD {
+unsafe impl ::windows_core::Abi for EVENT_RECORD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_RECORD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_RECORD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_RECORD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_RECORD {}
@@ -2388,7 +2388,7 @@ pub struct EVENT_TRACE {
     pub Header: EVENT_TRACE_HEADER,
     pub InstanceId: u32,
     pub ParentInstanceId: u32,
-    pub ParentGuid: ::windows::core::GUID,
+    pub ParentGuid: ::windows_core::GUID,
     pub MofData: *mut ::core::ffi::c_void,
     pub MofLength: u32,
     pub Anonymous: EVENT_TRACE_0,
@@ -2399,12 +2399,12 @@ impl ::core::clone::Clone for EVENT_TRACE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TRACE {
+unsafe impl ::windows_core::Abi for EVENT_TRACE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_TRACE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_TRACE {}
@@ -2425,12 +2425,12 @@ impl ::core::clone::Clone for EVENT_TRACE_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TRACE_0 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_TRACE_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_TRACE_0 {}
@@ -2470,7 +2470,7 @@ impl ::core::default::Default for EVENT_TRACE_CONTROL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TRACE_CONTROL {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_CONTROL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EVENT_TRACE_CONTROL {
@@ -2565,7 +2565,7 @@ impl ::core::default::Default for EVENT_TRACE_FLAG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TRACE_FLAG {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_FLAG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EVENT_TRACE_FLAG {
@@ -2627,12 +2627,12 @@ impl ::core::clone::Clone for EVENT_TRACE_HEADER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TRACE_HEADER {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_TRACE_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_TRACE_HEADER {}
@@ -2653,12 +2653,12 @@ impl ::core::clone::Clone for EVENT_TRACE_HEADER_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TRACE_HEADER_0 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_HEADER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_TRACE_HEADER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_TRACE_HEADER_0 {}
@@ -2684,12 +2684,12 @@ impl ::core::fmt::Debug for EVENT_TRACE_HEADER_0_0 {
         f.debug_struct("EVENT_TRACE_HEADER_0_0").field("HeaderType", &self.HeaderType).field("MarkerFlags", &self.MarkerFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TRACE_HEADER_0_0 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_HEADER_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_TRACE_HEADER_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_TRACE_HEADER_0_0 {}
@@ -2710,12 +2710,12 @@ impl ::core::clone::Clone for EVENT_TRACE_HEADER_1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TRACE_HEADER_1 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_HEADER_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_TRACE_HEADER_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_TRACE_HEADER_1 {}
@@ -2742,12 +2742,12 @@ impl ::core::fmt::Debug for EVENT_TRACE_HEADER_1_0 {
         f.debug_struct("EVENT_TRACE_HEADER_1_0").field("Type", &self.Type).field("Level", &self.Level).field("Version", &self.Version).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TRACE_HEADER_1_0 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_HEADER_1_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_TRACE_HEADER_1_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_1_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_1_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_TRACE_HEADER_1_0 {}
@@ -2759,7 +2759,7 @@ impl ::core::default::Default for EVENT_TRACE_HEADER_1_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub union EVENT_TRACE_HEADER_2 {
-    pub Guid: ::windows::core::GUID,
+    pub Guid: ::windows_core::GUID,
     pub GuidPtr: u64,
 }
 impl ::core::marker::Copy for EVENT_TRACE_HEADER_2 {}
@@ -2768,12 +2768,12 @@ impl ::core::clone::Clone for EVENT_TRACE_HEADER_2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TRACE_HEADER_2 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_HEADER_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_TRACE_HEADER_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_TRACE_HEADER_2 {}
@@ -2795,12 +2795,12 @@ impl ::core::clone::Clone for EVENT_TRACE_HEADER_3 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TRACE_HEADER_3 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_HEADER_3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_TRACE_HEADER_3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_TRACE_HEADER_3 {}
@@ -2826,12 +2826,12 @@ impl ::core::fmt::Debug for EVENT_TRACE_HEADER_3_0 {
         f.debug_struct("EVENT_TRACE_HEADER_3_0").field("KernelTime", &self.KernelTime).field("UserTime", &self.UserTime).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TRACE_HEADER_3_0 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_HEADER_3_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_TRACE_HEADER_3_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_3_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_3_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_TRACE_HEADER_3_0 {}
@@ -2857,12 +2857,12 @@ impl ::core::fmt::Debug for EVENT_TRACE_HEADER_3_1 {
         f.debug_struct("EVENT_TRACE_HEADER_3_1").field("ClientContext", &self.ClientContext).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TRACE_HEADER_3_1 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_HEADER_3_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EVENT_TRACE_HEADER_3_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_3_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_HEADER_3_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EVENT_TRACE_HEADER_3_1 {}
@@ -2877,8 +2877,8 @@ pub const EVENT_TRACE_INDEPENDENT_SESSION_MODE: u32 = 134217728u32;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`, `\"Win32_System_Time\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 pub struct EVENT_TRACE_LOGFILEA {
-    pub LogFileName: ::windows::core::PSTR,
-    pub LoggerName: ::windows::core::PSTR,
+    pub LogFileName: ::windows_core::PSTR,
+    pub LoggerName: ::windows_core::PSTR,
     pub CurrentTime: i64,
     pub BuffersRead: u32,
     pub Anonymous1: EVENT_TRACE_LOGFILEA_0,
@@ -2901,13 +2901,13 @@ impl ::core::clone::Clone for EVENT_TRACE_LOGFILEA {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_LOGFILEA {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_LOGFILEA {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for EVENT_TRACE_LOGFILEA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_LOGFILEA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_LOGFILEA>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -2934,13 +2934,13 @@ impl ::core::clone::Clone for EVENT_TRACE_LOGFILEA_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_LOGFILEA_0 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_LOGFILEA_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for EVENT_TRACE_LOGFILEA_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_LOGFILEA_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_LOGFILEA_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -2967,13 +2967,13 @@ impl ::core::clone::Clone for EVENT_TRACE_LOGFILEA_1 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_LOGFILEA_1 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_LOGFILEA_1 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for EVENT_TRACE_LOGFILEA_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_LOGFILEA_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_LOGFILEA_1>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -2988,8 +2988,8 @@ impl ::core::default::Default for EVENT_TRACE_LOGFILEA_1 {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`, `\"Win32_System_Time\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 pub struct EVENT_TRACE_LOGFILEW {
-    pub LogFileName: ::windows::core::PWSTR,
-    pub LoggerName: ::windows::core::PWSTR,
+    pub LogFileName: ::windows_core::PWSTR,
+    pub LoggerName: ::windows_core::PWSTR,
     pub CurrentTime: i64,
     pub BuffersRead: u32,
     pub Anonymous1: EVENT_TRACE_LOGFILEW_0,
@@ -3012,13 +3012,13 @@ impl ::core::clone::Clone for EVENT_TRACE_LOGFILEW {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_LOGFILEW {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_LOGFILEW {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for EVENT_TRACE_LOGFILEW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_LOGFILEW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_LOGFILEW>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -3045,13 +3045,13 @@ impl ::core::clone::Clone for EVENT_TRACE_LOGFILEW_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_LOGFILEW_0 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_LOGFILEW_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for EVENT_TRACE_LOGFILEW_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_LOGFILEW_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_LOGFILEW_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -3078,13 +3078,13 @@ impl ::core::clone::Clone for EVENT_TRACE_LOGFILEW_1 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_LOGFILEW_1 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_LOGFILEW_1 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for EVENT_TRACE_LOGFILEW_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_LOGFILEW_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_LOGFILEW_1>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -3139,13 +3139,13 @@ impl ::core::clone::Clone for EVENT_TRACE_PROPERTIES {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_PROPERTIES {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_PROPERTIES {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVENT_TRACE_PROPERTIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3172,13 +3172,13 @@ impl ::core::clone::Clone for EVENT_TRACE_PROPERTIES_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_PROPERTIES_0 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_PROPERTIES_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVENT_TRACE_PROPERTIES_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3225,13 +3225,13 @@ impl ::core::clone::Clone for EVENT_TRACE_PROPERTIES_V2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_PROPERTIES_V2 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_PROPERTIES_V2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVENT_TRACE_PROPERTIES_V2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_V2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_V2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3258,13 +3258,13 @@ impl ::core::clone::Clone for EVENT_TRACE_PROPERTIES_V2_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_PROPERTIES_V2_0 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_PROPERTIES_V2_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVENT_TRACE_PROPERTIES_V2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_V2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_V2_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3291,13 +3291,13 @@ impl ::core::clone::Clone for EVENT_TRACE_PROPERTIES_V2_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_PROPERTIES_V2_1 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_PROPERTIES_V2_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVENT_TRACE_PROPERTIES_V2_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_V2_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_V2_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3329,13 +3329,13 @@ impl ::core::fmt::Debug for EVENT_TRACE_PROPERTIES_V2_1_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_PROPERTIES_V2_1_0 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_PROPERTIES_V2_1_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVENT_TRACE_PROPERTIES_V2_1_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_V2_1_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_V2_1_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3362,13 +3362,13 @@ impl ::core::clone::Clone for EVENT_TRACE_PROPERTIES_V2_2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_PROPERTIES_V2_2 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_PROPERTIES_V2_2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVENT_TRACE_PROPERTIES_V2_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_V2_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_V2_2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3400,13 +3400,13 @@ impl ::core::fmt::Debug for EVENT_TRACE_PROPERTIES_V2_2_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EVENT_TRACE_PROPERTIES_V2_2_0 {
+unsafe impl ::windows_core::Abi for EVENT_TRACE_PROPERTIES_V2_2_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVENT_TRACE_PROPERTIES_V2_2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_V2_2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENT_TRACE_PROPERTIES_V2_2_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3663,12 +3663,12 @@ pub const EVENT_WRITE_FLAG_INPRIVATE: u32 = 2u32;
 pub const EVENT_WRITE_FLAG_NO_FAULTING: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn EnableTrace(enable: u32, enableflag: u32, enablelevel: u32, controlguid: *const ::windows::core::GUID, tracehandle: u64) -> u32 {
+pub unsafe fn EnableTrace(enable: u32, enableflag: u32, enablelevel: u32, controlguid: *const ::windows_core::GUID, tracehandle: u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnableTrace(enable: u32, enableflag: u32, enablelevel: u32, controlguid: *const ::windows::core::GUID, tracehandle: u64) -> u32;
+            fn EnableTrace(enable: u32, enableflag: u32, enablelevel: u32, controlguid: *const ::windows_core::GUID, tracehandle: u64) -> u32;
         }
         ::core::mem::transmute(EnableTrace(::core::mem::transmute(enable), ::core::mem::transmute(enableflag), ::core::mem::transmute(enablelevel), ::core::mem::transmute(controlguid), ::core::mem::transmute(tracehandle)))
     }
@@ -3677,12 +3677,12 @@ pub unsafe fn EnableTrace(enable: u32, enableflag: u32, enablelevel: u32, contro
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn EnableTraceEx(providerid: *const ::windows::core::GUID, sourceid: *const ::windows::core::GUID, tracehandle: u64, isenabled: u32, level: u8, matchanykeyword: u64, matchallkeyword: u64, enableproperty: u32, enablefilterdesc: *const EVENT_FILTER_DESCRIPTOR) -> u32 {
+pub unsafe fn EnableTraceEx(providerid: *const ::windows_core::GUID, sourceid: *const ::windows_core::GUID, tracehandle: u64, isenabled: u32, level: u8, matchanykeyword: u64, matchallkeyword: u64, enableproperty: u32, enablefilterdesc: *const EVENT_FILTER_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnableTraceEx(providerid: *const ::windows::core::GUID, sourceid: *const ::windows::core::GUID, tracehandle: u64, isenabled: u32, level: u8, matchanykeyword: u64, matchallkeyword: u64, enableproperty: u32, enablefilterdesc: *const EVENT_FILTER_DESCRIPTOR) -> u32;
+            fn EnableTraceEx(providerid: *const ::windows_core::GUID, sourceid: *const ::windows_core::GUID, tracehandle: u64, isenabled: u32, level: u8, matchanykeyword: u64, matchallkeyword: u64, enableproperty: u32, enablefilterdesc: *const EVENT_FILTER_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(EnableTraceEx(::core::mem::transmute(providerid), ::core::mem::transmute(sourceid), ::core::mem::transmute(tracehandle), ::core::mem::transmute(isenabled), ::core::mem::transmute(level), ::core::mem::transmute(matchanykeyword), ::core::mem::transmute(matchallkeyword), ::core::mem::transmute(enableproperty), ::core::mem::transmute(enablefilterdesc)))
     }
@@ -3691,12 +3691,12 @@ pub unsafe fn EnableTraceEx(providerid: *const ::windows::core::GUID, sourceid: 
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn EnableTraceEx2(tracehandle: u64, providerid: *const ::windows::core::GUID, controlcode: u32, level: u8, matchanykeyword: u64, matchallkeyword: u64, timeout: u32, enableparameters: *const ENABLE_TRACE_PARAMETERS) -> u32 {
+pub unsafe fn EnableTraceEx2(tracehandle: u64, providerid: *const ::windows_core::GUID, controlcode: u32, level: u8, matchanykeyword: u64, matchallkeyword: u64, timeout: u32, enableparameters: *const ENABLE_TRACE_PARAMETERS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnableTraceEx2(tracehandle: u64, providerid: *const ::windows::core::GUID, controlcode: u32, level: u8, matchanykeyword: u64, matchallkeyword: u64, timeout: u32, enableparameters: *const ENABLE_TRACE_PARAMETERS) -> u32;
+            fn EnableTraceEx2(tracehandle: u64, providerid: *const ::windows_core::GUID, controlcode: u32, level: u8, matchanykeyword: u64, matchallkeyword: u64, timeout: u32, enableparameters: *const ENABLE_TRACE_PARAMETERS) -> u32;
         }
         ::core::mem::transmute(EnableTraceEx2(::core::mem::transmute(tracehandle), ::core::mem::transmute(providerid), ::core::mem::transmute(controlcode), ::core::mem::transmute(level), ::core::mem::transmute(matchanykeyword), ::core::mem::transmute(matchallkeyword), ::core::mem::transmute(timeout), ::core::mem::transmute(enableparameters)))
     }
@@ -3713,7 +3713,7 @@ pub unsafe fn EnumerateTraceGuids(guidpropertiesarray: &mut [*mut TRACE_GUID_PRO
         extern "system" {
             fn EnumerateTraceGuids(guidpropertiesarray: *mut *mut TRACE_GUID_PROPERTIES, propertyarraycount: u32, guidcount: *mut u32) -> u32;
         }
-        ::core::mem::transmute(EnumerateTraceGuids(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(guidpropertiesarray)), guidpropertiesarray.len() as _, ::core::mem::transmute(guidcount)))
+        ::core::mem::transmute(EnumerateTraceGuids(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(guidpropertiesarray)), guidpropertiesarray.len() as _, ::core::mem::transmute(guidcount)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -3735,12 +3735,12 @@ pub unsafe fn EnumerateTraceGuidsEx(tracequeryinfoclass: TRACE_QUERY_INFO_CLASS,
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EventAccessControl<'a, Param2: ::windows::core::IntoParam<'a, super::super::super::Foundation::PSID>, Param4: ::windows::core::IntoParam<'a, super::super::super::Foundation::BOOLEAN>>(guid: *const ::windows::core::GUID, operation: u32, sid: Param2, rights: u32, allowordeny: Param4) -> u32 {
+pub unsafe fn EventAccessControl<'a, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::PSID>, Param4: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOLEAN>>(guid: *const ::windows_core::GUID, operation: u32, sid: Param2, rights: u32, allowordeny: Param4) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EventAccessControl(guid: *const ::windows::core::GUID, operation: u32, sid: super::super::super::Foundation::PSID, rights: u32, allowordeny: super::super::super::Foundation::BOOLEAN) -> u32;
+            fn EventAccessControl(guid: *const ::windows_core::GUID, operation: u32, sid: super::super::super::Foundation::PSID, rights: u32, allowordeny: super::super::super::Foundation::BOOLEAN) -> u32;
         }
         ::core::mem::transmute(EventAccessControl(::core::mem::transmute(guid), ::core::mem::transmute(operation), sid.into_param().abi(), ::core::mem::transmute(rights), allowordeny.into_param().abi()))
     }
@@ -3750,12 +3750,12 @@ pub unsafe fn EventAccessControl<'a, Param2: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Security\"`*"]
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn EventAccessQuery(guid: *const ::windows::core::GUID, buffer: super::super::super::Security::PSECURITY_DESCRIPTOR, buffersize: *mut u32) -> u32 {
+pub unsafe fn EventAccessQuery(guid: *const ::windows_core::GUID, buffer: super::super::super::Security::PSECURITY_DESCRIPTOR, buffersize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EventAccessQuery(guid: *const ::windows::core::GUID, buffer: super::super::super::Security::PSECURITY_DESCRIPTOR, buffersize: *mut u32) -> u32;
+            fn EventAccessQuery(guid: *const ::windows_core::GUID, buffer: super::super::super::Security::PSECURITY_DESCRIPTOR, buffersize: *mut u32) -> u32;
         }
         ::core::mem::transmute(EventAccessQuery(::core::mem::transmute(guid), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize)))
     }
@@ -3764,12 +3764,12 @@ pub unsafe fn EventAccessQuery(guid: *const ::windows::core::GUID, buffer: super
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn EventAccessRemove(guid: *const ::windows::core::GUID) -> u32 {
+pub unsafe fn EventAccessRemove(guid: *const ::windows_core::GUID) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EventAccessRemove(guid: *const ::windows::core::GUID) -> u32;
+            fn EventAccessRemove(guid: *const ::windows_core::GUID) -> u32;
         }
         ::core::mem::transmute(EventAccessRemove(::core::mem::transmute(guid)))
     }
@@ -3778,12 +3778,12 @@ pub unsafe fn EventAccessRemove(guid: *const ::windows::core::GUID) -> u32 {
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn EventActivityIdControl(controlcode: u32, activityid: *mut ::windows::core::GUID) -> u32 {
+pub unsafe fn EventActivityIdControl(controlcode: u32, activityid: *mut ::windows_core::GUID) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EventActivityIdControl(controlcode: u32, activityid: *mut ::windows::core::GUID) -> u32;
+            fn EventActivityIdControl(controlcode: u32, activityid: *mut ::windows_core::GUID) -> u32;
         }
         ::core::mem::transmute(EventActivityIdControl(::core::mem::transmute(controlcode), ::core::mem::transmute(activityid)))
     }
@@ -3822,12 +3822,12 @@ pub unsafe fn EventProviderEnabled(reghandle: u64, level: u8, keyword: u64) -> s
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn EventRegister(providerid: *const ::windows::core::GUID, enablecallback: PENABLECALLBACK, callbackcontext: *const ::core::ffi::c_void, reghandle: *mut u64) -> u32 {
+pub unsafe fn EventRegister(providerid: *const ::windows_core::GUID, enablecallback: PENABLECALLBACK, callbackcontext: *const ::core::ffi::c_void, reghandle: *mut u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EventRegister(providerid: *const ::windows::core::GUID, enablecallback: ::windows::core::RawPtr, callbackcontext: *const ::core::ffi::c_void, reghandle: *mut u64) -> u32;
+            fn EventRegister(providerid: *const ::windows_core::GUID, enablecallback: ::windows_core::RawPtr, callbackcontext: *const ::core::ffi::c_void, reghandle: *mut u64) -> u32;
         }
         ::core::mem::transmute(EventRegister(::core::mem::transmute(providerid), ::core::mem::transmute(enablecallback), ::core::mem::transmute(callbackcontext), ::core::mem::transmute(reghandle)))
     }
@@ -3848,8 +3848,8 @@ pub unsafe fn EventSetInformation(reghandle: u64, informationclass: EVENT_INFO_C
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-pub const EventTraceConfigGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x01853a65_418f_4f36_aefc_dc0f1d2fd235);
-pub const EventTraceGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x68fdd900_4a3e_11d1_84f4_0000f80464e3);
+pub const EventTraceConfigGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x01853a65_418f_4f36_aefc_dc0f1d2fd235);
+pub const EventTraceGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x68fdd900_4a3e_11d1_84f4_0000f80464e3);
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
 pub unsafe fn EventUnregister(reghandle: u64) -> u32 {
@@ -3873,33 +3873,33 @@ pub unsafe fn EventWrite(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTO
         extern "system" {
             fn EventWrite(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, userdatacount: u32, userdata: *const EVENT_DATA_DESCRIPTOR) -> u32;
         }
-        ::core::mem::transmute(EventWrite(::core::mem::transmute(reghandle), ::core::mem::transmute(eventdescriptor), userdata.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(userdata))))
+        ::core::mem::transmute(EventWrite(::core::mem::transmute(reghandle), ::core::mem::transmute(eventdescriptor), userdata.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(userdata))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn EventWriteEx(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, filter: u64, flags: u32, activityid: *const ::windows::core::GUID, relatedactivityid: *const ::windows::core::GUID, userdata: &[EVENT_DATA_DESCRIPTOR]) -> u32 {
+pub unsafe fn EventWriteEx(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, filter: u64, flags: u32, activityid: *const ::windows_core::GUID, relatedactivityid: *const ::windows_core::GUID, userdata: &[EVENT_DATA_DESCRIPTOR]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EventWriteEx(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, filter: u64, flags: u32, activityid: *const ::windows::core::GUID, relatedactivityid: *const ::windows::core::GUID, userdatacount: u32, userdata: *const EVENT_DATA_DESCRIPTOR) -> u32;
+            fn EventWriteEx(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, filter: u64, flags: u32, activityid: *const ::windows_core::GUID, relatedactivityid: *const ::windows_core::GUID, userdatacount: u32, userdata: *const EVENT_DATA_DESCRIPTOR) -> u32;
         }
-        ::core::mem::transmute(EventWriteEx(::core::mem::transmute(reghandle), ::core::mem::transmute(eventdescriptor), ::core::mem::transmute(filter), ::core::mem::transmute(flags), ::core::mem::transmute(activityid), ::core::mem::transmute(relatedactivityid), userdata.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(userdata))))
+        ::core::mem::transmute(EventWriteEx(::core::mem::transmute(reghandle), ::core::mem::transmute(eventdescriptor), ::core::mem::transmute(filter), ::core::mem::transmute(flags), ::core::mem::transmute(activityid), ::core::mem::transmute(relatedactivityid), userdata.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(userdata))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn EventWriteString<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(reghandle: u64, level: u8, keyword: u64, string: Param3) -> u32 {
+pub unsafe fn EventWriteString<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(reghandle: u64, level: u8, keyword: u64, string: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EventWriteString(reghandle: u64, level: u8, keyword: u64, string: ::windows::core::PCWSTR) -> u32;
+            fn EventWriteString(reghandle: u64, level: u8, keyword: u64, string: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(EventWriteString(::core::mem::transmute(reghandle), ::core::mem::transmute(level), ::core::mem::transmute(keyword), string.into_param().abi()))
     }
@@ -3908,14 +3908,14 @@ pub unsafe fn EventWriteString<'a, Param3: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn EventWriteTransfer(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, activityid: *const ::windows::core::GUID, relatedactivityid: *const ::windows::core::GUID, userdata: &[EVENT_DATA_DESCRIPTOR]) -> u32 {
+pub unsafe fn EventWriteTransfer(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, activityid: *const ::windows_core::GUID, relatedactivityid: *const ::windows_core::GUID, userdata: &[EVENT_DATA_DESCRIPTOR]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EventWriteTransfer(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, activityid: *const ::windows::core::GUID, relatedactivityid: *const ::windows::core::GUID, userdatacount: u32, userdata: *const EVENT_DATA_DESCRIPTOR) -> u32;
+            fn EventWriteTransfer(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, activityid: *const ::windows_core::GUID, relatedactivityid: *const ::windows_core::GUID, userdatacount: u32, userdata: *const EVENT_DATA_DESCRIPTOR) -> u32;
         }
-        ::core::mem::transmute(EventWriteTransfer(::core::mem::transmute(reghandle), ::core::mem::transmute(eventdescriptor), ::core::mem::transmute(activityid), ::core::mem::transmute(relatedactivityid), userdata.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(userdata))))
+        ::core::mem::transmute(EventWriteTransfer(::core::mem::transmute(reghandle), ::core::mem::transmute(eventdescriptor), ::core::mem::transmute(activityid), ::core::mem::transmute(relatedactivityid), userdata.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(userdata))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -3923,12 +3923,12 @@ pub unsafe fn EventWriteTransfer(reghandle: u64, eventdescriptor: *const EVENT_D
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FlushTraceA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
+pub unsafe fn FlushTraceA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FlushTraceA(tracehandle: u64, instancename: ::windows::core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+            fn FlushTraceA(tracehandle: u64, instancename: ::windows_core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
         }
         ::core::mem::transmute(FlushTraceA(::core::mem::transmute(tracehandle), instancename.into_param().abi(), ::core::mem::transmute(properties)))
     }
@@ -3938,12 +3938,12 @@ pub unsafe fn FlushTraceA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FlushTraceW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
+pub unsafe fn FlushTraceW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FlushTraceW(tracehandle: u64, instancename: ::windows::core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+            fn FlushTraceW(tracehandle: u64, instancename: ::windows_core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
         }
         ::core::mem::transmute(FlushTraceW(::core::mem::transmute(tracehandle), instancename.into_param().abi(), ::core::mem::transmute(properties)))
     }
@@ -4000,78 +4000,78 @@ pub unsafe fn GetTraceLoggerHandle(buffer: *const ::core::ffi::c_void) -> u64 {
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[repr(transparent)]
-pub struct ITraceEvent(::windows::core::IUnknown);
+pub struct ITraceEvent(::windows_core::IUnknown);
 impl ITraceEvent {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn Clone(&self) -> ::windows::core::Result<ITraceEvent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).Clone)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ITraceEvent>(result__)
+    pub unsafe fn Clone(&self) -> ::windows_core::Result<ITraceEvent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).Clone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ITraceEvent>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn GetUserContext(&self) -> ::windows::core::Result<*mut ::core::ffi::c_void> {
+    pub unsafe fn GetUserContext(&self) -> ::windows_core::Result<*mut ::core::ffi::c_void> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-        (::windows::core::Interface::vtable(self).GetUserContext)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::core::ffi::c_void>(result__)
+        (::windows_core::Interface::vtable(self).GetUserContext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut ::core::ffi::c_void>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn GetEventRecord(&self) -> ::windows::core::Result<*mut EVENT_RECORD> {
+    pub unsafe fn GetEventRecord(&self) -> ::windows_core::Result<*mut EVENT_RECORD> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut EVENT_RECORD>::zeroed();
-        (::windows::core::Interface::vtable(self).GetEventRecord)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut EVENT_RECORD>(result__)
+        (::windows_core::Interface::vtable(self).GetEventRecord)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut EVENT_RECORD>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn SetPayload(&self, payload: &[u8]) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetPayload)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(::windows::core::as_ptr_or_null(payload)), payload.len() as _).ok()
+    pub unsafe fn SetPayload(&self, payload: &[u8]) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetPayload)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(payload)), payload.len() as _).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn SetEventDescriptor(&self, eventdescriptor: *const EVENT_DESCRIPTOR) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetEventDescriptor)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(eventdescriptor)).ok()
+    pub unsafe fn SetEventDescriptor(&self, eventdescriptor: *const EVENT_DESCRIPTOR) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetEventDescriptor)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(eventdescriptor)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn SetProcessId(&self, processid: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetProcessId)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(processid)).ok()
+    pub unsafe fn SetProcessId(&self, processid: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetProcessId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(processid)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn SetProcessorIndex(&self, processorindex: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetProcessorIndex)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(processorindex)).ok()
+    pub unsafe fn SetProcessorIndex(&self, processorindex: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetProcessorIndex)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(processorindex)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn SetThreadId(&self, threadid: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetThreadId)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(threadid)).ok()
+    pub unsafe fn SetThreadId(&self, threadid: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetThreadId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(threadid)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn SetThreadTimes(&self, kerneltime: u32, usertime: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetThreadTimes)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(kerneltime), ::core::mem::transmute(usertime)).ok()
+    pub unsafe fn SetThreadTimes(&self, kerneltime: u32, usertime: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetThreadTimes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(kerneltime), ::core::mem::transmute(usertime)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn SetActivityId(&self, activityid: *const ::windows::core::GUID) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetActivityId)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(activityid)).ok()
+    pub unsafe fn SetActivityId(&self, activityid: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetActivityId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(activityid)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn SetTimeStamp(&self, timestamp: *const i64) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetTimeStamp)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(timestamp)).ok()
+    pub unsafe fn SetTimeStamp(&self, timestamp: *const i64) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetTimeStamp)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(timestamp)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn SetProviderId(&self, providerid: *const ::windows::core::GUID) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetProviderId)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(providerid)).ok()
+    pub unsafe fn SetProviderId(&self, providerid: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetProviderId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(providerid)).ok()
     }
 }
-impl ::core::convert::From<ITraceEvent> for ::windows::core::IUnknown {
+impl ::core::convert::From<ITraceEvent> for ::windows_core::IUnknown {
     fn from(value: ITraceEvent) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ITraceEvent> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ITraceEvent> for ::windows_core::IUnknown {
     fn from(value: &ITraceEvent) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITraceEvent {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ITraceEvent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITraceEvent {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ITraceEvent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for ITraceEvent {
@@ -4090,62 +4090,62 @@ impl ::core::fmt::Debug for ITraceEvent {
         f.debug_tuple("ITraceEvent").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for ITraceEvent {
+unsafe impl ::windows_core::Interface for ITraceEvent {
     type Vtable = ITraceEvent_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8cc97f40_9028_4ff3_9b62_7d1f79ca7bcb);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8cc97f40_9028_4ff3_9b62_7d1f79ca7bcb);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITraceEvent_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newevent: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetUserContext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usercontext: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub GetEventRecord: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventrecord: *mut *mut EVENT_RECORD) -> ::windows::core::HRESULT,
-    pub SetPayload: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, payload: *const u8, payloadsize: u32) -> ::windows::core::HRESULT,
-    pub SetEventDescriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventdescriptor: *const EVENT_DESCRIPTOR) -> ::windows::core::HRESULT,
-    pub SetProcessId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, processid: u32) -> ::windows::core::HRESULT,
-    pub SetProcessorIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, processorindex: u32) -> ::windows::core::HRESULT,
-    pub SetThreadId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, threadid: u32) -> ::windows::core::HRESULT,
-    pub SetThreadTimes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, kerneltime: u32, usertime: u32) -> ::windows::core::HRESULT,
-    pub SetActivityId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, activityid: *const ::windows::core::GUID) -> ::windows::core::HRESULT,
-    pub SetTimeStamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timestamp: *const i64) -> ::windows::core::HRESULT,
-    pub SetProviderId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, providerid: *const ::windows::core::GUID) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newevent: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetUserContext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usercontext: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub GetEventRecord: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventrecord: *mut *mut EVENT_RECORD) -> ::windows_core::HRESULT,
+    pub SetPayload: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, payload: *const u8, payloadsize: u32) -> ::windows_core::HRESULT,
+    pub SetEventDescriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventdescriptor: *const EVENT_DESCRIPTOR) -> ::windows_core::HRESULT,
+    pub SetProcessId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, processid: u32) -> ::windows_core::HRESULT,
+    pub SetProcessorIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, processorindex: u32) -> ::windows_core::HRESULT,
+    pub SetThreadId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, threadid: u32) -> ::windows_core::HRESULT,
+    pub SetThreadTimes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, kerneltime: u32, usertime: u32) -> ::windows_core::HRESULT,
+    pub SetActivityId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, activityid: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
+    pub SetTimeStamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timestamp: *const i64) -> ::windows_core::HRESULT,
+    pub SetProviderId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, providerid: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[repr(transparent)]
-pub struct ITraceEventCallback(::windows::core::IUnknown);
+pub struct ITraceEventCallback(::windows_core::IUnknown);
 impl ITraceEventCallback {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn OnBeginProcessTrace<'a, Param0: ::windows::core::IntoParam<'a, ITraceEvent>, Param1: ::windows::core::IntoParam<'a, ITraceRelogger>>(&self, headerevent: Param0, relogger: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).OnBeginProcessTrace)(::windows::core::Interface::as_raw(self), headerevent.into_param().abi(), relogger.into_param().abi()).ok()
+    pub unsafe fn OnBeginProcessTrace<'a, Param0: ::windows_core::IntoParam<'a, ITraceEvent>, Param1: ::windows_core::IntoParam<'a, ITraceRelogger>>(&self, headerevent: Param0, relogger: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).OnBeginProcessTrace)(::windows_core::Interface::as_raw(self), headerevent.into_param().abi(), relogger.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn OnFinalizeProcessTrace<'a, Param0: ::windows::core::IntoParam<'a, ITraceRelogger>>(&self, relogger: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).OnFinalizeProcessTrace)(::windows::core::Interface::as_raw(self), relogger.into_param().abi()).ok()
+    pub unsafe fn OnFinalizeProcessTrace<'a, Param0: ::windows_core::IntoParam<'a, ITraceRelogger>>(&self, relogger: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).OnFinalizeProcessTrace)(::windows_core::Interface::as_raw(self), relogger.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn OnEvent<'a, Param0: ::windows::core::IntoParam<'a, ITraceEvent>, Param1: ::windows::core::IntoParam<'a, ITraceRelogger>>(&self, event: Param0, relogger: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).OnEvent)(::windows::core::Interface::as_raw(self), event.into_param().abi(), relogger.into_param().abi()).ok()
+    pub unsafe fn OnEvent<'a, Param0: ::windows_core::IntoParam<'a, ITraceEvent>, Param1: ::windows_core::IntoParam<'a, ITraceRelogger>>(&self, event: Param0, relogger: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).OnEvent)(::windows_core::Interface::as_raw(self), event.into_param().abi(), relogger.into_param().abi()).ok()
     }
 }
-impl ::core::convert::From<ITraceEventCallback> for ::windows::core::IUnknown {
+impl ::core::convert::From<ITraceEventCallback> for ::windows_core::IUnknown {
     fn from(value: ITraceEventCallback) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ITraceEventCallback> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ITraceEventCallback> for ::windows_core::IUnknown {
     fn from(value: &ITraceEventCallback) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITraceEventCallback {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ITraceEventCallback {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITraceEventCallback {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ITraceEventCallback {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for ITraceEventCallback {
@@ -4164,84 +4164,84 @@ impl ::core::fmt::Debug for ITraceEventCallback {
         f.debug_tuple("ITraceEventCallback").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for ITraceEventCallback {
+unsafe impl ::windows_core::Interface for ITraceEventCallback {
     type Vtable = ITraceEventCallback_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3ed25501_593f_43e9_8f38_3ab46f5a4a52);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3ed25501_593f_43e9_8f38_3ab46f5a4a52);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITraceEventCallback_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub OnBeginProcessTrace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, headerevent: ::windows::core::RawPtr, relogger: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub OnFinalizeProcessTrace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relogger: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub OnEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, event: ::windows::core::RawPtr, relogger: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub OnBeginProcessTrace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, headerevent: ::windows_core::RawPtr, relogger: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub OnFinalizeProcessTrace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relogger: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub OnEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, event: ::windows_core::RawPtr, relogger: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[repr(transparent)]
-pub struct ITraceRelogger(::windows::core::IUnknown);
+pub struct ITraceRelogger(::windows_core::IUnknown);
 impl ITraceRelogger {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddLogfileTraceStream<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, logfilename: Param0, usercontext: *const ::core::ffi::c_void) -> ::windows::core::Result<u64> {
+    pub unsafe fn AddLogfileTraceStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, logfilename: Param0, usercontext: *const ::core::ffi::c_void) -> ::windows_core::Result<u64> {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
-        (::windows::core::Interface::vtable(self).AddLogfileTraceStream)(::windows::core::Interface::as_raw(self), logfilename.into_param().abi(), ::core::mem::transmute(usercontext), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
+        (::windows_core::Interface::vtable(self).AddLogfileTraceStream)(::windows_core::Interface::as_raw(self), logfilename.into_param().abi(), ::core::mem::transmute(usercontext), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddRealtimeTraceStream<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, loggername: Param0, usercontext: *const ::core::ffi::c_void) -> ::windows::core::Result<u64> {
+    pub unsafe fn AddRealtimeTraceStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, loggername: Param0, usercontext: *const ::core::ffi::c_void) -> ::windows_core::Result<u64> {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
-        (::windows::core::Interface::vtable(self).AddRealtimeTraceStream)(::windows::core::Interface::as_raw(self), loggername.into_param().abi(), ::core::mem::transmute(usercontext), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
+        (::windows_core::Interface::vtable(self).AddRealtimeTraceStream)(::windows_core::Interface::as_raw(self), loggername.into_param().abi(), ::core::mem::transmute(usercontext), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn RegisterCallback<'a, Param0: ::windows::core::IntoParam<'a, ITraceEventCallback>>(&self, callback: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).RegisterCallback)(::windows::core::Interface::as_raw(self), callback.into_param().abi()).ok()
+    pub unsafe fn RegisterCallback<'a, Param0: ::windows_core::IntoParam<'a, ITraceEventCallback>>(&self, callback: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).RegisterCallback)(::windows_core::Interface::as_raw(self), callback.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn Inject<'a, Param0: ::windows::core::IntoParam<'a, ITraceEvent>>(&self, event: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Inject)(::windows::core::Interface::as_raw(self), event.into_param().abi()).ok()
+    pub unsafe fn Inject<'a, Param0: ::windows_core::IntoParam<'a, ITraceEvent>>(&self, event: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Inject)(::windows_core::Interface::as_raw(self), event.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn CreateEventInstance(&self, tracehandle: u64, flags: u32) -> ::windows::core::Result<ITraceEvent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).CreateEventInstance)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(tracehandle), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ITraceEvent>(result__)
+    pub unsafe fn CreateEventInstance(&self, tracehandle: u64, flags: u32) -> ::windows_core::Result<ITraceEvent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).CreateEventInstance)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(tracehandle), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ITraceEvent>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn ProcessTrace(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ProcessTrace)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn ProcessTrace(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ProcessTrace)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetOutputFilename<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, logfilename: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetOutputFilename)(::windows::core::Interface::as_raw(self), logfilename.into_param().abi()).ok()
+    pub unsafe fn SetOutputFilename<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, logfilename: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetOutputFilename)(::windows_core::Interface::as_raw(self), logfilename.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCompressionMode<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::BOOLEAN>>(&self, compressionmode: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetCompressionMode)(::windows::core::Interface::as_raw(self), compressionmode.into_param().abi()).ok()
+    pub unsafe fn SetCompressionMode<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOLEAN>>(&self, compressionmode: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetCompressionMode)(::windows_core::Interface::as_raw(self), compressionmode.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-    pub unsafe fn Cancel(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Cancel)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Cancel(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Cancel)(::windows_core::Interface::as_raw(self)).ok()
     }
 }
-impl ::core::convert::From<ITraceRelogger> for ::windows::core::IUnknown {
+impl ::core::convert::From<ITraceRelogger> for ::windows_core::IUnknown {
     fn from(value: ITraceRelogger) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ITraceRelogger> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ITraceRelogger> for ::windows_core::IUnknown {
     fn from(value: &ITraceRelogger) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITraceRelogger {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ITraceRelogger {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITraceRelogger {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ITraceRelogger {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for ITraceRelogger {
@@ -4260,35 +4260,35 @@ impl ::core::fmt::Debug for ITraceRelogger {
         f.debug_tuple("ITraceRelogger").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for ITraceRelogger {
+unsafe impl ::windows_core::Interface for ITraceRelogger {
     type Vtable = ITraceRelogger_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf754ad43_3bcc_4286_8009_9c5da214e84e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf754ad43_3bcc_4286_8009_9c5da214e84e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITraceRelogger_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub AddLogfileTraceStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, logfilename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, usercontext: *const ::core::ffi::c_void, tracehandle: *mut u64) -> ::windows::core::HRESULT,
+    pub AddLogfileTraceStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, logfilename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, usercontext: *const ::core::ffi::c_void, tracehandle: *mut u64) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     AddLogfileTraceStream: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub AddRealtimeTraceStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, loggername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, usercontext: *const ::core::ffi::c_void, tracehandle: *mut u64) -> ::windows::core::HRESULT,
+    pub AddRealtimeTraceStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, loggername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, usercontext: *const ::core::ffi::c_void, tracehandle: *mut u64) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     AddRealtimeTraceStream: usize,
-    pub RegisterCallback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, callback: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub Inject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, event: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub CreateEventInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tracehandle: u64, flags: u32, event: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub ProcessTrace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub RegisterCallback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, callback: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub Inject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, event: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateEventInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tracehandle: u64, flags: u32, event: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub ProcessTrace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub SetOutputFilename: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, logfilename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows::core::HRESULT,
+    pub SetOutputFilename: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, logfilename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetOutputFilename: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub SetCompressionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, compressionmode: super::super::super::Foundation::BOOLEAN) -> ::windows::core::HRESULT,
+    pub SetCompressionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, compressionmode: super::super::super::Foundation::BOOLEAN) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetCompressionMode: usize,
-    pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub const KERNEL_LOGGER_NAME: &str = "NT Kernel Logger";
@@ -4325,7 +4325,7 @@ impl ::core::default::Default for MAP_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MAP_FLAGS {
+unsafe impl ::windows_core::Abi for MAP_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MAP_FLAGS {
@@ -4352,7 +4352,7 @@ impl ::core::default::Default for MAP_VALUETYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MAP_VALUETYPE {
+unsafe impl ::windows_core::Abi for MAP_VALUETYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MAP_VALUETYPE {
@@ -4396,12 +4396,12 @@ impl ::core::fmt::Debug for MOF_FIELD {
         f.debug_struct("MOF_FIELD").field("DataPtr", &self.DataPtr).field("Length", &self.Length).field("DataType", &self.DataType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MOF_FIELD {
+unsafe impl ::windows_core::Abi for MOF_FIELD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MOF_FIELD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MOF_FIELD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MOF_FIELD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MOF_FIELD {}
@@ -4427,12 +4427,12 @@ impl ::core::fmt::Debug for OFFSETINSTANCEDATAANDLENGTH {
         f.debug_struct("OFFSETINSTANCEDATAANDLENGTH").field("OffsetInstanceData", &self.OffsetInstanceData).field("LengthInstanceData", &self.LengthInstanceData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for OFFSETINSTANCEDATAANDLENGTH {
+unsafe impl ::windows_core::Abi for OFFSETINSTANCEDATAANDLENGTH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for OFFSETINSTANCEDATAANDLENGTH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFFSETINSTANCEDATAANDLENGTH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFFSETINSTANCEDATAANDLENGTH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for OFFSETINSTANCEDATAANDLENGTH {}
@@ -4474,9 +4474,9 @@ pub unsafe fn OpenTraceW(logfile: *mut EVENT_TRACE_LOGFILEW) -> u64 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub struct PAYLOAD_FILTER_PREDICATE {
-    pub FieldName: ::windows::core::PWSTR,
+    pub FieldName: ::windows_core::PWSTR,
     pub CompareOp: u16,
-    pub Value: ::windows::core::PWSTR,
+    pub Value: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for PAYLOAD_FILTER_PREDICATE {}
 impl ::core::clone::Clone for PAYLOAD_FILTER_PREDICATE {
@@ -4489,12 +4489,12 @@ impl ::core::fmt::Debug for PAYLOAD_FILTER_PREDICATE {
         f.debug_struct("PAYLOAD_FILTER_PREDICATE").field("FieldName", &self.FieldName).field("CompareOp", &self.CompareOp).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PAYLOAD_FILTER_PREDICATE {
+unsafe impl ::windows_core::Abi for PAYLOAD_FILTER_PREDICATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PAYLOAD_FILTER_PREDICATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PAYLOAD_FILTER_PREDICATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PAYLOAD_FILTER_PREDICATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PAYLOAD_FILTER_PREDICATE {}
@@ -4546,7 +4546,7 @@ impl ::core::default::Default for PAYLOAD_OPERATOR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PAYLOAD_OPERATOR {
+unsafe impl ::windows_core::Abi for PAYLOAD_OPERATOR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PAYLOAD_OPERATOR {
@@ -4555,7 +4555,7 @@ impl ::core::fmt::Debug for PAYLOAD_OPERATOR {
     }
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
-pub type PENABLECALLBACK = ::core::option::Option<unsafe extern "system" fn(sourceid: *const ::windows::core::GUID, isenabled: ENABLECALLBACK_ENABLED_STATE, level: u8, matchanykeyword: u64, matchallkeyword: u64, filterdata: *const EVENT_FILTER_DESCRIPTOR, callbackcontext: *mut ::core::ffi::c_void)>;
+pub type PENABLECALLBACK = ::core::option::Option<unsafe extern "system" fn(sourceid: *const ::windows_core::GUID, isenabled: ENABLECALLBACK_ENABLED_STATE, level: u8, matchanykeyword: u64, matchallkeyword: u64, filterdata: *const EVENT_FILTER_DESCRIPTOR, callbackcontext: *mut ::core::ffi::c_void)>;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub type PEVENT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pevent: *mut EVENT_TRACE)>;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
@@ -4593,12 +4593,12 @@ impl ::core::fmt::Debug for PROFILE_SOURCE_INFO {
         f.debug_struct("PROFILE_SOURCE_INFO").field("NextEntryOffset", &self.NextEntryOffset).field("Source", &self.Source).field("MinInterval", &self.MinInterval).field("MaxInterval", &self.MaxInterval).field("Reserved", &self.Reserved).field("Description", &self.Description).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PROFILE_SOURCE_INFO {
+unsafe impl ::windows_core::Abi for PROFILE_SOURCE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PROFILE_SOURCE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROFILE_SOURCE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROFILE_SOURCE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PROFILE_SOURCE_INFO {}
@@ -4625,12 +4625,12 @@ impl ::core::fmt::Debug for PROPERTY_DATA_DESCRIPTOR {
         f.debug_struct("PROPERTY_DATA_DESCRIPTOR").field("PropertyName", &self.PropertyName).field("ArrayIndex", &self.ArrayIndex).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PROPERTY_DATA_DESCRIPTOR {
+unsafe impl ::windows_core::Abi for PROPERTY_DATA_DESCRIPTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PROPERTY_DATA_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROPERTY_DATA_DESCRIPTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROPERTY_DATA_DESCRIPTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PROPERTY_DATA_DESCRIPTOR {}
@@ -4670,7 +4670,7 @@ impl ::core::default::Default for PROPERTY_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PROPERTY_FLAGS {
+unsafe impl ::windows_core::Abi for PROPERTY_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PROPERTY_FLAGS {
@@ -4696,12 +4696,12 @@ impl ::core::fmt::Debug for PROVIDER_ENUMERATION_INFO {
         f.debug_struct("PROVIDER_ENUMERATION_INFO").field("NumberOfProviders", &self.NumberOfProviders).field("Reserved", &self.Reserved).field("TraceProviderInfoArray", &self.TraceProviderInfoArray).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PROVIDER_ENUMERATION_INFO {
+unsafe impl ::windows_core::Abi for PROVIDER_ENUMERATION_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PROVIDER_ENUMERATION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROVIDER_ENUMERATION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROVIDER_ENUMERATION_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PROVIDER_ENUMERATION_INFO {}
@@ -4728,12 +4728,12 @@ impl ::core::fmt::Debug for PROVIDER_EVENT_INFO {
         f.debug_struct("PROVIDER_EVENT_INFO").field("NumberOfEvents", &self.NumberOfEvents).field("Reserved", &self.Reserved).field("EventDescriptorsArray", &self.EventDescriptorsArray).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PROVIDER_EVENT_INFO {
+unsafe impl ::windows_core::Abi for PROVIDER_EVENT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PROVIDER_EVENT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROVIDER_EVENT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROVIDER_EVENT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PROVIDER_EVENT_INFO {}
@@ -4760,12 +4760,12 @@ impl ::core::fmt::Debug for PROVIDER_FIELD_INFO {
         f.debug_struct("PROVIDER_FIELD_INFO").field("NameOffset", &self.NameOffset).field("DescriptionOffset", &self.DescriptionOffset).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PROVIDER_FIELD_INFO {
+unsafe impl ::windows_core::Abi for PROVIDER_FIELD_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PROVIDER_FIELD_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROVIDER_FIELD_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROVIDER_FIELD_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PROVIDER_FIELD_INFO {}
@@ -4792,12 +4792,12 @@ impl ::core::fmt::Debug for PROVIDER_FIELD_INFOARRAY {
         f.debug_struct("PROVIDER_FIELD_INFOARRAY").field("NumberOfElements", &self.NumberOfElements).field("FieldType", &self.FieldType).field("FieldInfoArray", &self.FieldInfoArray).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PROVIDER_FIELD_INFOARRAY {
+unsafe impl ::windows_core::Abi for PROVIDER_FIELD_INFOARRAY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PROVIDER_FIELD_INFOARRAY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROVIDER_FIELD_INFOARRAY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROVIDER_FIELD_INFOARRAY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PROVIDER_FIELD_INFOARRAY {}
@@ -4822,12 +4822,12 @@ impl ::core::clone::Clone for PROVIDER_FILTER_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for PROVIDER_FILTER_INFO {
+unsafe impl ::windows_core::Abi for PROVIDER_FILTER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PROVIDER_FILTER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROVIDER_FILTER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROVIDER_FILTER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PROVIDER_FILTER_INFO {}
@@ -4836,7 +4836,7 @@ impl ::core::default::Default for PROVIDER_FILTER_INFO {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const PrivateLoggerNotificationGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3595ab5c_042a_4c8e_b942_2d059bfeb1b1);
+pub const PrivateLoggerNotificationGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3595ab5c_042a_4c8e_b942_2d059bfeb1b1);
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
@@ -4847,7 +4847,7 @@ pub unsafe fn ProcessTrace(handlearray: &[u64], starttime: *const super::super::
         extern "system" {
             fn ProcessTrace(handlearray: *const u64, handlecount: u32, starttime: *const super::super::super::Foundation::FILETIME, endtime: *const super::super::super::Foundation::FILETIME) -> u32;
         }
-        ::core::mem::transmute(ProcessTrace(::core::mem::transmute(::windows::core::as_ptr_or_null(handlearray)), handlearray.len() as _, ::core::mem::transmute(starttime), ::core::mem::transmute(endtime)))
+        ::core::mem::transmute(ProcessTrace(::core::mem::transmute(::windows_core::as_ptr_or_null(handlearray)), handlearray.len() as _, ::core::mem::transmute(starttime), ::core::mem::transmute(endtime)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4862,7 +4862,7 @@ pub unsafe fn QueryAllTracesA(propertyarray: &mut [*mut EVENT_TRACE_PROPERTIES],
         extern "system" {
             fn QueryAllTracesA(propertyarray: *mut *mut EVENT_TRACE_PROPERTIES, propertyarraycount: u32, loggercount: *mut u32) -> u32;
         }
-        ::core::mem::transmute(QueryAllTracesA(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(propertyarray)), propertyarray.len() as _, ::core::mem::transmute(loggercount)))
+        ::core::mem::transmute(QueryAllTracesA(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(propertyarray)), propertyarray.len() as _, ::core::mem::transmute(loggercount)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4877,7 +4877,7 @@ pub unsafe fn QueryAllTracesW(propertyarray: &mut [*mut EVENT_TRACE_PROPERTIES],
         extern "system" {
             fn QueryAllTracesW(propertyarray: *mut *mut EVENT_TRACE_PROPERTIES, propertyarraycount: u32, loggercount: *mut u32) -> u32;
         }
-        ::core::mem::transmute(QueryAllTracesW(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(propertyarray)), propertyarray.len() as _, ::core::mem::transmute(loggercount)))
+        ::core::mem::transmute(QueryAllTracesW(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(propertyarray)), propertyarray.len() as _, ::core::mem::transmute(loggercount)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4885,12 +4885,12 @@ pub unsafe fn QueryAllTracesW(propertyarray: &mut [*mut EVENT_TRACE_PROPERTIES],
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QueryTraceA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
+pub unsafe fn QueryTraceA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QueryTraceA(tracehandle: u64, instancename: ::windows::core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+            fn QueryTraceA(tracehandle: u64, instancename: ::windows_core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
         }
         ::core::mem::transmute(QueryTraceA(::core::mem::transmute(tracehandle), instancename.into_param().abi(), ::core::mem::transmute(properties)))
     }
@@ -4914,12 +4914,12 @@ pub unsafe fn QueryTraceProcessingHandle(processinghandle: u64, informationclass
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QueryTraceW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
+pub unsafe fn QueryTraceW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QueryTraceW(tracehandle: u64, instancename: ::windows::core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+            fn QueryTraceW(tracehandle: u64, instancename: ::windows_core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
         }
         ::core::mem::transmute(QueryTraceW(::core::mem::transmute(tracehandle), instancename.into_param().abi(), ::core::mem::transmute(properties)))
     }
@@ -4929,14 +4929,14 @@ pub unsafe fn QueryTraceW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegisterTraceGuidsA<'a, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param6: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(requestaddress: WMIDPREQUEST, requestcontext: *const ::core::ffi::c_void, controlguid: *const ::windows::core::GUID, traceguidreg: &[TRACE_GUID_REGISTRATION], mofimagepath: Param5, mofresourcename: Param6, registrationhandle: *mut u64) -> u32 {
+pub unsafe fn RegisterTraceGuidsA<'a, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(requestaddress: WMIDPREQUEST, requestcontext: *const ::core::ffi::c_void, controlguid: *const ::windows_core::GUID, traceguidreg: &[TRACE_GUID_REGISTRATION], mofimagepath: Param5, mofresourcename: Param6, registrationhandle: *mut u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterTraceGuidsA(requestaddress: ::windows::core::RawPtr, requestcontext: *const ::core::ffi::c_void, controlguid: *const ::windows::core::GUID, guidcount: u32, traceguidreg: *const TRACE_GUID_REGISTRATION, mofimagepath: ::windows::core::PCSTR, mofresourcename: ::windows::core::PCSTR, registrationhandle: *mut u64) -> u32;
+            fn RegisterTraceGuidsA(requestaddress: ::windows_core::RawPtr, requestcontext: *const ::core::ffi::c_void, controlguid: *const ::windows_core::GUID, guidcount: u32, traceguidreg: *const TRACE_GUID_REGISTRATION, mofimagepath: ::windows_core::PCSTR, mofresourcename: ::windows_core::PCSTR, registrationhandle: *mut u64) -> u32;
         }
-        ::core::mem::transmute(RegisterTraceGuidsA(::core::mem::transmute(requestaddress), ::core::mem::transmute(requestcontext), ::core::mem::transmute(controlguid), traceguidreg.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(traceguidreg)), mofimagepath.into_param().abi(), mofresourcename.into_param().abi(), ::core::mem::transmute(registrationhandle)))
+        ::core::mem::transmute(RegisterTraceGuidsA(::core::mem::transmute(requestaddress), ::core::mem::transmute(requestcontext), ::core::mem::transmute(controlguid), traceguidreg.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(traceguidreg)), mofimagepath.into_param().abi(), mofresourcename.into_param().abi(), ::core::mem::transmute(registrationhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4944,26 +4944,26 @@ pub unsafe fn RegisterTraceGuidsA<'a, Param5: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegisterTraceGuidsW<'a, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param6: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(requestaddress: WMIDPREQUEST, requestcontext: *const ::core::ffi::c_void, controlguid: *const ::windows::core::GUID, traceguidreg: &[TRACE_GUID_REGISTRATION], mofimagepath: Param5, mofresourcename: Param6, registrationhandle: *mut u64) -> u32 {
+pub unsafe fn RegisterTraceGuidsW<'a, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(requestaddress: WMIDPREQUEST, requestcontext: *const ::core::ffi::c_void, controlguid: *const ::windows_core::GUID, traceguidreg: &[TRACE_GUID_REGISTRATION], mofimagepath: Param5, mofresourcename: Param6, registrationhandle: *mut u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterTraceGuidsW(requestaddress: ::windows::core::RawPtr, requestcontext: *const ::core::ffi::c_void, controlguid: *const ::windows::core::GUID, guidcount: u32, traceguidreg: *const TRACE_GUID_REGISTRATION, mofimagepath: ::windows::core::PCWSTR, mofresourcename: ::windows::core::PCWSTR, registrationhandle: *mut u64) -> u32;
+            fn RegisterTraceGuidsW(requestaddress: ::windows_core::RawPtr, requestcontext: *const ::core::ffi::c_void, controlguid: *const ::windows_core::GUID, guidcount: u32, traceguidreg: *const TRACE_GUID_REGISTRATION, mofimagepath: ::windows_core::PCWSTR, mofresourcename: ::windows_core::PCWSTR, registrationhandle: *mut u64) -> u32;
         }
-        ::core::mem::transmute(RegisterTraceGuidsW(::core::mem::transmute(requestaddress), ::core::mem::transmute(requestcontext), ::core::mem::transmute(controlguid), traceguidreg.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(traceguidreg)), mofimagepath.into_param().abi(), mofresourcename.into_param().abi(), ::core::mem::transmute(registrationhandle)))
+        ::core::mem::transmute(RegisterTraceGuidsW(::core::mem::transmute(requestaddress), ::core::mem::transmute(requestcontext), ::core::mem::transmute(controlguid), traceguidreg.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(traceguidreg)), mofimagepath.into_param().abi(), mofresourcename.into_param().abi(), ::core::mem::transmute(registrationhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn RemoveTraceCallback(pguid: *const ::windows::core::GUID) -> u32 {
+pub unsafe fn RemoveTraceCallback(pguid: *const ::windows_core::GUID) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveTraceCallback(pguid: *const ::windows::core::GUID) -> u32;
+            fn RemoveTraceCallback(pguid: *const ::windows_core::GUID) -> u32;
         }
         ::core::mem::transmute(RemoveTraceCallback(::core::mem::transmute(pguid)))
     }
@@ -5162,12 +5162,12 @@ pub const SYSTEM_TIMER_KW_CLOCK_TIMER: u64 = 2u64;
 pub const SYSTEM_TIMER_KW_GENERAL: u64 = 1u64;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn SetTraceCallback(pguid: *const ::windows::core::GUID, eventcallback: PEVENT_CALLBACK) -> u32 {
+pub unsafe fn SetTraceCallback(pguid: *const ::windows_core::GUID, eventcallback: PEVENT_CALLBACK) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetTraceCallback(pguid: *const ::windows::core::GUID, eventcallback: ::windows::core::RawPtr) -> u32;
+            fn SetTraceCallback(pguid: *const ::windows_core::GUID, eventcallback: ::windows_core::RawPtr) -> u32;
         }
         ::core::mem::transmute(SetTraceCallback(::core::mem::transmute(pguid), ::core::mem::transmute(eventcallback)))
     }
@@ -5177,12 +5177,12 @@ pub unsafe fn SetTraceCallback(pguid: *const ::windows::core::GUID, eventcallbac
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StartTraceA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(tracehandle: *mut u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
+pub unsafe fn StartTraceA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(tracehandle: *mut u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StartTraceA(tracehandle: *mut u64, instancename: ::windows::core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+            fn StartTraceA(tracehandle: *mut u64, instancename: ::windows_core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
         }
         ::core::mem::transmute(StartTraceA(::core::mem::transmute(tracehandle), instancename.into_param().abi(), ::core::mem::transmute(properties)))
     }
@@ -5192,12 +5192,12 @@ pub unsafe fn StartTraceA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StartTraceW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(tracehandle: *mut u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
+pub unsafe fn StartTraceW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(tracehandle: *mut u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StartTraceW(tracehandle: *mut u64, instancename: ::windows::core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+            fn StartTraceW(tracehandle: *mut u64, instancename: ::windows_core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
         }
         ::core::mem::transmute(StartTraceW(::core::mem::transmute(tracehandle), instancename.into_param().abi(), ::core::mem::transmute(properties)))
     }
@@ -5207,12 +5207,12 @@ pub unsafe fn StartTraceW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StopTraceA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
+pub unsafe fn StopTraceA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StopTraceA(tracehandle: u64, instancename: ::windows::core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+            fn StopTraceA(tracehandle: u64, instancename: ::windows_core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
         }
         ::core::mem::transmute(StopTraceA(::core::mem::transmute(tracehandle), instancename.into_param().abi(), ::core::mem::transmute(properties)))
     }
@@ -5222,36 +5222,36 @@ pub unsafe fn StopTraceA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::c
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StopTraceW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
+pub unsafe fn StopTraceW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StopTraceW(tracehandle: u64, instancename: ::windows::core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+            fn StopTraceW(tracehandle: u64, instancename: ::windows_core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
         }
         ::core::mem::transmute(StopTraceW(::core::mem::transmute(tracehandle), instancename.into_param().abi(), ::core::mem::transmute(properties)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-pub const SystemAlpcProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfcb9baaf_e529_4980_92e9_ced1a6aadfdf);
-pub const SystemConfigProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfef3a8b6_318d_4b67_a96a_3b0f6b8f18fe);
-pub const SystemCpuProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc6c5265f_eae8_4650_aae4_9d48603d8510);
-pub const SystemHypervisorProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xbafa072a_918a_4bed_b622_bc152097098f);
-pub const SystemInterruptProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd4bbee17_b545_4888_858b_744169015b25);
-pub const SystemIoFilterProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfbd09363_9e22_4661_b8bf_e7a34b535b8c);
-pub const SystemIoProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3d5c43e3_0f1c_4202_b817_174c0070dc79);
-pub const SystemLockProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x721ddfd3_dacc_4e1e_b26a_a2cb31d4705a);
-pub const SystemMemoryProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x82958ca9_b6cd_47f8_a3a8_03ae85a4bc24);
-pub const SystemObjectProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfebd7460_3d1d_47eb_af49_c9eeb1e146f2);
-pub const SystemPowerProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc134884a_32d5_4488_80e5_14ed7abb8269);
-pub const SystemProcessProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x151f55dc_467d_471f_83b5_5f889d46ff66);
-pub const SystemProfileProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xbfeb0324_1cee_496f_a409_2ac2b48a6322);
-pub const SystemRegistryProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x16156bd9_fab4_4cfa_a232_89d1099058e3);
-pub const SystemSchedulerProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x599a2a76_4d91_4910_9ac7_7d33f2e97a6c);
-pub const SystemSyscallProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x434286f7_6f1b_45bb_b37e_95f623046c7c);
-pub const SystemTimerProviderGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4f061568_e215_499f_ab2e_eda0ae890a5b);
-pub const SystemTraceControlGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9e814aad_3204_11d2_9a82_006008a86939);
+pub const SystemAlpcProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfcb9baaf_e529_4980_92e9_ced1a6aadfdf);
+pub const SystemConfigProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfef3a8b6_318d_4b67_a96a_3b0f6b8f18fe);
+pub const SystemCpuProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc6c5265f_eae8_4650_aae4_9d48603d8510);
+pub const SystemHypervisorProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbafa072a_918a_4bed_b622_bc152097098f);
+pub const SystemInterruptProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd4bbee17_b545_4888_858b_744169015b25);
+pub const SystemIoFilterProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfbd09363_9e22_4661_b8bf_e7a34b535b8c);
+pub const SystemIoProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3d5c43e3_0f1c_4202_b817_174c0070dc79);
+pub const SystemLockProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x721ddfd3_dacc_4e1e_b26a_a2cb31d4705a);
+pub const SystemMemoryProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x82958ca9_b6cd_47f8_a3a8_03ae85a4bc24);
+pub const SystemObjectProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfebd7460_3d1d_47eb_af49_c9eeb1e146f2);
+pub const SystemPowerProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc134884a_32d5_4488_80e5_14ed7abb8269);
+pub const SystemProcessProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x151f55dc_467d_471f_83b5_5f889d46ff66);
+pub const SystemProfileProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbfeb0324_1cee_496f_a409_2ac2b48a6322);
+pub const SystemRegistryProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x16156bd9_fab4_4cfa_a232_89d1099058e3);
+pub const SystemSchedulerProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x599a2a76_4d91_4910_9ac7_7d33f2e97a6c);
+pub const SystemSyscallProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x434286f7_6f1b_45bb_b37e_95f623046c7c);
+pub const SystemTimerProviderGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4f061568_e215_499f_ab2e_eda0ae890a5b);
+pub const SystemTraceControlGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9e814aad_3204_11d2_9a82_006008a86939);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub struct TDH_CONTEXT {
@@ -5270,12 +5270,12 @@ impl ::core::fmt::Debug for TDH_CONTEXT {
         f.debug_struct("TDH_CONTEXT").field("ParameterValue", &self.ParameterValue).field("ParameterType", &self.ParameterType).field("ParameterSize", &self.ParameterSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TDH_CONTEXT {
+unsafe impl ::windows_core::Abi for TDH_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TDH_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TDH_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TDH_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TDH_CONTEXT {}
@@ -5311,7 +5311,7 @@ impl ::core::default::Default for TDH_CONTEXT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TDH_CONTEXT_TYPE {
+unsafe impl ::windows_core::Abi for TDH_CONTEXT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TDH_CONTEXT_TYPE {
@@ -5343,7 +5343,7 @@ impl ::core::fmt::Debug for TDH_HANDLE {
         f.debug_tuple("TDH_HANDLE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TDH_HANDLE {
+unsafe impl ::windows_core::Abi for TDH_HANDLE {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
@@ -5367,7 +5367,7 @@ impl ::core::default::Default for TEMPLATE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TEMPLATE_FLAGS {
+unsafe impl ::windows_core::Abi for TEMPLATE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TEMPLATE_FLAGS {
@@ -5416,12 +5416,12 @@ impl ::core::fmt::Debug for TRACE_ENABLE_INFO {
         f.debug_struct("TRACE_ENABLE_INFO").field("IsEnabled", &self.IsEnabled).field("Level", &self.Level).field("Reserved1", &self.Reserved1).field("LoggerId", &self.LoggerId).field("EnableProperty", &self.EnableProperty).field("Reserved2", &self.Reserved2).field("MatchAnyKeyword", &self.MatchAnyKeyword).field("MatchAllKeyword", &self.MatchAllKeyword).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_ENABLE_INFO {
+unsafe impl ::windows_core::Abi for TRACE_ENABLE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRACE_ENABLE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_ENABLE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_ENABLE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRACE_ENABLE_INFO {}
@@ -5433,8 +5433,8 @@ impl ::core::default::Default for TRACE_ENABLE_INFO {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub struct TRACE_EVENT_INFO {
-    pub ProviderGuid: ::windows::core::GUID,
-    pub EventGuid: ::windows::core::GUID,
+    pub ProviderGuid: ::windows_core::GUID,
+    pub EventGuid: ::windows_core::GUID,
     pub EventDescriptor: EVENT_DESCRIPTOR,
     pub DecodingSource: DECODING_SOURCE,
     pub ProviderNameOffset: u32,
@@ -5460,12 +5460,12 @@ impl ::core::clone::Clone for TRACE_EVENT_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_EVENT_INFO {
+unsafe impl ::windows_core::Abi for TRACE_EVENT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRACE_EVENT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_EVENT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_EVENT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRACE_EVENT_INFO {}
@@ -5486,12 +5486,12 @@ impl ::core::clone::Clone for TRACE_EVENT_INFO_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_EVENT_INFO_0 {
+unsafe impl ::windows_core::Abi for TRACE_EVENT_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRACE_EVENT_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_EVENT_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_EVENT_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRACE_EVENT_INFO_0 {}
@@ -5512,12 +5512,12 @@ impl ::core::clone::Clone for TRACE_EVENT_INFO_1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_EVENT_INFO_1 {
+unsafe impl ::windows_core::Abi for TRACE_EVENT_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRACE_EVENT_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_EVENT_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_EVENT_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRACE_EVENT_INFO_1 {}
@@ -5538,12 +5538,12 @@ impl ::core::clone::Clone for TRACE_EVENT_INFO_2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_EVENT_INFO_2 {
+unsafe impl ::windows_core::Abi for TRACE_EVENT_INFO_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRACE_EVENT_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_EVENT_INFO_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_EVENT_INFO_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRACE_EVENT_INFO_2 {}
@@ -5568,12 +5568,12 @@ impl ::core::fmt::Debug for TRACE_EVENT_INFO_2_0 {
         f.debug_struct("TRACE_EVENT_INFO_2_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_EVENT_INFO_2_0 {
+unsafe impl ::windows_core::Abi for TRACE_EVENT_INFO_2_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRACE_EVENT_INFO_2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_EVENT_INFO_2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_EVENT_INFO_2_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRACE_EVENT_INFO_2_0 {}
@@ -5599,12 +5599,12 @@ impl ::core::fmt::Debug for TRACE_GUID_INFO {
         f.debug_struct("TRACE_GUID_INFO").field("InstanceCount", &self.InstanceCount).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_GUID_INFO {
+unsafe impl ::windows_core::Abi for TRACE_GUID_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRACE_GUID_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_GUID_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_GUID_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRACE_GUID_INFO {}
@@ -5617,7 +5617,7 @@ impl ::core::default::Default for TRACE_GUID_INFO {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct TRACE_GUID_PROPERTIES {
-    pub Guid: ::windows::core::GUID,
+    pub Guid: ::windows_core::GUID,
     pub GuidType: u32,
     pub LoggerId: u32,
     pub EnableLevel: u32,
@@ -5639,13 +5639,13 @@ impl ::core::fmt::Debug for TRACE_GUID_PROPERTIES {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TRACE_GUID_PROPERTIES {
+unsafe impl ::windows_core::Abi for TRACE_GUID_PROPERTIES {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TRACE_GUID_PROPERTIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_GUID_PROPERTIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_GUID_PROPERTIES>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5660,7 +5660,7 @@ impl ::core::default::Default for TRACE_GUID_PROPERTIES {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct TRACE_GUID_REGISTRATION {
-    pub Guid: *const ::windows::core::GUID,
+    pub Guid: *const ::windows_core::GUID,
     pub RegHandle: super::super::super::Foundation::HANDLE,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5678,13 +5678,13 @@ impl ::core::fmt::Debug for TRACE_GUID_REGISTRATION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TRACE_GUID_REGISTRATION {
+unsafe impl ::windows_core::Abi for TRACE_GUID_REGISTRATION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TRACE_GUID_REGISTRATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_GUID_REGISTRATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_GUID_REGISTRATION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5741,8 +5741,8 @@ pub struct TRACE_LOGFILE_HEADER {
     pub LogFileMode: u32,
     pub BuffersWritten: u32,
     pub Anonymous2: TRACE_LOGFILE_HEADER_1,
-    pub LoggerName: ::windows::core::PWSTR,
-    pub LogFileName: ::windows::core::PWSTR,
+    pub LoggerName: ::windows_core::PWSTR,
+    pub LogFileName: ::windows_core::PWSTR,
     pub TimeZone: super::super::Time::TIME_ZONE_INFORMATION,
     pub BootTime: i64,
     pub PerfFreq: i64,
@@ -5759,13 +5759,13 @@ impl ::core::clone::Clone for TRACE_LOGFILE_HEADER {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -5792,13 +5792,13 @@ impl ::core::clone::Clone for TRACE_LOGFILE_HEADER_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER_0 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -5833,13 +5833,13 @@ impl ::core::fmt::Debug for TRACE_LOGFILE_HEADER_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER_0_0 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -5854,7 +5854,7 @@ impl ::core::default::Default for TRACE_LOGFILE_HEADER_0_0 {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`, `\"Win32_System_Time\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 pub union TRACE_LOGFILE_HEADER_1 {
-    pub LogInstanceGuid: ::windows::core::GUID,
+    pub LogInstanceGuid: ::windows_core::GUID,
     pub Anonymous: TRACE_LOGFILE_HEADER_1_0,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -5866,13 +5866,13 @@ impl ::core::clone::Clone for TRACE_LOGFILE_HEADER_1 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER_1 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER_1 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER_1>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -5907,13 +5907,13 @@ impl ::core::fmt::Debug for TRACE_LOGFILE_HEADER_1_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER_1_0 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER_1_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER_1_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER_1_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER_1_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -5956,13 +5956,13 @@ impl ::core::clone::Clone for TRACE_LOGFILE_HEADER32 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER32 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER32 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER32>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -5989,13 +5989,13 @@ impl ::core::clone::Clone for TRACE_LOGFILE_HEADER32_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER32_0 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER32_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER32_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER32_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER32_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -6030,13 +6030,13 @@ impl ::core::fmt::Debug for TRACE_LOGFILE_HEADER32_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER32_0_0 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER32_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER32_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER32_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER32_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -6051,7 +6051,7 @@ impl ::core::default::Default for TRACE_LOGFILE_HEADER32_0_0 {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`, `\"Win32_System_Time\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 pub union TRACE_LOGFILE_HEADER32_1 {
-    pub LogInstanceGuid: ::windows::core::GUID,
+    pub LogInstanceGuid: ::windows_core::GUID,
     pub Anonymous: TRACE_LOGFILE_HEADER32_1_0,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -6063,13 +6063,13 @@ impl ::core::clone::Clone for TRACE_LOGFILE_HEADER32_1 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER32_1 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER32_1 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER32_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER32_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER32_1>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -6104,13 +6104,13 @@ impl ::core::fmt::Debug for TRACE_LOGFILE_HEADER32_1_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER32_1_0 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER32_1_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER32_1_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER32_1_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER32_1_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -6153,13 +6153,13 @@ impl ::core::clone::Clone for TRACE_LOGFILE_HEADER64 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER64 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER64 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER64 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER64>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER64>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -6186,13 +6186,13 @@ impl ::core::clone::Clone for TRACE_LOGFILE_HEADER64_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER64_0 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER64_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER64_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER64_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER64_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -6227,13 +6227,13 @@ impl ::core::fmt::Debug for TRACE_LOGFILE_HEADER64_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER64_0_0 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER64_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER64_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER64_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER64_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -6248,7 +6248,7 @@ impl ::core::default::Default for TRACE_LOGFILE_HEADER64_0_0 {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`, `\"Win32_System_Time\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 pub union TRACE_LOGFILE_HEADER64_1 {
-    pub LogInstanceGuid: ::windows::core::GUID,
+    pub LogInstanceGuid: ::windows_core::GUID,
     pub Anonymous: TRACE_LOGFILE_HEADER64_1_0,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -6260,13 +6260,13 @@ impl ::core::clone::Clone for TRACE_LOGFILE_HEADER64_1 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER64_1 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER64_1 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER64_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER64_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER64_1>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -6301,13 +6301,13 @@ impl ::core::fmt::Debug for TRACE_LOGFILE_HEADER64_1_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
-unsafe impl ::windows::core::Abi for TRACE_LOGFILE_HEADER64_1_0 {
+unsafe impl ::windows_core::Abi for TRACE_LOGFILE_HEADER64_1_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 impl ::core::cmp::PartialEq for TRACE_LOGFILE_HEADER64_1_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER64_1_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_LOGFILE_HEADER64_1_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -6343,7 +6343,7 @@ impl ::core::default::Default for TRACE_MESSAGE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_MESSAGE_FLAGS {
+unsafe impl ::windows_core::Abi for TRACE_MESSAGE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TRACE_MESSAGE_FLAGS {
@@ -6405,12 +6405,12 @@ impl ::core::fmt::Debug for TRACE_PERIODIC_CAPTURE_STATE_INFO {
         f.debug_struct("TRACE_PERIODIC_CAPTURE_STATE_INFO").field("CaptureStateFrequencyInSeconds", &self.CaptureStateFrequencyInSeconds).field("ProviderCount", &self.ProviderCount).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_PERIODIC_CAPTURE_STATE_INFO {
+unsafe impl ::windows_core::Abi for TRACE_PERIODIC_CAPTURE_STATE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRACE_PERIODIC_CAPTURE_STATE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_PERIODIC_CAPTURE_STATE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_PERIODIC_CAPTURE_STATE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRACE_PERIODIC_CAPTURE_STATE_INFO {}
@@ -6436,12 +6436,12 @@ impl ::core::fmt::Debug for TRACE_PROFILE_INTERVAL {
         f.debug_struct("TRACE_PROFILE_INTERVAL").field("Source", &self.Source).field("Interval", &self.Interval).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_PROFILE_INTERVAL {
+unsafe impl ::windows_core::Abi for TRACE_PROFILE_INTERVAL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRACE_PROFILE_INTERVAL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_PROFILE_INTERVAL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_PROFILE_INTERVAL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRACE_PROFILE_INTERVAL {}
@@ -6457,7 +6457,7 @@ pub const TRACE_PROVIDER_FLAG_PRE_ENABLE: u32 = 2u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub struct TRACE_PROVIDER_INFO {
-    pub ProviderGuid: ::windows::core::GUID,
+    pub ProviderGuid: ::windows_core::GUID,
     pub SchemaSource: u32,
     pub ProviderNameOffset: u32,
 }
@@ -6472,12 +6472,12 @@ impl ::core::fmt::Debug for TRACE_PROVIDER_INFO {
         f.debug_struct("TRACE_PROVIDER_INFO").field("ProviderGuid", &self.ProviderGuid).field("SchemaSource", &self.SchemaSource).field("ProviderNameOffset", &self.ProviderNameOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_PROVIDER_INFO {
+unsafe impl ::windows_core::Abi for TRACE_PROVIDER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRACE_PROVIDER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_PROVIDER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_PROVIDER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRACE_PROVIDER_INFO {}
@@ -6505,12 +6505,12 @@ impl ::core::fmt::Debug for TRACE_PROVIDER_INSTANCE_INFO {
         f.debug_struct("TRACE_PROVIDER_INSTANCE_INFO").field("NextOffset", &self.NextOffset).field("EnableCount", &self.EnableCount).field("Pid", &self.Pid).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_PROVIDER_INSTANCE_INFO {
+unsafe impl ::windows_core::Abi for TRACE_PROVIDER_INSTANCE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRACE_PROVIDER_INSTANCE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_PROVIDER_INSTANCE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_PROVIDER_INSTANCE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRACE_PROVIDER_INSTANCE_INFO {}
@@ -6590,7 +6590,7 @@ impl ::core::default::Default for TRACE_QUERY_INFO_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_QUERY_INFO_CLASS {
+unsafe impl ::windows_core::Abi for TRACE_QUERY_INFO_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TRACE_QUERY_INFO_CLASS {
@@ -6621,13 +6621,13 @@ impl ::core::fmt::Debug for TRACE_STACK_CACHING_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TRACE_STACK_CACHING_INFO {
+unsafe impl ::windows_core::Abi for TRACE_STACK_CACHING_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TRACE_STACK_CACHING_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_STACK_CACHING_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_STACK_CACHING_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6655,12 +6655,12 @@ impl ::core::fmt::Debug for TRACE_VERSION_INFO {
         f.debug_struct("TRACE_VERSION_INFO").field("EtwTraceProcessingVersion", &self.EtwTraceProcessingVersion).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRACE_VERSION_INFO {
+unsafe impl ::windows_core::Abi for TRACE_VERSION_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRACE_VERSION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_VERSION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACE_VERSION_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRACE_VERSION_INFO {}
@@ -6700,7 +6700,7 @@ pub unsafe fn TdhCleanupPayloadEventFilterDescriptor(eventfilterdescriptor: *mut
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhCloseDecodingHandle<'a, Param0: ::windows::core::IntoParam<'a, TDH_HANDLE>>(handle: Param0) -> u32 {
+pub unsafe fn TdhCloseDecodingHandle<'a, Param0: ::windows_core::IntoParam<'a, TDH_HANDLE>>(handle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6715,14 +6715,14 @@ pub unsafe fn TdhCloseDecodingHandle<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TdhCreatePayloadFilter<'a, Param2: ::windows::core::IntoParam<'a, super::super::super::Foundation::BOOLEAN>>(providerguid: *const ::windows::core::GUID, eventdescriptor: *const EVENT_DESCRIPTOR, eventmatchany: Param2, payloadpredicates: &[PAYLOAD_FILTER_PREDICATE], payloadfilter: *mut *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn TdhCreatePayloadFilter<'a, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOLEAN>>(providerguid: *const ::windows_core::GUID, eventdescriptor: *const EVENT_DESCRIPTOR, eventmatchany: Param2, payloadpredicates: &[PAYLOAD_FILTER_PREDICATE], payloadfilter: *mut *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TdhCreatePayloadFilter(providerguid: *const ::windows::core::GUID, eventdescriptor: *const EVENT_DESCRIPTOR, eventmatchany: super::super::super::Foundation::BOOLEAN, payloadpredicatecount: u32, payloadpredicates: *const PAYLOAD_FILTER_PREDICATE, payloadfilter: *mut *mut ::core::ffi::c_void) -> u32;
+            fn TdhCreatePayloadFilter(providerguid: *const ::windows_core::GUID, eventdescriptor: *const EVENT_DESCRIPTOR, eventmatchany: super::super::super::Foundation::BOOLEAN, payloadpredicatecount: u32, payloadpredicates: *const PAYLOAD_FILTER_PREDICATE, payloadfilter: *mut *mut ::core::ffi::c_void) -> u32;
         }
-        ::core::mem::transmute(TdhCreatePayloadFilter(::core::mem::transmute(providerguid), ::core::mem::transmute(eventdescriptor), eventmatchany.into_param().abi(), payloadpredicates.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(payloadpredicates)), ::core::mem::transmute(payloadfilter)))
+        ::core::mem::transmute(TdhCreatePayloadFilter(::core::mem::transmute(providerguid), ::core::mem::transmute(eventdescriptor), eventmatchany.into_param().abi(), payloadpredicates.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(payloadpredicates)), ::core::mem::transmute(payloadfilter)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -6743,12 +6743,12 @@ pub unsafe fn TdhDeletePayloadFilter(payloadfilter: *mut *mut ::core::ffi::c_voi
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhEnumerateManifestProviderEvents(providerguid: *const ::windows::core::GUID, buffer: *mut PROVIDER_EVENT_INFO, buffersize: *mut u32) -> u32 {
+pub unsafe fn TdhEnumerateManifestProviderEvents(providerguid: *const ::windows_core::GUID, buffer: *mut PROVIDER_EVENT_INFO, buffersize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TdhEnumerateManifestProviderEvents(providerguid: *const ::windows::core::GUID, buffer: *mut PROVIDER_EVENT_INFO, buffersize: *mut u32) -> u32;
+            fn TdhEnumerateManifestProviderEvents(providerguid: *const ::windows_core::GUID, buffer: *mut PROVIDER_EVENT_INFO, buffersize: *mut u32) -> u32;
         }
         ::core::mem::transmute(TdhEnumerateManifestProviderEvents(::core::mem::transmute(providerguid), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize)))
     }
@@ -6757,12 +6757,12 @@ pub unsafe fn TdhEnumerateManifestProviderEvents(providerguid: *const ::windows:
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhEnumerateProviderFieldInformation(pguid: *const ::windows::core::GUID, eventfieldtype: EVENT_FIELD_TYPE, pbuffer: *mut PROVIDER_FIELD_INFOARRAY, pbuffersize: *mut u32) -> u32 {
+pub unsafe fn TdhEnumerateProviderFieldInformation(pguid: *const ::windows_core::GUID, eventfieldtype: EVENT_FIELD_TYPE, pbuffer: *mut PROVIDER_FIELD_INFOARRAY, pbuffersize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TdhEnumerateProviderFieldInformation(pguid: *const ::windows::core::GUID, eventfieldtype: EVENT_FIELD_TYPE, pbuffer: *mut PROVIDER_FIELD_INFOARRAY, pbuffersize: *mut u32) -> u32;
+            fn TdhEnumerateProviderFieldInformation(pguid: *const ::windows_core::GUID, eventfieldtype: EVENT_FIELD_TYPE, pbuffer: *mut PROVIDER_FIELD_INFOARRAY, pbuffersize: *mut u32) -> u32;
         }
         ::core::mem::transmute(TdhEnumerateProviderFieldInformation(::core::mem::transmute(pguid), ::core::mem::transmute(eventfieldtype), ::core::mem::transmute(pbuffer), ::core::mem::transmute(pbuffersize)))
     }
@@ -6771,14 +6771,14 @@ pub unsafe fn TdhEnumerateProviderFieldInformation(pguid: *const ::windows::core
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhEnumerateProviderFilters(guid: *const ::windows::core::GUID, tdhcontext: &[TDH_CONTEXT], filtercount: *mut u32, buffer: *mut *mut PROVIDER_FILTER_INFO, buffersize: *mut u32) -> u32 {
+pub unsafe fn TdhEnumerateProviderFilters(guid: *const ::windows_core::GUID, tdhcontext: &[TDH_CONTEXT], filtercount: *mut u32, buffer: *mut *mut PROVIDER_FILTER_INFO, buffersize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TdhEnumerateProviderFilters(guid: *const ::windows::core::GUID, tdhcontextcount: u32, tdhcontext: *const TDH_CONTEXT, filtercount: *mut u32, buffer: *mut *mut PROVIDER_FILTER_INFO, buffersize: *mut u32) -> u32;
+            fn TdhEnumerateProviderFilters(guid: *const ::windows_core::GUID, tdhcontextcount: u32, tdhcontext: *const TDH_CONTEXT, filtercount: *mut u32, buffer: *mut *mut PROVIDER_FILTER_INFO, buffersize: *mut u32) -> u32;
         }
-        ::core::mem::transmute(TdhEnumerateProviderFilters(::core::mem::transmute(guid), tdhcontext.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(tdhcontext)), ::core::mem::transmute(filtercount), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize)))
+        ::core::mem::transmute(TdhEnumerateProviderFilters(::core::mem::transmute(guid), tdhcontext.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(tdhcontext)), ::core::mem::transmute(filtercount), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -6813,12 +6813,12 @@ pub unsafe fn TdhEnumerateProvidersForDecodingSource(filter: DECODING_SOURCE, bu
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhFormatProperty(eventinfo: *const TRACE_EVENT_INFO, mapinfo: *const EVENT_MAP_INFO, pointersize: u32, propertyintype: u16, propertyouttype: u16, propertylength: u16, userdatalength: u16, userdata: *const u8, buffersize: *mut u32, buffer: ::windows::core::PWSTR, userdataconsumed: *mut u16) -> u32 {
+pub unsafe fn TdhFormatProperty(eventinfo: *const TRACE_EVENT_INFO, mapinfo: *const EVENT_MAP_INFO, pointersize: u32, propertyintype: u16, propertyouttype: u16, propertylength: u16, userdatalength: u16, userdata: *const u8, buffersize: *mut u32, buffer: ::windows_core::PWSTR, userdataconsumed: *mut u16) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TdhFormatProperty(eventinfo: *const TRACE_EVENT_INFO, mapinfo: *const EVENT_MAP_INFO, pointersize: u32, propertyintype: u16, propertyouttype: u16, propertylength: u16, userdatalength: u16, userdata: *const u8, buffersize: *mut u32, buffer: ::windows::core::PWSTR, userdataconsumed: *mut u16) -> u32;
+            fn TdhFormatProperty(eventinfo: *const TRACE_EVENT_INFO, mapinfo: *const EVENT_MAP_INFO, pointersize: u32, propertyintype: u16, propertyouttype: u16, propertylength: u16, userdatalength: u16, userdata: *const u8, buffersize: *mut u32, buffer: ::windows_core::PWSTR, userdataconsumed: *mut u16) -> u32;
         }
         ::core::mem::transmute(TdhFormatProperty(::core::mem::transmute(eventinfo), ::core::mem::transmute(mapinfo), ::core::mem::transmute(pointersize), ::core::mem::transmute(propertyintype), ::core::mem::transmute(propertyouttype), ::core::mem::transmute(propertylength), ::core::mem::transmute(userdatalength), ::core::mem::transmute(userdata), ::core::mem::transmute(buffersize), ::core::mem::transmute(buffer), ::core::mem::transmute(userdataconsumed)))
     }
@@ -6827,7 +6827,7 @@ pub unsafe fn TdhFormatProperty(eventinfo: *const TRACE_EVENT_INFO, mapinfo: *co
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhGetDecodingParameter<'a, Param0: ::windows::core::IntoParam<'a, TDH_HANDLE>>(handle: Param0, tdhcontext: *mut TDH_CONTEXT) -> u32 {
+pub unsafe fn TdhGetDecodingParameter<'a, Param0: ::windows_core::IntoParam<'a, TDH_HANDLE>>(handle: Param0, tdhcontext: *mut TDH_CONTEXT) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6848,19 +6848,19 @@ pub unsafe fn TdhGetEventInformation(event: *const EVENT_RECORD, tdhcontext: &[T
         extern "system" {
             fn TdhGetEventInformation(event: *const EVENT_RECORD, tdhcontextcount: u32, tdhcontext: *const TDH_CONTEXT, buffer: *mut TRACE_EVENT_INFO, buffersize: *mut u32) -> u32;
         }
-        ::core::mem::transmute(TdhGetEventInformation(::core::mem::transmute(event), tdhcontext.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(tdhcontext)), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize)))
+        ::core::mem::transmute(TdhGetEventInformation(::core::mem::transmute(event), tdhcontext.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(tdhcontext)), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhGetEventMapInformation<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pevent: *const EVENT_RECORD, pmapname: Param1, pbuffer: *mut EVENT_MAP_INFO, pbuffersize: *mut u32) -> u32 {
+pub unsafe fn TdhGetEventMapInformation<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pevent: *const EVENT_RECORD, pmapname: Param1, pbuffer: *mut EVENT_MAP_INFO, pbuffersize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TdhGetEventMapInformation(pevent: *const EVENT_RECORD, pmapname: ::windows::core::PCWSTR, pbuffer: *mut EVENT_MAP_INFO, pbuffersize: *mut u32) -> u32;
+            fn TdhGetEventMapInformation(pevent: *const EVENT_RECORD, pmapname: ::windows_core::PCWSTR, pbuffer: *mut EVENT_MAP_INFO, pbuffersize: *mut u32) -> u32;
         }
         ::core::mem::transmute(TdhGetEventMapInformation(::core::mem::transmute(pevent), pmapname.into_param().abi(), ::core::mem::transmute(pbuffer), ::core::mem::transmute(pbuffersize)))
     }
@@ -6869,12 +6869,12 @@ pub unsafe fn TdhGetEventMapInformation<'a, Param1: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhGetManifestEventInformation(providerguid: *const ::windows::core::GUID, eventdescriptor: *const EVENT_DESCRIPTOR, buffer: *mut TRACE_EVENT_INFO, buffersize: *mut u32) -> u32 {
+pub unsafe fn TdhGetManifestEventInformation(providerguid: *const ::windows_core::GUID, eventdescriptor: *const EVENT_DESCRIPTOR, buffer: *mut TRACE_EVENT_INFO, buffersize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TdhGetManifestEventInformation(providerguid: *const ::windows::core::GUID, eventdescriptor: *const EVENT_DESCRIPTOR, buffer: *mut TRACE_EVENT_INFO, buffersize: *mut u32) -> u32;
+            fn TdhGetManifestEventInformation(providerguid: *const ::windows_core::GUID, eventdescriptor: *const EVENT_DESCRIPTOR, buffer: *mut TRACE_EVENT_INFO, buffersize: *mut u32) -> u32;
         }
         ::core::mem::transmute(TdhGetManifestEventInformation(::core::mem::transmute(providerguid), ::core::mem::transmute(eventdescriptor), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize)))
     }
@@ -6890,7 +6890,7 @@ pub unsafe fn TdhGetProperty(pevent: *const EVENT_RECORD, ptdhcontext: &[TDH_CON
         extern "system" {
             fn TdhGetProperty(pevent: *const EVENT_RECORD, tdhcontextcount: u32, ptdhcontext: *const TDH_CONTEXT, propertydatacount: u32, ppropertydata: *const PROPERTY_DATA_DESCRIPTOR, buffersize: u32, pbuffer: *mut u8) -> u32;
         }
-        ::core::mem::transmute(TdhGetProperty(::core::mem::transmute(pevent), ptdhcontext.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(ptdhcontext)), ppropertydata.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(ppropertydata)), ::core::mem::transmute(buffersize), ::core::mem::transmute(pbuffer)))
+        ::core::mem::transmute(TdhGetProperty(::core::mem::transmute(pevent), ptdhcontext.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ptdhcontext)), ppropertydata.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppropertydata)), ::core::mem::transmute(buffersize), ::core::mem::transmute(pbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -6904,14 +6904,14 @@ pub unsafe fn TdhGetPropertySize(pevent: *const EVENT_RECORD, ptdhcontext: &[TDH
         extern "system" {
             fn TdhGetPropertySize(pevent: *const EVENT_RECORD, tdhcontextcount: u32, ptdhcontext: *const TDH_CONTEXT, propertydatacount: u32, ppropertydata: *const PROPERTY_DATA_DESCRIPTOR, ppropertysize: *mut u32) -> u32;
         }
-        ::core::mem::transmute(TdhGetPropertySize(::core::mem::transmute(pevent), ptdhcontext.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(ptdhcontext)), ppropertydata.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(ppropertydata)), ::core::mem::transmute(ppropertysize)))
+        ::core::mem::transmute(TdhGetPropertySize(::core::mem::transmute(pevent), ptdhcontext.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ptdhcontext)), ppropertydata.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppropertydata)), ::core::mem::transmute(ppropertysize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhGetWppMessage<'a, Param0: ::windows::core::IntoParam<'a, TDH_HANDLE>>(handle: Param0, eventrecord: *const EVENT_RECORD, buffersize: *mut u32, buffer: *mut u8) -> u32 {
+pub unsafe fn TdhGetWppMessage<'a, Param0: ::windows_core::IntoParam<'a, TDH_HANDLE>>(handle: Param0, eventrecord: *const EVENT_RECORD, buffersize: *mut u32, buffer: *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6925,12 +6925,12 @@ pub unsafe fn TdhGetWppMessage<'a, Param0: ::windows::core::IntoParam<'a, TDH_HA
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhGetWppProperty<'a, Param0: ::windows::core::IntoParam<'a, TDH_HANDLE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(handle: Param0, eventrecord: *const EVENT_RECORD, propertyname: Param2, buffersize: *mut u32, buffer: *mut u8) -> u32 {
+pub unsafe fn TdhGetWppProperty<'a, Param0: ::windows_core::IntoParam<'a, TDH_HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(handle: Param0, eventrecord: *const EVENT_RECORD, propertyname: Param2, buffersize: *mut u32, buffer: *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TdhGetWppProperty(handle: TDH_HANDLE, eventrecord: *const EVENT_RECORD, propertyname: ::windows::core::PCWSTR, buffersize: *mut u32, buffer: *mut u8) -> u32;
+            fn TdhGetWppProperty(handle: TDH_HANDLE, eventrecord: *const EVENT_RECORD, propertyname: ::windows_core::PCWSTR, buffersize: *mut u32, buffer: *mut u8) -> u32;
         }
         ::core::mem::transmute(TdhGetWppProperty(handle.into_param().abi(), ::core::mem::transmute(eventrecord), propertyname.into_param().abi(), ::core::mem::transmute(buffersize), ::core::mem::transmute(buffer)))
     }
@@ -6939,12 +6939,12 @@ pub unsafe fn TdhGetWppProperty<'a, Param0: ::windows::core::IntoParam<'a, TDH_H
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhLoadManifest<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(manifest: Param0) -> u32 {
+pub unsafe fn TdhLoadManifest<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(manifest: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TdhLoadManifest(manifest: ::windows::core::PCWSTR) -> u32;
+            fn TdhLoadManifest(manifest: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(TdhLoadManifest(manifest.into_param().abi()))
     }
@@ -6953,12 +6953,12 @@ pub unsafe fn TdhLoadManifest<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhLoadManifestFromBinary<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(binarypath: Param0) -> u32 {
+pub unsafe fn TdhLoadManifestFromBinary<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(binarypath: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TdhLoadManifestFromBinary(binarypath: ::windows::core::PCWSTR) -> u32;
+            fn TdhLoadManifestFromBinary(binarypath: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(TdhLoadManifestFromBinary(binarypath.into_param().abi()))
     }
@@ -6995,12 +6995,12 @@ pub unsafe fn TdhOpenDecodingHandle(handle: *mut TDH_HANDLE) -> u32 {
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhQueryProviderFieldInformation(pguid: *const ::windows::core::GUID, eventfieldvalue: u64, eventfieldtype: EVENT_FIELD_TYPE, pbuffer: *mut PROVIDER_FIELD_INFOARRAY, pbuffersize: *mut u32) -> u32 {
+pub unsafe fn TdhQueryProviderFieldInformation(pguid: *const ::windows_core::GUID, eventfieldvalue: u64, eventfieldtype: EVENT_FIELD_TYPE, pbuffer: *mut PROVIDER_FIELD_INFOARRAY, pbuffersize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TdhQueryProviderFieldInformation(pguid: *const ::windows::core::GUID, eventfieldvalue: u64, eventfieldtype: EVENT_FIELD_TYPE, pbuffer: *mut PROVIDER_FIELD_INFOARRAY, pbuffersize: *mut u32) -> u32;
+            fn TdhQueryProviderFieldInformation(pguid: *const ::windows_core::GUID, eventfieldvalue: u64, eventfieldtype: EVENT_FIELD_TYPE, pbuffer: *mut PROVIDER_FIELD_INFOARRAY, pbuffersize: *mut u32) -> u32;
         }
         ::core::mem::transmute(TdhQueryProviderFieldInformation(::core::mem::transmute(pguid), ::core::mem::transmute(eventfieldvalue), ::core::mem::transmute(eventfieldtype), ::core::mem::transmute(pbuffer), ::core::mem::transmute(pbuffersize)))
     }
@@ -7009,7 +7009,7 @@ pub unsafe fn TdhQueryProviderFieldInformation(pguid: *const ::windows::core::GU
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhSetDecodingParameter<'a, Param0: ::windows::core::IntoParam<'a, TDH_HANDLE>>(handle: Param0, tdhcontext: *const TDH_CONTEXT) -> u32 {
+pub unsafe fn TdhSetDecodingParameter<'a, Param0: ::windows_core::IntoParam<'a, TDH_HANDLE>>(handle: Param0, tdhcontext: *const TDH_CONTEXT) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -7023,12 +7023,12 @@ pub unsafe fn TdhSetDecodingParameter<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TdhUnloadManifest<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(manifest: Param0) -> u32 {
+pub unsafe fn TdhUnloadManifest<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(manifest: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TdhUnloadManifest(manifest: ::windows::core::PCWSTR) -> u32;
+            fn TdhUnloadManifest(manifest: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(TdhUnloadManifest(manifest.into_param().abi()))
     }
@@ -7080,12 +7080,12 @@ pub unsafe fn TraceEventInstance(tracehandle: u64, eventtrace: *const EVENT_INST
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TraceMessage(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS, messageguid: *const ::windows::core::GUID, messagenumber: u16) -> u32 {
+pub unsafe fn TraceMessage(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS, messageguid: *const ::windows_core::GUID, messagenumber: u16) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TraceMessage(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS, messageguid: *const ::windows::core::GUID, messagenumber: u16) -> u32;
+            fn TraceMessage(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS, messageguid: *const ::windows_core::GUID, messagenumber: u16) -> u32;
         }
         ::core::mem::transmute(TraceMessage(::core::mem::transmute(loggerhandle), ::core::mem::transmute(messageflags), ::core::mem::transmute(messageguid), ::core::mem::transmute(messagenumber)))
     }
@@ -7094,12 +7094,12 @@ pub unsafe fn TraceMessage(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS,
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 #[inline]
-pub unsafe fn TraceMessageVa(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS, messageguid: *const ::windows::core::GUID, messagenumber: u16, messagearglist: *const i8) -> u32 {
+pub unsafe fn TraceMessageVa(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS, messageguid: *const ::windows_core::GUID, messagenumber: u16, messagearglist: *const i8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TraceMessageVa(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS, messageguid: *const ::windows::core::GUID, messagenumber: u16, messagearglist: *const i8) -> u32;
+            fn TraceMessageVa(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS, messageguid: *const ::windows_core::GUID, messagenumber: u16, messagearglist: *const i8) -> u32;
         }
         ::core::mem::transmute(TraceMessageVa(::core::mem::transmute(loggerhandle), ::core::mem::transmute(messageflags), ::core::mem::transmute(messageguid), ::core::mem::transmute(messagenumber), ::core::mem::transmute(messagearglist)))
     }
@@ -7151,12 +7151,12 @@ pub unsafe fn UnregisterTraceGuids(registrationhandle: u64) -> u32 {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UpdateTraceA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
+pub unsafe fn UpdateTraceA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UpdateTraceA(tracehandle: u64, instancename: ::windows::core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+            fn UpdateTraceA(tracehandle: u64, instancename: ::windows_core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
         }
         ::core::mem::transmute(UpdateTraceA(::core::mem::transmute(tracehandle), instancename.into_param().abi(), ::core::mem::transmute(properties)))
     }
@@ -7166,12 +7166,12 @@ pub unsafe fn UpdateTraceA<'a, Param1: ::windows::core::IntoParam<'a, ::windows:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UpdateTraceW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
+pub unsafe fn UpdateTraceW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(tracehandle: u64, instancename: Param1, properties: *mut EVENT_TRACE_PROPERTIES) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UpdateTraceW(tracehandle: u64, instancename: ::windows::core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+            fn UpdateTraceW(tracehandle: u64, instancename: ::windows_core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
         }
         ::core::mem::transmute(UpdateTraceW(::core::mem::transmute(tracehandle), instancename.into_param().abi(), ::core::mem::transmute(properties)))
     }
@@ -7217,7 +7217,7 @@ impl ::core::default::Default for WMIDPREQUESTCODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WMIDPREQUESTCODE {
+unsafe impl ::windows_core::Abi for WMIDPREQUESTCODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WMIDPREQUESTCODE {
@@ -7238,7 +7238,7 @@ pub const WMIGUID_SET: u32 = 2u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub struct WMIREGGUIDW {
-    pub Guid: ::windows::core::GUID,
+    pub Guid: ::windows_core::GUID,
     pub Flags: u32,
     pub InstanceCount: u32,
     pub Anonymous: WMIREGGUIDW_0,
@@ -7249,12 +7249,12 @@ impl ::core::clone::Clone for WMIREGGUIDW {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WMIREGGUIDW {
+unsafe impl ::windows_core::Abi for WMIREGGUIDW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WMIREGGUIDW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WMIREGGUIDW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WMIREGGUIDW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WMIREGGUIDW {}
@@ -7277,12 +7277,12 @@ impl ::core::clone::Clone for WMIREGGUIDW_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WMIREGGUIDW_0 {
+unsafe impl ::windows_core::Abi for WMIREGGUIDW_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WMIREGGUIDW_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WMIREGGUIDW_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WMIREGGUIDW_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WMIREGGUIDW_0 {}
@@ -7307,12 +7307,12 @@ impl ::core::clone::Clone for WMIREGINFOW {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WMIREGINFOW {
+unsafe impl ::windows_core::Abi for WMIREGINFOW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WMIREGINFOW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WMIREGINFOW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WMIREGINFOW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WMIREGINFOW {}
@@ -7370,13 +7370,13 @@ impl ::core::clone::Clone for WNODE_ALL_DATA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WNODE_ALL_DATA {
+unsafe impl ::windows_core::Abi for WNODE_ALL_DATA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WNODE_ALL_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_ALL_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_ALL_DATA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7403,13 +7403,13 @@ impl ::core::clone::Clone for WNODE_ALL_DATA_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WNODE_ALL_DATA_0 {
+unsafe impl ::windows_core::Abi for WNODE_ALL_DATA_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WNODE_ALL_DATA_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_ALL_DATA_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_ALL_DATA_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7435,13 +7435,13 @@ impl ::core::clone::Clone for WNODE_EVENT_ITEM {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WNODE_EVENT_ITEM {
+unsafe impl ::windows_core::Abi for WNODE_EVENT_ITEM {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WNODE_EVENT_ITEM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_EVENT_ITEM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_EVENT_ITEM>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7457,7 +7457,7 @@ impl ::core::default::Default for WNODE_EVENT_ITEM {
 #[cfg(feature = "Win32_Foundation")]
 pub struct WNODE_EVENT_REFERENCE {
     pub WnodeHeader: WNODE_HEADER,
-    pub TargetGuid: ::windows::core::GUID,
+    pub TargetGuid: ::windows_core::GUID,
     pub TargetDataBlockSize: u32,
     pub Anonymous: WNODE_EVENT_REFERENCE_0,
 }
@@ -7470,13 +7470,13 @@ impl ::core::clone::Clone for WNODE_EVENT_REFERENCE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WNODE_EVENT_REFERENCE {
+unsafe impl ::windows_core::Abi for WNODE_EVENT_REFERENCE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WNODE_EVENT_REFERENCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_EVENT_REFERENCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_EVENT_REFERENCE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7503,13 +7503,13 @@ impl ::core::clone::Clone for WNODE_EVENT_REFERENCE_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WNODE_EVENT_REFERENCE_0 {
+unsafe impl ::windows_core::Abi for WNODE_EVENT_REFERENCE_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WNODE_EVENT_REFERENCE_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_EVENT_REFERENCE_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_EVENT_REFERENCE_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7574,7 +7574,7 @@ pub struct WNODE_HEADER {
     pub ProviderId: u32,
     pub Anonymous1: WNODE_HEADER_0,
     pub Anonymous2: WNODE_HEADER_1,
-    pub Guid: ::windows::core::GUID,
+    pub Guid: ::windows_core::GUID,
     pub ClientContext: u32,
     pub Flags: u32,
 }
@@ -7587,13 +7587,13 @@ impl ::core::clone::Clone for WNODE_HEADER {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WNODE_HEADER {
+unsafe impl ::windows_core::Abi for WNODE_HEADER {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WNODE_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_HEADER>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7620,13 +7620,13 @@ impl ::core::clone::Clone for WNODE_HEADER_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WNODE_HEADER_0 {
+unsafe impl ::windows_core::Abi for WNODE_HEADER_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WNODE_HEADER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_HEADER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_HEADER_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7659,13 +7659,13 @@ impl ::core::fmt::Debug for WNODE_HEADER_0_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WNODE_HEADER_0_0 {
+unsafe impl ::windows_core::Abi for WNODE_HEADER_0_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WNODE_HEADER_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_HEADER_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_HEADER_0_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7693,13 +7693,13 @@ impl ::core::clone::Clone for WNODE_HEADER_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WNODE_HEADER_1 {
+unsafe impl ::windows_core::Abi for WNODE_HEADER_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WNODE_HEADER_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_HEADER_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_HEADER_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7731,13 +7731,13 @@ impl ::core::clone::Clone for WNODE_METHOD_ITEM {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WNODE_METHOD_ITEM {
+unsafe impl ::windows_core::Abi for WNODE_METHOD_ITEM {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WNODE_METHOD_ITEM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_METHOD_ITEM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_METHOD_ITEM>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7768,13 +7768,13 @@ impl ::core::clone::Clone for WNODE_SINGLE_INSTANCE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WNODE_SINGLE_INSTANCE {
+unsafe impl ::windows_core::Abi for WNODE_SINGLE_INSTANCE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WNODE_SINGLE_INSTANCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_SINGLE_INSTANCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_SINGLE_INSTANCE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7806,13 +7806,13 @@ impl ::core::clone::Clone for WNODE_SINGLE_ITEM {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WNODE_SINGLE_ITEM {
+unsafe impl ::windows_core::Abi for WNODE_SINGLE_ITEM {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WNODE_SINGLE_ITEM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_SINGLE_ITEM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_SINGLE_ITEM>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7839,13 +7839,13 @@ impl ::core::clone::Clone for WNODE_TOO_SMALL {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WNODE_TOO_SMALL {
+unsafe impl ::windows_core::Abi for WNODE_TOO_SMALL {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WNODE_TOO_SMALL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_TOO_SMALL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNODE_TOO_SMALL>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7945,7 +7945,7 @@ impl ::core::default::Default for _TDH_IN_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for _TDH_IN_TYPE {
+unsafe impl ::windows_core::Abi for _TDH_IN_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for _TDH_IN_TYPE {
@@ -8050,7 +8050,7 @@ impl ::core::default::Default for _TDH_OUT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for _TDH_OUT_TYPE {
+unsafe impl ::windows_core::Abi for _TDH_OUT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for _TDH_OUT_TYPE {

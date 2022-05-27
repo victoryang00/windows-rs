@@ -27,7 +27,7 @@ impl ::core::default::Default for HingeState {
     }
 }
 #[cfg(feature = "deprecated")]
-unsafe impl ::windows::core::Abi for HingeState {
+unsafe impl ::windows_core::Abi for HingeState {
     type Abi = Self;
 }
 #[cfg(feature = "deprecated")]
@@ -37,159 +37,159 @@ impl ::core::fmt::Debug for HingeState {
     }
 }
 #[cfg(feature = "deprecated")]
-unsafe impl ::windows::core::RuntimeType for HingeState {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.System.Preview.HingeState;i4)");
+unsafe impl ::windows_core::RuntimeType for HingeState {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.System.Preview.HingeState;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc(hidden)]
 #[cfg(feature = "deprecated")]
 #[repr(transparent)]
-pub struct ITwoPanelHingedDevicePosturePreview(::windows::core::IUnknown);
+pub struct ITwoPanelHingedDevicePosturePreview(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
-unsafe impl ::windows::core::Interface for ITwoPanelHingedDevicePosturePreview {
+unsafe impl ::windows_core::Interface for ITwoPanelHingedDevicePosturePreview {
     type Vtable = ITwoPanelHingedDevicePosturePreview_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x72245c31_4b39_42a6_8e73_7235ade16853);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x72245c31_4b39_42a6_8e73_7235ade16853);
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITwoPanelHingedDevicePosturePreview_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub GetCurrentPostureAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetCurrentPostureAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     GetCurrentPostureAsync: usize,
     #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub PostureChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows::core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub PostureChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     PostureChanged: usize,
     #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemovePostureChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub RemovePostureChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     RemovePostureChanged: usize,
 }
 #[doc(hidden)]
 #[cfg(feature = "deprecated")]
 #[repr(transparent)]
-pub struct ITwoPanelHingedDevicePosturePreviewReading(::windows::core::IUnknown);
+pub struct ITwoPanelHingedDevicePosturePreviewReading(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
-unsafe impl ::windows::core::Interface for ITwoPanelHingedDevicePosturePreviewReading {
+unsafe impl ::windows_core::Interface for ITwoPanelHingedDevicePosturePreviewReading {
     type Vtable = ITwoPanelHingedDevicePosturePreviewReading_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa0251452_4ad6_4b38_8426_c59a15493a7d);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa0251452_4ad6_4b38_8426_c59a15493a7d);
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITwoPanelHingedDevicePosturePreviewReading_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows::core::HRESULT,
+    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     Timestamp: usize,
     #[cfg(feature = "deprecated")]
-    pub HingeState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut HingeState) -> ::windows::core::HRESULT,
+    pub HingeState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut HingeState) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     HingeState: usize,
     #[cfg(all(feature = "Devices_Sensors", feature = "deprecated"))]
-    pub Panel1Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Devices::Sensors::SimpleOrientation) -> ::windows::core::HRESULT,
+    pub Panel1Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Devices::Sensors::SimpleOrientation) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Devices_Sensors", feature = "deprecated")))]
     Panel1Orientation: usize,
     #[cfg(feature = "deprecated")]
-    pub Panel1Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub Panel1Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Panel1Id: usize,
     #[cfg(all(feature = "Devices_Sensors", feature = "deprecated"))]
-    pub Panel2Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Devices::Sensors::SimpleOrientation) -> ::windows::core::HRESULT,
+    pub Panel2Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Devices::Sensors::SimpleOrientation) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Devices_Sensors", feature = "deprecated")))]
     Panel2Orientation: usize,
     #[cfg(feature = "deprecated")]
-    pub Panel2Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub Panel2Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Panel2Id: usize,
 }
 #[doc(hidden)]
 #[cfg(feature = "deprecated")]
 #[repr(transparent)]
-pub struct ITwoPanelHingedDevicePosturePreviewReadingChangedEventArgs(::windows::core::IUnknown);
+pub struct ITwoPanelHingedDevicePosturePreviewReadingChangedEventArgs(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
-unsafe impl ::windows::core::Interface for ITwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
+unsafe impl ::windows_core::Interface for ITwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
     type Vtable = ITwoPanelHingedDevicePosturePreviewReadingChangedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2d2d1bc6_02ce_474a_a556_a75b1cf93a03);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2d2d1bc6_02ce_474a_a556_a75b1cf93a03);
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITwoPanelHingedDevicePosturePreviewReadingChangedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "deprecated")]
-    pub Reading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Reading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Reading: usize,
 }
 #[doc(hidden)]
 #[cfg(feature = "deprecated")]
 #[repr(transparent)]
-pub struct ITwoPanelHingedDevicePosturePreviewStatics(::windows::core::IUnknown);
+pub struct ITwoPanelHingedDevicePosturePreviewStatics(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
-unsafe impl ::windows::core::Interface for ITwoPanelHingedDevicePosturePreviewStatics {
+unsafe impl ::windows_core::Interface for ITwoPanelHingedDevicePosturePreviewStatics {
     type Vtable = ITwoPanelHingedDevicePosturePreviewStatics_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0c4733d2_57e0_4180_bd5e_f31a2138423e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0c4733d2_57e0_4180_bd5e_f31a2138423e);
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITwoPanelHingedDevicePosturePreviewStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub GetDefaultAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetDefaultAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     GetDefaultAsync: usize,
 }
 #[doc = "*Required features: `\"System_Preview\"`, `\"deprecated\"`*"]
 #[cfg(feature = "deprecated")]
 #[repr(transparent)]
-pub struct TwoPanelHingedDevicePosturePreview(::windows::core::IUnknown);
+pub struct TwoPanelHingedDevicePosturePreview(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl TwoPanelHingedDevicePosturePreview {
     #[doc = "*Required features: `\"System_Preview\"`, `\"Foundation\"`, `\"deprecated\"`*"]
     #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetCurrentPostureAsync(&self) -> ::windows::core::Result<super::super::Foundation::IAsyncOperation<TwoPanelHingedDevicePosturePreviewReading>> {
+    pub fn GetCurrentPostureAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<TwoPanelHingedDevicePosturePreviewReading>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetCurrentPostureAsync)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<TwoPanelHingedDevicePosturePreviewReading>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetCurrentPostureAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<TwoPanelHingedDevicePosturePreviewReading>>(result__)
         }
     }
     #[doc = "*Required features: `\"System_Preview\"`, `\"Foundation\"`, `\"deprecated\"`*"]
     #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn PostureChanged<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::TypedEventHandler<TwoPanelHingedDevicePosturePreview, TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs>>>(&self, handler: Param0) -> ::windows::core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn PostureChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<TwoPanelHingedDevicePosturePreview, TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows::core::Interface::vtable(this).PostureChanged)(::windows::core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            (::windows_core::Interface::vtable(this).PostureChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
         }
     }
     #[doc = "*Required features: `\"System_Preview\"`, `\"Foundation\"`, `\"deprecated\"`*"]
     #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemovePostureChanged<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows::core::Result<()> {
+    pub fn RemovePostureChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemovePostureChanged)(::windows::core::Interface::as_raw(this), token.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).RemovePostureChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"System_Preview\"`, `\"Foundation\"`, `\"deprecated\"`*"]
     #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetDefaultAsync() -> ::windows::core::Result<super::super::Foundation::IAsyncOperation<TwoPanelHingedDevicePosturePreview>> {
+    pub fn GetDefaultAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<TwoPanelHingedDevicePosturePreview>> {
         Self::ITwoPanelHingedDevicePosturePreviewStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetDefaultAsync)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<TwoPanelHingedDevicePosturePreview>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetDefaultAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<TwoPanelHingedDevicePosturePreview>>(result__)
         })
     }
     #[doc(hidden)]
     #[cfg(feature = "deprecated")]
-    pub fn ITwoPanelHingedDevicePosturePreviewStatics<R, F: FnOnce(&ITwoPanelHingedDevicePosturePreviewStatics) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<TwoPanelHingedDevicePosturePreview, ITwoPanelHingedDevicePosturePreviewStatics> = ::windows::core::FactoryCache::new();
+    pub fn ITwoPanelHingedDevicePosturePreviewStatics<R, F: FnOnce(&ITwoPanelHingedDevicePosturePreviewStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<TwoPanelHingedDevicePosturePreview, ITwoPanelHingedDevicePosturePreviewStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
@@ -214,68 +214,68 @@ impl ::core::fmt::Debug for TwoPanelHingedDevicePosturePreview {
     }
 }
 #[cfg(feature = "deprecated")]
-unsafe impl ::windows::core::RuntimeType for TwoPanelHingedDevicePosturePreview {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.System.Preview.TwoPanelHingedDevicePosturePreview;{72245c31-4b39-42a6-8e73-7235ade16853})");
+unsafe impl ::windows_core::RuntimeType for TwoPanelHingedDevicePosturePreview {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.System.Preview.TwoPanelHingedDevicePosturePreview;{72245c31-4b39-42a6-8e73-7235ade16853})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
 #[cfg(feature = "deprecated")]
-unsafe impl ::windows::core::Interface for TwoPanelHingedDevicePosturePreview {
+unsafe impl ::windows_core::Interface for TwoPanelHingedDevicePosturePreview {
     type Vtable = ITwoPanelHingedDevicePosturePreview_Vtbl;
-    const IID: ::windows::core::GUID = <ITwoPanelHingedDevicePosturePreview as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <ITwoPanelHingedDevicePosturePreview as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "deprecated")]
-impl ::windows::core::RuntimeName for TwoPanelHingedDevicePosturePreview {
+impl ::windows_core::RuntimeName for TwoPanelHingedDevicePosturePreview {
     const NAME: &'static str = "Windows.System.Preview.TwoPanelHingedDevicePosturePreview";
 }
 #[cfg(feature = "deprecated")]
-impl ::core::convert::From<TwoPanelHingedDevicePosturePreview> for ::windows::core::IUnknown {
+impl ::core::convert::From<TwoPanelHingedDevicePosturePreview> for ::windows_core::IUnknown {
     fn from(value: TwoPanelHingedDevicePosturePreview) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "deprecated")]
-impl ::core::convert::From<&TwoPanelHingedDevicePosturePreview> for ::windows::core::IUnknown {
+impl ::core::convert::From<&TwoPanelHingedDevicePosturePreview> for ::windows_core::IUnknown {
     fn from(value: &TwoPanelHingedDevicePosturePreview) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "deprecated")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for TwoPanelHingedDevicePosturePreview {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for TwoPanelHingedDevicePosturePreview {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "deprecated")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a TwoPanelHingedDevicePosturePreview {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a TwoPanelHingedDevicePosturePreview {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "deprecated")]
-impl ::core::convert::From<TwoPanelHingedDevicePosturePreview> for ::windows::core::IInspectable {
+impl ::core::convert::From<TwoPanelHingedDevicePosturePreview> for ::windows_core::IInspectable {
     fn from(value: TwoPanelHingedDevicePosturePreview) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "deprecated")]
-impl ::core::convert::From<&TwoPanelHingedDevicePosturePreview> for ::windows::core::IInspectable {
+impl ::core::convert::From<&TwoPanelHingedDevicePosturePreview> for ::windows_core::IInspectable {
     fn from(value: &TwoPanelHingedDevicePosturePreview) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "deprecated")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for TwoPanelHingedDevicePosturePreview {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for TwoPanelHingedDevicePosturePreview {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "deprecated")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a TwoPanelHingedDevicePosturePreview {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a TwoPanelHingedDevicePosturePreview {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "deprecated")]
@@ -285,61 +285,61 @@ unsafe impl ::core::marker::Sync for TwoPanelHingedDevicePosturePreview {}
 #[doc = "*Required features: `\"System_Preview\"`, `\"deprecated\"`*"]
 #[cfg(feature = "deprecated")]
 #[repr(transparent)]
-pub struct TwoPanelHingedDevicePosturePreviewReading(::windows::core::IUnknown);
+pub struct TwoPanelHingedDevicePosturePreviewReading(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl TwoPanelHingedDevicePosturePreviewReading {
     #[doc = "*Required features: `\"System_Preview\"`, `\"Foundation\"`, `\"deprecated\"`*"]
     #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn Timestamp(&self) -> ::windows::core::Result<super::super::Foundation::DateTime> {
+    pub fn Timestamp(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows::core::Interface::vtable(this).Timestamp)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
         }
     }
     #[doc = "*Required features: `\"System_Preview\"`, `\"deprecated\"`*"]
     #[cfg(feature = "deprecated")]
-    pub fn HingeState(&self) -> ::windows::core::Result<HingeState> {
+    pub fn HingeState(&self) -> ::windows_core::Result<HingeState> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<HingeState>::zeroed();
-            (::windows::core::Interface::vtable(this).HingeState)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<HingeState>(result__)
+            (::windows_core::Interface::vtable(this).HingeState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<HingeState>(result__)
         }
     }
     #[doc = "*Required features: `\"System_Preview\"`, `\"Devices_Sensors\"`, `\"deprecated\"`*"]
     #[cfg(all(feature = "Devices_Sensors", feature = "deprecated"))]
-    pub fn Panel1Orientation(&self) -> ::windows::core::Result<super::super::Devices::Sensors::SimpleOrientation> {
+    pub fn Panel1Orientation(&self) -> ::windows_core::Result<super::super::Devices::Sensors::SimpleOrientation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Devices::Sensors::SimpleOrientation>::zeroed();
-            (::windows::core::Interface::vtable(this).Panel1Orientation)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Sensors::SimpleOrientation>(result__)
+            (::windows_core::Interface::vtable(this).Panel1Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Sensors::SimpleOrientation>(result__)
         }
     }
     #[doc = "*Required features: `\"System_Preview\"`, `\"deprecated\"`*"]
     #[cfg(feature = "deprecated")]
-    pub fn Panel1Id(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Panel1Id(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Panel1Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Panel1Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"System_Preview\"`, `\"Devices_Sensors\"`, `\"deprecated\"`*"]
     #[cfg(all(feature = "Devices_Sensors", feature = "deprecated"))]
-    pub fn Panel2Orientation(&self) -> ::windows::core::Result<super::super::Devices::Sensors::SimpleOrientation> {
+    pub fn Panel2Orientation(&self) -> ::windows_core::Result<super::super::Devices::Sensors::SimpleOrientation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Devices::Sensors::SimpleOrientation>::zeroed();
-            (::windows::core::Interface::vtable(this).Panel2Orientation)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Sensors::SimpleOrientation>(result__)
+            (::windows_core::Interface::vtable(this).Panel2Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Sensors::SimpleOrientation>(result__)
         }
     }
     #[doc = "*Required features: `\"System_Preview\"`, `\"deprecated\"`*"]
     #[cfg(feature = "deprecated")]
-    pub fn Panel2Id(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Panel2Id(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Panel2Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Panel2Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
 }
@@ -364,68 +364,68 @@ impl ::core::fmt::Debug for TwoPanelHingedDevicePosturePreviewReading {
     }
 }
 #[cfg(feature = "deprecated")]
-unsafe impl ::windows::core::RuntimeType for TwoPanelHingedDevicePosturePreviewReading {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.System.Preview.TwoPanelHingedDevicePosturePreviewReading;{a0251452-4ad6-4b38-8426-c59a15493a7d})");
+unsafe impl ::windows_core::RuntimeType for TwoPanelHingedDevicePosturePreviewReading {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.System.Preview.TwoPanelHingedDevicePosturePreviewReading;{a0251452-4ad6-4b38-8426-c59a15493a7d})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
 #[cfg(feature = "deprecated")]
-unsafe impl ::windows::core::Interface for TwoPanelHingedDevicePosturePreviewReading {
+unsafe impl ::windows_core::Interface for TwoPanelHingedDevicePosturePreviewReading {
     type Vtable = ITwoPanelHingedDevicePosturePreviewReading_Vtbl;
-    const IID: ::windows::core::GUID = <ITwoPanelHingedDevicePosturePreviewReading as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <ITwoPanelHingedDevicePosturePreviewReading as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "deprecated")]
-impl ::windows::core::RuntimeName for TwoPanelHingedDevicePosturePreviewReading {
+impl ::windows_core::RuntimeName for TwoPanelHingedDevicePosturePreviewReading {
     const NAME: &'static str = "Windows.System.Preview.TwoPanelHingedDevicePosturePreviewReading";
 }
 #[cfg(feature = "deprecated")]
-impl ::core::convert::From<TwoPanelHingedDevicePosturePreviewReading> for ::windows::core::IUnknown {
+impl ::core::convert::From<TwoPanelHingedDevicePosturePreviewReading> for ::windows_core::IUnknown {
     fn from(value: TwoPanelHingedDevicePosturePreviewReading) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "deprecated")]
-impl ::core::convert::From<&TwoPanelHingedDevicePosturePreviewReading> for ::windows::core::IUnknown {
+impl ::core::convert::From<&TwoPanelHingedDevicePosturePreviewReading> for ::windows_core::IUnknown {
     fn from(value: &TwoPanelHingedDevicePosturePreviewReading) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "deprecated")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for TwoPanelHingedDevicePosturePreviewReading {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for TwoPanelHingedDevicePosturePreviewReading {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "deprecated")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a TwoPanelHingedDevicePosturePreviewReading {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a TwoPanelHingedDevicePosturePreviewReading {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "deprecated")]
-impl ::core::convert::From<TwoPanelHingedDevicePosturePreviewReading> for ::windows::core::IInspectable {
+impl ::core::convert::From<TwoPanelHingedDevicePosturePreviewReading> for ::windows_core::IInspectable {
     fn from(value: TwoPanelHingedDevicePosturePreviewReading) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "deprecated")]
-impl ::core::convert::From<&TwoPanelHingedDevicePosturePreviewReading> for ::windows::core::IInspectable {
+impl ::core::convert::From<&TwoPanelHingedDevicePosturePreviewReading> for ::windows_core::IInspectable {
     fn from(value: &TwoPanelHingedDevicePosturePreviewReading) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "deprecated")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for TwoPanelHingedDevicePosturePreviewReading {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for TwoPanelHingedDevicePosturePreviewReading {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "deprecated")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a TwoPanelHingedDevicePosturePreviewReading {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a TwoPanelHingedDevicePosturePreviewReading {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "deprecated")]
@@ -435,16 +435,16 @@ unsafe impl ::core::marker::Sync for TwoPanelHingedDevicePosturePreviewReading {
 #[doc = "*Required features: `\"System_Preview\"`, `\"deprecated\"`*"]
 #[cfg(feature = "deprecated")]
 #[repr(transparent)]
-pub struct TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs(::windows::core::IUnknown);
+pub struct TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
     #[doc = "*Required features: `\"System_Preview\"`, `\"deprecated\"`*"]
     #[cfg(feature = "deprecated")]
-    pub fn Reading(&self) -> ::windows::core::Result<TwoPanelHingedDevicePosturePreviewReading> {
+    pub fn Reading(&self) -> ::windows_core::Result<TwoPanelHingedDevicePosturePreviewReading> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Reading)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<TwoPanelHingedDevicePosturePreviewReading>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Reading)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<TwoPanelHingedDevicePosturePreviewReading>(result__)
         }
     }
 }
@@ -469,68 +469,68 @@ impl ::core::fmt::Debug for TwoPanelHingedDevicePosturePreviewReadingChangedEven
     }
 }
 #[cfg(feature = "deprecated")]
-unsafe impl ::windows::core::RuntimeType for TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.System.Preview.TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs;{2d2d1bc6-02ce-474a-a556-a75b1cf93a03})");
+unsafe impl ::windows_core::RuntimeType for TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.System.Preview.TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs;{2d2d1bc6-02ce-474a-a556-a75b1cf93a03})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
 #[cfg(feature = "deprecated")]
-unsafe impl ::windows::core::Interface for TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
+unsafe impl ::windows_core::Interface for TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
     type Vtable = ITwoPanelHingedDevicePosturePreviewReadingChangedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = <ITwoPanelHingedDevicePosturePreviewReadingChangedEventArgs as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <ITwoPanelHingedDevicePosturePreviewReadingChangedEventArgs as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "deprecated")]
-impl ::windows::core::RuntimeName for TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
+impl ::windows_core::RuntimeName for TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
     const NAME: &'static str = "Windows.System.Preview.TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs";
 }
 #[cfg(feature = "deprecated")]
-impl ::core::convert::From<TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs> for ::windows_core::IUnknown {
     fn from(value: TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "deprecated")]
-impl ::core::convert::From<&TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<&TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs> for ::windows_core::IUnknown {
     fn from(value: &TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "deprecated")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "deprecated")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "deprecated")]
-impl ::core::convert::From<TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs> for ::windows_core::IInspectable {
     fn from(value: TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "deprecated")]
-impl ::core::convert::From<&TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<&TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs> for ::windows_core::IInspectable {
     fn from(value: &TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "deprecated")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "deprecated")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "deprecated")]

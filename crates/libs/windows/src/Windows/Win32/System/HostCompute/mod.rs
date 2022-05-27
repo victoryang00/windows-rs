@@ -22,7 +22,7 @@ impl ::core::fmt::Debug for HCS_CALLBACK {
         f.debug_tuple("HCS_CALLBACK").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HCS_CALLBACK {
+unsafe impl ::windows_core::Abi for HCS_CALLBACK {
     type Abi = Self;
 }
 #[cfg(feature = "implement")]

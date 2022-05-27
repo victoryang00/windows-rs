@@ -40,7 +40,7 @@ impl ::core::clone::Clone for TypeKind {
 #[repr(C)]
 #[doc = "*Required features: `\"UI_Xaml_Interop\"`*"]
 pub struct TypeName {
-    pub Name: ::windows_sys::core::HSTRING,
+    pub Name: ::windows_sys_core::HSTRING,
     pub Kind: TypeKind,
 }
 impl ::core::marker::Copy for TypeName {}

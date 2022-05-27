@@ -1,4 +1,4 @@
-use windows::core::*;
+use windows_core::*;
 use windows::Foundation::Collections::*;
 use windows::Win32::Foundation::E_BOUNDS;
 

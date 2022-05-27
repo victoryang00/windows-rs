@@ -27,7 +27,7 @@ impl ::core::default::Default for D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE {
+unsafe impl ::windows_core::Abi for D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE {
@@ -60,7 +60,7 @@ impl ::core::default::Default for D2D1_ALPHA_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D2D1_ALPHA_MODE {
+unsafe impl ::windows_core::Abi for D2D1_ALPHA_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D2D1_ALPHA_MODE {
@@ -86,12 +86,12 @@ impl ::core::fmt::Debug for D2D1_BEZIER_SEGMENT {
         f.debug_struct("D2D1_BEZIER_SEGMENT").field("point1", &self.point1).field("point2", &self.point2).field("point3", &self.point3).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D1_BEZIER_SEGMENT {
+unsafe impl ::windows_core::Abi for D2D1_BEZIER_SEGMENT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D1_BEZIER_SEGMENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D1_BEZIER_SEGMENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D1_BEZIER_SEGMENT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D1_BEZIER_SEGMENT {}
@@ -169,7 +169,7 @@ impl ::core::default::Default for D2D1_BLEND_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D2D1_BLEND_MODE {
+unsafe impl ::windows_core::Abi for D2D1_BLEND_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D2D1_BLEND_MODE {
@@ -198,7 +198,7 @@ impl ::core::default::Default for D2D1_BORDER_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D2D1_BORDER_MODE {
+unsafe impl ::windows_core::Abi for D2D1_BORDER_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D2D1_BORDER_MODE {
@@ -227,7 +227,7 @@ impl ::core::default::Default for D2D1_COLORMATRIX_ALPHA_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D2D1_COLORMATRIX_ALPHA_MODE {
+unsafe impl ::windows_core::Abi for D2D1_COLORMATRIX_ALPHA_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D2D1_COLORMATRIX_ALPHA_MODE {
@@ -254,12 +254,12 @@ impl ::core::fmt::Debug for D2D1_COLOR_F {
         f.debug_struct("D2D1_COLOR_F").field("r", &self.r).field("g", &self.g).field("b", &self.b).field("a", &self.a).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D1_COLOR_F {
+unsafe impl ::windows_core::Abi for D2D1_COLOR_F {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D1_COLOR_F {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D1_COLOR_F>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D1_COLOR_F>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D1_COLOR_F {}
@@ -311,7 +311,7 @@ impl ::core::default::Default for D2D1_COMPOSITE_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D2D1_COMPOSITE_MODE {
+unsafe impl ::windows_core::Abi for D2D1_COMPOSITE_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D2D1_COMPOSITE_MODE {
@@ -340,7 +340,7 @@ impl ::core::default::Default for D2D1_FIGURE_BEGIN {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D2D1_FIGURE_BEGIN {
+unsafe impl ::windows_core::Abi for D2D1_FIGURE_BEGIN {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D2D1_FIGURE_BEGIN {
@@ -369,7 +369,7 @@ impl ::core::default::Default for D2D1_FIGURE_END {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D2D1_FIGURE_END {
+unsafe impl ::windows_core::Abi for D2D1_FIGURE_END {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D2D1_FIGURE_END {
@@ -398,7 +398,7 @@ impl ::core::default::Default for D2D1_FILL_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D2D1_FILL_MODE {
+unsafe impl ::windows_core::Abi for D2D1_FILL_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D2D1_FILL_MODE {
@@ -429,7 +429,7 @@ impl ::core::default::Default for D2D1_PATH_SEGMENT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D2D1_PATH_SEGMENT {
+unsafe impl ::windows_core::Abi for D2D1_PATH_SEGMENT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D2D1_PATH_SEGMENT {
@@ -487,13 +487,13 @@ impl ::core::fmt::Debug for D2D1_PIXEL_FORMAT {
     }
 }
 #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
-unsafe impl ::windows::core::Abi for D2D1_PIXEL_FORMAT {
+unsafe impl ::windows_core::Abi for D2D1_PIXEL_FORMAT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::cmp::PartialEq for D2D1_PIXEL_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D1_PIXEL_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D1_PIXEL_FORMAT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
@@ -525,7 +525,7 @@ impl ::core::default::Default for D2D1_TURBULENCE_NOISE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D2D1_TURBULENCE_NOISE {
+unsafe impl ::windows_core::Abi for D2D1_TURBULENCE_NOISE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D2D1_TURBULENCE_NOISE {
@@ -552,12 +552,12 @@ impl ::core::fmt::Debug for D2D_COLOR_F {
         f.debug_struct("D2D_COLOR_F").field("r", &self.r).field("g", &self.g).field("b", &self.b).field("a", &self.a).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_COLOR_F {
+unsafe impl ::windows_core::Abi for D2D_COLOR_F {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_COLOR_F {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_COLOR_F>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_COLOR_F>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_COLOR_F {}
@@ -577,12 +577,12 @@ impl ::core::clone::Clone for D2D_MATRIX_3X2_F {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for D2D_MATRIX_3X2_F {
+unsafe impl ::windows_core::Abi for D2D_MATRIX_3X2_F {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_MATRIX_3X2_F {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_3X2_F>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_3X2_F>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_MATRIX_3X2_F {}
@@ -604,12 +604,12 @@ impl ::core::clone::Clone for D2D_MATRIX_3X2_F_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for D2D_MATRIX_3X2_F_0 {
+unsafe impl ::windows_core::Abi for D2D_MATRIX_3X2_F_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_MATRIX_3X2_F_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_3X2_F_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_3X2_F_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_MATRIX_3X2_F_0 {}
@@ -639,12 +639,12 @@ impl ::core::fmt::Debug for D2D_MATRIX_3X2_F_0_0 {
         f.debug_struct("D2D_MATRIX_3X2_F_0_0").field("m11", &self.m11).field("m12", &self.m12).field("m21", &self.m21).field("m22", &self.m22).field("dx", &self.dx).field("dy", &self.dy).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_MATRIX_3X2_F_0_0 {
+unsafe impl ::windows_core::Abi for D2D_MATRIX_3X2_F_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_MATRIX_3X2_F_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_3X2_F_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_3X2_F_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_MATRIX_3X2_F_0_0 {}
@@ -674,12 +674,12 @@ impl ::core::fmt::Debug for D2D_MATRIX_3X2_F_0_1 {
         f.debug_struct("D2D_MATRIX_3X2_F_0_1").field("_11", &self._11).field("_12", &self._12).field("_21", &self._21).field("_22", &self._22).field("_31", &self._31).field("_32", &self._32).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_MATRIX_3X2_F_0_1 {
+unsafe impl ::windows_core::Abi for D2D_MATRIX_3X2_F_0_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_MATRIX_3X2_F_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_3X2_F_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_3X2_F_0_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_MATRIX_3X2_F_0_1 {}
@@ -699,12 +699,12 @@ impl ::core::clone::Clone for D2D_MATRIX_4X3_F {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for D2D_MATRIX_4X3_F {
+unsafe impl ::windows_core::Abi for D2D_MATRIX_4X3_F {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_MATRIX_4X3_F {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_4X3_F>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_4X3_F>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_MATRIX_4X3_F {}
@@ -725,12 +725,12 @@ impl ::core::clone::Clone for D2D_MATRIX_4X3_F_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for D2D_MATRIX_4X3_F_0 {
+unsafe impl ::windows_core::Abi for D2D_MATRIX_4X3_F_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_MATRIX_4X3_F_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_4X3_F_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_4X3_F_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_MATRIX_4X3_F_0 {}
@@ -766,12 +766,12 @@ impl ::core::fmt::Debug for D2D_MATRIX_4X3_F_0_0 {
         f.debug_struct("D2D_MATRIX_4X3_F_0_0").field("_11", &self._11).field("_12", &self._12).field("_13", &self._13).field("_21", &self._21).field("_22", &self._22).field("_23", &self._23).field("_31", &self._31).field("_32", &self._32).field("_33", &self._33).field("_41", &self._41).field("_42", &self._42).field("_43", &self._43).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_MATRIX_4X3_F_0_0 {
+unsafe impl ::windows_core::Abi for D2D_MATRIX_4X3_F_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_MATRIX_4X3_F_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_4X3_F_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_4X3_F_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_MATRIX_4X3_F_0_0 {}
@@ -791,12 +791,12 @@ impl ::core::clone::Clone for D2D_MATRIX_4X4_F {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for D2D_MATRIX_4X4_F {
+unsafe impl ::windows_core::Abi for D2D_MATRIX_4X4_F {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_MATRIX_4X4_F {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_4X4_F>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_4X4_F>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_MATRIX_4X4_F {}
@@ -817,12 +817,12 @@ impl ::core::clone::Clone for D2D_MATRIX_4X4_F_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for D2D_MATRIX_4X4_F_0 {
+unsafe impl ::windows_core::Abi for D2D_MATRIX_4X4_F_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_MATRIX_4X4_F_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_4X4_F_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_4X4_F_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_MATRIX_4X4_F_0 {}
@@ -862,12 +862,12 @@ impl ::core::fmt::Debug for D2D_MATRIX_4X4_F_0_0 {
         f.debug_struct("D2D_MATRIX_4X4_F_0_0").field("_11", &self._11).field("_12", &self._12).field("_13", &self._13).field("_14", &self._14).field("_21", &self._21).field("_22", &self._22).field("_23", &self._23).field("_24", &self._24).field("_31", &self._31).field("_32", &self._32).field("_33", &self._33).field("_34", &self._34).field("_41", &self._41).field("_42", &self._42).field("_43", &self._43).field("_44", &self._44).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_MATRIX_4X4_F_0_0 {
+unsafe impl ::windows_core::Abi for D2D_MATRIX_4X4_F_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_MATRIX_4X4_F_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_4X4_F_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_4X4_F_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_MATRIX_4X4_F_0_0 {}
@@ -887,12 +887,12 @@ impl ::core::clone::Clone for D2D_MATRIX_5X4_F {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for D2D_MATRIX_5X4_F {
+unsafe impl ::windows_core::Abi for D2D_MATRIX_5X4_F {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_MATRIX_5X4_F {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_5X4_F>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_5X4_F>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_MATRIX_5X4_F {}
@@ -913,12 +913,12 @@ impl ::core::clone::Clone for D2D_MATRIX_5X4_F_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for D2D_MATRIX_5X4_F_0 {
+unsafe impl ::windows_core::Abi for D2D_MATRIX_5X4_F_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_MATRIX_5X4_F_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_5X4_F_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_5X4_F_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_MATRIX_5X4_F_0 {}
@@ -983,12 +983,12 @@ impl ::core::fmt::Debug for D2D_MATRIX_5X4_F_0_0 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_MATRIX_5X4_F_0_0 {
+unsafe impl ::windows_core::Abi for D2D_MATRIX_5X4_F_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_MATRIX_5X4_F_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_5X4_F_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_MATRIX_5X4_F_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_MATRIX_5X4_F_0_0 {}
@@ -1014,12 +1014,12 @@ impl ::core::fmt::Debug for D2D_POINT_2F {
         f.debug_struct("D2D_POINT_2F").field("x", &self.x).field("y", &self.y).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_POINT_2F {
+unsafe impl ::windows_core::Abi for D2D_POINT_2F {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_POINT_2F {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_POINT_2F>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_POINT_2F>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_POINT_2F {}
@@ -1045,12 +1045,12 @@ impl ::core::fmt::Debug for D2D_POINT_2U {
         f.debug_struct("D2D_POINT_2U").field("x", &self.x).field("y", &self.y).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_POINT_2U {
+unsafe impl ::windows_core::Abi for D2D_POINT_2U {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_POINT_2U {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_POINT_2U>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_POINT_2U>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_POINT_2U {}
@@ -1078,12 +1078,12 @@ impl ::core::fmt::Debug for D2D_RECT_F {
         f.debug_struct("D2D_RECT_F").field("left", &self.left).field("top", &self.top).field("right", &self.right).field("bottom", &self.bottom).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_RECT_F {
+unsafe impl ::windows_core::Abi for D2D_RECT_F {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_RECT_F {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_RECT_F>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_RECT_F>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_RECT_F {}
@@ -1111,12 +1111,12 @@ impl ::core::fmt::Debug for D2D_RECT_U {
         f.debug_struct("D2D_RECT_U").field("left", &self.left).field("top", &self.top).field("right", &self.right).field("bottom", &self.bottom).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_RECT_U {
+unsafe impl ::windows_core::Abi for D2D_RECT_U {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_RECT_U {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_RECT_U>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_RECT_U>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_RECT_U {}
@@ -1142,12 +1142,12 @@ impl ::core::fmt::Debug for D2D_SIZE_F {
         f.debug_struct("D2D_SIZE_F").field("width", &self.width).field("height", &self.height).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_SIZE_F {
+unsafe impl ::windows_core::Abi for D2D_SIZE_F {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_SIZE_F {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_SIZE_F>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_SIZE_F>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_SIZE_F {}
@@ -1173,12 +1173,12 @@ impl ::core::fmt::Debug for D2D_SIZE_U {
         f.debug_struct("D2D_SIZE_U").field("width", &self.width).field("height", &self.height).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_SIZE_U {
+unsafe impl ::windows_core::Abi for D2D_SIZE_U {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_SIZE_U {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_SIZE_U>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_SIZE_U>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_SIZE_U {}
@@ -1204,12 +1204,12 @@ impl ::core::fmt::Debug for D2D_VECTOR_2F {
         f.debug_struct("D2D_VECTOR_2F").field("x", &self.x).field("y", &self.y).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_VECTOR_2F {
+unsafe impl ::windows_core::Abi for D2D_VECTOR_2F {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_VECTOR_2F {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_VECTOR_2F>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_VECTOR_2F>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_VECTOR_2F {}
@@ -1236,12 +1236,12 @@ impl ::core::fmt::Debug for D2D_VECTOR_3F {
         f.debug_struct("D2D_VECTOR_3F").field("x", &self.x).field("y", &self.y).field("z", &self.z).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_VECTOR_3F {
+unsafe impl ::windows_core::Abi for D2D_VECTOR_3F {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_VECTOR_3F {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_VECTOR_3F>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_VECTOR_3F>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_VECTOR_3F {}
@@ -1269,12 +1269,12 @@ impl ::core::fmt::Debug for D2D_VECTOR_4F {
         f.debug_struct("D2D_VECTOR_4F").field("x", &self.x).field("y", &self.y).field("z", &self.z).field("w", &self.w).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D2D_VECTOR_4F {
+unsafe impl ::windows_core::Abi for D2D_VECTOR_4F {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D2D_VECTOR_4F {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_VECTOR_4F>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D2D_VECTOR_4F>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D2D_VECTOR_4F {}
@@ -1285,55 +1285,55 @@ impl ::core::default::Default for D2D_VECTOR_4F {
 }
 #[doc = "*Required features: `\"Win32_Graphics_Direct2D_Common\"`*"]
 #[repr(transparent)]
-pub struct ID2D1SimplifiedGeometrySink(::windows::core::IUnknown);
+pub struct ID2D1SimplifiedGeometrySink(::windows_core::IUnknown);
 impl ID2D1SimplifiedGeometrySink {
     #[doc = "*Required features: `\"Win32_Graphics_Direct2D_Common\"`*"]
     pub unsafe fn SetFillMode(&self, fillmode: D2D1_FILL_MODE) {
-        (::windows::core::Interface::vtable(self).SetFillMode)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(fillmode))
+        (::windows_core::Interface::vtable(self).SetFillMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(fillmode))
     }
     #[doc = "*Required features: `\"Win32_Graphics_Direct2D_Common\"`*"]
     pub unsafe fn SetSegmentFlags(&self, vertexflags: D2D1_PATH_SEGMENT) {
-        (::windows::core::Interface::vtable(self).SetSegmentFlags)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(vertexflags))
+        (::windows_core::Interface::vtable(self).SetSegmentFlags)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(vertexflags))
     }
     #[doc = "*Required features: `\"Win32_Graphics_Direct2D_Common\"`*"]
-    pub unsafe fn BeginFigure<'a, Param0: ::windows::core::IntoParam<'a, D2D_POINT_2F>>(&self, startpoint: Param0, figurebegin: D2D1_FIGURE_BEGIN) {
-        (::windows::core::Interface::vtable(self).BeginFigure)(::windows::core::Interface::as_raw(self), startpoint.into_param().abi(), ::core::mem::transmute(figurebegin))
+    pub unsafe fn BeginFigure<'a, Param0: ::windows_core::IntoParam<'a, D2D_POINT_2F>>(&self, startpoint: Param0, figurebegin: D2D1_FIGURE_BEGIN) {
+        (::windows_core::Interface::vtable(self).BeginFigure)(::windows_core::Interface::as_raw(self), startpoint.into_param().abi(), ::core::mem::transmute(figurebegin))
     }
     #[doc = "*Required features: `\"Win32_Graphics_Direct2D_Common\"`*"]
     pub unsafe fn AddLines(&self, points: &[D2D_POINT_2F]) {
-        (::windows::core::Interface::vtable(self).AddLines)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(::windows::core::as_ptr_or_null(points)), points.len() as _)
+        (::windows_core::Interface::vtable(self).AddLines)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(points)), points.len() as _)
     }
     #[doc = "*Required features: `\"Win32_Graphics_Direct2D_Common\"`*"]
     pub unsafe fn AddBeziers(&self, beziers: &[D2D1_BEZIER_SEGMENT]) {
-        (::windows::core::Interface::vtable(self).AddBeziers)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(::windows::core::as_ptr_or_null(beziers)), beziers.len() as _)
+        (::windows_core::Interface::vtable(self).AddBeziers)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(beziers)), beziers.len() as _)
     }
     #[doc = "*Required features: `\"Win32_Graphics_Direct2D_Common\"`*"]
     pub unsafe fn EndFigure(&self, figureend: D2D1_FIGURE_END) {
-        (::windows::core::Interface::vtable(self).EndFigure)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(figureend))
+        (::windows_core::Interface::vtable(self).EndFigure)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(figureend))
     }
     #[doc = "*Required features: `\"Win32_Graphics_Direct2D_Common\"`*"]
-    pub unsafe fn Close(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Close)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Close(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Close)(::windows_core::Interface::as_raw(self)).ok()
     }
 }
-impl ::core::convert::From<ID2D1SimplifiedGeometrySink> for ::windows::core::IUnknown {
+impl ::core::convert::From<ID2D1SimplifiedGeometrySink> for ::windows_core::IUnknown {
     fn from(value: ID2D1SimplifiedGeometrySink) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ID2D1SimplifiedGeometrySink> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ID2D1SimplifiedGeometrySink> for ::windows_core::IUnknown {
     fn from(value: &ID2D1SimplifiedGeometrySink) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ID2D1SimplifiedGeometrySink {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ID2D1SimplifiedGeometrySink {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ID2D1SimplifiedGeometrySink {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ID2D1SimplifiedGeometrySink {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for ID2D1SimplifiedGeometrySink {
@@ -1352,21 +1352,21 @@ impl ::core::fmt::Debug for ID2D1SimplifiedGeometrySink {
         f.debug_tuple("ID2D1SimplifiedGeometrySink").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for ID2D1SimplifiedGeometrySink {
+unsafe impl ::windows_core::Interface for ID2D1SimplifiedGeometrySink {
     type Vtable = ID2D1SimplifiedGeometrySink_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2cd9069e_12e2_11dc_9fed_001143a055f9);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2cd9069e_12e2_11dc_9fed_001143a055f9);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ID2D1SimplifiedGeometrySink_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     pub SetFillMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fillmode: D2D1_FILL_MODE),
     pub SetSegmentFlags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vertexflags: D2D1_PATH_SEGMENT),
     pub BeginFigure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startpoint: D2D_POINT_2F, figurebegin: D2D1_FIGURE_BEGIN),
     pub AddLines: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, points: *const D2D_POINT_2F, pointscount: u32),
     pub AddBeziers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, beziers: *const D2D1_BEZIER_SEGMENT, bezierscount: u32),
     pub EndFigure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, figureend: D2D1_FIGURE_END),
-    pub Close: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "implement")]
 ::core::include!("impl.rs");

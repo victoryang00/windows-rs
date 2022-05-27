@@ -1,11 +1,11 @@
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn ApplyGuestMemoryFix(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualaddress: u64, fixbuffer: *const ::core::ffi::c_void, fixbuffersize: u32) -> ::windows::core::Result<()> {
+pub unsafe fn ApplyGuestMemoryFix(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualaddress: u64, fixbuffer: *const ::core::ffi::c_void, fixbuffersize: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ApplyGuestMemoryFix(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualaddress: u64, fixbuffer: *const ::core::ffi::c_void, fixbuffersize: u32) -> ::windows::core::HRESULT;
+            fn ApplyGuestMemoryFix(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualaddress: u64, fixbuffer: *const ::core::ffi::c_void, fixbuffersize: u32) -> ::windows_core::HRESULT;
         }
         ApplyGuestMemoryFix(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(virtualaddress), ::core::mem::transmute(fixbuffer), ::core::mem::transmute(fixbuffersize)).ok()
     }
@@ -14,12 +14,12 @@ pub unsafe fn ApplyGuestMemoryFix(vmsavedstatedumphandle: *mut ::core::ffi::c_vo
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn ApplyPendingSavedStateFileReplayLog<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(vmrsfile: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn ApplyPendingSavedStateFileReplayLog<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(vmrsfile: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ApplyPendingSavedStateFileReplayLog(vmrsfile: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn ApplyPendingSavedStateFileReplayLog(vmrsfile: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         ApplyPendingSavedStateFileReplayLog(vmrsfile.into_param().abi()).ok()
     }
@@ -28,12 +28,12 @@ pub unsafe fn ApplyPendingSavedStateFileReplayLog<'a, Param0: ::windows::core::I
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn CallStackUnwind(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, imageinfo: *const MODULE_INFO, imageinfocount: u32, framecount: u32, callstack: *mut ::windows::core::PWSTR) -> ::windows::core::Result<()> {
+pub unsafe fn CallStackUnwind(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, imageinfo: *const MODULE_INFO, imageinfocount: u32, framecount: u32, callstack: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CallStackUnwind(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, imageinfo: *const MODULE_INFO, imageinfocount: u32, framecount: u32, callstack: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
+            fn CallStackUnwind(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, imageinfo: *const MODULE_INFO, imageinfocount: u32, framecount: u32, callstack: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT;
         }
         CallStackUnwind(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(imageinfo), ::core::mem::transmute(imageinfocount), ::core::mem::transmute(framecount), ::core::mem::transmute(callstack)).ok()
     }
@@ -43,7 +43,7 @@ pub unsafe fn CallStackUnwind(vmsavedstatedumphandle: *mut ::core::ffi::c_void, 
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 pub struct DOS_IMAGE_INFO {
-    pub PdbName: ::windows::core::PCSTR,
+    pub PdbName: ::windows_core::PCSTR,
     pub ImageBaseAddress: u64,
     pub ImageSize: u32,
     pub Timestamp: u32,
@@ -59,12 +59,12 @@ impl ::core::fmt::Debug for DOS_IMAGE_INFO {
         f.debug_struct("DOS_IMAGE_INFO").field("PdbName", &self.PdbName).field("ImageBaseAddress", &self.ImageBaseAddress).field("ImageSize", &self.ImageSize).field("Timestamp", &self.Timestamp).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DOS_IMAGE_INFO {
+unsafe impl ::windows_core::Abi for DOS_IMAGE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DOS_IMAGE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOS_IMAGE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOS_IMAGE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DOS_IMAGE_INFO {}
@@ -79,12 +79,12 @@ pub type FOUND_IMAGE_CALLBACK = ::core::option::Option<unsafe extern "system" fn
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindSavedStateSymbolFieldInType<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, typename: Param2, fieldname: Param3, offset: *mut u32, found: *mut super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
+pub unsafe fn FindSavedStateSymbolFieldInType<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, typename: Param2, fieldname: Param3, offset: *mut u32, found: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FindSavedStateSymbolFieldInType(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, typename: ::windows::core::PCSTR, fieldname: ::windows::core::PCWSTR, offset: *mut u32, found: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn FindSavedStateSymbolFieldInType(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, typename: ::windows_core::PCSTR, fieldname: ::windows_core::PCWSTR, offset: *mut u32, found: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
         FindSavedStateSymbolFieldInType(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), typename.into_param().abi(), fieldname.into_param().abi(), ::core::mem::transmute(offset), ::core::mem::transmute(found)).ok()
     }
@@ -93,12 +93,12 @@ pub unsafe fn FindSavedStateSymbolFieldInType<'a, Param2: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn ForceActiveVirtualTrustLevel(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualtrustlevel: u8) -> ::windows::core::Result<()> {
+pub unsafe fn ForceActiveVirtualTrustLevel(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualtrustlevel: u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ForceActiveVirtualTrustLevel(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualtrustlevel: u8) -> ::windows::core::HRESULT;
+            fn ForceActiveVirtualTrustLevel(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualtrustlevel: u8) -> ::windows_core::HRESULT;
         }
         ForceActiveVirtualTrustLevel(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(virtualtrustlevel)).ok()
     }
@@ -107,12 +107,12 @@ pub unsafe fn ForceActiveVirtualTrustLevel(vmsavedstatedumphandle: *mut ::core::
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn ForceArchitecture(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, architecture: VIRTUAL_PROCESSOR_ARCH) -> ::windows::core::Result<()> {
+pub unsafe fn ForceArchitecture(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, architecture: VIRTUAL_PROCESSOR_ARCH) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ForceArchitecture(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, architecture: VIRTUAL_PROCESSOR_ARCH) -> ::windows::core::HRESULT;
+            fn ForceArchitecture(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, architecture: VIRTUAL_PROCESSOR_ARCH) -> ::windows_core::HRESULT;
         }
         ForceArchitecture(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(architecture)).ok()
     }
@@ -122,12 +122,12 @@ pub unsafe fn ForceArchitecture(vmsavedstatedumphandle: *mut ::core::ffi::c_void
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ForceNestedHostMode<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, hostmode: Param2, oldmode: *mut super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
+pub unsafe fn ForceNestedHostMode<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, hostmode: Param2, oldmode: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ForceNestedHostMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, hostmode: super::super::Foundation::BOOL, oldmode: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn ForceNestedHostMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, hostmode: super::super::Foundation::BOOL, oldmode: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
         ForceNestedHostMode(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), hostmode.into_param().abi(), ::core::mem::transmute(oldmode)).ok()
     }
@@ -136,12 +136,12 @@ pub unsafe fn ForceNestedHostMode<'a, Param2: ::windows::core::IntoParam<'a, sup
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn ForcePagingMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, pagingmode: PAGING_MODE) -> ::windows::core::Result<()> {
+pub unsafe fn ForcePagingMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, pagingmode: PAGING_MODE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ForcePagingMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, pagingmode: PAGING_MODE) -> ::windows::core::HRESULT;
+            fn ForcePagingMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, pagingmode: PAGING_MODE) -> ::windows_core::HRESULT;
         }
         ForcePagingMode(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(pagingmode)).ok()
     }
@@ -165,12 +165,12 @@ impl ::core::fmt::Debug for GPA_MEMORY_CHUNK {
         f.debug_struct("GPA_MEMORY_CHUNK").field("GuestPhysicalStartPageIndex", &self.GuestPhysicalStartPageIndex).field("PageCount", &self.PageCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GPA_MEMORY_CHUNK {
+unsafe impl ::windows_core::Abi for GPA_MEMORY_CHUNK {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GPA_MEMORY_CHUNK {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GPA_MEMORY_CHUNK>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GPA_MEMORY_CHUNK>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GPA_MEMORY_CHUNK {}
@@ -192,12 +192,12 @@ impl ::core::clone::Clone for GUEST_OS_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for GUEST_OS_INFO {
+unsafe impl ::windows_core::Abi for GUEST_OS_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GUEST_OS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GUEST_OS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GUEST_OS_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GUEST_OS_INFO {}
@@ -222,12 +222,12 @@ impl ::core::fmt::Debug for GUEST_OS_INFO_0 {
         f.debug_struct("GUEST_OS_INFO_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GUEST_OS_INFO_0 {
+unsafe impl ::windows_core::Abi for GUEST_OS_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GUEST_OS_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GUEST_OS_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GUEST_OS_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GUEST_OS_INFO_0 {}
@@ -252,12 +252,12 @@ impl ::core::fmt::Debug for GUEST_OS_INFO_1 {
         f.debug_struct("GUEST_OS_INFO_1").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GUEST_OS_INFO_1 {
+unsafe impl ::windows_core::Abi for GUEST_OS_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GUEST_OS_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GUEST_OS_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GUEST_OS_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GUEST_OS_INFO_1 {}
@@ -293,7 +293,7 @@ impl ::core::default::Default for GUEST_OS_MICROSOFT_IDS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GUEST_OS_MICROSOFT_IDS {
+unsafe impl ::windows_core::Abi for GUEST_OS_MICROSOFT_IDS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GUEST_OS_MICROSOFT_IDS {
@@ -326,7 +326,7 @@ impl ::core::default::Default for GUEST_OS_OPENSOURCE_IDS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GUEST_OS_OPENSOURCE_IDS {
+unsafe impl ::windows_core::Abi for GUEST_OS_OPENSOURCE_IDS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GUEST_OS_OPENSOURCE_IDS {
@@ -357,7 +357,7 @@ impl ::core::default::Default for GUEST_OS_VENDOR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GUEST_OS_VENDOR {
+unsafe impl ::windows_core::Abi for GUEST_OS_VENDOR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GUEST_OS_VENDOR {
@@ -366,16 +366,16 @@ impl ::core::fmt::Debug for GUEST_OS_VENDOR {
     }
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type GUEST_SYMBOLS_PROVIDER_DEBUG_INFO_CALLBACK = ::core::option::Option<unsafe extern "system" fn(infomessage: ::windows::core::PCSTR)>;
-pub const GUID_DEVINTERFACE_VM_GENCOUNTER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3ff2c92b_6598_4e60_8e1c_0ccf4927e319);
+pub type GUEST_SYMBOLS_PROVIDER_DEBUG_INFO_CALLBACK = ::core::option::Option<unsafe extern "system" fn(infomessage: ::windows_core::PCSTR)>;
+pub const GUID_DEVINTERFACE_VM_GENCOUNTER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3ff2c92b_6598_4e60_8e1c_0ccf4927e319);
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GetActiveVirtualTrustLevel(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualtrustlevel: *mut u8) -> ::windows::core::Result<()> {
+pub unsafe fn GetActiveVirtualTrustLevel(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualtrustlevel: *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetActiveVirtualTrustLevel(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualtrustlevel: *mut u8) -> ::windows::core::HRESULT;
+            fn GetActiveVirtualTrustLevel(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualtrustlevel: *mut u8) -> ::windows_core::HRESULT;
         }
         GetActiveVirtualTrustLevel(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(virtualtrustlevel)).ok()
     }
@@ -384,12 +384,12 @@ pub unsafe fn GetActiveVirtualTrustLevel(vmsavedstatedumphandle: *mut ::core::ff
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GetArchitecture(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, architecture: *mut VIRTUAL_PROCESSOR_ARCH) -> ::windows::core::Result<()> {
+pub unsafe fn GetArchitecture(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, architecture: *mut VIRTUAL_PROCESSOR_ARCH) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetArchitecture(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, architecture: *mut VIRTUAL_PROCESSOR_ARCH) -> ::windows::core::HRESULT;
+            fn GetArchitecture(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, architecture: *mut VIRTUAL_PROCESSOR_ARCH) -> ::windows_core::HRESULT;
         }
         GetArchitecture(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(architecture)).ok()
     }
@@ -398,12 +398,12 @@ pub unsafe fn GetArchitecture(vmsavedstatedumphandle: *mut ::core::ffi::c_void, 
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GetEnabledVirtualTrustLevels(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualtrustlevels: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn GetEnabledVirtualTrustLevels(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualtrustlevels: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetEnabledVirtualTrustLevels(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualtrustlevels: *mut u32) -> ::windows::core::HRESULT;
+            fn GetEnabledVirtualTrustLevels(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualtrustlevels: *mut u32) -> ::windows_core::HRESULT;
         }
         GetEnabledVirtualTrustLevels(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(virtualtrustlevels)).ok()
     }
@@ -412,12 +412,12 @@ pub unsafe fn GetEnabledVirtualTrustLevels(vmsavedstatedumphandle: *mut ::core::
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GetGuestEnabledVirtualTrustLevels(vmsavedstatedumphandle: *mut ::core::ffi::c_void, virtualtrustlevels: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn GetGuestEnabledVirtualTrustLevels(vmsavedstatedumphandle: *mut ::core::ffi::c_void, virtualtrustlevels: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetGuestEnabledVirtualTrustLevels(vmsavedstatedumphandle: *mut ::core::ffi::c_void, virtualtrustlevels: *mut u32) -> ::windows::core::HRESULT;
+            fn GetGuestEnabledVirtualTrustLevels(vmsavedstatedumphandle: *mut ::core::ffi::c_void, virtualtrustlevels: *mut u32) -> ::windows_core::HRESULT;
         }
         GetGuestEnabledVirtualTrustLevels(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(virtualtrustlevels)).ok()
     }
@@ -426,12 +426,12 @@ pub unsafe fn GetGuestEnabledVirtualTrustLevels(vmsavedstatedumphandle: *mut ::c
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GetGuestOsInfo(vmsavedstatedumphandle: *mut ::core::ffi::c_void, virtualtrustlevel: u8, guestosinfo: *mut GUEST_OS_INFO) -> ::windows::core::Result<()> {
+pub unsafe fn GetGuestOsInfo(vmsavedstatedumphandle: *mut ::core::ffi::c_void, virtualtrustlevel: u8, guestosinfo: *mut GUEST_OS_INFO) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetGuestOsInfo(vmsavedstatedumphandle: *mut ::core::ffi::c_void, virtualtrustlevel: u8, guestosinfo: *mut GUEST_OS_INFO) -> ::windows::core::HRESULT;
+            fn GetGuestOsInfo(vmsavedstatedumphandle: *mut ::core::ffi::c_void, virtualtrustlevel: u8, guestosinfo: *mut GUEST_OS_INFO) -> ::windows_core::HRESULT;
         }
         GetGuestOsInfo(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(virtualtrustlevel), ::core::mem::transmute(guestosinfo)).ok()
     }
@@ -440,12 +440,12 @@ pub unsafe fn GetGuestOsInfo(vmsavedstatedumphandle: *mut ::core::ffi::c_void, v
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GetGuestPhysicalMemoryChunks(vmsavedstatedumphandle: *mut ::core::ffi::c_void, memorychunkpagesize: *mut u64, memorychunks: *mut GPA_MEMORY_CHUNK, memorychunkcount: *mut u64) -> ::windows::core::Result<()> {
+pub unsafe fn GetGuestPhysicalMemoryChunks(vmsavedstatedumphandle: *mut ::core::ffi::c_void, memorychunkpagesize: *mut u64, memorychunks: *mut GPA_MEMORY_CHUNK, memorychunkcount: *mut u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetGuestPhysicalMemoryChunks(vmsavedstatedumphandle: *mut ::core::ffi::c_void, memorychunkpagesize: *mut u64, memorychunks: *mut GPA_MEMORY_CHUNK, memorychunkcount: *mut u64) -> ::windows::core::HRESULT;
+            fn GetGuestPhysicalMemoryChunks(vmsavedstatedumphandle: *mut ::core::ffi::c_void, memorychunkpagesize: *mut u64, memorychunks: *mut GPA_MEMORY_CHUNK, memorychunkcount: *mut u64) -> ::windows_core::HRESULT;
         }
         GetGuestPhysicalMemoryChunks(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(memorychunkpagesize), ::core::mem::transmute(memorychunks), ::core::mem::transmute(memorychunkcount)).ok()
     }
@@ -454,12 +454,12 @@ pub unsafe fn GetGuestPhysicalMemoryChunks(vmsavedstatedumphandle: *mut ::core::
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GetGuestRawSavedMemorySize(vmsavedstatedumphandle: *mut ::core::ffi::c_void, guestrawsavedmemorysize: *mut u64) -> ::windows::core::Result<()> {
+pub unsafe fn GetGuestRawSavedMemorySize(vmsavedstatedumphandle: *mut ::core::ffi::c_void, guestrawsavedmemorysize: *mut u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetGuestRawSavedMemorySize(vmsavedstatedumphandle: *mut ::core::ffi::c_void, guestrawsavedmemorysize: *mut u64) -> ::windows::core::HRESULT;
+            fn GetGuestRawSavedMemorySize(vmsavedstatedumphandle: *mut ::core::ffi::c_void, guestrawsavedmemorysize: *mut u64) -> ::windows_core::HRESULT;
         }
         GetGuestRawSavedMemorySize(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(guestrawsavedmemorysize)).ok()
     }
@@ -468,12 +468,12 @@ pub unsafe fn GetGuestRawSavedMemorySize(vmsavedstatedumphandle: *mut ::core::ff
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GetMemoryBlockCacheLimit(vmsavedstatedumphandle: *mut ::core::ffi::c_void, memoryblockcachelimit: *mut u64) -> ::windows::core::Result<()> {
+pub unsafe fn GetMemoryBlockCacheLimit(vmsavedstatedumphandle: *mut ::core::ffi::c_void, memoryblockcachelimit: *mut u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetMemoryBlockCacheLimit(vmsavedstatedumphandle: *mut ::core::ffi::c_void, memoryblockcachelimit: *mut u64) -> ::windows::core::HRESULT;
+            fn GetMemoryBlockCacheLimit(vmsavedstatedumphandle: *mut ::core::ffi::c_void, memoryblockcachelimit: *mut u64) -> ::windows_core::HRESULT;
         }
         GetMemoryBlockCacheLimit(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(memoryblockcachelimit)).ok()
     }
@@ -483,12 +483,12 @@ pub unsafe fn GetMemoryBlockCacheLimit(vmsavedstatedumphandle: *mut ::core::ffi:
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNestedVirtualizationMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, enabled: *mut super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
+pub unsafe fn GetNestedVirtualizationMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, enabled: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNestedVirtualizationMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, enabled: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn GetNestedVirtualizationMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, enabled: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
         GetNestedVirtualizationMode(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(enabled)).ok()
     }
@@ -497,12 +497,12 @@ pub unsafe fn GetNestedVirtualizationMode(vmsavedstatedumphandle: *mut ::core::f
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GetPagingMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, pagingmode: *mut PAGING_MODE) -> ::windows::core::Result<()> {
+pub unsafe fn GetPagingMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, pagingmode: *mut PAGING_MODE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPagingMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, pagingmode: *mut PAGING_MODE) -> ::windows::core::HRESULT;
+            fn GetPagingMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, pagingmode: *mut PAGING_MODE) -> ::windows_core::HRESULT;
         }
         GetPagingMode(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(pagingmode)).ok()
     }
@@ -511,12 +511,12 @@ pub unsafe fn GetPagingMode(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vp
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GetRegisterValue(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, registerid: u32, registervalue: *mut VIRTUAL_PROCESSOR_REGISTER) -> ::windows::core::Result<()> {
+pub unsafe fn GetRegisterValue(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, registerid: u32, registervalue: *mut VIRTUAL_PROCESSOR_REGISTER) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetRegisterValue(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, registerid: u32, registervalue: *mut VIRTUAL_PROCESSOR_REGISTER) -> ::windows::core::HRESULT;
+            fn GetRegisterValue(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, registerid: u32, registervalue: *mut VIRTUAL_PROCESSOR_REGISTER) -> ::windows_core::HRESULT;
         }
         GetRegisterValue(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(registerid), ::core::mem::transmute(registervalue)).ok()
     }
@@ -525,12 +525,12 @@ pub unsafe fn GetRegisterValue(vmsavedstatedumphandle: *mut ::core::ffi::c_void,
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GetSavedStateSymbolFieldInfo<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, typename: Param2, typefieldinfomap: *mut ::windows::core::PWSTR) -> ::windows::core::Result<()> {
+pub unsafe fn GetSavedStateSymbolFieldInfo<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, typename: Param2, typefieldinfomap: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetSavedStateSymbolFieldInfo(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, typename: ::windows::core::PCSTR, typefieldinfomap: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
+            fn GetSavedStateSymbolFieldInfo(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, typename: ::windows_core::PCSTR, typefieldinfomap: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT;
         }
         GetSavedStateSymbolFieldInfo(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), typename.into_param().abi(), ::core::mem::transmute(typefieldinfomap)).ok()
     }
@@ -554,12 +554,12 @@ pub unsafe fn GetSavedStateSymbolProviderHandle(vmsavedstatedumphandle: *mut ::c
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GetSavedStateSymbolTypeSize<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, typename: Param2, size: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn GetSavedStateSymbolTypeSize<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, typename: Param2, size: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetSavedStateSymbolTypeSize(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, typename: ::windows::core::PCSTR, size: *mut u32) -> ::windows::core::HRESULT;
+            fn GetSavedStateSymbolTypeSize(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, typename: ::windows_core::PCSTR, size: *mut u32) -> ::windows_core::HRESULT;
         }
         GetSavedStateSymbolTypeSize(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), typename.into_param().abi(), ::core::mem::transmute(size)).ok()
     }
@@ -568,12 +568,12 @@ pub unsafe fn GetSavedStateSymbolTypeSize<'a, Param2: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GetVpCount(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpcount: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn GetVpCount(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpcount: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetVpCount(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpcount: *mut u32) -> ::windows::core::HRESULT;
+            fn GetVpCount(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpcount: *mut u32) -> ::windows_core::HRESULT;
         }
         GetVpCount(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpcount)).ok()
     }
@@ -582,12 +582,12 @@ pub unsafe fn GetVpCount(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpcou
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GuestPhysicalAddressToRawSavedMemoryOffset(vmsavedstatedumphandle: *mut ::core::ffi::c_void, physicaladdress: u64, rawsavedmemoryoffset: *mut u64) -> ::windows::core::Result<()> {
+pub unsafe fn GuestPhysicalAddressToRawSavedMemoryOffset(vmsavedstatedumphandle: *mut ::core::ffi::c_void, physicaladdress: u64, rawsavedmemoryoffset: *mut u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GuestPhysicalAddressToRawSavedMemoryOffset(vmsavedstatedumphandle: *mut ::core::ffi::c_void, physicaladdress: u64, rawsavedmemoryoffset: *mut u64) -> ::windows::core::HRESULT;
+            fn GuestPhysicalAddressToRawSavedMemoryOffset(vmsavedstatedumphandle: *mut ::core::ffi::c_void, physicaladdress: u64, rawsavedmemoryoffset: *mut u64) -> ::windows_core::HRESULT;
         }
         GuestPhysicalAddressToRawSavedMemoryOffset(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(physicaladdress), ::core::mem::transmute(rawsavedmemoryoffset)).ok()
     }
@@ -596,12 +596,12 @@ pub unsafe fn GuestPhysicalAddressToRawSavedMemoryOffset(vmsavedstatedumphandle:
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn GuestVirtualAddressToPhysicalAddress(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualaddress: u64, physicaladdress: *mut u64, unmappedregionsize: *mut u64) -> ::windows::core::Result<()> {
+pub unsafe fn GuestVirtualAddressToPhysicalAddress(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualaddress: u64, physicaladdress: *mut u64, unmappedregionsize: *mut u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GuestVirtualAddressToPhysicalAddress(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualaddress: u64, physicaladdress: *mut u64, unmappedregionsize: *mut u64) -> ::windows::core::HRESULT;
+            fn GuestVirtualAddressToPhysicalAddress(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, virtualaddress: u64, physicaladdress: *mut u64, unmappedregionsize: *mut u64) -> ::windows_core::HRESULT;
         }
         GuestVirtualAddressToPhysicalAddress(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(virtualaddress), ::core::mem::transmute(physicaladdress), ::core::mem::transmute(unmappedregionsize)).ok()
     }
@@ -627,7 +627,7 @@ impl ::core::default::Default for HDV_DEVICE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HDV_DEVICE_TYPE {
+unsafe impl ::windows_core::Abi for HDV_DEVICE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HDV_DEVICE_TYPE {
@@ -662,7 +662,7 @@ impl ::core::default::Default for HDV_DOORBELL_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HDV_DOORBELL_FLAGS {
+unsafe impl ::windows_core::Abi for HDV_DOORBELL_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HDV_DOORBELL_FLAGS {
@@ -691,7 +691,7 @@ impl ::core::default::Default for HDV_MMIO_MAPPING_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HDV_MMIO_MAPPING_FLAGS {
+unsafe impl ::windows_core::Abi for HDV_MMIO_MAPPING_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HDV_MMIO_MAPPING_FLAGS {
@@ -756,7 +756,7 @@ impl ::core::default::Default for HDV_PCI_BAR_SELECTOR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HDV_PCI_BAR_SELECTOR {
+unsafe impl ::windows_core::Abi for HDV_PCI_BAR_SELECTOR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HDV_PCI_BAR_SELECTOR {
@@ -765,9 +765,9 @@ impl ::core::fmt::Debug for HDV_PCI_BAR_SELECTOR {
     }
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type HDV_PCI_DEVICE_GET_DETAILS = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void, pnpid: *mut HDV_PCI_PNP_ID, probedbarscount: u32, probedbars: *mut u32) -> ::windows::core::HRESULT>;
+pub type HDV_PCI_DEVICE_GET_DETAILS = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void, pnpid: *mut HDV_PCI_PNP_ID, probedbarscount: u32, probedbars: *mut u32) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type HDV_PCI_DEVICE_INITIALIZE = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void) -> ::windows::core::HRESULT>;
+pub type HDV_PCI_DEVICE_INITIALIZE = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void) -> ::windows_core::HRESULT>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 pub struct HDV_PCI_DEVICE_INTERFACE {
@@ -806,12 +806,12 @@ impl ::core::fmt::Debug for HDV_PCI_DEVICE_INTERFACE {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for HDV_PCI_DEVICE_INTERFACE {
+unsafe impl ::windows_core::Abi for HDV_PCI_DEVICE_INTERFACE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HDV_PCI_DEVICE_INTERFACE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HDV_PCI_DEVICE_INTERFACE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HDV_PCI_DEVICE_INTERFACE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HDV_PCI_DEVICE_INTERFACE {}
@@ -821,9 +821,9 @@ impl ::core::default::Default for HDV_PCI_DEVICE_INTERFACE {
     }
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type HDV_PCI_DEVICE_SET_CONFIGURATION = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void, configurationvaluecount: u32, configurationvalues: *const ::windows::core::PWSTR) -> ::windows::core::HRESULT>;
+pub type HDV_PCI_DEVICE_SET_CONFIGURATION = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void, configurationvaluecount: u32, configurationvalues: *const ::windows_core::PWSTR) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type HDV_PCI_DEVICE_START = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void) -> ::windows::core::HRESULT>;
+pub type HDV_PCI_DEVICE_START = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 pub type HDV_PCI_DEVICE_STOP = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void)>;
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
@@ -847,7 +847,7 @@ impl ::core::default::Default for HDV_PCI_INTERFACE_VERSION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HDV_PCI_INTERFACE_VERSION {
+unsafe impl ::windows_core::Abi for HDV_PCI_INTERFACE_VERSION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HDV_PCI_INTERFACE_VERSION {
@@ -878,12 +878,12 @@ impl ::core::fmt::Debug for HDV_PCI_PNP_ID {
         f.debug_struct("HDV_PCI_PNP_ID").field("VendorID", &self.VendorID).field("DeviceID", &self.DeviceID).field("RevisionID", &self.RevisionID).field("ProgIf", &self.ProgIf).field("SubClass", &self.SubClass).field("BaseClass", &self.BaseClass).field("SubVendorID", &self.SubVendorID).field("SubSystemID", &self.SubSystemID).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HDV_PCI_PNP_ID {
+unsafe impl ::windows_core::Abi for HDV_PCI_PNP_ID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HDV_PCI_PNP_ID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HDV_PCI_PNP_ID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HDV_PCI_PNP_ID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HDV_PCI_PNP_ID {}
@@ -893,21 +893,21 @@ impl ::core::default::Default for HDV_PCI_PNP_ID {
     }
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type HDV_PCI_READ_CONFIG_SPACE = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void, offset: u32, value: *mut u32) -> ::windows::core::HRESULT>;
+pub type HDV_PCI_READ_CONFIG_SPACE = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void, offset: u32, value: *mut u32) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type HDV_PCI_READ_INTERCEPTED_MEMORY = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, offset: u64, length: u64, value: *mut u8) -> ::windows::core::HRESULT>;
+pub type HDV_PCI_READ_INTERCEPTED_MEMORY = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, offset: u64, length: u64, value: *mut u8) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type HDV_PCI_WRITE_CONFIG_SPACE = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void, offset: u32, value: u32) -> ::windows::core::HRESULT>;
+pub type HDV_PCI_WRITE_CONFIG_SPACE = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void, offset: u32, value: u32) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type HDV_PCI_WRITE_INTERCEPTED_MEMORY = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, offset: u64, length: u64, value: *const u8) -> ::windows::core::HRESULT>;
+pub type HDV_PCI_WRITE_INTERCEPTED_MEMORY = ::core::option::Option<unsafe extern "system" fn(devicecontext: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, offset: u64, length: u64, value: *const u8) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 pub const HVSOCKET_ADDRESS_FLAG_PASSTHRU: u32 = 1u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 pub struct HVSOCKET_ADDRESS_INFO {
-    pub SystemId: ::windows::core::GUID,
-    pub VirtualMachineId: ::windows::core::GUID,
-    pub SiloId: ::windows::core::GUID,
+    pub SystemId: ::windows_core::GUID,
+    pub VirtualMachineId: ::windows_core::GUID,
+    pub SiloId: ::windows_core::GUID,
     pub Flags: u32,
 }
 impl ::core::marker::Copy for HVSOCKET_ADDRESS_INFO {}
@@ -921,12 +921,12 @@ impl ::core::fmt::Debug for HVSOCKET_ADDRESS_INFO {
         f.debug_struct("HVSOCKET_ADDRESS_INFO").field("SystemId", &self.SystemId).field("VirtualMachineId", &self.VirtualMachineId).field("SiloId", &self.SiloId).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HVSOCKET_ADDRESS_INFO {
+unsafe impl ::windows_core::Abi for HVSOCKET_ADDRESS_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HVSOCKET_ADDRESS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HVSOCKET_ADDRESS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HVSOCKET_ADDRESS_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HVSOCKET_ADDRESS_INFO {}
@@ -943,23 +943,23 @@ pub const HVSOCKET_CONNECT_TIMEOUT: u32 = 1u32;
 pub const HVSOCKET_CONNECT_TIMEOUT_MAX: u32 = 300000u32;
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 pub const HVSOCKET_CONTAINER_PASSTHRU: u32 = 2u32;
-pub const HV_GUID_BROADCAST: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xffffffff_ffff_ffff_ffff_ffffffffffff);
-pub const HV_GUID_CHILDREN: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x90db8b89_0d35_4f79_8ce9_49ea0ac8b7cd);
-pub const HV_GUID_LOOPBACK: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe0e16197_dd56_4a10_9195_5ee7a155a838);
-pub const HV_GUID_PARENT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa42e7cda_d03f_480c_9cc2_a4de20abb878);
-pub const HV_GUID_SILOHOST: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36bd0c5c_7276_4223_88ba_7d03b654c568);
-pub const HV_GUID_VSOCK_TEMPLATE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000000_facb_11e6_bd58_64006a7986d3);
-pub const HV_GUID_ZERO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000000_0000_0000_0000_000000000000);
+pub const HV_GUID_BROADCAST: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xffffffff_ffff_ffff_ffff_ffffffffffff);
+pub const HV_GUID_CHILDREN: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x90db8b89_0d35_4f79_8ce9_49ea0ac8b7cd);
+pub const HV_GUID_LOOPBACK: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe0e16197_dd56_4a10_9195_5ee7a155a838);
+pub const HV_GUID_PARENT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa42e7cda_d03f_480c_9cc2_a4de20abb878);
+pub const HV_GUID_SILOHOST: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36bd0c5c_7276_4223_88ba_7d03b654c568);
+pub const HV_GUID_VSOCK_TEMPLATE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000000_facb_11e6_bd58_64006a7986d3);
+pub const HV_GUID_ZERO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000000_0000_0000_0000_000000000000);
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 pub const HV_PROTOCOL_RAW: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn HdvCreateDeviceInstance(devicehosthandle: *const ::core::ffi::c_void, devicetype: HDV_DEVICE_TYPE, deviceclassid: *const ::windows::core::GUID, deviceinstanceid: *const ::windows::core::GUID, deviceinterface: *const ::core::ffi::c_void, devicecontext: *const ::core::ffi::c_void, devicehandle: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn HdvCreateDeviceInstance(devicehosthandle: *const ::core::ffi::c_void, devicetype: HDV_DEVICE_TYPE, deviceclassid: *const ::windows_core::GUID, deviceinstanceid: *const ::windows_core::GUID, deviceinterface: *const ::core::ffi::c_void, devicecontext: *const ::core::ffi::c_void, devicehandle: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HdvCreateDeviceInstance(devicehosthandle: *const ::core::ffi::c_void, devicetype: HDV_DEVICE_TYPE, deviceclassid: *const ::windows::core::GUID, deviceinstanceid: *const ::windows::core::GUID, deviceinterface: *const ::core::ffi::c_void, devicecontext: *const ::core::ffi::c_void, devicehandle: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn HdvCreateDeviceInstance(devicehosthandle: *const ::core::ffi::c_void, devicetype: HDV_DEVICE_TYPE, deviceclassid: *const ::windows_core::GUID, deviceinstanceid: *const ::windows_core::GUID, deviceinterface: *const ::core::ffi::c_void, devicecontext: *const ::core::ffi::c_void, devicehandle: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         HdvCreateDeviceInstance(::core::mem::transmute(devicehosthandle), ::core::mem::transmute(devicetype), ::core::mem::transmute(deviceclassid), ::core::mem::transmute(deviceinstanceid), ::core::mem::transmute(deviceinterface), ::core::mem::transmute(devicecontext), ::core::mem::transmute(devicehandle)).ok()
     }
@@ -969,12 +969,12 @@ pub unsafe fn HdvCreateDeviceInstance(devicehosthandle: *const ::core::ffi::c_vo
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HdvCreateGuestMemoryAperture<'a, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(requestor: *const ::core::ffi::c_void, guestphysicaladdress: u64, bytecount: u32, writeprotected: Param3, mappedaddress: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn HdvCreateGuestMemoryAperture<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(requestor: *const ::core::ffi::c_void, guestphysicaladdress: u64, bytecount: u32, writeprotected: Param3, mappedaddress: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HdvCreateGuestMemoryAperture(requestor: *const ::core::ffi::c_void, guestphysicaladdress: u64, bytecount: u32, writeprotected: super::super::Foundation::BOOL, mappedaddress: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn HdvCreateGuestMemoryAperture(requestor: *const ::core::ffi::c_void, guestphysicaladdress: u64, bytecount: u32, writeprotected: super::super::Foundation::BOOL, mappedaddress: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         HdvCreateGuestMemoryAperture(::core::mem::transmute(requestor), ::core::mem::transmute(guestphysicaladdress), ::core::mem::transmute(bytecount), writeprotected.into_param().abi(), ::core::mem::transmute(mappedaddress)).ok()
     }
@@ -984,12 +984,12 @@ pub unsafe fn HdvCreateGuestMemoryAperture<'a, Param3: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HdvCreateSectionBackedMmioRange<'a, Param5: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, offsetinpages: u64, lengthinpages: u64, mappingflags: HDV_MMIO_MAPPING_FLAGS, sectionhandle: Param5, sectionoffsetinpages: u64) -> ::windows::core::Result<()> {
+pub unsafe fn HdvCreateSectionBackedMmioRange<'a, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, offsetinpages: u64, lengthinpages: u64, mappingflags: HDV_MMIO_MAPPING_FLAGS, sectionhandle: Param5, sectionoffsetinpages: u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HdvCreateSectionBackedMmioRange(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, offsetinpages: u64, lengthinpages: u64, mappingflags: HDV_MMIO_MAPPING_FLAGS, sectionhandle: super::super::Foundation::HANDLE, sectionoffsetinpages: u64) -> ::windows::core::HRESULT;
+            fn HdvCreateSectionBackedMmioRange(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, offsetinpages: u64, lengthinpages: u64, mappingflags: HDV_MMIO_MAPPING_FLAGS, sectionhandle: super::super::Foundation::HANDLE, sectionoffsetinpages: u64) -> ::windows_core::HRESULT;
         }
         HdvCreateSectionBackedMmioRange(::core::mem::transmute(requestor), ::core::mem::transmute(barindex), ::core::mem::transmute(offsetinpages), ::core::mem::transmute(lengthinpages), ::core::mem::transmute(mappingflags), sectionhandle.into_param().abi(), ::core::mem::transmute(sectionoffsetinpages)).ok()
     }
@@ -998,12 +998,12 @@ pub unsafe fn HdvCreateSectionBackedMmioRange<'a, Param5: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn HdvDeliverGuestInterrupt(requestor: *const ::core::ffi::c_void, msiaddress: u64, msidata: u32) -> ::windows::core::Result<()> {
+pub unsafe fn HdvDeliverGuestInterrupt(requestor: *const ::core::ffi::c_void, msiaddress: u64, msidata: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HdvDeliverGuestInterrupt(requestor: *const ::core::ffi::c_void, msiaddress: u64, msidata: u32) -> ::windows::core::HRESULT;
+            fn HdvDeliverGuestInterrupt(requestor: *const ::core::ffi::c_void, msiaddress: u64, msidata: u32) -> ::windows_core::HRESULT;
         }
         HdvDeliverGuestInterrupt(::core::mem::transmute(requestor), ::core::mem::transmute(msiaddress), ::core::mem::transmute(msidata)).ok()
     }
@@ -1012,12 +1012,12 @@ pub unsafe fn HdvDeliverGuestInterrupt(requestor: *const ::core::ffi::c_void, ms
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn HdvDestroyGuestMemoryAperture(requestor: *const ::core::ffi::c_void, mappedaddress: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn HdvDestroyGuestMemoryAperture(requestor: *const ::core::ffi::c_void, mappedaddress: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HdvDestroyGuestMemoryAperture(requestor: *const ::core::ffi::c_void, mappedaddress: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn HdvDestroyGuestMemoryAperture(requestor: *const ::core::ffi::c_void, mappedaddress: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         HdvDestroyGuestMemoryAperture(::core::mem::transmute(requestor), ::core::mem::transmute(mappedaddress)).ok()
     }
@@ -1026,12 +1026,12 @@ pub unsafe fn HdvDestroyGuestMemoryAperture(requestor: *const ::core::ffi::c_voi
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn HdvDestroySectionBackedMmioRange(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, offsetinpages: u64) -> ::windows::core::Result<()> {
+pub unsafe fn HdvDestroySectionBackedMmioRange(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, offsetinpages: u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HdvDestroySectionBackedMmioRange(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, offsetinpages: u64) -> ::windows::core::HRESULT;
+            fn HdvDestroySectionBackedMmioRange(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, offsetinpages: u64) -> ::windows_core::HRESULT;
         }
         HdvDestroySectionBackedMmioRange(::core::mem::transmute(requestor), ::core::mem::transmute(barindex), ::core::mem::transmute(offsetinpages)).ok()
     }
@@ -1041,12 +1041,12 @@ pub unsafe fn HdvDestroySectionBackedMmioRange(requestor: *const ::core::ffi::c_
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_System_HostComputeSystem\"`*"]
 #[cfg(feature = "Win32_System_HostComputeSystem")]
 #[inline]
-pub unsafe fn HdvInitializeDeviceHost<'a, Param0: ::windows::core::IntoParam<'a, super::HostComputeSystem::HCS_SYSTEM>>(computesystem: Param0, devicehosthandle: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn HdvInitializeDeviceHost<'a, Param0: ::windows_core::IntoParam<'a, super::HostComputeSystem::HCS_SYSTEM>>(computesystem: Param0, devicehosthandle: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HdvInitializeDeviceHost(computesystem: super::HostComputeSystem::HCS_SYSTEM, devicehosthandle: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn HdvInitializeDeviceHost(computesystem: super::HostComputeSystem::HCS_SYSTEM, devicehosthandle: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         HdvInitializeDeviceHost(computesystem.into_param().abi(), ::core::mem::transmute(devicehosthandle)).ok()
     }
@@ -1055,14 +1055,14 @@ pub unsafe fn HdvInitializeDeviceHost<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn HdvReadGuestMemory(requestor: *const ::core::ffi::c_void, guestphysicaladdress: u64, buffer: &mut [u8]) -> ::windows::core::Result<()> {
+pub unsafe fn HdvReadGuestMemory(requestor: *const ::core::ffi::c_void, guestphysicaladdress: u64, buffer: &mut [u8]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HdvReadGuestMemory(requestor: *const ::core::ffi::c_void, guestphysicaladdress: u64, bytecount: u32, buffer: *mut u8) -> ::windows::core::HRESULT;
+            fn HdvReadGuestMemory(requestor: *const ::core::ffi::c_void, guestphysicaladdress: u64, bytecount: u32, buffer: *mut u8) -> ::windows_core::HRESULT;
         }
-        HdvReadGuestMemory(::core::mem::transmute(requestor), ::core::mem::transmute(guestphysicaladdress), buffer.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer))).ok()
+        HdvReadGuestMemory(::core::mem::transmute(requestor), ::core::mem::transmute(guestphysicaladdress), buffer.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer))).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1070,12 +1070,12 @@ pub unsafe fn HdvReadGuestMemory(requestor: *const ::core::ffi::c_void, guestphy
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HdvRegisterDoorbell<'a, Param5: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, baroffset: u64, triggervalue: u64, flags: u64, doorbellevent: Param5) -> ::windows::core::Result<()> {
+pub unsafe fn HdvRegisterDoorbell<'a, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, baroffset: u64, triggervalue: u64, flags: u64, doorbellevent: Param5) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HdvRegisterDoorbell(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, baroffset: u64, triggervalue: u64, flags: u64, doorbellevent: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn HdvRegisterDoorbell(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, baroffset: u64, triggervalue: u64, flags: u64, doorbellevent: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         HdvRegisterDoorbell(::core::mem::transmute(requestor), ::core::mem::transmute(barindex), ::core::mem::transmute(baroffset), ::core::mem::transmute(triggervalue), ::core::mem::transmute(flags), doorbellevent.into_param().abi()).ok()
     }
@@ -1084,12 +1084,12 @@ pub unsafe fn HdvRegisterDoorbell<'a, Param5: ::windows::core::IntoParam<'a, sup
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn HdvTeardownDeviceHost(devicehosthandle: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn HdvTeardownDeviceHost(devicehosthandle: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HdvTeardownDeviceHost(devicehosthandle: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn HdvTeardownDeviceHost(devicehosthandle: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         HdvTeardownDeviceHost(::core::mem::transmute(devicehosthandle)).ok()
     }
@@ -1098,12 +1098,12 @@ pub unsafe fn HdvTeardownDeviceHost(devicehosthandle: *const ::core::ffi::c_void
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn HdvUnregisterDoorbell(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, baroffset: u64, triggervalue: u64, flags: u64) -> ::windows::core::Result<()> {
+pub unsafe fn HdvUnregisterDoorbell(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, baroffset: u64, triggervalue: u64, flags: u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HdvUnregisterDoorbell(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, baroffset: u64, triggervalue: u64, flags: u64) -> ::windows::core::HRESULT;
+            fn HdvUnregisterDoorbell(requestor: *const ::core::ffi::c_void, barindex: HDV_PCI_BAR_SELECTOR, baroffset: u64, triggervalue: u64, flags: u64) -> ::windows_core::HRESULT;
         }
         HdvUnregisterDoorbell(::core::mem::transmute(requestor), ::core::mem::transmute(barindex), ::core::mem::transmute(baroffset), ::core::mem::transmute(triggervalue), ::core::mem::transmute(flags)).ok()
     }
@@ -1112,14 +1112,14 @@ pub unsafe fn HdvUnregisterDoorbell(requestor: *const ::core::ffi::c_void, barin
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn HdvWriteGuestMemory(requestor: *const ::core::ffi::c_void, guestphysicaladdress: u64, buffer: &[u8]) -> ::windows::core::Result<()> {
+pub unsafe fn HdvWriteGuestMemory(requestor: *const ::core::ffi::c_void, guestphysicaladdress: u64, buffer: &[u8]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HdvWriteGuestMemory(requestor: *const ::core::ffi::c_void, guestphysicaladdress: u64, bytecount: u32, buffer: *const u8) -> ::windows::core::HRESULT;
+            fn HdvWriteGuestMemory(requestor: *const ::core::ffi::c_void, guestphysicaladdress: u64, bytecount: u32, buffer: *const u8) -> ::windows_core::HRESULT;
         }
-        HdvWriteGuestMemory(::core::mem::transmute(requestor), ::core::mem::transmute(guestphysicaladdress), buffer.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(buffer))).ok()
+        HdvWriteGuestMemory(::core::mem::transmute(requestor), ::core::mem::transmute(guestphysicaladdress), buffer.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(buffer))).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1129,12 +1129,12 @@ pub const IOCTL_VMGENCOUNTER_READ: u32 = 3325956u32;
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InKernelSpace(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, inkernelspace: *mut super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
+pub unsafe fn InKernelSpace(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, inkernelspace: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn InKernelSpace(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, inkernelspace: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn InKernelSpace(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, inkernelspace: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
         InKernelSpace(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(inkernelspace)).ok()
     }
@@ -1144,12 +1144,12 @@ pub unsafe fn InKernelSpace(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vp
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsActiveVirtualTrustLevelEnabled(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, activevirtualtrustlevelenabled: *mut super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
+pub unsafe fn IsActiveVirtualTrustLevelEnabled(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, activevirtualtrustlevelenabled: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsActiveVirtualTrustLevelEnabled(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, activevirtualtrustlevelenabled: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn IsActiveVirtualTrustLevelEnabled(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, activevirtualtrustlevelenabled: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
         IsActiveVirtualTrustLevelEnabled(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(activevirtualtrustlevelenabled)).ok()
     }
@@ -1159,12 +1159,12 @@ pub unsafe fn IsActiveVirtualTrustLevelEnabled(vmsavedstatedumphandle: *mut ::co
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsNestedVirtualizationEnabled(vmsavedstatedumphandle: *mut ::core::ffi::c_void, enabled: *mut super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
+pub unsafe fn IsNestedVirtualizationEnabled(vmsavedstatedumphandle: *mut ::core::ffi::c_void, enabled: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsNestedVirtualizationEnabled(vmsavedstatedumphandle: *mut ::core::ffi::c_void, enabled: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn IsNestedVirtualizationEnabled(vmsavedstatedumphandle: *mut ::core::ffi::c_void, enabled: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
         IsNestedVirtualizationEnabled(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(enabled)).ok()
     }
@@ -1173,12 +1173,12 @@ pub unsafe fn IsNestedVirtualizationEnabled(vmsavedstatedumphandle: *mut ::core:
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn LoadSavedStateFile<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(vmrsfile: Param0, vmsavedstatedumphandle: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn LoadSavedStateFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(vmrsfile: Param0, vmsavedstatedumphandle: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadSavedStateFile(vmrsfile: ::windows::core::PCWSTR, vmsavedstatedumphandle: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn LoadSavedStateFile(vmrsfile: ::windows_core::PCWSTR, vmsavedstatedumphandle: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         LoadSavedStateFile(vmrsfile.into_param().abi(), ::core::mem::transmute(vmsavedstatedumphandle)).ok()
     }
@@ -1187,12 +1187,12 @@ pub unsafe fn LoadSavedStateFile<'a, Param0: ::windows::core::IntoParam<'a, ::wi
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn LoadSavedStateFiles<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(binfile: Param0, vsvfile: Param1, vmsavedstatedumphandle: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn LoadSavedStateFiles<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(binfile: Param0, vsvfile: Param1, vmsavedstatedumphandle: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadSavedStateFiles(binfile: ::windows::core::PCWSTR, vsvfile: ::windows::core::PCWSTR, vmsavedstatedumphandle: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn LoadSavedStateFiles(binfile: ::windows_core::PCWSTR, vsvfile: ::windows_core::PCWSTR, vmsavedstatedumphandle: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         LoadSavedStateFiles(binfile.into_param().abi(), vsvfile.into_param().abi(), ::core::mem::transmute(vmsavedstatedumphandle)).ok()
     }
@@ -1201,12 +1201,12 @@ pub unsafe fn LoadSavedStateFiles<'a, Param0: ::windows::core::IntoParam<'a, ::w
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn LoadSavedStateModuleSymbols<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, imagename: Param1, modulename: Param2, baseaddress: u64, sizeofbase: u32) -> ::windows::core::Result<()> {
+pub unsafe fn LoadSavedStateModuleSymbols<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, imagename: Param1, modulename: Param2, baseaddress: u64, sizeofbase: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadSavedStateModuleSymbols(vmsavedstatedumphandle: *mut ::core::ffi::c_void, imagename: ::windows::core::PCSTR, modulename: ::windows::core::PCSTR, baseaddress: u64, sizeofbase: u32) -> ::windows::core::HRESULT;
+            fn LoadSavedStateModuleSymbols(vmsavedstatedumphandle: *mut ::core::ffi::c_void, imagename: ::windows_core::PCSTR, modulename: ::windows_core::PCSTR, baseaddress: u64, sizeofbase: u32) -> ::windows_core::HRESULT;
         }
         LoadSavedStateModuleSymbols(::core::mem::transmute(vmsavedstatedumphandle), imagename.into_param().abi(), modulename.into_param().abi(), ::core::mem::transmute(baseaddress), ::core::mem::transmute(sizeofbase)).ok()
     }
@@ -1215,12 +1215,12 @@ pub unsafe fn LoadSavedStateModuleSymbols<'a, Param1: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn LoadSavedStateModuleSymbolsEx<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, imagename: Param1, imagetimestamp: u32, modulename: Param3, baseaddress: u64, sizeofbase: u32) -> ::windows::core::Result<()> {
+pub unsafe fn LoadSavedStateModuleSymbolsEx<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, imagename: Param1, imagetimestamp: u32, modulename: Param3, baseaddress: u64, sizeofbase: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadSavedStateModuleSymbolsEx(vmsavedstatedumphandle: *mut ::core::ffi::c_void, imagename: ::windows::core::PCSTR, imagetimestamp: u32, modulename: ::windows::core::PCSTR, baseaddress: u64, sizeofbase: u32) -> ::windows::core::HRESULT;
+            fn LoadSavedStateModuleSymbolsEx(vmsavedstatedumphandle: *mut ::core::ffi::c_void, imagename: ::windows_core::PCSTR, imagetimestamp: u32, modulename: ::windows_core::PCSTR, baseaddress: u64, sizeofbase: u32) -> ::windows_core::HRESULT;
         }
         LoadSavedStateModuleSymbolsEx(::core::mem::transmute(vmsavedstatedumphandle), imagename.into_param().abi(), ::core::mem::transmute(imagetimestamp), modulename.into_param().abi(), ::core::mem::transmute(baseaddress), ::core::mem::transmute(sizeofbase)).ok()
     }
@@ -1230,12 +1230,12 @@ pub unsafe fn LoadSavedStateModuleSymbolsEx<'a, Param1: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadSavedStateSymbolProvider<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, usersymbols: Param1, force: Param2) -> ::windows::core::Result<()> {
+pub unsafe fn LoadSavedStateSymbolProvider<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, usersymbols: Param1, force: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadSavedStateSymbolProvider(vmsavedstatedumphandle: *mut ::core::ffi::c_void, usersymbols: ::windows::core::PCWSTR, force: super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn LoadSavedStateSymbolProvider(vmsavedstatedumphandle: *mut ::core::ffi::c_void, usersymbols: ::windows_core::PCWSTR, force: super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
         LoadSavedStateSymbolProvider(::core::mem::transmute(vmsavedstatedumphandle), usersymbols.into_param().abi(), force.into_param().abi()).ok()
     }
@@ -1244,12 +1244,12 @@ pub unsafe fn LoadSavedStateSymbolProvider<'a, Param1: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn LocateSavedStateFiles<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(vmname: Param0, snapshotname: Param1, binpath: *mut ::windows::core::PWSTR, vsvpath: *mut ::windows::core::PWSTR, vmrspath: *mut ::windows::core::PWSTR) -> ::windows::core::Result<()> {
+pub unsafe fn LocateSavedStateFiles<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(vmname: Param0, snapshotname: Param1, binpath: *mut ::windows_core::PWSTR, vsvpath: *mut ::windows_core::PWSTR, vmrspath: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LocateSavedStateFiles(vmname: ::windows::core::PCWSTR, snapshotname: ::windows::core::PCWSTR, binpath: *mut ::windows::core::PWSTR, vsvpath: *mut ::windows::core::PWSTR, vmrspath: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
+            fn LocateSavedStateFiles(vmname: ::windows_core::PCWSTR, snapshotname: ::windows_core::PCWSTR, binpath: *mut ::windows_core::PWSTR, vsvpath: *mut ::windows_core::PWSTR, vmrspath: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT;
         }
         LocateSavedStateFiles(vmname.into_param().abi(), snapshotname.into_param().abi(), ::core::mem::transmute(binpath), ::core::mem::transmute(vsvpath), ::core::mem::transmute(vmrspath)).ok()
     }
@@ -1259,7 +1259,7 @@ pub unsafe fn LocateSavedStateFiles<'a, Param0: ::windows::core::IntoParam<'a, :
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 pub struct MODULE_INFO {
-    pub ProcessImageName: ::windows::core::PCSTR,
+    pub ProcessImageName: ::windows_core::PCSTR,
     pub Image: DOS_IMAGE_INFO,
 }
 impl ::core::marker::Copy for MODULE_INFO {}
@@ -1273,12 +1273,12 @@ impl ::core::fmt::Debug for MODULE_INFO {
         f.debug_struct("MODULE_INFO").field("ProcessImageName", &self.ProcessImageName).field("Image", &self.Image).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MODULE_INFO {
+unsafe impl ::windows_core::Abi for MODULE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MODULE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MODULE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MODULE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MODULE_INFO {}
@@ -1314,7 +1314,7 @@ impl ::core::default::Default for PAGING_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PAGING_MODE {
+unsafe impl ::windows_core::Abi for PAGING_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PAGING_MODE {
@@ -1655,7 +1655,7 @@ impl ::core::default::Default for REGISTER_ID {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for REGISTER_ID {
+unsafe impl ::windows_core::Abi for REGISTER_ID {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for REGISTER_ID {
@@ -1665,12 +1665,12 @@ impl ::core::fmt::Debug for REGISTER_ID {
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn ReadGuestPhysicalAddress(vmsavedstatedumphandle: *mut ::core::ffi::c_void, physicaladdress: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn ReadGuestPhysicalAddress(vmsavedstatedumphandle: *mut ::core::ffi::c_void, physicaladdress: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadGuestPhysicalAddress(vmsavedstatedumphandle: *mut ::core::ffi::c_void, physicaladdress: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows::core::HRESULT;
+            fn ReadGuestPhysicalAddress(vmsavedstatedumphandle: *mut ::core::ffi::c_void, physicaladdress: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_core::HRESULT;
         }
         ReadGuestPhysicalAddress(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(physicaladdress), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize), ::core::mem::transmute(bytesread)).ok()
     }
@@ -1679,12 +1679,12 @@ pub unsafe fn ReadGuestPhysicalAddress(vmsavedstatedumphandle: *mut ::core::ffi:
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn ReadGuestRawSavedMemory(vmsavedstatedumphandle: *mut ::core::ffi::c_void, rawsavedmemoryoffset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn ReadGuestRawSavedMemory(vmsavedstatedumphandle: *mut ::core::ffi::c_void, rawsavedmemoryoffset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadGuestRawSavedMemory(vmsavedstatedumphandle: *mut ::core::ffi::c_void, rawsavedmemoryoffset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows::core::HRESULT;
+            fn ReadGuestRawSavedMemory(vmsavedstatedumphandle: *mut ::core::ffi::c_void, rawsavedmemoryoffset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_core::HRESULT;
         }
         ReadGuestRawSavedMemory(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(rawsavedmemoryoffset), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize), ::core::mem::transmute(bytesread)).ok()
     }
@@ -1693,12 +1693,12 @@ pub unsafe fn ReadGuestRawSavedMemory(vmsavedstatedumphandle: *mut ::core::ffi::
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn ReadSavedStateGlobalVariable<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, globalname: Param2, buffer: *mut ::core::ffi::c_void, buffersize: u32) -> ::windows::core::Result<()> {
+pub unsafe fn ReadSavedStateGlobalVariable<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, globalname: Param2, buffer: *mut ::core::ffi::c_void, buffersize: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadSavedStateGlobalVariable(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, globalname: ::windows::core::PCSTR, buffer: *mut ::core::ffi::c_void, buffersize: u32) -> ::windows::core::HRESULT;
+            fn ReadSavedStateGlobalVariable(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, globalname: ::windows_core::PCSTR, buffer: *mut ::core::ffi::c_void, buffersize: u32) -> ::windows_core::HRESULT;
         }
         ReadSavedStateGlobalVariable(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), globalname.into_param().abi(), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize)).ok()
     }
@@ -1707,12 +1707,12 @@ pub unsafe fn ReadSavedStateGlobalVariable<'a, Param2: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn ReleaseSavedStateFiles(vmsavedstatedumphandle: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn ReleaseSavedStateFiles(vmsavedstatedumphandle: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReleaseSavedStateFiles(vmsavedstatedumphandle: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn ReleaseSavedStateFiles(vmsavedstatedumphandle: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         ReleaseSavedStateFiles(::core::mem::transmute(vmsavedstatedumphandle)).ok()
     }
@@ -1721,12 +1721,12 @@ pub unsafe fn ReleaseSavedStateFiles(vmsavedstatedumphandle: *mut ::core::ffi::c
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn ReleaseSavedStateSymbolProvider(vmsavedstatedumphandle: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn ReleaseSavedStateSymbolProvider(vmsavedstatedumphandle: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReleaseSavedStateSymbolProvider(vmsavedstatedumphandle: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn ReleaseSavedStateSymbolProvider(vmsavedstatedumphandle: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         ReleaseSavedStateSymbolProvider(::core::mem::transmute(vmsavedstatedumphandle)).ok()
     }
@@ -1735,12 +1735,12 @@ pub unsafe fn ReleaseSavedStateSymbolProvider(vmsavedstatedumphandle: *mut ::cor
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn ResolveSavedStateGlobalVariableAddress<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, globalname: Param2, virtualaddress: *mut u64, size: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn ResolveSavedStateGlobalVariableAddress<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, globalname: Param2, virtualaddress: *mut u64, size: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ResolveSavedStateGlobalVariableAddress(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, globalname: ::windows::core::PCSTR, virtualaddress: *mut u64, size: *mut u32) -> ::windows::core::HRESULT;
+            fn ResolveSavedStateGlobalVariableAddress(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, globalname: ::windows_core::PCSTR, virtualaddress: *mut u64, size: *mut u32) -> ::windows_core::HRESULT;
         }
         ResolveSavedStateGlobalVariableAddress(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), globalname.into_param().abi(), ::core::mem::transmute(virtualaddress), ::core::mem::transmute(size)).ok()
     }
@@ -1752,8 +1752,8 @@ pub unsafe fn ResolveSavedStateGlobalVariableAddress<'a, Param2: ::windows::core
 pub struct SOCKADDR_HV {
     pub Family: u16,
     pub Reserved: u16,
-    pub VmId: ::windows::core::GUID,
-    pub ServiceId: ::windows::core::GUID,
+    pub VmId: ::windows_core::GUID,
+    pub ServiceId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for SOCKADDR_HV {}
 impl ::core::clone::Clone for SOCKADDR_HV {
@@ -1766,12 +1766,12 @@ impl ::core::fmt::Debug for SOCKADDR_HV {
         f.debug_struct("SOCKADDR_HV").field("Family", &self.Family).field("Reserved", &self.Reserved).field("VmId", &self.VmId).field("ServiceId", &self.ServiceId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SOCKADDR_HV {
+unsafe impl ::windows_core::Abi for SOCKADDR_HV {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SOCKADDR_HV {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SOCKADDR_HV>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SOCKADDR_HV>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SOCKADDR_HV {}
@@ -1783,12 +1783,12 @@ impl ::core::default::Default for SOCKADDR_HV {
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ScanMemoryForDosImages(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, startaddress: u64, endaddress: u64, callbackcontext: *mut ::core::ffi::c_void, foundimagecallback: FOUND_IMAGE_CALLBACK, standaloneaddress: *const u64, standaloneaddresscount: u32) -> ::windows::core::Result<()> {
+pub unsafe fn ScanMemoryForDosImages(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, startaddress: u64, endaddress: u64, callbackcontext: *mut ::core::ffi::c_void, foundimagecallback: FOUND_IMAGE_CALLBACK, standaloneaddress: *const u64, standaloneaddresscount: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ScanMemoryForDosImages(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, startaddress: u64, endaddress: u64, callbackcontext: *mut ::core::ffi::c_void, foundimagecallback: ::windows::core::RawPtr, standaloneaddress: *const u64, standaloneaddresscount: u32) -> ::windows::core::HRESULT;
+            fn ScanMemoryForDosImages(vmsavedstatedumphandle: *mut ::core::ffi::c_void, vpid: u32, startaddress: u64, endaddress: u64, callbackcontext: *mut ::core::ffi::c_void, foundimagecallback: ::windows_core::RawPtr, standaloneaddress: *const u64, standaloneaddresscount: u32) -> ::windows_core::HRESULT;
         }
         ScanMemoryForDosImages(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(vpid), ::core::mem::transmute(startaddress), ::core::mem::transmute(endaddress), ::core::mem::transmute(callbackcontext), ::core::mem::transmute(foundimagecallback), ::core::mem::transmute(standaloneaddress), ::core::mem::transmute(standaloneaddresscount)).ok()
     }
@@ -1797,12 +1797,12 @@ pub unsafe fn ScanMemoryForDosImages(vmsavedstatedumphandle: *mut ::core::ffi::c
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn SetMemoryBlockCacheLimit(vmsavedstatedumphandle: *mut ::core::ffi::c_void, memoryblockcachelimit: u64) -> ::windows::core::Result<()> {
+pub unsafe fn SetMemoryBlockCacheLimit(vmsavedstatedumphandle: *mut ::core::ffi::c_void, memoryblockcachelimit: u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetMemoryBlockCacheLimit(vmsavedstatedumphandle: *mut ::core::ffi::c_void, memoryblockcachelimit: u64) -> ::windows::core::HRESULT;
+            fn SetMemoryBlockCacheLimit(vmsavedstatedumphandle: *mut ::core::ffi::c_void, memoryblockcachelimit: u64) -> ::windows_core::HRESULT;
         }
         SetMemoryBlockCacheLimit(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(memoryblockcachelimit)).ok()
     }
@@ -1811,12 +1811,12 @@ pub unsafe fn SetMemoryBlockCacheLimit(vmsavedstatedumphandle: *mut ::core::ffi:
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn SetSavedStateSymbolProviderDebugInfoCallback(vmsavedstatedumphandle: *mut ::core::ffi::c_void, callback: GUEST_SYMBOLS_PROVIDER_DEBUG_INFO_CALLBACK) -> ::windows::core::Result<()> {
+pub unsafe fn SetSavedStateSymbolProviderDebugInfoCallback(vmsavedstatedumphandle: *mut ::core::ffi::c_void, callback: GUEST_SYMBOLS_PROVIDER_DEBUG_INFO_CALLBACK) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetSavedStateSymbolProviderDebugInfoCallback(vmsavedstatedumphandle: *mut ::core::ffi::c_void, callback: ::windows::core::RawPtr) -> ::windows::core::HRESULT;
+            fn SetSavedStateSymbolProviderDebugInfoCallback(vmsavedstatedumphandle: *mut ::core::ffi::c_void, callback: ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         SetSavedStateSymbolProviderDebugInfoCallback(::core::mem::transmute(vmsavedstatedumphandle), ::core::mem::transmute(callback)).ok()
     }
@@ -1846,7 +1846,7 @@ impl ::core::default::Default for VIRTUAL_PROCESSOR_ARCH {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_ARCH {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_ARCH {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VIRTUAL_PROCESSOR_ARCH {
@@ -1870,12 +1870,12 @@ impl ::core::clone::Clone for VIRTUAL_PROCESSOR_REGISTER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_REGISTER {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_REGISTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VIRTUAL_PROCESSOR_REGISTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VIRTUAL_PROCESSOR_REGISTER {}
@@ -1901,12 +1901,12 @@ impl ::core::fmt::Debug for VIRTUAL_PROCESSOR_REGISTER_0 {
         f.debug_struct("VIRTUAL_PROCESSOR_REGISTER_0").field("Low64", &self.Low64).field("High64", &self.High64).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_REGISTER_0 {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_REGISTER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VIRTUAL_PROCESSOR_REGISTER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VIRTUAL_PROCESSOR_REGISTER_0 {}
@@ -1929,12 +1929,12 @@ impl ::core::clone::Clone for VIRTUAL_PROCESSOR_REGISTER_1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_REGISTER_1 {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_REGISTER_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VIRTUAL_PROCESSOR_REGISTER_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VIRTUAL_PROCESSOR_REGISTER_1 {}
@@ -1959,12 +1959,12 @@ impl ::core::clone::Clone for VIRTUAL_PROCESSOR_REGISTER_1_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_0 {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VIRTUAL_PROCESSOR_REGISTER_1_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VIRTUAL_PROCESSOR_REGISTER_1_0 {}
@@ -1985,12 +1985,12 @@ impl ::core::clone::Clone for VIRTUAL_PROCESSOR_REGISTER_1_0_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_0_0 {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VIRTUAL_PROCESSOR_REGISTER_1_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VIRTUAL_PROCESSOR_REGISTER_1_0_0 {}
@@ -2016,12 +2016,12 @@ impl ::core::fmt::Debug for VIRTUAL_PROCESSOR_REGISTER_1_0_0_0 {
         f.debug_struct("VIRTUAL_PROCESSOR_REGISTER_1_0_0_0").field("LastFpEip", &self.LastFpEip).field("LastFpCs", &self.LastFpCs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_0_0_0 {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_0_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VIRTUAL_PROCESSOR_REGISTER_1_0_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_0_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_0_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VIRTUAL_PROCESSOR_REGISTER_1_0_0_0 {}
@@ -2044,12 +2044,12 @@ impl ::core::clone::Clone for VIRTUAL_PROCESSOR_REGISTER_1_1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_1 {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VIRTUAL_PROCESSOR_REGISTER_1_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VIRTUAL_PROCESSOR_REGISTER_1_1 {}
@@ -2070,12 +2070,12 @@ impl ::core::clone::Clone for VIRTUAL_PROCESSOR_REGISTER_1_1_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_1_0 {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_1_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VIRTUAL_PROCESSOR_REGISTER_1_1_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_1_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_1_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VIRTUAL_PROCESSOR_REGISTER_1_1_0 {}
@@ -2100,12 +2100,12 @@ impl ::core::fmt::Debug for VIRTUAL_PROCESSOR_REGISTER_1_1_0_0 {
         f.debug_struct("VIRTUAL_PROCESSOR_REGISTER_1_1_0_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_1_0_0 {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_1_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VIRTUAL_PROCESSOR_REGISTER_1_1_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_1_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_1_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VIRTUAL_PROCESSOR_REGISTER_1_1_0_0 {}
@@ -2131,12 +2131,12 @@ impl ::core::fmt::Debug for VIRTUAL_PROCESSOR_REGISTER_1_2 {
         f.debug_struct("VIRTUAL_PROCESSOR_REGISTER_1_2").field("Limit", &self.Limit).field("Base", &self.Base).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_2 {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VIRTUAL_PROCESSOR_REGISTER_1_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VIRTUAL_PROCESSOR_REGISTER_1_2 {}
@@ -2158,12 +2158,12 @@ impl ::core::clone::Clone for VIRTUAL_PROCESSOR_REGISTER_1_3 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_3 {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VIRTUAL_PROCESSOR_REGISTER_1_3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VIRTUAL_PROCESSOR_REGISTER_1_3 {}
@@ -2184,12 +2184,12 @@ impl ::core::clone::Clone for VIRTUAL_PROCESSOR_REGISTER_1_3_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_3_0 {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_3_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VIRTUAL_PROCESSOR_REGISTER_1_3_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_3_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_3_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VIRTUAL_PROCESSOR_REGISTER_1_3_0 {}
@@ -2215,12 +2215,12 @@ impl ::core::fmt::Debug for VIRTUAL_PROCESSOR_REGISTER_1_3_0_0 {
         f.debug_struct("VIRTUAL_PROCESSOR_REGISTER_1_3_0_0").field("LastFpDp", &self.LastFpDp).field("LastFpDs", &self.LastFpDs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_3_0_0 {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_REGISTER_1_3_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VIRTUAL_PROCESSOR_REGISTER_1_3_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_3_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VIRTUAL_PROCESSOR_REGISTER_1_3_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VIRTUAL_PROCESSOR_REGISTER_1_3_0_0 {}
@@ -2254,7 +2254,7 @@ impl ::core::default::Default for VIRTUAL_PROCESSOR_VENDOR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_PROCESSOR_VENDOR {
+unsafe impl ::windows_core::Abi for VIRTUAL_PROCESSOR_VENDOR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VIRTUAL_PROCESSOR_VENDOR {
@@ -2279,12 +2279,12 @@ impl ::core::fmt::Debug for VM_GENCOUNTER {
         f.debug_struct("VM_GENCOUNTER").field("GenerationCount", &self.GenerationCount).field("GenerationCountHigh", &self.GenerationCountHigh).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VM_GENCOUNTER {
+unsafe impl ::windows_core::Abi for VM_GENCOUNTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VM_GENCOUNTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VM_GENCOUNTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VM_GENCOUNTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VM_GENCOUNTER {}
@@ -2307,12 +2307,12 @@ impl ::core::clone::Clone for WHV_ACCESS_GPA_CONTROLS {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_ACCESS_GPA_CONTROLS {
+unsafe impl ::windows_core::Abi for WHV_ACCESS_GPA_CONTROLS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_ACCESS_GPA_CONTROLS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_ACCESS_GPA_CONTROLS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_ACCESS_GPA_CONTROLS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_ACCESS_GPA_CONTROLS {}
@@ -2338,12 +2338,12 @@ impl ::core::fmt::Debug for WHV_ACCESS_GPA_CONTROLS_0 {
         f.debug_struct("WHV_ACCESS_GPA_CONTROLS_0").field("CacheType", &self.CacheType).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_ACCESS_GPA_CONTROLS_0 {
+unsafe impl ::windows_core::Abi for WHV_ACCESS_GPA_CONTROLS_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_ACCESS_GPA_CONTROLS_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_ACCESS_GPA_CONTROLS_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_ACCESS_GPA_CONTROLS_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_ACCESS_GPA_CONTROLS_0 {}
@@ -2363,12 +2363,12 @@ impl ::core::clone::Clone for WHV_ADVISE_GPA_RANGE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_ADVISE_GPA_RANGE {
+unsafe impl ::windows_core::Abi for WHV_ADVISE_GPA_RANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_ADVISE_GPA_RANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_ADVISE_GPA_RANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_ADVISE_GPA_RANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_ADVISE_GPA_RANGE {}
@@ -2398,7 +2398,7 @@ impl ::core::default::Default for WHV_ADVISE_GPA_RANGE_CODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_ADVISE_GPA_RANGE_CODE {
+unsafe impl ::windows_core::Abi for WHV_ADVISE_GPA_RANGE_CODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_ADVISE_GPA_RANGE_CODE {
@@ -2418,12 +2418,12 @@ impl ::core::clone::Clone for WHV_ADVISE_GPA_RANGE_POPULATE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_ADVISE_GPA_RANGE_POPULATE {
+unsafe impl ::windows_core::Abi for WHV_ADVISE_GPA_RANGE_POPULATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_ADVISE_GPA_RANGE_POPULATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_ADVISE_GPA_RANGE_POPULATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_ADVISE_GPA_RANGE_POPULATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_ADVISE_GPA_RANGE_POPULATE {}
@@ -2444,12 +2444,12 @@ impl ::core::clone::Clone for WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS {
+unsafe impl ::windows_core::Abi for WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS {}
@@ -2474,12 +2474,12 @@ impl ::core::fmt::Debug for WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS_0 {
         f.debug_struct("WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS_0 {
+unsafe impl ::windows_core::Abi for WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_ADVISE_GPA_RANGE_POPULATE_FLAGS_0 {}
@@ -2507,7 +2507,7 @@ impl ::core::default::Default for WHV_ALLOCATE_VPCI_RESOURCE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_ALLOCATE_VPCI_RESOURCE_FLAGS {
+unsafe impl ::windows_core::Abi for WHV_ALLOCATE_VPCI_RESOURCE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_ALLOCATE_VPCI_RESOURCE_FLAGS {
@@ -2570,7 +2570,7 @@ impl ::core::default::Default for WHV_CACHE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_CACHE_TYPE {
+unsafe impl ::windows_core::Abi for WHV_CACHE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_CACHE_TYPE {
@@ -2609,13 +2609,13 @@ impl ::core::clone::Clone for WHV_CAPABILITY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WHV_CAPABILITY {
+unsafe impl ::windows_core::Abi for WHV_CAPABILITY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WHV_CAPABILITY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_CAPABILITY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_CAPABILITY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2675,7 +2675,7 @@ impl ::core::default::Default for WHV_CAPABILITY_CODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_CAPABILITY_CODE {
+unsafe impl ::windows_core::Abi for WHV_CAPABILITY_CODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_CAPABILITY_CODE {
@@ -2695,12 +2695,12 @@ impl ::core::clone::Clone for WHV_CAPABILITY_FEATURES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_CAPABILITY_FEATURES {
+unsafe impl ::windows_core::Abi for WHV_CAPABILITY_FEATURES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_CAPABILITY_FEATURES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_CAPABILITY_FEATURES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_CAPABILITY_FEATURES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_CAPABILITY_FEATURES {}
@@ -2725,12 +2725,12 @@ impl ::core::fmt::Debug for WHV_CAPABILITY_FEATURES_0 {
         f.debug_struct("WHV_CAPABILITY_FEATURES_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_CAPABILITY_FEATURES_0 {
+unsafe impl ::windows_core::Abi for WHV_CAPABILITY_FEATURES_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_CAPABILITY_FEATURES_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_CAPABILITY_FEATURES_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_CAPABILITY_FEATURES_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_CAPABILITY_FEATURES_0 {}
@@ -2759,12 +2759,12 @@ impl ::core::fmt::Debug for WHV_CAPABILITY_PROCESSOR_FREQUENCY_CAP {
         f.debug_struct("WHV_CAPABILITY_PROCESSOR_FREQUENCY_CAP").field("_bitfield", &self._bitfield).field("HighestFrequencyMhz", &self.HighestFrequencyMhz).field("NominalFrequencyMhz", &self.NominalFrequencyMhz).field("LowestFrequencyMhz", &self.LowestFrequencyMhz).field("FrequencyStepMhz", &self.FrequencyStepMhz).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_CAPABILITY_PROCESSOR_FREQUENCY_CAP {
+unsafe impl ::windows_core::Abi for WHV_CAPABILITY_PROCESSOR_FREQUENCY_CAP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_CAPABILITY_PROCESSOR_FREQUENCY_CAP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_CAPABILITY_PROCESSOR_FREQUENCY_CAP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_CAPABILITY_PROCESSOR_FREQUENCY_CAP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_CAPABILITY_PROCESSOR_FREQUENCY_CAP {}
@@ -2792,12 +2792,12 @@ impl ::core::fmt::Debug for WHV_CPUID_OUTPUT {
         f.debug_struct("WHV_CPUID_OUTPUT").field("Eax", &self.Eax).field("Ebx", &self.Ebx).field("Ecx", &self.Ecx).field("Edx", &self.Edx).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_CPUID_OUTPUT {
+unsafe impl ::windows_core::Abi for WHV_CPUID_OUTPUT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_CPUID_OUTPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_CPUID_OUTPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_CPUID_OUTPUT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_CPUID_OUTPUT {}
@@ -2827,7 +2827,7 @@ impl ::core::default::Default for WHV_CREATE_VPCI_DEVICE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_CREATE_VPCI_DEVICE_FLAGS {
+unsafe impl ::windows_core::Abi for WHV_CREATE_VPCI_DEVICE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_CREATE_VPCI_DEVICE_FLAGS {
@@ -2882,12 +2882,12 @@ impl ::core::fmt::Debug for WHV_DOORBELL_MATCH_DATA {
         f.debug_struct("WHV_DOORBELL_MATCH_DATA").field("GuestAddress", &self.GuestAddress).field("Value", &self.Value).field("Length", &self.Length).field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_DOORBELL_MATCH_DATA {
+unsafe impl ::windows_core::Abi for WHV_DOORBELL_MATCH_DATA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_DOORBELL_MATCH_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_DOORBELL_MATCH_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_DOORBELL_MATCH_DATA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_DOORBELL_MATCH_DATA {}
@@ -2926,12 +2926,12 @@ impl ::core::fmt::Debug for WHV_EMULATOR_CALLBACKS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_EMULATOR_CALLBACKS {
+unsafe impl ::windows_core::Abi for WHV_EMULATOR_CALLBACKS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_EMULATOR_CALLBACKS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EMULATOR_CALLBACKS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EMULATOR_CALLBACKS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_EMULATOR_CALLBACKS {}
@@ -2941,7 +2941,7 @@ impl ::core::default::Default for WHV_EMULATOR_CALLBACKS {
     }
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type WHV_EMULATOR_GET_VIRTUAL_PROCESSOR_REGISTERS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, registernames: *const WHV_REGISTER_NAME, registercount: u32, registervalues: *mut WHV_REGISTER_VALUE) -> ::windows::core::HRESULT>;
+pub type WHV_EMULATOR_GET_VIRTUAL_PROCESSOR_REGISTERS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, registernames: *const WHV_REGISTER_NAME, registercount: u32, registervalues: *mut WHV_REGISTER_VALUE) -> ::windows_core::HRESULT>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 pub struct WHV_EMULATOR_IO_ACCESS_INFO {
@@ -2961,12 +2961,12 @@ impl ::core::fmt::Debug for WHV_EMULATOR_IO_ACCESS_INFO {
         f.debug_struct("WHV_EMULATOR_IO_ACCESS_INFO").field("Direction", &self.Direction).field("Port", &self.Port).field("AccessSize", &self.AccessSize).field("Data", &self.Data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_EMULATOR_IO_ACCESS_INFO {
+unsafe impl ::windows_core::Abi for WHV_EMULATOR_IO_ACCESS_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_EMULATOR_IO_ACCESS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EMULATOR_IO_ACCESS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EMULATOR_IO_ACCESS_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_EMULATOR_IO_ACCESS_INFO {}
@@ -2976,7 +2976,7 @@ impl ::core::default::Default for WHV_EMULATOR_IO_ACCESS_INFO {
     }
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type WHV_EMULATOR_IO_PORT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, ioaccess: *mut WHV_EMULATOR_IO_ACCESS_INFO) -> ::windows::core::HRESULT>;
+pub type WHV_EMULATOR_IO_PORT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, ioaccess: *mut WHV_EMULATOR_IO_ACCESS_INFO) -> ::windows_core::HRESULT>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 pub struct WHV_EMULATOR_MEMORY_ACCESS_INFO {
@@ -2996,12 +2996,12 @@ impl ::core::fmt::Debug for WHV_EMULATOR_MEMORY_ACCESS_INFO {
         f.debug_struct("WHV_EMULATOR_MEMORY_ACCESS_INFO").field("GpaAddress", &self.GpaAddress).field("Direction", &self.Direction).field("AccessSize", &self.AccessSize).field("Data", &self.Data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_EMULATOR_MEMORY_ACCESS_INFO {
+unsafe impl ::windows_core::Abi for WHV_EMULATOR_MEMORY_ACCESS_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_EMULATOR_MEMORY_ACCESS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EMULATOR_MEMORY_ACCESS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EMULATOR_MEMORY_ACCESS_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_EMULATOR_MEMORY_ACCESS_INFO {}
@@ -3011,9 +3011,9 @@ impl ::core::default::Default for WHV_EMULATOR_MEMORY_ACCESS_INFO {
     }
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type WHV_EMULATOR_MEMORY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, memoryaccess: *mut WHV_EMULATOR_MEMORY_ACCESS_INFO) -> ::windows::core::HRESULT>;
+pub type WHV_EMULATOR_MEMORY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, memoryaccess: *mut WHV_EMULATOR_MEMORY_ACCESS_INFO) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type WHV_EMULATOR_SET_VIRTUAL_PROCESSOR_REGISTERS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, registernames: *const WHV_REGISTER_NAME, registercount: u32, registervalues: *const WHV_REGISTER_VALUE) -> ::windows::core::HRESULT>;
+pub type WHV_EMULATOR_SET_VIRTUAL_PROCESSOR_REGISTERS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, registernames: *const WHV_REGISTER_NAME, registercount: u32, registervalues: *const WHV_REGISTER_VALUE) -> ::windows_core::HRESULT>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 pub union WHV_EMULATOR_STATUS {
@@ -3026,12 +3026,12 @@ impl ::core::clone::Clone for WHV_EMULATOR_STATUS {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_EMULATOR_STATUS {
+unsafe impl ::windows_core::Abi for WHV_EMULATOR_STATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_EMULATOR_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EMULATOR_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EMULATOR_STATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_EMULATOR_STATUS {}
@@ -3056,12 +3056,12 @@ impl ::core::fmt::Debug for WHV_EMULATOR_STATUS_0 {
         f.debug_struct("WHV_EMULATOR_STATUS_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_EMULATOR_STATUS_0 {
+unsafe impl ::windows_core::Abi for WHV_EMULATOR_STATUS_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_EMULATOR_STATUS_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EMULATOR_STATUS_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EMULATOR_STATUS_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_EMULATOR_STATUS_0 {}
@@ -3071,7 +3071,7 @@ impl ::core::default::Default for WHV_EMULATOR_STATUS_0 {
     }
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
-pub type WHV_EMULATOR_TRANSLATE_GVA_PAGE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, gva: u64, translateflags: WHV_TRANSLATE_GVA_FLAGS, translationresult: *mut WHV_TRANSLATE_GVA_RESULT_CODE, gpa: *mut u64) -> ::windows::core::HRESULT>;
+pub type WHV_EMULATOR_TRANSLATE_GVA_PAGE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, gva: u64, translateflags: WHV_TRANSLATE_GVA_FLAGS, translationresult: *mut WHV_TRANSLATE_GVA_RESULT_CODE, gpa: *mut u64) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -3121,7 +3121,7 @@ impl ::core::default::Default for WHV_EXCEPTION_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_EXCEPTION_TYPE {
+unsafe impl ::windows_core::Abi for WHV_EXCEPTION_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_EXCEPTION_TYPE {
@@ -3141,12 +3141,12 @@ impl ::core::clone::Clone for WHV_EXTENDED_VM_EXITS {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_EXTENDED_VM_EXITS {
+unsafe impl ::windows_core::Abi for WHV_EXTENDED_VM_EXITS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_EXTENDED_VM_EXITS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EXTENDED_VM_EXITS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EXTENDED_VM_EXITS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_EXTENDED_VM_EXITS {}
@@ -3171,12 +3171,12 @@ impl ::core::fmt::Debug for WHV_EXTENDED_VM_EXITS_0 {
         f.debug_struct("WHV_EXTENDED_VM_EXITS_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_EXTENDED_VM_EXITS_0 {
+unsafe impl ::windows_core::Abi for WHV_EXTENDED_VM_EXITS_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_EXTENDED_VM_EXITS_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EXTENDED_VM_EXITS_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_EXTENDED_VM_EXITS_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_EXTENDED_VM_EXITS_0 {}
@@ -3205,12 +3205,12 @@ impl ::core::clone::Clone for WHV_HYPERCALL_CONTEXT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_HYPERCALL_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_HYPERCALL_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_HYPERCALL_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_HYPERCALL_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_HYPERCALL_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_HYPERCALL_CONTEXT {}
@@ -3233,12 +3233,12 @@ impl ::core::clone::Clone for WHV_INTERNAL_ACTIVITY_REGISTER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_INTERNAL_ACTIVITY_REGISTER {
+unsafe impl ::windows_core::Abi for WHV_INTERNAL_ACTIVITY_REGISTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_INTERNAL_ACTIVITY_REGISTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_INTERNAL_ACTIVITY_REGISTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_INTERNAL_ACTIVITY_REGISTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_INTERNAL_ACTIVITY_REGISTER {}
@@ -3263,12 +3263,12 @@ impl ::core::fmt::Debug for WHV_INTERNAL_ACTIVITY_REGISTER_0 {
         f.debug_struct("WHV_INTERNAL_ACTIVITY_REGISTER_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_INTERNAL_ACTIVITY_REGISTER_0 {
+unsafe impl ::windows_core::Abi for WHV_INTERNAL_ACTIVITY_REGISTER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_INTERNAL_ACTIVITY_REGISTER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_INTERNAL_ACTIVITY_REGISTER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_INTERNAL_ACTIVITY_REGISTER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_INTERNAL_ACTIVITY_REGISTER_0 {}
@@ -3295,12 +3295,12 @@ impl ::core::fmt::Debug for WHV_INTERRUPT_CONTROL {
         f.debug_struct("WHV_INTERRUPT_CONTROL").field("_bitfield", &self._bitfield).field("Destination", &self.Destination).field("Vector", &self.Vector).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_INTERRUPT_CONTROL {
+unsafe impl ::windows_core::Abi for WHV_INTERRUPT_CONTROL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_INTERRUPT_CONTROL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_INTERRUPT_CONTROL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_INTERRUPT_CONTROL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_INTERRUPT_CONTROL {}
@@ -3328,7 +3328,7 @@ impl ::core::default::Default for WHV_INTERRUPT_DESTINATION_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_INTERRUPT_DESTINATION_MODE {
+unsafe impl ::windows_core::Abi for WHV_INTERRUPT_DESTINATION_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_INTERRUPT_DESTINATION_MODE {
@@ -3355,7 +3355,7 @@ impl ::core::default::Default for WHV_INTERRUPT_TRIGGER_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_INTERRUPT_TRIGGER_MODE {
+unsafe impl ::windows_core::Abi for WHV_INTERRUPT_TRIGGER_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_INTERRUPT_TRIGGER_MODE {
@@ -3390,7 +3390,7 @@ impl ::core::default::Default for WHV_INTERRUPT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_INTERRUPT_TYPE {
+unsafe impl ::windows_core::Abi for WHV_INTERRUPT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_INTERRUPT_TYPE {
@@ -3423,7 +3423,7 @@ impl ::core::default::Default for WHV_MAP_GPA_RANGE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_MAP_GPA_RANGE_FLAGS {
+unsafe impl ::windows_core::Abi for WHV_MAP_GPA_RANGE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_MAP_GPA_RANGE_FLAGS {
@@ -3477,12 +3477,12 @@ impl ::core::clone::Clone for WHV_MEMORY_ACCESS_CONTEXT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_MEMORY_ACCESS_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_MEMORY_ACCESS_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_MEMORY_ACCESS_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_MEMORY_ACCESS_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_MEMORY_ACCESS_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_MEMORY_ACCESS_CONTEXT {}
@@ -3503,12 +3503,12 @@ impl ::core::clone::Clone for WHV_MEMORY_ACCESS_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_MEMORY_ACCESS_INFO {
+unsafe impl ::windows_core::Abi for WHV_MEMORY_ACCESS_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_MEMORY_ACCESS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_MEMORY_ACCESS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_MEMORY_ACCESS_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_MEMORY_ACCESS_INFO {}
@@ -3533,12 +3533,12 @@ impl ::core::fmt::Debug for WHV_MEMORY_ACCESS_INFO_0 {
         f.debug_struct("WHV_MEMORY_ACCESS_INFO_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_MEMORY_ACCESS_INFO_0 {
+unsafe impl ::windows_core::Abi for WHV_MEMORY_ACCESS_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_MEMORY_ACCESS_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_MEMORY_ACCESS_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_MEMORY_ACCESS_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_MEMORY_ACCESS_INFO_0 {}
@@ -3568,7 +3568,7 @@ impl ::core::default::Default for WHV_MEMORY_ACCESS_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_MEMORY_ACCESS_TYPE {
+unsafe impl ::windows_core::Abi for WHV_MEMORY_ACCESS_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_MEMORY_ACCESS_TYPE {
@@ -3593,12 +3593,12 @@ impl ::core::fmt::Debug for WHV_MEMORY_RANGE_ENTRY {
         f.debug_struct("WHV_MEMORY_RANGE_ENTRY").field("GuestAddress", &self.GuestAddress).field("SizeInBytes", &self.SizeInBytes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_MEMORY_RANGE_ENTRY {
+unsafe impl ::windows_core::Abi for WHV_MEMORY_RANGE_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_MEMORY_RANGE_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_MEMORY_RANGE_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_MEMORY_RANGE_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_MEMORY_RANGE_ENTRY {}
@@ -3628,7 +3628,7 @@ impl ::core::default::Default for WHV_MSR_ACTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_MSR_ACTION {
+unsafe impl ::windows_core::Abi for WHV_MSR_ACTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_MSR_ACTION {
@@ -3655,12 +3655,12 @@ impl ::core::fmt::Debug for WHV_MSR_ACTION_ENTRY {
         f.debug_struct("WHV_MSR_ACTION_ENTRY").field("Index", &self.Index).field("ReadAction", &self.ReadAction).field("WriteAction", &self.WriteAction).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_MSR_ACTION_ENTRY {
+unsafe impl ::windows_core::Abi for WHV_MSR_ACTION_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_MSR_ACTION_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_MSR_ACTION_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_MSR_ACTION_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_MSR_ACTION_ENTRY {}
@@ -3682,12 +3682,12 @@ impl ::core::clone::Clone for WHV_NOTIFICATION_PORT_PARAMETERS {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_NOTIFICATION_PORT_PARAMETERS {
+unsafe impl ::windows_core::Abi for WHV_NOTIFICATION_PORT_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_NOTIFICATION_PORT_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_NOTIFICATION_PORT_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_NOTIFICATION_PORT_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_NOTIFICATION_PORT_PARAMETERS {}
@@ -3708,12 +3708,12 @@ impl ::core::clone::Clone for WHV_NOTIFICATION_PORT_PARAMETERS_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_NOTIFICATION_PORT_PARAMETERS_0 {
+unsafe impl ::windows_core::Abi for WHV_NOTIFICATION_PORT_PARAMETERS_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_NOTIFICATION_PORT_PARAMETERS_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_NOTIFICATION_PORT_PARAMETERS_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_NOTIFICATION_PORT_PARAMETERS_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_NOTIFICATION_PORT_PARAMETERS_0 {}
@@ -3738,12 +3738,12 @@ impl ::core::fmt::Debug for WHV_NOTIFICATION_PORT_PARAMETERS_0_0 {
         f.debug_struct("WHV_NOTIFICATION_PORT_PARAMETERS_0_0").field("ConnectionId", &self.ConnectionId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_NOTIFICATION_PORT_PARAMETERS_0_0 {
+unsafe impl ::windows_core::Abi for WHV_NOTIFICATION_PORT_PARAMETERS_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_NOTIFICATION_PORT_PARAMETERS_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_NOTIFICATION_PORT_PARAMETERS_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_NOTIFICATION_PORT_PARAMETERS_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_NOTIFICATION_PORT_PARAMETERS_0_0 {}
@@ -3771,7 +3771,7 @@ impl ::core::default::Default for WHV_NOTIFICATION_PORT_PROPERTY_CODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_NOTIFICATION_PORT_PROPERTY_CODE {
+unsafe impl ::windows_core::Abi for WHV_NOTIFICATION_PORT_PROPERTY_CODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_NOTIFICATION_PORT_PROPERTY_CODE {
@@ -3798,7 +3798,7 @@ impl ::core::default::Default for WHV_NOTIFICATION_PORT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_NOTIFICATION_PORT_TYPE {
+unsafe impl ::windows_core::Abi for WHV_NOTIFICATION_PORT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_NOTIFICATION_PORT_TYPE {
@@ -3823,7 +3823,7 @@ impl ::core::default::Default for WHV_PARTITION_COUNTER_SET {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PARTITION_COUNTER_SET {
+unsafe impl ::windows_core::Abi for WHV_PARTITION_COUNTER_SET {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_PARTITION_COUNTER_SET {
@@ -3855,7 +3855,7 @@ impl ::core::fmt::Debug for WHV_PARTITION_HANDLE {
         f.debug_tuple("WHV_PARTITION_HANDLE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PARTITION_HANDLE {
+unsafe impl ::windows_core::Abi for WHV_PARTITION_HANDLE {
     type Abi = Self;
 }
 #[repr(C)]
@@ -3876,12 +3876,12 @@ impl ::core::fmt::Debug for WHV_PARTITION_MEMORY_COUNTERS {
         f.debug_struct("WHV_PARTITION_MEMORY_COUNTERS").field("Mapped4KPageCount", &self.Mapped4KPageCount).field("Mapped2MPageCount", &self.Mapped2MPageCount).field("Mapped1GPageCount", &self.Mapped1GPageCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PARTITION_MEMORY_COUNTERS {
+unsafe impl ::windows_core::Abi for WHV_PARTITION_MEMORY_COUNTERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PARTITION_MEMORY_COUNTERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PARTITION_MEMORY_COUNTERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PARTITION_MEMORY_COUNTERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PARTITION_MEMORY_COUNTERS {}
@@ -3934,13 +3934,13 @@ impl ::core::clone::Clone for WHV_PARTITION_PROPERTY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WHV_PARTITION_PROPERTY {
+unsafe impl ::windows_core::Abi for WHV_PARTITION_PROPERTY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WHV_PARTITION_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PARTITION_PROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PARTITION_PROPERTY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4026,7 +4026,7 @@ impl ::core::default::Default for WHV_PARTITION_PROPERTY_CODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PARTITION_PROPERTY_CODE {
+unsafe impl ::windows_core::Abi for WHV_PARTITION_PROPERTY_CODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_PARTITION_PROPERTY_CODE {
@@ -4054,12 +4054,12 @@ impl ::core::fmt::Debug for WHV_PROCESSOR_APIC_COUNTERS {
         f.debug_struct("WHV_PROCESSOR_APIC_COUNTERS").field("MmioAccessCount", &self.MmioAccessCount).field("EoiAccessCount", &self.EoiAccessCount).field("TprAccessCount", &self.TprAccessCount).field("SentIpiCount", &self.SentIpiCount).field("SelfIpiCount", &self.SelfIpiCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_APIC_COUNTERS {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_APIC_COUNTERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_APIC_COUNTERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_APIC_COUNTERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_APIC_COUNTERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_APIC_COUNTERS {}
@@ -4093,7 +4093,7 @@ impl ::core::default::Default for WHV_PROCESSOR_COUNTER_SET {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_COUNTER_SET {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_COUNTER_SET {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_PROCESSOR_COUNTER_SET {
@@ -4119,12 +4119,12 @@ impl ::core::fmt::Debug for WHV_PROCESSOR_EVENT_COUNTERS {
         f.debug_struct("WHV_PROCESSOR_EVENT_COUNTERS").field("PageFaultCount", &self.PageFaultCount).field("ExceptionCount", &self.ExceptionCount).field("InterruptCount", &self.InterruptCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_EVENT_COUNTERS {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_EVENT_COUNTERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_EVENT_COUNTERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_EVENT_COUNTERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_EVENT_COUNTERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_EVENT_COUNTERS {}
@@ -4145,12 +4145,12 @@ impl ::core::clone::Clone for WHV_PROCESSOR_FEATURES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_FEATURES {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_FEATURES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_FEATURES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_FEATURES {}
@@ -4175,12 +4175,12 @@ impl ::core::fmt::Debug for WHV_PROCESSOR_FEATURES_0 {
         f.debug_struct("WHV_PROCESSOR_FEATURES_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_FEATURES_0 {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_FEATURES_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_FEATURES_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_FEATURES_0 {}
@@ -4201,12 +4201,12 @@ impl ::core::clone::Clone for WHV_PROCESSOR_FEATURES1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_FEATURES1 {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_FEATURES1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_FEATURES1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_FEATURES1 {}
@@ -4231,12 +4231,12 @@ impl ::core::fmt::Debug for WHV_PROCESSOR_FEATURES1_0 {
         f.debug_struct("WHV_PROCESSOR_FEATURES1_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_FEATURES1_0 {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_FEATURES1_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_FEATURES1_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES1_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES1_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_FEATURES1_0 {}
@@ -4258,12 +4258,12 @@ impl ::core::clone::Clone for WHV_PROCESSOR_FEATURES_BANKS {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_FEATURES_BANKS {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_FEATURES_BANKS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_FEATURES_BANKS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES_BANKS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES_BANKS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_FEATURES_BANKS {}
@@ -4284,12 +4284,12 @@ impl ::core::clone::Clone for WHV_PROCESSOR_FEATURES_BANKS_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_FEATURES_BANKS_0 {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_FEATURES_BANKS_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_FEATURES_BANKS_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES_BANKS_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES_BANKS_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_FEATURES_BANKS_0 {}
@@ -4310,12 +4310,12 @@ impl ::core::clone::Clone for WHV_PROCESSOR_FEATURES_BANKS_0_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_FEATURES_BANKS_0_0 {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_FEATURES_BANKS_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_FEATURES_BANKS_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES_BANKS_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_FEATURES_BANKS_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_FEATURES_BANKS_0_0 {}
@@ -4343,12 +4343,12 @@ impl ::core::fmt::Debug for WHV_PROCESSOR_INTERCEPT_COUNTER {
         f.debug_struct("WHV_PROCESSOR_INTERCEPT_COUNTER").field("Count", &self.Count).field("Time100ns", &self.Time100ns).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_INTERCEPT_COUNTER {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_INTERCEPT_COUNTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_INTERCEPT_COUNTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_INTERCEPT_COUNTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_INTERCEPT_COUNTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_INTERCEPT_COUNTER {}
@@ -4401,12 +4401,12 @@ impl ::core::fmt::Debug for WHV_PROCESSOR_INTERCEPT_COUNTERS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_INTERCEPT_COUNTERS {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_INTERCEPT_COUNTERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_INTERCEPT_COUNTERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_INTERCEPT_COUNTERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_INTERCEPT_COUNTERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_INTERCEPT_COUNTERS {}
@@ -4427,12 +4427,12 @@ impl ::core::clone::Clone for WHV_PROCESSOR_PERFMON_FEATURES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_PERFMON_FEATURES {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_PERFMON_FEATURES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_PERFMON_FEATURES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_PERFMON_FEATURES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_PERFMON_FEATURES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_PERFMON_FEATURES {}
@@ -4457,12 +4457,12 @@ impl ::core::fmt::Debug for WHV_PROCESSOR_PERFMON_FEATURES_0 {
         f.debug_struct("WHV_PROCESSOR_PERFMON_FEATURES_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_PERFMON_FEATURES_0 {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_PERFMON_FEATURES_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_PERFMON_FEATURES_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_PERFMON_FEATURES_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_PERFMON_FEATURES_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_PERFMON_FEATURES_0 {}
@@ -4488,12 +4488,12 @@ impl ::core::fmt::Debug for WHV_PROCESSOR_RUNTIME_COUNTERS {
         f.debug_struct("WHV_PROCESSOR_RUNTIME_COUNTERS").field("TotalRuntime100ns", &self.TotalRuntime100ns).field("HypervisorRuntime100ns", &self.HypervisorRuntime100ns).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_RUNTIME_COUNTERS {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_RUNTIME_COUNTERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_RUNTIME_COUNTERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_RUNTIME_COUNTERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_RUNTIME_COUNTERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_RUNTIME_COUNTERS {}
@@ -4530,12 +4530,12 @@ impl ::core::fmt::Debug for WHV_PROCESSOR_SYNTHETIC_FEATURES_COUNTERS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_SYNTHETIC_FEATURES_COUNTERS {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_SYNTHETIC_FEATURES_COUNTERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_SYNTHETIC_FEATURES_COUNTERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_SYNTHETIC_FEATURES_COUNTERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_SYNTHETIC_FEATURES_COUNTERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_SYNTHETIC_FEATURES_COUNTERS {}
@@ -4565,7 +4565,7 @@ impl ::core::default::Default for WHV_PROCESSOR_VENDOR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_VENDOR {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_VENDOR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_PROCESSOR_VENDOR {
@@ -4585,12 +4585,12 @@ impl ::core::clone::Clone for WHV_PROCESSOR_XSAVE_FEATURES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_XSAVE_FEATURES {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_XSAVE_FEATURES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_XSAVE_FEATURES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_XSAVE_FEATURES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_XSAVE_FEATURES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_XSAVE_FEATURES {}
@@ -4615,12 +4615,12 @@ impl ::core::fmt::Debug for WHV_PROCESSOR_XSAVE_FEATURES_0 {
         f.debug_struct("WHV_PROCESSOR_XSAVE_FEATURES_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_PROCESSOR_XSAVE_FEATURES_0 {
+unsafe impl ::windows_core::Abi for WHV_PROCESSOR_XSAVE_FEATURES_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_PROCESSOR_XSAVE_FEATURES_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_XSAVE_FEATURES_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_PROCESSOR_XSAVE_FEATURES_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_PROCESSOR_XSAVE_FEATURES_0 {}
@@ -5098,7 +5098,7 @@ impl ::core::default::Default for WHV_REGISTER_NAME {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_REGISTER_NAME {
+unsafe impl ::windows_core::Abi for WHV_REGISTER_NAME {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_REGISTER_NAME {
@@ -5133,12 +5133,12 @@ impl ::core::clone::Clone for WHV_REGISTER_VALUE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_REGISTER_VALUE {
+unsafe impl ::windows_core::Abi for WHV_REGISTER_VALUE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_REGISTER_VALUE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_REGISTER_VALUE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_REGISTER_VALUE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_REGISTER_VALUE {}
@@ -5163,12 +5163,12 @@ impl ::core::fmt::Debug for WHV_RUN_VP_CANCELED_CONTEXT {
         f.debug_struct("WHV_RUN_VP_CANCELED_CONTEXT").field("CancelReason", &self.CancelReason).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_RUN_VP_CANCELED_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_RUN_VP_CANCELED_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_RUN_VP_CANCELED_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_RUN_VP_CANCELED_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_RUN_VP_CANCELED_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_RUN_VP_CANCELED_CONTEXT {}
@@ -5194,7 +5194,7 @@ impl ::core::default::Default for WHV_RUN_VP_CANCEL_REASON {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_RUN_VP_CANCEL_REASON {
+unsafe impl ::windows_core::Abi for WHV_RUN_VP_CANCEL_REASON {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_RUN_VP_CANCEL_REASON {
@@ -5216,12 +5216,12 @@ impl ::core::clone::Clone for WHV_RUN_VP_EXIT_CONTEXT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_RUN_VP_EXIT_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_RUN_VP_EXIT_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_RUN_VP_EXIT_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_RUN_VP_EXIT_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_RUN_VP_EXIT_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_RUN_VP_EXIT_CONTEXT {}
@@ -5255,12 +5255,12 @@ impl ::core::clone::Clone for WHV_RUN_VP_EXIT_CONTEXT_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_RUN_VP_EXIT_CONTEXT_0 {
+unsafe impl ::windows_core::Abi for WHV_RUN_VP_EXIT_CONTEXT_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_RUN_VP_EXIT_CONTEXT_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_RUN_VP_EXIT_CONTEXT_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_RUN_VP_EXIT_CONTEXT_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_RUN_VP_EXIT_CONTEXT_0 {}
@@ -5322,7 +5322,7 @@ impl ::core::default::Default for WHV_RUN_VP_EXIT_REASON {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_RUN_VP_EXIT_REASON {
+unsafe impl ::windows_core::Abi for WHV_RUN_VP_EXIT_REASON {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_RUN_VP_EXIT_REASON {
@@ -5342,12 +5342,12 @@ impl ::core::clone::Clone for WHV_SCHEDULER_FEATURES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_SCHEDULER_FEATURES {
+unsafe impl ::windows_core::Abi for WHV_SCHEDULER_FEATURES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_SCHEDULER_FEATURES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SCHEDULER_FEATURES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SCHEDULER_FEATURES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_SCHEDULER_FEATURES {}
@@ -5372,12 +5372,12 @@ impl ::core::fmt::Debug for WHV_SCHEDULER_FEATURES_0 {
         f.debug_struct("WHV_SCHEDULER_FEATURES_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_SCHEDULER_FEATURES_0 {
+unsafe impl ::windows_core::Abi for WHV_SCHEDULER_FEATURES_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_SCHEDULER_FEATURES_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SCHEDULER_FEATURES_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SCHEDULER_FEATURES_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_SCHEDULER_FEATURES_0 {}
@@ -5410,13 +5410,13 @@ impl ::core::fmt::Debug for WHV_SRIOV_RESOURCE_DESCRIPTOR {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WHV_SRIOV_RESOURCE_DESCRIPTOR {
+unsafe impl ::windows_core::Abi for WHV_SRIOV_RESOURCE_DESCRIPTOR {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WHV_SRIOV_RESOURCE_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SRIOV_RESOURCE_DESCRIPTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SRIOV_RESOURCE_DESCRIPTOR>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5446,12 +5446,12 @@ impl ::core::fmt::Debug for WHV_SYNIC_EVENT_PARAMETERS {
         f.debug_struct("WHV_SYNIC_EVENT_PARAMETERS").field("VpIndex", &self.VpIndex).field("TargetSint", &self.TargetSint).field("Reserved", &self.Reserved).field("FlagNumber", &self.FlagNumber).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_SYNIC_EVENT_PARAMETERS {
+unsafe impl ::windows_core::Abi for WHV_SYNIC_EVENT_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_SYNIC_EVENT_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNIC_EVENT_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNIC_EVENT_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_SYNIC_EVENT_PARAMETERS {}
@@ -5480,12 +5480,12 @@ impl ::core::fmt::Debug for WHV_SYNIC_SINT_DELIVERABLE_CONTEXT {
         f.debug_struct("WHV_SYNIC_SINT_DELIVERABLE_CONTEXT").field("DeliverableSints", &self.DeliverableSints).field("Reserved1", &self.Reserved1).field("Reserved2", &self.Reserved2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_SYNIC_SINT_DELIVERABLE_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_SYNIC_SINT_DELIVERABLE_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_SYNIC_SINT_DELIVERABLE_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNIC_SINT_DELIVERABLE_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNIC_SINT_DELIVERABLE_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_SYNIC_SINT_DELIVERABLE_CONTEXT {}
@@ -5506,12 +5506,12 @@ impl ::core::clone::Clone for WHV_SYNTHETIC_PROCESSOR_FEATURES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_SYNTHETIC_PROCESSOR_FEATURES {
+unsafe impl ::windows_core::Abi for WHV_SYNTHETIC_PROCESSOR_FEATURES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_SYNTHETIC_PROCESSOR_FEATURES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNTHETIC_PROCESSOR_FEATURES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNTHETIC_PROCESSOR_FEATURES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_SYNTHETIC_PROCESSOR_FEATURES {}
@@ -5536,12 +5536,12 @@ impl ::core::fmt::Debug for WHV_SYNTHETIC_PROCESSOR_FEATURES_0 {
         f.debug_struct("WHV_SYNTHETIC_PROCESSOR_FEATURES_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_SYNTHETIC_PROCESSOR_FEATURES_0 {
+unsafe impl ::windows_core::Abi for WHV_SYNTHETIC_PROCESSOR_FEATURES_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_SYNTHETIC_PROCESSOR_FEATURES_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNTHETIC_PROCESSOR_FEATURES_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNTHETIC_PROCESSOR_FEATURES_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_SYNTHETIC_PROCESSOR_FEATURES_0 {}
@@ -5563,12 +5563,12 @@ impl ::core::clone::Clone for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS {
+unsafe impl ::windows_core::Abi for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS {}
@@ -5589,12 +5589,12 @@ impl ::core::clone::Clone for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0 {
+unsafe impl ::windows_core::Abi for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0 {}
@@ -5614,12 +5614,12 @@ impl ::core::clone::Clone for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0_0 {
+unsafe impl ::windows_core::Abi for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_SYNTHETIC_PROCESSOR_FEATURES_BANKS_0_0 {}
@@ -5661,7 +5661,7 @@ impl ::core::default::Default for WHV_TRANSLATE_GVA_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_TRANSLATE_GVA_FLAGS {
+unsafe impl ::windows_core::Abi for WHV_TRANSLATE_GVA_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_TRANSLATE_GVA_FLAGS {
@@ -5714,12 +5714,12 @@ impl ::core::fmt::Debug for WHV_TRANSLATE_GVA_RESULT {
         f.debug_struct("WHV_TRANSLATE_GVA_RESULT").field("ResultCode", &self.ResultCode).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_TRANSLATE_GVA_RESULT {
+unsafe impl ::windows_core::Abi for WHV_TRANSLATE_GVA_RESULT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_TRANSLATE_GVA_RESULT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_TRANSLATE_GVA_RESULT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_TRANSLATE_GVA_RESULT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_TRANSLATE_GVA_RESULT {}
@@ -5761,7 +5761,7 @@ impl ::core::default::Default for WHV_TRANSLATE_GVA_RESULT_CODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_TRANSLATE_GVA_RESULT_CODE {
+unsafe impl ::windows_core::Abi for WHV_TRANSLATE_GVA_RESULT_CODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_TRANSLATE_GVA_RESULT_CODE {
@@ -5782,12 +5782,12 @@ impl ::core::clone::Clone for WHV_TRIGGER_PARAMETERS {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_TRIGGER_PARAMETERS {
+unsafe impl ::windows_core::Abi for WHV_TRIGGER_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_TRIGGER_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_TRIGGER_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_TRIGGER_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_TRIGGER_PARAMETERS {}
@@ -5809,12 +5809,12 @@ impl ::core::clone::Clone for WHV_TRIGGER_PARAMETERS_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_TRIGGER_PARAMETERS_0 {
+unsafe impl ::windows_core::Abi for WHV_TRIGGER_PARAMETERS_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_TRIGGER_PARAMETERS_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_TRIGGER_PARAMETERS_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_TRIGGER_PARAMETERS_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_TRIGGER_PARAMETERS_0 {}
@@ -5842,12 +5842,12 @@ impl ::core::fmt::Debug for WHV_TRIGGER_PARAMETERS_0_0 {
         f.debug_struct("WHV_TRIGGER_PARAMETERS_0_0").field("LogicalDeviceId", &self.LogicalDeviceId).field("MsiAddress", &self.MsiAddress).field("MsiData", &self.MsiData).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_TRIGGER_PARAMETERS_0_0 {
+unsafe impl ::windows_core::Abi for WHV_TRIGGER_PARAMETERS_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_TRIGGER_PARAMETERS_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_TRIGGER_PARAMETERS_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_TRIGGER_PARAMETERS_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_TRIGGER_PARAMETERS_0_0 {}
@@ -5877,7 +5877,7 @@ impl ::core::default::Default for WHV_TRIGGER_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_TRIGGER_TYPE {
+unsafe impl ::windows_core::Abi for WHV_TRIGGER_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_TRIGGER_TYPE {
@@ -5897,12 +5897,12 @@ impl ::core::clone::Clone for WHV_UINT128 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_UINT128 {
+unsafe impl ::windows_core::Abi for WHV_UINT128 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_UINT128 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_UINT128>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_UINT128>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_UINT128 {}
@@ -5928,12 +5928,12 @@ impl ::core::fmt::Debug for WHV_UINT128_0 {
         f.debug_struct("WHV_UINT128_0").field("Low64", &self.Low64).field("High64", &self.High64).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_UINT128_0 {
+unsafe impl ::windows_core::Abi for WHV_UINT128_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_UINT128_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_UINT128_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_UINT128_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_UINT128_0 {}
@@ -5955,12 +5955,12 @@ impl ::core::clone::Clone for WHV_VIRTUAL_PROCESSOR_PROPERTY {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VIRTUAL_PROCESSOR_PROPERTY {
+unsafe impl ::windows_core::Abi for WHV_VIRTUAL_PROCESSOR_PROPERTY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_VIRTUAL_PROCESSOR_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VIRTUAL_PROCESSOR_PROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VIRTUAL_PROCESSOR_PROPERTY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_VIRTUAL_PROCESSOR_PROPERTY {}
@@ -5981,12 +5981,12 @@ impl ::core::clone::Clone for WHV_VIRTUAL_PROCESSOR_PROPERTY_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VIRTUAL_PROCESSOR_PROPERTY_0 {
+unsafe impl ::windows_core::Abi for WHV_VIRTUAL_PROCESSOR_PROPERTY_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_VIRTUAL_PROCESSOR_PROPERTY_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VIRTUAL_PROCESSOR_PROPERTY_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VIRTUAL_PROCESSOR_PROPERTY_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_VIRTUAL_PROCESSOR_PROPERTY_0 {}
@@ -6012,7 +6012,7 @@ impl ::core::default::Default for WHV_VIRTUAL_PROCESSOR_PROPERTY_CODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VIRTUAL_PROCESSOR_PROPERTY_CODE {
+unsafe impl ::windows_core::Abi for WHV_VIRTUAL_PROCESSOR_PROPERTY_CODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_VIRTUAL_PROCESSOR_PROPERTY_CODE {
@@ -6045,7 +6045,7 @@ impl ::core::default::Default for WHV_VIRTUAL_PROCESSOR_STATE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VIRTUAL_PROCESSOR_STATE_TYPE {
+unsafe impl ::windows_core::Abi for WHV_VIRTUAL_PROCESSOR_STATE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_VIRTUAL_PROCESSOR_STATE_TYPE {
@@ -6066,12 +6066,12 @@ impl ::core::clone::Clone for WHV_VPCI_DEVICE_NOTIFICATION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VPCI_DEVICE_NOTIFICATION {
+unsafe impl ::windows_core::Abi for WHV_VPCI_DEVICE_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_VPCI_DEVICE_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_DEVICE_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_DEVICE_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_VPCI_DEVICE_NOTIFICATION {}
@@ -6091,12 +6091,12 @@ impl ::core::clone::Clone for WHV_VPCI_DEVICE_NOTIFICATION_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VPCI_DEVICE_NOTIFICATION_0 {
+unsafe impl ::windows_core::Abi for WHV_VPCI_DEVICE_NOTIFICATION_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_VPCI_DEVICE_NOTIFICATION_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_DEVICE_NOTIFICATION_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_DEVICE_NOTIFICATION_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_VPCI_DEVICE_NOTIFICATION_0 {}
@@ -6126,7 +6126,7 @@ impl ::core::default::Default for WHV_VPCI_DEVICE_NOTIFICATION_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VPCI_DEVICE_NOTIFICATION_TYPE {
+unsafe impl ::windows_core::Abi for WHV_VPCI_DEVICE_NOTIFICATION_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_VPCI_DEVICE_NOTIFICATION_TYPE {
@@ -6155,7 +6155,7 @@ impl ::core::default::Default for WHV_VPCI_DEVICE_PROPERTY_CODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VPCI_DEVICE_PROPERTY_CODE {
+unsafe impl ::windows_core::Abi for WHV_VPCI_DEVICE_PROPERTY_CODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_VPCI_DEVICE_PROPERTY_CODE {
@@ -6181,12 +6181,12 @@ impl ::core::fmt::Debug for WHV_VPCI_DEVICE_REGISTER {
         f.debug_struct("WHV_VPCI_DEVICE_REGISTER").field("Location", &self.Location).field("SizeInBytes", &self.SizeInBytes).field("OffsetInBytes", &self.OffsetInBytes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VPCI_DEVICE_REGISTER {
+unsafe impl ::windows_core::Abi for WHV_VPCI_DEVICE_REGISTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_VPCI_DEVICE_REGISTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_DEVICE_REGISTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_DEVICE_REGISTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_VPCI_DEVICE_REGISTER {}
@@ -6224,7 +6224,7 @@ impl ::core::default::Default for WHV_VPCI_DEVICE_REGISTER_SPACE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VPCI_DEVICE_REGISTER_SPACE {
+unsafe impl ::windows_core::Abi for WHV_VPCI_DEVICE_REGISTER_SPACE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_VPCI_DEVICE_REGISTER_SPACE {
@@ -6255,12 +6255,12 @@ impl ::core::fmt::Debug for WHV_VPCI_HARDWARE_IDS {
         f.debug_struct("WHV_VPCI_HARDWARE_IDS").field("VendorID", &self.VendorID).field("DeviceID", &self.DeviceID).field("RevisionID", &self.RevisionID).field("ProgIf", &self.ProgIf).field("SubClass", &self.SubClass).field("BaseClass", &self.BaseClass).field("SubVendorID", &self.SubVendorID).field("SubSystemID", &self.SubSystemID).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VPCI_HARDWARE_IDS {
+unsafe impl ::windows_core::Abi for WHV_VPCI_HARDWARE_IDS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_VPCI_HARDWARE_IDS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_HARDWARE_IDS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_HARDWARE_IDS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_VPCI_HARDWARE_IDS {}
@@ -6288,12 +6288,12 @@ impl ::core::fmt::Debug for WHV_VPCI_INTERRUPT_TARGET {
         f.debug_struct("WHV_VPCI_INTERRUPT_TARGET").field("Vector", &self.Vector).field("Flags", &self.Flags).field("ProcessorCount", &self.ProcessorCount).field("Processors", &self.Processors).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VPCI_INTERRUPT_TARGET {
+unsafe impl ::windows_core::Abi for WHV_VPCI_INTERRUPT_TARGET {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_VPCI_INTERRUPT_TARGET {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_INTERRUPT_TARGET>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_INTERRUPT_TARGET>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_VPCI_INTERRUPT_TARGET {}
@@ -6321,7 +6321,7 @@ impl ::core::default::Default for WHV_VPCI_INTERRUPT_TARGET_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VPCI_INTERRUPT_TARGET_FLAGS {
+unsafe impl ::windows_core::Abi for WHV_VPCI_INTERRUPT_TARGET_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_VPCI_INTERRUPT_TARGET_FLAGS {
@@ -6377,12 +6377,12 @@ impl ::core::fmt::Debug for WHV_VPCI_MMIO_MAPPING {
         f.debug_struct("WHV_VPCI_MMIO_MAPPING").field("Location", &self.Location).field("Flags", &self.Flags).field("SizeInBytes", &self.SizeInBytes).field("OffsetInBytes", &self.OffsetInBytes).field("VirtualAddress", &self.VirtualAddress).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VPCI_MMIO_MAPPING {
+unsafe impl ::windows_core::Abi for WHV_VPCI_MMIO_MAPPING {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_VPCI_MMIO_MAPPING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_MMIO_MAPPING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_MMIO_MAPPING>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_VPCI_MMIO_MAPPING {}
@@ -6410,7 +6410,7 @@ impl ::core::default::Default for WHV_VPCI_MMIO_RANGE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VPCI_MMIO_RANGE_FLAGS {
+unsafe impl ::windows_core::Abi for WHV_VPCI_MMIO_RANGE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_VPCI_MMIO_RANGE_FLAGS {
@@ -6462,12 +6462,12 @@ impl ::core::fmt::Debug for WHV_VPCI_PROBED_BARS {
         f.debug_struct("WHV_VPCI_PROBED_BARS").field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VPCI_PROBED_BARS {
+unsafe impl ::windows_core::Abi for WHV_VPCI_PROBED_BARS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_VPCI_PROBED_BARS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_PROBED_BARS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VPCI_PROBED_BARS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_VPCI_PROBED_BARS {}
@@ -6496,12 +6496,12 @@ impl ::core::clone::Clone for WHV_VP_EXCEPTION_CONTEXT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VP_EXCEPTION_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_VP_EXCEPTION_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_VP_EXCEPTION_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VP_EXCEPTION_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VP_EXCEPTION_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_VP_EXCEPTION_CONTEXT {}
@@ -6522,12 +6522,12 @@ impl ::core::clone::Clone for WHV_VP_EXCEPTION_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VP_EXCEPTION_INFO {
+unsafe impl ::windows_core::Abi for WHV_VP_EXCEPTION_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_VP_EXCEPTION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VP_EXCEPTION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VP_EXCEPTION_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_VP_EXCEPTION_INFO {}
@@ -6552,12 +6552,12 @@ impl ::core::fmt::Debug for WHV_VP_EXCEPTION_INFO_0 {
         f.debug_struct("WHV_VP_EXCEPTION_INFO_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VP_EXCEPTION_INFO_0 {
+unsafe impl ::windows_core::Abi for WHV_VP_EXCEPTION_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_VP_EXCEPTION_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VP_EXCEPTION_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VP_EXCEPTION_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_VP_EXCEPTION_INFO_0 {}
@@ -6583,12 +6583,12 @@ impl ::core::clone::Clone for WHV_VP_EXIT_CONTEXT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_VP_EXIT_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_VP_EXIT_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_VP_EXIT_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VP_EXIT_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_VP_EXIT_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_VP_EXIT_CONTEXT {}
@@ -6613,12 +6613,12 @@ impl ::core::fmt::Debug for WHV_X64_APIC_EOI_CONTEXT {
         f.debug_struct("WHV_X64_APIC_EOI_CONTEXT").field("InterruptVector", &self.InterruptVector).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_APIC_EOI_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_X64_APIC_EOI_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_APIC_EOI_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_APIC_EOI_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_APIC_EOI_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_APIC_EOI_CONTEXT {}
@@ -6643,12 +6643,12 @@ impl ::core::fmt::Debug for WHV_X64_APIC_INIT_SIPI_CONTEXT {
         f.debug_struct("WHV_X64_APIC_INIT_SIPI_CONTEXT").field("ApicIcr", &self.ApicIcr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_APIC_INIT_SIPI_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_X64_APIC_INIT_SIPI_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_APIC_INIT_SIPI_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_APIC_INIT_SIPI_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_APIC_INIT_SIPI_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_APIC_INIT_SIPI_CONTEXT {}
@@ -6673,12 +6673,12 @@ impl ::core::fmt::Debug for WHV_X64_APIC_SMI_CONTEXT {
         f.debug_struct("WHV_X64_APIC_SMI_CONTEXT").field("ApicIcr", &self.ApicIcr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_APIC_SMI_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_X64_APIC_SMI_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_APIC_SMI_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_APIC_SMI_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_APIC_SMI_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_APIC_SMI_CONTEXT {}
@@ -6705,12 +6705,12 @@ impl ::core::fmt::Debug for WHV_X64_APIC_WRITE_CONTEXT {
         f.debug_struct("WHV_X64_APIC_WRITE_CONTEXT").field("Type", &self.Type).field("Reserved", &self.Reserved).field("WriteValue", &self.WriteValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_APIC_WRITE_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_X64_APIC_WRITE_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_APIC_WRITE_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_APIC_WRITE_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_APIC_WRITE_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_APIC_WRITE_CONTEXT {}
@@ -6744,7 +6744,7 @@ impl ::core::default::Default for WHV_X64_APIC_WRITE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_APIC_WRITE_TYPE {
+unsafe impl ::windows_core::Abi for WHV_X64_APIC_WRITE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_X64_APIC_WRITE_TYPE {
@@ -6775,12 +6775,12 @@ impl ::core::fmt::Debug for WHV_X64_CPUID_ACCESS_CONTEXT {
         f.debug_struct("WHV_X64_CPUID_ACCESS_CONTEXT").field("Rax", &self.Rax).field("Rcx", &self.Rcx).field("Rdx", &self.Rdx).field("Rbx", &self.Rbx).field("DefaultResultRax", &self.DefaultResultRax).field("DefaultResultRcx", &self.DefaultResultRcx).field("DefaultResultRdx", &self.DefaultResultRdx).field("DefaultResultRbx", &self.DefaultResultRbx).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_CPUID_ACCESS_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_X64_CPUID_ACCESS_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_CPUID_ACCESS_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_CPUID_ACCESS_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_CPUID_ACCESS_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_CPUID_ACCESS_CONTEXT {}
@@ -6810,12 +6810,12 @@ impl ::core::fmt::Debug for WHV_X64_CPUID_RESULT {
         f.debug_struct("WHV_X64_CPUID_RESULT").field("Function", &self.Function).field("Reserved", &self.Reserved).field("Eax", &self.Eax).field("Ebx", &self.Ebx).field("Ecx", &self.Ecx).field("Edx", &self.Edx).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_CPUID_RESULT {
+unsafe impl ::windows_core::Abi for WHV_X64_CPUID_RESULT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_CPUID_RESULT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_CPUID_RESULT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_CPUID_RESULT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_CPUID_RESULT {}
@@ -6845,12 +6845,12 @@ impl ::core::fmt::Debug for WHV_X64_CPUID_RESULT2 {
         f.debug_struct("WHV_X64_CPUID_RESULT2").field("Function", &self.Function).field("Index", &self.Index).field("VpIndex", &self.VpIndex).field("Flags", &self.Flags).field("Output", &self.Output).field("Mask", &self.Mask).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_CPUID_RESULT2 {
+unsafe impl ::windows_core::Abi for WHV_X64_CPUID_RESULT2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_CPUID_RESULT2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_CPUID_RESULT2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_CPUID_RESULT2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_CPUID_RESULT2 {}
@@ -6878,7 +6878,7 @@ impl ::core::default::Default for WHV_X64_CPUID_RESULT2_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_CPUID_RESULT2_FLAGS {
+unsafe impl ::windows_core::Abi for WHV_X64_CPUID_RESULT2_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_X64_CPUID_RESULT2_FLAGS {
@@ -6926,12 +6926,12 @@ impl ::core::clone::Clone for WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER {
+unsafe impl ::windows_core::Abi for WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER {}
@@ -6956,12 +6956,12 @@ impl ::core::fmt::Debug for WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER_0 {
         f.debug_struct("WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER_0 {}
@@ -6982,12 +6982,12 @@ impl ::core::clone::Clone for WHV_X64_FP_CONTROL_STATUS_REGISTER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_FP_CONTROL_STATUS_REGISTER {
+unsafe impl ::windows_core::Abi for WHV_X64_FP_CONTROL_STATUS_REGISTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_FP_CONTROL_STATUS_REGISTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_FP_CONTROL_STATUS_REGISTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_FP_CONTROL_STATUS_REGISTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_FP_CONTROL_STATUS_REGISTER {}
@@ -7012,12 +7012,12 @@ impl ::core::clone::Clone for WHV_X64_FP_CONTROL_STATUS_REGISTER_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_FP_CONTROL_STATUS_REGISTER_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_FP_CONTROL_STATUS_REGISTER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_FP_CONTROL_STATUS_REGISTER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_FP_CONTROL_STATUS_REGISTER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_FP_CONTROL_STATUS_REGISTER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_FP_CONTROL_STATUS_REGISTER_0 {}
@@ -7038,12 +7038,12 @@ impl ::core::clone::Clone for WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0 {}
@@ -7070,12 +7070,12 @@ impl ::core::fmt::Debug for WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0_0 {
         f.debug_struct("WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0_0").field("LastFpEip", &self.LastFpEip).field("LastFpCs", &self.LastFpCs).field("Reserved2", &self.Reserved2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_FP_CONTROL_STATUS_REGISTER_0_0_0 {}
@@ -7096,12 +7096,12 @@ impl ::core::clone::Clone for WHV_X64_FP_REGISTER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_FP_REGISTER {
+unsafe impl ::windows_core::Abi for WHV_X64_FP_REGISTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_FP_REGISTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_FP_REGISTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_FP_REGISTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_FP_REGISTER {}
@@ -7127,12 +7127,12 @@ impl ::core::fmt::Debug for WHV_X64_FP_REGISTER_0 {
         f.debug_struct("WHV_X64_FP_REGISTER_0").field("Mantissa", &self.Mantissa).field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_FP_REGISTER_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_FP_REGISTER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_FP_REGISTER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_FP_REGISTER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_FP_REGISTER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_FP_REGISTER_0 {}
@@ -7157,12 +7157,12 @@ impl ::core::fmt::Debug for WHV_X64_INTERRUPTION_DELIVERABLE_CONTEXT {
         f.debug_struct("WHV_X64_INTERRUPTION_DELIVERABLE_CONTEXT").field("DeliverableType", &self.DeliverableType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_INTERRUPTION_DELIVERABLE_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_X64_INTERRUPTION_DELIVERABLE_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_INTERRUPTION_DELIVERABLE_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_INTERRUPTION_DELIVERABLE_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_INTERRUPTION_DELIVERABLE_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_INTERRUPTION_DELIVERABLE_CONTEXT {}
@@ -7183,12 +7183,12 @@ impl ::core::clone::Clone for WHV_X64_INTERRUPT_STATE_REGISTER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_INTERRUPT_STATE_REGISTER {
+unsafe impl ::windows_core::Abi for WHV_X64_INTERRUPT_STATE_REGISTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_INTERRUPT_STATE_REGISTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_INTERRUPT_STATE_REGISTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_INTERRUPT_STATE_REGISTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_INTERRUPT_STATE_REGISTER {}
@@ -7213,12 +7213,12 @@ impl ::core::fmt::Debug for WHV_X64_INTERRUPT_STATE_REGISTER_0 {
         f.debug_struct("WHV_X64_INTERRUPT_STATE_REGISTER_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_INTERRUPT_STATE_REGISTER_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_INTERRUPT_STATE_REGISTER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_INTERRUPT_STATE_REGISTER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_INTERRUPT_STATE_REGISTER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_INTERRUPT_STATE_REGISTER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_INTERRUPT_STATE_REGISTER_0 {}
@@ -7249,12 +7249,12 @@ impl ::core::clone::Clone for WHV_X64_IO_PORT_ACCESS_CONTEXT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_IO_PORT_ACCESS_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_X64_IO_PORT_ACCESS_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_IO_PORT_ACCESS_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_IO_PORT_ACCESS_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_IO_PORT_ACCESS_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_IO_PORT_ACCESS_CONTEXT {}
@@ -7275,12 +7275,12 @@ impl ::core::clone::Clone for WHV_X64_IO_PORT_ACCESS_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_IO_PORT_ACCESS_INFO {
+unsafe impl ::windows_core::Abi for WHV_X64_IO_PORT_ACCESS_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_IO_PORT_ACCESS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_IO_PORT_ACCESS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_IO_PORT_ACCESS_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_IO_PORT_ACCESS_INFO {}
@@ -7305,12 +7305,12 @@ impl ::core::fmt::Debug for WHV_X64_IO_PORT_ACCESS_INFO_0 {
         f.debug_struct("WHV_X64_IO_PORT_ACCESS_INFO_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_IO_PORT_ACCESS_INFO_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_IO_PORT_ACCESS_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_IO_PORT_ACCESS_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_IO_PORT_ACCESS_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_IO_PORT_ACCESS_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_IO_PORT_ACCESS_INFO_0 {}
@@ -7340,7 +7340,7 @@ impl ::core::default::Default for WHV_X64_LOCAL_APIC_EMULATION_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_LOCAL_APIC_EMULATION_MODE {
+unsafe impl ::windows_core::Abi for WHV_X64_LOCAL_APIC_EMULATION_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_X64_LOCAL_APIC_EMULATION_MODE {
@@ -7362,12 +7362,12 @@ impl ::core::clone::Clone for WHV_X64_MSR_ACCESS_CONTEXT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_MSR_ACCESS_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_X64_MSR_ACCESS_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_MSR_ACCESS_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_MSR_ACCESS_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_MSR_ACCESS_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_MSR_ACCESS_CONTEXT {}
@@ -7388,12 +7388,12 @@ impl ::core::clone::Clone for WHV_X64_MSR_ACCESS_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_MSR_ACCESS_INFO {
+unsafe impl ::windows_core::Abi for WHV_X64_MSR_ACCESS_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_MSR_ACCESS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_MSR_ACCESS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_MSR_ACCESS_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_MSR_ACCESS_INFO {}
@@ -7418,12 +7418,12 @@ impl ::core::fmt::Debug for WHV_X64_MSR_ACCESS_INFO_0 {
         f.debug_struct("WHV_X64_MSR_ACCESS_INFO_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_MSR_ACCESS_INFO_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_MSR_ACCESS_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_MSR_ACCESS_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_MSR_ACCESS_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_MSR_ACCESS_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_MSR_ACCESS_INFO_0 {}
@@ -7444,12 +7444,12 @@ impl ::core::clone::Clone for WHV_X64_MSR_EXIT_BITMAP {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_MSR_EXIT_BITMAP {
+unsafe impl ::windows_core::Abi for WHV_X64_MSR_EXIT_BITMAP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_MSR_EXIT_BITMAP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_MSR_EXIT_BITMAP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_MSR_EXIT_BITMAP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_MSR_EXIT_BITMAP {}
@@ -7474,12 +7474,12 @@ impl ::core::fmt::Debug for WHV_X64_MSR_EXIT_BITMAP_0 {
         f.debug_struct("WHV_X64_MSR_EXIT_BITMAP_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_MSR_EXIT_BITMAP_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_MSR_EXIT_BITMAP_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_MSR_EXIT_BITMAP_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_MSR_EXIT_BITMAP_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_MSR_EXIT_BITMAP_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_MSR_EXIT_BITMAP_0 {}
@@ -7500,12 +7500,12 @@ impl ::core::clone::Clone for WHV_X64_PENDING_DEBUG_EXCEPTION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_PENDING_DEBUG_EXCEPTION {
+unsafe impl ::windows_core::Abi for WHV_X64_PENDING_DEBUG_EXCEPTION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_PENDING_DEBUG_EXCEPTION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_DEBUG_EXCEPTION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_DEBUG_EXCEPTION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_PENDING_DEBUG_EXCEPTION {}
@@ -7530,12 +7530,12 @@ impl ::core::fmt::Debug for WHV_X64_PENDING_DEBUG_EXCEPTION_0 {
         f.debug_struct("WHV_X64_PENDING_DEBUG_EXCEPTION_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_PENDING_DEBUG_EXCEPTION_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_PENDING_DEBUG_EXCEPTION_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_PENDING_DEBUG_EXCEPTION_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_DEBUG_EXCEPTION_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_DEBUG_EXCEPTION_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_PENDING_DEBUG_EXCEPTION_0 {}
@@ -7563,7 +7563,7 @@ impl ::core::default::Default for WHV_X64_PENDING_EVENT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_PENDING_EVENT_TYPE {
+unsafe impl ::windows_core::Abi for WHV_X64_PENDING_EVENT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_X64_PENDING_EVENT_TYPE {
@@ -7583,12 +7583,12 @@ impl ::core::clone::Clone for WHV_X64_PENDING_EXCEPTION_EVENT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_PENDING_EXCEPTION_EVENT {
+unsafe impl ::windows_core::Abi for WHV_X64_PENDING_EXCEPTION_EVENT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_PENDING_EXCEPTION_EVENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_EXCEPTION_EVENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_EXCEPTION_EVENT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_PENDING_EXCEPTION_EVENT {}
@@ -7615,12 +7615,12 @@ impl ::core::fmt::Debug for WHV_X64_PENDING_EXCEPTION_EVENT_0 {
         f.debug_struct("WHV_X64_PENDING_EXCEPTION_EVENT_0").field("_bitfield", &self._bitfield).field("ErrorCode", &self.ErrorCode).field("ExceptionParameter", &self.ExceptionParameter).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_PENDING_EXCEPTION_EVENT_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_PENDING_EXCEPTION_EVENT_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_PENDING_EXCEPTION_EVENT_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_EXCEPTION_EVENT_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_EXCEPTION_EVENT_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_PENDING_EXCEPTION_EVENT_0 {}
@@ -7641,12 +7641,12 @@ impl ::core::clone::Clone for WHV_X64_PENDING_EXT_INT_EVENT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_PENDING_EXT_INT_EVENT {
+unsafe impl ::windows_core::Abi for WHV_X64_PENDING_EXT_INT_EVENT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_PENDING_EXT_INT_EVENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_EXT_INT_EVENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_EXT_INT_EVENT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_PENDING_EXT_INT_EVENT {}
@@ -7672,12 +7672,12 @@ impl ::core::fmt::Debug for WHV_X64_PENDING_EXT_INT_EVENT_0 {
         f.debug_struct("WHV_X64_PENDING_EXT_INT_EVENT_0").field("_bitfield", &self._bitfield).field("Reserved2", &self.Reserved2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_PENDING_EXT_INT_EVENT_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_PENDING_EXT_INT_EVENT_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_PENDING_EXT_INT_EVENT_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_EXT_INT_EVENT_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_EXT_INT_EVENT_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_PENDING_EXT_INT_EVENT_0 {}
@@ -7698,12 +7698,12 @@ impl ::core::clone::Clone for WHV_X64_PENDING_INTERRUPTION_REGISTER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_PENDING_INTERRUPTION_REGISTER {
+unsafe impl ::windows_core::Abi for WHV_X64_PENDING_INTERRUPTION_REGISTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_PENDING_INTERRUPTION_REGISTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_INTERRUPTION_REGISTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_INTERRUPTION_REGISTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_PENDING_INTERRUPTION_REGISTER {}
@@ -7729,12 +7729,12 @@ impl ::core::fmt::Debug for WHV_X64_PENDING_INTERRUPTION_REGISTER_0 {
         f.debug_struct("WHV_X64_PENDING_INTERRUPTION_REGISTER_0").field("_bitfield", &self._bitfield).field("ErrorCode", &self.ErrorCode).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_PENDING_INTERRUPTION_REGISTER_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_PENDING_INTERRUPTION_REGISTER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_PENDING_INTERRUPTION_REGISTER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_INTERRUPTION_REGISTER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_PENDING_INTERRUPTION_REGISTER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_PENDING_INTERRUPTION_REGISTER_0 {}
@@ -7764,7 +7764,7 @@ impl ::core::default::Default for WHV_X64_PENDING_INTERRUPTION_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_PENDING_INTERRUPTION_TYPE {
+unsafe impl ::windows_core::Abi for WHV_X64_PENDING_INTERRUPTION_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_X64_PENDING_INTERRUPTION_TYPE {
@@ -7787,12 +7787,12 @@ impl ::core::clone::Clone for WHV_X64_RDTSC_CONTEXT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_RDTSC_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_X64_RDTSC_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_RDTSC_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_RDTSC_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_RDTSC_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_RDTSC_CONTEXT {}
@@ -7813,12 +7813,12 @@ impl ::core::clone::Clone for WHV_X64_RDTSC_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_RDTSC_INFO {
+unsafe impl ::windows_core::Abi for WHV_X64_RDTSC_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_RDTSC_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_RDTSC_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_RDTSC_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_RDTSC_INFO {}
@@ -7843,12 +7843,12 @@ impl ::core::fmt::Debug for WHV_X64_RDTSC_INFO_0 {
         f.debug_struct("WHV_X64_RDTSC_INFO_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_RDTSC_INFO_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_RDTSC_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_RDTSC_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_RDTSC_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_RDTSC_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_RDTSC_INFO_0 {}
@@ -7871,12 +7871,12 @@ impl ::core::clone::Clone for WHV_X64_SEGMENT_REGISTER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_SEGMENT_REGISTER {
+unsafe impl ::windows_core::Abi for WHV_X64_SEGMENT_REGISTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_SEGMENT_REGISTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_SEGMENT_REGISTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_SEGMENT_REGISTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_SEGMENT_REGISTER {}
@@ -7897,12 +7897,12 @@ impl ::core::clone::Clone for WHV_X64_SEGMENT_REGISTER_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_SEGMENT_REGISTER_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_SEGMENT_REGISTER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_SEGMENT_REGISTER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_SEGMENT_REGISTER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_SEGMENT_REGISTER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_SEGMENT_REGISTER_0 {}
@@ -7927,12 +7927,12 @@ impl ::core::fmt::Debug for WHV_X64_SEGMENT_REGISTER_0_0 {
         f.debug_struct("WHV_X64_SEGMENT_REGISTER_0_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_SEGMENT_REGISTER_0_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_SEGMENT_REGISTER_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_SEGMENT_REGISTER_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_SEGMENT_REGISTER_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_SEGMENT_REGISTER_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_SEGMENT_REGISTER_0_0 {}
@@ -7959,12 +7959,12 @@ impl ::core::fmt::Debug for WHV_X64_TABLE_REGISTER {
         f.debug_struct("WHV_X64_TABLE_REGISTER").field("Pad", &self.Pad).field("Limit", &self.Limit).field("Base", &self.Base).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_TABLE_REGISTER {
+unsafe impl ::windows_core::Abi for WHV_X64_TABLE_REGISTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_TABLE_REGISTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_TABLE_REGISTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_TABLE_REGISTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_TABLE_REGISTER {}
@@ -7992,7 +7992,7 @@ impl ::core::default::Default for WHV_X64_UNSUPPORTED_FEATURE_CODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_UNSUPPORTED_FEATURE_CODE {
+unsafe impl ::windows_core::Abi for WHV_X64_UNSUPPORTED_FEATURE_CODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WHV_X64_UNSUPPORTED_FEATURE_CODE {
@@ -8018,12 +8018,12 @@ impl ::core::fmt::Debug for WHV_X64_UNSUPPORTED_FEATURE_CONTEXT {
         f.debug_struct("WHV_X64_UNSUPPORTED_FEATURE_CONTEXT").field("FeatureCode", &self.FeatureCode).field("Reserved", &self.Reserved).field("FeatureParameter", &self.FeatureParameter).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_UNSUPPORTED_FEATURE_CONTEXT {
+unsafe impl ::windows_core::Abi for WHV_X64_UNSUPPORTED_FEATURE_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_UNSUPPORTED_FEATURE_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_UNSUPPORTED_FEATURE_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_UNSUPPORTED_FEATURE_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_UNSUPPORTED_FEATURE_CONTEXT {}
@@ -8044,12 +8044,12 @@ impl ::core::clone::Clone for WHV_X64_VP_EXECUTION_STATE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_VP_EXECUTION_STATE {
+unsafe impl ::windows_core::Abi for WHV_X64_VP_EXECUTION_STATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_VP_EXECUTION_STATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_VP_EXECUTION_STATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_VP_EXECUTION_STATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_VP_EXECUTION_STATE {}
@@ -8074,12 +8074,12 @@ impl ::core::fmt::Debug for WHV_X64_VP_EXECUTION_STATE_0 {
         f.debug_struct("WHV_X64_VP_EXECUTION_STATE_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_VP_EXECUTION_STATE_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_VP_EXECUTION_STATE_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_VP_EXECUTION_STATE_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_VP_EXECUTION_STATE_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_VP_EXECUTION_STATE_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_VP_EXECUTION_STATE_0 {}
@@ -8100,12 +8100,12 @@ impl ::core::clone::Clone for WHV_X64_XMM_CONTROL_STATUS_REGISTER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_XMM_CONTROL_STATUS_REGISTER {
+unsafe impl ::windows_core::Abi for WHV_X64_XMM_CONTROL_STATUS_REGISTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_XMM_CONTROL_STATUS_REGISTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_XMM_CONTROL_STATUS_REGISTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_XMM_CONTROL_STATUS_REGISTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_XMM_CONTROL_STATUS_REGISTER {}
@@ -8127,12 +8127,12 @@ impl ::core::clone::Clone for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_XMM_CONTROL_STATUS_REGISTER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_XMM_CONTROL_STATUS_REGISTER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0 {}
@@ -8153,12 +8153,12 @@ impl ::core::clone::Clone for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0 {}
@@ -8185,12 +8185,12 @@ impl ::core::fmt::Debug for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0_0 {
         f.debug_struct("WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0_0").field("LastFpDp", &self.LastFpDp).field("LastFpDs", &self.LastFpDs).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0_0 {
+unsafe impl ::windows_core::Abi for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0_0 {}
@@ -8202,12 +8202,12 @@ impl ::core::default::Default for WHV_X64_XMM_CONTROL_STATUS_REGISTER_0_0_0 {
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WHvAcceptPartitionMigration<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(migrationhandle: Param0) -> ::windows::core::Result<WHV_PARTITION_HANDLE> {
+pub unsafe fn WHvAcceptPartitionMigration<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(migrationhandle: Param0) -> ::windows_core::Result<WHV_PARTITION_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvAcceptPartitionMigration(migrationhandle: super::super::Foundation::HANDLE, partition: *mut WHV_PARTITION_HANDLE) -> ::windows::core::HRESULT;
+            fn WHvAcceptPartitionMigration(migrationhandle: super::super::Foundation::HANDLE, partition: *mut WHV_PARTITION_HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<WHV_PARTITION_HANDLE>::zeroed();
         WHvAcceptPartitionMigration(migrationhandle.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WHV_PARTITION_HANDLE>(result__)
@@ -8217,14 +8217,14 @@ pub unsafe fn WHvAcceptPartitionMigration<'a, Param0: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvAdviseGpaRange<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, gparanges: &[WHV_MEMORY_RANGE_ENTRY], advice: WHV_ADVISE_GPA_RANGE_CODE, advicebuffer: *const ::core::ffi::c_void, advicebuffersizeinbytes: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvAdviseGpaRange<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, gparanges: &[WHV_MEMORY_RANGE_ENTRY], advice: WHV_ADVISE_GPA_RANGE_CODE, advicebuffer: *const ::core::ffi::c_void, advicebuffersizeinbytes: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvAdviseGpaRange(partition: WHV_PARTITION_HANDLE, gparanges: *const WHV_MEMORY_RANGE_ENTRY, gparangescount: u32, advice: WHV_ADVISE_GPA_RANGE_CODE, advicebuffer: *const ::core::ffi::c_void, advicebuffersizeinbytes: u32) -> ::windows::core::HRESULT;
+            fn WHvAdviseGpaRange(partition: WHV_PARTITION_HANDLE, gparanges: *const WHV_MEMORY_RANGE_ENTRY, gparangescount: u32, advice: WHV_ADVISE_GPA_RANGE_CODE, advicebuffer: *const ::core::ffi::c_void, advicebuffersizeinbytes: u32) -> ::windows_core::HRESULT;
         }
-        WHvAdviseGpaRange(partition.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(gparanges)), gparanges.len() as _, ::core::mem::transmute(advice), ::core::mem::transmute(advicebuffer), ::core::mem::transmute(advicebuffersizeinbytes)).ok()
+        WHvAdviseGpaRange(partition.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(gparanges)), gparanges.len() as _, ::core::mem::transmute(advice), ::core::mem::transmute(advicebuffer), ::core::mem::transmute(advicebuffersizeinbytes)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -8232,27 +8232,27 @@ pub unsafe fn WHvAdviseGpaRange<'a, Param0: ::windows::core::IntoParam<'a, WHV_P
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WHvAllocateVpciResource(providerid: *const ::windows::core::GUID, flags: WHV_ALLOCATE_VPCI_RESOURCE_FLAGS, resourcedescriptor: &[u8]) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn WHvAllocateVpciResource(providerid: *const ::windows_core::GUID, flags: WHV_ALLOCATE_VPCI_RESOURCE_FLAGS, resourcedescriptor: &[u8]) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvAllocateVpciResource(providerid: *const ::windows::core::GUID, flags: WHV_ALLOCATE_VPCI_RESOURCE_FLAGS, resourcedescriptor: *const ::core::ffi::c_void, resourcedescriptorsizeinbytes: u32, vpciresource: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn WHvAllocateVpciResource(providerid: *const ::windows_core::GUID, flags: WHV_ALLOCATE_VPCI_RESOURCE_FLAGS, resourcedescriptor: *const ::core::ffi::c_void, resourcedescriptorsizeinbytes: u32, vpciresource: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        WHvAllocateVpciResource(::core::mem::transmute(providerid), ::core::mem::transmute(flags), ::core::mem::transmute(::windows::core::as_ptr_or_null(resourcedescriptor)), resourcedescriptor.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+        WHvAllocateVpciResource(::core::mem::transmute(providerid), ::core::mem::transmute(flags), ::core::mem::transmute(::windows_core::as_ptr_or_null(resourcedescriptor)), resourcedescriptor.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvCancelPartitionMigration<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn WHvCancelPartitionMigration<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvCancelPartitionMigration(partition: WHV_PARTITION_HANDLE) -> ::windows::core::HRESULT;
+            fn WHvCancelPartitionMigration(partition: WHV_PARTITION_HANDLE) -> ::windows_core::HRESULT;
         }
         WHvCancelPartitionMigration(partition.into_param().abi()).ok()
     }
@@ -8261,12 +8261,12 @@ pub unsafe fn WHvCancelPartitionMigration<'a, Param0: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvCancelRunVirtualProcessor<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, flags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvCancelRunVirtualProcessor<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, flags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvCancelRunVirtualProcessor(partition: WHV_PARTITION_HANDLE, vpindex: u32, flags: u32) -> ::windows::core::HRESULT;
+            fn WHvCancelRunVirtualProcessor(partition: WHV_PARTITION_HANDLE, vpindex: u32, flags: u32) -> ::windows_core::HRESULT;
         }
         WHvCancelRunVirtualProcessor(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(flags)).ok()
     }
@@ -8275,12 +8275,12 @@ pub unsafe fn WHvCancelRunVirtualProcessor<'a, Param0: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvCompletePartitionMigration<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn WHvCompletePartitionMigration<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvCompletePartitionMigration(partition: WHV_PARTITION_HANDLE) -> ::windows::core::HRESULT;
+            fn WHvCompletePartitionMigration(partition: WHV_PARTITION_HANDLE) -> ::windows_core::HRESULT;
         }
         WHvCompletePartitionMigration(partition.into_param().abi()).ok()
     }
@@ -8290,12 +8290,12 @@ pub unsafe fn WHvCompletePartitionMigration<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WHvCreateNotificationPort<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(partition: Param0, parameters: *const WHV_NOTIFICATION_PORT_PARAMETERS, eventhandle: Param2, porthandle: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn WHvCreateNotificationPort<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(partition: Param0, parameters: *const WHV_NOTIFICATION_PORT_PARAMETERS, eventhandle: Param2, porthandle: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvCreateNotificationPort(partition: WHV_PARTITION_HANDLE, parameters: *const WHV_NOTIFICATION_PORT_PARAMETERS, eventhandle: super::super::Foundation::HANDLE, porthandle: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn WHvCreateNotificationPort(partition: WHV_PARTITION_HANDLE, parameters: *const WHV_NOTIFICATION_PORT_PARAMETERS, eventhandle: super::super::Foundation::HANDLE, porthandle: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         WHvCreateNotificationPort(partition.into_param().abi(), ::core::mem::transmute(parameters), eventhandle.into_param().abi(), ::core::mem::transmute(porthandle)).ok()
     }
@@ -8304,12 +8304,12 @@ pub unsafe fn WHvCreateNotificationPort<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvCreatePartition() -> ::windows::core::Result<WHV_PARTITION_HANDLE> {
+pub unsafe fn WHvCreatePartition() -> ::windows_core::Result<WHV_PARTITION_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvCreatePartition(partition: *mut WHV_PARTITION_HANDLE) -> ::windows::core::HRESULT;
+            fn WHvCreatePartition(partition: *mut WHV_PARTITION_HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<WHV_PARTITION_HANDLE>::zeroed();
         WHvCreatePartition(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WHV_PARTITION_HANDLE>(result__)
@@ -8320,12 +8320,12 @@ pub unsafe fn WHvCreatePartition() -> ::windows::core::Result<WHV_PARTITION_HAND
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WHvCreateTrigger<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, parameters: *const WHV_TRIGGER_PARAMETERS, triggerhandle: *mut *mut ::core::ffi::c_void, eventhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::Result<()> {
+pub unsafe fn WHvCreateTrigger<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, parameters: *const WHV_TRIGGER_PARAMETERS, triggerhandle: *mut *mut ::core::ffi::c_void, eventhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvCreateTrigger(partition: WHV_PARTITION_HANDLE, parameters: *const WHV_TRIGGER_PARAMETERS, triggerhandle: *mut *mut ::core::ffi::c_void, eventhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn WHvCreateTrigger(partition: WHV_PARTITION_HANDLE, parameters: *const WHV_TRIGGER_PARAMETERS, triggerhandle: *mut *mut ::core::ffi::c_void, eventhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         WHvCreateTrigger(partition.into_param().abi(), ::core::mem::transmute(parameters), ::core::mem::transmute(triggerhandle), ::core::mem::transmute(eventhandle)).ok()
     }
@@ -8334,12 +8334,12 @@ pub unsafe fn WHvCreateTrigger<'a, Param0: ::windows::core::IntoParam<'a, WHV_PA
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvCreateVirtualProcessor<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, flags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvCreateVirtualProcessor<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, flags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvCreateVirtualProcessor(partition: WHV_PARTITION_HANDLE, vpindex: u32, flags: u32) -> ::windows::core::HRESULT;
+            fn WHvCreateVirtualProcessor(partition: WHV_PARTITION_HANDLE, vpindex: u32, flags: u32) -> ::windows_core::HRESULT;
         }
         WHvCreateVirtualProcessor(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(flags)).ok()
     }
@@ -8348,14 +8348,14 @@ pub unsafe fn WHvCreateVirtualProcessor<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvCreateVirtualProcessor2<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, properties: &[WHV_VIRTUAL_PROCESSOR_PROPERTY]) -> ::windows::core::Result<()> {
+pub unsafe fn WHvCreateVirtualProcessor2<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, properties: &[WHV_VIRTUAL_PROCESSOR_PROPERTY]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvCreateVirtualProcessor2(partition: WHV_PARTITION_HANDLE, vpindex: u32, properties: *const WHV_VIRTUAL_PROCESSOR_PROPERTY, propertycount: u32) -> ::windows::core::HRESULT;
+            fn WHvCreateVirtualProcessor2(partition: WHV_PARTITION_HANDLE, vpindex: u32, properties: *const WHV_VIRTUAL_PROCESSOR_PROPERTY, propertycount: u32) -> ::windows_core::HRESULT;
         }
-        WHvCreateVirtualProcessor2(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(::windows::core::as_ptr_or_null(properties)), properties.len() as _).ok()
+        WHvCreateVirtualProcessor2(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(::windows_core::as_ptr_or_null(properties)), properties.len() as _).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -8363,12 +8363,12 @@ pub unsafe fn WHvCreateVirtualProcessor2<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WHvCreateVpciDevice<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(partition: Param0, logicaldeviceid: u64, vpciresource: Param2, flags: WHV_CREATE_VPCI_DEVICE_FLAGS, notificationeventhandle: Param4) -> ::windows::core::Result<()> {
+pub unsafe fn WHvCreateVpciDevice<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(partition: Param0, logicaldeviceid: u64, vpciresource: Param2, flags: WHV_CREATE_VPCI_DEVICE_FLAGS, notificationeventhandle: Param4) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvCreateVpciDevice(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, vpciresource: super::super::Foundation::HANDLE, flags: WHV_CREATE_VPCI_DEVICE_FLAGS, notificationeventhandle: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn WHvCreateVpciDevice(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, vpciresource: super::super::Foundation::HANDLE, flags: WHV_CREATE_VPCI_DEVICE_FLAGS, notificationeventhandle: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         WHvCreateVpciDevice(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid), vpciresource.into_param().abi(), ::core::mem::transmute(flags), notificationeventhandle.into_param().abi()).ok()
     }
@@ -8377,12 +8377,12 @@ pub unsafe fn WHvCreateVpciDevice<'a, Param0: ::windows::core::IntoParam<'a, WHV
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvDeleteNotificationPort<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, porthandle: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn WHvDeleteNotificationPort<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, porthandle: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvDeleteNotificationPort(partition: WHV_PARTITION_HANDLE, porthandle: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn WHvDeleteNotificationPort(partition: WHV_PARTITION_HANDLE, porthandle: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         WHvDeleteNotificationPort(partition.into_param().abi(), ::core::mem::transmute(porthandle)).ok()
     }
@@ -8391,12 +8391,12 @@ pub unsafe fn WHvDeleteNotificationPort<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvDeletePartition<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn WHvDeletePartition<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvDeletePartition(partition: WHV_PARTITION_HANDLE) -> ::windows::core::HRESULT;
+            fn WHvDeletePartition(partition: WHV_PARTITION_HANDLE) -> ::windows_core::HRESULT;
         }
         WHvDeletePartition(partition.into_param().abi()).ok()
     }
@@ -8405,12 +8405,12 @@ pub unsafe fn WHvDeletePartition<'a, Param0: ::windows::core::IntoParam<'a, WHV_
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvDeleteTrigger<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, triggerhandle: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn WHvDeleteTrigger<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, triggerhandle: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvDeleteTrigger(partition: WHV_PARTITION_HANDLE, triggerhandle: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn WHvDeleteTrigger(partition: WHV_PARTITION_HANDLE, triggerhandle: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         WHvDeleteTrigger(partition.into_param().abi(), ::core::mem::transmute(triggerhandle)).ok()
     }
@@ -8419,12 +8419,12 @@ pub unsafe fn WHvDeleteTrigger<'a, Param0: ::windows::core::IntoParam<'a, WHV_PA
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvDeleteVirtualProcessor<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvDeleteVirtualProcessor<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvDeleteVirtualProcessor(partition: WHV_PARTITION_HANDLE, vpindex: u32) -> ::windows::core::HRESULT;
+            fn WHvDeleteVirtualProcessor(partition: WHV_PARTITION_HANDLE, vpindex: u32) -> ::windows_core::HRESULT;
         }
         WHvDeleteVirtualProcessor(partition.into_param().abi(), ::core::mem::transmute(vpindex)).ok()
     }
@@ -8433,12 +8433,12 @@ pub unsafe fn WHvDeleteVirtualProcessor<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvDeleteVpciDevice<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64) -> ::windows::core::Result<()> {
+pub unsafe fn WHvDeleteVpciDevice<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvDeleteVpciDevice(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64) -> ::windows::core::HRESULT;
+            fn WHvDeleteVpciDevice(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64) -> ::windows_core::HRESULT;
         }
         WHvDeleteVpciDevice(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid)).ok()
     }
@@ -8447,12 +8447,12 @@ pub unsafe fn WHvDeleteVpciDevice<'a, Param0: ::windows::core::IntoParam<'a, WHV
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvEmulatorCreateEmulator(callbacks: *const WHV_EMULATOR_CALLBACKS, emulator: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn WHvEmulatorCreateEmulator(callbacks: *const WHV_EMULATOR_CALLBACKS, emulator: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvEmulatorCreateEmulator(callbacks: *const WHV_EMULATOR_CALLBACKS, emulator: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn WHvEmulatorCreateEmulator(callbacks: *const WHV_EMULATOR_CALLBACKS, emulator: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         WHvEmulatorCreateEmulator(::core::mem::transmute(callbacks), ::core::mem::transmute(emulator)).ok()
     }
@@ -8461,12 +8461,12 @@ pub unsafe fn WHvEmulatorCreateEmulator(callbacks: *const WHV_EMULATOR_CALLBACKS
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvEmulatorDestroyEmulator(emulator: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn WHvEmulatorDestroyEmulator(emulator: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvEmulatorDestroyEmulator(emulator: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn WHvEmulatorDestroyEmulator(emulator: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         WHvEmulatorDestroyEmulator(::core::mem::transmute(emulator)).ok()
     }
@@ -8475,12 +8475,12 @@ pub unsafe fn WHvEmulatorDestroyEmulator(emulator: *const ::core::ffi::c_void) -
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvEmulatorTryIoEmulation(emulator: *const ::core::ffi::c_void, context: *const ::core::ffi::c_void, vpcontext: *const WHV_VP_EXIT_CONTEXT, ioinstructioncontext: *const WHV_X64_IO_PORT_ACCESS_CONTEXT) -> ::windows::core::Result<WHV_EMULATOR_STATUS> {
+pub unsafe fn WHvEmulatorTryIoEmulation(emulator: *const ::core::ffi::c_void, context: *const ::core::ffi::c_void, vpcontext: *const WHV_VP_EXIT_CONTEXT, ioinstructioncontext: *const WHV_X64_IO_PORT_ACCESS_CONTEXT) -> ::windows_core::Result<WHV_EMULATOR_STATUS> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvEmulatorTryIoEmulation(emulator: *const ::core::ffi::c_void, context: *const ::core::ffi::c_void, vpcontext: *const WHV_VP_EXIT_CONTEXT, ioinstructioncontext: *const WHV_X64_IO_PORT_ACCESS_CONTEXT, emulatorreturnstatus: *mut WHV_EMULATOR_STATUS) -> ::windows::core::HRESULT;
+            fn WHvEmulatorTryIoEmulation(emulator: *const ::core::ffi::c_void, context: *const ::core::ffi::c_void, vpcontext: *const WHV_VP_EXIT_CONTEXT, ioinstructioncontext: *const WHV_X64_IO_PORT_ACCESS_CONTEXT, emulatorreturnstatus: *mut WHV_EMULATOR_STATUS) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<WHV_EMULATOR_STATUS>::zeroed();
         WHvEmulatorTryIoEmulation(::core::mem::transmute(emulator), ::core::mem::transmute(context), ::core::mem::transmute(vpcontext), ::core::mem::transmute(ioinstructioncontext), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WHV_EMULATOR_STATUS>(result__)
@@ -8490,12 +8490,12 @@ pub unsafe fn WHvEmulatorTryIoEmulation(emulator: *const ::core::ffi::c_void, co
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvEmulatorTryMmioEmulation(emulator: *const ::core::ffi::c_void, context: *const ::core::ffi::c_void, vpcontext: *const WHV_VP_EXIT_CONTEXT, mmioinstructioncontext: *const WHV_MEMORY_ACCESS_CONTEXT) -> ::windows::core::Result<WHV_EMULATOR_STATUS> {
+pub unsafe fn WHvEmulatorTryMmioEmulation(emulator: *const ::core::ffi::c_void, context: *const ::core::ffi::c_void, vpcontext: *const WHV_VP_EXIT_CONTEXT, mmioinstructioncontext: *const WHV_MEMORY_ACCESS_CONTEXT) -> ::windows_core::Result<WHV_EMULATOR_STATUS> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvEmulatorTryMmioEmulation(emulator: *const ::core::ffi::c_void, context: *const ::core::ffi::c_void, vpcontext: *const WHV_VP_EXIT_CONTEXT, mmioinstructioncontext: *const WHV_MEMORY_ACCESS_CONTEXT, emulatorreturnstatus: *mut WHV_EMULATOR_STATUS) -> ::windows::core::HRESULT;
+            fn WHvEmulatorTryMmioEmulation(emulator: *const ::core::ffi::c_void, context: *const ::core::ffi::c_void, vpcontext: *const WHV_VP_EXIT_CONTEXT, mmioinstructioncontext: *const WHV_MEMORY_ACCESS_CONTEXT, emulatorreturnstatus: *mut WHV_EMULATOR_STATUS) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<WHV_EMULATOR_STATUS>::zeroed();
         WHvEmulatorTryMmioEmulation(::core::mem::transmute(emulator), ::core::mem::transmute(context), ::core::mem::transmute(vpcontext), ::core::mem::transmute(mmioinstructioncontext), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WHV_EMULATOR_STATUS>(result__)
@@ -8505,12 +8505,12 @@ pub unsafe fn WHvEmulatorTryMmioEmulation(emulator: *const ::core::ffi::c_void, 
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetCapability(capabilitycode: WHV_CAPABILITY_CODE, capabilitybuffer: *mut ::core::ffi::c_void, capabilitybuffersizeinbytes: u32, writtensizeinbytes: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvGetCapability(capabilitycode: WHV_CAPABILITY_CODE, capabilitybuffer: *mut ::core::ffi::c_void, capabilitybuffersizeinbytes: u32, writtensizeinbytes: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetCapability(capabilitycode: WHV_CAPABILITY_CODE, capabilitybuffer: *mut ::core::ffi::c_void, capabilitybuffersizeinbytes: u32, writtensizeinbytes: *mut u32) -> ::windows::core::HRESULT;
+            fn WHvGetCapability(capabilitycode: WHV_CAPABILITY_CODE, capabilitybuffer: *mut ::core::ffi::c_void, capabilitybuffersizeinbytes: u32, writtensizeinbytes: *mut u32) -> ::windows_core::HRESULT;
         }
         WHvGetCapability(::core::mem::transmute(capabilitycode), ::core::mem::transmute(capabilitybuffer), ::core::mem::transmute(capabilitybuffersizeinbytes), ::core::mem::transmute(writtensizeinbytes)).ok()
     }
@@ -8519,26 +8519,26 @@ pub unsafe fn WHvGetCapability(capabilitycode: WHV_CAPABILITY_CODE, capabilitybu
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetInterruptTargetVpSet<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, destination: u64, destinationmode: WHV_INTERRUPT_DESTINATION_MODE, targetvps: &mut [u32], targetvpcount: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvGetInterruptTargetVpSet<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, destination: u64, destinationmode: WHV_INTERRUPT_DESTINATION_MODE, targetvps: &mut [u32], targetvpcount: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetInterruptTargetVpSet(partition: WHV_PARTITION_HANDLE, destination: u64, destinationmode: WHV_INTERRUPT_DESTINATION_MODE, targetvps: *mut u32, vpcount: u32, targetvpcount: *mut u32) -> ::windows::core::HRESULT;
+            fn WHvGetInterruptTargetVpSet(partition: WHV_PARTITION_HANDLE, destination: u64, destinationmode: WHV_INTERRUPT_DESTINATION_MODE, targetvps: *mut u32, vpcount: u32, targetvpcount: *mut u32) -> ::windows_core::HRESULT;
         }
-        WHvGetInterruptTargetVpSet(partition.into_param().abi(), ::core::mem::transmute(destination), ::core::mem::transmute(destinationmode), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(targetvps)), targetvps.len() as _, ::core::mem::transmute(targetvpcount)).ok()
+        WHvGetInterruptTargetVpSet(partition.into_param().abi(), ::core::mem::transmute(destination), ::core::mem::transmute(destinationmode), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(targetvps)), targetvps.len() as _, ::core::mem::transmute(targetvpcount)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetPartitionCounters<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, counterset: WHV_PARTITION_COUNTER_SET, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvGetPartitionCounters<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, counterset: WHV_PARTITION_COUNTER_SET, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetPartitionCounters(partition: WHV_PARTITION_HANDLE, counterset: WHV_PARTITION_COUNTER_SET, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows::core::HRESULT;
+            fn WHvGetPartitionCounters(partition: WHV_PARTITION_HANDLE, counterset: WHV_PARTITION_COUNTER_SET, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows_core::HRESULT;
         }
         WHvGetPartitionCounters(partition.into_param().abi(), ::core::mem::transmute(counterset), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersizeinbytes), ::core::mem::transmute(byteswritten)).ok()
     }
@@ -8547,12 +8547,12 @@ pub unsafe fn WHvGetPartitionCounters<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetPartitionProperty<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, propertycode: WHV_PARTITION_PROPERTY_CODE, propertybuffer: *mut ::core::ffi::c_void, propertybuffersizeinbytes: u32, writtensizeinbytes: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvGetPartitionProperty<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, propertycode: WHV_PARTITION_PROPERTY_CODE, propertybuffer: *mut ::core::ffi::c_void, propertybuffersizeinbytes: u32, writtensizeinbytes: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetPartitionProperty(partition: WHV_PARTITION_HANDLE, propertycode: WHV_PARTITION_PROPERTY_CODE, propertybuffer: *mut ::core::ffi::c_void, propertybuffersizeinbytes: u32, writtensizeinbytes: *mut u32) -> ::windows::core::HRESULT;
+            fn WHvGetPartitionProperty(partition: WHV_PARTITION_HANDLE, propertycode: WHV_PARTITION_PROPERTY_CODE, propertybuffer: *mut ::core::ffi::c_void, propertybuffersizeinbytes: u32, writtensizeinbytes: *mut u32) -> ::windows_core::HRESULT;
         }
         WHvGetPartitionProperty(partition.into_param().abi(), ::core::mem::transmute(propertycode), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersizeinbytes), ::core::mem::transmute(writtensizeinbytes)).ok()
     }
@@ -8561,12 +8561,12 @@ pub unsafe fn WHvGetPartitionProperty<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetVirtualProcessorCounters<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, counterset: WHV_PROCESSOR_COUNTER_SET, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvGetVirtualProcessorCounters<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, counterset: WHV_PROCESSOR_COUNTER_SET, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetVirtualProcessorCounters(partition: WHV_PARTITION_HANDLE, vpindex: u32, counterset: WHV_PROCESSOR_COUNTER_SET, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows::core::HRESULT;
+            fn WHvGetVirtualProcessorCounters(partition: WHV_PARTITION_HANDLE, vpindex: u32, counterset: WHV_PROCESSOR_COUNTER_SET, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows_core::HRESULT;
         }
         WHvGetVirtualProcessorCounters(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(counterset), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersizeinbytes), ::core::mem::transmute(byteswritten)).ok()
     }
@@ -8575,12 +8575,12 @@ pub unsafe fn WHvGetVirtualProcessorCounters<'a, Param0: ::windows::core::IntoPa
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetVirtualProcessorCpuidOutput<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, eax: u32, ecx: u32) -> ::windows::core::Result<WHV_CPUID_OUTPUT> {
+pub unsafe fn WHvGetVirtualProcessorCpuidOutput<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, eax: u32, ecx: u32) -> ::windows_core::Result<WHV_CPUID_OUTPUT> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetVirtualProcessorCpuidOutput(partition: WHV_PARTITION_HANDLE, vpindex: u32, eax: u32, ecx: u32, cpuidoutput: *mut WHV_CPUID_OUTPUT) -> ::windows::core::HRESULT;
+            fn WHvGetVirtualProcessorCpuidOutput(partition: WHV_PARTITION_HANDLE, vpindex: u32, eax: u32, ecx: u32, cpuidoutput: *mut WHV_CPUID_OUTPUT) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<WHV_CPUID_OUTPUT>::zeroed();
         WHvGetVirtualProcessorCpuidOutput(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(eax), ::core::mem::transmute(ecx), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WHV_CPUID_OUTPUT>(result__)
@@ -8590,12 +8590,12 @@ pub unsafe fn WHvGetVirtualProcessorCpuidOutput<'a, Param0: ::windows::core::Int
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetVirtualProcessorInterruptControllerState<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, state: *mut ::core::ffi::c_void, statesize: u32, writtensize: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvGetVirtualProcessorInterruptControllerState<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, state: *mut ::core::ffi::c_void, statesize: u32, writtensize: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetVirtualProcessorInterruptControllerState(partition: WHV_PARTITION_HANDLE, vpindex: u32, state: *mut ::core::ffi::c_void, statesize: u32, writtensize: *mut u32) -> ::windows::core::HRESULT;
+            fn WHvGetVirtualProcessorInterruptControllerState(partition: WHV_PARTITION_HANDLE, vpindex: u32, state: *mut ::core::ffi::c_void, statesize: u32, writtensize: *mut u32) -> ::windows_core::HRESULT;
         }
         WHvGetVirtualProcessorInterruptControllerState(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(state), ::core::mem::transmute(statesize), ::core::mem::transmute(writtensize)).ok()
     }
@@ -8604,12 +8604,12 @@ pub unsafe fn WHvGetVirtualProcessorInterruptControllerState<'a, Param0: ::windo
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetVirtualProcessorInterruptControllerState2<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, state: *mut ::core::ffi::c_void, statesize: u32, writtensize: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvGetVirtualProcessorInterruptControllerState2<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, state: *mut ::core::ffi::c_void, statesize: u32, writtensize: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetVirtualProcessorInterruptControllerState2(partition: WHV_PARTITION_HANDLE, vpindex: u32, state: *mut ::core::ffi::c_void, statesize: u32, writtensize: *mut u32) -> ::windows::core::HRESULT;
+            fn WHvGetVirtualProcessorInterruptControllerState2(partition: WHV_PARTITION_HANDLE, vpindex: u32, state: *mut ::core::ffi::c_void, statesize: u32, writtensize: *mut u32) -> ::windows_core::HRESULT;
         }
         WHvGetVirtualProcessorInterruptControllerState2(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(state), ::core::mem::transmute(statesize), ::core::mem::transmute(writtensize)).ok()
     }
@@ -8618,12 +8618,12 @@ pub unsafe fn WHvGetVirtualProcessorInterruptControllerState2<'a, Param0: ::wind
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetVirtualProcessorRegisters<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, registernames: *const WHV_REGISTER_NAME, registercount: u32, registervalues: *mut WHV_REGISTER_VALUE) -> ::windows::core::Result<()> {
+pub unsafe fn WHvGetVirtualProcessorRegisters<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, registernames: *const WHV_REGISTER_NAME, registercount: u32, registervalues: *mut WHV_REGISTER_VALUE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetVirtualProcessorRegisters(partition: WHV_PARTITION_HANDLE, vpindex: u32, registernames: *const WHV_REGISTER_NAME, registercount: u32, registervalues: *mut WHV_REGISTER_VALUE) -> ::windows::core::HRESULT;
+            fn WHvGetVirtualProcessorRegisters(partition: WHV_PARTITION_HANDLE, vpindex: u32, registernames: *const WHV_REGISTER_NAME, registercount: u32, registervalues: *mut WHV_REGISTER_VALUE) -> ::windows_core::HRESULT;
         }
         WHvGetVirtualProcessorRegisters(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(registernames), ::core::mem::transmute(registercount), ::core::mem::transmute(registervalues)).ok()
     }
@@ -8632,12 +8632,12 @@ pub unsafe fn WHvGetVirtualProcessorRegisters<'a, Param0: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetVirtualProcessorState<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, statetype: WHV_VIRTUAL_PROCESSOR_STATE_TYPE, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvGetVirtualProcessorState<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, statetype: WHV_VIRTUAL_PROCESSOR_STATE_TYPE, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetVirtualProcessorState(partition: WHV_PARTITION_HANDLE, vpindex: u32, statetype: WHV_VIRTUAL_PROCESSOR_STATE_TYPE, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows::core::HRESULT;
+            fn WHvGetVirtualProcessorState(partition: WHV_PARTITION_HANDLE, vpindex: u32, statetype: WHV_VIRTUAL_PROCESSOR_STATE_TYPE, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows_core::HRESULT;
         }
         WHvGetVirtualProcessorState(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(statetype), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersizeinbytes), ::core::mem::transmute(byteswritten)).ok()
     }
@@ -8646,12 +8646,12 @@ pub unsafe fn WHvGetVirtualProcessorState<'a, Param0: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetVirtualProcessorXsaveState<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvGetVirtualProcessorXsaveState<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetVirtualProcessorXsaveState(partition: WHV_PARTITION_HANDLE, vpindex: u32, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows::core::HRESULT;
+            fn WHvGetVirtualProcessorXsaveState(partition: WHV_PARTITION_HANDLE, vpindex: u32, buffer: *mut ::core::ffi::c_void, buffersizeinbytes: u32, byteswritten: *mut u32) -> ::windows_core::HRESULT;
         }
         WHvGetVirtualProcessorXsaveState(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersizeinbytes), ::core::mem::transmute(byteswritten)).ok()
     }
@@ -8660,12 +8660,12 @@ pub unsafe fn WHvGetVirtualProcessorXsaveState<'a, Param0: ::windows::core::Into
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetVpciDeviceInterruptTarget<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, index: u32, multimessagenumber: u32, target: *mut WHV_VPCI_INTERRUPT_TARGET, targetsizeinbytes: u32, byteswritten: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvGetVpciDeviceInterruptTarget<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, index: u32, multimessagenumber: u32, target: *mut WHV_VPCI_INTERRUPT_TARGET, targetsizeinbytes: u32, byteswritten: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetVpciDeviceInterruptTarget(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, index: u32, multimessagenumber: u32, target: *mut WHV_VPCI_INTERRUPT_TARGET, targetsizeinbytes: u32, byteswritten: *mut u32) -> ::windows::core::HRESULT;
+            fn WHvGetVpciDeviceInterruptTarget(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, index: u32, multimessagenumber: u32, target: *mut WHV_VPCI_INTERRUPT_TARGET, targetsizeinbytes: u32, byteswritten: *mut u32) -> ::windows_core::HRESULT;
         }
         WHvGetVpciDeviceInterruptTarget(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid), ::core::mem::transmute(index), ::core::mem::transmute(multimessagenumber), ::core::mem::transmute(target), ::core::mem::transmute(targetsizeinbytes), ::core::mem::transmute(byteswritten)).ok()
     }
@@ -8674,12 +8674,12 @@ pub unsafe fn WHvGetVpciDeviceInterruptTarget<'a, Param0: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetVpciDeviceNotification<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, notification: *mut WHV_VPCI_DEVICE_NOTIFICATION, notificationsizeinbytes: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvGetVpciDeviceNotification<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, notification: *mut WHV_VPCI_DEVICE_NOTIFICATION, notificationsizeinbytes: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetVpciDeviceNotification(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, notification: *mut WHV_VPCI_DEVICE_NOTIFICATION, notificationsizeinbytes: u32) -> ::windows::core::HRESULT;
+            fn WHvGetVpciDeviceNotification(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, notification: *mut WHV_VPCI_DEVICE_NOTIFICATION, notificationsizeinbytes: u32) -> ::windows_core::HRESULT;
         }
         WHvGetVpciDeviceNotification(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid), ::core::mem::transmute(notification), ::core::mem::transmute(notificationsizeinbytes)).ok()
     }
@@ -8688,12 +8688,12 @@ pub unsafe fn WHvGetVpciDeviceNotification<'a, Param0: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvGetVpciDeviceProperty<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, propertycode: WHV_VPCI_DEVICE_PROPERTY_CODE, propertybuffer: *mut ::core::ffi::c_void, propertybuffersizeinbytes: u32, writtensizeinbytes: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvGetVpciDeviceProperty<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, propertycode: WHV_VPCI_DEVICE_PROPERTY_CODE, propertybuffer: *mut ::core::ffi::c_void, propertybuffersizeinbytes: u32, writtensizeinbytes: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvGetVpciDeviceProperty(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, propertycode: WHV_VPCI_DEVICE_PROPERTY_CODE, propertybuffer: *mut ::core::ffi::c_void, propertybuffersizeinbytes: u32, writtensizeinbytes: *mut u32) -> ::windows::core::HRESULT;
+            fn WHvGetVpciDeviceProperty(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, propertycode: WHV_VPCI_DEVICE_PROPERTY_CODE, propertybuffer: *mut ::core::ffi::c_void, propertybuffersizeinbytes: u32, writtensizeinbytes: *mut u32) -> ::windows_core::HRESULT;
         }
         WHvGetVpciDeviceProperty(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid), ::core::mem::transmute(propertycode), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersizeinbytes), ::core::mem::transmute(writtensizeinbytes)).ok()
     }
@@ -8702,12 +8702,12 @@ pub unsafe fn WHvGetVpciDeviceProperty<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvMapGpaRange<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, sourceaddress: *const ::core::ffi::c_void, guestaddress: u64, sizeinbytes: u64, flags: WHV_MAP_GPA_RANGE_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn WHvMapGpaRange<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, sourceaddress: *const ::core::ffi::c_void, guestaddress: u64, sizeinbytes: u64, flags: WHV_MAP_GPA_RANGE_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvMapGpaRange(partition: WHV_PARTITION_HANDLE, sourceaddress: *const ::core::ffi::c_void, guestaddress: u64, sizeinbytes: u64, flags: WHV_MAP_GPA_RANGE_FLAGS) -> ::windows::core::HRESULT;
+            fn WHvMapGpaRange(partition: WHV_PARTITION_HANDLE, sourceaddress: *const ::core::ffi::c_void, guestaddress: u64, sizeinbytes: u64, flags: WHV_MAP_GPA_RANGE_FLAGS) -> ::windows_core::HRESULT;
         }
         WHvMapGpaRange(partition.into_param().abi(), ::core::mem::transmute(sourceaddress), ::core::mem::transmute(guestaddress), ::core::mem::transmute(sizeinbytes), ::core::mem::transmute(flags)).ok()
     }
@@ -8717,12 +8717,12 @@ pub unsafe fn WHvMapGpaRange<'a, Param0: ::windows::core::IntoParam<'a, WHV_PART
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WHvMapGpaRange2<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(partition: Param0, process: Param1, sourceaddress: *const ::core::ffi::c_void, guestaddress: u64, sizeinbytes: u64, flags: WHV_MAP_GPA_RANGE_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn WHvMapGpaRange2<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(partition: Param0, process: Param1, sourceaddress: *const ::core::ffi::c_void, guestaddress: u64, sizeinbytes: u64, flags: WHV_MAP_GPA_RANGE_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvMapGpaRange2(partition: WHV_PARTITION_HANDLE, process: super::super::Foundation::HANDLE, sourceaddress: *const ::core::ffi::c_void, guestaddress: u64, sizeinbytes: u64, flags: WHV_MAP_GPA_RANGE_FLAGS) -> ::windows::core::HRESULT;
+            fn WHvMapGpaRange2(partition: WHV_PARTITION_HANDLE, process: super::super::Foundation::HANDLE, sourceaddress: *const ::core::ffi::c_void, guestaddress: u64, sizeinbytes: u64, flags: WHV_MAP_GPA_RANGE_FLAGS) -> ::windows_core::HRESULT;
         }
         WHvMapGpaRange2(partition.into_param().abi(), process.into_param().abi(), ::core::mem::transmute(sourceaddress), ::core::mem::transmute(guestaddress), ::core::mem::transmute(sizeinbytes), ::core::mem::transmute(flags)).ok()
     }
@@ -8731,12 +8731,12 @@ pub unsafe fn WHvMapGpaRange2<'a, Param0: ::windows::core::IntoParam<'a, WHV_PAR
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvMapVpciDeviceInterrupt<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, index: u32, messagecount: u32, target: *const WHV_VPCI_INTERRUPT_TARGET, msiaddress: *mut u64, msidata: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvMapVpciDeviceInterrupt<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, index: u32, messagecount: u32, target: *const WHV_VPCI_INTERRUPT_TARGET, msiaddress: *mut u64, msidata: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvMapVpciDeviceInterrupt(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, index: u32, messagecount: u32, target: *const WHV_VPCI_INTERRUPT_TARGET, msiaddress: *mut u64, msidata: *mut u32) -> ::windows::core::HRESULT;
+            fn WHvMapVpciDeviceInterrupt(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, index: u32, messagecount: u32, target: *const WHV_VPCI_INTERRUPT_TARGET, msiaddress: *mut u64, msidata: *mut u32) -> ::windows_core::HRESULT;
         }
         WHvMapVpciDeviceInterrupt(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid), ::core::mem::transmute(index), ::core::mem::transmute(messagecount), ::core::mem::transmute(target), ::core::mem::transmute(msiaddress), ::core::mem::transmute(msidata)).ok()
     }
@@ -8745,12 +8745,12 @@ pub unsafe fn WHvMapVpciDeviceInterrupt<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvMapVpciDeviceMmioRanges<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, mappingcount: *mut u32, mappings: *mut *mut WHV_VPCI_MMIO_MAPPING) -> ::windows::core::Result<()> {
+pub unsafe fn WHvMapVpciDeviceMmioRanges<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, mappingcount: *mut u32, mappings: *mut *mut WHV_VPCI_MMIO_MAPPING) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvMapVpciDeviceMmioRanges(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, mappingcount: *mut u32, mappings: *mut *mut WHV_VPCI_MMIO_MAPPING) -> ::windows::core::HRESULT;
+            fn WHvMapVpciDeviceMmioRanges(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, mappingcount: *mut u32, mappings: *mut *mut WHV_VPCI_MMIO_MAPPING) -> ::windows_core::HRESULT;
         }
         WHvMapVpciDeviceMmioRanges(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid), ::core::mem::transmute(mappingcount), ::core::mem::transmute(mappings)).ok()
     }
@@ -8759,12 +8759,12 @@ pub unsafe fn WHvMapVpciDeviceMmioRanges<'a, Param0: ::windows::core::IntoParam<
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvPostVirtualProcessorSynicMessage<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, sintindex: u32, message: *const ::core::ffi::c_void, messagesizeinbytes: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvPostVirtualProcessorSynicMessage<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, sintindex: u32, message: *const ::core::ffi::c_void, messagesizeinbytes: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvPostVirtualProcessorSynicMessage(partition: WHV_PARTITION_HANDLE, vpindex: u32, sintindex: u32, message: *const ::core::ffi::c_void, messagesizeinbytes: u32) -> ::windows::core::HRESULT;
+            fn WHvPostVirtualProcessorSynicMessage(partition: WHV_PARTITION_HANDLE, vpindex: u32, sintindex: u32, message: *const ::core::ffi::c_void, messagesizeinbytes: u32) -> ::windows_core::HRESULT;
         }
         WHvPostVirtualProcessorSynicMessage(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(sintindex), ::core::mem::transmute(message), ::core::mem::transmute(messagesizeinbytes)).ok()
     }
@@ -8773,12 +8773,12 @@ pub unsafe fn WHvPostVirtualProcessorSynicMessage<'a, Param0: ::windows::core::I
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvQueryGpaRangeDirtyBitmap<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, guestaddress: u64, rangesizeinbytes: u64, bitmap: *mut u64, bitmapsizeinbytes: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvQueryGpaRangeDirtyBitmap<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, guestaddress: u64, rangesizeinbytes: u64, bitmap: *mut u64, bitmapsizeinbytes: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvQueryGpaRangeDirtyBitmap(partition: WHV_PARTITION_HANDLE, guestaddress: u64, rangesizeinbytes: u64, bitmap: *mut u64, bitmapsizeinbytes: u32) -> ::windows::core::HRESULT;
+            fn WHvQueryGpaRangeDirtyBitmap(partition: WHV_PARTITION_HANDLE, guestaddress: u64, rangesizeinbytes: u64, bitmap: *mut u64, bitmapsizeinbytes: u32) -> ::windows_core::HRESULT;
         }
         WHvQueryGpaRangeDirtyBitmap(partition.into_param().abi(), ::core::mem::transmute(guestaddress), ::core::mem::transmute(rangesizeinbytes), ::core::mem::transmute(bitmap), ::core::mem::transmute(bitmapsizeinbytes)).ok()
     }
@@ -8787,12 +8787,12 @@ pub unsafe fn WHvQueryGpaRangeDirtyBitmap<'a, Param0: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvReadGpaRange<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param3: ::windows::core::IntoParam<'a, WHV_ACCESS_GPA_CONTROLS>>(partition: Param0, vpindex: u32, guestaddress: u64, controls: Param3, data: *mut ::core::ffi::c_void, datasizeinbytes: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvReadGpaRange<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param3: ::windows_core::IntoParam<'a, WHV_ACCESS_GPA_CONTROLS>>(partition: Param0, vpindex: u32, guestaddress: u64, controls: Param3, data: *mut ::core::ffi::c_void, datasizeinbytes: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvReadGpaRange(partition: WHV_PARTITION_HANDLE, vpindex: u32, guestaddress: u64, controls: WHV_ACCESS_GPA_CONTROLS, data: *mut ::core::ffi::c_void, datasizeinbytes: u32) -> ::windows::core::HRESULT;
+            fn WHvReadGpaRange(partition: WHV_PARTITION_HANDLE, vpindex: u32, guestaddress: u64, controls: WHV_ACCESS_GPA_CONTROLS, data: *mut ::core::ffi::c_void, datasizeinbytes: u32) -> ::windows_core::HRESULT;
         }
         WHvReadGpaRange(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(guestaddress), controls.into_param().abi(), ::core::mem::transmute(data), ::core::mem::transmute(datasizeinbytes)).ok()
     }
@@ -8801,12 +8801,12 @@ pub unsafe fn WHvReadGpaRange<'a, Param0: ::windows::core::IntoParam<'a, WHV_PAR
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvReadVpciDeviceRegister<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, register: *const WHV_VPCI_DEVICE_REGISTER, data: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn WHvReadVpciDeviceRegister<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, register: *const WHV_VPCI_DEVICE_REGISTER, data: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvReadVpciDeviceRegister(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, register: *const WHV_VPCI_DEVICE_REGISTER, data: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn WHvReadVpciDeviceRegister(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, register: *const WHV_VPCI_DEVICE_REGISTER, data: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         WHvReadVpciDeviceRegister(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid), ::core::mem::transmute(register), ::core::mem::transmute(data)).ok()
     }
@@ -8816,12 +8816,12 @@ pub unsafe fn WHvReadVpciDeviceRegister<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WHvRegisterPartitionDoorbellEvent<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(partition: Param0, matchdata: *const WHV_DOORBELL_MATCH_DATA, eventhandle: Param2) -> ::windows::core::Result<()> {
+pub unsafe fn WHvRegisterPartitionDoorbellEvent<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(partition: Param0, matchdata: *const WHV_DOORBELL_MATCH_DATA, eventhandle: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvRegisterPartitionDoorbellEvent(partition: WHV_PARTITION_HANDLE, matchdata: *const WHV_DOORBELL_MATCH_DATA, eventhandle: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn WHvRegisterPartitionDoorbellEvent(partition: WHV_PARTITION_HANDLE, matchdata: *const WHV_DOORBELL_MATCH_DATA, eventhandle: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         WHvRegisterPartitionDoorbellEvent(partition.into_param().abi(), ::core::mem::transmute(matchdata), eventhandle.into_param().abi()).ok()
     }
@@ -8830,12 +8830,12 @@ pub unsafe fn WHvRegisterPartitionDoorbellEvent<'a, Param0: ::windows::core::Int
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvRequestInterrupt<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, interrupt: *const WHV_INTERRUPT_CONTROL, interruptcontrolsize: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvRequestInterrupt<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, interrupt: *const WHV_INTERRUPT_CONTROL, interruptcontrolsize: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvRequestInterrupt(partition: WHV_PARTITION_HANDLE, interrupt: *const WHV_INTERRUPT_CONTROL, interruptcontrolsize: u32) -> ::windows::core::HRESULT;
+            fn WHvRequestInterrupt(partition: WHV_PARTITION_HANDLE, interrupt: *const WHV_INTERRUPT_CONTROL, interruptcontrolsize: u32) -> ::windows_core::HRESULT;
         }
         WHvRequestInterrupt(partition.into_param().abi(), ::core::mem::transmute(interrupt), ::core::mem::transmute(interruptcontrolsize)).ok()
     }
@@ -8844,12 +8844,12 @@ pub unsafe fn WHvRequestInterrupt<'a, Param0: ::windows::core::IntoParam<'a, WHV
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvRequestVpciDeviceInterrupt<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, msiaddress: u64, msidata: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvRequestVpciDeviceInterrupt<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, msiaddress: u64, msidata: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvRequestVpciDeviceInterrupt(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, msiaddress: u64, msidata: u32) -> ::windows::core::HRESULT;
+            fn WHvRequestVpciDeviceInterrupt(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, msiaddress: u64, msidata: u32) -> ::windows_core::HRESULT;
         }
         WHvRequestVpciDeviceInterrupt(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid), ::core::mem::transmute(msiaddress), ::core::mem::transmute(msidata)).ok()
     }
@@ -8858,12 +8858,12 @@ pub unsafe fn WHvRequestVpciDeviceInterrupt<'a, Param0: ::windows::core::IntoPar
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvResetPartition<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn WHvResetPartition<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvResetPartition(partition: WHV_PARTITION_HANDLE) -> ::windows::core::HRESULT;
+            fn WHvResetPartition(partition: WHV_PARTITION_HANDLE) -> ::windows_core::HRESULT;
         }
         WHvResetPartition(partition.into_param().abi()).ok()
     }
@@ -8872,12 +8872,12 @@ pub unsafe fn WHvResetPartition<'a, Param0: ::windows::core::IntoParam<'a, WHV_P
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvResumePartitionTime<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn WHvResumePartitionTime<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvResumePartitionTime(partition: WHV_PARTITION_HANDLE) -> ::windows::core::HRESULT;
+            fn WHvResumePartitionTime(partition: WHV_PARTITION_HANDLE) -> ::windows_core::HRESULT;
         }
         WHvResumePartitionTime(partition.into_param().abi()).ok()
     }
@@ -8886,12 +8886,12 @@ pub unsafe fn WHvResumePartitionTime<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvRetargetVpciDeviceInterrupt<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, msiaddress: u64, msidata: u32, target: *const WHV_VPCI_INTERRUPT_TARGET) -> ::windows::core::Result<()> {
+pub unsafe fn WHvRetargetVpciDeviceInterrupt<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, msiaddress: u64, msidata: u32, target: *const WHV_VPCI_INTERRUPT_TARGET) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvRetargetVpciDeviceInterrupt(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, msiaddress: u64, msidata: u32, target: *const WHV_VPCI_INTERRUPT_TARGET) -> ::windows::core::HRESULT;
+            fn WHvRetargetVpciDeviceInterrupt(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, msiaddress: u64, msidata: u32, target: *const WHV_VPCI_INTERRUPT_TARGET) -> ::windows_core::HRESULT;
         }
         WHvRetargetVpciDeviceInterrupt(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid), ::core::mem::transmute(msiaddress), ::core::mem::transmute(msidata), ::core::mem::transmute(target)).ok()
     }
@@ -8900,12 +8900,12 @@ pub unsafe fn WHvRetargetVpciDeviceInterrupt<'a, Param0: ::windows::core::IntoPa
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvRunVirtualProcessor<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, exitcontext: *mut ::core::ffi::c_void, exitcontextsizeinbytes: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvRunVirtualProcessor<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, exitcontext: *mut ::core::ffi::c_void, exitcontextsizeinbytes: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvRunVirtualProcessor(partition: WHV_PARTITION_HANDLE, vpindex: u32, exitcontext: *mut ::core::ffi::c_void, exitcontextsizeinbytes: u32) -> ::windows::core::HRESULT;
+            fn WHvRunVirtualProcessor(partition: WHV_PARTITION_HANDLE, vpindex: u32, exitcontext: *mut ::core::ffi::c_void, exitcontextsizeinbytes: u32) -> ::windows_core::HRESULT;
         }
         WHvRunVirtualProcessor(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(exitcontext), ::core::mem::transmute(exitcontextsizeinbytes)).ok()
     }
@@ -8914,12 +8914,12 @@ pub unsafe fn WHvRunVirtualProcessor<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvSetNotificationPortProperty<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, porthandle: *const ::core::ffi::c_void, propertycode: WHV_NOTIFICATION_PORT_PROPERTY_CODE, propertyvalue: u64) -> ::windows::core::Result<()> {
+pub unsafe fn WHvSetNotificationPortProperty<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, porthandle: *const ::core::ffi::c_void, propertycode: WHV_NOTIFICATION_PORT_PROPERTY_CODE, propertyvalue: u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvSetNotificationPortProperty(partition: WHV_PARTITION_HANDLE, porthandle: *const ::core::ffi::c_void, propertycode: WHV_NOTIFICATION_PORT_PROPERTY_CODE, propertyvalue: u64) -> ::windows::core::HRESULT;
+            fn WHvSetNotificationPortProperty(partition: WHV_PARTITION_HANDLE, porthandle: *const ::core::ffi::c_void, propertycode: WHV_NOTIFICATION_PORT_PROPERTY_CODE, propertyvalue: u64) -> ::windows_core::HRESULT;
         }
         WHvSetNotificationPortProperty(partition.into_param().abi(), ::core::mem::transmute(porthandle), ::core::mem::transmute(propertycode), ::core::mem::transmute(propertyvalue)).ok()
     }
@@ -8928,12 +8928,12 @@ pub unsafe fn WHvSetNotificationPortProperty<'a, Param0: ::windows::core::IntoPa
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvSetPartitionProperty<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, propertycode: WHV_PARTITION_PROPERTY_CODE, propertybuffer: *const ::core::ffi::c_void, propertybuffersizeinbytes: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvSetPartitionProperty<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, propertycode: WHV_PARTITION_PROPERTY_CODE, propertybuffer: *const ::core::ffi::c_void, propertybuffersizeinbytes: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvSetPartitionProperty(partition: WHV_PARTITION_HANDLE, propertycode: WHV_PARTITION_PROPERTY_CODE, propertybuffer: *const ::core::ffi::c_void, propertybuffersizeinbytes: u32) -> ::windows::core::HRESULT;
+            fn WHvSetPartitionProperty(partition: WHV_PARTITION_HANDLE, propertycode: WHV_PARTITION_PROPERTY_CODE, propertybuffer: *const ::core::ffi::c_void, propertybuffersizeinbytes: u32) -> ::windows_core::HRESULT;
         }
         WHvSetPartitionProperty(partition.into_param().abi(), ::core::mem::transmute(propertycode), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersizeinbytes)).ok()
     }
@@ -8942,12 +8942,12 @@ pub unsafe fn WHvSetPartitionProperty<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvSetVirtualProcessorInterruptControllerState<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, state: *const ::core::ffi::c_void, statesize: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvSetVirtualProcessorInterruptControllerState<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, state: *const ::core::ffi::c_void, statesize: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvSetVirtualProcessorInterruptControllerState(partition: WHV_PARTITION_HANDLE, vpindex: u32, state: *const ::core::ffi::c_void, statesize: u32) -> ::windows::core::HRESULT;
+            fn WHvSetVirtualProcessorInterruptControllerState(partition: WHV_PARTITION_HANDLE, vpindex: u32, state: *const ::core::ffi::c_void, statesize: u32) -> ::windows_core::HRESULT;
         }
         WHvSetVirtualProcessorInterruptControllerState(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(state), ::core::mem::transmute(statesize)).ok()
     }
@@ -8956,12 +8956,12 @@ pub unsafe fn WHvSetVirtualProcessorInterruptControllerState<'a, Param0: ::windo
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvSetVirtualProcessorInterruptControllerState2<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, state: *const ::core::ffi::c_void, statesize: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvSetVirtualProcessorInterruptControllerState2<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, state: *const ::core::ffi::c_void, statesize: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvSetVirtualProcessorInterruptControllerState2(partition: WHV_PARTITION_HANDLE, vpindex: u32, state: *const ::core::ffi::c_void, statesize: u32) -> ::windows::core::HRESULT;
+            fn WHvSetVirtualProcessorInterruptControllerState2(partition: WHV_PARTITION_HANDLE, vpindex: u32, state: *const ::core::ffi::c_void, statesize: u32) -> ::windows_core::HRESULT;
         }
         WHvSetVirtualProcessorInterruptControllerState2(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(state), ::core::mem::transmute(statesize)).ok()
     }
@@ -8970,12 +8970,12 @@ pub unsafe fn WHvSetVirtualProcessorInterruptControllerState2<'a, Param0: ::wind
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvSetVirtualProcessorRegisters<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, registernames: *const WHV_REGISTER_NAME, registercount: u32, registervalues: *const WHV_REGISTER_VALUE) -> ::windows::core::Result<()> {
+pub unsafe fn WHvSetVirtualProcessorRegisters<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, registernames: *const WHV_REGISTER_NAME, registercount: u32, registervalues: *const WHV_REGISTER_VALUE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvSetVirtualProcessorRegisters(partition: WHV_PARTITION_HANDLE, vpindex: u32, registernames: *const WHV_REGISTER_NAME, registercount: u32, registervalues: *const WHV_REGISTER_VALUE) -> ::windows::core::HRESULT;
+            fn WHvSetVirtualProcessorRegisters(partition: WHV_PARTITION_HANDLE, vpindex: u32, registernames: *const WHV_REGISTER_NAME, registercount: u32, registervalues: *const WHV_REGISTER_VALUE) -> ::windows_core::HRESULT;
         }
         WHvSetVirtualProcessorRegisters(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(registernames), ::core::mem::transmute(registercount), ::core::mem::transmute(registervalues)).ok()
     }
@@ -8984,12 +8984,12 @@ pub unsafe fn WHvSetVirtualProcessorRegisters<'a, Param0: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvSetVirtualProcessorState<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, statetype: WHV_VIRTUAL_PROCESSOR_STATE_TYPE, buffer: *const ::core::ffi::c_void, buffersizeinbytes: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvSetVirtualProcessorState<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, statetype: WHV_VIRTUAL_PROCESSOR_STATE_TYPE, buffer: *const ::core::ffi::c_void, buffersizeinbytes: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvSetVirtualProcessorState(partition: WHV_PARTITION_HANDLE, vpindex: u32, statetype: WHV_VIRTUAL_PROCESSOR_STATE_TYPE, buffer: *const ::core::ffi::c_void, buffersizeinbytes: u32) -> ::windows::core::HRESULT;
+            fn WHvSetVirtualProcessorState(partition: WHV_PARTITION_HANDLE, vpindex: u32, statetype: WHV_VIRTUAL_PROCESSOR_STATE_TYPE, buffer: *const ::core::ffi::c_void, buffersizeinbytes: u32) -> ::windows_core::HRESULT;
         }
         WHvSetVirtualProcessorState(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(statetype), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersizeinbytes)).ok()
     }
@@ -8998,12 +8998,12 @@ pub unsafe fn WHvSetVirtualProcessorState<'a, Param0: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvSetVirtualProcessorXsaveState<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, buffer: *const ::core::ffi::c_void, buffersizeinbytes: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvSetVirtualProcessorXsaveState<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, buffer: *const ::core::ffi::c_void, buffersizeinbytes: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvSetVirtualProcessorXsaveState(partition: WHV_PARTITION_HANDLE, vpindex: u32, buffer: *const ::core::ffi::c_void, buffersizeinbytes: u32) -> ::windows::core::HRESULT;
+            fn WHvSetVirtualProcessorXsaveState(partition: WHV_PARTITION_HANDLE, vpindex: u32, buffer: *const ::core::ffi::c_void, buffersizeinbytes: u32) -> ::windows_core::HRESULT;
         }
         WHvSetVirtualProcessorXsaveState(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersizeinbytes)).ok()
     }
@@ -9013,12 +9013,12 @@ pub unsafe fn WHvSetVirtualProcessorXsaveState<'a, Param0: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_System_Power\"`*"]
 #[cfg(feature = "Win32_System_Power")]
 #[inline]
-pub unsafe fn WHvSetVpciDevicePowerState<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, powerstate: super::Power::DEVICE_POWER_STATE) -> ::windows::core::Result<()> {
+pub unsafe fn WHvSetVpciDevicePowerState<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, powerstate: super::Power::DEVICE_POWER_STATE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvSetVpciDevicePowerState(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, powerstate: super::Power::DEVICE_POWER_STATE) -> ::windows::core::HRESULT;
+            fn WHvSetVpciDevicePowerState(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, powerstate: super::Power::DEVICE_POWER_STATE) -> ::windows_core::HRESULT;
         }
         WHvSetVpciDevicePowerState(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid), ::core::mem::transmute(powerstate)).ok()
     }
@@ -9027,12 +9027,12 @@ pub unsafe fn WHvSetVpciDevicePowerState<'a, Param0: ::windows::core::IntoParam<
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvSetupPartition<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn WHvSetupPartition<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvSetupPartition(partition: WHV_PARTITION_HANDLE) -> ::windows::core::HRESULT;
+            fn WHvSetupPartition(partition: WHV_PARTITION_HANDLE) -> ::windows_core::HRESULT;
         }
         WHvSetupPartition(partition.into_param().abi()).ok()
     }
@@ -9042,12 +9042,12 @@ pub unsafe fn WHvSetupPartition<'a, Param0: ::windows::core::IntoParam<'a, WHV_P
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WHvSignalVirtualProcessorSynicEvent<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param1: ::windows::core::IntoParam<'a, WHV_SYNIC_EVENT_PARAMETERS>>(partition: Param0, synicevent: Param1) -> ::windows::core::Result<super::super::Foundation::BOOL> {
+pub unsafe fn WHvSignalVirtualProcessorSynicEvent<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param1: ::windows_core::IntoParam<'a, WHV_SYNIC_EVENT_PARAMETERS>>(partition: Param0, synicevent: Param1) -> ::windows_core::Result<super::super::Foundation::BOOL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvSignalVirtualProcessorSynicEvent(partition: WHV_PARTITION_HANDLE, synicevent: WHV_SYNIC_EVENT_PARAMETERS, newlysignaled: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn WHvSignalVirtualProcessorSynicEvent(partition: WHV_PARTITION_HANDLE, synicevent: WHV_SYNIC_EVENT_PARAMETERS, newlysignaled: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
         WHvSignalVirtualProcessorSynicEvent(partition.into_param().abi(), synicevent.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
@@ -9058,12 +9058,12 @@ pub unsafe fn WHvSignalVirtualProcessorSynicEvent<'a, Param0: ::windows::core::I
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WHvStartPartitionMigration<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn WHvStartPartitionMigration<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvStartPartitionMigration(partition: WHV_PARTITION_HANDLE, migrationhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn WHvStartPartitionMigration(partition: WHV_PARTITION_HANDLE, migrationhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
         WHvStartPartitionMigration(partition.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
@@ -9073,12 +9073,12 @@ pub unsafe fn WHvStartPartitionMigration<'a, Param0: ::windows::core::IntoParam<
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvSuspendPartitionTime<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn WHvSuspendPartitionTime<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvSuspendPartitionTime(partition: WHV_PARTITION_HANDLE) -> ::windows::core::HRESULT;
+            fn WHvSuspendPartitionTime(partition: WHV_PARTITION_HANDLE) -> ::windows_core::HRESULT;
         }
         WHvSuspendPartitionTime(partition.into_param().abi()).ok()
     }
@@ -9087,12 +9087,12 @@ pub unsafe fn WHvSuspendPartitionTime<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvTranslateGva<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, gva: u64, translateflags: WHV_TRANSLATE_GVA_FLAGS, translationresult: *mut WHV_TRANSLATE_GVA_RESULT, gpa: *mut u64) -> ::windows::core::Result<()> {
+pub unsafe fn WHvTranslateGva<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, vpindex: u32, gva: u64, translateflags: WHV_TRANSLATE_GVA_FLAGS, translationresult: *mut WHV_TRANSLATE_GVA_RESULT, gpa: *mut u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvTranslateGva(partition: WHV_PARTITION_HANDLE, vpindex: u32, gva: u64, translateflags: WHV_TRANSLATE_GVA_FLAGS, translationresult: *mut WHV_TRANSLATE_GVA_RESULT, gpa: *mut u64) -> ::windows::core::HRESULT;
+            fn WHvTranslateGva(partition: WHV_PARTITION_HANDLE, vpindex: u32, gva: u64, translateflags: WHV_TRANSLATE_GVA_FLAGS, translationresult: *mut WHV_TRANSLATE_GVA_RESULT, gpa: *mut u64) -> ::windows_core::HRESULT;
         }
         WHvTranslateGva(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(gva), ::core::mem::transmute(translateflags), ::core::mem::transmute(translationresult), ::core::mem::transmute(gpa)).ok()
     }
@@ -9101,12 +9101,12 @@ pub unsafe fn WHvTranslateGva<'a, Param0: ::windows::core::IntoParam<'a, WHV_PAR
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvUnmapGpaRange<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, guestaddress: u64, sizeinbytes: u64) -> ::windows::core::Result<()> {
+pub unsafe fn WHvUnmapGpaRange<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, guestaddress: u64, sizeinbytes: u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvUnmapGpaRange(partition: WHV_PARTITION_HANDLE, guestaddress: u64, sizeinbytes: u64) -> ::windows::core::HRESULT;
+            fn WHvUnmapGpaRange(partition: WHV_PARTITION_HANDLE, guestaddress: u64, sizeinbytes: u64) -> ::windows_core::HRESULT;
         }
         WHvUnmapGpaRange(partition.into_param().abi(), ::core::mem::transmute(guestaddress), ::core::mem::transmute(sizeinbytes)).ok()
     }
@@ -9115,12 +9115,12 @@ pub unsafe fn WHvUnmapGpaRange<'a, Param0: ::windows::core::IntoParam<'a, WHV_PA
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvUnmapVpciDeviceInterrupt<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, index: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvUnmapVpciDeviceInterrupt<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, index: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvUnmapVpciDeviceInterrupt(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, index: u32) -> ::windows::core::HRESULT;
+            fn WHvUnmapVpciDeviceInterrupt(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, index: u32) -> ::windows_core::HRESULT;
         }
         WHvUnmapVpciDeviceInterrupt(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid), ::core::mem::transmute(index)).ok()
     }
@@ -9129,12 +9129,12 @@ pub unsafe fn WHvUnmapVpciDeviceInterrupt<'a, Param0: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvUnmapVpciDeviceMmioRanges<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64) -> ::windows::core::Result<()> {
+pub unsafe fn WHvUnmapVpciDeviceMmioRanges<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvUnmapVpciDeviceMmioRanges(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64) -> ::windows::core::HRESULT;
+            fn WHvUnmapVpciDeviceMmioRanges(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64) -> ::windows_core::HRESULT;
         }
         WHvUnmapVpciDeviceMmioRanges(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid)).ok()
     }
@@ -9143,12 +9143,12 @@ pub unsafe fn WHvUnmapVpciDeviceMmioRanges<'a, Param0: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvUnregisterPartitionDoorbellEvent<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, matchdata: *const WHV_DOORBELL_MATCH_DATA) -> ::windows::core::Result<()> {
+pub unsafe fn WHvUnregisterPartitionDoorbellEvent<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, matchdata: *const WHV_DOORBELL_MATCH_DATA) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvUnregisterPartitionDoorbellEvent(partition: WHV_PARTITION_HANDLE, matchdata: *const WHV_DOORBELL_MATCH_DATA) -> ::windows::core::HRESULT;
+            fn WHvUnregisterPartitionDoorbellEvent(partition: WHV_PARTITION_HANDLE, matchdata: *const WHV_DOORBELL_MATCH_DATA) -> ::windows_core::HRESULT;
         }
         WHvUnregisterPartitionDoorbellEvent(partition.into_param().abi(), ::core::mem::transmute(matchdata)).ok()
     }
@@ -9157,12 +9157,12 @@ pub unsafe fn WHvUnregisterPartitionDoorbellEvent<'a, Param0: ::windows::core::I
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvUpdateTriggerParameters<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, parameters: *const WHV_TRIGGER_PARAMETERS, triggerhandle: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn WHvUpdateTriggerParameters<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, parameters: *const WHV_TRIGGER_PARAMETERS, triggerhandle: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvUpdateTriggerParameters(partition: WHV_PARTITION_HANDLE, parameters: *const WHV_TRIGGER_PARAMETERS, triggerhandle: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn WHvUpdateTriggerParameters(partition: WHV_PARTITION_HANDLE, parameters: *const WHV_TRIGGER_PARAMETERS, triggerhandle: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         WHvUpdateTriggerParameters(partition.into_param().abi(), ::core::mem::transmute(parameters), ::core::mem::transmute(triggerhandle)).ok()
     }
@@ -9171,12 +9171,12 @@ pub unsafe fn WHvUpdateTriggerParameters<'a, Param0: ::windows::core::IntoParam<
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvWriteGpaRange<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param3: ::windows::core::IntoParam<'a, WHV_ACCESS_GPA_CONTROLS>>(partition: Param0, vpindex: u32, guestaddress: u64, controls: Param3, data: *const ::core::ffi::c_void, datasizeinbytes: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WHvWriteGpaRange<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>, Param3: ::windows_core::IntoParam<'a, WHV_ACCESS_GPA_CONTROLS>>(partition: Param0, vpindex: u32, guestaddress: u64, controls: Param3, data: *const ::core::ffi::c_void, datasizeinbytes: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvWriteGpaRange(partition: WHV_PARTITION_HANDLE, vpindex: u32, guestaddress: u64, controls: WHV_ACCESS_GPA_CONTROLS, data: *const ::core::ffi::c_void, datasizeinbytes: u32) -> ::windows::core::HRESULT;
+            fn WHvWriteGpaRange(partition: WHV_PARTITION_HANDLE, vpindex: u32, guestaddress: u64, controls: WHV_ACCESS_GPA_CONTROLS, data: *const ::core::ffi::c_void, datasizeinbytes: u32) -> ::windows_core::HRESULT;
         }
         WHvWriteGpaRange(partition.into_param().abi(), ::core::mem::transmute(vpindex), ::core::mem::transmute(guestaddress), controls.into_param().abi(), ::core::mem::transmute(data), ::core::mem::transmute(datasizeinbytes)).ok()
     }
@@ -9185,12 +9185,12 @@ pub unsafe fn WHvWriteGpaRange<'a, Param0: ::windows::core::IntoParam<'a, WHV_PA
 }
 #[doc = "*Required features: `\"Win32_System_Hypervisor\"`*"]
 #[inline]
-pub unsafe fn WHvWriteVpciDeviceRegister<'a, Param0: ::windows::core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, register: *const WHV_VPCI_DEVICE_REGISTER, data: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn WHvWriteVpciDeviceRegister<'a, Param0: ::windows_core::IntoParam<'a, WHV_PARTITION_HANDLE>>(partition: Param0, logicaldeviceid: u64, register: *const WHV_VPCI_DEVICE_REGISTER, data: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WHvWriteVpciDeviceRegister(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, register: *const WHV_VPCI_DEVICE_REGISTER, data: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn WHvWriteVpciDeviceRegister(partition: WHV_PARTITION_HANDLE, logicaldeviceid: u64, register: *const WHV_VPCI_DEVICE_REGISTER, data: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         WHvWriteVpciDeviceRegister(partition.into_param().abi(), ::core::mem::transmute(logicaldeviceid), ::core::mem::transmute(register), ::core::mem::transmute(data)).ok()
     }

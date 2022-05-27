@@ -41,6 +41,6 @@ pub const ICW_USE_SHELLNEXT: u32 = 1024u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_InternetConnectionWizard\"`*"]
 pub type PFNCHECKCONNECTIONWIZARD = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: *mut u32) -> u32>;
 #[doc = "*Required features: `\"Win32_NetworkManagement_InternetConnectionWizard\"`*"]
-pub type PFNSETSHELLNEXT = ::core::option::Option<unsafe extern "system" fn(param0: ::windows::core::PCSTR) -> u32>;
+pub type PFNSETSHELLNEXT = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCSTR) -> u32>;
 #[cfg(feature = "implement")]
 ::core::include!("impl.rs");

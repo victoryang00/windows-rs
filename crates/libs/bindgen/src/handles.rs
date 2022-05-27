@@ -77,7 +77,7 @@ pub fn gen_win_handle(gen: &Gen, def: TypeDef) -> TokenStream {
                 f.debug_tuple(#name).field(&self.0).finish()
             }
         }
-        unsafe impl ::windows::core::Abi for #ident {
+        unsafe impl ::windows_core::Abi for #ident {
             type Abi = Self;
         }
     };
@@ -88,9 +88,9 @@ pub fn gen_win_handle(gen: &Gen, def: TypeDef) -> TokenStream {
         dependency.push_str(type_name.name);
 
         tokens.combine(&quote! {
-            impl<'a> ::windows::core::IntoParam<'a, #dependency> for #ident {
-                fn into_param(self) -> ::windows::core::Param<'a, #dependency> {
-                    ::windows::core::Param::Owned(#dependency(self.0))
+            impl<'a> ::windows_core::IntoParam<'a, #dependency> for #ident {
+                fn into_param(self) -> ::windows_core::Param<'a, #dependency> {
+                    ::windows_core::Param::Owned(#dependency(self.0))
                 }
             }
         });

@@ -50,7 +50,7 @@ fn gen_win_interface(gen: &Gen, def: TypeDef) -> TokenStream {
     tokens.combine(&quote! {
         #features
         #[repr(transparent)]
-        pub struct #ident(::windows::core::IUnknown, #phantoms) where #constraints;
+        pub struct #ident(::windows_core::IUnknown, #phantoms) where #constraints;
     });
 
     if !is_exclusive {
@@ -138,15 +138,15 @@ fn gen_conversions(gen: &Gen, def: TypeDef, _generics: &[Type], interfaces: &[In
                 }
             }
             #cfg
-            impl<'a, #constraints> ::windows::core::IntoParam<'a, #into> for #name {
-                fn into_param(self) -> ::windows::core::Param<'a, #into> {
-                    ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+            impl<'a, #constraints> ::windows_core::IntoParam<'a, #into> for #name {
+                fn into_param(self) -> ::windows_core::Param<'a, #into> {
+                    ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
                 }
             }
             #cfg
-            impl<'a, #constraints> ::windows::core::IntoParam<'a, #into> for &'a #name {
-                fn into_param(self) -> ::windows::core::Param<'a, #into> {
-                    ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+            impl<'a, #constraints> ::windows_core::IntoParam<'a, #into> for &'a #name {
+                fn into_param(self) -> ::windows_core::Param<'a, #into> {
+                    ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
                 }
             }
         });
@@ -159,30 +159,30 @@ fn gen_conversions(gen: &Gen, def: TypeDef, _generics: &[Type], interfaces: &[In
             tokens.combine(&quote! {
                 #cfg
                 impl<#constraints> ::core::convert::TryFrom<#name> for #into {
-                    type Error = ::windows::core::Error;
-                    fn try_from(value: #name) -> ::windows::core::Result<Self> {
+                    type Error = ::windows_core::Error;
+                    fn try_from(value: #name) -> ::windows_core::Result<Self> {
                         ::core::convert::TryFrom::try_from(&value)
                     }
                 }
                 #cfg
                 impl<#constraints> ::core::convert::TryFrom<&#name> for #into {
-                    type Error = ::windows::core::Error;
-                    fn try_from(value: &#name) -> ::windows::core::Result<Self> {
-                        ::windows::core::Interface::cast(value)
+                    type Error = ::windows_core::Error;
+                    fn try_from(value: &#name) -> ::windows_core::Result<Self> {
+                        ::windows_core::Interface::cast(value)
                     }
                 }
                 #cfg
-                impl<'a, #constraints> ::windows::core::IntoParam<'a, #into> for #name {
-                    fn into_param(self) -> ::windows::core::Param<'a, #into> {
-                        ::windows::core::IntoParam::into_param(&self)
+                impl<'a, #constraints> ::windows_core::IntoParam<'a, #into> for #name {
+                    fn into_param(self) -> ::windows_core::Param<'a, #into> {
+                        ::windows_core::IntoParam::into_param(&self)
                     }
                 }
                 #cfg
-                impl<'a, #constraints> ::windows::core::IntoParam<'a, #into> for &#name {
-                    fn into_param(self) -> ::windows::core::Param<'a, #into> {
+                impl<'a, #constraints> ::windows_core::IntoParam<'a, #into> for &#name {
+                    fn into_param(self) -> ::windows_core::Param<'a, #into> {
                         ::core::convert::TryInto::<#into>::try_into(self)
-                            .map(::windows::core::Param::Owned)
-                            .unwrap_or(::windows::core::Param::None)
+                            .map(::windows_core::Param::Owned)
+                            .unwrap_or(::windows_core::Param::None)
                     }
                 }
             });

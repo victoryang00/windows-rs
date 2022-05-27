@@ -24,7 +24,7 @@ impl ::core::default::Default for DragDropModifiers {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DragDropModifiers {
+unsafe impl ::windows_core::Abi for DragDropModifiers {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DragDropModifiers {
@@ -60,10 +60,10 @@ impl ::core::ops::Not for DragDropModifiers {
         Self(self.0.not())
     }
 }
-unsafe impl ::windows::core::RuntimeType for DragDropModifiers {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.ApplicationModel.DataTransfer.DragDrop.DragDropModifiers;u4)");
+unsafe impl ::windows_core::RuntimeType for DragDropModifiers {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.ApplicationModel.DataTransfer.DragDrop.DragDropModifiers;u4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }

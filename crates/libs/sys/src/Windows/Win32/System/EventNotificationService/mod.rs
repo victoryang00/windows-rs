@@ -2,10 +2,10 @@
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_EventNotificationService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn IsDestinationReachableA(lpszdestination: ::windows_sys::core::PCSTR, lpqocinfo: *mut QOCINFO) -> super::super::Foundation::BOOL;
+    pub fn IsDestinationReachableA(lpszdestination: ::windows_sys_core::PCSTR, lpqocinfo: *mut QOCINFO) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_EventNotificationService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn IsDestinationReachableW(lpszdestination: ::windows_sys::core::PCWSTR, lpqocinfo: *mut QOCINFO) -> super::super::Foundation::BOOL;
+    pub fn IsDestinationReachableW(lpszdestination: ::windows_sys_core::PCWSTR, lpqocinfo: *mut QOCINFO) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_EventNotificationService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn IsNetworkAlive(lpdwflags: *mut u32) -> super::super::Foundation::BOOL;
@@ -38,14 +38,14 @@ impl ::core::clone::Clone for QOCINFO {
         *self
     }
 }
-pub const SENS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3583494910, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
-pub const SENSGUID_EVENTCLASS_LOGON: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3583477296, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
-pub const SENSGUID_EVENTCLASS_LOGON2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3583477328, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
-pub const SENSGUID_EVENTCLASS_NETWORK: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3583477280, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
-pub const SENSGUID_EVENTCLASS_ONNOW: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3583477312, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
-pub const SENSGUID_PUBLISHER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1609440214, data2: 23451, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
-pub const SENSGUID_SUBSCRIBER_LCE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3549661872, data2: 23453, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
-pub const SENSGUID_SUBSCRIBER_WININET: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3549661877, data2: 23453, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
+pub const SENS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3583494910, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
+pub const SENSGUID_EVENTCLASS_LOGON: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3583477296, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
+pub const SENSGUID_EVENTCLASS_LOGON2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3583477328, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
+pub const SENSGUID_EVENTCLASS_NETWORK: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3583477280, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
+pub const SENSGUID_EVENTCLASS_ONNOW: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3583477312, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
+pub const SENSGUID_PUBLISHER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1609440214, data2: 23451, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
+pub const SENSGUID_SUBSCRIBER_LCE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3549661872, data2: 23453, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
+pub const SENSGUID_SUBSCRIBER_WININET: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3549661877, data2: 23453, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
 #[doc = "*Required features: `\"Win32_System_EventNotificationService\"`*"]
 pub type SENS_CONNECTION_TYPE = u32;
 #[doc = "*Required features: `\"Win32_System_EventNotificationService\"`*"]

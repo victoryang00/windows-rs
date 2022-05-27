@@ -17,7 +17,7 @@ impl ::core::default::Default for TextPatternRangeEndpoint {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TextPatternRangeEndpoint {
+unsafe impl ::windows_core::Abi for TextPatternRangeEndpoint {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TextPatternRangeEndpoint {
@@ -25,10 +25,10 @@ impl ::core::fmt::Debug for TextPatternRangeEndpoint {
         f.debug_tuple("TextPatternRangeEndpoint").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for TextPatternRangeEndpoint {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Xaml.Automation.Text.TextPatternRangeEndpoint;i4)");
+unsafe impl ::windows_core::RuntimeType for TextPatternRangeEndpoint {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Xaml.Automation.Text.TextPatternRangeEndpoint;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -56,7 +56,7 @@ impl ::core::default::Default for TextUnit {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TextUnit {
+unsafe impl ::windows_core::Abi for TextUnit {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TextUnit {
@@ -64,10 +64,10 @@ impl ::core::fmt::Debug for TextUnit {
         f.debug_tuple("TextUnit").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for TextUnit {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Xaml.Automation.Text.TextUnit;i4)");
+unsafe impl ::windows_core::RuntimeType for TextUnit {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Xaml.Automation.Text.TextUnit;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }

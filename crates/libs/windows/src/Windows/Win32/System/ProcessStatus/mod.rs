@@ -18,12 +18,12 @@ impl ::core::fmt::Debug for ENUM_PAGE_FILE_INFORMATION {
         f.debug_struct("ENUM_PAGE_FILE_INFORMATION").field("cb", &self.cb).field("Reserved", &self.Reserved).field("TotalSize", &self.TotalSize).field("TotalInUse", &self.TotalInUse).field("PeakUsage", &self.PeakUsage).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ENUM_PAGE_FILE_INFORMATION {
+unsafe impl ::windows_core::Abi for ENUM_PAGE_FILE_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ENUM_PAGE_FILE_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUM_PAGE_FILE_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUM_PAGE_FILE_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ENUM_PAGE_FILE_INFORMATION {}
@@ -55,7 +55,7 @@ impl ::core::default::Default for ENUM_PROCESS_MODULES_EX_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ENUM_PROCESS_MODULES_EX_FLAGS {
+unsafe impl ::windows_core::Abi for ENUM_PROCESS_MODULES_EX_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ENUM_PROCESS_MODULES_EX_FLAGS {
@@ -66,7 +66,7 @@ impl ::core::fmt::Debug for ENUM_PROCESS_MODULES_EX_FLAGS {
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32EmptyWorkingSet<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn K32EmptyWorkingSet<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -101,7 +101,7 @@ pub unsafe fn K32EnumPageFilesA(pcallbackroutine: PENUM_PAGE_FILE_CALLBACKA, pco
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32EnumPageFilesA(pcallbackroutine: ::windows::core::RawPtr, pcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn K32EnumPageFilesA(pcallbackroutine: ::windows_core::RawPtr, pcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(K32EnumPageFilesA(::core::mem::transmute(pcallbackroutine), ::core::mem::transmute(pcontext)))
     }
@@ -116,7 +116,7 @@ pub unsafe fn K32EnumPageFilesW(pcallbackroutine: PENUM_PAGE_FILE_CALLBACKW, pco
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32EnumPageFilesW(pcallbackroutine: ::windows::core::RawPtr, pcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn K32EnumPageFilesW(pcallbackroutine: ::windows_core::RawPtr, pcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(K32EnumPageFilesW(::core::mem::transmute(pcallbackroutine), ::core::mem::transmute(pcontext)))
     }
@@ -126,7 +126,7 @@ pub unsafe fn K32EnumPageFilesW(pcallbackroutine: PENUM_PAGE_FILE_CALLBACKW, pco
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32EnumProcessModules<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lphmodule: *mut super::super::Foundation::HINSTANCE, cb: u32, lpcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn K32EnumProcessModules<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lphmodule: *mut super::super::Foundation::HINSTANCE, cb: u32, lpcbneeded: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -141,7 +141,7 @@ pub unsafe fn K32EnumProcessModules<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32EnumProcessModulesEx<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lphmodule: *mut super::super::Foundation::HINSTANCE, cb: u32, lpcbneeded: *mut u32, dwfilterflag: ENUM_PROCESS_MODULES_EX_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn K32EnumProcessModulesEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lphmodule: *mut super::super::Foundation::HINSTANCE, cb: u32, lpcbneeded: *mut u32, dwfilterflag: ENUM_PROCESS_MODULES_EX_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -175,9 +175,9 @@ pub unsafe fn K32GetDeviceDriverBaseNameA(imagebase: *const ::core::ffi::c_void,
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32GetDeviceDriverBaseNameA(imagebase: *const ::core::ffi::c_void, lpfilename: ::windows::core::PSTR, nsize: u32) -> u32;
+            fn K32GetDeviceDriverBaseNameA(imagebase: *const ::core::ffi::c_void, lpfilename: ::windows_core::PSTR, nsize: u32) -> u32;
         }
-        ::core::mem::transmute(K32GetDeviceDriverBaseNameA(::core::mem::transmute(imagebase), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
+        ::core::mem::transmute(K32GetDeviceDriverBaseNameA(::core::mem::transmute(imagebase), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -189,9 +189,9 @@ pub unsafe fn K32GetDeviceDriverBaseNameW(imagebase: *const ::core::ffi::c_void,
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32GetDeviceDriverBaseNameW(imagebase: *const ::core::ffi::c_void, lpbasename: ::windows::core::PWSTR, nsize: u32) -> u32;
+            fn K32GetDeviceDriverBaseNameW(imagebase: *const ::core::ffi::c_void, lpbasename: ::windows_core::PWSTR, nsize: u32) -> u32;
         }
-        ::core::mem::transmute(K32GetDeviceDriverBaseNameW(::core::mem::transmute(imagebase), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpbasename)), lpbasename.len() as _))
+        ::core::mem::transmute(K32GetDeviceDriverBaseNameW(::core::mem::transmute(imagebase), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpbasename)), lpbasename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -203,9 +203,9 @@ pub unsafe fn K32GetDeviceDriverFileNameA(imagebase: *const ::core::ffi::c_void,
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32GetDeviceDriverFileNameA(imagebase: *const ::core::ffi::c_void, lpfilename: ::windows::core::PSTR, nsize: u32) -> u32;
+            fn K32GetDeviceDriverFileNameA(imagebase: *const ::core::ffi::c_void, lpfilename: ::windows_core::PSTR, nsize: u32) -> u32;
         }
-        ::core::mem::transmute(K32GetDeviceDriverFileNameA(::core::mem::transmute(imagebase), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
+        ::core::mem::transmute(K32GetDeviceDriverFileNameA(::core::mem::transmute(imagebase), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -217,9 +217,9 @@ pub unsafe fn K32GetDeviceDriverFileNameW(imagebase: *const ::core::ffi::c_void,
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32GetDeviceDriverFileNameW(imagebase: *const ::core::ffi::c_void, lpfilename: ::windows::core::PWSTR, nsize: u32) -> u32;
+            fn K32GetDeviceDriverFileNameW(imagebase: *const ::core::ffi::c_void, lpfilename: ::windows_core::PWSTR, nsize: u32) -> u32;
         }
-        ::core::mem::transmute(K32GetDeviceDriverFileNameW(::core::mem::transmute(imagebase), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
+        ::core::mem::transmute(K32GetDeviceDriverFileNameW(::core::mem::transmute(imagebase), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -227,14 +227,14 @@ pub unsafe fn K32GetDeviceDriverFileNameW(imagebase: *const ::core::ffi::c_void,
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32GetMappedFileNameA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpv: *const ::core::ffi::c_void, lpfilename: &mut [u8]) -> u32 {
+pub unsafe fn K32GetMappedFileNameA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpv: *const ::core::ffi::c_void, lpfilename: &mut [u8]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32GetMappedFileNameA(hprocess: super::super::Foundation::HANDLE, lpv: *const ::core::ffi::c_void, lpfilename: ::windows::core::PSTR, nsize: u32) -> u32;
+            fn K32GetMappedFileNameA(hprocess: super::super::Foundation::HANDLE, lpv: *const ::core::ffi::c_void, lpfilename: ::windows_core::PSTR, nsize: u32) -> u32;
         }
-        ::core::mem::transmute(K32GetMappedFileNameA(hprocess.into_param().abi(), ::core::mem::transmute(lpv), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
+        ::core::mem::transmute(K32GetMappedFileNameA(hprocess.into_param().abi(), ::core::mem::transmute(lpv), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -242,14 +242,14 @@ pub unsafe fn K32GetMappedFileNameA<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32GetMappedFileNameW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpv: *const ::core::ffi::c_void, lpfilename: &mut [u16]) -> u32 {
+pub unsafe fn K32GetMappedFileNameW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpv: *const ::core::ffi::c_void, lpfilename: &mut [u16]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32GetMappedFileNameW(hprocess: super::super::Foundation::HANDLE, lpv: *const ::core::ffi::c_void, lpfilename: ::windows::core::PWSTR, nsize: u32) -> u32;
+            fn K32GetMappedFileNameW(hprocess: super::super::Foundation::HANDLE, lpv: *const ::core::ffi::c_void, lpfilename: ::windows_core::PWSTR, nsize: u32) -> u32;
         }
-        ::core::mem::transmute(K32GetMappedFileNameW(hprocess.into_param().abi(), ::core::mem::transmute(lpv), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
+        ::core::mem::transmute(K32GetMappedFileNameW(hprocess.into_param().abi(), ::core::mem::transmute(lpv), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -257,14 +257,14 @@ pub unsafe fn K32GetMappedFileNameW<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32GetModuleBaseNameA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hprocess: Param0, hmodule: Param1, lpbasename: &mut [u8]) -> u32 {
+pub unsafe fn K32GetModuleBaseNameA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hprocess: Param0, hmodule: Param1, lpbasename: &mut [u8]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32GetModuleBaseNameA(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpbasename: ::windows::core::PSTR, nsize: u32) -> u32;
+            fn K32GetModuleBaseNameA(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpbasename: ::windows_core::PSTR, nsize: u32) -> u32;
         }
-        ::core::mem::transmute(K32GetModuleBaseNameA(hprocess.into_param().abi(), hmodule.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpbasename)), lpbasename.len() as _))
+        ::core::mem::transmute(K32GetModuleBaseNameA(hprocess.into_param().abi(), hmodule.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpbasename)), lpbasename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -272,14 +272,14 @@ pub unsafe fn K32GetModuleBaseNameA<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32GetModuleBaseNameW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hprocess: Param0, hmodule: Param1, lpbasename: &mut [u16]) -> u32 {
+pub unsafe fn K32GetModuleBaseNameW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hprocess: Param0, hmodule: Param1, lpbasename: &mut [u16]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32GetModuleBaseNameW(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpbasename: ::windows::core::PWSTR, nsize: u32) -> u32;
+            fn K32GetModuleBaseNameW(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpbasename: ::windows_core::PWSTR, nsize: u32) -> u32;
         }
-        ::core::mem::transmute(K32GetModuleBaseNameW(hprocess.into_param().abi(), hmodule.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpbasename)), lpbasename.len() as _))
+        ::core::mem::transmute(K32GetModuleBaseNameW(hprocess.into_param().abi(), hmodule.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpbasename)), lpbasename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -287,14 +287,14 @@ pub unsafe fn K32GetModuleBaseNameW<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32GetModuleFileNameExA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hprocess: Param0, hmodule: Param1, lpfilename: &mut [u8]) -> u32 {
+pub unsafe fn K32GetModuleFileNameExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hprocess: Param0, hmodule: Param1, lpfilename: &mut [u8]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32GetModuleFileNameExA(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpfilename: ::windows::core::PSTR, nsize: u32) -> u32;
+            fn K32GetModuleFileNameExA(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpfilename: ::windows_core::PSTR, nsize: u32) -> u32;
         }
-        ::core::mem::transmute(K32GetModuleFileNameExA(hprocess.into_param().abi(), hmodule.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
+        ::core::mem::transmute(K32GetModuleFileNameExA(hprocess.into_param().abi(), hmodule.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -302,14 +302,14 @@ pub unsafe fn K32GetModuleFileNameExA<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32GetModuleFileNameExW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hprocess: Param0, hmodule: Param1, lpfilename: &mut [u16]) -> u32 {
+pub unsafe fn K32GetModuleFileNameExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hprocess: Param0, hmodule: Param1, lpfilename: &mut [u16]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32GetModuleFileNameExW(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpfilename: ::windows::core::PWSTR, nsize: u32) -> u32;
+            fn K32GetModuleFileNameExW(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpfilename: ::windows_core::PWSTR, nsize: u32) -> u32;
         }
-        ::core::mem::transmute(K32GetModuleFileNameExW(hprocess.into_param().abi(), hmodule.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
+        ::core::mem::transmute(K32GetModuleFileNameExW(hprocess.into_param().abi(), hmodule.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpfilename)), lpfilename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -317,7 +317,7 @@ pub unsafe fn K32GetModuleFileNameExW<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32GetModuleInformation<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hprocess: Param0, hmodule: Param1, lpmodinfo: *mut MODULEINFO, cb: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn K32GetModuleInformation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hprocess: Param0, hmodule: Param1, lpmodinfo: *mut MODULEINFO, cb: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -347,14 +347,14 @@ pub unsafe fn K32GetPerformanceInfo(pperformanceinformation: *mut PERFORMANCE_IN
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32GetProcessImageFileNameA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpimagefilename: &mut [u8]) -> u32 {
+pub unsafe fn K32GetProcessImageFileNameA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpimagefilename: &mut [u8]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32GetProcessImageFileNameA(hprocess: super::super::Foundation::HANDLE, lpimagefilename: ::windows::core::PSTR, nsize: u32) -> u32;
+            fn K32GetProcessImageFileNameA(hprocess: super::super::Foundation::HANDLE, lpimagefilename: ::windows_core::PSTR, nsize: u32) -> u32;
         }
-        ::core::mem::transmute(K32GetProcessImageFileNameA(hprocess.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpimagefilename)), lpimagefilename.len() as _))
+        ::core::mem::transmute(K32GetProcessImageFileNameA(hprocess.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpimagefilename)), lpimagefilename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -362,14 +362,14 @@ pub unsafe fn K32GetProcessImageFileNameA<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32GetProcessImageFileNameW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpimagefilename: &mut [u16]) -> u32 {
+pub unsafe fn K32GetProcessImageFileNameW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpimagefilename: &mut [u16]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn K32GetProcessImageFileNameW(hprocess: super::super::Foundation::HANDLE, lpimagefilename: ::windows::core::PWSTR, nsize: u32) -> u32;
+            fn K32GetProcessImageFileNameW(hprocess: super::super::Foundation::HANDLE, lpimagefilename: ::windows_core::PWSTR, nsize: u32) -> u32;
         }
-        ::core::mem::transmute(K32GetProcessImageFileNameW(hprocess.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpimagefilename)), lpimagefilename.len() as _))
+        ::core::mem::transmute(K32GetProcessImageFileNameW(hprocess.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpimagefilename)), lpimagefilename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -377,7 +377,7 @@ pub unsafe fn K32GetProcessImageFileNameW<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32GetProcessMemoryInfo<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(process: Param0, ppsmemcounters: *mut PROCESS_MEMORY_COUNTERS, cb: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn K32GetProcessMemoryInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(process: Param0, ppsmemcounters: *mut PROCESS_MEMORY_COUNTERS, cb: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -392,7 +392,7 @@ pub unsafe fn K32GetProcessMemoryInfo<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32GetWsChanges<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpwatchinfo: *mut PSAPI_WS_WATCH_INFORMATION, cb: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn K32GetWsChanges<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpwatchinfo: *mut PSAPI_WS_WATCH_INFORMATION, cb: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -407,7 +407,7 @@ pub unsafe fn K32GetWsChanges<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32GetWsChangesEx<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpwatchinfoex: *mut PSAPI_WS_WATCH_INFORMATION_EX, cb: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn K32GetWsChangesEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpwatchinfoex: *mut PSAPI_WS_WATCH_INFORMATION_EX, cb: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -422,7 +422,7 @@ pub unsafe fn K32GetWsChangesEx<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32InitializeProcessForWsWatch<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn K32InitializeProcessForWsWatch<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -437,7 +437,7 @@ pub unsafe fn K32InitializeProcessForWsWatch<'a, Param0: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32QueryWorkingSet<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, pv: *mut ::core::ffi::c_void, cb: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn K32QueryWorkingSet<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, pv: *mut ::core::ffi::c_void, cb: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -452,7 +452,7 @@ pub unsafe fn K32QueryWorkingSet<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn K32QueryWorkingSetEx<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, pv: *mut ::core::ffi::c_void, cb: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn K32QueryWorkingSetEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, pv: *mut ::core::ffi::c_void, cb: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -482,12 +482,12 @@ impl ::core::fmt::Debug for MODULEINFO {
         f.debug_struct("MODULEINFO").field("lpBaseOfDll", &self.lpBaseOfDll).field("SizeOfImage", &self.SizeOfImage).field("EntryPoint", &self.EntryPoint).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MODULEINFO {
+unsafe impl ::windows_core::Abi for MODULEINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MODULEINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MODULEINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MODULEINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MODULEINFO {}
@@ -498,10 +498,10 @@ impl ::core::default::Default for MODULEINFO {
 }
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PENUM_PAGE_FILE_CALLBACKA = ::core::option::Option<unsafe extern "system" fn(pcontext: *mut ::core::ffi::c_void, ppagefileinfo: *mut ENUM_PAGE_FILE_INFORMATION, lpfilename: ::windows::core::PCSTR) -> super::super::Foundation::BOOL>;
+pub type PENUM_PAGE_FILE_CALLBACKA = ::core::option::Option<unsafe extern "system" fn(pcontext: *mut ::core::ffi::c_void, ppagefileinfo: *mut ENUM_PAGE_FILE_INFORMATION, lpfilename: ::windows_core::PCSTR) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PENUM_PAGE_FILE_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(pcontext: *mut ::core::ffi::c_void, ppagefileinfo: *mut ENUM_PAGE_FILE_INFORMATION, lpfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL>;
+pub type PENUM_PAGE_FILE_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(pcontext: *mut ::core::ffi::c_void, ppagefileinfo: *mut ENUM_PAGE_FILE_INFORMATION, lpfilename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`*"]
 pub struct PERFORMANCE_INFORMATION {
@@ -546,12 +546,12 @@ impl ::core::fmt::Debug for PERFORMANCE_INFORMATION {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for PERFORMANCE_INFORMATION {
+unsafe impl ::windows_core::Abi for PERFORMANCE_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PERFORMANCE_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERFORMANCE_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERFORMANCE_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PERFORMANCE_INFORMATION {}
@@ -596,12 +596,12 @@ impl ::core::fmt::Debug for PROCESS_MEMORY_COUNTERS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for PROCESS_MEMORY_COUNTERS {
+unsafe impl ::windows_core::Abi for PROCESS_MEMORY_COUNTERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PROCESS_MEMORY_COUNTERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROCESS_MEMORY_COUNTERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROCESS_MEMORY_COUNTERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PROCESS_MEMORY_COUNTERS {}
@@ -648,12 +648,12 @@ impl ::core::fmt::Debug for PROCESS_MEMORY_COUNTERS_EX {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for PROCESS_MEMORY_COUNTERS_EX {
+unsafe impl ::windows_core::Abi for PROCESS_MEMORY_COUNTERS_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PROCESS_MEMORY_COUNTERS_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROCESS_MEMORY_COUNTERS_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROCESS_MEMORY_COUNTERS_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PROCESS_MEMORY_COUNTERS_EX {}
@@ -676,12 +676,12 @@ impl ::core::clone::Clone for PSAPI_WORKING_SET_BLOCK {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for PSAPI_WORKING_SET_BLOCK {
+unsafe impl ::windows_core::Abi for PSAPI_WORKING_SET_BLOCK {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSAPI_WORKING_SET_BLOCK {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_BLOCK>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_BLOCK>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSAPI_WORKING_SET_BLOCK {}
@@ -706,12 +706,12 @@ impl ::core::fmt::Debug for PSAPI_WORKING_SET_BLOCK_0 {
         f.debug_struct("PSAPI_WORKING_SET_BLOCK_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PSAPI_WORKING_SET_BLOCK_0 {
+unsafe impl ::windows_core::Abi for PSAPI_WORKING_SET_BLOCK_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSAPI_WORKING_SET_BLOCK_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_BLOCK_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_BLOCK_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSAPI_WORKING_SET_BLOCK_0 {}
@@ -732,12 +732,12 @@ impl ::core::clone::Clone for PSAPI_WORKING_SET_EX_BLOCK {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for PSAPI_WORKING_SET_EX_BLOCK {
+unsafe impl ::windows_core::Abi for PSAPI_WORKING_SET_EX_BLOCK {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSAPI_WORKING_SET_EX_BLOCK {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_EX_BLOCK>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_EX_BLOCK>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSAPI_WORKING_SET_EX_BLOCK {}
@@ -758,12 +758,12 @@ impl ::core::clone::Clone for PSAPI_WORKING_SET_EX_BLOCK_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for PSAPI_WORKING_SET_EX_BLOCK_0 {
+unsafe impl ::windows_core::Abi for PSAPI_WORKING_SET_EX_BLOCK_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSAPI_WORKING_SET_EX_BLOCK_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_EX_BLOCK_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_EX_BLOCK_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSAPI_WORKING_SET_EX_BLOCK_0 {}
@@ -788,12 +788,12 @@ impl ::core::fmt::Debug for PSAPI_WORKING_SET_EX_BLOCK_0_0 {
         f.debug_struct("PSAPI_WORKING_SET_EX_BLOCK_0_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PSAPI_WORKING_SET_EX_BLOCK_0_0 {
+unsafe impl ::windows_core::Abi for PSAPI_WORKING_SET_EX_BLOCK_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSAPI_WORKING_SET_EX_BLOCK_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_EX_BLOCK_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_EX_BLOCK_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSAPI_WORKING_SET_EX_BLOCK_0_0 {}
@@ -818,12 +818,12 @@ impl ::core::fmt::Debug for PSAPI_WORKING_SET_EX_BLOCK_0_1 {
         f.debug_struct("PSAPI_WORKING_SET_EX_BLOCK_0_1").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PSAPI_WORKING_SET_EX_BLOCK_0_1 {
+unsafe impl ::windows_core::Abi for PSAPI_WORKING_SET_EX_BLOCK_0_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSAPI_WORKING_SET_EX_BLOCK_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_EX_BLOCK_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_EX_BLOCK_0_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSAPI_WORKING_SET_EX_BLOCK_0_1 {}
@@ -844,12 +844,12 @@ impl ::core::clone::Clone for PSAPI_WORKING_SET_EX_INFORMATION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for PSAPI_WORKING_SET_EX_INFORMATION {
+unsafe impl ::windows_core::Abi for PSAPI_WORKING_SET_EX_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSAPI_WORKING_SET_EX_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_EX_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_EX_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSAPI_WORKING_SET_EX_INFORMATION {}
@@ -870,12 +870,12 @@ impl ::core::clone::Clone for PSAPI_WORKING_SET_INFORMATION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for PSAPI_WORKING_SET_INFORMATION {
+unsafe impl ::windows_core::Abi for PSAPI_WORKING_SET_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSAPI_WORKING_SET_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WORKING_SET_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSAPI_WORKING_SET_INFORMATION {}
@@ -901,12 +901,12 @@ impl ::core::fmt::Debug for PSAPI_WS_WATCH_INFORMATION {
         f.debug_struct("PSAPI_WS_WATCH_INFORMATION").field("FaultingPc", &self.FaultingPc).field("FaultingVa", &self.FaultingVa).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PSAPI_WS_WATCH_INFORMATION {
+unsafe impl ::windows_core::Abi for PSAPI_WS_WATCH_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSAPI_WS_WATCH_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WS_WATCH_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WS_WATCH_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSAPI_WS_WATCH_INFORMATION {}
@@ -933,12 +933,12 @@ impl ::core::fmt::Debug for PSAPI_WS_WATCH_INFORMATION_EX {
         f.debug_struct("PSAPI_WS_WATCH_INFORMATION_EX").field("BasicInfo", &self.BasicInfo).field("FaultingThreadId", &self.FaultingThreadId).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PSAPI_WS_WATCH_INFORMATION_EX {
+unsafe impl ::windows_core::Abi for PSAPI_WS_WATCH_INFORMATION_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSAPI_WS_WATCH_INFORMATION_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WS_WATCH_INFORMATION_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSAPI_WS_WATCH_INFORMATION_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSAPI_WS_WATCH_INFORMATION_EX {}

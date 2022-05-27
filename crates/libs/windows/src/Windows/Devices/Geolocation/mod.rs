@@ -22,7 +22,7 @@ impl ::core::default::Default for AltitudeReferenceSystem {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for AltitudeReferenceSystem {
+unsafe impl ::windows_core::Abi for AltitudeReferenceSystem {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for AltitudeReferenceSystem {
@@ -30,10 +30,10 @@ impl ::core::fmt::Debug for AltitudeReferenceSystem {
         f.debug_tuple("AltitudeReferenceSystem").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for AltitudeReferenceSystem {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.AltitudeReferenceSystem;i4)");
+unsafe impl ::windows_core::RuntimeType for AltitudeReferenceSystem {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.AltitudeReferenceSystem;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -55,19 +55,19 @@ impl ::core::fmt::Debug for BasicGeoposition {
         f.debug_struct("BasicGeoposition").field("Latitude", &self.Latitude).field("Longitude", &self.Longitude).field("Altitude", &self.Altitude).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BasicGeoposition {
+unsafe impl ::windows_core::Abi for BasicGeoposition {
     type Abi = Self;
 }
-unsafe impl ::windows::core::RuntimeType for BasicGeoposition {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"struct(Windows.Devices.Geolocation.BasicGeoposition;f8;f8;f8)");
+unsafe impl ::windows_core::RuntimeType for BasicGeoposition {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Devices.Geolocation.BasicGeoposition;f8;f8;f8)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 impl ::core::cmp::PartialEq for BasicGeoposition {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BasicGeoposition>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BasicGeoposition>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BasicGeoposition {}
@@ -78,47 +78,47 @@ impl ::core::default::Default for BasicGeoposition {
 }
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct CivicAddress(::windows::core::IUnknown);
+pub struct CivicAddress(::windows_core::IUnknown);
 impl CivicAddress {
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Country(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Country(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Country)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Country)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn State(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn State(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).State)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).State)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn City(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn City(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).City)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).City)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn PostalCode(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn PostalCode(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).PostalCode)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).PostalCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Timestamp(&self) -> ::windows::core::Result<super::super::Foundation::DateTime> {
+    pub fn Timestamp(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows::core::Interface::vtable(this).Timestamp)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
         }
     }
 }
@@ -138,183 +138,183 @@ impl ::core::fmt::Debug for CivicAddress {
         f.debug_tuple("CivicAddress").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for CivicAddress {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.CivicAddress;{a8567a1a-64f4-4d48-bcea-f6b008eca34c})");
+unsafe impl ::windows_core::RuntimeType for CivicAddress {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.CivicAddress;{a8567a1a-64f4-4d48-bcea-f6b008eca34c})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for CivicAddress {
+unsafe impl ::windows_core::Interface for CivicAddress {
     type Vtable = ICivicAddress_Vtbl;
-    const IID: ::windows::core::GUID = <ICivicAddress as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <ICivicAddress as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for CivicAddress {
+impl ::windows_core::RuntimeName for CivicAddress {
     const NAME: &'static str = "Windows.Devices.Geolocation.CivicAddress";
 }
-impl ::core::convert::From<CivicAddress> for ::windows::core::IUnknown {
+impl ::core::convert::From<CivicAddress> for ::windows_core::IUnknown {
     fn from(value: CivicAddress) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&CivicAddress> for ::windows::core::IUnknown {
+impl ::core::convert::From<&CivicAddress> for ::windows_core::IUnknown {
     fn from(value: &CivicAddress) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for CivicAddress {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for CivicAddress {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a CivicAddress {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a CivicAddress {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<CivicAddress> for ::windows::core::IInspectable {
+impl ::core::convert::From<CivicAddress> for ::windows_core::IInspectable {
     fn from(value: CivicAddress) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&CivicAddress> for ::windows::core::IInspectable {
+impl ::core::convert::From<&CivicAddress> for ::windows_core::IInspectable {
     fn from(value: &CivicAddress) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for CivicAddress {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for CivicAddress {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a CivicAddress {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a CivicAddress {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for CivicAddress {}
 unsafe impl ::core::marker::Sync for CivicAddress {}
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct GeoboundingBox(::windows::core::IUnknown);
+pub struct GeoboundingBox(::windows_core::IUnknown);
 impl GeoboundingBox {
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn NorthwestCorner(&self) -> ::windows::core::Result<BasicGeoposition> {
+    pub fn NorthwestCorner(&self) -> ::windows_core::Result<BasicGeoposition> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<BasicGeoposition>::zeroed();
-            (::windows::core::Interface::vtable(this).NorthwestCorner)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BasicGeoposition>(result__)
+            (::windows_core::Interface::vtable(this).NorthwestCorner)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BasicGeoposition>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn SoutheastCorner(&self) -> ::windows::core::Result<BasicGeoposition> {
+    pub fn SoutheastCorner(&self) -> ::windows_core::Result<BasicGeoposition> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<BasicGeoposition>::zeroed();
-            (::windows::core::Interface::vtable(this).SoutheastCorner)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BasicGeoposition>(result__)
+            (::windows_core::Interface::vtable(this).SoutheastCorner)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BasicGeoposition>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Center(&self) -> ::windows::core::Result<BasicGeoposition> {
+    pub fn Center(&self) -> ::windows_core::Result<BasicGeoposition> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<BasicGeoposition>::zeroed();
-            (::windows::core::Interface::vtable(this).Center)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BasicGeoposition>(result__)
+            (::windows_core::Interface::vtable(this).Center)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BasicGeoposition>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn MinAltitude(&self) -> ::windows::core::Result<f64> {
+    pub fn MinAltitude(&self) -> ::windows_core::Result<f64> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).MinAltitude)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
+            (::windows_core::Interface::vtable(this).MinAltitude)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn MaxAltitude(&self) -> ::windows::core::Result<f64> {
+    pub fn MaxAltitude(&self) -> ::windows_core::Result<f64> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).MaxAltitude)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
+            (::windows_core::Interface::vtable(this).MaxAltitude)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Create<'a, Param0: ::windows::core::IntoParam<'a, BasicGeoposition>, Param1: ::windows::core::IntoParam<'a, BasicGeoposition>>(northwestcorner: Param0, southeastcorner: Param1) -> ::windows::core::Result<GeoboundingBox> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, BasicGeoposition>, Param1: ::windows_core::IntoParam<'a, BasicGeoposition>>(northwestcorner: Param0, southeastcorner: Param1) -> ::windows_core::Result<GeoboundingBox> {
         Self::IGeoboundingBoxFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Create)(::windows::core::Interface::as_raw(this), northwestcorner.into_param().abi(), southeastcorner.into_param().abi(), result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), northwestcorner.into_param().abi(), southeastcorner.into_param().abi(), result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn CreateWithAltitudeReference<'a, Param0: ::windows::core::IntoParam<'a, BasicGeoposition>, Param1: ::windows::core::IntoParam<'a, BasicGeoposition>>(northwestcorner: Param0, southeastcorner: Param1, altitudereferencesystem: AltitudeReferenceSystem) -> ::windows::core::Result<GeoboundingBox> {
+    pub fn CreateWithAltitudeReference<'a, Param0: ::windows_core::IntoParam<'a, BasicGeoposition>, Param1: ::windows_core::IntoParam<'a, BasicGeoposition>>(northwestcorner: Param0, southeastcorner: Param1, altitudereferencesystem: AltitudeReferenceSystem) -> ::windows_core::Result<GeoboundingBox> {
         Self::IGeoboundingBoxFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CreateWithAltitudeReference)(::windows::core::Interface::as_raw(this), northwestcorner.into_param().abi(), southeastcorner.into_param().abi(), altitudereferencesystem, result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CreateWithAltitudeReference)(::windows_core::Interface::as_raw(this), northwestcorner.into_param().abi(), southeastcorner.into_param().abi(), altitudereferencesystem, result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn CreateWithAltitudeReferenceAndSpatialReference<'a, Param0: ::windows::core::IntoParam<'a, BasicGeoposition>, Param1: ::windows::core::IntoParam<'a, BasicGeoposition>>(northwestcorner: Param0, southeastcorner: Param1, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows::core::Result<GeoboundingBox> {
+    pub fn CreateWithAltitudeReferenceAndSpatialReference<'a, Param0: ::windows_core::IntoParam<'a, BasicGeoposition>, Param1: ::windows_core::IntoParam<'a, BasicGeoposition>>(northwestcorner: Param0, southeastcorner: Param1, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows_core::Result<GeoboundingBox> {
         Self::IGeoboundingBoxFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CreateWithAltitudeReferenceAndSpatialReference)(::windows::core::Interface::as_raw(this), northwestcorner.into_param().abi(), southeastcorner.into_param().abi(), altitudereferencesystem, spatialreferenceid, result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CreateWithAltitudeReferenceAndSpatialReference)(::windows_core::Interface::as_raw(this), northwestcorner.into_param().abi(), southeastcorner.into_param().abi(), altitudereferencesystem, spatialreferenceid, result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TryCompute<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0) -> ::windows::core::Result<GeoboundingBox> {
+    pub fn TryCompute<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0) -> ::windows_core::Result<GeoboundingBox> {
         Self::IGeoboundingBoxStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).TryCompute)(::windows::core::Interface::as_raw(this), positions.into_param().abi(), result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).TryCompute)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TryComputeWithAltitudeReference<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altituderefsystem: AltitudeReferenceSystem) -> ::windows::core::Result<GeoboundingBox> {
+    pub fn TryComputeWithAltitudeReference<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altituderefsystem: AltitudeReferenceSystem) -> ::windows_core::Result<GeoboundingBox> {
         Self::IGeoboundingBoxStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).TryComputeWithAltitudeReference)(::windows::core::Interface::as_raw(this), positions.into_param().abi(), altituderefsystem, result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).TryComputeWithAltitudeReference)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), altituderefsystem, result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TryComputeWithAltitudeReferenceAndSpatialReference<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altituderefsystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows::core::Result<GeoboundingBox> {
+    pub fn TryComputeWithAltitudeReferenceAndSpatialReference<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altituderefsystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows_core::Result<GeoboundingBox> {
         Self::IGeoboundingBoxStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).TryComputeWithAltitudeReferenceAndSpatialReference)(::windows::core::Interface::as_raw(this), positions.into_param().abi(), altituderefsystem, spatialreferenceid, result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).TryComputeWithAltitudeReferenceAndSpatialReference)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), altituderefsystem, spatialreferenceid, result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn GeoshapeType(&self) -> ::windows::core::Result<GeoshapeType> {
-        let this = &::windows::core::Interface::cast::<IGeoshape>(self)?;
+    pub fn GeoshapeType(&self) -> ::windows_core::Result<GeoshapeType> {
+        let this = &::windows_core::Interface::cast::<IGeoshape>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<GeoshapeType>::zeroed();
-            (::windows::core::Interface::vtable(this).GeoshapeType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GeoshapeType>(result__)
+            (::windows_core::Interface::vtable(this).GeoshapeType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GeoshapeType>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn SpatialReferenceId(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IGeoshape>(self)?;
+    pub fn SpatialReferenceId(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IGeoshape>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).SpatialReferenceId)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).SpatialReferenceId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn AltitudeReferenceSystem(&self) -> ::windows::core::Result<AltitudeReferenceSystem> {
-        let this = &::windows::core::Interface::cast::<IGeoshape>(self)?;
+    pub fn AltitudeReferenceSystem(&self) -> ::windows_core::Result<AltitudeReferenceSystem> {
+        let this = &::windows_core::Interface::cast::<IGeoshape>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<AltitudeReferenceSystem>::zeroed();
-            (::windows::core::Interface::vtable(this).AltitudeReferenceSystem)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AltitudeReferenceSystem>(result__)
+            (::windows_core::Interface::vtable(this).AltitudeReferenceSystem)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AltitudeReferenceSystem>(result__)
         }
     }
     #[doc(hidden)]
-    pub fn IGeoboundingBoxFactory<R, F: FnOnce(&IGeoboundingBoxFactory) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<GeoboundingBox, IGeoboundingBoxFactory> = ::windows::core::FactoryCache::new();
+    pub fn IGeoboundingBoxFactory<R, F: FnOnce(&IGeoboundingBoxFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<GeoboundingBox, IGeoboundingBoxFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
     #[doc(hidden)]
-    pub fn IGeoboundingBoxStatics<R, F: FnOnce(&IGeoboundingBoxStatics) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<GeoboundingBox, IGeoboundingBoxStatics> = ::windows::core::FactoryCache::new();
+    pub fn IGeoboundingBoxStatics<R, F: FnOnce(&IGeoboundingBoxStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<GeoboundingBox, IGeoboundingBoxStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
@@ -334,152 +334,152 @@ impl ::core::fmt::Debug for GeoboundingBox {
         f.debug_tuple("GeoboundingBox").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for GeoboundingBox {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.GeoboundingBox;{0896c80b-274f-43da-9a06-cbfcdaeb4ec2})");
+unsafe impl ::windows_core::RuntimeType for GeoboundingBox {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.GeoboundingBox;{0896c80b-274f-43da-9a06-cbfcdaeb4ec2})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for GeoboundingBox {
+unsafe impl ::windows_core::Interface for GeoboundingBox {
     type Vtable = IGeoboundingBox_Vtbl;
-    const IID: ::windows::core::GUID = <IGeoboundingBox as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IGeoboundingBox as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for GeoboundingBox {
+impl ::windows_core::RuntimeName for GeoboundingBox {
     const NAME: &'static str = "Windows.Devices.Geolocation.GeoboundingBox";
 }
-impl ::core::convert::From<GeoboundingBox> for ::windows::core::IUnknown {
+impl ::core::convert::From<GeoboundingBox> for ::windows_core::IUnknown {
     fn from(value: GeoboundingBox) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&GeoboundingBox> for ::windows::core::IUnknown {
+impl ::core::convert::From<&GeoboundingBox> for ::windows_core::IUnknown {
     fn from(value: &GeoboundingBox) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for GeoboundingBox {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for GeoboundingBox {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a GeoboundingBox {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a GeoboundingBox {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<GeoboundingBox> for ::windows::core::IInspectable {
+impl ::core::convert::From<GeoboundingBox> for ::windows_core::IInspectable {
     fn from(value: GeoboundingBox) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&GeoboundingBox> for ::windows::core::IInspectable {
+impl ::core::convert::From<&GeoboundingBox> for ::windows_core::IInspectable {
     fn from(value: &GeoboundingBox) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for GeoboundingBox {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for GeoboundingBox {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a GeoboundingBox {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a GeoboundingBox {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<GeoboundingBox> for IGeoshape {
-    type Error = ::windows::core::Error;
-    fn try_from(value: GeoboundingBox) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: GeoboundingBox) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&GeoboundingBox> for IGeoshape {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &GeoboundingBox) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &GeoboundingBox) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IGeoshape> for GeoboundingBox {
-    fn into_param(self) -> ::windows::core::Param<'a, IGeoshape> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IGeoshape> for GeoboundingBox {
+    fn into_param(self) -> ::windows_core::Param<'a, IGeoshape> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IGeoshape> for &GeoboundingBox {
-    fn into_param(self) -> ::windows::core::Param<'a, IGeoshape> {
-        ::core::convert::TryInto::<IGeoshape>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IGeoshape> for &GeoboundingBox {
+    fn into_param(self) -> ::windows_core::Param<'a, IGeoshape> {
+        ::core::convert::TryInto::<IGeoshape>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for GeoboundingBox {}
 unsafe impl ::core::marker::Sync for GeoboundingBox {}
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct Geocircle(::windows::core::IUnknown);
+pub struct Geocircle(::windows_core::IUnknown);
 impl Geocircle {
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Center(&self) -> ::windows::core::Result<BasicGeoposition> {
+    pub fn Center(&self) -> ::windows_core::Result<BasicGeoposition> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<BasicGeoposition>::zeroed();
-            (::windows::core::Interface::vtable(this).Center)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BasicGeoposition>(result__)
+            (::windows_core::Interface::vtable(this).Center)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BasicGeoposition>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Radius(&self) -> ::windows::core::Result<f64> {
+    pub fn Radius(&self) -> ::windows_core::Result<f64> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).Radius)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
+            (::windows_core::Interface::vtable(this).Radius)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Create<'a, Param0: ::windows::core::IntoParam<'a, BasicGeoposition>>(position: Param0, radius: f64) -> ::windows::core::Result<Geocircle> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, BasicGeoposition>>(position: Param0, radius: f64) -> ::windows_core::Result<Geocircle> {
         Self::IGeocircleFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Create)(::windows::core::Interface::as_raw(this), position.into_param().abi(), radius, result__.as_mut_ptr()).from_abi::<Geocircle>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), position.into_param().abi(), radius, result__.as_mut_ptr()).from_abi::<Geocircle>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn CreateWithAltitudeReferenceSystem<'a, Param0: ::windows::core::IntoParam<'a, BasicGeoposition>>(position: Param0, radius: f64, altitudereferencesystem: AltitudeReferenceSystem) -> ::windows::core::Result<Geocircle> {
+    pub fn CreateWithAltitudeReferenceSystem<'a, Param0: ::windows_core::IntoParam<'a, BasicGeoposition>>(position: Param0, radius: f64, altitudereferencesystem: AltitudeReferenceSystem) -> ::windows_core::Result<Geocircle> {
         Self::IGeocircleFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CreateWithAltitudeReferenceSystem)(::windows::core::Interface::as_raw(this), position.into_param().abi(), radius, altitudereferencesystem, result__.as_mut_ptr()).from_abi::<Geocircle>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CreateWithAltitudeReferenceSystem)(::windows_core::Interface::as_raw(this), position.into_param().abi(), radius, altitudereferencesystem, result__.as_mut_ptr()).from_abi::<Geocircle>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn CreateWithAltitudeReferenceSystemAndSpatialReferenceId<'a, Param0: ::windows::core::IntoParam<'a, BasicGeoposition>>(position: Param0, radius: f64, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows::core::Result<Geocircle> {
+    pub fn CreateWithAltitudeReferenceSystemAndSpatialReferenceId<'a, Param0: ::windows_core::IntoParam<'a, BasicGeoposition>>(position: Param0, radius: f64, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows_core::Result<Geocircle> {
         Self::IGeocircleFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CreateWithAltitudeReferenceSystemAndSpatialReferenceId)(::windows::core::Interface::as_raw(this), position.into_param().abi(), radius, altitudereferencesystem, spatialreferenceid, result__.as_mut_ptr()).from_abi::<Geocircle>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CreateWithAltitudeReferenceSystemAndSpatialReferenceId)(::windows_core::Interface::as_raw(this), position.into_param().abi(), radius, altitudereferencesystem, spatialreferenceid, result__.as_mut_ptr()).from_abi::<Geocircle>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn GeoshapeType(&self) -> ::windows::core::Result<GeoshapeType> {
-        let this = &::windows::core::Interface::cast::<IGeoshape>(self)?;
+    pub fn GeoshapeType(&self) -> ::windows_core::Result<GeoshapeType> {
+        let this = &::windows_core::Interface::cast::<IGeoshape>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<GeoshapeType>::zeroed();
-            (::windows::core::Interface::vtable(this).GeoshapeType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GeoshapeType>(result__)
+            (::windows_core::Interface::vtable(this).GeoshapeType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GeoshapeType>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn SpatialReferenceId(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IGeoshape>(self)?;
+    pub fn SpatialReferenceId(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IGeoshape>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).SpatialReferenceId)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).SpatialReferenceId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn AltitudeReferenceSystem(&self) -> ::windows::core::Result<AltitudeReferenceSystem> {
-        let this = &::windows::core::Interface::cast::<IGeoshape>(self)?;
+    pub fn AltitudeReferenceSystem(&self) -> ::windows_core::Result<AltitudeReferenceSystem> {
+        let this = &::windows_core::Interface::cast::<IGeoshape>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<AltitudeReferenceSystem>::zeroed();
-            (::windows::core::Interface::vtable(this).AltitudeReferenceSystem)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AltitudeReferenceSystem>(result__)
+            (::windows_core::Interface::vtable(this).AltitudeReferenceSystem)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AltitudeReferenceSystem>(result__)
         }
     }
     #[doc(hidden)]
-    pub fn IGeocircleFactory<R, F: FnOnce(&IGeocircleFactory) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<Geocircle, IGeocircleFactory> = ::windows::core::FactoryCache::new();
+    pub fn IGeocircleFactory<R, F: FnOnce(&IGeocircleFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<Geocircle, IGeocircleFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
@@ -499,198 +499,198 @@ impl ::core::fmt::Debug for Geocircle {
         f.debug_tuple("Geocircle").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for Geocircle {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geocircle;{39e45843-a7f9-4e63-92a7-ba0c28d124b1})");
+unsafe impl ::windows_core::RuntimeType for Geocircle {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geocircle;{39e45843-a7f9-4e63-92a7-ba0c28d124b1})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for Geocircle {
+unsafe impl ::windows_core::Interface for Geocircle {
     type Vtable = IGeocircle_Vtbl;
-    const IID: ::windows::core::GUID = <IGeocircle as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IGeocircle as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for Geocircle {
+impl ::windows_core::RuntimeName for Geocircle {
     const NAME: &'static str = "Windows.Devices.Geolocation.Geocircle";
 }
-impl ::core::convert::From<Geocircle> for ::windows::core::IUnknown {
+impl ::core::convert::From<Geocircle> for ::windows_core::IUnknown {
     fn from(value: Geocircle) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geocircle> for ::windows::core::IUnknown {
+impl ::core::convert::From<&Geocircle> for ::windows_core::IUnknown {
     fn from(value: &Geocircle) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for Geocircle {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for Geocircle {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a Geocircle {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a Geocircle {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<Geocircle> for ::windows::core::IInspectable {
+impl ::core::convert::From<Geocircle> for ::windows_core::IInspectable {
     fn from(value: Geocircle) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geocircle> for ::windows::core::IInspectable {
+impl ::core::convert::From<&Geocircle> for ::windows_core::IInspectable {
     fn from(value: &Geocircle) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for Geocircle {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for Geocircle {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a Geocircle {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Geocircle {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<Geocircle> for IGeoshape {
-    type Error = ::windows::core::Error;
-    fn try_from(value: Geocircle) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: Geocircle) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&Geocircle> for IGeoshape {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &Geocircle) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &Geocircle) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IGeoshape> for Geocircle {
-    fn into_param(self) -> ::windows::core::Param<'a, IGeoshape> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IGeoshape> for Geocircle {
+    fn into_param(self) -> ::windows_core::Param<'a, IGeoshape> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IGeoshape> for &Geocircle {
-    fn into_param(self) -> ::windows::core::Param<'a, IGeoshape> {
-        ::core::convert::TryInto::<IGeoshape>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IGeoshape> for &Geocircle {
+    fn into_param(self) -> ::windows_core::Param<'a, IGeoshape> {
+        ::core::convert::TryInto::<IGeoshape>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for Geocircle {}
 unsafe impl ::core::marker::Sync for Geocircle {}
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct Geocoordinate(::windows::core::IUnknown);
+pub struct Geocoordinate(::windows_core::IUnknown);
 impl Geocoordinate {
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"deprecated\"`*"]
     #[cfg(feature = "deprecated")]
-    pub fn Latitude(&self) -> ::windows::core::Result<f64> {
+    pub fn Latitude(&self) -> ::windows_core::Result<f64> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).Latitude)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
+            (::windows_core::Interface::vtable(this).Latitude)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"deprecated\"`*"]
     #[cfg(feature = "deprecated")]
-    pub fn Longitude(&self) -> ::windows::core::Result<f64> {
+    pub fn Longitude(&self) -> ::windows_core::Result<f64> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).Longitude)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
+            (::windows_core::Interface::vtable(this).Longitude)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`, `\"deprecated\"`*"]
     #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn Altitude(&self) -> ::windows::core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn Altitude(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Altitude)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Altitude)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Accuracy(&self) -> ::windows::core::Result<f64> {
+    pub fn Accuracy(&self) -> ::windows_core::Result<f64> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).Accuracy)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
+            (::windows_core::Interface::vtable(this).Accuracy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn AltitudeAccuracy(&self) -> ::windows::core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn AltitudeAccuracy(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).AltitudeAccuracy)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).AltitudeAccuracy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Heading(&self) -> ::windows::core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn Heading(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Heading)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Heading)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Speed(&self) -> ::windows::core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn Speed(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Speed)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Speed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Timestamp(&self) -> ::windows::core::Result<super::super::Foundation::DateTime> {
+    pub fn Timestamp(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows::core::Interface::vtable(this).Timestamp)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Point(&self) -> ::windows::core::Result<Geopoint> {
-        let this = &::windows::core::Interface::cast::<IGeocoordinateWithPoint>(self)?;
+    pub fn Point(&self) -> ::windows_core::Result<Geopoint> {
+        let this = &::windows_core::Interface::cast::<IGeocoordinateWithPoint>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Point)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Geopoint>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Point)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Geopoint>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn PositionSource(&self) -> ::windows::core::Result<PositionSource> {
-        let this = &::windows::core::Interface::cast::<IGeocoordinateWithPositionData>(self)?;
+    pub fn PositionSource(&self) -> ::windows_core::Result<PositionSource> {
+        let this = &::windows_core::Interface::cast::<IGeocoordinateWithPositionData>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PositionSource>::zeroed();
-            (::windows::core::Interface::vtable(this).PositionSource)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PositionSource>(result__)
+            (::windows_core::Interface::vtable(this).PositionSource)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PositionSource>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn SatelliteData(&self) -> ::windows::core::Result<GeocoordinateSatelliteData> {
-        let this = &::windows::core::Interface::cast::<IGeocoordinateWithPositionData>(self)?;
+    pub fn SatelliteData(&self) -> ::windows_core::Result<GeocoordinateSatelliteData> {
+        let this = &::windows_core::Interface::cast::<IGeocoordinateWithPositionData>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).SatelliteData)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GeocoordinateSatelliteData>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).SatelliteData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GeocoordinateSatelliteData>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn PositionSourceTimestamp(&self) -> ::windows::core::Result<super::super::Foundation::IReference<super::super::Foundation::DateTime>> {
-        let this = &::windows::core::Interface::cast::<IGeocoordinateWithPositionSourceTimestamp>(self)?;
+    pub fn PositionSourceTimestamp(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Foundation::DateTime>> {
+        let this = &::windows_core::Interface::cast::<IGeocoordinateWithPositionSourceTimestamp>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).PositionSourceTimestamp)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::DateTime>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).PositionSourceTimestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::DateTime>>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn IsRemoteSource(&self) -> ::windows::core::Result<bool> {
-        let this = &::windows::core::Interface::cast::<IGeocoordinateWithRemoteSource>(self)?;
+    pub fn IsRemoteSource(&self) -> ::windows_core::Result<bool> {
+        let this = &::windows_core::Interface::cast::<IGeocoordinateWithRemoteSource>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsRemoteSource)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsRemoteSource)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
 }
@@ -710,109 +710,109 @@ impl ::core::fmt::Debug for Geocoordinate {
         f.debug_tuple("Geocoordinate").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for Geocoordinate {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geocoordinate;{ee21a3aa-976a-4c70-803d-083ea55bcbc4})");
+unsafe impl ::windows_core::RuntimeType for Geocoordinate {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geocoordinate;{ee21a3aa-976a-4c70-803d-083ea55bcbc4})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for Geocoordinate {
+unsafe impl ::windows_core::Interface for Geocoordinate {
     type Vtable = IGeocoordinate_Vtbl;
-    const IID: ::windows::core::GUID = <IGeocoordinate as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IGeocoordinate as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for Geocoordinate {
+impl ::windows_core::RuntimeName for Geocoordinate {
     const NAME: &'static str = "Windows.Devices.Geolocation.Geocoordinate";
 }
-impl ::core::convert::From<Geocoordinate> for ::windows::core::IUnknown {
+impl ::core::convert::From<Geocoordinate> for ::windows_core::IUnknown {
     fn from(value: Geocoordinate) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geocoordinate> for ::windows::core::IUnknown {
+impl ::core::convert::From<&Geocoordinate> for ::windows_core::IUnknown {
     fn from(value: &Geocoordinate) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for Geocoordinate {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for Geocoordinate {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a Geocoordinate {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a Geocoordinate {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<Geocoordinate> for ::windows::core::IInspectable {
+impl ::core::convert::From<Geocoordinate> for ::windows_core::IInspectable {
     fn from(value: Geocoordinate) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geocoordinate> for ::windows::core::IInspectable {
+impl ::core::convert::From<&Geocoordinate> for ::windows_core::IInspectable {
     fn from(value: &Geocoordinate) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for Geocoordinate {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for Geocoordinate {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a Geocoordinate {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Geocoordinate {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for Geocoordinate {}
 unsafe impl ::core::marker::Sync for Geocoordinate {}
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct GeocoordinateSatelliteData(::windows::core::IUnknown);
+pub struct GeocoordinateSatelliteData(::windows_core::IUnknown);
 impl GeocoordinateSatelliteData {
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn PositionDilutionOfPrecision(&self) -> ::windows::core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn PositionDilutionOfPrecision(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).PositionDilutionOfPrecision)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).PositionDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn HorizontalDilutionOfPrecision(&self) -> ::windows::core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn HorizontalDilutionOfPrecision(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).HorizontalDilutionOfPrecision)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).HorizontalDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn VerticalDilutionOfPrecision(&self) -> ::windows::core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn VerticalDilutionOfPrecision(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).VerticalDilutionOfPrecision)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).VerticalDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GeometricDilutionOfPrecision(&self) -> ::windows::core::Result<super::super::Foundation::IReference<f64>> {
-        let this = &::windows::core::Interface::cast::<IGeocoordinateSatelliteData2>(self)?;
+    pub fn GeometricDilutionOfPrecision(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+        let this = &::windows_core::Interface::cast::<IGeocoordinateSatelliteData2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GeometricDilutionOfPrecision)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GeometricDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn TimeDilutionOfPrecision(&self) -> ::windows::core::Result<super::super::Foundation::IReference<f64>> {
-        let this = &::windows::core::Interface::cast::<IGeocoordinateSatelliteData2>(self)?;
+    pub fn TimeDilutionOfPrecision(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+        let this = &::windows_core::Interface::cast::<IGeocoordinateSatelliteData2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).TimeDilutionOfPrecision)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).TimeDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
         }
     }
 }
@@ -832,58 +832,58 @@ impl ::core::fmt::Debug for GeocoordinateSatelliteData {
         f.debug_tuple("GeocoordinateSatelliteData").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for GeocoordinateSatelliteData {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.GeocoordinateSatelliteData;{c32a74d9-2608-474c-912c-06dd490f4af7})");
+unsafe impl ::windows_core::RuntimeType for GeocoordinateSatelliteData {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.GeocoordinateSatelliteData;{c32a74d9-2608-474c-912c-06dd490f4af7})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for GeocoordinateSatelliteData {
+unsafe impl ::windows_core::Interface for GeocoordinateSatelliteData {
     type Vtable = IGeocoordinateSatelliteData_Vtbl;
-    const IID: ::windows::core::GUID = <IGeocoordinateSatelliteData as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IGeocoordinateSatelliteData as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for GeocoordinateSatelliteData {
+impl ::windows_core::RuntimeName for GeocoordinateSatelliteData {
     const NAME: &'static str = "Windows.Devices.Geolocation.GeocoordinateSatelliteData";
 }
-impl ::core::convert::From<GeocoordinateSatelliteData> for ::windows::core::IUnknown {
+impl ::core::convert::From<GeocoordinateSatelliteData> for ::windows_core::IUnknown {
     fn from(value: GeocoordinateSatelliteData) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&GeocoordinateSatelliteData> for ::windows::core::IUnknown {
+impl ::core::convert::From<&GeocoordinateSatelliteData> for ::windows_core::IUnknown {
     fn from(value: &GeocoordinateSatelliteData) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for GeocoordinateSatelliteData {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for GeocoordinateSatelliteData {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a GeocoordinateSatelliteData {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a GeocoordinateSatelliteData {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<GeocoordinateSatelliteData> for ::windows::core::IInspectable {
+impl ::core::convert::From<GeocoordinateSatelliteData> for ::windows_core::IInspectable {
     fn from(value: GeocoordinateSatelliteData) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&GeocoordinateSatelliteData> for ::windows::core::IInspectable {
+impl ::core::convert::From<&GeocoordinateSatelliteData> for ::windows_core::IInspectable {
     fn from(value: &GeocoordinateSatelliteData) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for GeocoordinateSatelliteData {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for GeocoordinateSatelliteData {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a GeocoordinateSatelliteData {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a GeocoordinateSatelliteData {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for GeocoordinateSatelliteData {}
@@ -908,7 +908,7 @@ impl ::core::default::Default for GeolocationAccessStatus {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GeolocationAccessStatus {
+unsafe impl ::windows_core::Abi for GeolocationAccessStatus {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GeolocationAccessStatus {
@@ -916,191 +916,191 @@ impl ::core::fmt::Debug for GeolocationAccessStatus {
         f.debug_tuple("GeolocationAccessStatus").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for GeolocationAccessStatus {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.GeolocationAccessStatus;i4)");
+unsafe impl ::windows_core::RuntimeType for GeolocationAccessStatus {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.GeolocationAccessStatus;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct Geolocator(::windows::core::IUnknown);
+pub struct Geolocator(::windows_core::IUnknown);
 impl Geolocator {
-    pub fn new() -> ::windows::core::Result<Self> {
+    pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
     }
-    fn IActivationFactory<R, F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<Geolocator, ::windows::core::IGenericFactory> = ::windows::core::FactoryCache::new();
+    fn IActivationFactory<R, F: FnOnce(&::windows_core::IGenericFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<Geolocator, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn DesiredAccuracy(&self) -> ::windows::core::Result<PositionAccuracy> {
+    pub fn DesiredAccuracy(&self) -> ::windows_core::Result<PositionAccuracy> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PositionAccuracy>::zeroed();
-            (::windows::core::Interface::vtable(this).DesiredAccuracy)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PositionAccuracy>(result__)
+            (::windows_core::Interface::vtable(this).DesiredAccuracy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PositionAccuracy>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn SetDesiredAccuracy(&self, value: PositionAccuracy) -> ::windows::core::Result<()> {
+    pub fn SetDesiredAccuracy(&self, value: PositionAccuracy) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetDesiredAccuracy)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetDesiredAccuracy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn MovementThreshold(&self) -> ::windows::core::Result<f64> {
+    pub fn MovementThreshold(&self) -> ::windows_core::Result<f64> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).MovementThreshold)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
+            (::windows_core::Interface::vtable(this).MovementThreshold)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn SetMovementThreshold(&self, value: f64) -> ::windows::core::Result<()> {
+    pub fn SetMovementThreshold(&self, value: f64) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetMovementThreshold)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetMovementThreshold)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn ReportInterval(&self) -> ::windows::core::Result<u32> {
+    pub fn ReportInterval(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).ReportInterval)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).ReportInterval)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn SetReportInterval(&self, value: u32) -> ::windows::core::Result<()> {
+    pub fn SetReportInterval(&self, value: u32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetReportInterval)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetReportInterval)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn LocationStatus(&self) -> ::windows::core::Result<PositionStatus> {
+    pub fn LocationStatus(&self) -> ::windows_core::Result<PositionStatus> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PositionStatus>::zeroed();
-            (::windows::core::Interface::vtable(this).LocationStatus)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PositionStatus>(result__)
+            (::windows_core::Interface::vtable(this).LocationStatus)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PositionStatus>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetGeopositionAsync(&self) -> ::windows::core::Result<super::super::Foundation::IAsyncOperation<Geoposition>> {
+    pub fn GetGeopositionAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<Geoposition>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetGeopositionAsync)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Geoposition>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetGeopositionAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Geoposition>>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetGeopositionAsyncWithAgeAndTimeout<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::TimeSpan>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::TimeSpan>>(&self, maximumage: Param0, timeout: Param1) -> ::windows::core::Result<super::super::Foundation::IAsyncOperation<Geoposition>> {
+    pub fn GetGeopositionAsyncWithAgeAndTimeout<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(&self, maximumage: Param0, timeout: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<Geoposition>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetGeopositionAsyncWithAgeAndTimeout)(::windows::core::Interface::as_raw(this), maximumage.into_param().abi(), timeout.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Geoposition>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetGeopositionAsyncWithAgeAndTimeout)(::windows_core::Interface::as_raw(this), maximumage.into_param().abi(), timeout.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Geoposition>>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn PositionChanged<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::TypedEventHandler<Geolocator, PositionChangedEventArgs>>>(&self, handler: Param0) -> ::windows::core::Result<super::super::Foundation::EventRegistrationToken> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows::core::Interface::vtable(this).PositionChanged)(::windows::core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePositionChanged<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemovePositionChanged)(::windows::core::Interface::as_raw(this), token.into_param().abi()).ok() }
-    }
-    #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
-    #[cfg(feature = "Foundation")]
-    pub fn StatusChanged<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::TypedEventHandler<Geolocator, StatusChangedEventArgs>>>(&self, handler: Param0) -> ::windows::core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn PositionChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<Geolocator, PositionChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows::core::Interface::vtable(this).StatusChanged)(::windows::core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            (::windows_core::Interface::vtable(this).PositionChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn RemoveStatusChanged<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows::core::Result<()> {
+    pub fn RemovePositionChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemoveStatusChanged)(::windows::core::Interface::as_raw(this), token.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).RemovePositionChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
+    }
+    #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
+    #[cfg(feature = "Foundation")]
+    pub fn StatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<Geolocator, StatusChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+        }
+    }
+    #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
+    #[cfg(feature = "Foundation")]
+    pub fn RemoveStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe { (::windows_core::Interface::vtable(this).RemoveStatusChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn AllowFallbackToConsentlessPositions(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IGeolocator2>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).AllowFallbackToConsentlessPositions)(::windows::core::Interface::as_raw(this)).ok() }
+    pub fn AllowFallbackToConsentlessPositions(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IGeolocator2>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).AllowFallbackToConsentlessPositions)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn RequestAccessAsync() -> ::windows::core::Result<super::super::Foundation::IAsyncOperation<GeolocationAccessStatus>> {
+    pub fn RequestAccessAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<GeolocationAccessStatus>> {
         Self::IGeolocatorStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).RequestAccessAsync)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<GeolocationAccessStatus>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<GeolocationAccessStatus>>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetGeopositionHistoryAsync<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::DateTime>>(starttime: Param0) -> ::windows::core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<Geoposition>>> {
+    pub fn GetGeopositionHistoryAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>>(starttime: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<Geoposition>>> {
         Self::IGeolocatorStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetGeopositionHistoryAsync)(::windows::core::Interface::as_raw(this), starttime.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<Geoposition>>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetGeopositionHistoryAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<Geoposition>>>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetGeopositionHistoryWithDurationAsync<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::DateTime>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::TimeSpan>>(starttime: Param0, duration: Param1) -> ::windows::core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<Geoposition>>> {
+    pub fn GetGeopositionHistoryWithDurationAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(starttime: Param0, duration: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<Geoposition>>> {
         Self::IGeolocatorStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetGeopositionHistoryWithDurationAsync)(::windows::core::Interface::as_raw(this), starttime.into_param().abi(), duration.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<Geoposition>>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetGeopositionHistoryWithDurationAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), duration.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<Geoposition>>>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn IsDefaultGeopositionRecommended() -> ::windows::core::Result<bool> {
+    pub fn IsDefaultGeopositionRecommended() -> ::windows_core::Result<bool> {
         Self::IGeolocatorStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsDefaultGeopositionRecommended)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsDefaultGeopositionRecommended)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn SetDefaultGeoposition<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::IReference<BasicGeoposition>>>(value: Param0) -> ::windows::core::Result<()> {
-        Self::IGeolocatorStatics2(|this| unsafe { (::windows::core::Interface::vtable(this).SetDefaultGeoposition)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() })
+    pub fn SetDefaultGeoposition<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<BasicGeoposition>>>(value: Param0) -> ::windows_core::Result<()> {
+        Self::IGeolocatorStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).SetDefaultGeoposition)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn DefaultGeoposition() -> ::windows::core::Result<super::super::Foundation::IReference<BasicGeoposition>> {
+    pub fn DefaultGeoposition() -> ::windows_core::Result<super::super::Foundation::IReference<BasicGeoposition>> {
         Self::IGeolocatorStatics2(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).DefaultGeoposition)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<BasicGeoposition>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).DefaultGeoposition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<BasicGeoposition>>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn DesiredAccuracyInMeters(&self) -> ::windows::core::Result<super::super::Foundation::IReference<u32>> {
-        let this = &::windows::core::Interface::cast::<IGeolocatorWithScalarAccuracy>(self)?;
+    pub fn DesiredAccuracyInMeters(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u32>> {
+        let this = &::windows_core::Interface::cast::<IGeolocatorWithScalarAccuracy>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).DesiredAccuracyInMeters)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u32>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).DesiredAccuracyInMeters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u32>>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn SetDesiredAccuracyInMeters<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::IReference<u32>>>(&self, value: Param0) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IGeolocatorWithScalarAccuracy>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetDesiredAccuracyInMeters)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+    pub fn SetDesiredAccuracyInMeters<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<u32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IGeolocatorWithScalarAccuracy>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetDesiredAccuracyInMeters)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc(hidden)]
-    pub fn IGeolocatorStatics<R, F: FnOnce(&IGeolocatorStatics) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<Geolocator, IGeolocatorStatics> = ::windows::core::FactoryCache::new();
+    pub fn IGeolocatorStatics<R, F: FnOnce(&IGeolocatorStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<Geolocator, IGeolocatorStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
     #[doc(hidden)]
-    pub fn IGeolocatorStatics2<R, F: FnOnce(&IGeolocatorStatics2) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<Geolocator, IGeolocatorStatics2> = ::windows::core::FactoryCache::new();
+    pub fn IGeolocatorStatics2<R, F: FnOnce(&IGeolocatorStatics2) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<Geolocator, IGeolocatorStatics2> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
@@ -1120,126 +1120,126 @@ impl ::core::fmt::Debug for Geolocator {
         f.debug_tuple("Geolocator").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for Geolocator {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geolocator;{a9c3bf62-4524-4989-8aa9-de019d2e551f})");
+unsafe impl ::windows_core::RuntimeType for Geolocator {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geolocator;{a9c3bf62-4524-4989-8aa9-de019d2e551f})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for Geolocator {
+unsafe impl ::windows_core::Interface for Geolocator {
     type Vtable = IGeolocator_Vtbl;
-    const IID: ::windows::core::GUID = <IGeolocator as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IGeolocator as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for Geolocator {
+impl ::windows_core::RuntimeName for Geolocator {
     const NAME: &'static str = "Windows.Devices.Geolocation.Geolocator";
 }
-impl ::core::convert::From<Geolocator> for ::windows::core::IUnknown {
+impl ::core::convert::From<Geolocator> for ::windows_core::IUnknown {
     fn from(value: Geolocator) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geolocator> for ::windows::core::IUnknown {
+impl ::core::convert::From<&Geolocator> for ::windows_core::IUnknown {
     fn from(value: &Geolocator) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for Geolocator {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for Geolocator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a Geolocator {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a Geolocator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<Geolocator> for ::windows::core::IInspectable {
+impl ::core::convert::From<Geolocator> for ::windows_core::IInspectable {
     fn from(value: Geolocator) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geolocator> for ::windows::core::IInspectable {
+impl ::core::convert::From<&Geolocator> for ::windows_core::IInspectable {
     fn from(value: &Geolocator) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for Geolocator {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for Geolocator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a Geolocator {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Geolocator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for Geolocator {}
 unsafe impl ::core::marker::Sync for Geolocator {}
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct Geopath(::windows::core::IUnknown);
+pub struct Geopath(::windows_core::IUnknown);
 impl Geopath {
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Positions(&self) -> ::windows::core::Result<super::super::Foundation::Collections::IVectorView<BasicGeoposition>> {
+    pub fn Positions(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<BasicGeoposition>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Positions)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<BasicGeoposition>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Positions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<BasicGeoposition>>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0) -> ::windows::core::Result<Geopath> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0) -> ::windows_core::Result<Geopath> {
         Self::IGeopathFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Create)(::windows::core::Interface::as_raw(this), positions.into_param().abi(), result__.as_mut_ptr()).from_abi::<Geopath>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), result__.as_mut_ptr()).from_abi::<Geopath>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateWithAltitudeReference<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altitudereferencesystem: AltitudeReferenceSystem) -> ::windows::core::Result<Geopath> {
+    pub fn CreateWithAltitudeReference<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altitudereferencesystem: AltitudeReferenceSystem) -> ::windows_core::Result<Geopath> {
         Self::IGeopathFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CreateWithAltitudeReference)(::windows::core::Interface::as_raw(this), positions.into_param().abi(), altitudereferencesystem, result__.as_mut_ptr()).from_abi::<Geopath>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CreateWithAltitudeReference)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), altitudereferencesystem, result__.as_mut_ptr()).from_abi::<Geopath>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateWithAltitudeReferenceAndSpatialReference<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows::core::Result<Geopath> {
+    pub fn CreateWithAltitudeReferenceAndSpatialReference<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows_core::Result<Geopath> {
         Self::IGeopathFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CreateWithAltitudeReferenceAndSpatialReference)(::windows::core::Interface::as_raw(this), positions.into_param().abi(), altitudereferencesystem, spatialreferenceid, result__.as_mut_ptr()).from_abi::<Geopath>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CreateWithAltitudeReferenceAndSpatialReference)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), altitudereferencesystem, spatialreferenceid, result__.as_mut_ptr()).from_abi::<Geopath>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn GeoshapeType(&self) -> ::windows::core::Result<GeoshapeType> {
-        let this = &::windows::core::Interface::cast::<IGeoshape>(self)?;
+    pub fn GeoshapeType(&self) -> ::windows_core::Result<GeoshapeType> {
+        let this = &::windows_core::Interface::cast::<IGeoshape>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<GeoshapeType>::zeroed();
-            (::windows::core::Interface::vtable(this).GeoshapeType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GeoshapeType>(result__)
+            (::windows_core::Interface::vtable(this).GeoshapeType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GeoshapeType>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn SpatialReferenceId(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IGeoshape>(self)?;
+    pub fn SpatialReferenceId(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IGeoshape>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).SpatialReferenceId)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).SpatialReferenceId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn AltitudeReferenceSystem(&self) -> ::windows::core::Result<AltitudeReferenceSystem> {
-        let this = &::windows::core::Interface::cast::<IGeoshape>(self)?;
+    pub fn AltitudeReferenceSystem(&self) -> ::windows_core::Result<AltitudeReferenceSystem> {
+        let this = &::windows_core::Interface::cast::<IGeoshape>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<AltitudeReferenceSystem>::zeroed();
-            (::windows::core::Interface::vtable(this).AltitudeReferenceSystem)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AltitudeReferenceSystem>(result__)
+            (::windows_core::Interface::vtable(this).AltitudeReferenceSystem)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AltitudeReferenceSystem>(result__)
         }
     }
     #[doc(hidden)]
-    pub fn IGeopathFactory<R, F: FnOnce(&IGeopathFactory) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<Geopath, IGeopathFactory> = ::windows::core::FactoryCache::new();
+    pub fn IGeopathFactory<R, F: FnOnce(&IGeopathFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<Geopath, IGeopathFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
@@ -1259,144 +1259,144 @@ impl ::core::fmt::Debug for Geopath {
         f.debug_tuple("Geopath").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for Geopath {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geopath;{e53fd7b9-2da4-4714-a652-de8593289898})");
+unsafe impl ::windows_core::RuntimeType for Geopath {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geopath;{e53fd7b9-2da4-4714-a652-de8593289898})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for Geopath {
+unsafe impl ::windows_core::Interface for Geopath {
     type Vtable = IGeopath_Vtbl;
-    const IID: ::windows::core::GUID = <IGeopath as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IGeopath as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for Geopath {
+impl ::windows_core::RuntimeName for Geopath {
     const NAME: &'static str = "Windows.Devices.Geolocation.Geopath";
 }
-impl ::core::convert::From<Geopath> for ::windows::core::IUnknown {
+impl ::core::convert::From<Geopath> for ::windows_core::IUnknown {
     fn from(value: Geopath) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geopath> for ::windows::core::IUnknown {
+impl ::core::convert::From<&Geopath> for ::windows_core::IUnknown {
     fn from(value: &Geopath) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for Geopath {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for Geopath {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a Geopath {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a Geopath {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<Geopath> for ::windows::core::IInspectable {
+impl ::core::convert::From<Geopath> for ::windows_core::IInspectable {
     fn from(value: Geopath) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geopath> for ::windows::core::IInspectable {
+impl ::core::convert::From<&Geopath> for ::windows_core::IInspectable {
     fn from(value: &Geopath) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for Geopath {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for Geopath {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a Geopath {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Geopath {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<Geopath> for IGeoshape {
-    type Error = ::windows::core::Error;
-    fn try_from(value: Geopath) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: Geopath) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&Geopath> for IGeoshape {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &Geopath) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &Geopath) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IGeoshape> for Geopath {
-    fn into_param(self) -> ::windows::core::Param<'a, IGeoshape> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IGeoshape> for Geopath {
+    fn into_param(self) -> ::windows_core::Param<'a, IGeoshape> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IGeoshape> for &Geopath {
-    fn into_param(self) -> ::windows::core::Param<'a, IGeoshape> {
-        ::core::convert::TryInto::<IGeoshape>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IGeoshape> for &Geopath {
+    fn into_param(self) -> ::windows_core::Param<'a, IGeoshape> {
+        ::core::convert::TryInto::<IGeoshape>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for Geopath {}
 unsafe impl ::core::marker::Sync for Geopath {}
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct Geopoint(::windows::core::IUnknown);
+pub struct Geopoint(::windows_core::IUnknown);
 impl Geopoint {
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Position(&self) -> ::windows::core::Result<BasicGeoposition> {
+    pub fn Position(&self) -> ::windows_core::Result<BasicGeoposition> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<BasicGeoposition>::zeroed();
-            (::windows::core::Interface::vtable(this).Position)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BasicGeoposition>(result__)
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BasicGeoposition>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Create<'a, Param0: ::windows::core::IntoParam<'a, BasicGeoposition>>(position: Param0) -> ::windows::core::Result<Geopoint> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, BasicGeoposition>>(position: Param0) -> ::windows_core::Result<Geopoint> {
         Self::IGeopointFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Create)(::windows::core::Interface::as_raw(this), position.into_param().abi(), result__.as_mut_ptr()).from_abi::<Geopoint>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), position.into_param().abi(), result__.as_mut_ptr()).from_abi::<Geopoint>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn CreateWithAltitudeReferenceSystem<'a, Param0: ::windows::core::IntoParam<'a, BasicGeoposition>>(position: Param0, altitudereferencesystem: AltitudeReferenceSystem) -> ::windows::core::Result<Geopoint> {
+    pub fn CreateWithAltitudeReferenceSystem<'a, Param0: ::windows_core::IntoParam<'a, BasicGeoposition>>(position: Param0, altitudereferencesystem: AltitudeReferenceSystem) -> ::windows_core::Result<Geopoint> {
         Self::IGeopointFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CreateWithAltitudeReferenceSystem)(::windows::core::Interface::as_raw(this), position.into_param().abi(), altitudereferencesystem, result__.as_mut_ptr()).from_abi::<Geopoint>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CreateWithAltitudeReferenceSystem)(::windows_core::Interface::as_raw(this), position.into_param().abi(), altitudereferencesystem, result__.as_mut_ptr()).from_abi::<Geopoint>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn CreateWithAltitudeReferenceSystemAndSpatialReferenceId<'a, Param0: ::windows::core::IntoParam<'a, BasicGeoposition>>(position: Param0, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows::core::Result<Geopoint> {
+    pub fn CreateWithAltitudeReferenceSystemAndSpatialReferenceId<'a, Param0: ::windows_core::IntoParam<'a, BasicGeoposition>>(position: Param0, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows_core::Result<Geopoint> {
         Self::IGeopointFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CreateWithAltitudeReferenceSystemAndSpatialReferenceId)(::windows::core::Interface::as_raw(this), position.into_param().abi(), altitudereferencesystem, spatialreferenceid, result__.as_mut_ptr()).from_abi::<Geopoint>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CreateWithAltitudeReferenceSystemAndSpatialReferenceId)(::windows_core::Interface::as_raw(this), position.into_param().abi(), altitudereferencesystem, spatialreferenceid, result__.as_mut_ptr()).from_abi::<Geopoint>(result__)
         })
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn GeoshapeType(&self) -> ::windows::core::Result<GeoshapeType> {
-        let this = &::windows::core::Interface::cast::<IGeoshape>(self)?;
+    pub fn GeoshapeType(&self) -> ::windows_core::Result<GeoshapeType> {
+        let this = &::windows_core::Interface::cast::<IGeoshape>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<GeoshapeType>::zeroed();
-            (::windows::core::Interface::vtable(this).GeoshapeType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GeoshapeType>(result__)
+            (::windows_core::Interface::vtable(this).GeoshapeType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GeoshapeType>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn SpatialReferenceId(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IGeoshape>(self)?;
+    pub fn SpatialReferenceId(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IGeoshape>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).SpatialReferenceId)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).SpatialReferenceId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn AltitudeReferenceSystem(&self) -> ::windows::core::Result<AltitudeReferenceSystem> {
-        let this = &::windows::core::Interface::cast::<IGeoshape>(self)?;
+    pub fn AltitudeReferenceSystem(&self) -> ::windows_core::Result<AltitudeReferenceSystem> {
+        let this = &::windows_core::Interface::cast::<IGeoshape>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<AltitudeReferenceSystem>::zeroed();
-            (::windows::core::Interface::vtable(this).AltitudeReferenceSystem)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AltitudeReferenceSystem>(result__)
+            (::windows_core::Interface::vtable(this).AltitudeReferenceSystem)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AltitudeReferenceSystem>(result__)
         }
     }
     #[doc(hidden)]
-    pub fn IGeopointFactory<R, F: FnOnce(&IGeopointFactory) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<Geopoint, IGeopointFactory> = ::windows::core::FactoryCache::new();
+    pub fn IGeopointFactory<R, F: FnOnce(&IGeopointFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<Geopoint, IGeopointFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
@@ -1416,110 +1416,110 @@ impl ::core::fmt::Debug for Geopoint {
         f.debug_tuple("Geopoint").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for Geopoint {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geopoint;{6bfa00eb-e56e-49bb-9caf-cbaa78a8bcef})");
+unsafe impl ::windows_core::RuntimeType for Geopoint {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geopoint;{6bfa00eb-e56e-49bb-9caf-cbaa78a8bcef})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for Geopoint {
+unsafe impl ::windows_core::Interface for Geopoint {
     type Vtable = IGeopoint_Vtbl;
-    const IID: ::windows::core::GUID = <IGeopoint as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IGeopoint as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for Geopoint {
+impl ::windows_core::RuntimeName for Geopoint {
     const NAME: &'static str = "Windows.Devices.Geolocation.Geopoint";
 }
-impl ::core::convert::From<Geopoint> for ::windows::core::IUnknown {
+impl ::core::convert::From<Geopoint> for ::windows_core::IUnknown {
     fn from(value: Geopoint) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geopoint> for ::windows::core::IUnknown {
+impl ::core::convert::From<&Geopoint> for ::windows_core::IUnknown {
     fn from(value: &Geopoint) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for Geopoint {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for Geopoint {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a Geopoint {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a Geopoint {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<Geopoint> for ::windows::core::IInspectable {
+impl ::core::convert::From<Geopoint> for ::windows_core::IInspectable {
     fn from(value: Geopoint) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geopoint> for ::windows::core::IInspectable {
+impl ::core::convert::From<&Geopoint> for ::windows_core::IInspectable {
     fn from(value: &Geopoint) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for Geopoint {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for Geopoint {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a Geopoint {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Geopoint {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<Geopoint> for IGeoshape {
-    type Error = ::windows::core::Error;
-    fn try_from(value: Geopoint) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: Geopoint) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&Geopoint> for IGeoshape {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &Geopoint) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &Geopoint) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IGeoshape> for Geopoint {
-    fn into_param(self) -> ::windows::core::Param<'a, IGeoshape> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IGeoshape> for Geopoint {
+    fn into_param(self) -> ::windows_core::Param<'a, IGeoshape> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IGeoshape> for &Geopoint {
-    fn into_param(self) -> ::windows::core::Param<'a, IGeoshape> {
-        ::core::convert::TryInto::<IGeoshape>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IGeoshape> for &Geopoint {
+    fn into_param(self) -> ::windows_core::Param<'a, IGeoshape> {
+        ::core::convert::TryInto::<IGeoshape>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for Geopoint {}
 unsafe impl ::core::marker::Sync for Geopoint {}
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct Geoposition(::windows::core::IUnknown);
+pub struct Geoposition(::windows_core::IUnknown);
 impl Geoposition {
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Coordinate(&self) -> ::windows::core::Result<Geocoordinate> {
+    pub fn Coordinate(&self) -> ::windows_core::Result<Geocoordinate> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Coordinate)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Geocoordinate>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Coordinate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Geocoordinate>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn CivicAddress(&self) -> ::windows::core::Result<CivicAddress> {
+    pub fn CivicAddress(&self) -> ::windows_core::Result<CivicAddress> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CivicAddress)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<CivicAddress>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CivicAddress)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<CivicAddress>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn VenueData(&self) -> ::windows::core::Result<VenueData> {
-        let this = &::windows::core::Interface::cast::<IGeoposition2>(self)?;
+    pub fn VenueData(&self) -> ::windows_core::Result<VenueData> {
+        let this = &::windows_core::Interface::cast::<IGeoposition2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).VenueData)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VenueData>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).VenueData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VenueData>(result__)
         }
     }
 }
@@ -1539,58 +1539,58 @@ impl ::core::fmt::Debug for Geoposition {
         f.debug_tuple("Geoposition").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for Geoposition {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geoposition;{c18d0454-7d41-4ff7-a957-9dffb4ef7f5b})");
+unsafe impl ::windows_core::RuntimeType for Geoposition {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geoposition;{c18d0454-7d41-4ff7-a957-9dffb4ef7f5b})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for Geoposition {
+unsafe impl ::windows_core::Interface for Geoposition {
     type Vtable = IGeoposition_Vtbl;
-    const IID: ::windows::core::GUID = <IGeoposition as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IGeoposition as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for Geoposition {
+impl ::windows_core::RuntimeName for Geoposition {
     const NAME: &'static str = "Windows.Devices.Geolocation.Geoposition";
 }
-impl ::core::convert::From<Geoposition> for ::windows::core::IUnknown {
+impl ::core::convert::From<Geoposition> for ::windows_core::IUnknown {
     fn from(value: Geoposition) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geoposition> for ::windows::core::IUnknown {
+impl ::core::convert::From<&Geoposition> for ::windows_core::IUnknown {
     fn from(value: &Geoposition) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for Geoposition {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for Geoposition {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a Geoposition {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a Geoposition {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<Geoposition> for ::windows::core::IInspectable {
+impl ::core::convert::From<Geoposition> for ::windows_core::IInspectable {
     fn from(value: Geoposition) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geoposition> for ::windows::core::IInspectable {
+impl ::core::convert::From<&Geoposition> for ::windows_core::IInspectable {
     fn from(value: &Geoposition) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for Geoposition {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for Geoposition {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a Geoposition {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Geoposition {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for Geoposition {}
@@ -1616,7 +1616,7 @@ impl ::core::default::Default for GeoshapeType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GeoshapeType {
+unsafe impl ::windows_core::Abi for GeoshapeType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GeoshapeType {
@@ -1624,40 +1624,40 @@ impl ::core::fmt::Debug for GeoshapeType {
         f.debug_tuple("GeoshapeType").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for GeoshapeType {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.GeoshapeType;i4)");
+unsafe impl ::windows_core::RuntimeType for GeoshapeType {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.GeoshapeType;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct Geovisit(::windows::core::IUnknown);
+pub struct Geovisit(::windows_core::IUnknown);
 impl Geovisit {
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Position(&self) -> ::windows::core::Result<Geoposition> {
+    pub fn Position(&self) -> ::windows_core::Result<Geoposition> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Position)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Geoposition>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Geoposition>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn StateChange(&self) -> ::windows::core::Result<VisitStateChange> {
+    pub fn StateChange(&self) -> ::windows_core::Result<VisitStateChange> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<VisitStateChange>::zeroed();
-            (::windows::core::Interface::vtable(this).StateChange)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VisitStateChange>(result__)
+            (::windows_core::Interface::vtable(this).StateChange)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VisitStateChange>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Timestamp(&self) -> ::windows::core::Result<super::super::Foundation::DateTime> {
+    pub fn Timestamp(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows::core::Interface::vtable(this).Timestamp)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
         }
     }
 }
@@ -1677,117 +1677,117 @@ impl ::core::fmt::Debug for Geovisit {
         f.debug_tuple("Geovisit").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for Geovisit {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geovisit;{b1877a76-9ef6-41ab-a0dd-793ece76e2de})");
+unsafe impl ::windows_core::RuntimeType for Geovisit {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.Geovisit;{b1877a76-9ef6-41ab-a0dd-793ece76e2de})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for Geovisit {
+unsafe impl ::windows_core::Interface for Geovisit {
     type Vtable = IGeovisit_Vtbl;
-    const IID: ::windows::core::GUID = <IGeovisit as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IGeovisit as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for Geovisit {
+impl ::windows_core::RuntimeName for Geovisit {
     const NAME: &'static str = "Windows.Devices.Geolocation.Geovisit";
 }
-impl ::core::convert::From<Geovisit> for ::windows::core::IUnknown {
+impl ::core::convert::From<Geovisit> for ::windows_core::IUnknown {
     fn from(value: Geovisit) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geovisit> for ::windows::core::IUnknown {
+impl ::core::convert::From<&Geovisit> for ::windows_core::IUnknown {
     fn from(value: &Geovisit) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for Geovisit {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for Geovisit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a Geovisit {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a Geovisit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<Geovisit> for ::windows::core::IInspectable {
+impl ::core::convert::From<Geovisit> for ::windows_core::IInspectable {
     fn from(value: Geovisit) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&Geovisit> for ::windows::core::IInspectable {
+impl ::core::convert::From<&Geovisit> for ::windows_core::IInspectable {
     fn from(value: &Geovisit) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for Geovisit {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for Geovisit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a Geovisit {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Geovisit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for Geovisit {}
 unsafe impl ::core::marker::Sync for Geovisit {}
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct GeovisitMonitor(::windows::core::IUnknown);
+pub struct GeovisitMonitor(::windows_core::IUnknown);
 impl GeovisitMonitor {
-    pub fn new() -> ::windows::core::Result<Self> {
+    pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
     }
-    fn IActivationFactory<R, F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<GeovisitMonitor, ::windows::core::IGenericFactory> = ::windows::core::FactoryCache::new();
+    fn IActivationFactory<R, F: FnOnce(&::windows_core::IGenericFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<GeovisitMonitor, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn MonitoringScope(&self) -> ::windows::core::Result<VisitMonitoringScope> {
+    pub fn MonitoringScope(&self) -> ::windows_core::Result<VisitMonitoringScope> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<VisitMonitoringScope>::zeroed();
-            (::windows::core::Interface::vtable(this).MonitoringScope)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VisitMonitoringScope>(result__)
+            (::windows_core::Interface::vtable(this).MonitoringScope)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VisitMonitoringScope>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Start(&self, value: VisitMonitoringScope) -> ::windows::core::Result<()> {
+    pub fn Start(&self, value: VisitMonitoringScope) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Start)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Start)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Stop(&self) -> ::windows::core::Result<()> {
+    pub fn Stop(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Stop)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Stop)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn VisitStateChanged<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::TypedEventHandler<GeovisitMonitor, GeovisitStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows::core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn VisitStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<GeovisitMonitor, GeovisitStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows::core::Interface::vtable(this).VisitStateChanged)(::windows::core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            (::windows_core::Interface::vtable(this).VisitStateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn RemoveVisitStateChanged<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows::core::Result<()> {
+    pub fn RemoveVisitStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemoveVisitStateChanged)(::windows::core::Interface::as_raw(this), token.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).RemoveVisitStateChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetLastReportAsync() -> ::windows::core::Result<super::super::Foundation::IAsyncOperation<Geovisit>> {
+    pub fn GetLastReportAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<Geovisit>> {
         Self::IGeovisitMonitorStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetLastReportAsync)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Geovisit>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetLastReportAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Geovisit>>(result__)
         })
     }
     #[doc(hidden)]
-    pub fn IGeovisitMonitorStatics<R, F: FnOnce(&IGeovisitMonitorStatics) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<GeovisitMonitor, IGeovisitMonitorStatics> = ::windows::core::FactoryCache::new();
+    pub fn IGeovisitMonitorStatics<R, F: FnOnce(&IGeovisitMonitorStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<GeovisitMonitor, IGeovisitMonitorStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
@@ -1807,72 +1807,72 @@ impl ::core::fmt::Debug for GeovisitMonitor {
         f.debug_tuple("GeovisitMonitor").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for GeovisitMonitor {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.GeovisitMonitor;{80118aaf-5944-4591-83c1-396647f54f2c})");
+unsafe impl ::windows_core::RuntimeType for GeovisitMonitor {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.GeovisitMonitor;{80118aaf-5944-4591-83c1-396647f54f2c})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for GeovisitMonitor {
+unsafe impl ::windows_core::Interface for GeovisitMonitor {
     type Vtable = IGeovisitMonitor_Vtbl;
-    const IID: ::windows::core::GUID = <IGeovisitMonitor as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IGeovisitMonitor as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for GeovisitMonitor {
+impl ::windows_core::RuntimeName for GeovisitMonitor {
     const NAME: &'static str = "Windows.Devices.Geolocation.GeovisitMonitor";
 }
-impl ::core::convert::From<GeovisitMonitor> for ::windows::core::IUnknown {
+impl ::core::convert::From<GeovisitMonitor> for ::windows_core::IUnknown {
     fn from(value: GeovisitMonitor) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&GeovisitMonitor> for ::windows::core::IUnknown {
+impl ::core::convert::From<&GeovisitMonitor> for ::windows_core::IUnknown {
     fn from(value: &GeovisitMonitor) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for GeovisitMonitor {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for GeovisitMonitor {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a GeovisitMonitor {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a GeovisitMonitor {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<GeovisitMonitor> for ::windows::core::IInspectable {
+impl ::core::convert::From<GeovisitMonitor> for ::windows_core::IInspectable {
     fn from(value: GeovisitMonitor) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&GeovisitMonitor> for ::windows::core::IInspectable {
+impl ::core::convert::From<&GeovisitMonitor> for ::windows_core::IInspectable {
     fn from(value: &GeovisitMonitor) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for GeovisitMonitor {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for GeovisitMonitor {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a GeovisitMonitor {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a GeovisitMonitor {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for GeovisitMonitor {}
 unsafe impl ::core::marker::Sync for GeovisitMonitor {}
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct GeovisitStateChangedEventArgs(::windows::core::IUnknown);
+pub struct GeovisitStateChangedEventArgs(::windows_core::IUnknown);
 impl GeovisitStateChangedEventArgs {
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Visit(&self) -> ::windows::core::Result<Geovisit> {
+    pub fn Visit(&self) -> ::windows_core::Result<Geovisit> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Visit)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Geovisit>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Visit)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Geovisit>(result__)
         }
     }
 }
@@ -1892,73 +1892,73 @@ impl ::core::fmt::Debug for GeovisitStateChangedEventArgs {
         f.debug_tuple("GeovisitStateChangedEventArgs").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for GeovisitStateChangedEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.GeovisitStateChangedEventArgs;{ceb4d1ff-8b53-4968-beed-4cecd029ce15})");
+unsafe impl ::windows_core::RuntimeType for GeovisitStateChangedEventArgs {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.GeovisitStateChangedEventArgs;{ceb4d1ff-8b53-4968-beed-4cecd029ce15})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for GeovisitStateChangedEventArgs {
+unsafe impl ::windows_core::Interface for GeovisitStateChangedEventArgs {
     type Vtable = IGeovisitStateChangedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = <IGeovisitStateChangedEventArgs as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IGeovisitStateChangedEventArgs as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for GeovisitStateChangedEventArgs {
+impl ::windows_core::RuntimeName for GeovisitStateChangedEventArgs {
     const NAME: &'static str = "Windows.Devices.Geolocation.GeovisitStateChangedEventArgs";
 }
-impl ::core::convert::From<GeovisitStateChangedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<GeovisitStateChangedEventArgs> for ::windows_core::IUnknown {
     fn from(value: GeovisitStateChangedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&GeovisitStateChangedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<&GeovisitStateChangedEventArgs> for ::windows_core::IUnknown {
     fn from(value: &GeovisitStateChangedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for GeovisitStateChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for GeovisitStateChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a GeovisitStateChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a GeovisitStateChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<GeovisitStateChangedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<GeovisitStateChangedEventArgs> for ::windows_core::IInspectable {
     fn from(value: GeovisitStateChangedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&GeovisitStateChangedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<&GeovisitStateChangedEventArgs> for ::windows_core::IInspectable {
     fn from(value: &GeovisitStateChangedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for GeovisitStateChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for GeovisitStateChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a GeovisitStateChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a GeovisitStateChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for GeovisitStateChangedEventArgs {}
 unsafe impl ::core::marker::Sync for GeovisitStateChangedEventArgs {}
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct GeovisitTriggerDetails(::windows::core::IUnknown);
+pub struct GeovisitTriggerDetails(::windows_core::IUnknown);
 impl GeovisitTriggerDetails {
     #[doc = "*Required features: `\"Devices_Geolocation\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ReadReports(&self) -> ::windows::core::Result<super::super::Foundation::Collections::IVectorView<Geovisit>> {
+    pub fn ReadReports(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<Geovisit>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).ReadReports)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<Geovisit>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).ReadReports)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<Geovisit>>(result__)
         }
     }
 }
@@ -1978,591 +1978,591 @@ impl ::core::fmt::Debug for GeovisitTriggerDetails {
         f.debug_tuple("GeovisitTriggerDetails").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for GeovisitTriggerDetails {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.GeovisitTriggerDetails;{ea770d9e-d1c9-454b-99b7-b2f8cdd2482f})");
+unsafe impl ::windows_core::RuntimeType for GeovisitTriggerDetails {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.GeovisitTriggerDetails;{ea770d9e-d1c9-454b-99b7-b2f8cdd2482f})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for GeovisitTriggerDetails {
+unsafe impl ::windows_core::Interface for GeovisitTriggerDetails {
     type Vtable = IGeovisitTriggerDetails_Vtbl;
-    const IID: ::windows::core::GUID = <IGeovisitTriggerDetails as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IGeovisitTriggerDetails as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for GeovisitTriggerDetails {
+impl ::windows_core::RuntimeName for GeovisitTriggerDetails {
     const NAME: &'static str = "Windows.Devices.Geolocation.GeovisitTriggerDetails";
 }
-impl ::core::convert::From<GeovisitTriggerDetails> for ::windows::core::IUnknown {
+impl ::core::convert::From<GeovisitTriggerDetails> for ::windows_core::IUnknown {
     fn from(value: GeovisitTriggerDetails) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&GeovisitTriggerDetails> for ::windows::core::IUnknown {
+impl ::core::convert::From<&GeovisitTriggerDetails> for ::windows_core::IUnknown {
     fn from(value: &GeovisitTriggerDetails) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for GeovisitTriggerDetails {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for GeovisitTriggerDetails {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a GeovisitTriggerDetails {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a GeovisitTriggerDetails {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<GeovisitTriggerDetails> for ::windows::core::IInspectable {
+impl ::core::convert::From<GeovisitTriggerDetails> for ::windows_core::IInspectable {
     fn from(value: GeovisitTriggerDetails) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&GeovisitTriggerDetails> for ::windows::core::IInspectable {
+impl ::core::convert::From<&GeovisitTriggerDetails> for ::windows_core::IInspectable {
     fn from(value: &GeovisitTriggerDetails) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for GeovisitTriggerDetails {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for GeovisitTriggerDetails {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a GeovisitTriggerDetails {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a GeovisitTriggerDetails {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for GeovisitTriggerDetails {}
 unsafe impl ::core::marker::Sync for GeovisitTriggerDetails {}
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct ICivicAddress(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for ICivicAddress {
+pub struct ICivicAddress(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for ICivicAddress {
     type Vtable = ICivicAddress_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa8567a1a_64f4_4d48_bcea_f6b008eca34c);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa8567a1a_64f4_4d48_bcea_f6b008eca34c);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ICivicAddress_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Country: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub State: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub City: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub PostalCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Country: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub City: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub PostalCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows::core::HRESULT,
+    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Timestamp: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeoboundingBox(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeoboundingBox {
+pub struct IGeoboundingBox(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeoboundingBox {
     type Vtable = IGeoboundingBox_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0896c80b_274f_43da_9a06_cbfcdaeb4ec2);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0896c80b_274f_43da_9a06_cbfcdaeb4ec2);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeoboundingBox_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub NorthwestCorner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BasicGeoposition) -> ::windows::core::HRESULT,
-    pub SoutheastCorner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BasicGeoposition) -> ::windows::core::HRESULT,
-    pub Center: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BasicGeoposition) -> ::windows::core::HRESULT,
-    pub MinAltitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT,
-    pub MaxAltitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub NorthwestCorner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BasicGeoposition) -> ::windows_core::HRESULT,
+    pub SoutheastCorner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BasicGeoposition) -> ::windows_core::HRESULT,
+    pub Center: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BasicGeoposition) -> ::windows_core::HRESULT,
+    pub MinAltitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
+    pub MaxAltitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeoboundingBoxFactory(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeoboundingBoxFactory {
+pub struct IGeoboundingBoxFactory(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeoboundingBoxFactory {
     type Vtable = IGeoboundingBoxFactory_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4dfba589_0411_4abc_b3b5_5bbccb57d98c);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4dfba589_0411_4abc_b3b5_5bbccb57d98c);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeoboundingBoxFactory_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, northwestcorner: BasicGeoposition, southeastcorner: BasicGeoposition, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub CreateWithAltitudeReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, northwestcorner: BasicGeoposition, southeastcorner: BasicGeoposition, altitudereferencesystem: AltitudeReferenceSystem, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub CreateWithAltitudeReferenceAndSpatialReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, northwestcorner: BasicGeoposition, southeastcorner: BasicGeoposition, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, northwestcorner: BasicGeoposition, southeastcorner: BasicGeoposition, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateWithAltitudeReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, northwestcorner: BasicGeoposition, southeastcorner: BasicGeoposition, altitudereferencesystem: AltitudeReferenceSystem, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateWithAltitudeReferenceAndSpatialReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, northwestcorner: BasicGeoposition, southeastcorner: BasicGeoposition, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeoboundingBoxStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeoboundingBoxStatics {
+pub struct IGeoboundingBoxStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeoboundingBoxStatics {
     type Vtable = IGeoboundingBoxStatics_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x67b80708_e61a_4cd0_841b_93233792b5ca);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x67b80708_e61a_4cd0_841b_93233792b5ca);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeoboundingBoxStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Collections")]
-    pub TryCompute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub TryCompute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     TryCompute: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub TryComputeWithAltitudeReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows::core::RawPtr, altituderefsystem: AltitudeReferenceSystem, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub TryComputeWithAltitudeReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows_core::RawPtr, altituderefsystem: AltitudeReferenceSystem, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     TryComputeWithAltitudeReference: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub TryComputeWithAltitudeReferenceAndSpatialReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows::core::RawPtr, altituderefsystem: AltitudeReferenceSystem, spatialreferenceid: u32, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub TryComputeWithAltitudeReferenceAndSpatialReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows_core::RawPtr, altituderefsystem: AltitudeReferenceSystem, spatialreferenceid: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     TryComputeWithAltitudeReferenceAndSpatialReference: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeocircle(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeocircle {
+pub struct IGeocircle(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeocircle {
     type Vtable = IGeocircle_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x39e45843_a7f9_4e63_92a7_ba0c28d124b1);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x39e45843_a7f9_4e63_92a7_ba0c28d124b1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeocircle_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Center: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BasicGeoposition) -> ::windows::core::HRESULT,
-    pub Radius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Center: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BasicGeoposition) -> ::windows_core::HRESULT,
+    pub Radius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeocircleFactory(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeocircleFactory {
+pub struct IGeocircleFactory(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeocircleFactory {
     type Vtable = IGeocircleFactory_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xafd6531f_72b1_4f7d_87cc_4ed4c9849c05);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xafd6531f_72b1_4f7d_87cc_4ed4c9849c05);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeocircleFactory_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: BasicGeoposition, radius: f64, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub CreateWithAltitudeReferenceSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: BasicGeoposition, radius: f64, altitudereferencesystem: AltitudeReferenceSystem, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub CreateWithAltitudeReferenceSystemAndSpatialReferenceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: BasicGeoposition, radius: f64, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: BasicGeoposition, radius: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateWithAltitudeReferenceSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: BasicGeoposition, radius: f64, altitudereferencesystem: AltitudeReferenceSystem, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateWithAltitudeReferenceSystemAndSpatialReferenceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: BasicGeoposition, radius: f64, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeocoordinate(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeocoordinate {
+pub struct IGeocoordinate(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeocoordinate {
     type Vtable = IGeocoordinate_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xee21a3aa_976a_4c70_803d_083ea55bcbc4);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xee21a3aa_976a_4c70_803d_083ea55bcbc4);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeocoordinate_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "deprecated")]
-    pub Latitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT,
+    pub Latitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Latitude: usize,
     #[cfg(feature = "deprecated")]
-    pub Longitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT,
+    pub Longitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Longitude: usize,
     #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub Altitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Altitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     Altitude: usize,
-    pub Accuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT,
+    pub Accuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub AltitudeAccuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub AltitudeAccuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     AltitudeAccuracy: usize,
     #[cfg(feature = "Foundation")]
-    pub Heading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Heading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Heading: usize,
     #[cfg(feature = "Foundation")]
-    pub Speed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Speed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Speed: usize,
     #[cfg(feature = "Foundation")]
-    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows::core::HRESULT,
+    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Timestamp: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeocoordinateSatelliteData(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeocoordinateSatelliteData {
+pub struct IGeocoordinateSatelliteData(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeocoordinateSatelliteData {
     type Vtable = IGeocoordinateSatelliteData_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc32a74d9_2608_474c_912c_06dd490f4af7);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc32a74d9_2608_474c_912c_06dd490f4af7);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeocoordinateSatelliteData_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub PositionDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub PositionDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     PositionDilutionOfPrecision: usize,
     #[cfg(feature = "Foundation")]
-    pub HorizontalDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub HorizontalDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     HorizontalDilutionOfPrecision: usize,
     #[cfg(feature = "Foundation")]
-    pub VerticalDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub VerticalDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     VerticalDilutionOfPrecision: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeocoordinateSatelliteData2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeocoordinateSatelliteData2 {
+pub struct IGeocoordinateSatelliteData2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeocoordinateSatelliteData2 {
     type Vtable = IGeocoordinateSatelliteData2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x761c8cfd_a19d_5a51_80f5_71676115483e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x761c8cfd_a19d_5a51_80f5_71676115483e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeocoordinateSatelliteData2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub GeometricDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GeometricDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GeometricDilutionOfPrecision: usize,
     #[cfg(feature = "Foundation")]
-    pub TimeDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub TimeDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     TimeDilutionOfPrecision: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeocoordinateWithPoint(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeocoordinateWithPoint {
+pub struct IGeocoordinateWithPoint(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeocoordinateWithPoint {
     type Vtable = IGeocoordinateWithPoint_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfeea0525_d22c_4d46_b527_0b96066fc7db);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfeea0525_d22c_4d46_b527_0b96066fc7db);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeocoordinateWithPoint_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Point: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Point: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeocoordinateWithPositionData(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeocoordinateWithPositionData {
+pub struct IGeocoordinateWithPositionData(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeocoordinateWithPositionData {
     type Vtable = IGeocoordinateWithPositionData_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x95e634be_dbd6_40ac_b8f2_a65c0340d9a6);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x95e634be_dbd6_40ac_b8f2_a65c0340d9a6);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeocoordinateWithPositionData_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub PositionSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PositionSource) -> ::windows::core::HRESULT,
-    pub SatelliteData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub PositionSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PositionSource) -> ::windows_core::HRESULT,
+    pub SatelliteData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeocoordinateWithPositionSourceTimestamp(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeocoordinateWithPositionSourceTimestamp {
+pub struct IGeocoordinateWithPositionSourceTimestamp(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeocoordinateWithPositionSourceTimestamp {
     type Vtable = IGeocoordinateWithPositionSourceTimestamp_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8543fc02_c9f1_4610_afe0_8bc3a6a87036);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8543fc02_c9f1_4610_afe0_8bc3a6a87036);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeocoordinateWithPositionSourceTimestamp_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub PositionSourceTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub PositionSourceTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     PositionSourceTimestamp: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeocoordinateWithRemoteSource(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeocoordinateWithRemoteSource {
+pub struct IGeocoordinateWithRemoteSource(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeocoordinateWithRemoteSource {
     type Vtable = IGeocoordinateWithRemoteSource_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x397cebd7_ee38_5f3b_8900_c4a7bc9cf953);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x397cebd7_ee38_5f3b_8900_c4a7bc9cf953);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeocoordinateWithRemoteSource_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub IsRemoteSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub IsRemoteSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeolocator(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeolocator {
+pub struct IGeolocator(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeolocator {
     type Vtable = IGeolocator_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa9c3bf62_4524_4989_8aa9_de019d2e551f);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa9c3bf62_4524_4989_8aa9_de019d2e551f);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeolocator_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub DesiredAccuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PositionAccuracy) -> ::windows::core::HRESULT,
-    pub SetDesiredAccuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PositionAccuracy) -> ::windows::core::HRESULT,
-    pub MovementThreshold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT,
-    pub SetMovementThreshold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows::core::HRESULT,
-    pub ReportInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
-    pub SetReportInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows::core::HRESULT,
-    pub LocationStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PositionStatus) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub DesiredAccuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PositionAccuracy) -> ::windows_core::HRESULT,
+    pub SetDesiredAccuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PositionAccuracy) -> ::windows_core::HRESULT,
+    pub MovementThreshold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
+    pub SetMovementThreshold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
+    pub ReportInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
+    pub SetReportInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
+    pub LocationStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PositionStatus) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub GetGeopositionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetGeopositionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetGeopositionAsync: usize,
     #[cfg(feature = "Foundation")]
-    pub GetGeopositionAsyncWithAgeAndTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maximumage: super::super::Foundation::TimeSpan, timeout: super::super::Foundation::TimeSpan, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetGeopositionAsyncWithAgeAndTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maximumage: super::super::Foundation::TimeSpan, timeout: super::super::Foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetGeopositionAsyncWithAgeAndTimeout: usize,
     #[cfg(feature = "Foundation")]
-    pub PositionChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows::core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub PositionChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     PositionChanged: usize,
     #[cfg(feature = "Foundation")]
-    pub RemovePositionChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub RemovePositionChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemovePositionChanged: usize,
     #[cfg(feature = "Foundation")]
-    pub StatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows::core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub StatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     StatusChanged: usize,
     #[cfg(feature = "Foundation")]
-    pub RemoveStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub RemoveStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveStatusChanged: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeolocator2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeolocator2 {
+pub struct IGeolocator2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeolocator2 {
     type Vtable = IGeolocator2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd1b42e6d_8891_43b4_ad36_27c6fe9a97b1);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd1b42e6d_8891_43b4_ad36_27c6fe9a97b1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeolocator2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub AllowFallbackToConsentlessPositions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub AllowFallbackToConsentlessPositions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeolocatorStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeolocatorStatics {
+pub struct IGeolocatorStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeolocatorStatics {
     type Vtable = IGeolocatorStatics_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9a8e7571_2df5_4591_9f87_eb5fd894e9b7);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9a8e7571_2df5_4591_9f87_eb5fd894e9b7);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeolocatorStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub RequestAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub RequestAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RequestAccessAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub GetGeopositionHistoryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetGeopositionHistoryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetGeopositionHistoryAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub GetGeopositionHistoryWithDurationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, duration: super::super::Foundation::TimeSpan, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetGeopositionHistoryWithDurationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, duration: super::super::Foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetGeopositionHistoryWithDurationAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeolocatorStatics2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeolocatorStatics2 {
+pub struct IGeolocatorStatics2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeolocatorStatics2 {
     type Vtable = IGeolocatorStatics2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x993011a2_fa1c_4631_a71d_0dbeb1250d9c);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x993011a2_fa1c_4631_a71d_0dbeb1250d9c);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeolocatorStatics2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub IsDefaultGeopositionRecommended: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub IsDefaultGeopositionRecommended: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub SetDefaultGeoposition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SetDefaultGeoposition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetDefaultGeoposition: usize,
     #[cfg(feature = "Foundation")]
-    pub DefaultGeoposition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub DefaultGeoposition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     DefaultGeoposition: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeolocatorWithScalarAccuracy(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeolocatorWithScalarAccuracy {
+pub struct IGeolocatorWithScalarAccuracy(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeolocatorWithScalarAccuracy {
     type Vtable = IGeolocatorWithScalarAccuracy_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x96f5d3c1_b80f_460a_994d_a96c47a51aa4);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x96f5d3c1_b80f_460a_994d_a96c47a51aa4);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeolocatorWithScalarAccuracy_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub DesiredAccuracyInMeters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub DesiredAccuracyInMeters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     DesiredAccuracyInMeters: usize,
     #[cfg(feature = "Foundation")]
-    pub SetDesiredAccuracyInMeters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SetDesiredAccuracyInMeters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetDesiredAccuracyInMeters: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeopath(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeopath {
+pub struct IGeopath(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeopath {
     type Vtable = IGeopath_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe53fd7b9_2da4_4714_a652_de8593289898);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe53fd7b9_2da4_4714_a652_de8593289898);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeopath_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Collections")]
-    pub Positions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Positions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Positions: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeopathFactory(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeopathFactory {
+pub struct IGeopathFactory(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeopathFactory {
     type Vtable = IGeopathFactory_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x27bea9c8_c7e7_4359_9b9b_fca3e05ef593);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x27bea9c8_c7e7_4359_9b9b_fca3e05ef593);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeopathFactory_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Collections")]
-    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Create: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub CreateWithAltitudeReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows::core::RawPtr, altitudereferencesystem: AltitudeReferenceSystem, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CreateWithAltitudeReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows_core::RawPtr, altitudereferencesystem: AltitudeReferenceSystem, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateWithAltitudeReference: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub CreateWithAltitudeReferenceAndSpatialReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows::core::RawPtr, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CreateWithAltitudeReferenceAndSpatialReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, positions: ::windows_core::RawPtr, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateWithAltitudeReferenceAndSpatialReference: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeopoint(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeopoint {
+pub struct IGeopoint(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeopoint {
     type Vtable = IGeopoint_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6bfa00eb_e56e_49bb_9caf_cbaa78a8bcef);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6bfa00eb_e56e_49bb_9caf_cbaa78a8bcef);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeopoint_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BasicGeoposition) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BasicGeoposition) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeopointFactory(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeopointFactory {
+pub struct IGeopointFactory(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeopointFactory {
     type Vtable = IGeopointFactory_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdb6b8d33_76bd_4e30_8af7_a844dc37b7a0);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdb6b8d33_76bd_4e30_8af7_a844dc37b7a0);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeopointFactory_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: BasicGeoposition, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub CreateWithAltitudeReferenceSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: BasicGeoposition, altitudereferencesystem: AltitudeReferenceSystem, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub CreateWithAltitudeReferenceSystemAndSpatialReferenceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: BasicGeoposition, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: BasicGeoposition, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateWithAltitudeReferenceSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: BasicGeoposition, altitudereferencesystem: AltitudeReferenceSystem, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateWithAltitudeReferenceSystemAndSpatialReferenceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: BasicGeoposition, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeoposition(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeoposition {
+pub struct IGeoposition(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeoposition {
     type Vtable = IGeoposition_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc18d0454_7d41_4ff7_a957_9dffb4ef7f5b);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc18d0454_7d41_4ff7_a957_9dffb4ef7f5b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeoposition_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Coordinate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub CivicAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Coordinate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CivicAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeoposition2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeoposition2 {
+pub struct IGeoposition2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeoposition2 {
     type Vtable = IGeoposition2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7f62f697_8671_4b0d_86f8_474a8496187c);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7f62f697_8671_4b0d_86f8_474a8496187c);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeoposition2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub VenueData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub VenueData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct IGeoshape(::windows::core::IUnknown);
+pub struct IGeoshape(::windows_core::IUnknown);
 impl IGeoshape {
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn GeoshapeType(&self) -> ::windows::core::Result<GeoshapeType> {
+    pub fn GeoshapeType(&self) -> ::windows_core::Result<GeoshapeType> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<GeoshapeType>::zeroed();
-            (::windows::core::Interface::vtable(this).GeoshapeType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GeoshapeType>(result__)
+            (::windows_core::Interface::vtable(this).GeoshapeType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GeoshapeType>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn SpatialReferenceId(&self) -> ::windows::core::Result<u32> {
+    pub fn SpatialReferenceId(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).SpatialReferenceId)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).SpatialReferenceId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn AltitudeReferenceSystem(&self) -> ::windows::core::Result<AltitudeReferenceSystem> {
+    pub fn AltitudeReferenceSystem(&self) -> ::windows_core::Result<AltitudeReferenceSystem> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<AltitudeReferenceSystem>::zeroed();
-            (::windows::core::Interface::vtable(this).AltitudeReferenceSystem)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AltitudeReferenceSystem>(result__)
+            (::windows_core::Interface::vtable(this).AltitudeReferenceSystem)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AltitudeReferenceSystem>(result__)
         }
     }
 }
-impl ::core::convert::From<IGeoshape> for ::windows::core::IUnknown {
+impl ::core::convert::From<IGeoshape> for ::windows_core::IUnknown {
     fn from(value: IGeoshape) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IGeoshape> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IGeoshape> for ::windows_core::IUnknown {
     fn from(value: &IGeoshape) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IGeoshape {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IGeoshape {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IGeoshape {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IGeoshape {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<IGeoshape> for ::windows::core::IInspectable {
+impl ::core::convert::From<IGeoshape> for ::windows_core::IInspectable {
     fn from(value: IGeoshape) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IGeoshape> for ::windows::core::IInspectable {
+impl ::core::convert::From<&IGeoshape> for ::windows_core::IInspectable {
     fn from(value: &IGeoshape) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IGeoshape {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for IGeoshape {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IGeoshape {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IGeoshape {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IGeoshape {
@@ -2581,150 +2581,150 @@ impl ::core::fmt::Debug for IGeoshape {
         f.debug_tuple("IGeoshape").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for IGeoshape {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{c99ca2af-c729-43c1-8fab-d6dec914df7e}");
+unsafe impl ::windows_core::RuntimeType for IGeoshape {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{c99ca2af-c729-43c1-8fab-d6dec914df7e}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IGeoshape {
+unsafe impl ::windows_core::Interface for IGeoshape {
     type Vtable = IGeoshape_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc99ca2af_c729_43c1_8fab_d6dec914df7e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc99ca2af_c729_43c1_8fab_d6dec914df7e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeoshape_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub GeoshapeType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GeoshapeType) -> ::windows::core::HRESULT,
-    pub SpatialReferenceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
-    pub AltitudeReferenceSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AltitudeReferenceSystem) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub GeoshapeType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GeoshapeType) -> ::windows_core::HRESULT,
+    pub SpatialReferenceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
+    pub AltitudeReferenceSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AltitudeReferenceSystem) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeovisit(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeovisit {
+pub struct IGeovisit(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeovisit {
     type Vtable = IGeovisit_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb1877a76_9ef6_41ab_a0dd_793ece76e2de);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb1877a76_9ef6_41ab_a0dd_793ece76e2de);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeovisit_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub StateChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut VisitStateChange) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub StateChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut VisitStateChange) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows::core::HRESULT,
+    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Timestamp: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeovisitMonitor(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeovisitMonitor {
+pub struct IGeovisitMonitor(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeovisitMonitor {
     type Vtable = IGeovisitMonitor_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x80118aaf_5944_4591_83c1_396647f54f2c);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x80118aaf_5944_4591_83c1_396647f54f2c);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeovisitMonitor_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub MonitoringScope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut VisitMonitoringScope) -> ::windows::core::HRESULT,
-    pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: VisitMonitoringScope) -> ::windows::core::HRESULT,
-    pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub MonitoringScope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut VisitMonitoringScope) -> ::windows_core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: VisitMonitoringScope) -> ::windows_core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub VisitStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows::core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub VisitStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     VisitStateChanged: usize,
     #[cfg(feature = "Foundation")]
-    pub RemoveVisitStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub RemoveVisitStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveVisitStateChanged: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeovisitMonitorStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeovisitMonitorStatics {
+pub struct IGeovisitMonitorStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeovisitMonitorStatics {
     type Vtable = IGeovisitMonitorStatics_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xbcf976a7_bbf2_4cdd_95cf_554c82edfb87);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbcf976a7_bbf2_4cdd_95cf_554c82edfb87);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeovisitMonitorStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub GetLastReportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetLastReportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetLastReportAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeovisitStateChangedEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeovisitStateChangedEventArgs {
+pub struct IGeovisitStateChangedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeovisitStateChangedEventArgs {
     type Vtable = IGeovisitStateChangedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xceb4d1ff_8b53_4968_beed_4cecd029ce15);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xceb4d1ff_8b53_4968_beed_4cecd029ce15);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeovisitStateChangedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Visit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Visit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGeovisitTriggerDetails(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IGeovisitTriggerDetails {
+pub struct IGeovisitTriggerDetails(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGeovisitTriggerDetails {
     type Vtable = IGeovisitTriggerDetails_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xea770d9e_d1c9_454b_99b7_b2f8cdd2482f);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xea770d9e_d1c9_454b_99b7_b2f8cdd2482f);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGeovisitTriggerDetails_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Collections")]
-    pub ReadReports: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub ReadReports: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     ReadReports: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPositionChangedEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPositionChangedEventArgs {
+pub struct IPositionChangedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPositionChangedEventArgs {
     type Vtable = IPositionChangedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x37859ce5_9d1e_46c5_bf3b_6ad8cac1a093);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x37859ce5_9d1e_46c5_bf3b_6ad8cac1a093);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPositionChangedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IStatusChangedEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IStatusChangedEventArgs {
+pub struct IStatusChangedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IStatusChangedEventArgs {
     type Vtable = IStatusChangedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3453d2da_8c93_4111_a205_9aecfc9be5c0);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3453d2da_8c93_4111_a205_9aecfc9be5c0);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IStatusChangedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PositionStatus) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PositionStatus) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IVenueData(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IVenueData {
+pub struct IVenueData(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IVenueData {
     type Vtable = IVenueData_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x66f39187_60e3_4b2f_b527_4f53f1c3c677);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x66f39187_60e3_4b2f_b527_4f53f1c3c677);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVenueData_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub Level: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub Level: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
@@ -2745,7 +2745,7 @@ impl ::core::default::Default for PositionAccuracy {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PositionAccuracy {
+unsafe impl ::windows_core::Abi for PositionAccuracy {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PositionAccuracy {
@@ -2753,23 +2753,23 @@ impl ::core::fmt::Debug for PositionAccuracy {
         f.debug_tuple("PositionAccuracy").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PositionAccuracy {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.PositionAccuracy;i4)");
+unsafe impl ::windows_core::RuntimeType for PositionAccuracy {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.PositionAccuracy;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct PositionChangedEventArgs(::windows::core::IUnknown);
+pub struct PositionChangedEventArgs(::windows_core::IUnknown);
 impl PositionChangedEventArgs {
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Position(&self) -> ::windows::core::Result<Geoposition> {
+    pub fn Position(&self) -> ::windows_core::Result<Geoposition> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Position)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Geoposition>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Geoposition>(result__)
         }
     }
 }
@@ -2789,58 +2789,58 @@ impl ::core::fmt::Debug for PositionChangedEventArgs {
         f.debug_tuple("PositionChangedEventArgs").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PositionChangedEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.PositionChangedEventArgs;{37859ce5-9d1e-46c5-bf3b-6ad8cac1a093})");
+unsafe impl ::windows_core::RuntimeType for PositionChangedEventArgs {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.PositionChangedEventArgs;{37859ce5-9d1e-46c5-bf3b-6ad8cac1a093})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PositionChangedEventArgs {
+unsafe impl ::windows_core::Interface for PositionChangedEventArgs {
     type Vtable = IPositionChangedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = <IPositionChangedEventArgs as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPositionChangedEventArgs as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PositionChangedEventArgs {
+impl ::windows_core::RuntimeName for PositionChangedEventArgs {
     const NAME: &'static str = "Windows.Devices.Geolocation.PositionChangedEventArgs";
 }
-impl ::core::convert::From<PositionChangedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<PositionChangedEventArgs> for ::windows_core::IUnknown {
     fn from(value: PositionChangedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PositionChangedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PositionChangedEventArgs> for ::windows_core::IUnknown {
     fn from(value: &PositionChangedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PositionChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PositionChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PositionChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PositionChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PositionChangedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<PositionChangedEventArgs> for ::windows_core::IInspectable {
     fn from(value: PositionChangedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PositionChangedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PositionChangedEventArgs> for ::windows_core::IInspectable {
     fn from(value: &PositionChangedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PositionChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PositionChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PositionChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PositionChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for PositionChangedEventArgs {}
@@ -2869,7 +2869,7 @@ impl ::core::default::Default for PositionSource {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PositionSource {
+unsafe impl ::windows_core::Abi for PositionSource {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PositionSource {
@@ -2877,10 +2877,10 @@ impl ::core::fmt::Debug for PositionSource {
         f.debug_tuple("PositionSource").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PositionSource {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.PositionSource;i4)");
+unsafe impl ::windows_core::RuntimeType for PositionSource {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.PositionSource;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -2907,7 +2907,7 @@ impl ::core::default::Default for PositionStatus {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PositionStatus {
+unsafe impl ::windows_core::Abi for PositionStatus {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PositionStatus {
@@ -2915,23 +2915,23 @@ impl ::core::fmt::Debug for PositionStatus {
         f.debug_tuple("PositionStatus").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PositionStatus {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.PositionStatus;i4)");
+unsafe impl ::windows_core::RuntimeType for PositionStatus {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.PositionStatus;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct StatusChangedEventArgs(::windows::core::IUnknown);
+pub struct StatusChangedEventArgs(::windows_core::IUnknown);
 impl StatusChangedEventArgs {
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Status(&self) -> ::windows::core::Result<PositionStatus> {
+    pub fn Status(&self) -> ::windows_core::Result<PositionStatus> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PositionStatus>::zeroed();
-            (::windows::core::Interface::vtable(this).Status)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PositionStatus>(result__)
+            (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PositionStatus>(result__)
         }
     }
 }
@@ -2951,80 +2951,80 @@ impl ::core::fmt::Debug for StatusChangedEventArgs {
         f.debug_tuple("StatusChangedEventArgs").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for StatusChangedEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.StatusChangedEventArgs;{3453d2da-8c93-4111-a205-9aecfc9be5c0})");
+unsafe impl ::windows_core::RuntimeType for StatusChangedEventArgs {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.StatusChangedEventArgs;{3453d2da-8c93-4111-a205-9aecfc9be5c0})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for StatusChangedEventArgs {
+unsafe impl ::windows_core::Interface for StatusChangedEventArgs {
     type Vtable = IStatusChangedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = <IStatusChangedEventArgs as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IStatusChangedEventArgs as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for StatusChangedEventArgs {
+impl ::windows_core::RuntimeName for StatusChangedEventArgs {
     const NAME: &'static str = "Windows.Devices.Geolocation.StatusChangedEventArgs";
 }
-impl ::core::convert::From<StatusChangedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<StatusChangedEventArgs> for ::windows_core::IUnknown {
     fn from(value: StatusChangedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&StatusChangedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<&StatusChangedEventArgs> for ::windows_core::IUnknown {
     fn from(value: &StatusChangedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for StatusChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for StatusChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a StatusChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a StatusChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<StatusChangedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<StatusChangedEventArgs> for ::windows_core::IInspectable {
     fn from(value: StatusChangedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&StatusChangedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<&StatusChangedEventArgs> for ::windows_core::IInspectable {
     fn from(value: &StatusChangedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for StatusChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for StatusChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a StatusChangedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a StatusChangedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for StatusChangedEventArgs {}
 unsafe impl ::core::marker::Sync for StatusChangedEventArgs {}
 #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
 #[repr(transparent)]
-pub struct VenueData(::windows::core::IUnknown);
+pub struct VenueData(::windows_core::IUnknown);
 impl VenueData {
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Id(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"Devices_Geolocation\"`*"]
-    pub fn Level(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Level(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Level)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Level)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
 }
@@ -3044,58 +3044,58 @@ impl ::core::fmt::Debug for VenueData {
         f.debug_tuple("VenueData").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for VenueData {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.VenueData;{66f39187-60e3-4b2f-b527-4f53f1c3c677})");
+unsafe impl ::windows_core::RuntimeType for VenueData {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Devices.Geolocation.VenueData;{66f39187-60e3-4b2f-b527-4f53f1c3c677})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for VenueData {
+unsafe impl ::windows_core::Interface for VenueData {
     type Vtable = IVenueData_Vtbl;
-    const IID: ::windows::core::GUID = <IVenueData as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IVenueData as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for VenueData {
+impl ::windows_core::RuntimeName for VenueData {
     const NAME: &'static str = "Windows.Devices.Geolocation.VenueData";
 }
-impl ::core::convert::From<VenueData> for ::windows::core::IUnknown {
+impl ::core::convert::From<VenueData> for ::windows_core::IUnknown {
     fn from(value: VenueData) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&VenueData> for ::windows::core::IUnknown {
+impl ::core::convert::From<&VenueData> for ::windows_core::IUnknown {
     fn from(value: &VenueData) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for VenueData {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for VenueData {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a VenueData {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a VenueData {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<VenueData> for ::windows::core::IInspectable {
+impl ::core::convert::From<VenueData> for ::windows_core::IInspectable {
     fn from(value: VenueData) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&VenueData> for ::windows::core::IInspectable {
+impl ::core::convert::From<&VenueData> for ::windows_core::IInspectable {
     fn from(value: &VenueData) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for VenueData {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for VenueData {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a VenueData {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a VenueData {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for VenueData {}
@@ -3119,7 +3119,7 @@ impl ::core::default::Default for VisitMonitoringScope {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VisitMonitoringScope {
+unsafe impl ::windows_core::Abi for VisitMonitoringScope {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VisitMonitoringScope {
@@ -3127,10 +3127,10 @@ impl ::core::fmt::Debug for VisitMonitoringScope {
         f.debug_tuple("VisitMonitoringScope").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for VisitMonitoringScope {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.VisitMonitoringScope;i4)");
+unsafe impl ::windows_core::RuntimeType for VisitMonitoringScope {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.VisitMonitoringScope;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -3155,7 +3155,7 @@ impl ::core::default::Default for VisitStateChange {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VisitStateChange {
+unsafe impl ::windows_core::Abi for VisitStateChange {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VisitStateChange {
@@ -3163,10 +3163,10 @@ impl ::core::fmt::Debug for VisitStateChange {
         f.debug_tuple("VisitStateChange").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for VisitStateChange {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.VisitStateChange;i4)");
+unsafe impl ::windows_core::RuntimeType for VisitStateChange {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Devices.Geolocation.VisitStateChange;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }

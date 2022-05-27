@@ -2,17 +2,17 @@
 pub mod Injection;
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputActivationListenerPreviewStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IInputActivationListenerPreviewStatics {
+pub struct IInputActivationListenerPreviewStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputActivationListenerPreviewStatics {
     type Vtable = IInputActivationListenerPreviewStatics_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf0551ce5_0de6_5be0_a589_f737201a4582);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf0551ce5_0de6_5be0_a589_f737201a4582);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputActivationListenerPreviewStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "UI_WindowManagement")]
-    pub CreateForApplicationWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CreateForApplicationWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI_WindowManagement"))]
     CreateForApplicationWindow: usize,
 }
@@ -21,19 +21,19 @@ pub struct InputActivationListenerPreview;
 impl InputActivationListenerPreview {
     #[doc = "*Required features: `\"UI_Input_Preview\"`, `\"UI_WindowManagement\"`*"]
     #[cfg(feature = "UI_WindowManagement")]
-    pub fn CreateForApplicationWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::WindowManagement::AppWindow>>(window: Param0) -> ::windows::core::Result<super::InputActivationListener> {
+    pub fn CreateForApplicationWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::WindowManagement::AppWindow>>(window: Param0) -> ::windows_core::Result<super::InputActivationListener> {
         Self::IInputActivationListenerPreviewStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CreateForApplicationWindow)(::windows::core::Interface::as_raw(this), window.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::InputActivationListener>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CreateForApplicationWindow)(::windows_core::Interface::as_raw(this), window.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::InputActivationListener>(result__)
         })
     }
     #[doc(hidden)]
-    pub fn IInputActivationListenerPreviewStatics<R, F: FnOnce(&IInputActivationListenerPreviewStatics) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<InputActivationListenerPreview, IInputActivationListenerPreviewStatics> = ::windows::core::FactoryCache::new();
+    pub fn IInputActivationListenerPreviewStatics<R, F: FnOnce(&IInputActivationListenerPreviewStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<InputActivationListenerPreview, IInputActivationListenerPreviewStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
-impl ::windows::core::RuntimeName for InputActivationListenerPreview {
+impl ::windows_core::RuntimeName for InputActivationListenerPreview {
     const NAME: &'static str = "Windows.UI.Input.Preview.InputActivationListenerPreview";
 }
 #[cfg(feature = "implement")]

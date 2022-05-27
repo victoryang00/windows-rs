@@ -60,11 +60,11 @@ fn gen_class(gen: &Gen, def: TypeDef) -> TokenStream {
                     return Some(quote! {
                         #hidden
                         #features
-                        pub fn #interface_type<R, F: FnOnce(&#interface_type) -> ::windows::core::Result<R>>(
+                        pub fn #interface_type<R, F: FnOnce(&#interface_type) -> ::windows_core::Result<R>>(
                             callback: F,
-                        ) -> ::windows::core::Result<R> {
-                            static mut SHARED: ::windows::core::FactoryCache<#name, #interface_type> =
-                                ::windows::core::FactoryCache::new();
+                        ) -> ::windows_core::Result<R> {
+                            static mut SHARED: ::windows_core::FactoryCache<#name, #interface_type> =
+                                ::windows_core::FactoryCache::new();
                             unsafe { SHARED.call(callback) }
                         }
                     });
@@ -78,14 +78,14 @@ fn gen_class(gen: &Gen, def: TypeDef) -> TokenStream {
     if gen.reader.type_def_has_default_interface(def) {
         let new = if gen.reader.type_def_has_default_constructor(def) {
             quote! {
-                pub fn new() -> ::windows::core::Result<Self> {
+                pub fn new() -> ::windows_core::Result<Self> {
                     Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
                 }
-                fn IActivationFactory<R, F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>>(
+                fn IActivationFactory<R, F: FnOnce(&::windows_core::IGenericFactory) -> ::windows_core::Result<R>>(
                     callback: F,
-                ) -> ::windows::core::Result<R> {
-                    static mut SHARED: ::windows::core::FactoryCache<#name, ::windows::core::IGenericFactory> =
-                        ::windows::core::FactoryCache::new();
+                ) -> ::windows_core::Result<R> {
+                    static mut SHARED: ::windows_core::FactoryCache<#name, ::windows_core::IGenericFactory> =
+                        ::windows_core::FactoryCache::new();
                     unsafe { SHARED.call(callback) }
                 }
             }
@@ -97,7 +97,7 @@ fn gen_class(gen: &Gen, def: TypeDef) -> TokenStream {
             #doc
             #features
             #[repr(transparent)]
-            pub struct #name(::windows::core::IUnknown);
+            pub struct #name(::windows_core::IUnknown);
             #features
             impl #name {
                 #new
@@ -152,15 +152,15 @@ fn gen_conversions(gen: &Gen, def: TypeDef, name: &TokenStream, interfaces: &[In
                 }
             }
             #features
-            impl<'a> ::windows::core::IntoParam<'a, #into> for #name {
-                fn into_param(self) -> ::windows::core::Param<'a, #into> {
-                    ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+            impl<'a> ::windows_core::IntoParam<'a, #into> for #name {
+                fn into_param(self) -> ::windows_core::Param<'a, #into> {
+                    ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
                 }
             }
             #features
-            impl<'a> ::windows::core::IntoParam<'a, #into> for &'a #name {
-                fn into_param(self) -> ::windows::core::Param<'a, #into> {
-                    ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+            impl<'a> ::windows_core::IntoParam<'a, #into> for &'a #name {
+                fn into_param(self) -> ::windows_core::Param<'a, #into> {
+                    ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
                 }
             }
         });
@@ -182,30 +182,30 @@ fn gen_conversions(gen: &Gen, def: TypeDef, name: &TokenStream, interfaces: &[In
         tokens.combine(&quote! {
             #features
             impl ::core::convert::TryFrom<#name> for #into {
-                type Error = ::windows::core::Error;
-                fn try_from(value: #name) -> ::windows::core::Result<Self> {
+                type Error = ::windows_core::Error;
+                fn try_from(value: #name) -> ::windows_core::Result<Self> {
                     ::core::convert::TryFrom::try_from(&value)
                 }
             }
             #features
             impl ::core::convert::TryFrom<&#name> for #into {
-                type Error = ::windows::core::Error;
-                fn try_from(value: &#name) -> ::windows::core::Result<Self> {
-                    ::windows::core::Interface::cast(value)
+                type Error = ::windows_core::Error;
+                fn try_from(value: &#name) -> ::windows_core::Result<Self> {
+                    ::windows_core::Interface::cast(value)
                 }
             }
             #features
-            impl<'a> ::windows::core::IntoParam<'a, #into> for #name {
-                fn into_param(self) -> ::windows::core::Param<'a, #into> {
-                    ::windows::core::IntoParam::into_param(&self)
+            impl<'a> ::windows_core::IntoParam<'a, #into> for #name {
+                fn into_param(self) -> ::windows_core::Param<'a, #into> {
+                    ::windows_core::IntoParam::into_param(&self)
                 }
             }
             #features
-            impl<'a> ::windows::core::IntoParam<'a, #into> for &#name {
-                fn into_param(self) -> ::windows::core::Param<'a, #into> {
+            impl<'a> ::windows_core::IntoParam<'a, #into> for &#name {
+                fn into_param(self) -> ::windows_core::Param<'a, #into> {
                     ::core::convert::TryInto::<#into>::try_into(self)
-                        .map(::windows::core::Param::Owned)
-                        .unwrap_or(::windows::core::Param::None)
+                        .map(::windows_core::Param::Owned)
+                        .unwrap_or(::windows_core::Param::None)
                 }
             }
         });
@@ -227,19 +227,19 @@ fn gen_conversions(gen: &Gen, def: TypeDef, name: &TokenStream, interfaces: &[In
                 fn from(value: &#name) -> Self {
                     // This unwrap is legitimate because conversion to base can never fail because
                     // the base can never change across versions.
-                    ::windows::core::Interface::cast(value).unwrap()
+                    ::windows_core::Interface::cast(value).unwrap()
                 }
             }
             #features
-            impl<'a> ::windows::core::IntoParam<'a, #into> for #name {
-                fn into_param(self) -> ::windows::core::Param<'a, #into> {
-                    ::windows::core::IntoParam::into_param(&self)
+            impl<'a> ::windows_core::IntoParam<'a, #into> for #name {
+                fn into_param(self) -> ::windows_core::Param<'a, #into> {
+                    ::windows_core::IntoParam::into_param(&self)
                 }
             }
             #features
-            impl<'a> ::windows::core::IntoParam<'a, #into> for &#name {
-                fn into_param(self) -> ::windows::core::Param<'a, #into> {
-                    ::windows::core::Param::Owned(::core::convert::Into::<#into>::into(self))
+            impl<'a> ::windows_core::IntoParam<'a, #into> for &#name {
+                fn into_param(self) -> ::windows_core::Param<'a, #into> {
+                    ::windows_core::Param::Owned(::core::convert::Into::<#into>::into(self))
                 }
             }
         });

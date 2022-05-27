@@ -1,8 +1,8 @@
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
 pub struct COMDLG_FILTERSPEC {
-    pub pszName: ::windows::core::PCWSTR,
-    pub pszSpec: ::windows::core::PCWSTR,
+    pub pszName: ::windows_core::PCWSTR,
+    pub pszSpec: ::windows_core::PCWSTR,
 }
 impl ::core::marker::Copy for COMDLG_FILTERSPEC {}
 impl ::core::clone::Clone for COMDLG_FILTERSPEC {
@@ -15,12 +15,12 @@ impl ::core::fmt::Debug for COMDLG_FILTERSPEC {
         f.debug_struct("COMDLG_FILTERSPEC").field("pszName", &self.pszName).field("pszSpec", &self.pszSpec).finish()
     }
 }
-unsafe impl ::windows::core::Abi for COMDLG_FILTERSPEC {
+unsafe impl ::windows_core::Abi for COMDLG_FILTERSPEC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for COMDLG_FILTERSPEC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COMDLG_FILTERSPEC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COMDLG_FILTERSPEC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for COMDLG_FILTERSPEC {}
@@ -78,7 +78,7 @@ impl ::core::default::Default for DEVICE_SCALE_FACTOR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DEVICE_SCALE_FACTOR {
+unsafe impl ::windows_core::Abi for DEVICE_SCALE_FACTOR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DEVICE_SCALE_FACTOR {
@@ -88,37 +88,37 @@ impl ::core::fmt::Debug for DEVICE_SCALE_FACTOR {
 }
 #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
 #[repr(transparent)]
-pub struct IObjectArray(::windows::core::IUnknown);
+pub struct IObjectArray(::windows_core::IUnknown);
 impl IObjectArray {
     #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
-    pub unsafe fn GetCount(&self) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetCount(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).GetCount)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).GetCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
-    pub unsafe fn GetAt<T: ::windows::core::Interface>(&self, uiindex: u32) -> ::windows::core::Result<T> {
+    pub unsafe fn GetAt<T: ::windows_core::Interface>(&self, uiindex: u32) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).GetAt)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(uiindex), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).GetAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uiindex), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
 }
-impl ::core::convert::From<IObjectArray> for ::windows::core::IUnknown {
+impl ::core::convert::From<IObjectArray> for ::windows_core::IUnknown {
     fn from(value: IObjectArray) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IObjectArray> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IObjectArray> for ::windows_core::IUnknown {
     fn from(value: &IObjectArray) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IObjectArray {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IObjectArray {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IObjectArray {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IObjectArray {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IObjectArray {
@@ -137,66 +137,66 @@ impl ::core::fmt::Debug for IObjectArray {
         f.debug_tuple("IObjectArray").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IObjectArray {
+unsafe impl ::windows_core::Interface for IObjectArray {
     type Vtable = IObjectArray_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x92ca9dcd_5622_4bba_a805_5e9f541bd8c9);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x92ca9dcd_5622_4bba_a805_5e9f541bd8c9);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IObjectArray_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcobjects: *mut u32) -> ::windows::core::HRESULT,
-    pub GetAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcobjects: *mut u32) -> ::windows_core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
 #[repr(transparent)]
-pub struct IObjectCollection(::windows::core::IUnknown);
+pub struct IObjectCollection(::windows_core::IUnknown);
 impl IObjectCollection {
     #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
-    pub unsafe fn GetCount(&self) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetCount(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).base__.GetCount)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).base__.GetCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
-    pub unsafe fn GetAt<T: ::windows::core::Interface>(&self, uiindex: u32) -> ::windows::core::Result<T> {
+    pub unsafe fn GetAt<T: ::windows_core::Interface>(&self, uiindex: u32) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).base__.GetAt)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(uiindex), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).base__.GetAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uiindex), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
-    pub unsafe fn AddObject<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, punk: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).AddObject)(::windows::core::Interface::as_raw(self), punk.into_param().abi()).ok()
+    pub unsafe fn AddObject<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, punk: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).AddObject)(::windows_core::Interface::as_raw(self), punk.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
-    pub unsafe fn AddFromArray<'a, Param0: ::windows::core::IntoParam<'a, IObjectArray>>(&self, poasource: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).AddFromArray)(::windows::core::Interface::as_raw(self), poasource.into_param().abi()).ok()
+    pub unsafe fn AddFromArray<'a, Param0: ::windows_core::IntoParam<'a, IObjectArray>>(&self, poasource: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).AddFromArray)(::windows_core::Interface::as_raw(self), poasource.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
-    pub unsafe fn RemoveObjectAt(&self, uiindex: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).RemoveObjectAt)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(uiindex)).ok()
+    pub unsafe fn RemoveObjectAt(&self, uiindex: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).RemoveObjectAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uiindex)).ok()
     }
     #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
-    pub unsafe fn Clear(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Clear)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Clear(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Clear)(::windows_core::Interface::as_raw(self)).ok()
     }
 }
-impl ::core::convert::From<IObjectCollection> for ::windows::core::IUnknown {
+impl ::core::convert::From<IObjectCollection> for ::windows_core::IUnknown {
     fn from(value: IObjectCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IObjectCollection> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IObjectCollection> for ::windows_core::IUnknown {
     fn from(value: &IObjectCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IObjectCollection {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IObjectCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IObjectCollection {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IObjectCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IObjectCollection> for IObjectArray {
@@ -209,14 +209,14 @@ impl ::core::convert::From<&IObjectCollection> for IObjectArray {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IObjectArray> for IObjectCollection {
-    fn into_param(self) -> ::windows::core::Param<'a, IObjectArray> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IObjectArray> for IObjectCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, IObjectArray> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IObjectArray> for &'a IObjectCollection {
-    fn into_param(self) -> ::windows::core::Param<'a, IObjectArray> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IObjectArray> for &'a IObjectCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, IObjectArray> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IObjectCollection {
@@ -235,18 +235,18 @@ impl ::core::fmt::Debug for IObjectCollection {
         f.debug_tuple("IObjectCollection").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IObjectCollection {
+unsafe impl ::windows_core::Interface for IObjectCollection {
     type Vtable = IObjectCollection_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5632b1a4_e38a_400a_928a_d4cd63230295);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5632b1a4_e38a_400a_928a_d4cd63230295);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IObjectCollection_Vtbl {
     pub base__: IObjectArray_Vtbl,
-    pub AddObject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, punk: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub AddFromArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poasource: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub RemoveObjectAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32) -> ::windows::core::HRESULT,
-    pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub AddObject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, punk: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub AddFromArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poasource: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub RemoveObjectAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uiindex: u32) -> ::windows_core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
@@ -259,12 +259,12 @@ impl ::core::clone::Clone for ITEMIDLIST {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for ITEMIDLIST {
+unsafe impl ::windows_core::Abi for ITEMIDLIST {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ITEMIDLIST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ITEMIDLIST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ITEMIDLIST>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ITEMIDLIST {}
@@ -320,7 +320,7 @@ impl ::core::default::Default for PERCEIVED {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PERCEIVED {
+unsafe impl ::windows_core::Abi for PERCEIVED {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PERCEIVED {
@@ -397,7 +397,7 @@ impl ::core::default::Default for SHCOLSTATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SHCOLSTATE {
+unsafe impl ::windows_core::Abi for SHCOLSTATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SHCOLSTATE {
@@ -418,12 +418,12 @@ impl ::core::clone::Clone for SHELLDETAILS {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for SHELLDETAILS {
+unsafe impl ::windows_core::Abi for SHELLDETAILS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SHELLDETAILS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SHELLDETAILS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SHELLDETAILS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SHELLDETAILS {}
@@ -444,12 +444,12 @@ impl ::core::clone::Clone for SHITEMID {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for SHITEMID {
+unsafe impl ::windows_core::Abi for SHITEMID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SHITEMID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SHITEMID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SHITEMID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SHITEMID {}
@@ -470,12 +470,12 @@ impl ::core::clone::Clone for STRRET {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for STRRET {
+unsafe impl ::windows_core::Abi for STRRET {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STRRET {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STRRET>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STRRET>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STRRET {}
@@ -487,7 +487,7 @@ impl ::core::default::Default for STRRET {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
 pub union STRRET_0 {
-    pub pOleStr: ::windows::core::PWSTR,
+    pub pOleStr: ::windows_core::PWSTR,
     pub uOffset: u32,
     pub cStr: [u8; 260],
 }
@@ -497,12 +497,12 @@ impl ::core::clone::Clone for STRRET_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for STRRET_0 {
+unsafe impl ::windows_core::Abi for STRRET_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STRRET_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STRRET_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STRRET_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STRRET_0 {}
@@ -532,7 +532,7 @@ impl ::core::default::Default for STRRET_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for STRRET_TYPE {
+unsafe impl ::windows_core::Abi for STRRET_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for STRRET_TYPE {

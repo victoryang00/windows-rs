@@ -1,17 +1,17 @@
-pub const CLSID_IITCmdInt: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1180883618, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
-pub const CLSID_IITDatabase: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1718039634, data2: 35875, data3: 4560, data4: [168, 78, 0, 170, 0, 108, 125, 1] };
-pub const CLSID_IITDatabaseLocal: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1180883625, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
-pub const CLSID_IITGroupUpdate: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1180883620, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
-pub const CLSID_IITIndexBuild: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2409682346, data2: 57055, data3: 4560, data4: [154, 97, 0, 192, 79, 182, 139, 247] };
-pub const CLSID_IITPropList: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1180883630, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
-pub const CLSID_IITResultSet: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1180883623, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
-pub const CLSID_IITSvMgr: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1180883619, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
-pub const CLSID_IITWWFilterBuild: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2409682347, data2: 57055, data3: 4560, data4: [154, 97, 0, 192, 79, 182, 139, 247] };
-pub const CLSID_IITWordWheel: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3610715586, data2: 35858, data3: 4560, data4: [168, 78, 0, 170, 0, 108, 125, 1] };
-pub const CLSID_IITWordWheelLocal: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1180883624, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
-pub const CLSID_IITWordWheelUpdate: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1180883621, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
-pub const CLSID_ITEngStemmer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2409682344, data2: 57055, data3: 4560, data4: [154, 97, 0, 192, 79, 182, 139, 247] };
-pub const CLSID_ITStdBreaker: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1180883631, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
+pub const CLSID_IITCmdInt: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1180883618, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
+pub const CLSID_IITDatabase: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1718039634, data2: 35875, data3: 4560, data4: [168, 78, 0, 170, 0, 108, 125, 1] };
+pub const CLSID_IITDatabaseLocal: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1180883625, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
+pub const CLSID_IITGroupUpdate: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1180883620, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
+pub const CLSID_IITIndexBuild: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2409682346, data2: 57055, data3: 4560, data4: [154, 97, 0, 192, 79, 182, 139, 247] };
+pub const CLSID_IITPropList: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1180883630, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
+pub const CLSID_IITResultSet: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1180883623, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
+pub const CLSID_IITSvMgr: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1180883619, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
+pub const CLSID_IITWWFilterBuild: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2409682347, data2: 57055, data3: 4560, data4: [154, 97, 0, 192, 79, 182, 139, 247] };
+pub const CLSID_IITWordWheel: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3610715586, data2: 35858, data3: 4560, data4: [168, 78, 0, 170, 0, 108, 125, 1] };
+pub const CLSID_IITWordWheelLocal: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1180883624, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
+pub const CLSID_IITWordWheelUpdate: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1180883621, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
+pub const CLSID_ITEngStemmer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2409682344, data2: 57055, data3: 4560, data4: [154, 97, 0, 192, 79, 182, 139, 247] };
+pub const CLSID_ITStdBreaker: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1180883631, data2: 54163, data3: 4560, data4: [154, 86, 0, 192, 79, 182, 139, 247] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
 pub struct COLUMNSTATUS {
@@ -46,7 +46,7 @@ impl ::core::clone::Clone for CProperty {
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub union CProperty_0 {
-    pub lpszwData: ::windows_sys::core::PWSTR,
+    pub lpszwData: ::windows_sys_core::PWSTR,
     pub lpvData: *mut ::core::ffi::c_void,
     pub dwValue: u32,
 }
@@ -59,129 +59,129 @@ impl ::core::clone::Clone for CProperty_0 {
     }
 }
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_ALL_WILD: ::windows_sys::core::HRESULT = -2147479467i32;
+pub const E_ALL_WILD: ::windows_sys_core::HRESULT = -2147479467i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_ALREADYINIT: ::windows_sys::core::HRESULT = -2147479421i32;
+pub const E_ALREADYINIT: ::windows_sys_core::HRESULT = -2147479421i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_ALREADYOPEN: ::windows_sys::core::HRESULT = -2147479533i32;
+pub const E_ALREADYOPEN: ::windows_sys_core::HRESULT = -2147479533i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_ASSERT: ::windows_sys::core::HRESULT = -2147479546i32;
+pub const E_ASSERT: ::windows_sys_core::HRESULT = -2147479546i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_BADBREAKER: ::windows_sys::core::HRESULT = -2147479469i32;
+pub const E_BADBREAKER: ::windows_sys_core::HRESULT = -2147479469i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_BADFILE: ::windows_sys::core::HRESULT = -2147479549i32;
+pub const E_BADFILE: ::windows_sys_core::HRESULT = -2147479549i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_BADFILTERSIZE: ::windows_sys::core::HRESULT = -2147479528i32;
+pub const E_BADFILTERSIZE: ::windows_sys_core::HRESULT = -2147479528i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_BADFORMAT: ::windows_sys::core::HRESULT = -2147479548i32;
+pub const E_BADFORMAT: ::windows_sys_core::HRESULT = -2147479548i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_BADINDEXFLAGS: ::windows_sys::core::HRESULT = -2147479456i32;
+pub const E_BADINDEXFLAGS: ::windows_sys_core::HRESULT = -2147479456i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_BADPARAM: ::windows_sys::core::HRESULT = -2147479535i32;
+pub const E_BADPARAM: ::windows_sys_core::HRESULT = -2147479535i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_BADRANGEOP: ::windows_sys::core::HRESULT = -2147479459i32;
+pub const E_BADRANGEOP: ::windows_sys_core::HRESULT = -2147479459i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_BADVALUE: ::windows_sys::core::HRESULT = -2147479468i32;
+pub const E_BADVALUE: ::windows_sys_core::HRESULT = -2147479468i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_BADVERSION: ::windows_sys::core::HRESULT = -2147479550i32;
+pub const E_BADVERSION: ::windows_sys_core::HRESULT = -2147479550i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_CANTFINDDLL: ::windows_sys::core::HRESULT = -2147479538i32;
+pub const E_CANTFINDDLL: ::windows_sys_core::HRESULT = -2147479538i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_DISKFULL: ::windows_sys::core::HRESULT = -2147479496i32;
+pub const E_DISKFULL: ::windows_sys_core::HRESULT = -2147479496i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_DUPLICATE: ::windows_sys::core::HRESULT = -2147479551i32;
+pub const E_DUPLICATE: ::windows_sys_core::HRESULT = -2147479551i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_EXPECTEDTERM: ::windows_sys::core::HRESULT = -2147479465i32;
+pub const E_EXPECTEDTERM: ::windows_sys_core::HRESULT = -2147479465i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_FILECLOSE: ::windows_sys::core::HRESULT = -2147479503i32;
+pub const E_FILECLOSE: ::windows_sys_core::HRESULT = -2147479503i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_FILECREATE: ::windows_sys::core::HRESULT = -2147479504i32;
+pub const E_FILECREATE: ::windows_sys_core::HRESULT = -2147479504i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_FILEDELETE: ::windows_sys::core::HRESULT = -2147479499i32;
+pub const E_FILEDELETE: ::windows_sys_core::HRESULT = -2147479499i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_FILEINVALID: ::windows_sys::core::HRESULT = -2147479498i32;
+pub const E_FILEINVALID: ::windows_sys_core::HRESULT = -2147479498i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_FILENOTFOUND: ::windows_sys::core::HRESULT = -2147479497i32;
+pub const E_FILENOTFOUND: ::windows_sys_core::HRESULT = -2147479497i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_FILEREAD: ::windows_sys::core::HRESULT = -2147479502i32;
+pub const E_FILEREAD: ::windows_sys_core::HRESULT = -2147479502i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_FILESEEK: ::windows_sys::core::HRESULT = -2147479501i32;
+pub const E_FILESEEK: ::windows_sys_core::HRESULT = -2147479501i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_FILEWRITE: ::windows_sys::core::HRESULT = -2147479500i32;
+pub const E_FILEWRITE: ::windows_sys_core::HRESULT = -2147479500i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_GETLASTERROR: ::windows_sys::core::HRESULT = -2147479536i32;
+pub const E_GETLASTERROR: ::windows_sys_core::HRESULT = -2147479536i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_GROUPIDTOOBIG: ::windows_sys::core::HRESULT = -2147479542i32;
+pub const E_GROUPIDTOOBIG: ::windows_sys_core::HRESULT = -2147479542i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_INTERRUPT: ::windows_sys::core::HRESULT = -2147479545i32;
+pub const E_INTERRUPT: ::windows_sys_core::HRESULT = -2147479545i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_INVALIDSTATE: ::windows_sys::core::HRESULT = -2147479534i32;
+pub const E_INVALIDSTATE: ::windows_sys_core::HRESULT = -2147479534i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_MISSINGPROP: ::windows_sys::core::HRESULT = -2147479424i32;
+pub const E_MISSINGPROP: ::windows_sys_core::HRESULT = -2147479424i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_MISSLPAREN: ::windows_sys::core::HRESULT = -2147479464i32;
+pub const E_MISSLPAREN: ::windows_sys_core::HRESULT = -2147479464i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_MISSQUOTE: ::windows_sys::core::HRESULT = -2147479462i32;
+pub const E_MISSQUOTE: ::windows_sys_core::HRESULT = -2147479462i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_MISSRPAREN: ::windows_sys::core::HRESULT = -2147479463i32;
+pub const E_MISSRPAREN: ::windows_sys_core::HRESULT = -2147479463i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_NAMETOOLONG: ::windows_sys::core::HRESULT = -2147479520i32;
+pub const E_NAMETOOLONG: ::windows_sys_core::HRESULT = -2147479520i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_NOHANDLE: ::windows_sys::core::HRESULT = -2147479537i32;
+pub const E_NOHANDLE: ::windows_sys_core::HRESULT = -2147479537i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_NOKEYPROP: ::windows_sys::core::HRESULT = -2147479417i32;
+pub const E_NOKEYPROP: ::windows_sys_core::HRESULT = -2147479417i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_NOMERGEDDATA: ::windows_sys::core::HRESULT = -2147479540i32;
+pub const E_NOMERGEDDATA: ::windows_sys_core::HRESULT = -2147479540i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_NOPERMISSION: ::windows_sys::core::HRESULT = -2147479547i32;
+pub const E_NOPERMISSION: ::windows_sys_core::HRESULT = -2147479547i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_NOSTEMMER: ::windows_sys::core::HRESULT = -2147479454i32;
+pub const E_NOSTEMMER: ::windows_sys_core::HRESULT = -2147479454i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_NOTEXIST: ::windows_sys::core::HRESULT = -2147479552i32;
+pub const E_NOTEXIST: ::windows_sys_core::HRESULT = -2147479552i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_NOTFOUND: ::windows_sys::core::HRESULT = -2147479539i32;
+pub const E_NOTFOUND: ::windows_sys_core::HRESULT = -2147479539i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_NOTINIT: ::windows_sys::core::HRESULT = -2147479420i32;
+pub const E_NOTINIT: ::windows_sys_core::HRESULT = -2147479420i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_NOTOPEN: ::windows_sys::core::HRESULT = -2147479533i32;
+pub const E_NOTOPEN: ::windows_sys_core::HRESULT = -2147479533i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_NOTSUPPORTED: ::windows_sys::core::HRESULT = -2147479544i32;
+pub const E_NOTSUPPORTED: ::windows_sys_core::HRESULT = -2147479544i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_NULLQUERY: ::windows_sys::core::HRESULT = -2147479461i32;
+pub const E_NULLQUERY: ::windows_sys_core::HRESULT = -2147479461i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_OUTOFRANGE: ::windows_sys::core::HRESULT = -2147479543i32;
+pub const E_OUTOFRANGE: ::windows_sys_core::HRESULT = -2147479543i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_PROPLISTEMPTY: ::windows_sys::core::HRESULT = -2147479422i32;
+pub const E_PROPLISTEMPTY: ::windows_sys_core::HRESULT = -2147479422i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_PROPLISTNOTEMPTY: ::windows_sys::core::HRESULT = -2147479423i32;
+pub const E_PROPLISTNOTEMPTY: ::windows_sys_core::HRESULT = -2147479423i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_RESULTSETEMPTY: ::windows_sys::core::HRESULT = -2147479419i32;
+pub const E_RESULTSETEMPTY: ::windows_sys_core::HRESULT = -2147479419i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_STOPWORD: ::windows_sys::core::HRESULT = -2147479460i32;
+pub const E_STOPWORD: ::windows_sys_core::HRESULT = -2147479460i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_TOODEEP: ::windows_sys::core::HRESULT = -2147479466i32;
+pub const E_TOODEEP: ::windows_sys_core::HRESULT = -2147479466i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_TOOMANYCOLUMNS: ::windows_sys::core::HRESULT = -2147479418i32;
+pub const E_TOOMANYCOLUMNS: ::windows_sys_core::HRESULT = -2147479418i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_TOOMANYDUPS: ::windows_sys::core::HRESULT = -2147479471i32;
+pub const E_TOOMANYDUPS: ::windows_sys_core::HRESULT = -2147479471i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_TOOMANYOBJECTS: ::windows_sys::core::HRESULT = -2147479527i32;
+pub const E_TOOMANYOBJECTS: ::windows_sys_core::HRESULT = -2147479527i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_TOOMANYTITLES: ::windows_sys::core::HRESULT = -2147479541i32;
+pub const E_TOOMANYTITLES: ::windows_sys_core::HRESULT = -2147479541i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_TOOMANYTOPICS: ::windows_sys::core::HRESULT = -2147479472i32;
+pub const E_TOOMANYTOPICS: ::windows_sys_core::HRESULT = -2147479472i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_TREETOOBIG: ::windows_sys::core::HRESULT = -2147479470i32;
+pub const E_TREETOOBIG: ::windows_sys_core::HRESULT = -2147479470i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_UNKNOWN_TRANSPORT: ::windows_sys::core::HRESULT = -2147479530i32;
+pub const E_UNKNOWN_TRANSPORT: ::windows_sys_core::HRESULT = -2147479530i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_UNMATCHEDTYPE: ::windows_sys::core::HRESULT = -2147479458i32;
+pub const E_UNMATCHEDTYPE: ::windows_sys_core::HRESULT = -2147479458i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_UNSUPPORTED_TRANSPORT: ::windows_sys::core::HRESULT = -2147479529i32;
+pub const E_UNSUPPORTED_TRANSPORT: ::windows_sys_core::HRESULT = -2147479529i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_WILD_IN_DTYPE: ::windows_sys::core::HRESULT = -2147479455i32;
+pub const E_WILD_IN_DTYPE: ::windows_sys_core::HRESULT = -2147479455i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
-pub const E_WORDTOOLONG: ::windows_sys::core::HRESULT = -2147479457i32;
+pub const E_WORDTOOLONG: ::windows_sys_core::HRESULT = -2147479457i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
 pub const HHACT_BACK: i32 = 7i32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
@@ -235,7 +235,7 @@ pub const HHACT_ZOOM: i32 = 19i32;
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 pub struct HHNTRACK {
     pub hdr: super::super::UI::Controls::NMHDR,
-    pub pszCurUrl: ::windows_sys::core::PCSTR,
+    pub pszCurUrl: ::windows_sys_core::PCSTR,
     pub idAction: i32,
     pub phhWinType: *mut HH_WINTYPE,
 }
@@ -252,7 +252,7 @@ impl ::core::clone::Clone for HHNTRACK {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 pub struct HHN_NOTIFY {
     pub hdr: super::super::UI::Controls::NMHDR,
-    pub pszUrl: ::windows_sys::core::PCSTR,
+    pub pszUrl: ::windows_sys_core::PCSTR,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 impl ::core::marker::Copy for HHN_NOTIFY {}
@@ -449,8 +449,8 @@ pub const HH_DISPLAY_TOPIC: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
 pub struct HH_ENUM_CAT {
     pub cbStruct: i32,
-    pub pszCatName: ::windows_sys::core::PCSTR,
-    pub pszCatDescription: ::windows_sys::core::PCSTR,
+    pub pszCatName: ::windows_sys_core::PCSTR,
+    pub pszCatDescription: ::windows_sys_core::PCSTR,
 }
 impl ::core::marker::Copy for HH_ENUM_CAT {}
 impl ::core::clone::Clone for HH_ENUM_CAT {
@@ -469,9 +469,9 @@ pub const HH_ENUM_INFO_TYPE: u32 = 7u32;
 pub struct HH_ENUM_IT {
     pub cbStruct: i32,
     pub iType: i32,
-    pub pszCatName: ::windows_sys::core::PCSTR,
-    pub pszITName: ::windows_sys::core::PCSTR,
-    pub pszITDescription: ::windows_sys::core::PCSTR,
+    pub pszCatName: ::windows_sys_core::PCSTR,
+    pub pszITName: ::windows_sys_core::PCSTR,
+    pub pszITDescription: ::windows_sys_core::PCSTR,
 }
 impl ::core::marker::Copy for HH_ENUM_IT {}
 impl ::core::clone::Clone for HH_ENUM_IT {
@@ -589,8 +589,8 @@ pub const HH_SET_INCLUSIVE_FILTER: u32 = 24u32;
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
 pub struct HH_SET_INFOTYPE {
     pub cbStruct: i32,
-    pub pszCatName: ::windows_sys::core::PCSTR,
-    pub pszInfoTypeName: ::windows_sys::core::PCSTR,
+    pub pszCatName: ::windows_sys_core::PCSTR,
+    pub pszInfoTypeName: ::windows_sys_core::PCSTR,
 }
 impl ::core::marker::Copy for HH_SET_INFOTYPE {}
 impl ::core::clone::Clone for HH_SET_INFOTYPE {

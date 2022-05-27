@@ -8,56 +8,56 @@ pub mod Syndication;
 pub mod UI;
 #[doc = "*Required features: `\"Web\"`*"]
 #[repr(transparent)]
-pub struct IUriToStreamResolver(::windows::core::IUnknown);
+pub struct IUriToStreamResolver(::windows_core::IUnknown);
 impl IUriToStreamResolver {
     #[doc = "*Required features: `\"Web\"`, `\"Foundation\"`, `\"Storage_Streams\"`*"]
     #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn UriToStreamAsync<'a, Param0: ::windows::core::IntoParam<'a, super::Foundation::Uri>>(&self, uri: Param0) -> ::windows::core::Result<super::Foundation::IAsyncOperation<super::Storage::Streams::IInputStream>> {
+    pub fn UriToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Storage::Streams::IInputStream>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).UriToStreamAsync)(::windows::core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Storage::Streams::IInputStream>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).UriToStreamAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Storage::Streams::IInputStream>>(result__)
         }
     }
 }
-impl ::core::convert::From<IUriToStreamResolver> for ::windows::core::IUnknown {
+impl ::core::convert::From<IUriToStreamResolver> for ::windows_core::IUnknown {
     fn from(value: IUriToStreamResolver) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IUriToStreamResolver> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IUriToStreamResolver> for ::windows_core::IUnknown {
     fn from(value: &IUriToStreamResolver) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IUriToStreamResolver {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IUriToStreamResolver {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IUriToStreamResolver {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IUriToStreamResolver {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<IUriToStreamResolver> for ::windows::core::IInspectable {
+impl ::core::convert::From<IUriToStreamResolver> for ::windows_core::IInspectable {
     fn from(value: IUriToStreamResolver) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IUriToStreamResolver> for ::windows::core::IInspectable {
+impl ::core::convert::From<&IUriToStreamResolver> for ::windows_core::IInspectable {
     fn from(value: &IUriToStreamResolver) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IUriToStreamResolver {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for IUriToStreamResolver {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IUriToStreamResolver {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IUriToStreamResolver {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IUriToStreamResolver {
@@ -76,56 +76,56 @@ impl ::core::fmt::Debug for IUriToStreamResolver {
         f.debug_tuple("IUriToStreamResolver").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for IUriToStreamResolver {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{b0aba86a-9aeb-4d3a-9590-003e3ca7e290}");
+unsafe impl ::windows_core::RuntimeType for IUriToStreamResolver {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{b0aba86a-9aeb-4d3a-9590-003e3ca7e290}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IUriToStreamResolver {
+unsafe impl ::windows_core::Interface for IUriToStreamResolver {
     type Vtable = IUriToStreamResolver_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb0aba86a_9aeb_4d3a_9590_003e3ca7e290);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb0aba86a_9aeb_4d3a_9590_003e3ca7e290);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IUriToStreamResolver_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub UriToStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub UriToStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     UriToStreamAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IWebErrorStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IWebErrorStatics {
+pub struct IWebErrorStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IWebErrorStatics {
     type Vtable = IWebErrorStatics_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfe616766_bf27_4064_87b7_6563bb11ce2e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfe616766_bf27_4064_87b7_6563bb11ce2e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWebErrorStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub GetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hresult: i32, result__: *mut WebErrorStatus) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub GetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hresult: i32, result__: *mut WebErrorStatus) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Web\"`*"]
 pub struct WebError;
 impl WebError {
     #[doc = "*Required features: `\"Web\"`*"]
-    pub fn GetStatus(hresult: i32) -> ::windows::core::Result<WebErrorStatus> {
+    pub fn GetStatus(hresult: i32) -> ::windows_core::Result<WebErrorStatus> {
         Self::IWebErrorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<WebErrorStatus>::zeroed();
-            (::windows::core::Interface::vtable(this).GetStatus)(::windows::core::Interface::as_raw(this), hresult, result__.as_mut_ptr()).from_abi::<WebErrorStatus>(result__)
+            (::windows_core::Interface::vtable(this).GetStatus)(::windows_core::Interface::as_raw(this), hresult, result__.as_mut_ptr()).from_abi::<WebErrorStatus>(result__)
         })
     }
     #[doc(hidden)]
-    pub fn IWebErrorStatics<R, F: FnOnce(&IWebErrorStatics) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<WebError, IWebErrorStatics> = ::windows::core::FactoryCache::new();
+    pub fn IWebErrorStatics<R, F: FnOnce(&IWebErrorStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<WebError, IWebErrorStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
-impl ::windows::core::RuntimeName for WebError {
+impl ::windows_core::RuntimeName for WebError {
     const NAME: &'static str = "Windows.Web.WebError";
 }
 #[doc = "*Required features: `\"Web\"`*"]
@@ -200,7 +200,7 @@ impl ::core::default::Default for WebErrorStatus {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WebErrorStatus {
+unsafe impl ::windows_core::Abi for WebErrorStatus {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WebErrorStatus {
@@ -208,10 +208,10 @@ impl ::core::fmt::Debug for WebErrorStatus {
         f.debug_tuple("WebErrorStatus").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for WebErrorStatus {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Web.WebErrorStatus;i4)");
+unsafe impl ::windows_core::RuntimeType for WebErrorStatus {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Web.WebErrorStatus;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }

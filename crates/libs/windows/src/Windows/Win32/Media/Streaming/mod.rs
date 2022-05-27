@@ -15,12 +15,12 @@ impl ::core::fmt::Debug for CapturedMetadataExposureCompensation {
         f.debug_struct("CapturedMetadataExposureCompensation").field("Flags", &self.Flags).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CapturedMetadataExposureCompensation {
+unsafe impl ::windows_core::Abi for CapturedMetadataExposureCompensation {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CapturedMetadataExposureCompensation {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CapturedMetadataExposureCompensation>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CapturedMetadataExposureCompensation>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CapturedMetadataExposureCompensation {}
@@ -46,12 +46,12 @@ impl ::core::fmt::Debug for CapturedMetadataISOGains {
         f.debug_struct("CapturedMetadataISOGains").field("AnalogGain", &self.AnalogGain).field("DigitalGain", &self.DigitalGain).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CapturedMetadataISOGains {
+unsafe impl ::windows_core::Abi for CapturedMetadataISOGains {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CapturedMetadataISOGains {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CapturedMetadataISOGains>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CapturedMetadataISOGains>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CapturedMetadataISOGains {}
@@ -78,12 +78,12 @@ impl ::core::fmt::Debug for CapturedMetadataWhiteBalanceGains {
         f.debug_struct("CapturedMetadataWhiteBalanceGains").field("R", &self.R).field("G", &self.G).field("B", &self.B).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CapturedMetadataWhiteBalanceGains {
+unsafe impl ::windows_core::Abi for CapturedMetadataWhiteBalanceGains {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CapturedMetadataWhiteBalanceGains {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CapturedMetadataWhiteBalanceGains>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CapturedMetadataWhiteBalanceGains>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CapturedMetadataWhiteBalanceGains {}
@@ -111,12 +111,12 @@ impl ::core::fmt::Debug for FaceCharacterization {
         f.debug_struct("FaceCharacterization").field("BlinkScoreLeft", &self.BlinkScoreLeft).field("BlinkScoreRight", &self.BlinkScoreRight).field("FacialExpression", &self.FacialExpression).field("FacialExpressionScore", &self.FacialExpressionScore).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FaceCharacterization {
+unsafe impl ::windows_core::Abi for FaceCharacterization {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FaceCharacterization {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FaceCharacterization>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FaceCharacterization>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FaceCharacterization {}
@@ -142,12 +142,12 @@ impl ::core::fmt::Debug for FaceCharacterizationBlobHeader {
         f.debug_struct("FaceCharacterizationBlobHeader").field("Size", &self.Size).field("Count", &self.Count).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FaceCharacterizationBlobHeader {
+unsafe impl ::windows_core::Abi for FaceCharacterizationBlobHeader {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FaceCharacterizationBlobHeader {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FaceCharacterizationBlobHeader>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FaceCharacterizationBlobHeader>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FaceCharacterizationBlobHeader {}
@@ -178,13 +178,13 @@ impl ::core::fmt::Debug for FaceRectInfo {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FaceRectInfo {
+unsafe impl ::windows_core::Abi for FaceRectInfo {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FaceRectInfo {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FaceRectInfo>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FaceRectInfo>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -212,12 +212,12 @@ impl ::core::fmt::Debug for FaceRectInfoBlobHeader {
         f.debug_struct("FaceRectInfoBlobHeader").field("Size", &self.Size).field("Count", &self.Count).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FaceRectInfoBlobHeader {
+unsafe impl ::windows_core::Abi for FaceRectInfoBlobHeader {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FaceRectInfoBlobHeader {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FaceRectInfoBlobHeader>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FaceRectInfoBlobHeader>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FaceRectInfoBlobHeader {}
@@ -243,12 +243,12 @@ impl ::core::fmt::Debug for HistogramBlobHeader {
         f.debug_struct("HistogramBlobHeader").field("Size", &self.Size).field("Histograms", &self.Histograms).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HistogramBlobHeader {
+unsafe impl ::windows_core::Abi for HistogramBlobHeader {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HistogramBlobHeader {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HistogramBlobHeader>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HistogramBlobHeader>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HistogramBlobHeader {}
@@ -275,12 +275,12 @@ impl ::core::fmt::Debug for HistogramDataHeader {
         f.debug_struct("HistogramDataHeader").field("Size", &self.Size).field("ChannelMask", &self.ChannelMask).field("Linear", &self.Linear).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HistogramDataHeader {
+unsafe impl ::windows_core::Abi for HistogramDataHeader {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HistogramDataHeader {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HistogramDataHeader>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HistogramDataHeader>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HistogramDataHeader {}
@@ -312,13 +312,13 @@ impl ::core::fmt::Debug for HistogramGrid {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for HistogramGrid {
+unsafe impl ::windows_core::Abi for HistogramGrid {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HistogramGrid {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HistogramGrid>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HistogramGrid>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -354,13 +354,13 @@ impl ::core::fmt::Debug for HistogramHeader {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for HistogramHeader {
+unsafe impl ::windows_core::Abi for HistogramHeader {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HistogramHeader {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HistogramHeader>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HistogramHeader>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -390,7 +390,7 @@ impl ::core::default::Default for MF_MEDIASOURCE_STATUS_INFO {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MF_MEDIASOURCE_STATUS_INFO {
+unsafe impl ::windows_core::Abi for MF_MEDIASOURCE_STATUS_INFO {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MF_MEDIASOURCE_STATUS_INFO {
@@ -419,7 +419,7 @@ impl ::core::default::Default for MF_TRANSFER_VIDEO_FRAME_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MF_TRANSFER_VIDEO_FRAME_FLAGS {
+unsafe impl ::windows_core::Abi for MF_TRANSFER_VIDEO_FRAME_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MF_TRANSFER_VIDEO_FRAME_FLAGS {
@@ -445,12 +445,12 @@ impl ::core::fmt::Debug for MetadataTimeStamps {
         f.debug_struct("MetadataTimeStamps").field("Flags", &self.Flags).field("Device", &self.Device).field("Presentation", &self.Presentation).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MetadataTimeStamps {
+unsafe impl ::windows_core::Abi for MetadataTimeStamps {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MetadataTimeStamps {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MetadataTimeStamps>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MetadataTimeStamps>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MetadataTimeStamps {}

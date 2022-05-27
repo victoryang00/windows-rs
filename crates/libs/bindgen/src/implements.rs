@@ -28,7 +28,7 @@ pub fn gen(gen: &Gen, def: TypeDef) -> TokenStream {
         }
     }
 
-    let mut matches = quote! { iid == &<#type_ident as ::windows::core::Interface>::IID };
+    let mut matches = quote! { iid == &<#type_ident as ::windows_core::Interface>::IID };
 
     for def in gen.reader.type_def_vtables(def) {
         if let Type::TypeDef((def, generics)) = def {
@@ -36,7 +36,7 @@ pub fn gen(gen: &Gen, def: TypeDef) -> TokenStream {
             let name = gen.type_def_name(def, &generics);
 
             matches.combine(&quote! {
-                || iid == &<#name as ::windows::core::Interface>::IID
+                || iid == &<#name as ::windows_core::Interface>::IID
             })
         }
     }
@@ -84,7 +84,7 @@ pub fn gen(gen: &Gen, def: TypeDef) -> TokenStream {
         let invoke_upcall = if gen.reader.type_def_flags(def).winrt() { winrt_methods::gen_upcall(gen, &signature, quote! { this.#name }) } else { com_methods::gen_upcall(gen, &signature, quote! { this.#name }) };
 
         quote! {
-            unsafe extern "system" fn #name<#constraints Identity: ::windows::core::IUnknownImpl<Impl = Impl>, Impl: #impl_ident<#generic_names>, const OFFSET: isize> #vtbl_signature {
+            unsafe extern "system" fn #name<#constraints Identity: ::windows_core::IUnknownImpl<Impl = Impl>, Impl: #impl_ident<#generic_names>, const OFFSET: isize> #vtbl_signature {
                 // offset the `this` pointer by `OFFSET` times the size of a pointer and cast it as an IUnknown implementation
                 let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
                 let this = (*this).get_impl();
@@ -96,8 +96,8 @@ pub fn gen(gen: &Gen, def: TypeDef) -> TokenStream {
     let mut methods = quote! {};
 
     match gen.reader.type_def_vtables(def).last() {
-        Some(Type::IUnknown) => methods.combine(&quote! { base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(), }),
-        Some(Type::IInspectable) => methods.combine(&quote! { base__: ::windows::core::IInspectableVtbl::new::<Identity, #type_ident, OFFSET>(), }),
+        Some(Type::IUnknown) => methods.combine(&quote! { base__: ::windows_core::IUnknownVtbl::new::<Identity, OFFSET>(), }),
+        Some(Type::IInspectable) => methods.combine(&quote! { base__: ::windows_core::IInspectableVtbl::new::<Identity, #type_ident, OFFSET>(), }),
         Some(Type::TypeDef((def, generics))) => {
             let name = gen.type_def_name_imp(*def, generics, "_Vtbl");
             methods.combine(&quote! { base__: #name::new::<Identity, Impl, OFFSET>(), });
@@ -121,14 +121,14 @@ pub fn gen(gen: &Gen, def: TypeDef) -> TokenStream {
         #runtime_name
         #features
         impl<#constraints> #vtbl_ident<#generic_names> {
-            pub const fn new<Identity: ::windows::core::IUnknownImpl<Impl = Impl>, Impl: #impl_ident<#generic_names>, const OFFSET: isize>() -> #vtbl_ident<#generic_names> {
+            pub const fn new<Identity: ::windows_core::IUnknownImpl<Impl = Impl>, Impl: #impl_ident<#generic_names>, const OFFSET: isize>() -> #vtbl_ident<#generic_names> {
                 #(#method_impls)*
                 Self{
                     #methods
                     #(#named_phantoms)*
                 }
             }
-            pub fn matches(iid: &windows::core::GUID) -> bool {
+            pub fn matches(iid: &windows_core::GUID) -> bool {
                 #matches
             }
         }

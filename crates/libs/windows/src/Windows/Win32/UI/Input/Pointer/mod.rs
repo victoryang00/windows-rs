@@ -1,7 +1,7 @@
 #[doc = "*Required features: `\"Win32_UI_Input_Pointer\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnableMouseInPointer<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::BOOL>>(fenable: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn EnableMouseInPointer<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(fenable: Param0) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -31,7 +31,7 @@ pub unsafe fn GetPointerCursorId(pointerid: u32, cursorid: *mut u32) -> super::s
 #[doc = "*Required features: `\"Win32_UI_Input_Pointer\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`, `\"Win32_UI_Controls\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls"))]
 #[inline]
-pub unsafe fn GetPointerDevice<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(device: Param0, pointerdevice: *mut super::super::Controls::POINTER_DEVICE_INFO) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetPointerDevice<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(device: Param0, pointerdevice: *mut super::super::Controls::POINTER_DEVICE_INFO) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -46,7 +46,7 @@ pub unsafe fn GetPointerDevice<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_UI_Input_Pointer\"`, `\"Win32_Foundation\"`, `\"Win32_UI_Controls\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 #[inline]
-pub unsafe fn GetPointerDeviceCursors<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(device: Param0, cursorcount: *mut u32, devicecursors: *mut super::super::Controls::POINTER_DEVICE_CURSOR_INFO) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetPointerDeviceCursors<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(device: Param0, cursorcount: *mut u32, devicecursors: *mut super::super::Controls::POINTER_DEVICE_CURSOR_INFO) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -61,7 +61,7 @@ pub unsafe fn GetPointerDeviceCursors<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_UI_Input_Pointer\"`, `\"Win32_Foundation\"`, `\"Win32_UI_Controls\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 #[inline]
-pub unsafe fn GetPointerDeviceProperties<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(device: Param0, propertycount: *mut u32, pointerproperties: *mut super::super::Controls::POINTER_DEVICE_PROPERTY) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetPointerDeviceProperties<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(device: Param0, propertycount: *mut u32, pointerproperties: *mut super::super::Controls::POINTER_DEVICE_PROPERTY) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -76,7 +76,7 @@ pub unsafe fn GetPointerDeviceProperties<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_UI_Input_Pointer\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPointerDeviceRects<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(device: Param0, pointerdevicerect: *mut super::super::super::Foundation::RECT, displayrect: *mut super::super::super::Foundation::RECT) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetPointerDeviceRects<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(device: Param0, pointerdevicerect: *mut super::super::super::Foundation::RECT, displayrect: *mut super::super::super::Foundation::RECT) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -233,7 +233,7 @@ pub unsafe fn GetPointerInputTransform(pointerid: u32, inputtransform: &mut [INP
         extern "system" {
             fn GetPointerInputTransform(pointerid: u32, historycount: u32, inputtransform: *mut INPUT_TRANSFORM) -> super::super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GetPointerInputTransform(::core::mem::transmute(pointerid), inputtransform.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(inputtransform))))
+        ::core::mem::transmute(GetPointerInputTransform(::core::mem::transmute(pointerid), inputtransform.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(inputtransform))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -323,7 +323,7 @@ pub unsafe fn GetRawPointerDeviceData(pointerid: u32, historycount: u32, pproper
         extern "system" {
             fn GetRawPointerDeviceData(pointerid: u32, historycount: u32, propertiescount: u32, pproperties: *const super::super::Controls::POINTER_DEVICE_PROPERTY, pvalues: *mut i32) -> super::super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GetRawPointerDeviceData(::core::mem::transmute(pointerid), ::core::mem::transmute(historycount), pproperties.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pproperties)), ::core::mem::transmute(pvalues)))
+        ::core::mem::transmute(GetRawPointerDeviceData(::core::mem::transmute(pointerid), ::core::mem::transmute(historycount), pproperties.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pproperties)), ::core::mem::transmute(pvalues)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -361,12 +361,12 @@ impl ::core::fmt::Debug for INPUT_INJECTION_VALUE {
         f.debug_struct("INPUT_INJECTION_VALUE").field("page", &self.page).field("usage", &self.usage).field("value", &self.value).field("index", &self.index).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INPUT_INJECTION_VALUE {
+unsafe impl ::windows_core::Abi for INPUT_INJECTION_VALUE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INPUT_INJECTION_VALUE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_INJECTION_VALUE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_INJECTION_VALUE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INPUT_INJECTION_VALUE {}
@@ -386,12 +386,12 @@ impl ::core::clone::Clone for INPUT_TRANSFORM {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for INPUT_TRANSFORM {
+unsafe impl ::windows_core::Abi for INPUT_TRANSFORM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INPUT_TRANSFORM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_TRANSFORM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_TRANSFORM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INPUT_TRANSFORM {}
@@ -412,12 +412,12 @@ impl ::core::clone::Clone for INPUT_TRANSFORM_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for INPUT_TRANSFORM_0 {
+unsafe impl ::windows_core::Abi for INPUT_TRANSFORM_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INPUT_TRANSFORM_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_TRANSFORM_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_TRANSFORM_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INPUT_TRANSFORM_0 {}
@@ -457,12 +457,12 @@ impl ::core::fmt::Debug for INPUT_TRANSFORM_0_0 {
         f.debug_struct("INPUT_TRANSFORM_0_0").field("_11", &self._11).field("_12", &self._12).field("_13", &self._13).field("_14", &self._14).field("_21", &self._21).field("_22", &self._22).field("_23", &self._23).field("_24", &self._24).field("_31", &self._31).field("_32", &self._32).field("_33", &self._33).field("_34", &self._34).field("_41", &self._41).field("_42", &self._42).field("_43", &self._43).field("_44", &self._44).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INPUT_TRANSFORM_0_0 {
+unsafe impl ::windows_core::Abi for INPUT_TRANSFORM_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INPUT_TRANSFORM_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_TRANSFORM_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_TRANSFORM_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INPUT_TRANSFORM_0_0 {}
@@ -489,14 +489,14 @@ pub unsafe fn InitializeTouchInjection(maxcount: u32, dwmode: TOUCH_FEEDBACK_MOD
 #[doc = "*Required features: `\"Win32_UI_Input_Pointer\"`, `\"Win32_Foundation\"`, `\"Win32_UI_Controls\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
-pub unsafe fn InjectSyntheticPointerInput<'a, Param0: ::windows::core::IntoParam<'a, super::super::Controls::HSYNTHETICPOINTERDEVICE>>(device: Param0, pointerinfo: &[super::super::Controls::POINTER_TYPE_INFO]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn InjectSyntheticPointerInput<'a, Param0: ::windows_core::IntoParam<'a, super::super::Controls::HSYNTHETICPOINTERDEVICE>>(device: Param0, pointerinfo: &[super::super::Controls::POINTER_TYPE_INFO]) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn InjectSyntheticPointerInput(device: super::super::Controls::HSYNTHETICPOINTERDEVICE, pointerinfo: *const super::super::Controls::POINTER_TYPE_INFO, count: u32) -> super::super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(InjectSyntheticPointerInput(device.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(pointerinfo)), pointerinfo.len() as _))
+        ::core::mem::transmute(InjectSyntheticPointerInput(device.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(pointerinfo)), pointerinfo.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -511,7 +511,7 @@ pub unsafe fn InjectTouchInput(contacts: &[POINTER_TOUCH_INFO]) -> super::super:
         extern "system" {
             fn InjectTouchInput(count: u32, contacts: *const POINTER_TOUCH_INFO) -> super::super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(InjectTouchInput(contacts.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(contacts))))
+        ::core::mem::transmute(InjectTouchInput(contacts.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(contacts))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -568,7 +568,7 @@ impl ::core::default::Default for POINTER_BUTTON_CHANGE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for POINTER_BUTTON_CHANGE_TYPE {
+unsafe impl ::windows_core::Abi for POINTER_BUTTON_CHANGE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for POINTER_BUTTON_CHANGE_TYPE {
@@ -629,7 +629,7 @@ impl ::core::default::Default for POINTER_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for POINTER_FLAGS {
+unsafe impl ::windows_core::Abi for POINTER_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for POINTER_FLAGS {
@@ -718,13 +718,13 @@ impl ::core::fmt::Debug for POINTER_INFO {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-unsafe impl ::windows::core::Abi for POINTER_INFO {
+unsafe impl ::windows_core::Abi for POINTER_INFO {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::cmp::PartialEq for POINTER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POINTER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POINTER_INFO>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
@@ -762,13 +762,13 @@ impl ::core::fmt::Debug for POINTER_PEN_INFO {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-unsafe impl ::windows::core::Abi for POINTER_PEN_INFO {
+unsafe impl ::windows_core::Abi for POINTER_PEN_INFO {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::cmp::PartialEq for POINTER_PEN_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POINTER_PEN_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POINTER_PEN_INFO>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
@@ -806,13 +806,13 @@ impl ::core::fmt::Debug for POINTER_TOUCH_INFO {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-unsafe impl ::windows::core::Abi for POINTER_TOUCH_INFO {
+unsafe impl ::windows_core::Abi for POINTER_TOUCH_INFO {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::cmp::PartialEq for POINTER_TOUCH_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POINTER_TOUCH_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POINTER_TOUCH_INFO>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
@@ -859,7 +859,7 @@ impl ::core::default::Default for TOUCH_FEEDBACK_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TOUCH_FEEDBACK_MODE {
+unsafe impl ::windows_core::Abi for TOUCH_FEEDBACK_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TOUCH_FEEDBACK_MODE {

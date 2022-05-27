@@ -3,7 +3,7 @@
 
 mod bindings;
 use bindings::*;
-use windows::core::*;
+use windows_core::*;
 
 #[test]
 fn test() -> Result<()> {

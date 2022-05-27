@@ -2,7 +2,7 @@
 extern "system" {
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DirectInput8Create(hinst: super::super::Foundation::HINSTANCE, dwversion: u32, riidltf: *const ::windows_sys::core::GUID, ppvout: *mut *mut ::core::ffi::c_void, punkouter: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn DirectInput8Create(hinst: super::super::Foundation::HINSTANCE, dwversion: u32, riidltf: *const ::windows_sys_core::GUID, ppvout: *mut *mut ::core::ffi::c_void, punkouter: ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn HidD_FlushQueue(hiddeviceobject: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOLEAN;
@@ -19,7 +19,7 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn HidD_GetFeature(hiddeviceobject: super::super::Foundation::HANDLE, reportbuffer: *mut ::core::ffi::c_void, reportbufferlength: u32) -> super::super::Foundation::BOOLEAN;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-    pub fn HidD_GetHidGuid(hidguid: *mut ::windows_sys::core::GUID);
+    pub fn HidD_GetHidGuid(hidguid: *mut ::windows_sys_core::GUID);
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn HidD_GetIndexedString(hiddeviceobject: super::super::Foundation::HANDLE, stringindex: u32, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> super::super::Foundation::BOOLEAN;
@@ -61,7 +61,7 @@ extern "system" {
     pub fn HidD_SetOutputReport(hiddeviceobject: super::super::Foundation::HANDLE, reportbuffer: *const ::core::ffi::c_void, reportbufferlength: u32) -> super::super::Foundation::BOOLEAN;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetButtonArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, buttondata: *mut HIDP_BUTTON_ARRAY_DATA, buttondatalength: *mut u16, preparseddata: isize, report: ::windows_sys::core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_GetButtonArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, buttondata: *mut HIDP_BUTTON_ARRAY_DATA, buttondatalength: *mut u16, preparseddata: isize, report: ::windows_sys_core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn HidP_GetButtonCaps(reporttype: HIDP_REPORT_TYPE, buttoncaps: *mut HIDP_BUTTON_CAPS, buttoncapslength: *mut u16, preparseddata: isize) -> super::super::Foundation::NTSTATUS;
@@ -70,7 +70,7 @@ extern "system" {
     pub fn HidP_GetCaps(preparseddata: isize, capabilities: *mut HIDP_CAPS) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetData(reporttype: HIDP_REPORT_TYPE, datalist: *mut HIDP_DATA, datalength: *mut u32, preparseddata: isize, report: ::windows_sys::core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_GetData(reporttype: HIDP_REPORT_TYPE, datalist: *mut HIDP_DATA, datalength: *mut u32, preparseddata: isize, report: ::windows_sys_core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn HidP_GetExtendedAttributes(reporttype: HIDP_REPORT_TYPE, dataindex: u16, preparseddata: isize, attributes: *mut HIDP_EXTENDED_ATTRIBUTES, lengthattributes: *mut u32) -> super::super::Foundation::NTSTATUS;
@@ -79,7 +79,7 @@ extern "system" {
     pub fn HidP_GetLinkCollectionNodes(linkcollectionnodes: *mut HIDP_LINK_COLLECTION_NODE, linkcollectionnodeslength: *mut u32, preparseddata: isize) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetScaledUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: *mut i32, preparseddata: isize, report: ::windows_sys::core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_GetScaledUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: *mut i32, preparseddata: isize, report: ::windows_sys_core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn HidP_GetSpecificButtonCaps(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, buttoncaps: *mut HIDP_BUTTON_CAPS, buttoncapslength: *mut u16, preparseddata: isize) -> super::super::Foundation::NTSTATUS;
@@ -88,50 +88,50 @@ extern "system" {
     pub fn HidP_GetSpecificValueCaps(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, valuecaps: *mut HIDP_VALUE_CAPS, valuecapslength: *mut u16, preparseddata: isize) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: *mut u32, preparseddata: isize, report: ::windows_sys::core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_GetUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: *mut u32, preparseddata: isize, report: ::windows_sys_core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetUsageValueArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: ::windows_sys::core::PSTR, usagevaluebytelength: u16, preparseddata: isize, report: ::windows_sys::core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_GetUsageValueArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: ::windows_sys_core::PSTR, usagevaluebytelength: u16, preparseddata: isize, report: ::windows_sys_core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetUsages(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usagelist: *mut u16, usagelength: *mut u32, preparseddata: isize, report: ::windows_sys::core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_GetUsages(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usagelist: *mut u16, usagelength: *mut u32, preparseddata: isize, report: ::windows_sys_core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetUsagesEx(reporttype: HIDP_REPORT_TYPE, linkcollection: u16, buttonlist: *mut USAGE_AND_PAGE, usagelength: *mut u32, preparseddata: isize, report: ::windows_sys::core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_GetUsagesEx(reporttype: HIDP_REPORT_TYPE, linkcollection: u16, buttonlist: *mut USAGE_AND_PAGE, usagelength: *mut u32, preparseddata: isize, report: ::windows_sys_core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn HidP_GetValueCaps(reporttype: HIDP_REPORT_TYPE, valuecaps: *mut HIDP_VALUE_CAPS, valuecapslength: *mut u16, preparseddata: isize) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_InitializeReportForID(reporttype: HIDP_REPORT_TYPE, reportid: u8, preparseddata: isize, report: ::windows_sys::core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_InitializeReportForID(reporttype: HIDP_REPORT_TYPE, reportid: u8, preparseddata: isize, report: ::windows_sys_core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
     pub fn HidP_MaxDataListLength(reporttype: HIDP_REPORT_TYPE, preparseddata: isize) -> u32;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
     pub fn HidP_MaxUsageListLength(reporttype: HIDP_REPORT_TYPE, usagepage: u16, preparseddata: isize) -> u32;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_SetButtonArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, buttondata: *const HIDP_BUTTON_ARRAY_DATA, buttondatalength: u16, preparseddata: isize, report: ::windows_sys::core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_SetButtonArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, buttondata: *const HIDP_BUTTON_ARRAY_DATA, buttondatalength: u16, preparseddata: isize, report: ::windows_sys_core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_SetData(reporttype: HIDP_REPORT_TYPE, datalist: *mut HIDP_DATA, datalength: *mut u32, preparseddata: isize, report: ::windows_sys::core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_SetData(reporttype: HIDP_REPORT_TYPE, datalist: *mut HIDP_DATA, datalength: *mut u32, preparseddata: isize, report: ::windows_sys_core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_SetScaledUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: i32, preparseddata: isize, report: ::windows_sys::core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_SetScaledUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: i32, preparseddata: isize, report: ::windows_sys_core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_SetUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: u32, preparseddata: isize, report: ::windows_sys::core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_SetUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: u32, preparseddata: isize, report: ::windows_sys_core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_SetUsageValueArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: ::windows_sys::core::PCSTR, usagevaluebytelength: u16, preparseddata: isize, report: ::windows_sys::core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_SetUsageValueArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: ::windows_sys_core::PCSTR, usagevaluebytelength: u16, preparseddata: isize, report: ::windows_sys_core::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_SetUsages(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usagelist: *mut u16, usagelength: *mut u32, preparseddata: isize, report: ::windows_sys::core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_SetUsages(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usagelist: *mut u16, usagelength: *mut u32, preparseddata: isize, report: ::windows_sys_core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn HidP_TranslateUsagesToI8042ScanCodes(changedusagelist: *const u16, usagelistlength: u32, keyaction: HIDP_KEYBOARD_DIRECTION, modifierstate: *mut HIDP_KEYBOARD_MODIFIER_STATE, insertcodesprocedure: PHIDP_INSERT_SCANCODES, insertcodescontext: *const ::core::ffi::c_void) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_UnsetUsages(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usagelist: *mut u16, usagelength: *mut u32, preparseddata: isize, report: ::windows_sys::core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_UnsetUsages(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usagelist: *mut u16, usagelength: *mut u32, preparseddata: isize, report: ::windows_sys_core::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn HidP_UsageListDifference(previoususagelist: *const u16, currentusagelist: *const u16, breakusagelist: *mut u16, makeusagelist: *mut u16, usagelistlength: u32) -> super::super::Foundation::NTSTATUS;
@@ -176,10 +176,10 @@ pub const BUTTON_BIT_VOLUMEDOWN: u32 = 8u32;
 pub const BUTTON_BIT_VOLUMEUP: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const BUTTON_BIT_WINDOWS: u32 = 2u32;
-pub const CLSID_DirectInput: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 635832800, data2: 45657, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const CLSID_DirectInput8: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 635832804, data2: 45657, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const CLSID_DirectInputDevice: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 635832801, data2: 45657, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const CLSID_DirectInputDevice8: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 635832805, data2: 45657, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const CLSID_DirectInput: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 635832800, data2: 45657, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const CLSID_DirectInput8: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 635832804, data2: 45657, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const CLSID_DirectInputDevice: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 635832801, data2: 45657, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const CLSID_DirectInputDevice8: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 635832805, data2: 45657, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub struct CPOINT {
@@ -202,28 +202,28 @@ pub const DD_MOUSE_DEVICE_NAME: &str = "\\Device\\PointerClass";
 pub const DD_MOUSE_DEVICE_NAME_U: &str = "\\Device\\PointerClass";
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_DeviceInterface_HID_BackgroundAccess: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys::core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 8u32 };
+pub const DEVPKEY_DeviceInterface_HID_BackgroundAccess: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 8u32 };
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_DeviceInterface_HID_IsReadOnly: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys::core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 4u32 };
+pub const DEVPKEY_DeviceInterface_HID_IsReadOnly: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 4u32 };
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_DeviceInterface_HID_ProductId: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys::core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 6u32 };
+pub const DEVPKEY_DeviceInterface_HID_ProductId: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 6u32 };
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_DeviceInterface_HID_UsageId: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys::core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 3u32 };
+pub const DEVPKEY_DeviceInterface_HID_UsageId: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 3u32 };
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_DeviceInterface_HID_UsagePage: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys::core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 2u32 };
+pub const DEVPKEY_DeviceInterface_HID_UsagePage: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 2u32 };
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_DeviceInterface_HID_VendorId: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys::core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 5u32 };
+pub const DEVPKEY_DeviceInterface_HID_VendorId: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 5u32 };
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_DeviceInterface_HID_VersionNumber: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys::core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 7u32 };
+pub const DEVPKEY_DeviceInterface_HID_VersionNumber: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 7u32 };
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_DeviceInterface_HID_WakeScreenOnInputCapable: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys::core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 9u32 };
+pub const DEVPKEY_DeviceInterface_HID_WakeScreenOnInputCapable: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 3421733648, data2: 18967, data3: 17168, data4: [161, 235, 36, 127, 11, 103, 89, 59] }, pid: 9u32 };
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DI8DEVCLASS_ALL: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
@@ -381,7 +381,7 @@ pub struct DIACTIONA {
     pub dwSemantic: u32,
     pub dwFlags: u32,
     pub Anonymous: DIACTIONA_0,
-    pub guidInstance: ::windows_sys::core::GUID,
+    pub guidInstance: ::windows_sys_core::GUID,
     pub dwObjID: u32,
     pub dwHow: u32,
 }
@@ -394,7 +394,7 @@ impl ::core::clone::Clone for DIACTIONA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub union DIACTIONA_0 {
-    pub lptszActionName: ::windows_sys::core::PCSTR,
+    pub lptszActionName: ::windows_sys_core::PCSTR,
     pub uResIdString: u32,
 }
 impl ::core::marker::Copy for DIACTIONA_0 {}
@@ -412,7 +412,7 @@ pub struct DIACTIONFORMATA {
     pub dwDataSize: u32,
     pub dwNumActions: u32,
     pub rgoAction: *mut DIACTIONA,
-    pub guidActionMap: ::windows_sys::core::GUID,
+    pub guidActionMap: ::windows_sys_core::GUID,
     pub dwGenre: u32,
     pub dwBufferSize: u32,
     pub lAxisMin: i32,
@@ -439,7 +439,7 @@ pub struct DIACTIONFORMATW {
     pub dwDataSize: u32,
     pub dwNumActions: u32,
     pub rgoAction: *mut DIACTIONW,
-    pub guidActionMap: ::windows_sys::core::GUID,
+    pub guidActionMap: ::windows_sys_core::GUID,
     pub dwGenre: u32,
     pub dwBufferSize: u32,
     pub lAxisMin: i32,
@@ -464,7 +464,7 @@ pub struct DIACTIONW {
     pub dwSemantic: u32,
     pub dwFlags: u32,
     pub Anonymous: DIACTIONW_0,
-    pub guidInstance: ::windows_sys::core::GUID,
+    pub guidInstance: ::windows_sys_core::GUID,
     pub dwObjID: u32,
     pub dwHow: u32,
 }
@@ -477,7 +477,7 @@ impl ::core::clone::Clone for DIACTIONW {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub union DIACTIONW_0 {
-    pub lptszActionName: ::windows_sys::core::PCWSTR,
+    pub lptszActionName: ::windows_sys_core::PCWSTR,
     pub uResIdString: u32,
 }
 impl ::core::marker::Copy for DIACTIONW_0 {}
@@ -2213,12 +2213,12 @@ impl ::core::clone::Clone for DICONDITION {
 pub struct DICONFIGUREDEVICESPARAMSA {
     pub dwSize: u32,
     pub dwcUsers: u32,
-    pub lptszUserNames: ::windows_sys::core::PSTR,
+    pub lptszUserNames: ::windows_sys_core::PSTR,
     pub dwcFormats: u32,
     pub lprgFormats: *mut DIACTIONFORMATA,
     pub hwnd: super::super::Foundation::HWND,
     pub dics: DICOLORSET,
-    pub lpUnkDDSTarget: ::windows_sys::core::IUnknown,
+    pub lpUnkDDSTarget: ::windows_sys_core::IUnknown,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DICONFIGUREDEVICESPARAMSA {}
@@ -2234,12 +2234,12 @@ impl ::core::clone::Clone for DICONFIGUREDEVICESPARAMSA {
 pub struct DICONFIGUREDEVICESPARAMSW {
     pub dwSize: u32,
     pub dwcUsers: u32,
-    pub lptszUserNames: ::windows_sys::core::PWSTR,
+    pub lptszUserNames: ::windows_sys_core::PWSTR,
     pub dwcFormats: u32,
     pub lprgFormats: *mut DIACTIONFORMATW,
     pub hwnd: super::super::Foundation::HWND,
     pub dics: DICOLORSET,
-    pub lpUnkDDSTarget: ::windows_sys::core::IUnknown,
+    pub lpUnkDDSTarget: ::windows_sys_core::IUnknown,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DICONFIGUREDEVICESPARAMSW {}
@@ -2470,12 +2470,12 @@ impl ::core::clone::Clone for DIDEVICEIMAGEINFOW {
 #[cfg(feature = "Win32_Foundation")]
 pub struct DIDEVICEINSTANCEA {
     pub dwSize: u32,
-    pub guidInstance: ::windows_sys::core::GUID,
-    pub guidProduct: ::windows_sys::core::GUID,
+    pub guidInstance: ::windows_sys_core::GUID,
+    pub guidProduct: ::windows_sys_core::GUID,
     pub dwDevType: u32,
     pub tszInstanceName: [super::super::Foundation::CHAR; 260],
     pub tszProductName: [super::super::Foundation::CHAR; 260],
-    pub guidFFDriver: ::windows_sys::core::GUID,
+    pub guidFFDriver: ::windows_sys_core::GUID,
     pub wUsagePage: u16,
     pub wUsage: u16,
 }
@@ -2491,12 +2491,12 @@ impl ::core::clone::Clone for DIDEVICEINSTANCEA {
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub struct DIDEVICEINSTANCEW {
     pub dwSize: u32,
-    pub guidInstance: ::windows_sys::core::GUID,
-    pub guidProduct: ::windows_sys::core::GUID,
+    pub guidInstance: ::windows_sys_core::GUID,
+    pub guidProduct: ::windows_sys_core::GUID,
     pub dwDevType: u32,
     pub tszInstanceName: [u16; 260],
     pub tszProductName: [u16; 260],
-    pub guidFFDriver: ::windows_sys::core::GUID,
+    pub guidFFDriver: ::windows_sys_core::GUID,
     pub wUsagePage: u16,
     pub wUsage: u16,
 }
@@ -2511,8 +2511,8 @@ impl ::core::clone::Clone for DIDEVICEINSTANCEW {
 #[cfg(feature = "Win32_Foundation")]
 pub struct DIDEVICEINSTANCE_DX3A {
     pub dwSize: u32,
-    pub guidInstance: ::windows_sys::core::GUID,
-    pub guidProduct: ::windows_sys::core::GUID,
+    pub guidInstance: ::windows_sys_core::GUID,
+    pub guidProduct: ::windows_sys_core::GUID,
     pub dwDevType: u32,
     pub tszInstanceName: [super::super::Foundation::CHAR; 260],
     pub tszProductName: [super::super::Foundation::CHAR; 260],
@@ -2529,8 +2529,8 @@ impl ::core::clone::Clone for DIDEVICEINSTANCE_DX3A {
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub struct DIDEVICEINSTANCE_DX3W {
     pub dwSize: u32,
-    pub guidInstance: ::windows_sys::core::GUID,
-    pub guidProduct: ::windows_sys::core::GUID,
+    pub guidInstance: ::windows_sys_core::GUID,
+    pub guidProduct: ::windows_sys_core::GUID,
     pub dwDevType: u32,
     pub tszInstanceName: [u16; 260],
     pub tszProductName: [u16; 260],
@@ -2575,7 +2575,7 @@ impl ::core::clone::Clone for DIDEVICEOBJECTDATA_DX3 {
 #[cfg(feature = "Win32_Foundation")]
 pub struct DIDEVICEOBJECTINSTANCEA {
     pub dwSize: u32,
-    pub guidType: ::windows_sys::core::GUID,
+    pub guidType: ::windows_sys_core::GUID,
     pub dwOfs: u32,
     pub dwType: u32,
     pub dwFlags: u32,
@@ -2602,7 +2602,7 @@ impl ::core::clone::Clone for DIDEVICEOBJECTINSTANCEA {
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub struct DIDEVICEOBJECTINSTANCEW {
     pub dwSize: u32,
-    pub guidType: ::windows_sys::core::GUID,
+    pub guidType: ::windows_sys_core::GUID,
     pub dwOfs: u32,
     pub dwType: u32,
     pub dwFlags: u32,
@@ -2628,7 +2628,7 @@ impl ::core::clone::Clone for DIDEVICEOBJECTINSTANCEW {
 #[cfg(feature = "Win32_Foundation")]
 pub struct DIDEVICEOBJECTINSTANCE_DX3A {
     pub dwSize: u32,
-    pub guidType: ::windows_sys::core::GUID,
+    pub guidType: ::windows_sys_core::GUID,
     pub dwOfs: u32,
     pub dwType: u32,
     pub dwFlags: u32,
@@ -2646,7 +2646,7 @@ impl ::core::clone::Clone for DIDEVICEOBJECTINSTANCE_DX3A {
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub struct DIDEVICEOBJECTINSTANCE_DX3W {
     pub dwSize: u32,
-    pub guidType: ::windows_sys::core::GUID,
+    pub guidType: ::windows_sys_core::GUID,
     pub dwOfs: u32,
     pub dwType: u32,
     pub dwFlags: u32,
@@ -2895,7 +2895,7 @@ impl ::core::clone::Clone for DIEFFECTATTRIBUTES {
 #[cfg(feature = "Win32_Foundation")]
 pub struct DIEFFECTINFOA {
     pub dwSize: u32,
-    pub guid: ::windows_sys::core::GUID,
+    pub guid: ::windows_sys_core::GUID,
     pub dwEffType: u32,
     pub dwStaticParams: u32,
     pub dwDynamicParams: u32,
@@ -2913,7 +2913,7 @@ impl ::core::clone::Clone for DIEFFECTINFOA {
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub struct DIEFFECTINFOW {
     pub dwSize: u32,
-    pub guid: ::windows_sys::core::GUID,
+    pub guid: ::windows_sys_core::GUID,
     pub dwEffType: u32,
     pub dwStaticParams: u32,
     pub dwDynamicParams: u32,
@@ -3056,15 +3056,15 @@ pub const DIEP_TRIGGERREPEATINTERVAL: u32 = 16u32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DIEP_TYPESPECIFICPARAMS: u32 = 256u32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DIERR_ACQUIRED: ::windows_sys::core::HRESULT = -2147024726i32;
+pub const DIERR_ACQUIRED: ::windows_sys_core::HRESULT = -2147024726i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DIERR_ALREADYINITIALIZED: ::windows_sys::core::HRESULT = -2147023649i32;
+pub const DIERR_ALREADYINITIALIZED: ::windows_sys_core::HRESULT = -2147023649i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DIERR_BADDRIVERVER: ::windows_sys::core::HRESULT = -2147024777i32;
+pub const DIERR_BADDRIVERVER: ::windows_sys_core::HRESULT = -2147024777i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DIERR_BADINF: i32 = -2147220478i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DIERR_BETADIRECTINPUTVERSION: ::windows_sys::core::HRESULT = -2147023743i32;
+pub const DIERR_BETADIRECTINPUTVERSION: ::windows_sys_core::HRESULT = -2147023743i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DIERR_CANCELLED: i32 = -2147220479i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
@@ -3086,7 +3086,7 @@ pub const DIERR_HASEFFECTS: i32 = -2147220988i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DIERR_INCOMPLETEEFFECT: i32 = -2147220986i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DIERR_INPUTLOST: ::windows_sys::core::HRESULT = -2147024866i32;
+pub const DIERR_INPUTLOST: ::windows_sys_core::HRESULT = -2147024866i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DIERR_INSUFFICIENTPRIVS: i32 = -2147220992i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
@@ -3102,9 +3102,9 @@ pub const DIERR_NOAGGREGATION: i32 = -2147221232i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DIERR_NOINTERFACE: i32 = -2147467262i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DIERR_NOMOREITEMS: ::windows_sys::core::HRESULT = -2147024637i32;
+pub const DIERR_NOMOREITEMS: ::windows_sys_core::HRESULT = -2147024637i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DIERR_NOTACQUIRED: ::windows_sys::core::HRESULT = -2147024884i32;
+pub const DIERR_NOTACQUIRED: ::windows_sys_core::HRESULT = -2147024884i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DIERR_NOTBUFFERED: i32 = -2147220985i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
@@ -3112,13 +3112,13 @@ pub const DIERR_NOTDOWNLOADED: i32 = -2147220989i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DIERR_NOTEXCLUSIVEACQUIRED: i32 = -2147220987i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DIERR_NOTFOUND: ::windows_sys::core::HRESULT = -2147024894i32;
+pub const DIERR_NOTFOUND: ::windows_sys_core::HRESULT = -2147024894i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DIERR_NOTINITIALIZED: ::windows_sys::core::HRESULT = -2147024875i32;
+pub const DIERR_NOTINITIALIZED: ::windows_sys_core::HRESULT = -2147024875i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DIERR_OBJECTNOTFOUND: ::windows_sys::core::HRESULT = -2147024894i32;
+pub const DIERR_OBJECTNOTFOUND: ::windows_sys_core::HRESULT = -2147024894i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DIERR_OLDDIRECTINPUTVERSION: ::windows_sys::core::HRESULT = -2147023746i32;
+pub const DIERR_OLDDIRECTINPUTVERSION: ::windows_sys_core::HRESULT = -2147023746i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DIERR_OTHERAPPHASPRIO: i32 = -2147024891i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
@@ -3171,7 +3171,7 @@ impl ::core::clone::Clone for DIFFOBJECTATTRIBUTES {
 #[cfg(feature = "Win32_Foundation")]
 pub struct DIFILEEFFECT {
     pub dwSize: u32,
-    pub GuidEffect: ::windows_sys::core::GUID,
+    pub GuidEffect: ::windows_sys_core::GUID,
     pub lpDiEffect: *mut DIEFFECT,
     pub szFriendlyName: [super::super::Foundation::CHAR; 260],
 }
@@ -3275,8 +3275,8 @@ pub const DIHATSWITCH_TPS_GLANCE: u32 = 167790081u32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub struct DIHIDFFINITINFO {
     pub dwSize: u32,
-    pub pwszDeviceInterface: ::windows_sys::core::PWSTR,
-    pub GuidInstance: ::windows_sys::core::GUID,
+    pub pwszDeviceInterface: ::windows_sys_core::PWSTR,
+    pub GuidInstance: ::windows_sys_core::GUID,
 }
 impl ::core::marker::Copy for DIHIDFFINITINFO {}
 impl ::core::clone::Clone for DIHIDFFINITINFO {
@@ -3298,12 +3298,12 @@ pub const DIJC_WDMGAMEPORT: u32 = 16u32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub struct DIJOYCONFIG {
     pub dwSize: u32,
-    pub guidInstance: ::windows_sys::core::GUID,
+    pub guidInstance: ::windows_sys_core::GUID,
     pub hwc: JOYREGHWCONFIG,
     pub dwGain: u32,
     pub wszType: [u16; 256],
     pub wszCallout: [u16; 256],
-    pub guidGameport: ::windows_sys::core::GUID,
+    pub guidGameport: ::windows_sys_core::GUID,
 }
 impl ::core::marker::Copy for DIJOYCONFIG {}
 impl ::core::clone::Clone for DIJOYCONFIG {
@@ -3315,7 +3315,7 @@ impl ::core::clone::Clone for DIJOYCONFIG {
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub struct DIJOYCONFIG_DX5 {
     pub dwSize: u32,
-    pub guidInstance: ::windows_sys::core::GUID,
+    pub guidInstance: ::windows_sys_core::GUID,
     pub hwc: JOYREGHWCONFIG,
     pub dwGain: u32,
     pub wszType: [u16; 256],
@@ -3391,7 +3391,7 @@ impl ::core::clone::Clone for DIJOYSTATE2 {
 pub struct DIJOYTYPEINFO {
     pub dwSize: u32,
     pub hws: JOYREGHWSETTINGS,
-    pub clsidConfig: ::windows_sys::core::GUID,
+    pub clsidConfig: ::windows_sys_core::GUID,
     pub wszDisplayName: [u16; 256],
     pub wszCallout: [u16; 260],
     pub wszHardwareId: [u16; 256],
@@ -3410,7 +3410,7 @@ impl ::core::clone::Clone for DIJOYTYPEINFO {
 pub struct DIJOYTYPEINFO_DX5 {
     pub dwSize: u32,
     pub hws: JOYREGHWSETTINGS,
-    pub clsidConfig: ::windows_sys::core::GUID,
+    pub clsidConfig: ::windows_sys_core::GUID,
     pub wszDisplayName: [u16; 256],
     pub wszCallout: [u16; 260],
 }
@@ -3425,7 +3425,7 @@ impl ::core::clone::Clone for DIJOYTYPEINFO_DX5 {
 pub struct DIJOYTYPEINFO_DX6 {
     pub dwSize: u32,
     pub hws: JOYREGHWSETTINGS,
-    pub clsidConfig: ::windows_sys::core::GUID,
+    pub clsidConfig: ::windows_sys_core::GUID,
     pub wszDisplayName: [u16; 256],
     pub wszCallout: [u16; 260],
     pub wszHardwareId: [u16; 256],
@@ -4128,7 +4128,7 @@ impl ::core::clone::Clone for DIOBJECTCALIBRATION {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub struct DIOBJECTDATAFORMAT {
-    pub pguid: *const ::windows_sys::core::GUID,
+    pub pguid: *const ::windows_sys_core::GUID,
     pub dwOfs: u32,
     pub dwType: u32,
     pub dwFlags: u32,
@@ -4249,7 +4249,7 @@ impl ::core::clone::Clone for DIPROPDWORD {
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub struct DIPROPGUIDANDPATH {
     pub diph: DIPROPHEADER,
-    pub guidClass: ::windows_sys::core::GUID,
+    pub guidClass: ::windows_sys_core::GUID,
     pub wszPath: [u16; 260],
 }
 impl ::core::marker::Copy for DIPROPGUIDANDPATH {}
@@ -4534,9 +4534,9 @@ pub const DI_BUFFEROVERFLOW: i32 = 1i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DI_DEGREES: u32 = 100u32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DI_DOWNLOADSKIPPED: ::windows_sys::core::HRESULT = 3i32;
+pub const DI_DOWNLOADSKIPPED: ::windows_sys_core::HRESULT = 3i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DI_EFFECTRESTARTED: ::windows_sys::core::HRESULT = 4i32;
+pub const DI_EFFECTRESTARTED: ::windows_sys_core::HRESULT = 4i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DI_FFNOMINALMAX: u32 = 10000u32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
@@ -4546,19 +4546,19 @@ pub const DI_NOTATTACHED: i32 = 1i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DI_OK: i32 = 0i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DI_POLLEDDEVICE: ::windows_sys::core::HRESULT = 2i32;
+pub const DI_POLLEDDEVICE: ::windows_sys_core::HRESULT = 2i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DI_PROPNOEFFECT: i32 = 1i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const DI_SECONDS: u32 = 1000000u32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DI_SETTINGSNOTSAVED: ::windows_sys::core::HRESULT = 11i32;
+pub const DI_SETTINGSNOTSAVED: ::windows_sys_core::HRESULT = 11i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DI_TRUNCATED: ::windows_sys::core::HRESULT = 8i32;
+pub const DI_TRUNCATED: ::windows_sys_core::HRESULT = 8i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DI_TRUNCATEDANDRESTARTED: ::windows_sys::core::HRESULT = 12i32;
+pub const DI_TRUNCATEDANDRESTARTED: ::windows_sys_core::HRESULT = 12i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
-pub const DI_WRITEPROTECT: ::windows_sys::core::HRESULT = 19i32;
+pub const DI_WRITEPROTECT: ::windows_sys_core::HRESULT = 19i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub type GPIOBUTTONS_BUTTON_TYPE = i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
@@ -4597,45 +4597,45 @@ pub const GPIO_BUTTON_OEM_CUSTOM3: GPIOBUTTONS_BUTTON_TYPE = 15i32;
 pub const GPIO_BUTTON_COUNT_MIN: GPIOBUTTONS_BUTTON_TYPE = 5i32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub const GPIO_BUTTON_COUNT: GPIOBUTTONS_BUTTON_TYPE = 16i32;
-pub const GUID_Button: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2741830384, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_ConstantForce: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 324279328, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
-pub const GUID_CustomForce: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 324279339, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
-pub const GUID_DEVINTERFACE_HID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1293833650, data2: 61807, data3: 4559, data4: [136, 203, 0, 17, 17, 0, 0, 48] };
-pub const GUID_DEVINTERFACE_KEYBOARD: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286655171, data2: 22255, data3: 4561, data4: [188, 140, 0, 160, 201, 20, 5, 221] };
-pub const GUID_DEVINTERFACE_MOUSE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 932045900, data2: 22255, data3: 4561, data4: [188, 140, 0, 160, 201, 20, 5, 221] };
-pub const GUID_Damper: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 324279336, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
-pub const GUID_Friction: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 324279338, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
-pub const GUID_HIDClass: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1952061344, data2: 29907, data3: 4560, data4: [182, 254, 0, 160, 201, 15, 87, 218] };
-pub const GUID_HID_INTERFACE_HIDPARSE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4123202981, data2: 27052, data3: 19394, data4: [146, 121, 208, 182, 69, 118, 244, 75] };
-pub const GUID_HID_INTERFACE_NOTIFY: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 743321224, data2: 9702, data3: 19507, data4: [136, 47, 61, 130, 230, 7, 54, 129] };
-pub const GUID_Inertia: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 324279337, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
-pub const GUID_Joystick: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1864182640, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_Key: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1433567776, data2: 54076, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_KeyboardClass: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1295444331, data2: 58149, data3: 4558, data4: [191, 193, 8, 0, 43, 225, 3, 24] };
-pub const GUID_MediaClass: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1295444332, data2: 58149, data3: 4558, data4: [191, 193, 8, 0, 43, 225, 3, 24] };
-pub const GUID_MouseClass: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1295444335, data2: 58149, data3: 4558, data4: [191, 193, 8, 0, 43, 225, 3, 24] };
-pub const GUID_POV: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2741830386, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_RampForce: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 324279329, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
-pub const GUID_RxAxis: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2741830388, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_RyAxis: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2741830389, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_RzAxis: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2741830371, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_SawtoothDown: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 324279334, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
-pub const GUID_SawtoothUp: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 324279333, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
-pub const GUID_Sine: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 324279331, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
-pub const GUID_Slider: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2741830372, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_Spring: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 324279335, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
-pub const GUID_Square: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 324279330, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
-pub const GUID_SysKeyboard: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1864182625, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_SysKeyboardEm: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1864182658, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_SysKeyboardEm2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1864182659, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_SysMouse: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1864182624, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_SysMouseEm: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1864182656, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_SysMouseEm2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1864182657, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_Triangle: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 324279332, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
-pub const GUID_Unknown: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2741830387, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_XAxis: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2741830368, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_YAxis: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2741830369, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
-pub const GUID_ZAxis: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2741830370, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_Button: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2741830384, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_ConstantForce: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 324279328, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
+pub const GUID_CustomForce: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 324279339, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
+pub const GUID_DEVINTERFACE_HID: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1293833650, data2: 61807, data3: 4559, data4: [136, 203, 0, 17, 17, 0, 0, 48] };
+pub const GUID_DEVINTERFACE_KEYBOARD: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286655171, data2: 22255, data3: 4561, data4: [188, 140, 0, 160, 201, 20, 5, 221] };
+pub const GUID_DEVINTERFACE_MOUSE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 932045900, data2: 22255, data3: 4561, data4: [188, 140, 0, 160, 201, 20, 5, 221] };
+pub const GUID_Damper: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 324279336, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
+pub const GUID_Friction: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 324279338, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
+pub const GUID_HIDClass: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1952061344, data2: 29907, data3: 4560, data4: [182, 254, 0, 160, 201, 15, 87, 218] };
+pub const GUID_HID_INTERFACE_HIDPARSE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4123202981, data2: 27052, data3: 19394, data4: [146, 121, 208, 182, 69, 118, 244, 75] };
+pub const GUID_HID_INTERFACE_NOTIFY: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 743321224, data2: 9702, data3: 19507, data4: [136, 47, 61, 130, 230, 7, 54, 129] };
+pub const GUID_Inertia: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 324279337, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
+pub const GUID_Joystick: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1864182640, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_Key: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1433567776, data2: 54076, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_KeyboardClass: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1295444331, data2: 58149, data3: 4558, data4: [191, 193, 8, 0, 43, 225, 3, 24] };
+pub const GUID_MediaClass: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1295444332, data2: 58149, data3: 4558, data4: [191, 193, 8, 0, 43, 225, 3, 24] };
+pub const GUID_MouseClass: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1295444335, data2: 58149, data3: 4558, data4: [191, 193, 8, 0, 43, 225, 3, 24] };
+pub const GUID_POV: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2741830386, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_RampForce: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 324279329, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
+pub const GUID_RxAxis: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2741830388, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_RyAxis: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2741830389, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_RzAxis: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2741830371, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_SawtoothDown: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 324279334, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
+pub const GUID_SawtoothUp: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 324279333, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
+pub const GUID_Sine: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 324279331, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
+pub const GUID_Slider: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2741830372, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_Spring: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 324279335, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
+pub const GUID_Square: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 324279330, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
+pub const GUID_SysKeyboard: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1864182625, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_SysKeyboardEm: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1864182658, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_SysKeyboardEm2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1864182659, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_SysMouse: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1864182624, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_SysMouseEm: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1864182656, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_SysMouseEm2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1864182657, data2: 54688, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_Triangle: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 324279332, data2: 36403, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
+pub const GUID_Unknown: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2741830387, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_XAxis: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2741830368, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_YAxis: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2741830369, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+pub const GUID_ZAxis: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2741830370, data2: 51699, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub struct HIDD_ATTRIBUTES {
@@ -6782,7 +6782,7 @@ pub const KEY_UNICODE_SEQUENCE_END: u32 = 512u32;
 pub const KEY_UNICODE_SEQUENCE_ITEM: u32 = 256u32;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type LPDICONFIGUREDEVICESCALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_sys::core::IUnknown, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
+pub type LPDICONFIGUREDEVICESCALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_sys_core::IUnknown, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type LPDIENUMCREATEDEFFECTOBJECTSCALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: IDirectInputEffect, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
@@ -6815,7 +6815,7 @@ pub type LPDIENUMEFFECTSCALLBACKW = ::core::option::Option<unsafe extern "system
 pub type LPDIENUMEFFECTSINFILECALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIFILEEFFECT, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type LPDIJOYTYPECALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_sys::core::PCWSTR, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
+pub type LPDIJOYTYPECALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_sys_core::PCWSTR, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type LPFNSHOWJOYCPL = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND)>;
@@ -6954,7 +6954,7 @@ pub const MOUSE_WHEEL: u32 = 1024u32;
 pub type PFN_HidP_GetVersionInternal = ::core::option::Option<unsafe extern "system" fn(version: *mut u32) -> super::super::Foundation::NTSTATUS>;
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PHIDP_INSERT_SCANCODES = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, newscancodes: ::windows_sys::core::PCSTR, length: u32) -> super::super::Foundation::BOOLEAN>;
+pub type PHIDP_INSERT_SCANCODES = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, newscancodes: ::windows_sys_core::PCSTR, length: u32) -> super::super::Foundation::BOOLEAN>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]
 pub struct USAGE_AND_PAGE {

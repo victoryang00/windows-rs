@@ -14,24 +14,24 @@ pub fn gen() -> TokenStream {
                 !self.is_ok()
             }
             #[inline]
-            pub const fn to_hresult(self) -> ::windows::core::HRESULT {
-                ::windows::core::HRESULT(self.0 | 0x1000_0000)
+            pub const fn to_hresult(self) -> ::windows_core::HRESULT {
+                ::windows_core::HRESULT(self.0 | 0x1000_0000)
             }
             #[inline]
-            pub const fn ok(self) -> ::windows::core::Result<()> {
+            pub const fn ok(self) -> ::windows_core::Result<()> {
                 if self.is_ok() {
                     Ok(())
                 } else {
-                    Err(::windows::core::Error{ code: self.to_hresult(), info: None })
+                    Err(::windows_core::Error{ code: self.to_hresult(), info: None })
                 }
             }
         }
-        impl ::core::convert::From<NTSTATUS> for ::windows::core::HRESULT {
+        impl ::core::convert::From<NTSTATUS> for ::windows_core::HRESULT {
             fn from(value: NTSTATUS) -> Self {
                 value.to_hresult()
             }
         }
-        impl ::core::convert::From<NTSTATUS> for ::windows::core::Error {
+        impl ::core::convert::From<NTSTATUS> for ::windows_core::Error {
             fn from(value: NTSTATUS) -> Self {
                 Self{ code: value.to_hresult(), info: None }
             }
@@ -58,7 +58,7 @@ pub fn gen() -> TokenStream {
                 f.write_fmt(format_args!("NTSTATUS(0x{:08X})", self.0))
             }
         }
-        unsafe impl ::windows::core::Abi for NTSTATUS {
+        unsafe impl ::windows_core::Abi for NTSTATUS {
             type Abi = Self;
         }
     }

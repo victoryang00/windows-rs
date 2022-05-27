@@ -1,43 +1,43 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-    pub fn NdfCancelIncident(handle: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn NdfCancelIncident(handle: *const ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-    pub fn NdfCloseIncident(handle: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn NdfCloseIncident(handle: *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-    pub fn NdfCreateConnectivityIncident(handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn NdfCreateConnectivityIncident(handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-    pub fn NdfCreateDNSIncident(hostname: ::windows_sys::core::PCWSTR, querytype: u16, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn NdfCreateDNSIncident(hostname: ::windows_sys_core::PCWSTR, querytype: u16, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`, `\"Win32_Foundation\"`, `\"Win32_Networking_WinSock\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-    pub fn NdfCreateGroupingIncident(cloudname: ::windows_sys::core::PCWSTR, groupname: ::windows_sys::core::PCWSTR, identity: ::windows_sys::core::PCWSTR, invitation: ::windows_sys::core::PCWSTR, addresses: *const super::super::Networking::WinSock::SOCKET_ADDRESS_LIST, appid: ::windows_sys::core::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn NdfCreateGroupingIncident(cloudname: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, identity: ::windows_sys_core::PCWSTR, invitation: ::windows_sys_core::PCWSTR, addresses: *const super::super::Networking::WinSock::SOCKET_ADDRESS_LIST, appid: ::windows_sys_core::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn NdfCreateIncident(helperclassname: ::windows_sys::core::PCWSTR, celt: u32, attributes: *const HELPER_ATTRIBUTE, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn NdfCreateIncident(helperclassname: ::windows_sys_core::PCWSTR, celt: u32, attributes: *const HELPER_ATTRIBUTE, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-    pub fn NdfCreateNetConnectionIncident(handle: *mut *mut ::core::ffi::c_void, id: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn NdfCreateNetConnectionIncident(handle: *mut *mut ::core::ffi::c_void, id: ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn NdfCreatePnrpIncident(cloudname: ::windows_sys::core::PCWSTR, peername: ::windows_sys::core::PCWSTR, diagnosepublish: super::super::Foundation::BOOL, appid: ::windows_sys::core::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn NdfCreatePnrpIncident(cloudname: ::windows_sys_core::PCWSTR, peername: ::windows_sys_core::PCWSTR, diagnosepublish: super::super::Foundation::BOOL, appid: ::windows_sys_core::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-    pub fn NdfCreateSharingIncident(uncpath: ::windows_sys::core::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn NdfCreateSharingIncident(uncpath: ::windows_sys_core::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-    pub fn NdfCreateWebIncident(url: ::windows_sys::core::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn NdfCreateWebIncident(url: ::windows_sys_core::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn NdfCreateWebIncidentEx(url: ::windows_sys::core::PCWSTR, usewinhttp: super::super::Foundation::BOOL, modulename: ::windows_sys::core::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn NdfCreateWebIncidentEx(url: ::windows_sys_core::PCWSTR, usewinhttp: super::super::Foundation::BOOL, modulename: ::windows_sys_core::PCWSTR, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`, `\"Win32_Networking_WinSock\"`, `\"Win32_Security\"`*"]
     #[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security"))]
-    pub fn NdfCreateWinSockIncident(sock: super::super::Networking::WinSock::SOCKET, host: ::windows_sys::core::PCWSTR, port: u16, appid: ::windows_sys::core::PCWSTR, userid: *const super::super::Security::SID, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn NdfCreateWinSockIncident(sock: super::super::Networking::WinSock::SOCKET, host: ::windows_sys_core::PCWSTR, port: u16, appid: ::windows_sys_core::PCWSTR, userid: *const super::super::Security::SID, handle: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-    pub fn NdfDiagnoseIncident(handle: *const ::core::ffi::c_void, rootcausecount: *mut u32, rootcauses: *mut *mut RootCauseInfo, dwwait: u32, dwflags: u32) -> ::windows_sys::core::HRESULT;
+    pub fn NdfDiagnoseIncident(handle: *const ::core::ffi::c_void, rootcausecount: *mut u32, rootcauses: *mut *mut RootCauseInfo, dwwait: u32, dwflags: u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn NdfExecuteDiagnosis(handle: *const ::core::ffi::c_void, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT;
+    pub fn NdfExecuteDiagnosis(handle: *const ::core::ffi::c_void, hwnd: super::super::Foundation::HWND) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-    pub fn NdfGetTraceFile(handle: *const ::core::ffi::c_void, tracefilelocation: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT;
+    pub fn NdfGetTraceFile(handle: *const ::core::ffi::c_void, tracefilelocation: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-    pub fn NdfRepairIncident(handle: *const ::core::ffi::c_void, repairex: *const RepairInfoEx, dwwait: u32) -> ::windows_sys::core::HRESULT;
+    pub fn NdfRepairIncident(handle: *const ::core::ffi::c_void, repairex: *const RepairInfoEx, dwwait: u32) -> ::windows_sys_core::HRESULT;
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
 pub type ATTRIBUTE_TYPE = i32;
@@ -120,7 +120,7 @@ impl ::core::clone::Clone for DiagnosticsInfo {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct HELPER_ATTRIBUTE {
-    pub pwszName: ::windows_sys::core::PWSTR,
+    pub pwszName: ::windows_sys_core::PWSTR,
     pub r#type: ATTRIBUTE_TYPE,
     pub Anonymous: HELPER_ATTRIBUTE_0,
 }
@@ -145,8 +145,8 @@ pub union HELPER_ATTRIBUTE_0 {
     pub DWord: u32,
     pub Int64: i64,
     pub UInt64: u64,
-    pub PWStr: ::windows_sys::core::PWSTR,
-    pub Guid: ::windows_sys::core::GUID,
+    pub PWStr: ::windows_sys_core::PWSTR,
+    pub Guid: ::windows_sys_core::GUID,
     pub LifeTime: LIFE_TIME,
     pub Address: DIAG_SOCKADDR,
     pub OctetString: OCTET_STRING,
@@ -163,8 +163,8 @@ impl ::core::clone::Clone for HELPER_ATTRIBUTE_0 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct HYPOTHESIS {
-    pub pwszClassName: ::windows_sys::core::PWSTR,
-    pub pwszDescription: ::windows_sys::core::PWSTR,
+    pub pwszClassName: ::windows_sys_core::PWSTR,
+    pub pwszDescription: ::windows_sys_core::PWSTR,
     pub celt: u32,
     pub rgAttributes: *mut HELPER_ATTRIBUTE,
 }
@@ -179,7 +179,7 @@ impl ::core::clone::Clone for HYPOTHESIS {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
 pub struct HelperAttributeInfo {
-    pub pwszName: ::windows_sys::core::PWSTR,
+    pub pwszName: ::windows_sys_core::PWSTR,
     pub r#type: ATTRIBUTE_TYPE,
 }
 impl ::core::marker::Copy for HelperAttributeInfo {}
@@ -230,21 +230,21 @@ pub const NDF_APPLY_INCLUSION_LIST_FILTER: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
 pub const NDF_ERROR_START: u32 = 63744u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-pub const NDF_E_BAD_PARAM: ::windows_sys::core::HRESULT = -2146895611i32;
+pub const NDF_E_BAD_PARAM: ::windows_sys_core::HRESULT = -2146895611i32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-pub const NDF_E_CANCELLED: ::windows_sys::core::HRESULT = -2146895614i32;
+pub const NDF_E_CANCELLED: ::windows_sys_core::HRESULT = -2146895614i32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-pub const NDF_E_DISABLED: ::windows_sys::core::HRESULT = -2146895612i32;
+pub const NDF_E_DISABLED: ::windows_sys_core::HRESULT = -2146895612i32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-pub const NDF_E_LENGTH_EXCEEDED: ::windows_sys::core::HRESULT = -2146895616i32;
+pub const NDF_E_LENGTH_EXCEEDED: ::windows_sys_core::HRESULT = -2146895616i32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-pub const NDF_E_NOHELPERCLASS: ::windows_sys::core::HRESULT = -2146895615i32;
+pub const NDF_E_NOHELPERCLASS: ::windows_sys_core::HRESULT = -2146895615i32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-pub const NDF_E_PROBLEM_PRESENT: ::windows_sys::core::HRESULT = -2146895608i32;
+pub const NDF_E_PROBLEM_PRESENT: ::windows_sys_core::HRESULT = -2146895608i32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-pub const NDF_E_UNKNOWN: ::windows_sys::core::HRESULT = -2146895609i32;
+pub const NDF_E_UNKNOWN: ::windows_sys_core::HRESULT = -2146895609i32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
-pub const NDF_E_VALIDATION: ::windows_sys::core::HRESULT = -2146895610i32;
+pub const NDF_E_VALIDATION: ::windows_sys_core::HRESULT = -2146895610i32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
 pub const NDF_INBOUND_FLAG_EDGETRAVERSAL: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
@@ -340,9 +340,9 @@ pub const RF_WORKAROUND: u32 = 536870912u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
 pub struct RepairInfo {
-    pub guid: ::windows_sys::core::GUID,
-    pub pwszClassName: ::windows_sys::core::PWSTR,
-    pub pwszDescription: ::windows_sys::core::PWSTR,
+    pub guid: ::windows_sys_core::GUID,
+    pub pwszClassName: ::windows_sys_core::PWSTR,
+    pub pwszDescription: ::windows_sys_core::PWSTR,
     pub sidType: u32,
     pub cost: i32,
     pub flags: u32,
@@ -372,10 +372,10 @@ impl ::core::clone::Clone for RepairInfoEx {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
 pub struct RootCauseInfo {
-    pub pwszDescription: ::windows_sys::core::PWSTR,
-    pub rootCauseID: ::windows_sys::core::GUID,
+    pub pwszDescription: ::windows_sys_core::PWSTR,
+    pub rootCauseID: ::windows_sys_core::GUID,
     pub rootCauseFlags: u32,
-    pub networkInterfaceID: ::windows_sys::core::GUID,
+    pub networkInterfaceID: ::windows_sys_core::GUID,
     pub pRepairs: *mut RepairInfoEx,
     pub repairCount: u16,
 }
@@ -388,10 +388,10 @@ impl ::core::clone::Clone for RootCauseInfo {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
 pub struct ShellCommandInfo {
-    pub pwszOperation: ::windows_sys::core::PWSTR,
-    pub pwszFile: ::windows_sys::core::PWSTR,
-    pub pwszParameters: ::windows_sys::core::PWSTR,
-    pub pwszDirectory: ::windows_sys::core::PWSTR,
+    pub pwszOperation: ::windows_sys_core::PWSTR,
+    pub pwszFile: ::windows_sys_core::PWSTR,
+    pub pwszParameters: ::windows_sys_core::PWSTR,
+    pub pwszDirectory: ::windows_sys_core::PWSTR,
     pub nShowCmd: u32,
 }
 impl ::core::marker::Copy for ShellCommandInfo {}
@@ -427,10 +427,10 @@ impl ::core::clone::Clone for UiInfo {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`*"]
 pub union UiInfo_0 {
-    pub pwzNull: ::windows_sys::core::PWSTR,
+    pub pwzNull: ::windows_sys_core::PWSTR,
     pub ShellInfo: ShellCommandInfo,
-    pub pwzHelpUrl: ::windows_sys::core::PWSTR,
-    pub pwzDui: ::windows_sys::core::PWSTR,
+    pub pwzHelpUrl: ::windows_sys_core::PWSTR,
+    pub pwzDui: ::windows_sys_core::PWSTR,
 }
 impl ::core::marker::Copy for UiInfo_0 {}
 impl ::core::clone::Clone for UiInfo_0 {

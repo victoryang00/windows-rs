@@ -1,7 +1,7 @@
 
 [package]
 name = "windows-sys-win32-ui"
-version = "0.22.6"
+version = "0.37.0"
 authors = ["Microsoft"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
@@ -9,3 +9,39 @@ description = "Rust for Windows"
 repository = "https://github.com/microsoft/windows-rs"
 readme = "../../../.github/readme.md"
 rust-version = "1.46"
+
+[dependencies]
+windows-sys-core = { path = "../../libs/windows-sys-core",  version = "0.37.0" }
+
+[features]
+default = []
+deprecated = []
+Accessibility = []
+Animation = []
+ColorSystem = []
+Controls = []
+Controls_Dialogs = ["Controls"]
+Controls_RichEdit = ["Controls"]
+HiDpi = []
+Input = []
+Input_Ime = ["Input"]
+Input_Ink = ["Input"]
+Input_KeyboardAndMouse = ["Input"]
+Input_Pointer = ["Input"]
+Input_Radial = ["Input"]
+Input_Touch = ["Input"]
+Input_XboxController = ["Input"]
+InteractionContext = []
+LegacyWindowsEnvironmentFeatures = []
+Magnification = []
+Notifications = []
+Ribbon = []
+Shell = []
+Shell_Common = ["Shell"]
+Shell_PropertiesSystem = ["Shell"]
+TabletPC = []
+TextServices = []
+WindowsAndMessaging = []
+Wpf = []
+Xaml = []
+Xaml_Diagnostics = ["Xaml"]

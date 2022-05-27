@@ -19,8 +19,8 @@ pub struct ALLOCATOR_PROPERTIES_EX {
     pub cbBuffer: i32,
     pub cbAlign: i32,
     pub cbPrefix: i32,
-    pub MemoryType: ::windows::core::GUID,
-    pub BusType: ::windows::core::GUID,
+    pub MemoryType: ::windows_core::GUID,
+    pub BusType: ::windows_core::GUID,
     pub State: PIPE_STATE,
     pub Input: PIPE_TERMINATION,
     pub Output: PIPE_TERMINATION,
@@ -70,12 +70,12 @@ impl ::core::fmt::Debug for ALLOCATOR_PROPERTIES_EX {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for ALLOCATOR_PROPERTIES_EX {
+unsafe impl ::windows_core::Abi for ALLOCATOR_PROPERTIES_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ALLOCATOR_PROPERTIES_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ALLOCATOR_PROPERTIES_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ALLOCATOR_PROPERTIES_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ALLOCATOR_PROPERTIES_EX {}
@@ -84,8 +84,8 @@ impl ::core::default::Default for ALLOCATOR_PROPERTIES_EX {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const APO_CLASS_UUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5989fce8_9cd0_467d_8a6a_5419e31529d4);
-pub const AUDIOENDPOINT_CLASS_UUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc166523c_fe0c_4a94_a586_f1a80cfbbf3e);
+pub const APO_CLASS_UUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5989fce8_9cd0_467d_8a6a_5419e31529d4);
+pub const AUDIOENDPOINT_CLASS_UUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc166523c_fe0c_4a94_a586_f1a80cfbbf3e);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const AUDIOMODULE_MAX_DATA_SIZE: u32 = 64000u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
@@ -113,7 +113,7 @@ impl ::core::default::Default for AUDIOPOSTURE_ORIENTATION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for AUDIOPOSTURE_ORIENTATION {
+unsafe impl ::windows_core::Abi for AUDIOPOSTURE_ORIENTATION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for AUDIOPOSTURE_ORIENTATION {
@@ -143,13 +143,13 @@ impl ::core::fmt::Debug for AUDIORESOURCEMANAGEMENT_RESOURCEGROUP {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for AUDIORESOURCEMANAGEMENT_RESOURCEGROUP {
+unsafe impl ::windows_core::Abi for AUDIORESOURCEMANAGEMENT_RESOURCEGROUP {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for AUDIORESOURCEMANAGEMENT_RESOURCEGROUP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUDIORESOURCEMANAGEMENT_RESOURCEGROUP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUDIORESOURCEMANAGEMENT_RESOURCEGROUP>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -179,7 +179,7 @@ impl ::core::default::Default for AUDIO_CURVE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for AUDIO_CURVE_TYPE {
+unsafe impl ::windows_core::Abi for AUDIO_CURVE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for AUDIO_CURVE_TYPE {
@@ -187,33 +187,33 @@ impl ::core::fmt::Debug for AUDIO_CURVE_TYPE {
         f.debug_tuple("AUDIO_CURVE_TYPE").field(&self.0).finish()
     }
 }
-pub const AUDIO_EFFECT_TYPE_ACOUSTIC_ECHO_CANCELLATION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adbe_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_AUTOMATIC_GAIN_CONTROL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adc0_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_BASS_BOOST: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adc5_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_BASS_MANAGEMENT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adca_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_BEAMFORMING: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adc1_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_CONSTANT_TONE_REMOVAL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adc2_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_DEEP_NOISE_SUPPRESSION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64add0_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_DYNAMIC_RANGE_COMPRESSION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adce_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_ENVIRONMENTAL_EFFECTS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adcb_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_EQUALIZER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adc3_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_FAR_FIELD_BEAMFORMING: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adcf_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_LOUDNESS_EQUALIZER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adc4_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_NOISE_SUPPRESSION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adbf_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_ROOM_CORRECTION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adc9_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_SPEAKER_COMPENSATION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adcd_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_SPEAKER_FILL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adc8_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_SPEAKER_PROTECTION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adcc_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_VIRTUAL_HEADPHONES: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adc7_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_EFFECT_TYPE_VIRTUAL_SURROUND: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6f64adc6_8211_11e2_8c70_2c27d7f001fa);
-pub const AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x98951333_b9cd_48b1_a0a3_ff40682d73f7);
-pub const AUDIO_SIGNALPROCESSINGMODE_DEFAULT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc18e2f7e_933d_4965_b7d1_1eef228d2af3);
-pub const AUDIO_SIGNALPROCESSINGMODE_FAR_FIELD_SPEECH: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x28941cba_3be6_4a78_9a76_30fd91559b64);
-pub const AUDIO_SIGNALPROCESSINGMODE_MEDIA: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4780004e_7133_41d8_8c74_660dadd2c0ee);
-pub const AUDIO_SIGNALPROCESSINGMODE_MOVIE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb26feb0d_ec94_477c_9494_d1ab8e753f6e);
-pub const AUDIO_SIGNALPROCESSINGMODE_NOTIFICATION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9cf2a70b_f377_403b_bd6b_360863e0355c);
-pub const AUDIO_SIGNALPROCESSINGMODE_RAW: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9e90ea20_b493_4fd1_a1a8_7e1361a956cf);
-pub const AUDIO_SIGNALPROCESSINGMODE_SPEECH: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfc1cfc9b_b9d6_4cfa_b5e0_4bb2166878b2);
+pub const AUDIO_EFFECT_TYPE_ACOUSTIC_ECHO_CANCELLATION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adbe_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_AUTOMATIC_GAIN_CONTROL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adc0_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_BASS_BOOST: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adc5_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_BASS_MANAGEMENT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adca_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_BEAMFORMING: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adc1_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_CONSTANT_TONE_REMOVAL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adc2_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_DEEP_NOISE_SUPPRESSION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64add0_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_DYNAMIC_RANGE_COMPRESSION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adce_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_ENVIRONMENTAL_EFFECTS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adcb_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_EQUALIZER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adc3_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_FAR_FIELD_BEAMFORMING: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adcf_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_LOUDNESS_EQUALIZER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adc4_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_NOISE_SUPPRESSION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adbf_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_ROOM_CORRECTION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adc9_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_SPEAKER_COMPENSATION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adcd_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_SPEAKER_FILL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adc8_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_SPEAKER_PROTECTION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adcc_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_VIRTUAL_HEADPHONES: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adc7_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_EFFECT_TYPE_VIRTUAL_SURROUND: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6f64adc6_8211_11e2_8c70_2c27d7f001fa);
+pub const AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x98951333_b9cd_48b1_a0a3_ff40682d73f7);
+pub const AUDIO_SIGNALPROCESSINGMODE_DEFAULT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc18e2f7e_933d_4965_b7d1_1eef228d2af3);
+pub const AUDIO_SIGNALPROCESSINGMODE_FAR_FIELD_SPEECH: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x28941cba_3be6_4a78_9a76_30fd91559b64);
+pub const AUDIO_SIGNALPROCESSINGMODE_MEDIA: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4780004e_7133_41d8_8c74_660dadd2c0ee);
+pub const AUDIO_SIGNALPROCESSINGMODE_MOVIE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb26feb0d_ec94_477c_9494_d1ab8e753f6e);
+pub const AUDIO_SIGNALPROCESSINGMODE_NOTIFICATION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9cf2a70b_f377_403b_bd6b_360863e0355c);
+pub const AUDIO_SIGNALPROCESSINGMODE_RAW: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9e90ea20_b493_4fd1_a1a8_7e1361a956cf);
+pub const AUDIO_SIGNALPROCESSINGMODE_SPEECH: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfc1cfc9b_b9d6_4cfa_b5e0_4bb2166878b2);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const AllocatorStrategy_DontCare: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
@@ -224,8 +224,8 @@ pub const AllocatorStrategy_MinimizeFrameSize: u32 = 2u32;
 pub const AllocatorStrategy_MinimizeNumberOfAllocators: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const AllocatorStrategy_MinimizeNumberOfFrames: u32 = 1u32;
-pub const BLUETOOTHLE_MIDI_SERVICE_UUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x03b80e5a_ede8_4b33_a751_6ce34ec4c700);
-pub const BLUETOOTH_MIDI_DATAIO_CHARACTERISTIC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7772e5db_3868_4112_a1a9_f2669d106bf3);
+pub const BLUETOOTHLE_MIDI_SERVICE_UUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x03b80e5a_ede8_4b33_a751_6ce34ec4c700);
+pub const BLUETOOTH_MIDI_DATAIO_CHARACTERISTIC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7772e5db_3868_4112_a1a9_f2669d106bf3);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const BUS_INTERFACE_REFERENCE_VERSION: u32 = 256u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
@@ -255,7 +255,7 @@ impl ::core::default::Default for CAPTURE_MEMORY_ALLOCATION_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CAPTURE_MEMORY_ALLOCATION_FLAGS {
+unsafe impl ::windows_core::Abi for CAPTURE_MEMORY_ALLOCATION_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CAPTURE_MEMORY_ALLOCATION_FLAGS {
@@ -280,12 +280,12 @@ impl ::core::fmt::Debug for CC_BYTE_PAIR {
         f.debug_struct("CC_BYTE_PAIR").field("Decoded", &self.Decoded).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CC_BYTE_PAIR {
+unsafe impl ::windows_core::Abi for CC_BYTE_PAIR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CC_BYTE_PAIR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CC_BYTE_PAIR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CC_BYTE_PAIR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CC_BYTE_PAIR {}
@@ -313,12 +313,12 @@ impl ::core::fmt::Debug for CC_HW_FIELD {
         f.debug_struct("CC_HW_FIELD").field("ScanlinesRequested", &self.ScanlinesRequested).field("fieldFlags", &self.fieldFlags).field("PictureNumber", &self.PictureNumber).field("Lines", &self.Lines).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CC_HW_FIELD {
+unsafe impl ::windows_core::Abi for CC_HW_FIELD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CC_HW_FIELD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CC_HW_FIELD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CC_HW_FIELD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CC_HW_FIELD {}
@@ -329,15 +329,15 @@ impl ::core::default::Default for CC_HW_FIELD {
 }
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const CC_MAX_HW_DECODE_LINES: u32 = 12u32;
-pub const CLSID_KsIBasicAudioInterfaceHandler: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb9f8ac3e_0f71_11d2_b72c_00c04fb6bd3d);
-pub const CLSID_Proxy: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x17cca71b_ecd7_11d0_b908_00a0c9223196);
-pub const CODECAPI_ALLSETTINGS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6a577e92_83e1_4113_adc2_4fcec32f83a1);
-pub const CODECAPI_AUDIO_ENCODER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb9d19a3e_f897_429c_bc46_8138b7272b2d);
-pub const CODECAPI_CHANGELISTS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x62b12acf_f6b0_47d9_9456_96f22c4e0b9d);
-pub const CODECAPI_CURRENTCHANGELIST: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1cb14e83_7d72_4657_83fd_47a2c5b9d13d);
-pub const CODECAPI_SETALLDEFAULTS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6c5e6a7c_acf8_4f55_a999_1a628109051b);
-pub const CODECAPI_SUPPORTSEVENTS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0581af97_7693_4dbd_9dca_3f9ebd6585a1);
-pub const CODECAPI_VIDEO_ENCODER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7112e8e1_3d03_47ef_8e60_03f1cf537301);
+pub const CLSID_KsIBasicAudioInterfaceHandler: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb9f8ac3e_0f71_11d2_b72c_00c04fb6bd3d);
+pub const CLSID_Proxy: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x17cca71b_ecd7_11d0_b908_00a0c9223196);
+pub const CODECAPI_ALLSETTINGS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6a577e92_83e1_4113_adc2_4fcec32f83a1);
+pub const CODECAPI_AUDIO_ENCODER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb9d19a3e_f897_429c_bc46_8138b7272b2d);
+pub const CODECAPI_CHANGELISTS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x62b12acf_f6b0_47d9_9456_96f22c4e0b9d);
+pub const CODECAPI_CURRENTCHANGELIST: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1cb14e83_7d72_4657_83fd_47a2c5b9d13d);
+pub const CODECAPI_SETALLDEFAULTS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6c5e6a7c_acf8_4f55_a999_1a628109051b);
+pub const CODECAPI_SUPPORTSEVENTS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0581af97_7693_4dbd_9dca_3f9ebd6585a1);
+pub const CODECAPI_VIDEO_ENCODER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7112e8e1_3d03_47ef_8e60_03f1cf537301);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -357,7 +357,7 @@ impl ::core::default::Default for CONSTRICTOR_OPTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CONSTRICTOR_OPTION {
+unsafe impl ::windows_core::Abi for CONSTRICTOR_OPTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CONSTRICTOR_OPTION {
@@ -427,12 +427,12 @@ impl ::core::fmt::Debug for DEVCAPS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for DEVCAPS {
+unsafe impl ::windows_core::Abi for DEVCAPS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DEVCAPS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVCAPS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVCAPS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DEVCAPS {}
@@ -443,13 +443,13 @@ impl ::core::default::Default for DEVCAPS {
 }
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_KsAudio_Controller_DeviceInterface_Path: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows::core::GUID::from_u128(0x13e004d6_b066_43bd_913b_a415cd13da87), pid: 3u32 };
+pub const DEVPKEY_KsAudio_Controller_DeviceInterface_Path: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x13e004d6_b066_43bd_913b_a415cd13da87), pid: 3u32 };
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_KsAudio_PacketSize_Constraints: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows::core::GUID::from_u128(0x13e004d6_b066_43bd_913b_a415cd13da87), pid: 2u32 };
+pub const DEVPKEY_KsAudio_PacketSize_Constraints: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x13e004d6_b066_43bd_913b_a415cd13da87), pid: 2u32 };
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_KsAudio_PacketSize_Constraints2: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows::core::GUID::from_u128(0x9404f781_7191_409b_8b0b_80bf6ec229ae), pid: 2u32 };
+pub const DEVPKEY_KsAudio_PacketSize_Constraints2: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x9404f781_7191_409b_8b0b_80bf6ec229ae), pid: 2u32 };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct DS3DVECTOR {
@@ -463,12 +463,12 @@ impl ::core::clone::Clone for DS3DVECTOR {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DS3DVECTOR {
+unsafe impl ::windows_core::Abi for DS3DVECTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DS3DVECTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DS3DVECTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DS3DVECTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DS3DVECTOR {}
@@ -489,12 +489,12 @@ impl ::core::clone::Clone for DS3DVECTOR_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DS3DVECTOR_0 {
+unsafe impl ::windows_core::Abi for DS3DVECTOR_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DS3DVECTOR_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DS3DVECTOR_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DS3DVECTOR_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DS3DVECTOR_0 {}
@@ -515,12 +515,12 @@ impl ::core::clone::Clone for DS3DVECTOR_1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DS3DVECTOR_1 {
+unsafe impl ::windows_core::Abi for DS3DVECTOR_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DS3DVECTOR_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DS3DVECTOR_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DS3DVECTOR_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DS3DVECTOR_1 {}
@@ -541,12 +541,12 @@ impl ::core::clone::Clone for DS3DVECTOR_2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DS3DVECTOR_2 {
+unsafe impl ::windows_core::Abi for DS3DVECTOR_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DS3DVECTOR_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DS3DVECTOR_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DS3DVECTOR_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DS3DVECTOR_2 {}
@@ -555,9 +555,9 @@ impl ::core::default::Default for DS3DVECTOR_2 {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const ENCAPIPARAM_BITRATE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x49cc4c43_ca83_4ad4_a9af_f3696af666df);
-pub const ENCAPIPARAM_BITRATE_MODE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xee5fb25c_c713_40d1_9d58_c0d7241e250f);
-pub const ENCAPIPARAM_PEAK_BITRATE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x703f16a9_3d48_44a1_b077_018dff915d19);
+pub const ENCAPIPARAM_BITRATE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x49cc4c43_ca83_4ad4_a9af_f3696af666df);
+pub const ENCAPIPARAM_BITRATE_MODE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xee5fb25c_c713_40d1_9d58_c0d7241e250f);
+pub const ENCAPIPARAM_PEAK_BITRATE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x703f16a9_3d48_44a1_b077_018dff915d19);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -597,7 +597,7 @@ impl ::core::default::Default for EPcxConnectionType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EPcxConnectionType {
+unsafe impl ::windows_core::Abi for EPcxConnectionType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EPcxConnectionType {
@@ -630,7 +630,7 @@ impl ::core::default::Default for EPcxGenLocation {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EPcxGenLocation {
+unsafe impl ::windows_core::Abi for EPcxGenLocation {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EPcxGenLocation {
@@ -685,7 +685,7 @@ impl ::core::default::Default for EPcxGeoLocation {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EPcxGeoLocation {
+unsafe impl ::windows_core::Abi for EPcxGeoLocation {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EPcxGeoLocation {
@@ -716,7 +716,7 @@ impl ::core::default::Default for EPxcPortConnection {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EPxcPortConnection {
+unsafe impl ::windows_core::Abi for EPxcPortConnection {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EPxcPortConnection {
@@ -724,10 +724,10 @@ impl ::core::fmt::Debug for EPxcPortConnection {
         f.debug_tuple("EPxcPortConnection").field(&self.0).finish()
     }
 }
-pub const EVENTSETID_CROSSBAR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6a2e0641_28e4_11d0_a18c_00a0c9118956);
-pub const EVENTSETID_TUNER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6a2e0606_28e4_11d0_a18c_00a0c9118956);
-pub const EVENTSETID_VIDCAP_CAMERACONTROL_REGION_OF_INTEREST: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2fdffc5d_c732_4ba6_b5df_6b4d7fc88b8b);
-pub const EVENTSETID_VIDEODECODER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6a2e0621_28e4_11d0_a18c_00a0c9118956);
+pub const EVENTSETID_CROSSBAR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6a2e0641_28e4_11d0_a18c_00a0c9118956);
+pub const EVENTSETID_TUNER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6a2e0606_28e4_11d0_a18c_00a0c9118956);
+pub const EVENTSETID_VIDCAP_CAMERACONTROL_REGION_OF_INTEREST: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2fdffc5d_c732_4ba6_b5df_6b4d7fc88b8b);
+pub const EVENTSETID_VIDEODECODER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6a2e0621_28e4_11d0_a18c_00a0c9118956);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -751,7 +751,7 @@ impl ::core::default::Default for FRAMING_CACHE_OPS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FRAMING_CACHE_OPS {
+unsafe impl ::windows_core::Abi for FRAMING_CACHE_OPS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FRAMING_CACHE_OPS {
@@ -782,7 +782,7 @@ impl ::core::default::Default for FRAMING_PROP {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FRAMING_PROP {
+unsafe impl ::windows_core::Abi for FRAMING_PROP {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FRAMING_PROP {
@@ -790,38 +790,38 @@ impl ::core::fmt::Debug for FRAMING_PROP {
         f.debug_tuple("FRAMING_PROP").field(&self.0).finish()
     }
 }
-pub const GUID_NULL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000000_0000_0000_0000_000000000000);
+pub const GUID_NULL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000000_0000_0000_0000_000000000000);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
-pub struct IKsAggregateControl(::windows::core::IUnknown);
+pub struct IKsAggregateControl(::windows_core::IUnknown);
 impl IKsAggregateControl {
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn KsAddAggregate(&self, aggregateclass: *const ::windows::core::GUID) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).KsAddAggregate)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(aggregateclass)).ok()
+    pub unsafe fn KsAddAggregate(&self, aggregateclass: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).KsAddAggregate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(aggregateclass)).ok()
     }
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn KsRemoveAggregate(&self, aggregateclass: *const ::windows::core::GUID) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).KsRemoveAggregate)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(aggregateclass)).ok()
+    pub unsafe fn KsRemoveAggregate(&self, aggregateclass: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).KsRemoveAggregate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(aggregateclass)).ok()
     }
 }
-impl ::core::convert::From<IKsAggregateControl> for ::windows::core::IUnknown {
+impl ::core::convert::From<IKsAggregateControl> for ::windows_core::IUnknown {
     fn from(value: IKsAggregateControl) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IKsAggregateControl> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IKsAggregateControl> for ::windows_core::IUnknown {
     fn from(value: &IKsAggregateControl) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IKsAggregateControl {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IKsAggregateControl {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IKsAggregateControl {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IKsAggregateControl {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IKsAggregateControl {
@@ -840,16 +840,16 @@ impl ::core::fmt::Debug for IKsAggregateControl {
         f.debug_tuple("IKsAggregateControl").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IKsAggregateControl {
+unsafe impl ::windows_core::Interface for IKsAggregateControl {
     type Vtable = IKsAggregateControl_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7f40eac0_3947_11d2_874e_00a0c9223196);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7f40eac0_3947_11d2_874e_00a0c9223196);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IKsAggregateControl_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub KsAddAggregate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, aggregateclass: *const ::windows::core::GUID) -> ::windows::core::HRESULT,
-    pub KsRemoveAggregate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, aggregateclass: *const ::windows::core::GUID) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub KsAddAggregate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, aggregateclass: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
+    pub KsRemoveAggregate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, aggregateclass: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
 }
 #[repr(C)]
 pub struct IKsAllocator(pub u8);
@@ -857,39 +857,39 @@ pub struct IKsAllocator(pub u8);
 pub struct IKsAllocatorEx(pub u8);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
-pub struct IKsControl(::windows::core::IUnknown);
+pub struct IKsControl(::windows_core::IUnknown);
 impl IKsControl {
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn KsProperty(&self, property: *const KSIDENTIFIER, propertylength: u32, propertydata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).KsProperty)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(property), ::core::mem::transmute(propertylength), ::core::mem::transmute(propertydata), ::core::mem::transmute(datalength), ::core::mem::transmute(bytesreturned)).ok()
+    pub unsafe fn KsProperty(&self, property: *const KSIDENTIFIER, propertylength: u32, propertydata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).KsProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(property), ::core::mem::transmute(propertylength), ::core::mem::transmute(propertydata), ::core::mem::transmute(datalength), ::core::mem::transmute(bytesreturned)).ok()
     }
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn KsMethod(&self, method: *const KSIDENTIFIER, methodlength: u32, methoddata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).KsMethod)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(method), ::core::mem::transmute(methodlength), ::core::mem::transmute(methoddata), ::core::mem::transmute(datalength), ::core::mem::transmute(bytesreturned)).ok()
+    pub unsafe fn KsMethod(&self, method: *const KSIDENTIFIER, methodlength: u32, methoddata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).KsMethod)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(method), ::core::mem::transmute(methodlength), ::core::mem::transmute(methoddata), ::core::mem::transmute(datalength), ::core::mem::transmute(bytesreturned)).ok()
     }
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn KsEvent(&self, event: *const KSIDENTIFIER, eventlength: u32, eventdata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).KsEvent)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(event), ::core::mem::transmute(eventlength), ::core::mem::transmute(eventdata), ::core::mem::transmute(datalength), ::core::mem::transmute(bytesreturned)).ok()
+    pub unsafe fn KsEvent(&self, event: *const KSIDENTIFIER, eventlength: u32, eventdata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).KsEvent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(event), ::core::mem::transmute(eventlength), ::core::mem::transmute(eventdata), ::core::mem::transmute(datalength), ::core::mem::transmute(bytesreturned)).ok()
     }
 }
-impl ::core::convert::From<IKsControl> for ::windows::core::IUnknown {
+impl ::core::convert::From<IKsControl> for ::windows_core::IUnknown {
     fn from(value: IKsControl) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IKsControl> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IKsControl> for ::windows_core::IUnknown {
     fn from(value: &IKsControl) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IKsControl {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IKsControl {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IKsControl {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IKsControl {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IKsControl {
@@ -908,51 +908,51 @@ impl ::core::fmt::Debug for IKsControl {
         f.debug_tuple("IKsControl").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IKsControl {
+unsafe impl ::windows_core::Interface for IKsControl {
     type Vtable = IKsControl_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x28f54685_06fd_11d2_b27a_00a0c9223196);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x28f54685_06fd_11d2_b27a_00a0c9223196);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IKsControl_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub KsProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, property: *const KSIDENTIFIER, propertylength: u32, propertydata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows::core::HRESULT,
-    pub KsMethod: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, method: *const KSIDENTIFIER, methodlength: u32, methoddata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows::core::HRESULT,
-    pub KsEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, event: *const KSIDENTIFIER, eventlength: u32, eventdata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub KsProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, property: *const KSIDENTIFIER, propertylength: u32, propertydata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_core::HRESULT,
+    pub KsMethod: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, method: *const KSIDENTIFIER, methodlength: u32, methoddata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_core::HRESULT,
+    pub KsEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, event: *const KSIDENTIFIER, eventlength: u32, eventdata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
-pub struct IKsFormatSupport(::windows::core::IUnknown);
+pub struct IKsFormatSupport(::windows_core::IUnknown);
 impl IKsFormatSupport {
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsFormatSupported(&self, pksformat: *mut KSDATAFORMAT, cbformat: u32, pbsupported: *mut super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).IsFormatSupported)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pksformat), ::core::mem::transmute(cbformat), ::core::mem::transmute(pbsupported)).ok()
+    pub unsafe fn IsFormatSupported(&self, pksformat: *mut KSDATAFORMAT, cbformat: u32, pbsupported: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).IsFormatSupported)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pksformat), ::core::mem::transmute(cbformat), ::core::mem::transmute(pbsupported)).ok()
     }
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn GetDevicePreferredFormat(&self) -> ::windows::core::Result<*mut KSDATAFORMAT> {
+    pub unsafe fn GetDevicePreferredFormat(&self) -> ::windows_core::Result<*mut KSDATAFORMAT> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut KSDATAFORMAT>::zeroed();
-        (::windows::core::Interface::vtable(self).GetDevicePreferredFormat)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut KSDATAFORMAT>(result__)
+        (::windows_core::Interface::vtable(self).GetDevicePreferredFormat)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut KSDATAFORMAT>(result__)
     }
 }
-impl ::core::convert::From<IKsFormatSupport> for ::windows::core::IUnknown {
+impl ::core::convert::From<IKsFormatSupport> for ::windows_core::IUnknown {
     fn from(value: IKsFormatSupport) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IKsFormatSupport> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IKsFormatSupport> for ::windows_core::IUnknown {
     fn from(value: &IKsFormatSupport) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IKsFormatSupport {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IKsFormatSupport {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IKsFormatSupport {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IKsFormatSupport {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IKsFormatSupport {
@@ -971,48 +971,48 @@ impl ::core::fmt::Debug for IKsFormatSupport {
         f.debug_tuple("IKsFormatSupport").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IKsFormatSupport {
+unsafe impl ::windows_core::Interface for IKsFormatSupport {
     type Vtable = IKsFormatSupport_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3cb4a69d_bb6f_4d2b_95b7_452d2c155db5);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3cb4a69d_bb6f_4d2b_95b7_452d2c155db5);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IKsFormatSupport_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub IsFormatSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pksformat: *mut KSDATAFORMAT, cbformat: u32, pbsupported: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT,
+    pub IsFormatSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pksformat: *mut KSDATAFORMAT, cbformat: u32, pbsupported: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsFormatSupported: usize,
-    pub GetDevicePreferredFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppksformat: *mut *mut KSDATAFORMAT) -> ::windows::core::HRESULT,
+    pub GetDevicePreferredFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppksformat: *mut *mut KSDATAFORMAT) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
-pub struct IKsJackContainerId(::windows::core::IUnknown);
+pub struct IKsJackContainerId(::windows_core::IUnknown);
 impl IKsJackContainerId {
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn GetJackContainerId(&self) -> ::windows::core::Result<::windows::core::GUID> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::GUID>::zeroed();
-        (::windows::core::Interface::vtable(self).GetJackContainerId)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::GUID>(result__)
+    pub unsafe fn GetJackContainerId(&self) -> ::windows_core::Result<::windows_core::GUID> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::GUID>::zeroed();
+        (::windows_core::Interface::vtable(self).GetJackContainerId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::GUID>(result__)
     }
 }
-impl ::core::convert::From<IKsJackContainerId> for ::windows::core::IUnknown {
+impl ::core::convert::From<IKsJackContainerId> for ::windows_core::IUnknown {
     fn from(value: IKsJackContainerId) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IKsJackContainerId> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IKsJackContainerId> for ::windows_core::IUnknown {
     fn from(value: &IKsJackContainerId) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IKsJackContainerId {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IKsJackContainerId {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IKsJackContainerId {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IKsJackContainerId {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IKsJackContainerId {
@@ -1031,50 +1031,50 @@ impl ::core::fmt::Debug for IKsJackContainerId {
         f.debug_tuple("IKsJackContainerId").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IKsJackContainerId {
+unsafe impl ::windows_core::Interface for IKsJackContainerId {
     type Vtable = IKsJackContainerId_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc99af463_d629_4ec4_8c00_e54d68154248);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc99af463_d629_4ec4_8c00_e54d68154248);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IKsJackContainerId_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetJackContainerId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pjackcontainerid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetJackContainerId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pjackcontainerid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
-pub struct IKsJackDescription(::windows::core::IUnknown);
+pub struct IKsJackDescription(::windows_core::IUnknown);
 impl IKsJackDescription {
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn GetJackCount(&self) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetJackCount(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).GetJackCount)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).GetJackCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetJackDescription(&self, njack: u32) -> ::windows::core::Result<KSJACK_DESCRIPTION> {
+    pub unsafe fn GetJackDescription(&self, njack: u32) -> ::windows_core::Result<KSJACK_DESCRIPTION> {
         let mut result__ = ::core::mem::MaybeUninit::<KSJACK_DESCRIPTION>::zeroed();
-        (::windows::core::Interface::vtable(self).GetJackDescription)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(njack), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<KSJACK_DESCRIPTION>(result__)
+        (::windows_core::Interface::vtable(self).GetJackDescription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(njack), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<KSJACK_DESCRIPTION>(result__)
     }
 }
-impl ::core::convert::From<IKsJackDescription> for ::windows::core::IUnknown {
+impl ::core::convert::From<IKsJackDescription> for ::windows_core::IUnknown {
     fn from(value: IKsJackDescription) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IKsJackDescription> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IKsJackDescription> for ::windows_core::IUnknown {
     fn from(value: &IKsJackDescription) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IKsJackDescription {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IKsJackDescription {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IKsJackDescription {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IKsJackDescription {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IKsJackDescription {
@@ -1093,53 +1093,53 @@ impl ::core::fmt::Debug for IKsJackDescription {
         f.debug_tuple("IKsJackDescription").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IKsJackDescription {
+unsafe impl ::windows_core::Interface for IKsJackDescription {
     type Vtable = IKsJackDescription_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4509f757_2d46_4637_8e62_ce7db944f57b);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4509f757_2d46_4637_8e62_ce7db944f57b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IKsJackDescription_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetJackCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcjacks: *mut u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetJackCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcjacks: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub GetJackDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, njack: u32, pdescription: *mut KSJACK_DESCRIPTION) -> ::windows::core::HRESULT,
+    pub GetJackDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, njack: u32, pdescription: *mut KSJACK_DESCRIPTION) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetJackDescription: usize,
 }
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
-pub struct IKsJackDescription2(::windows::core::IUnknown);
+pub struct IKsJackDescription2(::windows_core::IUnknown);
 impl IKsJackDescription2 {
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn GetJackCount(&self) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetJackCount(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).GetJackCount)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).GetJackCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn GetJackDescription2(&self, njack: u32) -> ::windows::core::Result<KSJACK_DESCRIPTION2> {
+    pub unsafe fn GetJackDescription2(&self, njack: u32) -> ::windows_core::Result<KSJACK_DESCRIPTION2> {
         let mut result__ = ::core::mem::MaybeUninit::<KSJACK_DESCRIPTION2>::zeroed();
-        (::windows::core::Interface::vtable(self).GetJackDescription2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(njack), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<KSJACK_DESCRIPTION2>(result__)
+        (::windows_core::Interface::vtable(self).GetJackDescription2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(njack), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<KSJACK_DESCRIPTION2>(result__)
     }
 }
-impl ::core::convert::From<IKsJackDescription2> for ::windows::core::IUnknown {
+impl ::core::convert::From<IKsJackDescription2> for ::windows_core::IUnknown {
     fn from(value: IKsJackDescription2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IKsJackDescription2> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IKsJackDescription2> for ::windows_core::IUnknown {
     fn from(value: &IKsJackDescription2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IKsJackDescription2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IKsJackDescription2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IKsJackDescription2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IKsJackDescription2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IKsJackDescription2 {
@@ -1158,46 +1158,46 @@ impl ::core::fmt::Debug for IKsJackDescription2 {
         f.debug_tuple("IKsJackDescription2").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IKsJackDescription2 {
+unsafe impl ::windows_core::Interface for IKsJackDescription2 {
     type Vtable = IKsJackDescription2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x478f3a9b_e0c9_4827_9228_6f5505ffe76a);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x478f3a9b_e0c9_4827_9228_6f5505ffe76a);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IKsJackDescription2_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetJackCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcjacks: *mut u32) -> ::windows::core::HRESULT,
-    pub GetJackDescription2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, njack: u32, pdescription2: *mut KSJACK_DESCRIPTION2) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetJackCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcjacks: *mut u32) -> ::windows_core::HRESULT,
+    pub GetJackDescription2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, njack: u32, pdescription2: *mut KSJACK_DESCRIPTION2) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
-pub struct IKsJackSinkInformation(::windows::core::IUnknown);
+pub struct IKsJackSinkInformation(::windows_core::IUnknown);
 impl IKsJackSinkInformation {
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetJackSinkInformation(&self) -> ::windows::core::Result<KSJACK_SINK_INFORMATION> {
+    pub unsafe fn GetJackSinkInformation(&self) -> ::windows_core::Result<KSJACK_SINK_INFORMATION> {
         let mut result__ = ::core::mem::MaybeUninit::<KSJACK_SINK_INFORMATION>::zeroed();
-        (::windows::core::Interface::vtable(self).GetJackSinkInformation)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<KSJACK_SINK_INFORMATION>(result__)
+        (::windows_core::Interface::vtable(self).GetJackSinkInformation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<KSJACK_SINK_INFORMATION>(result__)
     }
 }
-impl ::core::convert::From<IKsJackSinkInformation> for ::windows::core::IUnknown {
+impl ::core::convert::From<IKsJackSinkInformation> for ::windows_core::IUnknown {
     fn from(value: IKsJackSinkInformation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IKsJackSinkInformation> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IKsJackSinkInformation> for ::windows_core::IUnknown {
     fn from(value: &IKsJackSinkInformation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IKsJackSinkInformation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IKsJackSinkInformation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IKsJackSinkInformation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IKsJackSinkInformation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IKsJackSinkInformation {
@@ -1216,16 +1216,16 @@ impl ::core::fmt::Debug for IKsJackSinkInformation {
         f.debug_tuple("IKsJackSinkInformation").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IKsJackSinkInformation {
+unsafe impl ::windows_core::Interface for IKsJackSinkInformation {
     type Vtable = IKsJackSinkInformation_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd9bd72ed_290f_4581_9ff3_61027a8fe532);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd9bd72ed_290f_4581_9ff3_61027a8fe532);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IKsJackSinkInformation_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub GetJackSinkInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pjacksinkinformation: *mut KSJACK_SINK_INFORMATION) -> ::windows::core::HRESULT,
+    pub GetJackSinkInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pjacksinkinformation: *mut KSJACK_SINK_INFORMATION) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetJackSinkInformation: usize,
 }
@@ -1233,40 +1233,40 @@ pub struct IKsJackSinkInformation_Vtbl {
 pub struct IKsPin(pub u8);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
-pub struct IKsPropertySet(::windows::core::IUnknown);
+pub struct IKsPropertySet(::windows_core::IUnknown);
 impl IKsPropertySet {
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn Set(&self, propset: *const ::windows::core::GUID, id: u32, instancedata: *const ::core::ffi::c_void, instancelength: u32, propertydata: *const ::core::ffi::c_void, datalength: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Set)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(propset), ::core::mem::transmute(id), ::core::mem::transmute(instancedata), ::core::mem::transmute(instancelength), ::core::mem::transmute(propertydata), ::core::mem::transmute(datalength)).ok()
+    pub unsafe fn Set(&self, propset: *const ::windows_core::GUID, id: u32, instancedata: *const ::core::ffi::c_void, instancelength: u32, propertydata: *const ::core::ffi::c_void, datalength: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Set)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propset), ::core::mem::transmute(id), ::core::mem::transmute(instancedata), ::core::mem::transmute(instancelength), ::core::mem::transmute(propertydata), ::core::mem::transmute(datalength)).ok()
     }
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn Get(&self, propset: *const ::windows::core::GUID, id: u32, instancedata: *const ::core::ffi::c_void, instancelength: u32, propertydata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Get)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(propset), ::core::mem::transmute(id), ::core::mem::transmute(instancedata), ::core::mem::transmute(instancelength), ::core::mem::transmute(propertydata), ::core::mem::transmute(datalength), ::core::mem::transmute(bytesreturned)).ok()
+    pub unsafe fn Get(&self, propset: *const ::windows_core::GUID, id: u32, instancedata: *const ::core::ffi::c_void, instancelength: u32, propertydata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Get)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propset), ::core::mem::transmute(id), ::core::mem::transmute(instancedata), ::core::mem::transmute(instancelength), ::core::mem::transmute(propertydata), ::core::mem::transmute(datalength), ::core::mem::transmute(bytesreturned)).ok()
     }
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn QuerySupported(&self, propset: *const ::windows::core::GUID, id: u32) -> ::windows::core::Result<u32> {
+    pub unsafe fn QuerySupported(&self, propset: *const ::windows_core::GUID, id: u32) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).QuerySupported)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(propset), ::core::mem::transmute(id), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).QuerySupported)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propset), ::core::mem::transmute(id), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
 }
-impl ::core::convert::From<IKsPropertySet> for ::windows::core::IUnknown {
+impl ::core::convert::From<IKsPropertySet> for ::windows_core::IUnknown {
     fn from(value: IKsPropertySet) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IKsPropertySet> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IKsPropertySet> for ::windows_core::IUnknown {
     fn from(value: &IKsPropertySet) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IKsPropertySet {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IKsPropertySet {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IKsPropertySet {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IKsPropertySet {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IKsPropertySet {
@@ -1285,45 +1285,45 @@ impl ::core::fmt::Debug for IKsPropertySet {
         f.debug_tuple("IKsPropertySet").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IKsPropertySet {
+unsafe impl ::windows_core::Interface for IKsPropertySet {
     type Vtable = IKsPropertySet_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x31efac30_515c_11d0_a9aa_00aa0061be93);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x31efac30_515c_11d0_a9aa_00aa0061be93);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IKsPropertySet_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Set: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propset: *const ::windows::core::GUID, id: u32, instancedata: *const ::core::ffi::c_void, instancelength: u32, propertydata: *const ::core::ffi::c_void, datalength: u32) -> ::windows::core::HRESULT,
-    pub Get: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propset: *const ::windows::core::GUID, id: u32, instancedata: *const ::core::ffi::c_void, instancelength: u32, propertydata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows::core::HRESULT,
-    pub QuerySupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propset: *const ::windows::core::GUID, id: u32, typesupport: *mut u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Set: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propset: *const ::windows_core::GUID, id: u32, instancedata: *const ::core::ffi::c_void, instancelength: u32, propertydata: *const ::core::ffi::c_void, datalength: u32) -> ::windows_core::HRESULT,
+    pub Get: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propset: *const ::windows_core::GUID, id: u32, instancedata: *const ::core::ffi::c_void, instancelength: u32, propertydata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_core::HRESULT,
+    pub QuerySupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propset: *const ::windows_core::GUID, id: u32, typesupport: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
-pub struct IKsTopology(::windows::core::IUnknown);
+pub struct IKsTopology(::windows_core::IUnknown);
 impl IKsTopology {
     #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-    pub unsafe fn CreateNodeInstance<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, nodeid: u32, flags: u32, desiredaccess: u32, unkouter: Param3, interfaceid: *const ::windows::core::GUID, interface: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).CreateNodeInstance)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(nodeid), ::core::mem::transmute(flags), ::core::mem::transmute(desiredaccess), unkouter.into_param().abi(), ::core::mem::transmute(interfaceid), ::core::mem::transmute(interface)).ok()
+    pub unsafe fn CreateNodeInstance<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, nodeid: u32, flags: u32, desiredaccess: u32, unkouter: Param3, interfaceid: *const ::windows_core::GUID, interface: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).CreateNodeInstance)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(nodeid), ::core::mem::transmute(flags), ::core::mem::transmute(desiredaccess), unkouter.into_param().abi(), ::core::mem::transmute(interfaceid), ::core::mem::transmute(interface)).ok()
     }
 }
-impl ::core::convert::From<IKsTopology> for ::windows::core::IUnknown {
+impl ::core::convert::From<IKsTopology> for ::windows_core::IUnknown {
     fn from(value: IKsTopology) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IKsTopology> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IKsTopology> for ::windows_core::IUnknown {
     fn from(value: &IKsTopology) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IKsTopology {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IKsTopology {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IKsTopology {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IKsTopology {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IKsTopology {
@@ -1342,15 +1342,15 @@ impl ::core::fmt::Debug for IKsTopology {
         f.debug_tuple("IKsTopology").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IKsTopology {
+unsafe impl ::windows_core::Interface for IKsTopology {
     type Vtable = IKsTopology_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x28f54683_06fd_11d2_b27a_00a0c9223196);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x28f54683_06fd_11d2_b27a_00a0c9223196);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IKsTopology_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub CreateNodeInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nodeid: u32, flags: u32, desiredaccess: u32, unkouter: *mut ::core::ffi::c_void, interfaceid: *const ::windows::core::GUID, interface: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub CreateNodeInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nodeid: u32, flags: u32, desiredaccess: u32, unkouter: *mut ::core::ffi::c_void, interfaceid: *const ::windows_core::GUID, interface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
@@ -1374,12 +1374,12 @@ impl ::core::fmt::Debug for INTERLEAVED_AUDIO_FORMAT_INFORMATION {
         f.debug_struct("INTERLEAVED_AUDIO_FORMAT_INFORMATION").field("Size", &self.Size).field("PrimaryChannelCount", &self.PrimaryChannelCount).field("PrimaryChannelStartPosition", &self.PrimaryChannelStartPosition).field("PrimaryChannelMask", &self.PrimaryChannelMask).field("InterleavedChannelCount", &self.InterleavedChannelCount).field("InterleavedChannelStartPosition", &self.InterleavedChannelStartPosition).field("InterleavedChannelMask", &self.InterleavedChannelMask).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INTERLEAVED_AUDIO_FORMAT_INFORMATION {
+unsafe impl ::windows_core::Abi for INTERLEAVED_AUDIO_FORMAT_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INTERLEAVED_AUDIO_FORMAT_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERLEAVED_AUDIO_FORMAT_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERLEAVED_AUDIO_FORMAT_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INTERLEAVED_AUDIO_FORMAT_INFORMATION {}
@@ -1430,13 +1430,13 @@ impl ::core::fmt::Debug for KSAC3_ALTERNATE_AUDIO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSAC3_ALTERNATE_AUDIO {
+unsafe impl ::windows_core::Abi for KSAC3_ALTERNATE_AUDIO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAC3_ALTERNATE_AUDIO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_ALTERNATE_AUDIO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_ALTERNATE_AUDIO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1469,12 +1469,12 @@ impl ::core::fmt::Debug for KSAC3_BIT_STREAM_MODE {
         f.debug_struct("KSAC3_BIT_STREAM_MODE").field("BitStreamMode", &self.BitStreamMode).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAC3_BIT_STREAM_MODE {
+unsafe impl ::windows_core::Abi for KSAC3_BIT_STREAM_MODE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAC3_BIT_STREAM_MODE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_BIT_STREAM_MODE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_BIT_STREAM_MODE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAC3_BIT_STREAM_MODE {}
@@ -1499,12 +1499,12 @@ impl ::core::fmt::Debug for KSAC3_DIALOGUE_LEVEL {
         f.debug_struct("KSAC3_DIALOGUE_LEVEL").field("DialogueLevel", &self.DialogueLevel).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAC3_DIALOGUE_LEVEL {
+unsafe impl ::windows_core::Abi for KSAC3_DIALOGUE_LEVEL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAC3_DIALOGUE_LEVEL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_DIALOGUE_LEVEL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_DIALOGUE_LEVEL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAC3_DIALOGUE_LEVEL {}
@@ -1535,13 +1535,13 @@ impl ::core::fmt::Debug for KSAC3_DOWNMIX {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSAC3_DOWNMIX {
+unsafe impl ::windows_core::Abi for KSAC3_DOWNMIX {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAC3_DOWNMIX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_DOWNMIX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_DOWNMIX>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1574,13 +1574,13 @@ impl ::core::fmt::Debug for KSAC3_ERROR_CONCEALMENT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSAC3_ERROR_CONCEALMENT {
+unsafe impl ::windows_core::Abi for KSAC3_ERROR_CONCEALMENT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAC3_ERROR_CONCEALMENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_ERROR_CONCEALMENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_ERROR_CONCEALMENT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1612,13 +1612,13 @@ impl ::core::fmt::Debug for KSAC3_ROOM_TYPE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSAC3_ROOM_TYPE {
+unsafe impl ::windows_core::Abi for KSAC3_ROOM_TYPE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAC3_ROOM_TYPE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_ROOM_TYPE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_ROOM_TYPE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1645,10 +1645,10 @@ pub const KSAC3_SERVICE_NO_DIALOG: u32 = 1u32;
 pub const KSAC3_SERVICE_VISUALLY_IMPAIRED: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSAC3_SERVICE_VOICE_OVER: u32 = 7u32;
-pub const KSALGORITHMINSTANCE_SYSTEM_ACOUSTIC_ECHO_CANCEL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1c22c56d_9879_4f5b_a389_27996ddc2810);
-pub const KSALGORITHMINSTANCE_SYSTEM_AGC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x950e55b9_877c_4c67_be08_e47b5611130a);
-pub const KSALGORITHMINSTANCE_SYSTEM_MICROPHONE_ARRAY_PROCESSOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb6f5a0a0_9e61_4f8c_91e3_76cf0f3c471f);
-pub const KSALGORITHMINSTANCE_SYSTEM_NOISE_SUPPRESS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5ab0882e_7274_4516_877d_4eee99ba4fd0);
+pub const KSALGORITHMINSTANCE_SYSTEM_ACOUSTIC_ECHO_CANCEL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1c22c56d_9879_4f5b_a389_27996ddc2810);
+pub const KSALGORITHMINSTANCE_SYSTEM_AGC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x950e55b9_877c_4c67_be08_e47b5611130a);
+pub const KSALGORITHMINSTANCE_SYSTEM_MICROPHONE_ARRAY_PROCESSOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb6f5a0a0_9e61_4f8c_91e3_76cf0f3c471f);
+pub const KSALGORITHMINSTANCE_SYSTEM_NOISE_SUPPRESS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5ab0882e_7274_4516_877d_4eee99ba4fd0);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -1668,7 +1668,7 @@ impl ::core::default::Default for KSALLOCATORMODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSALLOCATORMODE {
+unsafe impl ::windows_core::Abi for KSALLOCATORMODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSALLOCATORMODE {
@@ -1716,12 +1716,12 @@ impl ::core::clone::Clone for KSALLOCATOR_FRAMING {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSALLOCATOR_FRAMING {
+unsafe impl ::windows_core::Abi for KSALLOCATOR_FRAMING {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSALLOCATOR_FRAMING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSALLOCATOR_FRAMING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSALLOCATOR_FRAMING>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSALLOCATOR_FRAMING {}
@@ -1742,12 +1742,12 @@ impl ::core::clone::Clone for KSALLOCATOR_FRAMING_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSALLOCATOR_FRAMING_0 {
+unsafe impl ::windows_core::Abi for KSALLOCATOR_FRAMING_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSALLOCATOR_FRAMING_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSALLOCATOR_FRAMING_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSALLOCATOR_FRAMING_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSALLOCATOR_FRAMING_0 {}
@@ -1768,12 +1768,12 @@ impl ::core::clone::Clone for KSALLOCATOR_FRAMING_1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSALLOCATOR_FRAMING_1 {
+unsafe impl ::windows_core::Abi for KSALLOCATOR_FRAMING_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSALLOCATOR_FRAMING_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSALLOCATOR_FRAMING_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSALLOCATOR_FRAMING_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSALLOCATOR_FRAMING_1 {}
@@ -1797,12 +1797,12 @@ impl ::core::clone::Clone for KSALLOCATOR_FRAMING_EX {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSALLOCATOR_FRAMING_EX {
+unsafe impl ::windows_core::Abi for KSALLOCATOR_FRAMING_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSALLOCATOR_FRAMING_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSALLOCATOR_FRAMING_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSALLOCATOR_FRAMING_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSALLOCATOR_FRAMING_EX {}
@@ -1834,7 +1834,7 @@ pub const KSALLOCATOR_REQUIREMENTF_SYSTEM_MEMORY_CUSTOM_ALLOCATION: u32 = 16u32;
 pub struct KSATTRIBUTE {
     pub Size: u32,
     pub Flags: u32,
-    pub Attribute: ::windows::core::GUID,
+    pub Attribute: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for KSATTRIBUTE {}
 impl ::core::clone::Clone for KSATTRIBUTE {
@@ -1847,12 +1847,12 @@ impl ::core::fmt::Debug for KSATTRIBUTE {
         f.debug_struct("KSATTRIBUTE").field("Size", &self.Size).field("Flags", &self.Flags).field("Attribute", &self.Attribute).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSATTRIBUTE {
+unsafe impl ::windows_core::Abi for KSATTRIBUTE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSATTRIBUTE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSATTRIBUTE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSATTRIBUTE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSATTRIBUTE {}
@@ -1861,12 +1861,12 @@ impl ::core::default::Default for KSATTRIBUTE {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const KSATTRIBUTEID_AUDIOSIGNALPROCESSING_MODE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe1f89eb5_5f46_419b_967b_ff6770b98401);
+pub const KSATTRIBUTEID_AUDIOSIGNALPROCESSING_MODE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe1f89eb5_5f46_419b_967b_ff6770b98401);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE {
     pub AttributeHeader: KSATTRIBUTE,
-    pub SignalProcessingMode: ::windows::core::GUID,
+    pub SignalProcessingMode: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE {}
 impl ::core::clone::Clone for KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE {
@@ -1879,12 +1879,12 @@ impl ::core::fmt::Debug for KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE {
         f.debug_struct("KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE").field("AttributeHeader", &self.AttributeHeader).field("SignalProcessingMode", &self.SignalProcessingMode).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE {
+unsafe impl ::windows_core::Abi for KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE {}
@@ -1901,57 +1901,57 @@ pub const KSAUDDECOUTMODE_PCM_51: u32 = 2u32;
 pub const KSAUDDECOUTMODE_SPDIFF: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSAUDDECOUTMODE_STEREO_ANALOG: u32 = 1u32;
-pub const KSAUDFNAME_3D_CENTER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9f0670b4_991f_11d2_ac4d_00c04f8efb68);
-pub const KSAUDFNAME_3D_DEPTH: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x63ff5747_991f_11d2_ac4d_00c04f8efb68);
-pub const KSAUDFNAME_3D_STEREO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fede2_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_ALTERNATE_MICROPHONE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2bc31d6b_96e3_11d2_ac4c_00c04f8efb68);
-pub const KSAUDFNAME_AUX: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedfe_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_AUX_MUTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedfd_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_AUX_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedfc_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_BASS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fede0_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_CD_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedfb_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_CD_IN_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedf3_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_CD_MUTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedea_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_CD_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fede9_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_LINE_IN: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedf9_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_LINE_IN_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedf4_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_LINE_MUTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedec_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_LINE_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedeb_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_MASTER_MUTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fede4_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_MASTER_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fede3_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_MICROPHONE_BOOST: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2bc31d6a_96e3_11d2_ac4c_00c04f8efb68);
-pub const KSAUDFNAME_MIC_IN_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedf5_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_MIC_MUTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedee_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_MIC_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185feded_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_MIDI: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedf8_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_MIDI_IN_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedf2_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_MIDI_MUTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fede8_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_MIDI_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fede7_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_MIDRANGE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa2cbe478_ae84_49a1_8b72_4ad09b78ed34);
-pub const KSAUDFNAME_MONO_MIX: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00dff078_96e3_11d2_ac4c_00c04f8efb68);
-pub const KSAUDFNAME_MONO_MIX_MUTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2bc31d69_96e3_11d2_ac4c_00c04f8efb68);
-pub const KSAUDFNAME_MONO_MIX_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x22b0eafe_96e3_11d2_ac4c_00c04f8efb68);
-pub const KSAUDFNAME_MONO_OUT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf9b41dc3_96e2_11d2_ac4c_00c04f8efb68);
-pub const KSAUDFNAME_MONO_OUT_MUTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1ad247ec_96e3_11d2_ac4c_00c04f8efb68);
-pub const KSAUDFNAME_MONO_OUT_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1ad247eb_96e3_11d2_ac4c_00c04f8efb68);
-pub const KSAUDFNAME_PC_SPEAKER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedff_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_PC_SPEAKER_MUTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedf1_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_PC_SPEAKER_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedf0_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_PEAKMETER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x57e24340_fc5b_4612_a562_72b11a29dfae);
-pub const KSAUDFNAME_RECORDING_CONTROL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedfa_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_RECORDING_SOURCE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedef_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_STEREO_MIX: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00dff077_96e3_11d2_ac4c_00c04f8efb68);
-pub const KSAUDFNAME_STEREO_MIX_MUTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x22b0eafd_96e3_11d2_ac4c_00c04f8efb68);
-pub const KSAUDFNAME_STEREO_MIX_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1ad247ed_96e3_11d2_ac4c_00c04f8efb68);
-pub const KSAUDFNAME_TREBLE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fede1_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_VIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x915daec4_a434_11d2_ac52_00c04f8efb68);
-pub const KSAUDFNAME_VIDEO_MUTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9b46e709_992a_11d2_ac4d_00c04f8efb68);
-pub const KSAUDFNAME_VIDEO_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9b46e708_992a_11d2_ac4d_00c04f8efb68);
-pub const KSAUDFNAME_VOLUME_CONTROL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedf7_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_WAVE_IN_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fedf6_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_WAVE_MUTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fede6_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_WAVE_OUT_MIX: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fee00_9905_11d1_95a9_00c04fb925d3);
-pub const KSAUDFNAME_WAVE_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x185fede5_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_3D_CENTER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9f0670b4_991f_11d2_ac4d_00c04f8efb68);
+pub const KSAUDFNAME_3D_DEPTH: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x63ff5747_991f_11d2_ac4d_00c04f8efb68);
+pub const KSAUDFNAME_3D_STEREO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fede2_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_ALTERNATE_MICROPHONE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2bc31d6b_96e3_11d2_ac4c_00c04f8efb68);
+pub const KSAUDFNAME_AUX: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedfe_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_AUX_MUTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedfd_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_AUX_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedfc_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_BASS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fede0_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_CD_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedfb_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_CD_IN_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedf3_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_CD_MUTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedea_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_CD_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fede9_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_LINE_IN: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedf9_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_LINE_IN_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedf4_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_LINE_MUTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedec_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_LINE_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedeb_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_MASTER_MUTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fede4_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_MASTER_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fede3_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_MICROPHONE_BOOST: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2bc31d6a_96e3_11d2_ac4c_00c04f8efb68);
+pub const KSAUDFNAME_MIC_IN_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedf5_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_MIC_MUTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedee_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_MIC_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185feded_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_MIDI: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedf8_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_MIDI_IN_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedf2_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_MIDI_MUTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fede8_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_MIDI_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fede7_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_MIDRANGE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa2cbe478_ae84_49a1_8b72_4ad09b78ed34);
+pub const KSAUDFNAME_MONO_MIX: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00dff078_96e3_11d2_ac4c_00c04f8efb68);
+pub const KSAUDFNAME_MONO_MIX_MUTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2bc31d69_96e3_11d2_ac4c_00c04f8efb68);
+pub const KSAUDFNAME_MONO_MIX_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x22b0eafe_96e3_11d2_ac4c_00c04f8efb68);
+pub const KSAUDFNAME_MONO_OUT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf9b41dc3_96e2_11d2_ac4c_00c04f8efb68);
+pub const KSAUDFNAME_MONO_OUT_MUTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1ad247ec_96e3_11d2_ac4c_00c04f8efb68);
+pub const KSAUDFNAME_MONO_OUT_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1ad247eb_96e3_11d2_ac4c_00c04f8efb68);
+pub const KSAUDFNAME_PC_SPEAKER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedff_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_PC_SPEAKER_MUTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedf1_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_PC_SPEAKER_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedf0_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_PEAKMETER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x57e24340_fc5b_4612_a562_72b11a29dfae);
+pub const KSAUDFNAME_RECORDING_CONTROL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedfa_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_RECORDING_SOURCE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedef_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_STEREO_MIX: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00dff077_96e3_11d2_ac4c_00c04f8efb68);
+pub const KSAUDFNAME_STEREO_MIX_MUTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x22b0eafd_96e3_11d2_ac4c_00c04f8efb68);
+pub const KSAUDFNAME_STEREO_MIX_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1ad247ed_96e3_11d2_ac4c_00c04f8efb68);
+pub const KSAUDFNAME_TREBLE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fede1_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_VIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x915daec4_a434_11d2_ac52_00c04f8efb68);
+pub const KSAUDFNAME_VIDEO_MUTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9b46e709_992a_11d2_ac4d_00c04f8efb68);
+pub const KSAUDFNAME_VIDEO_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9b46e708_992a_11d2_ac4d_00c04f8efb68);
+pub const KSAUDFNAME_VOLUME_CONTROL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedf7_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_WAVE_IN_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fedf6_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_WAVE_MUTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fede6_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_WAVE_OUT_MIX: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fee00_9905_11d1_95a9_00c04fb925d3);
+pub const KSAUDFNAME_WAVE_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x185fede5_9905_11d1_95a9_00c04fb925d3);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSAUDIOENGINE_BUFFER_SIZE_RANGE {
@@ -1969,12 +1969,12 @@ impl ::core::fmt::Debug for KSAUDIOENGINE_BUFFER_SIZE_RANGE {
         f.debug_struct("KSAUDIOENGINE_BUFFER_SIZE_RANGE").field("MinBufferBytes", &self.MinBufferBytes).field("MaxBufferBytes", &self.MaxBufferBytes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIOENGINE_BUFFER_SIZE_RANGE {
+unsafe impl ::windows_core::Abi for KSAUDIOENGINE_BUFFER_SIZE_RANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIOENGINE_BUFFER_SIZE_RANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOENGINE_BUFFER_SIZE_RANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOENGINE_BUFFER_SIZE_RANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIOENGINE_BUFFER_SIZE_RANGE {}
@@ -2001,12 +2001,12 @@ impl ::core::fmt::Debug for KSAUDIOENGINE_DESCRIPTOR {
         f.debug_struct("KSAUDIOENGINE_DESCRIPTOR").field("nHostPinId", &self.nHostPinId).field("nOffloadPinId", &self.nOffloadPinId).field("nLoopbackPinId", &self.nLoopbackPinId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIOENGINE_DESCRIPTOR {
+unsafe impl ::windows_core::Abi for KSAUDIOENGINE_DESCRIPTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIOENGINE_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOENGINE_DESCRIPTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOENGINE_DESCRIPTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIOENGINE_DESCRIPTOR {}
@@ -2033,12 +2033,12 @@ impl ::core::fmt::Debug for KSAUDIOENGINE_VOLUMELEVEL {
         f.debug_struct("KSAUDIOENGINE_VOLUMELEVEL").field("TargetVolume", &self.TargetVolume).field("CurveType", &self.CurveType).field("CurveDuration", &self.CurveDuration).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIOENGINE_VOLUMELEVEL {
+unsafe impl ::windows_core::Abi for KSAUDIOENGINE_VOLUMELEVEL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIOENGINE_VOLUMELEVEL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOENGINE_VOLUMELEVEL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOENGINE_VOLUMELEVEL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIOENGINE_VOLUMELEVEL {}
@@ -2050,7 +2050,7 @@ impl ::core::default::Default for KSAUDIOENGINE_VOLUMELEVEL {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSAUDIOMODULE_DESCRIPTOR {
-    pub ClassId: ::windows::core::GUID,
+    pub ClassId: ::windows_core::GUID,
     pub InstanceId: u32,
     pub VersionMajor: u32,
     pub VersionMinor: u32,
@@ -2067,12 +2067,12 @@ impl ::core::fmt::Debug for KSAUDIOMODULE_DESCRIPTOR {
         f.debug_struct("KSAUDIOMODULE_DESCRIPTOR").field("ClassId", &self.ClassId).field("InstanceId", &self.InstanceId).field("VersionMajor", &self.VersionMajor).field("VersionMinor", &self.VersionMinor).field("Name", &self.Name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIOMODULE_DESCRIPTOR {
+unsafe impl ::windows_core::Abi for KSAUDIOMODULE_DESCRIPTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIOMODULE_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOMODULE_DESCRIPTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOMODULE_DESCRIPTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIOMODULE_DESCRIPTOR {}
@@ -2092,12 +2092,12 @@ impl ::core::clone::Clone for KSAUDIOMODULE_NOTIFICATION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIOMODULE_NOTIFICATION {
+unsafe impl ::windows_core::Abi for KSAUDIOMODULE_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIOMODULE_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOMODULE_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOMODULE_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIOMODULE_NOTIFICATION {}
@@ -2118,12 +2118,12 @@ impl ::core::clone::Clone for KSAUDIOMODULE_NOTIFICATION_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIOMODULE_NOTIFICATION_0 {
+unsafe impl ::windows_core::Abi for KSAUDIOMODULE_NOTIFICATION_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIOMODULE_NOTIFICATION_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOMODULE_NOTIFICATION_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOMODULE_NOTIFICATION_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIOMODULE_NOTIFICATION_0 {}
@@ -2135,8 +2135,8 @@ impl ::core::default::Default for KSAUDIOMODULE_NOTIFICATION_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSAUDIOMODULE_NOTIFICATION_0_0 {
-    pub DeviceId: ::windows::core::GUID,
-    pub ClassId: ::windows::core::GUID,
+    pub DeviceId: ::windows_core::GUID,
+    pub ClassId: ::windows_core::GUID,
     pub InstanceId: u32,
     pub Reserved: u32,
 }
@@ -2151,12 +2151,12 @@ impl ::core::fmt::Debug for KSAUDIOMODULE_NOTIFICATION_0_0 {
         f.debug_struct("KSAUDIOMODULE_NOTIFICATION_0_0").field("DeviceId", &self.DeviceId).field("ClassId", &self.ClassId).field("InstanceId", &self.InstanceId).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIOMODULE_NOTIFICATION_0_0 {
+unsafe impl ::windows_core::Abi for KSAUDIOMODULE_NOTIFICATION_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIOMODULE_NOTIFICATION_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOMODULE_NOTIFICATION_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOMODULE_NOTIFICATION_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIOMODULE_NOTIFICATION_0_0 {}
@@ -2169,7 +2169,7 @@ impl ::core::default::Default for KSAUDIOMODULE_NOTIFICATION_0_0 {
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSAUDIOMODULE_PROPERTY {
     pub Property: KSIDENTIFIER,
-    pub ClassId: ::windows::core::GUID,
+    pub ClassId: ::windows_core::GUID,
     pub InstanceId: u32,
 }
 impl ::core::marker::Copy for KSAUDIOMODULE_PROPERTY {}
@@ -2178,12 +2178,12 @@ impl ::core::clone::Clone for KSAUDIOMODULE_PROPERTY {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIOMODULE_PROPERTY {
+unsafe impl ::windows_core::Abi for KSAUDIOMODULE_PROPERTY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIOMODULE_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOMODULE_PROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIOMODULE_PROPERTY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIOMODULE_PROPERTY {}
@@ -2208,12 +2208,12 @@ impl ::core::fmt::Debug for KSAUDIO_CHANNEL_CONFIG {
         f.debug_struct("KSAUDIO_CHANNEL_CONFIG").field("ActiveSpeakerPositions", &self.ActiveSpeakerPositions).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIO_CHANNEL_CONFIG {
+unsafe impl ::windows_core::Abi for KSAUDIO_CHANNEL_CONFIG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIO_CHANNEL_CONFIG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_CHANNEL_CONFIG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_CHANNEL_CONFIG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIO_CHANNEL_CONFIG {}
@@ -2244,13 +2244,13 @@ impl ::core::fmt::Debug for KSAUDIO_COPY_PROTECTION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSAUDIO_COPY_PROTECTION {
+unsafe impl ::windows_core::Abi for KSAUDIO_COPY_PROTECTION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAUDIO_COPY_PROTECTION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_COPY_PROTECTION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_COPY_PROTECTION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2282,12 +2282,12 @@ impl ::core::fmt::Debug for KSAUDIO_DYNAMIC_RANGE {
         f.debug_struct("KSAUDIO_DYNAMIC_RANGE").field("QuietCompression", &self.QuietCompression).field("LoudCompression", &self.LoudCompression).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIO_DYNAMIC_RANGE {
+unsafe impl ::windows_core::Abi for KSAUDIO_DYNAMIC_RANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIO_DYNAMIC_RANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_DYNAMIC_RANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_DYNAMIC_RANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIO_DYNAMIC_RANGE {}
@@ -2317,12 +2317,12 @@ impl ::core::fmt::Debug for KSAUDIO_MICROPHONE_COORDINATES {
         f.debug_struct("KSAUDIO_MICROPHONE_COORDINATES").field("usType", &self.usType).field("wXCoord", &self.wXCoord).field("wYCoord", &self.wYCoord).field("wZCoord", &self.wZCoord).field("wVerticalAngle", &self.wVerticalAngle).field("wHorizontalAngle", &self.wHorizontalAngle).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIO_MICROPHONE_COORDINATES {
+unsafe impl ::windows_core::Abi for KSAUDIO_MICROPHONE_COORDINATES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIO_MICROPHONE_COORDINATES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MICROPHONE_COORDINATES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MICROPHONE_COORDINATES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIO_MICROPHONE_COORDINATES {}
@@ -2367,12 +2367,12 @@ impl ::core::fmt::Debug for KSAUDIO_MIC_ARRAY_GEOMETRY {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIO_MIC_ARRAY_GEOMETRY {
+unsafe impl ::windows_core::Abi for KSAUDIO_MIC_ARRAY_GEOMETRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIO_MIC_ARRAY_GEOMETRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIC_ARRAY_GEOMETRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIC_ARRAY_GEOMETRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIO_MIC_ARRAY_GEOMETRY {}
@@ -2398,13 +2398,13 @@ impl ::core::clone::Clone for KSAUDIO_MIXCAP_TABLE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSAUDIO_MIXCAP_TABLE {
+unsafe impl ::windows_core::Abi for KSAUDIO_MIXCAP_TABLE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAUDIO_MIXCAP_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIXCAP_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIXCAP_TABLE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2437,13 +2437,13 @@ impl ::core::fmt::Debug for KSAUDIO_MIXLEVEL {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSAUDIO_MIXLEVEL {
+unsafe impl ::windows_core::Abi for KSAUDIO_MIXLEVEL {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAUDIO_MIXLEVEL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIXLEVEL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIXLEVEL>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2472,13 +2472,13 @@ impl ::core::clone::Clone for KSAUDIO_MIX_CAPS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSAUDIO_MIX_CAPS {
+unsafe impl ::windows_core::Abi for KSAUDIO_MIX_CAPS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAUDIO_MIX_CAPS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIX_CAPS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIX_CAPS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2505,13 +2505,13 @@ impl ::core::clone::Clone for KSAUDIO_MIX_CAPS_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSAUDIO_MIX_CAPS_0 {
+unsafe impl ::windows_core::Abi for KSAUDIO_MIX_CAPS_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAUDIO_MIX_CAPS_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIX_CAPS_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIX_CAPS_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2542,12 +2542,12 @@ impl ::core::fmt::Debug for KSAUDIO_PACKETSIZE_CONSTRAINTS {
         f.debug_struct("KSAUDIO_PACKETSIZE_CONSTRAINTS").field("MinPacketPeriodInHns", &self.MinPacketPeriodInHns).field("PacketSizeFileAlignment", &self.PacketSizeFileAlignment).field("Reserved", &self.Reserved).field("NumProcessingModeConstraints", &self.NumProcessingModeConstraints).field("ProcessingModeConstraints", &self.ProcessingModeConstraints).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIO_PACKETSIZE_CONSTRAINTS {
+unsafe impl ::windows_core::Abi for KSAUDIO_PACKETSIZE_CONSTRAINTS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIO_PACKETSIZE_CONSTRAINTS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_PACKETSIZE_CONSTRAINTS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_PACKETSIZE_CONSTRAINTS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIO_PACKETSIZE_CONSTRAINTS {}
@@ -2576,12 +2576,12 @@ impl ::core::fmt::Debug for KSAUDIO_PACKETSIZE_CONSTRAINTS2 {
         f.debug_struct("KSAUDIO_PACKETSIZE_CONSTRAINTS2").field("MinPacketPeriodInHns", &self.MinPacketPeriodInHns).field("PacketSizeFileAlignment", &self.PacketSizeFileAlignment).field("MaxPacketSizeInBytes", &self.MaxPacketSizeInBytes).field("NumProcessingModeConstraints", &self.NumProcessingModeConstraints).field("ProcessingModeConstraints", &self.ProcessingModeConstraints).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIO_PACKETSIZE_CONSTRAINTS2 {
+unsafe impl ::windows_core::Abi for KSAUDIO_PACKETSIZE_CONSTRAINTS2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIO_PACKETSIZE_CONSTRAINTS2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_PACKETSIZE_CONSTRAINTS2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_PACKETSIZE_CONSTRAINTS2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIO_PACKETSIZE_CONSTRAINTS2 {}
@@ -2607,12 +2607,12 @@ impl ::core::fmt::Debug for KSAUDIO_POSITION {
         f.debug_struct("KSAUDIO_POSITION").field("PlayOffset", &self.PlayOffset).field("WriteOffset", &self.WriteOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIO_POSITION {
+unsafe impl ::windows_core::Abi for KSAUDIO_POSITION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIO_POSITION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_POSITION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_POSITION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIO_POSITION {}
@@ -2640,12 +2640,12 @@ impl ::core::fmt::Debug for KSAUDIO_POSITIONEX {
         f.debug_struct("KSAUDIO_POSITIONEX").field("TimerFrequency", &self.TimerFrequency).field("TimeStamp1", &self.TimeStamp1).field("Position", &self.Position).field("TimeStamp2", &self.TimeStamp2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIO_POSITIONEX {
+unsafe impl ::windows_core::Abi for KSAUDIO_POSITIONEX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIO_POSITIONEX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_POSITIONEX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_POSITIONEX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIO_POSITIONEX {}
@@ -2671,12 +2671,12 @@ impl ::core::fmt::Debug for KSAUDIO_PRESENTATION_POSITION {
         f.debug_struct("KSAUDIO_PRESENTATION_POSITION").field("u64PositionInBlocks", &self.u64PositionInBlocks).field("u64QPCPosition", &self.u64QPCPosition).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSAUDIO_PRESENTATION_POSITION {
+unsafe impl ::windows_core::Abi for KSAUDIO_PRESENTATION_POSITION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSAUDIO_PRESENTATION_POSITION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_PRESENTATION_POSITION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_PRESENTATION_POSITION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSAUDIO_PRESENTATION_POSITION {}
@@ -2721,8 +2721,8 @@ pub const KSAUDIO_STEREO_SPEAKER_GEOMETRY_MIN: u32 = 5u32;
 pub const KSAUDIO_STEREO_SPEAKER_GEOMETRY_NARROW: u32 = 10u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSAUDIO_STEREO_SPEAKER_GEOMETRY_WIDE: u32 = 20u32;
-pub const KSCAMERAPROFILE_BalancedVideoAndPhoto: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6b52b017_42c7_4a21_bfe3_23f009149887);
-pub const KSCAMERAPROFILE_CompressedCamera: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0e34cdc1_27ad_437f_abde_02b629f37b44);
+pub const KSCAMERAPROFILE_BalancedVideoAndPhoto: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6b52b017_42c7_4a21_bfe3_23f009149887);
+pub const KSCAMERAPROFILE_CompressedCamera: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0e34cdc1_27ad_437f_abde_02b629f37b44);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSCAMERAPROFILE_FLAGS_FACEDETECTION: u64 = 8u64;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
@@ -2735,17 +2735,17 @@ pub const KSCAMERAPROFILE_FLAGS_VARIABLEPHOTOSEQUENCE: u64 = 16u64;
 pub const KSCAMERAPROFILE_FLAGS_VIDEOHDR: u64 = 2u64;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSCAMERAPROFILE_FLAGS_VIDEOSTABLIZATION: u64 = 1u64;
-pub const KSCAMERAPROFILE_FaceAuth_Mode: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x81361b22_700b_4546_a2d4_c52e907bfc27);
-pub const KSCAMERAPROFILE_HDRWithWCGPhoto: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9bf6f1ff_b555_4625_b326_a46def318fb7);
-pub const KSCAMERAPROFILE_HDRWithWCGVideo: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4b27c336_4924_4989_b994_fdaf1dc7cd85);
-pub const KSCAMERAPROFILE_HighFrameRate: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x566e6113_8c35_48e7_b89f_d23fdc1219dc);
-pub const KSCAMERAPROFILE_HighQualityPhoto: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x32440725_961b_4ca3_b5b2_854e719d9e1b);
-pub const KSCAMERAPROFILE_Legacy: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb4894d81_62b7_4eec_8740_80658c4a9d3e);
-pub const KSCAMERAPROFILE_PhotoSequence: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x02399d9d_4ee8_49ba_bc07_5ff156531413);
-pub const KSCAMERAPROFILE_VariablePhotoSequence: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9ff2cb56_e75a_49b1_a928_9985d5946f87);
-pub const KSCAMERAPROFILE_VideoConferencing: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc5444a88_e1bf_4597_b2dd_9e1ead864bb8);
-pub const KSCAMERAPROFILE_VideoHDR8: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd4f3f4ec_bdff_4314_b1d4_008e281f74e7);
-pub const KSCAMERAPROFILE_VideoRecording: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa0e517e8_8f8c_4f6f_9a57_46fc2f647ec0);
+pub const KSCAMERAPROFILE_FaceAuth_Mode: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x81361b22_700b_4546_a2d4_c52e907bfc27);
+pub const KSCAMERAPROFILE_HDRWithWCGPhoto: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9bf6f1ff_b555_4625_b326_a46def318fb7);
+pub const KSCAMERAPROFILE_HDRWithWCGVideo: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4b27c336_4924_4989_b994_fdaf1dc7cd85);
+pub const KSCAMERAPROFILE_HighFrameRate: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x566e6113_8c35_48e7_b89f_d23fdc1219dc);
+pub const KSCAMERAPROFILE_HighQualityPhoto: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x32440725_961b_4ca3_b5b2_854e719d9e1b);
+pub const KSCAMERAPROFILE_Legacy: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb4894d81_62b7_4eec_8740_80658c4a9d3e);
+pub const KSCAMERAPROFILE_PhotoSequence: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x02399d9d_4ee8_49ba_bc07_5ff156531413);
+pub const KSCAMERAPROFILE_VariablePhotoSequence: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9ff2cb56_e75a_49b1_a928_9985d5946f87);
+pub const KSCAMERAPROFILE_VideoConferencing: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc5444a88_e1bf_4597_b2dd_9e1ead864bb8);
+pub const KSCAMERAPROFILE_VideoHDR8: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd4f3f4ec_bdff_4314_b1d4_008e281f74e7);
+pub const KSCAMERAPROFILE_VideoRecording: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa0e517e8_8f8c_4f6f_9a57_46fc2f647ec0);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_AUTO: u64 = 1u64;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
@@ -2765,7 +2765,7 @@ pub struct KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS {
     pub Resolution: super::super::Foundation::SIZE,
     pub MaxFrameRate: KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0,
     pub MaskResolution: super::super::Foundation::SIZE,
-    pub SubType: ::windows::core::GUID,
+    pub SubType: ::windows_core::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS {}
@@ -2782,13 +2782,13 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGC
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2821,13 +2821,13 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGC
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0 {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2861,12 +2861,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_CAMERAOFFSET {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_CAMERAOFFSET").field("PitchAngle", &self.PitchAngle).field("YawAngle", &self.YawAngle).field("Flag", &self.Flag).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_CAMERAOFFSET {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_CAMERAOFFSET {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_CAMERAOFFSET {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_CAMERAOFFSET>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_CAMERAOFFSET>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_CAMERAOFFSET {}
@@ -2921,12 +2921,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPS {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPS {}
@@ -2952,12 +2952,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPSHEADER
         f.debug_struct("KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPSHEADER").field("Size", &self.Size).field("Count", &self.Count).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPSHEADER {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPSHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPSHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPSHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPSHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_CONFIGCAPSHEADER {}
@@ -2987,12 +2987,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_SETTING {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_SETTING").field("OriginX", &self.OriginX).field("OriginY", &self.OriginY).field("WindowSize", &self.WindowSize).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_SETTING {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_SETTING {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_SETTING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_SETTING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_SETTING>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_DIGITALWINDOW_SETTING {}
@@ -3021,12 +3021,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_EVCOMPENSATION {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_EVCOMPENSATION").field("Mode", &self.Mode).field("Min", &self.Min).field("Max", &self.Max).field("Value", &self.Value).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_EVCOMPENSATION {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_EVCOMPENSATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_EVCOMPENSATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_EVCOMPENSATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_EVCOMPENSATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_EVCOMPENSATION {}
@@ -3088,12 +3088,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_FIELDOFVIEW {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_FIELDOFVIEW").field("NormalizedFocalLengthX", &self.NormalizedFocalLengthX).field("NormalizedFocalLengthY", &self.NormalizedFocalLengthY).field("Flag", &self.Flag).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_FIELDOFVIEW {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_FIELDOFVIEW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_FIELDOFVIEW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_FIELDOFVIEW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_FIELDOFVIEW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_FIELDOFVIEW {}
@@ -3159,7 +3159,7 @@ impl ::core::default::Default for KSCAMERA_EXTENDEDPROP_FOCUSSTATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_FOCUSSTATE {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_FOCUSSTATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_FOCUSSTATE {
@@ -3214,12 +3214,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_HEADER {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_HEADER").field("Version", &self.Version).field("PinId", &self.PinId).field("Size", &self.Size).field("Result", &self.Result).field("Flags", &self.Flags).field("Capability", &self.Capability).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_HEADER {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_HEADER {}
@@ -3281,12 +3281,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_METADATAINFO {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_METADATAINFO").field("BufferAlignment", &self.BufferAlignment).field("MaxMetadataBufferSize", &self.MaxMetadataBufferSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_METADATAINFO {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_METADATAINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_METADATAINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_METADATAINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_METADATAINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_METADATAINFO {}
@@ -3336,7 +3336,7 @@ impl ::core::default::Default for KSCAMERA_EXTENDEDPROP_MetadataAlignment {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_MetadataAlignment {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_MetadataAlignment {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_MetadataAlignment {
@@ -3385,12 +3385,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_PHOTOMODE {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_PHOTOMODE").field("RequestedHistoryFrames", &self.RequestedHistoryFrames).field("MaxHistoryFrames", &self.MaxHistoryFrames).field("SubMode", &self.SubMode).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_PHOTOMODE {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_PHOTOMODE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_PHOTOMODE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_PHOTOMODE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_PHOTOMODE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_PHOTOMODE {}
@@ -3420,7 +3420,7 @@ pub const KSCAMERA_EXTENDEDPROP_PHOTOTHUMBNAIL_DISABLE: u64 = 0u64;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSCAMERA_EXTENDEDPROP_PROFILE {
-    pub ProfileId: ::windows::core::GUID,
+    pub ProfileId: ::windows_core::GUID,
     pub Index: u32,
     pub Reserved: u32,
 }
@@ -3435,12 +3435,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_PROFILE {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_PROFILE").field("ProfileId", &self.ProfileId).field("Index", &self.Index).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_PROFILE {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_PROFILE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_PROFILE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_PROFILE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_PROFILE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_PROFILE {}
@@ -3474,7 +3474,7 @@ impl ::core::default::Default for KSCAMERA_EXTENDEDPROP_ROITYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_ROITYPE {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_ROITYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_ROITYPE {
@@ -3500,12 +3500,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPS {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPS").field("ControlId", &self.ControlId).field("MaxNumberOfROIs", &self.MaxNumberOfROIs).field("Capability", &self.Capability).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPS {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPS {}
@@ -3532,12 +3532,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPSHEADER {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPSHEADER").field("Size", &self.Size).field("ConfigCapCount", &self.ConfigCapCount).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPSHEADER {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPSHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPSHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPSHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPSHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPSHEADER {}
@@ -3568,13 +3568,13 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3607,13 +3607,13 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_ROI_FOCUS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_ROI_FOCUS {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_ROI_FOCUS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_ROI_FOCUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_FOCUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_FOCUS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3648,13 +3648,13 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_ROI_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_ROI_INFO {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_ROI_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_ROI_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3684,12 +3684,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROL {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROL").field("ControlId", &self.ControlId).field("ROICount", &self.ROICount).field("Result", &self.Result).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROL {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROL {}
@@ -3716,12 +3716,12 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER").field("Size", &self.Size).field("ControlCount", &self.ControlCount).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER {}
@@ -3752,13 +3752,13 @@ impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3810,12 +3810,12 @@ impl ::core::clone::Clone for KSCAMERA_EXTENDEDPROP_VALUE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_VALUE {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_VALUE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_VALUE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_VALUE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_VALUE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_VALUE {}
@@ -3840,12 +3840,12 @@ impl ::core::clone::Clone for KSCAMERA_EXTENDEDPROP_VALUE_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_VALUE_0 {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_VALUE_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_VALUE_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_VALUE_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_VALUE_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_VALUE_0 {}
@@ -3886,12 +3886,12 @@ impl ::core::clone::Clone for KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING {}
@@ -3949,7 +3949,7 @@ impl ::core::default::Default for KSCAMERA_EXTENDEDPROP_WBPRESET {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_WBPRESET {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_WBPRESET {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_WBPRESET {
@@ -3976,7 +3976,7 @@ impl ::core::default::Default for KSCAMERA_EXTENDEDPROP_WHITEBALANCE_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_EXTENDEDPROP_WHITEBALANCE_MODE {
+unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_WHITEBALANCE_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_WHITEBALANCE_MODE {
@@ -4011,12 +4011,12 @@ impl ::core::fmt::Debug for KSCAMERA_MAXVIDEOFPS_FORPHOTORES {
         f.debug_struct("KSCAMERA_MAXVIDEOFPS_FORPHOTORES").field("PhotoResWidth", &self.PhotoResWidth).field("PhotoResHeight", &self.PhotoResHeight).field("PreviewFPSNum", &self.PreviewFPSNum).field("PreviewFPSDenom", &self.PreviewFPSDenom).field("CaptureFPSNum", &self.CaptureFPSNum).field("CaptureFPSDenom", &self.CaptureFPSDenom).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_MAXVIDEOFPS_FORPHOTORES {
+unsafe impl ::windows_core::Abi for KSCAMERA_MAXVIDEOFPS_FORPHOTORES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_MAXVIDEOFPS_FORPHOTORES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_MAXVIDEOFPS_FORPHOTORES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_MAXVIDEOFPS_FORPHOTORES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_MAXVIDEOFPS_FORPHOTORES {}
@@ -4050,13 +4050,13 @@ impl ::core::fmt::Debug for KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK {
+unsafe impl ::windows_core::Abi for KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4113,12 +4113,12 @@ impl ::core::fmt::Debug for KSCAMERA_METADATA_CAPTURESTATS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_METADATA_CAPTURESTATS {
+unsafe impl ::windows_core::Abi for KSCAMERA_METADATA_CAPTURESTATS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_METADATA_CAPTURESTATS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_METADATA_CAPTURESTATS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_METADATA_CAPTURESTATS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_METADATA_CAPTURESTATS {}
@@ -4166,12 +4166,12 @@ impl ::core::fmt::Debug for KSCAMERA_METADATA_DIGITALWINDOW {
         f.debug_struct("KSCAMERA_METADATA_DIGITALWINDOW").field("Header", &self.Header).field("Window", &self.Window).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_METADATA_DIGITALWINDOW {
+unsafe impl ::windows_core::Abi for KSCAMERA_METADATA_DIGITALWINDOW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_METADATA_DIGITALWINDOW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_METADATA_DIGITALWINDOW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_METADATA_DIGITALWINDOW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_METADATA_DIGITALWINDOW {}
@@ -4198,12 +4198,12 @@ impl ::core::fmt::Debug for KSCAMERA_METADATA_FRAMEILLUMINATION {
         f.debug_struct("KSCAMERA_METADATA_FRAMEILLUMINATION").field("Header", &self.Header).field("Flags", &self.Flags).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_METADATA_FRAMEILLUMINATION {
+unsafe impl ::windows_core::Abi for KSCAMERA_METADATA_FRAMEILLUMINATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_METADATA_FRAMEILLUMINATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_METADATA_FRAMEILLUMINATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_METADATA_FRAMEILLUMINATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_METADATA_FRAMEILLUMINATION {}
@@ -4231,12 +4231,12 @@ impl ::core::fmt::Debug for KSCAMERA_METADATA_ITEMHEADER {
         f.debug_struct("KSCAMERA_METADATA_ITEMHEADER").field("MetadataId", &self.MetadataId).field("Size", &self.Size).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_METADATA_ITEMHEADER {
+unsafe impl ::windows_core::Abi for KSCAMERA_METADATA_ITEMHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_METADATA_ITEMHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_METADATA_ITEMHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_METADATA_ITEMHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_METADATA_ITEMHEADER {}
@@ -4263,12 +4263,12 @@ impl ::core::fmt::Debug for KSCAMERA_METADATA_PHOTOCONFIRMATION {
         f.debug_struct("KSCAMERA_METADATA_PHOTOCONFIRMATION").field("Header", &self.Header).field("PhotoConfirmationIndex", &self.PhotoConfirmationIndex).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_METADATA_PHOTOCONFIRMATION {
+unsafe impl ::windows_core::Abi for KSCAMERA_METADATA_PHOTOCONFIRMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_METADATA_PHOTOCONFIRMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_METADATA_PHOTOCONFIRMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_METADATA_PHOTOCONFIRMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_METADATA_PHOTOCONFIRMATION {}
@@ -4314,7 +4314,7 @@ impl ::core::default::Default for KSCAMERA_MetadataId {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_MetadataId {
+unsafe impl ::windows_core::Abi for KSCAMERA_MetadataId {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSCAMERA_MetadataId {
@@ -4342,12 +4342,12 @@ impl ::core::fmt::Debug for KSCAMERA_PERFRAMESETTING_CAP_HEADER {
         f.debug_struct("KSCAMERA_PERFRAMESETTING_CAP_HEADER").field("Size", &self.Size).field("ItemCount", &self.ItemCount).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PERFRAMESETTING_CAP_HEADER {
+unsafe impl ::windows_core::Abi for KSCAMERA_PERFRAMESETTING_CAP_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PERFRAMESETTING_CAP_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PERFRAMESETTING_CAP_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PERFRAMESETTING_CAP_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PERFRAMESETTING_CAP_HEADER {}
@@ -4374,12 +4374,12 @@ impl ::core::fmt::Debug for KSCAMERA_PERFRAMESETTING_CAP_ITEM_HEADER {
         f.debug_struct("KSCAMERA_PERFRAMESETTING_CAP_ITEM_HEADER").field("Size", &self.Size).field("Type", &self.Type).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PERFRAMESETTING_CAP_ITEM_HEADER {
+unsafe impl ::windows_core::Abi for KSCAMERA_PERFRAMESETTING_CAP_ITEM_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PERFRAMESETTING_CAP_ITEM_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PERFRAMESETTING_CAP_ITEM_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PERFRAMESETTING_CAP_ITEM_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PERFRAMESETTING_CAP_ITEM_HEADER {}
@@ -4393,7 +4393,7 @@ impl ::core::default::Default for KSCAMERA_PERFRAMESETTING_CAP_ITEM_HEADER {
 pub struct KSCAMERA_PERFRAMESETTING_CUSTOM_ITEM {
     pub Size: u32,
     pub Reserved: u32,
-    pub Id: ::windows::core::GUID,
+    pub Id: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for KSCAMERA_PERFRAMESETTING_CUSTOM_ITEM {}
 impl ::core::clone::Clone for KSCAMERA_PERFRAMESETTING_CUSTOM_ITEM {
@@ -4406,12 +4406,12 @@ impl ::core::fmt::Debug for KSCAMERA_PERFRAMESETTING_CUSTOM_ITEM {
         f.debug_struct("KSCAMERA_PERFRAMESETTING_CUSTOM_ITEM").field("Size", &self.Size).field("Reserved", &self.Reserved).field("Id", &self.Id).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PERFRAMESETTING_CUSTOM_ITEM {
+unsafe impl ::windows_core::Abi for KSCAMERA_PERFRAMESETTING_CUSTOM_ITEM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PERFRAMESETTING_CUSTOM_ITEM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PERFRAMESETTING_CUSTOM_ITEM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PERFRAMESETTING_CUSTOM_ITEM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PERFRAMESETTING_CUSTOM_ITEM {}
@@ -4439,12 +4439,12 @@ impl ::core::fmt::Debug for KSCAMERA_PERFRAMESETTING_FRAME_HEADER {
         f.debug_struct("KSCAMERA_PERFRAMESETTING_FRAME_HEADER").field("Size", &self.Size).field("Id", &self.Id).field("ItemCount", &self.ItemCount).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PERFRAMESETTING_FRAME_HEADER {
+unsafe impl ::windows_core::Abi for KSCAMERA_PERFRAMESETTING_FRAME_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PERFRAMESETTING_FRAME_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PERFRAMESETTING_FRAME_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PERFRAMESETTING_FRAME_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PERFRAMESETTING_FRAME_HEADER {}
@@ -4458,7 +4458,7 @@ impl ::core::default::Default for KSCAMERA_PERFRAMESETTING_FRAME_HEADER {
 pub struct KSCAMERA_PERFRAMESETTING_HEADER {
     pub Size: u32,
     pub FrameCount: u32,
-    pub Id: ::windows::core::GUID,
+    pub Id: ::windows_core::GUID,
     pub Flags: u64,
     pub LoopCount: u32,
     pub Reserved: u32,
@@ -4474,12 +4474,12 @@ impl ::core::fmt::Debug for KSCAMERA_PERFRAMESETTING_HEADER {
         f.debug_struct("KSCAMERA_PERFRAMESETTING_HEADER").field("Size", &self.Size).field("FrameCount", &self.FrameCount).field("Id", &self.Id).field("Flags", &self.Flags).field("LoopCount", &self.LoopCount).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PERFRAMESETTING_HEADER {
+unsafe impl ::windows_core::Abi for KSCAMERA_PERFRAMESETTING_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PERFRAMESETTING_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PERFRAMESETTING_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PERFRAMESETTING_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PERFRAMESETTING_HEADER {}
@@ -4506,12 +4506,12 @@ impl ::core::fmt::Debug for KSCAMERA_PERFRAMESETTING_ITEM_HEADER {
         f.debug_struct("KSCAMERA_PERFRAMESETTING_ITEM_HEADER").field("Size", &self.Size).field("Type", &self.Type).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PERFRAMESETTING_ITEM_HEADER {
+unsafe impl ::windows_core::Abi for KSCAMERA_PERFRAMESETTING_ITEM_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PERFRAMESETTING_ITEM_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PERFRAMESETTING_ITEM_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PERFRAMESETTING_ITEM_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PERFRAMESETTING_ITEM_HEADER {}
@@ -4549,7 +4549,7 @@ impl ::core::default::Default for KSCAMERA_PERFRAMESETTING_ITEM_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PERFRAMESETTING_ITEM_TYPE {
+unsafe impl ::windows_core::Abi for KSCAMERA_PERFRAMESETTING_ITEM_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSCAMERA_PERFRAMESETTING_ITEM_TYPE {
@@ -4562,7 +4562,7 @@ pub const KSCAMERA_PERFRAMESETTING_MANUAL: u64 = 8589934592u64;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSCAMERA_PROFILE_CONCURRENCYINFO {
-    pub ReferenceGuid: ::windows::core::GUID,
+    pub ReferenceGuid: ::windows_core::GUID,
     pub Reserved: u32,
     pub ProfileCount: u32,
     pub Profiles: *mut KSCAMERA_PROFILE_INFO,
@@ -4578,12 +4578,12 @@ impl ::core::fmt::Debug for KSCAMERA_PROFILE_CONCURRENCYINFO {
         f.debug_struct("KSCAMERA_PROFILE_CONCURRENCYINFO").field("ReferenceGuid", &self.ReferenceGuid).field("Reserved", &self.Reserved).field("ProfileCount", &self.ProfileCount).field("Profiles", &self.Profiles).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PROFILE_CONCURRENCYINFO {
+unsafe impl ::windows_core::Abi for KSCAMERA_PROFILE_CONCURRENCYINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PROFILE_CONCURRENCYINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_CONCURRENCYINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_CONCURRENCYINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PROFILE_CONCURRENCYINFO {}
@@ -4595,7 +4595,7 @@ impl ::core::default::Default for KSCAMERA_PROFILE_CONCURRENCYINFO {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSCAMERA_PROFILE_INFO {
-    pub ProfileId: ::windows::core::GUID,
+    pub ProfileId: ::windows_core::GUID,
     pub Index: u32,
     pub PinCount: u32,
     pub Pins: *mut KSCAMERA_PROFILE_PININFO,
@@ -4611,12 +4611,12 @@ impl ::core::fmt::Debug for KSCAMERA_PROFILE_INFO {
         f.debug_struct("KSCAMERA_PROFILE_INFO").field("ProfileId", &self.ProfileId).field("Index", &self.Index).field("PinCount", &self.PinCount).field("Pins", &self.Pins).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PROFILE_INFO {
+unsafe impl ::windows_core::Abi for KSCAMERA_PROFILE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PROFILE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PROFILE_INFO {}
@@ -4647,12 +4647,12 @@ impl ::core::fmt::Debug for KSCAMERA_PROFILE_MEDIAINFO {
         f.debug_struct("KSCAMERA_PROFILE_MEDIAINFO").field("Resolution", &self.Resolution).field("MaxFrameRate", &self.MaxFrameRate).field("Flags", &self.Flags).field("Data0", &self.Data0).field("Data1", &self.Data1).field("Data2", &self.Data2).field("Data3", &self.Data3).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PROFILE_MEDIAINFO {
+unsafe impl ::windows_core::Abi for KSCAMERA_PROFILE_MEDIAINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PROFILE_MEDIAINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_MEDIAINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_MEDIAINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PROFILE_MEDIAINFO {}
@@ -4678,12 +4678,12 @@ impl ::core::fmt::Debug for KSCAMERA_PROFILE_MEDIAINFO_0 {
         f.debug_struct("KSCAMERA_PROFILE_MEDIAINFO_0").field("Numerator", &self.Numerator).field("Denominator", &self.Denominator).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PROFILE_MEDIAINFO_0 {
+unsafe impl ::windows_core::Abi for KSCAMERA_PROFILE_MEDIAINFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PROFILE_MEDIAINFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_MEDIAINFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_MEDIAINFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PROFILE_MEDIAINFO_0 {}
@@ -4709,12 +4709,12 @@ impl ::core::fmt::Debug for KSCAMERA_PROFILE_MEDIAINFO_1 {
         f.debug_struct("KSCAMERA_PROFILE_MEDIAINFO_1").field("X", &self.X).field("Y", &self.Y).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PROFILE_MEDIAINFO_1 {
+unsafe impl ::windows_core::Abi for KSCAMERA_PROFILE_MEDIAINFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PROFILE_MEDIAINFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_MEDIAINFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_MEDIAINFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PROFILE_MEDIAINFO_1 {}
@@ -4726,7 +4726,7 @@ impl ::core::default::Default for KSCAMERA_PROFILE_MEDIAINFO_1 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSCAMERA_PROFILE_PININFO {
-    pub PinCategory: ::windows::core::GUID,
+    pub PinCategory: ::windows_core::GUID,
     pub Anonymous: KSCAMERA_PROFILE_PININFO_0,
     pub MediaInfoCount: u32,
     pub MediaInfos: *mut KSCAMERA_PROFILE_MEDIAINFO,
@@ -4737,12 +4737,12 @@ impl ::core::clone::Clone for KSCAMERA_PROFILE_PININFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PROFILE_PININFO {
+unsafe impl ::windows_core::Abi for KSCAMERA_PROFILE_PININFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PROFILE_PININFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_PININFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_PININFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PROFILE_PININFO {}
@@ -4763,12 +4763,12 @@ impl ::core::clone::Clone for KSCAMERA_PROFILE_PININFO_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PROFILE_PININFO_0 {
+unsafe impl ::windows_core::Abi for KSCAMERA_PROFILE_PININFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PROFILE_PININFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_PININFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_PININFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PROFILE_PININFO_0 {}
@@ -4794,12 +4794,12 @@ impl ::core::fmt::Debug for KSCAMERA_PROFILE_PININFO_0_0 {
         f.debug_struct("KSCAMERA_PROFILE_PININFO_0_0").field("PinIndex", &self.PinIndex).field("ProfileSensorType", &self.ProfileSensorType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCAMERA_PROFILE_PININFO_0_0 {
+unsafe impl ::windows_core::Abi for KSCAMERA_PROFILE_PININFO_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCAMERA_PROFILE_PININFO_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_PININFO_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_PROFILE_PININFO_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCAMERA_PROFILE_PININFO_0_0 {}
@@ -4808,43 +4808,43 @@ impl ::core::default::Default for KSCAMERA_PROFILE_PININFO_0_0 {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const KSCATEGORY_ACOUSTIC_ECHO_CANCEL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xbf963d80_c559_11d0_8a2b_00a0c9255ac1);
-pub const KSCATEGORY_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6994ad04_93ef_11d0_a3cc_00a0c9223196);
-pub const KSCATEGORY_BRIDGE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x085aff00_62ce_11cf_a5d6_28db04c10000);
-pub const KSCATEGORY_CAPTURE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x65e8773d_8f56_11d0_a3b9_00a0c9223196);
-pub const KSCATEGORY_CLOCK: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x53172480_4791_11d0_a5d6_28db04c10000);
-pub const KSCATEGORY_COMMUNICATIONSTRANSFORM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcf1dda2c_9743_11d0_a3ee_00a0c9223196);
-pub const KSCATEGORY_CROSSBAR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa799a801_a46d_11d0_a18c_00a02401dcd4);
-pub const KSCATEGORY_DATACOMPRESSOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1e84c900_7e70_11d0_a5d6_28db04c10000);
-pub const KSCATEGORY_DATADECOMPRESSOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2721ae20_7e70_11d0_a5d6_28db04c10000);
-pub const KSCATEGORY_DATATRANSFORM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2eb07ea0_7e70_11d0_a5d6_28db04c10000);
-pub const KSCATEGORY_ENCODER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x19689bf6_c384_48fd_ad51_90e58c79f70b);
-pub const KSCATEGORY_ESCALANTE_PLATFORM_DRIVER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x74f3aea8_9768_11d1_8e07_00a0c95ec22e);
-pub const KSCATEGORY_FILESYSTEM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x760fed5e_9357_11d0_a3cc_00a0c9223196);
-pub const KSCATEGORY_INTERFACETRANSFORM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcf1dda2d_9743_11d0_a3ee_00a0c9223196);
-pub const KSCATEGORY_MEDIUMTRANSFORM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcf1dda2e_9743_11d0_a3ee_00a0c9223196);
-pub const KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x830a44f2_a32d_476b_be97_42845673b35a);
-pub const KSCATEGORY_MIXER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xad809c00_7b88_11d0_a5d6_28db04c10000);
-pub const KSCATEGORY_MULTIPLEXER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7a5de1d3_01a1_452c_b481_4fa2b96271e8);
-pub const KSCATEGORY_NETWORK: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x67c9cc3c_69c4_11d2_8759_00a0c9223196);
-pub const KSCATEGORY_NETWORK_CAMERA: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb8238652_b500_41eb_b4f3_4234f7f5ae99);
-pub const KSCATEGORY_PROXY: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x97ebaaca_95bd_11d0_a3ea_00a0c9223196);
-pub const KSCATEGORY_QUALITY: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x97ebaacb_95bd_11d0_a3ea_00a0c9223196);
-pub const KSCATEGORY_REALTIME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xeb115ffc_10c8_4964_831d_6dcb02e6f23f);
-pub const KSCATEGORY_RENDER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x65e8773e_8f56_11d0_a3b9_00a0c9223196);
-pub const KSCATEGORY_SENSOR_CAMERA: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x24e552d7_6523_47f7_a647_d3465bf1f5ca);
-pub const KSCATEGORY_SENSOR_GROUP: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x669c7214_0a88_4311_a7f3_4e79820e33bd);
-pub const KSCATEGORY_SPLITTER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0a4252a0_7e70_11d0_a5d6_28db04c10000);
-pub const KSCATEGORY_TEXT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6994ad06_93ef_11d0_a3cc_00a0c9223196);
-pub const KSCATEGORY_TOPOLOGY: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdda54a40_1e4c_11d1_a050_405705c10000);
-pub const KSCATEGORY_TVAUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa799a802_a46d_11d0_a18c_00a02401dcd4);
-pub const KSCATEGORY_TVTUNER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa799a800_a46d_11d0_a18c_00a02401dcd4);
-pub const KSCATEGORY_VBICODEC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x07dad660_22f1_11d1_a9f4_00c04fbbde8f);
-pub const KSCATEGORY_VIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6994ad05_93ef_11d0_a3cc_00a0c9223196);
-pub const KSCATEGORY_VIDEO_CAMERA: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe5323777_f976_4f5b_9b55_b94699c46e44);
-pub const KSCATEGORY_VIRTUAL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3503eac4_1f26_11d1_8ab0_00a0c9223196);
-pub const KSCATEGORY_VPMUX: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa799a803_a46d_11d0_a18c_00a02401dcd4);
-pub const KSCATEGORY_WDMAUD_USE_PIN_NAME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x47a4fa20_a251_11d1_a050_0000f8004788);
+pub const KSCATEGORY_ACOUSTIC_ECHO_CANCEL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbf963d80_c559_11d0_8a2b_00a0c9255ac1);
+pub const KSCATEGORY_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6994ad04_93ef_11d0_a3cc_00a0c9223196);
+pub const KSCATEGORY_BRIDGE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x085aff00_62ce_11cf_a5d6_28db04c10000);
+pub const KSCATEGORY_CAPTURE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x65e8773d_8f56_11d0_a3b9_00a0c9223196);
+pub const KSCATEGORY_CLOCK: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x53172480_4791_11d0_a5d6_28db04c10000);
+pub const KSCATEGORY_COMMUNICATIONSTRANSFORM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcf1dda2c_9743_11d0_a3ee_00a0c9223196);
+pub const KSCATEGORY_CROSSBAR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa799a801_a46d_11d0_a18c_00a02401dcd4);
+pub const KSCATEGORY_DATACOMPRESSOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1e84c900_7e70_11d0_a5d6_28db04c10000);
+pub const KSCATEGORY_DATADECOMPRESSOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2721ae20_7e70_11d0_a5d6_28db04c10000);
+pub const KSCATEGORY_DATATRANSFORM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2eb07ea0_7e70_11d0_a5d6_28db04c10000);
+pub const KSCATEGORY_ENCODER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x19689bf6_c384_48fd_ad51_90e58c79f70b);
+pub const KSCATEGORY_ESCALANTE_PLATFORM_DRIVER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x74f3aea8_9768_11d1_8e07_00a0c95ec22e);
+pub const KSCATEGORY_FILESYSTEM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x760fed5e_9357_11d0_a3cc_00a0c9223196);
+pub const KSCATEGORY_INTERFACETRANSFORM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcf1dda2d_9743_11d0_a3ee_00a0c9223196);
+pub const KSCATEGORY_MEDIUMTRANSFORM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcf1dda2e_9743_11d0_a3ee_00a0c9223196);
+pub const KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x830a44f2_a32d_476b_be97_42845673b35a);
+pub const KSCATEGORY_MIXER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xad809c00_7b88_11d0_a5d6_28db04c10000);
+pub const KSCATEGORY_MULTIPLEXER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7a5de1d3_01a1_452c_b481_4fa2b96271e8);
+pub const KSCATEGORY_NETWORK: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x67c9cc3c_69c4_11d2_8759_00a0c9223196);
+pub const KSCATEGORY_NETWORK_CAMERA: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb8238652_b500_41eb_b4f3_4234f7f5ae99);
+pub const KSCATEGORY_PROXY: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x97ebaaca_95bd_11d0_a3ea_00a0c9223196);
+pub const KSCATEGORY_QUALITY: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x97ebaacb_95bd_11d0_a3ea_00a0c9223196);
+pub const KSCATEGORY_REALTIME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xeb115ffc_10c8_4964_831d_6dcb02e6f23f);
+pub const KSCATEGORY_RENDER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x65e8773e_8f56_11d0_a3b9_00a0c9223196);
+pub const KSCATEGORY_SENSOR_CAMERA: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x24e552d7_6523_47f7_a647_d3465bf1f5ca);
+pub const KSCATEGORY_SENSOR_GROUP: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x669c7214_0a88_4311_a7f3_4e79820e33bd);
+pub const KSCATEGORY_SPLITTER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0a4252a0_7e70_11d0_a5d6_28db04c10000);
+pub const KSCATEGORY_TEXT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6994ad06_93ef_11d0_a3cc_00a0c9223196);
+pub const KSCATEGORY_TOPOLOGY: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdda54a40_1e4c_11d1_a050_405705c10000);
+pub const KSCATEGORY_TVAUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa799a802_a46d_11d0_a18c_00a02401dcd4);
+pub const KSCATEGORY_TVTUNER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa799a800_a46d_11d0_a18c_00a02401dcd4);
+pub const KSCATEGORY_VBICODEC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x07dad660_22f1_11d1_a9f4_00c04fbbde8f);
+pub const KSCATEGORY_VIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6994ad05_93ef_11d0_a3cc_00a0c9223196);
+pub const KSCATEGORY_VIDEO_CAMERA: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe5323777_f976_4f5b_9b55_b94699c46e44);
+pub const KSCATEGORY_VIRTUAL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3503eac4_1f26_11d1_8ab0_00a0c9223196);
+pub const KSCATEGORY_VPMUX: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa799a803_a46d_11d0_a18c_00a02401dcd4);
+pub const KSCATEGORY_WDMAUD_USE_PIN_NAME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x47a4fa20_a251_11d1_a050_0000f8004788);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSCLOCK_CREATE {
@@ -4861,12 +4861,12 @@ impl ::core::fmt::Debug for KSCLOCK_CREATE {
         f.debug_struct("KSCLOCK_CREATE").field("CreateFlags", &self.CreateFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCLOCK_CREATE {
+unsafe impl ::windows_core::Abi for KSCLOCK_CREATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCLOCK_CREATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCLOCK_CREATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCLOCK_CREATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCLOCK_CREATE {}
@@ -4878,10 +4878,10 @@ impl ::core::default::Default for KSCLOCK_CREATE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSCOMPONENTID {
-    pub Manufacturer: ::windows::core::GUID,
-    pub Product: ::windows::core::GUID,
-    pub Component: ::windows::core::GUID,
-    pub Name: ::windows::core::GUID,
+    pub Manufacturer: ::windows_core::GUID,
+    pub Product: ::windows_core::GUID,
+    pub Component: ::windows_core::GUID,
+    pub Name: ::windows_core::GUID,
     pub Version: u32,
     pub Revision: u32,
 }
@@ -4896,12 +4896,12 @@ impl ::core::fmt::Debug for KSCOMPONENTID {
         f.debug_struct("KSCOMPONENTID").field("Manufacturer", &self.Manufacturer).field("Product", &self.Product).field("Component", &self.Component).field("Name", &self.Name).field("Version", &self.Version).field("Revision", &self.Revision).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCOMPONENTID {
+unsafe impl ::windows_core::Abi for KSCOMPONENTID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCOMPONENTID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCOMPONENTID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCOMPONENTID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCOMPONENTID {}
@@ -4910,7 +4910,7 @@ impl ::core::default::Default for KSCOMPONENTID {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const KSCOMPONENTID_USBAUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8f1275f0_26e9_4264_ba4d_39fff01d94aa);
+pub const KSCOMPONENTID_USBAUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8f1275f0_26e9_4264_ba4d_39fff01d94aa);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSCORRELATED_TIME {
@@ -4928,12 +4928,12 @@ impl ::core::fmt::Debug for KSCORRELATED_TIME {
         f.debug_struct("KSCORRELATED_TIME").field("Time", &self.Time).field("SystemTime", &self.SystemTime).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSCORRELATED_TIME {
+unsafe impl ::windows_core::Abi for KSCORRELATED_TIME {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSCORRELATED_TIME {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCORRELATED_TIME>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCORRELATED_TIME>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSCORRELATED_TIME {}
@@ -4974,12 +4974,12 @@ impl ::core::clone::Clone for KSDATAFORMAT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSDATAFORMAT {
+unsafe impl ::windows_core::Abi for KSDATAFORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDATAFORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDATAFORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDATAFORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDATAFORMAT {}
@@ -4995,9 +4995,9 @@ pub struct KSDATAFORMAT_0 {
     pub Flags: u32,
     pub SampleSize: u32,
     pub Reserved: u32,
-    pub MajorFormat: ::windows::core::GUID,
-    pub SubFormat: ::windows::core::GUID,
-    pub Specifier: ::windows::core::GUID,
+    pub MajorFormat: ::windows_core::GUID,
+    pub SubFormat: ::windows_core::GUID,
+    pub Specifier: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for KSDATAFORMAT_0 {}
 impl ::core::clone::Clone for KSDATAFORMAT_0 {
@@ -5010,12 +5010,12 @@ impl ::core::fmt::Debug for KSDATAFORMAT_0 {
         f.debug_struct("KSDATAFORMAT_0").field("FormatSize", &self.FormatSize).field("Flags", &self.Flags).field("SampleSize", &self.SampleSize).field("Reserved", &self.Reserved).field("MajorFormat", &self.MajorFormat).field("SubFormat", &self.SubFormat).field("Specifier", &self.Specifier).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSDATAFORMAT_0 {
+unsafe impl ::windows_core::Abi for KSDATAFORMAT_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDATAFORMAT_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDATAFORMAT_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDATAFORMAT_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDATAFORMAT_0 {}
@@ -5028,119 +5028,119 @@ impl ::core::default::Default for KSDATAFORMAT_0 {
 pub const KSDATAFORMAT_BIT_ATTRIBUTES: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSDATAFORMAT_BIT_TEMPORAL_COMPRESSION: u32 = 0u32;
-pub const KSDATAFORMAT_SPECIFIER_AC3_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d80e4_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_SPECIFIER_ANALOGVIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0482dde0_7817_11cf_8a03_00aa006ecb65);
-pub const KSDATAFORMAT_SPECIFIER_DIALECT_AC3_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36523b35_8ee5_11d1_8ca3_0060b057664a);
-pub const KSDATAFORMAT_SPECIFIER_DIALECT_MPEG1_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36523b32_8ee5_11d1_8ca3_0060b057664a);
-pub const KSDATAFORMAT_SPECIFIER_DIALECT_MPEG1_VIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36523b31_8ee5_11d1_8ca3_0060b057664a);
-pub const KSDATAFORMAT_SPECIFIER_DIALECT_MPEG2_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36523b34_8ee5_11d1_8ca3_0060b057664a);
-pub const KSDATAFORMAT_SPECIFIER_DIALECT_MPEG2_VIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36523b33_8ee5_11d1_8ca3_0060b057664a);
-pub const KSDATAFORMAT_SPECIFIER_DSOUND: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x518590a2_a184_11d0_8522_00c04fd9baf3);
-pub const KSDATAFORMAT_SPECIFIER_FILEHANDLE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x65e8773c_8f56_11d0_a3b9_00a0c9223196);
-pub const KSDATAFORMAT_SPECIFIER_FILENAME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xaa797b40_e974_11cf_a5d6_28db04c10000);
-pub const KSDATAFORMAT_SPECIFIER_H264_VIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2017be05_6629_4248_aaed_7e1a47bc9b9c);
-pub const KSDATAFORMAT_SPECIFIER_IMAGE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x692fa379_d3e8_4651_b5b4_0b94b013eeaf);
-pub const KSDATAFORMAT_SPECIFIER_JPEG_IMAGE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x692fa379_d3e8_4651_b5b4_0b94b013eeaf);
-pub const KSDATAFORMAT_SPECIFIER_LPCM_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d80e6_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_SPECIFIER_MPEG1_VIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x05589f82_c356_11ce_bf01_00aa0055595a);
-pub const KSDATAFORMAT_SPECIFIER_MPEG2_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d80e5_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_SPECIFIER_MPEG2_VIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d80e3_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_SPECIFIER_NONE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0f6417d6_c318_11d0_a43f_00a0c9223196);
-pub const KSDATAFORMAT_SPECIFIER_VBI: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf72a76e0_eb0a_11d0_ace4_0000c0cc16ba);
-pub const KSDATAFORMAT_SPECIFIER_VC_ID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xad98d184_aac3_11d0_a41c_00a0c9223196);
-pub const KSDATAFORMAT_SPECIFIER_VIDEOINFO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x05589f80_c356_11ce_bf01_00aa0055595a);
-pub const KSDATAFORMAT_SPECIFIER_VIDEOINFO2: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf72a76a0_eb0a_11d0_ace4_0000c0cc16ba);
-pub const KSDATAFORMAT_SPECIFIER_WAVEFORMATEX: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x05589f81_c356_11ce_bf01_00aa0055595a);
-pub const KSDATAFORMAT_SUBTYPE_AC3_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d802c_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_SUBTYPE_ANALOG: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6dba3190_67bd_11cf_a0f7_0020afd156e4);
-pub const KSDATAFORMAT_SUBTYPE_CC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x33214cc1_011f_11d2_b4b1_00a0d102cfbe);
-pub const KSDATAFORMAT_SUBTYPE_D16: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000050_0004_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_DSS_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa0af4f82_e163_11d0_bad9_00609744111a);
-pub const KSDATAFORMAT_SUBTYPE_DSS_VIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa0af4f81_e163_11d0_bad9_00609744111a);
-pub const KSDATAFORMAT_SUBTYPE_DTS_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d8033_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_AAC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000006_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_ATRAC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000008_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_DIGITAL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000092_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_DIGITAL_PLUS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0000000a_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_DIGITAL_PLUS_ATMOS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0000010a_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_MAT20: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0000010c_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_MAT21: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0000030c_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_MLP: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0000000c_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_DST: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0000000d_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_DTS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000008_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_DTSX_E1: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0000010b_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_DTSX_E2: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0000030b_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_DTS_HD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0000000b_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_MPEG1: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000003_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_MPEG2: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000004_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_MPEG3: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000005_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_ONE_BIT_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000009_0cea_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IEC61937_WMA_PRO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000164_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_IMAGE_RGB32: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000016_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_JPEG: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x19e4a5aa_5662_4fc5_a0c0_1758028e1057);
-pub const KSDATAFORMAT_SUBTYPE_L16: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000051_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_L16_CUSTOM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000051_8000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_L16_IR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000051_0002_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_L8: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000032_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_L8_CUSTOM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000032_8000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_L8_IR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000032_0002_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_LPCM_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d8032_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_SUBTYPE_Line21_BytePair: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6e8d4a22_310c_11d0_b79a_00aa003767a7);
-pub const KSDATAFORMAT_SUBTYPE_Line21_GOPPacket: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6e8d4a23_310c_11d0_b79a_00aa003767a7);
-pub const KSDATAFORMAT_SUBTYPE_MIDI: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1d262760_e957_11cf_a5d6_28db04c10000);
-pub const KSDATAFORMAT_SUBTYPE_MIDI_BUS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2ca15fa0_6cfe_11cf_a5d6_28db04c10000);
-pub const KSDATAFORMAT_SUBTYPE_MJPG_CUSTOM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x47504a4d_8000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_MJPG_DEPTH: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x47504a4d_0004_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_MJPG_IR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x47504a4d_0002_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_MPEG1Packet: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe436eb80_524f_11ce_9f53_0020af0ba770);
-pub const KSDATAFORMAT_SUBTYPE_MPEG1Payload: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe436eb81_524f_11ce_9f53_0020af0ba770);
-pub const KSDATAFORMAT_SUBTYPE_MPEG1Video: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe436eb86_524f_11ce_9f53_0020af0ba770);
-pub const KSDATAFORMAT_SUBTYPE_MPEG2_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d802b_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_SUBTYPE_MPEG2_VIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d8026_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_SUBTYPE_MPEGLAYER3: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000055_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_MPEG_HEAAC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00001610_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_NABTS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf72a76e2_eb0a_11d0_ace4_0000c0cc16ba);
-pub const KSDATAFORMAT_SUBTYPE_NABTS_FEC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe757bca1_39ac_11d1_a9f5_00c04fbbde8f);
-pub const KSDATAFORMAT_SUBTYPE_NONE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe436eb8e_524f_11ce_9f53_0020af0ba770);
-pub const KSDATAFORMAT_SUBTYPE_OVERLAY: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe436eb7f_524f_11ce_9f53_0020af0ba770);
-pub const KSDATAFORMAT_SUBTYPE_PCM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000001_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_RAW8: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xca20d9a0_3e3e_11d1_9bf9_00c04fbbdebf);
-pub const KSDATAFORMAT_SUBTYPE_RIFF: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4995daee_9ee6_11d0_a40e_00a0c9223196);
-pub const KSDATAFORMAT_SUBTYPE_RIFFMIDI: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4995daf0_9ee6_11d0_a40e_00a0c9223196);
-pub const KSDATAFORMAT_SUBTYPE_RIFFWAVE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe436eb8b_524f_11ce_9f53_0020af0ba770);
-pub const KSDATAFORMAT_SUBTYPE_SDDS_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d8034_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_SUBTYPE_STANDARD_AC3_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36523b25_8ee5_11d1_8ca3_0060b057664a);
-pub const KSDATAFORMAT_SUBTYPE_STANDARD_MPEG1_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36523b22_8ee5_11d1_8ca3_0060b057664a);
-pub const KSDATAFORMAT_SUBTYPE_STANDARD_MPEG1_VIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36523b21_8ee5_11d1_8ca3_0060b057664a);
-pub const KSDATAFORMAT_SUBTYPE_STANDARD_MPEG2_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36523b24_8ee5_11d1_8ca3_0060b057664a);
-pub const KSDATAFORMAT_SUBTYPE_STANDARD_MPEG2_VIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36523b23_8ee5_11d1_8ca3_0060b057664a);
-pub const KSDATAFORMAT_SUBTYPE_SUBPICTURE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d802d_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_SUBTYPE_TELETEXT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf72a76e3_eb0a_11d0_ace4_0000c0cc16ba);
-pub const KSDATAFORMAT_SUBTYPE_VPVBI: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5a9b6a41_1a22_11d1_bad9_00609744111a);
-pub const KSDATAFORMAT_SUBTYPE_VPVideo: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5a9b6a40_1a22_11d1_bad9_00609744111a);
-pub const KSDATAFORMAT_SUBTYPE_WAVEFORMATEX: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000000_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_WMAUDIO2: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000161_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_WMAUDIO3: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000162_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_SUBTYPE_WMAUDIO_LOSSLESS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000163_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_TYPE_ANALOGAUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0482dee1_7817_11cf_8a03_00aa006ecb65);
-pub const KSDATAFORMAT_TYPE_ANALOGVIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0482dde1_7817_11cf_8a03_00aa006ecb65);
-pub const KSDATAFORMAT_TYPE_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x73647561_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_TYPE_AUXLine21Data: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x670aea80_3a82_11d0_b79b_00aa003767a7);
-pub const KSDATAFORMAT_TYPE_DVD_ENCRYPTED_PACK: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xed0b916a_044d_11d1_aa78_00c04fc31d60);
-pub const KSDATAFORMAT_TYPE_IMAGE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x72178c23_e45b_11d5_bc2a_00b0d0f3f4ab);
-pub const KSDATAFORMAT_TYPE_MIDI: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7364696d_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_TYPE_MPEG2_PES: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d8020_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_TYPE_MPEG2_PROGRAM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d8022_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_TYPE_MPEG2_TRANSPORT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe06d8023_db46_11cf_b4d1_00805f6cbbea);
-pub const KSDATAFORMAT_TYPE_MUSIC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe725d360_62cc_11cf_a5d6_28db04c10000);
-pub const KSDATAFORMAT_TYPE_NABTS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe757bca0_39ac_11d1_a9f5_00c04fbbde8f);
-pub const KSDATAFORMAT_TYPE_STANDARD_ELEMENTARY_STREAM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36523b11_8ee5_11d1_8ca3_0060b057664a);
-pub const KSDATAFORMAT_TYPE_STANDARD_PACK_HEADER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36523b13_8ee5_11d1_8ca3_0060b057664a);
-pub const KSDATAFORMAT_TYPE_STANDARD_PES_PACKET: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36523b12_8ee5_11d1_8ca3_0060b057664a);
-pub const KSDATAFORMAT_TYPE_STREAM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe436eb83_524f_11ce_9f53_0020af0ba770);
-pub const KSDATAFORMAT_TYPE_TEXT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x73747874_0000_0010_8000_00aa00389b71);
-pub const KSDATAFORMAT_TYPE_VBI: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf72a76e1_eb0a_11d0_ace4_0000c0cc16ba);
-pub const KSDATAFORMAT_TYPE_VIDEO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x73646976_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SPECIFIER_AC3_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d80e4_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_SPECIFIER_ANALOGVIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0482dde0_7817_11cf_8a03_00aa006ecb65);
+pub const KSDATAFORMAT_SPECIFIER_DIALECT_AC3_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36523b35_8ee5_11d1_8ca3_0060b057664a);
+pub const KSDATAFORMAT_SPECIFIER_DIALECT_MPEG1_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36523b32_8ee5_11d1_8ca3_0060b057664a);
+pub const KSDATAFORMAT_SPECIFIER_DIALECT_MPEG1_VIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36523b31_8ee5_11d1_8ca3_0060b057664a);
+pub const KSDATAFORMAT_SPECIFIER_DIALECT_MPEG2_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36523b34_8ee5_11d1_8ca3_0060b057664a);
+pub const KSDATAFORMAT_SPECIFIER_DIALECT_MPEG2_VIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36523b33_8ee5_11d1_8ca3_0060b057664a);
+pub const KSDATAFORMAT_SPECIFIER_DSOUND: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x518590a2_a184_11d0_8522_00c04fd9baf3);
+pub const KSDATAFORMAT_SPECIFIER_FILEHANDLE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x65e8773c_8f56_11d0_a3b9_00a0c9223196);
+pub const KSDATAFORMAT_SPECIFIER_FILENAME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xaa797b40_e974_11cf_a5d6_28db04c10000);
+pub const KSDATAFORMAT_SPECIFIER_H264_VIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2017be05_6629_4248_aaed_7e1a47bc9b9c);
+pub const KSDATAFORMAT_SPECIFIER_IMAGE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x692fa379_d3e8_4651_b5b4_0b94b013eeaf);
+pub const KSDATAFORMAT_SPECIFIER_JPEG_IMAGE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x692fa379_d3e8_4651_b5b4_0b94b013eeaf);
+pub const KSDATAFORMAT_SPECIFIER_LPCM_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d80e6_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_SPECIFIER_MPEG1_VIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x05589f82_c356_11ce_bf01_00aa0055595a);
+pub const KSDATAFORMAT_SPECIFIER_MPEG2_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d80e5_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_SPECIFIER_MPEG2_VIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d80e3_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_SPECIFIER_NONE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0f6417d6_c318_11d0_a43f_00a0c9223196);
+pub const KSDATAFORMAT_SPECIFIER_VBI: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf72a76e0_eb0a_11d0_ace4_0000c0cc16ba);
+pub const KSDATAFORMAT_SPECIFIER_VC_ID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xad98d184_aac3_11d0_a41c_00a0c9223196);
+pub const KSDATAFORMAT_SPECIFIER_VIDEOINFO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x05589f80_c356_11ce_bf01_00aa0055595a);
+pub const KSDATAFORMAT_SPECIFIER_VIDEOINFO2: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf72a76a0_eb0a_11d0_ace4_0000c0cc16ba);
+pub const KSDATAFORMAT_SPECIFIER_WAVEFORMATEX: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x05589f81_c356_11ce_bf01_00aa0055595a);
+pub const KSDATAFORMAT_SUBTYPE_AC3_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d802c_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_SUBTYPE_ANALOG: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6dba3190_67bd_11cf_a0f7_0020afd156e4);
+pub const KSDATAFORMAT_SUBTYPE_CC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x33214cc1_011f_11d2_b4b1_00a0d102cfbe);
+pub const KSDATAFORMAT_SUBTYPE_D16: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000050_0004_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_DSS_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa0af4f82_e163_11d0_bad9_00609744111a);
+pub const KSDATAFORMAT_SUBTYPE_DSS_VIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa0af4f81_e163_11d0_bad9_00609744111a);
+pub const KSDATAFORMAT_SUBTYPE_DTS_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d8033_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_AAC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000006_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_ATRAC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000008_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_DIGITAL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000092_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_DIGITAL_PLUS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0000000a_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_DIGITAL_PLUS_ATMOS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0000010a_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_MAT20: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0000010c_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_MAT21: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0000030c_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_MLP: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0000000c_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_DST: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0000000d_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_DTS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000008_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_DTSX_E1: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0000010b_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_DTSX_E2: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0000030b_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_DTS_HD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0000000b_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_MPEG1: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000003_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_MPEG2: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000004_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_MPEG3: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000005_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_ONE_BIT_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000009_0cea_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IEC61937_WMA_PRO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000164_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_IMAGE_RGB32: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000016_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_JPEG: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x19e4a5aa_5662_4fc5_a0c0_1758028e1057);
+pub const KSDATAFORMAT_SUBTYPE_L16: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000051_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_L16_CUSTOM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000051_8000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_L16_IR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000051_0002_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_L8: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000032_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_L8_CUSTOM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000032_8000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_L8_IR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000032_0002_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_LPCM_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d8032_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_SUBTYPE_Line21_BytePair: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6e8d4a22_310c_11d0_b79a_00aa003767a7);
+pub const KSDATAFORMAT_SUBTYPE_Line21_GOPPacket: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6e8d4a23_310c_11d0_b79a_00aa003767a7);
+pub const KSDATAFORMAT_SUBTYPE_MIDI: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1d262760_e957_11cf_a5d6_28db04c10000);
+pub const KSDATAFORMAT_SUBTYPE_MIDI_BUS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2ca15fa0_6cfe_11cf_a5d6_28db04c10000);
+pub const KSDATAFORMAT_SUBTYPE_MJPG_CUSTOM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x47504a4d_8000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_MJPG_DEPTH: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x47504a4d_0004_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_MJPG_IR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x47504a4d_0002_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_MPEG1Packet: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe436eb80_524f_11ce_9f53_0020af0ba770);
+pub const KSDATAFORMAT_SUBTYPE_MPEG1Payload: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe436eb81_524f_11ce_9f53_0020af0ba770);
+pub const KSDATAFORMAT_SUBTYPE_MPEG1Video: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe436eb86_524f_11ce_9f53_0020af0ba770);
+pub const KSDATAFORMAT_SUBTYPE_MPEG2_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d802b_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_SUBTYPE_MPEG2_VIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d8026_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_SUBTYPE_MPEGLAYER3: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000055_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_MPEG_HEAAC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00001610_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_NABTS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf72a76e2_eb0a_11d0_ace4_0000c0cc16ba);
+pub const KSDATAFORMAT_SUBTYPE_NABTS_FEC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe757bca1_39ac_11d1_a9f5_00c04fbbde8f);
+pub const KSDATAFORMAT_SUBTYPE_NONE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe436eb8e_524f_11ce_9f53_0020af0ba770);
+pub const KSDATAFORMAT_SUBTYPE_OVERLAY: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe436eb7f_524f_11ce_9f53_0020af0ba770);
+pub const KSDATAFORMAT_SUBTYPE_PCM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000001_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_RAW8: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xca20d9a0_3e3e_11d1_9bf9_00c04fbbdebf);
+pub const KSDATAFORMAT_SUBTYPE_RIFF: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4995daee_9ee6_11d0_a40e_00a0c9223196);
+pub const KSDATAFORMAT_SUBTYPE_RIFFMIDI: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4995daf0_9ee6_11d0_a40e_00a0c9223196);
+pub const KSDATAFORMAT_SUBTYPE_RIFFWAVE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe436eb8b_524f_11ce_9f53_0020af0ba770);
+pub const KSDATAFORMAT_SUBTYPE_SDDS_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d8034_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_SUBTYPE_STANDARD_AC3_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36523b25_8ee5_11d1_8ca3_0060b057664a);
+pub const KSDATAFORMAT_SUBTYPE_STANDARD_MPEG1_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36523b22_8ee5_11d1_8ca3_0060b057664a);
+pub const KSDATAFORMAT_SUBTYPE_STANDARD_MPEG1_VIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36523b21_8ee5_11d1_8ca3_0060b057664a);
+pub const KSDATAFORMAT_SUBTYPE_STANDARD_MPEG2_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36523b24_8ee5_11d1_8ca3_0060b057664a);
+pub const KSDATAFORMAT_SUBTYPE_STANDARD_MPEG2_VIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36523b23_8ee5_11d1_8ca3_0060b057664a);
+pub const KSDATAFORMAT_SUBTYPE_SUBPICTURE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d802d_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_SUBTYPE_TELETEXT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf72a76e3_eb0a_11d0_ace4_0000c0cc16ba);
+pub const KSDATAFORMAT_SUBTYPE_VPVBI: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5a9b6a41_1a22_11d1_bad9_00609744111a);
+pub const KSDATAFORMAT_SUBTYPE_VPVideo: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5a9b6a40_1a22_11d1_bad9_00609744111a);
+pub const KSDATAFORMAT_SUBTYPE_WAVEFORMATEX: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000000_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_WMAUDIO2: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000161_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_WMAUDIO3: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000162_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_SUBTYPE_WMAUDIO_LOSSLESS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000163_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_TYPE_ANALOGAUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0482dee1_7817_11cf_8a03_00aa006ecb65);
+pub const KSDATAFORMAT_TYPE_ANALOGVIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0482dde1_7817_11cf_8a03_00aa006ecb65);
+pub const KSDATAFORMAT_TYPE_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x73647561_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_TYPE_AUXLine21Data: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x670aea80_3a82_11d0_b79b_00aa003767a7);
+pub const KSDATAFORMAT_TYPE_DVD_ENCRYPTED_PACK: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xed0b916a_044d_11d1_aa78_00c04fc31d60);
+pub const KSDATAFORMAT_TYPE_IMAGE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x72178c23_e45b_11d5_bc2a_00b0d0f3f4ab);
+pub const KSDATAFORMAT_TYPE_MIDI: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7364696d_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_TYPE_MPEG2_PES: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d8020_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_TYPE_MPEG2_PROGRAM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d8022_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_TYPE_MPEG2_TRANSPORT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe06d8023_db46_11cf_b4d1_00805f6cbbea);
+pub const KSDATAFORMAT_TYPE_MUSIC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe725d360_62cc_11cf_a5d6_28db04c10000);
+pub const KSDATAFORMAT_TYPE_NABTS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe757bca0_39ac_11d1_a9f5_00c04fbbde8f);
+pub const KSDATAFORMAT_TYPE_STANDARD_ELEMENTARY_STREAM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36523b11_8ee5_11d1_8ca3_0060b057664a);
+pub const KSDATAFORMAT_TYPE_STANDARD_PACK_HEADER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36523b13_8ee5_11d1_8ca3_0060b057664a);
+pub const KSDATAFORMAT_TYPE_STANDARD_PES_PACKET: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36523b12_8ee5_11d1_8ca3_0060b057664a);
+pub const KSDATAFORMAT_TYPE_STREAM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe436eb83_524f_11ce_9f53_0020af0ba770);
+pub const KSDATAFORMAT_TYPE_TEXT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x73747874_0000_0010_8000_00aa00389b71);
+pub const KSDATAFORMAT_TYPE_VBI: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf72a76e1_eb0a_11d0_ace4_0000c0cc16ba);
+pub const KSDATAFORMAT_TYPE_VIDEO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x73646976_0000_0010_8000_00aa00389b71);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSDATARANGE_AUDIO {
@@ -5157,12 +5157,12 @@ impl ::core::clone::Clone for KSDATARANGE_AUDIO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSDATARANGE_AUDIO {
+unsafe impl ::windows_core::Abi for KSDATARANGE_AUDIO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDATARANGE_AUDIO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDATARANGE_AUDIO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDATARANGE_AUDIO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDATARANGE_AUDIO {}
@@ -5179,7 +5179,7 @@ pub const KSDATARANGE_BIT_REQUIRED_ATTRIBUTES: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSDATARANGE_MUSIC {
     pub DataRange: KSDATAFORMAT,
-    pub Technology: ::windows::core::GUID,
+    pub Technology: ::windows_core::GUID,
     pub Channels: u32,
     pub Notes: u32,
     pub ChannelMask: u32,
@@ -5190,12 +5190,12 @@ impl ::core::clone::Clone for KSDATARANGE_MUSIC {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSDATARANGE_MUSIC {
+unsafe impl ::windows_core::Abi for KSDATARANGE_MUSIC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDATARANGE_MUSIC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDATARANGE_MUSIC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDATARANGE_MUSIC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDATARANGE_MUSIC {}
@@ -5204,7 +5204,7 @@ impl ::core::default::Default for KSDATARANGE_MUSIC {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const KSDEGRADESETID_Standard: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9f564180_704c_11d0_a5d6_28db04c10000);
+pub const KSDEGRADESETID_Standard: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9f564180_704c_11d0_a5d6_28db04c10000);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -5228,7 +5228,7 @@ impl ::core::default::Default for KSDEGRADE_STANDARD {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSDEGRADE_STANDARD {
+unsafe impl ::windows_core::Abi for KSDEGRADE_STANDARD {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSDEGRADE_STANDARD {
@@ -5259,12 +5259,12 @@ impl ::core::clone::Clone for KSDEVICE_PROFILE_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSDEVICE_PROFILE_INFO {
+unsafe impl ::windows_core::Abi for KSDEVICE_PROFILE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDEVICE_PROFILE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDEVICE_PROFILE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDEVICE_PROFILE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDEVICE_PROFILE_INFO {}
@@ -5284,12 +5284,12 @@ impl ::core::clone::Clone for KSDEVICE_PROFILE_INFO_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSDEVICE_PROFILE_INFO_0 {
+unsafe impl ::windows_core::Abi for KSDEVICE_PROFILE_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDEVICE_PROFILE_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDEVICE_PROFILE_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDEVICE_PROFILE_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDEVICE_PROFILE_INFO_0 {}
@@ -5317,12 +5317,12 @@ impl ::core::fmt::Debug for KSDEVICE_PROFILE_INFO_0_0 {
         f.debug_struct("KSDEVICE_PROFILE_INFO_0_0").field("Info", &self.Info).field("Reserved", &self.Reserved).field("ConcurrencyCount", &self.ConcurrencyCount).field("Concurrency", &self.Concurrency).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSDEVICE_PROFILE_INFO_0_0 {
+unsafe impl ::windows_core::Abi for KSDEVICE_PROFILE_INFO_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDEVICE_PROFILE_INFO_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDEVICE_PROFILE_INFO_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDEVICE_PROFILE_INFO_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDEVICE_PROFILE_INFO_0_0 {}
@@ -5354,7 +5354,7 @@ impl ::core::default::Default for KSDEVICE_THERMAL_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSDEVICE_THERMAL_STATE {
+unsafe impl ::windows_core::Abi for KSDEVICE_THERMAL_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSDEVICE_THERMAL_STATE {
@@ -5383,12 +5383,12 @@ impl ::core::fmt::Debug for KSDISPLAYCHANGE {
         f.debug_struct("KSDISPLAYCHANGE").field("PelsWidth", &self.PelsWidth).field("PelsHeight", &self.PelsHeight).field("BitsPerPel", &self.BitsPerPel).field("DeviceID", &self.DeviceID).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSDISPLAYCHANGE {
+unsafe impl ::windows_core::Abi for KSDISPLAYCHANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDISPLAYCHANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDISPLAYCHANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDISPLAYCHANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDISPLAYCHANGE {}
@@ -5416,12 +5416,12 @@ impl ::core::clone::Clone for KSDS3D_BUFFER_ALL {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSDS3D_BUFFER_ALL {
+unsafe impl ::windows_core::Abi for KSDS3D_BUFFER_ALL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDS3D_BUFFER_ALL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_BUFFER_ALL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_BUFFER_ALL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDS3D_BUFFER_ALL {}
@@ -5447,12 +5447,12 @@ impl ::core::fmt::Debug for KSDS3D_BUFFER_CONE_ANGLES {
         f.debug_struct("KSDS3D_BUFFER_CONE_ANGLES").field("InsideConeAngle", &self.InsideConeAngle).field("OutsideConeAngle", &self.OutsideConeAngle).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSDS3D_BUFFER_CONE_ANGLES {
+unsafe impl ::windows_core::Abi for KSDS3D_BUFFER_CONE_ANGLES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDS3D_BUFFER_CONE_ANGLES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_BUFFER_CONE_ANGLES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_BUFFER_CONE_ANGLES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDS3D_BUFFER_CONE_ANGLES {}
@@ -5482,7 +5482,7 @@ impl ::core::default::Default for KSDS3D_HRTF_COEFF_FORMAT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSDS3D_HRTF_COEFF_FORMAT {
+unsafe impl ::windows_core::Abi for KSDS3D_HRTF_COEFF_FORMAT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSDS3D_HRTF_COEFF_FORMAT {
@@ -5509,12 +5509,12 @@ impl ::core::fmt::Debug for KSDS3D_HRTF_FILTER_FORMAT_MSG {
         f.debug_struct("KSDS3D_HRTF_FILTER_FORMAT_MSG").field("FilterMethod", &self.FilterMethod).field("CoeffFormat", &self.CoeffFormat).field("Version", &self.Version).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSDS3D_HRTF_FILTER_FORMAT_MSG {
+unsafe impl ::windows_core::Abi for KSDS3D_HRTF_FILTER_FORMAT_MSG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDS3D_HRTF_FILTER_FORMAT_MSG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_HRTF_FILTER_FORMAT_MSG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_HRTF_FILTER_FORMAT_MSG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDS3D_HRTF_FILTER_FORMAT_MSG {}
@@ -5544,7 +5544,7 @@ impl ::core::default::Default for KSDS3D_HRTF_FILTER_METHOD {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSDS3D_HRTF_FILTER_METHOD {
+unsafe impl ::windows_core::Abi for KSDS3D_HRTF_FILTER_METHOD {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSDS3D_HRTF_FILTER_METHOD {
@@ -5573,7 +5573,7 @@ impl ::core::default::Default for KSDS3D_HRTF_FILTER_QUALITY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSDS3D_HRTF_FILTER_QUALITY {
+unsafe impl ::windows_core::Abi for KSDS3D_HRTF_FILTER_QUALITY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSDS3D_HRTF_FILTER_QUALITY {
@@ -5598,7 +5598,7 @@ impl ::core::default::Default for KSDS3D_HRTF_FILTER_VERSION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSDS3D_HRTF_FILTER_VERSION {
+unsafe impl ::windows_core::Abi for KSDS3D_HRTF_FILTER_VERSION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSDS3D_HRTF_FILTER_VERSION {
@@ -5629,12 +5629,12 @@ impl ::core::fmt::Debug for KSDS3D_HRTF_INIT_MSG {
         f.debug_struct("KSDS3D_HRTF_INIT_MSG").field("Size", &self.Size).field("Quality", &self.Quality).field("SampleRate", &self.SampleRate).field("MaxFilterSize", &self.MaxFilterSize).field("FilterTransientMuteLength", &self.FilterTransientMuteLength).field("FilterOverlapBufferLength", &self.FilterOverlapBufferLength).field("OutputOverlapBufferLength", &self.OutputOverlapBufferLength).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSDS3D_HRTF_INIT_MSG {
+unsafe impl ::windows_core::Abi for KSDS3D_HRTF_INIT_MSG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDS3D_HRTF_INIT_MSG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_HRTF_INIT_MSG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_HRTF_INIT_MSG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDS3D_HRTF_INIT_MSG {}
@@ -5669,13 +5669,13 @@ impl ::core::fmt::Debug for KSDS3D_HRTF_PARAMS_MSG {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSDS3D_HRTF_PARAMS_MSG {
+unsafe impl ::windows_core::Abi for KSDS3D_HRTF_PARAMS_MSG {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSDS3D_HRTF_PARAMS_MSG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_HRTF_PARAMS_MSG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_HRTF_PARAMS_MSG>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5707,12 +5707,12 @@ impl ::core::fmt::Debug for KSDS3D_ITD_PARAMS {
         f.debug_struct("KSDS3D_ITD_PARAMS").field("Channel", &self.Channel).field("VolSmoothScale", &self.VolSmoothScale).field("TotalDryAttenuation", &self.TotalDryAttenuation).field("TotalWetAttenuation", &self.TotalWetAttenuation).field("SmoothFrequency", &self.SmoothFrequency).field("Delay", &self.Delay).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSDS3D_ITD_PARAMS {
+unsafe impl ::windows_core::Abi for KSDS3D_ITD_PARAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDS3D_ITD_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_ITD_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_ITD_PARAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDS3D_ITD_PARAMS {}
@@ -5740,12 +5740,12 @@ impl ::core::fmt::Debug for KSDS3D_ITD_PARAMS_MSG {
         f.debug_struct("KSDS3D_ITD_PARAMS_MSG").field("Enabled", &self.Enabled).field("LeftParams", &self.LeftParams).field("RightParams", &self.RightParams).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSDS3D_ITD_PARAMS_MSG {
+unsafe impl ::windows_core::Abi for KSDS3D_ITD_PARAMS_MSG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDS3D_ITD_PARAMS_MSG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_ITD_PARAMS_MSG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_ITD_PARAMS_MSG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDS3D_ITD_PARAMS_MSG {}
@@ -5771,12 +5771,12 @@ impl ::core::clone::Clone for KSDS3D_LISTENER_ALL {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSDS3D_LISTENER_ALL {
+unsafe impl ::windows_core::Abi for KSDS3D_LISTENER_ALL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDS3D_LISTENER_ALL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_LISTENER_ALL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_LISTENER_ALL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDS3D_LISTENER_ALL {}
@@ -5797,12 +5797,12 @@ impl ::core::clone::Clone for KSDS3D_LISTENER_ORIENTATION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSDS3D_LISTENER_ORIENTATION {
+unsafe impl ::windows_core::Abi for KSDS3D_LISTENER_ORIENTATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSDS3D_LISTENER_ORIENTATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_LISTENER_ORIENTATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_LISTENER_ORIENTATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSDS3D_LISTENER_ORIENTATION {}
@@ -5854,12 +5854,12 @@ impl ::core::fmt::Debug for KSERROR {
         f.debug_struct("KSERROR").field("Context", &self.Context).field("Status", &self.Status).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSERROR {
+unsafe impl ::windows_core::Abi for KSERROR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSERROR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSERROR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSERROR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSERROR {}
@@ -5884,13 +5884,13 @@ impl ::core::clone::Clone for KSEVENTDATA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSEVENTDATA {
+unsafe impl ::windows_core::Abi for KSEVENTDATA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENTDATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5918,13 +5918,13 @@ impl ::core::clone::Clone for KSEVENTDATA_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSEVENTDATA_0 {
+unsafe impl ::windows_core::Abi for KSEVENTDATA_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENTDATA_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5957,13 +5957,13 @@ impl ::core::fmt::Debug for KSEVENTDATA_0_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSEVENTDATA_0_0 {
+unsafe impl ::windows_core::Abi for KSEVENTDATA_0_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENTDATA_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA_0_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5996,13 +5996,13 @@ impl ::core::fmt::Debug for KSEVENTDATA_0_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSEVENTDATA_0_1 {
+unsafe impl ::windows_core::Abi for KSEVENTDATA_0_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENTDATA_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA_0_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6036,13 +6036,13 @@ impl ::core::fmt::Debug for KSEVENTDATA_0_2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSEVENTDATA_0_2 {
+unsafe impl ::windows_core::Abi for KSEVENTDATA_0_2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENTDATA_0_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA_0_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA_0_2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6067,25 +6067,25 @@ pub const KSEVENTF_SEMAPHORE_HANDLE: u32 = 2u32;
 pub const KSEVENTF_SEMAPHORE_OBJECT: u32 = 8u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSEVENTF_WORKITEM: u32 = 32u32;
-pub const KSEVENTSETID_AudioControlChange: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe85e9698_fa2f_11d1_95bd_00c04fb925d3);
-pub const KSEVENTSETID_CameraAsyncControl: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x22a11754_9701_4088_b33f_6b9cbc52df5e);
-pub const KSEVENTSETID_CameraEvent: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7899b2e0_6b43_4964_9d2a_a21f4061f576);
-pub const KSEVENTSETID_Clock: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x364d8e20_62c7_11cf_a5d6_28db04c10000);
-pub const KSEVENTSETID_Connection: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7f4bcbe0_9ea5_11cf_a5d6_28db04c10000);
-pub const KSEVENTSETID_Device: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x288296ec_9f94_41b4_a153_aa31aeecb33f);
-pub const KSEVENTSETID_DynamicFormatChange: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x162ac456_83d7_4239_96df_c75ffa138bc6);
-pub const KSEVENTSETID_EXTDEV_Command: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x109c7988_b3cb_11d2_b48e_006097b3391b);
-pub const KSEVENTSETID_ExtendedCameraControl: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x571c92c9_13a2_47e3_a649_d2a778166384);
-pub const KSEVENTSETID_LoopedStreaming: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4682b940_c6ef_11d0_96d8_00aa0051e51d);
-pub const KSEVENTSETID_PinCapsChange: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdd4f192e_3b78_49ad_a534_2c315b822000);
-pub const KSEVENTSETID_SoundDetector: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x69785c9b_fc2d_49d6_ac32_4799f87de9f6);
-pub const KSEVENTSETID_StreamAllocator: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x75d95571_073c_11d0_a161_0020afd156e4);
-pub const KSEVENTSETID_Telephony: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb77f12b4_ceb4_4484_8d5e_52c1e7d8762d);
-pub const KSEVENTSETID_VIDCAPTOSTI: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdb47de20_f628_11d1_ba41_00a0c90d2b05);
-pub const KSEVENTSETID_VIDCAP_TVAUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6a2e0651_28e4_11d0_a18c_00a0c9118956);
-pub const KSEVENTSETID_VPNotify: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x20c5598e_d3c8_11d0_8dfc_00c04fd7c08b);
-pub const KSEVENTSETID_VPVBINotify: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xec529b01_1a1f_11d1_bad9_00609744111a);
-pub const KSEVENTSETID_VolumeLimit: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xda168465_3a7c_4858_9d4a_3e8e24701aef);
+pub const KSEVENTSETID_AudioControlChange: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe85e9698_fa2f_11d1_95bd_00c04fb925d3);
+pub const KSEVENTSETID_CameraAsyncControl: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x22a11754_9701_4088_b33f_6b9cbc52df5e);
+pub const KSEVENTSETID_CameraEvent: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7899b2e0_6b43_4964_9d2a_a21f4061f576);
+pub const KSEVENTSETID_Clock: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x364d8e20_62c7_11cf_a5d6_28db04c10000);
+pub const KSEVENTSETID_Connection: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7f4bcbe0_9ea5_11cf_a5d6_28db04c10000);
+pub const KSEVENTSETID_Device: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x288296ec_9f94_41b4_a153_aa31aeecb33f);
+pub const KSEVENTSETID_DynamicFormatChange: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x162ac456_83d7_4239_96df_c75ffa138bc6);
+pub const KSEVENTSETID_EXTDEV_Command: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x109c7988_b3cb_11d2_b48e_006097b3391b);
+pub const KSEVENTSETID_ExtendedCameraControl: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x571c92c9_13a2_47e3_a649_d2a778166384);
+pub const KSEVENTSETID_LoopedStreaming: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4682b940_c6ef_11d0_96d8_00aa0051e51d);
+pub const KSEVENTSETID_PinCapsChange: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdd4f192e_3b78_49ad_a534_2c315b822000);
+pub const KSEVENTSETID_SoundDetector: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x69785c9b_fc2d_49d6_ac32_4799f87de9f6);
+pub const KSEVENTSETID_StreamAllocator: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x75d95571_073c_11d0_a161_0020afd156e4);
+pub const KSEVENTSETID_Telephony: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb77f12b4_ceb4_4484_8d5e_52c1e7d8762d);
+pub const KSEVENTSETID_VIDCAPTOSTI: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdb47de20_f628_11d1_ba41_00a0c90d2b05);
+pub const KSEVENTSETID_VIDCAP_TVAUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6a2e0651_28e4_11d0_a18c_00a0c9118956);
+pub const KSEVENTSETID_VPNotify: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x20c5598e_d3c8_11d0_8dfc_00c04fd7c08b);
+pub const KSEVENTSETID_VPVBINotify: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xec529b01_1a1f_11d1_bad9_00609744111a);
+pub const KSEVENTSETID_VolumeLimit: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xda168465_3a7c_4858_9d4a_3e8e24701aef);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -6103,7 +6103,7 @@ impl ::core::default::Default for KSEVENT_AUDIO_CONTROL_CHANGE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_AUDIO_CONTROL_CHANGE {
+unsafe impl ::windows_core::Abi for KSEVENT_AUDIO_CONTROL_CHANGE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_AUDIO_CONTROL_CHANGE {
@@ -6130,7 +6130,7 @@ impl ::core::default::Default for KSEVENT_CAMERACONTROL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_CAMERACONTROL {
+unsafe impl ::windows_core::Abi for KSEVENT_CAMERACONTROL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_CAMERACONTROL {
@@ -6155,7 +6155,7 @@ impl ::core::default::Default for KSEVENT_CAMERAEVENT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_CAMERAEVENT {
+unsafe impl ::windows_core::Abi for KSEVENT_CAMERAEVENT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_CAMERAEVENT {
@@ -6182,7 +6182,7 @@ impl ::core::default::Default for KSEVENT_CLOCK_POSITION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_CLOCK_POSITION {
+unsafe impl ::windows_core::Abi for KSEVENT_CLOCK_POSITION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_CLOCK_POSITION {
@@ -6215,7 +6215,7 @@ impl ::core::default::Default for KSEVENT_CONNECTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_CONNECTION {
+unsafe impl ::windows_core::Abi for KSEVENT_CONNECTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_CONNECTION {
@@ -6240,7 +6240,7 @@ impl ::core::default::Default for KSEVENT_CROSSBAR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_CROSSBAR {
+unsafe impl ::windows_core::Abi for KSEVENT_CROSSBAR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_CROSSBAR {
@@ -6279,7 +6279,7 @@ impl ::core::default::Default for KSEVENT_DEVCMD {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_DEVCMD {
+unsafe impl ::windows_core::Abi for KSEVENT_DEVCMD {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_DEVCMD {
@@ -6310,7 +6310,7 @@ impl ::core::default::Default for KSEVENT_DEVICE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_DEVICE {
+unsafe impl ::windows_core::Abi for KSEVENT_DEVICE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_DEVICE {
@@ -6335,7 +6335,7 @@ impl ::core::default::Default for KSEVENT_DYNAMICFORMATCHANGE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_DYNAMICFORMATCHANGE {
+unsafe impl ::windows_core::Abi for KSEVENT_DYNAMICFORMATCHANGE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_DYNAMICFORMATCHANGE {
@@ -6366,7 +6366,7 @@ impl ::core::default::Default for KSEVENT_LOOPEDSTREAMING {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_LOOPEDSTREAMING {
+unsafe impl ::windows_core::Abi for KSEVENT_LOOPEDSTREAMING {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_LOOPEDSTREAMING {
@@ -6393,7 +6393,7 @@ impl ::core::default::Default for KSEVENT_PINCAPS_CHANGENOTIFICATIONS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_PINCAPS_CHANGENOTIFICATIONS {
+unsafe impl ::windows_core::Abi for KSEVENT_PINCAPS_CHANGENOTIFICATIONS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_PINCAPS_CHANGENOTIFICATIONS {
@@ -6418,7 +6418,7 @@ impl ::core::default::Default for KSEVENT_SOUNDDETECTOR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_SOUNDDETECTOR {
+unsafe impl ::windows_core::Abi for KSEVENT_SOUNDDETECTOR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_SOUNDDETECTOR {
@@ -6445,7 +6445,7 @@ impl ::core::default::Default for KSEVENT_STREAMALLOCATOR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_STREAMALLOCATOR {
+unsafe impl ::windows_core::Abi for KSEVENT_STREAMALLOCATOR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_STREAMALLOCATOR {
@@ -6470,7 +6470,7 @@ impl ::core::default::Default for KSEVENT_TELEPHONY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_TELEPHONY {
+unsafe impl ::windows_core::Abi for KSEVENT_TELEPHONY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_TELEPHONY {
@@ -6495,13 +6495,13 @@ impl ::core::clone::Clone for KSEVENT_TIME_INTERVAL {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSEVENT_TIME_INTERVAL {
+unsafe impl ::windows_core::Abi for KSEVENT_TIME_INTERVAL {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENT_TIME_INTERVAL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENT_TIME_INTERVAL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENT_TIME_INTERVAL>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6528,13 +6528,13 @@ impl ::core::clone::Clone for KSEVENT_TIME_MARK {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSEVENT_TIME_MARK {
+unsafe impl ::windows_core::Abi for KSEVENT_TIME_MARK {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENT_TIME_MARK {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENT_TIME_MARK>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENT_TIME_MARK>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6564,7 +6564,7 @@ impl ::core::default::Default for KSEVENT_TUNER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_TUNER {
+unsafe impl ::windows_core::Abi for KSEVENT_TUNER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_TUNER {
@@ -6589,13 +6589,13 @@ impl ::core::clone::Clone for KSEVENT_TUNER_INITIATE_SCAN_S {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSEVENT_TUNER_INITIATE_SCAN_S {
+unsafe impl ::windows_core::Abi for KSEVENT_TUNER_INITIATE_SCAN_S {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENT_TUNER_INITIATE_SCAN_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENT_TUNER_INITIATE_SCAN_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENT_TUNER_INITIATE_SCAN_S>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6623,7 +6623,7 @@ impl ::core::default::Default for KSEVENT_TVAUDIO {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_TVAUDIO {
+unsafe impl ::windows_core::Abi for KSEVENT_TVAUDIO {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_TVAUDIO {
@@ -6666,7 +6666,7 @@ impl ::core::default::Default for KSEVENT_VIDCAPTOSTI {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_VIDCAPTOSTI {
+unsafe impl ::windows_core::Abi for KSEVENT_VIDCAPTOSTI {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_VIDCAPTOSTI {
@@ -6691,7 +6691,7 @@ impl ::core::default::Default for KSEVENT_VIDEODECODER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_VIDEODECODER {
+unsafe impl ::windows_core::Abi for KSEVENT_VIDEODECODER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_VIDEODECODER {
@@ -6716,7 +6716,7 @@ impl ::core::default::Default for KSEVENT_VOLUMELIMIT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_VOLUMELIMIT {
+unsafe impl ::windows_core::Abi for KSEVENT_VOLUMELIMIT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_VOLUMELIMIT {
@@ -6741,7 +6741,7 @@ impl ::core::default::Default for KSEVENT_VPNOTIFY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_VPNOTIFY {
+unsafe impl ::windows_core::Abi for KSEVENT_VPNOTIFY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_VPNOTIFY {
@@ -6766,7 +6766,7 @@ impl ::core::default::Default for KSEVENT_VPVBINOTIFY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSEVENT_VPVBINOTIFY {
+unsafe impl ::windows_core::Abi for KSEVENT_VPVBINOTIFY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSEVENT_VPVBINOTIFY {
@@ -6787,12 +6787,12 @@ impl ::core::clone::Clone for KSE_NODE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSE_NODE {
+unsafe impl ::windows_core::Abi for KSE_NODE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSE_NODE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSE_NODE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSE_NODE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSE_NODE {}
@@ -6814,12 +6814,12 @@ impl ::core::clone::Clone for KSE_PIN {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSE_PIN {
+unsafe impl ::windows_core::Abi for KSE_PIN {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSE_PIN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSE_PIN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSE_PIN>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSE_PIN {}
@@ -6858,12 +6858,12 @@ impl ::core::fmt::Debug for KSFRAMETIME {
         f.debug_struct("KSFRAMETIME").field("Duration", &self.Duration).field("FrameFlags", &self.FrameFlags).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSFRAMETIME {
+unsafe impl ::windows_core::Abi for KSFRAMETIME {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSFRAMETIME {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSFRAMETIME>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSFRAMETIME>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSFRAMETIME {}
@@ -6898,13 +6898,13 @@ impl ::core::fmt::Debug for KSGOP_USERDATA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSGOP_USERDATA {
+unsafe impl ::windows_core::Abi for KSGOP_USERDATA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSGOP_USERDATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSGOP_USERDATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSGOP_USERDATA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6926,12 +6926,12 @@ impl ::core::clone::Clone for KSIDENTIFIER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSIDENTIFIER {
+unsafe impl ::windows_core::Abi for KSIDENTIFIER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSIDENTIFIER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSIDENTIFIER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSIDENTIFIER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSIDENTIFIER {}
@@ -6952,12 +6952,12 @@ impl ::core::clone::Clone for KSIDENTIFIER_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSIDENTIFIER_0 {
+unsafe impl ::windows_core::Abi for KSIDENTIFIER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSIDENTIFIER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSIDENTIFIER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSIDENTIFIER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSIDENTIFIER_0 {}
@@ -6969,7 +6969,7 @@ impl ::core::default::Default for KSIDENTIFIER_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSIDENTIFIER_0_0 {
-    pub Set: ::windows::core::GUID,
+    pub Set: ::windows_core::GUID,
     pub Id: u32,
     pub Flags: u32,
 }
@@ -6984,12 +6984,12 @@ impl ::core::fmt::Debug for KSIDENTIFIER_0_0 {
         f.debug_struct("KSIDENTIFIER_0_0").field("Set", &self.Set).field("Id", &self.Id).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSIDENTIFIER_0_0 {
+unsafe impl ::windows_core::Abi for KSIDENTIFIER_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSIDENTIFIER_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSIDENTIFIER_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSIDENTIFIER_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSIDENTIFIER_0_0 {}
@@ -6998,9 +6998,9 @@ impl ::core::default::Default for KSIDENTIFIER_0_0 {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const KSINTERFACESETID_FileIo: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8c6f932c_e771_11d0_b8ff_00a0c9223196);
-pub const KSINTERFACESETID_Media: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3a13eb40_30a7_11d0_a5d6_28db04c10000);
-pub const KSINTERFACESETID_Standard: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1a8766a0_62ce_11cf_a5d6_28db04c10000);
+pub const KSINTERFACESETID_FileIo: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8c6f932c_e771_11d0_b8ff_00a0c9223196);
+pub const KSINTERFACESETID_Media: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3a13eb40_30a7_11d0_a5d6_28db04c10000);
+pub const KSINTERFACESETID_Standard: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1a8766a0_62ce_11cf_a5d6_28db04c10000);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -7018,7 +7018,7 @@ impl ::core::default::Default for KSINTERFACE_FILEIO {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSINTERFACE_FILEIO {
+unsafe impl ::windows_core::Abi for KSINTERFACE_FILEIO {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSINTERFACE_FILEIO {
@@ -7047,7 +7047,7 @@ impl ::core::default::Default for KSINTERFACE_MEDIA {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSINTERFACE_MEDIA {
+unsafe impl ::windows_core::Abi for KSINTERFACE_MEDIA {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSINTERFACE_MEDIA {
@@ -7076,7 +7076,7 @@ impl ::core::default::Default for KSINTERFACE_STANDARD {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSINTERFACE_STANDARD {
+unsafe impl ::windows_core::Abi for KSINTERFACE_STANDARD {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSINTERFACE_STANDARD {
@@ -7101,12 +7101,12 @@ impl ::core::fmt::Debug for KSINTERVAL {
         f.debug_struct("KSINTERVAL").field("TimeBase", &self.TimeBase).field("Interval", &self.Interval).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSINTERVAL {
+unsafe impl ::windows_core::Abi for KSINTERVAL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSINTERVAL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSINTERVAL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSINTERVAL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSINTERVAL {}
@@ -7142,13 +7142,13 @@ impl ::core::fmt::Debug for KSJACK_DESCRIPTION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSJACK_DESCRIPTION {
+unsafe impl ::windows_core::Abi for KSJACK_DESCRIPTION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSJACK_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSJACK_DESCRIPTION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSJACK_DESCRIPTION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7176,12 +7176,12 @@ impl ::core::fmt::Debug for KSJACK_DESCRIPTION2 {
         f.debug_struct("KSJACK_DESCRIPTION2").field("DeviceStateInfo", &self.DeviceStateInfo).field("JackCapabilities", &self.JackCapabilities).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSJACK_DESCRIPTION2 {
+unsafe impl ::windows_core::Abi for KSJACK_DESCRIPTION2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSJACK_DESCRIPTION2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSJACK_DESCRIPTION2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSJACK_DESCRIPTION2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSJACK_DESCRIPTION2 {}
@@ -7209,7 +7209,7 @@ impl ::core::default::Default for KSJACK_SINK_CONNECTIONTYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSJACK_SINK_CONNECTIONTYPE {
+unsafe impl ::windows_core::Abi for KSJACK_SINK_CONNECTIONTYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSJACK_SINK_CONNECTIONTYPE {
@@ -7246,13 +7246,13 @@ impl ::core::fmt::Debug for KSJACK_SINK_INFORMATION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSJACK_SINK_INFORMATION {
+unsafe impl ::windows_core::Abi for KSJACK_SINK_INFORMATION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSJACK_SINK_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSJACK_SINK_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSJACK_SINK_INFORMATION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7263,21 +7263,21 @@ impl ::core::default::Default for KSJACK_SINK_INFORMATION {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const KSMEDIUMSETID_MidiBus: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x05908040_3246_11d0_a5d6_28db04c10000);
-pub const KSMEDIUMSETID_Standard: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4747b320_62ce_11cf_a5d6_28db04c10000);
-pub const KSMEDIUMSETID_VPBus: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa18c15ec_ce43_11d0_abe7_00a0c9223196);
+pub const KSMEDIUMSETID_MidiBus: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x05908040_3246_11d0_a5d6_28db04c10000);
+pub const KSMEDIUMSETID_Standard: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4747b320_62ce_11cf_a5d6_28db04c10000);
+pub const KSMEDIUMSETID_VPBus: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa18c15ec_ce43_11d0_abe7_00a0c9223196);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSMEDIUM_STANDARD_DEVIO: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSMEDIUM_TYPE_ANYINSTANCE: u32 = 0u32;
-pub const KSMEMORY_TYPE_DEVICE_UNKNOWN: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x091bb639_603f_11d1_b067_00a0c9062802);
-pub const KSMEMORY_TYPE_KERNEL_NONPAGED: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4a6d5fc4_7895_11d1_b069_00a0c9062802);
-pub const KSMEMORY_TYPE_KERNEL_PAGED: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd833f8f8_7894_11d1_b069_00a0c9062802);
-pub const KSMEMORY_TYPE_SYSTEM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x091bb638_603f_11d1_b067_00a0c9062802);
-pub const KSMEMORY_TYPE_USER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8cb0fc28_7893_11d1_b069_00a0c9062802);
-pub const KSMETHODSETID_StreamAllocator: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcf6e4341_ec87_11cf_a130_0020afd156e4);
-pub const KSMETHODSETID_StreamIo: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x65d003ca_1523_11d2_b27a_00a0c9223196);
-pub const KSMETHODSETID_Wavetable: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdcef31eb_d907_11d0_9583_00c04fb925d3);
+pub const KSMEMORY_TYPE_DEVICE_UNKNOWN: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x091bb639_603f_11d1_b067_00a0c9062802);
+pub const KSMEMORY_TYPE_KERNEL_NONPAGED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4a6d5fc4_7895_11d1_b069_00a0c9062802);
+pub const KSMEMORY_TYPE_KERNEL_PAGED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd833f8f8_7894_11d1_b069_00a0c9062802);
+pub const KSMEMORY_TYPE_SYSTEM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x091bb638_603f_11d1_b067_00a0c9062802);
+pub const KSMEMORY_TYPE_USER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8cb0fc28_7893_11d1_b069_00a0c9062802);
+pub const KSMETHODSETID_StreamAllocator: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcf6e4341_ec87_11cf_a130_0020afd156e4);
+pub const KSMETHODSETID_StreamIo: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x65d003ca_1523_11d2_b27a_00a0c9223196);
+pub const KSMETHODSETID_Wavetable: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdcef31eb_d907_11d0_9583_00c04fb925d3);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -7297,7 +7297,7 @@ impl ::core::default::Default for KSMETHOD_STREAMALLOCATOR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSMETHOD_STREAMALLOCATOR {
+unsafe impl ::windows_core::Abi for KSMETHOD_STREAMALLOCATOR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSMETHOD_STREAMALLOCATOR {
@@ -7324,7 +7324,7 @@ impl ::core::default::Default for KSMETHOD_STREAMIO {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSMETHOD_STREAMIO {
+unsafe impl ::windows_core::Abi for KSMETHOD_STREAMIO {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSMETHOD_STREAMIO {
@@ -7373,7 +7373,7 @@ impl ::core::default::Default for KSMETHOD_WAVETABLE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSMETHOD_WAVETABLE {
+unsafe impl ::windows_core::Abi for KSMETHOD_WAVETABLE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSMETHOD_WAVETABLE {
@@ -7383,16 +7383,16 @@ impl ::core::fmt::Debug for KSMETHOD_WAVETABLE {
 }
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSMETHOD_WAVE_QUEUED_BREAKLOOP: u32 = 1u32;
-pub const KSMFT_CATEGORY_AUDIO_DECODER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9ea73fb4_ef7a_4559_8d5d_719d8f0426c7);
-pub const KSMFT_CATEGORY_AUDIO_EFFECT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x11064c48_3648_4ed0_932e_05ce8ac811b7);
-pub const KSMFT_CATEGORY_AUDIO_ENCODER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x91c64bd0_f91e_4d8c_9276_db248279d975);
-pub const KSMFT_CATEGORY_DEMULTIPLEXER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa8700a7a_939b_44c5_99d7_76226b23b3f1);
-pub const KSMFT_CATEGORY_MULTIPLEXER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x059c561e_05ae_4b61_b69d_55b61ee54a7b);
-pub const KSMFT_CATEGORY_OTHER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x90175d57_b7ea_4901_aeb3_933a8747756f);
-pub const KSMFT_CATEGORY_VIDEO_DECODER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd6c02d4b_6833_45b4_971a_05a4b04bab91);
-pub const KSMFT_CATEGORY_VIDEO_EFFECT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x12e17c21_532c_4a6e_8a1c_40825a736397);
-pub const KSMFT_CATEGORY_VIDEO_ENCODER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf79eac7d_e545_4387_bdee_d647d7bde42a);
-pub const KSMFT_CATEGORY_VIDEO_PROCESSOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x302ea3fc_aa5f_47f9_9f7a_c2188bb16302);
+pub const KSMFT_CATEGORY_AUDIO_DECODER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9ea73fb4_ef7a_4559_8d5d_719d8f0426c7);
+pub const KSMFT_CATEGORY_AUDIO_EFFECT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x11064c48_3648_4ed0_932e_05ce8ac811b7);
+pub const KSMFT_CATEGORY_AUDIO_ENCODER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x91c64bd0_f91e_4d8c_9276_db248279d975);
+pub const KSMFT_CATEGORY_DEMULTIPLEXER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa8700a7a_939b_44c5_99d7_76226b23b3f1);
+pub const KSMFT_CATEGORY_MULTIPLEXER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x059c561e_05ae_4b61_b69d_55b61ee54a7b);
+pub const KSMFT_CATEGORY_OTHER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x90175d57_b7ea_4901_aeb3_933a8747756f);
+pub const KSMFT_CATEGORY_VIDEO_DECODER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd6c02d4b_6833_45b4_971a_05a4b04bab91);
+pub const KSMFT_CATEGORY_VIDEO_EFFECT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x12e17c21_532c_4a6e_8a1c_40825a736397);
+pub const KSMFT_CATEGORY_VIDEO_ENCODER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf79eac7d_e545_4387_bdee_d647d7bde42a);
+pub const KSMFT_CATEGORY_VIDEO_PROCESSOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x302ea3fc_aa5f_47f9_9f7a_c2188bb16302);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -7414,7 +7414,7 @@ impl ::core::default::Default for KSMICARRAY_MICARRAYTYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSMICARRAY_MICARRAYTYPE {
+unsafe impl ::windows_core::Abi for KSMICARRAY_MICARRAYTYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSMICARRAY_MICARRAYTYPE {
@@ -7451,7 +7451,7 @@ impl ::core::default::Default for KSMICARRAY_MICTYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSMICARRAY_MICTYPE {
+unsafe impl ::windows_core::Abi for KSMICARRAY_MICTYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSMICARRAY_MICTYPE {
@@ -7484,12 +7484,12 @@ impl ::core::fmt::Debug for KSMPEGVID_RECT {
         f.debug_struct("KSMPEGVID_RECT").field("StartX", &self.StartX).field("StartY", &self.StartY).field("EndX", &self.EndX).field("EndY", &self.EndY).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSMPEGVID_RECT {
+unsafe impl ::windows_core::Abi for KSMPEGVID_RECT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSMPEGVID_RECT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSMPEGVID_RECT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSMPEGVID_RECT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSMPEGVID_RECT {}
@@ -7510,12 +7510,12 @@ impl ::core::clone::Clone for KSMULTIPLE_DATA_PROP {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSMULTIPLE_DATA_PROP {
+unsafe impl ::windows_core::Abi for KSMULTIPLE_DATA_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSMULTIPLE_DATA_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSMULTIPLE_DATA_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSMULTIPLE_DATA_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSMULTIPLE_DATA_PROP {}
@@ -7541,12 +7541,12 @@ impl ::core::fmt::Debug for KSMULTIPLE_ITEM {
         f.debug_struct("KSMULTIPLE_ITEM").field("Size", &self.Size).field("Count", &self.Count).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSMULTIPLE_ITEM {
+unsafe impl ::windows_core::Abi for KSMULTIPLE_ITEM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSMULTIPLE_ITEM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSMULTIPLE_ITEM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSMULTIPLE_ITEM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSMULTIPLE_ITEM {}
@@ -7572,12 +7572,12 @@ impl ::core::fmt::Debug for KSMUSICFORMAT {
         f.debug_struct("KSMUSICFORMAT").field("TimeDeltaMs", &self.TimeDeltaMs).field("ByteCount", &self.ByteCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSMUSICFORMAT {
+unsafe impl ::windows_core::Abi for KSMUSICFORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSMUSICFORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSMUSICFORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSMUSICFORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSMUSICFORMAT {}
@@ -7586,11 +7586,11 @@ impl ::core::default::Default for KSMUSICFORMAT {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const KSMUSIC_TECHNOLOGY_FMSYNTH: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x252c5c80_62e9_11cf_a5d6_28db04c10000);
-pub const KSMUSIC_TECHNOLOGY_PORT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x86c92e60_62e8_11cf_a5d6_28db04c10000);
-pub const KSMUSIC_TECHNOLOGY_SQSYNTH: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0ecf4380_62e9_11cf_a5d6_28db04c10000);
-pub const KSMUSIC_TECHNOLOGY_SWSYNTH: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x37407736_3620_11d1_85d3_0000f8754380);
-pub const KSMUSIC_TECHNOLOGY_WAVETABLE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x394ec7c0_62e9_11cf_a5d6_28db04c10000);
+pub const KSMUSIC_TECHNOLOGY_FMSYNTH: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x252c5c80_62e9_11cf_a5d6_28db04c10000);
+pub const KSMUSIC_TECHNOLOGY_PORT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x86c92e60_62e8_11cf_a5d6_28db04c10000);
+pub const KSMUSIC_TECHNOLOGY_SQSYNTH: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0ecf4380_62e9_11cf_a5d6_28db04c10000);
+pub const KSMUSIC_TECHNOLOGY_SWSYNTH: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x37407736_3620_11d1_85d3_0000f8754380);
+pub const KSMUSIC_TECHNOLOGY_WAVETABLE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x394ec7c0_62e9_11cf_a5d6_28db04c10000);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSM_NODE {
@@ -7604,12 +7604,12 @@ impl ::core::clone::Clone for KSM_NODE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSM_NODE {
+unsafe impl ::windows_core::Abi for KSM_NODE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSM_NODE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSM_NODE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSM_NODE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSM_NODE {}
@@ -7618,11 +7618,11 @@ impl ::core::default::Default for KSM_NODE {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const KSNAME_Allocator: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x642f5d00_4791_11d0_a5d6_28db04c10000);
-pub const KSNAME_Clock: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x53172480_4791_11d0_a5d6_28db04c10000);
-pub const KSNAME_Filter: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9b365890_165f_11d0_a195_0020afd156e4);
-pub const KSNAME_Pin: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x146f1a80_4791_11d0_a5d6_28db04c10000);
-pub const KSNAME_TopologyNode: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0621061a_ee75_11d0_b915_00a0c9223196);
+pub const KSNAME_Allocator: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x642f5d00_4791_11d0_a5d6_28db04c10000);
+pub const KSNAME_Clock: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x53172480_4791_11d0_a5d6_28db04c10000);
+pub const KSNAME_Filter: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9b365890_165f_11d0_a195_0020afd156e4);
+pub const KSNAME_Pin: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x146f1a80_4791_11d0_a5d6_28db04c10000);
+pub const KSNAME_TopologyNode: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0621061a_ee75_11d0_b915_00a0c9223196);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSNODEPIN_AEC_CAPTURE_IN: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
@@ -7656,12 +7656,12 @@ impl ::core::clone::Clone for KSNODEPROPERTY {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSNODEPROPERTY {
+unsafe impl ::windows_core::Abi for KSNODEPROPERTY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSNODEPROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSNODEPROPERTY {}
@@ -7686,13 +7686,13 @@ impl ::core::clone::Clone for KSNODEPROPERTY_AUDIO_3D_LISTENER {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for KSNODEPROPERTY_AUDIO_3D_LISTENER {
+unsafe impl ::windows_core::Abi for KSNODEPROPERTY_AUDIO_3D_LISTENER {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for KSNODEPROPERTY_AUDIO_3D_LISTENER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY_AUDIO_3D_LISTENER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY_AUDIO_3D_LISTENER>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -7720,13 +7720,13 @@ impl ::core::clone::Clone for KSNODEPROPERTY_AUDIO_3D_LISTENER {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for KSNODEPROPERTY_AUDIO_3D_LISTENER {
+unsafe impl ::windows_core::Abi for KSNODEPROPERTY_AUDIO_3D_LISTENER {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for KSNODEPROPERTY_AUDIO_3D_LISTENER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY_AUDIO_3D_LISTENER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY_AUDIO_3D_LISTENER>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -7750,12 +7750,12 @@ impl ::core::clone::Clone for KSNODEPROPERTY_AUDIO_CHANNEL {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSNODEPROPERTY_AUDIO_CHANNEL {
+unsafe impl ::windows_core::Abi for KSNODEPROPERTY_AUDIO_CHANNEL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSNODEPROPERTY_AUDIO_CHANNEL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY_AUDIO_CHANNEL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY_AUDIO_CHANNEL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSNODEPROPERTY_AUDIO_CHANNEL {}
@@ -7778,12 +7778,12 @@ impl ::core::clone::Clone for KSNODEPROPERTY_AUDIO_DEV_SPECIFIC {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSNODEPROPERTY_AUDIO_DEV_SPECIFIC {
+unsafe impl ::windows_core::Abi for KSNODEPROPERTY_AUDIO_DEV_SPECIFIC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSNODEPROPERTY_AUDIO_DEV_SPECIFIC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY_AUDIO_DEV_SPECIFIC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY_AUDIO_DEV_SPECIFIC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSNODEPROPERTY_AUDIO_DEV_SPECIFIC {}
@@ -7809,13 +7809,13 @@ impl ::core::clone::Clone for KSNODEPROPERTY_AUDIO_PROPERTY {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for KSNODEPROPERTY_AUDIO_PROPERTY {
+unsafe impl ::windows_core::Abi for KSNODEPROPERTY_AUDIO_PROPERTY {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for KSNODEPROPERTY_AUDIO_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY_AUDIO_PROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY_AUDIO_PROPERTY>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -7844,13 +7844,13 @@ impl ::core::clone::Clone for KSNODEPROPERTY_AUDIO_PROPERTY {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for KSNODEPROPERTY_AUDIO_PROPERTY {
+unsafe impl ::windows_core::Abi for KSNODEPROPERTY_AUDIO_PROPERTY {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for KSNODEPROPERTY_AUDIO_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY_AUDIO_PROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODEPROPERTY_AUDIO_PROPERTY>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -7861,105 +7861,105 @@ impl ::core::default::Default for KSNODEPROPERTY_AUDIO_PROPERTY {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const KSNODETYPE_1394_DA_STREAM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21fe6_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_1394_DV_STREAM_SOUNDTRACK: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21fe7_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_3D_EFFECTS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x55515860_c559_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_ADC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d837fe0_c555_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_AGC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe88c9ba0_c557_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_ANALOG_CONNECTOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21fe1_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_ANALOG_TAPE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220e7_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_AUDIO_ENGINE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x35caf6e4_f3b3_4168_bb4b_55e77a461c7e);
-pub const KSNODETYPE_AUDIO_KEYWORDDETECTOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3817e0b8_df58_4375_b669_c49634331f9d);
-pub const KSNODETYPE_AUDIO_LOOPBACK: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8f42c0b2_91ce_4bcf_9ccd_0e599037ab35);
-pub const KSNODETYPE_AUDIO_MODULE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x45aab42e_caeb_4052_8aa9_b38cb5109619);
-pub const KSNODETYPE_BIDIRECTIONAL_UNDEFINED: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21de0_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_CABLE_TUNER_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220ee_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_CD_PLAYER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220e3_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_CHORUS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x20173f20_c559_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_COMMUNICATION_SPEAKER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21ce6_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_DAC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x507ae360_c554_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_DAT_IO_DIGITAL_AUDIO_TAPE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220e4_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_DCC_IO_DIGITAL_COMPACT_CASSETTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220e5_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_DELAY: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x144981e0_c558_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_DEMUX: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0eb67d4_e807_11d0_958a_00c04fb925d3);
-pub const KSNODETYPE_DESKTOP_MICROPHONE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21be2_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_DESKTOP_SPEAKER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21ce4_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_DEV_SPECIFIC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x941c7ac0_c559_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_DIGITAL_AUDIO_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21fe2_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_DISPLAYPORT_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe47e4031_3ea6_418d_8f9b_b73843ccba97);
-pub const KSNODETYPE_DOWN_LINE_PHONE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21ee3_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_DRM_DESCRAMBLE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xffbb6e3f_ccfe_4d84_90d9_421418b03a8e);
-pub const KSNODETYPE_DSS_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220ef_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_DVD_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220eb_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_DYN_RANGE_COMPRESSOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x08c8a6a8_601f_4af8_8793_d905ff4ca97d);
-pub const KSNODETYPE_ECHO_CANCELING_SPEAKERPHONE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21de5_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_ECHO_SUPPRESSING_SPEAKERPHONE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21de4_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_EMBEDDED_UNDEFINED: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220e0_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_EQUALIZATION_NOISE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220e2_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_EQUALIZER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9d41b4a0_c557_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_EXTERNAL_UNDEFINED: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21fe0_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_FM_RX: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x834a733c_f485_41c0_a62b_513025014e40);
-pub const KSNODETYPE_HANDSET: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21de1_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_HDMI_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd1b9cc2a_f519_417f_91c9_55fa65481001);
-pub const KSNODETYPE_HEADPHONES: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21ce2_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_HEADSET: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21de2_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_HEAD_MOUNTED_DISPLAY_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21ce3_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_INPUT_UNDEFINED: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21be0_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_LEGACY_AUDIO_CONNECTOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21fe4_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_LEVEL_CALIBRATION_NOISE_SOURCE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220e1_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_LINE_CONNECTOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21fe3_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_LOUDNESS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x41887440_c558_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_LOW_FREQUENCY_EFFECTS_SPEAKER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21ce7_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_MICROPHONE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21be1_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_MICROPHONE_ARRAY: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21be5_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_MIDI_ELEMENT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x01c6fe66_6e48_4c65_ac9b_52db5d656c7e);
-pub const KSNODETYPE_MIDI_JACK: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x265e0c3f_fa39_4df3_ab04_be01b91e299a);
-pub const KSNODETYPE_MINIDISK: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220e6_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_MULTITRACK_RECORDER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220f2_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_MUTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x02b223c0_c557_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_MUX: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2ceaf780_c556_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_NOISE_SUPPRESS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe07f903f_62fd_4e60_8cdd_dea7236665b5);
-pub const KSNODETYPE_OMNI_DIRECTIONAL_MICROPHONE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21be4_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_OUTPUT_UNDEFINED: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21ce0_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_PARAMETRIC_EQUALIZER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x19bb3a6a_ce2b_4442_87ec_6727c3cab477);
-pub const KSNODETYPE_PEAKMETER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa085651e_5f0d_4b36_a869_d195d6ab4b9e);
-pub const KSNODETYPE_PERSONAL_MICROPHONE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21be3_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_PHONE_LINE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21ee1_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_PHONOGRAPH: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220e8_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_PROCESSING_MICROPHONE_ARRAY: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21be6_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_PROLOGIC_DECODER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x831c2c80_c558_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_PROLOGIC_ENCODER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8074c5b2_3c66_11d2_b45a_3078302c2030);
-pub const KSNODETYPE_RADIO_RECEIVER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220f0_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_RADIO_TRANSMITTER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220f1_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_REVERB: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xef0328e0_c558_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_ROOM_SPEAKER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21ce5_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_SATELLITE_RECEIVER_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220ed_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_SPDIF_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21fe5_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_SPEAKER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21ce1_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_SPEAKERPHONE_NO_ECHO_REDUCTION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21de3_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_SPEAKERS_STATIC_JACK: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x28e04f87_4dbe_4f8d_8589_025d209dfb4a);
-pub const KSNODETYPE_SRC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9db7b9e0_c555_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_STEREO_WIDE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa9e69800_c558_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_SUM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xda441a60_c556_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_SUPERMIX: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe573adc0_c555_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_SYNTHESIZER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220f3_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_TELEPHONE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21ee2_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_TELEPHONY_BIDI: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x686d7cc0_d903_4258_b443_3a3d3580741c);
-pub const KSNODETYPE_TELEPHONY_UNDEFINED: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff21ee0_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_TONE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7607e580_c557_11d0_8a2b_00a0c9255ac1);
-pub const KSNODETYPE_TV_TUNER_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220ec_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_UPDOWN_MIX: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb7edc5cf_7b63_4ee2_a100_29ee2cb6b2de);
-pub const KSNODETYPE_VCR_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220e9_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_VIDEO_CAMERA_TERMINAL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff229e6_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_VIDEO_DISC_AUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff220ea_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_VIDEO_INPUT_MTT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff229e7_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_VIDEO_INPUT_TERMINAL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff229e2_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_VIDEO_OUTPUT_MTT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff229e8_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_VIDEO_OUTPUT_TERMINAL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff229e3_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_VIDEO_PROCESSING: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff229e5_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_VIDEO_SELECTOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff229e4_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_VIDEO_STREAMING: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdff229e1_f70f_11d0_b917_00a0c9223196);
-pub const KSNODETYPE_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3a5acc00_c557_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_1394_DA_STREAM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21fe6_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_1394_DV_STREAM_SOUNDTRACK: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21fe7_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_3D_EFFECTS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x55515860_c559_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_ADC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d837fe0_c555_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_AGC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe88c9ba0_c557_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_ANALOG_CONNECTOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21fe1_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_ANALOG_TAPE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220e7_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_AUDIO_ENGINE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x35caf6e4_f3b3_4168_bb4b_55e77a461c7e);
+pub const KSNODETYPE_AUDIO_KEYWORDDETECTOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3817e0b8_df58_4375_b669_c49634331f9d);
+pub const KSNODETYPE_AUDIO_LOOPBACK: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8f42c0b2_91ce_4bcf_9ccd_0e599037ab35);
+pub const KSNODETYPE_AUDIO_MODULE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x45aab42e_caeb_4052_8aa9_b38cb5109619);
+pub const KSNODETYPE_BIDIRECTIONAL_UNDEFINED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21de0_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_CABLE_TUNER_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220ee_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_CD_PLAYER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220e3_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_CHORUS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x20173f20_c559_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_COMMUNICATION_SPEAKER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21ce6_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_DAC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x507ae360_c554_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_DAT_IO_DIGITAL_AUDIO_TAPE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220e4_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_DCC_IO_DIGITAL_COMPACT_CASSETTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220e5_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_DELAY: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x144981e0_c558_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_DEMUX: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0eb67d4_e807_11d0_958a_00c04fb925d3);
+pub const KSNODETYPE_DESKTOP_MICROPHONE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21be2_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_DESKTOP_SPEAKER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21ce4_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_DEV_SPECIFIC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x941c7ac0_c559_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_DIGITAL_AUDIO_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21fe2_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_DISPLAYPORT_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe47e4031_3ea6_418d_8f9b_b73843ccba97);
+pub const KSNODETYPE_DOWN_LINE_PHONE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21ee3_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_DRM_DESCRAMBLE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xffbb6e3f_ccfe_4d84_90d9_421418b03a8e);
+pub const KSNODETYPE_DSS_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220ef_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_DVD_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220eb_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_DYN_RANGE_COMPRESSOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x08c8a6a8_601f_4af8_8793_d905ff4ca97d);
+pub const KSNODETYPE_ECHO_CANCELING_SPEAKERPHONE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21de5_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_ECHO_SUPPRESSING_SPEAKERPHONE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21de4_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_EMBEDDED_UNDEFINED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220e0_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_EQUALIZATION_NOISE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220e2_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_EQUALIZER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9d41b4a0_c557_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_EXTERNAL_UNDEFINED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21fe0_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_FM_RX: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x834a733c_f485_41c0_a62b_513025014e40);
+pub const KSNODETYPE_HANDSET: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21de1_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_HDMI_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd1b9cc2a_f519_417f_91c9_55fa65481001);
+pub const KSNODETYPE_HEADPHONES: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21ce2_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_HEADSET: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21de2_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_HEAD_MOUNTED_DISPLAY_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21ce3_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_INPUT_UNDEFINED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21be0_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_LEGACY_AUDIO_CONNECTOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21fe4_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_LEVEL_CALIBRATION_NOISE_SOURCE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220e1_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_LINE_CONNECTOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21fe3_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_LOUDNESS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x41887440_c558_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_LOW_FREQUENCY_EFFECTS_SPEAKER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21ce7_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_MICROPHONE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21be1_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_MICROPHONE_ARRAY: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21be5_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_MIDI_ELEMENT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x01c6fe66_6e48_4c65_ac9b_52db5d656c7e);
+pub const KSNODETYPE_MIDI_JACK: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x265e0c3f_fa39_4df3_ab04_be01b91e299a);
+pub const KSNODETYPE_MINIDISK: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220e6_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_MULTITRACK_RECORDER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220f2_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_MUTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x02b223c0_c557_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_MUX: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2ceaf780_c556_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_NOISE_SUPPRESS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe07f903f_62fd_4e60_8cdd_dea7236665b5);
+pub const KSNODETYPE_OMNI_DIRECTIONAL_MICROPHONE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21be4_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_OUTPUT_UNDEFINED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21ce0_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_PARAMETRIC_EQUALIZER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x19bb3a6a_ce2b_4442_87ec_6727c3cab477);
+pub const KSNODETYPE_PEAKMETER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa085651e_5f0d_4b36_a869_d195d6ab4b9e);
+pub const KSNODETYPE_PERSONAL_MICROPHONE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21be3_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_PHONE_LINE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21ee1_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_PHONOGRAPH: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220e8_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_PROCESSING_MICROPHONE_ARRAY: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21be6_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_PROLOGIC_DECODER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x831c2c80_c558_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_PROLOGIC_ENCODER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8074c5b2_3c66_11d2_b45a_3078302c2030);
+pub const KSNODETYPE_RADIO_RECEIVER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220f0_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_RADIO_TRANSMITTER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220f1_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_REVERB: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xef0328e0_c558_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_ROOM_SPEAKER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21ce5_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_SATELLITE_RECEIVER_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220ed_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_SPDIF_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21fe5_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_SPEAKER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21ce1_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_SPEAKERPHONE_NO_ECHO_REDUCTION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21de3_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_SPEAKERS_STATIC_JACK: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x28e04f87_4dbe_4f8d_8589_025d209dfb4a);
+pub const KSNODETYPE_SRC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9db7b9e0_c555_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_STEREO_WIDE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa9e69800_c558_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_SUM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xda441a60_c556_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_SUPERMIX: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe573adc0_c555_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_SYNTHESIZER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220f3_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_TELEPHONE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21ee2_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_TELEPHONY_BIDI: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x686d7cc0_d903_4258_b443_3a3d3580741c);
+pub const KSNODETYPE_TELEPHONY_UNDEFINED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff21ee0_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_TONE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7607e580_c557_11d0_8a2b_00a0c9255ac1);
+pub const KSNODETYPE_TV_TUNER_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220ec_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_UPDOWN_MIX: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb7edc5cf_7b63_4ee2_a100_29ee2cb6b2de);
+pub const KSNODETYPE_VCR_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220e9_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_VIDEO_CAMERA_TERMINAL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff229e6_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_VIDEO_DISC_AUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff220ea_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_VIDEO_INPUT_MTT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff229e7_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_VIDEO_INPUT_TERMINAL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff229e2_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_VIDEO_OUTPUT_MTT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff229e8_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_VIDEO_OUTPUT_TERMINAL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff229e3_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_VIDEO_PROCESSING: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff229e5_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_VIDEO_SELECTOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff229e4_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_VIDEO_STREAMING: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdff229e1_f70f_11d0_b917_00a0c9223196);
+pub const KSNODETYPE_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3a5acc00_c557_11d0_8a2b_00a0c9255ac1);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSNODE_CREATE {
@@ -7977,12 +7977,12 @@ impl ::core::fmt::Debug for KSNODE_CREATE {
         f.debug_struct("KSNODE_CREATE").field("CreateFlags", &self.CreateFlags).field("Node", &self.Node).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSNODE_CREATE {
+unsafe impl ::windows_core::Abi for KSNODE_CREATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSNODE_CREATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODE_CREATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSNODE_CREATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSNODE_CREATE {}
@@ -7991,8 +7991,8 @@ impl ::core::default::Default for KSNODE_CREATE {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const KSNOTIFICATIONID_AudioModule: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9c2220f0_d9a6_4d5c_a036_573857fd50d2);
-pub const KSNOTIFICATIONID_SoundDetector: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6389d844_bb32_4c4c_a802_f4b4b77afead);
+pub const KSNOTIFICATIONID_AudioModule: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9c2220f0_d9a6_4d5c_a036_573857fd50d2);
+pub const KSNOTIFICATIONID_SoundDetector: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6389d844_bb32_4c4c_a802_f4b4b77afead);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSPIN_CINSTANCES {
@@ -8010,12 +8010,12 @@ impl ::core::fmt::Debug for KSPIN_CINSTANCES {
         f.debug_struct("KSPIN_CINSTANCES").field("PossibleCount", &self.PossibleCount).field("CurrentCount", &self.CurrentCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPIN_CINSTANCES {
+unsafe impl ::windows_core::Abi for KSPIN_CINSTANCES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPIN_CINSTANCES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPIN_CINSTANCES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPIN_CINSTANCES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPIN_CINSTANCES {}
@@ -8049,7 +8049,7 @@ impl ::core::default::Default for KSPIN_COMMUNICATION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPIN_COMMUNICATION {
+unsafe impl ::windows_core::Abi for KSPIN_COMMUNICATION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPIN_COMMUNICATION {
@@ -8076,13 +8076,13 @@ impl ::core::clone::Clone for KSPIN_CONNECT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPIN_CONNECT {
+unsafe impl ::windows_core::Abi for KSPIN_CONNECT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPIN_CONNECT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPIN_CONNECT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPIN_CONNECT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8112,7 +8112,7 @@ impl ::core::default::Default for KSPIN_DATAFLOW {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPIN_DATAFLOW {
+unsafe impl ::windows_core::Abi for KSPIN_DATAFLOW {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPIN_DATAFLOW {
@@ -8183,7 +8183,7 @@ impl ::core::default::Default for KSPIN_MDL_CACHING_EVENT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPIN_MDL_CACHING_EVENT {
+unsafe impl ::windows_core::Abi for KSPIN_MDL_CACHING_EVENT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPIN_MDL_CACHING_EVENT {
@@ -8208,12 +8208,12 @@ impl ::core::fmt::Debug for KSPIN_MDL_CACHING_NOTIFICATION {
         f.debug_struct("KSPIN_MDL_CACHING_NOTIFICATION").field("Event", &self.Event).field("Buffer", &self.Buffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPIN_MDL_CACHING_NOTIFICATION {
+unsafe impl ::windows_core::Abi for KSPIN_MDL_CACHING_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPIN_MDL_CACHING_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPIN_MDL_CACHING_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPIN_MDL_CACHING_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPIN_MDL_CACHING_NOTIFICATION {}
@@ -8239,12 +8239,12 @@ impl ::core::fmt::Debug for KSPIN_MDL_CACHING_NOTIFICATION32 {
         f.debug_struct("KSPIN_MDL_CACHING_NOTIFICATION32").field("Event", &self.Event).field("Buffer", &self.Buffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPIN_MDL_CACHING_NOTIFICATION32 {
+unsafe impl ::windows_core::Abi for KSPIN_MDL_CACHING_NOTIFICATION32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPIN_MDL_CACHING_NOTIFICATION32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPIN_MDL_CACHING_NOTIFICATION32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPIN_MDL_CACHING_NOTIFICATION32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPIN_MDL_CACHING_NOTIFICATION32 {}
@@ -8271,12 +8271,12 @@ impl ::core::fmt::Debug for KSPIN_PHYSICALCONNECTION {
         f.debug_struct("KSPIN_PHYSICALCONNECTION").field("Size", &self.Size).field("Pin", &self.Pin).field("SymbolicLinkName", &self.SymbolicLinkName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPIN_PHYSICALCONNECTION {
+unsafe impl ::windows_core::Abi for KSPIN_PHYSICALCONNECTION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPIN_PHYSICALCONNECTION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPIN_PHYSICALCONNECTION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPIN_PHYSICALCONNECTION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPIN_PHYSICALCONNECTION {}
@@ -8302,7 +8302,7 @@ impl ::core::default::Default for KSPPROPERTY_ALLOCATOR_MDLCACHING {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPPROPERTY_ALLOCATOR_MDLCACHING {
+unsafe impl ::windows_core::Abi for KSPPROPERTY_ALLOCATOR_MDLCACHING {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPPROPERTY_ALLOCATOR_MDLCACHING {
@@ -8327,12 +8327,12 @@ impl ::core::fmt::Debug for KSPRIORITY {
         f.debug_struct("KSPRIORITY").field("PriorityClass", &self.PriorityClass).field("PrioritySubClass", &self.PrioritySubClass).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPRIORITY {
+unsafe impl ::windows_core::Abi for KSPRIORITY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPRIORITY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPRIORITY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPRIORITY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPRIORITY {}
@@ -8363,9 +8363,9 @@ pub const KSPROBE_STREAMREAD: u32 = 0u32;
 pub const KSPROBE_STREAMWRITE: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSPROBE_SYSTEMADDRESS: u32 = 64u32;
-pub const KSPROPERTYSETID_ExtendedCameraControl: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1cb79112_c0d2_4213_9ca6_cd4fdb927972);
-pub const KSPROPERTYSETID_NetworkCameraControl: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0e780f09_5745_4e3a_bc9f_f226ea43a6ec);
-pub const KSPROPERTYSETID_PerFrameSettingControl: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf1f3e261_dee6_4537_bff5_ee206db54aac);
+pub const KSPROPERTYSETID_ExtendedCameraControl: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1cb79112_c0d2_4213_9ca6_cd4fdb927972);
+pub const KSPROPERTYSETID_NetworkCameraControl: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0e780f09_5745_4e3a_bc9f_f226ea43a6ec);
+pub const KSPROPERTYSETID_PerFrameSettingControl: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf1f3e261_dee6_4537_bff5_ee206db54aac);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -8395,7 +8395,7 @@ impl ::core::default::Default for KSPROPERTY_AC3 {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_AC3 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_AC3 {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_AC3 {
@@ -8426,7 +8426,7 @@ impl ::core::default::Default for KSPROPERTY_ALLOCATOR_CONTROL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_ALLOCATOR_CONTROL {
+unsafe impl ::windows_core::Abi for KSPROPERTY_ALLOCATOR_CONTROL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_ALLOCATOR_CONTROL {
@@ -8450,12 +8450,12 @@ impl ::core::fmt::Debug for KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS_S {
         f.debug_struct("KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS_S").field("InterleavedCapSupported", &self.InterleavedCapSupported).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS_S {}
@@ -8480,12 +8480,12 @@ impl ::core::fmt::Debug for KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S {
         f.debug_struct("KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S").field("InterleavedCapPossible", &self.InterleavedCapPossible).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE_S {}
@@ -8511,12 +8511,12 @@ impl ::core::fmt::Debug for KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S {
         f.debug_struct("KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S").field("CX", &self.CX).field("CY", &self.CY).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S {}
@@ -8544,7 +8544,7 @@ impl ::core::default::Default for KSPROPERTY_AUDDECOUT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_AUDDECOUT {
+unsafe impl ::windows_core::Abi for KSPROPERTY_AUDDECOUT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_AUDDECOUT {
@@ -8687,7 +8687,7 @@ impl ::core::default::Default for KSPROPERTY_AUDIO {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_AUDIO {
+unsafe impl ::windows_core::Abi for KSPROPERTY_AUDIO {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_AUDIO {
@@ -8728,7 +8728,7 @@ impl ::core::default::Default for KSPROPERTY_AUDIOENGINE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_AUDIOENGINE {
+unsafe impl ::windows_core::Abi for KSPROPERTY_AUDIOENGINE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_AUDIOENGINE {
@@ -8757,7 +8757,7 @@ impl ::core::default::Default for KSPROPERTY_AUDIOMODULE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_AUDIOMODULE {
+unsafe impl ::windows_core::Abi for KSPROPERTY_AUDIOMODULE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_AUDIOMODULE {
@@ -8782,7 +8782,7 @@ impl ::core::default::Default for KSPROPERTY_AUDIOPOSTURE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_AUDIOPOSTURE {
+unsafe impl ::windows_core::Abi for KSPROPERTY_AUDIOPOSTURE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_AUDIOPOSTURE {
@@ -8807,7 +8807,7 @@ impl ::core::default::Default for KSPROPERTY_AUDIORESOURCEMANAGEMENT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_AUDIORESOURCEMANAGEMENT {
+unsafe impl ::windows_core::Abi for KSPROPERTY_AUDIORESOURCEMANAGEMENT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_AUDIORESOURCEMANAGEMENT {
@@ -8832,7 +8832,7 @@ impl ::core::default::Default for KSPROPERTY_AUDIOSIGNALPROCESSING {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_AUDIOSIGNALPROCESSING {
+unsafe impl ::windows_core::Abi for KSPROPERTY_AUDIOSIGNALPROCESSING {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_AUDIOSIGNALPROCESSING {
@@ -8929,7 +8929,7 @@ impl ::core::default::Default for KSPROPERTY_BIBLIOGRAPHIC {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_BIBLIOGRAPHIC {
+unsafe impl ::windows_core::Abi for KSPROPERTY_BIBLIOGRAPHIC {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_BIBLIOGRAPHIC {
@@ -8949,12 +8949,12 @@ impl ::core::clone::Clone for KSPROPERTY_BOUNDS_LONG {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_BOUNDS_LONG {
+unsafe impl ::windows_core::Abi for KSPROPERTY_BOUNDS_LONG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_BOUNDS_LONG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_BOUNDS_LONG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_BOUNDS_LONG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_BOUNDS_LONG {}
@@ -8980,12 +8980,12 @@ impl ::core::fmt::Debug for KSPROPERTY_BOUNDS_LONG_0 {
         f.debug_struct("KSPROPERTY_BOUNDS_LONG_0").field("SignedMinimum", &self.SignedMinimum).field("SignedMaximum", &self.SignedMaximum).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_BOUNDS_LONG_0 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_BOUNDS_LONG_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_BOUNDS_LONG_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_BOUNDS_LONG_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_BOUNDS_LONG_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_BOUNDS_LONG_0 {}
@@ -9011,12 +9011,12 @@ impl ::core::fmt::Debug for KSPROPERTY_BOUNDS_LONG_1 {
         f.debug_struct("KSPROPERTY_BOUNDS_LONG_1").field("UnsignedMinimum", &self.UnsignedMinimum).field("UnsignedMaximum", &self.UnsignedMaximum).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_BOUNDS_LONG_1 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_BOUNDS_LONG_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_BOUNDS_LONG_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_BOUNDS_LONG_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_BOUNDS_LONG_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_BOUNDS_LONG_1 {}
@@ -9037,12 +9037,12 @@ impl ::core::clone::Clone for KSPROPERTY_BOUNDS_LONGLONG {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_BOUNDS_LONGLONG {
+unsafe impl ::windows_core::Abi for KSPROPERTY_BOUNDS_LONGLONG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_BOUNDS_LONGLONG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_BOUNDS_LONGLONG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_BOUNDS_LONGLONG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_BOUNDS_LONGLONG {}
@@ -9068,12 +9068,12 @@ impl ::core::fmt::Debug for KSPROPERTY_BOUNDS_LONGLONG_0 {
         f.debug_struct("KSPROPERTY_BOUNDS_LONGLONG_0").field("SignedMinimum", &self.SignedMinimum).field("SignedMaximum", &self.SignedMaximum).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_BOUNDS_LONGLONG_0 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_BOUNDS_LONGLONG_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_BOUNDS_LONGLONG_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_BOUNDS_LONGLONG_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_BOUNDS_LONGLONG_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_BOUNDS_LONGLONG_0 {}
@@ -9099,12 +9099,12 @@ impl ::core::fmt::Debug for KSPROPERTY_BOUNDS_LONGLONG_1 {
         f.debug_struct("KSPROPERTY_BOUNDS_LONGLONG_1").field("UnsignedMinimum", &self.UnsignedMinimum).field("UnsignedMaximum", &self.UnsignedMaximum).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_BOUNDS_LONGLONG_1 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_BOUNDS_LONGLONG_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_BOUNDS_LONGLONG_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_BOUNDS_LONGLONG_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_BOUNDS_LONGLONG_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_BOUNDS_LONGLONG_1 {}
@@ -9132,7 +9132,7 @@ impl ::core::default::Default for KSPROPERTY_BTAUDIO {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_BTAUDIO {
+unsafe impl ::windows_core::Abi for KSPROPERTY_BTAUDIO {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_BTAUDIO {
@@ -9247,7 +9247,7 @@ impl ::core::default::Default for KSPROPERTY_CAMERACONTROL_EXTENDED_PROPERTY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_EXTENDED_PROPERTY {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_EXTENDED_PROPERTY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_CAMERACONTROL_EXTENDED_PROPERTY {
@@ -9282,7 +9282,7 @@ impl ::core::default::Default for KSPROPERTY_CAMERACONTROL_FLASH {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_FLASH {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_FLASH {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_CAMERACONTROL_FLASH {
@@ -9317,12 +9317,12 @@ impl ::core::fmt::Debug for KSPROPERTY_CAMERACONTROL_FLASH_S {
         f.debug_struct("KSPROPERTY_CAMERACONTROL_FLASH_S").field("Flash", &self.Flash).field("Capabilities", &self.Capabilities).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_FLASH_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_FLASH_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_FLASH_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_FLASH_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_FLASH_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_CAMERACONTROL_FLASH_S {}
@@ -9345,12 +9345,12 @@ impl ::core::clone::Clone for KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH_S {}
@@ -9376,7 +9376,7 @@ impl ::core::default::Default for KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY 
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY {
@@ -9403,12 +9403,12 @@ impl ::core::fmt::Debug for KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY_S {
         f.debug_struct("KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY_S").field("Capabilities", &self.Capabilities).field("Reserved0", &self.Reserved0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY_S {}
@@ -9433,12 +9433,12 @@ impl ::core::clone::Clone for KSPROPERTY_CAMERACONTROL_NODE_FOCAL_LENGTH_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_NODE_FOCAL_LENGTH_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_NODE_FOCAL_LENGTH_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_NODE_FOCAL_LENGTH_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_NODE_FOCAL_LENGTH_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_NODE_FOCAL_LENGTH_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_CAMERACONTROL_NODE_FOCAL_LENGTH_S {}
@@ -9461,12 +9461,12 @@ impl ::core::clone::Clone for KSPROPERTY_CAMERACONTROL_NODE_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_NODE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_NODE_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_NODE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_NODE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_NODE_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_CAMERACONTROL_NODE_S {}
@@ -9490,12 +9490,12 @@ impl ::core::clone::Clone for KSPROPERTY_CAMERACONTROL_NODE_S2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_NODE_S2 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_NODE_S2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_NODE_S2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_NODE_S2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_NODE_S2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_CAMERACONTROL_NODE_S2 {}
@@ -9525,7 +9525,7 @@ impl ::core::default::Default for KSPROPERTY_CAMERACONTROL_PERFRAMESETTING_PROPE
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_PERFRAMESETTING_PROPERTY {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_PERFRAMESETTING_PROPERTY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_CAMERACONTROL_PERFRAMESETTING_PROPERTY {
@@ -9550,7 +9550,7 @@ impl ::core::default::Default for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST {
@@ -9591,13 +9591,13 @@ impl ::core::clone::Clone for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9624,13 +9624,13 @@ impl ::core::clone::Clone for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9655,12 +9655,12 @@ impl ::core::clone::Clone for KSPROPERTY_CAMERACONTROL_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_CAMERACONTROL_S {}
@@ -9684,12 +9684,12 @@ impl ::core::clone::Clone for KSPROPERTY_CAMERACONTROL_S2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_S2 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_S2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_S2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_S2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_S2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_CAMERACONTROL_S2 {}
@@ -9717,13 +9717,13 @@ impl ::core::clone::Clone for KSPROPERTY_CAMERACONTROL_S_EX {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_S_EX {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_S_EX {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_S_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_S_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_S_EX>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9765,12 +9765,12 @@ impl ::core::fmt::Debug for KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S {
         f.debug_struct("KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S").field("VideoStabilizationMode", &self.VideoStabilizationMode).field("Capabilities", &self.Capabilities).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_CAMERACONTROL_VIDEOSTABILIZATION_MODE_S {}
@@ -9796,7 +9796,7 @@ impl ::core::default::Default for KSPROPERTY_CAMERACONTROL_VIDEO_STABILIZATION_M
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERACONTROL_VIDEO_STABILIZATION_MODE {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_VIDEO_STABILIZATION_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_CAMERACONTROL_VIDEO_STABILIZATION_MODE {
@@ -9823,7 +9823,7 @@ impl ::core::default::Default for KSPROPERTY_CAMERA_PHOTOTRIGGERTIME_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CAMERA_PHOTOTRIGGERTIME_FLAGS {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERA_PHOTOTRIGGERTIME_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_CAMERA_PHOTOTRIGGERTIME_FLAGS {
@@ -9858,7 +9858,7 @@ impl ::core::default::Default for KSPROPERTY_CLOCK {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CLOCK {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CLOCK {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_CLOCK {
@@ -9897,7 +9897,7 @@ impl ::core::default::Default for KSPROPERTY_CONNECTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CONNECTION {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CONNECTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_CONNECTION {
@@ -9936,7 +9936,7 @@ impl ::core::default::Default for KSPROPERTY_COPYPROT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_COPYPROT {
+unsafe impl ::windows_core::Abi for KSPROPERTY_COPYPROT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_COPYPROT {
@@ -9957,12 +9957,12 @@ impl ::core::clone::Clone for KSPROPERTY_CROSSBAR_ACTIVE_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CROSSBAR_ACTIVE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CROSSBAR_ACTIVE_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_CROSSBAR_ACTIVE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CROSSBAR_ACTIVE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CROSSBAR_ACTIVE_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_CROSSBAR_ACTIVE_S {}
@@ -9984,12 +9984,12 @@ impl ::core::clone::Clone for KSPROPERTY_CROSSBAR_CAPS_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CROSSBAR_CAPS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CROSSBAR_CAPS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_CROSSBAR_CAPS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CROSSBAR_CAPS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CROSSBAR_CAPS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_CROSSBAR_CAPS_S {}
@@ -10014,12 +10014,12 @@ impl ::core::clone::Clone for KSPROPERTY_CROSSBAR_PININFO_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CROSSBAR_PININFO_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CROSSBAR_PININFO_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_CROSSBAR_PININFO_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CROSSBAR_PININFO_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CROSSBAR_PININFO_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_CROSSBAR_PININFO_S {}
@@ -10042,12 +10042,12 @@ impl ::core::clone::Clone for KSPROPERTY_CROSSBAR_ROUTE_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CROSSBAR_ROUTE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CROSSBAR_ROUTE_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_CROSSBAR_ROUTE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CROSSBAR_ROUTE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CROSSBAR_ROUTE_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_CROSSBAR_ROUTE_S {}
@@ -10073,7 +10073,7 @@ impl ::core::default::Default for KSPROPERTY_CYCLIC {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_CYCLIC {
+unsafe impl ::windows_core::Abi for KSPROPERTY_CYCLIC {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_CYCLIC {
@@ -10096,12 +10096,12 @@ impl ::core::clone::Clone for KSPROPERTY_DESCRIPTION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_DESCRIPTION {
+unsafe impl ::windows_core::Abi for KSPROPERTY_DESCRIPTION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_DESCRIPTION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_DESCRIPTION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_DESCRIPTION {}
@@ -10143,7 +10143,7 @@ impl ::core::default::Default for KSPROPERTY_DIRECTSOUND3DBUFFER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_DIRECTSOUND3DBUFFER {
+unsafe impl ::windows_core::Abi for KSPROPERTY_DIRECTSOUND3DBUFFER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_DIRECTSOUND3DBUFFER {
@@ -10184,7 +10184,7 @@ impl ::core::default::Default for KSPROPERTY_DIRECTSOUND3DLISTENER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_DIRECTSOUND3DLISTENER {
+unsafe impl ::windows_core::Abi for KSPROPERTY_DIRECTSOUND3DLISTENER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_DIRECTSOUND3DLISTENER {
@@ -10209,7 +10209,7 @@ impl ::core::default::Default for KSPROPERTY_DRMAUDIOSTREAM {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_DRMAUDIOSTREAM {
+unsafe impl ::windows_core::Abi for KSPROPERTY_DRMAUDIOSTREAM {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_DRMAUDIOSTREAM {
@@ -10231,12 +10231,12 @@ impl ::core::clone::Clone for KSPROPERTY_DROPPEDFRAMES_CURRENT_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_DROPPEDFRAMES_CURRENT_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_DROPPEDFRAMES_CURRENT_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_DROPPEDFRAMES_CURRENT_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_DROPPEDFRAMES_CURRENT_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_DROPPEDFRAMES_CURRENT_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_DROPPEDFRAMES_CURRENT_S {}
@@ -10266,7 +10266,7 @@ impl ::core::default::Default for KSPROPERTY_DVDSUBPIC {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_DVDSUBPIC {
+unsafe impl ::windows_core::Abi for KSPROPERTY_DVDSUBPIC {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_DVDSUBPIC {
@@ -10299,7 +10299,7 @@ impl ::core::default::Default for KSPROPERTY_EXTDEVICE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_EXTDEVICE {
+unsafe impl ::windows_core::Abi for KSPROPERTY_EXTDEVICE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_EXTDEVICE {
@@ -10319,12 +10319,12 @@ impl ::core::clone::Clone for KSPROPERTY_EXTDEVICE_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_EXTDEVICE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_EXTDEVICE_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTDEVICE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTDEVICE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTDEVICE_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_EXTDEVICE_S {}
@@ -10348,12 +10348,12 @@ impl ::core::clone::Clone for KSPROPERTY_EXTDEVICE_S_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_EXTDEVICE_S_0 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_EXTDEVICE_S_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTDEVICE_S_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTDEVICE_S_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTDEVICE_S_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_EXTDEVICE_S_0 {}
@@ -10383,7 +10383,7 @@ impl ::core::default::Default for KSPROPERTY_EXTENSION_UNIT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_EXTENSION_UNIT {
+unsafe impl ::windows_core::Abi for KSPROPERTY_EXTENSION_UNIT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_EXTENSION_UNIT {
@@ -10428,7 +10428,7 @@ impl ::core::default::Default for KSPROPERTY_EXTXPORT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_EXTXPORT {
+unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_EXTXPORT {
@@ -10452,13 +10452,13 @@ impl ::core::clone::Clone for KSPROPERTY_EXTXPORT_NODE_S {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_EXTXPORT_NODE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_NODE_S {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_NODE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_NODE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_NODE_S>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10492,13 +10492,13 @@ impl ::core::clone::Clone for KSPROPERTY_EXTXPORT_NODE_S_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_EXTXPORT_NODE_S_0 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_NODE_S_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_NODE_S_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_NODE_S_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_NODE_S_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10531,13 +10531,13 @@ impl ::core::fmt::Debug for KSPROPERTY_EXTXPORT_NODE_S_0_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_EXTXPORT_NODE_S_0_0 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_NODE_S_0_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_NODE_S_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_NODE_S_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_NODE_S_0_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10572,13 +10572,13 @@ impl ::core::fmt::Debug for KSPROPERTY_EXTXPORT_NODE_S_0_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_EXTXPORT_NODE_S_0_1 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_NODE_S_0_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_NODE_S_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_NODE_S_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_NODE_S_0_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10605,13 +10605,13 @@ impl ::core::clone::Clone for KSPROPERTY_EXTXPORT_S {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_EXTXPORT_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_S {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_S>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10645,13 +10645,13 @@ impl ::core::clone::Clone for KSPROPERTY_EXTXPORT_S_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_EXTXPORT_S_0 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_S_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_S_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_S_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_S_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10684,13 +10684,13 @@ impl ::core::fmt::Debug for KSPROPERTY_EXTXPORT_S_0_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_EXTXPORT_S_0_0 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_S_0_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_S_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_S_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_S_0_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10725,13 +10725,13 @@ impl ::core::fmt::Debug for KSPROPERTY_EXTXPORT_S_0_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_EXTXPORT_S_0_1 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_S_0_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_S_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_S_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_S_0_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10759,7 +10759,7 @@ impl ::core::default::Default for KSPROPERTY_FMRX_CONTROL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_FMRX_CONTROL {
+unsafe impl ::windows_core::Abi for KSPROPERTY_FMRX_CONTROL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_FMRX_CONTROL {
@@ -10788,7 +10788,7 @@ impl ::core::default::Default for KSPROPERTY_FMRX_TOPOLOGY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_FMRX_TOPOLOGY {
+unsafe impl ::windows_core::Abi for KSPROPERTY_FMRX_TOPOLOGY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_FMRX_TOPOLOGY {
@@ -10813,7 +10813,7 @@ impl ::core::default::Default for KSPROPERTY_GENERAL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_GENERAL {
+unsafe impl ::windows_core::Abi for KSPROPERTY_GENERAL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_GENERAL {
@@ -10842,7 +10842,7 @@ impl ::core::default::Default for KSPROPERTY_HRTF3D {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_HRTF3D {
+unsafe impl ::windows_core::Abi for KSPROPERTY_HRTF3D {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_HRTF3D {
@@ -10867,7 +10867,7 @@ impl ::core::default::Default for KSPROPERTY_INTERLEAVEDAUDIO {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_INTERLEAVEDAUDIO {
+unsafe impl ::windows_core::Abi for KSPROPERTY_INTERLEAVEDAUDIO {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_INTERLEAVEDAUDIO {
@@ -10892,7 +10892,7 @@ impl ::core::default::Default for KSPROPERTY_ITD3D {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_ITD3D {
+unsafe impl ::windows_core::Abi for KSPROPERTY_ITD3D {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_ITD3D {
@@ -10923,7 +10923,7 @@ impl ::core::default::Default for KSPROPERTY_JACK {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_JACK {
+unsafe impl ::windows_core::Abi for KSPROPERTY_JACK {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_JACK {
@@ -10948,12 +10948,12 @@ impl ::core::fmt::Debug for KSPROPERTY_MEDIAAVAILABLE {
         f.debug_struct("KSPROPERTY_MEDIAAVAILABLE").field("Earliest", &self.Earliest).field("Latest", &self.Latest).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_MEDIAAVAILABLE {
+unsafe impl ::windows_core::Abi for KSPROPERTY_MEDIAAVAILABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_MEDIAAVAILABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_MEDIAAVAILABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_MEDIAAVAILABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_MEDIAAVAILABLE {}
@@ -10997,7 +10997,7 @@ impl ::core::default::Default for KSPROPERTY_MEDIASEEKING {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_MEDIASEEKING {
+unsafe impl ::windows_core::Abi for KSPROPERTY_MEDIASEEKING {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_MEDIASEEKING {
@@ -11024,12 +11024,12 @@ impl ::core::fmt::Debug for KSPROPERTY_MEMBERSHEADER {
         f.debug_struct("KSPROPERTY_MEMBERSHEADER").field("MembersFlags", &self.MembersFlags).field("MembersSize", &self.MembersSize).field("MembersCount", &self.MembersCount).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_MEMBERSHEADER {
+unsafe impl ::windows_core::Abi for KSPROPERTY_MEMBERSHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_MEMBERSHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_MEMBERSHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_MEMBERSHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_MEMBERSHEADER {}
@@ -11077,7 +11077,7 @@ impl ::core::default::Default for KSPROPERTY_MPEG2VID {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_MPEG2VID {
+unsafe impl ::windows_core::Abi for KSPROPERTY_MPEG2VID {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_MPEG2VID {
@@ -11102,7 +11102,7 @@ impl ::core::default::Default for KSPROPERTY_MPEG4_MEDIATYPE_ATTRIBUTES {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_MPEG4_MEDIATYPE_ATTRIBUTES {
+unsafe impl ::windows_core::Abi for KSPROPERTY_MPEG4_MEDIATYPE_ATTRIBUTES {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_MPEG4_MEDIATYPE_ATTRIBUTES {
@@ -11127,12 +11127,12 @@ impl ::core::fmt::Debug for KSPROPERTY_NETWORKCAMERACONTROL_EVENT_INFO {
         f.debug_struct("KSPROPERTY_NETWORKCAMERACONTROL_EVENT_INFO").field("Header", &self.Header).field("EventFilter", &self.EventFilter).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_NETWORKCAMERACONTROL_EVENT_INFO {
+unsafe impl ::windows_core::Abi for KSPROPERTY_NETWORKCAMERACONTROL_EVENT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_NETWORKCAMERACONTROL_EVENT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_NETWORKCAMERACONTROL_EVENT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_NETWORKCAMERACONTROL_EVENT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_NETWORKCAMERACONTROL_EVENT_INFO {}
@@ -11167,13 +11167,13 @@ impl ::core::fmt::Debug for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO {
+unsafe impl ::windows_core::Abi for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11201,7 +11201,7 @@ impl ::core::default::Default for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_TYPE 
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_TYPE {
+unsafe impl ::windows_core::Abi for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_TYPE {
@@ -11226,12 +11226,12 @@ impl ::core::fmt::Debug for KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_HEADER {
         f.debug_struct("KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_HEADER").field("Size", &self.Size).field("Type", &self.Type).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_HEADER {
+unsafe impl ::windows_core::Abi for KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_HEADER {}
@@ -11261,7 +11261,7 @@ impl ::core::default::Default for KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_TYPE {
+unsafe impl ::windows_core::Abi for KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_TYPE {
@@ -11292,7 +11292,7 @@ impl ::core::default::Default for KSPROPERTY_NETWORKCAMERACONTROL_PROPERTY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_NETWORKCAMERACONTROL_PROPERTY {
+unsafe impl ::windows_core::Abi for KSPROPERTY_NETWORKCAMERACONTROL_PROPERTY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_NETWORKCAMERACONTROL_PROPERTY {
@@ -11329,7 +11329,7 @@ impl ::core::default::Default for KSPROPERTY_OVERLAYUPDATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_OVERLAYUPDATE {
+unsafe impl ::windows_core::Abi for KSPROPERTY_OVERLAYUPDATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_OVERLAYUPDATE {
@@ -11386,7 +11386,7 @@ impl ::core::default::Default for KSPROPERTY_PIN {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_PIN {
+unsafe impl ::windows_core::Abi for KSPROPERTY_PIN {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_PIN {
@@ -11417,12 +11417,12 @@ impl ::core::fmt::Debug for KSPROPERTY_POSITIONS {
         f.debug_struct("KSPROPERTY_POSITIONS").field("Current", &self.Current).field("Stop", &self.Stop).field("CurrentFlags", &self.CurrentFlags).field("StopFlags", &self.StopFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_POSITIONS {
+unsafe impl ::windows_core::Abi for KSPROPERTY_POSITIONS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_POSITIONS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_POSITIONS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_POSITIONS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_POSITIONS {}
@@ -11450,7 +11450,7 @@ impl ::core::default::Default for KSPROPERTY_QUALITY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_QUALITY {
+unsafe impl ::windows_core::Abi for KSPROPERTY_QUALITY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_QUALITY {
@@ -11501,7 +11501,7 @@ impl ::core::default::Default for KSPROPERTY_RTAUDIO {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_RTAUDIO {
+unsafe impl ::windows_core::Abi for KSPROPERTY_RTAUDIO {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_RTAUDIO {
@@ -11523,12 +11523,12 @@ impl ::core::clone::Clone for KSPROPERTY_SELECTOR_NODE_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_SELECTOR_NODE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_SELECTOR_NODE_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_SELECTOR_NODE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_SELECTOR_NODE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_SELECTOR_NODE_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_SELECTOR_NODE_S {}
@@ -11551,12 +11551,12 @@ impl ::core::clone::Clone for KSPROPERTY_SELECTOR_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_SELECTOR_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_SELECTOR_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_SELECTOR_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_SELECTOR_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_SELECTOR_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_SELECTOR_S {}
@@ -11578,12 +11578,12 @@ impl ::core::clone::Clone for KSPROPERTY_SERIAL {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_SERIAL {
+unsafe impl ::windows_core::Abi for KSPROPERTY_SERIAL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_SERIAL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_SERIAL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_SERIAL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_SERIAL {}
@@ -11595,7 +11595,7 @@ impl ::core::default::Default for KSPROPERTY_SERIAL {
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSPROPERTY_SERIALHDR {
-    pub PropertySet: ::windows::core::GUID,
+    pub PropertySet: ::windows_core::GUID,
     pub Count: u32,
 }
 impl ::core::marker::Copy for KSPROPERTY_SERIALHDR {}
@@ -11604,12 +11604,12 @@ impl ::core::clone::Clone for KSPROPERTY_SERIALHDR {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_SERIALHDR {
+unsafe impl ::windows_core::Abi for KSPROPERTY_SERIALHDR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_SERIALHDR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_SERIALHDR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_SERIALHDR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_SERIALHDR {}
@@ -11645,7 +11645,7 @@ impl ::core::default::Default for KSPROPERTY_SOUNDDETECTOR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_SOUNDDETECTOR {
+unsafe impl ::windows_core::Abi for KSPROPERTY_SOUNDDETECTOR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_SOUNDDETECTOR {
@@ -11677,12 +11677,12 @@ impl ::core::fmt::Debug for KSPROPERTY_SPHLI {
         f.debug_struct("KSPROPERTY_SPHLI").field("HLISS", &self.HLISS).field("Reserved", &self.Reserved).field("StartPTM", &self.StartPTM).field("EndPTM", &self.EndPTM).field("StartX", &self.StartX).field("StartY", &self.StartY).field("StopX", &self.StopX).field("StopY", &self.StopY).field("ColCon", &self.ColCon).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_SPHLI {
+unsafe impl ::windows_core::Abi for KSPROPERTY_SPHLI {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_SPHLI {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_SPHLI>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_SPHLI>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_SPHLI {}
@@ -11707,12 +11707,12 @@ impl ::core::fmt::Debug for KSPROPERTY_SPPAL {
         f.debug_struct("KSPROPERTY_SPPAL").field("sppal", &self.sppal).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_SPPAL {
+unsafe impl ::windows_core::Abi for KSPROPERTY_SPPAL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_SPPAL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_SPPAL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_SPPAL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_SPPAL {}
@@ -11734,12 +11734,12 @@ impl ::core::clone::Clone for KSPROPERTY_STEPPING_LONG {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_STEPPING_LONG {
+unsafe impl ::windows_core::Abi for KSPROPERTY_STEPPING_LONG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_STEPPING_LONG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_STEPPING_LONG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_STEPPING_LONG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_STEPPING_LONG {}
@@ -11760,12 +11760,12 @@ impl ::core::clone::Clone for KSPROPERTY_STEPPING_LONGLONG {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_STEPPING_LONGLONG {
+unsafe impl ::windows_core::Abi for KSPROPERTY_STEPPING_LONGLONG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_STEPPING_LONGLONG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_STEPPING_LONGLONG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_STEPPING_LONGLONG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_STEPPING_LONGLONG {}
@@ -11811,7 +11811,7 @@ impl ::core::default::Default for KSPROPERTY_STREAM {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_STREAM {
+unsafe impl ::windows_core::Abi for KSPROPERTY_STREAM {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_STREAM {
@@ -11836,7 +11836,7 @@ impl ::core::default::Default for KSPROPERTY_STREAMINTERFACE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_STREAMINTERFACE {
+unsafe impl ::windows_core::Abi for KSPROPERTY_STREAMINTERFACE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_STREAMINTERFACE {
@@ -11871,7 +11871,7 @@ impl ::core::default::Default for KSPROPERTY_TELEPHONY_CONTROL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TELEPHONY_CONTROL {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TELEPHONY_CONTROL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_TELEPHONY_CONTROL {
@@ -11898,7 +11898,7 @@ impl ::core::default::Default for KSPROPERTY_TELEPHONY_TOPOLOGY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TELEPHONY_TOPOLOGY {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TELEPHONY_TOPOLOGY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_TELEPHONY_TOPOLOGY {
@@ -11927,7 +11927,7 @@ impl ::core::default::Default for KSPROPERTY_TIMECODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TIMECODE {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TIMECODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_TIMECODE {
@@ -11947,12 +11947,12 @@ impl ::core::clone::Clone for KSPROPERTY_TIMECODE_NODE_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TIMECODE_NODE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TIMECODE_NODE_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TIMECODE_NODE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TIMECODE_NODE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TIMECODE_NODE_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TIMECODE_NODE_S {}
@@ -11973,12 +11973,12 @@ impl ::core::clone::Clone for KSPROPERTY_TIMECODE_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TIMECODE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TIMECODE_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TIMECODE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TIMECODE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TIMECODE_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TIMECODE_S {}
@@ -12010,7 +12010,7 @@ impl ::core::default::Default for KSPROPERTY_TOPOLOGY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TOPOLOGY {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TOPOLOGY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_TOPOLOGY {
@@ -12037,7 +12037,7 @@ impl ::core::default::Default for KSPROPERTY_TOPOLOGYNODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TOPOLOGYNODE {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TOPOLOGYNODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_TOPOLOGYNODE {
@@ -12084,7 +12084,7 @@ impl ::core::default::Default for KSPROPERTY_TUNER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_TUNER {
@@ -12107,12 +12107,12 @@ impl ::core::clone::Clone for KSPROPERTY_TUNER_CAPS_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER_CAPS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_CAPS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_CAPS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_CAPS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_CAPS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TUNER_CAPS_S {}
@@ -12139,12 +12139,12 @@ impl ::core::clone::Clone for KSPROPERTY_TUNER_FREQUENCY_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER_FREQUENCY_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_FREQUENCY_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_FREQUENCY_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_FREQUENCY_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_FREQUENCY_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TUNER_FREQUENCY_S {}
@@ -12165,12 +12165,12 @@ impl ::core::clone::Clone for KSPROPERTY_TUNER_IF_MEDIUM_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER_IF_MEDIUM_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_IF_MEDIUM_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_IF_MEDIUM_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_IF_MEDIUM_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_IF_MEDIUM_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TUNER_IF_MEDIUM_S {}
@@ -12191,12 +12191,12 @@ impl ::core::clone::Clone for KSPROPERTY_TUNER_INPUT_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER_INPUT_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_INPUT_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_INPUT_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_INPUT_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_INPUT_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TUNER_INPUT_S {}
@@ -12230,7 +12230,7 @@ impl ::core::default::Default for KSPROPERTY_TUNER_MODES {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER_MODES {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_MODES {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_TUNER_MODES {
@@ -12257,12 +12257,12 @@ impl ::core::clone::Clone for KSPROPERTY_TUNER_MODE_CAPS_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER_MODE_CAPS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_MODE_CAPS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_MODE_CAPS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_MODE_CAPS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_MODE_CAPS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TUNER_MODE_CAPS_S {}
@@ -12283,12 +12283,12 @@ impl ::core::clone::Clone for KSPROPERTY_TUNER_MODE_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER_MODE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_MODE_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_MODE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_MODE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_MODE_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TUNER_MODE_S {}
@@ -12301,7 +12301,7 @@ impl ::core::default::Default for KSPROPERTY_TUNER_MODE_S {
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS_S {
     pub Property: KSIDENTIFIER,
-    pub NetworkType: ::windows::core::GUID,
+    pub NetworkType: ::windows_core::GUID,
     pub BufferSize: u32,
     pub NetworkTunerCapabilities: *mut ::core::ffi::c_void,
 }
@@ -12311,12 +12311,12 @@ impl ::core::clone::Clone for KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS_S {}
@@ -12344,13 +12344,13 @@ impl ::core::clone::Clone for KSPROPERTY_TUNER_SCAN_CAPS_S {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER_SCAN_CAPS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_SCAN_CAPS_S {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_SCAN_CAPS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_SCAN_CAPS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_SCAN_CAPS_S>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12374,12 +12374,12 @@ impl ::core::clone::Clone for KSPROPERTY_TUNER_SCAN_STATUS_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER_SCAN_STATUS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_SCAN_STATUS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_SCAN_STATUS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_SCAN_STATUS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_SCAN_STATUS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TUNER_SCAN_STATUS_S {}
@@ -12404,13 +12404,13 @@ impl ::core::clone::Clone for KSPROPERTY_TUNER_STANDARD_MODE_S {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER_STANDARD_MODE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_STANDARD_MODE_S {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_STANDARD_MODE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_STANDARD_MODE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_STANDARD_MODE_S>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12433,12 +12433,12 @@ impl ::core::clone::Clone for KSPROPERTY_TUNER_STANDARD_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER_STANDARD_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_STANDARD_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_STANDARD_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_STANDARD_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_STANDARD_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TUNER_STANDARD_S {}
@@ -12462,12 +12462,12 @@ impl ::core::clone::Clone for KSPROPERTY_TUNER_STATUS_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TUNER_STATUS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_STATUS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_STATUS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_STATUS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_STATUS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TUNER_STATUS_S {}
@@ -12490,12 +12490,12 @@ impl ::core::clone::Clone for KSPROPERTY_TVAUDIO_CAPS_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TVAUDIO_CAPS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TVAUDIO_CAPS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TVAUDIO_CAPS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TVAUDIO_CAPS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TVAUDIO_CAPS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TVAUDIO_CAPS_S {}
@@ -12516,12 +12516,12 @@ impl ::core::clone::Clone for KSPROPERTY_TVAUDIO_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_TVAUDIO_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_TVAUDIO_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_TVAUDIO_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TVAUDIO_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TVAUDIO_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_TVAUDIO_S {}
@@ -12579,7 +12579,7 @@ impl ::core::default::Default for KSPROPERTY_VBICAP {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VBICAP {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VBICAP {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VBICAP {
@@ -12612,7 +12612,7 @@ impl ::core::default::Default for KSPROPERTY_VBICODECFILTERING {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VBICODECFILTERING {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VBICODECFILTERING {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VBICODECFILTERING {
@@ -12632,12 +12632,12 @@ impl ::core::clone::Clone for KSPROPERTY_VBICODECFILTERING_CC_SUBSTREAMS_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VBICODECFILTERING_CC_SUBSTREAMS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VBICODECFILTERING_CC_SUBSTREAMS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VBICODECFILTERING_CC_SUBSTREAMS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_CC_SUBSTREAMS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_CC_SUBSTREAMS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VBICODECFILTERING_CC_SUBSTREAMS_S {}
@@ -12658,12 +12658,12 @@ impl ::core::clone::Clone for KSPROPERTY_VBICODECFILTERING_NABTS_SUBSTREAMS_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VBICODECFILTERING_NABTS_SUBSTREAMS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VBICODECFILTERING_NABTS_SUBSTREAMS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VBICODECFILTERING_NABTS_SUBSTREAMS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_NABTS_SUBSTREAMS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_NABTS_SUBSTREAMS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VBICODECFILTERING_NABTS_SUBSTREAMS_S {}
@@ -12684,12 +12684,12 @@ impl ::core::clone::Clone for KSPROPERTY_VBICODECFILTERING_SCANLINES_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VBICODECFILTERING_SCANLINES_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VBICODECFILTERING_SCANLINES_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VBICODECFILTERING_SCANLINES_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_SCANLINES_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_SCANLINES_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VBICODECFILTERING_SCANLINES_S {}
@@ -12710,12 +12710,12 @@ impl ::core::clone::Clone for KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_PIN_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_PIN_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_PIN_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_PIN_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_PIN_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_PIN_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_PIN_S {}
@@ -12736,12 +12736,12 @@ impl ::core::clone::Clone for KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VBICODECFILTERING_STATISTICS_CC_S {}
@@ -12762,12 +12762,12 @@ impl ::core::clone::Clone for KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_PIN
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_PIN_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_PIN_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_PIN_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_PIN_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_PIN_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_PIN_S {}
@@ -12788,12 +12788,12 @@ impl ::core::clone::Clone for KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VBICODECFILTERING_STATISTICS_COMMON_S {}
@@ -12814,12 +12814,12 @@ impl ::core::clone::Clone for KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_PIN_
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_PIN_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_PIN_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_PIN_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_PIN_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_PIN_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_PIN_S {}
@@ -12840,12 +12840,12 @@ impl ::core::clone::Clone for KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VBICODECFILTERING_STATISTICS_NABTS_S {}
@@ -12909,7 +12909,7 @@ impl ::core::default::Default for KSPROPERTY_VIDCAP_CAMERACONTROL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDCAP_CAMERACONTROL {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDCAP_CAMERACONTROL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VIDCAP_CAMERACONTROL {
@@ -12942,7 +12942,7 @@ impl ::core::default::Default for KSPROPERTY_VIDCAP_CROSSBAR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDCAP_CROSSBAR {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDCAP_CROSSBAR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VIDCAP_CROSSBAR {
@@ -12967,7 +12967,7 @@ impl ::core::default::Default for KSPROPERTY_VIDCAP_DROPPEDFRAMES {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDCAP_DROPPEDFRAMES {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDCAP_DROPPEDFRAMES {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VIDCAP_DROPPEDFRAMES {
@@ -12994,7 +12994,7 @@ impl ::core::default::Default for KSPROPERTY_VIDCAP_SELECTOR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDCAP_SELECTOR {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDCAP_SELECTOR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VIDCAP_SELECTOR {
@@ -13023,7 +13023,7 @@ impl ::core::default::Default for KSPROPERTY_VIDCAP_TVAUDIO {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDCAP_TVAUDIO {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDCAP_TVAUDIO {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VIDCAP_TVAUDIO {
@@ -13060,7 +13060,7 @@ impl ::core::default::Default for KSPROPERTY_VIDCAP_VIDEOCOMPRESSION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDCAP_VIDEOCOMPRESSION {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDCAP_VIDEOCOMPRESSION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VIDCAP_VIDEOCOMPRESSION {
@@ -13091,7 +13091,7 @@ impl ::core::default::Default for KSPROPERTY_VIDCAP_VIDEOCONTROL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDCAP_VIDEOCONTROL {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDCAP_VIDEOCONTROL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VIDCAP_VIDEOCONTROL {
@@ -13126,7 +13126,7 @@ impl ::core::default::Default for KSPROPERTY_VIDCAP_VIDEODECODER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDCAP_VIDEODECODER {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDCAP_VIDEODECODER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VIDCAP_VIDEODECODER {
@@ -13157,7 +13157,7 @@ impl ::core::default::Default for KSPROPERTY_VIDCAP_VIDEOENCODER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDCAP_VIDEOENCODER {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDCAP_VIDEOENCODER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VIDCAP_VIDEOENCODER {
@@ -13208,7 +13208,7 @@ impl ::core::default::Default for KSPROPERTY_VIDCAP_VIDEOPROCAMP {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDCAP_VIDEOPROCAMP {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDCAP_VIDEOPROCAMP {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VIDCAP_VIDEOPROCAMP {
@@ -13233,12 +13233,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEOCOMPRESSION_GETINFO_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEOCOMPRESSION_GETINFO_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOCOMPRESSION_GETINFO_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOCOMPRESSION_GETINFO_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCOMPRESSION_GETINFO_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCOMPRESSION_GETINFO_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEOCOMPRESSION_GETINFO_S {}
@@ -13260,12 +13260,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEOCOMPRESSION_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEOCOMPRESSION_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOCOMPRESSION_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOCOMPRESSION_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCOMPRESSION_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCOMPRESSION_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEOCOMPRESSION_S {}
@@ -13288,12 +13288,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEOCOMPRESSION_S1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEOCOMPRESSION_S1 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOCOMPRESSION_S1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOCOMPRESSION_S1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCOMPRESSION_S1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCOMPRESSION_S1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEOCOMPRESSION_S1 {}
@@ -13322,13 +13322,13 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -13352,12 +13352,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEOCONTROL_CAPS_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEOCONTROL_CAPS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOCONTROL_CAPS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOCONTROL_CAPS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCONTROL_CAPS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCONTROL_CAPS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEOCONTROL_CAPS_S {}
@@ -13384,13 +13384,13 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -13414,12 +13414,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEOCONTROL_MODE_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEOCONTROL_MODE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOCONTROL_MODE_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOCONTROL_MODE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCONTROL_MODE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCONTROL_MODE_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEOCONTROL_MODE_S {}
@@ -13443,12 +13443,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEODECODER_CAPS_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEODECODER_CAPS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEODECODER_CAPS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEODECODER_CAPS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEODECODER_CAPS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEODECODER_CAPS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEODECODER_CAPS_S {}
@@ -13469,12 +13469,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEODECODER_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEODECODER_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEODECODER_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEODECODER_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEODECODER_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEODECODER_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEODECODER_S {}
@@ -13497,12 +13497,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEODECODER_STATUS2_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEODECODER_STATUS2_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEODECODER_STATUS2_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEODECODER_STATUS2_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEODECODER_STATUS2_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEODECODER_STATUS2_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEODECODER_STATUS2_S {}
@@ -13524,12 +13524,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEODECODER_STATUS_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEODECODER_STATUS_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEODECODER_STATUS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEODECODER_STATUS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEODECODER_STATUS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEODECODER_STATUS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEODECODER_STATUS_S {}
@@ -13552,12 +13552,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEOENCODER_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEOENCODER_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOENCODER_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOENCODER_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOENCODER_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOENCODER_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEOENCODER_S {}
@@ -13584,12 +13584,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEOPROCAMP_NODE_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEOPROCAMP_NODE_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOPROCAMP_NODE_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOPROCAMP_NODE_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOPROCAMP_NODE_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOPROCAMP_NODE_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEOPROCAMP_NODE_S {}
@@ -13613,12 +13613,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEOPROCAMP_NODE_S2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEOPROCAMP_NODE_S2 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOPROCAMP_NODE_S2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOPROCAMP_NODE_S2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOPROCAMP_NODE_S2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOPROCAMP_NODE_S2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEOPROCAMP_NODE_S2 {}
@@ -13641,12 +13641,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEOPROCAMP_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEOPROCAMP_S {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOPROCAMP_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOPROCAMP_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOPROCAMP_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOPROCAMP_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEOPROCAMP_S {}
@@ -13670,12 +13670,12 @@ impl ::core::clone::Clone for KSPROPERTY_VIDEOPROCAMP_S2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDEOPROCAMP_S2 {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOPROCAMP_S2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOPROCAMP_S2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOPROCAMP_S2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOPROCAMP_S2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSPROPERTY_VIDEOPROCAMP_S2 {}
@@ -13707,7 +13707,7 @@ impl ::core::default::Default for KSPROPERTY_VIDMEM_TRANSPORT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VIDMEM_TRANSPORT {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VIDMEM_TRANSPORT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VIDMEM_TRANSPORT {
@@ -13762,7 +13762,7 @@ impl ::core::default::Default for KSPROPERTY_VPCONFIG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_VPCONFIG {
+unsafe impl ::windows_core::Abi for KSPROPERTY_VPCONFIG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_VPCONFIG {
@@ -13799,7 +13799,7 @@ impl ::core::default::Default for KSPROPERTY_WAVE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSPROPERTY_WAVE {
+unsafe impl ::windows_core::Abi for KSPROPERTY_WAVE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSPROPERTY_WAVE {
@@ -13809,58 +13809,58 @@ impl ::core::fmt::Debug for KSPROPERTY_WAVE {
 }
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const KSPROPERTY_WAVE_QUEUED_POSITION: u32 = 1u32;
-pub const KSPROPSETID_AC3: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xbfabe720_6e1f_11d0_bcf2_444553540000);
-pub const KSPROPSETID_Audio: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x45ffaaa0_6e1b_11d0_bcf2_444553540000);
-pub const KSPROPSETID_AudioBufferDuration: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4e73c07f_23cc_4955_a7ea_3da502496290);
-pub const KSPROPSETID_AudioDecoderOut: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6ca6e020_43bd_11d0_bd6a_003505c103a9);
-pub const KSPROPSETID_AudioEngine: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3a2f82dc_886f_4baa_9eb4_082b9025c536);
-pub const KSPROPSETID_AudioModule: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc034fdb0_ff75_47c8_aa3c_ee46716b50c6);
-pub const KSPROPSETID_AudioPosture: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa3fb7b0d_474e_4f51_a379_51282dd4fa8f);
-pub const KSPROPSETID_AudioResourceManagement: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd0b305e1_b2cc_484c_8f23_e5d28ad9cf88);
-pub const KSPROPSETID_AudioSignalProcessing: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4f67b528_30c9_40de_b2fb_859ddd1f3470);
-pub const KSPROPSETID_Bibliographic: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x07ba150e_e2b1_11d0_ac17_00a0c9223196);
-pub const KSPROPSETID_BtAudio: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7fa06c40_b8f6_4c7e_8556_e8c33a12e54d);
-pub const KSPROPSETID_Clock: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdf12a4c0_ac17_11cf_a5d6_28db04c10000);
-pub const KSPROPSETID_Connection: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1d58c920_ac9b_11cf_a5d6_28db04c10000);
-pub const KSPROPSETID_CopyProt: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0e8a0a40_6aef_11d0_9ed0_00a024ca19b3);
-pub const KSPROPSETID_Cyclic: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3ffeaea0_2bee_11cf_a5d6_28db04c10000);
-pub const KSPROPSETID_DirectSound3DBuffer: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x437b3411_d060_11d0_8583_00c04fd9baf3);
-pub const KSPROPSETID_DirectSound3DListener: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x437b3414_d060_11d0_8583_00c04fd9baf3);
-pub const KSPROPSETID_DrmAudioStream: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2f2c8ddd_4198_4fac_ba29_61bb05b7de06);
-pub const KSPROPSETID_DvdSubPic: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xac390460_43af_11d0_bd6a_003505c103a9);
-pub const KSPROPSETID_FMRXControl: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x947bba3a_e8ee_4786_90c4_8428185f05be);
-pub const KSPROPSETID_FMRXTopology: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0c46ce8f_dc2d_4204_9dc9_f58963366563);
-pub const KSPROPSETID_General: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1464eda5_6a8f_11d1_9aa7_00a0c9223196);
-pub const KSPROPSETID_Hrtf3d: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb66decb0_a083_11d0_851e_00c04fd9baf3);
-pub const KSPROPSETID_InterleavedAudio: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe9ebe550_d619_4c0a_976b_7062322b3006);
-pub const KSPROPSETID_Itd3d: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6429f090_9fd9_11d0_a75b_00a0c90365e3);
-pub const KSPROPSETID_Jack: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4509f757_2d46_4637_8e62_ce7db944f57b);
-pub const KSPROPSETID_MPEG4_MediaType_Attributes: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xff6c4bfa_07a9_4c7b_a237_672f9d68065f);
-pub const KSPROPSETID_MediaSeeking: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xee904f0c_d09b_11d0_abe9_00a0c9223196);
-pub const KSPROPSETID_MemoryTransport: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0a3d1c5d_5243_4819_9ed0_aee8044cee2b);
-pub const KSPROPSETID_Mpeg2Vid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc8e11b60_0cc9_11d0_bd69_003505c103a9);
-pub const KSPROPSETID_OverlayUpdate: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x490ea5cf_7681_11d1_a21c_00a0c9223196);
-pub const KSPROPSETID_Pin: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8c134960_51ad_11cf_878a_94f801c10000);
-pub const KSPROPSETID_PinMDLCacheClearProp: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xbd718a7b_97fc_40c7_88ce_d3ff06f55b16);
-pub const KSPROPSETID_Quality: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd16ad380_ac1a_11cf_a5d6_28db04c10000);
-pub const KSPROPSETID_RtAudio: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa855a48c_2f78_4729_9051_1968746b9eef);
-pub const KSPROPSETID_SoundDetector: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x113c425e_fd17_4057_b422_ed4074f1afdf);
-pub const KSPROPSETID_SoundDetector2: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfe07e322_450c_4bd5_84ca_a948500ea6aa);
-pub const KSPROPSETID_Stream: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x65aaba60_98ae_11cf_a10d_0020afd156e4);
-pub const KSPROPSETID_StreamAllocator: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcf6e4342_ec87_11cf_a130_0020afd156e4);
-pub const KSPROPSETID_StreamInterface: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1fdd8ee1_9cd3_11d0_82aa_0000f822fe8a);
-pub const KSPROPSETID_TSRateChange: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa503c5c0_1d1d_11d1_ad80_444553540000);
-pub const KSPROPSETID_TelephonyControl: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb6df7eb1_d099_489f_a6a0_c0106f0887a7);
-pub const KSPROPSETID_TelephonyTopology: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xabf25c7e_0e64_4e32_b190_d0f6d7c53e97);
-pub const KSPROPSETID_Topology: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x720d4ac0_7533_11d0_a5d6_28db04c10000);
-pub const KSPROPSETID_TopologyNode: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x45ffaaa1_6e1b_11d0_bcf2_444553540000);
-pub const KSPROPSETID_VBICAP_PROPERTIES: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf162c607_7b35_496f_ad7f_2dca3b46b718);
-pub const KSPROPSETID_VBICodecFiltering: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcafeb0ca_8715_11d0_bd6a_0035c0edbabe);
-pub const KSPROPSETID_VPConfig: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xbc29a660_30e3_11d0_9e69_00c04fd7c15b);
-pub const KSPROPSETID_VPVBIConfig: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xec529b00_1a1f_11d1_bad9_00609744111a);
-pub const KSPROPSETID_VramCapture: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe73face3_2880_4902_b799_88d0cd634e0f);
-pub const KSPROPSETID_Wave: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x924e54b0_630f_11cf_ada7_08003e30494a);
-pub const KSPROPTYPESETID_General: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x97e99ba0_bdea_11cf_a5d6_28db04c10000);
+pub const KSPROPSETID_AC3: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbfabe720_6e1f_11d0_bcf2_444553540000);
+pub const KSPROPSETID_Audio: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x45ffaaa0_6e1b_11d0_bcf2_444553540000);
+pub const KSPROPSETID_AudioBufferDuration: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4e73c07f_23cc_4955_a7ea_3da502496290);
+pub const KSPROPSETID_AudioDecoderOut: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6ca6e020_43bd_11d0_bd6a_003505c103a9);
+pub const KSPROPSETID_AudioEngine: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3a2f82dc_886f_4baa_9eb4_082b9025c536);
+pub const KSPROPSETID_AudioModule: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc034fdb0_ff75_47c8_aa3c_ee46716b50c6);
+pub const KSPROPSETID_AudioPosture: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa3fb7b0d_474e_4f51_a379_51282dd4fa8f);
+pub const KSPROPSETID_AudioResourceManagement: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd0b305e1_b2cc_484c_8f23_e5d28ad9cf88);
+pub const KSPROPSETID_AudioSignalProcessing: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4f67b528_30c9_40de_b2fb_859ddd1f3470);
+pub const KSPROPSETID_Bibliographic: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x07ba150e_e2b1_11d0_ac17_00a0c9223196);
+pub const KSPROPSETID_BtAudio: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7fa06c40_b8f6_4c7e_8556_e8c33a12e54d);
+pub const KSPROPSETID_Clock: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdf12a4c0_ac17_11cf_a5d6_28db04c10000);
+pub const KSPROPSETID_Connection: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1d58c920_ac9b_11cf_a5d6_28db04c10000);
+pub const KSPROPSETID_CopyProt: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0e8a0a40_6aef_11d0_9ed0_00a024ca19b3);
+pub const KSPROPSETID_Cyclic: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3ffeaea0_2bee_11cf_a5d6_28db04c10000);
+pub const KSPROPSETID_DirectSound3DBuffer: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x437b3411_d060_11d0_8583_00c04fd9baf3);
+pub const KSPROPSETID_DirectSound3DListener: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x437b3414_d060_11d0_8583_00c04fd9baf3);
+pub const KSPROPSETID_DrmAudioStream: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2f2c8ddd_4198_4fac_ba29_61bb05b7de06);
+pub const KSPROPSETID_DvdSubPic: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xac390460_43af_11d0_bd6a_003505c103a9);
+pub const KSPROPSETID_FMRXControl: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x947bba3a_e8ee_4786_90c4_8428185f05be);
+pub const KSPROPSETID_FMRXTopology: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0c46ce8f_dc2d_4204_9dc9_f58963366563);
+pub const KSPROPSETID_General: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1464eda5_6a8f_11d1_9aa7_00a0c9223196);
+pub const KSPROPSETID_Hrtf3d: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb66decb0_a083_11d0_851e_00c04fd9baf3);
+pub const KSPROPSETID_InterleavedAudio: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe9ebe550_d619_4c0a_976b_7062322b3006);
+pub const KSPROPSETID_Itd3d: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6429f090_9fd9_11d0_a75b_00a0c90365e3);
+pub const KSPROPSETID_Jack: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4509f757_2d46_4637_8e62_ce7db944f57b);
+pub const KSPROPSETID_MPEG4_MediaType_Attributes: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xff6c4bfa_07a9_4c7b_a237_672f9d68065f);
+pub const KSPROPSETID_MediaSeeking: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xee904f0c_d09b_11d0_abe9_00a0c9223196);
+pub const KSPROPSETID_MemoryTransport: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0a3d1c5d_5243_4819_9ed0_aee8044cee2b);
+pub const KSPROPSETID_Mpeg2Vid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc8e11b60_0cc9_11d0_bd69_003505c103a9);
+pub const KSPROPSETID_OverlayUpdate: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x490ea5cf_7681_11d1_a21c_00a0c9223196);
+pub const KSPROPSETID_Pin: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8c134960_51ad_11cf_878a_94f801c10000);
+pub const KSPROPSETID_PinMDLCacheClearProp: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbd718a7b_97fc_40c7_88ce_d3ff06f55b16);
+pub const KSPROPSETID_Quality: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd16ad380_ac1a_11cf_a5d6_28db04c10000);
+pub const KSPROPSETID_RtAudio: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa855a48c_2f78_4729_9051_1968746b9eef);
+pub const KSPROPSETID_SoundDetector: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x113c425e_fd17_4057_b422_ed4074f1afdf);
+pub const KSPROPSETID_SoundDetector2: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfe07e322_450c_4bd5_84ca_a948500ea6aa);
+pub const KSPROPSETID_Stream: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x65aaba60_98ae_11cf_a10d_0020afd156e4);
+pub const KSPROPSETID_StreamAllocator: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcf6e4342_ec87_11cf_a130_0020afd156e4);
+pub const KSPROPSETID_StreamInterface: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1fdd8ee1_9cd3_11d0_82aa_0000f822fe8a);
+pub const KSPROPSETID_TSRateChange: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa503c5c0_1d1d_11d1_ad80_444553540000);
+pub const KSPROPSETID_TelephonyControl: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb6df7eb1_d099_489f_a6a0_c0106f0887a7);
+pub const KSPROPSETID_TelephonyTopology: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xabf25c7e_0e64_4e32_b190_d0f6d7c53e97);
+pub const KSPROPSETID_Topology: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x720d4ac0_7533_11d0_a5d6_28db04c10000);
+pub const KSPROPSETID_TopologyNode: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x45ffaaa1_6e1b_11d0_bcf2_444553540000);
+pub const KSPROPSETID_VBICAP_PROPERTIES: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf162c607_7b35_496f_ad7f_2dca3b46b718);
+pub const KSPROPSETID_VBICodecFiltering: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcafeb0ca_8715_11d0_bd6a_0035c0edbabe);
+pub const KSPROPSETID_VPConfig: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbc29a660_30e3_11d0_9e69_00c04fd7c15b);
+pub const KSPROPSETID_VPVBIConfig: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xec529b00_1a1f_11d1_bad9_00609744111a);
+pub const KSPROPSETID_VramCapture: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe73face3_2880_4902_b799_88d0cd634e0f);
+pub const KSPROPSETID_Wave: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x924e54b0_630f_11cf_ada7_08003e30494a);
+pub const KSPROPTYPESETID_General: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x97e99ba0_bdea_11cf_a5d6_28db04c10000);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSP_NODE {
@@ -13874,12 +13874,12 @@ impl ::core::clone::Clone for KSP_NODE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSP_NODE {
+unsafe impl ::windows_core::Abi for KSP_NODE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSP_NODE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSP_NODE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSP_NODE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSP_NODE {}
@@ -13901,12 +13901,12 @@ impl ::core::clone::Clone for KSP_PIN {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSP_PIN {
+unsafe impl ::windows_core::Abi for KSP_PIN {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSP_PIN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSP_PIN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSP_PIN>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSP_PIN {}
@@ -13927,12 +13927,12 @@ impl ::core::clone::Clone for KSP_PIN_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSP_PIN_0 {
+unsafe impl ::windows_core::Abi for KSP_PIN_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSP_PIN_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSP_PIN_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSP_PIN_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSP_PIN_0 {}
@@ -13945,8 +13945,8 @@ impl ::core::default::Default for KSP_PIN_0 {
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSP_TIMEFORMAT {
     pub Property: KSIDENTIFIER,
-    pub SourceFormat: ::windows::core::GUID,
-    pub TargetFormat: ::windows::core::GUID,
+    pub SourceFormat: ::windows_core::GUID,
+    pub TargetFormat: ::windows_core::GUID,
     pub Time: i64,
 }
 impl ::core::marker::Copy for KSP_TIMEFORMAT {}
@@ -13955,12 +13955,12 @@ impl ::core::clone::Clone for KSP_TIMEFORMAT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSP_TIMEFORMAT {
+unsafe impl ::windows_core::Abi for KSP_TIMEFORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSP_TIMEFORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSP_TIMEFORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSP_TIMEFORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSP_TIMEFORMAT {}
@@ -13987,12 +13987,12 @@ impl ::core::fmt::Debug for KSQUALITY {
         f.debug_struct("KSQUALITY").field("Context", &self.Context).field("Proportion", &self.Proportion).field("DeltaTime", &self.DeltaTime).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSQUALITY {
+unsafe impl ::windows_core::Abi for KSQUALITY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSQUALITY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSQUALITY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSQUALITY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSQUALITY {}
@@ -14023,13 +14023,13 @@ impl ::core::fmt::Debug for KSQUALITY_MANAGER {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSQUALITY_MANAGER {
+unsafe impl ::windows_core::Abi for KSQUALITY_MANAGER {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSQUALITY_MANAGER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSQUALITY_MANAGER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSQUALITY_MANAGER>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14057,13 +14057,13 @@ impl ::core::clone::Clone for KSQUERYBUFFER {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSQUERYBUFFER {
+unsafe impl ::windows_core::Abi for KSQUERYBUFFER {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSQUERYBUFFER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSQUERYBUFFER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSQUERYBUFFER>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14089,12 +14089,12 @@ impl ::core::clone::Clone for KSRATE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSRATE {
+unsafe impl ::windows_core::Abi for KSRATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRATE {}
@@ -14115,12 +14115,12 @@ impl ::core::clone::Clone for KSRATE_CAPABILITY {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSRATE_CAPABILITY {
+unsafe impl ::windows_core::Abi for KSRATE_CAPABILITY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRATE_CAPABILITY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRATE_CAPABILITY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRATE_CAPABILITY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRATE_CAPABILITY {}
@@ -14153,13 +14153,13 @@ impl ::core::clone::Clone for KSRELATIVEEVENT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSRELATIVEEVENT {
+unsafe impl ::windows_core::Abi for KSRELATIVEEVENT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSRELATIVEEVENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRELATIVEEVENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRELATIVEEVENT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14186,13 +14186,13 @@ impl ::core::clone::Clone for KSRELATIVEEVENT_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSRELATIVEEVENT_0 {
+unsafe impl ::windows_core::Abi for KSRELATIVEEVENT_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSRELATIVEEVENT_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRELATIVEEVENT_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRELATIVEEVENT_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14226,7 +14226,7 @@ impl ::core::default::Default for KSRESET {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSRESET {
+unsafe impl ::windows_core::Abi for KSRESET {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSRESET {
@@ -14251,12 +14251,12 @@ impl ::core::fmt::Debug for KSRESOLUTION {
         f.debug_struct("KSRESOLUTION").field("Granularity", &self.Granularity).field("Error", &self.Error).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSRESOLUTION {
+unsafe impl ::windows_core::Abi for KSRESOLUTION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRESOLUTION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRESOLUTION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRESOLUTION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRESOLUTION {}
@@ -14288,13 +14288,13 @@ impl ::core::fmt::Debug for KSRTAUDIO_BUFFER {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSRTAUDIO_BUFFER {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_BUFFER {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSRTAUDIO_BUFFER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14328,13 +14328,13 @@ impl ::core::fmt::Debug for KSRTAUDIO_BUFFER32 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSRTAUDIO_BUFFER32 {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_BUFFER32 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSRTAUDIO_BUFFER32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER32>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14358,12 +14358,12 @@ impl ::core::clone::Clone for KSRTAUDIO_BUFFER_PROPERTY {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSRTAUDIO_BUFFER_PROPERTY {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_BUFFER_PROPERTY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRTAUDIO_BUFFER_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER_PROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER_PROPERTY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRTAUDIO_BUFFER_PROPERTY {}
@@ -14385,12 +14385,12 @@ impl ::core::clone::Clone for KSRTAUDIO_BUFFER_PROPERTY32 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSRTAUDIO_BUFFER_PROPERTY32 {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_BUFFER_PROPERTY32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRTAUDIO_BUFFER_PROPERTY32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER_PROPERTY32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER_PROPERTY32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRTAUDIO_BUFFER_PROPERTY32 {}
@@ -14413,12 +14413,12 @@ impl ::core::clone::Clone for KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION {}
@@ -14441,12 +14441,12 @@ impl ::core::clone::Clone for KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION32 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION32 {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION32 {}
@@ -14479,13 +14479,13 @@ impl ::core::fmt::Debug for KSRTAUDIO_GETREADPACKET_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSRTAUDIO_GETREADPACKET_INFO {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_GETREADPACKET_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSRTAUDIO_GETREADPACKET_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_GETREADPACKET_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_GETREADPACKET_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14514,12 +14514,12 @@ impl ::core::fmt::Debug for KSRTAUDIO_HWLATENCY {
         f.debug_struct("KSRTAUDIO_HWLATENCY").field("FifoSize", &self.FifoSize).field("ChipsetDelay", &self.ChipsetDelay).field("CodecDelay", &self.CodecDelay).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSRTAUDIO_HWLATENCY {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_HWLATENCY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRTAUDIO_HWLATENCY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_HWLATENCY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_HWLATENCY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRTAUDIO_HWLATENCY {}
@@ -14548,12 +14548,12 @@ impl ::core::fmt::Debug for KSRTAUDIO_HWREGISTER {
         f.debug_struct("KSRTAUDIO_HWREGISTER").field("Register", &self.Register).field("Width", &self.Width).field("Numerator", &self.Numerator).field("Denominator", &self.Denominator).field("Accuracy", &self.Accuracy).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSRTAUDIO_HWREGISTER {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_HWREGISTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRTAUDIO_HWREGISTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_HWREGISTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_HWREGISTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRTAUDIO_HWREGISTER {}
@@ -14582,12 +14582,12 @@ impl ::core::fmt::Debug for KSRTAUDIO_HWREGISTER32 {
         f.debug_struct("KSRTAUDIO_HWREGISTER32").field("Register", &self.Register).field("Width", &self.Width).field("Numerator", &self.Numerator).field("Denominator", &self.Denominator).field("Accuracy", &self.Accuracy).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSRTAUDIO_HWREGISTER32 {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_HWREGISTER32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRTAUDIO_HWREGISTER32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_HWREGISTER32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_HWREGISTER32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRTAUDIO_HWREGISTER32 {}
@@ -14608,12 +14608,12 @@ impl ::core::clone::Clone for KSRTAUDIO_HWREGISTER_PROPERTY {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSRTAUDIO_HWREGISTER_PROPERTY {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_HWREGISTER_PROPERTY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRTAUDIO_HWREGISTER_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_HWREGISTER_PROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_HWREGISTER_PROPERTY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRTAUDIO_HWREGISTER_PROPERTY {}
@@ -14634,12 +14634,12 @@ impl ::core::clone::Clone for KSRTAUDIO_HWREGISTER_PROPERTY32 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSRTAUDIO_HWREGISTER_PROPERTY32 {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_HWREGISTER_PROPERTY32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRTAUDIO_HWREGISTER_PROPERTY32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_HWREGISTER_PROPERTY32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_HWREGISTER_PROPERTY32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRTAUDIO_HWREGISTER_PROPERTY32 {}
@@ -14664,13 +14664,13 @@ impl ::core::clone::Clone for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14693,12 +14693,12 @@ impl ::core::clone::Clone for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY32 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY32 {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY32 {}
@@ -14725,12 +14725,12 @@ impl ::core::fmt::Debug for KSRTAUDIO_PACKETVREGISTER {
         f.debug_struct("KSRTAUDIO_PACKETVREGISTER").field("CompletedPacketCount", &self.CompletedPacketCount).field("CompletedPacketQPC", &self.CompletedPacketQPC).field("CompletedPacketHash", &self.CompletedPacketHash).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSRTAUDIO_PACKETVREGISTER {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_PACKETVREGISTER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRTAUDIO_PACKETVREGISTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_PACKETVREGISTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_PACKETVREGISTER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRTAUDIO_PACKETVREGISTER {}
@@ -14751,12 +14751,12 @@ impl ::core::clone::Clone for KSRTAUDIO_PACKETVREGISTER_PROPERTY {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSRTAUDIO_PACKETVREGISTER_PROPERTY {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_PACKETVREGISTER_PROPERTY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRTAUDIO_PACKETVREGISTER_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_PACKETVREGISTER_PROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_PACKETVREGISTER_PROPERTY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRTAUDIO_PACKETVREGISTER_PROPERTY {}
@@ -14783,12 +14783,12 @@ impl ::core::fmt::Debug for KSRTAUDIO_SETWRITEPACKET_INFO {
         f.debug_struct("KSRTAUDIO_SETWRITEPACKET_INFO").field("PacketNumber", &self.PacketNumber).field("Flags", &self.Flags).field("EosPacketLength", &self.EosPacketLength).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSRTAUDIO_SETWRITEPACKET_INFO {
+unsafe impl ::windows_core::Abi for KSRTAUDIO_SETWRITEPACKET_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSRTAUDIO_SETWRITEPACKET_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_SETWRITEPACKET_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_SETWRITEPACKET_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSRTAUDIO_SETWRITEPACKET_INFO {}
@@ -14801,7 +14801,7 @@ impl ::core::default::Default for KSRTAUDIO_SETWRITEPACKET_INFO {
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSSOUNDDETECTORPROPERTY {
     pub Property: KSIDENTIFIER,
-    pub EventId: ::windows::core::GUID,
+    pub EventId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for KSSOUNDDETECTORPROPERTY {}
 impl ::core::clone::Clone for KSSOUNDDETECTORPROPERTY {
@@ -14809,12 +14809,12 @@ impl ::core::clone::Clone for KSSOUNDDETECTORPROPERTY {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSSOUNDDETECTORPROPERTY {
+unsafe impl ::windows_core::Abi for KSSOUNDDETECTORPROPERTY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSSOUNDDETECTORPROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSOUNDDETECTORPROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSOUNDDETECTORPROPERTY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSSOUNDDETECTORPROPERTY {}
@@ -14846,7 +14846,7 @@ impl ::core::default::Default for KSSTATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KSSTATE {
+unsafe impl ::windows_core::Abi for KSSTATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KSSTATE {
@@ -14867,12 +14867,12 @@ impl ::core::clone::Clone for KSSTREAMALLOCATOR_STATUS {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSSTREAMALLOCATOR_STATUS {
+unsafe impl ::windows_core::Abi for KSSTREAMALLOCATOR_STATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSSTREAMALLOCATOR_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAMALLOCATOR_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAMALLOCATOR_STATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSSTREAMALLOCATOR_STATUS {}
@@ -14894,12 +14894,12 @@ impl ::core::clone::Clone for KSSTREAMALLOCATOR_STATUS_EX {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSSTREAMALLOCATOR_STATUS_EX {
+unsafe impl ::windows_core::Abi for KSSTREAMALLOCATOR_STATUS_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSSTREAMALLOCATOR_STATUS_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAMALLOCATOR_STATUS_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAMALLOCATOR_STATUS_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSSTREAMALLOCATOR_STATUS_EX {}
@@ -14939,13 +14939,13 @@ impl ::core::fmt::Debug for KSSTREAM_HEADER {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for KSSTREAM_HEADER {
+unsafe impl ::windows_core::Abi for KSSTREAM_HEADER {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for KSSTREAM_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_HEADER>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -14984,13 +14984,13 @@ impl ::core::fmt::Debug for KSSTREAM_HEADER {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for KSSTREAM_HEADER {
+unsafe impl ::windows_core::Abi for KSSTREAM_HEADER {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for KSSTREAM_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_HEADER>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -15060,12 +15060,12 @@ impl ::core::fmt::Debug for KSSTREAM_METADATA_INFO {
         f.debug_struct("KSSTREAM_METADATA_INFO").field("BufferSize", &self.BufferSize).field("UsedSize", &self.UsedSize).field("Data", &self.Data).field("SystemVa", &self.SystemVa).field("Flags", &self.Flags).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSSTREAM_METADATA_INFO {
+unsafe impl ::windows_core::Abi for KSSTREAM_METADATA_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSSTREAM_METADATA_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_METADATA_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_METADATA_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSSTREAM_METADATA_INFO {}
@@ -15094,12 +15094,12 @@ impl ::core::clone::Clone for KSSTREAM_UVC_METADATA {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSSTREAM_UVC_METADATA {
+unsafe impl ::windows_core::Abi for KSSTREAM_UVC_METADATA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSSTREAM_UVC_METADATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_UVC_METADATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_UVC_METADATA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSSTREAM_UVC_METADATA {}
@@ -15123,12 +15123,12 @@ impl ::core::clone::Clone for KSSTREAM_UVC_METADATATYPE_TIMESTAMP {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSSTREAM_UVC_METADATATYPE_TIMESTAMP {
+unsafe impl ::windows_core::Abi for KSSTREAM_UVC_METADATATYPE_TIMESTAMP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSSTREAM_UVC_METADATATYPE_TIMESTAMP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_UVC_METADATATYPE_TIMESTAMP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_UVC_METADATATYPE_TIMESTAMP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSSTREAM_UVC_METADATATYPE_TIMESTAMP {}
@@ -15149,12 +15149,12 @@ impl ::core::clone::Clone for KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0 {
+unsafe impl ::windows_core::Abi for KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0 {}
@@ -15179,12 +15179,12 @@ impl ::core::fmt::Debug for KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0_0 {
         f.debug_struct("KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0_0 {
+unsafe impl ::windows_core::Abi for KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSSTREAM_UVC_METADATATYPE_TIMESTAMP_0_0 {}
@@ -15226,12 +15226,12 @@ impl ::core::fmt::Debug for KSTELEPHONY_CALLCONTROL {
         f.debug_struct("KSTELEPHONY_CALLCONTROL").field("CallType", &self.CallType).field("CallControlOp", &self.CallControlOp).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSTELEPHONY_CALLCONTROL {
+unsafe impl ::windows_core::Abi for KSTELEPHONY_CALLCONTROL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSTELEPHONY_CALLCONTROL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTELEPHONY_CALLCONTROL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTELEPHONY_CALLCONTROL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSTELEPHONY_CALLCONTROL {}
@@ -15257,12 +15257,12 @@ impl ::core::fmt::Debug for KSTELEPHONY_CALLINFO {
         f.debug_struct("KSTELEPHONY_CALLINFO").field("CallType", &self.CallType).field("CallState", &self.CallState).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSTELEPHONY_CALLINFO {
+unsafe impl ::windows_core::Abi for KSTELEPHONY_CALLINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSTELEPHONY_CALLINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTELEPHONY_CALLINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTELEPHONY_CALLINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSTELEPHONY_CALLINFO {}
@@ -15288,12 +15288,12 @@ impl ::core::fmt::Debug for KSTELEPHONY_PROVIDERCHANGE {
         f.debug_struct("KSTELEPHONY_PROVIDERCHANGE").field("CallType", &self.CallType).field("ProviderChangeOp", &self.ProviderChangeOp).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSTELEPHONY_PROVIDERCHANGE {
+unsafe impl ::windows_core::Abi for KSTELEPHONY_PROVIDERCHANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSTELEPHONY_PROVIDERCHANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTELEPHONY_PROVIDERCHANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTELEPHONY_PROVIDERCHANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSTELEPHONY_PROVIDERCHANGE {}
@@ -15320,12 +15320,12 @@ impl ::core::fmt::Debug for KSTIME {
         f.debug_struct("KSTIME").field("Time", &self.Time).field("Numerator", &self.Numerator).field("Denominator", &self.Denominator).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSTIME {
+unsafe impl ::windows_core::Abi for KSTIME {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSTIME {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTIME>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTIME>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSTIME {}
@@ -15334,21 +15334,21 @@ impl ::core::default::Default for KSTIME {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const KSTIME_FORMAT_BYTE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7b785571_8c82_11cf_bc0c_00aa00ac74f6);
-pub const KSTIME_FORMAT_FIELD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7b785573_8c82_11cf_bc0c_00aa00ac74f6);
-pub const KSTIME_FORMAT_FRAME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7b785570_8c82_11cf_bc0c_00aa00ac74f6);
-pub const KSTIME_FORMAT_MEDIA_TIME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7b785574_8c82_11cf_bc0c_00aa00ac74f6);
-pub const KSTIME_FORMAT_SAMPLE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7b785572_8c82_11cf_bc0c_00aa00ac74f6);
+pub const KSTIME_FORMAT_BYTE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7b785571_8c82_11cf_bc0c_00aa00ac74f6);
+pub const KSTIME_FORMAT_FIELD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7b785573_8c82_11cf_bc0c_00aa00ac74f6);
+pub const KSTIME_FORMAT_FRAME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7b785570_8c82_11cf_bc0c_00aa00ac74f6);
+pub const KSTIME_FORMAT_MEDIA_TIME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7b785574_8c82_11cf_bc0c_00aa00ac74f6);
+pub const KSTIME_FORMAT_SAMPLE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7b785572_8c82_11cf_bc0c_00aa00ac74f6);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KSTOPOLOGY {
     pub CategoriesCount: u32,
-    pub Categories: *const ::windows::core::GUID,
+    pub Categories: *const ::windows_core::GUID,
     pub TopologyNodesCount: u32,
-    pub TopologyNodes: *const ::windows::core::GUID,
+    pub TopologyNodes: *const ::windows_core::GUID,
     pub TopologyConnectionsCount: u32,
     pub TopologyConnections: *const KSTOPOLOGY_CONNECTION,
-    pub TopologyNodesNames: *const ::windows::core::GUID,
+    pub TopologyNodesNames: *const ::windows_core::GUID,
     pub Reserved: u32,
 }
 impl ::core::marker::Copy for KSTOPOLOGY {}
@@ -15362,12 +15362,12 @@ impl ::core::fmt::Debug for KSTOPOLOGY {
         f.debug_struct("KSTOPOLOGY").field("CategoriesCount", &self.CategoriesCount).field("Categories", &self.Categories).field("TopologyNodesCount", &self.TopologyNodesCount).field("TopologyNodes", &self.TopologyNodes).field("TopologyConnectionsCount", &self.TopologyConnectionsCount).field("TopologyConnections", &self.TopologyConnections).field("TopologyNodesNames", &self.TopologyNodesNames).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSTOPOLOGY {
+unsafe impl ::windows_core::Abi for KSTOPOLOGY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSTOPOLOGY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTOPOLOGY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTOPOLOGY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSTOPOLOGY {}
@@ -15395,12 +15395,12 @@ impl ::core::fmt::Debug for KSTOPOLOGY_CONNECTION {
         f.debug_struct("KSTOPOLOGY_CONNECTION").field("FromNode", &self.FromNode).field("FromNodePin", &self.FromNodePin).field("ToNode", &self.ToNode).field("ToNodePin", &self.ToNodePin).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSTOPOLOGY_CONNECTION {
+unsafe impl ::windows_core::Abi for KSTOPOLOGY_CONNECTION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSTOPOLOGY_CONNECTION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTOPOLOGY_CONNECTION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTOPOLOGY_CONNECTION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSTOPOLOGY_CONNECTION {}
@@ -15426,12 +15426,12 @@ impl ::core::fmt::Debug for KSTOPOLOGY_ENDPOINTID {
         f.debug_struct("KSTOPOLOGY_ENDPOINTID").field("TopologyName", &self.TopologyName).field("PinId", &self.PinId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSTOPOLOGY_ENDPOINTID {
+unsafe impl ::windows_core::Abi for KSTOPOLOGY_ENDPOINTID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSTOPOLOGY_ENDPOINTID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTOPOLOGY_ENDPOINTID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTOPOLOGY_ENDPOINTID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSTOPOLOGY_ENDPOINTID {}
@@ -15457,12 +15457,12 @@ impl ::core::fmt::Debug for KSTOPOLOGY_ENDPOINTIDPAIR {
         f.debug_struct("KSTOPOLOGY_ENDPOINTIDPAIR").field("RenderEndpoint", &self.RenderEndpoint).field("CaptureEndpoint", &self.CaptureEndpoint).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSTOPOLOGY_ENDPOINTIDPAIR {
+unsafe impl ::windows_core::Abi for KSTOPOLOGY_ENDPOINTIDPAIR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSTOPOLOGY_ENDPOINTIDPAIR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTOPOLOGY_ENDPOINTIDPAIR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSTOPOLOGY_ENDPOINTIDPAIR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSTOPOLOGY_ENDPOINTIDPAIR {}
@@ -15489,12 +15489,12 @@ impl ::core::fmt::Debug for KSVPMAXPIXELRATE {
         f.debug_struct("KSVPMAXPIXELRATE").field("Size", &self.Size).field("MaxPixelsPerSecond", &self.MaxPixelsPerSecond).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSVPMAXPIXELRATE {
+unsafe impl ::windows_core::Abi for KSVPMAXPIXELRATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSVPMAXPIXELRATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSVPMAXPIXELRATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSVPMAXPIXELRATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSVPMAXPIXELRATE {}
@@ -15515,12 +15515,12 @@ impl ::core::clone::Clone for KSVPSIZE_PROP {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KSVPSIZE_PROP {
+unsafe impl ::windows_core::Abi for KSVPSIZE_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSVPSIZE_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSVPSIZE_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSVPSIZE_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSVPSIZE_PROP {}
@@ -15547,12 +15547,12 @@ impl ::core::fmt::Debug for KSVPSURFACEPARAMS {
         f.debug_struct("KSVPSURFACEPARAMS").field("dwPitch", &self.dwPitch).field("dwXOrigin", &self.dwXOrigin).field("dwYOrigin", &self.dwYOrigin).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSVPSURFACEPARAMS {
+unsafe impl ::windows_core::Abi for KSVPSURFACEPARAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSVPSURFACEPARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSVPSURFACEPARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSVPSURFACEPARAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSVPSURFACEPARAMS {}
@@ -15581,13 +15581,13 @@ impl ::core::clone::Clone for KSWAVETABLE_WAVE_DESC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KSWAVETABLE_WAVE_DESC {
+unsafe impl ::windows_core::Abi for KSWAVETABLE_WAVE_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSWAVETABLE_WAVE_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSWAVETABLE_WAVE_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSWAVETABLE_WAVE_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -15616,12 +15616,12 @@ impl ::core::fmt::Debug for KSWAVE_BUFFER {
         f.debug_struct("KSWAVE_BUFFER").field("Attributes", &self.Attributes).field("BufferSize", &self.BufferSize).field("BufferAddress", &self.BufferAddress).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSWAVE_BUFFER {
+unsafe impl ::windows_core::Abi for KSWAVE_BUFFER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSWAVE_BUFFER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSWAVE_BUFFER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSWAVE_BUFFER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSWAVE_BUFFER {}
@@ -15650,12 +15650,12 @@ impl ::core::fmt::Debug for KSWAVE_COMPATCAPS {
         f.debug_struct("KSWAVE_COMPATCAPS").field("ulDeviceType", &self.ulDeviceType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSWAVE_COMPATCAPS {
+unsafe impl ::windows_core::Abi for KSWAVE_COMPATCAPS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSWAVE_COMPATCAPS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSWAVE_COMPATCAPS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSWAVE_COMPATCAPS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSWAVE_COMPATCAPS {}
@@ -15690,12 +15690,12 @@ impl ::core::fmt::Debug for KSWAVE_INPUT_CAPABILITIES {
         f.debug_struct("KSWAVE_INPUT_CAPABILITIES").field("MaximumChannelsPerConnection", &self.MaximumChannelsPerConnection).field("MinimumBitsPerSample", &self.MinimumBitsPerSample).field("MaximumBitsPerSample", &self.MaximumBitsPerSample).field("MinimumSampleFrequency", &self.MinimumSampleFrequency).field("MaximumSampleFrequency", &self.MaximumSampleFrequency).field("TotalConnections", &self.TotalConnections).field("ActiveConnections", &self.ActiveConnections).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSWAVE_INPUT_CAPABILITIES {
+unsafe impl ::windows_core::Abi for KSWAVE_INPUT_CAPABILITIES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSWAVE_INPUT_CAPABILITIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSWAVE_INPUT_CAPABILITIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSWAVE_INPUT_CAPABILITIES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSWAVE_INPUT_CAPABILITIES {}
@@ -15760,12 +15760,12 @@ impl ::core::fmt::Debug for KSWAVE_OUTPUT_CAPABILITIES {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSWAVE_OUTPUT_CAPABILITIES {
+unsafe impl ::windows_core::Abi for KSWAVE_OUTPUT_CAPABILITIES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSWAVE_OUTPUT_CAPABILITIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSWAVE_OUTPUT_CAPABILITIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSWAVE_OUTPUT_CAPABILITIES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSWAVE_OUTPUT_CAPABILITIES {}
@@ -15791,12 +15791,12 @@ impl ::core::fmt::Debug for KSWAVE_VOLUME {
         f.debug_struct("KSWAVE_VOLUME").field("LeftAttenuation", &self.LeftAttenuation).field("RightAttenuation", &self.RightAttenuation).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KSWAVE_VOLUME {
+unsafe impl ::windows_core::Abi for KSWAVE_VOLUME {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KSWAVE_VOLUME {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSWAVE_VOLUME>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSWAVE_VOLUME>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KSWAVE_VOLUME {}
@@ -15836,7 +15836,7 @@ impl ::core::default::Default for KS_AMPixAspectRatio {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_AMPixAspectRatio {
+unsafe impl ::windows_core::Abi for KS_AMPixAspectRatio {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_AMPixAspectRatio {
@@ -15891,13 +15891,13 @@ impl ::core::fmt::Debug for KS_AMVPDATAINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_AMVPDATAINFO {
+unsafe impl ::windows_core::Abi for KS_AMVPDATAINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_AMVPDATAINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AMVPDATAINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AMVPDATAINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -15933,13 +15933,13 @@ impl ::core::fmt::Debug for KS_AMVPDIMINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_AMVPDIMINFO {
+unsafe impl ::windows_core::Abi for KS_AMVPDIMINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_AMVPDIMINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AMVPDIMINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AMVPDIMINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -15967,12 +15967,12 @@ impl ::core::fmt::Debug for KS_AMVPSIZE {
         f.debug_struct("KS_AMVPSIZE").field("dwWidth", &self.dwWidth).field("dwHeight", &self.dwHeight).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_AMVPSIZE {
+unsafe impl ::windows_core::Abi for KS_AMVPSIZE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_AMVPSIZE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AMVPSIZE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AMVPSIZE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_AMVPSIZE {}
@@ -16006,7 +16006,7 @@ impl ::core::default::Default for KS_AMVP_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_AMVP_MODE {
+unsafe impl ::windows_core::Abi for KS_AMVP_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_AMVP_MODE {
@@ -16035,7 +16035,7 @@ impl ::core::default::Default for KS_AMVP_SELECTFORMATBY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_AMVP_SELECTFORMATBY {
+unsafe impl ::windows_core::Abi for KS_AMVP_SELECTFORMATBY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_AMVP_SELECTFORMATBY {
@@ -16060,12 +16060,12 @@ impl ::core::fmt::Debug for KS_AM_ExactRateChange {
         f.debug_struct("KS_AM_ExactRateChange").field("OutputZeroTime", &self.OutputZeroTime).field("Rate", &self.Rate).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_AM_ExactRateChange {
+unsafe impl ::windows_core::Abi for KS_AM_ExactRateChange {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_AM_ExactRateChange {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AM_ExactRateChange>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AM_ExactRateChange>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_AM_ExactRateChange {}
@@ -16097,7 +16097,7 @@ impl ::core::default::Default for KS_AM_PROPERTY_TS_RATE_CHANGE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_AM_PROPERTY_TS_RATE_CHANGE {
+unsafe impl ::windows_core::Abi for KS_AM_PROPERTY_TS_RATE_CHANGE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_AM_PROPERTY_TS_RATE_CHANGE {
@@ -16122,12 +16122,12 @@ impl ::core::fmt::Debug for KS_AM_SimpleRateChange {
         f.debug_struct("KS_AM_SimpleRateChange").field("StartTime", &self.StartTime).field("Rate", &self.Rate).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_AM_SimpleRateChange {
+unsafe impl ::windows_core::Abi for KS_AM_SimpleRateChange {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_AM_SimpleRateChange {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AM_SimpleRateChange>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AM_SimpleRateChange>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_AM_SimpleRateChange {}
@@ -16163,13 +16163,13 @@ impl ::core::fmt::Debug for KS_AnalogVideoInfo {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_AnalogVideoInfo {
+unsafe impl ::windows_core::Abi for KS_AnalogVideoInfo {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_AnalogVideoInfo {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AnalogVideoInfo>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AnalogVideoInfo>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16237,7 +16237,7 @@ impl ::core::default::Default for KS_AnalogVideoStandard {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_AnalogVideoStandard {
+unsafe impl ::windows_core::Abi for KS_AnalogVideoStandard {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_AnalogVideoStandard {
@@ -16277,12 +16277,12 @@ impl ::core::fmt::Debug for KS_BITMAPINFOHEADER {
         f.debug_struct("KS_BITMAPINFOHEADER").field("biSize", &self.biSize).field("biWidth", &self.biWidth).field("biHeight", &self.biHeight).field("biPlanes", &self.biPlanes).field("biBitCount", &self.biBitCount).field("biCompression", &self.biCompression).field("biSizeImage", &self.biSizeImage).field("biXPelsPerMeter", &self.biXPelsPerMeter).field("biYPelsPerMeter", &self.biYPelsPerMeter).field("biClrUsed", &self.biClrUsed).field("biClrImportant", &self.biClrImportant).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_BITMAPINFOHEADER {
+unsafe impl ::windows_core::Abi for KS_BITMAPINFOHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_BITMAPINFOHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_BITMAPINFOHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_BITMAPINFOHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_BITMAPINFOHEADER {}
@@ -16346,12 +16346,12 @@ impl ::core::fmt::Debug for KS_COLCON {
         f.debug_struct("KS_COLCON").field("_bitfield1", &self._bitfield1).field("_bitfield2", &self._bitfield2).field("_bitfield3", &self._bitfield3).field("_bitfield4", &self._bitfield4).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_COLCON {
+unsafe impl ::windows_core::Abi for KS_COLCON {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_COLCON {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_COLCON>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_COLCON>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_COLCON {}
@@ -16378,12 +16378,12 @@ impl ::core::fmt::Debug for KS_COMPRESSION {
         f.debug_struct("KS_COMPRESSION").field("RatioNumerator", &self.RatioNumerator).field("RatioDenominator", &self.RatioDenominator).field("RatioConstantMargin", &self.RatioConstantMargin).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_COMPRESSION {
+unsafe impl ::windows_core::Abi for KS_COMPRESSION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_COMPRESSION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_COMPRESSION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_COMPRESSION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_COMPRESSION {}
@@ -16410,12 +16410,12 @@ impl ::core::fmt::Debug for KS_COPY_MACROVISION {
         f.debug_struct("KS_COPY_MACROVISION").field("MACROVISIONLevel", &self.MACROVISIONLevel).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_COPY_MACROVISION {
+unsafe impl ::windows_core::Abi for KS_COPY_MACROVISION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_COPY_MACROVISION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_COPY_MACROVISION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_COPY_MACROVISION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_COPY_MACROVISION {}
@@ -16447,7 +16447,7 @@ impl ::core::default::Default for KS_COPY_MACROVISION_LEVEL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_COPY_MACROVISION_LEVEL {
+unsafe impl ::windows_core::Abi for KS_COPY_MACROVISION_LEVEL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_COPY_MACROVISION_LEVEL {
@@ -16476,7 +16476,7 @@ impl ::core::default::Default for KS_CameraControlAsyncOperation {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_CameraControlAsyncOperation {
+unsafe impl ::windows_core::Abi for KS_CameraControlAsyncOperation {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_CameraControlAsyncOperation {
@@ -16509,7 +16509,7 @@ impl ::core::default::Default for KS_CompressionCaps {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_CompressionCaps {
+unsafe impl ::windows_core::Abi for KS_CompressionCaps {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_CompressionCaps {
@@ -16529,12 +16529,12 @@ impl ::core::clone::Clone for KS_DATAFORMAT_H264VIDEOINFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KS_DATAFORMAT_H264VIDEOINFO {
+unsafe impl ::windows_core::Abi for KS_DATAFORMAT_H264VIDEOINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_DATAFORMAT_H264VIDEOINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_H264VIDEOINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_H264VIDEOINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_DATAFORMAT_H264VIDEOINFO {}
@@ -16555,12 +16555,12 @@ impl ::core::clone::Clone for KS_DATAFORMAT_IMAGEINFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KS_DATAFORMAT_IMAGEINFO {
+unsafe impl ::windows_core::Abi for KS_DATAFORMAT_IMAGEINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_DATAFORMAT_IMAGEINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_IMAGEINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_IMAGEINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_DATAFORMAT_IMAGEINFO {}
@@ -16585,13 +16585,13 @@ impl ::core::clone::Clone for KS_DATAFORMAT_MPEGVIDEOINFO2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_DATAFORMAT_MPEGVIDEOINFO2 {
+unsafe impl ::windows_core::Abi for KS_DATAFORMAT_MPEGVIDEOINFO2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATAFORMAT_MPEGVIDEOINFO2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_MPEGVIDEOINFO2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_MPEGVIDEOINFO2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16614,12 +16614,12 @@ impl ::core::clone::Clone for KS_DATAFORMAT_VBIINFOHEADER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KS_DATAFORMAT_VBIINFOHEADER {
+unsafe impl ::windows_core::Abi for KS_DATAFORMAT_VBIINFOHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_DATAFORMAT_VBIINFOHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_VBIINFOHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_VBIINFOHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_DATAFORMAT_VBIINFOHEADER {}
@@ -16644,13 +16644,13 @@ impl ::core::clone::Clone for KS_DATAFORMAT_VIDEOINFOHEADER {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_DATAFORMAT_VIDEOINFOHEADER {
+unsafe impl ::windows_core::Abi for KS_DATAFORMAT_VIDEOINFOHEADER {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATAFORMAT_VIDEOINFOHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_VIDEOINFOHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_VIDEOINFOHEADER>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16677,13 +16677,13 @@ impl ::core::clone::Clone for KS_DATAFORMAT_VIDEOINFOHEADER2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_DATAFORMAT_VIDEOINFOHEADER2 {
+unsafe impl ::windows_core::Abi for KS_DATAFORMAT_VIDEOINFOHEADER2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATAFORMAT_VIDEOINFOHEADER2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_VIDEOINFOHEADER2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_VIDEOINFOHEADER2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16710,13 +16710,13 @@ impl ::core::clone::Clone for KS_DATAFORMAT_VIDEOINFO_PALETTE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_DATAFORMAT_VIDEOINFO_PALETTE {
+unsafe impl ::windows_core::Abi for KS_DATAFORMAT_VIDEOINFO_PALETTE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATAFORMAT_VIDEOINFO_PALETTE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_VIDEOINFO_PALETTE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_VIDEOINFO_PALETTE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16743,13 +16743,13 @@ impl ::core::clone::Clone for KS_DATARANGE_ANALOGVIDEO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_DATARANGE_ANALOGVIDEO {
+unsafe impl ::windows_core::Abi for KS_DATARANGE_ANALOGVIDEO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_ANALOGVIDEO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_ANALOGVIDEO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_ANALOGVIDEO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16781,13 +16781,13 @@ impl ::core::clone::Clone for KS_DATARANGE_H264_VIDEO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_DATARANGE_H264_VIDEO {
+unsafe impl ::windows_core::Abi for KS_DATARANGE_H264_VIDEO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_H264_VIDEO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_H264_VIDEO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_H264_VIDEO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16815,13 +16815,13 @@ impl ::core::clone::Clone for KS_DATARANGE_IMAGE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_DATARANGE_IMAGE {
+unsafe impl ::windows_core::Abi for KS_DATARANGE_IMAGE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_IMAGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_IMAGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_IMAGE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16853,13 +16853,13 @@ impl ::core::clone::Clone for KS_DATARANGE_MPEG1_VIDEO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_DATARANGE_MPEG1_VIDEO {
+unsafe impl ::windows_core::Abi for KS_DATARANGE_MPEG1_VIDEO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_MPEG1_VIDEO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_MPEG1_VIDEO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_MPEG1_VIDEO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16891,13 +16891,13 @@ impl ::core::clone::Clone for KS_DATARANGE_MPEG2_VIDEO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_DATARANGE_MPEG2_VIDEO {
+unsafe impl ::windows_core::Abi for KS_DATARANGE_MPEG2_VIDEO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_MPEG2_VIDEO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_MPEG2_VIDEO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_MPEG2_VIDEO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16929,13 +16929,13 @@ impl ::core::clone::Clone for KS_DATARANGE_VIDEO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_DATARANGE_VIDEO {
+unsafe impl ::windows_core::Abi for KS_DATARANGE_VIDEO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_VIDEO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_VIDEO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_VIDEO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16967,13 +16967,13 @@ impl ::core::clone::Clone for KS_DATARANGE_VIDEO2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_DATARANGE_VIDEO2 {
+unsafe impl ::windows_core::Abi for KS_DATARANGE_VIDEO2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_VIDEO2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_VIDEO2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_VIDEO2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17005,13 +17005,13 @@ impl ::core::clone::Clone for KS_DATARANGE_VIDEO_PALETTE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_DATARANGE_VIDEO_PALETTE {
+unsafe impl ::windows_core::Abi for KS_DATARANGE_VIDEO_PALETTE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_VIDEO_PALETTE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_VIDEO_PALETTE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_VIDEO_PALETTE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17043,13 +17043,13 @@ impl ::core::clone::Clone for KS_DATARANGE_VIDEO_VBI {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_DATARANGE_VIDEO_VBI {
+unsafe impl ::windows_core::Abi for KS_DATARANGE_VIDEO_VBI {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_VIDEO_VBI {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_VIDEO_VBI>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_VIDEO_VBI>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17085,7 +17085,7 @@ impl ::core::default::Default for KS_DVDCOPYSTATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_DVDCOPYSTATE {
+unsafe impl ::windows_core::Abi for KS_DVDCOPYSTATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_DVDCOPYSTATE {
@@ -17110,12 +17110,12 @@ impl ::core::fmt::Debug for KS_DVDCOPY_BUSKEY {
         f.debug_struct("KS_DVDCOPY_BUSKEY").field("BusKey", &self.BusKey).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_DVDCOPY_BUSKEY {
+unsafe impl ::windows_core::Abi for KS_DVDCOPY_BUSKEY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_DVDCOPY_BUSKEY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVDCOPY_BUSKEY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVDCOPY_BUSKEY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_DVDCOPY_BUSKEY {}
@@ -17141,12 +17141,12 @@ impl ::core::fmt::Debug for KS_DVDCOPY_CHLGKEY {
         f.debug_struct("KS_DVDCOPY_CHLGKEY").field("ChlgKey", &self.ChlgKey).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_DVDCOPY_CHLGKEY {
+unsafe impl ::windows_core::Abi for KS_DVDCOPY_CHLGKEY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_DVDCOPY_CHLGKEY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVDCOPY_CHLGKEY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVDCOPY_CHLGKEY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_DVDCOPY_CHLGKEY {}
@@ -17171,12 +17171,12 @@ impl ::core::fmt::Debug for KS_DVDCOPY_DISCKEY {
         f.debug_struct("KS_DVDCOPY_DISCKEY").field("DiscKey", &self.DiscKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_DVDCOPY_DISCKEY {
+unsafe impl ::windows_core::Abi for KS_DVDCOPY_DISCKEY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_DVDCOPY_DISCKEY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVDCOPY_DISCKEY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVDCOPY_DISCKEY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_DVDCOPY_DISCKEY {}
@@ -17203,12 +17203,12 @@ impl ::core::fmt::Debug for KS_DVDCOPY_REGION {
         f.debug_struct("KS_DVDCOPY_REGION").field("Reserved", &self.Reserved).field("RegionData", &self.RegionData).field("Reserved2", &self.Reserved2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_DVDCOPY_REGION {
+unsafe impl ::windows_core::Abi for KS_DVDCOPY_REGION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_DVDCOPY_REGION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVDCOPY_REGION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVDCOPY_REGION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_DVDCOPY_REGION {}
@@ -17233,12 +17233,12 @@ impl ::core::fmt::Debug for KS_DVDCOPY_SET_COPY_STATE {
         f.debug_struct("KS_DVDCOPY_SET_COPY_STATE").field("DVDCopyState", &self.DVDCopyState).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_DVDCOPY_SET_COPY_STATE {
+unsafe impl ::windows_core::Abi for KS_DVDCOPY_SET_COPY_STATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_DVDCOPY_SET_COPY_STATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVDCOPY_SET_COPY_STATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVDCOPY_SET_COPY_STATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_DVDCOPY_SET_COPY_STATE {}
@@ -17266,12 +17266,12 @@ impl ::core::fmt::Debug for KS_DVDCOPY_TITLEKEY {
         f.debug_struct("KS_DVDCOPY_TITLEKEY").field("KeyFlags", &self.KeyFlags).field("ReservedNT", &self.ReservedNT).field("TitleKey", &self.TitleKey).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_DVDCOPY_TITLEKEY {
+unsafe impl ::windows_core::Abi for KS_DVDCOPY_TITLEKEY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_DVDCOPY_TITLEKEY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVDCOPY_TITLEKEY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVDCOPY_TITLEKEY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_DVDCOPY_TITLEKEY {}
@@ -17321,12 +17321,12 @@ impl ::core::fmt::Debug for KS_DVD_YCrCb {
         f.debug_struct("KS_DVD_YCrCb").field("Reserved", &self.Reserved).field("Y", &self.Y).field("Cr", &self.Cr).field("Cb", &self.Cb).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_DVD_YCrCb {
+unsafe impl ::windows_core::Abi for KS_DVD_YCrCb {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_DVD_YCrCb {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVD_YCrCb>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVD_YCrCb>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_DVD_YCrCb {}
@@ -17354,12 +17354,12 @@ impl ::core::fmt::Debug for KS_DVD_YUV {
         f.debug_struct("KS_DVD_YUV").field("Reserved", &self.Reserved).field("Y", &self.Y).field("V", &self.V).field("U", &self.U).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_DVD_YUV {
+unsafe impl ::windows_core::Abi for KS_DVD_YUV {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_DVD_YUV {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVD_YUV>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DVD_YUV>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_DVD_YUV {}
@@ -17392,13 +17392,13 @@ impl ::core::clone::Clone for KS_FRAME_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_FRAME_INFO {
+unsafe impl ::windows_core::Abi for KS_FRAME_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_FRAME_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAME_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAME_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17425,13 +17425,13 @@ impl ::core::clone::Clone for KS_FRAME_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_FRAME_INFO_0 {
+unsafe impl ::windows_core::Abi for KS_FRAME_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_FRAME_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAME_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAME_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17458,13 +17458,13 @@ impl ::core::clone::Clone for KS_FRAME_INFO_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_FRAME_INFO_1 {
+unsafe impl ::windows_core::Abi for KS_FRAME_INFO_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_FRAME_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAME_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAME_INFO_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17497,13 +17497,13 @@ impl ::core::fmt::Debug for KS_FRAME_INFO_1_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_FRAME_INFO_1_0 {
+unsafe impl ::windows_core::Abi for KS_FRAME_INFO_1_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_FRAME_INFO_1_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAME_INFO_1_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAME_INFO_1_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17517,8 +17517,8 @@ impl ::core::default::Default for KS_FRAME_INFO_1_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct KS_FRAMING_ITEM {
-    pub MemoryType: ::windows::core::GUID,
-    pub BusType: ::windows::core::GUID,
+    pub MemoryType: ::windows_core::GUID,
+    pub BusType: ::windows_core::GUID,
     pub MemoryFlags: u32,
     pub BusFlags: u32,
     pub Flags: u32,
@@ -17534,12 +17534,12 @@ impl ::core::clone::Clone for KS_FRAMING_ITEM {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KS_FRAMING_ITEM {
+unsafe impl ::windows_core::Abi for KS_FRAMING_ITEM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_FRAMING_ITEM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAMING_ITEM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAMING_ITEM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_FRAMING_ITEM {}
@@ -17560,12 +17560,12 @@ impl ::core::clone::Clone for KS_FRAMING_ITEM_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for KS_FRAMING_ITEM_0 {
+unsafe impl ::windows_core::Abi for KS_FRAMING_ITEM_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_FRAMING_ITEM_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAMING_ITEM_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAMING_ITEM_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_FRAMING_ITEM_0 {}
@@ -17592,12 +17592,12 @@ impl ::core::fmt::Debug for KS_FRAMING_RANGE {
         f.debug_struct("KS_FRAMING_RANGE").field("MinFrameSize", &self.MinFrameSize).field("MaxFrameSize", &self.MaxFrameSize).field("Stepping", &self.Stepping).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_FRAMING_RANGE {
+unsafe impl ::windows_core::Abi for KS_FRAMING_RANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_FRAMING_RANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAMING_RANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAMING_RANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_FRAMING_RANGE {}
@@ -17624,12 +17624,12 @@ impl ::core::fmt::Debug for KS_FRAMING_RANGE_WEIGHTED {
         f.debug_struct("KS_FRAMING_RANGE_WEIGHTED").field("Range", &self.Range).field("InPlaceWeight", &self.InPlaceWeight).field("NotInPlaceWeight", &self.NotInPlaceWeight).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_FRAMING_RANGE_WEIGHTED {
+unsafe impl ::windows_core::Abi for KS_FRAMING_RANGE_WEIGHTED {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_FRAMING_RANGE_WEIGHTED {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAMING_RANGE_WEIGHTED>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAMING_RANGE_WEIGHTED>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_FRAMING_RANGE_WEIGHTED {}
@@ -17730,12 +17730,12 @@ impl ::core::fmt::Debug for KS_H264VIDEOINFO {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_H264VIDEOINFO {
+unsafe impl ::windows_core::Abi for KS_H264VIDEOINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_H264VIDEOINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_H264VIDEOINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_H264VIDEOINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_H264VIDEOINFO {}
@@ -17799,7 +17799,7 @@ impl ::core::default::Default for KS_LogicalMemoryType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_LogicalMemoryType {
+unsafe impl ::windows_core::Abi for KS_LogicalMemoryType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_LogicalMemoryType {
@@ -17828,12 +17828,12 @@ impl ::core::fmt::Debug for KS_MPEAUDIOINFO {
         f.debug_struct("KS_MPEAUDIOINFO").field("dwFlags", &self.dwFlags).field("dwReserved1", &self.dwReserved1).field("dwReserved2", &self.dwReserved2).field("dwReserved3", &self.dwReserved3).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_MPEAUDIOINFO {
+unsafe impl ::windows_core::Abi for KS_MPEAUDIOINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_MPEAUDIOINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_MPEAUDIOINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_MPEAUDIOINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_MPEAUDIOINFO {}
@@ -17866,13 +17866,13 @@ impl ::core::fmt::Debug for KS_MPEG1VIDEOINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_MPEG1VIDEOINFO {
+unsafe impl ::windows_core::Abi for KS_MPEG1VIDEOINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_MPEG1VIDEOINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_MPEG1VIDEOINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_MPEG1VIDEOINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17906,7 +17906,7 @@ impl ::core::default::Default for KS_MPEG2Level {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_MPEG2Level {
+unsafe impl ::windows_core::Abi for KS_MPEG2Level {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_MPEG2Level {
@@ -17939,7 +17939,7 @@ impl ::core::default::Default for KS_MPEG2Profile {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_MPEG2Profile {
+unsafe impl ::windows_core::Abi for KS_MPEG2Profile {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_MPEG2Profile {
@@ -17990,13 +17990,13 @@ impl ::core::clone::Clone for KS_MPEGVIDEOINFO2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_MPEGVIDEOINFO2 {
+unsafe impl ::windows_core::Abi for KS_MPEGVIDEOINFO2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_MPEGVIDEOINFO2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_MPEGVIDEOINFO2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_MPEGVIDEOINFO2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18096,7 +18096,7 @@ impl ::core::default::Default for KS_PhysicalConnectorType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_PhysicalConnectorType {
+unsafe impl ::windows_core::Abi for KS_PhysicalConnectorType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_PhysicalConnectorType {
@@ -18123,12 +18123,12 @@ impl ::core::fmt::Debug for KS_RGBQUAD {
         f.debug_struct("KS_RGBQUAD").field("rgbBlue", &self.rgbBlue).field("rgbGreen", &self.rgbGreen).field("rgbRed", &self.rgbRed).field("rgbReserved", &self.rgbReserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_RGBQUAD {
+unsafe impl ::windows_core::Abi for KS_RGBQUAD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_RGBQUAD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_RGBQUAD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_RGBQUAD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_RGBQUAD {}
@@ -18137,7 +18137,7 @@ impl ::core::default::Default for KS_RGBQUAD {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const KS_SECURE_CAMERA_SCENARIO_ID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xae53fc6e_8d89_4488_9d2e_4d008731c5fd);
+pub const KS_SECURE_CAMERA_SCENARIO_ID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xae53fc6e_8d89_4488_9d2e_4d008731c5fd);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -18167,7 +18167,7 @@ impl ::core::default::Default for KS_SEEKING_CAPABILITIES {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_SEEKING_CAPABILITIES {
+unsafe impl ::windows_core::Abi for KS_SEEKING_CAPABILITIES {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_SEEKING_CAPABILITIES {
@@ -18204,7 +18204,7 @@ impl ::core::default::Default for KS_SEEKING_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_SEEKING_FLAGS {
+unsafe impl ::windows_core::Abi for KS_SEEKING_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_SEEKING_FLAGS {
@@ -18229,12 +18229,12 @@ impl ::core::fmt::Debug for KS_TRUECOLORINFO {
         f.debug_struct("KS_TRUECOLORINFO").field("dwBitMasks", &self.dwBitMasks).field("bmiColors", &self.bmiColors).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_TRUECOLORINFO {
+unsafe impl ::windows_core::Abi for KS_TRUECOLORINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_TRUECOLORINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_TRUECOLORINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_TRUECOLORINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_TRUECOLORINFO {}
@@ -18264,7 +18264,7 @@ impl ::core::default::Default for KS_TUNER_STRATEGY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_TUNER_STRATEGY {
+unsafe impl ::windows_core::Abi for KS_TUNER_STRATEGY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_TUNER_STRATEGY {
@@ -18293,7 +18293,7 @@ impl ::core::default::Default for KS_TUNER_TUNING_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_TUNER_TUNING_FLAGS {
+unsafe impl ::windows_core::Abi for KS_TUNER_TUNING_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_TUNER_TUNING_FLAGS {
@@ -18342,12 +18342,12 @@ impl ::core::fmt::Debug for KS_TVTUNER_CHANGE_INFO {
         f.debug_struct("KS_TVTUNER_CHANGE_INFO").field("dwFlags", &self.dwFlags).field("dwCountryCode", &self.dwCountryCode).field("dwAnalogVideoStandard", &self.dwAnalogVideoStandard).field("dwChannel", &self.dwChannel).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_TVTUNER_CHANGE_INFO {
+unsafe impl ::windows_core::Abi for KS_TVTUNER_CHANGE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_TVTUNER_CHANGE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_TVTUNER_CHANGE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_TVTUNER_CHANGE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_TVTUNER_CHANGE_INFO {}
@@ -18404,12 +18404,12 @@ impl ::core::fmt::Debug for KS_VBIINFOHEADER {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_VBIINFOHEADER {
+unsafe impl ::windows_core::Abi for KS_VBIINFOHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_VBIINFOHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VBIINFOHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VBIINFOHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_VBIINFOHEADER {}
@@ -18456,12 +18456,12 @@ impl ::core::fmt::Debug for KS_VBI_FRAME_INFO {
         f.debug_struct("KS_VBI_FRAME_INFO").field("ExtendedHeaderSize", &self.ExtendedHeaderSize).field("dwFrameFlags", &self.dwFrameFlags).field("PictureNumber", &self.PictureNumber).field("DropCount", &self.DropCount).field("dwSamplingFrequency", &self.dwSamplingFrequency).field("TvTunerChangeInfo", &self.TvTunerChangeInfo).field("VBIInfoHeader", &self.VBIInfoHeader).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KS_VBI_FRAME_INFO {
+unsafe impl ::windows_core::Abi for KS_VBI_FRAME_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KS_VBI_FRAME_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VBI_FRAME_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VBI_FRAME_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KS_VBI_FRAME_INFO {}
@@ -18491,7 +18491,7 @@ impl ::core::default::Default for KS_VIDEODECODER_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_VIDEODECODER_FLAGS {
+unsafe impl ::windows_core::Abi for KS_VIDEODECODER_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_VIDEODECODER_FLAGS {
@@ -18520,13 +18520,13 @@ impl ::core::clone::Clone for KS_VIDEOINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_VIDEOINFO {
+unsafe impl ::windows_core::Abi for KS_VIDEOINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_VIDEOINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18554,13 +18554,13 @@ impl ::core::clone::Clone for KS_VIDEOINFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_VIDEOINFO_0 {
+unsafe impl ::windows_core::Abi for KS_VIDEOINFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_VIDEOINFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18597,13 +18597,13 @@ impl ::core::fmt::Debug for KS_VIDEOINFOHEADER {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_VIDEOINFOHEADER {
+unsafe impl ::windows_core::Abi for KS_VIDEOINFOHEADER {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_VIDEOINFOHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFOHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFOHEADER>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18640,13 +18640,13 @@ impl ::core::clone::Clone for KS_VIDEOINFOHEADER2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_VIDEOINFOHEADER2 {
+unsafe impl ::windows_core::Abi for KS_VIDEOINFOHEADER2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_VIDEOINFOHEADER2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFOHEADER2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFOHEADER2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18673,13 +18673,13 @@ impl ::core::clone::Clone for KS_VIDEOINFOHEADER2_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_VIDEOINFOHEADER2_0 {
+unsafe impl ::windows_core::Abi for KS_VIDEOINFOHEADER2_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_VIDEOINFOHEADER2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFOHEADER2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFOHEADER2_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18740,7 +18740,7 @@ pub const KS_VIDEO_FLAG_WEAVE: i32 = 8i32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct KS_VIDEO_STREAM_CONFIG_CAPS {
-    pub guid: ::windows::core::GUID,
+    pub guid: ::windows_core::GUID,
     pub VideoStandard: u32,
     pub InputSize: super::super::Foundation::SIZE,
     pub MinCroppingSize: super::super::Foundation::SIZE,
@@ -18799,13 +18799,13 @@ impl ::core::fmt::Debug for KS_VIDEO_STREAM_CONFIG_CAPS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for KS_VIDEO_STREAM_CONFIG_CAPS {
+unsafe impl ::windows_core::Abi for KS_VIDEO_STREAM_CONFIG_CAPS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_VIDEO_STREAM_CONFIG_CAPS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEO_STREAM_CONFIG_CAPS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEO_STREAM_CONFIG_CAPS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18851,7 +18851,7 @@ impl ::core::default::Default for KS_VideoControlFlags {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_VideoControlFlags {
+unsafe impl ::windows_core::Abi for KS_VideoControlFlags {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_VideoControlFlags {
@@ -18884,7 +18884,7 @@ impl ::core::default::Default for KS_VideoStreamingHints {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KS_VideoStreamingHints {
+unsafe impl ::windows_core::Abi for KS_VideoStreamingHints {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KS_VideoStreamingHints {
@@ -18913,7 +18913,7 @@ pub const KS_iTRUECOLOR: u32 = 16u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreateAllocator<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectionhandle: Param0, allocatorframing: *const KSALLOCATOR_FRAMING, allocatorhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn KsCreateAllocator<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectionhandle: Param0, allocatorframing: *const KSALLOCATOR_FRAMING, allocatorhandle: *mut super::super::Foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18928,12 +18928,12 @@ pub unsafe fn KsCreateAllocator<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreateAllocator2<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectionhandle: Param0, allocatorframing: *const KSALLOCATOR_FRAMING) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn KsCreateAllocator2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectionhandle: Param0, allocatorframing: *const KSALLOCATOR_FRAMING) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn KsCreateAllocator2(connectionhandle: super::super::Foundation::HANDLE, allocatorframing: *const KSALLOCATOR_FRAMING, allocatorhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn KsCreateAllocator2(connectionhandle: super::super::Foundation::HANDLE, allocatorframing: *const KSALLOCATOR_FRAMING, allocatorhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
         KsCreateAllocator2(connectionhandle.into_param().abi(), ::core::mem::transmute(allocatorframing), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
@@ -18944,7 +18944,7 @@ pub unsafe fn KsCreateAllocator2<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreateClock<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectionhandle: Param0, clockcreate: *const KSCLOCK_CREATE, clockhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn KsCreateClock<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectionhandle: Param0, clockcreate: *const KSCLOCK_CREATE, clockhandle: *mut super::super::Foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18959,12 +18959,12 @@ pub unsafe fn KsCreateClock<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreateClock2<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectionhandle: Param0, clockcreate: *const KSCLOCK_CREATE) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn KsCreateClock2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectionhandle: Param0, clockcreate: *const KSCLOCK_CREATE) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn KsCreateClock2(connectionhandle: super::super::Foundation::HANDLE, clockcreate: *const KSCLOCK_CREATE, clockhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn KsCreateClock2(connectionhandle: super::super::Foundation::HANDLE, clockcreate: *const KSCLOCK_CREATE, clockhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
         KsCreateClock2(connectionhandle.into_param().abi(), ::core::mem::transmute(clockcreate), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
@@ -18975,7 +18975,7 @@ pub unsafe fn KsCreateClock2<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreatePin<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filterhandle: Param0, connect: *const KSPIN_CONNECT, desiredaccess: u32, connectionhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn KsCreatePin<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filterhandle: Param0, connect: *const KSPIN_CONNECT, desiredaccess: u32, connectionhandle: *mut super::super::Foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18990,12 +18990,12 @@ pub unsafe fn KsCreatePin<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreatePin2<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filterhandle: Param0, connect: *const KSPIN_CONNECT, desiredaccess: u32) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn KsCreatePin2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filterhandle: Param0, connect: *const KSPIN_CONNECT, desiredaccess: u32) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn KsCreatePin2(filterhandle: super::super::Foundation::HANDLE, connect: *const KSPIN_CONNECT, desiredaccess: u32, connectionhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn KsCreatePin2(filterhandle: super::super::Foundation::HANDLE, connect: *const KSPIN_CONNECT, desiredaccess: u32, connectionhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
         KsCreatePin2(filterhandle.into_param().abi(), ::core::mem::transmute(connect), ::core::mem::transmute(desiredaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
@@ -19006,7 +19006,7 @@ pub unsafe fn KsCreatePin2<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreateTopologyNode<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(parenthandle: Param0, nodecreate: *const KSNODE_CREATE, desiredaccess: u32, nodehandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn KsCreateTopologyNode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(parenthandle: Param0, nodecreate: *const KSNODE_CREATE, desiredaccess: u32, nodehandle: *mut super::super::Foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19021,12 +19021,12 @@ pub unsafe fn KsCreateTopologyNode<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreateTopologyNode2<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(parenthandle: Param0, nodecreate: *const KSNODE_CREATE, desiredaccess: u32) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn KsCreateTopologyNode2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(parenthandle: Param0, nodecreate: *const KSNODE_CREATE, desiredaccess: u32) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn KsCreateTopologyNode2(parenthandle: super::super::Foundation::HANDLE, nodecreate: *const KSNODE_CREATE, desiredaccess: u32, nodehandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn KsCreateTopologyNode2(parenthandle: super::super::Foundation::HANDLE, nodecreate: *const KSNODE_CREATE, desiredaccess: u32, nodehandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
         KsCreateTopologyNode2(parenthandle.into_param().abi(), ::core::mem::transmute(nodecreate), ::core::mem::transmute(desiredaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
@@ -19050,13 +19050,13 @@ impl ::core::clone::Clone for LOOPEDSTREAMING_POSITION_EVENT_DATA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for LOOPEDSTREAMING_POSITION_EVENT_DATA {
+unsafe impl ::windows_core::Abi for LOOPEDSTREAMING_POSITION_EVENT_DATA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for LOOPEDSTREAMING_POSITION_EVENT_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOOPEDSTREAMING_POSITION_EVENT_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOOPEDSTREAMING_POSITION_EVENT_DATA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19098,13 +19098,13 @@ impl ::core::fmt::Debug for MEDIUM_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MEDIUM_INFO {
+unsafe impl ::windows_core::Abi for MEDIUM_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MEDIUM_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MEDIUM_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MEDIUM_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19119,7 +19119,7 @@ impl ::core::default::Default for MEDIUM_INFO {
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub union MF_MDL_SHARED_PAYLOAD_KEY {
     pub combined: MF_MDL_SHARED_PAYLOAD_KEY_0,
-    pub GMDLHandle: ::windows::core::GUID,
+    pub GMDLHandle: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for MF_MDL_SHARED_PAYLOAD_KEY {}
 impl ::core::clone::Clone for MF_MDL_SHARED_PAYLOAD_KEY {
@@ -19127,12 +19127,12 @@ impl ::core::clone::Clone for MF_MDL_SHARED_PAYLOAD_KEY {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MF_MDL_SHARED_PAYLOAD_KEY {
+unsafe impl ::windows_core::Abi for MF_MDL_SHARED_PAYLOAD_KEY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MF_MDL_SHARED_PAYLOAD_KEY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MF_MDL_SHARED_PAYLOAD_KEY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MF_MDL_SHARED_PAYLOAD_KEY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MF_MDL_SHARED_PAYLOAD_KEY {}
@@ -19159,12 +19159,12 @@ impl ::core::fmt::Debug for MF_MDL_SHARED_PAYLOAD_KEY_0 {
         f.debug_struct("MF_MDL_SHARED_PAYLOAD_KEY_0").field("pHandle", &self.pHandle).field("fHandle", &self.fHandle).field("uPayload", &self.uPayload).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MF_MDL_SHARED_PAYLOAD_KEY_0 {
+unsafe impl ::windows_core::Abi for MF_MDL_SHARED_PAYLOAD_KEY_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MF_MDL_SHARED_PAYLOAD_KEY_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MF_MDL_SHARED_PAYLOAD_KEY_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MF_MDL_SHARED_PAYLOAD_KEY_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MF_MDL_SHARED_PAYLOAD_KEY_0 {}
@@ -19196,12 +19196,12 @@ impl ::core::fmt::Debug for NABTSFEC_BUFFER {
         f.debug_struct("NABTSFEC_BUFFER").field("dataSize", &self.dataSize).field("groupID", &self.groupID).field("Reserved", &self.Reserved).field("data", &self.data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NABTSFEC_BUFFER {
+unsafe impl ::windows_core::Abi for NABTSFEC_BUFFER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NABTSFEC_BUFFER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NABTSFEC_BUFFER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NABTSFEC_BUFFER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NABTSFEC_BUFFER {}
@@ -19223,12 +19223,12 @@ impl ::core::clone::Clone for NABTS_BUFFER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for NABTS_BUFFER {
+unsafe impl ::windows_core::Abi for NABTS_BUFFER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NABTS_BUFFER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NABTS_BUFFER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NABTS_BUFFER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NABTS_BUFFER {}
@@ -19254,12 +19254,12 @@ impl ::core::fmt::Debug for NABTS_BUFFER_LINE {
         f.debug_struct("NABTS_BUFFER_LINE").field("Confidence", &self.Confidence).field("Bytes", &self.Bytes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NABTS_BUFFER_LINE {
+unsafe impl ::windows_core::Abi for NABTS_BUFFER_LINE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NABTS_BUFFER_LINE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NABTS_BUFFER_LINE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NABTS_BUFFER_LINE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NABTS_BUFFER_LINE {}
@@ -19296,12 +19296,12 @@ impl ::core::fmt::Debug for OPTIMAL_WEIGHT_TOTALS {
         f.debug_struct("OPTIMAL_WEIGHT_TOTALS").field("MinTotalNominator", &self.MinTotalNominator).field("MaxTotalNominator", &self.MaxTotalNominator).field("TotalDenominator", &self.TotalDenominator).finish()
     }
 }
-unsafe impl ::windows::core::Abi for OPTIMAL_WEIGHT_TOTALS {
+unsafe impl ::windows_core::Abi for OPTIMAL_WEIGHT_TOTALS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for OPTIMAL_WEIGHT_TOTALS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPTIMAL_WEIGHT_TOTALS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPTIMAL_WEIGHT_TOTALS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for OPTIMAL_WEIGHT_TOTALS {}
@@ -19310,25 +19310,25 @@ impl ::core::default::Default for OPTIMAL_WEIGHT_TOTALS {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const PINNAME_DISPLAYPORT_OUT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x21fbb329_1a4a_48da_a076_2318a3c59b26);
-pub const PINNAME_HDMI_OUT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x387bfc03_e7ef_4901_86e0_35b7c32b00ef);
-pub const PINNAME_IMAGE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x38a0cd98_d49b_4ce8_b48a_344667a17830);
-pub const PINNAME_SPDIF_IN: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x15dc9025_22ad_41b3_8875_f4ceb0299e20);
-pub const PINNAME_SPDIF_OUT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3a264481_e52c_4b82_8e7a_c8e2f91dc380);
-pub const PINNAME_VIDEO_ANALOGVIDEOIN: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfb6c4283_0353_11d1_905f_0000c0cc16ba);
-pub const PINNAME_VIDEO_CAPTURE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfb6c4281_0353_11d1_905f_0000c0cc16ba);
-pub const PINNAME_VIDEO_CC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfb6c4289_0353_11d1_905f_0000c0cc16ba);
-pub const PINNAME_VIDEO_CC_CAPTURE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1aad8061_012d_11d2_b4b1_00a0d102cfbe);
-pub const PINNAME_VIDEO_EDS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfb6c4287_0353_11d1_905f_0000c0cc16ba);
-pub const PINNAME_VIDEO_NABTS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfb6c4286_0353_11d1_905f_0000c0cc16ba);
-pub const PINNAME_VIDEO_NABTS_CAPTURE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x29703660_498a_11d2_b4b1_00a0d102cfbe);
-pub const PINNAME_VIDEO_PREVIEW: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfb6c4282_0353_11d1_905f_0000c0cc16ba);
-pub const PINNAME_VIDEO_STILL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfb6c428a_0353_11d1_905f_0000c0cc16ba);
-pub const PINNAME_VIDEO_TELETEXT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfb6c4288_0353_11d1_905f_0000c0cc16ba);
-pub const PINNAME_VIDEO_TIMECODE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfb6c428b_0353_11d1_905f_0000c0cc16ba);
-pub const PINNAME_VIDEO_VBI: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfb6c4284_0353_11d1_905f_0000c0cc16ba);
-pub const PINNAME_VIDEO_VIDEOPORT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfb6c4285_0353_11d1_905f_0000c0cc16ba);
-pub const PINNAME_VIDEO_VIDEOPORT_VBI: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfb6c428c_0353_11d1_905f_0000c0cc16ba);
+pub const PINNAME_DISPLAYPORT_OUT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x21fbb329_1a4a_48da_a076_2318a3c59b26);
+pub const PINNAME_HDMI_OUT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x387bfc03_e7ef_4901_86e0_35b7c32b00ef);
+pub const PINNAME_IMAGE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x38a0cd98_d49b_4ce8_b48a_344667a17830);
+pub const PINNAME_SPDIF_IN: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x15dc9025_22ad_41b3_8875_f4ceb0299e20);
+pub const PINNAME_SPDIF_OUT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3a264481_e52c_4b82_8e7a_c8e2f91dc380);
+pub const PINNAME_VIDEO_ANALOGVIDEOIN: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfb6c4283_0353_11d1_905f_0000c0cc16ba);
+pub const PINNAME_VIDEO_CAPTURE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfb6c4281_0353_11d1_905f_0000c0cc16ba);
+pub const PINNAME_VIDEO_CC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfb6c4289_0353_11d1_905f_0000c0cc16ba);
+pub const PINNAME_VIDEO_CC_CAPTURE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1aad8061_012d_11d2_b4b1_00a0d102cfbe);
+pub const PINNAME_VIDEO_EDS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfb6c4287_0353_11d1_905f_0000c0cc16ba);
+pub const PINNAME_VIDEO_NABTS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfb6c4286_0353_11d1_905f_0000c0cc16ba);
+pub const PINNAME_VIDEO_NABTS_CAPTURE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x29703660_498a_11d2_b4b1_00a0d102cfbe);
+pub const PINNAME_VIDEO_PREVIEW: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfb6c4282_0353_11d1_905f_0000c0cc16ba);
+pub const PINNAME_VIDEO_STILL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfb6c428a_0353_11d1_905f_0000c0cc16ba);
+pub const PINNAME_VIDEO_TELETEXT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfb6c4288_0353_11d1_905f_0000c0cc16ba);
+pub const PINNAME_VIDEO_TIMECODE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfb6c428b_0353_11d1_905f_0000c0cc16ba);
+pub const PINNAME_VIDEO_VBI: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfb6c4284_0353_11d1_905f_0000c0cc16ba);
+pub const PINNAME_VIDEO_VIDEOPORT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfb6c4285_0353_11d1_905f_0000c0cc16ba);
+pub const PINNAME_VIDEO_VIDEOPORT_VBI: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfb6c428c_0353_11d1_905f_0000c0cc16ba);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -19352,7 +19352,7 @@ impl ::core::default::Default for PIPE_ALLOCATOR_PLACE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PIPE_ALLOCATOR_PLACE {
+unsafe impl ::windows_core::Abi for PIPE_ALLOCATOR_PLACE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PIPE_ALLOCATOR_PLACE {
@@ -19378,12 +19378,12 @@ impl ::core::fmt::Debug for PIPE_DIMENSIONS {
         f.debug_struct("PIPE_DIMENSIONS").field("AllocatorPin", &self.AllocatorPin).field("MaxExpansionPin", &self.MaxExpansionPin).field("EndPin", &self.EndPin).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PIPE_DIMENSIONS {
+unsafe impl ::windows_core::Abi for PIPE_DIMENSIONS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PIPE_DIMENSIONS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PIPE_DIMENSIONS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PIPE_DIMENSIONS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PIPE_DIMENSIONS {}
@@ -19417,7 +19417,7 @@ impl ::core::default::Default for PIPE_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PIPE_STATE {
+unsafe impl ::windows_core::Abi for PIPE_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PIPE_STATE {
@@ -19446,12 +19446,12 @@ impl ::core::fmt::Debug for PIPE_TERMINATION {
         f.debug_struct("PIPE_TERMINATION").field("Flags", &self.Flags).field("OutsideFactors", &self.OutsideFactors).field("Weigth", &self.Weigth).field("PhysicalRange", &self.PhysicalRange).field("OptimalRange", &self.OptimalRange).field("Compression", &self.Compression).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PIPE_TERMINATION {
+unsafe impl ::windows_core::Abi for PIPE_TERMINATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PIPE_TERMINATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PIPE_TERMINATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PIPE_TERMINATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PIPE_TERMINATION {}
@@ -19460,25 +19460,25 @@ impl ::core::default::Default for PIPE_TERMINATION {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const PROPSETID_ALLOCATOR_CONTROL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x53171960_148e_11d2_9979_0000c0cc16ba);
-pub const PROPSETID_EXT_DEVICE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb5730a90_1a2c_11cf_8c23_00aa006b6814);
-pub const PROPSETID_EXT_TRANSPORT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa03cd5f0_3045_11cf_8c44_00aa006b6814);
-pub const PROPSETID_TIMECODE_READER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9b496ce1_811b_11cf_8c77_00aa006b6814);
-pub const PROPSETID_TUNER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6a2e0605_28e4_11d0_a18c_00a0c9118956);
-pub const PROPSETID_VIDCAP_CAMERACONTROL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc6e13370_30ac_11d0_a18c_00a0c9118956);
-pub const PROPSETID_VIDCAP_CAMERACONTROL_FLASH: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x785e8f49_63a2_4144_ab70_ffb278fa26ce);
-pub const PROPSETID_VIDCAP_CAMERACONTROL_IMAGE_PIN_CAPABILITY: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9d3d7bbf_5c6d_4138_bb00_584edd20f7c5);
-pub const PROPSETID_VIDCAP_CAMERACONTROL_REGION_OF_INTEREST: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9d12d198_f86c_4fed_b023_5d87653da793);
-pub const PROPSETID_VIDCAP_CAMERACONTROL_VIDEO_STABILIZATION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x43964bd3_7716_404e_8be1_d299b20e50fd);
-pub const PROPSETID_VIDCAP_CROSSBAR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6a2e0640_28e4_11d0_a18c_00a0c9118956);
-pub const PROPSETID_VIDCAP_DROPPEDFRAMES: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc6e13344_30ac_11d0_a18c_00a0c9118956);
-pub const PROPSETID_VIDCAP_SELECTOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1abdaeca_68b6_4f83_9371_b413907c7b9f);
-pub const PROPSETID_VIDCAP_TVAUDIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6a2e0650_28e4_11d0_a18c_00a0c9118956);
-pub const PROPSETID_VIDCAP_VIDEOCOMPRESSION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc6e13343_30ac_11d0_a18c_00a0c9118956);
-pub const PROPSETID_VIDCAP_VIDEOCONTROL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6a2e0670_28e4_11d0_a18c_00a0c9118956);
-pub const PROPSETID_VIDCAP_VIDEODECODER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc6e13350_30ac_11d0_a18c_00a0c9118956);
-pub const PROPSETID_VIDCAP_VIDEOENCODER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6a2e0610_28e4_11d0_a18c_00a0c9118956);
-pub const PROPSETID_VIDCAP_VIDEOPROCAMP: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc6e13360_30ac_11d0_a18c_00a0c9118956);
+pub const PROPSETID_ALLOCATOR_CONTROL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x53171960_148e_11d2_9979_0000c0cc16ba);
+pub const PROPSETID_EXT_DEVICE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb5730a90_1a2c_11cf_8c23_00aa006b6814);
+pub const PROPSETID_EXT_TRANSPORT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa03cd5f0_3045_11cf_8c44_00aa006b6814);
+pub const PROPSETID_TIMECODE_READER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9b496ce1_811b_11cf_8c77_00aa006b6814);
+pub const PROPSETID_TUNER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6a2e0605_28e4_11d0_a18c_00a0c9118956);
+pub const PROPSETID_VIDCAP_CAMERACONTROL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc6e13370_30ac_11d0_a18c_00a0c9118956);
+pub const PROPSETID_VIDCAP_CAMERACONTROL_FLASH: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x785e8f49_63a2_4144_ab70_ffb278fa26ce);
+pub const PROPSETID_VIDCAP_CAMERACONTROL_IMAGE_PIN_CAPABILITY: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9d3d7bbf_5c6d_4138_bb00_584edd20f7c5);
+pub const PROPSETID_VIDCAP_CAMERACONTROL_REGION_OF_INTEREST: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9d12d198_f86c_4fed_b023_5d87653da793);
+pub const PROPSETID_VIDCAP_CAMERACONTROL_VIDEO_STABILIZATION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x43964bd3_7716_404e_8be1_d299b20e50fd);
+pub const PROPSETID_VIDCAP_CROSSBAR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6a2e0640_28e4_11d0_a18c_00a0c9118956);
+pub const PROPSETID_VIDCAP_DROPPEDFRAMES: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc6e13344_30ac_11d0_a18c_00a0c9118956);
+pub const PROPSETID_VIDCAP_SELECTOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1abdaeca_68b6_4f83_9371_b413907c7b9f);
+pub const PROPSETID_VIDCAP_TVAUDIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6a2e0650_28e4_11d0_a18c_00a0c9118956);
+pub const PROPSETID_VIDCAP_VIDEOCOMPRESSION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc6e13343_30ac_11d0_a18c_00a0c9118956);
+pub const PROPSETID_VIDCAP_VIDEOCONTROL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6a2e0670_28e4_11d0_a18c_00a0c9118956);
+pub const PROPSETID_VIDCAP_VIDEODECODER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc6e13350_30ac_11d0_a18c_00a0c9118956);
+pub const PROPSETID_VIDCAP_VIDEOENCODER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6a2e0610_28e4_11d0_a18c_00a0c9118956);
+pub const PROPSETID_VIDCAP_VIDEOPROCAMP: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc6e13360_30ac_11d0_a18c_00a0c9118956);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const PipeFactor_Align: u32 = 512u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
@@ -19506,13 +19506,13 @@ pub const PipeFactor_UserModeDownstream: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const PipeFactor_UserModeUpstream: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-pub const RT_RCDATA: ::windows::core::PCWSTR = ::windows::core::PCWSTR(10i32 as _);
+pub const RT_RCDATA: ::windows_core::PCWSTR = ::windows_core::PCWSTR(10i32 as _);
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
-pub const RT_STRING: ::windows::core::PCWSTR = ::windows::core::PCWSTR(6i32 as _);
+pub const RT_STRING: ::windows_core::PCWSTR = ::windows_core::PCWSTR(6i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct SECURE_BUFFER_INFO {
-    pub guidBufferIdentifier: ::windows::core::GUID,
+    pub guidBufferIdentifier: ::windows_core::GUID,
     pub cbBufferSize: u32,
     pub cbCaptured: u32,
     pub ullReserved: [u64; 16],
@@ -19528,12 +19528,12 @@ impl ::core::fmt::Debug for SECURE_BUFFER_INFO {
         f.debug_struct("SECURE_BUFFER_INFO").field("guidBufferIdentifier", &self.guidBufferIdentifier).field("cbBufferSize", &self.cbBufferSize).field("cbCaptured", &self.cbCaptured).field("ullReserved", &self.ullReserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SECURE_BUFFER_INFO {
+unsafe impl ::windows_core::Abi for SECURE_BUFFER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SECURE_BUFFER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SECURE_BUFFER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SECURE_BUFFER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SECURE_BUFFER_INFO {}
@@ -19546,7 +19546,7 @@ impl ::core::default::Default for SECURE_BUFFER_INFO {
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct SOUNDDETECTOR_PATTERNHEADER {
     pub Size: u32,
-    pub PatternType: ::windows::core::GUID,
+    pub PatternType: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for SOUNDDETECTOR_PATTERNHEADER {}
 impl ::core::clone::Clone for SOUNDDETECTOR_PATTERNHEADER {
@@ -19559,12 +19559,12 @@ impl ::core::fmt::Debug for SOUNDDETECTOR_PATTERNHEADER {
         f.debug_struct("SOUNDDETECTOR_PATTERNHEADER").field("Size", &self.Size).field("PatternType", &self.PatternType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SOUNDDETECTOR_PATTERNHEADER {
+unsafe impl ::windows_core::Abi for SOUNDDETECTOR_PATTERNHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SOUNDDETECTOR_PATTERNHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SOUNDDETECTOR_PATTERNHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SOUNDDETECTOR_PATTERNHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SOUNDDETECTOR_PATTERNHEADER {}
@@ -19636,7 +19636,7 @@ impl ::core::default::Default for TELEPHONY_CALLCONTROLOP {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TELEPHONY_CALLCONTROLOP {
+unsafe impl ::windows_core::Abi for TELEPHONY_CALLCONTROLOP {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TELEPHONY_CALLCONTROLOP {
@@ -19667,7 +19667,7 @@ impl ::core::default::Default for TELEPHONY_CALLSTATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TELEPHONY_CALLSTATE {
+unsafe impl ::windows_core::Abi for TELEPHONY_CALLSTATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TELEPHONY_CALLSTATE {
@@ -19696,7 +19696,7 @@ impl ::core::default::Default for TELEPHONY_CALLTYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TELEPHONY_CALLTYPE {
+unsafe impl ::windows_core::Abi for TELEPHONY_CALLTYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TELEPHONY_CALLTYPE {
@@ -19725,7 +19725,7 @@ impl ::core::default::Default for TELEPHONY_PROVIDERCHANGEOP {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TELEPHONY_PROVIDERCHANGEOP {
+unsafe impl ::windows_core::Abi for TELEPHONY_PROVIDERCHANGEOP {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TELEPHONY_PROVIDERCHANGEOP {
@@ -19753,12 +19753,12 @@ impl ::core::fmt::Debug for TRANSPORTAUDIOPARMS {
         f.debug_struct("TRANSPORTAUDIOPARMS").field("EnableOutput", &self.EnableOutput).field("EnableRecord", &self.EnableRecord).field("EnableSelsync", &self.EnableSelsync).field("Input", &self.Input).field("MonitorSource", &self.MonitorSource).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRANSPORTAUDIOPARMS {
+unsafe impl ::windows_core::Abi for TRANSPORTAUDIOPARMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRANSPORTAUDIOPARMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSPORTAUDIOPARMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSPORTAUDIOPARMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRANSPORTAUDIOPARMS {}
@@ -19843,12 +19843,12 @@ impl ::core::fmt::Debug for TRANSPORTBASICPARMS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRANSPORTBASICPARMS {
+unsafe impl ::windows_core::Abi for TRANSPORTBASICPARMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRANSPORTBASICPARMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSPORTBASICPARMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSPORTBASICPARMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRANSPORTBASICPARMS {}
@@ -19899,12 +19899,12 @@ impl ::core::fmt::Debug for TRANSPORTSTATUS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRANSPORTSTATUS {
+unsafe impl ::windows_core::Abi for TRANSPORTSTATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRANSPORTSTATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSPORTSTATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSPORTSTATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRANSPORTSTATUS {}
@@ -19930,12 +19930,12 @@ impl ::core::fmt::Debug for TRANSPORTVIDEOPARMS {
         f.debug_struct("TRANSPORTVIDEOPARMS").field("OutputMode", &self.OutputMode).field("Input", &self.Input).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRANSPORTVIDEOPARMS {
+unsafe impl ::windows_core::Abi for TRANSPORTVIDEOPARMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRANSPORTVIDEOPARMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSPORTVIDEOPARMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSPORTVIDEOPARMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRANSPORTVIDEOPARMS {}
@@ -19961,12 +19961,12 @@ impl ::core::fmt::Debug for TRANSPORT_STATE {
         f.debug_struct("TRANSPORT_STATE").field("Mode", &self.Mode).field("State", &self.State).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRANSPORT_STATE {
+unsafe impl ::windows_core::Abi for TRANSPORT_STATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRANSPORT_STATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSPORT_STATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSPORT_STATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRANSPORT_STATE {}
@@ -19998,12 +19998,12 @@ impl ::core::fmt::Debug for TUNER_ANALOG_CAPS_S {
         f.debug_struct("TUNER_ANALOG_CAPS_S").field("Mode", &self.Mode).field("StandardsSupported", &self.StandardsSupported).field("MinFrequency", &self.MinFrequency).field("MaxFrequency", &self.MaxFrequency).field("TuningGranularity", &self.TuningGranularity).field("SettlingTime", &self.SettlingTime).field("ScanSensingRange", &self.ScanSensingRange).field("FineTuneSensingRange", &self.FineTuneSensingRange).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TUNER_ANALOG_CAPS_S {
+unsafe impl ::windows_core::Abi for TUNER_ANALOG_CAPS_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TUNER_ANALOG_CAPS_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TUNER_ANALOG_CAPS_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TUNER_ANALOG_CAPS_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TUNER_ANALOG_CAPS_S {}
@@ -20025,12 +20025,12 @@ impl ::core::clone::Clone for VBICAP_PROPERTIES_PROTECTION_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VBICAP_PROPERTIES_PROTECTION_S {
+unsafe impl ::windows_core::Abi for VBICAP_PROPERTIES_PROTECTION_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VBICAP_PROPERTIES_PROTECTION_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICAP_PROPERTIES_PROTECTION_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICAP_PROPERTIES_PROTECTION_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VBICAP_PROPERTIES_PROTECTION_S {}
@@ -20055,12 +20055,12 @@ impl ::core::fmt::Debug for VBICODECFILTERING_CC_SUBSTREAMS {
         f.debug_struct("VBICODECFILTERING_CC_SUBSTREAMS").field("SubstreamMask", &self.SubstreamMask).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VBICODECFILTERING_CC_SUBSTREAMS {
+unsafe impl ::windows_core::Abi for VBICODECFILTERING_CC_SUBSTREAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VBICODECFILTERING_CC_SUBSTREAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_CC_SUBSTREAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_CC_SUBSTREAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VBICODECFILTERING_CC_SUBSTREAMS {}
@@ -20085,12 +20085,12 @@ impl ::core::fmt::Debug for VBICODECFILTERING_NABTS_SUBSTREAMS {
         f.debug_struct("VBICODECFILTERING_NABTS_SUBSTREAMS").field("SubstreamMask", &self.SubstreamMask).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VBICODECFILTERING_NABTS_SUBSTREAMS {
+unsafe impl ::windows_core::Abi for VBICODECFILTERING_NABTS_SUBSTREAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VBICODECFILTERING_NABTS_SUBSTREAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_NABTS_SUBSTREAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_NABTS_SUBSTREAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VBICODECFILTERING_NABTS_SUBSTREAMS {}
@@ -20115,12 +20115,12 @@ impl ::core::fmt::Debug for VBICODECFILTERING_SCANLINES {
         f.debug_struct("VBICODECFILTERING_SCANLINES").field("DwordBitArray", &self.DwordBitArray).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VBICODECFILTERING_SCANLINES {
+unsafe impl ::windows_core::Abi for VBICODECFILTERING_SCANLINES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VBICODECFILTERING_SCANLINES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_SCANLINES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_SCANLINES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VBICODECFILTERING_SCANLINES {}
@@ -20145,12 +20145,12 @@ impl ::core::fmt::Debug for VBICODECFILTERING_STATISTICS_CC {
         f.debug_struct("VBICODECFILTERING_STATISTICS_CC").field("Common", &self.Common).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VBICODECFILTERING_STATISTICS_CC {
+unsafe impl ::windows_core::Abi for VBICODECFILTERING_STATISTICS_CC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VBICODECFILTERING_STATISTICS_CC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_CC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_CC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VBICODECFILTERING_STATISTICS_CC {}
@@ -20175,12 +20175,12 @@ impl ::core::fmt::Debug for VBICODECFILTERING_STATISTICS_CC_PIN {
         f.debug_struct("VBICODECFILTERING_STATISTICS_CC_PIN").field("Common", &self.Common).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VBICODECFILTERING_STATISTICS_CC_PIN {
+unsafe impl ::windows_core::Abi for VBICODECFILTERING_STATISTICS_CC_PIN {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VBICODECFILTERING_STATISTICS_CC_PIN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_CC_PIN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_CC_PIN>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VBICODECFILTERING_STATISTICS_CC_PIN {}
@@ -20233,12 +20233,12 @@ impl ::core::fmt::Debug for VBICODECFILTERING_STATISTICS_COMMON {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for VBICODECFILTERING_STATISTICS_COMMON {
+unsafe impl ::windows_core::Abi for VBICODECFILTERING_STATISTICS_COMMON {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VBICODECFILTERING_STATISTICS_COMMON {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_COMMON>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_COMMON>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VBICODECFILTERING_STATISTICS_COMMON {}
@@ -20270,12 +20270,12 @@ impl ::core::fmt::Debug for VBICODECFILTERING_STATISTICS_COMMON_PIN {
         f.debug_struct("VBICODECFILTERING_STATISTICS_COMMON_PIN").field("SRBsProcessed", &self.SRBsProcessed).field("SRBsIgnored", &self.SRBsIgnored).field("SRBsMissing", &self.SRBsMissing).field("InternalErrors", &self.InternalErrors).field("ExternalErrors", &self.ExternalErrors).field("Discontinuities", &self.Discontinuities).field("LineConfidenceAvg", &self.LineConfidenceAvg).field("BytesOutput", &self.BytesOutput).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VBICODECFILTERING_STATISTICS_COMMON_PIN {
+unsafe impl ::windows_core::Abi for VBICODECFILTERING_STATISTICS_COMMON_PIN {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VBICODECFILTERING_STATISTICS_COMMON_PIN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_COMMON_PIN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_COMMON_PIN>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VBICODECFILTERING_STATISTICS_COMMON_PIN {}
@@ -20307,12 +20307,12 @@ impl ::core::fmt::Debug for VBICODECFILTERING_STATISTICS_NABTS {
         f.debug_struct("VBICODECFILTERING_STATISTICS_NABTS").field("Common", &self.Common).field("FECBundleBadLines", &self.FECBundleBadLines).field("FECQueueOverflows", &self.FECQueueOverflows).field("FECCorrectedLines", &self.FECCorrectedLines).field("FECUncorrectableLines", &self.FECUncorrectableLines).field("BundlesProcessed", &self.BundlesProcessed).field("BundlesSent2IP", &self.BundlesSent2IP).field("FilteredLines", &self.FilteredLines).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VBICODECFILTERING_STATISTICS_NABTS {
+unsafe impl ::windows_core::Abi for VBICODECFILTERING_STATISTICS_NABTS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VBICODECFILTERING_STATISTICS_NABTS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_NABTS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_NABTS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VBICODECFILTERING_STATISTICS_NABTS {}
@@ -20337,12 +20337,12 @@ impl ::core::fmt::Debug for VBICODECFILTERING_STATISTICS_NABTS_PIN {
         f.debug_struct("VBICODECFILTERING_STATISTICS_NABTS_PIN").field("Common", &self.Common).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VBICODECFILTERING_STATISTICS_NABTS_PIN {
+unsafe impl ::windows_core::Abi for VBICODECFILTERING_STATISTICS_NABTS_PIN {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VBICODECFILTERING_STATISTICS_NABTS_PIN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_NABTS_PIN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_NABTS_PIN>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VBICODECFILTERING_STATISTICS_NABTS_PIN {}
@@ -20367,12 +20367,12 @@ impl ::core::fmt::Debug for VBICODECFILTERING_STATISTICS_TELETEXT {
         f.debug_struct("VBICODECFILTERING_STATISTICS_TELETEXT").field("Common", &self.Common).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VBICODECFILTERING_STATISTICS_TELETEXT {
+unsafe impl ::windows_core::Abi for VBICODECFILTERING_STATISTICS_TELETEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VBICODECFILTERING_STATISTICS_TELETEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_TELETEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_TELETEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VBICODECFILTERING_STATISTICS_TELETEXT {}
@@ -20397,12 +20397,12 @@ impl ::core::fmt::Debug for VBICODECFILTERING_STATISTICS_TELETEXT_PIN {
         f.debug_struct("VBICODECFILTERING_STATISTICS_TELETEXT_PIN").field("Common", &self.Common).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VBICODECFILTERING_STATISTICS_TELETEXT_PIN {
+unsafe impl ::windows_core::Abi for VBICODECFILTERING_STATISTICS_TELETEXT_PIN {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VBICODECFILTERING_STATISTICS_TELETEXT_PIN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_TELETEXT_PIN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VBICODECFILTERING_STATISTICS_TELETEXT_PIN>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VBICODECFILTERING_STATISTICS_TELETEXT_PIN {}
@@ -20434,12 +20434,12 @@ impl ::core::fmt::Debug for VRAM_SURFACE_INFO {
         f.debug_struct("VRAM_SURFACE_INFO").field("hSurface", &self.hSurface).field("VramPhysicalAddress", &self.VramPhysicalAddress).field("cbCaptured", &self.cbCaptured).field("dwWidth", &self.dwWidth).field("dwHeight", &self.dwHeight).field("dwLinearSize", &self.dwLinearSize).field("lPitch", &self.lPitch).field("ullReserved", &self.ullReserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VRAM_SURFACE_INFO {
+unsafe impl ::windows_core::Abi for VRAM_SURFACE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VRAM_SURFACE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VRAM_SURFACE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VRAM_SURFACE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VRAM_SURFACE_INFO {}
@@ -20460,12 +20460,12 @@ impl ::core::clone::Clone for VRAM_SURFACE_INFO_PROPERTY_S {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VRAM_SURFACE_INFO_PROPERTY_S {
+unsafe impl ::windows_core::Abi for VRAM_SURFACE_INFO_PROPERTY_S {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VRAM_SURFACE_INFO_PROPERTY_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VRAM_SURFACE_INFO_PROPERTY_S>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VRAM_SURFACE_INFO_PROPERTY_S>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VRAM_SURFACE_INFO_PROPERTY_S {}
@@ -20495,12 +20495,12 @@ impl ::core::fmt::Debug for WNF_KSCAMERA_STREAMSTATE_INFO {
         f.debug_struct("WNF_KSCAMERA_STREAMSTATE_INFO").field("ProcessId", &self.ProcessId).field("SessionId", &self.SessionId).field("StreamState", &self.StreamState).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WNF_KSCAMERA_STREAMSTATE_INFO {
+unsafe impl ::windows_core::Abi for WNF_KSCAMERA_STREAMSTATE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WNF_KSCAMERA_STREAMSTATE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNF_KSCAMERA_STREAMSTATE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNF_KSCAMERA_STREAMSTATE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WNF_KSCAMERA_STREAMSTATE_INFO {}
@@ -20526,12 +20526,12 @@ impl ::core::fmt::Debug for WST_BUFFER {
         f.debug_struct("WST_BUFFER").field("ScanlinesRequested", &self.ScanlinesRequested).field("WstLines", &self.WstLines).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WST_BUFFER {
+unsafe impl ::windows_core::Abi for WST_BUFFER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WST_BUFFER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WST_BUFFER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WST_BUFFER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WST_BUFFER {}
@@ -20557,12 +20557,12 @@ impl ::core::fmt::Debug for WST_BUFFER_LINE {
         f.debug_struct("WST_BUFFER_LINE").field("Confidence", &self.Confidence).field("Bytes", &self.Bytes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WST_BUFFER_LINE {
+unsafe impl ::windows_core::Abi for WST_BUFFER_LINE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WST_BUFFER_LINE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WST_BUFFER_LINE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WST_BUFFER_LINE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WST_BUFFER_LINE {}
@@ -20580,7 +20580,7 @@ pub const WST_TVTUNER_CHANGE_END_TUNE: i32 = 8192i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT {
-    pub ProcessingMode: ::windows::core::GUID,
+    pub ProcessingMode: ::windows_core::GUID,
     pub SamplesPerProcessingPacket: u32,
     pub ProcessingPacketDurationInHns: u32,
 }
@@ -20595,12 +20595,12 @@ impl ::core::fmt::Debug for _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT 
         f.debug_struct("_KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT").field("ProcessingMode", &self.ProcessingMode).field("SamplesPerProcessingPacket", &self.SamplesPerProcessingPacket).field("ProcessingPacketDurationInHns", &self.ProcessingPacketDurationInHns).finish()
     }
 }
-unsafe impl ::windows::core::Abi for _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT {
+unsafe impl ::windows_core::Abi for _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT {}
@@ -20630,7 +20630,7 @@ impl ::core::default::Default for _TunerDecoderLockType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for _TunerDecoderLockType {
+unsafe impl ::windows_core::Abi for _TunerDecoderLockType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for _TunerDecoderLockType {

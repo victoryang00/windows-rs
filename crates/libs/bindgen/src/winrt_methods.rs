@@ -26,7 +26,7 @@ pub fn gen(gen: &Gen, def: TypeDef, generics: &[Type], kind: InterfaceKind, meth
     let return_type_tokens = if let Some(return_type) = &signature.return_type {
         let tokens = gen.type_name(return_type);
         if gen.reader.type_is_winrt_array(return_type) {
-            quote! { ::windows::core::Array<#tokens> }
+            quote! { ::windows_core::Array<#tokens> }
         } else {
             quote! { #tokens }
         }
@@ -37,7 +37,7 @@ pub fn gen(gen: &Gen, def: TypeDef, generics: &[Type], kind: InterfaceKind, meth
     let return_arg = if let Some(return_type) = &signature.return_type {
         if gen.reader.type_is_winrt_array(return_type) {
             let return_type = gen.type_name(return_type);
-            quote! { ::windows::core::Array::<#return_type>::set_abi_len(result__.assume_init_mut()), result__.as_mut_ptr() as *mut _ as _ }
+            quote! { ::windows_core::Array::<#return_type>::set_abi_len(result__.assume_init_mut()), result__.as_mut_ptr() as *mut _ as _ }
         } else {
             quote! { result__.as_mut_ptr() }
         }
@@ -57,7 +57,7 @@ pub fn gen(gen: &Gen, def: TypeDef, generics: &[Type], kind: InterfaceKind, meth
             (
                 quote! {
                     let mut result__ = ::core::mem::MaybeUninit::<#return_type_tokens>::zeroed();
-                    (::windows::core::Interface::vtable(this).#vname)(::windows::core::Interface::as_raw(this), #args #composable_args #return_arg)
+                    (::windows_core::Interface::vtable(this).#vname)(::windows_core::Interface::as_raw(this), #args #composable_args #return_arg)
                         .and_then(|| result__.assume_init())
                 },
                 quote! {},
@@ -68,12 +68,12 @@ pub fn gen(gen: &Gen, def: TypeDef, generics: &[Type], kind: InterfaceKind, meth
             (
                 quote! {
                     let mut result__ = ::core::mem::MaybeUninit::<#abi_type_name>::zeroed();
-                        (::windows::core::Interface::vtable(this).#vname)(::windows::core::Interface::as_raw(this), #args #composable_args #return_arg)
+                        (::windows_core::Interface::vtable(this).#vname)(::windows_core::Interface::as_raw(this), #args #composable_args #return_arg)
                             .from_abi::<#return_type_tokens>(result__ )
                 },
                 quote! {
                     let mut result__ = ::core::mem::MaybeUninit::<#abi_type_name>::zeroed();
-                        (::windows::core::Interface::vtable(this).#vname)(::windows::core::Interface::as_raw(this), #args ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows::core::IInspectable>::None as *mut _ as _, #return_arg)
+                        (::windows_core::Interface::vtable(this).#vname)(::windows_core::Interface::as_raw(this), #args ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, #return_arg)
                             .from_abi::<#return_type_tokens>(result__ )
                 },
             )
@@ -81,7 +81,7 @@ pub fn gen(gen: &Gen, def: TypeDef, generics: &[Type], kind: InterfaceKind, meth
     } else {
         (
             quote! {
-                (::windows::core::Interface::vtable(this).#vname)(::windows::core::Interface::as_raw(this), #args #composable_args).ok()
+                (::windows_core::Interface::vtable(this).#vname)(::windows_core::Interface::as_raw(this), #args #composable_args).ok()
             },
             quote! {},
         )
@@ -91,7 +91,7 @@ pub fn gen(gen: &Gen, def: TypeDef, generics: &[Type], kind: InterfaceKind, meth
         InterfaceKind::Default => quote! {
             #doc
             #features
-            pub fn #name<#constraints>(&self, #params) -> ::windows::core::Result<#return_type_tokens> {
+            pub fn #name<#constraints>(&self, #params) -> ::windows_core::Result<#return_type_tokens> {
                 let this = self;
                 unsafe {
                     #vcall
@@ -102,8 +102,8 @@ pub fn gen(gen: &Gen, def: TypeDef, generics: &[Type], kind: InterfaceKind, meth
             quote! {
                 #doc
                 #features
-                pub fn #name<#constraints>(&self, #params) -> ::windows::core::Result<#return_type_tokens> {
-                    let this = &::windows::core::Interface::cast::<#interface_name>(self)?;
+                pub fn #name<#constraints>(&self, #params) -> ::windows_core::Result<#return_type_tokens> {
+                    let this = &::windows_core::Interface::cast::<#interface_name>(self)?;
                     unsafe {
                         #vcall
                     }
@@ -114,7 +114,7 @@ pub fn gen(gen: &Gen, def: TypeDef, generics: &[Type], kind: InterfaceKind, meth
             quote! {
                 #doc
                 #features
-                pub fn #name<#constraints>(#params) -> ::windows::core::Result<#return_type_tokens> {
+                pub fn #name<#constraints>(#params) -> ::windows_core::Result<#return_type_tokens> {
                     Self::#interface_name(|this| unsafe { #vcall })
                 }
             }
@@ -123,14 +123,14 @@ pub fn gen(gen: &Gen, def: TypeDef, generics: &[Type], kind: InterfaceKind, meth
             quote! {
                 #doc
                 #features
-                pub fn #name<#constraints>(#params) -> ::windows::core::Result<#return_type_tokens> {
+                pub fn #name<#constraints>(#params) -> ::windows_core::Result<#return_type_tokens> {
                     Self::#interface_name(|this| unsafe { #vcall_none })
                 }
                 #doc
                 #features
-                pub fn #name_compose<#constraints T: ::windows::core::Compose>(#params  compose: T) -> ::windows::core::Result<#return_type_tokens> {
+                pub fn #name_compose<#constraints T: ::windows_core::Compose>(#params  compose: T) -> ::windows_core::Result<#return_type_tokens> {
                     Self::#interface_name(|this| unsafe {
-                        let (derived__, base__) = ::windows::core::Compose::compose(compose);
+                        let (derived__, base__) = ::windows_core::Compose::compose(compose);
                         #vcall
                     })
                 }
@@ -159,7 +159,7 @@ fn gen_winrt_params(gen: &Gen, params: &[SignatureParam]) -> TokenStream {
         } else if gen.reader.type_is_winrt_array(&param.ty) {
             result.combine(&quote! { #name: &mut [#default_type], });
         } else if gen.reader.type_is_winrt_array_ref(&param.ty) {
-            result.combine(&quote! { #name: &mut ::windows::core::Array<#kind>, });
+            result.combine(&quote! { #name: &mut ::windows_core::Array<#kind>, });
         } else {
             result.combine(&quote! { #name: &mut #default_type, });
         }
@@ -213,7 +213,7 @@ pub fn gen_upcall(gen: &Gen, sig: &Signature, inner: TokenStream) -> TokenStream
                         // use `core::ptr::write` since `result` could be uninitialized
                         ::core::ptr::write(result__, ok_data__);
                         ::core::ptr::write(result_size__, ok_data_len__);
-                        ::windows::core::HRESULT(0)
+                        ::windows_core::HRESULT(0)
                     }
                     ::core::result::Result::Err(err) => err.into()
                 }
@@ -226,7 +226,7 @@ pub fn gen_upcall(gen: &Gen, sig: &Signature, inner: TokenStream) -> TokenStream
                         // use `core::ptr::write` since `result` could be uninitialized
                         ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                         ::core::mem::forget(ok__);
-                        ::windows::core::HRESULT(0)
+                        ::windows_core::HRESULT(0)
                     }
                     ::core::result::Result::Err(err) => err.into()
                 }
@@ -255,7 +255,7 @@ fn gen_winrt_invoke_arg(gen: &Gen, param: &SignatureParam) -> TokenStream {
     } else if gen.reader.type_is_winrt_array(&param.ty) {
         quote! { ::core::slice::from_raw_parts_mut(::core::mem::transmute_copy(&#name), #abi_size_name as _) }
     } else if gen.reader.type_is_winrt_array_ref(&param.ty) {
-        quote! { ::windows::core::ArrayProxy::from_raw_parts(::core::mem::transmute_copy(&#name), #abi_size_name).as_array() }
+        quote! { ::windows_core::ArrayProxy::from_raw_parts(::core::mem::transmute_copy(&#name), #abi_size_name).as_array() }
     } else {
         quote! { ::core::mem::transmute_copy(&#name) }
     }

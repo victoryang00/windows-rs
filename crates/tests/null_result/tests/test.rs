@@ -1,4 +1,4 @@
-use windows::core::*;
+use windows_core::*;
 use windows::Win32::Foundation::S_OK;
 use windows::UI::Xaml::Interop::*;
 use windows::UI::Xaml::Markup::*;

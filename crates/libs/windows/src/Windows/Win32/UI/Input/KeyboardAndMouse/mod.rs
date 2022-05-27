@@ -29,7 +29,7 @@ impl ::core::default::Default for ACTIVATE_KEYBOARD_LAYOUT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ACTIVATE_KEYBOARD_LAYOUT_FLAGS {
+unsafe impl ::windows_core::Abi for ACTIVATE_KEYBOARD_LAYOUT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ACTIVATE_KEYBOARD_LAYOUT_FLAGS {
@@ -44,7 +44,7 @@ pub const AX_KBD_DESKTOP_TYPE: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_UI_TextServices\"`*"]
 #[cfg(feature = "Win32_UI_TextServices")]
 #[inline]
-pub unsafe fn ActivateKeyboardLayout<'a, Param0: ::windows::core::IntoParam<'a, super::super::TextServices::HKL>>(hkl: Param0, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> ::windows::core::Result<super::super::TextServices::HKL> {
+pub unsafe fn ActivateKeyboardLayout<'a, Param0: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(hkl: Param0, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> ::windows_core::Result<super::super::TextServices::HKL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -52,7 +52,7 @@ pub unsafe fn ActivateKeyboardLayout<'a, Param0: ::windows::core::IntoParam<'a, 
             fn ActivateKeyboardLayout(hkl: super::super::TextServices::HKL, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> super::super::TextServices::HKL;
         }
         let result__ = ActivateKeyboardLayout(hkl.into_param().abi(), ::core::mem::transmute(flags));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -62,7 +62,7 @@ pub const BREVE: u32 = 774u32;
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BlockInput<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::BOOL>>(fblockit: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn BlockInput<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(fblockit: Param0) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -100,12 +100,12 @@ impl ::core::fmt::Debug for DEADKEY {
         f.debug_struct("DEADKEY").field("dwBoth", &self.dwBoth).field("wchComposed", &self.wchComposed).field("uFlags", &self.uFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DEADKEY {
+unsafe impl ::windows_core::Abi for DEADKEY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DEADKEY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEADKEY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEADKEY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DEADKEY {}
@@ -133,7 +133,7 @@ pub const DOUBLE_ACUTE: u32 = 779u32;
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DragDetect<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::super::Foundation::POINT>>(hwnd: Param0, pt: Param1) -> super::super::super::Foundation::BOOL {
+pub unsafe fn DragDetect<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::POINT>>(hwnd: Param0, pt: Param1) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -150,7 +150,7 @@ pub const EXTENDED_BIT: u32 = 16777216u32;
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnableWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::super::Foundation::BOOL>>(hwnd: Param0, benable: Param1) -> super::super::super::Foundation::BOOL {
+pub unsafe fn EnableWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(hwnd: Param0, benable: Param1) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -189,7 +189,7 @@ impl ::core::default::Default for GET_MOUSE_MOVE_POINTS_EX_RESOLUTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GET_MOUSE_MOVE_POINTS_EX_RESOLUTION {
+unsafe impl ::windows_core::Abi for GET_MOUSE_MOVE_POINTS_EX_RESOLUTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GET_MOUSE_MOVE_POINTS_EX_RESOLUTION {
@@ -295,9 +295,9 @@ pub unsafe fn GetKeyNameTextA(lparam: i32, lpstring: &mut [u8]) -> i32 {
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetKeyNameTextA(lparam: i32, lpstring: ::windows::core::PSTR, cchsize: i32) -> i32;
+            fn GetKeyNameTextA(lparam: i32, lpstring: ::windows_core::PSTR, cchsize: i32) -> i32;
         }
-        ::core::mem::transmute(GetKeyNameTextA(::core::mem::transmute(lparam), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _))
+        ::core::mem::transmute(GetKeyNameTextA(::core::mem::transmute(lparam), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -309,9 +309,9 @@ pub unsafe fn GetKeyNameTextW(lparam: i32, lpstring: &mut [u16]) -> i32 {
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetKeyNameTextW(lparam: i32, lpstring: ::windows::core::PWSTR, cchsize: i32) -> i32;
+            fn GetKeyNameTextW(lparam: i32, lpstring: ::windows_core::PWSTR, cchsize: i32) -> i32;
         }
-        ::core::mem::transmute(GetKeyNameTextW(::core::mem::transmute(lparam), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _))
+        ::core::mem::transmute(GetKeyNameTextW(::core::mem::transmute(lparam), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -355,7 +355,7 @@ pub unsafe fn GetKeyboardLayoutList(lplist: &mut [super::super::TextServices::HK
         extern "system" {
             fn GetKeyboardLayoutList(nbuff: i32, lplist: *mut super::super::TextServices::HKL) -> i32;
         }
-        ::core::mem::transmute(GetKeyboardLayoutList(lplist.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lplist))))
+        ::core::mem::transmute(GetKeyboardLayoutList(lplist.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lplist))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -368,9 +368,9 @@ pub unsafe fn GetKeyboardLayoutNameA(pwszklid: &mut [u8; 9]) -> super::super::su
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetKeyboardLayoutNameA(pwszklid: ::windows::core::PSTR) -> super::super::super::Foundation::BOOL;
+            fn GetKeyboardLayoutNameA(pwszklid: ::windows_core::PSTR) -> super::super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GetKeyboardLayoutNameA(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pwszklid))))
+        ::core::mem::transmute(GetKeyboardLayoutNameA(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pwszklid))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -383,9 +383,9 @@ pub unsafe fn GetKeyboardLayoutNameW(pwszklid: &mut [u16; 9]) -> super::super::s
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetKeyboardLayoutNameW(pwszklid: ::windows::core::PWSTR) -> super::super::super::Foundation::BOOL;
+            fn GetKeyboardLayoutNameW(pwszklid: ::windows_core::PWSTR) -> super::super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GetKeyboardLayoutNameW(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pwszklid))))
+        ::core::mem::transmute(GetKeyboardLayoutNameW(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pwszklid))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -400,7 +400,7 @@ pub unsafe fn GetKeyboardState(lpkeystate: &mut [u8; 256]) -> super::super::supe
         extern "system" {
             fn GetKeyboardState(lpkeystate: *mut u8) -> super::super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GetKeyboardState(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpkeystate))))
+        ::core::mem::transmute(GetKeyboardState(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpkeystate))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -443,7 +443,7 @@ pub unsafe fn GetMouseMovePointsEx(cbsize: u32, lppt: *const MOUSEMOVEPOINT, lpp
         extern "system" {
             fn GetMouseMovePointsEx(cbsize: u32, lppt: *const MOUSEMOVEPOINT, lpptbuf: *mut MOUSEMOVEPOINT, nbufpoints: i32, resolution: GET_MOUSE_MOVE_POINTS_EX_RESOLUTION) -> i32;
         }
-        ::core::mem::transmute(GetMouseMovePointsEx(::core::mem::transmute(cbsize), ::core::mem::transmute(lppt), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpptbuf)), lpptbuf.len() as _, ::core::mem::transmute(resolution)))
+        ::core::mem::transmute(GetMouseMovePointsEx(::core::mem::transmute(cbsize), ::core::mem::transmute(lppt), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpptbuf)), lpptbuf.len() as _, ::core::mem::transmute(resolution)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -468,12 +468,12 @@ impl ::core::fmt::Debug for HARDWAREINPUT {
         f.debug_struct("HARDWAREINPUT").field("uMsg", &self.uMsg).field("wParamL", &self.wParamL).field("wParamH", &self.wParamH).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HARDWAREINPUT {
+unsafe impl ::windows_core::Abi for HARDWAREINPUT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HARDWAREINPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HARDWAREINPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HARDWAREINPUT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HARDWAREINPUT {}
@@ -509,7 +509,7 @@ impl ::core::default::Default for HOT_KEY_MODIFIERS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HOT_KEY_MODIFIERS {
+unsafe impl ::windows_core::Abi for HOT_KEY_MODIFIERS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HOT_KEY_MODIFIERS {
@@ -557,12 +557,12 @@ impl ::core::clone::Clone for INPUT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for INPUT {
+unsafe impl ::windows_core::Abi for INPUT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INPUT {}
@@ -584,12 +584,12 @@ impl ::core::clone::Clone for INPUT_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for INPUT_0 {
+unsafe impl ::windows_core::Abi for INPUT_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INPUT_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INPUT_0 {}
@@ -619,7 +619,7 @@ impl ::core::default::Default for INPUT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for INPUT_TYPE {
+unsafe impl ::windows_core::Abi for INPUT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for INPUT_TYPE {
@@ -630,7 +630,7 @@ impl ::core::fmt::Debug for INPUT_TYPE {
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsWindowEnabled<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn IsWindowEnabled<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -720,12 +720,12 @@ impl ::core::fmt::Debug for KBDTABLE_DESC {
         f.debug_struct("KBDTABLE_DESC").field("wszDllName", &self.wszDllName).field("dwType", &self.dwType).field("dwSubType", &self.dwSubType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KBDTABLE_DESC {
+unsafe impl ::windows_core::Abi for KBDTABLE_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KBDTABLE_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KBDTABLE_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KBDTABLE_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KBDTABLE_DESC {}
@@ -751,12 +751,12 @@ impl ::core::fmt::Debug for KBDTABLE_MULTI {
         f.debug_struct("KBDTABLE_MULTI").field("nTables", &self.nTables).field("aKbdTables", &self.aKbdTables).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KBDTABLE_MULTI {
+unsafe impl ::windows_core::Abi for KBDTABLE_MULTI {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KBDTABLE_MULTI {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KBDTABLE_MULTI>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KBDTABLE_MULTI>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KBDTABLE_MULTI {}
@@ -787,12 +787,12 @@ impl ::core::fmt::Debug for KBD_TYPE_INFO {
         f.debug_struct("KBD_TYPE_INFO").field("dwVersion", &self.dwVersion).field("dwType", &self.dwType).field("dwSubType", &self.dwSubType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KBD_TYPE_INFO {
+unsafe impl ::windows_core::Abi for KBD_TYPE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KBD_TYPE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KBD_TYPE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KBD_TYPE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KBD_TYPE_INFO {}
@@ -823,12 +823,12 @@ impl ::core::fmt::Debug for KEYBDINPUT {
         f.debug_struct("KEYBDINPUT").field("wVk", &self.wVk).field("wScan", &self.wScan).field("dwFlags", &self.dwFlags).field("time", &self.time).field("dwExtraInfo", &self.dwExtraInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KEYBDINPUT {
+unsafe impl ::windows_core::Abi for KEYBDINPUT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KEYBDINPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KEYBDINPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KEYBDINPUT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KEYBDINPUT {}
@@ -860,7 +860,7 @@ impl ::core::default::Default for KEYBD_EVENT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KEYBD_EVENT_FLAGS {
+unsafe impl ::windows_core::Abi for KEYBD_EVENT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KEYBD_EVENT_FLAGS {
@@ -929,12 +929,12 @@ impl ::core::fmt::Debug for LASTINPUTINFO {
         f.debug_struct("LASTINPUTINFO").field("cbSize", &self.cbSize).field("dwTime", &self.dwTime).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LASTINPUTINFO {
+unsafe impl ::windows_core::Abi for LASTINPUTINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LASTINPUTINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LASTINPUTINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LASTINPUTINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LASTINPUTINFO {}
@@ -961,12 +961,12 @@ impl ::core::fmt::Debug for LIGATURE1 {
         f.debug_struct("LIGATURE1").field("VirtualKey", &self.VirtualKey).field("ModificationNumber", &self.ModificationNumber).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LIGATURE1 {
+unsafe impl ::windows_core::Abi for LIGATURE1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LIGATURE1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIGATURE1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIGATURE1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LIGATURE1 {}
@@ -993,12 +993,12 @@ impl ::core::fmt::Debug for LIGATURE2 {
         f.debug_struct("LIGATURE2").field("VirtualKey", &self.VirtualKey).field("ModificationNumber", &self.ModificationNumber).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LIGATURE2 {
+unsafe impl ::windows_core::Abi for LIGATURE2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LIGATURE2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIGATURE2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIGATURE2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LIGATURE2 {}
@@ -1025,12 +1025,12 @@ impl ::core::fmt::Debug for LIGATURE3 {
         f.debug_struct("LIGATURE3").field("VirtualKey", &self.VirtualKey).field("ModificationNumber", &self.ModificationNumber).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LIGATURE3 {
+unsafe impl ::windows_core::Abi for LIGATURE3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LIGATURE3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIGATURE3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIGATURE3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LIGATURE3 {}
@@ -1057,12 +1057,12 @@ impl ::core::fmt::Debug for LIGATURE4 {
         f.debug_struct("LIGATURE4").field("VirtualKey", &self.VirtualKey).field("ModificationNumber", &self.ModificationNumber).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LIGATURE4 {
+unsafe impl ::windows_core::Abi for LIGATURE4 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LIGATURE4 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIGATURE4>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIGATURE4>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LIGATURE4 {}
@@ -1089,12 +1089,12 @@ impl ::core::fmt::Debug for LIGATURE5 {
         f.debug_struct("LIGATURE5").field("VirtualKey", &self.VirtualKey).field("ModificationNumber", &self.ModificationNumber).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LIGATURE5 {
+unsafe impl ::windows_core::Abi for LIGATURE5 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LIGATURE5 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIGATURE5>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIGATURE5>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LIGATURE5 {}
@@ -1106,15 +1106,15 @@ impl ::core::default::Default for LIGATURE5 {
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_UI_TextServices\"`*"]
 #[cfg(feature = "Win32_UI_TextServices")]
 #[inline]
-pub unsafe fn LoadKeyboardLayoutA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pwszklid: Param0, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> ::windows::core::Result<super::super::TextServices::HKL> {
+pub unsafe fn LoadKeyboardLayoutA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pwszklid: Param0, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> ::windows_core::Result<super::super::TextServices::HKL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadKeyboardLayoutA(pwszklid: ::windows::core::PCSTR, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> super::super::TextServices::HKL;
+            fn LoadKeyboardLayoutA(pwszklid: ::windows_core::PCSTR, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> super::super::TextServices::HKL;
         }
         let result__ = LoadKeyboardLayoutA(pwszklid.into_param().abi(), ::core::mem::transmute(flags));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1122,15 +1122,15 @@ pub unsafe fn LoadKeyboardLayoutA<'a, Param0: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_UI_TextServices\"`*"]
 #[cfg(feature = "Win32_UI_TextServices")]
 #[inline]
-pub unsafe fn LoadKeyboardLayoutW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszklid: Param0, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> ::windows::core::Result<super::super::TextServices::HKL> {
+pub unsafe fn LoadKeyboardLayoutW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszklid: Param0, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> ::windows_core::Result<super::super::TextServices::HKL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadKeyboardLayoutW(pwszklid: ::windows::core::PCWSTR, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> super::super::TextServices::HKL;
+            fn LoadKeyboardLayoutW(pwszklid: ::windows_core::PCWSTR, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> super::super::TextServices::HKL;
         }
         let result__ = LoadKeyboardLayoutW(pwszklid.into_param().abi(), ::core::mem::transmute(flags));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1175,12 +1175,12 @@ impl ::core::fmt::Debug for MODIFIERS {
         f.debug_struct("MODIFIERS").field("pVkToBit", &self.pVkToBit).field("wMaxModBits", &self.wMaxModBits).field("ModNumber", &self.ModNumber).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MODIFIERS {
+unsafe impl ::windows_core::Abi for MODIFIERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MODIFIERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MODIFIERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MODIFIERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MODIFIERS {}
@@ -1210,12 +1210,12 @@ impl ::core::fmt::Debug for MOUSEINPUT {
         f.debug_struct("MOUSEINPUT").field("dx", &self.dx).field("dy", &self.dy).field("mouseData", &self.mouseData).field("dwFlags", &self.dwFlags).field("time", &self.time).field("dwExtraInfo", &self.dwExtraInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MOUSEINPUT {
+unsafe impl ::windows_core::Abi for MOUSEINPUT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MOUSEINPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MOUSEINPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MOUSEINPUT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MOUSEINPUT {}
@@ -1243,12 +1243,12 @@ impl ::core::fmt::Debug for MOUSEMOVEPOINT {
         f.debug_struct("MOUSEMOVEPOINT").field("x", &self.x).field("y", &self.y).field("time", &self.time).field("dwExtraInfo", &self.dwExtraInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MOUSEMOVEPOINT {
+unsafe impl ::windows_core::Abi for MOUSEMOVEPOINT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MOUSEMOVEPOINT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MOUSEMOVEPOINT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MOUSEMOVEPOINT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MOUSEMOVEPOINT {}
@@ -1300,7 +1300,7 @@ impl ::core::default::Default for MOUSE_EVENT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MOUSE_EVENT_FLAGS {
+unsafe impl ::windows_core::Abi for MOUSE_EVENT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MOUSE_EVENT_FLAGS {
@@ -1353,7 +1353,7 @@ pub unsafe fn MapVirtualKeyA(ucode: u32, umaptype: u32) -> u32 {
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_UI_TextServices\"`*"]
 #[cfg(feature = "Win32_UI_TextServices")]
 #[inline]
-pub unsafe fn MapVirtualKeyExA<'a, Param2: ::windows::core::IntoParam<'a, super::super::TextServices::HKL>>(ucode: u32, umaptype: u32, dwhkl: Param2) -> u32 {
+pub unsafe fn MapVirtualKeyExA<'a, Param2: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(ucode: u32, umaptype: u32, dwhkl: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1368,7 +1368,7 @@ pub unsafe fn MapVirtualKeyExA<'a, Param2: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_UI_TextServices\"`*"]
 #[cfg(feature = "Win32_UI_TextServices")]
 #[inline]
-pub unsafe fn MapVirtualKeyExW<'a, Param2: ::windows::core::IntoParam<'a, super::super::TextServices::HKL>>(ucode: u32, umaptype: u32, dwhkl: Param2) -> u32 {
+pub unsafe fn MapVirtualKeyExW<'a, Param2: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(ucode: u32, umaptype: u32, dwhkl: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1453,7 +1453,7 @@ pub const RING: u32 = 778u32;
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegisterHotKey<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0, id: i32, fsmodifiers: HOT_KEY_MODIFIERS, vk: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn RegisterHotKey<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0, id: i32, fsmodifiers: HOT_KEY_MODIFIERS, vk: u32) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1511,7 +1511,7 @@ pub unsafe fn SendInput(pinputs: &[INPUT], cbsize: i32) -> u32 {
         extern "system" {
             fn SendInput(cinputs: u32, pinputs: *const INPUT, cbsize: i32) -> u32;
         }
-        ::core::mem::transmute(SendInput(pinputs.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pinputs)), ::core::mem::transmute(cbsize)))
+        ::core::mem::transmute(SendInput(pinputs.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pinputs)), ::core::mem::transmute(cbsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1519,7 +1519,7 @@ pub unsafe fn SendInput(pinputs: &[INPUT], cbsize: i32) -> u32 {
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetActiveWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::HWND {
+pub unsafe fn SetActiveWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1534,7 +1534,7 @@ pub unsafe fn SetActiveWindow<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCapture<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::HWND {
+pub unsafe fn SetCapture<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1564,7 +1564,7 @@ pub unsafe fn SetDoubleClickTime(param0: u32) -> super::super::super::Foundation
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetFocus<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::HWND {
+pub unsafe fn SetFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1586,7 +1586,7 @@ pub unsafe fn SetKeyboardState(lpkeystate: &[u8; 256]) -> super::super::super::F
         extern "system" {
             fn SetKeyboardState(lpkeystate: *const u8) -> super::super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetKeyboardState(::core::mem::transmute(::windows::core::as_ptr_or_null(lpkeystate))))
+        ::core::mem::transmute(SetKeyboardState(::core::mem::transmute(::windows_core::as_ptr_or_null(lpkeystate))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1594,7 +1594,7 @@ pub unsafe fn SetKeyboardState(lpkeystate: &[u8; 256]) -> super::super::super::F
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SwapMouseButton<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::BOOL>>(fswap: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SwapMouseButton<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(fswap: Param0) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1638,13 +1638,13 @@ impl ::core::fmt::Debug for TRACKMOUSEEVENT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TRACKMOUSEEVENT {
+unsafe impl ::windows_core::Abi for TRACKMOUSEEVENT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TRACKMOUSEEVENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACKMOUSEEVENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACKMOUSEEVENT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1680,7 +1680,7 @@ impl ::core::default::Default for TRACKMOUSEEVENT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TRACKMOUSEEVENT_FLAGS {
+unsafe impl ::windows_core::Abi for TRACKMOUSEEVENT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TRACKMOUSEEVENT_FLAGS {
@@ -1725,7 +1725,7 @@ pub unsafe fn ToAscii(uvirtkey: u32, uscancode: u32, lpkeystate: &[u8; 256], lpc
         extern "system" {
             fn ToAscii(uvirtkey: u32, uscancode: u32, lpkeystate: *const u8, lpchar: *mut u16, uflags: u32) -> i32;
         }
-        ::core::mem::transmute(ToAscii(::core::mem::transmute(uvirtkey), ::core::mem::transmute(uscancode), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpkeystate)), ::core::mem::transmute(lpchar), ::core::mem::transmute(uflags)))
+        ::core::mem::transmute(ToAscii(::core::mem::transmute(uvirtkey), ::core::mem::transmute(uscancode), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpkeystate)), ::core::mem::transmute(lpchar), ::core::mem::transmute(uflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1733,14 +1733,14 @@ pub unsafe fn ToAscii(uvirtkey: u32, uscancode: u32, lpkeystate: &[u8; 256], lpc
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_UI_TextServices\"`*"]
 #[cfg(feature = "Win32_UI_TextServices")]
 #[inline]
-pub unsafe fn ToAsciiEx<'a, Param5: ::windows::core::IntoParam<'a, super::super::TextServices::HKL>>(uvirtkey: u32, uscancode: u32, lpkeystate: &[u8; 256], lpchar: *mut u16, uflags: u32, dwhkl: Param5) -> i32 {
+pub unsafe fn ToAsciiEx<'a, Param5: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(uvirtkey: u32, uscancode: u32, lpkeystate: &[u8; 256], lpchar: *mut u16, uflags: u32, dwhkl: Param5) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn ToAsciiEx(uvirtkey: u32, uscancode: u32, lpkeystate: *const u8, lpchar: *mut u16, uflags: u32, dwhkl: super::super::TextServices::HKL) -> i32;
         }
-        ::core::mem::transmute(ToAsciiEx(::core::mem::transmute(uvirtkey), ::core::mem::transmute(uscancode), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpkeystate)), ::core::mem::transmute(lpchar), ::core::mem::transmute(uflags), dwhkl.into_param().abi()))
+        ::core::mem::transmute(ToAsciiEx(::core::mem::transmute(uvirtkey), ::core::mem::transmute(uscancode), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpkeystate)), ::core::mem::transmute(lpchar), ::core::mem::transmute(uflags), dwhkl.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1752,9 +1752,9 @@ pub unsafe fn ToUnicode(wvirtkey: u32, wscancode: u32, lpkeystate: &[u8; 256], p
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ToUnicode(wvirtkey: u32, wscancode: u32, lpkeystate: *const u8, pwszbuff: ::windows::core::PWSTR, cchbuff: i32, wflags: u32) -> i32;
+            fn ToUnicode(wvirtkey: u32, wscancode: u32, lpkeystate: *const u8, pwszbuff: ::windows_core::PWSTR, cchbuff: i32, wflags: u32) -> i32;
         }
-        ::core::mem::transmute(ToUnicode(::core::mem::transmute(wvirtkey), ::core::mem::transmute(wscancode), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpkeystate)), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pwszbuff)), pwszbuff.len() as _, ::core::mem::transmute(wflags)))
+        ::core::mem::transmute(ToUnicode(::core::mem::transmute(wvirtkey), ::core::mem::transmute(wscancode), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpkeystate)), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pwszbuff)), pwszbuff.len() as _, ::core::mem::transmute(wflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1762,14 +1762,14 @@ pub unsafe fn ToUnicode(wvirtkey: u32, wscancode: u32, lpkeystate: &[u8; 256], p
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_UI_TextServices\"`*"]
 #[cfg(feature = "Win32_UI_TextServices")]
 #[inline]
-pub unsafe fn ToUnicodeEx<'a, Param6: ::windows::core::IntoParam<'a, super::super::TextServices::HKL>>(wvirtkey: u32, wscancode: u32, lpkeystate: &[u8; 256], pwszbuff: &mut [u16], wflags: u32, dwhkl: Param6) -> i32 {
+pub unsafe fn ToUnicodeEx<'a, Param6: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(wvirtkey: u32, wscancode: u32, lpkeystate: &[u8; 256], pwszbuff: &mut [u16], wflags: u32, dwhkl: Param6) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ToUnicodeEx(wvirtkey: u32, wscancode: u32, lpkeystate: *const u8, pwszbuff: ::windows::core::PWSTR, cchbuff: i32, wflags: u32, dwhkl: super::super::TextServices::HKL) -> i32;
+            fn ToUnicodeEx(wvirtkey: u32, wscancode: u32, lpkeystate: *const u8, pwszbuff: ::windows_core::PWSTR, cchbuff: i32, wflags: u32, dwhkl: super::super::TextServices::HKL) -> i32;
         }
-        ::core::mem::transmute(ToUnicodeEx(::core::mem::transmute(wvirtkey), ::core::mem::transmute(wscancode), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpkeystate)), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pwszbuff)), pwszbuff.len() as _, ::core::mem::transmute(wflags), dwhkl.into_param().abi()))
+        ::core::mem::transmute(ToUnicodeEx(::core::mem::transmute(wvirtkey), ::core::mem::transmute(wscancode), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpkeystate)), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pwszbuff)), pwszbuff.len() as _, ::core::mem::transmute(wflags), dwhkl.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1794,7 +1794,7 @@ pub const UMLAUT: u32 = 776u32;
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_Foundation\"`, `\"Win32_UI_TextServices\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_TextServices"))]
 #[inline]
-pub unsafe fn UnloadKeyboardLayout<'a, Param0: ::windows::core::IntoParam<'a, super::super::TextServices::HKL>>(hkl: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn UnloadKeyboardLayout<'a, Param0: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(hkl: Param0) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1809,7 +1809,7 @@ pub unsafe fn UnloadKeyboardLayout<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnregisterHotKey<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0, id: i32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn UnregisterHotKey<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0, id: i32) -> super::super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2296,7 +2296,7 @@ impl ::core::default::Default for VIRTUAL_KEY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VIRTUAL_KEY {
+unsafe impl ::windows_core::Abi for VIRTUAL_KEY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VIRTUAL_KEY {
@@ -2353,12 +2353,12 @@ impl ::core::fmt::Debug for VK_TO_BIT {
         f.debug_struct("VK_TO_BIT").field("Vk", &self.Vk).field("ModBits", &self.ModBits).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VK_TO_BIT {
+unsafe impl ::windows_core::Abi for VK_TO_BIT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VK_TO_BIT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_BIT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_BIT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VK_TO_BIT {}
@@ -2385,12 +2385,12 @@ impl ::core::fmt::Debug for VK_TO_WCHARS1 {
         f.debug_struct("VK_TO_WCHARS1").field("VirtualKey", &self.VirtualKey).field("Attributes", &self.Attributes).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VK_TO_WCHARS1 {
+unsafe impl ::windows_core::Abi for VK_TO_WCHARS1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VK_TO_WCHARS1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VK_TO_WCHARS1 {}
@@ -2417,12 +2417,12 @@ impl ::core::fmt::Debug for VK_TO_WCHARS10 {
         f.debug_struct("VK_TO_WCHARS10").field("VirtualKey", &self.VirtualKey).field("Attributes", &self.Attributes).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VK_TO_WCHARS10 {
+unsafe impl ::windows_core::Abi for VK_TO_WCHARS10 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VK_TO_WCHARS10 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS10>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS10>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VK_TO_WCHARS10 {}
@@ -2449,12 +2449,12 @@ impl ::core::fmt::Debug for VK_TO_WCHARS2 {
         f.debug_struct("VK_TO_WCHARS2").field("VirtualKey", &self.VirtualKey).field("Attributes", &self.Attributes).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VK_TO_WCHARS2 {
+unsafe impl ::windows_core::Abi for VK_TO_WCHARS2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VK_TO_WCHARS2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VK_TO_WCHARS2 {}
@@ -2481,12 +2481,12 @@ impl ::core::fmt::Debug for VK_TO_WCHARS3 {
         f.debug_struct("VK_TO_WCHARS3").field("VirtualKey", &self.VirtualKey).field("Attributes", &self.Attributes).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VK_TO_WCHARS3 {
+unsafe impl ::windows_core::Abi for VK_TO_WCHARS3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VK_TO_WCHARS3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VK_TO_WCHARS3 {}
@@ -2513,12 +2513,12 @@ impl ::core::fmt::Debug for VK_TO_WCHARS4 {
         f.debug_struct("VK_TO_WCHARS4").field("VirtualKey", &self.VirtualKey).field("Attributes", &self.Attributes).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VK_TO_WCHARS4 {
+unsafe impl ::windows_core::Abi for VK_TO_WCHARS4 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VK_TO_WCHARS4 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS4>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS4>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VK_TO_WCHARS4 {}
@@ -2545,12 +2545,12 @@ impl ::core::fmt::Debug for VK_TO_WCHARS5 {
         f.debug_struct("VK_TO_WCHARS5").field("VirtualKey", &self.VirtualKey).field("Attributes", &self.Attributes).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VK_TO_WCHARS5 {
+unsafe impl ::windows_core::Abi for VK_TO_WCHARS5 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VK_TO_WCHARS5 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS5>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS5>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VK_TO_WCHARS5 {}
@@ -2577,12 +2577,12 @@ impl ::core::fmt::Debug for VK_TO_WCHARS6 {
         f.debug_struct("VK_TO_WCHARS6").field("VirtualKey", &self.VirtualKey).field("Attributes", &self.Attributes).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VK_TO_WCHARS6 {
+unsafe impl ::windows_core::Abi for VK_TO_WCHARS6 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VK_TO_WCHARS6 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS6>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS6>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VK_TO_WCHARS6 {}
@@ -2609,12 +2609,12 @@ impl ::core::fmt::Debug for VK_TO_WCHARS7 {
         f.debug_struct("VK_TO_WCHARS7").field("VirtualKey", &self.VirtualKey).field("Attributes", &self.Attributes).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VK_TO_WCHARS7 {
+unsafe impl ::windows_core::Abi for VK_TO_WCHARS7 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VK_TO_WCHARS7 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS7>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS7>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VK_TO_WCHARS7 {}
@@ -2641,12 +2641,12 @@ impl ::core::fmt::Debug for VK_TO_WCHARS8 {
         f.debug_struct("VK_TO_WCHARS8").field("VirtualKey", &self.VirtualKey).field("Attributes", &self.Attributes).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VK_TO_WCHARS8 {
+unsafe impl ::windows_core::Abi for VK_TO_WCHARS8 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VK_TO_WCHARS8 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS8>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS8>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VK_TO_WCHARS8 {}
@@ -2673,12 +2673,12 @@ impl ::core::fmt::Debug for VK_TO_WCHARS9 {
         f.debug_struct("VK_TO_WCHARS9").field("VirtualKey", &self.VirtualKey).field("Attributes", &self.Attributes).field("wch", &self.wch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VK_TO_WCHARS9 {
+unsafe impl ::windows_core::Abi for VK_TO_WCHARS9 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VK_TO_WCHARS9 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS9>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHARS9>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VK_TO_WCHARS9 {}
@@ -2705,12 +2705,12 @@ impl ::core::fmt::Debug for VK_TO_WCHAR_TABLE {
         f.debug_struct("VK_TO_WCHAR_TABLE").field("pVkToWchars", &self.pVkToWchars).field("nModifications", &self.nModifications).field("cbSize", &self.cbSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VK_TO_WCHAR_TABLE {
+unsafe impl ::windows_core::Abi for VK_TO_WCHAR_TABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VK_TO_WCHAR_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHAR_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_TO_WCHAR_TABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VK_TO_WCHAR_TABLE {}
@@ -2736,12 +2736,12 @@ impl ::core::fmt::Debug for VK_VSC {
         f.debug_struct("VK_VSC").field("Vk", &self.Vk).field("Vsc", &self.Vsc).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VK_VSC {
+unsafe impl ::windows_core::Abi for VK_VSC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VK_VSC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_VSC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VK_VSC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VK_VSC {}
@@ -2756,7 +2756,7 @@ pub const VK__none_: u32 = 255u32;
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`*"]
 pub struct VSC_LPWSTR {
     pub vsc: u8,
-    pub pwsz: ::windows::core::PWSTR,
+    pub pwsz: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for VSC_LPWSTR {}
 impl ::core::clone::Clone for VSC_LPWSTR {
@@ -2769,12 +2769,12 @@ impl ::core::fmt::Debug for VSC_LPWSTR {
         f.debug_struct("VSC_LPWSTR").field("vsc", &self.vsc).field("pwsz", &self.pwsz).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VSC_LPWSTR {
+unsafe impl ::windows_core::Abi for VSC_LPWSTR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VSC_LPWSTR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VSC_LPWSTR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VSC_LPWSTR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VSC_LPWSTR {}
@@ -2800,12 +2800,12 @@ impl ::core::fmt::Debug for VSC_VK {
         f.debug_struct("VSC_VK").field("Vsc", &self.Vsc).field("Vk", &self.Vk).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VSC_VK {
+unsafe impl ::windows_core::Abi for VSC_VK {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VSC_VK {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VSC_VK>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VSC_VK>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VSC_VK {}
@@ -2817,7 +2817,7 @@ impl ::core::default::Default for VSC_VK {
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn VkKeyScanA<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::CHAR>>(ch: Param0) -> i16 {
+pub unsafe fn VkKeyScanA<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::CHAR>>(ch: Param0) -> i16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2832,7 +2832,7 @@ pub unsafe fn VkKeyScanA<'a, Param0: ::windows::core::IntoParam<'a, super::super
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_Foundation\"`, `\"Win32_UI_TextServices\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_TextServices"))]
 #[inline]
-pub unsafe fn VkKeyScanExA<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::CHAR>, Param1: ::windows::core::IntoParam<'a, super::super::TextServices::HKL>>(ch: Param0, dwhkl: Param1) -> i16 {
+pub unsafe fn VkKeyScanExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::CHAR>, Param1: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(ch: Param0, dwhkl: Param1) -> i16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2847,7 +2847,7 @@ pub unsafe fn VkKeyScanExA<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_Input_KeyboardAndMouse\"`, `\"Win32_UI_TextServices\"`*"]
 #[cfg(feature = "Win32_UI_TextServices")]
 #[inline]
-pub unsafe fn VkKeyScanExW<'a, Param1: ::windows::core::IntoParam<'a, super::super::TextServices::HKL>>(ch: u16, dwhkl: Param1) -> i16 {
+pub unsafe fn VkKeyScanExW<'a, Param1: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(ch: u16, dwhkl: Param1) -> i16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2911,12 +2911,12 @@ impl ::core::fmt::Debug for _VK_FUNCTION_PARAM {
         f.debug_struct("_VK_FUNCTION_PARAM").field("NLSFEProcIndex", &self.NLSFEProcIndex).field("NLSFEProcParam", &self.NLSFEProcParam).finish()
     }
 }
-unsafe impl ::windows::core::Abi for _VK_FUNCTION_PARAM {
+unsafe impl ::windows_core::Abi for _VK_FUNCTION_PARAM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for _VK_FUNCTION_PARAM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_VK_FUNCTION_PARAM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_VK_FUNCTION_PARAM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for _VK_FUNCTION_PARAM {}
@@ -2946,12 +2946,12 @@ impl ::core::fmt::Debug for _VK_TO_FUNCTION_TABLE {
         f.debug_struct("_VK_TO_FUNCTION_TABLE").field("Vk", &self.Vk).field("NLSFEProcType", &self.NLSFEProcType).field("NLSFEProcCurrent", &self.NLSFEProcCurrent).field("NLSFEProcSwitch", &self.NLSFEProcSwitch).field("NLSFEProc", &self.NLSFEProc).field("NLSFEProcAlt", &self.NLSFEProcAlt).finish()
     }
 }
-unsafe impl ::windows::core::Abi for _VK_TO_FUNCTION_TABLE {
+unsafe impl ::windows_core::Abi for _VK_TO_FUNCTION_TABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for _VK_TO_FUNCTION_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_VK_TO_FUNCTION_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_VK_TO_FUNCTION_TABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for _VK_TO_FUNCTION_TABLE {}
@@ -3036,12 +3036,12 @@ impl ::core::fmt::Debug for tagKbdLayer {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for tagKbdLayer {
+unsafe impl ::windows_core::Abi for tagKbdLayer {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for tagKbdLayer {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<tagKbdLayer>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<tagKbdLayer>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for tagKbdLayer {}
@@ -3071,12 +3071,12 @@ impl ::core::fmt::Debug for tagKbdNlsLayer {
         f.debug_struct("tagKbdNlsLayer").field("OEMIdentifier", &self.OEMIdentifier).field("LayoutInformation", &self.LayoutInformation).field("NumOfVkToF", &self.NumOfVkToF).field("pVkToF", &self.pVkToF).field("NumOfMouseVKey", &self.NumOfMouseVKey).field("pusMouseVKey", &self.pusMouseVKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for tagKbdNlsLayer {
+unsafe impl ::windows_core::Abi for tagKbdNlsLayer {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for tagKbdNlsLayer {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<tagKbdNlsLayer>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<tagKbdNlsLayer>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for tagKbdNlsLayer {}

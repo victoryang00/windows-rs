@@ -23,7 +23,7 @@ impl ::core::default::Default for DXGI_ALPHA_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_ALPHA_MODE {
+unsafe impl ::windows_core::Abi for DXGI_ALPHA_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DXGI_ALPHA_MODE {
@@ -100,7 +100,7 @@ impl ::core::default::Default for DXGI_COLOR_SPACE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_COLOR_SPACE_TYPE {
+unsafe impl ::windows_core::Abi for DXGI_COLOR_SPACE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DXGI_COLOR_SPACE_TYPE {
@@ -377,7 +377,7 @@ impl ::core::default::Default for DXGI_FORMAT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_FORMAT {
+unsafe impl ::windows_core::Abi for DXGI_FORMAT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DXGI_FORMAT {
@@ -405,12 +405,12 @@ impl ::core::fmt::Debug for DXGI_GAMMA_CONTROL {
         f.debug_struct("DXGI_GAMMA_CONTROL").field("Scale", &self.Scale).field("Offset", &self.Offset).field("GammaCurve", &self.GammaCurve).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_GAMMA_CONTROL {
+unsafe impl ::windows_core::Abi for DXGI_GAMMA_CONTROL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DXGI_GAMMA_CONTROL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_GAMMA_CONTROL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_GAMMA_CONTROL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DXGI_GAMMA_CONTROL {}
@@ -444,13 +444,13 @@ impl ::core::fmt::Debug for DXGI_GAMMA_CONTROL_CAPABILITIES {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DXGI_GAMMA_CONTROL_CAPABILITIES {
+unsafe impl ::windows_core::Abi for DXGI_GAMMA_CONTROL_CAPABILITIES {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DXGI_GAMMA_CONTROL_CAPABILITIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_GAMMA_CONTROL_CAPABILITIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_GAMMA_CONTROL_CAPABILITIES>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -478,12 +478,12 @@ impl ::core::fmt::Debug for DXGI_JPEG_AC_HUFFMAN_TABLE {
         f.debug_struct("DXGI_JPEG_AC_HUFFMAN_TABLE").field("CodeCounts", &self.CodeCounts).field("CodeValues", &self.CodeValues).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_JPEG_AC_HUFFMAN_TABLE {
+unsafe impl ::windows_core::Abi for DXGI_JPEG_AC_HUFFMAN_TABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DXGI_JPEG_AC_HUFFMAN_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_JPEG_AC_HUFFMAN_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_JPEG_AC_HUFFMAN_TABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DXGI_JPEG_AC_HUFFMAN_TABLE {}
@@ -509,12 +509,12 @@ impl ::core::fmt::Debug for DXGI_JPEG_DC_HUFFMAN_TABLE {
         f.debug_struct("DXGI_JPEG_DC_HUFFMAN_TABLE").field("CodeCounts", &self.CodeCounts).field("CodeValues", &self.CodeValues).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_JPEG_DC_HUFFMAN_TABLE {
+unsafe impl ::windows_core::Abi for DXGI_JPEG_DC_HUFFMAN_TABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DXGI_JPEG_DC_HUFFMAN_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_JPEG_DC_HUFFMAN_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_JPEG_DC_HUFFMAN_TABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DXGI_JPEG_DC_HUFFMAN_TABLE {}
@@ -539,12 +539,12 @@ impl ::core::fmt::Debug for DXGI_JPEG_QUANTIZATION_TABLE {
         f.debug_struct("DXGI_JPEG_QUANTIZATION_TABLE").field("Elements", &self.Elements).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_JPEG_QUANTIZATION_TABLE {
+unsafe impl ::windows_core::Abi for DXGI_JPEG_QUANTIZATION_TABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DXGI_JPEG_QUANTIZATION_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_JPEG_QUANTIZATION_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_JPEG_QUANTIZATION_TABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DXGI_JPEG_QUANTIZATION_TABLE {}
@@ -574,12 +574,12 @@ impl ::core::fmt::Debug for DXGI_MODE_DESC {
         f.debug_struct("DXGI_MODE_DESC").field("Width", &self.Width).field("Height", &self.Height).field("RefreshRate", &self.RefreshRate).field("Format", &self.Format).field("ScanlineOrdering", &self.ScanlineOrdering).field("Scaling", &self.Scaling).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_MODE_DESC {
+unsafe impl ::windows_core::Abi for DXGI_MODE_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DXGI_MODE_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_MODE_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_MODE_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DXGI_MODE_DESC {}
@@ -613,7 +613,7 @@ impl ::core::default::Default for DXGI_MODE_ROTATION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_MODE_ROTATION {
+unsafe impl ::windows_core::Abi for DXGI_MODE_ROTATION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DXGI_MODE_ROTATION {
@@ -642,7 +642,7 @@ impl ::core::default::Default for DXGI_MODE_SCALING {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_MODE_SCALING {
+unsafe impl ::windows_core::Abi for DXGI_MODE_SCALING {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DXGI_MODE_SCALING {
@@ -673,7 +673,7 @@ impl ::core::default::Default for DXGI_MODE_SCANLINE_ORDER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_MODE_SCANLINE_ORDER {
+unsafe impl ::windows_core::Abi for DXGI_MODE_SCANLINE_ORDER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DXGI_MODE_SCANLINE_ORDER {
@@ -698,12 +698,12 @@ impl ::core::fmt::Debug for DXGI_RATIONAL {
         f.debug_struct("DXGI_RATIONAL").field("Numerator", &self.Numerator).field("Denominator", &self.Denominator).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_RATIONAL {
+unsafe impl ::windows_core::Abi for DXGI_RATIONAL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DXGI_RATIONAL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_RATIONAL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_RATIONAL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DXGI_RATIONAL {}
@@ -730,12 +730,12 @@ impl ::core::fmt::Debug for DXGI_RGB {
         f.debug_struct("DXGI_RGB").field("Red", &self.Red).field("Green", &self.Green).field("Blue", &self.Blue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_RGB {
+unsafe impl ::windows_core::Abi for DXGI_RGB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DXGI_RGB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_RGB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_RGB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DXGI_RGB {}
@@ -761,12 +761,12 @@ impl ::core::fmt::Debug for DXGI_SAMPLE_DESC {
         f.debug_struct("DXGI_SAMPLE_DESC").field("Count", &self.Count).field("Quality", &self.Quality).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DXGI_SAMPLE_DESC {
+unsafe impl ::windows_core::Abi for DXGI_SAMPLE_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DXGI_SAMPLE_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_SAMPLE_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_SAMPLE_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DXGI_SAMPLE_DESC {}

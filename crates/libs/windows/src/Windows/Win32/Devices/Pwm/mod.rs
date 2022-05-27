@@ -1,4 +1,4 @@
-pub const GUID_DEVINTERFACE_PWM_CONTROLLER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x60824b4c_eed1_4c9c_b49c_1b961461a819);
+pub const GUID_DEVINTERFACE_PWM_CONTROLLER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x60824b4c_eed1_4c9c_b49c_1b961461a819);
 #[doc = "*Required features: `\"Win32_Devices_Pwm\"`*"]
 pub const GUID_DEVINTERFACE_PWM_CONTROLLER_WSZ: &str = "{60824B4C-EED1-4C9C-B49C-1B961461A819}";
 #[doc = "*Required features: `\"Win32_Devices_Pwm\"`*"]
@@ -37,12 +37,12 @@ impl ::core::fmt::Debug for PWM_CONTROLLER_GET_ACTUAL_PERIOD_OUTPUT {
         f.debug_struct("PWM_CONTROLLER_GET_ACTUAL_PERIOD_OUTPUT").field("ActualPeriod", &self.ActualPeriod).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PWM_CONTROLLER_GET_ACTUAL_PERIOD_OUTPUT {
+unsafe impl ::windows_core::Abi for PWM_CONTROLLER_GET_ACTUAL_PERIOD_OUTPUT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PWM_CONTROLLER_GET_ACTUAL_PERIOD_OUTPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_CONTROLLER_GET_ACTUAL_PERIOD_OUTPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_CONTROLLER_GET_ACTUAL_PERIOD_OUTPUT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PWM_CONTROLLER_GET_ACTUAL_PERIOD_OUTPUT {}
@@ -70,12 +70,12 @@ impl ::core::fmt::Debug for PWM_CONTROLLER_INFO {
         f.debug_struct("PWM_CONTROLLER_INFO").field("Size", &self.Size).field("PinCount", &self.PinCount).field("MinimumPeriod", &self.MinimumPeriod).field("MaximumPeriod", &self.MaximumPeriod).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PWM_CONTROLLER_INFO {
+unsafe impl ::windows_core::Abi for PWM_CONTROLLER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PWM_CONTROLLER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_CONTROLLER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_CONTROLLER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PWM_CONTROLLER_INFO {}
@@ -100,12 +100,12 @@ impl ::core::fmt::Debug for PWM_CONTROLLER_SET_DESIRED_PERIOD_INPUT {
         f.debug_struct("PWM_CONTROLLER_SET_DESIRED_PERIOD_INPUT").field("DesiredPeriod", &self.DesiredPeriod).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PWM_CONTROLLER_SET_DESIRED_PERIOD_INPUT {
+unsafe impl ::windows_core::Abi for PWM_CONTROLLER_SET_DESIRED_PERIOD_INPUT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PWM_CONTROLLER_SET_DESIRED_PERIOD_INPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_CONTROLLER_SET_DESIRED_PERIOD_INPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_CONTROLLER_SET_DESIRED_PERIOD_INPUT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PWM_CONTROLLER_SET_DESIRED_PERIOD_INPUT {}
@@ -130,12 +130,12 @@ impl ::core::fmt::Debug for PWM_CONTROLLER_SET_DESIRED_PERIOD_OUTPUT {
         f.debug_struct("PWM_CONTROLLER_SET_DESIRED_PERIOD_OUTPUT").field("ActualPeriod", &self.ActualPeriod).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PWM_CONTROLLER_SET_DESIRED_PERIOD_OUTPUT {
+unsafe impl ::windows_core::Abi for PWM_CONTROLLER_SET_DESIRED_PERIOD_OUTPUT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PWM_CONTROLLER_SET_DESIRED_PERIOD_OUTPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_CONTROLLER_SET_DESIRED_PERIOD_OUTPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_CONTROLLER_SET_DESIRED_PERIOD_OUTPUT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PWM_CONTROLLER_SET_DESIRED_PERIOD_OUTPUT {}
@@ -180,12 +180,12 @@ impl ::core::fmt::Debug for PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE_OUTPUT {
         f.debug_struct("PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE_OUTPUT").field("Percentage", &self.Percentage).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE_OUTPUT {
+unsafe impl ::windows_core::Abi for PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE_OUTPUT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE_OUTPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE_OUTPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE_OUTPUT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE_OUTPUT {}
@@ -210,12 +210,12 @@ impl ::core::fmt::Debug for PWM_PIN_GET_POLARITY_OUTPUT {
         f.debug_struct("PWM_PIN_GET_POLARITY_OUTPUT").field("Polarity", &self.Polarity).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PWM_PIN_GET_POLARITY_OUTPUT {
+unsafe impl ::windows_core::Abi for PWM_PIN_GET_POLARITY_OUTPUT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PWM_PIN_GET_POLARITY_OUTPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_PIN_GET_POLARITY_OUTPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_PIN_GET_POLARITY_OUTPUT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PWM_PIN_GET_POLARITY_OUTPUT {}
@@ -245,13 +245,13 @@ impl ::core::fmt::Debug for PWM_PIN_IS_STARTED_OUTPUT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PWM_PIN_IS_STARTED_OUTPUT {
+unsafe impl ::windows_core::Abi for PWM_PIN_IS_STARTED_OUTPUT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PWM_PIN_IS_STARTED_OUTPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_PIN_IS_STARTED_OUTPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_PIN_IS_STARTED_OUTPUT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -278,12 +278,12 @@ impl ::core::fmt::Debug for PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE_INPUT {
         f.debug_struct("PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE_INPUT").field("Percentage", &self.Percentage).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE_INPUT {
+unsafe impl ::windows_core::Abi for PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE_INPUT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE_INPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE_INPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE_INPUT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE_INPUT {}
@@ -308,12 +308,12 @@ impl ::core::fmt::Debug for PWM_PIN_SET_POLARITY_INPUT {
         f.debug_struct("PWM_PIN_SET_POLARITY_INPUT").field("Polarity", &self.Polarity).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PWM_PIN_SET_POLARITY_INPUT {
+unsafe impl ::windows_core::Abi for PWM_PIN_SET_POLARITY_INPUT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PWM_PIN_SET_POLARITY_INPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_PIN_SET_POLARITY_INPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_PIN_SET_POLARITY_INPUT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PWM_PIN_SET_POLARITY_INPUT {}
@@ -341,7 +341,7 @@ impl ::core::default::Default for PWM_POLARITY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PWM_POLARITY {
+unsafe impl ::windows_core::Abi for PWM_POLARITY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PWM_POLARITY {

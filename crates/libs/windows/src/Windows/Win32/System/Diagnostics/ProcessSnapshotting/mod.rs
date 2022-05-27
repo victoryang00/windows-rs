@@ -22,7 +22,7 @@ impl ::core::fmt::Debug for HPSS {
         f.debug_tuple("HPSS").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HPSS {
+unsafe impl ::windows_core::Abi for HPSS {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -49,7 +49,7 @@ impl ::core::fmt::Debug for HPSSWALK {
         f.debug_tuple("HPSSWALK").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HPSSWALK {
+unsafe impl ::windows_core::Abi for HPSSWALK {
     type Abi = Self;
 }
 #[repr(C)]
@@ -70,12 +70,12 @@ impl ::core::fmt::Debug for PSS_ALLOCATOR {
         f.debug_struct("PSS_ALLOCATOR").field("Context", &self.Context).field("AllocRoutine", &self.AllocRoutine).field("FreeRoutine", &self.FreeRoutine).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PSS_ALLOCATOR {
+unsafe impl ::windows_core::Abi for PSS_ALLOCATOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSS_ALLOCATOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_ALLOCATOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_ALLOCATOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSS_ALLOCATOR {}
@@ -100,12 +100,12 @@ impl ::core::fmt::Debug for PSS_AUXILIARY_PAGES_INFORMATION {
         f.debug_struct("PSS_AUXILIARY_PAGES_INFORMATION").field("AuxPagesCaptured", &self.AuxPagesCaptured).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PSS_AUXILIARY_PAGES_INFORMATION {
+unsafe impl ::windows_core::Abi for PSS_AUXILIARY_PAGES_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSS_AUXILIARY_PAGES_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_AUXILIARY_PAGES_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_AUXILIARY_PAGES_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSS_AUXILIARY_PAGES_INFORMATION {}
@@ -139,13 +139,13 @@ impl ::core::fmt::Debug for PSS_AUXILIARY_PAGE_ENTRY {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
-unsafe impl ::windows::core::Abi for PSS_AUXILIARY_PAGE_ENTRY {
+unsafe impl ::windows_core::Abi for PSS_AUXILIARY_PAGE_ENTRY {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
 impl ::core::cmp::PartialEq for PSS_AUXILIARY_PAGE_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_AUXILIARY_PAGE_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_AUXILIARY_PAGE_ENTRY>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
@@ -215,7 +215,7 @@ impl ::core::default::Default for PSS_CAPTURE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PSS_CAPTURE_FLAGS {
+unsafe impl ::windows_core::Abi for PSS_CAPTURE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PSS_CAPTURE_FLAGS {
@@ -270,7 +270,7 @@ impl ::core::default::Default for PSS_DUPLICATE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PSS_DUPLICATE_FLAGS {
+unsafe impl ::windows_core::Abi for PSS_DUPLICATE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PSS_DUPLICATE_FLAGS {
@@ -322,9 +322,9 @@ pub struct PSS_HANDLE_ENTRY {
     pub NonPagedPoolCharge: u32,
     pub CreationTime: super::super::super::Foundation::FILETIME,
     pub TypeNameLength: u16,
-    pub TypeName: ::windows::core::PCWSTR,
+    pub TypeName: ::windows_core::PCWSTR,
     pub ObjectNameLength: u16,
-    pub ObjectName: ::windows::core::PCWSTR,
+    pub ObjectName: ::windows_core::PCWSTR,
     pub TypeSpecificInformation: PSS_HANDLE_ENTRY_0,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -336,13 +336,13 @@ impl ::core::clone::Clone for PSS_HANDLE_ENTRY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PSS_HANDLE_ENTRY {
+unsafe impl ::windows_core::Abi for PSS_HANDLE_ENTRY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PSS_HANDLE_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -373,13 +373,13 @@ impl ::core::clone::Clone for PSS_HANDLE_ENTRY_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PSS_HANDLE_ENTRY_0 {
+unsafe impl ::windows_core::Abi for PSS_HANDLE_ENTRY_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PSS_HANDLE_ENTRY_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -412,13 +412,13 @@ impl ::core::fmt::Debug for PSS_HANDLE_ENTRY_0_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PSS_HANDLE_ENTRY_0_0 {
+unsafe impl ::windows_core::Abi for PSS_HANDLE_ENTRY_0_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PSS_HANDLE_ENTRY_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -453,13 +453,13 @@ impl ::core::fmt::Debug for PSS_HANDLE_ENTRY_0_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PSS_HANDLE_ENTRY_0_1 {
+unsafe impl ::windows_core::Abi for PSS_HANDLE_ENTRY_0_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PSS_HANDLE_ENTRY_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -497,13 +497,13 @@ impl ::core::fmt::Debug for PSS_HANDLE_ENTRY_0_2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PSS_HANDLE_ENTRY_0_2 {
+unsafe impl ::windows_core::Abi for PSS_HANDLE_ENTRY_0_2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PSS_HANDLE_ENTRY_0_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0_2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -537,13 +537,13 @@ impl ::core::fmt::Debug for PSS_HANDLE_ENTRY_0_3 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PSS_HANDLE_ENTRY_0_3 {
+unsafe impl ::windows_core::Abi for PSS_HANDLE_ENTRY_0_3 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PSS_HANDLE_ENTRY_0_3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0_3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0_3>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -576,13 +576,13 @@ impl ::core::fmt::Debug for PSS_HANDLE_ENTRY_0_4 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PSS_HANDLE_ENTRY_0_4 {
+unsafe impl ::windows_core::Abi for PSS_HANDLE_ENTRY_0_4 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PSS_HANDLE_ENTRY_0_4 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0_4>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0_4>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -621,13 +621,13 @@ impl ::core::fmt::Debug for PSS_HANDLE_ENTRY_0_5 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PSS_HANDLE_ENTRY_0_5 {
+unsafe impl ::windows_core::Abi for PSS_HANDLE_ENTRY_0_5 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PSS_HANDLE_ENTRY_0_5 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0_5>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_ENTRY_0_5>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -663,7 +663,7 @@ impl ::core::default::Default for PSS_HANDLE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PSS_HANDLE_FLAGS {
+unsafe impl ::windows_core::Abi for PSS_HANDLE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PSS_HANDLE_FLAGS {
@@ -715,12 +715,12 @@ impl ::core::fmt::Debug for PSS_HANDLE_INFORMATION {
         f.debug_struct("PSS_HANDLE_INFORMATION").field("HandlesCaptured", &self.HandlesCaptured).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PSS_HANDLE_INFORMATION {
+unsafe impl ::windows_core::Abi for PSS_HANDLE_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSS_HANDLE_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSS_HANDLE_INFORMATION {}
@@ -751,13 +751,13 @@ impl ::core::fmt::Debug for PSS_HANDLE_TRACE_INFORMATION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PSS_HANDLE_TRACE_INFORMATION {
+unsafe impl ::windows_core::Abi for PSS_HANDLE_TRACE_INFORMATION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PSS_HANDLE_TRACE_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_TRACE_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_HANDLE_TRACE_INFORMATION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -797,7 +797,7 @@ impl ::core::default::Default for PSS_OBJECT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PSS_OBJECT_TYPE {
+unsafe impl ::windows_core::Abi for PSS_OBJECT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PSS_OBJECT_TYPE {
@@ -845,12 +845,12 @@ impl ::core::fmt::Debug for PSS_PERFORMANCE_COUNTERS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for PSS_PERFORMANCE_COUNTERS {
+unsafe impl ::windows_core::Abi for PSS_PERFORMANCE_COUNTERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSS_PERFORMANCE_COUNTERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_PERFORMANCE_COUNTERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_PERFORMANCE_COUNTERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSS_PERFORMANCE_COUNTERS {}
@@ -888,7 +888,7 @@ impl ::core::default::Default for PSS_PROCESS_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PSS_PROCESS_FLAGS {
+unsafe impl ::windows_core::Abi for PSS_PROCESS_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PSS_PROCESS_FLAGS {
@@ -997,13 +997,13 @@ impl ::core::fmt::Debug for PSS_PROCESS_INFORMATION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PSS_PROCESS_INFORMATION {
+unsafe impl ::windows_core::Abi for PSS_PROCESS_INFORMATION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PSS_PROCESS_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_PROCESS_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_PROCESS_INFORMATION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1045,7 +1045,7 @@ impl ::core::default::Default for PSS_QUERY_INFORMATION_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PSS_QUERY_INFORMATION_CLASS {
+unsafe impl ::windows_core::Abi for PSS_QUERY_INFORMATION_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PSS_QUERY_INFORMATION_CLASS {
@@ -1112,13 +1112,13 @@ impl ::core::fmt::Debug for PSS_THREAD_ENTRY {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
-unsafe impl ::windows::core::Abi for PSS_THREAD_ENTRY {
+unsafe impl ::windows_core::Abi for PSS_THREAD_ENTRY {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::cmp::PartialEq for PSS_THREAD_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_THREAD_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_THREAD_ENTRY>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
@@ -1148,7 +1148,7 @@ impl ::core::default::Default for PSS_THREAD_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PSS_THREAD_FLAGS {
+unsafe impl ::windows_core::Abi for PSS_THREAD_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PSS_THREAD_FLAGS {
@@ -1201,12 +1201,12 @@ impl ::core::fmt::Debug for PSS_THREAD_INFORMATION {
         f.debug_struct("PSS_THREAD_INFORMATION").field("ThreadsCaptured", &self.ThreadsCaptured).field("ContextLength", &self.ContextLength).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PSS_THREAD_INFORMATION {
+unsafe impl ::windows_core::Abi for PSS_THREAD_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSS_THREAD_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_THREAD_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_THREAD_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSS_THREAD_INFORMATION {}
@@ -1236,13 +1236,13 @@ impl ::core::fmt::Debug for PSS_VA_CLONE_INFORMATION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PSS_VA_CLONE_INFORMATION {
+unsafe impl ::windows_core::Abi for PSS_VA_CLONE_INFORMATION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PSS_VA_CLONE_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_VA_CLONE_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_VA_CLONE_INFORMATION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1268,7 +1268,7 @@ pub struct PSS_VA_SPACE_ENTRY {
     pub ImageBase: *mut ::core::ffi::c_void,
     pub CheckSum: u32,
     pub MappedFileNameLength: u16,
-    pub MappedFileName: ::windows::core::PCWSTR,
+    pub MappedFileName: ::windows_core::PCWSTR,
 }
 impl ::core::marker::Copy for PSS_VA_SPACE_ENTRY {}
 impl ::core::clone::Clone for PSS_VA_SPACE_ENTRY {
@@ -1295,12 +1295,12 @@ impl ::core::fmt::Debug for PSS_VA_SPACE_ENTRY {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for PSS_VA_SPACE_ENTRY {
+unsafe impl ::windows_core::Abi for PSS_VA_SPACE_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSS_VA_SPACE_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_VA_SPACE_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_VA_SPACE_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSS_VA_SPACE_ENTRY {}
@@ -1325,12 +1325,12 @@ impl ::core::fmt::Debug for PSS_VA_SPACE_INFORMATION {
         f.debug_struct("PSS_VA_SPACE_INFORMATION").field("RegionCount", &self.RegionCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PSS_VA_SPACE_INFORMATION {
+unsafe impl ::windows_core::Abi for PSS_VA_SPACE_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PSS_VA_SPACE_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_VA_SPACE_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSS_VA_SPACE_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PSS_VA_SPACE_INFORMATION {}
@@ -1362,7 +1362,7 @@ impl ::core::default::Default for PSS_WALK_INFORMATION_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PSS_WALK_INFORMATION_CLASS {
+unsafe impl ::windows_core::Abi for PSS_WALK_INFORMATION_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PSS_WALK_INFORMATION_CLASS {
@@ -1373,7 +1373,7 @@ impl ::core::fmt::Debug for PSS_WALK_INFORMATION_CLASS {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_ProcessSnapshotting\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PssCaptureSnapshot<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(processhandle: Param0, captureflags: PSS_CAPTURE_FLAGS, threadcontextflags: u32, snapshothandle: *mut HPSS) -> u32 {
+pub unsafe fn PssCaptureSnapshot<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(processhandle: Param0, captureflags: PSS_CAPTURE_FLAGS, threadcontextflags: u32, snapshothandle: *mut HPSS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1388,7 +1388,7 @@ pub unsafe fn PssCaptureSnapshot<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_ProcessSnapshotting\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PssDuplicateSnapshot<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, HPSS>, Param2: ::windows::core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(sourceprocesshandle: Param0, snapshothandle: Param1, targetprocesshandle: Param2, targetsnapshothandle: *mut HPSS, flags: PSS_DUPLICATE_FLAGS) -> u32 {
+pub unsafe fn PssDuplicateSnapshot<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, HPSS>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(sourceprocesshandle: Param0, snapshothandle: Param1, targetprocesshandle: Param2, targetsnapshothandle: *mut HPSS, flags: PSS_DUPLICATE_FLAGS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1403,7 +1403,7 @@ pub unsafe fn PssDuplicateSnapshot<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_ProcessSnapshotting\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PssFreeSnapshot<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, HPSS>>(processhandle: Param0, snapshothandle: Param1) -> u32 {
+pub unsafe fn PssFreeSnapshot<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, HPSS>>(processhandle: Param0, snapshothandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1417,7 +1417,7 @@ pub unsafe fn PssFreeSnapshot<'a, Param0: ::windows::core::IntoParam<'a, super::
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_ProcessSnapshotting\"`*"]
 #[inline]
-pub unsafe fn PssQuerySnapshot<'a, Param0: ::windows::core::IntoParam<'a, HPSS>>(snapshothandle: Param0, informationclass: PSS_QUERY_INFORMATION_CLASS, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> u32 {
+pub unsafe fn PssQuerySnapshot<'a, Param0: ::windows_core::IntoParam<'a, HPSS>>(snapshothandle: Param0, informationclass: PSS_QUERY_INFORMATION_CLASS, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1445,7 +1445,7 @@ pub unsafe fn PssWalkMarkerCreate(allocator: *const PSS_ALLOCATOR, walkmarkerhan
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_ProcessSnapshotting\"`*"]
 #[inline]
-pub unsafe fn PssWalkMarkerFree<'a, Param0: ::windows::core::IntoParam<'a, HPSSWALK>>(walkmarkerhandle: Param0) -> u32 {
+pub unsafe fn PssWalkMarkerFree<'a, Param0: ::windows_core::IntoParam<'a, HPSSWALK>>(walkmarkerhandle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1459,7 +1459,7 @@ pub unsafe fn PssWalkMarkerFree<'a, Param0: ::windows::core::IntoParam<'a, HPSSW
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_ProcessSnapshotting\"`*"]
 #[inline]
-pub unsafe fn PssWalkMarkerGetPosition<'a, Param0: ::windows::core::IntoParam<'a, HPSSWALK>>(walkmarkerhandle: Param0, position: *mut usize) -> u32 {
+pub unsafe fn PssWalkMarkerGetPosition<'a, Param0: ::windows_core::IntoParam<'a, HPSSWALK>>(walkmarkerhandle: Param0, position: *mut usize) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1473,7 +1473,7 @@ pub unsafe fn PssWalkMarkerGetPosition<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_ProcessSnapshotting\"`*"]
 #[inline]
-pub unsafe fn PssWalkMarkerSeekToBeginning<'a, Param0: ::windows::core::IntoParam<'a, HPSSWALK>>(walkmarkerhandle: Param0) -> u32 {
+pub unsafe fn PssWalkMarkerSeekToBeginning<'a, Param0: ::windows_core::IntoParam<'a, HPSSWALK>>(walkmarkerhandle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1487,7 +1487,7 @@ pub unsafe fn PssWalkMarkerSeekToBeginning<'a, Param0: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_ProcessSnapshotting\"`*"]
 #[inline]
-pub unsafe fn PssWalkMarkerSetPosition<'a, Param0: ::windows::core::IntoParam<'a, HPSSWALK>>(walkmarkerhandle: Param0, position: usize) -> u32 {
+pub unsafe fn PssWalkMarkerSetPosition<'a, Param0: ::windows_core::IntoParam<'a, HPSSWALK>>(walkmarkerhandle: Param0, position: usize) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1501,14 +1501,14 @@ pub unsafe fn PssWalkMarkerSetPosition<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_ProcessSnapshotting\"`*"]
 #[inline]
-pub unsafe fn PssWalkSnapshot<'a, Param0: ::windows::core::IntoParam<'a, HPSS>, Param2: ::windows::core::IntoParam<'a, HPSSWALK>>(snapshothandle: Param0, informationclass: PSS_WALK_INFORMATION_CLASS, walkmarkerhandle: Param2, buffer: &mut [u8]) -> u32 {
+pub unsafe fn PssWalkSnapshot<'a, Param0: ::windows_core::IntoParam<'a, HPSS>, Param2: ::windows_core::IntoParam<'a, HPSSWALK>>(snapshothandle: Param0, informationclass: PSS_WALK_INFORMATION_CLASS, walkmarkerhandle: Param2, buffer: &mut [u8]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn PssWalkSnapshot(snapshothandle: HPSS, informationclass: PSS_WALK_INFORMATION_CLASS, walkmarkerhandle: HPSSWALK, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> u32;
         }
-        ::core::mem::transmute(PssWalkSnapshot(snapshothandle.into_param().abi(), ::core::mem::transmute(informationclass), walkmarkerhandle.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _))
+        ::core::mem::transmute(PssWalkSnapshot(snapshothandle.into_param().abi(), ::core::mem::transmute(informationclass), walkmarkerhandle.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");

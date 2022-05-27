@@ -3,12 +3,12 @@ pub const APPCRASH_EVENT: &str = "APPCRASH";
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddERExcludedApplicationA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(szapplication: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn AddERExcludedApplicationA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(szapplication: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddERExcludedApplicationA(szapplication: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn AddERExcludedApplicationA(szapplication: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(AddERExcludedApplicationA(szapplication.into_param().abi()))
     }
@@ -18,12 +18,12 @@ pub unsafe fn AddERExcludedApplicationA<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddERExcludedApplicationW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(wszapplication: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn AddERExcludedApplicationW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(wszapplication: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddERExcludedApplicationW(wszapplication: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn AddERExcludedApplicationW(wszapplication: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(AddERExcludedApplicationW(wszapplication.into_param().abi()))
     }
@@ -67,7 +67,7 @@ impl ::core::default::Default for EFaultRepRetVal {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EFaultRepRetVal {
+unsafe impl ::windows_core::Abi for EFaultRepRetVal {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EFaultRepRetVal {
@@ -99,7 +99,7 @@ impl ::core::fmt::Debug for HREPORT {
         f.debug_tuple("HREPORT").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HREPORT {
+unsafe impl ::windows_core::Abi for HREPORT {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -126,20 +126,20 @@ impl ::core::fmt::Debug for HREPORTSTORE {
         f.debug_tuple("HREPORTSTORE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HREPORTSTORE {
+unsafe impl ::windows_core::Abi for HREPORTSTORE {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 pub const PACKAGED_APPCRASH_EVENT: &str = "MoAppCrash";
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Kernel\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
-pub type PFN_WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbiscustomdebugger: *mut super::super::Foundation::BOOL, pwszdebuggerlaunch: ::windows::core::PWSTR, pchdebuggerlaunch: *mut u32, pbisdebuggerautolaunch: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT>;
+pub type PFN_WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbiscustomdebugger: *mut super::super::Foundation::BOOL, pwszdebuggerlaunch: ::windows_core::PWSTR, pchdebuggerlaunch: *mut u32, pbisdebuggerautolaunch: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Kernel\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
-pub type PFN_WER_RUNTIME_EXCEPTION_EVENT = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbownershipclaimed: *mut super::super::Foundation::BOOL, pwszeventname: ::windows::core::PWSTR, pchsize: *mut u32, pdwsignaturecount: *mut u32) -> ::windows::core::HRESULT>;
+pub type PFN_WER_RUNTIME_EXCEPTION_EVENT = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbownershipclaimed: *mut super::super::Foundation::BOOL, pwszeventname: ::windows_core::PWSTR, pchsize: *mut u32, pdwsignaturecount: *mut u32) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Kernel\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
-pub type PFN_WER_RUNTIME_EXCEPTION_EVENT_SIGNATURE = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, dwindex: u32, pwszname: ::windows::core::PWSTR, pchname: *mut u32, pwszvalue: ::windows::core::PWSTR, pchvalue: *mut u32) -> ::windows::core::HRESULT>;
+pub type PFN_WER_RUNTIME_EXCEPTION_EVENT_SIGNATURE = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, dwindex: u32, pwszname: ::windows_core::PWSTR, pchname: *mut u32, pwszvalue: ::windows_core::PWSTR, pchvalue: *mut u32) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -165,7 +165,7 @@ impl ::core::default::Default for REPORT_STORE_TYPES {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for REPORT_STORE_TYPES {
+unsafe impl ::windows_core::Abi for REPORT_STORE_TYPES {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for REPORT_STORE_TYPES {
@@ -213,7 +213,7 @@ impl ::core::default::Default for WER_CONSENT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WER_CONSENT {
+unsafe impl ::windows_core::Abi for WER_CONSENT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WER_CONSENT {
@@ -266,13 +266,13 @@ impl ::core::fmt::Debug for WER_DUMP_CUSTOM_OPTIONS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WER_DUMP_CUSTOM_OPTIONS {
+unsafe impl ::windows_core::Abi for WER_DUMP_CUSTOM_OPTIONS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_DUMP_CUSTOM_OPTIONS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_DUMP_CUSTOM_OPTIONS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_DUMP_CUSTOM_OPTIONS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -330,13 +330,13 @@ impl ::core::fmt::Debug for WER_DUMP_CUSTOM_OPTIONS_V2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WER_DUMP_CUSTOM_OPTIONS_V2 {
+unsafe impl ::windows_core::Abi for WER_DUMP_CUSTOM_OPTIONS_V2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_DUMP_CUSTOM_OPTIONS_V2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_DUMP_CUSTOM_OPTIONS_V2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_DUMP_CUSTOM_OPTIONS_V2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -400,13 +400,13 @@ impl ::core::fmt::Debug for WER_DUMP_CUSTOM_OPTIONS_V3 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WER_DUMP_CUSTOM_OPTIONS_V3 {
+unsafe impl ::windows_core::Abi for WER_DUMP_CUSTOM_OPTIONS_V3 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_DUMP_CUSTOM_OPTIONS_V3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_DUMP_CUSTOM_OPTIONS_V3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_DUMP_CUSTOM_OPTIONS_V3>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -448,7 +448,7 @@ impl ::core::default::Default for WER_DUMP_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WER_DUMP_TYPE {
+unsafe impl ::windows_core::Abi for WER_DUMP_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WER_DUMP_TYPE {
@@ -478,13 +478,13 @@ impl ::core::fmt::Debug for WER_EXCEPTION_INFORMATION {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
-unsafe impl ::windows::core::Abi for WER_EXCEPTION_INFORMATION {
+unsafe impl ::windows_core::Abi for WER_EXCEPTION_INFORMATION {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::cmp::PartialEq for WER_EXCEPTION_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_EXCEPTION_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_EXCEPTION_INFORMATION>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
@@ -520,7 +520,7 @@ impl ::core::default::Default for WER_FAULT_REPORTING {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WER_FAULT_REPORTING {
+unsafe impl ::windows_core::Abi for WER_FAULT_REPORTING {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WER_FAULT_REPORTING {
@@ -587,7 +587,7 @@ impl ::core::default::Default for WER_FILE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WER_FILE {
+unsafe impl ::windows_core::Abi for WER_FILE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WER_FILE {
@@ -660,7 +660,7 @@ impl ::core::default::Default for WER_FILE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WER_FILE_TYPE {
+unsafe impl ::windows_core::Abi for WER_FILE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WER_FILE_TYPE {
@@ -745,7 +745,7 @@ impl ::core::default::Default for WER_REGISTER_FILE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WER_REGISTER_FILE_TYPE {
+unsafe impl ::windows_core::Abi for WER_REGISTER_FILE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WER_REGISTER_FILE_TYPE {
@@ -781,13 +781,13 @@ impl ::core::fmt::Debug for WER_REPORT_INFORMATION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WER_REPORT_INFORMATION {
+unsafe impl ::windows_core::Abi for WER_REPORT_INFORMATION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_INFORMATION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -839,13 +839,13 @@ impl ::core::fmt::Debug for WER_REPORT_INFORMATION_V3 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WER_REPORT_INFORMATION_V3 {
+unsafe impl ::windows_core::Abi for WER_REPORT_INFORMATION_V3 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_INFORMATION_V3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_INFORMATION_V3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_INFORMATION_V3>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -903,13 +903,13 @@ impl ::core::fmt::Debug for WER_REPORT_INFORMATION_V4 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WER_REPORT_INFORMATION_V4 {
+unsafe impl ::windows_core::Abi for WER_REPORT_INFORMATION_V4 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_INFORMATION_V4 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_INFORMATION_V4>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_INFORMATION_V4>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -969,13 +969,13 @@ impl ::core::fmt::Debug for WER_REPORT_INFORMATION_V5 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WER_REPORT_INFORMATION_V5 {
+unsafe impl ::windows_core::Abi for WER_REPORT_INFORMATION_V5 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_INFORMATION_V5 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_INFORMATION_V5>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_INFORMATION_V5>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -991,8 +991,8 @@ impl ::core::default::Default for WER_REPORT_INFORMATION_V5 {
 #[cfg(feature = "Win32_Foundation")]
 pub struct WER_REPORT_METADATA_V1 {
     pub Signature: WER_REPORT_SIGNATURE,
-    pub BucketId: ::windows::core::GUID,
-    pub ReportId: ::windows::core::GUID,
+    pub BucketId: ::windows_core::GUID,
+    pub ReportId: ::windows_core::GUID,
     pub CreationTime: super::super::Foundation::FILETIME,
     pub SizeInBytes: u64,
 }
@@ -1011,13 +1011,13 @@ impl ::core::fmt::Debug for WER_REPORT_METADATA_V1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WER_REPORT_METADATA_V1 {
+unsafe impl ::windows_core::Abi for WER_REPORT_METADATA_V1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_METADATA_V1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_METADATA_V1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_METADATA_V1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1033,16 +1033,16 @@ impl ::core::default::Default for WER_REPORT_METADATA_V1 {
 #[cfg(feature = "Win32_Foundation")]
 pub struct WER_REPORT_METADATA_V2 {
     pub Signature: WER_REPORT_SIGNATURE,
-    pub BucketId: ::windows::core::GUID,
-    pub ReportId: ::windows::core::GUID,
+    pub BucketId: ::windows_core::GUID,
+    pub ReportId: ::windows_core::GUID,
     pub CreationTime: super::super::Foundation::FILETIME,
     pub SizeInBytes: u64,
     pub CabId: [u16; 260],
     pub ReportStatus: u32,
-    pub ReportIntegratorId: ::windows::core::GUID,
+    pub ReportIntegratorId: ::windows_core::GUID,
     pub NumberOfFiles: u32,
     pub SizeOfFileNames: u32,
-    pub FileNames: ::windows::core::PWSTR,
+    pub FileNames: ::windows_core::PWSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WER_REPORT_METADATA_V2 {}
@@ -1071,13 +1071,13 @@ impl ::core::fmt::Debug for WER_REPORT_METADATA_V2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WER_REPORT_METADATA_V2 {
+unsafe impl ::windows_core::Abi for WER_REPORT_METADATA_V2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_METADATA_V2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_METADATA_V2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_METADATA_V2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1093,16 +1093,16 @@ impl ::core::default::Default for WER_REPORT_METADATA_V2 {
 #[cfg(feature = "Win32_Foundation")]
 pub struct WER_REPORT_METADATA_V3 {
     pub Signature: WER_REPORT_SIGNATURE,
-    pub BucketId: ::windows::core::GUID,
-    pub ReportId: ::windows::core::GUID,
+    pub BucketId: ::windows_core::GUID,
+    pub ReportId: ::windows_core::GUID,
     pub CreationTime: super::super::Foundation::FILETIME,
     pub SizeInBytes: u64,
     pub CabId: [u16; 260],
     pub ReportStatus: u32,
-    pub ReportIntegratorId: ::windows::core::GUID,
+    pub ReportIntegratorId: ::windows_core::GUID,
     pub NumberOfFiles: u32,
     pub SizeOfFileNames: u32,
-    pub FileNames: ::windows::core::PWSTR,
+    pub FileNames: ::windows_core::PWSTR,
     pub FriendlyEventName: [u16; 128],
     pub ApplicationName: [u16; 128],
     pub ApplicationPath: [u16; 260],
@@ -1143,13 +1143,13 @@ impl ::core::fmt::Debug for WER_REPORT_METADATA_V3 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WER_REPORT_METADATA_V3 {
+unsafe impl ::windows_core::Abi for WER_REPORT_METADATA_V3 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_METADATA_V3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_METADATA_V3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_METADATA_V3>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1177,12 +1177,12 @@ impl ::core::fmt::Debug for WER_REPORT_PARAMETER {
         f.debug_struct("WER_REPORT_PARAMETER").field("Name", &self.Name).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WER_REPORT_PARAMETER {
+unsafe impl ::windows_core::Abi for WER_REPORT_PARAMETER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WER_REPORT_PARAMETER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_PARAMETER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_PARAMETER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WER_REPORT_PARAMETER {}
@@ -1208,12 +1208,12 @@ impl ::core::fmt::Debug for WER_REPORT_SIGNATURE {
         f.debug_struct("WER_REPORT_SIGNATURE").field("EventName", &self.EventName).field("Parameters", &self.Parameters).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WER_REPORT_SIGNATURE {
+unsafe impl ::windows_core::Abi for WER_REPORT_SIGNATURE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WER_REPORT_SIGNATURE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_SIGNATURE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_SIGNATURE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WER_REPORT_SIGNATURE {}
@@ -1249,7 +1249,7 @@ impl ::core::default::Default for WER_REPORT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WER_REPORT_TYPE {
+unsafe impl ::windows_core::Abi for WER_REPORT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WER_REPORT_TYPE {
@@ -1294,7 +1294,7 @@ impl ::core::default::Default for WER_REPORT_UI {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WER_REPORT_UI {
+unsafe impl ::windows_core::Abi for WER_REPORT_UI {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WER_REPORT_UI {
@@ -1317,7 +1317,7 @@ pub struct WER_RUNTIME_EXCEPTION_INFORMATION {
     pub hThread: super::super::Foundation::HANDLE,
     pub exceptionRecord: super::Diagnostics::Debug::EXCEPTION_RECORD,
     pub context: super::Diagnostics::Debug::CONTEXT,
-    pub pwszReportId: ::windows::core::PCWSTR,
+    pub pwszReportId: ::windows_core::PCWSTR,
     pub bIsFatal: super::super::Foundation::BOOL,
     pub dwReserved: u32,
 }
@@ -1330,13 +1330,13 @@ impl ::core::clone::Clone for WER_RUNTIME_EXCEPTION_INFORMATION {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
-unsafe impl ::windows::core::Abi for WER_RUNTIME_EXCEPTION_INFORMATION {
+unsafe impl ::windows_core::Abi for WER_RUNTIME_EXCEPTION_INFORMATION {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::cmp::PartialEq for WER_RUNTIME_EXCEPTION_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_RUNTIME_EXCEPTION_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_RUNTIME_EXCEPTION_INFORMATION>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
@@ -1394,7 +1394,7 @@ impl ::core::default::Default for WER_SUBMIT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WER_SUBMIT_FLAGS {
+unsafe impl ::windows_core::Abi for WER_SUBMIT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WER_SUBMIT_FLAGS {
@@ -1471,7 +1471,7 @@ impl ::core::default::Default for WER_SUBMIT_RESULT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WER_SUBMIT_RESULT {
+unsafe impl ::windows_core::Abi for WER_SUBMIT_RESULT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WER_SUBMIT_RESULT {
@@ -1482,12 +1482,12 @@ impl ::core::fmt::Debug for WER_SUBMIT_RESULT {
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WerAddExcludedApplication<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(pwzexename: Param0, ballusers: Param1) -> ::windows::core::Result<()> {
+pub unsafe fn WerAddExcludedApplication<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(pwzexename: Param0, ballusers: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerAddExcludedApplication(pwzexename: ::windows::core::PCWSTR, ballusers: super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn WerAddExcludedApplication(pwzexename: ::windows_core::PCWSTR, ballusers: super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
         WerAddExcludedApplication(pwzexename.into_param().abi(), ballusers.into_param().abi()).ok()
     }
@@ -1496,12 +1496,12 @@ pub unsafe fn WerAddExcludedApplication<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerFreeString<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszstr: Param0) {
+pub unsafe fn WerFreeString<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszstr: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerFreeString(pwszstr: ::windows::core::PCWSTR);
+            fn WerFreeString(pwszstr: ::windows_core::PCWSTR);
         }
         WerFreeString(pwszstr.into_param().abi())
     }
@@ -1511,12 +1511,12 @@ pub unsafe fn WerFreeString<'a, Param0: ::windows::core::IntoParam<'a, ::windows
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WerGetFlags<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> ::windows::core::Result<WER_FAULT_REPORTING> {
+pub unsafe fn WerGetFlags<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> ::windows_core::Result<WER_FAULT_REPORTING> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerGetFlags(hprocess: super::super::Foundation::HANDLE, pdwflags: *mut WER_FAULT_REPORTING) -> ::windows::core::HRESULT;
+            fn WerGetFlags(hprocess: super::super::Foundation::HANDLE, pdwflags: *mut WER_FAULT_REPORTING) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<WER_FAULT_REPORTING>::zeroed();
         WerGetFlags(hprocess.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WER_FAULT_REPORTING>(result__)
@@ -1526,12 +1526,12 @@ pub unsafe fn WerGetFlags<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerRegisterAdditionalProcess(processid: u32, captureextrainfoforthreadid: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WerRegisterAdditionalProcess(processid: u32, captureextrainfoforthreadid: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerRegisterAdditionalProcess(processid: u32, captureextrainfoforthreadid: u32) -> ::windows::core::HRESULT;
+            fn WerRegisterAdditionalProcess(processid: u32, captureextrainfoforthreadid: u32) -> ::windows_core::HRESULT;
         }
         WerRegisterAdditionalProcess(::core::mem::transmute(processid), ::core::mem::transmute(captureextrainfoforthreadid)).ok()
     }
@@ -1540,12 +1540,12 @@ pub unsafe fn WerRegisterAdditionalProcess(processid: u32, captureextrainfoforth
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerRegisterAppLocalDump<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(localappdatarelativepath: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn WerRegisterAppLocalDump<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(localappdatarelativepath: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerRegisterAppLocalDump(localappdatarelativepath: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn WerRegisterAppLocalDump(localappdatarelativepath: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         WerRegisterAppLocalDump(localappdatarelativepath.into_param().abi()).ok()
     }
@@ -1554,12 +1554,12 @@ pub unsafe fn WerRegisterAppLocalDump<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerRegisterCustomMetadata<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(key: Param0, value: Param1) -> ::windows::core::Result<()> {
+pub unsafe fn WerRegisterCustomMetadata<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(key: Param0, value: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerRegisterCustomMetadata(key: ::windows::core::PCWSTR, value: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn WerRegisterCustomMetadata(key: ::windows_core::PCWSTR, value: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         WerRegisterCustomMetadata(key.into_param().abi(), value.into_param().abi()).ok()
     }
@@ -1568,12 +1568,12 @@ pub unsafe fn WerRegisterCustomMetadata<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerRegisterExcludedMemoryBlock(address: *const ::core::ffi::c_void, size: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WerRegisterExcludedMemoryBlock(address: *const ::core::ffi::c_void, size: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerRegisterExcludedMemoryBlock(address: *const ::core::ffi::c_void, size: u32) -> ::windows::core::HRESULT;
+            fn WerRegisterExcludedMemoryBlock(address: *const ::core::ffi::c_void, size: u32) -> ::windows_core::HRESULT;
         }
         WerRegisterExcludedMemoryBlock(::core::mem::transmute(address), ::core::mem::transmute(size)).ok()
     }
@@ -1582,12 +1582,12 @@ pub unsafe fn WerRegisterExcludedMemoryBlock(address: *const ::core::ffi::c_void
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerRegisterFile<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwzfile: Param0, regfiletype: WER_REGISTER_FILE_TYPE, dwflags: WER_FILE) -> ::windows::core::Result<()> {
+pub unsafe fn WerRegisterFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwzfile: Param0, regfiletype: WER_REGISTER_FILE_TYPE, dwflags: WER_FILE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerRegisterFile(pwzfile: ::windows::core::PCWSTR, regfiletype: WER_REGISTER_FILE_TYPE, dwflags: WER_FILE) -> ::windows::core::HRESULT;
+            fn WerRegisterFile(pwzfile: ::windows_core::PCWSTR, regfiletype: WER_REGISTER_FILE_TYPE, dwflags: WER_FILE) -> ::windows_core::HRESULT;
         }
         WerRegisterFile(pwzfile.into_param().abi(), ::core::mem::transmute(regfiletype), ::core::mem::transmute(dwflags)).ok()
     }
@@ -1596,12 +1596,12 @@ pub unsafe fn WerRegisterFile<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerRegisterMemoryBlock(pvaddress: *const ::core::ffi::c_void, dwsize: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WerRegisterMemoryBlock(pvaddress: *const ::core::ffi::c_void, dwsize: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerRegisterMemoryBlock(pvaddress: *const ::core::ffi::c_void, dwsize: u32) -> ::windows::core::HRESULT;
+            fn WerRegisterMemoryBlock(pvaddress: *const ::core::ffi::c_void, dwsize: u32) -> ::windows_core::HRESULT;
         }
         WerRegisterMemoryBlock(::core::mem::transmute(pvaddress), ::core::mem::transmute(dwsize)).ok()
     }
@@ -1610,12 +1610,12 @@ pub unsafe fn WerRegisterMemoryBlock(pvaddress: *const ::core::ffi::c_void, dwsi
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerRegisterRuntimeExceptionModule<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszoutofprocesscallbackdll: Param0, pcontext: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn WerRegisterRuntimeExceptionModule<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszoutofprocesscallbackdll: Param0, pcontext: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerRegisterRuntimeExceptionModule(pwszoutofprocesscallbackdll: ::windows::core::PCWSTR, pcontext: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn WerRegisterRuntimeExceptionModule(pwszoutofprocesscallbackdll: ::windows_core::PCWSTR, pcontext: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         WerRegisterRuntimeExceptionModule(pwszoutofprocesscallbackdll.into_param().abi(), ::core::mem::transmute(pcontext)).ok()
     }
@@ -1625,12 +1625,12 @@ pub unsafe fn WerRegisterRuntimeExceptionModule<'a, Param0: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WerRemoveExcludedApplication<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(pwzexename: Param0, ballusers: Param1) -> ::windows::core::Result<()> {
+pub unsafe fn WerRemoveExcludedApplication<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(pwzexename: Param0, ballusers: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerRemoveExcludedApplication(pwzexename: ::windows::core::PCWSTR, ballusers: super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn WerRemoveExcludedApplication(pwzexename: ::windows_core::PCWSTR, ballusers: super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
         WerRemoveExcludedApplication(pwzexename.into_param().abi(), ballusers.into_param().abi()).ok()
     }
@@ -1640,12 +1640,12 @@ pub unsafe fn WerRemoveExcludedApplication<'a, Param0: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Kernel\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 #[inline]
-pub unsafe fn WerReportAddDump<'a, Param0: ::windows::core::IntoParam<'a, HREPORT>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hreporthandle: Param0, hprocess: Param1, hthread: Param2, dumptype: WER_DUMP_TYPE, pexceptionparam: *const WER_EXCEPTION_INFORMATION, pdumpcustomoptions: *const WER_DUMP_CUSTOM_OPTIONS, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WerReportAddDump<'a, Param0: ::windows_core::IntoParam<'a, HREPORT>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hreporthandle: Param0, hprocess: Param1, hthread: Param2, dumptype: WER_DUMP_TYPE, pexceptionparam: *const WER_EXCEPTION_INFORMATION, pdumpcustomoptions: *const WER_DUMP_CUSTOM_OPTIONS, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerReportAddDump(hreporthandle: HREPORT, hprocess: super::super::Foundation::HANDLE, hthread: super::super::Foundation::HANDLE, dumptype: WER_DUMP_TYPE, pexceptionparam: *const WER_EXCEPTION_INFORMATION, pdumpcustomoptions: *const WER_DUMP_CUSTOM_OPTIONS, dwflags: u32) -> ::windows::core::HRESULT;
+            fn WerReportAddDump(hreporthandle: HREPORT, hprocess: super::super::Foundation::HANDLE, hthread: super::super::Foundation::HANDLE, dumptype: WER_DUMP_TYPE, pexceptionparam: *const WER_EXCEPTION_INFORMATION, pdumpcustomoptions: *const WER_DUMP_CUSTOM_OPTIONS, dwflags: u32) -> ::windows_core::HRESULT;
         }
         WerReportAddDump(hreporthandle.into_param().abi(), hprocess.into_param().abi(), hthread.into_param().abi(), ::core::mem::transmute(dumptype), ::core::mem::transmute(pexceptionparam), ::core::mem::transmute(pdumpcustomoptions), ::core::mem::transmute(dwflags)).ok()
     }
@@ -1654,12 +1654,12 @@ pub unsafe fn WerReportAddDump<'a, Param0: ::windows::core::IntoParam<'a, HREPOR
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerReportAddFile<'a, Param0: ::windows::core::IntoParam<'a, HREPORT>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hreporthandle: Param0, pwzpath: Param1, repfiletype: WER_FILE_TYPE, dwfileflags: WER_FILE) -> ::windows::core::Result<()> {
+pub unsafe fn WerReportAddFile<'a, Param0: ::windows_core::IntoParam<'a, HREPORT>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hreporthandle: Param0, pwzpath: Param1, repfiletype: WER_FILE_TYPE, dwfileflags: WER_FILE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerReportAddFile(hreporthandle: HREPORT, pwzpath: ::windows::core::PCWSTR, repfiletype: WER_FILE_TYPE, dwfileflags: WER_FILE) -> ::windows::core::HRESULT;
+            fn WerReportAddFile(hreporthandle: HREPORT, pwzpath: ::windows_core::PCWSTR, repfiletype: WER_FILE_TYPE, dwfileflags: WER_FILE) -> ::windows_core::HRESULT;
         }
         WerReportAddFile(hreporthandle.into_param().abi(), pwzpath.into_param().abi(), ::core::mem::transmute(repfiletype), ::core::mem::transmute(dwfileflags)).ok()
     }
@@ -1668,12 +1668,12 @@ pub unsafe fn WerReportAddFile<'a, Param0: ::windows::core::IntoParam<'a, HREPOR
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerReportCloseHandle<'a, Param0: ::windows::core::IntoParam<'a, HREPORT>>(hreporthandle: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn WerReportCloseHandle<'a, Param0: ::windows_core::IntoParam<'a, HREPORT>>(hreporthandle: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerReportCloseHandle(hreporthandle: HREPORT) -> ::windows::core::HRESULT;
+            fn WerReportCloseHandle(hreporthandle: HREPORT) -> ::windows_core::HRESULT;
         }
         WerReportCloseHandle(hreporthandle.into_param().abi()).ok()
     }
@@ -1683,12 +1683,12 @@ pub unsafe fn WerReportCloseHandle<'a, Param0: ::windows::core::IntoParam<'a, HR
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WerReportCreate<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwzeventtype: Param0, reptype: WER_REPORT_TYPE, preportinformation: *const WER_REPORT_INFORMATION) -> ::windows::core::Result<HREPORT> {
+pub unsafe fn WerReportCreate<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwzeventtype: Param0, reptype: WER_REPORT_TYPE, preportinformation: *const WER_REPORT_INFORMATION) -> ::windows_core::Result<HREPORT> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerReportCreate(pwzeventtype: ::windows::core::PCWSTR, reptype: WER_REPORT_TYPE, preportinformation: *const WER_REPORT_INFORMATION, phreporthandle: *mut HREPORT) -> ::windows::core::HRESULT;
+            fn WerReportCreate(pwzeventtype: ::windows_core::PCWSTR, reptype: WER_REPORT_TYPE, preportinformation: *const WER_REPORT_INFORMATION, phreporthandle: *mut HREPORT) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<HREPORT>::zeroed();
         WerReportCreate(pwzeventtype.into_param().abi(), ::core::mem::transmute(reptype), ::core::mem::transmute(preportinformation), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<HREPORT>(result__)
@@ -1699,12 +1699,12 @@ pub unsafe fn WerReportCreate<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WerReportHang<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwndhungapp: Param0, pwzhungapplicationname: Param1) -> ::windows::core::Result<()> {
+pub unsafe fn WerReportHang<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndhungapp: Param0, pwzhungapplicationname: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerReportHang(hwndhungapp: super::super::Foundation::HWND, pwzhungapplicationname: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn WerReportHang(hwndhungapp: super::super::Foundation::HWND, pwzhungapplicationname: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         WerReportHang(hwndhungapp.into_param().abi(), pwzhungapplicationname.into_param().abi()).ok()
     }
@@ -1713,12 +1713,12 @@ pub unsafe fn WerReportHang<'a, Param0: ::windows::core::IntoParam<'a, super::su
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerReportSetParameter<'a, Param0: ::windows::core::IntoParam<'a, HREPORT>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hreporthandle: Param0, dwparamid: u32, pwzname: Param2, pwzvalue: Param3) -> ::windows::core::Result<()> {
+pub unsafe fn WerReportSetParameter<'a, Param0: ::windows_core::IntoParam<'a, HREPORT>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hreporthandle: Param0, dwparamid: u32, pwzname: Param2, pwzvalue: Param3) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerReportSetParameter(hreporthandle: HREPORT, dwparamid: u32, pwzname: ::windows::core::PCWSTR, pwzvalue: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn WerReportSetParameter(hreporthandle: HREPORT, dwparamid: u32, pwzname: ::windows_core::PCWSTR, pwzvalue: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         WerReportSetParameter(hreporthandle.into_param().abi(), ::core::mem::transmute(dwparamid), pwzname.into_param().abi(), pwzvalue.into_param().abi()).ok()
     }
@@ -1727,12 +1727,12 @@ pub unsafe fn WerReportSetParameter<'a, Param0: ::windows::core::IntoParam<'a, H
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerReportSetUIOption<'a, Param0: ::windows::core::IntoParam<'a, HREPORT>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hreporthandle: Param0, repuitypeid: WER_REPORT_UI, pwzvalue: Param2) -> ::windows::core::Result<()> {
+pub unsafe fn WerReportSetUIOption<'a, Param0: ::windows_core::IntoParam<'a, HREPORT>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hreporthandle: Param0, repuitypeid: WER_REPORT_UI, pwzvalue: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerReportSetUIOption(hreporthandle: HREPORT, repuitypeid: WER_REPORT_UI, pwzvalue: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn WerReportSetUIOption(hreporthandle: HREPORT, repuitypeid: WER_REPORT_UI, pwzvalue: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         WerReportSetUIOption(hreporthandle.into_param().abi(), ::core::mem::transmute(repuitypeid), pwzvalue.into_param().abi()).ok()
     }
@@ -1741,12 +1741,12 @@ pub unsafe fn WerReportSetUIOption<'a, Param0: ::windows::core::IntoParam<'a, HR
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerReportSubmit<'a, Param0: ::windows::core::IntoParam<'a, HREPORT>>(hreporthandle: Param0, consent: WER_CONSENT, dwflags: WER_SUBMIT_FLAGS) -> ::windows::core::Result<WER_SUBMIT_RESULT> {
+pub unsafe fn WerReportSubmit<'a, Param0: ::windows_core::IntoParam<'a, HREPORT>>(hreporthandle: Param0, consent: WER_CONSENT, dwflags: WER_SUBMIT_FLAGS) -> ::windows_core::Result<WER_SUBMIT_RESULT> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerReportSubmit(hreporthandle: HREPORT, consent: WER_CONSENT, dwflags: WER_SUBMIT_FLAGS, psubmitresult: *mut WER_SUBMIT_RESULT) -> ::windows::core::HRESULT;
+            fn WerReportSubmit(hreporthandle: HREPORT, consent: WER_CONSENT, dwflags: WER_SUBMIT_FLAGS, psubmitresult: *mut WER_SUBMIT_RESULT) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<WER_SUBMIT_RESULT>::zeroed();
         WerReportSubmit(hreporthandle.into_param().abi(), ::core::mem::transmute(consent), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WER_SUBMIT_RESULT>(result__)
@@ -1756,12 +1756,12 @@ pub unsafe fn WerReportSubmit<'a, Param0: ::windows::core::IntoParam<'a, HREPORT
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerSetFlags(dwflags: WER_FAULT_REPORTING) -> ::windows::core::Result<()> {
+pub unsafe fn WerSetFlags(dwflags: WER_FAULT_REPORTING) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerSetFlags(dwflags: WER_FAULT_REPORTING) -> ::windows::core::HRESULT;
+            fn WerSetFlags(dwflags: WER_FAULT_REPORTING) -> ::windows_core::HRESULT;
         }
         WerSetFlags(::core::mem::transmute(dwflags)).ok()
     }
@@ -1770,7 +1770,7 @@ pub unsafe fn WerSetFlags(dwflags: WER_FAULT_REPORTING) -> ::windows::core::Resu
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerStoreClose<'a, Param0: ::windows::core::IntoParam<'a, HREPORTSTORE>>(hreportstore: Param0) {
+pub unsafe fn WerStoreClose<'a, Param0: ::windows_core::IntoParam<'a, HREPORTSTORE>>(hreportstore: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1784,42 +1784,42 @@ pub unsafe fn WerStoreClose<'a, Param0: ::windows::core::IntoParam<'a, HREPORTST
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerStoreGetFirstReportKey<'a, Param0: ::windows::core::IntoParam<'a, HREPORTSTORE>>(hreportstore: Param0) -> ::windows::core::Result<::windows::core::PWSTR> {
+pub unsafe fn WerStoreGetFirstReportKey<'a, Param0: ::windows_core::IntoParam<'a, HREPORTSTORE>>(hreportstore: Param0) -> ::windows_core::Result<::windows_core::PWSTR> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerStoreGetFirstReportKey(hreportstore: HREPORTSTORE, ppszreportkey: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
+            fn WerStoreGetFirstReportKey(hreportstore: HREPORTSTORE, ppszreportkey: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::PWSTR>::zeroed();
-        WerStoreGetFirstReportKey(hreportstore.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::PWSTR>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
+        WerStoreGetFirstReportKey(hreportstore.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerStoreGetNextReportKey<'a, Param0: ::windows::core::IntoParam<'a, HREPORTSTORE>>(hreportstore: Param0) -> ::windows::core::Result<::windows::core::PWSTR> {
+pub unsafe fn WerStoreGetNextReportKey<'a, Param0: ::windows_core::IntoParam<'a, HREPORTSTORE>>(hreportstore: Param0) -> ::windows_core::Result<::windows_core::PWSTR> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerStoreGetNextReportKey(hreportstore: HREPORTSTORE, ppszreportkey: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
+            fn WerStoreGetNextReportKey(hreportstore: HREPORTSTORE, ppszreportkey: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::PWSTR>::zeroed();
-        WerStoreGetNextReportKey(hreportstore.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::PWSTR>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
+        WerStoreGetNextReportKey(hreportstore.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerStoreGetReportCount<'a, Param0: ::windows::core::IntoParam<'a, HREPORTSTORE>>(hreportstore: Param0) -> ::windows::core::Result<u32> {
+pub unsafe fn WerStoreGetReportCount<'a, Param0: ::windows_core::IntoParam<'a, HREPORTSTORE>>(hreportstore: Param0) -> ::windows_core::Result<u32> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerStoreGetReportCount(hreportstore: HREPORTSTORE, pdwreportcount: *mut u32) -> ::windows::core::HRESULT;
+            fn WerStoreGetReportCount(hreportstore: HREPORTSTORE, pdwreportcount: *mut u32) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         WerStoreGetReportCount(hreportstore.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
@@ -1829,12 +1829,12 @@ pub unsafe fn WerStoreGetReportCount<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerStoreGetSizeOnDisk<'a, Param0: ::windows::core::IntoParam<'a, HREPORTSTORE>>(hreportstore: Param0) -> ::windows::core::Result<u64> {
+pub unsafe fn WerStoreGetSizeOnDisk<'a, Param0: ::windows_core::IntoParam<'a, HREPORTSTORE>>(hreportstore: Param0) -> ::windows_core::Result<u64> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerStoreGetSizeOnDisk(hreportstore: HREPORTSTORE, pqwsizeinbytes: *mut u64) -> ::windows::core::HRESULT;
+            fn WerStoreGetSizeOnDisk(hreportstore: HREPORTSTORE, pqwsizeinbytes: *mut u64) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
         WerStoreGetSizeOnDisk(hreportstore.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
@@ -1844,12 +1844,12 @@ pub unsafe fn WerStoreGetSizeOnDisk<'a, Param0: ::windows::core::IntoParam<'a, H
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerStoreOpen(repstoretype: REPORT_STORE_TYPES) -> ::windows::core::Result<HREPORTSTORE> {
+pub unsafe fn WerStoreOpen(repstoretype: REPORT_STORE_TYPES) -> ::windows_core::Result<HREPORTSTORE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerStoreOpen(repstoretype: REPORT_STORE_TYPES, phreportstore: *mut HREPORTSTORE) -> ::windows::core::HRESULT;
+            fn WerStoreOpen(repstoretype: REPORT_STORE_TYPES, phreportstore: *mut HREPORTSTORE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<HREPORTSTORE>::zeroed();
         WerStoreOpen(::core::mem::transmute(repstoretype), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<HREPORTSTORE>(result__)
@@ -1859,12 +1859,12 @@ pub unsafe fn WerStoreOpen(repstoretype: REPORT_STORE_TYPES) -> ::windows::core:
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerStorePurge() -> ::windows::core::Result<()> {
+pub unsafe fn WerStorePurge() -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerStorePurge() -> ::windows::core::HRESULT;
+            fn WerStorePurge() -> ::windows_core::HRESULT;
         }
         WerStorePurge().ok()
     }
@@ -1874,12 +1874,12 @@ pub unsafe fn WerStorePurge() -> ::windows::core::Result<()> {
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WerStoreQueryReportMetadataV1<'a, Param0: ::windows::core::IntoParam<'a, HREPORTSTORE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hreportstore: Param0, pszreportkey: Param1) -> ::windows::core::Result<WER_REPORT_METADATA_V1> {
+pub unsafe fn WerStoreQueryReportMetadataV1<'a, Param0: ::windows_core::IntoParam<'a, HREPORTSTORE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hreportstore: Param0, pszreportkey: Param1) -> ::windows_core::Result<WER_REPORT_METADATA_V1> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerStoreQueryReportMetadataV1(hreportstore: HREPORTSTORE, pszreportkey: ::windows::core::PCWSTR, preportmetadata: *mut WER_REPORT_METADATA_V1) -> ::windows::core::HRESULT;
+            fn WerStoreQueryReportMetadataV1(hreportstore: HREPORTSTORE, pszreportkey: ::windows_core::PCWSTR, preportmetadata: *mut WER_REPORT_METADATA_V1) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<WER_REPORT_METADATA_V1>::zeroed();
         WerStoreQueryReportMetadataV1(hreportstore.into_param().abi(), pszreportkey.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WER_REPORT_METADATA_V1>(result__)
@@ -1890,12 +1890,12 @@ pub unsafe fn WerStoreQueryReportMetadataV1<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WerStoreQueryReportMetadataV2<'a, Param0: ::windows::core::IntoParam<'a, HREPORTSTORE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hreportstore: Param0, pszreportkey: Param1) -> ::windows::core::Result<WER_REPORT_METADATA_V2> {
+pub unsafe fn WerStoreQueryReportMetadataV2<'a, Param0: ::windows_core::IntoParam<'a, HREPORTSTORE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hreportstore: Param0, pszreportkey: Param1) -> ::windows_core::Result<WER_REPORT_METADATA_V2> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerStoreQueryReportMetadataV2(hreportstore: HREPORTSTORE, pszreportkey: ::windows::core::PCWSTR, preportmetadata: *mut WER_REPORT_METADATA_V2) -> ::windows::core::HRESULT;
+            fn WerStoreQueryReportMetadataV2(hreportstore: HREPORTSTORE, pszreportkey: ::windows_core::PCWSTR, preportmetadata: *mut WER_REPORT_METADATA_V2) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<WER_REPORT_METADATA_V2>::zeroed();
         WerStoreQueryReportMetadataV2(hreportstore.into_param().abi(), pszreportkey.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WER_REPORT_METADATA_V2>(result__)
@@ -1906,12 +1906,12 @@ pub unsafe fn WerStoreQueryReportMetadataV2<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WerStoreQueryReportMetadataV3<'a, Param0: ::windows::core::IntoParam<'a, HREPORTSTORE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hreportstore: Param0, pszreportkey: Param1) -> ::windows::core::Result<WER_REPORT_METADATA_V3> {
+pub unsafe fn WerStoreQueryReportMetadataV3<'a, Param0: ::windows_core::IntoParam<'a, HREPORTSTORE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hreportstore: Param0, pszreportkey: Param1) -> ::windows_core::Result<WER_REPORT_METADATA_V3> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerStoreQueryReportMetadataV3(hreportstore: HREPORTSTORE, pszreportkey: ::windows::core::PCWSTR, preportmetadata: *mut WER_REPORT_METADATA_V3) -> ::windows::core::HRESULT;
+            fn WerStoreQueryReportMetadataV3(hreportstore: HREPORTSTORE, pszreportkey: ::windows_core::PCWSTR, preportmetadata: *mut WER_REPORT_METADATA_V3) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<WER_REPORT_METADATA_V3>::zeroed();
         WerStoreQueryReportMetadataV3(hreportstore.into_param().abi(), pszreportkey.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WER_REPORT_METADATA_V3>(result__)
@@ -1921,12 +1921,12 @@ pub unsafe fn WerStoreQueryReportMetadataV3<'a, Param0: ::windows::core::IntoPar
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerStoreUploadReport<'a, Param0: ::windows::core::IntoParam<'a, HREPORTSTORE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hreportstore: Param0, pszreportkey: Param1, dwflags: u32) -> ::windows::core::Result<WER_SUBMIT_RESULT> {
+pub unsafe fn WerStoreUploadReport<'a, Param0: ::windows_core::IntoParam<'a, HREPORTSTORE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hreportstore: Param0, pszreportkey: Param1, dwflags: u32) -> ::windows_core::Result<WER_SUBMIT_RESULT> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerStoreUploadReport(hreportstore: HREPORTSTORE, pszreportkey: ::windows::core::PCWSTR, dwflags: u32, psubmitresult: *mut WER_SUBMIT_RESULT) -> ::windows::core::HRESULT;
+            fn WerStoreUploadReport(hreportstore: HREPORTSTORE, pszreportkey: ::windows_core::PCWSTR, dwflags: u32, psubmitresult: *mut WER_SUBMIT_RESULT) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<WER_SUBMIT_RESULT>::zeroed();
         WerStoreUploadReport(hreportstore.into_param().abi(), pszreportkey.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WER_SUBMIT_RESULT>(result__)
@@ -1936,12 +1936,12 @@ pub unsafe fn WerStoreUploadReport<'a, Param0: ::windows::core::IntoParam<'a, HR
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerUnregisterAdditionalProcess(processid: u32) -> ::windows::core::Result<()> {
+pub unsafe fn WerUnregisterAdditionalProcess(processid: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerUnregisterAdditionalProcess(processid: u32) -> ::windows::core::HRESULT;
+            fn WerUnregisterAdditionalProcess(processid: u32) -> ::windows_core::HRESULT;
         }
         WerUnregisterAdditionalProcess(::core::mem::transmute(processid)).ok()
     }
@@ -1950,12 +1950,12 @@ pub unsafe fn WerUnregisterAdditionalProcess(processid: u32) -> ::windows::core:
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerUnregisterAppLocalDump() -> ::windows::core::Result<()> {
+pub unsafe fn WerUnregisterAppLocalDump() -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerUnregisterAppLocalDump() -> ::windows::core::HRESULT;
+            fn WerUnregisterAppLocalDump() -> ::windows_core::HRESULT;
         }
         WerUnregisterAppLocalDump().ok()
     }
@@ -1964,12 +1964,12 @@ pub unsafe fn WerUnregisterAppLocalDump() -> ::windows::core::Result<()> {
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerUnregisterCustomMetadata<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(key: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn WerUnregisterCustomMetadata<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(key: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerUnregisterCustomMetadata(key: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn WerUnregisterCustomMetadata(key: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         WerUnregisterCustomMetadata(key.into_param().abi()).ok()
     }
@@ -1978,12 +1978,12 @@ pub unsafe fn WerUnregisterCustomMetadata<'a, Param0: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerUnregisterExcludedMemoryBlock(address: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn WerUnregisterExcludedMemoryBlock(address: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerUnregisterExcludedMemoryBlock(address: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn WerUnregisterExcludedMemoryBlock(address: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         WerUnregisterExcludedMemoryBlock(::core::mem::transmute(address)).ok()
     }
@@ -1992,12 +1992,12 @@ pub unsafe fn WerUnregisterExcludedMemoryBlock(address: *const ::core::ffi::c_vo
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerUnregisterFile<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwzfilepath: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn WerUnregisterFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwzfilepath: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerUnregisterFile(pwzfilepath: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn WerUnregisterFile(pwzfilepath: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         WerUnregisterFile(pwzfilepath.into_param().abi()).ok()
     }
@@ -2006,12 +2006,12 @@ pub unsafe fn WerUnregisterFile<'a, Param0: ::windows::core::IntoParam<'a, ::win
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerUnregisterMemoryBlock(pvaddress: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn WerUnregisterMemoryBlock(pvaddress: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerUnregisterMemoryBlock(pvaddress: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn WerUnregisterMemoryBlock(pvaddress: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         WerUnregisterMemoryBlock(::core::mem::transmute(pvaddress)).ok()
     }
@@ -2020,12 +2020,12 @@ pub unsafe fn WerUnregisterMemoryBlock(pvaddress: *const ::core::ffi::c_void) ->
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
 #[inline]
-pub unsafe fn WerUnregisterRuntimeExceptionModule<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszoutofprocesscallbackdll: Param0, pcontext: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn WerUnregisterRuntimeExceptionModule<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszoutofprocesscallbackdll: Param0, pcontext: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerUnregisterRuntimeExceptionModule(pwszoutofprocesscallbackdll: ::windows::core::PCWSTR, pcontext: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn WerUnregisterRuntimeExceptionModule(pwszoutofprocesscallbackdll: ::windows_core::PCWSTR, pcontext: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         WerUnregisterRuntimeExceptionModule(pwszoutofprocesscallbackdll.into_param().abi(), ::core::mem::transmute(pcontext)).ok()
     }
@@ -2033,9 +2033,9 @@ pub unsafe fn WerUnregisterRuntimeExceptionModule<'a, Param0: ::windows::core::I
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
-pub type pfn_ADDEREXCLUDEDAPPLICATIONA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows::core::PCSTR) -> EFaultRepRetVal>;
+pub type pfn_ADDEREXCLUDEDAPPLICATIONA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCSTR) -> EFaultRepRetVal>;
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`*"]
-pub type pfn_ADDEREXCLUDEDAPPLICATIONW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows::core::PCWSTR) -> EFaultRepRetVal>;
+pub type pfn_ADDEREXCLUDEDAPPLICATIONW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR) -> EFaultRepRetVal>;
 #[doc = "*Required features: `\"Win32_System_ErrorReporting\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Kernel\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 pub type pfn_REPORTFAULT = ::core::option::Option<unsafe extern "system" fn(param0: *const super::Diagnostics::Debug::EXCEPTION_POINTERS, param1: u32) -> EFaultRepRetVal>;

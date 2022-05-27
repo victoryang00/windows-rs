@@ -1,84 +1,84 @@
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IXsltProcessor(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IXsltProcessor {
+pub struct IXsltProcessor(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IXsltProcessor {
     type Vtable = IXsltProcessor_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7b64703f_550c_48c6_a90f_93a5b964518f);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7b64703f_550c_48c6_a90f_93a5b964518f);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IXsltProcessor_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Data_Xml_Dom")]
-    pub TransformToString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inputnode: ::windows::core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub TransformToString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inputnode: ::windows_core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Data_Xml_Dom"))]
     TransformToString: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IXsltProcessor2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IXsltProcessor2 {
+pub struct IXsltProcessor2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IXsltProcessor2 {
     type Vtable = IXsltProcessor2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8da45c56_97a5_44cb_a8be_27d86280c70a);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8da45c56_97a5_44cb_a8be_27d86280c70a);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IXsltProcessor2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Data_Xml_Dom")]
-    pub TransformToDocument: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inputnode: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub TransformToDocument: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inputnode: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Data_Xml_Dom"))]
     TransformToDocument: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IXsltProcessorFactory(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IXsltProcessorFactory {
+pub struct IXsltProcessorFactory(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IXsltProcessorFactory {
     type Vtable = IXsltProcessorFactory_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x274146c0_9a51_4663_bf30_0ef742146f20);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x274146c0_9a51_4663_bf30_0ef742146f20);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IXsltProcessorFactory_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Data_Xml_Dom")]
-    pub CreateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, document: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, document: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Data_Xml_Dom"))]
     CreateInstance: usize,
 }
 #[doc = "*Required features: `\"Data_Xml_Xsl\"`*"]
 #[repr(transparent)]
-pub struct XsltProcessor(::windows::core::IUnknown);
+pub struct XsltProcessor(::windows_core::IUnknown);
 impl XsltProcessor {
     #[doc = "*Required features: `\"Data_Xml_Xsl\"`, `\"Data_Xml_Dom\"`*"]
     #[cfg(feature = "Data_Xml_Dom")]
-    pub fn TransformToString<'a, Param0: ::windows::core::IntoParam<'a, super::Dom::IXmlNode>>(&self, inputnode: Param0) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn TransformToString<'a, Param0: ::windows_core::IntoParam<'a, super::Dom::IXmlNode>>(&self, inputnode: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).TransformToString)(::windows::core::Interface::as_raw(this), inputnode.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).TransformToString)(::windows_core::Interface::as_raw(this), inputnode.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"Data_Xml_Xsl\"`, `\"Data_Xml_Dom\"`*"]
     #[cfg(feature = "Data_Xml_Dom")]
-    pub fn TransformToDocument<'a, Param0: ::windows::core::IntoParam<'a, super::Dom::IXmlNode>>(&self, inputnode: Param0) -> ::windows::core::Result<super::Dom::XmlDocument> {
-        let this = &::windows::core::Interface::cast::<IXsltProcessor2>(self)?;
+    pub fn TransformToDocument<'a, Param0: ::windows_core::IntoParam<'a, super::Dom::IXmlNode>>(&self, inputnode: Param0) -> ::windows_core::Result<super::Dom::XmlDocument> {
+        let this = &::windows_core::Interface::cast::<IXsltProcessor2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).TransformToDocument)(::windows::core::Interface::as_raw(this), inputnode.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Dom::XmlDocument>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).TransformToDocument)(::windows_core::Interface::as_raw(this), inputnode.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Dom::XmlDocument>(result__)
         }
     }
     #[doc = "*Required features: `\"Data_Xml_Xsl\"`, `\"Data_Xml_Dom\"`*"]
     #[cfg(feature = "Data_Xml_Dom")]
-    pub fn CreateInstance<'a, Param0: ::windows::core::IntoParam<'a, super::Dom::XmlDocument>>(document: Param0) -> ::windows::core::Result<XsltProcessor> {
+    pub fn CreateInstance<'a, Param0: ::windows_core::IntoParam<'a, super::Dom::XmlDocument>>(document: Param0) -> ::windows_core::Result<XsltProcessor> {
         Self::IXsltProcessorFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CreateInstance)(::windows::core::Interface::as_raw(this), document.into_param().abi(), result__.as_mut_ptr()).from_abi::<XsltProcessor>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(::windows_core::Interface::as_raw(this), document.into_param().abi(), result__.as_mut_ptr()).from_abi::<XsltProcessor>(result__)
         })
     }
     #[doc(hidden)]
-    pub fn IXsltProcessorFactory<R, F: FnOnce(&IXsltProcessorFactory) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<XsltProcessor, IXsltProcessorFactory> = ::windows::core::FactoryCache::new();
+    pub fn IXsltProcessorFactory<R, F: FnOnce(&IXsltProcessorFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<XsltProcessor, IXsltProcessorFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
@@ -98,58 +98,58 @@ impl ::core::fmt::Debug for XsltProcessor {
         f.debug_tuple("XsltProcessor").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for XsltProcessor {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Data.Xml.Xsl.XsltProcessor;{7b64703f-550c-48c6-a90f-93a5b964518f})");
+unsafe impl ::windows_core::RuntimeType for XsltProcessor {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Data.Xml.Xsl.XsltProcessor;{7b64703f-550c-48c6-a90f-93a5b964518f})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for XsltProcessor {
+unsafe impl ::windows_core::Interface for XsltProcessor {
     type Vtable = IXsltProcessor_Vtbl;
-    const IID: ::windows::core::GUID = <IXsltProcessor as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IXsltProcessor as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for XsltProcessor {
+impl ::windows_core::RuntimeName for XsltProcessor {
     const NAME: &'static str = "Windows.Data.Xml.Xsl.XsltProcessor";
 }
-impl ::core::convert::From<XsltProcessor> for ::windows::core::IUnknown {
+impl ::core::convert::From<XsltProcessor> for ::windows_core::IUnknown {
     fn from(value: XsltProcessor) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&XsltProcessor> for ::windows::core::IUnknown {
+impl ::core::convert::From<&XsltProcessor> for ::windows_core::IUnknown {
     fn from(value: &XsltProcessor) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for XsltProcessor {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for XsltProcessor {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a XsltProcessor {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a XsltProcessor {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<XsltProcessor> for ::windows::core::IInspectable {
+impl ::core::convert::From<XsltProcessor> for ::windows_core::IInspectable {
     fn from(value: XsltProcessor) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&XsltProcessor> for ::windows::core::IInspectable {
+impl ::core::convert::From<&XsltProcessor> for ::windows_core::IInspectable {
     fn from(value: &XsltProcessor) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for XsltProcessor {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for XsltProcessor {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a XsltProcessor {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a XsltProcessor {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for XsltProcessor {}

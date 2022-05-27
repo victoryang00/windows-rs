@@ -2,19 +2,19 @@
 pub struct ApplicationProfile;
 impl ApplicationProfile {
     #[doc = "*Required features: `\"Phone_ApplicationModel\"`*"]
-    pub fn Modes() -> ::windows::core::Result<ApplicationProfileModes> {
+    pub fn Modes() -> ::windows_core::Result<ApplicationProfileModes> {
         Self::IApplicationProfileStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<ApplicationProfileModes>::zeroed();
-            (::windows::core::Interface::vtable(this).Modes)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ApplicationProfileModes>(result__)
+            (::windows_core::Interface::vtable(this).Modes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ApplicationProfileModes>(result__)
         })
     }
     #[doc(hidden)]
-    pub fn IApplicationProfileStatics<R, F: FnOnce(&IApplicationProfileStatics) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<ApplicationProfile, IApplicationProfileStatics> = ::windows::core::FactoryCache::new();
+    pub fn IApplicationProfileStatics<R, F: FnOnce(&IApplicationProfileStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<ApplicationProfile, IApplicationProfileStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
-impl ::windows::core::RuntimeName for ApplicationProfile {
+impl ::windows_core::RuntimeName for ApplicationProfile {
     const NAME: &'static str = "Windows.Phone.ApplicationModel.ApplicationProfile";
 }
 #[doc = "*Required features: `\"Phone_ApplicationModel\"`*"]
@@ -36,7 +36,7 @@ impl ::core::default::Default for ApplicationProfileModes {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ApplicationProfileModes {
+unsafe impl ::windows_core::Abi for ApplicationProfileModes {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ApplicationProfileModes {
@@ -72,25 +72,25 @@ impl ::core::ops::Not for ApplicationProfileModes {
         Self(self.0.not())
     }
 }
-unsafe impl ::windows::core::RuntimeType for ApplicationProfileModes {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Phone.ApplicationModel.ApplicationProfileModes;u4)");
+unsafe impl ::windows_core::RuntimeType for ApplicationProfileModes {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Phone.ApplicationModel.ApplicationProfileModes;u4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IApplicationProfileStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IApplicationProfileStatics {
+pub struct IApplicationProfileStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IApplicationProfileStatics {
     type Vtable = IApplicationProfileStatics_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd5008ab4_7e7a_11e1_a7f2_b0a14824019b);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd5008ab4_7e7a_11e1_a7f2_b0a14824019b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IApplicationProfileStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Modes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ApplicationProfileModes) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Modes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ApplicationProfileModes) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "implement")]
 ::core::include!("impl.rs");

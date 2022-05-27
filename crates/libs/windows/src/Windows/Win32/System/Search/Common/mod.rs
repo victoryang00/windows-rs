@@ -43,7 +43,7 @@ impl ::core::default::Default for CONDITION_OPERATION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CONDITION_OPERATION {
+unsafe impl ::windows_core::Abi for CONDITION_OPERATION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CONDITION_OPERATION {
@@ -74,7 +74,7 @@ impl ::core::default::Default for CONDITION_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CONDITION_TYPE {
+unsafe impl ::windows_core::Abi for CONDITION_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CONDITION_TYPE {

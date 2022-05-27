@@ -1,4 +1,4 @@
-use windows::core::*;
+use windows_core::*;
 use windows::Foundation::Collections::*;
 
 // TODO: test whether we can implement two different IIterable's.

@@ -1,9 +1,9 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_UI_Xaml_Diagnostics\"`*"]
-    pub fn InitializeXamlDiagnostic(endpointname: ::windows_sys::core::PCWSTR, pid: u32, wszdllxamldiagnostics: ::windows_sys::core::PCWSTR, wsztapdllname: ::windows_sys::core::PCWSTR, tapclsid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn InitializeXamlDiagnostic(endpointname: ::windows_sys_core::PCWSTR, pid: u32, wszdllxamldiagnostics: ::windows_sys_core::PCWSTR, wsztapdllname: ::windows_sys_core::PCWSTR, tapclsid: ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_UI_Xaml_Diagnostics\"`*"]
-    pub fn InitializeXamlDiagnosticsEx(endpointname: ::windows_sys::core::PCWSTR, pid: u32, wszdllxamldiagnostics: ::windows_sys::core::PCWSTR, wsztapdllname: ::windows_sys::core::PCWSTR, tapclsid: ::windows_sys::core::GUID, wszinitializationdata: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT;
+    pub fn InitializeXamlDiagnosticsEx(endpointname: ::windows_sys_core::PCWSTR, pid: u32, wszdllxamldiagnostics: ::windows_sys_core::PCWSTR, wsztapdllname: ::windows_sys_core::PCWSTR, tapclsid: ::windows_sys_core::GUID, wszinitializationdata: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
 }
 #[doc = "*Required features: `\"Win32_UI_Xaml_Diagnostics\"`*"]
 pub type BaseValueSource = i32;
@@ -72,7 +72,7 @@ impl ::core::clone::Clone for CollectionElementValue {
     }
 }
 #[doc = "*Required features: `\"Win32_UI_Xaml_Diagnostics\"`*"]
-pub const E_UNKNOWNTYPE: ::windows_sys::core::HRESULT = -2144665560i32;
+pub const E_UNKNOWNTYPE: ::windows_sys_core::HRESULT = -2144665560i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Xaml_Diagnostics\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]

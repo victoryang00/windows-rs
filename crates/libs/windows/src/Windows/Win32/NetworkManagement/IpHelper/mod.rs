@@ -38,7 +38,7 @@ pub unsafe fn CancelIPChangeNotify(notifyoverlapped: *const super::super::System
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CancelMibChangeNotify2<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(notificationhandle: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn CancelMibChangeNotify2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(notificationhandle: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -68,12 +68,12 @@ pub unsafe fn CaptureInterfaceHardwareCrossTimestamp(interfaceluid: *const super
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ConvertCompartmentGuidToId(compartmentguid: *const ::windows::core::GUID, compartmentid: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertCompartmentGuidToId(compartmentguid: *const ::windows_core::GUID, compartmentid: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConvertCompartmentGuidToId(compartmentguid: *const ::windows::core::GUID, compartmentid: *mut u32) -> super::super::Foundation::NTSTATUS;
+            fn ConvertCompartmentGuidToId(compartmentguid: *const ::windows_core::GUID, compartmentid: *mut u32) -> super::super::Foundation::NTSTATUS;
         }
         ConvertCompartmentGuidToId(::core::mem::transmute(compartmentguid), ::core::mem::transmute(compartmentid)).ok()
     }
@@ -83,12 +83,12 @@ pub unsafe fn ConvertCompartmentGuidToId(compartmentguid: *const ::windows::core
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ConvertCompartmentIdToGuid(compartmentid: u32, compartmentguid: *mut ::windows::core::GUID) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertCompartmentIdToGuid(compartmentid: u32, compartmentguid: *mut ::windows_core::GUID) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConvertCompartmentIdToGuid(compartmentid: u32, compartmentguid: *mut ::windows::core::GUID) -> super::super::Foundation::NTSTATUS;
+            fn ConvertCompartmentIdToGuid(compartmentid: u32, compartmentguid: *mut ::windows_core::GUID) -> super::super::Foundation::NTSTATUS;
         }
         ConvertCompartmentIdToGuid(::core::mem::transmute(compartmentid), ::core::mem::transmute(compartmentguid)).ok()
     }
@@ -98,12 +98,12 @@ pub unsafe fn ConvertCompartmentIdToGuid(compartmentid: u32, compartmentguid: *m
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn ConvertInterfaceAliasToLuid<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(interfacealias: Param0, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertInterfaceAliasToLuid<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(interfacealias: Param0, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConvertInterfaceAliasToLuid(interfacealias: ::windows::core::PCWSTR, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
+            fn ConvertInterfaceAliasToLuid(interfacealias: ::windows_core::PCWSTR, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
         }
         ConvertInterfaceAliasToLuid(interfacealias.into_param().abi(), ::core::mem::transmute(interfaceluid)).ok()
     }
@@ -113,12 +113,12 @@ pub unsafe fn ConvertInterfaceAliasToLuid<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn ConvertInterfaceGuidToLuid(interfaceguid: *const ::windows::core::GUID, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertInterfaceGuidToLuid(interfaceguid: *const ::windows_core::GUID, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConvertInterfaceGuidToLuid(interfaceguid: *const ::windows::core::GUID, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
+            fn ConvertInterfaceGuidToLuid(interfaceguid: *const ::windows_core::GUID, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
         }
         ConvertInterfaceGuidToLuid(::core::mem::transmute(interfaceguid), ::core::mem::transmute(interfaceluid)).ok()
     }
@@ -128,7 +128,7 @@ pub unsafe fn ConvertInterfaceGuidToLuid(interfaceguid: *const ::windows::core::
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn ConvertInterfaceIndexToLuid(interfaceindex: u32, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertInterfaceIndexToLuid(interfaceindex: u32, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -143,14 +143,14 @@ pub unsafe fn ConvertInterfaceIndexToLuid(interfaceindex: u32, interfaceluid: *m
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn ConvertInterfaceLuidToAlias(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacealias: &mut [u16]) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertInterfaceLuidToAlias(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacealias: &mut [u16]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConvertInterfaceLuidToAlias(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacealias: ::windows::core::PWSTR, length: usize) -> super::super::Foundation::NTSTATUS;
+            fn ConvertInterfaceLuidToAlias(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacealias: ::windows_core::PWSTR, length: usize) -> super::super::Foundation::NTSTATUS;
         }
-        ConvertInterfaceLuidToAlias(::core::mem::transmute(interfaceluid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(interfacealias)), interfacealias.len() as _).ok()
+        ConvertInterfaceLuidToAlias(::core::mem::transmute(interfaceluid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(interfacealias)), interfacealias.len() as _).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -158,12 +158,12 @@ pub unsafe fn ConvertInterfaceLuidToAlias(interfaceluid: *const super::Ndis::NET
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn ConvertInterfaceLuidToGuid(interfaceluid: *const super::Ndis::NET_LUID_LH, interfaceguid: *mut ::windows::core::GUID) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertInterfaceLuidToGuid(interfaceluid: *const super::Ndis::NET_LUID_LH, interfaceguid: *mut ::windows_core::GUID) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConvertInterfaceLuidToGuid(interfaceluid: *const super::Ndis::NET_LUID_LH, interfaceguid: *mut ::windows::core::GUID) -> super::super::Foundation::NTSTATUS;
+            fn ConvertInterfaceLuidToGuid(interfaceluid: *const super::Ndis::NET_LUID_LH, interfaceguid: *mut ::windows_core::GUID) -> super::super::Foundation::NTSTATUS;
         }
         ConvertInterfaceLuidToGuid(::core::mem::transmute(interfaceluid), ::core::mem::transmute(interfaceguid)).ok()
     }
@@ -173,7 +173,7 @@ pub unsafe fn ConvertInterfaceLuidToGuid(interfaceluid: *const super::Ndis::NET_
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn ConvertInterfaceLuidToIndex(interfaceluid: *const super::Ndis::NET_LUID_LH, interfaceindex: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertInterfaceLuidToIndex(interfaceluid: *const super::Ndis::NET_LUID_LH, interfaceindex: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -188,14 +188,14 @@ pub unsafe fn ConvertInterfaceLuidToIndex(interfaceluid: *const super::Ndis::NET
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn ConvertInterfaceLuidToNameA(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacename: &mut [u8]) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertInterfaceLuidToNameA(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacename: &mut [u8]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConvertInterfaceLuidToNameA(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacename: ::windows::core::PSTR, length: usize) -> super::super::Foundation::NTSTATUS;
+            fn ConvertInterfaceLuidToNameA(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacename: ::windows_core::PSTR, length: usize) -> super::super::Foundation::NTSTATUS;
         }
-        ConvertInterfaceLuidToNameA(::core::mem::transmute(interfaceluid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(interfacename)), interfacename.len() as _).ok()
+        ConvertInterfaceLuidToNameA(::core::mem::transmute(interfaceluid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(interfacename)), interfacename.len() as _).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -203,14 +203,14 @@ pub unsafe fn ConvertInterfaceLuidToNameA(interfaceluid: *const super::Ndis::NET
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn ConvertInterfaceLuidToNameW(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacename: &mut [u16]) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertInterfaceLuidToNameW(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacename: &mut [u16]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConvertInterfaceLuidToNameW(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacename: ::windows::core::PWSTR, length: usize) -> super::super::Foundation::NTSTATUS;
+            fn ConvertInterfaceLuidToNameW(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacename: ::windows_core::PWSTR, length: usize) -> super::super::Foundation::NTSTATUS;
         }
-        ConvertInterfaceLuidToNameW(::core::mem::transmute(interfaceluid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(interfacename)), interfacename.len() as _).ok()
+        ConvertInterfaceLuidToNameW(::core::mem::transmute(interfaceluid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(interfacename)), interfacename.len() as _).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -218,12 +218,12 @@ pub unsafe fn ConvertInterfaceLuidToNameW(interfaceluid: *const super::Ndis::NET
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn ConvertInterfaceNameToLuidA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(interfacename: Param0, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertInterfaceNameToLuidA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(interfacename: Param0, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConvertInterfaceNameToLuidA(interfacename: ::windows::core::PCSTR, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
+            fn ConvertInterfaceNameToLuidA(interfacename: ::windows_core::PCSTR, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
         }
         ConvertInterfaceNameToLuidA(interfacename.into_param().abi(), ::core::mem::transmute(interfaceluid)).ok()
     }
@@ -233,12 +233,12 @@ pub unsafe fn ConvertInterfaceNameToLuidA<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn ConvertInterfaceNameToLuidW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(interfacename: Param0, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertInterfaceNameToLuidW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(interfacename: Param0, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConvertInterfaceNameToLuidW(interfacename: ::windows::core::PCWSTR, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
+            fn ConvertInterfaceNameToLuidW(interfacename: ::windows_core::PCWSTR, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
         }
         ConvertInterfaceNameToLuidW(interfacename.into_param().abi(), ::core::mem::transmute(interfaceluid)).ok()
     }
@@ -248,7 +248,7 @@ pub unsafe fn ConvertInterfaceNameToLuidW<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ConvertIpv4MaskToLength(mask: u32, masklength: *mut u8) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertIpv4MaskToLength(mask: u32, masklength: *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -263,7 +263,7 @@ pub unsafe fn ConvertIpv4MaskToLength(mask: u32, masklength: *mut u8) -> ::windo
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ConvertLengthToIpv4Mask(masklength: u32, mask: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn ConvertLengthToIpv4Mask(masklength: u32, mask: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -278,7 +278,7 @@ pub unsafe fn ConvertLengthToIpv4Mask(masklength: u32, mask: *mut u32) -> ::wind
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn CreateAnycastIpAddressEntry(row: *const MIB_ANYCASTIPADDRESS_ROW) -> ::windows::core::Result<()> {
+pub unsafe fn CreateAnycastIpAddressEntry(row: *const MIB_ANYCASTIPADDRESS_ROW) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -308,7 +308,7 @@ pub unsafe fn CreateIpForwardEntry(proute: *const MIB_IPFORWARDROW) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn CreateIpForwardEntry2(row: *const MIB_IPFORWARD_ROW2) -> ::windows::core::Result<()> {
+pub unsafe fn CreateIpForwardEntry2(row: *const MIB_IPFORWARD_ROW2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -337,7 +337,7 @@ pub unsafe fn CreateIpNetEntry(parpentry: *const MIB_IPNETROW_LH) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn CreateIpNetEntry2(row: *const MIB_IPNET_ROW2) -> ::windows::core::Result<()> {
+pub unsafe fn CreateIpNetEntry2(row: *const MIB_IPNET_ROW2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -394,7 +394,7 @@ pub unsafe fn CreateProxyArpEntry(dwaddress: u32, dwmask: u32, dwifindex: u32) -
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn CreateSortedAddressPairs(sourceaddresslist: *const super::super::Networking::WinSock::SOCKADDR_IN6, sourceaddresscount: u32, destinationaddresslist: *const super::super::Networking::WinSock::SOCKADDR_IN6, destinationaddresscount: u32, addresssortoptions: u32, sortedaddresspairlist: *mut *mut super::super::Networking::WinSock::SOCKADDR_IN6_PAIR, sortedaddresspaircount: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn CreateSortedAddressPairs(sourceaddresslist: *const super::super::Networking::WinSock::SOCKADDR_IN6, sourceaddresscount: u32, destinationaddresslist: *const super::super::Networking::WinSock::SOCKADDR_IN6, destinationaddresscount: u32, addresssortoptions: u32, sortedaddresspairlist: *mut *mut super::super::Networking::WinSock::SOCKADDR_IN6_PAIR, sortedaddresspaircount: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -409,7 +409,7 @@ pub unsafe fn CreateSortedAddressPairs(sourceaddresslist: *const super::super::N
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn CreateUnicastIpAddressEntry(row: *const MIB_UNICASTIPADDRESS_ROW) -> ::windows::core::Result<()> {
+pub unsafe fn CreateUnicastIpAddressEntry(row: *const MIB_UNICASTIPADDRESS_ROW) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -442,7 +442,7 @@ pub const DNS_DOH_POLICY_REQUIRED: u32 = 32u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`*"]
 pub struct DNS_DOH_SERVER_SETTINGS {
-    pub Template: ::windows::core::PWSTR,
+    pub Template: ::windows_core::PWSTR,
     pub Flags: u64,
 }
 impl ::core::marker::Copy for DNS_DOH_SERVER_SETTINGS {}
@@ -456,12 +456,12 @@ impl ::core::fmt::Debug for DNS_DOH_SERVER_SETTINGS {
         f.debug_struct("DNS_DOH_SERVER_SETTINGS").field("Template", &self.Template).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DNS_DOH_SERVER_SETTINGS {
+unsafe impl ::windows_core::Abi for DNS_DOH_SERVER_SETTINGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DNS_DOH_SERVER_SETTINGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_DOH_SERVER_SETTINGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_DOH_SERVER_SETTINGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DNS_DOH_SERVER_SETTINGS {}
@@ -483,14 +483,14 @@ pub const DNS_ENABLE_DOH: u32 = 1u32;
 pub struct DNS_INTERFACE_SETTINGS {
     pub Version: u32,
     pub Flags: u64,
-    pub Domain: ::windows::core::PWSTR,
-    pub NameServer: ::windows::core::PWSTR,
-    pub SearchList: ::windows::core::PWSTR,
+    pub Domain: ::windows_core::PWSTR,
+    pub NameServer: ::windows_core::PWSTR,
+    pub SearchList: ::windows_core::PWSTR,
     pub RegistrationEnabled: u32,
     pub RegisterAdapterName: u32,
     pub EnableLLMNR: u32,
     pub QueryAdapterName: u32,
-    pub ProfileNameServer: ::windows::core::PWSTR,
+    pub ProfileNameServer: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for DNS_INTERFACE_SETTINGS {}
 impl ::core::clone::Clone for DNS_INTERFACE_SETTINGS {
@@ -503,12 +503,12 @@ impl ::core::fmt::Debug for DNS_INTERFACE_SETTINGS {
         f.debug_struct("DNS_INTERFACE_SETTINGS").field("Version", &self.Version).field("Flags", &self.Flags).field("Domain", &self.Domain).field("NameServer", &self.NameServer).field("SearchList", &self.SearchList).field("RegistrationEnabled", &self.RegistrationEnabled).field("RegisterAdapterName", &self.RegisterAdapterName).field("EnableLLMNR", &self.EnableLLMNR).field("QueryAdapterName", &self.QueryAdapterName).field("ProfileNameServer", &self.ProfileNameServer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DNS_INTERFACE_SETTINGS {
+unsafe impl ::windows_core::Abi for DNS_INTERFACE_SETTINGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DNS_INTERFACE_SETTINGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_INTERFACE_SETTINGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_INTERFACE_SETTINGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DNS_INTERFACE_SETTINGS {}
@@ -522,16 +522,16 @@ impl ::core::default::Default for DNS_INTERFACE_SETTINGS {
 pub struct DNS_INTERFACE_SETTINGS3 {
     pub Version: u32,
     pub Flags: u64,
-    pub Domain: ::windows::core::PWSTR,
-    pub NameServer: ::windows::core::PWSTR,
-    pub SearchList: ::windows::core::PWSTR,
+    pub Domain: ::windows_core::PWSTR,
+    pub NameServer: ::windows_core::PWSTR,
+    pub SearchList: ::windows_core::PWSTR,
     pub RegistrationEnabled: u32,
     pub RegisterAdapterName: u32,
     pub EnableLLMNR: u32,
     pub QueryAdapterName: u32,
-    pub ProfileNameServer: ::windows::core::PWSTR,
+    pub ProfileNameServer: ::windows_core::PWSTR,
     pub DisableUnconstrainedQueries: u32,
-    pub SupplementalSearchList: ::windows::core::PWSTR,
+    pub SupplementalSearchList: ::windows_core::PWSTR,
     pub cServerProperties: u32,
     pub ServerProperties: *mut DNS_SERVER_PROPERTY,
     pub cProfileServerProperties: u32,
@@ -565,12 +565,12 @@ impl ::core::fmt::Debug for DNS_INTERFACE_SETTINGS3 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for DNS_INTERFACE_SETTINGS3 {
+unsafe impl ::windows_core::Abi for DNS_INTERFACE_SETTINGS3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DNS_INTERFACE_SETTINGS3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_INTERFACE_SETTINGS3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_INTERFACE_SETTINGS3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DNS_INTERFACE_SETTINGS3 {}
@@ -584,7 +584,7 @@ impl ::core::default::Default for DNS_INTERFACE_SETTINGS3 {
 pub struct DNS_INTERFACE_SETTINGS_EX {
     pub SettingsV1: DNS_INTERFACE_SETTINGS,
     pub DisableUnconstrainedQueries: u32,
-    pub SupplementalSearchList: ::windows::core::PWSTR,
+    pub SupplementalSearchList: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for DNS_INTERFACE_SETTINGS_EX {}
 impl ::core::clone::Clone for DNS_INTERFACE_SETTINGS_EX {
@@ -597,12 +597,12 @@ impl ::core::fmt::Debug for DNS_INTERFACE_SETTINGS_EX {
         f.debug_struct("DNS_INTERFACE_SETTINGS_EX").field("SettingsV1", &self.SettingsV1).field("DisableUnconstrainedQueries", &self.DisableUnconstrainedQueries).field("SupplementalSearchList", &self.SupplementalSearchList).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DNS_INTERFACE_SETTINGS_EX {
+unsafe impl ::windows_core::Abi for DNS_INTERFACE_SETTINGS_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DNS_INTERFACE_SETTINGS_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_INTERFACE_SETTINGS_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_INTERFACE_SETTINGS_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DNS_INTERFACE_SETTINGS_EX {}
@@ -631,12 +631,12 @@ impl ::core::clone::Clone for DNS_SERVER_PROPERTY {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DNS_SERVER_PROPERTY {
+unsafe impl ::windows_core::Abi for DNS_SERVER_PROPERTY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DNS_SERVER_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_SERVER_PROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_SERVER_PROPERTY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DNS_SERVER_PROPERTY {}
@@ -664,7 +664,7 @@ impl ::core::default::Default for DNS_SERVER_PROPERTY_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DNS_SERVER_PROPERTY_TYPE {
+unsafe impl ::windows_core::Abi for DNS_SERVER_PROPERTY_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DNS_SERVER_PROPERTY_TYPE {
@@ -683,12 +683,12 @@ impl ::core::clone::Clone for DNS_SERVER_PROPERTY_TYPES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DNS_SERVER_PROPERTY_TYPES {
+unsafe impl ::windows_core::Abi for DNS_SERVER_PROPERTY_TYPES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DNS_SERVER_PROPERTY_TYPES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_SERVER_PROPERTY_TYPES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_SERVER_PROPERTY_TYPES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DNS_SERVER_PROPERTY_TYPES {}
@@ -704,9 +704,9 @@ pub const DNS_SERVER_PROPERTY_VERSION1: u32 = 1u32;
 pub struct DNS_SETTINGS {
     pub Version: u32,
     pub Flags: u64,
-    pub Hostname: ::windows::core::PWSTR,
-    pub Domain: ::windows::core::PWSTR,
-    pub SearchList: ::windows::core::PWSTR,
+    pub Hostname: ::windows_core::PWSTR,
+    pub Domain: ::windows_core::PWSTR,
+    pub SearchList: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for DNS_SETTINGS {}
 impl ::core::clone::Clone for DNS_SETTINGS {
@@ -719,12 +719,12 @@ impl ::core::fmt::Debug for DNS_SETTINGS {
         f.debug_struct("DNS_SETTINGS").field("Version", &self.Version).field("Flags", &self.Flags).field("Hostname", &self.Hostname).field("Domain", &self.Domain).field("SearchList", &self.SearchList).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DNS_SETTINGS {
+unsafe impl ::windows_core::Abi for DNS_SETTINGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DNS_SETTINGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_SETTINGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_SETTINGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DNS_SETTINGS {}
@@ -738,9 +738,9 @@ impl ::core::default::Default for DNS_SETTINGS {
 pub struct DNS_SETTINGS2 {
     pub Version: u32,
     pub Flags: u64,
-    pub Hostname: ::windows::core::PWSTR,
-    pub Domain: ::windows::core::PWSTR,
-    pub SearchList: ::windows::core::PWSTR,
+    pub Hostname: ::windows_core::PWSTR,
+    pub Domain: ::windows_core::PWSTR,
+    pub SearchList: ::windows_core::PWSTR,
     pub SettingFlags: u64,
 }
 impl ::core::marker::Copy for DNS_SETTINGS2 {}
@@ -754,12 +754,12 @@ impl ::core::fmt::Debug for DNS_SETTINGS2 {
         f.debug_struct("DNS_SETTINGS2").field("Version", &self.Version).field("Flags", &self.Flags).field("Hostname", &self.Hostname).field("Domain", &self.Domain).field("SearchList", &self.SearchList).field("SettingFlags", &self.SettingFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DNS_SETTINGS2 {
+unsafe impl ::windows_core::Abi for DNS_SETTINGS2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DNS_SETTINGS2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_SETTINGS2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DNS_SETTINGS2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DNS_SETTINGS2 {}
@@ -803,7 +803,7 @@ pub const DNS_SETTING_SUPPLEMENTAL_SEARCH_LIST: u32 = 2048u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn DeleteAnycastIpAddressEntry(row: *const MIB_ANYCASTIPADDRESS_ROW) -> ::windows::core::Result<()> {
+pub unsafe fn DeleteAnycastIpAddressEntry(row: *const MIB_ANYCASTIPADDRESS_ROW) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -847,7 +847,7 @@ pub unsafe fn DeleteIpForwardEntry(proute: *const MIB_IPFORWARDROW) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn DeleteIpForwardEntry2(row: *const MIB_IPFORWARD_ROW2) -> ::windows::core::Result<()> {
+pub unsafe fn DeleteIpForwardEntry2(row: *const MIB_IPFORWARD_ROW2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -876,7 +876,7 @@ pub unsafe fn DeleteIpNetEntry(parpentry: *const MIB_IPNETROW_LH) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn DeleteIpNetEntry2(row: *const MIB_IPNET_ROW2) -> ::windows::core::Result<()> {
+pub unsafe fn DeleteIpNetEntry2(row: *const MIB_IPNET_ROW2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -933,7 +933,7 @@ pub unsafe fn DeleteProxyArpEntry(dwaddress: u32, dwmask: u32, dwifindex: u32) -
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn DeleteUnicastIpAddressEntry(row: *const MIB_UNICASTIPADDRESS_ROW) -> ::windows::core::Result<()> {
+pub unsafe fn DeleteUnicastIpAddressEntry(row: *const MIB_UNICASTIPADDRESS_ROW) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1012,13 +1012,13 @@ impl ::core::fmt::Debug for FIXED_INFO_W2KSP1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FIXED_INFO_W2KSP1 {
+unsafe impl ::windows_core::Abi for FIXED_INFO_W2KSP1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FIXED_INFO_W2KSP1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FIXED_INFO_W2KSP1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FIXED_INFO_W2KSP1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1046,7 +1046,7 @@ pub unsafe fn FlushIpNetTable(dwifindex: u32) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FlushIpNetTable2(family: u16, interfaceindex: u32) -> ::windows::core::Result<()> {
+pub unsafe fn FlushIpNetTable2(family: u16, interfaceindex: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1061,7 +1061,7 @@ pub unsafe fn FlushIpNetTable2(family: u16, interfaceindex: u32) -> ::windows::c
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FlushIpPathTable(family: u16) -> ::windows::core::Result<()> {
+pub unsafe fn FlushIpPathTable(family: u16) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1154,7 +1154,7 @@ impl ::core::default::Default for GET_ADAPTERS_ADDRESSES_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GET_ADAPTERS_ADDRESSES_FLAGS {
+unsafe impl ::windows_core::Abi for GET_ADAPTERS_ADDRESSES_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GET_ADAPTERS_ADDRESSES_FLAGS {
@@ -1211,7 +1211,7 @@ impl ::core::default::Default for GLOBAL_FILTER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GLOBAL_FILTER {
+unsafe impl ::windows_core::Abi for GLOBAL_FILTER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GLOBAL_FILTER {
@@ -1221,12 +1221,12 @@ impl ::core::fmt::Debug for GLOBAL_FILTER {
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`*"]
 #[inline]
-pub unsafe fn GetAdapterIndex<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(adaptername: Param0, ifindex: *mut u32) -> u32 {
+pub unsafe fn GetAdapterIndex<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(adaptername: Param0, ifindex: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetAdapterIndex(adaptername: ::windows::core::PCWSTR, ifindex: *mut u32) -> u32;
+            fn GetAdapterIndex(adaptername: ::windows_core::PCWSTR, ifindex: *mut u32) -> u32;
         }
         ::core::mem::transmute(GetAdapterIndex(adaptername.into_param().abi(), ::core::mem::transmute(ifindex)))
     }
@@ -1280,7 +1280,7 @@ pub unsafe fn GetAdaptersInfo(adapterinfo: *mut IP_ADAPTER_INFO, sizepointer: *m
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetAnycastIpAddressEntry(row: *mut MIB_ANYCASTIPADDRESS_ROW) -> ::windows::core::Result<()> {
+pub unsafe fn GetAnycastIpAddressEntry(row: *mut MIB_ANYCASTIPADDRESS_ROW) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1295,7 +1295,7 @@ pub unsafe fn GetAnycastIpAddressEntry(row: *mut MIB_ANYCASTIPADDRESS_ROW) -> ::
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetAnycastIpAddressTable(family: u16, table: *mut *mut MIB_ANYCASTIPADDRESS_TABLE) -> ::windows::core::Result<()> {
+pub unsafe fn GetAnycastIpAddressTable(family: u16, table: *mut *mut MIB_ANYCASTIPADDRESS_TABLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1354,7 +1354,7 @@ pub unsafe fn GetBestRoute(dwdestaddr: u32, dwsourceaddr: u32, pbestroute: *mut 
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetBestRoute2(interfaceluid: *const super::Ndis::NET_LUID_LH, interfaceindex: u32, sourceaddress: *const super::super::Networking::WinSock::SOCKADDR_INET, destinationaddress: *const super::super::Networking::WinSock::SOCKADDR_INET, addresssortoptions: u32, bestroute: *mut MIB_IPFORWARD_ROW2, bestsourceaddress: *mut super::super::Networking::WinSock::SOCKADDR_INET) -> ::windows::core::Result<()> {
+pub unsafe fn GetBestRoute2(interfaceluid: *const super::Ndis::NET_LUID_LH, interfaceindex: u32, sourceaddress: *const super::super::Networking::WinSock::SOCKADDR_INET, destinationaddress: *const super::super::Networking::WinSock::SOCKADDR_INET, addresssortoptions: u32, bestroute: *mut MIB_IPFORWARD_ROW2, bestsourceaddress: *mut super::super::Networking::WinSock::SOCKADDR_INET) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1411,7 +1411,7 @@ pub unsafe fn GetDefaultCompartmentId() -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDnsSettings(settings: *mut DNS_SETTINGS) -> ::windows::core::Result<()> {
+pub unsafe fn GetDnsSettings(settings: *mut DNS_SETTINGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1426,7 +1426,7 @@ pub unsafe fn GetDnsSettings(settings: *mut DNS_SETTINGS) -> ::windows::core::Re
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetExtendedTcpTable<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(ptcptable: *mut ::core::ffi::c_void, pdwsize: *mut u32, border: Param2, ulaf: u32, tableclass: TCP_TABLE_CLASS, reserved: u32) -> u32 {
+pub unsafe fn GetExtendedTcpTable<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(ptcptable: *mut ::core::ffi::c_void, pdwsize: *mut u32, border: Param2, ulaf: u32, tableclass: TCP_TABLE_CLASS, reserved: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1441,7 +1441,7 @@ pub unsafe fn GetExtendedTcpTable<'a, Param2: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetExtendedUdpTable<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(pudptable: *mut ::core::ffi::c_void, pdwsize: *mut u32, border: Param2, ulaf: u32, tableclass: UDP_TABLE_CLASS, reserved: u32) -> u32 {
+pub unsafe fn GetExtendedUdpTable<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(pudptable: *mut ::core::ffi::c_void, pdwsize: *mut u32, border: Param2, ulaf: u32, tableclass: UDP_TABLE_CLASS, reserved: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1512,7 +1512,7 @@ pub unsafe fn GetIfEntry(pifrow: *mut MIB_IFROW) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn GetIfEntry2(row: *mut MIB_IF_ROW2) -> ::windows::core::Result<()> {
+pub unsafe fn GetIfEntry2(row: *mut MIB_IF_ROW2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1527,7 +1527,7 @@ pub unsafe fn GetIfEntry2(row: *mut MIB_IF_ROW2) -> ::windows::core::Result<()> 
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn GetIfEntry2Ex(level: MIB_IF_ENTRY_LEVEL, row: *mut MIB_IF_ROW2) -> ::windows::core::Result<()> {
+pub unsafe fn GetIfEntry2Ex(level: MIB_IF_ENTRY_LEVEL, row: *mut MIB_IF_ROW2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1542,7 +1542,7 @@ pub unsafe fn GetIfEntry2Ex(level: MIB_IF_ENTRY_LEVEL, row: *mut MIB_IF_ROW2) ->
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetIfStackTable(table: *mut *mut MIB_IFSTACK_TABLE) -> ::windows::core::Result<()> {
+pub unsafe fn GetIfStackTable(table: *mut *mut MIB_IFSTACK_TABLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1557,7 +1557,7 @@ pub unsafe fn GetIfStackTable(table: *mut *mut MIB_IFSTACK_TABLE) -> ::windows::
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetIfTable<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(piftable: *mut MIB_IFTABLE, pdwsize: *mut u32, border: Param2) -> u32 {
+pub unsafe fn GetIfTable<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(piftable: *mut MIB_IFTABLE, pdwsize: *mut u32, border: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1572,7 +1572,7 @@ pub unsafe fn GetIfTable<'a, Param2: ::windows::core::IntoParam<'a, super::super
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn GetIfTable2(table: *mut *mut MIB_IF_TABLE2) -> ::windows::core::Result<()> {
+pub unsafe fn GetIfTable2(table: *mut *mut MIB_IF_TABLE2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1587,7 +1587,7 @@ pub unsafe fn GetIfTable2(table: *mut *mut MIB_IF_TABLE2) -> ::windows::core::Re
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
 #[inline]
-pub unsafe fn GetIfTable2Ex(level: MIB_IF_TABLE_LEVEL, table: *mut *mut MIB_IF_TABLE2) -> ::windows::core::Result<()> {
+pub unsafe fn GetIfTable2Ex(level: MIB_IF_TABLE_LEVEL, table: *mut *mut MIB_IF_TABLE2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1617,12 +1617,12 @@ pub unsafe fn GetInterfaceActiveTimestampCapabilities(interfaceluid: *const supe
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetInterfaceDnsSettings<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::GUID>>(interface: Param0, settings: *mut DNS_INTERFACE_SETTINGS) -> ::windows::core::Result<()> {
+pub unsafe fn GetInterfaceDnsSettings<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(interface: Param0, settings: *mut DNS_INTERFACE_SETTINGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetInterfaceDnsSettings(interface: ::windows::core::GUID, settings: *mut DNS_INTERFACE_SETTINGS) -> super::super::Foundation::NTSTATUS;
+            fn GetInterfaceDnsSettings(interface: ::windows_core::GUID, settings: *mut DNS_INTERFACE_SETTINGS) -> super::super::Foundation::NTSTATUS;
         }
         GetInterfaceDnsSettings(interface.into_param().abi(), ::core::mem::transmute(settings)).ok()
     }
@@ -1661,7 +1661,7 @@ pub unsafe fn GetInterfaceSupportedTimestampCapabilities(interfaceluid: *const s
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetInvertedIfStackTable(table: *mut *mut MIB_INVERTEDIFSTACK_TABLE) -> ::windows::core::Result<()> {
+pub unsafe fn GetInvertedIfStackTable(table: *mut *mut MIB_INVERTEDIFSTACK_TABLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1676,7 +1676,7 @@ pub unsafe fn GetInvertedIfStackTable(table: *mut *mut MIB_INVERTEDIFSTACK_TABLE
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetIpAddrTable<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(pipaddrtable: *mut MIB_IPADDRTABLE, pdwsize: *mut u32, border: Param2) -> u32 {
+pub unsafe fn GetIpAddrTable<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(pipaddrtable: *mut MIB_IPADDRTABLE, pdwsize: *mut u32, border: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1690,12 +1690,12 @@ pub unsafe fn GetIpAddrTable<'a, Param2: ::windows::core::IntoParam<'a, super::s
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`*"]
 #[inline]
-pub unsafe fn GetIpErrorString(errorcode: u32, buffer: ::windows::core::PWSTR, size: *mut u32) -> u32 {
+pub unsafe fn GetIpErrorString(errorcode: u32, buffer: ::windows_core::PWSTR, size: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetIpErrorString(errorcode: u32, buffer: ::windows::core::PWSTR, size: *mut u32) -> u32;
+            fn GetIpErrorString(errorcode: u32, buffer: ::windows_core::PWSTR, size: *mut u32) -> u32;
         }
         ::core::mem::transmute(GetIpErrorString(::core::mem::transmute(errorcode), ::core::mem::transmute(buffer), ::core::mem::transmute(size)))
     }
@@ -1705,7 +1705,7 @@ pub unsafe fn GetIpErrorString(errorcode: u32, buffer: ::windows::core::PWSTR, s
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetIpForwardEntry2(row: *mut MIB_IPFORWARD_ROW2) -> ::windows::core::Result<()> {
+pub unsafe fn GetIpForwardEntry2(row: *mut MIB_IPFORWARD_ROW2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1720,7 +1720,7 @@ pub unsafe fn GetIpForwardEntry2(row: *mut MIB_IPFORWARD_ROW2) -> ::windows::cor
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetIpForwardTable<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(pipforwardtable: *mut MIB_IPFORWARDTABLE, pdwsize: *mut u32, border: Param2) -> u32 {
+pub unsafe fn GetIpForwardTable<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(pipforwardtable: *mut MIB_IPFORWARDTABLE, pdwsize: *mut u32, border: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1735,7 +1735,7 @@ pub unsafe fn GetIpForwardTable<'a, Param2: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetIpForwardTable2(family: u16, table: *mut *mut MIB_IPFORWARD_TABLE2) -> ::windows::core::Result<()> {
+pub unsafe fn GetIpForwardTable2(family: u16, table: *mut *mut MIB_IPFORWARD_TABLE2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1750,7 +1750,7 @@ pub unsafe fn GetIpForwardTable2(family: u16, table: *mut *mut MIB_IPFORWARD_TAB
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetIpInterfaceEntry(row: *mut MIB_IPINTERFACE_ROW) -> ::windows::core::Result<()> {
+pub unsafe fn GetIpInterfaceEntry(row: *mut MIB_IPINTERFACE_ROW) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1765,7 +1765,7 @@ pub unsafe fn GetIpInterfaceEntry(row: *mut MIB_IPINTERFACE_ROW) -> ::windows::c
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetIpInterfaceTable(family: u16, table: *mut *mut MIB_IPINTERFACE_TABLE) -> ::windows::core::Result<()> {
+pub unsafe fn GetIpInterfaceTable(family: u16, table: *mut *mut MIB_IPINTERFACE_TABLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1780,7 +1780,7 @@ pub unsafe fn GetIpInterfaceTable(family: u16, table: *mut *mut MIB_IPINTERFACE_
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetIpNetEntry2(row: *mut MIB_IPNET_ROW2) -> ::windows::core::Result<()> {
+pub unsafe fn GetIpNetEntry2(row: *mut MIB_IPNET_ROW2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1795,7 +1795,7 @@ pub unsafe fn GetIpNetEntry2(row: *mut MIB_IPNET_ROW2) -> ::windows::core::Resul
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetIpNetTable<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(ipnettable: *mut MIB_IPNETTABLE, sizepointer: *mut u32, order: Param2) -> u32 {
+pub unsafe fn GetIpNetTable<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(ipnettable: *mut MIB_IPNETTABLE, sizepointer: *mut u32, order: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1810,7 +1810,7 @@ pub unsafe fn GetIpNetTable<'a, Param2: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetIpNetTable2(family: u16, table: *mut *mut MIB_IPNET_TABLE2) -> ::windows::core::Result<()> {
+pub unsafe fn GetIpNetTable2(family: u16, table: *mut *mut MIB_IPNET_TABLE2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1825,7 +1825,7 @@ pub unsafe fn GetIpNetTable2(family: u16, table: *mut *mut MIB_IPNET_TABLE2) -> 
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetIpNetworkConnectionBandwidthEstimates(interfaceindex: u32, addressfamily: u16, bandwidthestimates: *mut MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES) -> ::windows::core::Result<()> {
+pub unsafe fn GetIpNetworkConnectionBandwidthEstimates(interfaceindex: u32, addressfamily: u16, bandwidthestimates: *mut MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1840,7 +1840,7 @@ pub unsafe fn GetIpNetworkConnectionBandwidthEstimates(interfaceindex: u32, addr
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetIpPathEntry(row: *mut MIB_IPPATH_ROW) -> ::windows::core::Result<()> {
+pub unsafe fn GetIpPathEntry(row: *mut MIB_IPPATH_ROW) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1855,7 +1855,7 @@ pub unsafe fn GetIpPathEntry(row: *mut MIB_IPPATH_ROW) -> ::windows::core::Resul
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetIpPathTable(family: u16, table: *mut *mut MIB_IPPATH_TABLE) -> ::windows::core::Result<()> {
+pub unsafe fn GetIpPathTable(family: u16, table: *mut *mut MIB_IPPATH_TABLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1899,7 +1899,7 @@ pub unsafe fn GetIpStatisticsEx(statistics: *mut MIB_IPSTATS_LH, family: super::
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetJobCompartmentId<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(jobhandle: Param0) -> u32 {
+pub unsafe fn GetJobCompartmentId<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(jobhandle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1914,7 +1914,7 @@ pub unsafe fn GetJobCompartmentId<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetMulticastIpAddressEntry(row: *mut MIB_MULTICASTIPADDRESS_ROW) -> ::windows::core::Result<()> {
+pub unsafe fn GetMulticastIpAddressEntry(row: *mut MIB_MULTICASTIPADDRESS_ROW) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1929,7 +1929,7 @@ pub unsafe fn GetMulticastIpAddressEntry(row: *mut MIB_MULTICASTIPADDRESS_ROW) -
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetMulticastIpAddressTable(family: u16, table: *mut *mut MIB_MULTICASTIPADDRESS_TABLE) -> ::windows::core::Result<()> {
+pub unsafe fn GetMulticastIpAddressTable(family: u16, table: *mut *mut MIB_MULTICASTIPADDRESS_TABLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1944,7 +1944,7 @@ pub unsafe fn GetMulticastIpAddressTable(family: u16, table: *mut *mut MIB_MULTI
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetNetworkConnectivityHint(connectivityhint: *mut super::super::Networking::WinSock::NL_NETWORK_CONNECTIVITY_HINT) -> ::windows::core::Result<()> {
+pub unsafe fn GetNetworkConnectivityHint(connectivityhint: *mut super::super::Networking::WinSock::NL_NETWORK_CONNECTIVITY_HINT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1959,7 +1959,7 @@ pub unsafe fn GetNetworkConnectivityHint(connectivityhint: *mut super::super::Ne
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetNetworkConnectivityHintForInterface(interfaceindex: u32, connectivityhint: *mut super::super::Networking::WinSock::NL_NETWORK_CONNECTIVITY_HINT) -> ::windows::core::Result<()> {
+pub unsafe fn GetNetworkConnectivityHintForInterface(interfaceindex: u32, connectivityhint: *mut super::super::Networking::WinSock::NL_NETWORK_CONNECTIVITY_HINT) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1974,14 +1974,14 @@ pub unsafe fn GetNetworkConnectivityHintForInterface(interfaceindex: u32, connec
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNetworkInformation(networkguid: *const ::windows::core::GUID, compartmentid: *mut u32, siteid: *mut u32, networkname: &mut [u16]) -> ::windows::core::Result<()> {
+pub unsafe fn GetNetworkInformation(networkguid: *const ::windows_core::GUID, compartmentid: *mut u32, siteid: *mut u32, networkname: &mut [u16]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNetworkInformation(networkguid: *const ::windows::core::GUID, compartmentid: *mut u32, siteid: *mut u32, networkname: ::windows::core::PWSTR, length: u32) -> super::super::Foundation::NTSTATUS;
+            fn GetNetworkInformation(networkguid: *const ::windows_core::GUID, compartmentid: *mut u32, siteid: *mut u32, networkname: ::windows_core::PWSTR, length: u32) -> super::super::Foundation::NTSTATUS;
         }
-        GetNetworkInformation(::core::mem::transmute(networkguid), ::core::mem::transmute(compartmentid), ::core::mem::transmute(siteid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(networkname)), networkname.len() as _).ok()
+        GetNetworkInformation(::core::mem::transmute(networkguid), ::core::mem::transmute(compartmentid), ::core::mem::transmute(siteid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(networkname)), networkname.len() as _).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2161,7 +2161,7 @@ pub unsafe fn GetSessionCompartmentId(sessionid: u32) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetTcp6Table<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(tcptable: *mut MIB_TCP6TABLE, sizepointer: *mut u32, order: Param2) -> u32 {
+pub unsafe fn GetTcp6Table<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(tcptable: *mut MIB_TCP6TABLE, sizepointer: *mut u32, order: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2176,7 +2176,7 @@ pub unsafe fn GetTcp6Table<'a, Param2: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetTcp6Table2<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(tcptable: *mut MIB_TCP6TABLE2, sizepointer: *mut u32, order: Param2) -> u32 {
+pub unsafe fn GetTcp6Table2<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(tcptable: *mut MIB_TCP6TABLE2, sizepointer: *mut u32, order: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2235,7 +2235,7 @@ pub unsafe fn GetTcpStatisticsEx2(statistics: *mut MIB_TCPSTATS2, family: super:
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTcpTable<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(tcptable: *mut MIB_TCPTABLE, sizepointer: *mut u32, order: Param2) -> u32 {
+pub unsafe fn GetTcpTable<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(tcptable: *mut MIB_TCPTABLE, sizepointer: *mut u32, order: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2250,7 +2250,7 @@ pub unsafe fn GetTcpTable<'a, Param2: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTcpTable2<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(tcptable: *mut MIB_TCPTABLE2, sizepointer: *mut u32, order: Param2) -> u32 {
+pub unsafe fn GetTcpTable2<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(tcptable: *mut MIB_TCPTABLE2, sizepointer: *mut u32, order: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2265,7 +2265,7 @@ pub unsafe fn GetTcpTable2<'a, Param2: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTeredoPort(port: *mut u16) -> ::windows::core::Result<()> {
+pub unsafe fn GetTeredoPort(port: *mut u16) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2280,7 +2280,7 @@ pub unsafe fn GetTeredoPort(port: *mut u16) -> ::windows::core::Result<()> {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetUdp6Table<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(udp6table: *mut MIB_UDP6TABLE, sizepointer: *mut u32, order: Param2) -> u32 {
+pub unsafe fn GetUdp6Table<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(udp6table: *mut MIB_UDP6TABLE, sizepointer: *mut u32, order: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2339,7 +2339,7 @@ pub unsafe fn GetUdpStatisticsEx2(statistics: *mut MIB_UDPSTATS2, family: super:
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetUdpTable<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(udptable: *mut MIB_UDPTABLE, sizepointer: *mut u32, order: Param2) -> u32 {
+pub unsafe fn GetUdpTable<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(udptable: *mut MIB_UDPTABLE, sizepointer: *mut u32, order: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2368,7 +2368,7 @@ pub unsafe fn GetUniDirectionalAdapterInfo(pipifinfo: *mut IP_UNIDIRECTIONAL_ADA
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetUnicastIpAddressEntry(row: *mut MIB_UNICASTIPADDRESS_ROW) -> ::windows::core::Result<()> {
+pub unsafe fn GetUnicastIpAddressEntry(row: *mut MIB_UNICASTIPADDRESS_ROW) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2383,7 +2383,7 @@ pub unsafe fn GetUnicastIpAddressEntry(row: *mut MIB_UNICASTIPADDRESS_ROW) -> ::
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn GetUnicastIpAddressTable(family: u16, table: *mut *mut MIB_UNICASTIPADDRESS_TABLE) -> ::windows::core::Result<()> {
+pub unsafe fn GetUnicastIpAddressTable(family: u16, table: *mut *mut MIB_UNICASTIPADDRESS_TABLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2419,7 +2419,7 @@ impl ::core::fmt::Debug for HIFTIMESTAMPCHANGE {
         f.debug_tuple("HIFTIMESTAMPCHANGE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HIFTIMESTAMPCHANGE {
+unsafe impl ::windows_core::Abi for HIFTIMESTAMPCHANGE {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`*"]
@@ -2465,7 +2465,7 @@ impl ::core::default::Default for ICMP4_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ICMP4_TYPE {
+unsafe impl ::windows_core::Abi for ICMP4_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ICMP4_TYPE {
@@ -2520,7 +2520,7 @@ impl ::core::default::Default for ICMP6_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ICMP6_TYPE {
+unsafe impl ::windows_core::Abi for ICMP6_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ICMP6_TYPE {
@@ -2557,7 +2557,7 @@ impl ::core::default::Default for IF_ACCESS_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for IF_ACCESS_TYPE {
+unsafe impl ::windows_core::Abi for IF_ACCESS_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for IF_ACCESS_TYPE {
@@ -3011,12 +3011,12 @@ impl ::core::fmt::Debug for INTERFACE_HARDWARE_CROSSTIMESTAMP {
         f.debug_struct("INTERFACE_HARDWARE_CROSSTIMESTAMP").field("SystemTimestamp1", &self.SystemTimestamp1).field("HardwareClockTimestamp", &self.HardwareClockTimestamp).field("SystemTimestamp2", &self.SystemTimestamp2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INTERFACE_HARDWARE_CROSSTIMESTAMP {
+unsafe impl ::windows_core::Abi for INTERFACE_HARDWARE_CROSSTIMESTAMP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INTERFACE_HARDWARE_CROSSTIMESTAMP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERFACE_HARDWARE_CROSSTIMESTAMP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERFACE_HARDWARE_CROSSTIMESTAMP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INTERFACE_HARDWARE_CROSSTIMESTAMP {}
@@ -3068,13 +3068,13 @@ impl ::core::fmt::Debug for INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES {
+unsafe impl ::windows_core::Abi for INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3108,13 +3108,13 @@ impl ::core::fmt::Debug for INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES {
+unsafe impl ::windows_core::Abi for INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3149,13 +3149,13 @@ impl ::core::fmt::Debug for INTERFACE_TIMESTAMP_CAPABILITIES {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for INTERFACE_TIMESTAMP_CAPABILITIES {
+unsafe impl ::windows_core::Abi for INTERFACE_TIMESTAMP_CAPABILITIES {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for INTERFACE_TIMESTAMP_CAPABILITIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERFACE_TIMESTAMP_CAPABILITIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERFACE_TIMESTAMP_CAPABILITIES>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3193,7 +3193,7 @@ impl ::core::default::Default for INTERNAL_IF_OPER_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for INTERNAL_IF_OPER_STATUS {
+unsafe impl ::windows_core::Abi for INTERNAL_IF_OPER_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for INTERNAL_IF_OPER_STATUS {
@@ -3231,12 +3231,12 @@ impl ::core::clone::Clone for IPV6_ADDRESS_EX {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for IPV6_ADDRESS_EX {
+unsafe impl ::windows_core::Abi for IPV6_ADDRESS_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IPV6_ADDRESS_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPV6_ADDRESS_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPV6_ADDRESS_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IPV6_ADDRESS_EX {}
@@ -3255,14 +3255,14 @@ pub const IPV6_ROUTE_INFO: u32 = 4294901776u32;
 pub struct IP_ADAPTER_ADDRESSES_LH {
     pub Anonymous1: IP_ADAPTER_ADDRESSES_LH_0,
     pub Next: *mut IP_ADAPTER_ADDRESSES_LH,
-    pub AdapterName: ::windows::core::PSTR,
+    pub AdapterName: ::windows_core::PSTR,
     pub FirstUnicastAddress: *mut IP_ADAPTER_UNICAST_ADDRESS_LH,
     pub FirstAnycastAddress: *mut IP_ADAPTER_ANYCAST_ADDRESS_XP,
     pub FirstMulticastAddress: *mut IP_ADAPTER_MULTICAST_ADDRESS_XP,
     pub FirstDnsServerAddress: *mut IP_ADAPTER_DNS_SERVER_ADDRESS_XP,
-    pub DnsSuffix: ::windows::core::PWSTR,
-    pub Description: ::windows::core::PWSTR,
-    pub FriendlyName: ::windows::core::PWSTR,
+    pub DnsSuffix: ::windows_core::PWSTR,
+    pub Description: ::windows_core::PWSTR,
+    pub FriendlyName: ::windows_core::PWSTR,
     pub PhysicalAddress: [u8; 8],
     pub PhysicalAddressLength: u32,
     pub Anonymous2: IP_ADAPTER_ADDRESSES_LH_1,
@@ -3281,7 +3281,7 @@ pub struct IP_ADAPTER_ADDRESSES_LH {
     pub Luid: super::Ndis::NET_LUID_LH,
     pub Dhcpv4Server: super::super::Networking::WinSock::SOCKET_ADDRESS,
     pub CompartmentId: u32,
-    pub NetworkGuid: ::windows::core::GUID,
+    pub NetworkGuid: ::windows_core::GUID,
     pub ConnectionType: super::Ndis::NET_IF_CONNECTION_TYPE,
     pub TunnelType: super::Ndis::TUNNEL_TYPE,
     pub Dhcpv6Server: super::super::Networking::WinSock::SOCKET_ADDRESS,
@@ -3299,13 +3299,13 @@ impl ::core::clone::Clone for IP_ADAPTER_ADDRESSES_LH {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_ADDRESSES_LH {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_ADDRESSES_LH {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_ADDRESSES_LH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_LH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_LH>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -3332,13 +3332,13 @@ impl ::core::clone::Clone for IP_ADAPTER_ADDRESSES_LH_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_ADDRESSES_LH_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_ADDRESSES_LH_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_ADDRESSES_LH_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_LH_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_LH_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -3371,13 +3371,13 @@ impl ::core::fmt::Debug for IP_ADAPTER_ADDRESSES_LH_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_ADDRESSES_LH_0_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_ADDRESSES_LH_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_ADDRESSES_LH_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_LH_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_LH_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -3404,13 +3404,13 @@ impl ::core::clone::Clone for IP_ADAPTER_ADDRESSES_LH_1 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_ADDRESSES_LH_1 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_ADDRESSES_LH_1 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_ADDRESSES_LH_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_LH_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_LH_1>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -3442,13 +3442,13 @@ impl ::core::fmt::Debug for IP_ADAPTER_ADDRESSES_LH_1_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_ADDRESSES_LH_1_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_ADDRESSES_LH_1_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_ADDRESSES_LH_1_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_LH_1_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_LH_1_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -3465,14 +3465,14 @@ impl ::core::default::Default for IP_ADAPTER_ADDRESSES_LH_1_0 {
 pub struct IP_ADAPTER_ADDRESSES_XP {
     pub Anonymous: IP_ADAPTER_ADDRESSES_XP_0,
     pub Next: *mut IP_ADAPTER_ADDRESSES_XP,
-    pub AdapterName: ::windows::core::PSTR,
+    pub AdapterName: ::windows_core::PSTR,
     pub FirstUnicastAddress: *mut IP_ADAPTER_UNICAST_ADDRESS_XP,
     pub FirstAnycastAddress: *mut IP_ADAPTER_ANYCAST_ADDRESS_XP,
     pub FirstMulticastAddress: *mut IP_ADAPTER_MULTICAST_ADDRESS_XP,
     pub FirstDnsServerAddress: *mut IP_ADAPTER_DNS_SERVER_ADDRESS_XP,
-    pub DnsSuffix: ::windows::core::PWSTR,
-    pub Description: ::windows::core::PWSTR,
-    pub FriendlyName: ::windows::core::PWSTR,
+    pub DnsSuffix: ::windows_core::PWSTR,
+    pub Description: ::windows_core::PWSTR,
+    pub FriendlyName: ::windows_core::PWSTR,
     pub PhysicalAddress: [u8; 8],
     pub PhysicalAddressLength: u32,
     pub Flags: u32,
@@ -3492,13 +3492,13 @@ impl ::core::clone::Clone for IP_ADAPTER_ADDRESSES_XP {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_ADDRESSES_XP {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_ADDRESSES_XP {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_ADDRESSES_XP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_XP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_XP>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -3525,13 +3525,13 @@ impl ::core::clone::Clone for IP_ADAPTER_ADDRESSES_XP_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_ADDRESSES_XP_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_ADDRESSES_XP_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_ADDRESSES_XP_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_XP_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_XP_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -3564,13 +3564,13 @@ impl ::core::fmt::Debug for IP_ADAPTER_ADDRESSES_XP_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_ADDRESSES_XP_0_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_ADDRESSES_XP_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_ADDRESSES_XP_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_XP_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ADDRESSES_XP_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -3602,13 +3602,13 @@ impl ::core::clone::Clone for IP_ADAPTER_ANYCAST_ADDRESS_XP {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_ANYCAST_ADDRESS_XP {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_ANYCAST_ADDRESS_XP {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_ANYCAST_ADDRESS_XP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ANYCAST_ADDRESS_XP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ANYCAST_ADDRESS_XP>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -3635,13 +3635,13 @@ impl ::core::clone::Clone for IP_ADAPTER_ANYCAST_ADDRESS_XP_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_ANYCAST_ADDRESS_XP_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_ANYCAST_ADDRESS_XP_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_ANYCAST_ADDRESS_XP_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ANYCAST_ADDRESS_XP_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ANYCAST_ADDRESS_XP_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -3674,13 +3674,13 @@ impl ::core::fmt::Debug for IP_ADAPTER_ANYCAST_ADDRESS_XP_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_ANYCAST_ADDRESS_XP_0_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_ANYCAST_ADDRESS_XP_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_ANYCAST_ADDRESS_XP_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ANYCAST_ADDRESS_XP_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ANYCAST_ADDRESS_XP_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -3712,13 +3712,13 @@ impl ::core::clone::Clone for IP_ADAPTER_DNS_SERVER_ADDRESS_XP {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_DNS_SERVER_ADDRESS_XP {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_DNS_SERVER_ADDRESS_XP {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_DNS_SERVER_ADDRESS_XP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_DNS_SERVER_ADDRESS_XP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_DNS_SERVER_ADDRESS_XP>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -3745,13 +3745,13 @@ impl ::core::clone::Clone for IP_ADAPTER_DNS_SERVER_ADDRESS_XP_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_DNS_SERVER_ADDRESS_XP_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_DNS_SERVER_ADDRESS_XP_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_DNS_SERVER_ADDRESS_XP_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_DNS_SERVER_ADDRESS_XP_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_DNS_SERVER_ADDRESS_XP_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -3784,13 +3784,13 @@ impl ::core::fmt::Debug for IP_ADAPTER_DNS_SERVER_ADDRESS_XP_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_DNS_SERVER_ADDRESS_XP_0_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_DNS_SERVER_ADDRESS_XP_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_DNS_SERVER_ADDRESS_XP_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_DNS_SERVER_ADDRESS_XP_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_DNS_SERVER_ADDRESS_XP_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -3818,12 +3818,12 @@ impl ::core::fmt::Debug for IP_ADAPTER_DNS_SUFFIX {
         f.debug_struct("IP_ADAPTER_DNS_SUFFIX").field("Next", &self.Next).field("String", &self.String).finish()
     }
 }
-unsafe impl ::windows::core::Abi for IP_ADAPTER_DNS_SUFFIX {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_DNS_SUFFIX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IP_ADAPTER_DNS_SUFFIX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_DNS_SUFFIX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_DNS_SUFFIX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IP_ADAPTER_DNS_SUFFIX {}
@@ -3849,13 +3849,13 @@ impl ::core::clone::Clone for IP_ADAPTER_GATEWAY_ADDRESS_LH {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_GATEWAY_ADDRESS_LH {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_GATEWAY_ADDRESS_LH {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_GATEWAY_ADDRESS_LH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_GATEWAY_ADDRESS_LH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_GATEWAY_ADDRESS_LH>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -3882,13 +3882,13 @@ impl ::core::clone::Clone for IP_ADAPTER_GATEWAY_ADDRESS_LH_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_GATEWAY_ADDRESS_LH_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_GATEWAY_ADDRESS_LH_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_GATEWAY_ADDRESS_LH_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_GATEWAY_ADDRESS_LH_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_GATEWAY_ADDRESS_LH_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -3921,13 +3921,13 @@ impl ::core::fmt::Debug for IP_ADAPTER_GATEWAY_ADDRESS_LH_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_GATEWAY_ADDRESS_LH_0_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_GATEWAY_ADDRESS_LH_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_GATEWAY_ADDRESS_LH_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_GATEWAY_ADDRESS_LH_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_GATEWAY_ADDRESS_LH_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -3955,12 +3955,12 @@ impl ::core::fmt::Debug for IP_ADAPTER_INDEX_MAP {
         f.debug_struct("IP_ADAPTER_INDEX_MAP").field("Index", &self.Index).field("Name", &self.Name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for IP_ADAPTER_INDEX_MAP {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_INDEX_MAP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IP_ADAPTER_INDEX_MAP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_INDEX_MAP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_INDEX_MAP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IP_ADAPTER_INDEX_MAP {}
@@ -4026,13 +4026,13 @@ impl ::core::fmt::Debug for IP_ADAPTER_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_INFO {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IP_ADAPTER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4068,13 +4068,13 @@ impl ::core::clone::Clone for IP_ADAPTER_MULTICAST_ADDRESS_XP {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_MULTICAST_ADDRESS_XP {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_MULTICAST_ADDRESS_XP {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_MULTICAST_ADDRESS_XP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_MULTICAST_ADDRESS_XP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_MULTICAST_ADDRESS_XP>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4101,13 +4101,13 @@ impl ::core::clone::Clone for IP_ADAPTER_MULTICAST_ADDRESS_XP_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_MULTICAST_ADDRESS_XP_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_MULTICAST_ADDRESS_XP_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_MULTICAST_ADDRESS_XP_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_MULTICAST_ADDRESS_XP_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_MULTICAST_ADDRESS_XP_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4140,13 +4140,13 @@ impl ::core::fmt::Debug for IP_ADAPTER_MULTICAST_ADDRESS_XP_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_MULTICAST_ADDRESS_XP_0_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_MULTICAST_ADDRESS_XP_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_MULTICAST_ADDRESS_XP_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_MULTICAST_ADDRESS_XP_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_MULTICAST_ADDRESS_XP_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4178,12 +4178,12 @@ impl ::core::fmt::Debug for IP_ADAPTER_ORDER_MAP {
         f.debug_struct("IP_ADAPTER_ORDER_MAP").field("NumAdapters", &self.NumAdapters).field("AdapterOrder", &self.AdapterOrder).finish()
     }
 }
-unsafe impl ::windows::core::Abi for IP_ADAPTER_ORDER_MAP {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_ORDER_MAP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IP_ADAPTER_ORDER_MAP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ORDER_MAP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_ORDER_MAP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IP_ADAPTER_ORDER_MAP {}
@@ -4210,13 +4210,13 @@ impl ::core::clone::Clone for IP_ADAPTER_PREFIX_XP {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_PREFIX_XP {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_PREFIX_XP {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_PREFIX_XP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_PREFIX_XP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_PREFIX_XP>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4243,13 +4243,13 @@ impl ::core::clone::Clone for IP_ADAPTER_PREFIX_XP_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_PREFIX_XP_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_PREFIX_XP_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_PREFIX_XP_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_PREFIX_XP_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_PREFIX_XP_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4282,13 +4282,13 @@ impl ::core::fmt::Debug for IP_ADAPTER_PREFIX_XP_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_PREFIX_XP_0_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_PREFIX_XP_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_PREFIX_XP_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_PREFIX_XP_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_PREFIX_XP_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4327,13 +4327,13 @@ impl ::core::clone::Clone for IP_ADAPTER_UNICAST_ADDRESS_LH {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_UNICAST_ADDRESS_LH {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_UNICAST_ADDRESS_LH {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_UNICAST_ADDRESS_LH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_UNICAST_ADDRESS_LH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_UNICAST_ADDRESS_LH>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4360,13 +4360,13 @@ impl ::core::clone::Clone for IP_ADAPTER_UNICAST_ADDRESS_LH_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_UNICAST_ADDRESS_LH_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_UNICAST_ADDRESS_LH_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_UNICAST_ADDRESS_LH_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_UNICAST_ADDRESS_LH_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_UNICAST_ADDRESS_LH_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4399,13 +4399,13 @@ impl ::core::fmt::Debug for IP_ADAPTER_UNICAST_ADDRESS_LH_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_UNICAST_ADDRESS_LH_0_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_UNICAST_ADDRESS_LH_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_UNICAST_ADDRESS_LH_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_UNICAST_ADDRESS_LH_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_UNICAST_ADDRESS_LH_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4439,13 +4439,13 @@ impl ::core::clone::Clone for IP_ADAPTER_UNICAST_ADDRESS_XP {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_UNICAST_ADDRESS_XP {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_UNICAST_ADDRESS_XP {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_UNICAST_ADDRESS_XP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_UNICAST_ADDRESS_XP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_UNICAST_ADDRESS_XP>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4472,13 +4472,13 @@ impl ::core::clone::Clone for IP_ADAPTER_UNICAST_ADDRESS_XP_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_UNICAST_ADDRESS_XP_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_UNICAST_ADDRESS_XP_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_UNICAST_ADDRESS_XP_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_UNICAST_ADDRESS_XP_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_UNICAST_ADDRESS_XP_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4511,13 +4511,13 @@ impl ::core::fmt::Debug for IP_ADAPTER_UNICAST_ADDRESS_XP_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_UNICAST_ADDRESS_XP_0_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_UNICAST_ADDRESS_XP_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_UNICAST_ADDRESS_XP_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_UNICAST_ADDRESS_XP_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_UNICAST_ADDRESS_XP_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4545,13 +4545,13 @@ impl ::core::clone::Clone for IP_ADAPTER_WINS_SERVER_ADDRESS_LH {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_WINS_SERVER_ADDRESS_LH {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_WINS_SERVER_ADDRESS_LH {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_WINS_SERVER_ADDRESS_LH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_WINS_SERVER_ADDRESS_LH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_WINS_SERVER_ADDRESS_LH>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4578,13 +4578,13 @@ impl ::core::clone::Clone for IP_ADAPTER_WINS_SERVER_ADDRESS_LH_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_WINS_SERVER_ADDRESS_LH_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_WINS_SERVER_ADDRESS_LH_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_WINS_SERVER_ADDRESS_LH_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_WINS_SERVER_ADDRESS_LH_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_WINS_SERVER_ADDRESS_LH_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4617,13 +4617,13 @@ impl ::core::fmt::Debug for IP_ADAPTER_WINS_SERVER_ADDRESS_LH_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADAPTER_WINS_SERVER_ADDRESS_LH_0_0 {
+unsafe impl ::windows_core::Abi for IP_ADAPTER_WINS_SERVER_ADDRESS_LH_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADAPTER_WINS_SERVER_ADDRESS_LH_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_WINS_SERVER_ADDRESS_LH_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADAPTER_WINS_SERVER_ADDRESS_LH_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4650,13 +4650,13 @@ impl ::core::clone::Clone for IP_ADDRESS_PREFIX {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for IP_ADDRESS_PREFIX {
+unsafe impl ::windows_core::Abi for IP_ADDRESS_PREFIX {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for IP_ADDRESS_PREFIX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADDRESS_PREFIX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADDRESS_PREFIX>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -4688,13 +4688,13 @@ impl ::core::fmt::Debug for IP_ADDRESS_STRING {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for IP_ADDRESS_STRING {
+unsafe impl ::windows_core::Abi for IP_ADDRESS_STRING {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IP_ADDRESS_STRING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADDRESS_STRING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADDRESS_STRING>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4737,13 +4737,13 @@ impl ::core::fmt::Debug for IP_ADDR_STRING {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for IP_ADDR_STRING {
+unsafe impl ::windows_core::Abi for IP_ADDR_STRING {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IP_ADDR_STRING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADDR_STRING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_ADDR_STRING>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4845,12 +4845,12 @@ impl ::core::fmt::Debug for IP_INTERFACE_INFO {
         f.debug_struct("IP_INTERFACE_INFO").field("NumAdapters", &self.NumAdapters).field("Adapter", &self.Adapter).finish()
     }
 }
-unsafe impl ::windows::core::Abi for IP_INTERFACE_INFO {
+unsafe impl ::windows_core::Abi for IP_INTERFACE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IP_INTERFACE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_INTERFACE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_INTERFACE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IP_INTERFACE_INFO {}
@@ -4892,12 +4892,12 @@ impl ::core::fmt::Debug for IP_MCAST_COUNTER_INFO {
         f.debug_struct("IP_MCAST_COUNTER_INFO").field("InMcastOctets", &self.InMcastOctets).field("OutMcastOctets", &self.OutMcastOctets).field("InMcastPkts", &self.InMcastPkts).field("OutMcastPkts", &self.OutMcastPkts).finish()
     }
 }
-unsafe impl ::windows::core::Abi for IP_MCAST_COUNTER_INFO {
+unsafe impl ::windows_core::Abi for IP_MCAST_COUNTER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IP_MCAST_COUNTER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_MCAST_COUNTER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_MCAST_COUNTER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IP_MCAST_COUNTER_INFO {}
@@ -4962,13 +4962,13 @@ impl ::core::fmt::Debug for IP_PER_ADAPTER_INFO_W2KSP1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for IP_PER_ADAPTER_INFO_W2KSP1 {
+unsafe impl ::windows_core::Abi for IP_PER_ADAPTER_INFO_W2KSP1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IP_PER_ADAPTER_INFO_W2KSP1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_PER_ADAPTER_INFO_W2KSP1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_PER_ADAPTER_INFO_W2KSP1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5030,12 +5030,12 @@ impl ::core::fmt::Debug for IP_UNIDIRECTIONAL_ADAPTER_ADDRESS {
         f.debug_struct("IP_UNIDIRECTIONAL_ADAPTER_ADDRESS").field("NumAdapters", &self.NumAdapters).field("Address", &self.Address).finish()
     }
 }
-unsafe impl ::windows::core::Abi for IP_UNIDIRECTIONAL_ADAPTER_ADDRESS {
+unsafe impl ::windows_core::Abi for IP_UNIDIRECTIONAL_ADAPTER_ADDRESS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IP_UNIDIRECTIONAL_ADAPTER_ADDRESS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_UNIDIRECTIONAL_ADAPTER_ADDRESS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IP_UNIDIRECTIONAL_ADAPTER_ADDRESS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IP_UNIDIRECTIONAL_ADAPTER_ADDRESS {}
@@ -5050,7 +5050,7 @@ pub const IP_UNLOAD: u32 = 11022u32;
 pub const IP_UNRECOGNIZED_NEXT_HEADER: u32 = 11043u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`*"]
 #[inline]
-pub unsafe fn Icmp6CreateFile() -> ::windows::core::Result<IcmpHandle> {
+pub unsafe fn Icmp6CreateFile() -> ::windows_core::Result<IcmpHandle> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5058,7 +5058,7 @@ pub unsafe fn Icmp6CreateFile() -> ::windows::core::Result<IcmpHandle> {
             fn Icmp6CreateFile() -> IcmpHandle;
         }
         let result__ = Icmp6CreateFile();
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -5080,12 +5080,12 @@ pub unsafe fn Icmp6ParseReplies(replybuffer: *mut ::core::ffi::c_void, replysize
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_Networking_WinSock\"`, `\"Win32_System_WindowsProgramming\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_System_WindowsProgramming"))]
 #[inline]
-pub unsafe fn Icmp6SendEcho2<'a, Param0: ::windows::core::IntoParam<'a, IcmpHandle>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(icmphandle: Param0, event: Param1, apcroutine: super::super::System::WindowsProgramming::PIO_APC_ROUTINE, apccontext: *const ::core::ffi::c_void, sourceaddress: *const super::super::Networking::WinSock::SOCKADDR_IN6, destinationaddress: *const super::super::Networking::WinSock::SOCKADDR_IN6, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32 {
+pub unsafe fn Icmp6SendEcho2<'a, Param0: ::windows_core::IntoParam<'a, IcmpHandle>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(icmphandle: Param0, event: Param1, apcroutine: super::super::System::WindowsProgramming::PIO_APC_ROUTINE, apccontext: *const ::core::ffi::c_void, sourceaddress: *const super::super::Networking::WinSock::SOCKADDR_IN6, destinationaddress: *const super::super::Networking::WinSock::SOCKADDR_IN6, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn Icmp6SendEcho2(icmphandle: IcmpHandle, event: super::super::Foundation::HANDLE, apcroutine: ::windows::core::RawPtr, apccontext: *const ::core::ffi::c_void, sourceaddress: *const super::super::Networking::WinSock::SOCKADDR_IN6, destinationaddress: *const super::super::Networking::WinSock::SOCKADDR_IN6, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32;
+            fn Icmp6SendEcho2(icmphandle: IcmpHandle, event: super::super::Foundation::HANDLE, apcroutine: ::windows_core::RawPtr, apccontext: *const ::core::ffi::c_void, sourceaddress: *const super::super::Networking::WinSock::SOCKADDR_IN6, destinationaddress: *const super::super::Networking::WinSock::SOCKADDR_IN6, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32;
         }
         ::core::mem::transmute(Icmp6SendEcho2(icmphandle.into_param().abi(), event.into_param().abi(), ::core::mem::transmute(apcroutine), ::core::mem::transmute(apccontext), ::core::mem::transmute(sourceaddress), ::core::mem::transmute(destinationaddress), ::core::mem::transmute(requestdata), ::core::mem::transmute(requestsize), ::core::mem::transmute(requestoptions), ::core::mem::transmute(replybuffer), ::core::mem::transmute(replysize), ::core::mem::transmute(timeout)))
     }
@@ -5095,7 +5095,7 @@ pub unsafe fn Icmp6SendEcho2<'a, Param0: ::windows::core::IntoParam<'a, IcmpHand
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IcmpCloseHandle<'a, Param0: ::windows::core::IntoParam<'a, IcmpHandle>>(icmphandle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IcmpCloseHandle<'a, Param0: ::windows_core::IntoParam<'a, IcmpHandle>>(icmphandle: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5109,7 +5109,7 @@ pub unsafe fn IcmpCloseHandle<'a, Param0: ::windows::core::IntoParam<'a, IcmpHan
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`*"]
 #[inline]
-pub unsafe fn IcmpCreateFile() -> ::windows::core::Result<IcmpHandle> {
+pub unsafe fn IcmpCreateFile() -> ::windows_core::Result<IcmpHandle> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5117,7 +5117,7 @@ pub unsafe fn IcmpCreateFile() -> ::windows::core::Result<IcmpHandle> {
             fn IcmpCreateFile() -> IcmpHandle;
         }
         let result__ = IcmpCreateFile();
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -5146,7 +5146,7 @@ impl ::core::fmt::Debug for IcmpHandle {
         f.debug_tuple("IcmpHandle").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for IcmpHandle {
+unsafe impl ::windows_core::Abi for IcmpHandle {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`*"]
@@ -5165,7 +5165,7 @@ pub unsafe fn IcmpParseReplies(replybuffer: *mut ::core::ffi::c_void, replysize:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`*"]
 #[inline]
-pub unsafe fn IcmpSendEcho<'a, Param0: ::windows::core::IntoParam<'a, IcmpHandle>>(icmphandle: Param0, destinationaddress: u32, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32 {
+pub unsafe fn IcmpSendEcho<'a, Param0: ::windows_core::IntoParam<'a, IcmpHandle>>(icmphandle: Param0, destinationaddress: u32, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5180,12 +5180,12 @@ pub unsafe fn IcmpSendEcho<'a, Param0: ::windows::core::IntoParam<'a, IcmpHandle
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_System_WindowsProgramming\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
 #[inline]
-pub unsafe fn IcmpSendEcho2<'a, Param0: ::windows::core::IntoParam<'a, IcmpHandle>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(icmphandle: Param0, event: Param1, apcroutine: super::super::System::WindowsProgramming::PIO_APC_ROUTINE, apccontext: *const ::core::ffi::c_void, destinationaddress: u32, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32 {
+pub unsafe fn IcmpSendEcho2<'a, Param0: ::windows_core::IntoParam<'a, IcmpHandle>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(icmphandle: Param0, event: Param1, apcroutine: super::super::System::WindowsProgramming::PIO_APC_ROUTINE, apccontext: *const ::core::ffi::c_void, destinationaddress: u32, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IcmpSendEcho2(icmphandle: IcmpHandle, event: super::super::Foundation::HANDLE, apcroutine: ::windows::core::RawPtr, apccontext: *const ::core::ffi::c_void, destinationaddress: u32, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32;
+            fn IcmpSendEcho2(icmphandle: IcmpHandle, event: super::super::Foundation::HANDLE, apcroutine: ::windows_core::RawPtr, apccontext: *const ::core::ffi::c_void, destinationaddress: u32, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32;
         }
         ::core::mem::transmute(IcmpSendEcho2(icmphandle.into_param().abi(), event.into_param().abi(), ::core::mem::transmute(apcroutine), ::core::mem::transmute(apccontext), ::core::mem::transmute(destinationaddress), ::core::mem::transmute(requestdata), ::core::mem::transmute(requestsize), ::core::mem::transmute(requestoptions), ::core::mem::transmute(replybuffer), ::core::mem::transmute(replysize), ::core::mem::transmute(timeout)))
     }
@@ -5195,12 +5195,12 @@ pub unsafe fn IcmpSendEcho2<'a, Param0: ::windows::core::IntoParam<'a, IcmpHandl
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_System_WindowsProgramming\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
 #[inline]
-pub unsafe fn IcmpSendEcho2Ex<'a, Param0: ::windows::core::IntoParam<'a, IcmpHandle>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(icmphandle: Param0, event: Param1, apcroutine: super::super::System::WindowsProgramming::PIO_APC_ROUTINE, apccontext: *const ::core::ffi::c_void, sourceaddress: u32, destinationaddress: u32, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32 {
+pub unsafe fn IcmpSendEcho2Ex<'a, Param0: ::windows_core::IntoParam<'a, IcmpHandle>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(icmphandle: Param0, event: Param1, apcroutine: super::super::System::WindowsProgramming::PIO_APC_ROUTINE, apccontext: *const ::core::ffi::c_void, sourceaddress: u32, destinationaddress: u32, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IcmpSendEcho2Ex(icmphandle: IcmpHandle, event: super::super::Foundation::HANDLE, apcroutine: ::windows::core::RawPtr, apccontext: *const ::core::ffi::c_void, sourceaddress: u32, destinationaddress: u32, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32;
+            fn IcmpSendEcho2Ex(icmphandle: IcmpHandle, event: super::super::Foundation::HANDLE, apcroutine: ::windows_core::RawPtr, apccontext: *const ::core::ffi::c_void, sourceaddress: u32, destinationaddress: u32, requestdata: *const ::core::ffi::c_void, requestsize: u16, requestoptions: *const ip_option_information, replybuffer: *mut ::core::ffi::c_void, replysize: u32, timeout: u32) -> u32;
         }
         ::core::mem::transmute(IcmpSendEcho2Ex(icmphandle.into_param().abi(), event.into_param().abi(), ::core::mem::transmute(apcroutine), ::core::mem::transmute(apccontext), ::core::mem::transmute(sourceaddress), ::core::mem::transmute(destinationaddress), ::core::mem::transmute(requestdata), ::core::mem::transmute(requestsize), ::core::mem::transmute(requestoptions), ::core::mem::transmute(replybuffer), ::core::mem::transmute(replysize), ::core::mem::transmute(timeout)))
     }
@@ -5385,12 +5385,12 @@ impl ::core::fmt::Debug for MIBICMPINFO {
         f.debug_struct("MIBICMPINFO").field("icmpInStats", &self.icmpInStats).field("icmpOutStats", &self.icmpOutStats).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIBICMPINFO {
+unsafe impl ::windows_core::Abi for MIBICMPINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIBICMPINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIBICMPINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIBICMPINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIBICMPINFO {}
@@ -5441,12 +5441,12 @@ impl ::core::fmt::Debug for MIBICMPSTATS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIBICMPSTATS {
+unsafe impl ::windows_core::Abi for MIBICMPSTATS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIBICMPSTATS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIBICMPSTATS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIBICMPSTATS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIBICMPSTATS {}
@@ -5473,12 +5473,12 @@ impl ::core::fmt::Debug for MIBICMPSTATS_EX_XPSP1 {
         f.debug_struct("MIBICMPSTATS_EX_XPSP1").field("dwMsgs", &self.dwMsgs).field("dwErrors", &self.dwErrors).field("rgdwTypeCount", &self.rgdwTypeCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIBICMPSTATS_EX_XPSP1 {
+unsafe impl ::windows_core::Abi for MIBICMPSTATS_EX_XPSP1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIBICMPSTATS_EX_XPSP1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIBICMPSTATS_EX_XPSP1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIBICMPSTATS_EX_XPSP1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIBICMPSTATS_EX_XPSP1 {}
@@ -5505,13 +5505,13 @@ impl ::core::clone::Clone for MIB_ANYCASTIPADDRESS_ROW {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_ANYCASTIPADDRESS_ROW {
+unsafe impl ::windows_core::Abi for MIB_ANYCASTIPADDRESS_ROW {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_ANYCASTIPADDRESS_ROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_ANYCASTIPADDRESS_ROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_ANYCASTIPADDRESS_ROW>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -5538,13 +5538,13 @@ impl ::core::clone::Clone for MIB_ANYCASTIPADDRESS_TABLE {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_ANYCASTIPADDRESS_TABLE {
+unsafe impl ::windows_core::Abi for MIB_ANYCASTIPADDRESS_TABLE {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_ANYCASTIPADDRESS_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_ANYCASTIPADDRESS_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_ANYCASTIPADDRESS_TABLE>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -5572,12 +5572,12 @@ impl ::core::fmt::Debug for MIB_BEST_IF {
         f.debug_struct("MIB_BEST_IF").field("dwDestAddr", &self.dwDestAddr).field("dwIfIndex", &self.dwIfIndex).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_BEST_IF {
+unsafe impl ::windows_core::Abi for MIB_BEST_IF {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_BEST_IF {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_BEST_IF>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_BEST_IF>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_BEST_IF {}
@@ -5603,12 +5603,12 @@ impl ::core::fmt::Debug for MIB_BOUNDARYROW {
         f.debug_struct("MIB_BOUNDARYROW").field("dwGroupAddress", &self.dwGroupAddress).field("dwGroupMask", &self.dwGroupMask).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_BOUNDARYROW {
+unsafe impl ::windows_core::Abi for MIB_BOUNDARYROW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_BOUNDARYROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_BOUNDARYROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_BOUNDARYROW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_BOUNDARYROW {}
@@ -5633,12 +5633,12 @@ impl ::core::fmt::Debug for MIB_ICMP {
         f.debug_struct("MIB_ICMP").field("stats", &self.stats).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_ICMP {
+unsafe impl ::windows_core::Abi for MIB_ICMP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_ICMP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_ICMP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_ICMP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_ICMP {}
@@ -5664,12 +5664,12 @@ impl ::core::fmt::Debug for MIB_ICMP_EX_XPSP1 {
         f.debug_struct("MIB_ICMP_EX_XPSP1").field("icmpInStats", &self.icmpInStats).field("icmpOutStats", &self.icmpOutStats).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_ICMP_EX_XPSP1 {
+unsafe impl ::windows_core::Abi for MIB_ICMP_EX_XPSP1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_ICMP_EX_XPSP1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_ICMP_EX_XPSP1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_ICMP_EX_XPSP1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_ICMP_EX_XPSP1 {}
@@ -5694,12 +5694,12 @@ impl ::core::fmt::Debug for MIB_IFNUMBER {
         f.debug_struct("MIB_IFNUMBER").field("dwValue", &self.dwValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IFNUMBER {
+unsafe impl ::windows_core::Abi for MIB_IFNUMBER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IFNUMBER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IFNUMBER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IFNUMBER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IFNUMBER {}
@@ -5772,12 +5772,12 @@ impl ::core::fmt::Debug for MIB_IFROW {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IFROW {
+unsafe impl ::windows_core::Abi for MIB_IFROW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IFROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IFROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IFROW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IFROW {}
@@ -5803,12 +5803,12 @@ impl ::core::fmt::Debug for MIB_IFSTACK_ROW {
         f.debug_struct("MIB_IFSTACK_ROW").field("HigherLayerInterfaceIndex", &self.HigherLayerInterfaceIndex).field("LowerLayerInterfaceIndex", &self.LowerLayerInterfaceIndex).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IFSTACK_ROW {
+unsafe impl ::windows_core::Abi for MIB_IFSTACK_ROW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IFSTACK_ROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IFSTACK_ROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IFSTACK_ROW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IFSTACK_ROW {}
@@ -5834,12 +5834,12 @@ impl ::core::fmt::Debug for MIB_IFSTACK_TABLE {
         f.debug_struct("MIB_IFSTACK_TABLE").field("NumEntries", &self.NumEntries).field("Table", &self.Table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IFSTACK_TABLE {
+unsafe impl ::windows_core::Abi for MIB_IFSTACK_TABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IFSTACK_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IFSTACK_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IFSTACK_TABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IFSTACK_TABLE {}
@@ -5873,13 +5873,13 @@ impl ::core::fmt::Debug for MIB_IFSTATUS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MIB_IFSTATUS {
+unsafe impl ::windows_core::Abi for MIB_IFSTATUS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIB_IFSTATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IFSTATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IFSTATUS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5907,12 +5907,12 @@ impl ::core::fmt::Debug for MIB_IFTABLE {
         f.debug_struct("MIB_IFTABLE").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IFTABLE {
+unsafe impl ::windows_core::Abi for MIB_IFTABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IFTABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IFTABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IFTABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IFTABLE {}
@@ -5946,7 +5946,7 @@ impl ::core::default::Default for MIB_IF_ENTRY_LEVEL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IF_ENTRY_LEVEL {
+unsafe impl ::windows_core::Abi for MIB_IF_ENTRY_LEVEL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MIB_IF_ENTRY_LEVEL {
@@ -5960,7 +5960,7 @@ impl ::core::fmt::Debug for MIB_IF_ENTRY_LEVEL {
 pub struct MIB_IF_ROW2 {
     pub InterfaceLuid: super::Ndis::NET_LUID_LH,
     pub InterfaceIndex: u32,
-    pub InterfaceGuid: ::windows::core::GUID,
+    pub InterfaceGuid: ::windows_core::GUID,
     pub Alias: [u16; 257],
     pub Description: [u16; 257],
     pub PhysicalAddressLength: u32,
@@ -5977,7 +5977,7 @@ pub struct MIB_IF_ROW2 {
     pub OperStatus: super::Ndis::IF_OPER_STATUS,
     pub AdminStatus: super::Ndis::NET_IF_ADMIN_STATUS,
     pub MediaConnectState: super::Ndis::NET_IF_MEDIA_CONNECT_STATE,
-    pub NetworkGuid: ::windows::core::GUID,
+    pub NetworkGuid: ::windows_core::GUID,
     pub ConnectionType: super::Ndis::NET_IF_CONNECTION_TYPE,
     pub TransmitLinkSpeed: u64,
     pub ReceiveLinkSpeed: u64,
@@ -6009,13 +6009,13 @@ impl ::core::clone::Clone for MIB_IF_ROW2 {
     }
 }
 #[cfg(feature = "Win32_NetworkManagement_Ndis")]
-unsafe impl ::windows::core::Abi for MIB_IF_ROW2 {
+unsafe impl ::windows_core::Abi for MIB_IF_ROW2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_NetworkManagement_Ndis")]
 impl ::core::cmp::PartialEq for MIB_IF_ROW2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IF_ROW2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IF_ROW2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_NetworkManagement_Ndis")]
@@ -6047,13 +6047,13 @@ impl ::core::fmt::Debug for MIB_IF_ROW2_0 {
     }
 }
 #[cfg(feature = "Win32_NetworkManagement_Ndis")]
-unsafe impl ::windows::core::Abi for MIB_IF_ROW2_0 {
+unsafe impl ::windows_core::Abi for MIB_IF_ROW2_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_NetworkManagement_Ndis")]
 impl ::core::cmp::PartialEq for MIB_IF_ROW2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IF_ROW2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IF_ROW2_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_NetworkManagement_Ndis")]
@@ -6080,13 +6080,13 @@ impl ::core::clone::Clone for MIB_IF_TABLE2 {
     }
 }
 #[cfg(feature = "Win32_NetworkManagement_Ndis")]
-unsafe impl ::windows::core::Abi for MIB_IF_TABLE2 {
+unsafe impl ::windows_core::Abi for MIB_IF_TABLE2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_NetworkManagement_Ndis")]
 impl ::core::cmp::PartialEq for MIB_IF_TABLE2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IF_TABLE2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IF_TABLE2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_NetworkManagement_Ndis")]
@@ -6118,7 +6118,7 @@ impl ::core::default::Default for MIB_IF_TABLE_LEVEL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IF_TABLE_LEVEL {
+unsafe impl ::windows_core::Abi for MIB_IF_TABLE_LEVEL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MIB_IF_TABLE_LEVEL {
@@ -6159,12 +6159,12 @@ impl ::core::fmt::Debug for MIB_INVERTEDIFSTACK_ROW {
         f.debug_struct("MIB_INVERTEDIFSTACK_ROW").field("LowerLayerInterfaceIndex", &self.LowerLayerInterfaceIndex).field("HigherLayerInterfaceIndex", &self.HigherLayerInterfaceIndex).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_INVERTEDIFSTACK_ROW {
+unsafe impl ::windows_core::Abi for MIB_INVERTEDIFSTACK_ROW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_INVERTEDIFSTACK_ROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_INVERTEDIFSTACK_ROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_INVERTEDIFSTACK_ROW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_INVERTEDIFSTACK_ROW {}
@@ -6190,12 +6190,12 @@ impl ::core::fmt::Debug for MIB_INVERTEDIFSTACK_TABLE {
         f.debug_struct("MIB_INVERTEDIFSTACK_TABLE").field("NumEntries", &self.NumEntries).field("Table", &self.Table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_INVERTEDIFSTACK_TABLE {
+unsafe impl ::windows_core::Abi for MIB_INVERTEDIFSTACK_TABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_INVERTEDIFSTACK_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_INVERTEDIFSTACK_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_INVERTEDIFSTACK_TABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_INVERTEDIFSTACK_TABLE {}
@@ -6226,12 +6226,12 @@ impl ::core::fmt::Debug for MIB_IPADDRROW_W2K {
         f.debug_struct("MIB_IPADDRROW_W2K").field("dwAddr", &self.dwAddr).field("dwIndex", &self.dwIndex).field("dwMask", &self.dwMask).field("dwBCastAddr", &self.dwBCastAddr).field("dwReasmSize", &self.dwReasmSize).field("unused1", &self.unused1).field("unused2", &self.unused2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPADDRROW_W2K {
+unsafe impl ::windows_core::Abi for MIB_IPADDRROW_W2K {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPADDRROW_W2K {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPADDRROW_W2K>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPADDRROW_W2K>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPADDRROW_W2K {}
@@ -6262,12 +6262,12 @@ impl ::core::fmt::Debug for MIB_IPADDRROW_XP {
         f.debug_struct("MIB_IPADDRROW_XP").field("dwAddr", &self.dwAddr).field("dwIndex", &self.dwIndex).field("dwMask", &self.dwMask).field("dwBCastAddr", &self.dwBCastAddr).field("dwReasmSize", &self.dwReasmSize).field("unused1", &self.unused1).field("wType", &self.wType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPADDRROW_XP {
+unsafe impl ::windows_core::Abi for MIB_IPADDRROW_XP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPADDRROW_XP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPADDRROW_XP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPADDRROW_XP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPADDRROW_XP {}
@@ -6293,12 +6293,12 @@ impl ::core::fmt::Debug for MIB_IPADDRTABLE {
         f.debug_struct("MIB_IPADDRTABLE").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPADDRTABLE {
+unsafe impl ::windows_core::Abi for MIB_IPADDRTABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPADDRTABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPADDRTABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPADDRTABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPADDRTABLE {}
@@ -6336,13 +6336,13 @@ impl ::core::clone::Clone for MIB_IPDESTROW {
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
-unsafe impl ::windows::core::Abi for MIB_IPDESTROW {
+unsafe impl ::windows_core::Abi for MIB_IPDESTROW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MIB_IPDESTROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPDESTROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPDESTROW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -6369,13 +6369,13 @@ impl ::core::clone::Clone for MIB_IPDESTTABLE {
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
-unsafe impl ::windows::core::Abi for MIB_IPDESTTABLE {
+unsafe impl ::windows_core::Abi for MIB_IPDESTTABLE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MIB_IPDESTTABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPDESTTABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPDESTTABLE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -6402,12 +6402,12 @@ impl ::core::fmt::Debug for MIB_IPFORWARDNUMBER {
         f.debug_struct("MIB_IPFORWARDNUMBER").field("dwValue", &self.dwValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPFORWARDNUMBER {
+unsafe impl ::windows_core::Abi for MIB_IPFORWARDNUMBER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPFORWARDNUMBER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARDNUMBER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARDNUMBER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPFORWARDNUMBER {}
@@ -6444,13 +6444,13 @@ impl ::core::clone::Clone for MIB_IPFORWARDROW {
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
-unsafe impl ::windows::core::Abi for MIB_IPFORWARDROW {
+unsafe impl ::windows_core::Abi for MIB_IPFORWARDROW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MIB_IPFORWARDROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARDROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARDROW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -6477,13 +6477,13 @@ impl ::core::clone::Clone for MIB_IPFORWARDROW_0 {
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
-unsafe impl ::windows::core::Abi for MIB_IPFORWARDROW_0 {
+unsafe impl ::windows_core::Abi for MIB_IPFORWARDROW_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MIB_IPFORWARDROW_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARDROW_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARDROW_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -6510,13 +6510,13 @@ impl ::core::clone::Clone for MIB_IPFORWARDROW_1 {
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
-unsafe impl ::windows::core::Abi for MIB_IPFORWARDROW_1 {
+unsafe impl ::windows_core::Abi for MIB_IPFORWARDROW_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MIB_IPFORWARDROW_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARDROW_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARDROW_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -6543,13 +6543,13 @@ impl ::core::clone::Clone for MIB_IPFORWARDTABLE {
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
-unsafe impl ::windows::core::Abi for MIB_IPFORWARDTABLE {
+unsafe impl ::windows_core::Abi for MIB_IPFORWARDTABLE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MIB_IPFORWARDTABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARDTABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARDTABLE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -6589,13 +6589,13 @@ impl ::core::clone::Clone for MIB_IPFORWARD_ROW2 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_IPFORWARD_ROW2 {
+unsafe impl ::windows_core::Abi for MIB_IPFORWARD_ROW2 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_IPFORWARD_ROW2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARD_ROW2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARD_ROW2>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -6622,13 +6622,13 @@ impl ::core::clone::Clone for MIB_IPFORWARD_TABLE2 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_IPFORWARD_TABLE2 {
+unsafe impl ::windows_core::Abi for MIB_IPFORWARD_TABLE2 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_IPFORWARD_TABLE2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARD_TABLE2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPFORWARD_TABLE2>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -6662,7 +6662,7 @@ impl ::core::default::Default for MIB_IPFORWARD_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPFORWARD_TYPE {
+unsafe impl ::windows_core::Abi for MIB_IPFORWARD_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MIB_IPFORWARD_TYPE {
@@ -6719,13 +6719,13 @@ impl ::core::clone::Clone for MIB_IPINTERFACE_ROW {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_IPINTERFACE_ROW {
+unsafe impl ::windows_core::Abi for MIB_IPINTERFACE_ROW {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_IPINTERFACE_ROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPINTERFACE_ROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPINTERFACE_ROW>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -6752,13 +6752,13 @@ impl ::core::clone::Clone for MIB_IPINTERFACE_TABLE {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_IPINTERFACE_TABLE {
+unsafe impl ::windows_core::Abi for MIB_IPINTERFACE_TABLE {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_IPINTERFACE_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPINTERFACE_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPINTERFACE_TABLE>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -6788,12 +6788,12 @@ impl ::core::fmt::Debug for MIB_IPMCAST_BOUNDARY {
         f.debug_struct("MIB_IPMCAST_BOUNDARY").field("dwIfIndex", &self.dwIfIndex).field("dwGroupAddress", &self.dwGroupAddress).field("dwGroupMask", &self.dwGroupMask).field("dwStatus", &self.dwStatus).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPMCAST_BOUNDARY {
+unsafe impl ::windows_core::Abi for MIB_IPMCAST_BOUNDARY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPMCAST_BOUNDARY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_BOUNDARY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_BOUNDARY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPMCAST_BOUNDARY {}
@@ -6819,12 +6819,12 @@ impl ::core::fmt::Debug for MIB_IPMCAST_BOUNDARY_TABLE {
         f.debug_struct("MIB_IPMCAST_BOUNDARY_TABLE").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPMCAST_BOUNDARY_TABLE {
+unsafe impl ::windows_core::Abi for MIB_IPMCAST_BOUNDARY_TABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPMCAST_BOUNDARY_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_BOUNDARY_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_BOUNDARY_TABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPMCAST_BOUNDARY_TABLE {}
@@ -6849,12 +6849,12 @@ impl ::core::fmt::Debug for MIB_IPMCAST_GLOBAL {
         f.debug_struct("MIB_IPMCAST_GLOBAL").field("dwEnable", &self.dwEnable).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPMCAST_GLOBAL {
+unsafe impl ::windows_core::Abi for MIB_IPMCAST_GLOBAL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPMCAST_GLOBAL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_GLOBAL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_GLOBAL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPMCAST_GLOBAL {}
@@ -6884,12 +6884,12 @@ impl ::core::fmt::Debug for MIB_IPMCAST_IF_ENTRY {
         f.debug_struct("MIB_IPMCAST_IF_ENTRY").field("dwIfIndex", &self.dwIfIndex).field("dwTtl", &self.dwTtl).field("dwProtocol", &self.dwProtocol).field("dwRateLimit", &self.dwRateLimit).field("ulInMcastOctets", &self.ulInMcastOctets).field("ulOutMcastOctets", &self.ulOutMcastOctets).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPMCAST_IF_ENTRY {
+unsafe impl ::windows_core::Abi for MIB_IPMCAST_IF_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPMCAST_IF_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_IF_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_IF_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPMCAST_IF_ENTRY {}
@@ -6915,12 +6915,12 @@ impl ::core::fmt::Debug for MIB_IPMCAST_IF_TABLE {
         f.debug_struct("MIB_IPMCAST_IF_TABLE").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPMCAST_IF_TABLE {
+unsafe impl ::windows_core::Abi for MIB_IPMCAST_IF_TABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPMCAST_IF_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_IF_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_IF_TABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPMCAST_IF_TABLE {}
@@ -6977,12 +6977,12 @@ impl ::core::fmt::Debug for MIB_IPMCAST_MFE {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPMCAST_MFE {
+unsafe impl ::windows_core::Abi for MIB_IPMCAST_MFE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPMCAST_MFE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_MFE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_MFE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPMCAST_MFE {}
@@ -7041,12 +7041,12 @@ impl ::core::fmt::Debug for MIB_IPMCAST_MFE_STATS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPMCAST_MFE_STATS {
+unsafe impl ::windows_core::Abi for MIB_IPMCAST_MFE_STATS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPMCAST_MFE_STATS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_MFE_STATS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_MFE_STATS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPMCAST_MFE_STATS {}
@@ -7115,12 +7115,12 @@ impl ::core::fmt::Debug for MIB_IPMCAST_MFE_STATS_EX_XP {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPMCAST_MFE_STATS_EX_XP {
+unsafe impl ::windows_core::Abi for MIB_IPMCAST_MFE_STATS_EX_XP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPMCAST_MFE_STATS_EX_XP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_MFE_STATS_EX_XP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_MFE_STATS_EX_XP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPMCAST_MFE_STATS_EX_XP {}
@@ -7151,12 +7151,12 @@ impl ::core::fmt::Debug for MIB_IPMCAST_OIF_STATS_LH {
         f.debug_struct("MIB_IPMCAST_OIF_STATS_LH").field("dwOutIfIndex", &self.dwOutIfIndex).field("dwNextHopAddr", &self.dwNextHopAddr).field("dwDialContext", &self.dwDialContext).field("ulTtlTooLow", &self.ulTtlTooLow).field("ulFragNeeded", &self.ulFragNeeded).field("ulOutPackets", &self.ulOutPackets).field("ulOutDiscards", &self.ulOutDiscards).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPMCAST_OIF_STATS_LH {
+unsafe impl ::windows_core::Abi for MIB_IPMCAST_OIF_STATS_LH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPMCAST_OIF_STATS_LH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_OIF_STATS_LH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_OIF_STATS_LH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPMCAST_OIF_STATS_LH {}
@@ -7187,12 +7187,12 @@ impl ::core::fmt::Debug for MIB_IPMCAST_OIF_STATS_W2K {
         f.debug_struct("MIB_IPMCAST_OIF_STATS_W2K").field("dwOutIfIndex", &self.dwOutIfIndex).field("dwNextHopAddr", &self.dwNextHopAddr).field("pvDialContext", &self.pvDialContext).field("ulTtlTooLow", &self.ulTtlTooLow).field("ulFragNeeded", &self.ulFragNeeded).field("ulOutPackets", &self.ulOutPackets).field("ulOutDiscards", &self.ulOutDiscards).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPMCAST_OIF_STATS_W2K {
+unsafe impl ::windows_core::Abi for MIB_IPMCAST_OIF_STATS_W2K {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPMCAST_OIF_STATS_W2K {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_OIF_STATS_W2K>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_OIF_STATS_W2K>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPMCAST_OIF_STATS_W2K {}
@@ -7220,12 +7220,12 @@ impl ::core::fmt::Debug for MIB_IPMCAST_OIF_W2K {
         f.debug_struct("MIB_IPMCAST_OIF_W2K").field("dwOutIfIndex", &self.dwOutIfIndex).field("dwNextHopAddr", &self.dwNextHopAddr).field("pvReserved", &self.pvReserved).field("dwReserved", &self.dwReserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPMCAST_OIF_W2K {
+unsafe impl ::windows_core::Abi for MIB_IPMCAST_OIF_W2K {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPMCAST_OIF_W2K {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_OIF_W2K>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_OIF_W2K>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPMCAST_OIF_W2K {}
@@ -7253,12 +7253,12 @@ impl ::core::fmt::Debug for MIB_IPMCAST_OIF_XP {
         f.debug_struct("MIB_IPMCAST_OIF_XP").field("dwOutIfIndex", &self.dwOutIfIndex).field("dwNextHopAddr", &self.dwNextHopAddr).field("dwReserved", &self.dwReserved).field("dwReserved1", &self.dwReserved1).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPMCAST_OIF_XP {
+unsafe impl ::windows_core::Abi for MIB_IPMCAST_OIF_XP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPMCAST_OIF_XP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_OIF_XP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_OIF_XP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPMCAST_OIF_XP {}
@@ -7286,12 +7286,12 @@ impl ::core::fmt::Debug for MIB_IPMCAST_SCOPE {
         f.debug_struct("MIB_IPMCAST_SCOPE").field("dwGroupAddress", &self.dwGroupAddress).field("dwGroupMask", &self.dwGroupMask).field("snNameBuffer", &self.snNameBuffer).field("dwStatus", &self.dwStatus).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPMCAST_SCOPE {
+unsafe impl ::windows_core::Abi for MIB_IPMCAST_SCOPE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPMCAST_SCOPE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_SCOPE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPMCAST_SCOPE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPMCAST_SCOPE {}
@@ -7315,12 +7315,12 @@ impl ::core::clone::Clone for MIB_IPNETROW_LH {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPNETROW_LH {
+unsafe impl ::windows_core::Abi for MIB_IPNETROW_LH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPNETROW_LH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNETROW_LH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNETROW_LH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPNETROW_LH {}
@@ -7341,12 +7341,12 @@ impl ::core::clone::Clone for MIB_IPNETROW_LH_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPNETROW_LH_0 {
+unsafe impl ::windows_core::Abi for MIB_IPNETROW_LH_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPNETROW_LH_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNETROW_LH_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNETROW_LH_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPNETROW_LH_0 {}
@@ -7375,12 +7375,12 @@ impl ::core::fmt::Debug for MIB_IPNETROW_W2K {
         f.debug_struct("MIB_IPNETROW_W2K").field("dwIndex", &self.dwIndex).field("dwPhysAddrLen", &self.dwPhysAddrLen).field("bPhysAddr", &self.bPhysAddr).field("dwAddr", &self.dwAddr).field("dwType", &self.dwType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPNETROW_W2K {
+unsafe impl ::windows_core::Abi for MIB_IPNETROW_W2K {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPNETROW_W2K {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNETROW_W2K>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNETROW_W2K>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPNETROW_W2K {}
@@ -7401,12 +7401,12 @@ impl ::core::clone::Clone for MIB_IPNETTABLE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPNETTABLE {
+unsafe impl ::windows_core::Abi for MIB_IPNETTABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPNETTABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNETTABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNETTABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPNETTABLE {}
@@ -7437,13 +7437,13 @@ impl ::core::clone::Clone for MIB_IPNET_ROW2 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_IPNET_ROW2 {
+unsafe impl ::windows_core::Abi for MIB_IPNET_ROW2 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_IPNET_ROW2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNET_ROW2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNET_ROW2>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -7470,13 +7470,13 @@ impl ::core::clone::Clone for MIB_IPNET_ROW2_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_IPNET_ROW2_0 {
+unsafe impl ::windows_core::Abi for MIB_IPNET_ROW2_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_IPNET_ROW2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNET_ROW2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNET_ROW2_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -7508,13 +7508,13 @@ impl ::core::fmt::Debug for MIB_IPNET_ROW2_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_IPNET_ROW2_0_0 {
+unsafe impl ::windows_core::Abi for MIB_IPNET_ROW2_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_IPNET_ROW2_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNET_ROW2_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNET_ROW2_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -7541,13 +7541,13 @@ impl ::core::clone::Clone for MIB_IPNET_ROW2_1 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_IPNET_ROW2_1 {
+unsafe impl ::windows_core::Abi for MIB_IPNET_ROW2_1 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_IPNET_ROW2_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNET_ROW2_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNET_ROW2_1>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -7574,13 +7574,13 @@ impl ::core::clone::Clone for MIB_IPNET_TABLE2 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_IPNET_TABLE2 {
+unsafe impl ::windows_core::Abi for MIB_IPNET_TABLE2 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_IPNET_TABLE2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNET_TABLE2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPNET_TABLE2>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -7614,7 +7614,7 @@ impl ::core::default::Default for MIB_IPNET_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPNET_TYPE {
+unsafe impl ::windows_core::Abi for MIB_IPNET_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MIB_IPNET_TYPE {
@@ -7648,13 +7648,13 @@ impl ::core::clone::Clone for MIB_IPPATH_ROW {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_IPPATH_ROW {
+unsafe impl ::windows_core::Abi for MIB_IPPATH_ROW {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_IPPATH_ROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPPATH_ROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPPATH_ROW>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -7681,13 +7681,13 @@ impl ::core::clone::Clone for MIB_IPPATH_ROW_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_IPPATH_ROW_0 {
+unsafe impl ::windows_core::Abi for MIB_IPPATH_ROW_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_IPPATH_ROW_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPPATH_ROW_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPPATH_ROW_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -7714,13 +7714,13 @@ impl ::core::clone::Clone for MIB_IPPATH_TABLE {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_IPPATH_TABLE {
+unsafe impl ::windows_core::Abi for MIB_IPPATH_TABLE {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_IPPATH_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPPATH_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPPATH_TABLE>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -7752,7 +7752,7 @@ impl ::core::default::Default for MIB_IPSTATS_FORWARDING {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPSTATS_FORWARDING {
+unsafe impl ::windows_core::Abi for MIB_IPSTATS_FORWARDING {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MIB_IPSTATS_FORWARDING {
@@ -7793,12 +7793,12 @@ impl ::core::clone::Clone for MIB_IPSTATS_LH {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPSTATS_LH {
+unsafe impl ::windows_core::Abi for MIB_IPSTATS_LH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPSTATS_LH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPSTATS_LH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPSTATS_LH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPSTATS_LH {}
@@ -7819,12 +7819,12 @@ impl ::core::clone::Clone for MIB_IPSTATS_LH_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPSTATS_LH_0 {
+unsafe impl ::windows_core::Abi for MIB_IPSTATS_LH_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPSTATS_LH_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPSTATS_LH_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPSTATS_LH_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPSTATS_LH_0 {}
@@ -7895,12 +7895,12 @@ impl ::core::fmt::Debug for MIB_IPSTATS_W2K {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_IPSTATS_W2K {
+unsafe impl ::windows_core::Abi for MIB_IPSTATS_W2K {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_IPSTATS_W2K {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPSTATS_W2K>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IPSTATS_W2K>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_IPSTATS_W2K {}
@@ -7931,13 +7931,13 @@ impl ::core::fmt::Debug for MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES {
+unsafe impl ::windows_core::Abi for MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -7965,12 +7965,12 @@ impl ::core::fmt::Debug for MIB_MCAST_LIMIT_ROW {
         f.debug_struct("MIB_MCAST_LIMIT_ROW").field("dwTtl", &self.dwTtl).field("dwRateLimit", &self.dwRateLimit).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_MCAST_LIMIT_ROW {
+unsafe impl ::windows_core::Abi for MIB_MCAST_LIMIT_ROW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_MCAST_LIMIT_ROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_MCAST_LIMIT_ROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_MCAST_LIMIT_ROW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_MCAST_LIMIT_ROW {}
@@ -7996,12 +7996,12 @@ impl ::core::fmt::Debug for MIB_MFE_STATS_TABLE {
         f.debug_struct("MIB_MFE_STATS_TABLE").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_MFE_STATS_TABLE {
+unsafe impl ::windows_core::Abi for MIB_MFE_STATS_TABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_MFE_STATS_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_MFE_STATS_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_MFE_STATS_TABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_MFE_STATS_TABLE {}
@@ -8027,12 +8027,12 @@ impl ::core::fmt::Debug for MIB_MFE_STATS_TABLE_EX_XP {
         f.debug_struct("MIB_MFE_STATS_TABLE_EX_XP").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_MFE_STATS_TABLE_EX_XP {
+unsafe impl ::windows_core::Abi for MIB_MFE_STATS_TABLE_EX_XP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_MFE_STATS_TABLE_EX_XP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_MFE_STATS_TABLE_EX_XP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_MFE_STATS_TABLE_EX_XP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_MFE_STATS_TABLE_EX_XP {}
@@ -8058,12 +8058,12 @@ impl ::core::fmt::Debug for MIB_MFE_TABLE {
         f.debug_struct("MIB_MFE_TABLE").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_MFE_TABLE {
+unsafe impl ::windows_core::Abi for MIB_MFE_TABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_MFE_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_MFE_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_MFE_TABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_MFE_TABLE {}
@@ -8090,13 +8090,13 @@ impl ::core::clone::Clone for MIB_MULTICASTIPADDRESS_ROW {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_MULTICASTIPADDRESS_ROW {
+unsafe impl ::windows_core::Abi for MIB_MULTICASTIPADDRESS_ROW {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_MULTICASTIPADDRESS_ROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_MULTICASTIPADDRESS_ROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_MULTICASTIPADDRESS_ROW>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -8123,13 +8123,13 @@ impl ::core::clone::Clone for MIB_MULTICASTIPADDRESS_TABLE {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_MULTICASTIPADDRESS_TABLE {
+unsafe impl ::windows_core::Abi for MIB_MULTICASTIPADDRESS_TABLE {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_MULTICASTIPADDRESS_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_MULTICASTIPADDRESS_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_MULTICASTIPADDRESS_TABLE>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -8163,7 +8163,7 @@ impl ::core::default::Default for MIB_NOTIFICATION_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MIB_NOTIFICATION_TYPE {
+unsafe impl ::windows_core::Abi for MIB_NOTIFICATION_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MIB_NOTIFICATION_TYPE {
@@ -8183,12 +8183,12 @@ impl ::core::clone::Clone for MIB_OPAQUE_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_OPAQUE_INFO {
+unsafe impl ::windows_core::Abi for MIB_OPAQUE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_OPAQUE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_OPAQUE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_OPAQUE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_OPAQUE_INFO {}
@@ -8209,12 +8209,12 @@ impl ::core::clone::Clone for MIB_OPAQUE_INFO_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_OPAQUE_INFO_0 {
+unsafe impl ::windows_core::Abi for MIB_OPAQUE_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_OPAQUE_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_OPAQUE_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_OPAQUE_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_OPAQUE_INFO_0 {}
@@ -8240,12 +8240,12 @@ impl ::core::fmt::Debug for MIB_OPAQUE_QUERY {
         f.debug_struct("MIB_OPAQUE_QUERY").field("dwVarId", &self.dwVarId).field("rgdwVarIndex", &self.rgdwVarIndex).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_OPAQUE_QUERY {
+unsafe impl ::windows_core::Abi for MIB_OPAQUE_QUERY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_OPAQUE_QUERY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_OPAQUE_QUERY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_OPAQUE_QUERY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_OPAQUE_QUERY {}
@@ -8272,12 +8272,12 @@ impl ::core::fmt::Debug for MIB_PROXYARP {
         f.debug_struct("MIB_PROXYARP").field("dwAddress", &self.dwAddress).field("dwMask", &self.dwMask).field("dwIfIndex", &self.dwIfIndex).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_PROXYARP {
+unsafe impl ::windows_core::Abi for MIB_PROXYARP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_PROXYARP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_PROXYARP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_PROXYARP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_PROXYARP {}
@@ -8307,13 +8307,13 @@ impl ::core::fmt::Debug for MIB_ROUTESTATE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MIB_ROUTESTATE {
+unsafe impl ::windows_core::Abi for MIB_ROUTESTATE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIB_ROUTESTATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_ROUTESTATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_ROUTESTATE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8345,13 +8345,13 @@ impl ::core::clone::Clone for MIB_TCP6ROW {
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
-unsafe impl ::windows::core::Abi for MIB_TCP6ROW {
+unsafe impl ::windows_core::Abi for MIB_TCP6ROW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MIB_TCP6ROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6ROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6ROW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -8385,13 +8385,13 @@ impl ::core::clone::Clone for MIB_TCP6ROW2 {
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
-unsafe impl ::windows::core::Abi for MIB_TCP6ROW2 {
+unsafe impl ::windows_core::Abi for MIB_TCP6ROW2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MIB_TCP6ROW2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6ROW2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6ROW2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -8438,12 +8438,12 @@ impl ::core::fmt::Debug for MIB_TCP6ROW_OWNER_MODULE {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCP6ROW_OWNER_MODULE {
+unsafe impl ::windows_core::Abi for MIB_TCP6ROW_OWNER_MODULE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCP6ROW_OWNER_MODULE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6ROW_OWNER_MODULE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6ROW_OWNER_MODULE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCP6ROW_OWNER_MODULE {}
@@ -8475,12 +8475,12 @@ impl ::core::fmt::Debug for MIB_TCP6ROW_OWNER_PID {
         f.debug_struct("MIB_TCP6ROW_OWNER_PID").field("ucLocalAddr", &self.ucLocalAddr).field("dwLocalScopeId", &self.dwLocalScopeId).field("dwLocalPort", &self.dwLocalPort).field("ucRemoteAddr", &self.ucRemoteAddr).field("dwRemoteScopeId", &self.dwRemoteScopeId).field("dwRemotePort", &self.dwRemotePort).field("dwState", &self.dwState).field("dwOwningPid", &self.dwOwningPid).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCP6ROW_OWNER_PID {
+unsafe impl ::windows_core::Abi for MIB_TCP6ROW_OWNER_PID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCP6ROW_OWNER_PID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6ROW_OWNER_PID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6ROW_OWNER_PID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCP6ROW_OWNER_PID {}
@@ -8505,13 +8505,13 @@ impl ::core::clone::Clone for MIB_TCP6TABLE {
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
-unsafe impl ::windows::core::Abi for MIB_TCP6TABLE {
+unsafe impl ::windows_core::Abi for MIB_TCP6TABLE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MIB_TCP6TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6TABLE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -8538,13 +8538,13 @@ impl ::core::clone::Clone for MIB_TCP6TABLE2 {
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
-unsafe impl ::windows::core::Abi for MIB_TCP6TABLE2 {
+unsafe impl ::windows_core::Abi for MIB_TCP6TABLE2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MIB_TCP6TABLE2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6TABLE2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6TABLE2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -8572,12 +8572,12 @@ impl ::core::fmt::Debug for MIB_TCP6TABLE_OWNER_MODULE {
         f.debug_struct("MIB_TCP6TABLE_OWNER_MODULE").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCP6TABLE_OWNER_MODULE {
+unsafe impl ::windows_core::Abi for MIB_TCP6TABLE_OWNER_MODULE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCP6TABLE_OWNER_MODULE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6TABLE_OWNER_MODULE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6TABLE_OWNER_MODULE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCP6TABLE_OWNER_MODULE {}
@@ -8603,12 +8603,12 @@ impl ::core::fmt::Debug for MIB_TCP6TABLE_OWNER_PID {
         f.debug_struct("MIB_TCP6TABLE_OWNER_PID").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCP6TABLE_OWNER_PID {
+unsafe impl ::windows_core::Abi for MIB_TCP6TABLE_OWNER_PID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCP6TABLE_OWNER_PID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6TABLE_OWNER_PID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCP6TABLE_OWNER_PID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCP6TABLE_OWNER_PID {}
@@ -8639,12 +8639,12 @@ impl ::core::fmt::Debug for MIB_TCPROW2 {
         f.debug_struct("MIB_TCPROW2").field("dwState", &self.dwState).field("dwLocalAddr", &self.dwLocalAddr).field("dwLocalPort", &self.dwLocalPort).field("dwRemoteAddr", &self.dwRemoteAddr).field("dwRemotePort", &self.dwRemotePort).field("dwOwningPid", &self.dwOwningPid).field("dwOffloadState", &self.dwOffloadState).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPROW2 {
+unsafe impl ::windows_core::Abi for MIB_TCPROW2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPROW2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPROW2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPROW2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPROW2 {}
@@ -8668,12 +8668,12 @@ impl ::core::clone::Clone for MIB_TCPROW_LH {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPROW_LH {
+unsafe impl ::windows_core::Abi for MIB_TCPROW_LH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPROW_LH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPROW_LH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPROW_LH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPROW_LH {}
@@ -8694,12 +8694,12 @@ impl ::core::clone::Clone for MIB_TCPROW_LH_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPROW_LH_0 {
+unsafe impl ::windows_core::Abi for MIB_TCPROW_LH_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPROW_LH_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPROW_LH_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPROW_LH_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPROW_LH_0 {}
@@ -8731,12 +8731,12 @@ impl ::core::fmt::Debug for MIB_TCPROW_OWNER_MODULE {
         f.debug_struct("MIB_TCPROW_OWNER_MODULE").field("dwState", &self.dwState).field("dwLocalAddr", &self.dwLocalAddr).field("dwLocalPort", &self.dwLocalPort).field("dwRemoteAddr", &self.dwRemoteAddr).field("dwRemotePort", &self.dwRemotePort).field("dwOwningPid", &self.dwOwningPid).field("liCreateTimestamp", &self.liCreateTimestamp).field("OwningModuleInfo", &self.OwningModuleInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPROW_OWNER_MODULE {
+unsafe impl ::windows_core::Abi for MIB_TCPROW_OWNER_MODULE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPROW_OWNER_MODULE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPROW_OWNER_MODULE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPROW_OWNER_MODULE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPROW_OWNER_MODULE {}
@@ -8766,12 +8766,12 @@ impl ::core::fmt::Debug for MIB_TCPROW_OWNER_PID {
         f.debug_struct("MIB_TCPROW_OWNER_PID").field("dwState", &self.dwState).field("dwLocalAddr", &self.dwLocalAddr).field("dwLocalPort", &self.dwLocalPort).field("dwRemoteAddr", &self.dwRemoteAddr).field("dwRemotePort", &self.dwRemotePort).field("dwOwningPid", &self.dwOwningPid).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPROW_OWNER_PID {
+unsafe impl ::windows_core::Abi for MIB_TCPROW_OWNER_PID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPROW_OWNER_PID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPROW_OWNER_PID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPROW_OWNER_PID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPROW_OWNER_PID {}
@@ -8800,12 +8800,12 @@ impl ::core::fmt::Debug for MIB_TCPROW_W2K {
         f.debug_struct("MIB_TCPROW_W2K").field("dwState", &self.dwState).field("dwLocalAddr", &self.dwLocalAddr).field("dwLocalPort", &self.dwLocalPort).field("dwRemoteAddr", &self.dwRemoteAddr).field("dwRemotePort", &self.dwRemotePort).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPROW_W2K {
+unsafe impl ::windows_core::Abi for MIB_TCPROW_W2K {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPROW_W2K {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPROW_W2K>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPROW_W2K>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPROW_W2K {}
@@ -8860,12 +8860,12 @@ impl ::core::fmt::Debug for MIB_TCPSTATS2 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPSTATS2 {
+unsafe impl ::windows_core::Abi for MIB_TCPSTATS2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPSTATS2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPSTATS2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPSTATS2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPSTATS2 {}
@@ -8899,12 +8899,12 @@ impl ::core::clone::Clone for MIB_TCPSTATS_LH {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPSTATS_LH {
+unsafe impl ::windows_core::Abi for MIB_TCPSTATS_LH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPSTATS_LH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPSTATS_LH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPSTATS_LH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPSTATS_LH {}
@@ -8925,12 +8925,12 @@ impl ::core::clone::Clone for MIB_TCPSTATS_LH_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPSTATS_LH_0 {
+unsafe impl ::windows_core::Abi for MIB_TCPSTATS_LH_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPSTATS_LH_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPSTATS_LH_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPSTATS_LH_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPSTATS_LH_0 {}
@@ -8985,12 +8985,12 @@ impl ::core::fmt::Debug for MIB_TCPSTATS_W2K {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPSTATS_W2K {
+unsafe impl ::windows_core::Abi for MIB_TCPSTATS_W2K {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPSTATS_W2K {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPSTATS_W2K>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPSTATS_W2K>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPSTATS_W2K {}
@@ -9011,12 +9011,12 @@ impl ::core::clone::Clone for MIB_TCPTABLE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPTABLE {
+unsafe impl ::windows_core::Abi for MIB_TCPTABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPTABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPTABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPTABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPTABLE {}
@@ -9042,12 +9042,12 @@ impl ::core::fmt::Debug for MIB_TCPTABLE2 {
         f.debug_struct("MIB_TCPTABLE2").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPTABLE2 {
+unsafe impl ::windows_core::Abi for MIB_TCPTABLE2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPTABLE2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPTABLE2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPTABLE2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPTABLE2 {}
@@ -9073,12 +9073,12 @@ impl ::core::fmt::Debug for MIB_TCPTABLE_OWNER_MODULE {
         f.debug_struct("MIB_TCPTABLE_OWNER_MODULE").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPTABLE_OWNER_MODULE {
+unsafe impl ::windows_core::Abi for MIB_TCPTABLE_OWNER_MODULE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPTABLE_OWNER_MODULE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPTABLE_OWNER_MODULE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPTABLE_OWNER_MODULE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPTABLE_OWNER_MODULE {}
@@ -9104,12 +9104,12 @@ impl ::core::fmt::Debug for MIB_TCPTABLE_OWNER_PID {
         f.debug_struct("MIB_TCPTABLE_OWNER_PID").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCPTABLE_OWNER_PID {
+unsafe impl ::windows_core::Abi for MIB_TCPTABLE_OWNER_PID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_TCPTABLE_OWNER_PID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPTABLE_OWNER_PID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_TCPTABLE_OWNER_PID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_TCPTABLE_OWNER_PID {}
@@ -9159,7 +9159,7 @@ impl ::core::default::Default for MIB_TCP_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MIB_TCP_STATE {
+unsafe impl ::windows_core::Abi for MIB_TCP_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MIB_TCP_STATE {
@@ -9184,13 +9184,13 @@ impl ::core::clone::Clone for MIB_UDP6ROW {
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
-unsafe impl ::windows::core::Abi for MIB_UDP6ROW {
+unsafe impl ::windows_core::Abi for MIB_UDP6ROW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MIB_UDP6ROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -9221,12 +9221,12 @@ impl ::core::clone::Clone for MIB_UDP6ROW2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDP6ROW2 {
+unsafe impl ::windows_core::Abi for MIB_UDP6ROW2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDP6ROW2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDP6ROW2 {}
@@ -9247,12 +9247,12 @@ impl ::core::clone::Clone for MIB_UDP6ROW2_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDP6ROW2_0 {
+unsafe impl ::windows_core::Abi for MIB_UDP6ROW2_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDP6ROW2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW2_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDP6ROW2_0 {}
@@ -9277,12 +9277,12 @@ impl ::core::fmt::Debug for MIB_UDP6ROW2_0_0 {
         f.debug_struct("MIB_UDP6ROW2_0_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDP6ROW2_0_0 {
+unsafe impl ::windows_core::Abi for MIB_UDP6ROW2_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDP6ROW2_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW2_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW2_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDP6ROW2_0_0 {}
@@ -9308,12 +9308,12 @@ impl ::core::clone::Clone for MIB_UDP6ROW_OWNER_MODULE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDP6ROW_OWNER_MODULE {
+unsafe impl ::windows_core::Abi for MIB_UDP6ROW_OWNER_MODULE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDP6ROW_OWNER_MODULE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW_OWNER_MODULE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW_OWNER_MODULE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDP6ROW_OWNER_MODULE {}
@@ -9334,12 +9334,12 @@ impl ::core::clone::Clone for MIB_UDP6ROW_OWNER_MODULE_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDP6ROW_OWNER_MODULE_0 {
+unsafe impl ::windows_core::Abi for MIB_UDP6ROW_OWNER_MODULE_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDP6ROW_OWNER_MODULE_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW_OWNER_MODULE_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW_OWNER_MODULE_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDP6ROW_OWNER_MODULE_0 {}
@@ -9364,12 +9364,12 @@ impl ::core::fmt::Debug for MIB_UDP6ROW_OWNER_MODULE_0_0 {
         f.debug_struct("MIB_UDP6ROW_OWNER_MODULE_0_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDP6ROW_OWNER_MODULE_0_0 {
+unsafe impl ::windows_core::Abi for MIB_UDP6ROW_OWNER_MODULE_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDP6ROW_OWNER_MODULE_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW_OWNER_MODULE_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW_OWNER_MODULE_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDP6ROW_OWNER_MODULE_0_0 {}
@@ -9397,12 +9397,12 @@ impl ::core::fmt::Debug for MIB_UDP6ROW_OWNER_PID {
         f.debug_struct("MIB_UDP6ROW_OWNER_PID").field("ucLocalAddr", &self.ucLocalAddr).field("dwLocalScopeId", &self.dwLocalScopeId).field("dwLocalPort", &self.dwLocalPort).field("dwOwningPid", &self.dwOwningPid).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDP6ROW_OWNER_PID {
+unsafe impl ::windows_core::Abi for MIB_UDP6ROW_OWNER_PID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDP6ROW_OWNER_PID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW_OWNER_PID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6ROW_OWNER_PID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDP6ROW_OWNER_PID {}
@@ -9427,13 +9427,13 @@ impl ::core::clone::Clone for MIB_UDP6TABLE {
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
-unsafe impl ::windows::core::Abi for MIB_UDP6TABLE {
+unsafe impl ::windows_core::Abi for MIB_UDP6TABLE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MIB_UDP6TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6TABLE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -9456,12 +9456,12 @@ impl ::core::clone::Clone for MIB_UDP6TABLE2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDP6TABLE2 {
+unsafe impl ::windows_core::Abi for MIB_UDP6TABLE2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDP6TABLE2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6TABLE2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6TABLE2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDP6TABLE2 {}
@@ -9482,12 +9482,12 @@ impl ::core::clone::Clone for MIB_UDP6TABLE_OWNER_MODULE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDP6TABLE_OWNER_MODULE {
+unsafe impl ::windows_core::Abi for MIB_UDP6TABLE_OWNER_MODULE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDP6TABLE_OWNER_MODULE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6TABLE_OWNER_MODULE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6TABLE_OWNER_MODULE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDP6TABLE_OWNER_MODULE {}
@@ -9513,12 +9513,12 @@ impl ::core::fmt::Debug for MIB_UDP6TABLE_OWNER_PID {
         f.debug_struct("MIB_UDP6TABLE_OWNER_PID").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDP6TABLE_OWNER_PID {
+unsafe impl ::windows_core::Abi for MIB_UDP6TABLE_OWNER_PID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDP6TABLE_OWNER_PID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6TABLE_OWNER_PID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDP6TABLE_OWNER_PID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDP6TABLE_OWNER_PID {}
@@ -9544,12 +9544,12 @@ impl ::core::fmt::Debug for MIB_UDPROW {
         f.debug_struct("MIB_UDPROW").field("dwLocalAddr", &self.dwLocalAddr).field("dwLocalPort", &self.dwLocalPort).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPROW {
+unsafe impl ::windows_core::Abi for MIB_UDPROW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPROW {}
@@ -9576,12 +9576,12 @@ impl ::core::clone::Clone for MIB_UDPROW2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPROW2 {
+unsafe impl ::windows_core::Abi for MIB_UDPROW2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPROW2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPROW2 {}
@@ -9602,12 +9602,12 @@ impl ::core::clone::Clone for MIB_UDPROW2_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPROW2_0 {
+unsafe impl ::windows_core::Abi for MIB_UDPROW2_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPROW2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW2_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPROW2_0 {}
@@ -9632,12 +9632,12 @@ impl ::core::fmt::Debug for MIB_UDPROW2_0_0 {
         f.debug_struct("MIB_UDPROW2_0_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPROW2_0_0 {
+unsafe impl ::windows_core::Abi for MIB_UDPROW2_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPROW2_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW2_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW2_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPROW2_0_0 {}
@@ -9662,12 +9662,12 @@ impl ::core::clone::Clone for MIB_UDPROW_OWNER_MODULE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPROW_OWNER_MODULE {
+unsafe impl ::windows_core::Abi for MIB_UDPROW_OWNER_MODULE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPROW_OWNER_MODULE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW_OWNER_MODULE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW_OWNER_MODULE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPROW_OWNER_MODULE {}
@@ -9688,12 +9688,12 @@ impl ::core::clone::Clone for MIB_UDPROW_OWNER_MODULE_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPROW_OWNER_MODULE_0 {
+unsafe impl ::windows_core::Abi for MIB_UDPROW_OWNER_MODULE_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPROW_OWNER_MODULE_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW_OWNER_MODULE_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW_OWNER_MODULE_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPROW_OWNER_MODULE_0 {}
@@ -9718,12 +9718,12 @@ impl ::core::fmt::Debug for MIB_UDPROW_OWNER_MODULE_0_0 {
         f.debug_struct("MIB_UDPROW_OWNER_MODULE_0_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPROW_OWNER_MODULE_0_0 {
+unsafe impl ::windows_core::Abi for MIB_UDPROW_OWNER_MODULE_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPROW_OWNER_MODULE_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW_OWNER_MODULE_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW_OWNER_MODULE_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPROW_OWNER_MODULE_0_0 {}
@@ -9750,12 +9750,12 @@ impl ::core::fmt::Debug for MIB_UDPROW_OWNER_PID {
         f.debug_struct("MIB_UDPROW_OWNER_PID").field("dwLocalAddr", &self.dwLocalAddr).field("dwLocalPort", &self.dwLocalPort).field("dwOwningPid", &self.dwOwningPid).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPROW_OWNER_PID {
+unsafe impl ::windows_core::Abi for MIB_UDPROW_OWNER_PID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPROW_OWNER_PID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW_OWNER_PID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPROW_OWNER_PID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPROW_OWNER_PID {}
@@ -9784,12 +9784,12 @@ impl ::core::fmt::Debug for MIB_UDPSTATS {
         f.debug_struct("MIB_UDPSTATS").field("dwInDatagrams", &self.dwInDatagrams).field("dwNoPorts", &self.dwNoPorts).field("dwInErrors", &self.dwInErrors).field("dwOutDatagrams", &self.dwOutDatagrams).field("dwNumAddrs", &self.dwNumAddrs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPSTATS {
+unsafe impl ::windows_core::Abi for MIB_UDPSTATS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPSTATS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPSTATS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPSTATS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPSTATS {}
@@ -9818,12 +9818,12 @@ impl ::core::fmt::Debug for MIB_UDPSTATS2 {
         f.debug_struct("MIB_UDPSTATS2").field("dw64InDatagrams", &self.dw64InDatagrams).field("dwNoPorts", &self.dwNoPorts).field("dwInErrors", &self.dwInErrors).field("dw64OutDatagrams", &self.dw64OutDatagrams).field("dwNumAddrs", &self.dwNumAddrs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPSTATS2 {
+unsafe impl ::windows_core::Abi for MIB_UDPSTATS2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPSTATS2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPSTATS2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPSTATS2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPSTATS2 {}
@@ -9849,12 +9849,12 @@ impl ::core::fmt::Debug for MIB_UDPTABLE {
         f.debug_struct("MIB_UDPTABLE").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPTABLE {
+unsafe impl ::windows_core::Abi for MIB_UDPTABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPTABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPTABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPTABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPTABLE {}
@@ -9875,12 +9875,12 @@ impl ::core::clone::Clone for MIB_UDPTABLE2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPTABLE2 {
+unsafe impl ::windows_core::Abi for MIB_UDPTABLE2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPTABLE2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPTABLE2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPTABLE2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPTABLE2 {}
@@ -9901,12 +9901,12 @@ impl ::core::clone::Clone for MIB_UDPTABLE_OWNER_MODULE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPTABLE_OWNER_MODULE {
+unsafe impl ::windows_core::Abi for MIB_UDPTABLE_OWNER_MODULE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPTABLE_OWNER_MODULE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPTABLE_OWNER_MODULE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPTABLE_OWNER_MODULE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPTABLE_OWNER_MODULE {}
@@ -9932,12 +9932,12 @@ impl ::core::fmt::Debug for MIB_UDPTABLE_OWNER_PID {
         f.debug_struct("MIB_UDPTABLE_OWNER_PID").field("dwNumEntries", &self.dwNumEntries).field("table", &self.table).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIB_UDPTABLE_OWNER_PID {
+unsafe impl ::windows_core::Abi for MIB_UDPTABLE_OWNER_PID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIB_UDPTABLE_OWNER_PID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPTABLE_OWNER_PID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UDPTABLE_OWNER_PID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIB_UDPTABLE_OWNER_PID {}
@@ -9972,13 +9972,13 @@ impl ::core::clone::Clone for MIB_UNICASTIPADDRESS_ROW {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_UNICASTIPADDRESS_ROW {
+unsafe impl ::windows_core::Abi for MIB_UNICASTIPADDRESS_ROW {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_UNICASTIPADDRESS_ROW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UNICASTIPADDRESS_ROW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UNICASTIPADDRESS_ROW>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -10005,13 +10005,13 @@ impl ::core::clone::Clone for MIB_UNICASTIPADDRESS_TABLE {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
-unsafe impl ::windows::core::Abi for MIB_UNICASTIPADDRESS_TABLE {
+unsafe impl ::windows_core::Abi for MIB_UNICASTIPADDRESS_TABLE {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 impl ::core::cmp::PartialEq for MIB_UNICASTIPADDRESS_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UNICASTIPADDRESS_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIB_UNICASTIPADDRESS_TABLE>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -10053,7 +10053,7 @@ impl ::core::default::Default for NET_ADDRESS_FORMAT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NET_ADDRESS_FORMAT {
+unsafe impl ::windows_core::Abi for NET_ADDRESS_FORMAT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NET_ADDRESS_FORMAT {
@@ -10086,7 +10086,7 @@ pub const NUMBER_OF_EXPORTED_VARIABLES: u32 = 39u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NhpAllocateAndGetInterfaceInfoFromStack<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(pptable: *mut *mut ip_interface_name_info_w2ksp1, pdwcount: *mut u32, border: Param2, hheap: Param3, dwflags: u32) -> u32 {
+pub unsafe fn NhpAllocateAndGetInterfaceInfoFromStack<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(pptable: *mut *mut ip_interface_name_info_w2ksp1, pdwcount: *mut u32, border: Param2, hheap: Param3, dwflags: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10116,12 +10116,12 @@ pub unsafe fn NotifyAddrChange(handle: *mut super::super::Foundation::HANDLE, ov
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn NotifyIpInterfaceChange<'a, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(family: u16, callback: PIPINTERFACE_CHANGE_CALLBACK, callercontext: *const ::core::ffi::c_void, initialnotification: Param3, notificationhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::Result<()> {
+pub unsafe fn NotifyIpInterfaceChange<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(family: u16, callback: PIPINTERFACE_CHANGE_CALLBACK, callercontext: *const ::core::ffi::c_void, initialnotification: Param3, notificationhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NotifyIpInterfaceChange(family: u16, callback: ::windows::core::RawPtr, callercontext: *const ::core::ffi::c_void, initialnotification: super::super::Foundation::BOOLEAN, notificationhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::NTSTATUS;
+            fn NotifyIpInterfaceChange(family: u16, callback: ::windows_core::RawPtr, callercontext: *const ::core::ffi::c_void, initialnotification: super::super::Foundation::BOOLEAN, notificationhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::NTSTATUS;
         }
         NotifyIpInterfaceChange(::core::mem::transmute(family), ::core::mem::transmute(callback), ::core::mem::transmute(callercontext), initialnotification.into_param().abi(), ::core::mem::transmute(notificationhandle)).ok()
     }
@@ -10131,12 +10131,12 @@ pub unsafe fn NotifyIpInterfaceChange<'a, Param3: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn NotifyNetworkConnectivityHintChange<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(callback: PNETWORK_CONNECTIVITY_HINT_CHANGE_CALLBACK, callercontext: *const ::core::ffi::c_void, initialnotification: Param2, notificationhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::Result<()> {
+pub unsafe fn NotifyNetworkConnectivityHintChange<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(callback: PNETWORK_CONNECTIVITY_HINT_CHANGE_CALLBACK, callercontext: *const ::core::ffi::c_void, initialnotification: Param2, notificationhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NotifyNetworkConnectivityHintChange(callback: ::windows::core::RawPtr, callercontext: *const ::core::ffi::c_void, initialnotification: super::super::Foundation::BOOLEAN, notificationhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::NTSTATUS;
+            fn NotifyNetworkConnectivityHintChange(callback: ::windows_core::RawPtr, callercontext: *const ::core::ffi::c_void, initialnotification: super::super::Foundation::BOOLEAN, notificationhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::NTSTATUS;
         }
         NotifyNetworkConnectivityHintChange(::core::mem::transmute(callback), ::core::mem::transmute(callercontext), initialnotification.into_param().abi(), ::core::mem::transmute(notificationhandle)).ok()
     }
@@ -10161,12 +10161,12 @@ pub unsafe fn NotifyRouteChange(handle: *mut super::super::Foundation::HANDLE, o
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn NotifyRouteChange2<'a, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(addressfamily: u16, callback: PIPFORWARD_CHANGE_CALLBACK, callercontext: *const ::core::ffi::c_void, initialnotification: Param3, notificationhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::Result<()> {
+pub unsafe fn NotifyRouteChange2<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(addressfamily: u16, callback: PIPFORWARD_CHANGE_CALLBACK, callercontext: *const ::core::ffi::c_void, initialnotification: Param3, notificationhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NotifyRouteChange2(addressfamily: u16, callback: ::windows::core::RawPtr, callercontext: *const ::core::ffi::c_void, initialnotification: super::super::Foundation::BOOLEAN, notificationhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::NTSTATUS;
+            fn NotifyRouteChange2(addressfamily: u16, callback: ::windows_core::RawPtr, callercontext: *const ::core::ffi::c_void, initialnotification: super::super::Foundation::BOOLEAN, notificationhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::NTSTATUS;
         }
         NotifyRouteChange2(::core::mem::transmute(addressfamily), ::core::mem::transmute(callback), ::core::mem::transmute(callercontext), initialnotification.into_param().abi(), ::core::mem::transmute(notificationhandle)).ok()
     }
@@ -10176,12 +10176,12 @@ pub unsafe fn NotifyRouteChange2<'a, Param3: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn NotifyStableUnicastIpAddressTable(family: u16, table: *mut *mut MIB_UNICASTIPADDRESS_TABLE, callercallback: PSTABLE_UNICAST_IPADDRESS_TABLE_CALLBACK, callercontext: *const ::core::ffi::c_void, notificationhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::Result<()> {
+pub unsafe fn NotifyStableUnicastIpAddressTable(family: u16, table: *mut *mut MIB_UNICASTIPADDRESS_TABLE, callercallback: PSTABLE_UNICAST_IPADDRESS_TABLE_CALLBACK, callercontext: *const ::core::ffi::c_void, notificationhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NotifyStableUnicastIpAddressTable(family: u16, table: *mut *mut MIB_UNICASTIPADDRESS_TABLE, callercallback: ::windows::core::RawPtr, callercontext: *const ::core::ffi::c_void, notificationhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::NTSTATUS;
+            fn NotifyStableUnicastIpAddressTable(family: u16, table: *mut *mut MIB_UNICASTIPADDRESS_TABLE, callercallback: ::windows_core::RawPtr, callercontext: *const ::core::ffi::c_void, notificationhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::NTSTATUS;
         }
         NotifyStableUnicastIpAddressTable(::core::mem::transmute(family), ::core::mem::transmute(table), ::core::mem::transmute(callercallback), ::core::mem::transmute(callercontext), ::core::mem::transmute(notificationhandle)).ok()
     }
@@ -10191,12 +10191,12 @@ pub unsafe fn NotifyStableUnicastIpAddressTable(family: u16, table: *mut *mut MI
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NotifyTeredoPortChange<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(callback: PTEREDO_PORT_CHANGE_CALLBACK, callercontext: *const ::core::ffi::c_void, initialnotification: Param2, notificationhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::Result<()> {
+pub unsafe fn NotifyTeredoPortChange<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(callback: PTEREDO_PORT_CHANGE_CALLBACK, callercontext: *const ::core::ffi::c_void, initialnotification: Param2, notificationhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NotifyTeredoPortChange(callback: ::windows::core::RawPtr, callercontext: *const ::core::ffi::c_void, initialnotification: super::super::Foundation::BOOLEAN, notificationhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::NTSTATUS;
+            fn NotifyTeredoPortChange(callback: ::windows_core::RawPtr, callercontext: *const ::core::ffi::c_void, initialnotification: super::super::Foundation::BOOLEAN, notificationhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::NTSTATUS;
         }
         NotifyTeredoPortChange(::core::mem::transmute(callback), ::core::mem::transmute(callercontext), initialnotification.into_param().abi(), ::core::mem::transmute(notificationhandle)).ok()
     }
@@ -10206,12 +10206,12 @@ pub unsafe fn NotifyTeredoPortChange<'a, Param2: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn NotifyUnicastIpAddressChange<'a, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(family: u16, callback: PUNICAST_IPADDRESS_CHANGE_CALLBACK, callercontext: *const ::core::ffi::c_void, initialnotification: Param3, notificationhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::Result<()> {
+pub unsafe fn NotifyUnicastIpAddressChange<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(family: u16, callback: PUNICAST_IPADDRESS_CHANGE_CALLBACK, callercontext: *const ::core::ffi::c_void, initialnotification: Param3, notificationhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NotifyUnicastIpAddressChange(family: u16, callback: ::windows::core::RawPtr, callercontext: *const ::core::ffi::c_void, initialnotification: super::super::Foundation::BOOLEAN, notificationhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::NTSTATUS;
+            fn NotifyUnicastIpAddressChange(family: u16, callback: ::windows_core::RawPtr, callercontext: *const ::core::ffi::c_void, initialnotification: super::super::Foundation::BOOLEAN, notificationhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::NTSTATUS;
         }
         NotifyUnicastIpAddressChange(::core::mem::transmute(family), ::core::mem::transmute(callback), ::core::mem::transmute(callercontext), initialnotification.into_param().abi(), ::core::mem::transmute(notificationhandle)).ok()
     }
@@ -10239,7 +10239,7 @@ impl ::core::default::Default for PFADDRESSTYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PFADDRESSTYPE {
+unsafe impl ::windows_core::Abi for PFADDRESSTYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PFADDRESSTYPE {
@@ -10272,7 +10272,7 @@ impl ::core::default::Default for PFFORWARD_ACTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PFFORWARD_ACTION {
+unsafe impl ::windows_core::Abi for PFFORWARD_ACTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PFFORWARD_ACTION {
@@ -10301,7 +10301,7 @@ impl ::core::default::Default for PFFRAMETYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PFFRAMETYPE {
+unsafe impl ::windows_core::Abi for PFFRAMETYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PFFRAMETYPE {
@@ -10333,12 +10333,12 @@ impl ::core::fmt::Debug for PFLOGFRAME {
         f.debug_struct("PFLOGFRAME").field("Timestamp", &self.Timestamp).field("pfeTypeOfFrame", &self.pfeTypeOfFrame).field("dwTotalSizeUsed", &self.dwTotalSizeUsed).field("dwFilterRule", &self.dwFilterRule).field("wSizeOfAdditionalData", &self.wSizeOfAdditionalData).field("wSizeOfIpHeader", &self.wSizeOfIpHeader).field("dwInterfaceName", &self.dwInterfaceName).field("dwIPIndex", &self.dwIPIndex).field("bPacketData", &self.bPacketData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PFLOGFRAME {
+unsafe impl ::windows_core::Abi for PFLOGFRAME {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PFLOGFRAME {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PFLOGFRAME>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PFLOGFRAME>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PFLOGFRAME {}
@@ -10389,12 +10389,12 @@ impl ::core::fmt::Debug for PF_FILTER_DESCRIPTOR {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for PF_FILTER_DESCRIPTOR {
+unsafe impl ::windows_core::Abi for PF_FILTER_DESCRIPTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PF_FILTER_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PF_FILTER_DESCRIPTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PF_FILTER_DESCRIPTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PF_FILTER_DESCRIPTOR {}
@@ -10420,12 +10420,12 @@ impl ::core::fmt::Debug for PF_FILTER_STATS {
         f.debug_struct("PF_FILTER_STATS").field("dwNumPacketsFiltered", &self.dwNumPacketsFiltered).field("info", &self.info).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PF_FILTER_STATS {
+unsafe impl ::windows_core::Abi for PF_FILTER_STATS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PF_FILTER_STATS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PF_FILTER_STATS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PF_FILTER_STATS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PF_FILTER_STATS {}
@@ -10482,12 +10482,12 @@ impl ::core::fmt::Debug for PF_INTERFACE_STATS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for PF_INTERFACE_STATS {
+unsafe impl ::windows_core::Abi for PF_INTERFACE_STATS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PF_INTERFACE_STATS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PF_INTERFACE_STATS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PF_INTERFACE_STATS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PF_INTERFACE_STATS {}
@@ -10514,12 +10514,12 @@ impl ::core::fmt::Debug for PF_LATEBIND_INFO {
         f.debug_struct("PF_LATEBIND_INFO").field("SrcAddr", &self.SrcAddr).field("DstAddr", &self.DstAddr).field("Mask", &self.Mask).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PF_LATEBIND_INFO {
+unsafe impl ::windows_core::Abi for PF_LATEBIND_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PF_LATEBIND_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PF_LATEBIND_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PF_LATEBIND_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PF_LATEBIND_INFO {}
@@ -10608,7 +10608,7 @@ pub unsafe fn PfBindInterfaceToIndex(pinterface: *mut ::core::ffi::c_void, dwind
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PfCreateInterface<'a, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(dwname: u32, inaction: PFFORWARD_ACTION, outaction: PFFORWARD_ACTION, buselog: Param3, bmustbeunique: Param4, ppinterface: *mut *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn PfCreateInterface<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(dwname: u32, inaction: PFFORWARD_ACTION, outaction: PFFORWARD_ACTION, buselog: Param3, bmustbeunique: Param4, ppinterface: *mut *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10651,7 +10651,7 @@ pub unsafe fn PfDeleteLog() -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PfGetInterfaceStatistics<'a, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(pinterface: *mut ::core::ffi::c_void, ppfstats: *mut PF_INTERFACE_STATS, pdwbuffersize: *mut u32, fresetcounters: Param3) -> u32 {
+pub unsafe fn PfGetInterfaceStatistics<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(pinterface: *mut ::core::ffi::c_void, ppfstats: *mut PF_INTERFACE_STATS, pdwbuffersize: *mut u32, fresetcounters: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10666,7 +10666,7 @@ pub unsafe fn PfGetInterfaceStatistics<'a, Param3: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PfMakeLog<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hevent: Param0) -> u32 {
+pub unsafe fn PfMakeLog<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hevent: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10791,7 +10791,7 @@ pub unsafe fn RegisterInterfaceTimestampConfigChange(callback: PINTERFACE_TIMEST
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterInterfaceTimestampConfigChange(callback: ::windows::core::RawPtr, callercontext: *const ::core::ffi::c_void, notificationhandle: *mut HIFTIMESTAMPCHANGE) -> u32;
+            fn RegisterInterfaceTimestampConfigChange(callback: ::windows_core::RawPtr, callercontext: *const ::core::ffi::c_void, notificationhandle: *mut HIFTIMESTAMPCHANGE) -> u32;
         }
         ::core::mem::transmute(RegisterInterfaceTimestampConfigChange(::core::mem::transmute(callback), ::core::mem::transmute(callercontext), ::core::mem::transmute(notificationhandle)))
     }
@@ -10801,7 +10801,7 @@ pub unsafe fn RegisterInterfaceTimestampConfigChange(callback: PINTERFACE_TIMEST
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn ResolveIpNetEntry2(row: *mut MIB_IPNET_ROW2, sourceaddress: *const super::super::Networking::WinSock::SOCKADDR_INET) -> ::windows::core::Result<()> {
+pub unsafe fn ResolveIpNetEntry2(row: *mut MIB_IPNET_ROW2, sourceaddress: *const super::super::Networking::WinSock::SOCKADDR_INET) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10860,7 +10860,7 @@ pub unsafe fn SendARP(destip: u32, srcip: u32, pmacaddr: *mut ::core::ffi::c_voi
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCurrentThreadCompartmentId(compartmentid: u32) -> ::windows::core::Result<()> {
+pub unsafe fn SetCurrentThreadCompartmentId(compartmentid: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10875,7 +10875,7 @@ pub unsafe fn SetCurrentThreadCompartmentId(compartmentid: u32) -> ::windows::co
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCurrentThreadCompartmentScope(compartmentscope: u32) -> ::windows::core::Result<()> {
+pub unsafe fn SetCurrentThreadCompartmentScope(compartmentscope: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10890,7 +10890,7 @@ pub unsafe fn SetCurrentThreadCompartmentScope(compartmentscope: u32) -> ::windo
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetDnsSettings(settings: *const DNS_SETTINGS) -> ::windows::core::Result<()> {
+pub unsafe fn SetDnsSettings(settings: *const DNS_SETTINGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10919,12 +10919,12 @@ pub unsafe fn SetIfEntry(pifrow: *const MIB_IFROW) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetInterfaceDnsSettings<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::GUID>>(interface: Param0, settings: *const DNS_INTERFACE_SETTINGS) -> ::windows::core::Result<()> {
+pub unsafe fn SetInterfaceDnsSettings<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(interface: Param0, settings: *const DNS_INTERFACE_SETTINGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetInterfaceDnsSettings(interface: ::windows::core::GUID, settings: *const DNS_INTERFACE_SETTINGS) -> super::super::Foundation::NTSTATUS;
+            fn SetInterfaceDnsSettings(interface: ::windows_core::GUID, settings: *const DNS_INTERFACE_SETTINGS) -> super::super::Foundation::NTSTATUS;
         }
         SetInterfaceDnsSettings(interface.into_param().abi(), ::core::mem::transmute(settings)).ok()
     }
@@ -10949,7 +10949,7 @@ pub unsafe fn SetIpForwardEntry(proute: *const MIB_IPFORWARDROW) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn SetIpForwardEntry2(route: *const MIB_IPFORWARD_ROW2) -> ::windows::core::Result<()> {
+pub unsafe fn SetIpForwardEntry2(route: *const MIB_IPFORWARD_ROW2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10964,7 +10964,7 @@ pub unsafe fn SetIpForwardEntry2(route: *const MIB_IPFORWARD_ROW2) -> ::windows:
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn SetIpInterfaceEntry(row: *mut MIB_IPINTERFACE_ROW) -> ::windows::core::Result<()> {
+pub unsafe fn SetIpInterfaceEntry(row: *mut MIB_IPINTERFACE_ROW) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10993,7 +10993,7 @@ pub unsafe fn SetIpNetEntry(parpentry: *const MIB_IPNETROW_LH) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn SetIpNetEntry2(row: *const MIB_IPNET_ROW2) -> ::windows::core::Result<()> {
+pub unsafe fn SetIpNetEntry2(row: *const MIB_IPNET_ROW2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11050,7 +11050,7 @@ pub unsafe fn SetIpTTL(nttl: u32) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetJobCompartmentId<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(jobhandle: Param0, compartmentid: u32) -> ::windows::core::Result<()> {
+pub unsafe fn SetJobCompartmentId<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(jobhandle: Param0, compartmentid: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11065,12 +11065,12 @@ pub unsafe fn SetJobCompartmentId<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetNetworkInformation<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(networkguid: *const ::windows::core::GUID, compartmentid: u32, networkname: Param2) -> ::windows::core::Result<()> {
+pub unsafe fn SetNetworkInformation<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(networkguid: *const ::windows_core::GUID, compartmentid: u32, networkname: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetNetworkInformation(networkguid: *const ::windows::core::GUID, compartmentid: u32, networkname: ::windows::core::PCWSTR) -> super::super::Foundation::NTSTATUS;
+            fn SetNetworkInformation(networkguid: *const ::windows_core::GUID, compartmentid: u32, networkname: ::windows_core::PCWSTR) -> super::super::Foundation::NTSTATUS;
         }
         SetNetworkInformation(::core::mem::transmute(networkguid), ::core::mem::transmute(compartmentid), networkname.into_param().abi()).ok()
     }
@@ -11109,7 +11109,7 @@ pub unsafe fn SetPerTcpConnectionEStats(row: *const MIB_TCPROW_LH, estatstype: T
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetSessionCompartmentId(sessionid: u32, compartmentid: u32) -> ::windows::core::Result<()> {
+pub unsafe fn SetSessionCompartmentId(sessionid: u32, compartmentid: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11138,7 +11138,7 @@ pub unsafe fn SetTcpEntry(ptcprow: *const MIB_TCPROW_LH) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`, `\"Win32_Foundation\"`, `\"Win32_NetworkManagement_Ndis\"`, `\"Win32_Networking_WinSock\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
 #[inline]
-pub unsafe fn SetUnicastIpAddressEntry(row: *const MIB_UNICASTIPADDRESS_ROW) -> ::windows::core::Result<()> {
+pub unsafe fn SetUnicastIpAddressEntry(row: *const MIB_UNICASTIPADDRESS_ROW) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11155,8 +11155,8 @@ pub const TCP6_STATS: u32 = 38u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`*"]
 pub struct TCPIP_OWNER_MODULE_BASIC_INFO {
-    pub pModuleName: ::windows::core::PWSTR,
-    pub pModulePath: ::windows::core::PWSTR,
+    pub pModuleName: ::windows_core::PWSTR,
+    pub pModulePath: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for TCPIP_OWNER_MODULE_BASIC_INFO {}
 impl ::core::clone::Clone for TCPIP_OWNER_MODULE_BASIC_INFO {
@@ -11169,12 +11169,12 @@ impl ::core::fmt::Debug for TCPIP_OWNER_MODULE_BASIC_INFO {
         f.debug_struct("TCPIP_OWNER_MODULE_BASIC_INFO").field("pModuleName", &self.pModuleName).field("pModulePath", &self.pModulePath).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TCPIP_OWNER_MODULE_BASIC_INFO {
+unsafe impl ::windows_core::Abi for TCPIP_OWNER_MODULE_BASIC_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TCPIP_OWNER_MODULE_BASIC_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCPIP_OWNER_MODULE_BASIC_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCPIP_OWNER_MODULE_BASIC_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TCPIP_OWNER_MODULE_BASIC_INFO {}
@@ -11200,7 +11200,7 @@ impl ::core::default::Default for TCPIP_OWNER_MODULE_INFO_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TCPIP_OWNER_MODULE_INFO_CLASS {
+unsafe impl ::windows_core::Abi for TCPIP_OWNER_MODULE_INFO_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TCPIP_OWNER_MODULE_INFO_CLASS {
@@ -11231,7 +11231,7 @@ impl ::core::default::Default for TCP_BOOLEAN_OPTIONAL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TCP_BOOLEAN_OPTIONAL {
+unsafe impl ::windows_core::Abi for TCP_BOOLEAN_OPTIONAL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TCP_BOOLEAN_OPTIONAL {
@@ -11264,7 +11264,7 @@ impl ::core::default::Default for TCP_CONNECTION_OFFLOAD_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TCP_CONNECTION_OFFLOAD_STATE {
+unsafe impl ::windows_core::Abi for TCP_CONNECTION_OFFLOAD_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TCP_CONNECTION_OFFLOAD_STATE {
@@ -11298,13 +11298,13 @@ impl ::core::fmt::Debug for TCP_ESTATS_BANDWIDTH_ROD_v0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TCP_ESTATS_BANDWIDTH_ROD_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_BANDWIDTH_ROD_v0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TCP_ESTATS_BANDWIDTH_ROD_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_BANDWIDTH_ROD_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_BANDWIDTH_ROD_v0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11332,12 +11332,12 @@ impl ::core::fmt::Debug for TCP_ESTATS_BANDWIDTH_RW_v0 {
         f.debug_struct("TCP_ESTATS_BANDWIDTH_RW_v0").field("EnableCollectionOutbound", &self.EnableCollectionOutbound).field("EnableCollectionInbound", &self.EnableCollectionInbound).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TCP_ESTATS_BANDWIDTH_RW_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_BANDWIDTH_RW_v0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TCP_ESTATS_BANDWIDTH_RW_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_BANDWIDTH_RW_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_BANDWIDTH_RW_v0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TCP_ESTATS_BANDWIDTH_RW_v0 {}
@@ -11390,12 +11390,12 @@ impl ::core::fmt::Debug for TCP_ESTATS_DATA_ROD_v0 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for TCP_ESTATS_DATA_ROD_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_DATA_ROD_v0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TCP_ESTATS_DATA_ROD_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_DATA_ROD_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_DATA_ROD_v0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TCP_ESTATS_DATA_ROD_v0 {}
@@ -11425,13 +11425,13 @@ impl ::core::fmt::Debug for TCP_ESTATS_DATA_RW_v0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TCP_ESTATS_DATA_RW_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_DATA_RW_v0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TCP_ESTATS_DATA_RW_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_DATA_RW_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_DATA_RW_v0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11461,12 +11461,12 @@ impl ::core::fmt::Debug for TCP_ESTATS_FINE_RTT_ROD_v0 {
         f.debug_struct("TCP_ESTATS_FINE_RTT_ROD_v0").field("RttVar", &self.RttVar).field("MaxRtt", &self.MaxRtt).field("MinRtt", &self.MinRtt).field("SumRtt", &self.SumRtt).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TCP_ESTATS_FINE_RTT_ROD_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_FINE_RTT_ROD_v0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TCP_ESTATS_FINE_RTT_ROD_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_FINE_RTT_ROD_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_FINE_RTT_ROD_v0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TCP_ESTATS_FINE_RTT_ROD_v0 {}
@@ -11496,13 +11496,13 @@ impl ::core::fmt::Debug for TCP_ESTATS_FINE_RTT_RW_v0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TCP_ESTATS_FINE_RTT_RW_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_FINE_RTT_RW_v0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TCP_ESTATS_FINE_RTT_RW_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_FINE_RTT_RW_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_FINE_RTT_RW_v0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11532,12 +11532,12 @@ impl ::core::fmt::Debug for TCP_ESTATS_OBS_REC_ROD_v0 {
         f.debug_struct("TCP_ESTATS_OBS_REC_ROD_v0").field("CurRwinRcvd", &self.CurRwinRcvd).field("MaxRwinRcvd", &self.MaxRwinRcvd).field("MinRwinRcvd", &self.MinRwinRcvd).field("WinScaleRcvd", &self.WinScaleRcvd).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TCP_ESTATS_OBS_REC_ROD_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_OBS_REC_ROD_v0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TCP_ESTATS_OBS_REC_ROD_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_OBS_REC_ROD_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_OBS_REC_ROD_v0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TCP_ESTATS_OBS_REC_ROD_v0 {}
@@ -11567,13 +11567,13 @@ impl ::core::fmt::Debug for TCP_ESTATS_OBS_REC_RW_v0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TCP_ESTATS_OBS_REC_RW_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_OBS_REC_RW_v0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TCP_ESTATS_OBS_REC_RW_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_OBS_REC_RW_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_OBS_REC_RW_v0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11680,12 +11680,12 @@ impl ::core::fmt::Debug for TCP_ESTATS_PATH_ROD_v0 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for TCP_ESTATS_PATH_ROD_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_PATH_ROD_v0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TCP_ESTATS_PATH_ROD_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_PATH_ROD_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_PATH_ROD_v0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TCP_ESTATS_PATH_ROD_v0 {}
@@ -11715,13 +11715,13 @@ impl ::core::fmt::Debug for TCP_ESTATS_PATH_RW_v0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TCP_ESTATS_PATH_RW_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_PATH_RW_v0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TCP_ESTATS_PATH_RW_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_PATH_RW_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_PATH_RW_v0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11776,12 +11776,12 @@ impl ::core::fmt::Debug for TCP_ESTATS_REC_ROD_v0 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for TCP_ESTATS_REC_ROD_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_REC_ROD_v0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TCP_ESTATS_REC_ROD_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_REC_ROD_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_REC_ROD_v0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TCP_ESTATS_REC_ROD_v0 {}
@@ -11811,13 +11811,13 @@ impl ::core::fmt::Debug for TCP_ESTATS_REC_RW_v0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TCP_ESTATS_REC_RW_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_REC_RW_v0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TCP_ESTATS_REC_RW_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_REC_RW_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_REC_RW_v0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11847,12 +11847,12 @@ impl ::core::fmt::Debug for TCP_ESTATS_SEND_BUFF_ROD_v0 {
         f.debug_struct("TCP_ESTATS_SEND_BUFF_ROD_v0").field("CurRetxQueue", &self.CurRetxQueue).field("MaxRetxQueue", &self.MaxRetxQueue).field("CurAppWQueue", &self.CurAppWQueue).field("MaxAppWQueue", &self.MaxAppWQueue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TCP_ESTATS_SEND_BUFF_ROD_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_SEND_BUFF_ROD_v0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TCP_ESTATS_SEND_BUFF_ROD_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_SEND_BUFF_ROD_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_SEND_BUFF_ROD_v0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TCP_ESTATS_SEND_BUFF_ROD_v0 {}
@@ -11882,13 +11882,13 @@ impl ::core::fmt::Debug for TCP_ESTATS_SEND_BUFF_RW_v0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TCP_ESTATS_SEND_BUFF_RW_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_SEND_BUFF_RW_v0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TCP_ESTATS_SEND_BUFF_RW_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_SEND_BUFF_RW_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_SEND_BUFF_RW_v0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11951,12 +11951,12 @@ impl ::core::fmt::Debug for TCP_ESTATS_SND_CONG_ROD_v0 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for TCP_ESTATS_SND_CONG_ROD_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_SND_CONG_ROD_v0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TCP_ESTATS_SND_CONG_ROD_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_SND_CONG_ROD_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_SND_CONG_ROD_v0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TCP_ESTATS_SND_CONG_ROD_v0 {}
@@ -11981,12 +11981,12 @@ impl ::core::fmt::Debug for TCP_ESTATS_SND_CONG_ROS_v0 {
         f.debug_struct("TCP_ESTATS_SND_CONG_ROS_v0").field("LimCwnd", &self.LimCwnd).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TCP_ESTATS_SND_CONG_ROS_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_SND_CONG_ROS_v0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TCP_ESTATS_SND_CONG_ROS_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_SND_CONG_ROS_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_SND_CONG_ROS_v0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TCP_ESTATS_SND_CONG_ROS_v0 {}
@@ -12016,13 +12016,13 @@ impl ::core::fmt::Debug for TCP_ESTATS_SND_CONG_RW_v0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TCP_ESTATS_SND_CONG_RW_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_SND_CONG_RW_v0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TCP_ESTATS_SND_CONG_RW_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_SND_CONG_RW_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_SND_CONG_RW_v0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12056,13 +12056,13 @@ impl ::core::fmt::Debug for TCP_ESTATS_SYN_OPTS_ROS_v0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TCP_ESTATS_SYN_OPTS_ROS_v0 {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_SYN_OPTS_ROS_v0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TCP_ESTATS_SYN_OPTS_ROS_v0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_SYN_OPTS_ROS_v0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCP_ESTATS_SYN_OPTS_ROS_v0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12108,7 +12108,7 @@ impl ::core::default::Default for TCP_ESTATS_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TCP_ESTATS_TYPE {
+unsafe impl ::windows_core::Abi for TCP_ESTATS_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TCP_ESTATS_TYPE {
@@ -12149,7 +12149,7 @@ impl ::core::default::Default for TCP_RTO_ALGORITHM {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TCP_RTO_ALGORITHM {
+unsafe impl ::windows_core::Abi for TCP_RTO_ALGORITHM {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TCP_RTO_ALGORITHM {
@@ -12192,7 +12192,7 @@ impl ::core::default::Default for TCP_SOFT_ERROR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TCP_SOFT_ERROR {
+unsafe impl ::windows_core::Abi for TCP_SOFT_ERROR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TCP_SOFT_ERROR {
@@ -12237,7 +12237,7 @@ impl ::core::default::Default for TCP_TABLE_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TCP_TABLE_CLASS {
+unsafe impl ::windows_core::Abi for TCP_TABLE_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TCP_TABLE_CLASS {
@@ -12274,7 +12274,7 @@ impl ::core::default::Default for UDP_TABLE_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for UDP_TABLE_CLASS {
+unsafe impl ::windows_core::Abi for UDP_TABLE_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for UDP_TABLE_CLASS {
@@ -12299,7 +12299,7 @@ pub unsafe fn UnenableRouter(poverlapped: *const super::super::System::IO::OVERL
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`*"]
 #[inline]
-pub unsafe fn UnregisterInterfaceTimestampConfigChange<'a, Param0: ::windows::core::IntoParam<'a, HIFTIMESTAMPCHANGE>>(notificationhandle: Param0) {
+pub unsafe fn UnregisterInterfaceTimestampConfigChange<'a, Param0: ::windows_core::IntoParam<'a, HIFTIMESTAMPCHANGE>>(notificationhandle: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -12328,12 +12328,12 @@ impl ::core::fmt::Debug for arp_send_reply {
         f.debug_struct("arp_send_reply").field("DestAddress", &self.DestAddress).field("SrcAddress", &self.SrcAddress).finish()
     }
 }
-unsafe impl ::windows::core::Abi for arp_send_reply {
+unsafe impl ::windows_core::Abi for arp_send_reply {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for arp_send_reply {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<arp_send_reply>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<arp_send_reply>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for arp_send_reply {}
@@ -12364,12 +12364,12 @@ impl ::core::fmt::Debug for icmp_echo_reply {
         f.debug_struct("icmp_echo_reply").field("Address", &self.Address).field("Status", &self.Status).field("RoundTripTime", &self.RoundTripTime).field("DataSize", &self.DataSize).field("Reserved", &self.Reserved).field("Data", &self.Data).field("Options", &self.Options).finish()
     }
 }
-unsafe impl ::windows::core::Abi for icmp_echo_reply {
+unsafe impl ::windows_core::Abi for icmp_echo_reply {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for icmp_echo_reply {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<icmp_echo_reply>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<icmp_echo_reply>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for icmp_echo_reply {}
@@ -12405,13 +12405,13 @@ impl ::core::fmt::Debug for icmp_echo_reply32 {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for icmp_echo_reply32 {
+unsafe impl ::windows_core::Abi for icmp_echo_reply32 {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for icmp_echo_reply32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<icmp_echo_reply32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<icmp_echo_reply32>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -12435,12 +12435,12 @@ impl ::core::clone::Clone for icmpv6_echo_reply_lh {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for icmpv6_echo_reply_lh {
+unsafe impl ::windows_core::Abi for icmpv6_echo_reply_lh {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for icmpv6_echo_reply_lh {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<icmpv6_echo_reply_lh>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<icmpv6_echo_reply_lh>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for icmpv6_echo_reply_lh {}
@@ -12451,26 +12451,26 @@ impl ::core::default::Default for icmpv6_echo_reply_lh {
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`*"]
 #[inline]
-pub unsafe fn if_indextoname(interfaceindex: u32, interfacename: &mut [u8; 256]) -> ::windows::core::PSTR {
+pub unsafe fn if_indextoname(interfaceindex: u32, interfacename: &mut [u8; 256]) -> ::windows_core::PSTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn if_indextoname(interfaceindex: u32, interfacename: ::windows::core::PSTR) -> ::windows::core::PSTR;
+            fn if_indextoname(interfaceindex: u32, interfacename: ::windows_core::PSTR) -> ::windows_core::PSTR;
         }
-        ::core::mem::transmute(if_indextoname(::core::mem::transmute(interfaceindex), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(interfacename))))
+        ::core::mem::transmute(if_indextoname(::core::mem::transmute(interfaceindex), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(interfacename))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_IpHelper\"`*"]
 #[inline]
-pub unsafe fn if_nametoindex<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(interfacename: Param0) -> u32 {
+pub unsafe fn if_nametoindex<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(interfacename: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn if_nametoindex(interfacename: ::windows::core::PCSTR) -> u32;
+            fn if_nametoindex(interfacename: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(if_nametoindex(interfacename.into_param().abi()))
     }
@@ -12484,8 +12484,8 @@ pub struct ip_interface_name_info_w2ksp1 {
     pub MediaType: u32,
     pub ConnectionType: u8,
     pub AccessType: u8,
-    pub DeviceGuid: ::windows::core::GUID,
-    pub InterfaceGuid: ::windows::core::GUID,
+    pub DeviceGuid: ::windows_core::GUID,
+    pub InterfaceGuid: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for ip_interface_name_info_w2ksp1 {}
 impl ::core::clone::Clone for ip_interface_name_info_w2ksp1 {
@@ -12498,12 +12498,12 @@ impl ::core::fmt::Debug for ip_interface_name_info_w2ksp1 {
         f.debug_struct("ip_interface_name_info_w2ksp1").field("Index", &self.Index).field("MediaType", &self.MediaType).field("ConnectionType", &self.ConnectionType).field("AccessType", &self.AccessType).field("DeviceGuid", &self.DeviceGuid).field("InterfaceGuid", &self.InterfaceGuid).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ip_interface_name_info_w2ksp1 {
+unsafe impl ::windows_core::Abi for ip_interface_name_info_w2ksp1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ip_interface_name_info_w2ksp1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ip_interface_name_info_w2ksp1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ip_interface_name_info_w2ksp1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ip_interface_name_info_w2ksp1 {}
@@ -12532,12 +12532,12 @@ impl ::core::fmt::Debug for ip_option_information {
         f.debug_struct("ip_option_information").field("Ttl", &self.Ttl).field("Tos", &self.Tos).field("Flags", &self.Flags).field("OptionsSize", &self.OptionsSize).field("OptionsData", &self.OptionsData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ip_option_information {
+unsafe impl ::windows_core::Abi for ip_option_information {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ip_option_information {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ip_option_information>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ip_option_information>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ip_option_information {}
@@ -12571,13 +12571,13 @@ impl ::core::fmt::Debug for ip_option_information32 {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for ip_option_information32 {
+unsafe impl ::windows_core::Abi for ip_option_information32 {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for ip_option_information32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ip_option_information32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ip_option_information32>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -12605,12 +12605,12 @@ impl ::core::fmt::Debug for tcp_reserve_port_range {
         f.debug_struct("tcp_reserve_port_range").field("UpperRange", &self.UpperRange).field("LowerRange", &self.LowerRange).finish()
     }
 }
-unsafe impl ::windows::core::Abi for tcp_reserve_port_range {
+unsafe impl ::windows_core::Abi for tcp_reserve_port_range {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for tcp_reserve_port_range {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<tcp_reserve_port_range>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<tcp_reserve_port_range>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for tcp_reserve_port_range {}

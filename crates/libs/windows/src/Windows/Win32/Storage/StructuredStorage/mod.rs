@@ -22,7 +22,7 @@ impl ::core::fmt::Debug for JET_API_PTR {
         f.debug_tuple("JET_API_PTR").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JET_API_PTR {
+unsafe impl ::windows_core::Abi for JET_API_PTR {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -49,7 +49,7 @@ impl ::core::fmt::Debug for JET_HANDLE {
         f.debug_tuple("JET_HANDLE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JET_HANDLE {
+unsafe impl ::windows_core::Abi for JET_HANDLE {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -76,7 +76,7 @@ impl ::core::fmt::Debug for JET_INSTANCE {
         f.debug_tuple("JET_INSTANCE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JET_INSTANCE {
+unsafe impl ::windows_core::Abi for JET_INSTANCE {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -103,7 +103,7 @@ impl ::core::fmt::Debug for JET_SESID {
         f.debug_tuple("JET_SESID").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JET_SESID {
+unsafe impl ::windows_core::Abi for JET_SESID {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -130,7 +130,7 @@ impl ::core::fmt::Debug for JET_TABLEID {
         f.debug_tuple("JET_TABLEID").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JET_TABLEID {
+unsafe impl ::windows_core::Abi for JET_TABLEID {
     type Abi = Self;
 }
 #[cfg(feature = "implement")]

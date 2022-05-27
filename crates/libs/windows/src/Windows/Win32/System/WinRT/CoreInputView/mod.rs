@@ -1,52 +1,52 @@
 #[doc = "*Required features: `\"Win32_System_WinRT_CoreInputView\"`*"]
 #[repr(transparent)]
-pub struct ICoreFrameworkInputViewInterop(::windows::core::IUnknown);
+pub struct ICoreFrameworkInputViewInterop(::windows_core::IUnknown);
 impl ICoreFrameworkInputViewInterop {
     #[doc = "*Required features: `\"Win32_System_WinRT_CoreInputView\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HWND>, T: ::windows::core::Interface>(&self, appwindow: Param0) -> ::windows::core::Result<T> {
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).GetForWindow)(::windows::core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
 }
-impl ::core::convert::From<ICoreFrameworkInputViewInterop> for ::windows::core::IUnknown {
+impl ::core::convert::From<ICoreFrameworkInputViewInterop> for ::windows_core::IUnknown {
     fn from(value: ICoreFrameworkInputViewInterop) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ICoreFrameworkInputViewInterop> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ICoreFrameworkInputViewInterop> for ::windows_core::IUnknown {
     fn from(value: &ICoreFrameworkInputViewInterop) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ICoreFrameworkInputViewInterop {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ICoreFrameworkInputViewInterop {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ICoreFrameworkInputViewInterop {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ICoreFrameworkInputViewInterop {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<ICoreFrameworkInputViewInterop> for ::windows::core::IInspectable {
+impl ::core::convert::From<ICoreFrameworkInputViewInterop> for ::windows_core::IInspectable {
     fn from(value: ICoreFrameworkInputViewInterop) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ICoreFrameworkInputViewInterop> for ::windows::core::IInspectable {
+impl ::core::convert::From<&ICoreFrameworkInputViewInterop> for ::windows_core::IInspectable {
     fn from(value: &ICoreFrameworkInputViewInterop) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ICoreFrameworkInputViewInterop {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for ICoreFrameworkInputViewInterop {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ICoreFrameworkInputViewInterop {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a ICoreFrameworkInputViewInterop {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for ICoreFrameworkInputViewInterop {
@@ -65,16 +65,16 @@ impl ::core::fmt::Debug for ICoreFrameworkInputViewInterop {
         f.debug_tuple("ICoreFrameworkInputViewInterop").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for ICoreFrameworkInputViewInterop {
+unsafe impl ::windows_core::Interface for ICoreFrameworkInputViewInterop {
     type Vtable = ICoreFrameworkInputViewInterop_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0e3da342_b11c_484b_9c1c_be0d61c2f6c5);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0e3da342_b11c_484b_9c1c_be0d61c2f6c5);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ICoreFrameworkInputViewInterop_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::super::Foundation::HWND, riid: *const ::windows::core::GUID, coreframeworkinputview: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::super::Foundation::HWND, riid: *const ::windows_core::GUID, coreframeworkinputview: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetForWindow: usize,
 }

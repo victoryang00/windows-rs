@@ -1,12 +1,12 @@
 pub trait IDevicePairingSettings_Impl: Sized {}
-impl ::windows::core::RuntimeName for IDevicePairingSettings {
+impl ::windows_core::RuntimeName for IDevicePairingSettings {
     const NAME: &'static str = "Windows.Devices.Enumeration.IDevicePairingSettings";
 }
 impl IDevicePairingSettings_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl<Impl = Impl>, Impl: IDevicePairingSettings_Impl, const OFFSET: isize>() -> IDevicePairingSettings_Vtbl {
-        Self { base__: ::windows::core::IInspectableVtbl::new::<Identity, IDevicePairingSettings, OFFSET>() }
+    pub const fn new<Identity: ::windows_core::IUnknownImpl<Impl = Impl>, Impl: IDevicePairingSettings_Impl, const OFFSET: isize>() -> IDevicePairingSettings_Vtbl {
+        Self { base__: ::windows_core::IInspectableVtbl::new::<Identity, IDevicePairingSettings, OFFSET>() }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IDevicePairingSettings as ::windows::core::Interface>::IID
+    pub fn matches(iid: &windows_core::GUID) -> bool {
+        iid == &<IDevicePairingSettings as ::windows_core::Interface>::IID
     }
 }

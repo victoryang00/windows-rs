@@ -1,12 +1,12 @@
 #[doc = "*Required features: `\"Win32_System_TpmBaseServices\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDeviceID(pbwindowsaik: *mut u8, cbwindowsaik: u32, pcbresult: *mut u32, pfprotectedbytpm: *mut super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
+pub unsafe fn GetDeviceID(pbwindowsaik: *mut u8, cbwindowsaik: u32, pcbresult: *mut u32, pfprotectedbytpm: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDeviceID(pbwindowsaik: *mut u8, cbwindowsaik: u32, pcbresult: *mut u32, pfprotectedbytpm: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn GetDeviceID(pbwindowsaik: *mut u8, cbwindowsaik: u32, pcbresult: *mut u32, pfprotectedbytpm: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
         GetDeviceID(::core::mem::transmute(pbwindowsaik), ::core::mem::transmute(cbwindowsaik), ::core::mem::transmute(pcbresult), ::core::mem::transmute(pfprotectedbytpm)).ok()
     }
@@ -16,14 +16,14 @@ pub unsafe fn GetDeviceID(pbwindowsaik: *mut u8, cbwindowsaik: u32, pcbresult: *
 #[doc = "*Required features: `\"Win32_System_TpmBaseServices\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDeviceIDString(pszwindowsaik: &mut [u16], pcchresult: *mut u32, pfprotectedbytpm: *mut super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
+pub unsafe fn GetDeviceIDString(pszwindowsaik: &mut [u16], pcchresult: *mut u32, pfprotectedbytpm: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDeviceIDString(pszwindowsaik: ::windows::core::PWSTR, cchwindowsaik: u32, pcchresult: *mut u32, pfprotectedbytpm: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn GetDeviceIDString(pszwindowsaik: ::windows_core::PWSTR, cchwindowsaik: u32, pcchresult: *mut u32, pfprotectedbytpm: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
-        GetDeviceIDString(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pszwindowsaik)), pszwindowsaik.len() as _, ::core::mem::transmute(pcchresult), ::core::mem::transmute(pfprotectedbytpm)).ok()
+        GetDeviceIDString(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszwindowsaik)), pszwindowsaik.len() as _, ::core::mem::transmute(pcchresult), ::core::mem::transmute(pfprotectedbytpm)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -53,7 +53,7 @@ impl ::core::default::Default for TBS_COMMAND_LOCALITY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TBS_COMMAND_LOCALITY {
+unsafe impl ::windows_core::Abi for TBS_COMMAND_LOCALITY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TBS_COMMAND_LOCALITY {
@@ -86,7 +86,7 @@ impl ::core::default::Default for TBS_COMMAND_PRIORITY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TBS_COMMAND_PRIORITY {
+unsafe impl ::windows_core::Abi for TBS_COMMAND_PRIORITY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TBS_COMMAND_PRIORITY {
@@ -110,12 +110,12 @@ impl ::core::fmt::Debug for TBS_CONTEXT_PARAMS {
         f.debug_struct("TBS_CONTEXT_PARAMS").field("version", &self.version).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TBS_CONTEXT_PARAMS {
+unsafe impl ::windows_core::Abi for TBS_CONTEXT_PARAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TBS_CONTEXT_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TBS_CONTEXT_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TBS_CONTEXT_PARAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TBS_CONTEXT_PARAMS {}
@@ -136,12 +136,12 @@ impl ::core::clone::Clone for TBS_CONTEXT_PARAMS2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for TBS_CONTEXT_PARAMS2 {
+unsafe impl ::windows_core::Abi for TBS_CONTEXT_PARAMS2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TBS_CONTEXT_PARAMS2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TBS_CONTEXT_PARAMS2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TBS_CONTEXT_PARAMS2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TBS_CONTEXT_PARAMS2 {}
@@ -162,12 +162,12 @@ impl ::core::clone::Clone for TBS_CONTEXT_PARAMS2_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for TBS_CONTEXT_PARAMS2_0 {
+unsafe impl ::windows_core::Abi for TBS_CONTEXT_PARAMS2_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TBS_CONTEXT_PARAMS2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TBS_CONTEXT_PARAMS2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TBS_CONTEXT_PARAMS2_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TBS_CONTEXT_PARAMS2_0 {}
@@ -192,12 +192,12 @@ impl ::core::fmt::Debug for TBS_CONTEXT_PARAMS2_0_0 {
         f.debug_struct("TBS_CONTEXT_PARAMS2_0_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TBS_CONTEXT_PARAMS2_0_0 {
+unsafe impl ::windows_core::Abi for TBS_CONTEXT_PARAMS2_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TBS_CONTEXT_PARAMS2_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TBS_CONTEXT_PARAMS2_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TBS_CONTEXT_PARAMS2_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TBS_CONTEXT_PARAMS2_0_0 {}
@@ -255,12 +255,12 @@ impl ::core::fmt::Debug for TPM_DEVICE_INFO {
         f.debug_struct("TPM_DEVICE_INFO").field("structVersion", &self.structVersion).field("tpmVersion", &self.tpmVersion).field("tpmInterfaceType", &self.tpmInterfaceType).field("tpmImpRevision", &self.tpmImpRevision).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TPM_DEVICE_INFO {
+unsafe impl ::windows_core::Abi for TPM_DEVICE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TPM_DEVICE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TPM_DEVICE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TPM_DEVICE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TPM_DEVICE_INFO {}
@@ -464,12 +464,12 @@ impl ::core::fmt::Debug for tdTPM_WNF_PROVISIONING {
         f.debug_struct("tdTPM_WNF_PROVISIONING").field("status", &self.status).field("message", &self.message).finish()
     }
 }
-unsafe impl ::windows::core::Abi for tdTPM_WNF_PROVISIONING {
+unsafe impl ::windows_core::Abi for tdTPM_WNF_PROVISIONING {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for tdTPM_WNF_PROVISIONING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<tdTPM_WNF_PROVISIONING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<tdTPM_WNF_PROVISIONING>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for tdTPM_WNF_PROVISIONING {}

@@ -19,12 +19,12 @@ impl ::core::fmt::Debug for ARRAY_INFO {
         f.debug_struct("ARRAY_INFO").field("Dimension", &self.Dimension).field("BufferConformanceMark", &self.BufferConformanceMark).field("BufferVarianceMark", &self.BufferVarianceMark).field("MaxCountArray", &self.MaxCountArray).field("OffsetArray", &self.OffsetArray).field("ActualCountArray", &self.ActualCountArray).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ARRAY_INFO {
+unsafe impl ::windows_core::Abi for ARRAY_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ARRAY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ARRAY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ARRAY_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ARRAY_INFO {}
@@ -50,12 +50,12 @@ impl ::core::fmt::Debug for BinaryParam {
         f.debug_struct("BinaryParam").field("Buffer", &self.Buffer).field("Size", &self.Size).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BinaryParam {
+unsafe impl ::windows_core::Abi for BinaryParam {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BinaryParam {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BinaryParam>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BinaryParam>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BinaryParam {}
@@ -76,12 +76,12 @@ impl ::core::clone::Clone for CLIENT_CALL_RETURN {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CLIENT_CALL_RETURN {
+unsafe impl ::windows_core::Abi for CLIENT_CALL_RETURN {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CLIENT_CALL_RETURN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CLIENT_CALL_RETURN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CLIENT_CALL_RETURN>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CLIENT_CALL_RETURN {}
@@ -107,12 +107,12 @@ impl ::core::fmt::Debug for COMM_FAULT_OFFSETS {
         f.debug_struct("COMM_FAULT_OFFSETS").field("CommOffset", &self.CommOffset).field("FaultOffset", &self.FaultOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for COMM_FAULT_OFFSETS {
+unsafe impl ::windows_core::Abi for COMM_FAULT_OFFSETS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for COMM_FAULT_OFFSETS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COMM_FAULT_OFFSETS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COMM_FAULT_OFFSETS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for COMM_FAULT_OFFSETS {}
@@ -142,7 +142,7 @@ pub unsafe fn DceErrorInqTextA(rpcstatus: RPC_STATUS, errortext: &mut [u8; 256])
         extern "system" {
             fn DceErrorInqTextA(rpcstatus: RPC_STATUS, errortext: *mut u8) -> RPC_STATUS;
         }
-        ::core::mem::transmute(DceErrorInqTextA(::core::mem::transmute(rpcstatus), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(errortext))))
+        ::core::mem::transmute(DceErrorInqTextA(::core::mem::transmute(rpcstatus), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(errortext))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -156,7 +156,7 @@ pub unsafe fn DceErrorInqTextW(rpcstatus: RPC_STATUS, errortext: &mut [u16; 256]
         extern "system" {
             fn DceErrorInqTextW(rpcstatus: RPC_STATUS, errortext: *mut u16) -> RPC_STATUS;
         }
-        ::core::mem::transmute(DceErrorInqTextW(::core::mem::transmute(rpcstatus), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(errortext))))
+        ::core::mem::transmute(DceErrorInqTextW(::core::mem::transmute(rpcstatus), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(errortext))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -205,7 +205,7 @@ impl ::core::default::Default for EXPR_TOKEN {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EXPR_TOKEN {
+unsafe impl ::windows_core::Abi for EXPR_TOKEN {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EXPR_TOKEN {
@@ -242,7 +242,7 @@ impl ::core::default::Default for ExtendedErrorParamTypes {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ExtendedErrorParamTypes {
+unsafe impl ::windows_core::Abi for ExtendedErrorParamTypes {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ExtendedErrorParamTypes {
@@ -269,12 +269,12 @@ impl ::core::fmt::Debug for FULL_PTR_XLAT_TABLES {
         f.debug_struct("FULL_PTR_XLAT_TABLES").field("RefIdToPointer", &self.RefIdToPointer).field("PointerToRefId", &self.PointerToRefId).field("NextRefId", &self.NextRefId).field("XlatSide", &self.XlatSide).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FULL_PTR_XLAT_TABLES {
+unsafe impl ::windows_core::Abi for FULL_PTR_XLAT_TABLES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FULL_PTR_XLAT_TABLES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FULL_PTR_XLAT_TABLES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FULL_PTR_XLAT_TABLES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FULL_PTR_XLAT_TABLES {}
@@ -302,12 +302,12 @@ impl ::core::fmt::Debug for GENERIC_BINDING_INFO {
         f.debug_struct("GENERIC_BINDING_INFO").field("pObj", &self.pObj).field("Size", &self.Size).field("pfnBind", &self.pfnBind.map(|f| f as usize)).field("pfnUnbind", &self.pfnUnbind.map(|f| f as usize)).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GENERIC_BINDING_INFO {
+unsafe impl ::windows_core::Abi for GENERIC_BINDING_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GENERIC_BINDING_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GENERIC_BINDING_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GENERIC_BINDING_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GENERIC_BINDING_INFO {}
@@ -335,12 +335,12 @@ impl ::core::fmt::Debug for GENERIC_BINDING_ROUTINE_PAIR {
         f.debug_struct("GENERIC_BINDING_ROUTINE_PAIR").field("pfnBind", &self.pfnBind.map(|f| f as usize)).field("pfnUnbind", &self.pfnUnbind.map(|f| f as usize)).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GENERIC_BINDING_ROUTINE_PAIR {
+unsafe impl ::windows_core::Abi for GENERIC_BINDING_ROUTINE_PAIR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GENERIC_BINDING_ROUTINE_PAIR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GENERIC_BINDING_ROUTINE_PAIR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GENERIC_BINDING_ROUTINE_PAIR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GENERIC_BINDING_ROUTINE_PAIR {}
@@ -370,7 +370,7 @@ impl ::core::default::Default for GROUP_NAME_SYNTAX {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GROUP_NAME_SYNTAX {
+unsafe impl ::windows_core::Abi for GROUP_NAME_SYNTAX {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GROUP_NAME_SYNTAX {
@@ -399,7 +399,7 @@ impl ::core::default::Default for IDL_CS_CONVERT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for IDL_CS_CONVERT {
+unsafe impl ::windows_core::Abi for IDL_CS_CONVERT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for IDL_CS_CONVERT {
@@ -411,7 +411,7 @@ impl ::core::fmt::Debug for IDL_CS_CONVERT {
 pub const INVALID_FRAGMENT_ID: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn IUnknown_AddRef_Proxy<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(this: Param0) -> u32 {
+pub unsafe fn IUnknown_AddRef_Proxy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(this: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -425,12 +425,12 @@ pub unsafe fn IUnknown_AddRef_Proxy<'a, Param0: ::windows::core::IntoParam<'a, :
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn IUnknown_QueryInterface_Proxy<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(this: Param0, riid: *const ::windows::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn IUnknown_QueryInterface_Proxy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(this: Param0, riid: *const ::windows_core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IUnknown_QueryInterface_Proxy(this: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn IUnknown_QueryInterface_Proxy(this: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         IUnknown_QueryInterface_Proxy(this.into_param().abi(), ::core::mem::transmute(riid), ::core::mem::transmute(ppvobject)).ok()
     }
@@ -439,7 +439,7 @@ pub unsafe fn IUnknown_QueryInterface_Proxy<'a, Param0: ::windows::core::IntoPar
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn IUnknown_Release_Proxy<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(this: Param0) -> u32 {
+pub unsafe fn IUnknown_Release_Proxy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(this: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -822,12 +822,12 @@ pub unsafe fn I_RpcGetBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS {
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn I_RpcGetBufferWithObject(message: *mut RPC_MESSAGE, objectuuid: *mut ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn I_RpcGetBufferWithObject(message: *mut RPC_MESSAGE, objectuuid: *mut ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn I_RpcGetBufferWithObject(message: *mut RPC_MESSAGE, objectuuid: *mut ::windows::core::GUID) -> RPC_STATUS;
+            fn I_RpcGetBufferWithObject(message: *mut RPC_MESSAGE, objectuuid: *mut ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(I_RpcGetBufferWithObject(::core::mem::transmute(message), ::core::mem::transmute(objectuuid)))
     }
@@ -1094,12 +1094,12 @@ impl ::core::fmt::Debug for I_RpcProxyCallbackInterface {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for I_RpcProxyCallbackInterface {
+unsafe impl ::windows_core::Abi for I_RpcProxyCallbackInterface {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for I_RpcProxyCallbackInterface {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<I_RpcProxyCallbackInterface>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<I_RpcProxyCallbackInterface>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for I_RpcProxyCallbackInterface {}
@@ -1109,11 +1109,11 @@ impl ::core::default::Default for I_RpcProxyCallbackInterface {
     }
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
-pub type I_RpcProxyFilterIfFn = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, ifuuid: *const ::windows::core::GUID, ifmajorversion: u16, fallow: *mut i32) -> RPC_STATUS>;
+pub type I_RpcProxyFilterIfFn = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, ifuuid: *const ::windows_core::GUID, ifmajorversion: u16, fallow: *mut i32) -> RPC_STATUS>;
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
-pub type I_RpcProxyGetClientAddressFn = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, buffer: ::windows::core::PCSTR, bufferlength: *mut u32) -> RPC_STATUS>;
+pub type I_RpcProxyGetClientAddressFn = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, buffer: ::windows_core::PCSTR, bufferlength: *mut u32) -> RPC_STATUS>;
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
-pub type I_RpcProxyGetClientSessionAndResourceUUID = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, sessionidpresent: *mut i32, sessionid: *mut ::windows::core::GUID, resourceidpresent: *mut i32, resourceid: *mut ::windows::core::GUID) -> RPC_STATUS>;
+pub type I_RpcProxyGetClientSessionAndResourceUUID = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, sessionidpresent: *mut i32, sessionid: *mut ::windows_core::GUID, resourceidpresent: *mut i32, resourceid: *mut ::windows_core::GUID) -> RPC_STATUS>;
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 pub type I_RpcProxyGetConnectionTimeoutFn = ::core::option::Option<unsafe extern "system" fn(connectiontimeout: *mut u32) -> RPC_STATUS>;
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
@@ -1325,7 +1325,7 @@ pub unsafe fn I_RpcServerRegisterForwardFunction(pforwardfunction: *mut RPC_FORW
     {
         #[link(name = "windows")]
         extern "system" {
-            fn I_RpcServerRegisterForwardFunction(pforwardfunction: *mut ::windows::core::RawPtr) -> RPC_STATUS;
+            fn I_RpcServerRegisterForwardFunction(pforwardfunction: *mut ::windows_core::RawPtr) -> RPC_STATUS;
         }
         ::core::mem::transmute(I_RpcServerRegisterForwardFunction(::core::mem::transmute(pforwardfunction)))
     }
@@ -1339,7 +1339,7 @@ pub unsafe fn I_RpcServerSetAddressChangeFn(paddresschangefn: *mut RPC_ADDRESS_C
     {
         #[link(name = "windows")]
         extern "system" {
-            fn I_RpcServerSetAddressChangeFn(paddresschangefn: *mut ::windows::core::RawPtr) -> RPC_STATUS;
+            fn I_RpcServerSetAddressChangeFn(paddresschangefn: *mut ::windows_core::RawPtr) -> RPC_STATUS;
         }
         ::core::mem::transmute(I_RpcServerSetAddressChangeFn(::core::mem::transmute(paddresschangefn)))
     }
@@ -1376,12 +1376,12 @@ pub unsafe fn I_RpcServerSubscribeForDisconnectNotification(binding: *const ::co
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn I_RpcServerSubscribeForDisconnectNotification2(binding: *const ::core::ffi::c_void, hevent: *const ::core::ffi::c_void, subscriptionid: *mut ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn I_RpcServerSubscribeForDisconnectNotification2(binding: *const ::core::ffi::c_void, hevent: *const ::core::ffi::c_void, subscriptionid: *mut ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn I_RpcServerSubscribeForDisconnectNotification2(binding: *const ::core::ffi::c_void, hevent: *const ::core::ffi::c_void, subscriptionid: *mut ::windows::core::GUID) -> RPC_STATUS;
+            fn I_RpcServerSubscribeForDisconnectNotification2(binding: *const ::core::ffi::c_void, hevent: *const ::core::ffi::c_void, subscriptionid: *mut ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(I_RpcServerSubscribeForDisconnectNotification2(::core::mem::transmute(binding), ::core::mem::transmute(hevent), ::core::mem::transmute(subscriptionid)))
     }
@@ -1390,12 +1390,12 @@ pub unsafe fn I_RpcServerSubscribeForDisconnectNotification2(binding: *const ::c
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn I_RpcServerUnsubscribeForDisconnectNotification<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::GUID>>(binding: *const ::core::ffi::c_void, subscriptionid: Param1) -> RPC_STATUS {
+pub unsafe fn I_RpcServerUnsubscribeForDisconnectNotification<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(binding: *const ::core::ffi::c_void, subscriptionid: Param1) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn I_RpcServerUnsubscribeForDisconnectNotification(binding: *const ::core::ffi::c_void, subscriptionid: ::windows::core::GUID) -> RPC_STATUS;
+            fn I_RpcServerUnsubscribeForDisconnectNotification(binding: *const ::core::ffi::c_void, subscriptionid: ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(I_RpcServerUnsubscribeForDisconnectNotification(::core::mem::transmute(binding), subscriptionid.into_param().abi()))
     }
@@ -1516,12 +1516,12 @@ pub unsafe fn I_RpcTurnOnEEInfoPropagation() -> RPC_STATUS {
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn I_UuidCreate(uuid: *mut ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn I_UuidCreate(uuid: *mut ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn I_UuidCreate(uuid: *mut ::windows::core::GUID) -> RPC_STATUS;
+            fn I_UuidCreate(uuid: *mut ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(I_UuidCreate(::core::mem::transmute(uuid)))
     }
@@ -1547,7 +1547,7 @@ impl ::core::default::Default for LRPC_SYSTEM_HANDLE_MARSHAL_DIRECTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for LRPC_SYSTEM_HANDLE_MARSHAL_DIRECTION {
+unsafe impl ::windows_core::Abi for LRPC_SYSTEM_HANDLE_MARSHAL_DIRECTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for LRPC_SYSTEM_HANDLE_MARSHAL_DIRECTION {
@@ -1572,12 +1572,12 @@ impl ::core::fmt::Debug for MALLOC_FREE_STRUCT {
         f.debug_struct("MALLOC_FREE_STRUCT").field("pfnAllocate", &self.pfnAllocate).field("pfnFree", &self.pfnFree).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MALLOC_FREE_STRUCT {
+unsafe impl ::windows_core::Abi for MALLOC_FREE_STRUCT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MALLOC_FREE_STRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MALLOC_FREE_STRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MALLOC_FREE_STRUCT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MALLOC_FREE_STRUCT {}
@@ -1609,7 +1609,7 @@ impl ::core::default::Default for MIDL_ES_CODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MIDL_ES_CODE {
+unsafe impl ::windows_core::Abi for MIDL_ES_CODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MIDL_ES_CODE {
@@ -1638,7 +1638,7 @@ impl ::core::default::Default for MIDL_ES_HANDLE_STYLE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MIDL_ES_HANDLE_STYLE {
+unsafe impl ::windows_core::Abi for MIDL_ES_HANDLE_STYLE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MIDL_ES_HANDLE_STYLE {
@@ -1649,7 +1649,7 @@ impl ::core::fmt::Debug for MIDL_ES_HANDLE_STYLE {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 pub type MIDL_ES_READ = ::core::option::Option<unsafe extern "system" fn(state: *mut ::core::ffi::c_void, pbuffer: *mut *mut i8, psize: *mut u32)>;
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
-pub type MIDL_ES_WRITE = ::core::option::Option<unsafe extern "system" fn(state: *mut ::core::ffi::c_void, buffer: ::windows::core::PCSTR, size: u32)>;
+pub type MIDL_ES_WRITE = ::core::option::Option<unsafe extern "system" fn(state: *mut ::core::ffi::c_void, buffer: ::windows_core::PCSTR, size: u32)>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 pub struct MIDL_FORMAT_STRING {
@@ -1667,12 +1667,12 @@ impl ::core::fmt::Debug for MIDL_FORMAT_STRING {
         f.debug_struct("MIDL_FORMAT_STRING").field("Pad", &self.Pad).field("Format", &self.Format).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIDL_FORMAT_STRING {
+unsafe impl ::windows_core::Abi for MIDL_FORMAT_STRING {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIDL_FORMAT_STRING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_FORMAT_STRING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_FORMAT_STRING>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIDL_FORMAT_STRING {}
@@ -1701,12 +1701,12 @@ impl ::core::fmt::Debug for MIDL_INTERCEPTION_INFO {
         f.debug_struct("MIDL_INTERCEPTION_INFO").field("Version", &self.Version).field("ProcString", &self.ProcString).field("ProcFormatOffsetTable", &self.ProcFormatOffsetTable).field("ProcCount", &self.ProcCount).field("TypeString", &self.TypeString).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIDL_INTERCEPTION_INFO {
+unsafe impl ::windows_core::Abi for MIDL_INTERCEPTION_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIDL_INTERCEPTION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_INTERCEPTION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_INTERCEPTION_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIDL_INTERCEPTION_INFO {}
@@ -1732,12 +1732,12 @@ impl ::core::fmt::Debug for MIDL_INTERFACE_METHOD_PROPERTIES {
         f.debug_struct("MIDL_INTERFACE_METHOD_PROPERTIES").field("MethodCount", &self.MethodCount).field("MethodProperties", &self.MethodProperties).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIDL_INTERFACE_METHOD_PROPERTIES {
+unsafe impl ::windows_core::Abi for MIDL_INTERFACE_METHOD_PROPERTIES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIDL_INTERFACE_METHOD_PROPERTIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_INTERFACE_METHOD_PROPERTIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_INTERFACE_METHOD_PROPERTIES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIDL_INTERFACE_METHOD_PROPERTIES {}
@@ -1763,12 +1763,12 @@ impl ::core::fmt::Debug for MIDL_METHOD_PROPERTY {
         f.debug_struct("MIDL_METHOD_PROPERTY").field("Id", &self.Id).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIDL_METHOD_PROPERTY {
+unsafe impl ::windows_core::Abi for MIDL_METHOD_PROPERTY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIDL_METHOD_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_METHOD_PROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_METHOD_PROPERTY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIDL_METHOD_PROPERTY {}
@@ -1794,12 +1794,12 @@ impl ::core::fmt::Debug for MIDL_METHOD_PROPERTY_MAP {
         f.debug_struct("MIDL_METHOD_PROPERTY_MAP").field("Count", &self.Count).field("Properties", &self.Properties).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIDL_METHOD_PROPERTY_MAP {
+unsafe impl ::windows_core::Abi for MIDL_METHOD_PROPERTY_MAP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIDL_METHOD_PROPERTY_MAP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_METHOD_PROPERTY_MAP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_METHOD_PROPERTY_MAP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIDL_METHOD_PROPERTY_MAP {}
@@ -1836,13 +1836,13 @@ impl ::core::fmt::Debug for MIDL_SERVER_INFO {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for MIDL_SERVER_INFO {
+unsafe impl ::windows_core::Abi for MIDL_SERVER_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for MIDL_SERVER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_SERVER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_SERVER_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -1879,13 +1879,13 @@ impl ::core::fmt::Debug for MIDL_STUBLESS_PROXY_INFO {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for MIDL_STUBLESS_PROXY_INFO {
+unsafe impl ::windows_core::Abi for MIDL_STUBLESS_PROXY_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for MIDL_STUBLESS_PROXY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_STUBLESS_PROXY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_STUBLESS_PROXY_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -1930,13 +1930,13 @@ impl ::core::clone::Clone for MIDL_STUB_DESC {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for MIDL_STUB_DESC {
+unsafe impl ::windows_core::Abi for MIDL_STUB_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for MIDL_STUB_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_STUB_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_STUB_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -1964,13 +1964,13 @@ impl ::core::clone::Clone for MIDL_STUB_DESC_0 {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for MIDL_STUB_DESC_0 {
+unsafe impl ::windows_core::Abi for MIDL_STUB_DESC_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for MIDL_STUB_DESC_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_STUB_DESC_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_STUB_DESC_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -2178,7 +2178,7 @@ impl ::core::fmt::Debug for MIDL_STUB_MESSAGE {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for MIDL_STUB_MESSAGE {
+unsafe impl ::windows_core::Abi for MIDL_STUB_MESSAGE {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -2276,12 +2276,12 @@ impl ::core::fmt::Debug for MIDL_SYNTAX_INFO {
         f.debug_struct("MIDL_SYNTAX_INFO").field("TransferSyntax", &self.TransferSyntax).field("DispatchTable", &self.DispatchTable).field("ProcString", &self.ProcString).field("FmtStringOffset", &self.FmtStringOffset).field("TypeString", &self.TypeString).field("aUserMarshalQuadruple", &self.aUserMarshalQuadruple).field("pMethodProperties", &self.pMethodProperties).field("pReserved2", &self.pReserved2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIDL_SYNTAX_INFO {
+unsafe impl ::windows_core::Abi for MIDL_SYNTAX_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIDL_SYNTAX_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_SYNTAX_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_SYNTAX_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIDL_SYNTAX_INFO {}
@@ -2308,12 +2308,12 @@ impl ::core::fmt::Debug for MIDL_TYPE_PICKLING_INFO {
         f.debug_struct("MIDL_TYPE_PICKLING_INFO").field("Version", &self.Version).field("Flags", &self.Flags).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MIDL_TYPE_PICKLING_INFO {
+unsafe impl ::windows_core::Abi for MIDL_TYPE_PICKLING_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MIDL_TYPE_PICKLING_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_TYPE_PICKLING_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_TYPE_PICKLING_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MIDL_TYPE_PICKLING_INFO {}
@@ -2347,13 +2347,13 @@ impl ::core::fmt::Debug for MIDL_WINRT_TYPE_SERIALIZATION_INFO {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for MIDL_WINRT_TYPE_SERIALIZATION_INFO {
+unsafe impl ::windows_core::Abi for MIDL_WINRT_TYPE_SERIALIZATION_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for MIDL_WINRT_TYPE_SERIALIZATION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_WINRT_TYPE_SERIALIZATION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDL_WINRT_TYPE_SERIALIZATION_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -2384,12 +2384,12 @@ pub unsafe fn MesBufferHandleReset(handle: *const ::core::ffi::c_void, handlesty
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn MesDecodeBufferHandleCreate<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(buffer: Param0, buffersize: u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
+pub unsafe fn MesDecodeBufferHandleCreate<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(buffer: Param0, buffersize: u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MesDecodeBufferHandleCreate(buffer: ::windows::core::PCSTR, buffersize: u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+            fn MesDecodeBufferHandleCreate(buffer: ::windows_core::PCSTR, buffersize: u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(MesDecodeBufferHandleCreate(buffer.into_param().abi(), ::core::mem::transmute(buffersize), ::core::mem::transmute(phandle)))
     }
@@ -2403,7 +2403,7 @@ pub unsafe fn MesDecodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_vo
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MesDecodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_void, readfn: ::windows::core::RawPtr, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+            fn MesDecodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_void, readfn: ::windows_core::RawPtr, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(MesDecodeIncrementalHandleCreate(::core::mem::transmute(userstate), ::core::mem::transmute(readfn), ::core::mem::transmute(phandle)))
     }
@@ -2426,12 +2426,12 @@ pub unsafe fn MesEncodeDynBufferHandleCreate(pbuffer: *mut *mut i8, pencodedsize
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn MesEncodeFixedBufferHandleCreate(pbuffer: ::windows::core::PSTR, buffersize: u32, pencodedsize: *mut u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
+pub unsafe fn MesEncodeFixedBufferHandleCreate(pbuffer: ::windows_core::PSTR, buffersize: u32, pencodedsize: *mut u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MesEncodeFixedBufferHandleCreate(pbuffer: ::windows::core::PSTR, buffersize: u32, pencodedsize: *mut u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+            fn MesEncodeFixedBufferHandleCreate(pbuffer: ::windows_core::PSTR, buffersize: u32, pencodedsize: *mut u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(MesEncodeFixedBufferHandleCreate(::core::mem::transmute(pbuffer), ::core::mem::transmute(buffersize), ::core::mem::transmute(pencodedsize), ::core::mem::transmute(phandle)))
     }
@@ -2445,7 +2445,7 @@ pub unsafe fn MesEncodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_vo
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MesEncodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_void, allocfn: ::windows::core::RawPtr, writefn: ::windows::core::RawPtr, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+            fn MesEncodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_void, allocfn: ::windows_core::RawPtr, writefn: ::windows_core::RawPtr, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(MesEncodeIncrementalHandleCreate(::core::mem::transmute(userstate), ::core::mem::transmute(allocfn), ::core::mem::transmute(writefn), ::core::mem::transmute(phandle)))
     }
@@ -2473,7 +2473,7 @@ pub unsafe fn MesIncrementalHandleReset(handle: *mut ::core::ffi::c_void, userst
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MesIncrementalHandleReset(handle: *mut ::core::ffi::c_void, userstate: *mut ::core::ffi::c_void, allocfn: ::windows::core::RawPtr, writefn: ::windows::core::RawPtr, readfn: ::windows::core::RawPtr, operation: MIDL_ES_CODE) -> RPC_STATUS;
+            fn MesIncrementalHandleReset(handle: *mut ::core::ffi::c_void, userstate: *mut ::core::ffi::c_void, allocfn: ::windows_core::RawPtr, writefn: ::windows_core::RawPtr, readfn: ::windows_core::RawPtr, operation: MIDL_ES_CODE) -> RPC_STATUS;
         }
         ::core::mem::transmute(MesIncrementalHandleReset(::core::mem::transmute(handle), ::core::mem::transmute(userstate), ::core::mem::transmute(allocfn), ::core::mem::transmute(writefn), ::core::mem::transmute(readfn), ::core::mem::transmute(operation)))
     }
@@ -2515,12 +2515,12 @@ impl ::core::fmt::Debug for NDR64_ARRAY_ELEMENT_INFO {
         f.debug_struct("NDR64_ARRAY_ELEMENT_INFO").field("ElementMemSize", &self.ElementMemSize).field("Element", &self.Element).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_ARRAY_ELEMENT_INFO {
+unsafe impl ::windows_core::Abi for NDR64_ARRAY_ELEMENT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_ARRAY_ELEMENT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_ARRAY_ELEMENT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_ARRAY_ELEMENT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_ARRAY_ELEMENT_INFO {}
@@ -2545,12 +2545,12 @@ impl ::core::fmt::Debug for NDR64_ARRAY_FLAGS {
         f.debug_struct("NDR64_ARRAY_FLAGS").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_ARRAY_FLAGS {
+unsafe impl ::windows_core::Abi for NDR64_ARRAY_FLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_ARRAY_FLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_ARRAY_FLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_ARRAY_FLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_ARRAY_FLAGS {}
@@ -2572,12 +2572,12 @@ impl ::core::clone::Clone for NDR64_BINDINGS {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_BINDINGS {
+unsafe impl ::windows_core::Abi for NDR64_BINDINGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_BINDINGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BINDINGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BINDINGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_BINDINGS {}
@@ -2603,12 +2603,12 @@ impl ::core::fmt::Debug for NDR64_BIND_AND_NOTIFY_EXTENSION {
         f.debug_struct("NDR64_BIND_AND_NOTIFY_EXTENSION").field("Binding", &self.Binding).field("NotifyIndex", &self.NotifyIndex).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_BIND_AND_NOTIFY_EXTENSION {
+unsafe impl ::windows_core::Abi for NDR64_BIND_AND_NOTIFY_EXTENSION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_BIND_AND_NOTIFY_EXTENSION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BIND_AND_NOTIFY_EXTENSION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BIND_AND_NOTIFY_EXTENSION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_BIND_AND_NOTIFY_EXTENSION {}
@@ -2637,12 +2637,12 @@ impl ::core::fmt::Debug for NDR64_BIND_CONTEXT {
         f.debug_struct("NDR64_BIND_CONTEXT").field("HandleType", &self.HandleType).field("Flags", &self.Flags).field("StackOffset", &self.StackOffset).field("RoutineIndex", &self.RoutineIndex).field("Ordinal", &self.Ordinal).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_BIND_CONTEXT {
+unsafe impl ::windows_core::Abi for NDR64_BIND_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_BIND_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BIND_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BIND_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_BIND_CONTEXT {}
@@ -2671,12 +2671,12 @@ impl ::core::fmt::Debug for NDR64_BIND_GENERIC {
         f.debug_struct("NDR64_BIND_GENERIC").field("HandleType", &self.HandleType).field("Flags", &self.Flags).field("StackOffset", &self.StackOffset).field("RoutineIndex", &self.RoutineIndex).field("Size", &self.Size).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_BIND_GENERIC {
+unsafe impl ::windows_core::Abi for NDR64_BIND_GENERIC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_BIND_GENERIC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BIND_GENERIC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BIND_GENERIC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_BIND_GENERIC {}
@@ -2704,12 +2704,12 @@ impl ::core::fmt::Debug for NDR64_BIND_PRIMITIVE {
         f.debug_struct("NDR64_BIND_PRIMITIVE").field("HandleType", &self.HandleType).field("Flags", &self.Flags).field("StackOffset", &self.StackOffset).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_BIND_PRIMITIVE {
+unsafe impl ::windows_core::Abi for NDR64_BIND_PRIMITIVE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_BIND_PRIMITIVE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BIND_PRIMITIVE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BIND_PRIMITIVE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_BIND_PRIMITIVE {}
@@ -2739,12 +2739,12 @@ impl ::core::fmt::Debug for NDR64_BOGUS_ARRAY_HEADER_FORMAT {
         f.debug_struct("NDR64_BOGUS_ARRAY_HEADER_FORMAT").field("FormatCode", &self.FormatCode).field("Alignment", &self.Alignment).field("Flags", &self.Flags).field("NumberDims", &self.NumberDims).field("NumberElements", &self.NumberElements).field("Element", &self.Element).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_BOGUS_ARRAY_HEADER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_BOGUS_ARRAY_HEADER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_BOGUS_ARRAY_HEADER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BOGUS_ARRAY_HEADER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BOGUS_ARRAY_HEADER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_BOGUS_ARRAY_HEADER_FORMAT {}
@@ -2776,12 +2776,12 @@ impl ::core::fmt::Debug for NDR64_BOGUS_STRUCTURE_HEADER_FORMAT {
         f.debug_struct("NDR64_BOGUS_STRUCTURE_HEADER_FORMAT").field("FormatCode", &self.FormatCode).field("Alignment", &self.Alignment).field("Flags", &self.Flags).field("Reserve", &self.Reserve).field("MemorySize", &self.MemorySize).field("OriginalMemberLayout", &self.OriginalMemberLayout).field("OriginalPointerLayout", &self.OriginalPointerLayout).field("PointerLayout", &self.PointerLayout).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_BOGUS_STRUCTURE_HEADER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_BOGUS_STRUCTURE_HEADER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_BOGUS_STRUCTURE_HEADER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BOGUS_STRUCTURE_HEADER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BOGUS_STRUCTURE_HEADER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_BOGUS_STRUCTURE_HEADER_FORMAT {}
@@ -2809,12 +2809,12 @@ impl ::core::fmt::Debug for NDR64_BUFFER_ALIGN_FORMAT {
         f.debug_struct("NDR64_BUFFER_ALIGN_FORMAT").field("FormatCode", &self.FormatCode).field("Alignment", &self.Alignment).field("Reserved", &self.Reserved).field("Reserved2", &self.Reserved2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_BUFFER_ALIGN_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_BUFFER_ALIGN_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_BUFFER_ALIGN_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BUFFER_ALIGN_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_BUFFER_ALIGN_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_BUFFER_ALIGN_FORMAT {}
@@ -2839,12 +2839,12 @@ impl ::core::fmt::Debug for NDR64_CONFORMANT_STRING_FORMAT {
         f.debug_struct("NDR64_CONFORMANT_STRING_FORMAT").field("Header", &self.Header).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_CONFORMANT_STRING_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_CONFORMANT_STRING_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_CONFORMANT_STRING_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONFORMANT_STRING_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONFORMANT_STRING_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_CONFORMANT_STRING_FORMAT {}
@@ -2874,12 +2874,12 @@ impl ::core::fmt::Debug for NDR64_CONF_ARRAY_HEADER_FORMAT {
         f.debug_struct("NDR64_CONF_ARRAY_HEADER_FORMAT").field("FormatCode", &self.FormatCode).field("Alignment", &self.Alignment).field("Flags", &self.Flags).field("Reserved", &self.Reserved).field("ElementSize", &self.ElementSize).field("ConfDescriptor", &self.ConfDescriptor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_CONF_ARRAY_HEADER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_CONF_ARRAY_HEADER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_CONF_ARRAY_HEADER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONF_ARRAY_HEADER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONF_ARRAY_HEADER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_CONF_ARRAY_HEADER_FORMAT {}
@@ -2912,12 +2912,12 @@ impl ::core::fmt::Debug for NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT {
         f.debug_struct("NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT").field("FormatCode", &self.FormatCode).field("Alignment", &self.Alignment).field("Flags", &self.Flags).field("Dimensions", &self.Dimensions).field("MemorySize", &self.MemorySize).field("OriginalMemberLayout", &self.OriginalMemberLayout).field("OriginalPointerLayout", &self.OriginalPointerLayout).field("PointerLayout", &self.PointerLayout).field("ConfArrayDescription", &self.ConfArrayDescription).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT {}
@@ -2947,12 +2947,12 @@ impl ::core::fmt::Debug for NDR64_CONF_STRUCTURE_HEADER_FORMAT {
         f.debug_struct("NDR64_CONF_STRUCTURE_HEADER_FORMAT").field("FormatCode", &self.FormatCode).field("Alignment", &self.Alignment).field("Flags", &self.Flags).field("Reserve", &self.Reserve).field("MemorySize", &self.MemorySize).field("ArrayDescription", &self.ArrayDescription).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_CONF_STRUCTURE_HEADER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_CONF_STRUCTURE_HEADER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_CONF_STRUCTURE_HEADER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONF_STRUCTURE_HEADER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONF_STRUCTURE_HEADER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_CONF_STRUCTURE_HEADER_FORMAT {}
@@ -2983,12 +2983,12 @@ impl ::core::fmt::Debug for NDR64_CONF_VAR_ARRAY_HEADER_FORMAT {
         f.debug_struct("NDR64_CONF_VAR_ARRAY_HEADER_FORMAT").field("FormatCode", &self.FormatCode).field("Alignment", &self.Alignment).field("Flags", &self.Flags).field("Reserved", &self.Reserved).field("ElementSize", &self.ElementSize).field("ConfDescriptor", &self.ConfDescriptor).field("VarDescriptor", &self.VarDescriptor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_CONF_VAR_ARRAY_HEADER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_CONF_VAR_ARRAY_HEADER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_CONF_VAR_ARRAY_HEADER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONF_VAR_ARRAY_HEADER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONF_VAR_ARRAY_HEADER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_CONF_VAR_ARRAY_HEADER_FORMAT {}
@@ -3016,12 +3016,12 @@ impl ::core::fmt::Debug for NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT {
         f.debug_struct("NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT").field("FixedArrayFormat", &self.FixedArrayFormat).field("ConfDescription", &self.ConfDescription).field("VarDescription", &self.VarDescription).field("OffsetDescription", &self.OffsetDescription).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT {}
@@ -3036,7 +3036,7 @@ pub struct NDR64_CONSTANT_IID_FORMAT {
     pub FormatCode: u8,
     pub Flags: u8,
     pub Reserved: u16,
-    pub Guid: ::windows::core::GUID,
+    pub Guid: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for NDR64_CONSTANT_IID_FORMAT {}
 impl ::core::clone::Clone for NDR64_CONSTANT_IID_FORMAT {
@@ -3049,12 +3049,12 @@ impl ::core::fmt::Debug for NDR64_CONSTANT_IID_FORMAT {
         f.debug_struct("NDR64_CONSTANT_IID_FORMAT").field("FormatCode", &self.FormatCode).field("Flags", &self.Flags).field("Reserved", &self.Reserved).field("Guid", &self.Guid).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_CONSTANT_IID_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_CONSTANT_IID_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_CONSTANT_IID_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONSTANT_IID_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONSTANT_IID_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_CONSTANT_IID_FORMAT {}
@@ -3079,12 +3079,12 @@ impl ::core::fmt::Debug for NDR64_CONTEXT_HANDLE_FLAGS {
         f.debug_struct("NDR64_CONTEXT_HANDLE_FLAGS").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_CONTEXT_HANDLE_FLAGS {
+unsafe impl ::windows_core::Abi for NDR64_CONTEXT_HANDLE_FLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_CONTEXT_HANDLE_FLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONTEXT_HANDLE_FLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONTEXT_HANDLE_FLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_CONTEXT_HANDLE_FLAGS {}
@@ -3112,12 +3112,12 @@ impl ::core::fmt::Debug for NDR64_CONTEXT_HANDLE_FORMAT {
         f.debug_struct("NDR64_CONTEXT_HANDLE_FORMAT").field("FormatCode", &self.FormatCode).field("ContextFlags", &self.ContextFlags).field("RundownRoutineIndex", &self.RundownRoutineIndex).field("Ordinal", &self.Ordinal).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_CONTEXT_HANDLE_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_CONTEXT_HANDLE_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_CONTEXT_HANDLE_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONTEXT_HANDLE_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_CONTEXT_HANDLE_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_CONTEXT_HANDLE_FORMAT {}
@@ -3145,12 +3145,12 @@ impl ::core::fmt::Debug for NDR64_EMBEDDED_COMPLEX_FORMAT {
         f.debug_struct("NDR64_EMBEDDED_COMPLEX_FORMAT").field("FormatCode", &self.FormatCode).field("Reserve1", &self.Reserve1).field("Reserve2", &self.Reserve2).field("Type", &self.Type).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_EMBEDDED_COMPLEX_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_EMBEDDED_COMPLEX_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_EMBEDDED_COMPLEX_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_EMBEDDED_COMPLEX_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_EMBEDDED_COMPLEX_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_EMBEDDED_COMPLEX_FORMAT {}
@@ -3181,12 +3181,12 @@ impl ::core::fmt::Debug for NDR64_ENCAPSULATED_UNION {
         f.debug_struct("NDR64_ENCAPSULATED_UNION").field("FormatCode", &self.FormatCode).field("Alignment", &self.Alignment).field("Flags", &self.Flags).field("SwitchType", &self.SwitchType).field("MemoryOffset", &self.MemoryOffset).field("MemorySize", &self.MemorySize).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_ENCAPSULATED_UNION {
+unsafe impl ::windows_core::Abi for NDR64_ENCAPSULATED_UNION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_ENCAPSULATED_UNION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_ENCAPSULATED_UNION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_ENCAPSULATED_UNION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_ENCAPSULATED_UNION {}
@@ -3214,12 +3214,12 @@ impl ::core::fmt::Debug for NDR64_EXPR_CONST32 {
         f.debug_struct("NDR64_EXPR_CONST32").field("ExprType", &self.ExprType).field("Reserved", &self.Reserved).field("Reserved1", &self.Reserved1).field("ConstValue", &self.ConstValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_EXPR_CONST32 {
+unsafe impl ::windows_core::Abi for NDR64_EXPR_CONST32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_EXPR_CONST32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_EXPR_CONST32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_EXPR_CONST32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_EXPR_CONST32 {}
@@ -3247,12 +3247,12 @@ impl ::core::fmt::Debug for NDR64_EXPR_CONST64 {
         f.debug_struct("NDR64_EXPR_CONST64").field("ExprType", &self.ExprType).field("Reserved", &self.Reserved).field("Reserved1", &self.Reserved1).field("ConstValue", &self.ConstValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_EXPR_CONST64 {
+unsafe impl ::windows_core::Abi for NDR64_EXPR_CONST64 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_EXPR_CONST64 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_EXPR_CONST64>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_EXPR_CONST64>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_EXPR_CONST64 {}
@@ -3279,12 +3279,12 @@ impl ::core::fmt::Debug for NDR64_EXPR_NOOP {
         f.debug_struct("NDR64_EXPR_NOOP").field("ExprType", &self.ExprType).field("Size", &self.Size).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_EXPR_NOOP {
+unsafe impl ::windows_core::Abi for NDR64_EXPR_NOOP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_EXPR_NOOP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_EXPR_NOOP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_EXPR_NOOP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_EXPR_NOOP {}
@@ -3312,12 +3312,12 @@ impl ::core::fmt::Debug for NDR64_EXPR_OPERATOR {
         f.debug_struct("NDR64_EXPR_OPERATOR").field("ExprType", &self.ExprType).field("Operator", &self.Operator).field("CastType", &self.CastType).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_EXPR_OPERATOR {
+unsafe impl ::windows_core::Abi for NDR64_EXPR_OPERATOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_EXPR_OPERATOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_EXPR_OPERATOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_EXPR_OPERATOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_EXPR_OPERATOR {}
@@ -3345,12 +3345,12 @@ impl ::core::fmt::Debug for NDR64_EXPR_VAR {
         f.debug_struct("NDR64_EXPR_VAR").field("ExprType", &self.ExprType).field("VarType", &self.VarType).field("Reserved", &self.Reserved).field("Offset", &self.Offset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_EXPR_VAR {
+unsafe impl ::windows_core::Abi for NDR64_EXPR_VAR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_EXPR_VAR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_EXPR_VAR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_EXPR_VAR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_EXPR_VAR {}
@@ -3389,12 +3389,12 @@ impl ::core::fmt::Debug for NDR64_FIXED_REPEAT_FORMAT {
         f.debug_struct("NDR64_FIXED_REPEAT_FORMAT").field("RepeatFormat", &self.RepeatFormat).field("Iterations", &self.Iterations).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_FIXED_REPEAT_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_FIXED_REPEAT_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_FIXED_REPEAT_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_FIXED_REPEAT_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_FIXED_REPEAT_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_FIXED_REPEAT_FORMAT {}
@@ -3423,12 +3423,12 @@ impl ::core::fmt::Debug for NDR64_FIX_ARRAY_HEADER_FORMAT {
         f.debug_struct("NDR64_FIX_ARRAY_HEADER_FORMAT").field("FormatCode", &self.FormatCode).field("Alignment", &self.Alignment).field("Flags", &self.Flags).field("Reserved", &self.Reserved).field("TotalSize", &self.TotalSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_FIX_ARRAY_HEADER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_FIX_ARRAY_HEADER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_FIX_ARRAY_HEADER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_FIX_ARRAY_HEADER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_FIX_ARRAY_HEADER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_FIX_ARRAY_HEADER_FORMAT {}
@@ -3453,12 +3453,12 @@ impl ::core::fmt::Debug for NDR64_IID_FLAGS {
         f.debug_struct("NDR64_IID_FLAGS").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_IID_FLAGS {
+unsafe impl ::windows_core::Abi for NDR64_IID_FLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_IID_FLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_IID_FLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_IID_FLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_IID_FLAGS {}
@@ -3486,12 +3486,12 @@ impl ::core::fmt::Debug for NDR64_IID_FORMAT {
         f.debug_struct("NDR64_IID_FORMAT").field("FormatCode", &self.FormatCode).field("Flags", &self.Flags).field("Reserved", &self.Reserved).field("IIDDescriptor", &self.IIDDescriptor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_IID_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_IID_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_IID_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_IID_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_IID_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_IID_FORMAT {}
@@ -3519,12 +3519,12 @@ impl ::core::fmt::Debug for NDR64_MEMPAD_FORMAT {
         f.debug_struct("NDR64_MEMPAD_FORMAT").field("FormatCode", &self.FormatCode).field("Reserve1", &self.Reserve1).field("MemPad", &self.MemPad).field("Reserved2", &self.Reserved2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_MEMPAD_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_MEMPAD_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_MEMPAD_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_MEMPAD_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_MEMPAD_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_MEMPAD_FORMAT {}
@@ -3550,12 +3550,12 @@ impl ::core::fmt::Debug for NDR64_NON_CONFORMANT_STRING_FORMAT {
         f.debug_struct("NDR64_NON_CONFORMANT_STRING_FORMAT").field("Header", &self.Header).field("TotalSize", &self.TotalSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_NON_CONFORMANT_STRING_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_NON_CONFORMANT_STRING_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_NON_CONFORMANT_STRING_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_NON_CONFORMANT_STRING_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_NON_CONFORMANT_STRING_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_NON_CONFORMANT_STRING_FORMAT {}
@@ -3586,12 +3586,12 @@ impl ::core::fmt::Debug for NDR64_NON_ENCAPSULATED_UNION {
         f.debug_struct("NDR64_NON_ENCAPSULATED_UNION").field("FormatCode", &self.FormatCode).field("Alignment", &self.Alignment).field("Flags", &self.Flags).field("SwitchType", &self.SwitchType).field("MemorySize", &self.MemorySize).field("Switch", &self.Switch).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_NON_ENCAPSULATED_UNION {
+unsafe impl ::windows_core::Abi for NDR64_NON_ENCAPSULATED_UNION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_NON_ENCAPSULATED_UNION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_NON_ENCAPSULATED_UNION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_NON_ENCAPSULATED_UNION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_NON_ENCAPSULATED_UNION {}
@@ -3619,12 +3619,12 @@ impl ::core::fmt::Debug for NDR64_NO_REPEAT_FORMAT {
         f.debug_struct("NDR64_NO_REPEAT_FORMAT").field("FormatCode", &self.FormatCode).field("Flags", &self.Flags).field("Reserved1", &self.Reserved1).field("Reserved2", &self.Reserved2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_NO_REPEAT_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_NO_REPEAT_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_NO_REPEAT_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_NO_REPEAT_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_NO_REPEAT_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_NO_REPEAT_FORMAT {}
@@ -3649,12 +3649,12 @@ impl ::core::fmt::Debug for NDR64_PARAM_FLAGS {
         f.debug_struct("NDR64_PARAM_FLAGS").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_PARAM_FLAGS {
+unsafe impl ::windows_core::Abi for NDR64_PARAM_FLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_PARAM_FLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_PARAM_FLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_PARAM_FLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_PARAM_FLAGS {}
@@ -3682,12 +3682,12 @@ impl ::core::fmt::Debug for NDR64_PARAM_FORMAT {
         f.debug_struct("NDR64_PARAM_FORMAT").field("Type", &self.Type).field("Attributes", &self.Attributes).field("Reserved", &self.Reserved).field("StackOffset", &self.StackOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_PARAM_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_PARAM_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_PARAM_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_PARAM_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_PARAM_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_PARAM_FORMAT {}
@@ -3712,12 +3712,12 @@ impl ::core::fmt::Debug for NDR64_PIPE_FLAGS {
         f.debug_struct("NDR64_PIPE_FLAGS").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_PIPE_FLAGS {
+unsafe impl ::windows_core::Abi for NDR64_PIPE_FLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_PIPE_FLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_PIPE_FLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_PIPE_FLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_PIPE_FLAGS {}
@@ -3748,12 +3748,12 @@ impl ::core::fmt::Debug for NDR64_PIPE_FORMAT {
         f.debug_struct("NDR64_PIPE_FORMAT").field("FormatCode", &self.FormatCode).field("Flags", &self.Flags).field("Alignment", &self.Alignment).field("Reserved", &self.Reserved).field("Type", &self.Type).field("MemorySize", &self.MemorySize).field("BufferSize", &self.BufferSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_PIPE_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_PIPE_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_PIPE_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_PIPE_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_PIPE_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_PIPE_FORMAT {}
@@ -3781,12 +3781,12 @@ impl ::core::fmt::Debug for NDR64_POINTER_FORMAT {
         f.debug_struct("NDR64_POINTER_FORMAT").field("FormatCode", &self.FormatCode).field("Flags", &self.Flags).field("Reserved", &self.Reserved).field("Pointee", &self.Pointee).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_POINTER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_POINTER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_POINTER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_POINTER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_POINTER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_POINTER_FORMAT {}
@@ -3812,12 +3812,12 @@ impl ::core::fmt::Debug for NDR64_POINTER_INSTANCE_HEADER_FORMAT {
         f.debug_struct("NDR64_POINTER_INSTANCE_HEADER_FORMAT").field("Offset", &self.Offset).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_POINTER_INSTANCE_HEADER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_POINTER_INSTANCE_HEADER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_POINTER_INSTANCE_HEADER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_POINTER_INSTANCE_HEADER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_POINTER_INSTANCE_HEADER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_POINTER_INSTANCE_HEADER_FORMAT {}
@@ -3842,12 +3842,12 @@ impl ::core::fmt::Debug for NDR64_POINTER_REPEAT_FLAGS {
         f.debug_struct("NDR64_POINTER_REPEAT_FLAGS").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_POINTER_REPEAT_FLAGS {
+unsafe impl ::windows_core::Abi for NDR64_POINTER_REPEAT_FLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_POINTER_REPEAT_FLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_POINTER_REPEAT_FLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_POINTER_REPEAT_FLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_POINTER_REPEAT_FLAGS {}
@@ -3872,12 +3872,12 @@ impl ::core::fmt::Debug for NDR64_PROC_FLAGS {
         f.debug_struct("NDR64_PROC_FLAGS").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_PROC_FLAGS {
+unsafe impl ::windows_core::Abi for NDR64_PROC_FLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_PROC_FLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_PROC_FLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_PROC_FLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_PROC_FLAGS {}
@@ -3909,12 +3909,12 @@ impl ::core::fmt::Debug for NDR64_PROC_FORMAT {
         f.debug_struct("NDR64_PROC_FORMAT").field("Flags", &self.Flags).field("StackSize", &self.StackSize).field("ConstantClientBufferSize", &self.ConstantClientBufferSize).field("ConstantServerBufferSize", &self.ConstantServerBufferSize).field("RpcFlags", &self.RpcFlags).field("FloatDoubleMask", &self.FloatDoubleMask).field("NumberOfParams", &self.NumberOfParams).field("ExtensionSize", &self.ExtensionSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_PROC_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_PROC_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_PROC_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_PROC_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_PROC_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_PROC_FORMAT {}
@@ -3942,12 +3942,12 @@ impl ::core::fmt::Debug for NDR64_RANGED_STRING_FORMAT {
         f.debug_struct("NDR64_RANGED_STRING_FORMAT").field("Header", &self.Header).field("Reserved", &self.Reserved).field("Min", &self.Min).field("Max", &self.Max).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_RANGED_STRING_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_RANGED_STRING_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_RANGED_STRING_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_RANGED_STRING_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_RANGED_STRING_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_RANGED_STRING_FORMAT {}
@@ -3976,12 +3976,12 @@ impl ::core::fmt::Debug for NDR64_RANGE_FORMAT {
         f.debug_struct("NDR64_RANGE_FORMAT").field("FormatCode", &self.FormatCode).field("RangeType", &self.RangeType).field("Reserved", &self.Reserved).field("MinValue", &self.MinValue).field("MaxValue", &self.MaxValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_RANGE_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_RANGE_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_RANGE_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_RANGE_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_RANGE_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_RANGE_FORMAT {}
@@ -4014,12 +4014,12 @@ impl ::core::fmt::Debug for NDR64_RANGE_PIPE_FORMAT {
         f.debug_struct("NDR64_RANGE_PIPE_FORMAT").field("FormatCode", &self.FormatCode).field("Flags", &self.Flags).field("Alignment", &self.Alignment).field("Reserved", &self.Reserved).field("Type", &self.Type).field("MemorySize", &self.MemorySize).field("BufferSize", &self.BufferSize).field("MinValue", &self.MinValue).field("MaxValue", &self.MaxValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_RANGE_PIPE_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_RANGE_PIPE_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_RANGE_PIPE_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_RANGE_PIPE_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_RANGE_PIPE_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_RANGE_PIPE_FORMAT {}
@@ -4049,12 +4049,12 @@ impl ::core::fmt::Debug for NDR64_REPEAT_FORMAT {
         f.debug_struct("NDR64_REPEAT_FORMAT").field("FormatCode", &self.FormatCode).field("Flags", &self.Flags).field("Reserved", &self.Reserved).field("Increment", &self.Increment).field("OffsetToArray", &self.OffsetToArray).field("NumberOfPointers", &self.NumberOfPointers).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_REPEAT_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_REPEAT_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_REPEAT_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_REPEAT_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_REPEAT_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_REPEAT_FORMAT {}
@@ -4079,12 +4079,12 @@ impl ::core::fmt::Debug for NDR64_RPC_FLAGS {
         f.debug_struct("NDR64_RPC_FLAGS").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_RPC_FLAGS {
+unsafe impl ::windows_core::Abi for NDR64_RPC_FLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_RPC_FLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_RPC_FLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_RPC_FLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_RPC_FLAGS {}
@@ -4112,12 +4112,12 @@ impl ::core::fmt::Debug for NDR64_SIMPLE_MEMBER_FORMAT {
         f.debug_struct("NDR64_SIMPLE_MEMBER_FORMAT").field("FormatCode", &self.FormatCode).field("Reserved1", &self.Reserved1).field("Reserved2", &self.Reserved2).field("Reserved3", &self.Reserved3).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_SIMPLE_MEMBER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_SIMPLE_MEMBER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_SIMPLE_MEMBER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_SIMPLE_MEMBER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_SIMPLE_MEMBER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_SIMPLE_MEMBER_FORMAT {}
@@ -4145,12 +4145,12 @@ impl ::core::fmt::Debug for NDR64_SIMPLE_REGION_FORMAT {
         f.debug_struct("NDR64_SIMPLE_REGION_FORMAT").field("FormatCode", &self.FormatCode).field("Alignment", &self.Alignment).field("RegionSize", &self.RegionSize).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_SIMPLE_REGION_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_SIMPLE_REGION_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_SIMPLE_REGION_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_SIMPLE_REGION_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_SIMPLE_REGION_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_SIMPLE_REGION_FORMAT {}
@@ -4176,12 +4176,12 @@ impl ::core::fmt::Debug for NDR64_SIZED_CONFORMANT_STRING_FORMAT {
         f.debug_struct("NDR64_SIZED_CONFORMANT_STRING_FORMAT").field("Header", &self.Header).field("SizeDescription", &self.SizeDescription).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_SIZED_CONFORMANT_STRING_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_SIZED_CONFORMANT_STRING_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_SIZED_CONFORMANT_STRING_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_SIZED_CONFORMANT_STRING_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_SIZED_CONFORMANT_STRING_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_SIZED_CONFORMANT_STRING_FORMAT {}
@@ -4206,12 +4206,12 @@ impl ::core::fmt::Debug for NDR64_STRING_FLAGS {
         f.debug_struct("NDR64_STRING_FLAGS").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_STRING_FLAGS {
+unsafe impl ::windows_core::Abi for NDR64_STRING_FLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_STRING_FLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_STRING_FLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_STRING_FLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_STRING_FLAGS {}
@@ -4238,12 +4238,12 @@ impl ::core::fmt::Debug for NDR64_STRING_HEADER_FORMAT {
         f.debug_struct("NDR64_STRING_HEADER_FORMAT").field("FormatCode", &self.FormatCode).field("Flags", &self.Flags).field("ElementSize", &self.ElementSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_STRING_HEADER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_STRING_HEADER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_STRING_HEADER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_STRING_HEADER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_STRING_HEADER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_STRING_HEADER_FORMAT {}
@@ -4268,12 +4268,12 @@ impl ::core::fmt::Debug for NDR64_STRUCTURE_FLAGS {
         f.debug_struct("NDR64_STRUCTURE_FLAGS").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_STRUCTURE_FLAGS {
+unsafe impl ::windows_core::Abi for NDR64_STRUCTURE_FLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_STRUCTURE_FLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_STRUCTURE_FLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_STRUCTURE_FLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_STRUCTURE_FLAGS {}
@@ -4302,12 +4302,12 @@ impl ::core::fmt::Debug for NDR64_STRUCTURE_HEADER_FORMAT {
         f.debug_struct("NDR64_STRUCTURE_HEADER_FORMAT").field("FormatCode", &self.FormatCode).field("Alignment", &self.Alignment).field("Flags", &self.Flags).field("Reserve", &self.Reserve).field("MemorySize", &self.MemorySize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_STRUCTURE_HEADER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_STRUCTURE_HEADER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_STRUCTURE_HEADER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_STRUCTURE_HEADER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_STRUCTURE_HEADER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_STRUCTURE_HEADER_FORMAT {}
@@ -4334,12 +4334,12 @@ impl ::core::fmt::Debug for NDR64_SYSTEM_HANDLE_FORMAT {
         f.debug_struct("NDR64_SYSTEM_HANDLE_FORMAT").field("FormatCode", &self.FormatCode).field("HandleType", &self.HandleType).field("DesiredAccess", &self.DesiredAccess).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_SYSTEM_HANDLE_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_SYSTEM_HANDLE_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_SYSTEM_HANDLE_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_SYSTEM_HANDLE_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_SYSTEM_HANDLE_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_SYSTEM_HANDLE_FORMAT {}
@@ -4364,12 +4364,12 @@ impl ::core::fmt::Debug for NDR64_TRANSMIT_AS_FLAGS {
         f.debug_struct("NDR64_TRANSMIT_AS_FLAGS").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_TRANSMIT_AS_FLAGS {
+unsafe impl ::windows_core::Abi for NDR64_TRANSMIT_AS_FLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_TRANSMIT_AS_FLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_TRANSMIT_AS_FLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_TRANSMIT_AS_FLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_TRANSMIT_AS_FLAGS {}
@@ -4401,12 +4401,12 @@ impl ::core::fmt::Debug for NDR64_TRANSMIT_AS_FORMAT {
         f.debug_struct("NDR64_TRANSMIT_AS_FORMAT").field("FormatCode", &self.FormatCode).field("Flags", &self.Flags).field("RoutineIndex", &self.RoutineIndex).field("TransmittedTypeWireAlignment", &self.TransmittedTypeWireAlignment).field("MemoryAlignment", &self.MemoryAlignment).field("PresentedTypeMemorySize", &self.PresentedTypeMemorySize).field("TransmittedTypeBufferSize", &self.TransmittedTypeBufferSize).field("TransmittedType", &self.TransmittedType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_TRANSMIT_AS_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_TRANSMIT_AS_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_TRANSMIT_AS_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_TRANSMIT_AS_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_TRANSMIT_AS_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_TRANSMIT_AS_FORMAT {}
@@ -4436,12 +4436,12 @@ impl ::core::fmt::Debug for NDR64_TYPE_STRICT_CONTEXT_HANDLE {
         f.debug_struct("NDR64_TYPE_STRICT_CONTEXT_HANDLE").field("FormatCode", &self.FormatCode).field("RealFormatCode", &self.RealFormatCode).field("Reserved", &self.Reserved).field("Type", &self.Type).field("CtxtFlags", &self.CtxtFlags).field("CtxtID", &self.CtxtID).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_TYPE_STRICT_CONTEXT_HANDLE {
+unsafe impl ::windows_core::Abi for NDR64_TYPE_STRICT_CONTEXT_HANDLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_TYPE_STRICT_CONTEXT_HANDLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_TYPE_STRICT_CONTEXT_HANDLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_TYPE_STRICT_CONTEXT_HANDLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_TYPE_STRICT_CONTEXT_HANDLE {}
@@ -4468,12 +4468,12 @@ impl ::core::fmt::Debug for NDR64_UNION_ARM {
         f.debug_struct("NDR64_UNION_ARM").field("CaseValue", &self.CaseValue).field("Type", &self.Type).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_UNION_ARM {
+unsafe impl ::windows_core::Abi for NDR64_UNION_ARM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_UNION_ARM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_UNION_ARM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_UNION_ARM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_UNION_ARM {}
@@ -4501,12 +4501,12 @@ impl ::core::fmt::Debug for NDR64_UNION_ARM_SELECTOR {
         f.debug_struct("NDR64_UNION_ARM_SELECTOR").field("Reserved1", &self.Reserved1).field("Alignment", &self.Alignment).field("Reserved2", &self.Reserved2).field("Arms", &self.Arms).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_UNION_ARM_SELECTOR {
+unsafe impl ::windows_core::Abi for NDR64_UNION_ARM_SELECTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_UNION_ARM_SELECTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_UNION_ARM_SELECTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_UNION_ARM_SELECTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_UNION_ARM_SELECTOR {}
@@ -4531,12 +4531,12 @@ impl ::core::fmt::Debug for NDR64_USER_MARSHAL_FLAGS {
         f.debug_struct("NDR64_USER_MARSHAL_FLAGS").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_USER_MARSHAL_FLAGS {
+unsafe impl ::windows_core::Abi for NDR64_USER_MARSHAL_FLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_USER_MARSHAL_FLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_USER_MARSHAL_FLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_USER_MARSHAL_FLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_USER_MARSHAL_FLAGS {}
@@ -4568,12 +4568,12 @@ impl ::core::fmt::Debug for NDR64_USER_MARSHAL_FORMAT {
         f.debug_struct("NDR64_USER_MARSHAL_FORMAT").field("FormatCode", &self.FormatCode).field("Flags", &self.Flags).field("RoutineIndex", &self.RoutineIndex).field("TransmittedTypeWireAlignment", &self.TransmittedTypeWireAlignment).field("MemoryAlignment", &self.MemoryAlignment).field("UserTypeMemorySize", &self.UserTypeMemorySize).field("TransmittedTypeBufferSize", &self.TransmittedTypeBufferSize).field("TransmittedType", &self.TransmittedType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_USER_MARSHAL_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_USER_MARSHAL_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_USER_MARSHAL_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_USER_MARSHAL_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_USER_MARSHAL_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_USER_MARSHAL_FORMAT {}
@@ -4604,12 +4604,12 @@ impl ::core::fmt::Debug for NDR64_VAR_ARRAY_HEADER_FORMAT {
         f.debug_struct("NDR64_VAR_ARRAY_HEADER_FORMAT").field("FormatCode", &self.FormatCode).field("Alignment", &self.Alignment).field("Flags", &self.Flags).field("Reserved", &self.Reserved).field("TotalSize", &self.TotalSize).field("ElementSize", &self.ElementSize).field("VarDescriptor", &self.VarDescriptor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR64_VAR_ARRAY_HEADER_FORMAT {
+unsafe impl ::windows_core::Abi for NDR64_VAR_ARRAY_HEADER_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR64_VAR_ARRAY_HEADER_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_VAR_ARRAY_HEADER_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR64_VAR_ARRAY_HEADER_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR64_VAR_ARRAY_HEADER_FORMAT {}
@@ -4667,7 +4667,7 @@ pub unsafe fn NDRSContextMarshall(ccontext: *const NDR_SCONTEXT_1, pbuff: *mut :
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NDRSContextMarshall(ccontext: *const NDR_SCONTEXT_1, pbuff: *mut ::core::ffi::c_void, userrundownin: ::windows::core::RawPtr);
+            fn NDRSContextMarshall(ccontext: *const NDR_SCONTEXT_1, pbuff: *mut ::core::ffi::c_void, userrundownin: ::windows_core::RawPtr);
         }
         NDRSContextMarshall(::core::mem::transmute(ccontext), ::core::mem::transmute(pbuff), ::core::mem::transmute(userrundownin))
     }
@@ -4681,7 +4681,7 @@ pub unsafe fn NDRSContextMarshall2(bindinghandle: *const ::core::ffi::c_void, cc
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NDRSContextMarshall2(bindinghandle: *const ::core::ffi::c_void, ccontext: *const NDR_SCONTEXT_1, pbuff: *mut ::core::ffi::c_void, userrundownin: ::windows::core::RawPtr, ctxguard: *const ::core::ffi::c_void, flags: u32);
+            fn NDRSContextMarshall2(bindinghandle: *const ::core::ffi::c_void, ccontext: *const NDR_SCONTEXT_1, pbuff: *mut ::core::ffi::c_void, userrundownin: ::windows_core::RawPtr, ctxguard: *const ::core::ffi::c_void, flags: u32);
         }
         NDRSContextMarshall2(::core::mem::transmute(bindinghandle), ::core::mem::transmute(ccontext), ::core::mem::transmute(pbuff), ::core::mem::transmute(userrundownin), ::core::mem::transmute(ctxguard), ::core::mem::transmute(flags))
     }
@@ -4695,7 +4695,7 @@ pub unsafe fn NDRSContextMarshallEx(bindinghandle: *const ::core::ffi::c_void, c
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NDRSContextMarshallEx(bindinghandle: *const ::core::ffi::c_void, ccontext: *const NDR_SCONTEXT_1, pbuff: *mut ::core::ffi::c_void, userrundownin: ::windows::core::RawPtr);
+            fn NDRSContextMarshallEx(bindinghandle: *const ::core::ffi::c_void, ccontext: *const NDR_SCONTEXT_1, pbuff: *mut ::core::ffi::c_void, userrundownin: ::windows_core::RawPtr);
         }
         NDRSContextMarshallEx(::core::mem::transmute(bindinghandle), ::core::mem::transmute(ccontext), ::core::mem::transmute(pbuff), ::core::mem::transmute(userrundownin))
     }
@@ -4763,12 +4763,12 @@ impl ::core::fmt::Debug for NDR_CS_ROUTINES {
         f.debug_struct("NDR_CS_ROUTINES").field("pSizeConvertRoutines", &self.pSizeConvertRoutines).field("pTagGettingRoutines", &self.pTagGettingRoutines).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR_CS_ROUTINES {
+unsafe impl ::windows_core::Abi for NDR_CS_ROUTINES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR_CS_ROUTINES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR_CS_ROUTINES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR_CS_ROUTINES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR_CS_ROUTINES {}
@@ -4796,12 +4796,12 @@ impl ::core::fmt::Debug for NDR_CS_SIZE_CONVERT_ROUTINES {
         f.debug_struct("NDR_CS_SIZE_CONVERT_ROUTINES").field("pfnNetSize", &self.pfnNetSize.map(|f| f as usize)).field("pfnToNetCs", &self.pfnToNetCs.map(|f| f as usize)).field("pfnLocalSize", &self.pfnLocalSize.map(|f| f as usize)).field("pfnFromNetCs", &self.pfnFromNetCs.map(|f| f as usize)).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR_CS_SIZE_CONVERT_ROUTINES {
+unsafe impl ::windows_core::Abi for NDR_CS_SIZE_CONVERT_ROUTINES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR_CS_SIZE_CONVERT_ROUTINES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR_CS_SIZE_CONVERT_ROUTINES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR_CS_SIZE_CONVERT_ROUTINES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR_CS_SIZE_CONVERT_ROUTINES {}
@@ -4831,12 +4831,12 @@ impl ::core::fmt::Debug for NDR_EXPR_DESC {
         f.debug_struct("NDR_EXPR_DESC").field("pOffset", &self.pOffset).field("pFormatExpr", &self.pFormatExpr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR_EXPR_DESC {
+unsafe impl ::windows_core::Abi for NDR_EXPR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR_EXPR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR_EXPR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR_EXPR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR_EXPR_DESC {}
@@ -4870,12 +4870,12 @@ impl ::core::fmt::Debug for NDR_SCONTEXT_1 {
         f.debug_struct("NDR_SCONTEXT_1").field("pad", &self.pad).field("userContext", &self.userContext).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NDR_SCONTEXT_1 {
+unsafe impl ::windows_core::Abi for NDR_SCONTEXT_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NDR_SCONTEXT_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR_SCONTEXT_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR_SCONTEXT_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NDR_SCONTEXT_1 {}
@@ -4898,7 +4898,7 @@ impl ::core::clone::Clone for NDR_USER_MARSHAL_INFO {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for NDR_USER_MARSHAL_INFO {
+unsafe impl ::windows_core::Abi for NDR_USER_MARSHAL_INFO {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -4928,13 +4928,13 @@ impl ::core::clone::Clone for NDR_USER_MARSHAL_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for NDR_USER_MARSHAL_INFO_0 {
+unsafe impl ::windows_core::Abi for NDR_USER_MARSHAL_INFO_0 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for NDR_USER_MARSHAL_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR_USER_MARSHAL_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDR_USER_MARSHAL_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -4976,7 +4976,7 @@ impl ::core::fmt::Debug for NDR_USER_MARSHAL_INFO_LEVEL1 {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for NDR_USER_MARSHAL_INFO_LEVEL1 {
+unsafe impl ::windows_core::Abi for NDR_USER_MARSHAL_INFO_LEVEL1 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -5056,12 +5056,12 @@ pub unsafe fn Ndr64DcomAsyncClientCall(pproxyinfo: *mut MIDL_STUBLESS_PROXY_INFO
 #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
-pub unsafe fn Ndr64DcomAsyncStubCall<'a, Param0: ::windows::core::IntoParam<'a, super::Com::IRpcStubBuffer>, Param1: ::windows::core::IntoParam<'a, super::Com::IRpcChannelBuffer>>(pthis: Param0, pchannel: Param1, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32 {
+pub unsafe fn Ndr64DcomAsyncStubCall<'a, Param0: ::windows_core::IntoParam<'a, super::Com::IRpcStubBuffer>, Param1: ::windows_core::IntoParam<'a, super::Com::IRpcChannelBuffer>>(pthis: Param0, pchannel: Param1, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn Ndr64DcomAsyncStubCall(pthis: ::windows::core::RawPtr, pchannel: ::windows::core::RawPtr, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32;
+            fn Ndr64DcomAsyncStubCall(pthis: ::windows_core::RawPtr, pchannel: ::windows_core::RawPtr, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32;
         }
         ::core::mem::transmute(Ndr64DcomAsyncStubCall(pthis.into_param().abi(), pchannel.into_param().abi(), ::core::mem::transmute(prpcmsg), ::core::mem::transmute(pdwstubphase)))
     }
@@ -5895,12 +5895,12 @@ pub unsafe fn NdrCorrelationPass(pstubmsg: *mut MIDL_STUB_MESSAGE) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
-pub unsafe fn NdrCreateServerInterfaceFromStub<'a, Param0: ::windows::core::IntoParam<'a, super::Com::IRpcStubBuffer>>(pstub: Param0, pserverif: *mut RPC_SERVER_INTERFACE) -> RPC_STATUS {
+pub unsafe fn NdrCreateServerInterfaceFromStub<'a, Param0: ::windows_core::IntoParam<'a, super::Com::IRpcStubBuffer>>(pstub: Param0, pserverif: *mut RPC_SERVER_INTERFACE) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NdrCreateServerInterfaceFromStub(pstub: ::windows::core::RawPtr, pserverif: *mut RPC_SERVER_INTERFACE) -> RPC_STATUS;
+            fn NdrCreateServerInterfaceFromStub(pstub: ::windows_core::RawPtr, pserverif: *mut RPC_SERVER_INTERFACE) -> RPC_STATUS;
         }
         ::core::mem::transmute(NdrCreateServerInterfaceFromStub(pstub.into_param().abi(), ::core::mem::transmute(pserverif)))
     }
@@ -5925,12 +5925,12 @@ pub unsafe fn NdrDcomAsyncClientCall(pstubdescriptor: *mut MIDL_STUB_DESC, pform
 #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
-pub unsafe fn NdrDcomAsyncStubCall<'a, Param0: ::windows::core::IntoParam<'a, super::Com::IRpcStubBuffer>, Param1: ::windows::core::IntoParam<'a, super::Com::IRpcChannelBuffer>>(pthis: Param0, pchannel: Param1, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32 {
+pub unsafe fn NdrDcomAsyncStubCall<'a, Param0: ::windows_core::IntoParam<'a, super::Com::IRpcStubBuffer>, Param1: ::windows_core::IntoParam<'a, super::Com::IRpcChannelBuffer>>(pthis: Param0, pchannel: Param1, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NdrDcomAsyncStubCall(pthis: ::windows::core::RawPtr, pchannel: ::windows::core::RawPtr, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32;
+            fn NdrDcomAsyncStubCall(pthis: ::windows_core::RawPtr, pchannel: ::windows_core::RawPtr, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32;
         }
         ::core::mem::transmute(NdrDcomAsyncStubCall(pthis.into_param().abi(), pchannel.into_param().abi(), ::core::mem::transmute(prpcmsg), ::core::mem::transmute(pdwstubphase)))
     }
@@ -6148,12 +6148,12 @@ pub unsafe fn NdrGetBuffer(pstubmsg: *mut MIDL_STUB_MESSAGE, bufferlength: u32, 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
-pub unsafe fn NdrGetDcomProtocolVersion(pstubmsg: *mut MIDL_STUB_MESSAGE, pversion: *mut RPC_VERSION) -> ::windows::core::Result<()> {
+pub unsafe fn NdrGetDcomProtocolVersion(pstubmsg: *mut MIDL_STUB_MESSAGE, pversion: *mut RPC_VERSION) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NdrGetDcomProtocolVersion(pstubmsg: *mut MIDL_STUB_MESSAGE, pversion: *mut RPC_VERSION) -> ::windows::core::HRESULT;
+            fn NdrGetDcomProtocolVersion(pstubmsg: *mut MIDL_STUB_MESSAGE, pversion: *mut RPC_VERSION) -> ::windows_core::HRESULT;
         }
         NdrGetDcomProtocolVersion(::core::mem::transmute(pstubmsg), ::core::mem::transmute(pversion)).ok()
     }
@@ -7072,7 +7072,7 @@ pub unsafe fn NdrServerContextMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, context
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NdrServerContextMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, contexthandle: *mut NDR_SCONTEXT_1, rundownroutine: ::windows::core::RawPtr);
+            fn NdrServerContextMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, contexthandle: *mut NDR_SCONTEXT_1, rundownroutine: ::windows_core::RawPtr);
         }
         NdrServerContextMarshall(::core::mem::transmute(pstubmsg), ::core::mem::transmute(contexthandle), ::core::mem::transmute(rundownroutine))
     }
@@ -7087,7 +7087,7 @@ pub unsafe fn NdrServerContextNewMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, cont
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NdrServerContextNewMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, contexthandle: *mut NDR_SCONTEXT_1, rundownroutine: ::windows::core::RawPtr, pformat: *mut u8);
+            fn NdrServerContextNewMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, contexthandle: *mut NDR_SCONTEXT_1, rundownroutine: ::windows_core::RawPtr, pformat: *mut u8);
         }
         NdrServerContextNewMarshall(::core::mem::transmute(pstubmsg), ::core::mem::transmute(contexthandle), ::core::mem::transmute(rundownroutine), ::core::mem::transmute(pformat))
     }
@@ -7599,7 +7599,7 @@ impl ::core::default::Default for PROXY_PHASE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PROXY_PHASE {
+unsafe impl ::windows_core::Abi for PROXY_PHASE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PROXY_PHASE {
@@ -7622,8 +7622,8 @@ pub struct RDR_CALLOUT_STATE {
     pub ResourceTypePresent: u8,
     pub SessionIdPresent: u8,
     pub InterfacePresent: u8,
-    pub ResourceType: ::windows::core::GUID,
-    pub SessionId: ::windows::core::GUID,
+    pub ResourceType: ::windows_core::GUID,
+    pub SessionId: ::windows_core::GUID,
     pub Interface: RPC_SYNTAX_IDENTIFIER,
     pub CertContext: *mut ::core::ffi::c_void,
 }
@@ -7653,12 +7653,12 @@ impl ::core::fmt::Debug for RDR_CALLOUT_STATE {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for RDR_CALLOUT_STATE {
+unsafe impl ::windows_core::Abi for RDR_CALLOUT_STATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RDR_CALLOUT_STATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RDR_CALLOUT_STATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RDR_CALLOUT_STATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RDR_CALLOUT_STATE {}
@@ -7722,7 +7722,7 @@ impl ::core::default::Default for RPC_ADDRESS_CHANGE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RPC_ADDRESS_CHANGE_TYPE {
+unsafe impl ::windows_core::Abi for RPC_ADDRESS_CHANGE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RPC_ADDRESS_CHANGE_TYPE {
@@ -7755,7 +7755,7 @@ impl ::core::default::Default for RPC_ASYNC_EVENT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RPC_ASYNC_EVENT {
+unsafe impl ::windows_core::Abi for RPC_ASYNC_EVENT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RPC_ASYNC_EVENT {
@@ -7782,13 +7782,13 @@ impl ::core::clone::Clone for RPC_ASYNC_NOTIFICATION_INFO {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-unsafe impl ::windows::core::Abi for RPC_ASYNC_NOTIFICATION_INFO {
+unsafe impl ::windows_core::Abi for RPC_ASYNC_NOTIFICATION_INFO {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 impl ::core::cmp::PartialEq for RPC_ASYNC_NOTIFICATION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ASYNC_NOTIFICATION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ASYNC_NOTIFICATION_INFO>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
@@ -7821,13 +7821,13 @@ impl ::core::fmt::Debug for RPC_ASYNC_NOTIFICATION_INFO_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-unsafe impl ::windows::core::Abi for RPC_ASYNC_NOTIFICATION_INFO_0 {
+unsafe impl ::windows_core::Abi for RPC_ASYNC_NOTIFICATION_INFO_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 impl ::core::cmp::PartialEq for RPC_ASYNC_NOTIFICATION_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ASYNC_NOTIFICATION_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ASYNC_NOTIFICATION_INFO_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
@@ -7862,13 +7862,13 @@ impl ::core::fmt::Debug for RPC_ASYNC_NOTIFICATION_INFO_1 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-unsafe impl ::windows::core::Abi for RPC_ASYNC_NOTIFICATION_INFO_1 {
+unsafe impl ::windows_core::Abi for RPC_ASYNC_NOTIFICATION_INFO_1 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 impl ::core::cmp::PartialEq for RPC_ASYNC_NOTIFICATION_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ASYNC_NOTIFICATION_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ASYNC_NOTIFICATION_INFO_1>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
@@ -7901,13 +7901,13 @@ impl ::core::fmt::Debug for RPC_ASYNC_NOTIFICATION_INFO_2 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-unsafe impl ::windows::core::Abi for RPC_ASYNC_NOTIFICATION_INFO_2 {
+unsafe impl ::windows_core::Abi for RPC_ASYNC_NOTIFICATION_INFO_2 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 impl ::core::cmp::PartialEq for RPC_ASYNC_NOTIFICATION_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ASYNC_NOTIFICATION_INFO_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ASYNC_NOTIFICATION_INFO_2>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
@@ -7943,13 +7943,13 @@ impl ::core::clone::Clone for RPC_ASYNC_STATE {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-unsafe impl ::windows::core::Abi for RPC_ASYNC_STATE {
+unsafe impl ::windows_core::Abi for RPC_ASYNC_STATE {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 impl ::core::cmp::PartialEq for RPC_ASYNC_STATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ASYNC_STATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ASYNC_STATE>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
@@ -7985,7 +7985,7 @@ impl ::core::default::Default for RPC_BINDING_HANDLE_OPTIONS_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RPC_BINDING_HANDLE_OPTIONS_FLAGS {
+unsafe impl ::windows_core::Abi for RPC_BINDING_HANDLE_OPTIONS_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RPC_BINDING_HANDLE_OPTIONS_FLAGS {
@@ -8040,12 +8040,12 @@ impl ::core::fmt::Debug for RPC_BINDING_HANDLE_OPTIONS_V1 {
         f.debug_struct("RPC_BINDING_HANDLE_OPTIONS_V1").field("Version", &self.Version).field("Flags", &self.Flags).field("ComTimeout", &self.ComTimeout).field("CallTimeout", &self.CallTimeout).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_BINDING_HANDLE_OPTIONS_V1 {
+unsafe impl ::windows_core::Abi for RPC_BINDING_HANDLE_OPTIONS_V1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_BINDING_HANDLE_OPTIONS_V1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_OPTIONS_V1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_OPTIONS_V1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_BINDING_HANDLE_OPTIONS_V1 {}
@@ -8080,13 +8080,13 @@ impl ::core::fmt::Debug for RPC_BINDING_HANDLE_SECURITY_V1_A {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_BINDING_HANDLE_SECURITY_V1_A {
+unsafe impl ::windows_core::Abi for RPC_BINDING_HANDLE_SECURITY_V1_A {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_BINDING_HANDLE_SECURITY_V1_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_SECURITY_V1_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_SECURITY_V1_A>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -8123,13 +8123,13 @@ impl ::core::fmt::Debug for RPC_BINDING_HANDLE_SECURITY_V1_W {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_BINDING_HANDLE_SECURITY_V1_W {
+unsafe impl ::windows_core::Abi for RPC_BINDING_HANDLE_SECURITY_V1_W {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_BINDING_HANDLE_SECURITY_V1_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_SECURITY_V1_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_SECURITY_V1_W>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -8149,7 +8149,7 @@ pub struct RPC_BINDING_HANDLE_TEMPLATE_V1_A {
     pub NetworkAddress: *mut u8,
     pub StringEndpoint: *mut u8,
     pub u1: RPC_BINDING_HANDLE_TEMPLATE_V1_A_0,
-    pub ObjectUuid: ::windows::core::GUID,
+    pub ObjectUuid: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for RPC_BINDING_HANDLE_TEMPLATE_V1_A {}
 impl ::core::clone::Clone for RPC_BINDING_HANDLE_TEMPLATE_V1_A {
@@ -8157,12 +8157,12 @@ impl ::core::clone::Clone for RPC_BINDING_HANDLE_TEMPLATE_V1_A {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for RPC_BINDING_HANDLE_TEMPLATE_V1_A {
+unsafe impl ::windows_core::Abi for RPC_BINDING_HANDLE_TEMPLATE_V1_A {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_BINDING_HANDLE_TEMPLATE_V1_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_TEMPLATE_V1_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_TEMPLATE_V1_A>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_BINDING_HANDLE_TEMPLATE_V1_A {}
@@ -8182,12 +8182,12 @@ impl ::core::clone::Clone for RPC_BINDING_HANDLE_TEMPLATE_V1_A_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for RPC_BINDING_HANDLE_TEMPLATE_V1_A_0 {
+unsafe impl ::windows_core::Abi for RPC_BINDING_HANDLE_TEMPLATE_V1_A_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_BINDING_HANDLE_TEMPLATE_V1_A_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_TEMPLATE_V1_A_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_TEMPLATE_V1_A_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_BINDING_HANDLE_TEMPLATE_V1_A_0 {}
@@ -8205,7 +8205,7 @@ pub struct RPC_BINDING_HANDLE_TEMPLATE_V1_W {
     pub NetworkAddress: *mut u16,
     pub StringEndpoint: *mut u16,
     pub u1: RPC_BINDING_HANDLE_TEMPLATE_V1_W_0,
-    pub ObjectUuid: ::windows::core::GUID,
+    pub ObjectUuid: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for RPC_BINDING_HANDLE_TEMPLATE_V1_W {}
 impl ::core::clone::Clone for RPC_BINDING_HANDLE_TEMPLATE_V1_W {
@@ -8213,12 +8213,12 @@ impl ::core::clone::Clone for RPC_BINDING_HANDLE_TEMPLATE_V1_W {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for RPC_BINDING_HANDLE_TEMPLATE_V1_W {
+unsafe impl ::windows_core::Abi for RPC_BINDING_HANDLE_TEMPLATE_V1_W {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_BINDING_HANDLE_TEMPLATE_V1_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_TEMPLATE_V1_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_TEMPLATE_V1_W>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_BINDING_HANDLE_TEMPLATE_V1_W {}
@@ -8238,12 +8238,12 @@ impl ::core::clone::Clone for RPC_BINDING_HANDLE_TEMPLATE_V1_W_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for RPC_BINDING_HANDLE_TEMPLATE_V1_W_0 {
+unsafe impl ::windows_core::Abi for RPC_BINDING_HANDLE_TEMPLATE_V1_W_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_BINDING_HANDLE_TEMPLATE_V1_W_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_TEMPLATE_V1_W_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_HANDLE_TEMPLATE_V1_W_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_BINDING_HANDLE_TEMPLATE_V1_W_0 {}
@@ -8269,12 +8269,12 @@ impl ::core::fmt::Debug for RPC_BINDING_VECTOR {
         f.debug_struct("RPC_BINDING_VECTOR").field("Count", &self.Count).field("BindingH", &self.BindingH).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_BINDING_VECTOR {
+unsafe impl ::windows_core::Abi for RPC_BINDING_VECTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_BINDING_VECTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_VECTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_BINDING_VECTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_BINDING_VECTOR {}
@@ -8334,13 +8334,13 @@ impl ::core::fmt::Debug for RPC_CALL_ATTRIBUTES_V1_A {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RPC_CALL_ATTRIBUTES_V1_A {
+unsafe impl ::windows_core::Abi for RPC_CALL_ATTRIBUTES_V1_A {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RPC_CALL_ATTRIBUTES_V1_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_ATTRIBUTES_V1_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_ATTRIBUTES_V1_A>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8390,13 +8390,13 @@ impl ::core::fmt::Debug for RPC_CALL_ATTRIBUTES_V1_W {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RPC_CALL_ATTRIBUTES_V1_W {
+unsafe impl ::windows_core::Abi for RPC_CALL_ATTRIBUTES_V1_W {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RPC_CALL_ATTRIBUTES_V1_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_ATTRIBUTES_V1_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_ATTRIBUTES_V1_W>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8428,7 +8428,7 @@ pub struct RPC_CALL_ATTRIBUTES_V2_A {
     pub CallType: RpcCallType,
     pub CallLocalAddress: *mut RPC_CALL_LOCAL_ADDRESS_V1,
     pub OpNum: u16,
-    pub InterfaceUuid: ::windows::core::GUID,
+    pub InterfaceUuid: ::windows_core::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RPC_CALL_ATTRIBUTES_V2_A {}
@@ -8464,13 +8464,13 @@ impl ::core::fmt::Debug for RPC_CALL_ATTRIBUTES_V2_A {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RPC_CALL_ATTRIBUTES_V2_A {
+unsafe impl ::windows_core::Abi for RPC_CALL_ATTRIBUTES_V2_A {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RPC_CALL_ATTRIBUTES_V2_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_ATTRIBUTES_V2_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_ATTRIBUTES_V2_A>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8502,7 +8502,7 @@ pub struct RPC_CALL_ATTRIBUTES_V2_W {
     pub CallType: RpcCallType,
     pub CallLocalAddress: *mut RPC_CALL_LOCAL_ADDRESS_V1,
     pub OpNum: u16,
-    pub InterfaceUuid: ::windows::core::GUID,
+    pub InterfaceUuid: ::windows_core::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RPC_CALL_ATTRIBUTES_V2_W {}
@@ -8538,13 +8538,13 @@ impl ::core::fmt::Debug for RPC_CALL_ATTRIBUTES_V2_W {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RPC_CALL_ATTRIBUTES_V2_W {
+unsafe impl ::windows_core::Abi for RPC_CALL_ATTRIBUTES_V2_W {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RPC_CALL_ATTRIBUTES_V2_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_ATTRIBUTES_V2_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_ATTRIBUTES_V2_W>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8576,7 +8576,7 @@ pub struct RPC_CALL_ATTRIBUTES_V3_A {
     pub CallType: RpcCallType,
     pub CallLocalAddress: *mut RPC_CALL_LOCAL_ADDRESS_V1,
     pub OpNum: u16,
-    pub InterfaceUuid: ::windows::core::GUID,
+    pub InterfaceUuid: ::windows_core::GUID,
     pub ClientIdentifierBufferLength: u32,
     pub ClientIdentifier: *mut u8,
 }
@@ -8616,13 +8616,13 @@ impl ::core::fmt::Debug for RPC_CALL_ATTRIBUTES_V3_A {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RPC_CALL_ATTRIBUTES_V3_A {
+unsafe impl ::windows_core::Abi for RPC_CALL_ATTRIBUTES_V3_A {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RPC_CALL_ATTRIBUTES_V3_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_ATTRIBUTES_V3_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_ATTRIBUTES_V3_A>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8654,7 +8654,7 @@ pub struct RPC_CALL_ATTRIBUTES_V3_W {
     pub CallType: RpcCallType,
     pub CallLocalAddress: *mut RPC_CALL_LOCAL_ADDRESS_V1,
     pub OpNum: u16,
-    pub InterfaceUuid: ::windows::core::GUID,
+    pub InterfaceUuid: ::windows_core::GUID,
     pub ClientIdentifierBufferLength: u32,
     pub ClientIdentifier: *mut u8,
 }
@@ -8694,13 +8694,13 @@ impl ::core::fmt::Debug for RPC_CALL_ATTRIBUTES_V3_W {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RPC_CALL_ATTRIBUTES_V3_W {
+unsafe impl ::windows_core::Abi for RPC_CALL_ATTRIBUTES_V3_W {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RPC_CALL_ATTRIBUTES_V3_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_ATTRIBUTES_V3_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_ATTRIBUTES_V3_W>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8732,12 +8732,12 @@ impl ::core::fmt::Debug for RPC_CALL_LOCAL_ADDRESS_V1 {
         f.debug_struct("RPC_CALL_LOCAL_ADDRESS_V1").field("Version", &self.Version).field("Buffer", &self.Buffer).field("BufferSize", &self.BufferSize).field("AddressFormat", &self.AddressFormat).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_CALL_LOCAL_ADDRESS_V1 {
+unsafe impl ::windows_core::Abi for RPC_CALL_LOCAL_ADDRESS_V1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_CALL_LOCAL_ADDRESS_V1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_LOCAL_ADDRESS_V1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CALL_LOCAL_ADDRESS_V1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_CALL_LOCAL_ADDRESS_V1 {}
@@ -8773,12 +8773,12 @@ impl ::core::fmt::Debug for RPC_CLIENT_INFORMATION1 {
         f.debug_struct("RPC_CLIENT_INFORMATION1").field("UserName", &self.UserName).field("ComputerName", &self.ComputerName).field("Privilege", &self.Privilege).field("AuthFlags", &self.AuthFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_CLIENT_INFORMATION1 {
+unsafe impl ::windows_core::Abi for RPC_CLIENT_INFORMATION1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_CLIENT_INFORMATION1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CLIENT_INFORMATION1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CLIENT_INFORMATION1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_CLIENT_INFORMATION1 {}
@@ -8811,12 +8811,12 @@ impl ::core::fmt::Debug for RPC_CLIENT_INTERFACE {
         f.debug_struct("RPC_CLIENT_INTERFACE").field("Length", &self.Length).field("InterfaceId", &self.InterfaceId).field("TransferSyntax", &self.TransferSyntax).field("DispatchTable", &self.DispatchTable).field("RpcProtseqEndpointCount", &self.RpcProtseqEndpointCount).field("RpcProtseqEndpoint", &self.RpcProtseqEndpoint).field("Reserved", &self.Reserved).field("InterpreterInfo", &self.InterpreterInfo).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_CLIENT_INTERFACE {
+unsafe impl ::windows_core::Abi for RPC_CLIENT_INTERFACE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_CLIENT_INTERFACE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CLIENT_INTERFACE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_CLIENT_INTERFACE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_CLIENT_INTERFACE {}
@@ -8872,7 +8872,7 @@ impl ::core::default::Default for RPC_C_AUTHN_INFO_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RPC_C_AUTHN_INFO_TYPE {
+unsafe impl ::windows_core::Abi for RPC_C_AUTHN_INFO_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RPC_C_AUTHN_INFO_TYPE {
@@ -8963,7 +8963,7 @@ impl ::core::default::Default for RPC_C_HTTP_AUTHN_TARGET {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RPC_C_HTTP_AUTHN_TARGET {
+unsafe impl ::windows_core::Abi for RPC_C_HTTP_AUTHN_TARGET {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RPC_C_HTTP_AUTHN_TARGET {
@@ -9022,7 +9022,7 @@ impl ::core::default::Default for RPC_C_HTTP_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RPC_C_HTTP_FLAGS {
+unsafe impl ::windows_core::Abi for RPC_C_HTTP_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RPC_C_HTTP_FLAGS {
@@ -9110,7 +9110,7 @@ pub const RPC_C_OPT_COOKIE_AUTH: u32 = 7u32;
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 pub struct RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR {
     pub BufferSize: u32,
-    pub Buffer: ::windows::core::PSTR,
+    pub Buffer: ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR {}
 impl ::core::clone::Clone for RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR {
@@ -9123,12 +9123,12 @@ impl ::core::fmt::Debug for RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR {
         f.debug_struct("RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR").field("BufferSize", &self.BufferSize).field("Buffer", &self.Buffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR {
+unsafe impl ::windows_core::Abi for RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR {}
@@ -9224,7 +9224,7 @@ impl ::core::default::Default for RPC_C_QOS_CAPABILITIES {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RPC_C_QOS_CAPABILITIES {
+unsafe impl ::windows_core::Abi for RPC_C_QOS_CAPABILITIES {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RPC_C_QOS_CAPABILITIES {
@@ -9279,7 +9279,7 @@ impl ::core::default::Default for RPC_C_QOS_IDENTITY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RPC_C_QOS_IDENTITY {
+unsafe impl ::windows_core::Abi for RPC_C_QOS_IDENTITY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RPC_C_QOS_IDENTITY {
@@ -9345,12 +9345,12 @@ impl ::core::fmt::Debug for RPC_DISPATCH_TABLE {
         f.debug_struct("RPC_DISPATCH_TABLE").field("DispatchTableCount", &self.DispatchTableCount).field("DispatchTable", &self.DispatchTable.map(|f| f as usize)).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_DISPATCH_TABLE {
+unsafe impl ::windows_core::Abi for RPC_DISPATCH_TABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_DISPATCH_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_DISPATCH_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_DISPATCH_TABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_DISPATCH_TABLE {}
@@ -9373,12 +9373,12 @@ impl ::core::clone::Clone for RPC_EE_INFO_PARAM {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for RPC_EE_INFO_PARAM {
+unsafe impl ::windows_core::Abi for RPC_EE_INFO_PARAM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_EE_INFO_PARAM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_EE_INFO_PARAM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_EE_INFO_PARAM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_EE_INFO_PARAM {}
@@ -9390,8 +9390,8 @@ impl ::core::default::Default for RPC_EE_INFO_PARAM {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 pub union RPC_EE_INFO_PARAM_0 {
-    pub AnsiString: ::windows::core::PSTR,
-    pub UnicodeString: ::windows::core::PWSTR,
+    pub AnsiString: ::windows_core::PSTR,
+    pub UnicodeString: ::windows_core::PWSTR,
     pub LVal: i32,
     pub SVal: i16,
     pub PVal: u64,
@@ -9403,12 +9403,12 @@ impl ::core::clone::Clone for RPC_EE_INFO_PARAM_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for RPC_EE_INFO_PARAM_0 {
+unsafe impl ::windows_core::Abi for RPC_EE_INFO_PARAM_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_EE_INFO_PARAM_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_EE_INFO_PARAM_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_EE_INFO_PARAM_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_EE_INFO_PARAM_0 {}
@@ -9437,12 +9437,12 @@ impl ::core::fmt::Debug for RPC_ENDPOINT_TEMPLATEA {
         f.debug_struct("RPC_ENDPOINT_TEMPLATEA").field("Version", &self.Version).field("ProtSeq", &self.ProtSeq).field("Endpoint", &self.Endpoint).field("SecurityDescriptor", &self.SecurityDescriptor).field("Backlog", &self.Backlog).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_ENDPOINT_TEMPLATEA {
+unsafe impl ::windows_core::Abi for RPC_ENDPOINT_TEMPLATEA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_ENDPOINT_TEMPLATEA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ENDPOINT_TEMPLATEA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ENDPOINT_TEMPLATEA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_ENDPOINT_TEMPLATEA {}
@@ -9471,12 +9471,12 @@ impl ::core::fmt::Debug for RPC_ENDPOINT_TEMPLATEW {
         f.debug_struct("RPC_ENDPOINT_TEMPLATEW").field("Version", &self.Version).field("ProtSeq", &self.ProtSeq).field("Endpoint", &self.Endpoint).field("SecurityDescriptor", &self.SecurityDescriptor).field("Backlog", &self.Backlog).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_ENDPOINT_TEMPLATEW {
+unsafe impl ::windows_core::Abi for RPC_ENDPOINT_TEMPLATEW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_ENDPOINT_TEMPLATEW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ENDPOINT_TEMPLATEW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ENDPOINT_TEMPLATEW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_ENDPOINT_TEMPLATEW {}
@@ -9503,12 +9503,12 @@ impl ::core::fmt::Debug for RPC_ERROR_ENUM_HANDLE {
         f.debug_struct("RPC_ERROR_ENUM_HANDLE").field("Signature", &self.Signature).field("CurrentPos", &self.CurrentPos).field("Head", &self.Head).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_ERROR_ENUM_HANDLE {
+unsafe impl ::windows_core::Abi for RPC_ERROR_ENUM_HANDLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_ERROR_ENUM_HANDLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ERROR_ENUM_HANDLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_ERROR_ENUM_HANDLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_ERROR_ENUM_HANDLE {}
@@ -9522,7 +9522,7 @@ impl ::core::default::Default for RPC_ERROR_ENUM_HANDLE {
 #[cfg(feature = "Win32_Foundation")]
 pub struct RPC_EXTENDED_ERROR_INFO {
     pub Version: u32,
-    pub ComputerName: ::windows::core::PWSTR,
+    pub ComputerName: ::windows_core::PWSTR,
     pub ProcessID: u32,
     pub u: RPC_EXTENDED_ERROR_INFO_0,
     pub GeneratingComponent: u32,
@@ -9541,13 +9541,13 @@ impl ::core::clone::Clone for RPC_EXTENDED_ERROR_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RPC_EXTENDED_ERROR_INFO {
+unsafe impl ::windows_core::Abi for RPC_EXTENDED_ERROR_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RPC_EXTENDED_ERROR_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_EXTENDED_ERROR_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_EXTENDED_ERROR_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9574,13 +9574,13 @@ impl ::core::clone::Clone for RPC_EXTENDED_ERROR_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RPC_EXTENDED_ERROR_INFO_0 {
+unsafe impl ::windows_core::Abi for RPC_EXTENDED_ERROR_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RPC_EXTENDED_ERROR_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_EXTENDED_ERROR_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_EXTENDED_ERROR_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9594,7 +9594,7 @@ impl ::core::default::Default for RPC_EXTENDED_ERROR_INFO_0 {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 pub const RPC_FLAGS_VALID_BIT: u32 = 32768u32;
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
-pub type RPC_FORWARD_FUNCTION = ::core::option::Option<unsafe extern "system" fn(interfaceid: *mut ::windows::core::GUID, interfaceversion: *mut RPC_VERSION, objectid: *mut ::windows::core::GUID, rpcpro: *mut u8, ppdestendpoint: *mut *mut ::core::ffi::c_void) -> RPC_STATUS>;
+pub type RPC_FORWARD_FUNCTION = ::core::option::Option<unsafe extern "system" fn(interfaceid: *mut ::windows_core::GUID, interfaceversion: *mut RPC_VERSION, objectid: *mut ::windows_core::GUID, rpcpro: *mut u8, ppdestendpoint: *mut *mut ::core::ffi::c_void) -> RPC_STATUS>;
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 pub const RPC_FW_IF_FLAG_DCOM: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
@@ -9624,7 +9624,7 @@ impl ::core::default::Default for RPC_HTTP_REDIRECTOR_STAGE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RPC_HTTP_REDIRECTOR_STAGE {
+unsafe impl ::windows_core::Abi for RPC_HTTP_REDIRECTOR_STAGE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RPC_HTTP_REDIRECTOR_STAGE {
@@ -9653,12 +9653,12 @@ impl ::core::fmt::Debug for RPC_HTTP_TRANSPORT_CREDENTIALS_A {
         f.debug_struct("RPC_HTTP_TRANSPORT_CREDENTIALS_A").field("TransportCredentials", &self.TransportCredentials).field("Flags", &self.Flags).field("AuthenticationTarget", &self.AuthenticationTarget).field("NumberOfAuthnSchemes", &self.NumberOfAuthnSchemes).field("AuthnSchemes", &self.AuthnSchemes).field("ServerCertificateSubject", &self.ServerCertificateSubject).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_HTTP_TRANSPORT_CREDENTIALS_A {
+unsafe impl ::windows_core::Abi for RPC_HTTP_TRANSPORT_CREDENTIALS_A {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_HTTP_TRANSPORT_CREDENTIALS_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_HTTP_TRANSPORT_CREDENTIALS_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_HTTP_TRANSPORT_CREDENTIALS_A>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_HTTP_TRANSPORT_CREDENTIALS_A {}
@@ -9701,12 +9701,12 @@ impl ::core::fmt::Debug for RPC_HTTP_TRANSPORT_CREDENTIALS_V2_A {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_HTTP_TRANSPORT_CREDENTIALS_V2_A {
+unsafe impl ::windows_core::Abi for RPC_HTTP_TRANSPORT_CREDENTIALS_V2_A {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_HTTP_TRANSPORT_CREDENTIALS_V2_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_HTTP_TRANSPORT_CREDENTIALS_V2_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_HTTP_TRANSPORT_CREDENTIALS_V2_A>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_HTTP_TRANSPORT_CREDENTIALS_V2_A {}
@@ -9749,12 +9749,12 @@ impl ::core::fmt::Debug for RPC_HTTP_TRANSPORT_CREDENTIALS_V2_W {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_HTTP_TRANSPORT_CREDENTIALS_V2_W {
+unsafe impl ::windows_core::Abi for RPC_HTTP_TRANSPORT_CREDENTIALS_V2_W {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_HTTP_TRANSPORT_CREDENTIALS_V2_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_HTTP_TRANSPORT_CREDENTIALS_V2_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_HTTP_TRANSPORT_CREDENTIALS_V2_W>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_HTTP_TRANSPORT_CREDENTIALS_V2_W {}
@@ -9797,12 +9797,12 @@ impl ::core::fmt::Debug for RPC_HTTP_TRANSPORT_CREDENTIALS_V3_A {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_HTTP_TRANSPORT_CREDENTIALS_V3_A {
+unsafe impl ::windows_core::Abi for RPC_HTTP_TRANSPORT_CREDENTIALS_V3_A {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_HTTP_TRANSPORT_CREDENTIALS_V3_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_HTTP_TRANSPORT_CREDENTIALS_V3_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_HTTP_TRANSPORT_CREDENTIALS_V3_A>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_HTTP_TRANSPORT_CREDENTIALS_V3_A {}
@@ -9845,12 +9845,12 @@ impl ::core::fmt::Debug for RPC_HTTP_TRANSPORT_CREDENTIALS_V3_W {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_HTTP_TRANSPORT_CREDENTIALS_V3_W {
+unsafe impl ::windows_core::Abi for RPC_HTTP_TRANSPORT_CREDENTIALS_V3_W {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_HTTP_TRANSPORT_CREDENTIALS_V3_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_HTTP_TRANSPORT_CREDENTIALS_V3_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_HTTP_TRANSPORT_CREDENTIALS_V3_W>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_HTTP_TRANSPORT_CREDENTIALS_V3_W {}
@@ -9880,12 +9880,12 @@ impl ::core::fmt::Debug for RPC_HTTP_TRANSPORT_CREDENTIALS_W {
         f.debug_struct("RPC_HTTP_TRANSPORT_CREDENTIALS_W").field("TransportCredentials", &self.TransportCredentials).field("Flags", &self.Flags).field("AuthenticationTarget", &self.AuthenticationTarget).field("NumberOfAuthnSchemes", &self.NumberOfAuthnSchemes).field("AuthnSchemes", &self.AuthnSchemes).field("ServerCertificateSubject", &self.ServerCertificateSubject).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_HTTP_TRANSPORT_CREDENTIALS_W {
+unsafe impl ::windows_core::Abi for RPC_HTTP_TRANSPORT_CREDENTIALS_W {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_HTTP_TRANSPORT_CREDENTIALS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_HTTP_TRANSPORT_CREDENTIALS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_HTTP_TRANSPORT_CREDENTIALS_W>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_HTTP_TRANSPORT_CREDENTIALS_W {}
@@ -9911,7 +9911,7 @@ pub type RPC_IF_CALLBACK_FN = ::core::option::Option<unsafe extern "system" fn(i
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 pub struct RPC_IF_ID {
-    pub Uuid: ::windows::core::GUID,
+    pub Uuid: ::windows_core::GUID,
     pub VersMajor: u16,
     pub VersMinor: u16,
 }
@@ -9926,12 +9926,12 @@ impl ::core::fmt::Debug for RPC_IF_ID {
         f.debug_struct("RPC_IF_ID").field("Uuid", &self.Uuid).field("VersMajor", &self.VersMajor).field("VersMinor", &self.VersMinor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_IF_ID {
+unsafe impl ::windows_core::Abi for RPC_IF_ID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_IF_ID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_IF_ID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_IF_ID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_IF_ID {}
@@ -9957,12 +9957,12 @@ impl ::core::fmt::Debug for RPC_IF_ID_VECTOR {
         f.debug_struct("RPC_IF_ID_VECTOR").field("Count", &self.Count).field("IfId", &self.IfId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_IF_ID_VECTOR {
+unsafe impl ::windows_core::Abi for RPC_IF_ID_VECTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_IF_ID_VECTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_IF_ID_VECTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_IF_ID_VECTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_IF_ID_VECTOR {}
@@ -9995,12 +9995,12 @@ impl ::core::fmt::Debug for RPC_IMPORT_CONTEXT_P {
         f.debug_struct("RPC_IMPORT_CONTEXT_P").field("LookupContext", &self.LookupContext).field("ProposedHandle", &self.ProposedHandle).field("Bindings", &self.Bindings).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_IMPORT_CONTEXT_P {
+unsafe impl ::windows_core::Abi for RPC_IMPORT_CONTEXT_P {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_IMPORT_CONTEXT_P {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_IMPORT_CONTEXT_P>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_IMPORT_CONTEXT_P>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_IMPORT_CONTEXT_P {}
@@ -10018,7 +10018,7 @@ pub const RPC_INTERFACE_HAS_PIPES: u32 = 1u32;
 pub struct RPC_INTERFACE_TEMPLATEA {
     pub Version: u32,
     pub IfSpec: *mut ::core::ffi::c_void,
-    pub MgrTypeUuid: *mut ::windows::core::GUID,
+    pub MgrTypeUuid: *mut ::windows_core::GUID,
     pub MgrEpv: *mut ::core::ffi::c_void,
     pub Flags: u32,
     pub MaxCalls: u32,
@@ -10039,12 +10039,12 @@ impl ::core::fmt::Debug for RPC_INTERFACE_TEMPLATEA {
         f.debug_struct("RPC_INTERFACE_TEMPLATEA").field("Version", &self.Version).field("IfSpec", &self.IfSpec).field("MgrTypeUuid", &self.MgrTypeUuid).field("MgrEpv", &self.MgrEpv).field("Flags", &self.Flags).field("MaxCalls", &self.MaxCalls).field("MaxRpcSize", &self.MaxRpcSize).field("IfCallback", &self.IfCallback.map(|f| f as usize)).field("UuidVector", &self.UuidVector).field("Annotation", &self.Annotation).field("SecurityDescriptor", &self.SecurityDescriptor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_INTERFACE_TEMPLATEA {
+unsafe impl ::windows_core::Abi for RPC_INTERFACE_TEMPLATEA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_INTERFACE_TEMPLATEA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_INTERFACE_TEMPLATEA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_INTERFACE_TEMPLATEA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_INTERFACE_TEMPLATEA {}
@@ -10058,7 +10058,7 @@ impl ::core::default::Default for RPC_INTERFACE_TEMPLATEA {
 pub struct RPC_INTERFACE_TEMPLATEW {
     pub Version: u32,
     pub IfSpec: *mut ::core::ffi::c_void,
-    pub MgrTypeUuid: *mut ::windows::core::GUID,
+    pub MgrTypeUuid: *mut ::windows_core::GUID,
     pub MgrEpv: *mut ::core::ffi::c_void,
     pub Flags: u32,
     pub MaxCalls: u32,
@@ -10079,12 +10079,12 @@ impl ::core::fmt::Debug for RPC_INTERFACE_TEMPLATEW {
         f.debug_struct("RPC_INTERFACE_TEMPLATEW").field("Version", &self.Version).field("IfSpec", &self.IfSpec).field("MgrTypeUuid", &self.MgrTypeUuid).field("MgrEpv", &self.MgrEpv).field("Flags", &self.Flags).field("MaxCalls", &self.MaxCalls).field("MaxRpcSize", &self.MaxRpcSize).field("IfCallback", &self.IfCallback.map(|f| f as usize)).field("UuidVector", &self.UuidVector).field("Annotation", &self.Annotation).field("SecurityDescriptor", &self.SecurityDescriptor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_INTERFACE_TEMPLATEW {
+unsafe impl ::windows_core::Abi for RPC_INTERFACE_TEMPLATEW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_INTERFACE_TEMPLATEW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_INTERFACE_TEMPLATEW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_INTERFACE_TEMPLATEW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_INTERFACE_TEMPLATEW {}
@@ -10131,12 +10131,12 @@ impl ::core::fmt::Debug for RPC_MESSAGE {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_MESSAGE {
+unsafe impl ::windows_core::Abi for RPC_MESSAGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_MESSAGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_MESSAGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_MESSAGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_MESSAGE {}
@@ -10178,7 +10178,7 @@ impl ::core::default::Default for RPC_NOTIFICATIONS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RPC_NOTIFICATIONS {
+unsafe impl ::windows_core::Abi for RPC_NOTIFICATIONS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RPC_NOTIFICATIONS {
@@ -10213,7 +10213,7 @@ impl ::core::default::Default for RPC_NOTIFICATION_TYPES {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RPC_NOTIFICATION_TYPES {
+unsafe impl ::windows_core::Abi for RPC_NOTIFICATION_TYPES {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RPC_NOTIFICATION_TYPES {
@@ -10222,7 +10222,7 @@ impl ::core::fmt::Debug for RPC_NOTIFICATION_TYPES {
     }
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
-pub type RPC_OBJECT_INQ_FN = ::core::option::Option<unsafe extern "system" fn(objectuuid: *const ::windows::core::GUID, typeuuid: *mut ::windows::core::GUID, status: *mut RPC_STATUS)>;
+pub type RPC_OBJECT_INQ_FN = ::core::option::Option<unsafe extern "system" fn(objectuuid: *const ::windows_core::GUID, typeuuid: *mut ::windows_core::GUID, status: *mut RPC_STATUS)>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 pub struct RPC_POLICY {
@@ -10241,12 +10241,12 @@ impl ::core::fmt::Debug for RPC_POLICY {
         f.debug_struct("RPC_POLICY").field("Length", &self.Length).field("EndpointFlags", &self.EndpointFlags).field("NICFlags", &self.NICFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_POLICY {
+unsafe impl ::windows_core::Abi for RPC_POLICY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_POLICY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_POLICY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_POLICY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_POLICY {}
@@ -10272,12 +10272,12 @@ impl ::core::fmt::Debug for RPC_PROTSEQ_ENDPOINT {
         f.debug_struct("RPC_PROTSEQ_ENDPOINT").field("RpcProtocolSequence", &self.RpcProtocolSequence).field("Endpoint", &self.Endpoint).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_PROTSEQ_ENDPOINT {
+unsafe impl ::windows_core::Abi for RPC_PROTSEQ_ENDPOINT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_PROTSEQ_ENDPOINT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_PROTSEQ_ENDPOINT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_PROTSEQ_ENDPOINT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_PROTSEQ_ENDPOINT {}
@@ -10311,12 +10311,12 @@ impl ::core::fmt::Debug for RPC_PROTSEQ_VECTORA {
         f.debug_struct("RPC_PROTSEQ_VECTORA").field("Count", &self.Count).field("Protseq", &self.Protseq).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_PROTSEQ_VECTORA {
+unsafe impl ::windows_core::Abi for RPC_PROTSEQ_VECTORA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_PROTSEQ_VECTORA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_PROTSEQ_VECTORA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_PROTSEQ_VECTORA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_PROTSEQ_VECTORA {}
@@ -10342,12 +10342,12 @@ impl ::core::fmt::Debug for RPC_PROTSEQ_VECTORW {
         f.debug_struct("RPC_PROTSEQ_VECTORW").field("Count", &self.Count).field("Protseq", &self.Protseq).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_PROTSEQ_VECTORW {
+unsafe impl ::windows_core::Abi for RPC_PROTSEQ_VECTORW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_PROTSEQ_VECTORW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_PROTSEQ_VECTORW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_PROTSEQ_VECTORW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_PROTSEQ_VECTORW {}
@@ -10404,13 +10404,13 @@ impl ::core::fmt::Debug for RPC_SECURITY_QOS {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10441,13 +10441,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V2_A {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V2_A {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V2_A {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V2_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V2_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V2_A>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10473,13 +10473,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V2_A_0 {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V2_A_0 {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V2_A_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V2_A_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V2_A_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V2_A_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10510,13 +10510,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V2_W {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V2_W {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V2_W {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V2_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V2_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V2_W>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10542,13 +10542,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V2_W_0 {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V2_W_0 {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V2_W_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V2_W_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V2_W_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V2_W_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10580,13 +10580,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V3_A {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V3_A {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V3_A {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V3_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V3_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V3_A>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10612,13 +10612,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V3_A_0 {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V3_A_0 {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V3_A_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V3_A_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V3_A_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V3_A_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10650,13 +10650,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V3_W {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V3_W {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V3_W {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V3_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V3_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V3_W>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10682,13 +10682,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V3_W_0 {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V3_W_0 {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V3_W_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V3_W_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V3_W_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V3_W_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10721,13 +10721,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V4_A {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V4_A {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V4_A {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V4_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V4_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V4_A>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10753,13 +10753,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V4_A_0 {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V4_A_0 {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V4_A_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V4_A_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V4_A_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V4_A_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10792,13 +10792,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V4_W {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V4_W {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V4_W {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V4_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V4_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V4_W>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10824,13 +10824,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V4_W_0 {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V4_W_0 {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V4_W_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V4_W_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V4_W_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V4_W_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10864,13 +10864,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V5_A {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V5_A {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V5_A {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V5_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V5_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V5_A>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10896,13 +10896,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V5_A_0 {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V5_A_0 {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V5_A_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V5_A_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V5_A_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V5_A_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10936,13 +10936,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V5_W {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V5_W {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V5_W {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V5_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V5_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V5_W>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10968,13 +10968,13 @@ impl ::core::clone::Clone for RPC_SECURITY_QOS_V5_W_0 {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for RPC_SECURITY_QOS_V5_W_0 {
+unsafe impl ::windows_core::Abi for RPC_SECURITY_QOS_V5_W_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for RPC_SECURITY_QOS_V5_W_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V5_W_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SECURITY_QOS_V5_W_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -11003,12 +11003,12 @@ impl ::core::fmt::Debug for RPC_SEC_CONTEXT_KEY_INFO {
         f.debug_struct("RPC_SEC_CONTEXT_KEY_INFO").field("EncryptAlgorithm", &self.EncryptAlgorithm).field("KeySize", &self.KeySize).field("SignatureAlgorithm", &self.SignatureAlgorithm).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_SEC_CONTEXT_KEY_INFO {
+unsafe impl ::windows_core::Abi for RPC_SEC_CONTEXT_KEY_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_SEC_CONTEXT_KEY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SEC_CONTEXT_KEY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SEC_CONTEXT_KEY_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_SEC_CONTEXT_KEY_INFO {}
@@ -11041,12 +11041,12 @@ impl ::core::fmt::Debug for RPC_SERVER_INTERFACE {
         f.debug_struct("RPC_SERVER_INTERFACE").field("Length", &self.Length).field("InterfaceId", &self.InterfaceId).field("TransferSyntax", &self.TransferSyntax).field("DispatchTable", &self.DispatchTable).field("RpcProtseqEndpointCount", &self.RpcProtseqEndpointCount).field("RpcProtseqEndpoint", &self.RpcProtseqEndpoint).field("DefaultManagerEpv", &self.DefaultManagerEpv).field("InterpreterInfo", &self.InterpreterInfo).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_SERVER_INTERFACE {
+unsafe impl ::windows_core::Abi for RPC_SERVER_INTERFACE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_SERVER_INTERFACE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SERVER_INTERFACE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SERVER_INTERFACE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_SERVER_INTERFACE {}
@@ -11074,12 +11074,12 @@ impl ::core::fmt::Debug for RPC_STATS_VECTOR {
         f.debug_struct("RPC_STATS_VECTOR").field("Count", &self.Count).field("Stats", &self.Stats).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_STATS_VECTOR {
+unsafe impl ::windows_core::Abi for RPC_STATS_VECTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_STATS_VECTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_STATS_VECTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_STATS_VECTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_STATS_VECTOR {}
@@ -11303,7 +11303,7 @@ impl ::core::default::Default for RPC_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RPC_STATUS {
+unsafe impl ::windows_core::Abi for RPC_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RPC_STATUS {
@@ -11314,7 +11314,7 @@ impl ::core::fmt::Debug for RPC_STATUS {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 pub struct RPC_SYNTAX_IDENTIFIER {
-    pub SyntaxGUID: ::windows::core::GUID,
+    pub SyntaxGUID: ::windows_core::GUID,
     pub SyntaxVersion: RPC_VERSION,
 }
 impl ::core::marker::Copy for RPC_SYNTAX_IDENTIFIER {}
@@ -11328,12 +11328,12 @@ impl ::core::fmt::Debug for RPC_SYNTAX_IDENTIFIER {
         f.debug_struct("RPC_SYNTAX_IDENTIFIER").field("SyntaxGUID", &self.SyntaxGUID).field("SyntaxVersion", &self.SyntaxVersion).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_SYNTAX_IDENTIFIER {
+unsafe impl ::windows_core::Abi for RPC_SYNTAX_IDENTIFIER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_SYNTAX_IDENTIFIER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SYNTAX_IDENTIFIER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_SYNTAX_IDENTIFIER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_SYNTAX_IDENTIFIER {}
@@ -11353,7 +11353,7 @@ pub const RPC_SYSTEM_HANDLE_FREE_UNRETRIEVED: u32 = 1u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 pub struct RPC_TRANSFER_SYNTAX {
-    pub Uuid: ::windows::core::GUID,
+    pub Uuid: ::windows_core::GUID,
     pub VersMajor: u16,
     pub VersMinor: u16,
 }
@@ -11368,12 +11368,12 @@ impl ::core::fmt::Debug for RPC_TRANSFER_SYNTAX {
         f.debug_struct("RPC_TRANSFER_SYNTAX").field("Uuid", &self.Uuid).field("VersMajor", &self.VersMajor).field("VersMinor", &self.VersMinor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_TRANSFER_SYNTAX {
+unsafe impl ::windows_core::Abi for RPC_TRANSFER_SYNTAX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_TRANSFER_SYNTAX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_TRANSFER_SYNTAX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_TRANSFER_SYNTAX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_TRANSFER_SYNTAX {}
@@ -11403,12 +11403,12 @@ impl ::core::fmt::Debug for RPC_VERSION {
         f.debug_struct("RPC_VERSION").field("MajorVersion", &self.MajorVersion).field("MinorVersion", &self.MinorVersion).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RPC_VERSION {
+unsafe impl ::windows_core::Abi for RPC_VERSION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RPC_VERSION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_VERSION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RPC_VERSION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RPC_VERSION {}
@@ -11435,7 +11435,7 @@ pub unsafe fn RpcAsyncAbortCall(pasync: *mut RPC_ASYNC_STATE, exceptioncode: u32
 #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_Foundation\"`, `\"Win32_System_IO\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
-pub unsafe fn RpcAsyncCancelCall<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(pasync: *mut RPC_ASYNC_STATE, fabort: Param1) -> RPC_STATUS {
+pub unsafe fn RpcAsyncCancelCall<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(pasync: *mut RPC_ASYNC_STATE, fabort: Param1) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11738,12 +11738,12 @@ pub unsafe fn RpcBindingInqMaxCalls(binding: *const ::core::ffi::c_void, maxcall
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcBindingInqObject(binding: *const ::core::ffi::c_void, objectuuid: *mut ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn RpcBindingInqObject(binding: *const ::core::ffi::c_void, objectuuid: *mut ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcBindingInqObject(binding: *const ::core::ffi::c_void, objectuuid: *mut ::windows::core::GUID) -> RPC_STATUS;
+            fn RpcBindingInqObject(binding: *const ::core::ffi::c_void, objectuuid: *mut ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcBindingInqObject(::core::mem::transmute(binding), ::core::mem::transmute(objectuuid)))
     }
@@ -11852,12 +11852,12 @@ pub unsafe fn RpcBindingSetAuthInfoW(binding: *const ::core::ffi::c_void, server
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcBindingSetObject(binding: *const ::core::ffi::c_void, objectuuid: *const ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn RpcBindingSetObject(binding: *const ::core::ffi::c_void, objectuuid: *const ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcBindingSetObject(binding: *const ::core::ffi::c_void, objectuuid: *const ::windows::core::GUID) -> RPC_STATUS;
+            fn RpcBindingSetObject(binding: *const ::core::ffi::c_void, objectuuid: *const ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcBindingSetObject(::core::mem::transmute(binding), ::core::mem::transmute(objectuuid)))
     }
@@ -11957,7 +11957,7 @@ impl ::core::default::Default for RpcCallClientLocality {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RpcCallClientLocality {
+unsafe impl ::windows_core::Abi for RpcCallClientLocality {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RpcCallClientLocality {
@@ -11988,7 +11988,7 @@ impl ::core::default::Default for RpcCallType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RpcCallType {
+unsafe impl ::windows_core::Abi for RpcCallType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RpcCallType {
@@ -12184,7 +12184,7 @@ pub unsafe fn RpcErrorEndEnumeration(enumhandle: *mut RPC_ERROR_ENUM_HANDLE) -> 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RpcErrorGetNextRecord<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(enumhandle: *const RPC_ERROR_ENUM_HANDLE, copystrings: Param1, errorinfo: *mut RPC_EXTENDED_ERROR_INFO) -> RPC_STATUS {
+pub unsafe fn RpcErrorGetNextRecord<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(enumhandle: *const RPC_ERROR_ENUM_HANDLE, copystrings: Param1, errorinfo: *mut RPC_EXTENDED_ERROR_INFO) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -12297,7 +12297,7 @@ pub unsafe fn RpcFreeAuthorizationContext(pauthzclientcontext: *mut *mut ::core:
 #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RpcGetAuthorizationContextForClient<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LUID>>(clientbinding: *const ::core::ffi::c_void, impersonateonreturn: Param1, reserved1: *const ::core::ffi::c_void, pexpirationtime: *const i64, reserved2: Param4, reserved3: u32, reserved4: *const ::core::ffi::c_void, pauthzclientcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
+pub unsafe fn RpcGetAuthorizationContextForClient<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LUID>>(clientbinding: *const ::core::ffi::c_void, impersonateonreturn: Param1, reserved1: *const ::core::ffi::c_void, pexpirationtime: *const i64, reserved2: Param4, reserved3: u32, reserved4: *const ::core::ffi::c_void, pauthzclientcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -12400,7 +12400,7 @@ impl ::core::default::Default for RpcLocalAddressFormat {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RpcLocalAddressFormat {
+unsafe impl ::windows_core::Abi for RpcLocalAddressFormat {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RpcLocalAddressFormat {
@@ -12424,12 +12424,12 @@ pub unsafe fn RpcMgmtEnableIdleCleanup() -> RPC_STATUS {
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcMgmtEpEltInqBegin(epbinding: *const ::core::ffi::c_void, inquirytype: u32, ifid: *const RPC_IF_ID, versoption: u32, objectuuid: *const ::windows::core::GUID, inquirycontext: *mut *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
+pub unsafe fn RpcMgmtEpEltInqBegin(epbinding: *const ::core::ffi::c_void, inquirytype: u32, ifid: *const RPC_IF_ID, versoption: u32, objectuuid: *const ::windows_core::GUID, inquirycontext: *mut *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcMgmtEpEltInqBegin(epbinding: *const ::core::ffi::c_void, inquirytype: u32, ifid: *const RPC_IF_ID, versoption: u32, objectuuid: *const ::windows::core::GUID, inquirycontext: *mut *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+            fn RpcMgmtEpEltInqBegin(epbinding: *const ::core::ffi::c_void, inquirytype: u32, ifid: *const RPC_IF_ID, versoption: u32, objectuuid: *const ::windows_core::GUID, inquirycontext: *mut *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcMgmtEpEltInqBegin(::core::mem::transmute(epbinding), ::core::mem::transmute(inquirytype), ::core::mem::transmute(ifid), ::core::mem::transmute(versoption), ::core::mem::transmute(objectuuid), ::core::mem::transmute(inquirycontext)))
     }
@@ -12452,12 +12452,12 @@ pub unsafe fn RpcMgmtEpEltInqDone(inquirycontext: *mut *mut *mut ::core::ffi::c_
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcMgmtEpEltInqNextA(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows::core::GUID, annotation: *mut *mut u8) -> RPC_STATUS {
+pub unsafe fn RpcMgmtEpEltInqNextA(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows_core::GUID, annotation: *mut *mut u8) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcMgmtEpEltInqNextA(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows::core::GUID, annotation: *mut *mut u8) -> RPC_STATUS;
+            fn RpcMgmtEpEltInqNextA(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows_core::GUID, annotation: *mut *mut u8) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcMgmtEpEltInqNextA(::core::mem::transmute(inquirycontext), ::core::mem::transmute(ifid), ::core::mem::transmute(binding), ::core::mem::transmute(objectuuid), ::core::mem::transmute(annotation)))
     }
@@ -12466,12 +12466,12 @@ pub unsafe fn RpcMgmtEpEltInqNextA(inquirycontext: *const *const ::core::ffi::c_
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcMgmtEpEltInqNextW(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows::core::GUID, annotation: *mut *mut u16) -> RPC_STATUS {
+pub unsafe fn RpcMgmtEpEltInqNextW(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows_core::GUID, annotation: *mut *mut u16) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcMgmtEpEltInqNextW(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows::core::GUID, annotation: *mut *mut u16) -> RPC_STATUS;
+            fn RpcMgmtEpEltInqNextW(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows_core::GUID, annotation: *mut *mut u16) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcMgmtEpEltInqNextW(::core::mem::transmute(inquirycontext), ::core::mem::transmute(ifid), ::core::mem::transmute(binding), ::core::mem::transmute(objectuuid), ::core::mem::transmute(annotation)))
     }
@@ -12480,12 +12480,12 @@ pub unsafe fn RpcMgmtEpEltInqNextW(inquirycontext: *const *const ::core::ffi::c_
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcMgmtEpUnregister(epbinding: *const ::core::ffi::c_void, ifid: *const RPC_IF_ID, binding: *const ::core::ffi::c_void, objectuuid: *const ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn RpcMgmtEpUnregister(epbinding: *const ::core::ffi::c_void, ifid: *const RPC_IF_ID, binding: *const ::core::ffi::c_void, objectuuid: *const ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcMgmtEpUnregister(epbinding: *const ::core::ffi::c_void, ifid: *const RPC_IF_ID, binding: *const ::core::ffi::c_void, objectuuid: *const ::windows::core::GUID) -> RPC_STATUS;
+            fn RpcMgmtEpUnregister(epbinding: *const ::core::ffi::c_void, ifid: *const RPC_IF_ID, binding: *const ::core::ffi::c_void, objectuuid: *const ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcMgmtEpUnregister(::core::mem::transmute(epbinding), ::core::mem::transmute(ifid), ::core::mem::transmute(binding), ::core::mem::transmute(objectuuid)))
     }
@@ -12597,7 +12597,7 @@ pub unsafe fn RpcMgmtSetAuthorizationFn(authorizationfn: RPC_MGMT_AUTHORIZATION_
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcMgmtSetAuthorizationFn(authorizationfn: ::windows::core::RawPtr) -> RPC_STATUS;
+            fn RpcMgmtSetAuthorizationFn(authorizationfn: ::windows_core::RawPtr) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcMgmtSetAuthorizationFn(::core::mem::transmute(authorizationfn)))
     }
@@ -12802,12 +12802,12 @@ pub unsafe fn RpcNsBindingExportW(entrynamesyntax: u32, entryname: *const u16, i
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcNsBindingImportBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows::core::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
+pub unsafe fn RpcNsBindingImportBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_core::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcNsBindingImportBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows::core::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+            fn RpcNsBindingImportBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_core::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcNsBindingImportBeginA(::core::mem::transmute(entrynamesyntax), ::core::mem::transmute(entryname), ::core::mem::transmute(ifspec), ::core::mem::transmute(objuuid), ::core::mem::transmute(importcontext)))
     }
@@ -12816,12 +12816,12 @@ pub unsafe fn RpcNsBindingImportBeginA(entrynamesyntax: u32, entryname: *const u
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcNsBindingImportBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows::core::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
+pub unsafe fn RpcNsBindingImportBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_core::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcNsBindingImportBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows::core::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+            fn RpcNsBindingImportBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_core::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcNsBindingImportBeginW(::core::mem::transmute(entrynamesyntax), ::core::mem::transmute(entryname), ::core::mem::transmute(ifspec), ::core::mem::transmute(objuuid), ::core::mem::transmute(importcontext)))
     }
@@ -12886,12 +12886,12 @@ pub unsafe fn RpcNsBindingInqEntryNameW(binding: *const ::core::ffi::c_void, ent
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcNsBindingLookupBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows::core::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
+pub unsafe fn RpcNsBindingLookupBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_core::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcNsBindingLookupBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows::core::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+            fn RpcNsBindingLookupBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_core::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcNsBindingLookupBeginA(::core::mem::transmute(entrynamesyntax), ::core::mem::transmute(entryname), ::core::mem::transmute(ifspec), ::core::mem::transmute(objuuid), ::core::mem::transmute(bindingmaxcount), ::core::mem::transmute(lookupcontext)))
     }
@@ -12900,12 +12900,12 @@ pub unsafe fn RpcNsBindingLookupBeginA(entrynamesyntax: u32, entryname: *const u
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcNsBindingLookupBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows::core::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
+pub unsafe fn RpcNsBindingLookupBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_core::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcNsBindingLookupBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows::core::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+            fn RpcNsBindingLookupBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_core::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcNsBindingLookupBeginW(::core::mem::transmute(entrynamesyntax), ::core::mem::transmute(entryname), ::core::mem::transmute(ifspec), ::core::mem::transmute(objuuid), ::core::mem::transmute(bindingmaxcount), ::core::mem::transmute(lookupcontext)))
     }
@@ -13082,12 +13082,12 @@ pub unsafe fn RpcNsEntryObjectInqDone(inquirycontext: *mut *mut ::core::ffi::c_v
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcNsEntryObjectInqNext(inquirycontext: *mut ::core::ffi::c_void, objuuid: *mut ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn RpcNsEntryObjectInqNext(inquirycontext: *mut ::core::ffi::c_void, objuuid: *mut ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcNsEntryObjectInqNext(inquirycontext: *mut ::core::ffi::c_void, objuuid: *mut ::windows::core::GUID) -> RPC_STATUS;
+            fn RpcNsEntryObjectInqNext(inquirycontext: *mut ::core::ffi::c_void, objuuid: *mut ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcNsEntryObjectInqNext(::core::mem::transmute(inquirycontext), ::core::mem::transmute(objuuid)))
     }
@@ -13558,12 +13558,12 @@ pub unsafe fn RpcNsProfileEltRemoveW(profilenamesyntax: u32, profilename: *const
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcObjectInqType(objuuid: *const ::windows::core::GUID, typeuuid: *mut ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn RpcObjectInqType(objuuid: *const ::windows_core::GUID, typeuuid: *mut ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcObjectInqType(objuuid: *const ::windows::core::GUID, typeuuid: *mut ::windows::core::GUID) -> RPC_STATUS;
+            fn RpcObjectInqType(objuuid: *const ::windows_core::GUID, typeuuid: *mut ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcObjectInqType(::core::mem::transmute(objuuid), ::core::mem::transmute(typeuuid)))
     }
@@ -13577,7 +13577,7 @@ pub unsafe fn RpcObjectSetInqFn(inquiryfn: RPC_OBJECT_INQ_FN) -> RPC_STATUS {
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcObjectSetInqFn(inquiryfn: ::windows::core::RawPtr) -> RPC_STATUS;
+            fn RpcObjectSetInqFn(inquiryfn: ::windows_core::RawPtr) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcObjectSetInqFn(::core::mem::transmute(inquiryfn)))
     }
@@ -13586,12 +13586,12 @@ pub unsafe fn RpcObjectSetInqFn(inquiryfn: RPC_OBJECT_INQ_FN) -> RPC_STATUS {
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcObjectSetType(objuuid: *const ::windows::core::GUID, typeuuid: *const ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn RpcObjectSetType(objuuid: *const ::windows_core::GUID, typeuuid: *const ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcObjectSetType(objuuid: *const ::windows::core::GUID, typeuuid: *const ::windows::core::GUID) -> RPC_STATUS;
+            fn RpcObjectSetType(objuuid: *const ::windows_core::GUID, typeuuid: *const ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcObjectSetType(::core::mem::transmute(objuuid), ::core::mem::transmute(typeuuid)))
     }
@@ -13665,7 +13665,7 @@ impl ::core::default::Default for RpcProxyPerfCounters {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RpcProxyPerfCounters {
+unsafe impl ::windows_core::Abi for RpcProxyPerfCounters {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RpcProxyPerfCounters {
@@ -13843,12 +13843,12 @@ pub unsafe fn RpcServerInqDefaultPrincNameW(authnsvc: u32, princname: *mut *mut 
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcServerInqIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
+pub unsafe fn RpcServerInqIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, mgrepv: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcServerInqIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+            fn RpcServerInqIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, mgrepv: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcServerInqIf(::core::mem::transmute(ifspec), ::core::mem::transmute(mgrtypeuuid), ::core::mem::transmute(mgrepv)))
     }
@@ -13890,9 +13890,9 @@ pub unsafe fn RpcServerInterfaceGroupCreateA(interfaces: &[RPC_INTERFACE_TEMPLAT
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcServerInterfaceGroupCreateA(interfaces: *const RPC_INTERFACE_TEMPLATEA, numifs: u32, endpoints: *const RPC_ENDPOINT_TEMPLATEA, numendpoints: u32, idleperiod: u32, idlecallbackfn: ::windows::core::RawPtr, idlecallbackcontext: *const ::core::ffi::c_void, ifgroup: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+            fn RpcServerInterfaceGroupCreateA(interfaces: *const RPC_INTERFACE_TEMPLATEA, numifs: u32, endpoints: *const RPC_ENDPOINT_TEMPLATEA, numendpoints: u32, idleperiod: u32, idlecallbackfn: ::windows_core::RawPtr, idlecallbackcontext: *const ::core::ffi::c_void, ifgroup: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
         }
-        ::core::mem::transmute(RpcServerInterfaceGroupCreateA(::core::mem::transmute(::windows::core::as_ptr_or_null(interfaces)), interfaces.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(endpoints)), endpoints.len() as _, ::core::mem::transmute(idleperiod), ::core::mem::transmute(idlecallbackfn), ::core::mem::transmute(idlecallbackcontext), ::core::mem::transmute(ifgroup)))
+        ::core::mem::transmute(RpcServerInterfaceGroupCreateA(::core::mem::transmute(::windows_core::as_ptr_or_null(interfaces)), interfaces.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(endpoints)), endpoints.len() as _, ::core::mem::transmute(idleperiod), ::core::mem::transmute(idlecallbackfn), ::core::mem::transmute(idlecallbackcontext), ::core::mem::transmute(ifgroup)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13904,9 +13904,9 @@ pub unsafe fn RpcServerInterfaceGroupCreateW(interfaces: &[RPC_INTERFACE_TEMPLAT
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcServerInterfaceGroupCreateW(interfaces: *const RPC_INTERFACE_TEMPLATEW, numifs: u32, endpoints: *const RPC_ENDPOINT_TEMPLATEW, numendpoints: u32, idleperiod: u32, idlecallbackfn: ::windows::core::RawPtr, idlecallbackcontext: *const ::core::ffi::c_void, ifgroup: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+            fn RpcServerInterfaceGroupCreateW(interfaces: *const RPC_INTERFACE_TEMPLATEW, numifs: u32, endpoints: *const RPC_ENDPOINT_TEMPLATEW, numendpoints: u32, idleperiod: u32, idlecallbackfn: ::windows_core::RawPtr, idlecallbackcontext: *const ::core::ffi::c_void, ifgroup: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
         }
-        ::core::mem::transmute(RpcServerInterfaceGroupCreateW(::core::mem::transmute(::windows::core::as_ptr_or_null(interfaces)), interfaces.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(endpoints)), endpoints.len() as _, ::core::mem::transmute(idleperiod), ::core::mem::transmute(idlecallbackfn), ::core::mem::transmute(idlecallbackcontext), ::core::mem::transmute(ifgroup)))
+        ::core::mem::transmute(RpcServerInterfaceGroupCreateW(::core::mem::transmute(::windows_core::as_ptr_or_null(interfaces)), interfaces.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(endpoints)), endpoints.len() as _, ::core::mem::transmute(idleperiod), ::core::mem::transmute(idlecallbackfn), ::core::mem::transmute(idlecallbackcontext), ::core::mem::transmute(ifgroup)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13960,7 +13960,7 @@ pub unsafe fn RpcServerRegisterAuthInfoA(serverprincname: *const u8, authnsvc: u
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcServerRegisterAuthInfoA(serverprincname: *const u8, authnsvc: u32, getkeyfn: ::windows::core::RawPtr, arg: *const ::core::ffi::c_void) -> RPC_STATUS;
+            fn RpcServerRegisterAuthInfoA(serverprincname: *const u8, authnsvc: u32, getkeyfn: ::windows_core::RawPtr, arg: *const ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcServerRegisterAuthInfoA(::core::mem::transmute(serverprincname), ::core::mem::transmute(authnsvc), ::core::mem::transmute(getkeyfn), ::core::mem::transmute(arg)))
     }
@@ -13974,7 +13974,7 @@ pub unsafe fn RpcServerRegisterAuthInfoW(serverprincname: *const u16, authnsvc: 
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcServerRegisterAuthInfoW(serverprincname: *const u16, authnsvc: u32, getkeyfn: ::windows::core::RawPtr, arg: *const ::core::ffi::c_void) -> RPC_STATUS;
+            fn RpcServerRegisterAuthInfoW(serverprincname: *const u16, authnsvc: u32, getkeyfn: ::windows_core::RawPtr, arg: *const ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcServerRegisterAuthInfoW(::core::mem::transmute(serverprincname), ::core::mem::transmute(authnsvc), ::core::mem::transmute(getkeyfn), ::core::mem::transmute(arg)))
     }
@@ -13983,12 +13983,12 @@ pub unsafe fn RpcServerRegisterAuthInfoW(serverprincname: *const u16, authnsvc: 
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcServerRegisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *const ::core::ffi::c_void) -> RPC_STATUS {
+pub unsafe fn RpcServerRegisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, mgrepv: *const ::core::ffi::c_void) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcServerRegisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *const ::core::ffi::c_void) -> RPC_STATUS;
+            fn RpcServerRegisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, mgrepv: *const ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcServerRegisterIf(::core::mem::transmute(ifspec), ::core::mem::transmute(mgrtypeuuid), ::core::mem::transmute(mgrepv)))
     }
@@ -13997,12 +13997,12 @@ pub unsafe fn RpcServerRegisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuui
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcServerRegisterIf2(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallbackfn: RPC_IF_CALLBACK_FN) -> RPC_STATUS {
+pub unsafe fn RpcServerRegisterIf2(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallbackfn: RPC_IF_CALLBACK_FN) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcServerRegisterIf2(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallbackfn: ::windows::core::RawPtr) -> RPC_STATUS;
+            fn RpcServerRegisterIf2(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallbackfn: ::windows_core::RawPtr) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcServerRegisterIf2(::core::mem::transmute(ifspec), ::core::mem::transmute(mgrtypeuuid), ::core::mem::transmute(mgrepv), ::core::mem::transmute(flags), ::core::mem::transmute(maxcalls), ::core::mem::transmute(maxrpcsize), ::core::mem::transmute(ifcallbackfn)))
     }
@@ -14011,12 +14011,12 @@ pub unsafe fn RpcServerRegisterIf2(ifspec: *const ::core::ffi::c_void, mgrtypeuu
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcServerRegisterIf3(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallback: RPC_IF_CALLBACK_FN, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS {
+pub unsafe fn RpcServerRegisterIf3(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallback: RPC_IF_CALLBACK_FN, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcServerRegisterIf3(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallback: ::windows::core::RawPtr, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
+            fn RpcServerRegisterIf3(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallback: ::windows_core::RawPtr, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcServerRegisterIf3(::core::mem::transmute(ifspec), ::core::mem::transmute(mgrtypeuuid), ::core::mem::transmute(mgrepv), ::core::mem::transmute(flags), ::core::mem::transmute(maxcalls), ::core::mem::transmute(maxrpcsize), ::core::mem::transmute(ifcallback), ::core::mem::transmute(securitydescriptor)))
     }
@@ -14025,12 +14025,12 @@ pub unsafe fn RpcServerRegisterIf3(ifspec: *const ::core::ffi::c_void, mgrtypeuu
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcServerRegisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, ifcallback: RPC_IF_CALLBACK_FN) -> RPC_STATUS {
+pub unsafe fn RpcServerRegisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, ifcallback: RPC_IF_CALLBACK_FN) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcServerRegisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, ifcallback: ::windows::core::RawPtr) -> RPC_STATUS;
+            fn RpcServerRegisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, ifcallback: ::windows_core::RawPtr) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcServerRegisterIfEx(::core::mem::transmute(ifspec), ::core::mem::transmute(mgrtypeuuid), ::core::mem::transmute(mgrepv), ::core::mem::transmute(flags), ::core::mem::transmute(maxcalls), ::core::mem::transmute(ifcallback)))
     }
@@ -14068,12 +14068,12 @@ pub unsafe fn RpcServerTestCancel(bindinghandle: *const ::core::ffi::c_void) -> 
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcServerUnregisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, waitforcallstocomplete: u32) -> RPC_STATUS {
+pub unsafe fn RpcServerUnregisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, waitforcallstocomplete: u32) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcServerUnregisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, waitforcallstocomplete: u32) -> RPC_STATUS;
+            fn RpcServerUnregisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, waitforcallstocomplete: u32) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcServerUnregisterIf(::core::mem::transmute(ifspec), ::core::mem::transmute(mgrtypeuuid), ::core::mem::transmute(waitforcallstocomplete)))
     }
@@ -14082,12 +14082,12 @@ pub unsafe fn RpcServerUnregisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeu
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn RpcServerUnregisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, rundowncontexthandles: i32) -> RPC_STATUS {
+pub unsafe fn RpcServerUnregisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, rundowncontexthandles: i32) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcServerUnregisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, rundowncontexthandles: i32) -> RPC_STATUS;
+            fn RpcServerUnregisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core::GUID, rundowncontexthandles: i32) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcServerUnregisterIfEx(::core::mem::transmute(ifspec), ::core::mem::transmute(mgrtypeuuid), ::core::mem::transmute(rundowncontexthandles)))
     }
@@ -14451,7 +14451,7 @@ pub unsafe fn RpcSmSetClientAllocFree(clientalloc: RPC_CLIENT_ALLOC, clientfree:
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcSmSetClientAllocFree(clientalloc: ::windows::core::RawPtr, clientfree: ::windows::core::RawPtr) -> RPC_STATUS;
+            fn RpcSmSetClientAllocFree(clientalloc: ::windows_core::RawPtr, clientfree: ::windows_core::RawPtr) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcSmSetClientAllocFree(::core::mem::transmute(clientalloc), ::core::mem::transmute(clientfree)))
     }
@@ -14479,7 +14479,7 @@ pub unsafe fn RpcSmSwapClientAllocFree(clientalloc: RPC_CLIENT_ALLOC, clientfree
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcSmSwapClientAllocFree(clientalloc: ::windows::core::RawPtr, clientfree: ::windows::core::RawPtr, oldclientalloc: *mut ::windows::core::RawPtr, oldclientfree: *mut ::windows::core::RawPtr) -> RPC_STATUS;
+            fn RpcSmSwapClientAllocFree(clientalloc: ::windows_core::RawPtr, clientfree: ::windows_core::RawPtr, oldclientalloc: *mut ::windows_core::RawPtr, oldclientfree: *mut ::windows_core::RawPtr) -> RPC_STATUS;
         }
         ::core::mem::transmute(RpcSmSwapClientAllocFree(::core::mem::transmute(clientalloc), ::core::mem::transmute(clientfree), ::core::mem::transmute(oldclientalloc), ::core::mem::transmute(oldclientfree)))
     }
@@ -14633,7 +14633,7 @@ pub unsafe fn RpcSsSetClientAllocFree(clientalloc: RPC_CLIENT_ALLOC, clientfree:
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcSsSetClientAllocFree(clientalloc: ::windows::core::RawPtr, clientfree: ::windows::core::RawPtr);
+            fn RpcSsSetClientAllocFree(clientalloc: ::windows_core::RawPtr, clientfree: ::windows_core::RawPtr);
         }
         RpcSsSetClientAllocFree(::core::mem::transmute(clientalloc), ::core::mem::transmute(clientfree))
     }
@@ -14661,7 +14661,7 @@ pub unsafe fn RpcSsSwapClientAllocFree(clientalloc: RPC_CLIENT_ALLOC, clientfree
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RpcSsSwapClientAllocFree(clientalloc: ::windows::core::RawPtr, clientfree: ::windows::core::RawPtr, oldclientalloc: *mut ::windows::core::RawPtr, oldclientfree: *mut ::windows::core::RawPtr);
+            fn RpcSsSwapClientAllocFree(clientalloc: ::windows_core::RawPtr, clientfree: ::windows_core::RawPtr, oldclientalloc: *mut ::windows_core::RawPtr, oldclientfree: *mut ::windows_core::RawPtr);
         }
         RpcSsSwapClientAllocFree(::core::mem::transmute(clientalloc), ::core::mem::transmute(clientfree), ::core::mem::transmute(oldclientalloc), ::core::mem::transmute(oldclientfree))
     }
@@ -14797,12 +14797,12 @@ impl ::core::fmt::Debug for SCONTEXT_QUEUE {
         f.debug_struct("SCONTEXT_QUEUE").field("NumberOfObjects", &self.NumberOfObjects).field("ArrayOfObjects", &self.ArrayOfObjects).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SCONTEXT_QUEUE {
+unsafe impl ::windows_core::Abi for SCONTEXT_QUEUE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SCONTEXT_QUEUE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCONTEXT_QUEUE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCONTEXT_QUEUE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SCONTEXT_QUEUE {}
@@ -14830,7 +14830,7 @@ impl ::core::default::Default for SEC_WINNT_AUTH_IDENTITY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SEC_WINNT_AUTH_IDENTITY {
+unsafe impl ::windows_core::Abi for SEC_WINNT_AUTH_IDENTITY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SEC_WINNT_AUTH_IDENTITY {
@@ -14860,12 +14860,12 @@ impl ::core::fmt::Debug for SEC_WINNT_AUTH_IDENTITY_A {
         f.debug_struct("SEC_WINNT_AUTH_IDENTITY_A").field("User", &self.User).field("UserLength", &self.UserLength).field("Domain", &self.Domain).field("DomainLength", &self.DomainLength).field("Password", &self.Password).field("PasswordLength", &self.PasswordLength).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SEC_WINNT_AUTH_IDENTITY_A {
+unsafe impl ::windows_core::Abi for SEC_WINNT_AUTH_IDENTITY_A {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SEC_WINNT_AUTH_IDENTITY_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SEC_WINNT_AUTH_IDENTITY_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SEC_WINNT_AUTH_IDENTITY_A>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SEC_WINNT_AUTH_IDENTITY_A {}
@@ -14896,12 +14896,12 @@ impl ::core::fmt::Debug for SEC_WINNT_AUTH_IDENTITY_W {
         f.debug_struct("SEC_WINNT_AUTH_IDENTITY_W").field("User", &self.User).field("UserLength", &self.UserLength).field("Domain", &self.Domain).field("DomainLength", &self.DomainLength).field("Password", &self.Password).field("PasswordLength", &self.PasswordLength).field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SEC_WINNT_AUTH_IDENTITY_W {
+unsafe impl ::windows_core::Abi for SEC_WINNT_AUTH_IDENTITY_W {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SEC_WINNT_AUTH_IDENTITY_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SEC_WINNT_AUTH_IDENTITY_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SEC_WINNT_AUTH_IDENTITY_W>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SEC_WINNT_AUTH_IDENTITY_W {}
@@ -14935,7 +14935,7 @@ impl ::core::default::Default for STUB_PHASE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for STUB_PHASE {
+unsafe impl ::windows_core::Abi for STUB_PHASE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for STUB_PHASE {
@@ -15003,13 +15003,13 @@ impl ::core::fmt::Debug for USER_MARSHAL_CB {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for USER_MARSHAL_CB {
+unsafe impl ::windows_core::Abi for USER_MARSHAL_CB {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for USER_MARSHAL_CB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MARSHAL_CB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MARSHAL_CB>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -15043,7 +15043,7 @@ impl ::core::default::Default for USER_MARSHAL_CB_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for USER_MARSHAL_CB_TYPE {
+unsafe impl ::windows_core::Abi for USER_MARSHAL_CB_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for USER_MARSHAL_CB_TYPE {
@@ -15098,12 +15098,12 @@ impl ::core::fmt::Debug for USER_MARSHAL_ROUTINE_QUADRUPLE {
         f.debug_struct("USER_MARSHAL_ROUTINE_QUADRUPLE").field("pfnBufferSize", &self.pfnBufferSize.map(|f| f as usize)).field("pfnMarshall", &self.pfnMarshall.map(|f| f as usize)).field("pfnUnmarshall", &self.pfnUnmarshall.map(|f| f as usize)).field("pfnFree", &self.pfnFree.map(|f| f as usize)).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_MARSHAL_ROUTINE_QUADRUPLE {
+unsafe impl ::windows_core::Abi for USER_MARSHAL_ROUTINE_QUADRUPLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_MARSHAL_ROUTINE_QUADRUPLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MARSHAL_ROUTINE_QUADRUPLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MARSHAL_ROUTINE_QUADRUPLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_MARSHAL_ROUTINE_QUADRUPLE {}
@@ -15120,7 +15120,7 @@ pub type USER_MARSHAL_UNMARSHALLING_ROUTINE = ::core::option::Option<unsafe exte
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 pub struct UUID_VECTOR {
     pub Count: u32,
-    pub Uuid: [*mut ::windows::core::GUID; 1],
+    pub Uuid: [*mut ::windows_core::GUID; 1],
 }
 impl ::core::marker::Copy for UUID_VECTOR {}
 impl ::core::clone::Clone for UUID_VECTOR {
@@ -15133,12 +15133,12 @@ impl ::core::fmt::Debug for UUID_VECTOR {
         f.debug_struct("UUID_VECTOR").field("Count", &self.Count).field("Uuid", &self.Uuid).finish()
     }
 }
-unsafe impl ::windows::core::Abi for UUID_VECTOR {
+unsafe impl ::windows_core::Abi for UUID_VECTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for UUID_VECTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<UUID_VECTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<UUID_VECTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for UUID_VECTOR {}
@@ -15149,12 +15149,12 @@ impl ::core::default::Default for UUID_VECTOR {
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn UuidCompare(uuid1: *const ::windows::core::GUID, uuid2: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> i32 {
+pub unsafe fn UuidCompare(uuid1: *const ::windows_core::GUID, uuid2: *const ::windows_core::GUID, status: *mut RPC_STATUS) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UuidCompare(uuid1: *const ::windows::core::GUID, uuid2: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> i32;
+            fn UuidCompare(uuid1: *const ::windows_core::GUID, uuid2: *const ::windows_core::GUID, status: *mut RPC_STATUS) -> i32;
         }
         ::core::mem::transmute(UuidCompare(::core::mem::transmute(uuid1), ::core::mem::transmute(uuid2), ::core::mem::transmute(status)))
     }
@@ -15163,12 +15163,12 @@ pub unsafe fn UuidCompare(uuid1: *const ::windows::core::GUID, uuid2: *const ::w
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn UuidCreate(uuid: *mut ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn UuidCreate(uuid: *mut ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UuidCreate(uuid: *mut ::windows::core::GUID) -> RPC_STATUS;
+            fn UuidCreate(uuid: *mut ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(UuidCreate(::core::mem::transmute(uuid)))
     }
@@ -15177,12 +15177,12 @@ pub unsafe fn UuidCreate(uuid: *mut ::windows::core::GUID) -> RPC_STATUS {
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn UuidCreateNil(niluuid: *mut ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn UuidCreateNil(niluuid: *mut ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UuidCreateNil(niluuid: *mut ::windows::core::GUID) -> RPC_STATUS;
+            fn UuidCreateNil(niluuid: *mut ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(UuidCreateNil(::core::mem::transmute(niluuid)))
     }
@@ -15191,12 +15191,12 @@ pub unsafe fn UuidCreateNil(niluuid: *mut ::windows::core::GUID) -> RPC_STATUS {
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn UuidCreateSequential(uuid: *mut ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn UuidCreateSequential(uuid: *mut ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UuidCreateSequential(uuid: *mut ::windows::core::GUID) -> RPC_STATUS;
+            fn UuidCreateSequential(uuid: *mut ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(UuidCreateSequential(::core::mem::transmute(uuid)))
     }
@@ -15205,12 +15205,12 @@ pub unsafe fn UuidCreateSequential(uuid: *mut ::windows::core::GUID) -> RPC_STAT
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn UuidEqual(uuid1: *const ::windows::core::GUID, uuid2: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> i32 {
+pub unsafe fn UuidEqual(uuid1: *const ::windows_core::GUID, uuid2: *const ::windows_core::GUID, status: *mut RPC_STATUS) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UuidEqual(uuid1: *const ::windows::core::GUID, uuid2: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> i32;
+            fn UuidEqual(uuid1: *const ::windows_core::GUID, uuid2: *const ::windows_core::GUID, status: *mut RPC_STATUS) -> i32;
         }
         ::core::mem::transmute(UuidEqual(::core::mem::transmute(uuid1), ::core::mem::transmute(uuid2), ::core::mem::transmute(status)))
     }
@@ -15219,12 +15219,12 @@ pub unsafe fn UuidEqual(uuid1: *const ::windows::core::GUID, uuid2: *const ::win
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn UuidFromStringA(stringuuid: *const u8, uuid: *mut ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn UuidFromStringA(stringuuid: *const u8, uuid: *mut ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UuidFromStringA(stringuuid: *const u8, uuid: *mut ::windows::core::GUID) -> RPC_STATUS;
+            fn UuidFromStringA(stringuuid: *const u8, uuid: *mut ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(UuidFromStringA(::core::mem::transmute(stringuuid), ::core::mem::transmute(uuid)))
     }
@@ -15233,12 +15233,12 @@ pub unsafe fn UuidFromStringA(stringuuid: *const u8, uuid: *mut ::windows::core:
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn UuidFromStringW(stringuuid: *const u16, uuid: *mut ::windows::core::GUID) -> RPC_STATUS {
+pub unsafe fn UuidFromStringW(stringuuid: *const u16, uuid: *mut ::windows_core::GUID) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UuidFromStringW(stringuuid: *const u16, uuid: *mut ::windows::core::GUID) -> RPC_STATUS;
+            fn UuidFromStringW(stringuuid: *const u16, uuid: *mut ::windows_core::GUID) -> RPC_STATUS;
         }
         ::core::mem::transmute(UuidFromStringW(::core::mem::transmute(stringuuid), ::core::mem::transmute(uuid)))
     }
@@ -15247,12 +15247,12 @@ pub unsafe fn UuidFromStringW(stringuuid: *const u16, uuid: *mut ::windows::core
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn UuidHash(uuid: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> u16 {
+pub unsafe fn UuidHash(uuid: *const ::windows_core::GUID, status: *mut RPC_STATUS) -> u16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UuidHash(uuid: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> u16;
+            fn UuidHash(uuid: *const ::windows_core::GUID, status: *mut RPC_STATUS) -> u16;
         }
         ::core::mem::transmute(UuidHash(::core::mem::transmute(uuid), ::core::mem::transmute(status)))
     }
@@ -15261,12 +15261,12 @@ pub unsafe fn UuidHash(uuid: *const ::windows::core::GUID, status: *mut RPC_STAT
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn UuidIsNil(uuid: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> i32 {
+pub unsafe fn UuidIsNil(uuid: *const ::windows_core::GUID, status: *mut RPC_STATUS) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UuidIsNil(uuid: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> i32;
+            fn UuidIsNil(uuid: *const ::windows_core::GUID, status: *mut RPC_STATUS) -> i32;
         }
         ::core::mem::transmute(UuidIsNil(::core::mem::transmute(uuid), ::core::mem::transmute(status)))
     }
@@ -15275,12 +15275,12 @@ pub unsafe fn UuidIsNil(uuid: *const ::windows::core::GUID, status: *mut RPC_STA
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn UuidToStringA(uuid: *const ::windows::core::GUID, stringuuid: *mut *mut u8) -> RPC_STATUS {
+pub unsafe fn UuidToStringA(uuid: *const ::windows_core::GUID, stringuuid: *mut *mut u8) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UuidToStringA(uuid: *const ::windows::core::GUID, stringuuid: *mut *mut u8) -> RPC_STATUS;
+            fn UuidToStringA(uuid: *const ::windows_core::GUID, stringuuid: *mut *mut u8) -> RPC_STATUS;
         }
         ::core::mem::transmute(UuidToStringA(::core::mem::transmute(uuid), ::core::mem::transmute(stringuuid)))
     }
@@ -15289,12 +15289,12 @@ pub unsafe fn UuidToStringA(uuid: *const ::windows::core::GUID, stringuuid: *mut
 }
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
-pub unsafe fn UuidToStringW(uuid: *const ::windows::core::GUID, stringuuid: *mut *mut u16) -> RPC_STATUS {
+pub unsafe fn UuidToStringW(uuid: *const ::windows_core::GUID, stringuuid: *mut *mut u16) -> RPC_STATUS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UuidToStringW(uuid: *const ::windows::core::GUID, stringuuid: *mut *mut u16) -> RPC_STATUS;
+            fn UuidToStringW(uuid: *const ::windows_core::GUID, stringuuid: *mut *mut u16) -> RPC_STATUS;
         }
         ::core::mem::transmute(UuidToStringW(::core::mem::transmute(uuid), ::core::mem::transmute(stringuuid)))
     }
@@ -15320,7 +15320,7 @@ impl ::core::default::Default for XLAT_SIDE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for XLAT_SIDE {
+unsafe impl ::windows_core::Abi for XLAT_SIDE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for XLAT_SIDE {
@@ -15355,13 +15355,13 @@ impl ::core::fmt::Debug for XMIT_ROUTINE_QUINTUPLE {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Abi for XMIT_ROUTINE_QUINTUPLE {
+unsafe impl ::windows_core::Abi for XMIT_ROUTINE_QUINTUPLE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::cmp::PartialEq for XMIT_ROUTINE_QUINTUPLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XMIT_ROUTINE_QUINTUPLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XMIT_ROUTINE_QUINTUPLE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -15395,12 +15395,12 @@ impl ::core::fmt::Debug for _NDR_SCONTEXT {
         f.debug_struct("_NDR_SCONTEXT").field("pad", &self.pad).field("userContext", &self.userContext).finish()
     }
 }
-unsafe impl ::windows::core::Abi for _NDR_SCONTEXT {
+unsafe impl ::windows_core::Abi for _NDR_SCONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for _NDR_SCONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_NDR_SCONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_NDR_SCONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for _NDR_SCONTEXT {}
@@ -15458,7 +15458,7 @@ impl ::core::default::Default for system_handle_t {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for system_handle_t {
+unsafe impl ::windows_core::Abi for system_handle_t {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for system_handle_t {

@@ -8,46 +8,46 @@ pub mod PrintTicket;
 pub mod Workflow;
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct IPrintDocumentSource(::windows::core::IUnknown);
+pub struct IPrintDocumentSource(::windows_core::IUnknown);
 impl IPrintDocumentSource {}
-impl ::core::convert::From<IPrintDocumentSource> for ::windows::core::IUnknown {
+impl ::core::convert::From<IPrintDocumentSource> for ::windows_core::IUnknown {
     fn from(value: IPrintDocumentSource) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IPrintDocumentSource> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IPrintDocumentSource> for ::windows_core::IUnknown {
     fn from(value: &IPrintDocumentSource) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IPrintDocumentSource {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IPrintDocumentSource {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IPrintDocumentSource {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintDocumentSource {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<IPrintDocumentSource> for ::windows::core::IInspectable {
+impl ::core::convert::From<IPrintDocumentSource> for ::windows_core::IInspectable {
     fn from(value: IPrintDocumentSource) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IPrintDocumentSource> for ::windows::core::IInspectable {
+impl ::core::convert::From<&IPrintDocumentSource> for ::windows_core::IInspectable {
     fn from(value: &IPrintDocumentSource) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IPrintDocumentSource {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for IPrintDocumentSource {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IPrintDocumentSource {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IPrintDocumentSource {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IPrintDocumentSource {
@@ -66,310 +66,310 @@ impl ::core::fmt::Debug for IPrintDocumentSource {
         f.debug_tuple("IPrintDocumentSource").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for IPrintDocumentSource {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{dedc0c30-f1eb-47df-aae6-ed5427511f01}");
+unsafe impl ::windows_core::RuntimeType for IPrintDocumentSource {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{dedc0c30-f1eb-47df-aae6-ed5427511f01}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IPrintDocumentSource {
+unsafe impl ::windows_core::Interface for IPrintDocumentSource {
     type Vtable = IPrintDocumentSource_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdedc0c30_f1eb_47df_aae6_ed5427511f01);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdedc0c30_f1eb_47df_aae6_ed5427511f01);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintDocumentSource_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintManager(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintManager {
+pub struct IPrintManager(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintManager {
     type Vtable = IPrintManager_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xff2a9694_8c99_44fd_ae4a_19d9aa9a0f0a);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xff2a9694_8c99_44fd_ae4a_19d9aa9a0f0a);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintManager_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub PrintTaskRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows::core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub PrintTaskRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     PrintTaskRequested: usize,
     #[cfg(feature = "Foundation")]
-    pub RemovePrintTaskRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub RemovePrintTaskRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemovePrintTaskRequested: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintManagerStatic(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintManagerStatic {
+pub struct IPrintManagerStatic(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintManagerStatic {
     type Vtable = IPrintManagerStatic_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x58185dcd_e634_4654_84f0_e0152a8217ac);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x58185dcd_e634_4654_84f0_e0152a8217ac);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintManagerStatic_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub GetForCurrentView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub GetForCurrentView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub ShowPrintUIAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub ShowPrintUIAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ShowPrintUIAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintManagerStatic2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintManagerStatic2 {
+pub struct IPrintManagerStatic2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintManagerStatic2 {
     type Vtable = IPrintManagerStatic2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x35a99955_e6ab_4139_9abd_b86a729b3598);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x35a99955_e6ab_4139_9abd_b86a729b3598);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintManagerStatic2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub IsSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub IsSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintPageInfo(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintPageInfo {
+pub struct IPrintPageInfo(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintPageInfo {
     type Vtable = IPrintPageInfo_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdd4be9c9_a6a1_4ada_930e_da872a4f23d3);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdd4be9c9_a6a1_4ada_930e_da872a4f23d3);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintPageInfo_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub SetMediaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintMediaSize) -> ::windows::core::HRESULT,
-    pub MediaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintMediaSize) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub SetMediaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintMediaSize) -> ::windows_core::HRESULT,
+    pub MediaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintMediaSize) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub SetPageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::Size) -> ::windows::core::HRESULT,
+    pub SetPageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::Size) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetPageSize: usize,
     #[cfg(feature = "Foundation")]
-    pub PageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Size) -> ::windows::core::HRESULT,
+    pub PageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Size) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     PageSize: usize,
-    pub SetDpiX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows::core::HRESULT,
-    pub DpiX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
-    pub SetDpiY: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows::core::HRESULT,
-    pub DpiY: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
-    pub SetOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintOrientation) -> ::windows::core::HRESULT,
-    pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintOrientation) -> ::windows::core::HRESULT,
+    pub SetDpiX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
+    pub DpiX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
+    pub SetDpiY: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
+    pub DpiY: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
+    pub SetOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintOrientation) -> ::windows_core::HRESULT,
+    pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintOrientation) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintPageRange(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintPageRange {
+pub struct IPrintPageRange(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintPageRange {
     type Vtable = IPrintPageRange_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf8a06c54_6e7c_51c5_57fd_0660c2d71513);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf8a06c54_6e7c_51c5_57fd_0660c2d71513);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintPageRange_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub FirstPageNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub LastPageNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub FirstPageNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub LastPageNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintPageRangeFactory(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintPageRangeFactory {
+pub struct IPrintPageRangeFactory(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintPageRangeFactory {
     type Vtable = IPrintPageRangeFactory_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x408fd45f_e047_5f85_7129_fb085a4fad14);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x408fd45f_e047_5f85_7129_fb085a4fad14);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintPageRangeFactory_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, firstpage: i32, lastpage: i32, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub CreateWithSinglePage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, page: i32, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, firstpage: i32, lastpage: i32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateWithSinglePage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, page: i32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintPageRangeOptions(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintPageRangeOptions {
+pub struct IPrintPageRangeOptions(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintPageRangeOptions {
     type Vtable = IPrintPageRangeOptions_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xce6db728_1357_46b2_a923_79f995f448fc);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xce6db728_1357_46b2_a923_79f995f448fc);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintPageRangeOptions_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub SetAllowAllPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows::core::HRESULT,
-    pub AllowAllPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub SetAllowCurrentPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows::core::HRESULT,
-    pub AllowCurrentPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub SetAllowCustomSetOfPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows::core::HRESULT,
-    pub AllowCustomSetOfPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub SetAllowAllPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
+    pub AllowAllPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub SetAllowCurrentPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
+    pub AllowCurrentPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub SetAllowCustomSetOfPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
+    pub AllowCustomSetOfPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintTask(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintTask {
+pub struct IPrintTask(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintTask {
     type Vtable = IPrintTask_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x61d80247_6cf6_4fad_84e2_a5e82e2d4ceb);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x61d80247_6cf6_4fad_84e2_a5e82e2d4ceb);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTask_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "ApplicationModel_DataTransfer")]
-    pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "ApplicationModel_DataTransfer"))]
     Properties: usize,
-    pub Source: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub Options: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Source: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub Options: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub Previewing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows::core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub Previewing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Previewing: usize,
     #[cfg(feature = "Foundation")]
-    pub RemovePreviewing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub RemovePreviewing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemovePreviewing: usize,
     #[cfg(feature = "Foundation")]
-    pub Submitting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows::core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub Submitting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Submitting: usize,
     #[cfg(feature = "Foundation")]
-    pub RemoveSubmitting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub RemoveSubmitting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveSubmitting: usize,
     #[cfg(feature = "Foundation")]
-    pub Progressing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows::core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub Progressing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Progressing: usize,
     #[cfg(feature = "Foundation")]
-    pub RemoveProgressing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub RemoveProgressing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveProgressing: usize,
     #[cfg(feature = "Foundation")]
-    pub Completed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows::core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub Completed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Completed: usize,
     #[cfg(feature = "Foundation")]
-    pub RemoveCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows::core::HRESULT,
+    pub RemoveCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveCompleted: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintTask2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintTask2 {
+pub struct IPrintTask2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintTask2 {
     type Vtable = IPrintTask2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36234877_3e53_4d9d_8f5e_316ac8dedae1);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36234877_3e53_4d9d_8f5e_316ac8dedae1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTask2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub SetIsPreviewEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows::core::HRESULT,
-    pub IsPreviewEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub SetIsPreviewEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
+    pub IsPreviewEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintTaskCompletedEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintTaskCompletedEventArgs {
+pub struct IPrintTaskCompletedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintTaskCompletedEventArgs {
     type Vtable = IPrintTaskCompletedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5bcd34af_24e9_4c10_8d07_14c346ba3fce);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5bcd34af_24e9_4c10_8d07_14c346ba3fce);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTaskCompletedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Completion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintTaskCompletion) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Completion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintTaskCompletion) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintTaskOptions(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintTaskOptions {
+pub struct IPrintTaskOptions(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintTaskOptions {
     type Vtable = IPrintTaskOptions_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5a0a66bb_d289_41bb_96dd_57e28338ae3f);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5a0a66bb_d289_41bb_96dd_57e28338ae3f);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTaskOptions_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub SetBordering: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintBordering) -> ::windows::core::HRESULT,
-    pub Bordering: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintBordering) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub SetBordering: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintBordering) -> ::windows_core::HRESULT,
+    pub Bordering: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintBordering) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
-    pub GetPagePrintTicket: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, printpageinfo: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetPagePrintTicket: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, printpageinfo: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     GetPagePrintTicket: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintTaskOptions2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintTaskOptions2 {
+pub struct IPrintTaskOptions2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintTaskOptions2 {
     type Vtable = IPrintTaskOptions2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xeb9b1606_9a36_4b59_8617_b217849262e1);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xeb9b1606_9a36_4b59_8617_b217849262e1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTaskOptions2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub PageRangeOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub PageRangeOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub CustomPageRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CustomPageRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     CustomPageRanges: usize,
 }
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct IPrintTaskOptionsCore(::windows::core::IUnknown);
+pub struct IPrintTaskOptionsCore(::windows_core::IUnknown);
 impl IPrintTaskOptionsCore {
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetPageDescription(&self, jobpagenumber: u32) -> ::windows::core::Result<PrintPageDescription> {
+    pub fn GetPageDescription(&self, jobpagenumber: u32) -> ::windows_core::Result<PrintPageDescription> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintPageDescription>::zeroed();
-            (::windows::core::Interface::vtable(this).GetPageDescription)(::windows::core::Interface::as_raw(this), jobpagenumber, result__.as_mut_ptr()).from_abi::<PrintPageDescription>(result__)
+            (::windows_core::Interface::vtable(this).GetPageDescription)(::windows_core::Interface::as_raw(this), jobpagenumber, result__.as_mut_ptr()).from_abi::<PrintPageDescription>(result__)
         }
     }
 }
-impl ::core::convert::From<IPrintTaskOptionsCore> for ::windows::core::IUnknown {
+impl ::core::convert::From<IPrintTaskOptionsCore> for ::windows_core::IUnknown {
     fn from(value: IPrintTaskOptionsCore) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IPrintTaskOptionsCore> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IPrintTaskOptionsCore> for ::windows_core::IUnknown {
     fn from(value: &IPrintTaskOptionsCore) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IPrintTaskOptionsCore {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IPrintTaskOptionsCore {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IPrintTaskOptionsCore {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintTaskOptionsCore {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<IPrintTaskOptionsCore> for ::windows::core::IInspectable {
+impl ::core::convert::From<IPrintTaskOptionsCore> for ::windows_core::IInspectable {
     fn from(value: IPrintTaskOptionsCore) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IPrintTaskOptionsCore> for ::windows::core::IInspectable {
+impl ::core::convert::From<&IPrintTaskOptionsCore> for ::windows_core::IInspectable {
     fn from(value: &IPrintTaskOptionsCore) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IPrintTaskOptionsCore {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for IPrintTaskOptionsCore {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IPrintTaskOptionsCore {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IPrintTaskOptionsCore {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IPrintTaskOptionsCore {
@@ -388,228 +388,228 @@ impl ::core::fmt::Debug for IPrintTaskOptionsCore {
         f.debug_tuple("IPrintTaskOptionsCore").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for IPrintTaskOptionsCore {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{1bdbb474-4ed1-41eb-be3c-72d18ed67337}");
+unsafe impl ::windows_core::RuntimeType for IPrintTaskOptionsCore {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{1bdbb474-4ed1-41eb-be3c-72d18ed67337}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IPrintTaskOptionsCore {
+unsafe impl ::windows_core::Interface for IPrintTaskOptionsCore {
     type Vtable = IPrintTaskOptionsCore_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1bdbb474_4ed1_41eb_be3c_72d18ed67337);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1bdbb474_4ed1_41eb_be3c_72d18ed67337);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTaskOptionsCore_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub GetPageDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, jobpagenumber: u32, result__: *mut PrintPageDescription) -> ::windows::core::HRESULT,
+    pub GetPageDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, jobpagenumber: u32, result__: *mut PrintPageDescription) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetPageDescription: usize,
 }
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct IPrintTaskOptionsCoreProperties(::windows::core::IUnknown);
+pub struct IPrintTaskOptionsCoreProperties(::windows_core::IUnknown);
 impl IPrintTaskOptionsCoreProperties {
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetMediaSize(&self, value: PrintMediaSize) -> ::windows::core::Result<()> {
+    pub fn SetMediaSize(&self, value: PrintMediaSize) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetMediaSize)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetMediaSize)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn MediaSize(&self) -> ::windows::core::Result<PrintMediaSize> {
+    pub fn MediaSize(&self) -> ::windows_core::Result<PrintMediaSize> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintMediaSize>::zeroed();
-            (::windows::core::Interface::vtable(this).MediaSize)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintMediaSize>(result__)
+            (::windows_core::Interface::vtable(this).MediaSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintMediaSize>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetMediaType(&self, value: PrintMediaType) -> ::windows::core::Result<()> {
+    pub fn SetMediaType(&self, value: PrintMediaType) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetMediaType)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetMediaType)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn MediaType(&self) -> ::windows::core::Result<PrintMediaType> {
+    pub fn MediaType(&self) -> ::windows_core::Result<PrintMediaType> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintMediaType>::zeroed();
-            (::windows::core::Interface::vtable(this).MediaType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintMediaType>(result__)
+            (::windows_core::Interface::vtable(this).MediaType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintMediaType>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetOrientation(&self, value: PrintOrientation) -> ::windows::core::Result<()> {
+    pub fn SetOrientation(&self, value: PrintOrientation) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetOrientation)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetOrientation)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Orientation(&self) -> ::windows::core::Result<PrintOrientation> {
+    pub fn Orientation(&self) -> ::windows_core::Result<PrintOrientation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintOrientation>::zeroed();
-            (::windows::core::Interface::vtable(this).Orientation)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintOrientation>(result__)
+            (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintOrientation>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetPrintQuality(&self, value: PrintQuality) -> ::windows::core::Result<()> {
+    pub fn SetPrintQuality(&self, value: PrintQuality) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetPrintQuality)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetPrintQuality)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn PrintQuality(&self) -> ::windows::core::Result<PrintQuality> {
+    pub fn PrintQuality(&self) -> ::windows_core::Result<PrintQuality> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintQuality>::zeroed();
-            (::windows::core::Interface::vtable(this).PrintQuality)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintQuality>(result__)
+            (::windows_core::Interface::vtable(this).PrintQuality)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintQuality>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetColorMode(&self, value: PrintColorMode) -> ::windows::core::Result<()> {
+    pub fn SetColorMode(&self, value: PrintColorMode) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetColorMode)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetColorMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn ColorMode(&self) -> ::windows::core::Result<PrintColorMode> {
+    pub fn ColorMode(&self) -> ::windows_core::Result<PrintColorMode> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintColorMode>::zeroed();
-            (::windows::core::Interface::vtable(this).ColorMode)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintColorMode>(result__)
+            (::windows_core::Interface::vtable(this).ColorMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintColorMode>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetDuplex(&self, value: PrintDuplex) -> ::windows::core::Result<()> {
+    pub fn SetDuplex(&self, value: PrintDuplex) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetDuplex)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetDuplex)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Duplex(&self) -> ::windows::core::Result<PrintDuplex> {
+    pub fn Duplex(&self) -> ::windows_core::Result<PrintDuplex> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintDuplex>::zeroed();
-            (::windows::core::Interface::vtable(this).Duplex)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintDuplex>(result__)
+            (::windows_core::Interface::vtable(this).Duplex)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintDuplex>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetCollation(&self, value: PrintCollation) -> ::windows::core::Result<()> {
+    pub fn SetCollation(&self, value: PrintCollation) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetCollation)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetCollation)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Collation(&self) -> ::windows::core::Result<PrintCollation> {
+    pub fn Collation(&self) -> ::windows_core::Result<PrintCollation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintCollation>::zeroed();
-            (::windows::core::Interface::vtable(this).Collation)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintCollation>(result__)
+            (::windows_core::Interface::vtable(this).Collation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintCollation>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetStaple(&self, value: PrintStaple) -> ::windows::core::Result<()> {
+    pub fn SetStaple(&self, value: PrintStaple) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetStaple)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetStaple)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Staple(&self) -> ::windows::core::Result<PrintStaple> {
+    pub fn Staple(&self) -> ::windows_core::Result<PrintStaple> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintStaple>::zeroed();
-            (::windows::core::Interface::vtable(this).Staple)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintStaple>(result__)
+            (::windows_core::Interface::vtable(this).Staple)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintStaple>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetHolePunch(&self, value: PrintHolePunch) -> ::windows::core::Result<()> {
+    pub fn SetHolePunch(&self, value: PrintHolePunch) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetHolePunch)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetHolePunch)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn HolePunch(&self) -> ::windows::core::Result<PrintHolePunch> {
+    pub fn HolePunch(&self) -> ::windows_core::Result<PrintHolePunch> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintHolePunch>::zeroed();
-            (::windows::core::Interface::vtable(this).HolePunch)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintHolePunch>(result__)
+            (::windows_core::Interface::vtable(this).HolePunch)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintHolePunch>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetBinding(&self, value: PrintBinding) -> ::windows::core::Result<()> {
+    pub fn SetBinding(&self, value: PrintBinding) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetBinding)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetBinding)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Binding(&self) -> ::windows::core::Result<PrintBinding> {
+    pub fn Binding(&self) -> ::windows_core::Result<PrintBinding> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintBinding>::zeroed();
-            (::windows::core::Interface::vtable(this).Binding)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintBinding>(result__)
+            (::windows_core::Interface::vtable(this).Binding)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintBinding>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn MinCopies(&self) -> ::windows::core::Result<u32> {
+    pub fn MinCopies(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).MinCopies)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).MinCopies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn MaxCopies(&self) -> ::windows::core::Result<u32> {
+    pub fn MaxCopies(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).MaxCopies)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).MaxCopies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetNumberOfCopies(&self, value: u32) -> ::windows::core::Result<()> {
+    pub fn SetNumberOfCopies(&self, value: u32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetNumberOfCopies)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetNumberOfCopies)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn NumberOfCopies(&self) -> ::windows::core::Result<u32> {
+    pub fn NumberOfCopies(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).NumberOfCopies)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).NumberOfCopies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
 }
-impl ::core::convert::From<IPrintTaskOptionsCoreProperties> for ::windows::core::IUnknown {
+impl ::core::convert::From<IPrintTaskOptionsCoreProperties> for ::windows_core::IUnknown {
     fn from(value: IPrintTaskOptionsCoreProperties) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IPrintTaskOptionsCoreProperties> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IPrintTaskOptionsCoreProperties> for ::windows_core::IUnknown {
     fn from(value: &IPrintTaskOptionsCoreProperties) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IPrintTaskOptionsCoreProperties {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IPrintTaskOptionsCoreProperties {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IPrintTaskOptionsCoreProperties {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintTaskOptionsCoreProperties {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<IPrintTaskOptionsCoreProperties> for ::windows::core::IInspectable {
+impl ::core::convert::From<IPrintTaskOptionsCoreProperties> for ::windows_core::IInspectable {
     fn from(value: IPrintTaskOptionsCoreProperties) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IPrintTaskOptionsCoreProperties> for ::windows::core::IInspectable {
+impl ::core::convert::From<&IPrintTaskOptionsCoreProperties> for ::windows_core::IInspectable {
     fn from(value: &IPrintTaskOptionsCoreProperties) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IPrintTaskOptionsCoreProperties {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for IPrintTaskOptionsCoreProperties {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IPrintTaskOptionsCoreProperties {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IPrintTaskOptionsCoreProperties {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IPrintTaskOptionsCoreProperties {
@@ -628,98 +628,98 @@ impl ::core::fmt::Debug for IPrintTaskOptionsCoreProperties {
         f.debug_tuple("IPrintTaskOptionsCoreProperties").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for IPrintTaskOptionsCoreProperties {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{c1b71832-9e93-4e55-814b-3326a59efce1}");
+unsafe impl ::windows_core::RuntimeType for IPrintTaskOptionsCoreProperties {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{c1b71832-9e93-4e55-814b-3326a59efce1}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IPrintTaskOptionsCoreProperties {
+unsafe impl ::windows_core::Interface for IPrintTaskOptionsCoreProperties {
     type Vtable = IPrintTaskOptionsCoreProperties_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc1b71832_9e93_4e55_814b_3326a59efce1);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc1b71832_9e93_4e55_814b_3326a59efce1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTaskOptionsCoreProperties_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub SetMediaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintMediaSize) -> ::windows::core::HRESULT,
-    pub MediaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintMediaSize) -> ::windows::core::HRESULT,
-    pub SetMediaType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintMediaType) -> ::windows::core::HRESULT,
-    pub MediaType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintMediaType) -> ::windows::core::HRESULT,
-    pub SetOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintOrientation) -> ::windows::core::HRESULT,
-    pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintOrientation) -> ::windows::core::HRESULT,
-    pub SetPrintQuality: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintQuality) -> ::windows::core::HRESULT,
-    pub PrintQuality: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintQuality) -> ::windows::core::HRESULT,
-    pub SetColorMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintColorMode) -> ::windows::core::HRESULT,
-    pub ColorMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintColorMode) -> ::windows::core::HRESULT,
-    pub SetDuplex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintDuplex) -> ::windows::core::HRESULT,
-    pub Duplex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintDuplex) -> ::windows::core::HRESULT,
-    pub SetCollation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintCollation) -> ::windows::core::HRESULT,
-    pub Collation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintCollation) -> ::windows::core::HRESULT,
-    pub SetStaple: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintStaple) -> ::windows::core::HRESULT,
-    pub Staple: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintStaple) -> ::windows::core::HRESULT,
-    pub SetHolePunch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintHolePunch) -> ::windows::core::HRESULT,
-    pub HolePunch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintHolePunch) -> ::windows::core::HRESULT,
-    pub SetBinding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintBinding) -> ::windows::core::HRESULT,
-    pub Binding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintBinding) -> ::windows::core::HRESULT,
-    pub MinCopies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
-    pub MaxCopies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
-    pub SetNumberOfCopies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows::core::HRESULT,
-    pub NumberOfCopies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub SetMediaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintMediaSize) -> ::windows_core::HRESULT,
+    pub MediaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintMediaSize) -> ::windows_core::HRESULT,
+    pub SetMediaType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintMediaType) -> ::windows_core::HRESULT,
+    pub MediaType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintMediaType) -> ::windows_core::HRESULT,
+    pub SetOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintOrientation) -> ::windows_core::HRESULT,
+    pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintOrientation) -> ::windows_core::HRESULT,
+    pub SetPrintQuality: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintQuality) -> ::windows_core::HRESULT,
+    pub PrintQuality: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintQuality) -> ::windows_core::HRESULT,
+    pub SetColorMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintColorMode) -> ::windows_core::HRESULT,
+    pub ColorMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintColorMode) -> ::windows_core::HRESULT,
+    pub SetDuplex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintDuplex) -> ::windows_core::HRESULT,
+    pub Duplex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintDuplex) -> ::windows_core::HRESULT,
+    pub SetCollation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintCollation) -> ::windows_core::HRESULT,
+    pub Collation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintCollation) -> ::windows_core::HRESULT,
+    pub SetStaple: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintStaple) -> ::windows_core::HRESULT,
+    pub Staple: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintStaple) -> ::windows_core::HRESULT,
+    pub SetHolePunch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintHolePunch) -> ::windows_core::HRESULT,
+    pub HolePunch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintHolePunch) -> ::windows_core::HRESULT,
+    pub SetBinding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintBinding) -> ::windows_core::HRESULT,
+    pub Binding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintBinding) -> ::windows_core::HRESULT,
+    pub MinCopies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
+    pub MaxCopies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
+    pub SetNumberOfCopies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
+    pub NumberOfCopies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct IPrintTaskOptionsCoreUIConfiguration(::windows::core::IUnknown);
+pub struct IPrintTaskOptionsCoreUIConfiguration(::windows_core::IUnknown);
 impl IPrintTaskOptionsCoreUIConfiguration {
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DisplayedOptions(&self) -> ::windows::core::Result<super::super::Foundation::Collections::IVector<::windows::core::HSTRING>> {
+    pub fn DisplayedOptions(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).DisplayedOptions)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows::core::HSTRING>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).DisplayedOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
 }
-impl ::core::convert::From<IPrintTaskOptionsCoreUIConfiguration> for ::windows::core::IUnknown {
+impl ::core::convert::From<IPrintTaskOptionsCoreUIConfiguration> for ::windows_core::IUnknown {
     fn from(value: IPrintTaskOptionsCoreUIConfiguration) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IPrintTaskOptionsCoreUIConfiguration> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IPrintTaskOptionsCoreUIConfiguration> for ::windows_core::IUnknown {
     fn from(value: &IPrintTaskOptionsCoreUIConfiguration) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IPrintTaskOptionsCoreUIConfiguration {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IPrintTaskOptionsCoreUIConfiguration {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IPrintTaskOptionsCoreUIConfiguration {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintTaskOptionsCoreUIConfiguration {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<IPrintTaskOptionsCoreUIConfiguration> for ::windows::core::IInspectable {
+impl ::core::convert::From<IPrintTaskOptionsCoreUIConfiguration> for ::windows_core::IInspectable {
     fn from(value: IPrintTaskOptionsCoreUIConfiguration) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IPrintTaskOptionsCoreUIConfiguration> for ::windows::core::IInspectable {
+impl ::core::convert::From<&IPrintTaskOptionsCoreUIConfiguration> for ::windows_core::IInspectable {
     fn from(value: &IPrintTaskOptionsCoreUIConfiguration) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IPrintTaskOptionsCoreUIConfiguration {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for IPrintTaskOptionsCoreUIConfiguration {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IPrintTaskOptionsCoreUIConfiguration {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IPrintTaskOptionsCoreUIConfiguration {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IPrintTaskOptionsCoreUIConfiguration {
@@ -738,180 +738,180 @@ impl ::core::fmt::Debug for IPrintTaskOptionsCoreUIConfiguration {
         f.debug_tuple("IPrintTaskOptionsCoreUIConfiguration").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for IPrintTaskOptionsCoreUIConfiguration {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{62e69e23-9a1e-4336-b74f-3cc7f4cff709}");
+unsafe impl ::windows_core::RuntimeType for IPrintTaskOptionsCoreUIConfiguration {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{62e69e23-9a1e-4336-b74f-3cc7f4cff709}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IPrintTaskOptionsCoreUIConfiguration {
+unsafe impl ::windows_core::Interface for IPrintTaskOptionsCoreUIConfiguration {
     type Vtable = IPrintTaskOptionsCoreUIConfiguration_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x62e69e23_9a1e_4336_b74f_3cc7f4cff709);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x62e69e23_9a1e_4336_b74f_3cc7f4cff709);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTaskOptionsCoreUIConfiguration_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Collections")]
-    pub DisplayedOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub DisplayedOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     DisplayedOptions: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintTaskProgressingEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintTaskProgressingEventArgs {
+pub struct IPrintTaskProgressingEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintTaskProgressingEventArgs {
     type Vtable = IPrintTaskProgressingEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x810cd3cb_b410_4282_a073_5ac378234174);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x810cd3cb_b410_4282_a073_5ac378234174);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTaskProgressingEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub DocumentPageCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub DocumentPageCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintTaskRequest(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintTaskRequest {
+pub struct IPrintTaskRequest(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintTaskRequest {
     type Vtable = IPrintTaskRequest_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6ff61e2e_2722_4240_a67c_f364849a17f3);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6ff61e2e_2722_4240_a67c_f364849a17f3);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTaskRequest_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub Deadline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows::core::HRESULT,
+    pub Deadline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Deadline: usize,
-    pub CreatePrintTask: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, title: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, handler: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CreatePrintTask: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, title: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, handler: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintTaskRequestedDeferral(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintTaskRequestedDeferral {
+pub struct IPrintTaskRequestedDeferral(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintTaskRequestedDeferral {
     type Vtable = IPrintTaskRequestedDeferral_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcfefb3f0_ce3e_42c7_9496_64800c622c44);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcfefb3f0_ce3e_42c7_9496_64800c622c44);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTaskRequestedDeferral_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Complete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Complete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintTaskRequestedEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintTaskRequestedEventArgs {
+pub struct IPrintTaskRequestedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintTaskRequestedEventArgs {
     type Vtable = IPrintTaskRequestedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd0aff924_a31b_454c_a7b6_5d0cc522fc16);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd0aff924_a31b_454c_a7b6_5d0cc522fc16);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTaskRequestedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Request: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Request: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintTaskSourceRequestedArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintTaskSourceRequestedArgs {
+pub struct IPrintTaskSourceRequestedArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintTaskSourceRequestedArgs {
     type Vtable = IPrintTaskSourceRequestedArgs_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf9f067be_f456_41f0_9c98_5ce73e851410);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf9f067be_f456_41f0_9c98_5ce73e851410);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTaskSourceRequestedArgs_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation")]
-    pub Deadline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows::core::HRESULT,
+    pub Deadline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Deadline: usize,
-    pub SetSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SetSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintTaskSourceRequestedDeferral(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintTaskSourceRequestedDeferral {
+pub struct IPrintTaskSourceRequestedDeferral(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintTaskSourceRequestedDeferral {
     type Vtable = IPrintTaskSourceRequestedDeferral_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4a1560d1_6992_4d9d_8555_4ca4563fb166);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4a1560d1_6992_4d9d_8555_4ca4563fb166);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTaskSourceRequestedDeferral_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Complete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Complete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPrintTaskTargetDeviceSupport(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPrintTaskTargetDeviceSupport {
+pub struct IPrintTaskTargetDeviceSupport(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPrintTaskTargetDeviceSupport {
     type Vtable = IPrintTaskTargetDeviceSupport_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x295d70c0_c2cb_4b7d_b0ea_93095091a220);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x295d70c0_c2cb_4b7d_b0ea_93095091a220);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintTaskTargetDeviceSupport_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub SetIsPrinterTargetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows::core::HRESULT,
-    pub IsPrinterTargetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub SetIs3DManufacturingTargetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows::core::HRESULT,
-    pub Is3DManufacturingTargetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub SetIsPrinterTargetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
+    pub IsPrinterTargetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub SetIs3DManufacturingTargetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
+    pub Is3DManufacturingTargetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IStandardPrintTaskOptionsStatic(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IStandardPrintTaskOptionsStatic {
+pub struct IStandardPrintTaskOptionsStatic(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IStandardPrintTaskOptionsStatic {
     type Vtable = IStandardPrintTaskOptionsStatic_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb4483d26_0dd0_4cd4_baff_930fc7d6a574);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb4483d26_0dd0_4cd4_baff_930fc7d6a574);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IStandardPrintTaskOptionsStatic_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub MediaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub MediaType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub PrintQuality: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub ColorMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub Duplex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub Collation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub Staple: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub HolePunch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub Binding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub Copies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub NUp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub InputBin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub MediaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub MediaType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub PrintQuality: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub ColorMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub Duplex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub Collation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub Staple: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub HolePunch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub Binding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub Copies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub NUp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub InputBin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IStandardPrintTaskOptionsStatic2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IStandardPrintTaskOptionsStatic2 {
+pub struct IStandardPrintTaskOptionsStatic2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IStandardPrintTaskOptionsStatic2 {
     type Vtable = IStandardPrintTaskOptionsStatic2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3be38bf4_7a44_4269_9a52_81261e289ee9);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3be38bf4_7a44_4269_9a52_81261e289ee9);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IStandardPrintTaskOptionsStatic2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Bordering: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Bordering: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IStandardPrintTaskOptionsStatic3(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IStandardPrintTaskOptionsStatic3 {
+pub struct IStandardPrintTaskOptionsStatic3(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IStandardPrintTaskOptionsStatic3 {
     type Vtable = IStandardPrintTaskOptionsStatic3_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xbbf68e86_3858_41b3_a799_55dd9888d475);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbbf68e86_3858_41b3_a799_55dd9888d475);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IStandardPrintTaskOptionsStatic3_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub CustomPageRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub CustomPageRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
@@ -947,7 +947,7 @@ impl ::core::default::Default for PrintBinding {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PrintBinding {
+unsafe impl ::windows_core::Abi for PrintBinding {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PrintBinding {
@@ -955,10 +955,10 @@ impl ::core::fmt::Debug for PrintBinding {
         f.debug_tuple("PrintBinding").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintBinding {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintBinding;i4)");
+unsafe impl ::windows_core::RuntimeType for PrintBinding {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintBinding;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -984,7 +984,7 @@ impl ::core::default::Default for PrintBordering {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PrintBordering {
+unsafe impl ::windows_core::Abi for PrintBordering {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PrintBordering {
@@ -992,10 +992,10 @@ impl ::core::fmt::Debug for PrintBordering {
         f.debug_tuple("PrintBordering").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintBordering {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintBordering;i4)");
+unsafe impl ::windows_core::RuntimeType for PrintBordering {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintBordering;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -1021,7 +1021,7 @@ impl ::core::default::Default for PrintCollation {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PrintCollation {
+unsafe impl ::windows_core::Abi for PrintCollation {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PrintCollation {
@@ -1029,10 +1029,10 @@ impl ::core::fmt::Debug for PrintCollation {
         f.debug_tuple("PrintCollation").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintCollation {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintCollation;i4)");
+unsafe impl ::windows_core::RuntimeType for PrintCollation {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintCollation;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -1059,7 +1059,7 @@ impl ::core::default::Default for PrintColorMode {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PrintColorMode {
+unsafe impl ::windows_core::Abi for PrintColorMode {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PrintColorMode {
@@ -1067,10 +1067,10 @@ impl ::core::fmt::Debug for PrintColorMode {
         f.debug_tuple("PrintColorMode").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintColorMode {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintColorMode;i4)");
+unsafe impl ::windows_core::RuntimeType for PrintColorMode {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintColorMode;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -1097,7 +1097,7 @@ impl ::core::default::Default for PrintDuplex {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PrintDuplex {
+unsafe impl ::windows_core::Abi for PrintDuplex {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PrintDuplex {
@@ -1105,10 +1105,10 @@ impl ::core::fmt::Debug for PrintDuplex {
         f.debug_tuple("PrintDuplex").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintDuplex {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintDuplex;i4)");
+unsafe impl ::windows_core::RuntimeType for PrintDuplex {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintDuplex;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -1137,7 +1137,7 @@ impl ::core::default::Default for PrintHolePunch {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PrintHolePunch {
+unsafe impl ::windows_core::Abi for PrintHolePunch {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PrintHolePunch {
@@ -1145,62 +1145,62 @@ impl ::core::fmt::Debug for PrintHolePunch {
         f.debug_tuple("PrintHolePunch").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintHolePunch {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintHolePunch;i4)");
+unsafe impl ::windows_core::RuntimeType for PrintHolePunch {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintHolePunch;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintManager(::windows::core::IUnknown);
+pub struct PrintManager(::windows_core::IUnknown);
 impl PrintManager {
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn PrintTaskRequested<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintManager, PrintTaskRequestedEventArgs>>>(&self, eventhandler: Param0) -> ::windows::core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn PrintTaskRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintManager, PrintTaskRequestedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows::core::Interface::vtable(this).PrintTaskRequested)(::windows::core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            (::windows_core::Interface::vtable(this).PrintTaskRequested)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn RemovePrintTaskRequested<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows::core::Result<()> {
+    pub fn RemovePrintTaskRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemovePrintTaskRequested)(::windows::core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).RemovePrintTaskRequested)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn GetForCurrentView() -> ::windows::core::Result<PrintManager> {
+    pub fn GetForCurrentView() -> ::windows_core::Result<PrintManager> {
         Self::IPrintManagerStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetForCurrentView)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintManager>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetForCurrentView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintManager>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn ShowPrintUIAsync() -> ::windows::core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn ShowPrintUIAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
         Self::IPrintManagerStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).ShowPrintUIAsync)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).ShowPrintUIAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn IsSupported() -> ::windows::core::Result<bool> {
+    pub fn IsSupported() -> ::windows_core::Result<bool> {
         Self::IPrintManagerStatic2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsSupported)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsSupported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
     #[doc(hidden)]
-    pub fn IPrintManagerStatic<R, F: FnOnce(&IPrintManagerStatic) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<PrintManager, IPrintManagerStatic> = ::windows::core::FactoryCache::new();
+    pub fn IPrintManagerStatic<R, F: FnOnce(&IPrintManagerStatic) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<PrintManager, IPrintManagerStatic> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
     #[doc(hidden)]
-    pub fn IPrintManagerStatic2<R, F: FnOnce(&IPrintManagerStatic2) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<PrintManager, IPrintManagerStatic2> = ::windows::core::FactoryCache::new();
+    pub fn IPrintManagerStatic2<R, F: FnOnce(&IPrintManagerStatic2) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<PrintManager, IPrintManagerStatic2> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
@@ -1220,58 +1220,58 @@ impl ::core::fmt::Debug for PrintManager {
         f.debug_tuple("PrintManager").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintManager {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintManager;{ff2a9694-8c99-44fd-ae4a-19d9aa9a0f0a})");
+unsafe impl ::windows_core::RuntimeType for PrintManager {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintManager;{ff2a9694-8c99-44fd-ae4a-19d9aa9a0f0a})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PrintManager {
+unsafe impl ::windows_core::Interface for PrintManager {
     type Vtable = IPrintManager_Vtbl;
-    const IID: ::windows::core::GUID = <IPrintManager as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPrintManager as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PrintManager {
+impl ::windows_core::RuntimeName for PrintManager {
     const NAME: &'static str = "Windows.Graphics.Printing.PrintManager";
 }
-impl ::core::convert::From<PrintManager> for ::windows::core::IUnknown {
+impl ::core::convert::From<PrintManager> for ::windows_core::IUnknown {
     fn from(value: PrintManager) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintManager> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PrintManager> for ::windows_core::IUnknown {
     fn from(value: &PrintManager) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PrintManager {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PrintManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PrintManager {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PrintManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PrintManager> for ::windows::core::IInspectable {
+impl ::core::convert::From<PrintManager> for ::windows_core::IInspectable {
     fn from(value: PrintManager) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintManager> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PrintManager> for ::windows_core::IInspectable {
     fn from(value: &PrintManager) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PrintManager {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PrintManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PrintManager {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PrintManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for PrintManager {}
@@ -1466,7 +1466,7 @@ impl ::core::default::Default for PrintMediaSize {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PrintMediaSize {
+unsafe impl ::windows_core::Abi for PrintMediaSize {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PrintMediaSize {
@@ -1474,10 +1474,10 @@ impl ::core::fmt::Debug for PrintMediaSize {
         f.debug_tuple("PrintMediaSize").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintMediaSize {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintMediaSize;i4)");
+unsafe impl ::windows_core::RuntimeType for PrintMediaSize {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintMediaSize;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -1530,7 +1530,7 @@ impl ::core::default::Default for PrintMediaType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PrintMediaType {
+unsafe impl ::windows_core::Abi for PrintMediaType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PrintMediaType {
@@ -1538,10 +1538,10 @@ impl ::core::fmt::Debug for PrintMediaType {
         f.debug_tuple("PrintMediaType").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintMediaType {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintMediaType;i4)");
+unsafe impl ::windows_core::RuntimeType for PrintMediaType {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintMediaType;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -1569,7 +1569,7 @@ impl ::core::default::Default for PrintOrientation {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PrintOrientation {
+unsafe impl ::windows_core::Abi for PrintOrientation {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PrintOrientation {
@@ -1577,10 +1577,10 @@ impl ::core::fmt::Debug for PrintOrientation {
         f.debug_tuple("PrintOrientation").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintOrientation {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintOrientation;i4)");
+unsafe impl ::windows_core::RuntimeType for PrintOrientation {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintOrientation;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -1608,21 +1608,21 @@ impl ::core::fmt::Debug for PrintPageDescription {
     }
 }
 #[cfg(feature = "Foundation")]
-unsafe impl ::windows::core::Abi for PrintPageDescription {
+unsafe impl ::windows_core::Abi for PrintPageDescription {
     type Abi = Self;
 }
 #[cfg(feature = "Foundation")]
-unsafe impl ::windows::core::RuntimeType for PrintPageDescription {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"struct(Windows.Graphics.Printing.PrintPageDescription;struct(Windows.Foundation.Size;f4;f4);struct(Windows.Foundation.Rect;f4;f4;f4;f4);u4;u4)");
+unsafe impl ::windows_core::RuntimeType for PrintPageDescription {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Graphics.Printing.PrintPageDescription;struct(Windows.Foundation.Size;f4;f4);struct(Windows.Foundation.Rect;f4;f4;f4;f4);u4;u4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[cfg(feature = "Foundation")]
 impl ::core::cmp::PartialEq for PrintPageDescription {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PrintPageDescription>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PrintPageDescription>()) == 0 }
     }
 }
 #[cfg(feature = "Foundation")]
@@ -1635,80 +1635,80 @@ impl ::core::default::Default for PrintPageDescription {
 }
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintPageInfo(::windows::core::IUnknown);
+pub struct PrintPageInfo(::windows_core::IUnknown);
 impl PrintPageInfo {
-    pub fn new() -> ::windows::core::Result<Self> {
+    pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
     }
-    fn IActivationFactory<R, F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<PrintPageInfo, ::windows::core::IGenericFactory> = ::windows::core::FactoryCache::new();
+    fn IActivationFactory<R, F: FnOnce(&::windows_core::IGenericFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<PrintPageInfo, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetMediaSize(&self, value: PrintMediaSize) -> ::windows::core::Result<()> {
+    pub fn SetMediaSize(&self, value: PrintMediaSize) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetMediaSize)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetMediaSize)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn MediaSize(&self) -> ::windows::core::Result<PrintMediaSize> {
+    pub fn MediaSize(&self) -> ::windows_core::Result<PrintMediaSize> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintMediaSize>::zeroed();
-            (::windows::core::Interface::vtable(this).MediaSize)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintMediaSize>(result__)
+            (::windows_core::Interface::vtable(this).MediaSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintMediaSize>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn SetPageSize<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::Size>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetPageSize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Size>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetPageSize)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetPageSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn PageSize(&self) -> ::windows::core::Result<super::super::Foundation::Size> {
+    pub fn PageSize(&self) -> ::windows_core::Result<super::super::Foundation::Size> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Size>::zeroed();
-            (::windows::core::Interface::vtable(this).PageSize)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Size>(result__)
+            (::windows_core::Interface::vtable(this).PageSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Size>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetDpiX(&self, value: u32) -> ::windows::core::Result<()> {
+    pub fn SetDpiX(&self, value: u32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetDpiX)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetDpiX)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn DpiX(&self) -> ::windows::core::Result<u32> {
+    pub fn DpiX(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).DpiX)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).DpiX)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetDpiY(&self, value: u32) -> ::windows::core::Result<()> {
+    pub fn SetDpiY(&self, value: u32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetDpiY)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetDpiY)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn DpiY(&self) -> ::windows::core::Result<u32> {
+    pub fn DpiY(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).DpiY)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).DpiY)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetOrientation(&self, value: PrintOrientation) -> ::windows::core::Result<()> {
+    pub fn SetOrientation(&self, value: PrintOrientation) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetOrientation)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetOrientation)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Orientation(&self) -> ::windows::core::Result<PrintOrientation> {
+    pub fn Orientation(&self) -> ::windows_core::Result<PrintOrientation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintOrientation>::zeroed();
-            (::windows::core::Interface::vtable(this).Orientation)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintOrientation>(result__)
+            (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintOrientation>(result__)
         }
     }
 }
@@ -1728,99 +1728,99 @@ impl ::core::fmt::Debug for PrintPageInfo {
         f.debug_tuple("PrintPageInfo").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintPageInfo {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintPageInfo;{dd4be9c9-a6a1-4ada-930e-da872a4f23d3})");
+unsafe impl ::windows_core::RuntimeType for PrintPageInfo {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintPageInfo;{dd4be9c9-a6a1-4ada-930e-da872a4f23d3})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PrintPageInfo {
+unsafe impl ::windows_core::Interface for PrintPageInfo {
     type Vtable = IPrintPageInfo_Vtbl;
-    const IID: ::windows::core::GUID = <IPrintPageInfo as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPrintPageInfo as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PrintPageInfo {
+impl ::windows_core::RuntimeName for PrintPageInfo {
     const NAME: &'static str = "Windows.Graphics.Printing.PrintPageInfo";
 }
-impl ::core::convert::From<PrintPageInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<PrintPageInfo> for ::windows_core::IUnknown {
     fn from(value: PrintPageInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintPageInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PrintPageInfo> for ::windows_core::IUnknown {
     fn from(value: &PrintPageInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PrintPageInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PrintPageInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PrintPageInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PrintPageInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PrintPageInfo> for ::windows::core::IInspectable {
+impl ::core::convert::From<PrintPageInfo> for ::windows_core::IInspectable {
     fn from(value: PrintPageInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintPageInfo> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PrintPageInfo> for ::windows_core::IInspectable {
     fn from(value: &PrintPageInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PrintPageInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PrintPageInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PrintPageInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PrintPageInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for PrintPageInfo {}
 unsafe impl ::core::marker::Sync for PrintPageInfo {}
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintPageRange(::windows::core::IUnknown);
+pub struct PrintPageRange(::windows_core::IUnknown);
 impl PrintPageRange {
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn FirstPageNumber(&self) -> ::windows::core::Result<i32> {
+    pub fn FirstPageNumber(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).FirstPageNumber)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).FirstPageNumber)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn LastPageNumber(&self) -> ::windows::core::Result<i32> {
+    pub fn LastPageNumber(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).LastPageNumber)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).LastPageNumber)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Create(firstpage: i32, lastpage: i32) -> ::windows::core::Result<PrintPageRange> {
+    pub fn Create(firstpage: i32, lastpage: i32) -> ::windows_core::Result<PrintPageRange> {
         Self::IPrintPageRangeFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Create)(::windows::core::Interface::as_raw(this), firstpage, lastpage, result__.as_mut_ptr()).from_abi::<PrintPageRange>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), firstpage, lastpage, result__.as_mut_ptr()).from_abi::<PrintPageRange>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn CreateWithSinglePage(page: i32) -> ::windows::core::Result<PrintPageRange> {
+    pub fn CreateWithSinglePage(page: i32) -> ::windows_core::Result<PrintPageRange> {
         Self::IPrintPageRangeFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CreateWithSinglePage)(::windows::core::Interface::as_raw(this), page, result__.as_mut_ptr()).from_abi::<PrintPageRange>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CreateWithSinglePage)(::windows_core::Interface::as_raw(this), page, result__.as_mut_ptr()).from_abi::<PrintPageRange>(result__)
         })
     }
     #[doc(hidden)]
-    pub fn IPrintPageRangeFactory<R, F: FnOnce(&IPrintPageRangeFactory) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<PrintPageRange, IPrintPageRangeFactory> = ::windows::core::FactoryCache::new();
+    pub fn IPrintPageRangeFactory<R, F: FnOnce(&IPrintPageRangeFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<PrintPageRange, IPrintPageRangeFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
@@ -1840,103 +1840,103 @@ impl ::core::fmt::Debug for PrintPageRange {
         f.debug_tuple("PrintPageRange").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintPageRange {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintPageRange;{f8a06c54-6e7c-51c5-57fd-0660c2d71513})");
+unsafe impl ::windows_core::RuntimeType for PrintPageRange {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintPageRange;{f8a06c54-6e7c-51c5-57fd-0660c2d71513})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PrintPageRange {
+unsafe impl ::windows_core::Interface for PrintPageRange {
     type Vtable = IPrintPageRange_Vtbl;
-    const IID: ::windows::core::GUID = <IPrintPageRange as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPrintPageRange as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PrintPageRange {
+impl ::windows_core::RuntimeName for PrintPageRange {
     const NAME: &'static str = "Windows.Graphics.Printing.PrintPageRange";
 }
-impl ::core::convert::From<PrintPageRange> for ::windows::core::IUnknown {
+impl ::core::convert::From<PrintPageRange> for ::windows_core::IUnknown {
     fn from(value: PrintPageRange) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintPageRange> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PrintPageRange> for ::windows_core::IUnknown {
     fn from(value: &PrintPageRange) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PrintPageRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PrintPageRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PrintPageRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PrintPageRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PrintPageRange> for ::windows::core::IInspectable {
+impl ::core::convert::From<PrintPageRange> for ::windows_core::IInspectable {
     fn from(value: PrintPageRange) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintPageRange> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PrintPageRange> for ::windows_core::IInspectable {
     fn from(value: &PrintPageRange) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PrintPageRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PrintPageRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PrintPageRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PrintPageRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for PrintPageRange {}
 unsafe impl ::core::marker::Sync for PrintPageRange {}
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintPageRangeOptions(::windows::core::IUnknown);
+pub struct PrintPageRangeOptions(::windows_core::IUnknown);
 impl PrintPageRangeOptions {
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetAllowAllPages(&self, value: bool) -> ::windows::core::Result<()> {
+    pub fn SetAllowAllPages(&self, value: bool) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetAllowAllPages)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetAllowAllPages)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn AllowAllPages(&self) -> ::windows::core::Result<bool> {
+    pub fn AllowAllPages(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).AllowAllPages)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).AllowAllPages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetAllowCurrentPage(&self, value: bool) -> ::windows::core::Result<()> {
+    pub fn SetAllowCurrentPage(&self, value: bool) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetAllowCurrentPage)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetAllowCurrentPage)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn AllowCurrentPage(&self) -> ::windows::core::Result<bool> {
+    pub fn AllowCurrentPage(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).AllowCurrentPage)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).AllowCurrentPage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetAllowCustomSetOfPages(&self, value: bool) -> ::windows::core::Result<()> {
+    pub fn SetAllowCustomSetOfPages(&self, value: bool) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetAllowCustomSetOfPages)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetAllowCustomSetOfPages)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn AllowCustomSetOfPages(&self) -> ::windows::core::Result<bool> {
+    pub fn AllowCustomSetOfPages(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).AllowCustomSetOfPages)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).AllowCustomSetOfPages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
 }
@@ -1956,58 +1956,58 @@ impl ::core::fmt::Debug for PrintPageRangeOptions {
         f.debug_tuple("PrintPageRangeOptions").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintPageRangeOptions {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintPageRangeOptions;{ce6db728-1357-46b2-a923-79f995f448fc})");
+unsafe impl ::windows_core::RuntimeType for PrintPageRangeOptions {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintPageRangeOptions;{ce6db728-1357-46b2-a923-79f995f448fc})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PrintPageRangeOptions {
+unsafe impl ::windows_core::Interface for PrintPageRangeOptions {
     type Vtable = IPrintPageRangeOptions_Vtbl;
-    const IID: ::windows::core::GUID = <IPrintPageRangeOptions as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPrintPageRangeOptions as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PrintPageRangeOptions {
+impl ::windows_core::RuntimeName for PrintPageRangeOptions {
     const NAME: &'static str = "Windows.Graphics.Printing.PrintPageRangeOptions";
 }
-impl ::core::convert::From<PrintPageRangeOptions> for ::windows::core::IUnknown {
+impl ::core::convert::From<PrintPageRangeOptions> for ::windows_core::IUnknown {
     fn from(value: PrintPageRangeOptions) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintPageRangeOptions> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PrintPageRangeOptions> for ::windows_core::IUnknown {
     fn from(value: &PrintPageRangeOptions) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PrintPageRangeOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PrintPageRangeOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PrintPageRangeOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PrintPageRangeOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PrintPageRangeOptions> for ::windows::core::IInspectable {
+impl ::core::convert::From<PrintPageRangeOptions> for ::windows_core::IInspectable {
     fn from(value: PrintPageRangeOptions) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintPageRangeOptions> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PrintPageRangeOptions> for ::windows_core::IInspectable {
     fn from(value: &PrintPageRangeOptions) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PrintPageRangeOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PrintPageRangeOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PrintPageRangeOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PrintPageRangeOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for PrintPageRangeOptions {}
@@ -2039,7 +2039,7 @@ impl ::core::default::Default for PrintQuality {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PrintQuality {
+unsafe impl ::windows_core::Abi for PrintQuality {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PrintQuality {
@@ -2047,10 +2047,10 @@ impl ::core::fmt::Debug for PrintQuality {
         f.debug_tuple("PrintQuality").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintQuality {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintQuality;i4)");
+unsafe impl ::windows_core::RuntimeType for PrintQuality {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintQuality;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -2084,7 +2084,7 @@ impl ::core::default::Default for PrintStaple {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PrintStaple {
+unsafe impl ::windows_core::Abi for PrintStaple {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PrintStaple {
@@ -2092,139 +2092,139 @@ impl ::core::fmt::Debug for PrintStaple {
         f.debug_tuple("PrintStaple").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintStaple {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintStaple;i4)");
+unsafe impl ::windows_core::RuntimeType for PrintStaple {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintStaple;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintTask(::windows::core::IUnknown);
+pub struct PrintTask(::windows_core::IUnknown);
 impl PrintTask {
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"ApplicationModel_DataTransfer\"`*"]
     #[cfg(feature = "ApplicationModel_DataTransfer")]
-    pub fn Properties(&self) -> ::windows::core::Result<super::super::ApplicationModel::DataTransfer::DataPackagePropertySet> {
+    pub fn Properties(&self) -> ::windows_core::Result<super::super::ApplicationModel::DataTransfer::DataPackagePropertySet> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Properties)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::ApplicationModel::DataTransfer::DataPackagePropertySet>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::ApplicationModel::DataTransfer::DataPackagePropertySet>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Source(&self) -> ::windows::core::Result<IPrintDocumentSource> {
+    pub fn Source(&self) -> ::windows_core::Result<IPrintDocumentSource> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Source)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IPrintDocumentSource>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Source)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IPrintDocumentSource>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Options(&self) -> ::windows::core::Result<PrintTaskOptions> {
+    pub fn Options(&self) -> ::windows_core::Result<PrintTaskOptions> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Options)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintTaskOptions>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Options)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintTaskOptions>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Previewing<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintTask, ::windows::core::IInspectable>>>(&self, eventhandler: Param0) -> ::windows::core::Result<super::super::Foundation::EventRegistrationToken> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows::core::Interface::vtable(this).Previewing)(::windows::core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePreviewing<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemovePreviewing)(::windows::core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
-    }
-    #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
-    #[cfg(feature = "Foundation")]
-    pub fn Submitting<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintTask, ::windows::core::IInspectable>>>(&self, eventhandler: Param0) -> ::windows::core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Previewing<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintTask, ::windows_core::IInspectable>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows::core::Interface::vtable(this).Submitting)(::windows::core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            (::windows_core::Interface::vtable(this).Previewing)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn RemoveSubmitting<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows::core::Result<()> {
+    pub fn RemovePreviewing<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemoveSubmitting)(::windows::core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).RemovePreviewing)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Progressing<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintTask, PrintTaskProgressingEventArgs>>>(&self, eventhandler: Param0) -> ::windows::core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Submitting<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintTask, ::windows_core::IInspectable>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows::core::Interface::vtable(this).Progressing)(::windows::core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            (::windows_core::Interface::vtable(this).Submitting)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn RemoveProgressing<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows::core::Result<()> {
+    pub fn RemoveSubmitting<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemoveProgressing)(::windows::core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).RemoveSubmitting)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Completed<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintTask, PrintTaskCompletedEventArgs>>>(&self, eventhandler: Param0) -> ::windows::core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Progressing<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintTask, PrintTaskProgressingEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows::core::Interface::vtable(this).Completed)(::windows::core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            (::windows_core::Interface::vtable(this).Progressing)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn RemoveCompleted<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows::core::Result<()> {
+    pub fn RemoveProgressing<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemoveCompleted)(::windows::core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).RemoveProgressing)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
+    }
+    #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
+    #[cfg(feature = "Foundation")]
+    pub fn Completed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintTask, PrintTaskCompletedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Completed)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+        }
+    }
+    #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
+    #[cfg(feature = "Foundation")]
+    pub fn RemoveCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe { (::windows_core::Interface::vtable(this).RemoveCompleted)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetIsPreviewEnabled(&self, value: bool) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTask2>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetIsPreviewEnabled)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetIsPreviewEnabled(&self, value: bool) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTask2>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetIsPreviewEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn IsPreviewEnabled(&self) -> ::windows::core::Result<bool> {
-        let this = &::windows::core::Interface::cast::<IPrintTask2>(self)?;
+    pub fn IsPreviewEnabled(&self) -> ::windows_core::Result<bool> {
+        let this = &::windows_core::Interface::cast::<IPrintTask2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsPreviewEnabled)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsPreviewEnabled)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetIsPrinterTargetEnabled(&self, value: bool) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskTargetDeviceSupport>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetIsPrinterTargetEnabled)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetIsPrinterTargetEnabled(&self, value: bool) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskTargetDeviceSupport>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetIsPrinterTargetEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn IsPrinterTargetEnabled(&self) -> ::windows::core::Result<bool> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskTargetDeviceSupport>(self)?;
+    pub fn IsPrinterTargetEnabled(&self) -> ::windows_core::Result<bool> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskTargetDeviceSupport>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsPrinterTargetEnabled)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsPrinterTargetEnabled)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetIs3DManufacturingTargetEnabled(&self, value: bool) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskTargetDeviceSupport>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetIs3DManufacturingTargetEnabled)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetIs3DManufacturingTargetEnabled(&self, value: bool) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskTargetDeviceSupport>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetIs3DManufacturingTargetEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Is3DManufacturingTargetEnabled(&self) -> ::windows::core::Result<bool> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskTargetDeviceSupport>(self)?;
+    pub fn Is3DManufacturingTargetEnabled(&self) -> ::windows_core::Result<bool> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskTargetDeviceSupport>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).Is3DManufacturingTargetEnabled)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).Is3DManufacturingTargetEnabled)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
 }
@@ -2244,72 +2244,72 @@ impl ::core::fmt::Debug for PrintTask {
         f.debug_tuple("PrintTask").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintTask {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTask;{61d80247-6cf6-4fad-84e2-a5e82e2d4ceb})");
+unsafe impl ::windows_core::RuntimeType for PrintTask {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTask;{61d80247-6cf6-4fad-84e2-a5e82e2d4ceb})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PrintTask {
+unsafe impl ::windows_core::Interface for PrintTask {
     type Vtable = IPrintTask_Vtbl;
-    const IID: ::windows::core::GUID = <IPrintTask as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPrintTask as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PrintTask {
+impl ::windows_core::RuntimeName for PrintTask {
     const NAME: &'static str = "Windows.Graphics.Printing.PrintTask";
 }
-impl ::core::convert::From<PrintTask> for ::windows::core::IUnknown {
+impl ::core::convert::From<PrintTask> for ::windows_core::IUnknown {
     fn from(value: PrintTask) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTask> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PrintTask> for ::windows_core::IUnknown {
     fn from(value: &PrintTask) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PrintTask {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PrintTask {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PrintTask {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PrintTask {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PrintTask> for ::windows::core::IInspectable {
+impl ::core::convert::From<PrintTask> for ::windows_core::IInspectable {
     fn from(value: PrintTask) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTask> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PrintTask> for ::windows_core::IInspectable {
     fn from(value: &PrintTask) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PrintTask {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PrintTask {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PrintTask {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PrintTask {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for PrintTask {}
 unsafe impl ::core::marker::Sync for PrintTask {}
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintTaskCompletedEventArgs(::windows::core::IUnknown);
+pub struct PrintTaskCompletedEventArgs(::windows_core::IUnknown);
 impl PrintTaskCompletedEventArgs {
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Completion(&self) -> ::windows::core::Result<PrintTaskCompletion> {
+    pub fn Completion(&self) -> ::windows_core::Result<PrintTaskCompletion> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintTaskCompletion>::zeroed();
-            (::windows::core::Interface::vtable(this).Completion)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintTaskCompletion>(result__)
+            (::windows_core::Interface::vtable(this).Completion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintTaskCompletion>(result__)
         }
     }
 }
@@ -2329,58 +2329,58 @@ impl ::core::fmt::Debug for PrintTaskCompletedEventArgs {
         f.debug_tuple("PrintTaskCompletedEventArgs").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintTaskCompletedEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskCompletedEventArgs;{5bcd34af-24e9-4c10-8d07-14c346ba3fce})");
+unsafe impl ::windows_core::RuntimeType for PrintTaskCompletedEventArgs {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskCompletedEventArgs;{5bcd34af-24e9-4c10-8d07-14c346ba3fce})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PrintTaskCompletedEventArgs {
+unsafe impl ::windows_core::Interface for PrintTaskCompletedEventArgs {
     type Vtable = IPrintTaskCompletedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = <IPrintTaskCompletedEventArgs as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPrintTaskCompletedEventArgs as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PrintTaskCompletedEventArgs {
+impl ::windows_core::RuntimeName for PrintTaskCompletedEventArgs {
     const NAME: &'static str = "Windows.Graphics.Printing.PrintTaskCompletedEventArgs";
 }
-impl ::core::convert::From<PrintTaskCompletedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<PrintTaskCompletedEventArgs> for ::windows_core::IUnknown {
     fn from(value: PrintTaskCompletedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskCompletedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PrintTaskCompletedEventArgs> for ::windows_core::IUnknown {
     fn from(value: &PrintTaskCompletedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PrintTaskCompletedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PrintTaskCompletedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PrintTaskCompletedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PrintTaskCompletedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PrintTaskCompletedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<PrintTaskCompletedEventArgs> for ::windows_core::IInspectable {
     fn from(value: PrintTaskCompletedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskCompletedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PrintTaskCompletedEventArgs> for ::windows_core::IInspectable {
     fn from(value: &PrintTaskCompletedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PrintTaskCompletedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PrintTaskCompletedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PrintTaskCompletedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PrintTaskCompletedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for PrintTaskCompletedEventArgs {}
@@ -2406,7 +2406,7 @@ impl ::core::default::Default for PrintTaskCompletion {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PrintTaskCompletion {
+unsafe impl ::windows_core::Abi for PrintTaskCompletion {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PrintTaskCompletion {
@@ -2414,231 +2414,231 @@ impl ::core::fmt::Debug for PrintTaskCompletion {
         f.debug_tuple("PrintTaskCompletion").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintTaskCompletion {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintTaskCompletion;i4)");
+unsafe impl ::windows_core::RuntimeType for PrintTaskCompletion {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.Printing.PrintTaskCompletion;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintTaskOptions(::windows::core::IUnknown);
+pub struct PrintTaskOptions(::windows_core::IUnknown);
 impl PrintTaskOptions {
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetBordering(&self, value: PrintBordering) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptions>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetBordering)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetBordering(&self, value: PrintBordering) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptions>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetBordering)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Bordering(&self) -> ::windows::core::Result<PrintBordering> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptions>(self)?;
+    pub fn Bordering(&self) -> ::windows_core::Result<PrintBordering> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptions>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintBordering>::zeroed();
-            (::windows::core::Interface::vtable(this).Bordering)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintBordering>(result__)
+            (::windows_core::Interface::vtable(this).Bordering)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintBordering>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetPagePrintTicket<'a, Param0: ::windows::core::IntoParam<'a, PrintPageInfo>>(&self, printpageinfo: Param0) -> ::windows::core::Result<super::super::Storage::Streams::IRandomAccessStream> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptions>(self)?;
+    pub fn GetPagePrintTicket<'a, Param0: ::windows_core::IntoParam<'a, PrintPageInfo>>(&self, printpageinfo: Param0) -> ::windows_core::Result<super::super::Storage::Streams::IRandomAccessStream> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptions>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetPagePrintTicket)(::windows::core::Interface::as_raw(this), printpageinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStream>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetPagePrintTicket)(::windows_core::Interface::as_raw(this), printpageinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStream>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn PageRangeOptions(&self) -> ::windows::core::Result<PrintPageRangeOptions> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptions2>(self)?;
+    pub fn PageRangeOptions(&self) -> ::windows_core::Result<PrintPageRangeOptions> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptions2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).PageRangeOptions)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintPageRangeOptions>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).PageRangeOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintPageRangeOptions>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CustomPageRanges(&self) -> ::windows::core::Result<super::super::Foundation::Collections::IVector<PrintPageRange>> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptions2>(self)?;
+    pub fn CustomPageRanges(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<PrintPageRange>> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptions2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CustomPageRanges)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<PrintPageRange>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CustomPageRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<PrintPageRange>>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetPageDescription(&self, jobpagenumber: u32) -> ::windows::core::Result<PrintPageDescription> {
+    pub fn GetPageDescription(&self, jobpagenumber: u32) -> ::windows_core::Result<PrintPageDescription> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintPageDescription>::zeroed();
-            (::windows::core::Interface::vtable(this).GetPageDescription)(::windows::core::Interface::as_raw(this), jobpagenumber, result__.as_mut_ptr()).from_abi::<PrintPageDescription>(result__)
+            (::windows_core::Interface::vtable(this).GetPageDescription)(::windows_core::Interface::as_raw(this), jobpagenumber, result__.as_mut_ptr()).from_abi::<PrintPageDescription>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetMediaSize(&self, value: PrintMediaSize) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetMediaSize)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetMediaSize(&self, value: PrintMediaSize) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetMediaSize)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn MediaSize(&self) -> ::windows::core::Result<PrintMediaSize> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+    pub fn MediaSize(&self) -> ::windows_core::Result<PrintMediaSize> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintMediaSize>::zeroed();
-            (::windows::core::Interface::vtable(this).MediaSize)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintMediaSize>(result__)
+            (::windows_core::Interface::vtable(this).MediaSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintMediaSize>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetMediaType(&self, value: PrintMediaType) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetMediaType)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetMediaType(&self, value: PrintMediaType) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetMediaType)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn MediaType(&self) -> ::windows::core::Result<PrintMediaType> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+    pub fn MediaType(&self) -> ::windows_core::Result<PrintMediaType> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintMediaType>::zeroed();
-            (::windows::core::Interface::vtable(this).MediaType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintMediaType>(result__)
+            (::windows_core::Interface::vtable(this).MediaType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintMediaType>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetOrientation(&self, value: PrintOrientation) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetOrientation)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetOrientation(&self, value: PrintOrientation) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetOrientation)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Orientation(&self) -> ::windows::core::Result<PrintOrientation> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+    pub fn Orientation(&self) -> ::windows_core::Result<PrintOrientation> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintOrientation>::zeroed();
-            (::windows::core::Interface::vtable(this).Orientation)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintOrientation>(result__)
+            (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintOrientation>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetPrintQuality(&self, value: PrintQuality) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetPrintQuality)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetPrintQuality(&self, value: PrintQuality) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetPrintQuality)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn PrintQuality(&self) -> ::windows::core::Result<PrintQuality> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+    pub fn PrintQuality(&self) -> ::windows_core::Result<PrintQuality> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintQuality>::zeroed();
-            (::windows::core::Interface::vtable(this).PrintQuality)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintQuality>(result__)
+            (::windows_core::Interface::vtable(this).PrintQuality)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintQuality>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetColorMode(&self, value: PrintColorMode) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetColorMode)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetColorMode(&self, value: PrintColorMode) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetColorMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn ColorMode(&self) -> ::windows::core::Result<PrintColorMode> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+    pub fn ColorMode(&self) -> ::windows_core::Result<PrintColorMode> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintColorMode>::zeroed();
-            (::windows::core::Interface::vtable(this).ColorMode)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintColorMode>(result__)
+            (::windows_core::Interface::vtable(this).ColorMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintColorMode>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetDuplex(&self, value: PrintDuplex) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetDuplex)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetDuplex(&self, value: PrintDuplex) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetDuplex)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Duplex(&self) -> ::windows::core::Result<PrintDuplex> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+    pub fn Duplex(&self) -> ::windows_core::Result<PrintDuplex> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintDuplex>::zeroed();
-            (::windows::core::Interface::vtable(this).Duplex)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintDuplex>(result__)
+            (::windows_core::Interface::vtable(this).Duplex)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintDuplex>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetCollation(&self, value: PrintCollation) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetCollation)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetCollation(&self, value: PrintCollation) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetCollation)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Collation(&self) -> ::windows::core::Result<PrintCollation> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+    pub fn Collation(&self) -> ::windows_core::Result<PrintCollation> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintCollation>::zeroed();
-            (::windows::core::Interface::vtable(this).Collation)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintCollation>(result__)
+            (::windows_core::Interface::vtable(this).Collation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintCollation>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetStaple(&self, value: PrintStaple) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetStaple)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetStaple(&self, value: PrintStaple) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetStaple)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Staple(&self) -> ::windows::core::Result<PrintStaple> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+    pub fn Staple(&self) -> ::windows_core::Result<PrintStaple> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintStaple>::zeroed();
-            (::windows::core::Interface::vtable(this).Staple)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintStaple>(result__)
+            (::windows_core::Interface::vtable(this).Staple)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintStaple>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetHolePunch(&self, value: PrintHolePunch) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetHolePunch)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetHolePunch(&self, value: PrintHolePunch) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetHolePunch)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn HolePunch(&self) -> ::windows::core::Result<PrintHolePunch> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+    pub fn HolePunch(&self) -> ::windows_core::Result<PrintHolePunch> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintHolePunch>::zeroed();
-            (::windows::core::Interface::vtable(this).HolePunch)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintHolePunch>(result__)
+            (::windows_core::Interface::vtable(this).HolePunch)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintHolePunch>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetBinding(&self, value: PrintBinding) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetBinding)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetBinding(&self, value: PrintBinding) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetBinding)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Binding(&self) -> ::windows::core::Result<PrintBinding> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+    pub fn Binding(&self) -> ::windows_core::Result<PrintBinding> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<PrintBinding>::zeroed();
-            (::windows::core::Interface::vtable(this).Binding)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintBinding>(result__)
+            (::windows_core::Interface::vtable(this).Binding)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintBinding>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn MinCopies(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+    pub fn MinCopies(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).MinCopies)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).MinCopies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn MaxCopies(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+    pub fn MaxCopies(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).MaxCopies)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).MaxCopies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetNumberOfCopies(&self, value: u32) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetNumberOfCopies)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetNumberOfCopies(&self, value: u32) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetNumberOfCopies)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn NumberOfCopies(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
+    pub fn NumberOfCopies(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreProperties>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).NumberOfCopies)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).NumberOfCopies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DisplayedOptions(&self) -> ::windows::core::Result<super::super::Foundation::Collections::IVector<::windows::core::HSTRING>> {
-        let this = &::windows::core::Interface::cast::<IPrintTaskOptionsCoreUIConfiguration>(self)?;
+    pub fn DisplayedOptions(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+        let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreUIConfiguration>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).DisplayedOptions)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows::core::HSTRING>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).DisplayedOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
 }
@@ -2658,138 +2658,138 @@ impl ::core::fmt::Debug for PrintTaskOptions {
         f.debug_tuple("PrintTaskOptions").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintTaskOptions {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskOptions;{1bdbb474-4ed1-41eb-be3c-72d18ed67337})");
+unsafe impl ::windows_core::RuntimeType for PrintTaskOptions {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskOptions;{1bdbb474-4ed1-41eb-be3c-72d18ed67337})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PrintTaskOptions {
+unsafe impl ::windows_core::Interface for PrintTaskOptions {
     type Vtable = IPrintTaskOptionsCore_Vtbl;
-    const IID: ::windows::core::GUID = <IPrintTaskOptionsCore as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPrintTaskOptionsCore as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PrintTaskOptions {
+impl ::windows_core::RuntimeName for PrintTaskOptions {
     const NAME: &'static str = "Windows.Graphics.Printing.PrintTaskOptions";
 }
-impl ::core::convert::From<PrintTaskOptions> for ::windows::core::IUnknown {
+impl ::core::convert::From<PrintTaskOptions> for ::windows_core::IUnknown {
     fn from(value: PrintTaskOptions) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskOptions> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PrintTaskOptions> for ::windows_core::IUnknown {
     fn from(value: &PrintTaskOptions) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PrintTaskOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PrintTaskOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PrintTaskOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PrintTaskOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PrintTaskOptions> for ::windows::core::IInspectable {
+impl ::core::convert::From<PrintTaskOptions> for ::windows_core::IInspectable {
     fn from(value: PrintTaskOptions) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskOptions> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PrintTaskOptions> for ::windows_core::IInspectable {
     fn from(value: &PrintTaskOptions) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PrintTaskOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PrintTaskOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PrintTaskOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PrintTaskOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<PrintTaskOptions> for IPrintTaskOptionsCore {
-    type Error = ::windows::core::Error;
-    fn try_from(value: PrintTaskOptions) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: PrintTaskOptions) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&PrintTaskOptions> for IPrintTaskOptionsCore {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &PrintTaskOptions) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &PrintTaskOptions) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IPrintTaskOptionsCore> for PrintTaskOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, IPrintTaskOptionsCore> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IPrintTaskOptionsCore> for PrintTaskOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, IPrintTaskOptionsCore> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IPrintTaskOptionsCore> for &PrintTaskOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, IPrintTaskOptionsCore> {
-        ::core::convert::TryInto::<IPrintTaskOptionsCore>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IPrintTaskOptionsCore> for &PrintTaskOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, IPrintTaskOptionsCore> {
+        ::core::convert::TryInto::<IPrintTaskOptionsCore>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<PrintTaskOptions> for IPrintTaskOptionsCoreProperties {
-    type Error = ::windows::core::Error;
-    fn try_from(value: PrintTaskOptions) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: PrintTaskOptions) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&PrintTaskOptions> for IPrintTaskOptionsCoreProperties {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &PrintTaskOptions) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &PrintTaskOptions) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IPrintTaskOptionsCoreProperties> for PrintTaskOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, IPrintTaskOptionsCoreProperties> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IPrintTaskOptionsCoreProperties> for PrintTaskOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, IPrintTaskOptionsCoreProperties> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IPrintTaskOptionsCoreProperties> for &PrintTaskOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, IPrintTaskOptionsCoreProperties> {
-        ::core::convert::TryInto::<IPrintTaskOptionsCoreProperties>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IPrintTaskOptionsCoreProperties> for &PrintTaskOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, IPrintTaskOptionsCoreProperties> {
+        ::core::convert::TryInto::<IPrintTaskOptionsCoreProperties>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<PrintTaskOptions> for IPrintTaskOptionsCoreUIConfiguration {
-    type Error = ::windows::core::Error;
-    fn try_from(value: PrintTaskOptions) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: PrintTaskOptions) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&PrintTaskOptions> for IPrintTaskOptionsCoreUIConfiguration {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &PrintTaskOptions) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &PrintTaskOptions) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IPrintTaskOptionsCoreUIConfiguration> for PrintTaskOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, IPrintTaskOptionsCoreUIConfiguration> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IPrintTaskOptionsCoreUIConfiguration> for PrintTaskOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, IPrintTaskOptionsCoreUIConfiguration> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IPrintTaskOptionsCoreUIConfiguration> for &PrintTaskOptions {
-    fn into_param(self) -> ::windows::core::Param<'a, IPrintTaskOptionsCoreUIConfiguration> {
-        ::core::convert::TryInto::<IPrintTaskOptionsCoreUIConfiguration>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IPrintTaskOptionsCoreUIConfiguration> for &PrintTaskOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, IPrintTaskOptionsCoreUIConfiguration> {
+        ::core::convert::TryInto::<IPrintTaskOptionsCoreUIConfiguration>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for PrintTaskOptions {}
 unsafe impl ::core::marker::Sync for PrintTaskOptions {}
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintTaskProgressingEventArgs(::windows::core::IUnknown);
+pub struct PrintTaskProgressingEventArgs(::windows_core::IUnknown);
 impl PrintTaskProgressingEventArgs {
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn DocumentPageCount(&self) -> ::windows::core::Result<u32> {
+    pub fn DocumentPageCount(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).DocumentPageCount)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).DocumentPageCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
 }
@@ -2809,89 +2809,89 @@ impl ::core::fmt::Debug for PrintTaskProgressingEventArgs {
         f.debug_tuple("PrintTaskProgressingEventArgs").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintTaskProgressingEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskProgressingEventArgs;{810cd3cb-b410-4282-a073-5ac378234174})");
+unsafe impl ::windows_core::RuntimeType for PrintTaskProgressingEventArgs {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskProgressingEventArgs;{810cd3cb-b410-4282-a073-5ac378234174})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PrintTaskProgressingEventArgs {
+unsafe impl ::windows_core::Interface for PrintTaskProgressingEventArgs {
     type Vtable = IPrintTaskProgressingEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = <IPrintTaskProgressingEventArgs as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPrintTaskProgressingEventArgs as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PrintTaskProgressingEventArgs {
+impl ::windows_core::RuntimeName for PrintTaskProgressingEventArgs {
     const NAME: &'static str = "Windows.Graphics.Printing.PrintTaskProgressingEventArgs";
 }
-impl ::core::convert::From<PrintTaskProgressingEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<PrintTaskProgressingEventArgs> for ::windows_core::IUnknown {
     fn from(value: PrintTaskProgressingEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskProgressingEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PrintTaskProgressingEventArgs> for ::windows_core::IUnknown {
     fn from(value: &PrintTaskProgressingEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PrintTaskProgressingEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PrintTaskProgressingEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PrintTaskProgressingEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PrintTaskProgressingEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PrintTaskProgressingEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<PrintTaskProgressingEventArgs> for ::windows_core::IInspectable {
     fn from(value: PrintTaskProgressingEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskProgressingEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PrintTaskProgressingEventArgs> for ::windows_core::IInspectable {
     fn from(value: &PrintTaskProgressingEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PrintTaskProgressingEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PrintTaskProgressingEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PrintTaskProgressingEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PrintTaskProgressingEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for PrintTaskProgressingEventArgs {}
 unsafe impl ::core::marker::Sync for PrintTaskProgressingEventArgs {}
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintTaskRequest(::windows::core::IUnknown);
+pub struct PrintTaskRequest(::windows_core::IUnknown);
 impl PrintTaskRequest {
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Deadline(&self) -> ::windows::core::Result<super::super::Foundation::DateTime> {
+    pub fn Deadline(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows::core::Interface::vtable(this).Deadline)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            (::windows_core::Interface::vtable(this).Deadline)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn CreatePrintTask<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>, Param1: ::windows::core::IntoParam<'a, PrintTaskSourceRequestedHandler>>(&self, title: Param0, handler: Param1) -> ::windows::core::Result<PrintTask> {
+    pub fn CreatePrintTask<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, PrintTaskSourceRequestedHandler>>(&self, title: Param0, handler: Param1) -> ::windows_core::Result<PrintTask> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CreatePrintTask)(::windows::core::Interface::as_raw(this), title.into_param().abi(), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<PrintTask>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CreatePrintTask)(::windows_core::Interface::as_raw(this), title.into_param().abi(), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<PrintTask>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn GetDeferral(&self) -> ::windows::core::Result<PrintTaskRequestedDeferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<PrintTaskRequestedDeferral> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetDeferral)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintTaskRequestedDeferral>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintTaskRequestedDeferral>(result__)
         }
     }
 }
@@ -2911,70 +2911,70 @@ impl ::core::fmt::Debug for PrintTaskRequest {
         f.debug_tuple("PrintTaskRequest").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintTaskRequest {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskRequest;{6ff61e2e-2722-4240-a67c-f364849a17f3})");
+unsafe impl ::windows_core::RuntimeType for PrintTaskRequest {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskRequest;{6ff61e2e-2722-4240-a67c-f364849a17f3})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PrintTaskRequest {
+unsafe impl ::windows_core::Interface for PrintTaskRequest {
     type Vtable = IPrintTaskRequest_Vtbl;
-    const IID: ::windows::core::GUID = <IPrintTaskRequest as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPrintTaskRequest as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PrintTaskRequest {
+impl ::windows_core::RuntimeName for PrintTaskRequest {
     const NAME: &'static str = "Windows.Graphics.Printing.PrintTaskRequest";
 }
-impl ::core::convert::From<PrintTaskRequest> for ::windows::core::IUnknown {
+impl ::core::convert::From<PrintTaskRequest> for ::windows_core::IUnknown {
     fn from(value: PrintTaskRequest) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskRequest> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PrintTaskRequest> for ::windows_core::IUnknown {
     fn from(value: &PrintTaskRequest) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PrintTaskRequest {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PrintTaskRequest {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PrintTaskRequest {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PrintTaskRequest {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PrintTaskRequest> for ::windows::core::IInspectable {
+impl ::core::convert::From<PrintTaskRequest> for ::windows_core::IInspectable {
     fn from(value: PrintTaskRequest) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskRequest> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PrintTaskRequest> for ::windows_core::IInspectable {
     fn from(value: &PrintTaskRequest) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PrintTaskRequest {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PrintTaskRequest {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PrintTaskRequest {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PrintTaskRequest {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for PrintTaskRequest {}
 unsafe impl ::core::marker::Sync for PrintTaskRequest {}
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintTaskRequestedDeferral(::windows::core::IUnknown);
+pub struct PrintTaskRequestedDeferral(::windows_core::IUnknown);
 impl PrintTaskRequestedDeferral {
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Complete(&self) -> ::windows::core::Result<()> {
+    pub fn Complete(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Complete)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Complete)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
 impl ::core::clone::Clone for PrintTaskRequestedDeferral {
@@ -2993,72 +2993,72 @@ impl ::core::fmt::Debug for PrintTaskRequestedDeferral {
         f.debug_tuple("PrintTaskRequestedDeferral").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintTaskRequestedDeferral {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskRequestedDeferral;{cfefb3f0-ce3e-42c7-9496-64800c622c44})");
+unsafe impl ::windows_core::RuntimeType for PrintTaskRequestedDeferral {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskRequestedDeferral;{cfefb3f0-ce3e-42c7-9496-64800c622c44})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PrintTaskRequestedDeferral {
+unsafe impl ::windows_core::Interface for PrintTaskRequestedDeferral {
     type Vtable = IPrintTaskRequestedDeferral_Vtbl;
-    const IID: ::windows::core::GUID = <IPrintTaskRequestedDeferral as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPrintTaskRequestedDeferral as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PrintTaskRequestedDeferral {
+impl ::windows_core::RuntimeName for PrintTaskRequestedDeferral {
     const NAME: &'static str = "Windows.Graphics.Printing.PrintTaskRequestedDeferral";
 }
-impl ::core::convert::From<PrintTaskRequestedDeferral> for ::windows::core::IUnknown {
+impl ::core::convert::From<PrintTaskRequestedDeferral> for ::windows_core::IUnknown {
     fn from(value: PrintTaskRequestedDeferral) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskRequestedDeferral> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PrintTaskRequestedDeferral> for ::windows_core::IUnknown {
     fn from(value: &PrintTaskRequestedDeferral) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PrintTaskRequestedDeferral {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PrintTaskRequestedDeferral {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PrintTaskRequestedDeferral {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PrintTaskRequestedDeferral {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PrintTaskRequestedDeferral> for ::windows::core::IInspectable {
+impl ::core::convert::From<PrintTaskRequestedDeferral> for ::windows_core::IInspectable {
     fn from(value: PrintTaskRequestedDeferral) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskRequestedDeferral> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PrintTaskRequestedDeferral> for ::windows_core::IInspectable {
     fn from(value: &PrintTaskRequestedDeferral) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PrintTaskRequestedDeferral {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PrintTaskRequestedDeferral {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PrintTaskRequestedDeferral {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PrintTaskRequestedDeferral {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for PrintTaskRequestedDeferral {}
 unsafe impl ::core::marker::Sync for PrintTaskRequestedDeferral {}
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintTaskRequestedEventArgs(::windows::core::IUnknown);
+pub struct PrintTaskRequestedEventArgs(::windows_core::IUnknown);
 impl PrintTaskRequestedEventArgs {
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Request(&self) -> ::windows::core::Result<PrintTaskRequest> {
+    pub fn Request(&self) -> ::windows_core::Result<PrintTaskRequest> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Request)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintTaskRequest>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Request)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintTaskRequest>(result__)
         }
     }
 }
@@ -3078,86 +3078,86 @@ impl ::core::fmt::Debug for PrintTaskRequestedEventArgs {
         f.debug_tuple("PrintTaskRequestedEventArgs").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintTaskRequestedEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskRequestedEventArgs;{d0aff924-a31b-454c-a7b6-5d0cc522fc16})");
+unsafe impl ::windows_core::RuntimeType for PrintTaskRequestedEventArgs {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskRequestedEventArgs;{d0aff924-a31b-454c-a7b6-5d0cc522fc16})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PrintTaskRequestedEventArgs {
+unsafe impl ::windows_core::Interface for PrintTaskRequestedEventArgs {
     type Vtable = IPrintTaskRequestedEventArgs_Vtbl;
-    const IID: ::windows::core::GUID = <IPrintTaskRequestedEventArgs as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPrintTaskRequestedEventArgs as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PrintTaskRequestedEventArgs {
+impl ::windows_core::RuntimeName for PrintTaskRequestedEventArgs {
     const NAME: &'static str = "Windows.Graphics.Printing.PrintTaskRequestedEventArgs";
 }
-impl ::core::convert::From<PrintTaskRequestedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<PrintTaskRequestedEventArgs> for ::windows_core::IUnknown {
     fn from(value: PrintTaskRequestedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskRequestedEventArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PrintTaskRequestedEventArgs> for ::windows_core::IUnknown {
     fn from(value: &PrintTaskRequestedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PrintTaskRequestedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PrintTaskRequestedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PrintTaskRequestedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PrintTaskRequestedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PrintTaskRequestedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<PrintTaskRequestedEventArgs> for ::windows_core::IInspectable {
     fn from(value: PrintTaskRequestedEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskRequestedEventArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PrintTaskRequestedEventArgs> for ::windows_core::IInspectable {
     fn from(value: &PrintTaskRequestedEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PrintTaskRequestedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PrintTaskRequestedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PrintTaskRequestedEventArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PrintTaskRequestedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for PrintTaskRequestedEventArgs {}
 unsafe impl ::core::marker::Sync for PrintTaskRequestedEventArgs {}
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintTaskSourceRequestedArgs(::windows::core::IUnknown);
+pub struct PrintTaskSourceRequestedArgs(::windows_core::IUnknown);
 impl PrintTaskSourceRequestedArgs {
     #[doc = "*Required features: `\"Graphics_Printing\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Deadline(&self) -> ::windows::core::Result<super::super::Foundation::DateTime> {
+    pub fn Deadline(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows::core::Interface::vtable(this).Deadline)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            (::windows_core::Interface::vtable(this).Deadline)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
         }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn SetSource<'a, Param0: ::windows::core::IntoParam<'a, IPrintDocumentSource>>(&self, source: Param0) -> ::windows::core::Result<()> {
+    pub fn SetSource<'a, Param0: ::windows_core::IntoParam<'a, IPrintDocumentSource>>(&self, source: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetSource)(::windows::core::Interface::as_raw(this), source.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetSource)(::windows_core::Interface::as_raw(this), source.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn GetDeferral(&self) -> ::windows::core::Result<PrintTaskSourceRequestedDeferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<PrintTaskSourceRequestedDeferral> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetDeferral)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintTaskSourceRequestedDeferral>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintTaskSourceRequestedDeferral>(result__)
         }
     }
 }
@@ -3177,70 +3177,70 @@ impl ::core::fmt::Debug for PrintTaskSourceRequestedArgs {
         f.debug_tuple("PrintTaskSourceRequestedArgs").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintTaskSourceRequestedArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskSourceRequestedArgs;{f9f067be-f456-41f0-9c98-5ce73e851410})");
+unsafe impl ::windows_core::RuntimeType for PrintTaskSourceRequestedArgs {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskSourceRequestedArgs;{f9f067be-f456-41f0-9c98-5ce73e851410})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PrintTaskSourceRequestedArgs {
+unsafe impl ::windows_core::Interface for PrintTaskSourceRequestedArgs {
     type Vtable = IPrintTaskSourceRequestedArgs_Vtbl;
-    const IID: ::windows::core::GUID = <IPrintTaskSourceRequestedArgs as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPrintTaskSourceRequestedArgs as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PrintTaskSourceRequestedArgs {
+impl ::windows_core::RuntimeName for PrintTaskSourceRequestedArgs {
     const NAME: &'static str = "Windows.Graphics.Printing.PrintTaskSourceRequestedArgs";
 }
-impl ::core::convert::From<PrintTaskSourceRequestedArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<PrintTaskSourceRequestedArgs> for ::windows_core::IUnknown {
     fn from(value: PrintTaskSourceRequestedArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskSourceRequestedArgs> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PrintTaskSourceRequestedArgs> for ::windows_core::IUnknown {
     fn from(value: &PrintTaskSourceRequestedArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PrintTaskSourceRequestedArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PrintTaskSourceRequestedArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PrintTaskSourceRequestedArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PrintTaskSourceRequestedArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PrintTaskSourceRequestedArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<PrintTaskSourceRequestedArgs> for ::windows_core::IInspectable {
     fn from(value: PrintTaskSourceRequestedArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskSourceRequestedArgs> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PrintTaskSourceRequestedArgs> for ::windows_core::IInspectable {
     fn from(value: &PrintTaskSourceRequestedArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PrintTaskSourceRequestedArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PrintTaskSourceRequestedArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PrintTaskSourceRequestedArgs {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PrintTaskSourceRequestedArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for PrintTaskSourceRequestedArgs {}
 unsafe impl ::core::marker::Sync for PrintTaskSourceRequestedArgs {}
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintTaskSourceRequestedDeferral(::windows::core::IUnknown);
+pub struct PrintTaskSourceRequestedDeferral(::windows_core::IUnknown);
 impl PrintTaskSourceRequestedDeferral {
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Complete(&self) -> ::windows::core::Result<()> {
+    pub fn Complete(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Complete)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Complete)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
 impl ::core::clone::Clone for PrintTaskSourceRequestedDeferral {
@@ -3259,111 +3259,111 @@ impl ::core::fmt::Debug for PrintTaskSourceRequestedDeferral {
         f.debug_tuple("PrintTaskSourceRequestedDeferral").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PrintTaskSourceRequestedDeferral {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskSourceRequestedDeferral;{4a1560d1-6992-4d9d-8555-4ca4563fb166})");
+unsafe impl ::windows_core::RuntimeType for PrintTaskSourceRequestedDeferral {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Graphics.Printing.PrintTaskSourceRequestedDeferral;{4a1560d1-6992-4d9d-8555-4ca4563fb166})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for PrintTaskSourceRequestedDeferral {
+unsafe impl ::windows_core::Interface for PrintTaskSourceRequestedDeferral {
     type Vtable = IPrintTaskSourceRequestedDeferral_Vtbl;
-    const IID: ::windows::core::GUID = <IPrintTaskSourceRequestedDeferral as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IPrintTaskSourceRequestedDeferral as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for PrintTaskSourceRequestedDeferral {
+impl ::windows_core::RuntimeName for PrintTaskSourceRequestedDeferral {
     const NAME: &'static str = "Windows.Graphics.Printing.PrintTaskSourceRequestedDeferral";
 }
-impl ::core::convert::From<PrintTaskSourceRequestedDeferral> for ::windows::core::IUnknown {
+impl ::core::convert::From<PrintTaskSourceRequestedDeferral> for ::windows_core::IUnknown {
     fn from(value: PrintTaskSourceRequestedDeferral) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskSourceRequestedDeferral> for ::windows::core::IUnknown {
+impl ::core::convert::From<&PrintTaskSourceRequestedDeferral> for ::windows_core::IUnknown {
     fn from(value: &PrintTaskSourceRequestedDeferral) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PrintTaskSourceRequestedDeferral {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for PrintTaskSourceRequestedDeferral {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PrintTaskSourceRequestedDeferral {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a PrintTaskSourceRequestedDeferral {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<PrintTaskSourceRequestedDeferral> for ::windows::core::IInspectable {
+impl ::core::convert::From<PrintTaskSourceRequestedDeferral> for ::windows_core::IInspectable {
     fn from(value: PrintTaskSourceRequestedDeferral) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&PrintTaskSourceRequestedDeferral> for ::windows::core::IInspectable {
+impl ::core::convert::From<&PrintTaskSourceRequestedDeferral> for ::windows_core::IInspectable {
     fn from(value: &PrintTaskSourceRequestedDeferral) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PrintTaskSourceRequestedDeferral {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for PrintTaskSourceRequestedDeferral {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a PrintTaskSourceRequestedDeferral {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a PrintTaskSourceRequestedDeferral {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for PrintTaskSourceRequestedDeferral {}
 unsafe impl ::core::marker::Sync for PrintTaskSourceRequestedDeferral {}
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
-pub struct PrintTaskSourceRequestedHandler(pub ::windows::core::IUnknown);
+pub struct PrintTaskSourceRequestedHandler(pub ::windows_core::IUnknown);
 impl PrintTaskSourceRequestedHandler {
-    pub fn new<F: FnMut(&::core::option::Option<PrintTaskSourceRequestedArgs>) -> ::windows::core::Result<()> + ::core::marker::Send + 'static>(invoke: F) -> Self {
-        let com = PrintTaskSourceRequestedHandlerBox::<F> { vtable: &PrintTaskSourceRequestedHandlerBox::<F>::VTABLE, count: ::windows::core::RefCount::new(1), invoke };
-        unsafe { ::core::mem::transmute(::windows::core::alloc::boxed::Box::new(com)) }
+    pub fn new<F: FnMut(&::core::option::Option<PrintTaskSourceRequestedArgs>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static>(invoke: F) -> Self {
+        let com = PrintTaskSourceRequestedHandlerBox::<F> { vtable: &PrintTaskSourceRequestedHandlerBox::<F>::VTABLE, count: ::windows_core::RefCount::new(1), invoke };
+        unsafe { ::core::mem::transmute(::windows_core::alloc::boxed::Box::new(com)) }
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Invoke<'a, Param0: ::windows::core::IntoParam<'a, PrintTaskSourceRequestedArgs>>(&self, args: Param0) -> ::windows::core::Result<()> {
+    pub fn Invoke<'a, Param0: ::windows_core::IntoParam<'a, PrintTaskSourceRequestedArgs>>(&self, args: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Invoke)(::windows::core::Interface::as_raw(this), args.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Invoke)(::windows_core::Interface::as_raw(this), args.into_param().abi()).ok() }
     }
 }
 #[repr(C)]
-struct PrintTaskSourceRequestedHandlerBox<F: FnMut(&::core::option::Option<PrintTaskSourceRequestedArgs>) -> ::windows::core::Result<()> + ::core::marker::Send + 'static> {
+struct PrintTaskSourceRequestedHandlerBox<F: FnMut(&::core::option::Option<PrintTaskSourceRequestedArgs>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static> {
     vtable: *const PrintTaskSourceRequestedHandler_Vtbl,
     invoke: F,
-    count: ::windows::core::RefCount,
+    count: ::windows_core::RefCount,
 }
-impl<F: FnMut(&::core::option::Option<PrintTaskSourceRequestedArgs>) -> ::windows::core::Result<()> + ::core::marker::Send + 'static> PrintTaskSourceRequestedHandlerBox<F> {
+impl<F: FnMut(&::core::option::Option<PrintTaskSourceRequestedArgs>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static> PrintTaskSourceRequestedHandlerBox<F> {
     const VTABLE: PrintTaskSourceRequestedHandler_Vtbl = PrintTaskSourceRequestedHandler_Vtbl {
-        base__: ::windows::core::IUnknownVtbl { QueryInterface: Self::QueryInterface, AddRef: Self::AddRef, Release: Self::Release },
+        base__: ::windows_core::IUnknownVtbl { QueryInterface: Self::QueryInterface, AddRef: Self::AddRef, Release: Self::Release },
         Invoke: Self::Invoke,
     };
-    unsafe extern "system" fn QueryInterface(this: ::windows::core::RawPtr, iid: &::windows::core::GUID, interface: *mut *const ::core::ffi::c_void) -> ::windows::core::HRESULT {
-        let this = this as *mut ::windows::core::RawPtr as *mut Self;
-        *interface = if iid == &<PrintTaskSourceRequestedHandler as ::windows::core::Interface>::IID || iid == &<::windows::core::IUnknown as ::windows::core::Interface>::IID || iid == &<::windows::core::IAgileObject as ::windows::core::Interface>::IID { &mut (*this).vtable as *mut _ as _ } else { ::core::ptr::null_mut() };
+    unsafe extern "system" fn QueryInterface(this: ::windows_core::RawPtr, iid: &::windows_core::GUID, interface: *mut *const ::core::ffi::c_void) -> ::windows_core::HRESULT {
+        let this = this as *mut ::windows_core::RawPtr as *mut Self;
+        *interface = if iid == &<PrintTaskSourceRequestedHandler as ::windows_core::Interface>::IID || iid == &<::windows_core::IUnknown as ::windows_core::Interface>::IID || iid == &<::windows_core::IAgileObject as ::windows_core::Interface>::IID { &mut (*this).vtable as *mut _ as _ } else { ::core::ptr::null_mut() };
         if (*interface).is_null() {
-            ::windows::core::HRESULT(-2147467262)
+            ::windows_core::HRESULT(-2147467262)
         } else {
             (*this).count.add_ref();
-            ::windows::core::HRESULT(0)
+            ::windows_core::HRESULT(0)
         }
     }
-    unsafe extern "system" fn AddRef(this: ::windows::core::RawPtr) -> u32 {
-        let this = this as *mut ::windows::core::RawPtr as *mut Self;
+    unsafe extern "system" fn AddRef(this: ::windows_core::RawPtr) -> u32 {
+        let this = this as *mut ::windows_core::RawPtr as *mut Self;
         (*this).count.add_ref()
     }
-    unsafe extern "system" fn Release(this: ::windows::core::RawPtr) -> u32 {
-        let this = this as *mut ::windows::core::RawPtr as *mut Self;
+    unsafe extern "system" fn Release(this: ::windows_core::RawPtr) -> u32 {
+        let this = this as *mut ::windows_core::RawPtr as *mut Self;
         let remaining = (*this).count.release();
         if remaining == 0 {
-            ::windows::core::alloc::boxed::Box::from_raw(this);
+            ::windows_core::alloc::boxed::Box::from_raw(this);
         }
         remaining
     }
-    unsafe extern "system" fn Invoke(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
-        let this = this as *mut ::windows::core::RawPtr as *mut Self;
+    unsafe extern "system" fn Invoke(this: *mut ::core::ffi::c_void, args: ::windows_core::RawPtr) -> ::windows_core::HRESULT {
+        let this = this as *mut ::windows_core::RawPtr as *mut Self;
         ((*this).invoke)(::core::mem::transmute(&args)).into()
     }
 }
@@ -3383,148 +3383,148 @@ impl ::core::fmt::Debug for PrintTaskSourceRequestedHandler {
         f.debug_tuple("PrintTaskSourceRequestedHandler").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for PrintTaskSourceRequestedHandler {
+unsafe impl ::windows_core::Interface for PrintTaskSourceRequestedHandler {
     type Vtable = PrintTaskSourceRequestedHandler_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6c109fa8_5cb6_4b3a_8663_f39cb02dc9b4);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6c109fa8_5cb6_4b3a_8663_f39cb02dc9b4);
 }
-unsafe impl ::windows::core::RuntimeType for PrintTaskSourceRequestedHandler {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{6c109fa8-5cb6-4b3a-8663-f39cb02dc9b4}");
+unsafe impl ::windows_core::RuntimeType for PrintTaskSourceRequestedHandler {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{6c109fa8-5cb6-4b3a-8663-f39cb02dc9b4}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct PrintTaskSourceRequestedHandler_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Invoke: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Invoke: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, args: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 pub struct StandardPrintTaskOptions;
 impl StandardPrintTaskOptions {
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn MediaSize() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn MediaSize() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).MediaSize)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).MediaSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn MediaType() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn MediaType() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).MediaType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).MediaType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Orientation() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Orientation() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Orientation)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn PrintQuality() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn PrintQuality() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).PrintQuality)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).PrintQuality)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn ColorMode() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn ColorMode() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).ColorMode)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).ColorMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Duplex() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Duplex() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Duplex)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Duplex)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Collation() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Collation() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Collation)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Collation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Staple() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Staple() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Staple)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Staple)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn HolePunch() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn HolePunch() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).HolePunch)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).HolePunch)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Binding() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Binding() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Binding)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Binding)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Copies() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Copies() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Copies)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Copies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn NUp() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn NUp() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).NUp)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).NUp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn InputBin() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn InputBin() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).InputBin)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).InputBin)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn Bordering() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Bordering() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic2(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Bordering)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Bordering)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc = "*Required features: `\"Graphics_Printing\"`*"]
-    pub fn CustomPageRanges() -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn CustomPageRanges() -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IStandardPrintTaskOptionsStatic3(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).CustomPageRanges)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).CustomPageRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
     #[doc(hidden)]
-    pub fn IStandardPrintTaskOptionsStatic<R, F: FnOnce(&IStandardPrintTaskOptionsStatic) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic> = ::windows::core::FactoryCache::new();
+    pub fn IStandardPrintTaskOptionsStatic<R, F: FnOnce(&IStandardPrintTaskOptionsStatic) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
     #[doc(hidden)]
-    pub fn IStandardPrintTaskOptionsStatic2<R, F: FnOnce(&IStandardPrintTaskOptionsStatic2) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic2> = ::windows::core::FactoryCache::new();
+    pub fn IStandardPrintTaskOptionsStatic2<R, F: FnOnce(&IStandardPrintTaskOptionsStatic2) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic2> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
     #[doc(hidden)]
-    pub fn IStandardPrintTaskOptionsStatic3<R, F: FnOnce(&IStandardPrintTaskOptionsStatic3) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic3> = ::windows::core::FactoryCache::new();
+    pub fn IStandardPrintTaskOptionsStatic3<R, F: FnOnce(&IStandardPrintTaskOptionsStatic3) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic3> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
-impl ::windows::core::RuntimeName for StandardPrintTaskOptions {
+impl ::windows_core::RuntimeName for StandardPrintTaskOptions {
     const NAME: &'static str = "Windows.Graphics.Printing.StandardPrintTaskOptions";
 }
 #[cfg(feature = "implement")]

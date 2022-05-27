@@ -1,8 +1,8 @@
-pub const CUSTOM_SYSTEM_STATE_CHANGE_EVENT_GUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2d7a2816_0c5e_45fc_9ce7_570e5ecde9c9);
+pub const CUSTOM_SYSTEM_STATE_CHANGE_EVENT_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2d7a2816_0c5e_45fc_9ce7_570e5ecde9c9);
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn ChangeServiceConfig2A<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwinfolevel: SERVICE_CONFIG, lpinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn ChangeServiceConfig2A<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwinfolevel: SERVICE_CONFIG, lpinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17,7 +17,7 @@ pub unsafe fn ChangeServiceConfig2A<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn ChangeServiceConfig2W<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwinfolevel: SERVICE_CONFIG, lpinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn ChangeServiceConfig2W<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwinfolevel: SERVICE_CONFIG, lpinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -32,24 +32,12 @@ pub unsafe fn ChangeServiceConfig2W<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn ChangeServiceConfigA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param7: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param8: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param9: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param10: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(
-    hservice: Param0,
-    dwservicetype: u32,
-    dwstarttype: SERVICE_START_TYPE,
-    dwerrorcontrol: SERVICE_ERROR,
-    lpbinarypathname: Param4,
-    lploadordergroup: Param5,
-    lpdwtagid: *mut u32,
-    lpdependencies: Param7,
-    lpservicestartname: Param8,
-    lppassword: Param9,
-    lpdisplayname: Param10,
-) -> super::super::Foundation::BOOL {
+pub unsafe fn ChangeServiceConfigA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param8: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param9: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param10: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hservice: Param0, dwservicetype: u32, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: Param4, lploadordergroup: Param5, lpdwtagid: *mut u32, lpdependencies: Param7, lpservicestartname: Param8, lppassword: Param9, lpdisplayname: Param10) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ChangeServiceConfigA(hservice: super::super::Security::SC_HANDLE, dwservicetype: u32, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows::core::PCSTR, lploadordergroup: ::windows::core::PCSTR, lpdwtagid: *mut u32, lpdependencies: ::windows::core::PCSTR, lpservicestartname: ::windows::core::PCSTR, lppassword: ::windows::core::PCSTR, lpdisplayname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn ChangeServiceConfigA(hservice: super::super::Security::SC_HANDLE, dwservicetype: u32, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows_core::PCSTR, lploadordergroup: ::windows_core::PCSTR, lpdwtagid: *mut u32, lpdependencies: ::windows_core::PCSTR, lpservicestartname: ::windows_core::PCSTR, lppassword: ::windows_core::PCSTR, lpdisplayname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(ChangeServiceConfigA(hservice.into_param().abi(), ::core::mem::transmute(dwservicetype), ::core::mem::transmute(dwstarttype), ::core::mem::transmute(dwerrorcontrol), lpbinarypathname.into_param().abi(), lploadordergroup.into_param().abi(), ::core::mem::transmute(lpdwtagid), lpdependencies.into_param().abi(), lpservicestartname.into_param().abi(), lppassword.into_param().abi(), lpdisplayname.into_param().abi()))
     }
@@ -59,24 +47,12 @@ pub unsafe fn ChangeServiceConfigA<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn ChangeServiceConfigW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param7: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param8: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param9: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param10: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(
-    hservice: Param0,
-    dwservicetype: u32,
-    dwstarttype: SERVICE_START_TYPE,
-    dwerrorcontrol: SERVICE_ERROR,
-    lpbinarypathname: Param4,
-    lploadordergroup: Param5,
-    lpdwtagid: *mut u32,
-    lpdependencies: Param7,
-    lpservicestartname: Param8,
-    lppassword: Param9,
-    lpdisplayname: Param10,
-) -> super::super::Foundation::BOOL {
+pub unsafe fn ChangeServiceConfigW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param8: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param9: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param10: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hservice: Param0, dwservicetype: u32, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: Param4, lploadordergroup: Param5, lpdwtagid: *mut u32, lpdependencies: Param7, lpservicestartname: Param8, lppassword: Param9, lpdisplayname: Param10) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ChangeServiceConfigW(hservice: super::super::Security::SC_HANDLE, dwservicetype: u32, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows::core::PCWSTR, lploadordergroup: ::windows::core::PCWSTR, lpdwtagid: *mut u32, lpdependencies: ::windows::core::PCWSTR, lpservicestartname: ::windows::core::PCWSTR, lppassword: ::windows::core::PCWSTR, lpdisplayname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn ChangeServiceConfigW(hservice: super::super::Security::SC_HANDLE, dwservicetype: u32, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows_core::PCWSTR, lploadordergroup: ::windows_core::PCWSTR, lpdwtagid: *mut u32, lpdependencies: ::windows_core::PCWSTR, lpservicestartname: ::windows_core::PCWSTR, lppassword: ::windows_core::PCWSTR, lpdisplayname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(ChangeServiceConfigW(hservice.into_param().abi(), ::core::mem::transmute(dwservicetype), ::core::mem::transmute(dwstarttype), ::core::mem::transmute(dwerrorcontrol), lpbinarypathname.into_param().abi(), lploadordergroup.into_param().abi(), ::core::mem::transmute(lpdwtagid), lpdependencies.into_param().abi(), lpservicestartname.into_param().abi(), lppassword.into_param().abi(), lpdisplayname.into_param().abi()))
     }
@@ -86,7 +62,7 @@ pub unsafe fn ChangeServiceConfigW<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn CloseServiceHandle<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hscobject: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn CloseServiceHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hscobject: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -101,7 +77,7 @@ pub unsafe fn CloseServiceHandle<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn ControlService<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwcontrol: u32, lpservicestatus: *mut SERVICE_STATUS) -> super::super::Foundation::BOOL {
+pub unsafe fn ControlService<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwcontrol: u32, lpservicestatus: *mut SERVICE_STATUS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -116,7 +92,7 @@ pub unsafe fn ControlService<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn ControlServiceExA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwcontrol: u32, dwinfolevel: u32, pcontrolparams: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn ControlServiceExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwcontrol: u32, dwinfolevel: u32, pcontrolparams: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -131,7 +107,7 @@ pub unsafe fn ControlServiceExA<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn ControlServiceExW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwcontrol: u32, dwinfolevel: u32, pcontrolparams: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn ControlServiceExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwcontrol: u32, dwinfolevel: u32, pcontrolparams: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -146,7 +122,7 @@ pub unsafe fn ControlServiceExW<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Security\"`*"]
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn CreateServiceA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param7: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param8: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param10: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param11: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param12: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(
+pub unsafe fn CreateServiceA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param8: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param10: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param11: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param12: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(
     hscmanager: Param0,
     lpservicename: Param1,
     lpdisplayname: Param2,
@@ -160,15 +136,15 @@ pub unsafe fn CreateServiceA<'a, Param0: ::windows::core::IntoParam<'a, super::s
     lpdependencies: Param10,
     lpservicestartname: Param11,
     lppassword: Param12,
-) -> ::windows::core::Result<super::super::Security::SC_HANDLE> {
+) -> ::windows_core::Result<super::super::Security::SC_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateServiceA(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows::core::PCSTR, lpdisplayname: ::windows::core::PCSTR, dwdesiredaccess: u32, dwservicetype: ENUM_SERVICE_TYPE, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows::core::PCSTR, lploadordergroup: ::windows::core::PCSTR, lpdwtagid: *mut u32, lpdependencies: ::windows::core::PCSTR, lpservicestartname: ::windows::core::PCSTR, lppassword: ::windows::core::PCSTR) -> super::super::Security::SC_HANDLE;
+            fn CreateServiceA(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows_core::PCSTR, lpdisplayname: ::windows_core::PCSTR, dwdesiredaccess: u32, dwservicetype: ENUM_SERVICE_TYPE, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows_core::PCSTR, lploadordergroup: ::windows_core::PCSTR, lpdwtagid: *mut u32, lpdependencies: ::windows_core::PCSTR, lpservicestartname: ::windows_core::PCSTR, lppassword: ::windows_core::PCSTR) -> super::super::Security::SC_HANDLE;
         }
         let result__ = CreateServiceA(hscmanager.into_param().abi(), lpservicename.into_param().abi(), lpdisplayname.into_param().abi(), ::core::mem::transmute(dwdesiredaccess), ::core::mem::transmute(dwservicetype), ::core::mem::transmute(dwstarttype), ::core::mem::transmute(dwerrorcontrol), lpbinarypathname.into_param().abi(), lploadordergroup.into_param().abi(), ::core::mem::transmute(lpdwtagid), lpdependencies.into_param().abi(), lpservicestartname.into_param().abi(), lppassword.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -176,7 +152,7 @@ pub unsafe fn CreateServiceA<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Security\"`*"]
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn CreateServiceW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param7: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param8: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param10: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param11: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param12: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(
+pub unsafe fn CreateServiceW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param8: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param10: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param11: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param12: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(
     hscmanager: Param0,
     lpservicename: Param1,
     lpdisplayname: Param2,
@@ -190,25 +166,25 @@ pub unsafe fn CreateServiceW<'a, Param0: ::windows::core::IntoParam<'a, super::s
     lpdependencies: Param10,
     lpservicestartname: Param11,
     lppassword: Param12,
-) -> ::windows::core::Result<super::super::Security::SC_HANDLE> {
+) -> ::windows_core::Result<super::super::Security::SC_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateServiceW(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows::core::PCWSTR, lpdisplayname: ::windows::core::PCWSTR, dwdesiredaccess: u32, dwservicetype: ENUM_SERVICE_TYPE, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows::core::PCWSTR, lploadordergroup: ::windows::core::PCWSTR, lpdwtagid: *mut u32, lpdependencies: ::windows::core::PCWSTR, lpservicestartname: ::windows::core::PCWSTR, lppassword: ::windows::core::PCWSTR) -> super::super::Security::SC_HANDLE;
+            fn CreateServiceW(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows_core::PCWSTR, lpdisplayname: ::windows_core::PCWSTR, dwdesiredaccess: u32, dwservicetype: ENUM_SERVICE_TYPE, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows_core::PCWSTR, lploadordergroup: ::windows_core::PCWSTR, lpdwtagid: *mut u32, lpdependencies: ::windows_core::PCWSTR, lpservicestartname: ::windows_core::PCWSTR, lppassword: ::windows_core::PCWSTR) -> super::super::Security::SC_HANDLE;
         }
         let result__ = CreateServiceW(hscmanager.into_param().abi(), lpservicename.into_param().abi(), lpdisplayname.into_param().abi(), ::core::mem::transmute(dwdesiredaccess), ::core::mem::transmute(dwservicetype), ::core::mem::transmute(dwstarttype), ::core::mem::transmute(dwerrorcontrol), lpbinarypathname.into_param().abi(), lploadordergroup.into_param().abi(), ::core::mem::transmute(lpdwtagid), lpdependencies.into_param().abi(), lpservicestartname.into_param().abi(), lppassword.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-pub const DOMAIN_JOIN_GUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1ce20aba_9851_4421_9430_1ddeb766e809);
-pub const DOMAIN_LEAVE_GUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xddaf516e_58c2_4866_9574_c3b615d42ea1);
+pub const DOMAIN_JOIN_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1ce20aba_9851_4421_9430_1ddeb766e809);
+pub const DOMAIN_LEAVE_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xddaf516e_58c2_4866_9574_c3b615d42ea1);
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn DeleteService<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DeleteService<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -241,7 +217,7 @@ impl ::core::default::Default for ENUM_SERVICE_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ENUM_SERVICE_STATE {
+unsafe impl ::windows_core::Abi for ENUM_SERVICE_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ENUM_SERVICE_STATE {
@@ -252,8 +228,8 @@ impl ::core::fmt::Debug for ENUM_SERVICE_STATE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct ENUM_SERVICE_STATUSA {
-    pub lpServiceName: ::windows::core::PSTR,
-    pub lpDisplayName: ::windows::core::PSTR,
+    pub lpServiceName: ::windows_core::PSTR,
+    pub lpDisplayName: ::windows_core::PSTR,
     pub ServiceStatus: SERVICE_STATUS,
 }
 impl ::core::marker::Copy for ENUM_SERVICE_STATUSA {}
@@ -267,12 +243,12 @@ impl ::core::fmt::Debug for ENUM_SERVICE_STATUSA {
         f.debug_struct("ENUM_SERVICE_STATUSA").field("lpServiceName", &self.lpServiceName).field("lpDisplayName", &self.lpDisplayName).field("ServiceStatus", &self.ServiceStatus).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ENUM_SERVICE_STATUSA {
+unsafe impl ::windows_core::Abi for ENUM_SERVICE_STATUSA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ENUM_SERVICE_STATUSA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUM_SERVICE_STATUSA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUM_SERVICE_STATUSA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ENUM_SERVICE_STATUSA {}
@@ -284,8 +260,8 @@ impl ::core::default::Default for ENUM_SERVICE_STATUSA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct ENUM_SERVICE_STATUSW {
-    pub lpServiceName: ::windows::core::PWSTR,
-    pub lpDisplayName: ::windows::core::PWSTR,
+    pub lpServiceName: ::windows_core::PWSTR,
+    pub lpDisplayName: ::windows_core::PWSTR,
     pub ServiceStatus: SERVICE_STATUS,
 }
 impl ::core::marker::Copy for ENUM_SERVICE_STATUSW {}
@@ -299,12 +275,12 @@ impl ::core::fmt::Debug for ENUM_SERVICE_STATUSW {
         f.debug_struct("ENUM_SERVICE_STATUSW").field("lpServiceName", &self.lpServiceName).field("lpDisplayName", &self.lpDisplayName).field("ServiceStatus", &self.ServiceStatus).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ENUM_SERVICE_STATUSW {
+unsafe impl ::windows_core::Abi for ENUM_SERVICE_STATUSW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ENUM_SERVICE_STATUSW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUM_SERVICE_STATUSW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUM_SERVICE_STATUSW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ENUM_SERVICE_STATUSW {}
@@ -316,8 +292,8 @@ impl ::core::default::Default for ENUM_SERVICE_STATUSW {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct ENUM_SERVICE_STATUS_PROCESSA {
-    pub lpServiceName: ::windows::core::PSTR,
-    pub lpDisplayName: ::windows::core::PSTR,
+    pub lpServiceName: ::windows_core::PSTR,
+    pub lpDisplayName: ::windows_core::PSTR,
     pub ServiceStatusProcess: SERVICE_STATUS_PROCESS,
 }
 impl ::core::marker::Copy for ENUM_SERVICE_STATUS_PROCESSA {}
@@ -331,12 +307,12 @@ impl ::core::fmt::Debug for ENUM_SERVICE_STATUS_PROCESSA {
         f.debug_struct("ENUM_SERVICE_STATUS_PROCESSA").field("lpServiceName", &self.lpServiceName).field("lpDisplayName", &self.lpDisplayName).field("ServiceStatusProcess", &self.ServiceStatusProcess).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ENUM_SERVICE_STATUS_PROCESSA {
+unsafe impl ::windows_core::Abi for ENUM_SERVICE_STATUS_PROCESSA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ENUM_SERVICE_STATUS_PROCESSA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUM_SERVICE_STATUS_PROCESSA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUM_SERVICE_STATUS_PROCESSA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ENUM_SERVICE_STATUS_PROCESSA {}
@@ -348,8 +324,8 @@ impl ::core::default::Default for ENUM_SERVICE_STATUS_PROCESSA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct ENUM_SERVICE_STATUS_PROCESSW {
-    pub lpServiceName: ::windows::core::PWSTR,
-    pub lpDisplayName: ::windows::core::PWSTR,
+    pub lpServiceName: ::windows_core::PWSTR,
+    pub lpDisplayName: ::windows_core::PWSTR,
     pub ServiceStatusProcess: SERVICE_STATUS_PROCESS,
 }
 impl ::core::marker::Copy for ENUM_SERVICE_STATUS_PROCESSW {}
@@ -363,12 +339,12 @@ impl ::core::fmt::Debug for ENUM_SERVICE_STATUS_PROCESSW {
         f.debug_struct("ENUM_SERVICE_STATUS_PROCESSW").field("lpServiceName", &self.lpServiceName).field("lpDisplayName", &self.lpDisplayName).field("ServiceStatusProcess", &self.ServiceStatusProcess).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ENUM_SERVICE_STATUS_PROCESSW {
+unsafe impl ::windows_core::Abi for ENUM_SERVICE_STATUS_PROCESSW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ENUM_SERVICE_STATUS_PROCESSW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUM_SERVICE_STATUS_PROCESSW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUM_SERVICE_STATUS_PROCESSW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ENUM_SERVICE_STATUS_PROCESSW {}
@@ -412,7 +388,7 @@ impl ::core::default::Default for ENUM_SERVICE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ENUM_SERVICE_TYPE {
+unsafe impl ::windows_core::Abi for ENUM_SERVICE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ENUM_SERVICE_TYPE {
@@ -451,7 +427,7 @@ impl ::core::ops::Not for ENUM_SERVICE_TYPE {
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn EnumDependentServicesA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumDependentServicesA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -466,7 +442,7 @@ pub unsafe fn EnumDependentServicesA<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn EnumDependentServicesW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumDependentServicesW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -481,7 +457,7 @@ pub unsafe fn EnumDependentServicesW<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn EnumServicesStatusA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hscmanager: Param0, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumServicesStatusA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hscmanager: Param0, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -496,12 +472,12 @@ pub unsafe fn EnumServicesStatusA<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn EnumServicesStatusExA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param9: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hscmanager: Param0, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: Param9) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumServicesStatusExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param9: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hscmanager: Param0, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: Param9) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumServicesStatusExA(hscmanager: super::super::Security::SC_HANDLE, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn EnumServicesStatusExA(hscmanager: super::super::Security::SC_HANDLE, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumServicesStatusExA(hscmanager.into_param().abi(), ::core::mem::transmute(infolevel), ::core::mem::transmute(dwservicetype), ::core::mem::transmute(dwservicestate), ::core::mem::transmute(lpservices), ::core::mem::transmute(cbbufsize), ::core::mem::transmute(pcbbytesneeded), ::core::mem::transmute(lpservicesreturned), ::core::mem::transmute(lpresumehandle), pszgroupname.into_param().abi()))
     }
@@ -511,12 +487,12 @@ pub unsafe fn EnumServicesStatusExA<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn EnumServicesStatusExW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param9: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hscmanager: Param0, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: Param9) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumServicesStatusExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param9: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hscmanager: Param0, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: Param9) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumServicesStatusExW(hscmanager: super::super::Security::SC_HANDLE, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn EnumServicesStatusExW(hscmanager: super::super::Security::SC_HANDLE, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumServicesStatusExW(hscmanager.into_param().abi(), ::core::mem::transmute(infolevel), ::core::mem::transmute(dwservicetype), ::core::mem::transmute(dwservicestate), ::core::mem::transmute(lpservices), ::core::mem::transmute(cbbufsize), ::core::mem::transmute(pcbbytesneeded), ::core::mem::transmute(lpservicesreturned), ::core::mem::transmute(lpresumehandle), pszgroupname.into_param().abi()))
     }
@@ -526,7 +502,7 @@ pub unsafe fn EnumServicesStatusExW<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn EnumServicesStatusW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hscmanager: Param0, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumServicesStatusW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hscmanager: Param0, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -538,18 +514,18 @@ pub unsafe fn EnumServicesStatusW<'a, Param0: ::windows::core::IntoParam<'a, sup
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-pub const FIREWALL_PORT_CLOSE_GUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa144ed38_8e12_4de4_9d96_e64740b1a524);
-pub const FIREWALL_PORT_OPEN_GUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb7569e07_8421_4ee0_ad10_86915afdad09);
+pub const FIREWALL_PORT_CLOSE_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa144ed38_8e12_4de4_9d96_e64740b1a524);
+pub const FIREWALL_PORT_OPEN_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb7569e07_8421_4ee0_ad10_86915afdad09);
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 #[inline]
-pub unsafe fn GetServiceDirectory<'a, Param0: ::windows::core::IntoParam<'a, SERVICE_STATUS_HANDLE>>(hservicestatus: Param0, edirectorytype: SERVICE_DIRECTORY_TYPE, lppathbuffer: &mut [u16], lpcchrequiredbufferlength: *mut u32) -> u32 {
+pub unsafe fn GetServiceDirectory<'a, Param0: ::windows_core::IntoParam<'a, SERVICE_STATUS_HANDLE>>(hservicestatus: Param0, edirectorytype: SERVICE_DIRECTORY_TYPE, lppathbuffer: &mut [u16], lpcchrequiredbufferlength: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetServiceDirectory(hservicestatus: SERVICE_STATUS_HANDLE, edirectorytype: SERVICE_DIRECTORY_TYPE, lppathbuffer: ::windows::core::PWSTR, cchpathbufferlength: u32, lpcchrequiredbufferlength: *mut u32) -> u32;
+            fn GetServiceDirectory(hservicestatus: SERVICE_STATUS_HANDLE, edirectorytype: SERVICE_DIRECTORY_TYPE, lppathbuffer: ::windows_core::PWSTR, cchpathbufferlength: u32, lpcchrequiredbufferlength: *mut u32) -> u32;
         }
-        ::core::mem::transmute(GetServiceDirectory(hservicestatus.into_param().abi(), ::core::mem::transmute(edirectorytype), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lppathbuffer)), lppathbuffer.len() as _, ::core::mem::transmute(lpcchrequiredbufferlength)))
+        ::core::mem::transmute(GetServiceDirectory(hservicestatus.into_param().abi(), ::core::mem::transmute(edirectorytype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lppathbuffer)), lppathbuffer.len() as _, ::core::mem::transmute(lpcchrequiredbufferlength)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -557,12 +533,12 @@ pub unsafe fn GetServiceDirectory<'a, Param0: ::windows::core::IntoParam<'a, SER
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn GetServiceDisplayNameA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hscmanager: Param0, lpservicename: Param1, lpdisplayname: ::windows::core::PSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetServiceDisplayNameA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hscmanager: Param0, lpservicename: Param1, lpdisplayname: ::windows_core::PSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetServiceDisplayNameA(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows::core::PCSTR, lpdisplayname: ::windows::core::PSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetServiceDisplayNameA(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows_core::PCSTR, lpdisplayname: ::windows_core::PSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(GetServiceDisplayNameA(hscmanager.into_param().abi(), lpservicename.into_param().abi(), ::core::mem::transmute(lpdisplayname), ::core::mem::transmute(lpcchbuffer)))
     }
@@ -572,12 +548,12 @@ pub unsafe fn GetServiceDisplayNameA<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn GetServiceDisplayNameW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hscmanager: Param0, lpservicename: Param1, lpdisplayname: ::windows::core::PWSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetServiceDisplayNameW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hscmanager: Param0, lpservicename: Param1, lpdisplayname: ::windows_core::PWSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetServiceDisplayNameW(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows::core::PCWSTR, lpdisplayname: ::windows::core::PWSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetServiceDisplayNameW(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows_core::PCWSTR, lpdisplayname: ::windows_core::PWSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(GetServiceDisplayNameW(hscmanager.into_param().abi(), lpservicename.into_param().abi(), ::core::mem::transmute(lpdisplayname), ::core::mem::transmute(lpcchbuffer)))
     }
@@ -587,12 +563,12 @@ pub unsafe fn GetServiceDisplayNameW<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn GetServiceKeyNameA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hscmanager: Param0, lpdisplayname: Param1, lpservicename: ::windows::core::PSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetServiceKeyNameA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hscmanager: Param0, lpdisplayname: Param1, lpservicename: ::windows_core::PSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetServiceKeyNameA(hscmanager: super::super::Security::SC_HANDLE, lpdisplayname: ::windows::core::PCSTR, lpservicename: ::windows::core::PSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetServiceKeyNameA(hscmanager: super::super::Security::SC_HANDLE, lpdisplayname: ::windows_core::PCSTR, lpservicename: ::windows_core::PSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(GetServiceKeyNameA(hscmanager.into_param().abi(), lpdisplayname.into_param().abi(), ::core::mem::transmute(lpservicename), ::core::mem::transmute(lpcchbuffer)))
     }
@@ -602,12 +578,12 @@ pub unsafe fn GetServiceKeyNameA<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn GetServiceKeyNameW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hscmanager: Param0, lpdisplayname: Param1, lpservicename: ::windows::core::PWSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetServiceKeyNameW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hscmanager: Param0, lpdisplayname: Param1, lpservicename: ::windows_core::PWSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetServiceKeyNameW(hscmanager: super::super::Security::SC_HANDLE, lpdisplayname: ::windows::core::PCWSTR, lpservicename: ::windows::core::PWSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetServiceKeyNameW(hscmanager: super::super::Security::SC_HANDLE, lpdisplayname: ::windows_core::PCWSTR, lpservicename: ::windows_core::PWSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(GetServiceKeyNameW(hscmanager.into_param().abi(), lpdisplayname.into_param().abi(), ::core::mem::transmute(lpservicename), ::core::mem::transmute(lpcchbuffer)))
     }
@@ -617,7 +593,7 @@ pub unsafe fn GetServiceKeyNameW<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn GetServiceRegistryStateKey<'a, Param0: ::windows::core::IntoParam<'a, SERVICE_STATUS_HANDLE>>(servicestatushandle: Param0, statetype: SERVICE_REGISTRY_STATE_TYPE, accessmask: u32, servicestatekey: *mut super::Registry::HKEY) -> u32 {
+pub unsafe fn GetServiceRegistryStateKey<'a, Param0: ::windows_core::IntoParam<'a, SERVICE_STATUS_HANDLE>>(servicestatushandle: Param0, statetype: SERVICE_REGISTRY_STATE_TYPE, accessmask: u32, servicestatekey: *mut super::Registry::HKEY) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -632,14 +608,14 @@ pub unsafe fn GetServiceRegistryStateKey<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Security\"`*"]
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn GetSharedServiceDirectory<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(servicehandle: Param0, directorytype: SERVICE_SHARED_DIRECTORY_TYPE, pathbuffer: &mut [u16], requiredbufferlength: *mut u32) -> u32 {
+pub unsafe fn GetSharedServiceDirectory<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(servicehandle: Param0, directorytype: SERVICE_SHARED_DIRECTORY_TYPE, pathbuffer: &mut [u16], requiredbufferlength: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetSharedServiceDirectory(servicehandle: super::super::Security::SC_HANDLE, directorytype: SERVICE_SHARED_DIRECTORY_TYPE, pathbuffer: ::windows::core::PWSTR, pathbufferlength: u32, requiredbufferlength: *mut u32) -> u32;
+            fn GetSharedServiceDirectory(servicehandle: super::super::Security::SC_HANDLE, directorytype: SERVICE_SHARED_DIRECTORY_TYPE, pathbuffer: ::windows_core::PWSTR, pathbufferlength: u32, requiredbufferlength: *mut u32) -> u32;
         }
-        ::core::mem::transmute(GetSharedServiceDirectory(servicehandle.into_param().abi(), ::core::mem::transmute(directorytype), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pathbuffer)), pathbuffer.len() as _, ::core::mem::transmute(requiredbufferlength)))
+        ::core::mem::transmute(GetSharedServiceDirectory(servicehandle.into_param().abi(), ::core::mem::transmute(directorytype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pathbuffer)), pathbuffer.len() as _, ::core::mem::transmute(requiredbufferlength)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -647,7 +623,7 @@ pub unsafe fn GetSharedServiceDirectory<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Security\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(all(feature = "Win32_Security", feature = "Win32_System_Registry"))]
 #[inline]
-pub unsafe fn GetSharedServiceRegistryStateKey<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(servicehandle: Param0, statetype: SERVICE_SHARED_REGISTRY_STATE_TYPE, accessmask: u32, servicestatekey: *mut super::Registry::HKEY) -> u32 {
+pub unsafe fn GetSharedServiceRegistryStateKey<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(servicehandle: Param0, statetype: SERVICE_SHARED_REGISTRY_STATE_TYPE, accessmask: u32, servicestatekey: *mut super::Registry::HKEY) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -668,13 +644,13 @@ pub type LPHANDLER_FUNCTION = ::core::option::Option<unsafe extern "system" fn(d
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub type LPHANDLER_FUNCTION_EX = ::core::option::Option<unsafe extern "system" fn(dwcontrol: u32, dweventtype: u32, lpeventdata: *mut ::core::ffi::c_void, lpcontext: *mut ::core::ffi::c_void) -> u32>;
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
-pub type LPSERVICE_MAIN_FUNCTIONA = ::core::option::Option<unsafe extern "system" fn(dwnumservicesargs: u32, lpserviceargvectors: *mut ::windows::core::PSTR)>;
+pub type LPSERVICE_MAIN_FUNCTIONA = ::core::option::Option<unsafe extern "system" fn(dwnumservicesargs: u32, lpserviceargvectors: *mut ::windows_core::PSTR)>;
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
-pub type LPSERVICE_MAIN_FUNCTIONW = ::core::option::Option<unsafe extern "system" fn(dwnumservicesargs: u32, lpserviceargvectors: *mut ::windows::core::PWSTR)>;
+pub type LPSERVICE_MAIN_FUNCTIONW = ::core::option::Option<unsafe extern "system" fn(dwnumservicesargs: u32, lpserviceargvectors: *mut ::windows_core::PWSTR)>;
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Security\"`*"]
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn LockServiceDatabase<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hscmanager: Param0) -> *mut ::core::ffi::c_void {
+pub unsafe fn LockServiceDatabase<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hscmanager: Param0) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -686,14 +662,14 @@ pub unsafe fn LockServiceDatabase<'a, Param0: ::windows::core::IntoParam<'a, sup
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-pub const MACHINE_POLICY_PRESENT_GUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x659fcae6_5bdb_4da9_b1ff_ca2a178d46e0);
-pub const NAMED_PIPE_EVENT_GUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1f81d131_3fac_4537_9e0c_7e7b0c2f4b55);
-pub const NETWORK_MANAGER_FIRST_IP_ADDRESS_ARRIVAL_GUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4f27f2de_14e2_430b_a549_7cd48cbc8245);
-pub const NETWORK_MANAGER_LAST_IP_ADDRESS_REMOVAL_GUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcc4ba62a_162e_4648_847a_b6bdf993e335);
+pub const MACHINE_POLICY_PRESENT_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x659fcae6_5bdb_4da9_b1ff_ca2a178d46e0);
+pub const NAMED_PIPE_EVENT_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1f81d131_3fac_4537_9e0c_7e7b0c2f4b55);
+pub const NETWORK_MANAGER_FIRST_IP_ADDRESS_ARRIVAL_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4f27f2de_14e2_430b_a549_7cd48cbc8245);
+pub const NETWORK_MANAGER_LAST_IP_ADDRESS_REMOVAL_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcc4ba62a_162e_4648_847a_b6bdf993e335);
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NotifyBootConfigStatus<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(bootacceptable: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn NotifyBootConfigStatus<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(bootacceptable: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -708,7 +684,7 @@ pub unsafe fn NotifyBootConfigStatus<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Security\"`*"]
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn NotifyServiceStatusChangeA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwnotifymask: SERVICE_NOTIFY, pnotifybuffer: *const SERVICE_NOTIFY_2A) -> u32 {
+pub unsafe fn NotifyServiceStatusChangeA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwnotifymask: SERVICE_NOTIFY, pnotifybuffer: *const SERVICE_NOTIFY_2A) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -723,7 +699,7 @@ pub unsafe fn NotifyServiceStatusChangeA<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Security\"`*"]
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn NotifyServiceStatusChangeW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwnotifymask: SERVICE_NOTIFY, pnotifybuffer: *const SERVICE_NOTIFY_2W) -> u32 {
+pub unsafe fn NotifyServiceStatusChangeW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwnotifymask: SERVICE_NOTIFY, pnotifybuffer: *const SERVICE_NOTIFY_2W) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -738,15 +714,15 @@ pub unsafe fn NotifyServiceStatusChangeW<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Security\"`*"]
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn OpenSCManagerA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpmachinename: Param0, lpdatabasename: Param1, dwdesiredaccess: u32) -> ::windows::core::Result<super::super::Security::SC_HANDLE> {
+pub unsafe fn OpenSCManagerA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpmachinename: Param0, lpdatabasename: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<super::super::Security::SC_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenSCManagerA(lpmachinename: ::windows::core::PCSTR, lpdatabasename: ::windows::core::PCSTR, dwdesiredaccess: u32) -> super::super::Security::SC_HANDLE;
+            fn OpenSCManagerA(lpmachinename: ::windows_core::PCSTR, lpdatabasename: ::windows_core::PCSTR, dwdesiredaccess: u32) -> super::super::Security::SC_HANDLE;
         }
         let result__ = OpenSCManagerA(lpmachinename.into_param().abi(), lpdatabasename.into_param().abi(), ::core::mem::transmute(dwdesiredaccess));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -754,15 +730,15 @@ pub unsafe fn OpenSCManagerA<'a, Param0: ::windows::core::IntoParam<'a, ::window
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Security\"`*"]
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn OpenSCManagerW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpmachinename: Param0, lpdatabasename: Param1, dwdesiredaccess: u32) -> ::windows::core::Result<super::super::Security::SC_HANDLE> {
+pub unsafe fn OpenSCManagerW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpmachinename: Param0, lpdatabasename: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<super::super::Security::SC_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenSCManagerW(lpmachinename: ::windows::core::PCWSTR, lpdatabasename: ::windows::core::PCWSTR, dwdesiredaccess: u32) -> super::super::Security::SC_HANDLE;
+            fn OpenSCManagerW(lpmachinename: ::windows_core::PCWSTR, lpdatabasename: ::windows_core::PCWSTR, dwdesiredaccess: u32) -> super::super::Security::SC_HANDLE;
         }
         let result__ = OpenSCManagerW(lpmachinename.into_param().abi(), lpdatabasename.into_param().abi(), ::core::mem::transmute(dwdesiredaccess));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -770,15 +746,15 @@ pub unsafe fn OpenSCManagerW<'a, Param0: ::windows::core::IntoParam<'a, ::window
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Security\"`*"]
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn OpenServiceA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hscmanager: Param0, lpservicename: Param1, dwdesiredaccess: u32) -> ::windows::core::Result<super::super::Security::SC_HANDLE> {
+pub unsafe fn OpenServiceA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hscmanager: Param0, lpservicename: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<super::super::Security::SC_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenServiceA(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows::core::PCSTR, dwdesiredaccess: u32) -> super::super::Security::SC_HANDLE;
+            fn OpenServiceA(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows_core::PCSTR, dwdesiredaccess: u32) -> super::super::Security::SC_HANDLE;
         }
         let result__ = OpenServiceA(hscmanager.into_param().abi(), lpservicename.into_param().abi(), ::core::mem::transmute(dwdesiredaccess));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -786,15 +762,15 @@ pub unsafe fn OpenServiceA<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Security\"`*"]
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn OpenServiceW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hscmanager: Param0, lpservicename: Param1, dwdesiredaccess: u32) -> ::windows::core::Result<super::super::Security::SC_HANDLE> {
+pub unsafe fn OpenServiceW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hscmanager: Param0, lpservicename: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<super::super::Security::SC_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenServiceW(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows::core::PCWSTR, dwdesiredaccess: u32) -> super::super::Security::SC_HANDLE;
+            fn OpenServiceW(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows_core::PCWSTR, dwdesiredaccess: u32) -> super::super::Security::SC_HANDLE;
         }
         let result__ = OpenServiceW(hscmanager.into_param().abi(), lpservicename.into_param().abi(), ::core::mem::transmute(dwdesiredaccess));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -809,12 +785,12 @@ pub struct QUERY_SERVICE_CONFIGA {
     pub dwServiceType: ENUM_SERVICE_TYPE,
     pub dwStartType: SERVICE_START_TYPE,
     pub dwErrorControl: SERVICE_ERROR,
-    pub lpBinaryPathName: ::windows::core::PSTR,
-    pub lpLoadOrderGroup: ::windows::core::PSTR,
+    pub lpBinaryPathName: ::windows_core::PSTR,
+    pub lpLoadOrderGroup: ::windows_core::PSTR,
     pub dwTagId: u32,
-    pub lpDependencies: ::windows::core::PSTR,
-    pub lpServiceStartName: ::windows::core::PSTR,
-    pub lpDisplayName: ::windows::core::PSTR,
+    pub lpDependencies: ::windows_core::PSTR,
+    pub lpServiceStartName: ::windows_core::PSTR,
+    pub lpDisplayName: ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for QUERY_SERVICE_CONFIGA {}
 impl ::core::clone::Clone for QUERY_SERVICE_CONFIGA {
@@ -827,12 +803,12 @@ impl ::core::fmt::Debug for QUERY_SERVICE_CONFIGA {
         f.debug_struct("QUERY_SERVICE_CONFIGA").field("dwServiceType", &self.dwServiceType).field("dwStartType", &self.dwStartType).field("dwErrorControl", &self.dwErrorControl).field("lpBinaryPathName", &self.lpBinaryPathName).field("lpLoadOrderGroup", &self.lpLoadOrderGroup).field("dwTagId", &self.dwTagId).field("lpDependencies", &self.lpDependencies).field("lpServiceStartName", &self.lpServiceStartName).field("lpDisplayName", &self.lpDisplayName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for QUERY_SERVICE_CONFIGA {
+unsafe impl ::windows_core::Abi for QUERY_SERVICE_CONFIGA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for QUERY_SERVICE_CONFIGA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QUERY_SERVICE_CONFIGA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QUERY_SERVICE_CONFIGA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for QUERY_SERVICE_CONFIGA {}
@@ -847,12 +823,12 @@ pub struct QUERY_SERVICE_CONFIGW {
     pub dwServiceType: ENUM_SERVICE_TYPE,
     pub dwStartType: SERVICE_START_TYPE,
     pub dwErrorControl: SERVICE_ERROR,
-    pub lpBinaryPathName: ::windows::core::PWSTR,
-    pub lpLoadOrderGroup: ::windows::core::PWSTR,
+    pub lpBinaryPathName: ::windows_core::PWSTR,
+    pub lpLoadOrderGroup: ::windows_core::PWSTR,
     pub dwTagId: u32,
-    pub lpDependencies: ::windows::core::PWSTR,
-    pub lpServiceStartName: ::windows::core::PWSTR,
-    pub lpDisplayName: ::windows::core::PWSTR,
+    pub lpDependencies: ::windows_core::PWSTR,
+    pub lpServiceStartName: ::windows_core::PWSTR,
+    pub lpDisplayName: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for QUERY_SERVICE_CONFIGW {}
 impl ::core::clone::Clone for QUERY_SERVICE_CONFIGW {
@@ -865,12 +841,12 @@ impl ::core::fmt::Debug for QUERY_SERVICE_CONFIGW {
         f.debug_struct("QUERY_SERVICE_CONFIGW").field("dwServiceType", &self.dwServiceType).field("dwStartType", &self.dwStartType).field("dwErrorControl", &self.dwErrorControl).field("lpBinaryPathName", &self.lpBinaryPathName).field("lpLoadOrderGroup", &self.lpLoadOrderGroup).field("dwTagId", &self.dwTagId).field("lpDependencies", &self.lpDependencies).field("lpServiceStartName", &self.lpServiceStartName).field("lpDisplayName", &self.lpDisplayName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for QUERY_SERVICE_CONFIGW {
+unsafe impl ::windows_core::Abi for QUERY_SERVICE_CONFIGW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for QUERY_SERVICE_CONFIGW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QUERY_SERVICE_CONFIGW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QUERY_SERVICE_CONFIGW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for QUERY_SERVICE_CONFIGW {}
@@ -883,7 +859,7 @@ impl ::core::default::Default for QUERY_SERVICE_CONFIGW {
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct QUERY_SERVICE_LOCK_STATUSA {
     pub fIsLocked: u32,
-    pub lpLockOwner: ::windows::core::PSTR,
+    pub lpLockOwner: ::windows_core::PSTR,
     pub dwLockDuration: u32,
 }
 impl ::core::marker::Copy for QUERY_SERVICE_LOCK_STATUSA {}
@@ -897,12 +873,12 @@ impl ::core::fmt::Debug for QUERY_SERVICE_LOCK_STATUSA {
         f.debug_struct("QUERY_SERVICE_LOCK_STATUSA").field("fIsLocked", &self.fIsLocked).field("lpLockOwner", &self.lpLockOwner).field("dwLockDuration", &self.dwLockDuration).finish()
     }
 }
-unsafe impl ::windows::core::Abi for QUERY_SERVICE_LOCK_STATUSA {
+unsafe impl ::windows_core::Abi for QUERY_SERVICE_LOCK_STATUSA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for QUERY_SERVICE_LOCK_STATUSA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QUERY_SERVICE_LOCK_STATUSA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QUERY_SERVICE_LOCK_STATUSA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for QUERY_SERVICE_LOCK_STATUSA {}
@@ -915,7 +891,7 @@ impl ::core::default::Default for QUERY_SERVICE_LOCK_STATUSA {
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct QUERY_SERVICE_LOCK_STATUSW {
     pub fIsLocked: u32,
-    pub lpLockOwner: ::windows::core::PWSTR,
+    pub lpLockOwner: ::windows_core::PWSTR,
     pub dwLockDuration: u32,
 }
 impl ::core::marker::Copy for QUERY_SERVICE_LOCK_STATUSW {}
@@ -929,12 +905,12 @@ impl ::core::fmt::Debug for QUERY_SERVICE_LOCK_STATUSW {
         f.debug_struct("QUERY_SERVICE_LOCK_STATUSW").field("fIsLocked", &self.fIsLocked).field("lpLockOwner", &self.lpLockOwner).field("dwLockDuration", &self.dwLockDuration).finish()
     }
 }
-unsafe impl ::windows::core::Abi for QUERY_SERVICE_LOCK_STATUSW {
+unsafe impl ::windows_core::Abi for QUERY_SERVICE_LOCK_STATUSW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for QUERY_SERVICE_LOCK_STATUSW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QUERY_SERVICE_LOCK_STATUSW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QUERY_SERVICE_LOCK_STATUSW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for QUERY_SERVICE_LOCK_STATUSW {}
@@ -946,7 +922,7 @@ impl ::core::default::Default for QUERY_SERVICE_LOCK_STATUSW {
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn QueryServiceConfig2A<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwinfolevel: SERVICE_CONFIG, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryServiceConfig2A<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwinfolevel: SERVICE_CONFIG, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -961,7 +937,7 @@ pub unsafe fn QueryServiceConfig2A<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn QueryServiceConfig2W<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwinfolevel: SERVICE_CONFIG, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryServiceConfig2W<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwinfolevel: SERVICE_CONFIG, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -976,7 +952,7 @@ pub unsafe fn QueryServiceConfig2W<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn QueryServiceConfigA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, lpserviceconfig: *mut QUERY_SERVICE_CONFIGA, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryServiceConfigA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, lpserviceconfig: *mut QUERY_SERVICE_CONFIGA, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -991,7 +967,7 @@ pub unsafe fn QueryServiceConfigA<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn QueryServiceConfigW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, lpserviceconfig: *mut QUERY_SERVICE_CONFIGW, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryServiceConfigW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, lpserviceconfig: *mut QUERY_SERVICE_CONFIGW, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1006,7 +982,7 @@ pub unsafe fn QueryServiceConfigW<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QueryServiceDynamicInformation<'a, Param0: ::windows::core::IntoParam<'a, SERVICE_STATUS_HANDLE>>(hservicestatus: Param0, dwinfolevel: u32, ppdynamicinfo: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryServiceDynamicInformation<'a, Param0: ::windows_core::IntoParam<'a, SERVICE_STATUS_HANDLE>>(hservicestatus: Param0, dwinfolevel: u32, ppdynamicinfo: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1021,7 +997,7 @@ pub unsafe fn QueryServiceDynamicInformation<'a, Param0: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn QueryServiceLockStatusA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hscmanager: Param0, lplockstatus: *mut QUERY_SERVICE_LOCK_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryServiceLockStatusA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hscmanager: Param0, lplockstatus: *mut QUERY_SERVICE_LOCK_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1036,7 +1012,7 @@ pub unsafe fn QueryServiceLockStatusA<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn QueryServiceLockStatusW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hscmanager: Param0, lplockstatus: *mut QUERY_SERVICE_LOCK_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryServiceLockStatusW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hscmanager: Param0, lplockstatus: *mut QUERY_SERVICE_LOCK_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1051,7 +1027,7 @@ pub unsafe fn QueryServiceLockStatusW<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn QueryServiceObjectSecurity<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwsecurityinformation: u32, lpsecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryServiceObjectSecurity<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, dwsecurityinformation: u32, lpsecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1066,7 +1042,7 @@ pub unsafe fn QueryServiceObjectSecurity<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn QueryServiceStatus<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, lpservicestatus: *mut SERVICE_STATUS) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryServiceStatus<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, lpservicestatus: *mut SERVICE_STATUS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1081,7 +1057,7 @@ pub unsafe fn QueryServiceStatus<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn QueryServiceStatusEx<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, infolevel: SC_STATUS_TYPE, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryServiceStatusEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, infolevel: SC_STATUS_TYPE, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1093,63 +1069,63 @@ pub unsafe fn QueryServiceStatusEx<'a, Param0: ::windows::core::IntoParam<'a, su
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-pub const RPC_INTERFACE_EVENT_GUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xbc90d167_9470_4139_a9ba_be0bbbf5b74d);
+pub const RPC_INTERFACE_EVENT_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbc90d167_9470_4139_a9ba_be0bbbf5b74d);
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 #[inline]
-pub unsafe fn RegisterServiceCtrlHandlerA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpservicename: Param0, lphandlerproc: LPHANDLER_FUNCTION) -> ::windows::core::Result<SERVICE_STATUS_HANDLE> {
+pub unsafe fn RegisterServiceCtrlHandlerA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpservicename: Param0, lphandlerproc: LPHANDLER_FUNCTION) -> ::windows_core::Result<SERVICE_STATUS_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterServiceCtrlHandlerA(lpservicename: ::windows::core::PCSTR, lphandlerproc: ::windows::core::RawPtr) -> SERVICE_STATUS_HANDLE;
+            fn RegisterServiceCtrlHandlerA(lpservicename: ::windows_core::PCSTR, lphandlerproc: ::windows_core::RawPtr) -> SERVICE_STATUS_HANDLE;
         }
         let result__ = RegisterServiceCtrlHandlerA(lpservicename.into_param().abi(), ::core::mem::transmute(lphandlerproc));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 #[inline]
-pub unsafe fn RegisterServiceCtrlHandlerExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpservicename: Param0, lphandlerproc: LPHANDLER_FUNCTION_EX, lpcontext: *const ::core::ffi::c_void) -> ::windows::core::Result<SERVICE_STATUS_HANDLE> {
+pub unsafe fn RegisterServiceCtrlHandlerExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpservicename: Param0, lphandlerproc: LPHANDLER_FUNCTION_EX, lpcontext: *const ::core::ffi::c_void) -> ::windows_core::Result<SERVICE_STATUS_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterServiceCtrlHandlerExA(lpservicename: ::windows::core::PCSTR, lphandlerproc: ::windows::core::RawPtr, lpcontext: *const ::core::ffi::c_void) -> SERVICE_STATUS_HANDLE;
+            fn RegisterServiceCtrlHandlerExA(lpservicename: ::windows_core::PCSTR, lphandlerproc: ::windows_core::RawPtr, lpcontext: *const ::core::ffi::c_void) -> SERVICE_STATUS_HANDLE;
         }
         let result__ = RegisterServiceCtrlHandlerExA(lpservicename.into_param().abi(), ::core::mem::transmute(lphandlerproc), ::core::mem::transmute(lpcontext));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 #[inline]
-pub unsafe fn RegisterServiceCtrlHandlerExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpservicename: Param0, lphandlerproc: LPHANDLER_FUNCTION_EX, lpcontext: *const ::core::ffi::c_void) -> ::windows::core::Result<SERVICE_STATUS_HANDLE> {
+pub unsafe fn RegisterServiceCtrlHandlerExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpservicename: Param0, lphandlerproc: LPHANDLER_FUNCTION_EX, lpcontext: *const ::core::ffi::c_void) -> ::windows_core::Result<SERVICE_STATUS_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterServiceCtrlHandlerExW(lpservicename: ::windows::core::PCWSTR, lphandlerproc: ::windows::core::RawPtr, lpcontext: *const ::core::ffi::c_void) -> SERVICE_STATUS_HANDLE;
+            fn RegisterServiceCtrlHandlerExW(lpservicename: ::windows_core::PCWSTR, lphandlerproc: ::windows_core::RawPtr, lpcontext: *const ::core::ffi::c_void) -> SERVICE_STATUS_HANDLE;
         }
         let result__ = RegisterServiceCtrlHandlerExW(lpservicename.into_param().abi(), ::core::mem::transmute(lphandlerproc), ::core::mem::transmute(lpcontext));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 #[inline]
-pub unsafe fn RegisterServiceCtrlHandlerW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpservicename: Param0, lphandlerproc: LPHANDLER_FUNCTION) -> ::windows::core::Result<SERVICE_STATUS_HANDLE> {
+pub unsafe fn RegisterServiceCtrlHandlerW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpservicename: Param0, lphandlerproc: LPHANDLER_FUNCTION) -> ::windows_core::Result<SERVICE_STATUS_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterServiceCtrlHandlerW(lpservicename: ::windows::core::PCWSTR, lphandlerproc: ::windows::core::RawPtr) -> SERVICE_STATUS_HANDLE;
+            fn RegisterServiceCtrlHandlerW(lpservicename: ::windows_core::PCWSTR, lphandlerproc: ::windows_core::RawPtr) -> SERVICE_STATUS_HANDLE;
         }
         let result__ = RegisterServiceCtrlHandlerW(lpservicename.into_param().abi(), ::core::mem::transmute(lphandlerproc));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1171,12 +1147,12 @@ impl ::core::fmt::Debug for SC_ACTION {
         f.debug_struct("SC_ACTION").field("Type", &self.Type).field("Delay", &self.Delay).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SC_ACTION {
+unsafe impl ::windows_core::Abi for SC_ACTION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SC_ACTION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SC_ACTION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SC_ACTION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SC_ACTION {}
@@ -1210,7 +1186,7 @@ impl ::core::default::Default for SC_ACTION_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SC_ACTION_TYPE {
+unsafe impl ::windows_core::Abi for SC_ACTION_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SC_ACTION_TYPE {
@@ -1237,7 +1213,7 @@ impl ::core::default::Default for SC_ENUM_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SC_ENUM_TYPE {
+unsafe impl ::windows_core::Abi for SC_ENUM_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SC_ENUM_TYPE {
@@ -1266,7 +1242,7 @@ impl ::core::default::Default for SC_EVENT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SC_EVENT_TYPE {
+unsafe impl ::windows_core::Abi for SC_EVENT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SC_EVENT_TYPE {
@@ -1305,7 +1281,7 @@ impl ::core::default::Default for SC_STATUS_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SC_STATUS_TYPE {
+unsafe impl ::windows_core::Abi for SC_STATUS_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SC_STATUS_TYPE {
@@ -1392,7 +1368,7 @@ impl ::core::default::Default for SERVICE_CONFIG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_CONFIG {
+unsafe impl ::windows_core::Abi for SERVICE_CONFIG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVICE_CONFIG {
@@ -1436,7 +1412,7 @@ pub const SERVICE_CONTROL_STATUS_REASON_INFO: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct SERVICE_CONTROL_STATUS_REASON_PARAMSA {
     pub dwReason: u32,
-    pub pszComment: ::windows::core::PSTR,
+    pub pszComment: ::windows_core::PSTR,
     pub ServiceStatus: SERVICE_STATUS_PROCESS,
 }
 impl ::core::marker::Copy for SERVICE_CONTROL_STATUS_REASON_PARAMSA {}
@@ -1450,12 +1426,12 @@ impl ::core::fmt::Debug for SERVICE_CONTROL_STATUS_REASON_PARAMSA {
         f.debug_struct("SERVICE_CONTROL_STATUS_REASON_PARAMSA").field("dwReason", &self.dwReason).field("pszComment", &self.pszComment).field("ServiceStatus", &self.ServiceStatus).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_CONTROL_STATUS_REASON_PARAMSA {
+unsafe impl ::windows_core::Abi for SERVICE_CONTROL_STATUS_REASON_PARAMSA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_CONTROL_STATUS_REASON_PARAMSA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_CONTROL_STATUS_REASON_PARAMSA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_CONTROL_STATUS_REASON_PARAMSA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_CONTROL_STATUS_REASON_PARAMSA {}
@@ -1468,7 +1444,7 @@ impl ::core::default::Default for SERVICE_CONTROL_STATUS_REASON_PARAMSA {
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct SERVICE_CONTROL_STATUS_REASON_PARAMSW {
     pub dwReason: u32,
-    pub pszComment: ::windows::core::PWSTR,
+    pub pszComment: ::windows_core::PWSTR,
     pub ServiceStatus: SERVICE_STATUS_PROCESS,
 }
 impl ::core::marker::Copy for SERVICE_CONTROL_STATUS_REASON_PARAMSW {}
@@ -1482,12 +1458,12 @@ impl ::core::fmt::Debug for SERVICE_CONTROL_STATUS_REASON_PARAMSW {
         f.debug_struct("SERVICE_CONTROL_STATUS_REASON_PARAMSW").field("dwReason", &self.dwReason).field("pszComment", &self.pszComment).field("ServiceStatus", &self.ServiceStatus).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_CONTROL_STATUS_REASON_PARAMSW {
+unsafe impl ::windows_core::Abi for SERVICE_CONTROL_STATUS_REASON_PARAMSW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_CONTROL_STATUS_REASON_PARAMSW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_CONTROL_STATUS_REASON_PARAMSW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_CONTROL_STATUS_REASON_PARAMSW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_CONTROL_STATUS_REASON_PARAMSW {}
@@ -1515,12 +1491,12 @@ impl ::core::clone::Clone for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM {
+unsafe impl ::windows_core::Abi for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM {}
@@ -1541,12 +1517,12 @@ impl ::core::clone::Clone for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0 {
+unsafe impl ::windows_core::Abi for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0 {}
@@ -1572,12 +1548,12 @@ impl ::core::fmt::Debug for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0_0 {
         f.debug_struct("SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0_0").field("DataOffset", &self.DataOffset).field("Data", &self.Data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0_0 {
+unsafe impl ::windows_core::Abi for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0_0 {}
@@ -1607,13 +1583,13 @@ impl ::core::fmt::Debug for SERVICE_DELAYED_AUTO_START_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVICE_DELAYED_AUTO_START_INFO {
+unsafe impl ::windows_core::Abi for SERVICE_DELAYED_AUTO_START_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVICE_DELAYED_AUTO_START_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_DELAYED_AUTO_START_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_DELAYED_AUTO_START_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1627,7 +1603,7 @@ impl ::core::default::Default for SERVICE_DELAYED_AUTO_START_INFO {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct SERVICE_DESCRIPTIONA {
-    pub lpDescription: ::windows::core::PSTR,
+    pub lpDescription: ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for SERVICE_DESCRIPTIONA {}
 impl ::core::clone::Clone for SERVICE_DESCRIPTIONA {
@@ -1640,12 +1616,12 @@ impl ::core::fmt::Debug for SERVICE_DESCRIPTIONA {
         f.debug_struct("SERVICE_DESCRIPTIONA").field("lpDescription", &self.lpDescription).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_DESCRIPTIONA {
+unsafe impl ::windows_core::Abi for SERVICE_DESCRIPTIONA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_DESCRIPTIONA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_DESCRIPTIONA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_DESCRIPTIONA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_DESCRIPTIONA {}
@@ -1657,7 +1633,7 @@ impl ::core::default::Default for SERVICE_DESCRIPTIONA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct SERVICE_DESCRIPTIONW {
-    pub lpDescription: ::windows::core::PWSTR,
+    pub lpDescription: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for SERVICE_DESCRIPTIONW {}
 impl ::core::clone::Clone for SERVICE_DESCRIPTIONW {
@@ -1670,12 +1646,12 @@ impl ::core::fmt::Debug for SERVICE_DESCRIPTIONW {
         f.debug_struct("SERVICE_DESCRIPTIONW").field("lpDescription", &self.lpDescription).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_DESCRIPTIONW {
+unsafe impl ::windows_core::Abi for SERVICE_DESCRIPTIONW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_DESCRIPTIONW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_DESCRIPTIONW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_DESCRIPTIONW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_DESCRIPTIONW {}
@@ -1703,7 +1679,7 @@ impl ::core::default::Default for SERVICE_DIRECTORY_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_DIRECTORY_TYPE {
+unsafe impl ::windows_core::Abi for SERVICE_DIRECTORY_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVICE_DIRECTORY_TYPE {
@@ -1738,7 +1714,7 @@ impl ::core::default::Default for SERVICE_ERROR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_ERROR {
+unsafe impl ::windows_core::Abi for SERVICE_ERROR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVICE_ERROR {
@@ -1750,8 +1726,8 @@ impl ::core::fmt::Debug for SERVICE_ERROR {
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct SERVICE_FAILURE_ACTIONSA {
     pub dwResetPeriod: u32,
-    pub lpRebootMsg: ::windows::core::PSTR,
-    pub lpCommand: ::windows::core::PSTR,
+    pub lpRebootMsg: ::windows_core::PSTR,
+    pub lpCommand: ::windows_core::PSTR,
     pub cActions: u32,
     pub lpsaActions: *mut SC_ACTION,
 }
@@ -1766,12 +1742,12 @@ impl ::core::fmt::Debug for SERVICE_FAILURE_ACTIONSA {
         f.debug_struct("SERVICE_FAILURE_ACTIONSA").field("dwResetPeriod", &self.dwResetPeriod).field("lpRebootMsg", &self.lpRebootMsg).field("lpCommand", &self.lpCommand).field("cActions", &self.cActions).field("lpsaActions", &self.lpsaActions).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_FAILURE_ACTIONSA {
+unsafe impl ::windows_core::Abi for SERVICE_FAILURE_ACTIONSA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_FAILURE_ACTIONSA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_FAILURE_ACTIONSA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_FAILURE_ACTIONSA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_FAILURE_ACTIONSA {}
@@ -1784,8 +1760,8 @@ impl ::core::default::Default for SERVICE_FAILURE_ACTIONSA {
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct SERVICE_FAILURE_ACTIONSW {
     pub dwResetPeriod: u32,
-    pub lpRebootMsg: ::windows::core::PWSTR,
-    pub lpCommand: ::windows::core::PWSTR,
+    pub lpRebootMsg: ::windows_core::PWSTR,
+    pub lpCommand: ::windows_core::PWSTR,
     pub cActions: u32,
     pub lpsaActions: *mut SC_ACTION,
 }
@@ -1800,12 +1776,12 @@ impl ::core::fmt::Debug for SERVICE_FAILURE_ACTIONSW {
         f.debug_struct("SERVICE_FAILURE_ACTIONSW").field("dwResetPeriod", &self.dwResetPeriod).field("lpRebootMsg", &self.lpRebootMsg).field("lpCommand", &self.lpCommand).field("cActions", &self.cActions).field("lpsaActions", &self.lpsaActions).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_FAILURE_ACTIONSW {
+unsafe impl ::windows_core::Abi for SERVICE_FAILURE_ACTIONSW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_FAILURE_ACTIONSW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_FAILURE_ACTIONSW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_FAILURE_ACTIONSW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_FAILURE_ACTIONSW {}
@@ -1835,13 +1811,13 @@ impl ::core::fmt::Debug for SERVICE_FAILURE_ACTIONS_FLAG {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVICE_FAILURE_ACTIONS_FLAG {
+unsafe impl ::windows_core::Abi for SERVICE_FAILURE_ACTIONS_FLAG {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVICE_FAILURE_ACTIONS_FLAG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_FAILURE_ACTIONS_FLAG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_FAILURE_ACTIONS_FLAG>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1872,12 +1848,12 @@ impl ::core::fmt::Debug for SERVICE_LAUNCH_PROTECTED_INFO {
         f.debug_struct("SERVICE_LAUNCH_PROTECTED_INFO").field("dwLaunchProtected", &self.dwLaunchProtected).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_LAUNCH_PROTECTED_INFO {
+unsafe impl ::windows_core::Abi for SERVICE_LAUNCH_PROTECTED_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_LAUNCH_PROTECTED_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_LAUNCH_PROTECTED_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_LAUNCH_PROTECTED_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_LAUNCH_PROTECTED_INFO {}
@@ -1895,7 +1871,7 @@ pub const SERVICE_LAUNCH_PROTECTED_WINDOWS_LIGHT: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub type SERVICE_MAIN_FUNCTIONA = ::core::option::Option<unsafe extern "system" fn(dwnumservicesargs: u32, lpserviceargvectors: *mut *mut i8)>;
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
-pub type SERVICE_MAIN_FUNCTIONW = ::core::option::Option<unsafe extern "system" fn(dwnumservicesargs: u32, lpserviceargvectors: *mut ::windows::core::PWSTR)>;
+pub type SERVICE_MAIN_FUNCTIONW = ::core::option::Option<unsafe extern "system" fn(dwnumservicesargs: u32, lpserviceargvectors: *mut ::windows_core::PWSTR)>;
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -1931,7 +1907,7 @@ impl ::core::default::Default for SERVICE_NOTIFY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_NOTIFY {
+unsafe impl ::windows_core::Abi for SERVICE_NOTIFY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVICE_NOTIFY {
@@ -1987,12 +1963,12 @@ impl ::core::fmt::Debug for SERVICE_NOTIFY_1 {
         f.debug_struct("SERVICE_NOTIFY_1").field("dwVersion", &self.dwVersion).field("pfnNotifyCallback", &self.pfnNotifyCallback.map(|f| f as usize)).field("pContext", &self.pContext).field("dwNotificationStatus", &self.dwNotificationStatus).field("ServiceStatus", &self.ServiceStatus).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_NOTIFY_1 {
+unsafe impl ::windows_core::Abi for SERVICE_NOTIFY_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_NOTIFY_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_NOTIFY_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_NOTIFY_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_NOTIFY_1 {}
@@ -2010,7 +1986,7 @@ pub struct SERVICE_NOTIFY_2A {
     pub dwNotificationStatus: u32,
     pub ServiceStatus: SERVICE_STATUS_PROCESS,
     pub dwNotificationTriggered: u32,
-    pub pszServiceNames: ::windows::core::PSTR,
+    pub pszServiceNames: ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for SERVICE_NOTIFY_2A {}
 impl ::core::clone::Clone for SERVICE_NOTIFY_2A {
@@ -2023,12 +1999,12 @@ impl ::core::fmt::Debug for SERVICE_NOTIFY_2A {
         f.debug_struct("SERVICE_NOTIFY_2A").field("dwVersion", &self.dwVersion).field("pfnNotifyCallback", &self.pfnNotifyCallback.map(|f| f as usize)).field("pContext", &self.pContext).field("dwNotificationStatus", &self.dwNotificationStatus).field("ServiceStatus", &self.ServiceStatus).field("dwNotificationTriggered", &self.dwNotificationTriggered).field("pszServiceNames", &self.pszServiceNames).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_NOTIFY_2A {
+unsafe impl ::windows_core::Abi for SERVICE_NOTIFY_2A {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_NOTIFY_2A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_NOTIFY_2A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_NOTIFY_2A>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_NOTIFY_2A {}
@@ -2046,7 +2022,7 @@ pub struct SERVICE_NOTIFY_2W {
     pub dwNotificationStatus: u32,
     pub ServiceStatus: SERVICE_STATUS_PROCESS,
     pub dwNotificationTriggered: u32,
-    pub pszServiceNames: ::windows::core::PWSTR,
+    pub pszServiceNames: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for SERVICE_NOTIFY_2W {}
 impl ::core::clone::Clone for SERVICE_NOTIFY_2W {
@@ -2059,12 +2035,12 @@ impl ::core::fmt::Debug for SERVICE_NOTIFY_2W {
         f.debug_struct("SERVICE_NOTIFY_2W").field("dwVersion", &self.dwVersion).field("pfnNotifyCallback", &self.pfnNotifyCallback.map(|f| f as usize)).field("pContext", &self.pContext).field("dwNotificationStatus", &self.dwNotificationStatus).field("ServiceStatus", &self.ServiceStatus).field("dwNotificationTriggered", &self.dwNotificationTriggered).field("pszServiceNames", &self.pszServiceNames).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_NOTIFY_2W {
+unsafe impl ::windows_core::Abi for SERVICE_NOTIFY_2W {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_NOTIFY_2W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_NOTIFY_2W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_NOTIFY_2W>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_NOTIFY_2W {}
@@ -2105,13 +2081,13 @@ impl ::core::fmt::Debug for SERVICE_PREFERRED_NODE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVICE_PREFERRED_NODE_INFO {
+unsafe impl ::windows_core::Abi for SERVICE_PREFERRED_NODE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVICE_PREFERRED_NODE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_PREFERRED_NODE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_PREFERRED_NODE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2138,12 +2114,12 @@ impl ::core::fmt::Debug for SERVICE_PRESHUTDOWN_INFO {
         f.debug_struct("SERVICE_PRESHUTDOWN_INFO").field("dwPreshutdownTimeout", &self.dwPreshutdownTimeout).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_PRESHUTDOWN_INFO {
+unsafe impl ::windows_core::Abi for SERVICE_PRESHUTDOWN_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_PRESHUTDOWN_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_PRESHUTDOWN_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_PRESHUTDOWN_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_PRESHUTDOWN_INFO {}
@@ -2177,7 +2153,7 @@ impl ::core::default::Default for SERVICE_REGISTRY_STATE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_REGISTRY_STATE_TYPE {
+unsafe impl ::windows_core::Abi for SERVICE_REGISTRY_STATE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVICE_REGISTRY_STATE_TYPE {
@@ -2188,7 +2164,7 @@ impl ::core::fmt::Debug for SERVICE_REGISTRY_STATE_TYPE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct SERVICE_REQUIRED_PRIVILEGES_INFOA {
-    pub pmszRequiredPrivileges: ::windows::core::PSTR,
+    pub pmszRequiredPrivileges: ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for SERVICE_REQUIRED_PRIVILEGES_INFOA {}
 impl ::core::clone::Clone for SERVICE_REQUIRED_PRIVILEGES_INFOA {
@@ -2201,12 +2177,12 @@ impl ::core::fmt::Debug for SERVICE_REQUIRED_PRIVILEGES_INFOA {
         f.debug_struct("SERVICE_REQUIRED_PRIVILEGES_INFOA").field("pmszRequiredPrivileges", &self.pmszRequiredPrivileges).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_REQUIRED_PRIVILEGES_INFOA {
+unsafe impl ::windows_core::Abi for SERVICE_REQUIRED_PRIVILEGES_INFOA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_REQUIRED_PRIVILEGES_INFOA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_REQUIRED_PRIVILEGES_INFOA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_REQUIRED_PRIVILEGES_INFOA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_REQUIRED_PRIVILEGES_INFOA {}
@@ -2218,7 +2194,7 @@ impl ::core::default::Default for SERVICE_REQUIRED_PRIVILEGES_INFOA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct SERVICE_REQUIRED_PRIVILEGES_INFOW {
-    pub pmszRequiredPrivileges: ::windows::core::PWSTR,
+    pub pmszRequiredPrivileges: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for SERVICE_REQUIRED_PRIVILEGES_INFOW {}
 impl ::core::clone::Clone for SERVICE_REQUIRED_PRIVILEGES_INFOW {
@@ -2231,12 +2207,12 @@ impl ::core::fmt::Debug for SERVICE_REQUIRED_PRIVILEGES_INFOW {
         f.debug_struct("SERVICE_REQUIRED_PRIVILEGES_INFOW").field("pmszRequiredPrivileges", &self.pmszRequiredPrivileges).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_REQUIRED_PRIVILEGES_INFOW {
+unsafe impl ::windows_core::Abi for SERVICE_REQUIRED_PRIVILEGES_INFOW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_REQUIRED_PRIVILEGES_INFOW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_REQUIRED_PRIVILEGES_INFOW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_REQUIRED_PRIVILEGES_INFOW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_REQUIRED_PRIVILEGES_INFOW {}
@@ -2264,7 +2240,7 @@ impl ::core::default::Default for SERVICE_RUNS_IN_PROCESS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_RUNS_IN_PROCESS {
+unsafe impl ::windows_core::Abi for SERVICE_RUNS_IN_PROCESS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVICE_RUNS_IN_PROCESS {
@@ -2289,7 +2265,7 @@ impl ::core::default::Default for SERVICE_SHARED_DIRECTORY_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_SHARED_DIRECTORY_TYPE {
+unsafe impl ::windows_core::Abi for SERVICE_SHARED_DIRECTORY_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVICE_SHARED_DIRECTORY_TYPE {
@@ -2314,7 +2290,7 @@ impl ::core::default::Default for SERVICE_SHARED_REGISTRY_STATE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_SHARED_REGISTRY_STATE_TYPE {
+unsafe impl ::windows_core::Abi for SERVICE_SHARED_REGISTRY_STATE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVICE_SHARED_REGISTRY_STATE_TYPE {
@@ -2338,12 +2314,12 @@ impl ::core::fmt::Debug for SERVICE_SID_INFO {
         f.debug_struct("SERVICE_SID_INFO").field("dwServiceSidType", &self.dwServiceSidType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_SID_INFO {
+unsafe impl ::windows_core::Abi for SERVICE_SID_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_SID_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_SID_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_SID_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_SID_INFO {}
@@ -2374,12 +2350,12 @@ impl ::core::fmt::Debug for SERVICE_START_REASON {
         f.debug_struct("SERVICE_START_REASON").field("dwReason", &self.dwReason).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_START_REASON {
+unsafe impl ::windows_core::Abi for SERVICE_START_REASON {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_START_REASON {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_START_REASON>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_START_REASON>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_START_REASON {}
@@ -2423,7 +2399,7 @@ impl ::core::default::Default for SERVICE_START_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_START_TYPE {
+unsafe impl ::windows_core::Abi for SERVICE_START_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVICE_START_TYPE {
@@ -2453,12 +2429,12 @@ impl ::core::fmt::Debug for SERVICE_STATUS {
         f.debug_struct("SERVICE_STATUS").field("dwServiceType", &self.dwServiceType).field("dwCurrentState", &self.dwCurrentState).field("dwControlsAccepted", &self.dwControlsAccepted).field("dwWin32ExitCode", &self.dwWin32ExitCode).field("dwServiceSpecificExitCode", &self.dwServiceSpecificExitCode).field("dwCheckPoint", &self.dwCheckPoint).field("dwWaitHint", &self.dwWaitHint).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_STATUS {
+unsafe impl ::windows_core::Abi for SERVICE_STATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_STATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_STATUS {}
@@ -2496,7 +2472,7 @@ impl ::core::default::Default for SERVICE_STATUS_CURRENT_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_STATUS_CURRENT_STATE {
+unsafe impl ::windows_core::Abi for SERVICE_STATUS_CURRENT_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVICE_STATUS_CURRENT_STATE {
@@ -2528,7 +2504,7 @@ impl ::core::fmt::Debug for SERVICE_STATUS_HANDLE {
         f.debug_tuple("SERVICE_STATUS_HANDLE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_STATUS_HANDLE {
+unsafe impl ::windows_core::Abi for SERVICE_STATUS_HANDLE {
     type Abi = Self;
 }
 #[repr(C)]
@@ -2555,12 +2531,12 @@ impl ::core::fmt::Debug for SERVICE_STATUS_PROCESS {
         f.debug_struct("SERVICE_STATUS_PROCESS").field("dwServiceType", &self.dwServiceType).field("dwCurrentState", &self.dwCurrentState).field("dwControlsAccepted", &self.dwControlsAccepted).field("dwWin32ExitCode", &self.dwWin32ExitCode).field("dwServiceSpecificExitCode", &self.dwServiceSpecificExitCode).field("dwCheckPoint", &self.dwCheckPoint).field("dwWaitHint", &self.dwWaitHint).field("dwProcessId", &self.dwProcessId).field("dwServiceFlags", &self.dwServiceFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_STATUS_PROCESS {
+unsafe impl ::windows_core::Abi for SERVICE_STATUS_PROCESS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_STATUS_PROCESS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_STATUS_PROCESS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_STATUS_PROCESS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_STATUS_PROCESS {}
@@ -2660,7 +2636,7 @@ pub const SERVICE_STOP_REASON_MINOR_WMI: u32 = 18u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct SERVICE_TABLE_ENTRYA {
-    pub lpServiceName: ::windows::core::PSTR,
+    pub lpServiceName: ::windows_core::PSTR,
     pub lpServiceProc: LPSERVICE_MAIN_FUNCTIONA,
 }
 impl ::core::marker::Copy for SERVICE_TABLE_ENTRYA {}
@@ -2674,12 +2650,12 @@ impl ::core::fmt::Debug for SERVICE_TABLE_ENTRYA {
         f.debug_struct("SERVICE_TABLE_ENTRYA").field("lpServiceName", &self.lpServiceName).field("lpServiceProc", &self.lpServiceProc.map(|f| f as usize)).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_TABLE_ENTRYA {
+unsafe impl ::windows_core::Abi for SERVICE_TABLE_ENTRYA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_TABLE_ENTRYA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TABLE_ENTRYA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TABLE_ENTRYA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_TABLE_ENTRYA {}
@@ -2691,7 +2667,7 @@ impl ::core::default::Default for SERVICE_TABLE_ENTRYA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Services\"`*"]
 pub struct SERVICE_TABLE_ENTRYW {
-    pub lpServiceName: ::windows::core::PWSTR,
+    pub lpServiceName: ::windows_core::PWSTR,
     pub lpServiceProc: LPSERVICE_MAIN_FUNCTIONW,
 }
 impl ::core::marker::Copy for SERVICE_TABLE_ENTRYW {}
@@ -2705,12 +2681,12 @@ impl ::core::fmt::Debug for SERVICE_TABLE_ENTRYW {
         f.debug_struct("SERVICE_TABLE_ENTRYW").field("lpServiceName", &self.lpServiceName).field("lpServiceProc", &self.lpServiceProc.map(|f| f as usize)).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_TABLE_ENTRYW {
+unsafe impl ::windows_core::Abi for SERVICE_TABLE_ENTRYW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_TABLE_ENTRYW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TABLE_ENTRYW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TABLE_ENTRYW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_TABLE_ENTRYW {}
@@ -2736,12 +2712,12 @@ impl ::core::fmt::Debug for SERVICE_TIMECHANGE_INFO {
         f.debug_struct("SERVICE_TIMECHANGE_INFO").field("liNewTime", &self.liNewTime).field("liOldTime", &self.liOldTime).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_TIMECHANGE_INFO {
+unsafe impl ::windows_core::Abi for SERVICE_TIMECHANGE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_TIMECHANGE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TIMECHANGE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TIMECHANGE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_TIMECHANGE_INFO {}
@@ -2755,7 +2731,7 @@ impl ::core::default::Default for SERVICE_TIMECHANGE_INFO {
 pub struct SERVICE_TRIGGER {
     pub dwTriggerType: SERVICE_TRIGGER_TYPE,
     pub dwAction: SERVICE_TRIGGER_ACTION,
-    pub pTriggerSubtype: *mut ::windows::core::GUID,
+    pub pTriggerSubtype: *mut ::windows_core::GUID,
     pub cDataItems: u32,
     pub pDataItems: *mut SERVICE_TRIGGER_SPECIFIC_DATA_ITEM,
 }
@@ -2770,12 +2746,12 @@ impl ::core::fmt::Debug for SERVICE_TRIGGER {
         f.debug_struct("SERVICE_TRIGGER").field("dwTriggerType", &self.dwTriggerType).field("dwAction", &self.dwAction).field("pTriggerSubtype", &self.pTriggerSubtype).field("cDataItems", &self.cDataItems).field("pDataItems", &self.pDataItems).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_TRIGGER {
+unsafe impl ::windows_core::Abi for SERVICE_TRIGGER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_TRIGGER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TRIGGER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TRIGGER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_TRIGGER {}
@@ -2803,7 +2779,7 @@ impl ::core::default::Default for SERVICE_TRIGGER_ACTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_TRIGGER_ACTION {
+unsafe impl ::windows_core::Abi for SERVICE_TRIGGER_ACTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVICE_TRIGGER_ACTION {
@@ -2827,12 +2803,12 @@ impl ::core::fmt::Debug for SERVICE_TRIGGER_CUSTOM_STATE_ID {
         f.debug_struct("SERVICE_TRIGGER_CUSTOM_STATE_ID").field("Data", &self.Data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_TRIGGER_CUSTOM_STATE_ID {
+unsafe impl ::windows_core::Abi for SERVICE_TRIGGER_CUSTOM_STATE_ID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_TRIGGER_CUSTOM_STATE_ID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TRIGGER_CUSTOM_STATE_ID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TRIGGER_CUSTOM_STATE_ID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_TRIGGER_CUSTOM_STATE_ID {}
@@ -2859,12 +2835,12 @@ impl ::core::fmt::Debug for SERVICE_TRIGGER_INFO {
         f.debug_struct("SERVICE_TRIGGER_INFO").field("cTriggers", &self.cTriggers).field("pTriggers", &self.pTriggers).field("pReserved", &self.pReserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_TRIGGER_INFO {
+unsafe impl ::windows_core::Abi for SERVICE_TRIGGER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_TRIGGER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TRIGGER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TRIGGER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_TRIGGER_INFO {}
@@ -2891,12 +2867,12 @@ impl ::core::fmt::Debug for SERVICE_TRIGGER_SPECIFIC_DATA_ITEM {
         f.debug_struct("SERVICE_TRIGGER_SPECIFIC_DATA_ITEM").field("dwDataType", &self.dwDataType).field("cbData", &self.cbData).field("pData", &self.pData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_TRIGGER_SPECIFIC_DATA_ITEM {
+unsafe impl ::windows_core::Abi for SERVICE_TRIGGER_SPECIFIC_DATA_ITEM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_TRIGGER_SPECIFIC_DATA_ITEM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TRIGGER_SPECIFIC_DATA_ITEM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_TRIGGER_SPECIFIC_DATA_ITEM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_TRIGGER_SPECIFIC_DATA_ITEM {}
@@ -2930,7 +2906,7 @@ impl ::core::default::Default for SERVICE_TRIGGER_SPECIFIC_DATA_ITEM_DATA_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_TRIGGER_SPECIFIC_DATA_ITEM_DATA_TYPE {
+unsafe impl ::windows_core::Abi for SERVICE_TRIGGER_SPECIFIC_DATA_ITEM_DATA_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVICE_TRIGGER_SPECIFIC_DATA_ITEM_DATA_TYPE {
@@ -2969,7 +2945,7 @@ impl ::core::default::Default for SERVICE_TRIGGER_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_TRIGGER_TYPE {
+unsafe impl ::windows_core::Abi for SERVICE_TRIGGER_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVICE_TRIGGER_TYPE {
@@ -2986,7 +2962,7 @@ pub const SERVICE_USER_DEFINED_CONTROL: u32 = 256u32;
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetServiceBits<'a, Param0: ::windows::core::IntoParam<'a, SERVICE_STATUS_HANDLE>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hservicestatus: Param0, dwservicebits: u32, bsetbitson: Param2, bupdateimmediately: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn SetServiceBits<'a, Param0: ::windows_core::IntoParam<'a, SERVICE_STATUS_HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hservicestatus: Param0, dwservicebits: u32, bsetbitson: Param2, bupdateimmediately: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -3001,7 +2977,7 @@ pub unsafe fn SetServiceBits<'a, Param0: ::windows::core::IntoParam<'a, SERVICE_
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn SetServiceObjectSecurity<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param2: ::windows::core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(hservice: Param0, dwsecurityinformation: super::super::Security::OBJECT_SECURITY_INFORMATION, lpsecuritydescriptor: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetServiceObjectSecurity<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(hservice: Param0, dwsecurityinformation: super::super::Security::OBJECT_SECURITY_INFORMATION, lpsecuritydescriptor: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -3016,7 +2992,7 @@ pub unsafe fn SetServiceObjectSecurity<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetServiceStatus<'a, Param0: ::windows::core::IntoParam<'a, SERVICE_STATUS_HANDLE>>(hservicestatus: Param0, lpservicestatus: *const SERVICE_STATUS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetServiceStatus<'a, Param0: ::windows_core::IntoParam<'a, SERVICE_STATUS_HANDLE>>(hservicestatus: Param0, lpservicestatus: *const SERVICE_STATUS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -3031,14 +3007,14 @@ pub unsafe fn SetServiceStatus<'a, Param0: ::windows::core::IntoParam<'a, SERVIC
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn StartServiceA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, lpserviceargvectors: &[::windows::core::PSTR]) -> super::super::Foundation::BOOL {
+pub unsafe fn StartServiceA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, lpserviceargvectors: &[::windows_core::PSTR]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StartServiceA(hservice: super::super::Security::SC_HANDLE, dwnumserviceargs: u32, lpserviceargvectors: *const ::windows::core::PSTR) -> super::super::Foundation::BOOL;
+            fn StartServiceA(hservice: super::super::Security::SC_HANDLE, dwnumserviceargs: u32, lpserviceargvectors: *const ::windows_core::PSTR) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(StartServiceA(hservice.into_param().abi(), lpserviceargvectors.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(lpserviceargvectors))))
+        ::core::mem::transmute(StartServiceA(hservice.into_param().abi(), lpserviceargvectors.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(lpserviceargvectors))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -3076,19 +3052,19 @@ pub unsafe fn StartServiceCtrlDispatcherW(lpservicestarttable: *const SERVICE_TA
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn StartServiceW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, lpserviceargvectors: &[::windows::core::PWSTR]) -> super::super::Foundation::BOOL {
+pub unsafe fn StartServiceW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>>(hservice: Param0, lpserviceargvectors: &[::windows_core::PWSTR]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StartServiceW(hservice: super::super::Security::SC_HANDLE, dwnumserviceargs: u32, lpserviceargvectors: *const ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
+            fn StartServiceW(hservice: super::super::Security::SC_HANDLE, dwnumserviceargs: u32, lpserviceargvectors: *const ::windows_core::PWSTR) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(StartServiceW(hservice.into_param().abi(), lpserviceargvectors.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(lpserviceargvectors))))
+        ::core::mem::transmute(StartServiceW(hservice.into_param().abi(), lpserviceargvectors.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(lpserviceargvectors))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-pub const USER_POLICY_PRESENT_GUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x54fb46c8_f089_464c_b1fd_59d1b62c3b50);
+pub const USER_POLICY_PRESENT_GUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x54fb46c8_f089_464c_b1fd_59d1b62c3b50);
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
@@ -3107,7 +3083,7 @@ pub unsafe fn UnlockServiceDatabase(sclock: *const ::core::ffi::c_void) -> super
 #[doc = "*Required features: `\"Win32_System_Services\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn WaitServiceState<'a, Param0: ::windows::core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hservice: Param0, dwnotify: u32, dwtimeout: u32, hcancelevent: Param3) -> u32 {
+pub unsafe fn WaitServiceState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::SC_HANDLE>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hservice: Param0, dwnotify: u32, dwtimeout: u32, hcancelevent: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]

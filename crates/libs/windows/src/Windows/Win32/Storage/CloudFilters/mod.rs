@@ -22,7 +22,7 @@ impl ::core::default::Default for CF_CALLBACK_CANCEL_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_CANCEL_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_CANCEL_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_CANCEL_FLAGS {
@@ -77,7 +77,7 @@ impl ::core::default::Default for CF_CALLBACK_CLOSE_COMPLETION_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_CLOSE_COMPLETION_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_CLOSE_COMPLETION_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_CLOSE_COMPLETION_FLAGS {
@@ -134,7 +134,7 @@ impl ::core::default::Default for CF_CALLBACK_DEHYDRATE_COMPLETION_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_DEHYDRATE_COMPLETION_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_DEHYDRATE_COMPLETION_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_DEHYDRATE_COMPLETION_FLAGS {
@@ -189,7 +189,7 @@ impl ::core::default::Default for CF_CALLBACK_DEHYDRATE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_DEHYDRATE_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_DEHYDRATE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_DEHYDRATE_FLAGS {
@@ -250,7 +250,7 @@ impl ::core::default::Default for CF_CALLBACK_DEHYDRATION_REASON {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_DEHYDRATION_REASON {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_DEHYDRATION_REASON {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_DEHYDRATION_REASON {
@@ -275,7 +275,7 @@ impl ::core::default::Default for CF_CALLBACK_DELETE_COMPLETION_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_DELETE_COMPLETION_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_DELETE_COMPLETION_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_DELETE_COMPLETION_FLAGS {
@@ -332,7 +332,7 @@ impl ::core::default::Default for CF_CALLBACK_DELETE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_DELETE_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_DELETE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_DELETE_FLAGS {
@@ -389,7 +389,7 @@ impl ::core::default::Default for CF_CALLBACK_FETCH_DATA_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_FETCH_DATA_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_FETCH_DATA_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_FETCH_DATA_FLAGS {
@@ -442,7 +442,7 @@ impl ::core::default::Default for CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS {
@@ -485,8 +485,8 @@ pub struct CF_CALLBACK_INFO {
     pub StructSize: u32,
     pub ConnectionKey: CF_CONNECTION_KEY,
     pub CallbackContext: *mut ::core::ffi::c_void,
-    pub VolumeGuidName: ::windows::core::PCWSTR,
-    pub VolumeDosName: ::windows::core::PCWSTR,
+    pub VolumeGuidName: ::windows_core::PCWSTR,
+    pub VolumeDosName: ::windows_core::PCWSTR,
     pub VolumeSerialNumber: u32,
     pub SyncRootFileId: i64,
     pub SyncRootIdentity: *const ::core::ffi::c_void,
@@ -495,7 +495,7 @@ pub struct CF_CALLBACK_INFO {
     pub FileSize: i64,
     pub FileIdentity: *const ::core::ffi::c_void,
     pub FileIdentityLength: u32,
-    pub NormalizedPath: ::windows::core::PCWSTR,
+    pub NormalizedPath: ::windows_core::PCWSTR,
     pub TransferKey: i64,
     pub PriorityHint: u8,
     pub CorrelationVector: *mut super::super::System::CorrelationVector::CORRELATION_VECTOR,
@@ -537,13 +537,13 @@ impl ::core::fmt::Debug for CF_CALLBACK_INFO {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
-unsafe impl ::windows::core::Abi for CF_CALLBACK_INFO {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_INFO {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
 impl ::core::cmp::PartialEq for CF_CALLBACK_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_INFO>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
@@ -575,7 +575,7 @@ impl ::core::default::Default for CF_CALLBACK_OPEN_COMPLETION_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_OPEN_COMPLETION_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_OPEN_COMPLETION_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_OPEN_COMPLETION_FLAGS {
@@ -623,12 +623,12 @@ impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS {}
@@ -659,12 +659,12 @@ impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0 {}
@@ -685,12 +685,12 @@ impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS_0_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_0 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_0 {}
@@ -710,12 +710,12 @@ impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS_0_0_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_0_0 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_0_0 {}
@@ -741,12 +741,12 @@ impl ::core::fmt::Debug for CF_CALLBACK_PARAMETERS_0_0_0_0 {
         f.debug_struct("CF_CALLBACK_PARAMETERS_0_0_0_0").field("FileOffset", &self.FileOffset).field("Length", &self.Length).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_0_0_0 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_0_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_0_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_0_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_0_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_0_0_0 {}
@@ -771,12 +771,12 @@ impl ::core::fmt::Debug for CF_CALLBACK_PARAMETERS_0_1 {
         f.debug_struct("CF_CALLBACK_PARAMETERS_0_1").field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_1 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_1 {}
@@ -802,12 +802,12 @@ impl ::core::fmt::Debug for CF_CALLBACK_PARAMETERS_0_2 {
         f.debug_struct("CF_CALLBACK_PARAMETERS_0_2").field("Flags", &self.Flags).field("Reason", &self.Reason).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_2 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_2 {}
@@ -833,12 +833,12 @@ impl ::core::fmt::Debug for CF_CALLBACK_PARAMETERS_0_3 {
         f.debug_struct("CF_CALLBACK_PARAMETERS_0_3").field("Flags", &self.Flags).field("Reason", &self.Reason).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_3 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_3 {}
@@ -863,12 +863,12 @@ impl ::core::fmt::Debug for CF_CALLBACK_PARAMETERS_0_4 {
         f.debug_struct("CF_CALLBACK_PARAMETERS_0_4").field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_4 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_4 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_4 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_4>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_4>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_4 {}
@@ -893,12 +893,12 @@ impl ::core::fmt::Debug for CF_CALLBACK_PARAMETERS_0_5 {
         f.debug_struct("CF_CALLBACK_PARAMETERS_0_5").field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_5 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_5 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_5 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_5>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_5>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_5 {}
@@ -929,12 +929,12 @@ impl ::core::fmt::Debug for CF_CALLBACK_PARAMETERS_0_6 {
         f.debug_struct("CF_CALLBACK_PARAMETERS_0_6").field("Flags", &self.Flags).field("RequiredFileOffset", &self.RequiredFileOffset).field("RequiredLength", &self.RequiredLength).field("OptionalFileOffset", &self.OptionalFileOffset).field("OptionalLength", &self.OptionalLength).field("LastDehydrationTime", &self.LastDehydrationTime).field("LastDehydrationReason", &self.LastDehydrationReason).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_6 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_6 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_6 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_6>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_6>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_6 {}
@@ -947,7 +947,7 @@ impl ::core::default::Default for CF_CALLBACK_PARAMETERS_0_6 {
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 pub struct CF_CALLBACK_PARAMETERS_0_7 {
     pub Flags: CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS,
-    pub Pattern: ::windows::core::PCWSTR,
+    pub Pattern: ::windows_core::PCWSTR,
 }
 impl ::core::marker::Copy for CF_CALLBACK_PARAMETERS_0_7 {}
 impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS_0_7 {
@@ -960,12 +960,12 @@ impl ::core::fmt::Debug for CF_CALLBACK_PARAMETERS_0_7 {
         f.debug_struct("CF_CALLBACK_PARAMETERS_0_7").field("Flags", &self.Flags).field("Pattern", &self.Pattern).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_7 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_7 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_7 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_7>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_7>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_7 {}
@@ -990,12 +990,12 @@ impl ::core::fmt::Debug for CF_CALLBACK_PARAMETERS_0_8 {
         f.debug_struct("CF_CALLBACK_PARAMETERS_0_8").field("Flags", &self.Flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_8 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_8 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_8 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_8>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_8>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_8 {}
@@ -1008,7 +1008,7 @@ impl ::core::default::Default for CF_CALLBACK_PARAMETERS_0_8 {
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 pub struct CF_CALLBACK_PARAMETERS_0_9 {
     pub Flags: CF_CALLBACK_RENAME_COMPLETION_FLAGS,
-    pub SourcePath: ::windows::core::PCWSTR,
+    pub SourcePath: ::windows_core::PCWSTR,
 }
 impl ::core::marker::Copy for CF_CALLBACK_PARAMETERS_0_9 {}
 impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS_0_9 {
@@ -1021,12 +1021,12 @@ impl ::core::fmt::Debug for CF_CALLBACK_PARAMETERS_0_9 {
         f.debug_struct("CF_CALLBACK_PARAMETERS_0_9").field("Flags", &self.Flags).field("SourcePath", &self.SourcePath).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_9 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_9 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_9 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_9>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_9>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_9 {}
@@ -1039,7 +1039,7 @@ impl ::core::default::Default for CF_CALLBACK_PARAMETERS_0_9 {
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 pub struct CF_CALLBACK_PARAMETERS_0_10 {
     pub Flags: CF_CALLBACK_RENAME_FLAGS,
-    pub TargetPath: ::windows::core::PCWSTR,
+    pub TargetPath: ::windows_core::PCWSTR,
 }
 impl ::core::marker::Copy for CF_CALLBACK_PARAMETERS_0_10 {}
 impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS_0_10 {
@@ -1052,12 +1052,12 @@ impl ::core::fmt::Debug for CF_CALLBACK_PARAMETERS_0_10 {
         f.debug_struct("CF_CALLBACK_PARAMETERS_0_10").field("Flags", &self.Flags).field("TargetPath", &self.TargetPath).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_10 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_10 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_10 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_10>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_10>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_10 {}
@@ -1084,12 +1084,12 @@ impl ::core::fmt::Debug for CF_CALLBACK_PARAMETERS_0_11 {
         f.debug_struct("CF_CALLBACK_PARAMETERS_0_11").field("Flags", &self.Flags).field("RequiredFileOffset", &self.RequiredFileOffset).field("RequiredLength", &self.RequiredLength).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_PARAMETERS_0_11 {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_PARAMETERS_0_11 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_CALLBACK_PARAMETERS_0_11 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_11>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_PARAMETERS_0_11>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_CALLBACK_PARAMETERS_0_11 {}
@@ -1120,13 +1120,13 @@ impl ::core::fmt::Debug for CF_CALLBACK_REGISTRATION {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
-unsafe impl ::windows::core::Abi for CF_CALLBACK_REGISTRATION {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_REGISTRATION {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
 impl ::core::cmp::PartialEq for CF_CALLBACK_REGISTRATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_REGISTRATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_CALLBACK_REGISTRATION>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
@@ -1154,7 +1154,7 @@ impl ::core::default::Default for CF_CALLBACK_RENAME_COMPLETION_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_RENAME_COMPLETION_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_RENAME_COMPLETION_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_RENAME_COMPLETION_FLAGS {
@@ -1213,7 +1213,7 @@ impl ::core::default::Default for CF_CALLBACK_RENAME_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_RENAME_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_RENAME_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_RENAME_FLAGS {
@@ -1292,7 +1292,7 @@ impl ::core::default::Default for CF_CALLBACK_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_TYPE {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_TYPE {
@@ -1319,7 +1319,7 @@ impl ::core::default::Default for CF_CALLBACK_VALIDATE_DATA_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CALLBACK_VALIDATE_DATA_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CALLBACK_VALIDATE_DATA_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CALLBACK_VALIDATE_DATA_FLAGS {
@@ -1379,7 +1379,7 @@ impl ::core::fmt::Debug for CF_CONNECTION_KEY {
         f.debug_tuple("CF_CONNECTION_KEY").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_CONNECTION_KEY {
+unsafe impl ::windows_core::Abi for CF_CONNECTION_KEY {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
@@ -1405,7 +1405,7 @@ impl ::core::default::Default for CF_CONNECT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CONNECT_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CONNECT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CONNECT_FLAGS {
@@ -1468,7 +1468,7 @@ impl ::core::default::Default for CF_CONVERT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CONVERT_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CONVERT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CONVERT_FLAGS {
@@ -1523,7 +1523,7 @@ impl ::core::default::Default for CF_CREATE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_CREATE_FLAGS {
+unsafe impl ::windows_core::Abi for CF_CREATE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_CREATE_FLAGS {
@@ -1578,7 +1578,7 @@ impl ::core::default::Default for CF_DEHYDRATE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_DEHYDRATE_FLAGS {
+unsafe impl ::windows_core::Abi for CF_DEHYDRATE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_DEHYDRATE_FLAGS {
@@ -1631,12 +1631,12 @@ impl ::core::fmt::Debug for CF_FILE_RANGE {
         f.debug_struct("CF_FILE_RANGE").field("StartingOffset", &self.StartingOffset).field("Length", &self.Length).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_FILE_RANGE {
+unsafe impl ::windows_core::Abi for CF_FILE_RANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_FILE_RANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_FILE_RANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_FILE_RANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_FILE_RANGE {}
@@ -1667,13 +1667,13 @@ impl ::core::fmt::Debug for CF_FS_METADATA {
     }
 }
 #[cfg(feature = "Win32_Storage_FileSystem")]
-unsafe impl ::windows::core::Abi for CF_FS_METADATA {
+unsafe impl ::windows_core::Abi for CF_FS_METADATA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::cmp::PartialEq for CF_FS_METADATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_FS_METADATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_FS_METADATA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Storage_FileSystem")]
@@ -1703,7 +1703,7 @@ impl ::core::default::Default for CF_HARDLINK_POLICY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_HARDLINK_POLICY {
+unsafe impl ::windows_core::Abi for CF_HARDLINK_POLICY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_HARDLINK_POLICY {
@@ -1756,7 +1756,7 @@ impl ::core::default::Default for CF_HYDRATE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_HYDRATE_FLAGS {
+unsafe impl ::windows_core::Abi for CF_HYDRATE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_HYDRATE_FLAGS {
@@ -1809,12 +1809,12 @@ impl ::core::fmt::Debug for CF_HYDRATION_POLICY {
         f.debug_struct("CF_HYDRATION_POLICY").field("Primary", &self.Primary).field("Modifier", &self.Modifier).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_HYDRATION_POLICY {
+unsafe impl ::windows_core::Abi for CF_HYDRATION_POLICY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_HYDRATION_POLICY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_HYDRATION_POLICY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_HYDRATION_POLICY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_HYDRATION_POLICY {}
@@ -1848,7 +1848,7 @@ impl ::core::default::Default for CF_HYDRATION_POLICY_MODIFIER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_HYDRATION_POLICY_MODIFIER {
+unsafe impl ::windows_core::Abi for CF_HYDRATION_POLICY_MODIFIER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_HYDRATION_POLICY_MODIFIER {
@@ -1900,12 +1900,12 @@ impl ::core::fmt::Debug for CF_HYDRATION_POLICY_MODIFIER_USHORT {
         f.debug_struct("CF_HYDRATION_POLICY_MODIFIER_USHORT").field("us", &self.us).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_HYDRATION_POLICY_MODIFIER_USHORT {
+unsafe impl ::windows_core::Abi for CF_HYDRATION_POLICY_MODIFIER_USHORT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_HYDRATION_POLICY_MODIFIER_USHORT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_HYDRATION_POLICY_MODIFIER_USHORT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_HYDRATION_POLICY_MODIFIER_USHORT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_HYDRATION_POLICY_MODIFIER_USHORT {}
@@ -1937,7 +1937,7 @@ impl ::core::default::Default for CF_HYDRATION_POLICY_PRIMARY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_HYDRATION_POLICY_PRIMARY {
+unsafe impl ::windows_core::Abi for CF_HYDRATION_POLICY_PRIMARY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_HYDRATION_POLICY_PRIMARY {
@@ -1961,12 +1961,12 @@ impl ::core::fmt::Debug for CF_HYDRATION_POLICY_PRIMARY_USHORT {
         f.debug_struct("CF_HYDRATION_POLICY_PRIMARY_USHORT").field("us", &self.us).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_HYDRATION_POLICY_PRIMARY_USHORT {
+unsafe impl ::windows_core::Abi for CF_HYDRATION_POLICY_PRIMARY_USHORT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_HYDRATION_POLICY_PRIMARY_USHORT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_HYDRATION_POLICY_PRIMARY_USHORT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_HYDRATION_POLICY_PRIMARY_USHORT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_HYDRATION_POLICY_PRIMARY_USHORT {}
@@ -2020,7 +2020,7 @@ impl ::core::default::Default for CF_INSYNC_POLICY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_INSYNC_POLICY {
+unsafe impl ::windows_core::Abi for CF_INSYNC_POLICY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_INSYNC_POLICY {
@@ -2075,7 +2075,7 @@ impl ::core::default::Default for CF_IN_SYNC_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_IN_SYNC_STATE {
+unsafe impl ::windows_core::Abi for CF_IN_SYNC_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_IN_SYNC_STATE {
@@ -2114,7 +2114,7 @@ impl ::core::default::Default for CF_OPEN_FILE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_OPEN_FILE_FLAGS {
+unsafe impl ::windows_core::Abi for CF_OPEN_FILE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_OPEN_FILE_FLAGS {
@@ -2167,7 +2167,7 @@ impl ::core::default::Default for CF_OPERATION_ACK_DATA_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_OPERATION_ACK_DATA_FLAGS {
+unsafe impl ::windows_core::Abi for CF_OPERATION_ACK_DATA_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_OPERATION_ACK_DATA_FLAGS {
@@ -2220,7 +2220,7 @@ impl ::core::default::Default for CF_OPERATION_ACK_DEHYDRATE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_OPERATION_ACK_DEHYDRATE_FLAGS {
+unsafe impl ::windows_core::Abi for CF_OPERATION_ACK_DEHYDRATE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_OPERATION_ACK_DEHYDRATE_FLAGS {
@@ -2273,7 +2273,7 @@ impl ::core::default::Default for CF_OPERATION_ACK_DELETE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_OPERATION_ACK_DELETE_FLAGS {
+unsafe impl ::windows_core::Abi for CF_OPERATION_ACK_DELETE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_OPERATION_ACK_DELETE_FLAGS {
@@ -2326,7 +2326,7 @@ impl ::core::default::Default for CF_OPERATION_ACK_RENAME_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_OPERATION_ACK_RENAME_FLAGS {
+unsafe impl ::windows_core::Abi for CF_OPERATION_ACK_RENAME_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_OPERATION_ACK_RENAME_FLAGS {
@@ -2389,13 +2389,13 @@ impl ::core::fmt::Debug for CF_OPERATION_INFO {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
-unsafe impl ::windows::core::Abi for CF_OPERATION_INFO {
+unsafe impl ::windows_core::Abi for CF_OPERATION_INFO {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
 impl ::core::cmp::PartialEq for CF_OPERATION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_INFO>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
@@ -2422,13 +2422,13 @@ impl ::core::clone::Clone for CF_OPERATION_PARAMETERS {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
-unsafe impl ::windows::core::Abi for CF_OPERATION_PARAMETERS {
+unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
@@ -2461,13 +2461,13 @@ impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
-unsafe impl ::windows::core::Abi for CF_OPERATION_PARAMETERS_0 {
+unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
@@ -2502,13 +2502,13 @@ impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
-unsafe impl ::windows::core::Abi for CF_OPERATION_PARAMETERS_0_0 {
+unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
@@ -2543,13 +2543,13 @@ impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_1 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
-unsafe impl ::windows::core::Abi for CF_OPERATION_PARAMETERS_0_1 {
+unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_1 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_1>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
@@ -2582,13 +2582,13 @@ impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_2 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
-unsafe impl ::windows::core::Abi for CF_OPERATION_PARAMETERS_0_2 {
+unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_2 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_2>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
@@ -2621,13 +2621,13 @@ impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_3 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
-unsafe impl ::windows::core::Abi for CF_OPERATION_PARAMETERS_0_3 {
+unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_3 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_3>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
@@ -2662,13 +2662,13 @@ impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_4 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
-unsafe impl ::windows::core::Abi for CF_OPERATION_PARAMETERS_0_4 {
+unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_4 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_4 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_4>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_4>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
@@ -2704,13 +2704,13 @@ impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_5 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
-unsafe impl ::windows::core::Abi for CF_OPERATION_PARAMETERS_0_5 {
+unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_5 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_5 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_5>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_5>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
@@ -2746,13 +2746,13 @@ impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_6 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
-unsafe impl ::windows::core::Abi for CF_OPERATION_PARAMETERS_0_6 {
+unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_6 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_6 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_6>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_6>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
@@ -2789,13 +2789,13 @@ impl ::core::fmt::Debug for CF_OPERATION_PARAMETERS_0_7 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
-unsafe impl ::windows::core::Abi for CF_OPERATION_PARAMETERS_0_7 {
+unsafe impl ::windows_core::Abi for CF_OPERATION_PARAMETERS_0_7 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
 impl ::core::cmp::PartialEq for CF_OPERATION_PARAMETERS_0_7 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_7>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_OPERATION_PARAMETERS_0_7>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
@@ -2825,7 +2825,7 @@ impl ::core::default::Default for CF_OPERATION_RESTART_HYDRATION_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_OPERATION_RESTART_HYDRATION_FLAGS {
+unsafe impl ::windows_core::Abi for CF_OPERATION_RESTART_HYDRATION_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_OPERATION_RESTART_HYDRATION_FLAGS {
@@ -2878,7 +2878,7 @@ impl ::core::default::Default for CF_OPERATION_RETRIEVE_DATA_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_OPERATION_RETRIEVE_DATA_FLAGS {
+unsafe impl ::windows_core::Abi for CF_OPERATION_RETRIEVE_DATA_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_OPERATION_RETRIEVE_DATA_FLAGS {
@@ -2931,7 +2931,7 @@ impl ::core::default::Default for CF_OPERATION_TRANSFER_DATA_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_OPERATION_TRANSFER_DATA_FLAGS {
+unsafe impl ::windows_core::Abi for CF_OPERATION_TRANSFER_DATA_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_OPERATION_TRANSFER_DATA_FLAGS {
@@ -2988,7 +2988,7 @@ impl ::core::default::Default for CF_OPERATION_TRANSFER_PLACEHOLDERS_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_OPERATION_TRANSFER_PLACEHOLDERS_FLAGS {
+unsafe impl ::windows_core::Abi for CF_OPERATION_TRANSFER_PLACEHOLDERS_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_OPERATION_TRANSFER_PLACEHOLDERS_FLAGS {
@@ -3055,7 +3055,7 @@ impl ::core::default::Default for CF_OPERATION_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_OPERATION_TYPE {
+unsafe impl ::windows_core::Abi for CF_OPERATION_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_OPERATION_TYPE {
@@ -3088,7 +3088,7 @@ impl ::core::default::Default for CF_PIN_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_PIN_STATE {
+unsafe impl ::windows_core::Abi for CF_PIN_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_PIN_STATE {
@@ -3117,12 +3117,12 @@ impl ::core::fmt::Debug for CF_PLACEHOLDER_BASIC_INFO {
         f.debug_struct("CF_PLACEHOLDER_BASIC_INFO").field("PinState", &self.PinState).field("InSyncState", &self.InSyncState).field("FileId", &self.FileId).field("SyncRootFileId", &self.SyncRootFileId).field("FileIdentityLength", &self.FileIdentityLength).field("FileIdentity", &self.FileIdentity).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_PLACEHOLDER_BASIC_INFO {
+unsafe impl ::windows_core::Abi for CF_PLACEHOLDER_BASIC_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_PLACEHOLDER_BASIC_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_PLACEHOLDER_BASIC_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_PLACEHOLDER_BASIC_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_PLACEHOLDER_BASIC_INFO {}
@@ -3156,7 +3156,7 @@ impl ::core::default::Default for CF_PLACEHOLDER_CREATE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_PLACEHOLDER_CREATE_FLAGS {
+unsafe impl ::windows_core::Abi for CF_PLACEHOLDER_CREATE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_PLACEHOLDER_CREATE_FLAGS {
@@ -3196,12 +3196,12 @@ impl ::core::ops::Not for CF_PLACEHOLDER_CREATE_FLAGS {
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Storage_FileSystem\"`*"]
 #[cfg(feature = "Win32_Storage_FileSystem")]
 pub struct CF_PLACEHOLDER_CREATE_INFO {
-    pub RelativeFileName: ::windows::core::PCWSTR,
+    pub RelativeFileName: ::windows_core::PCWSTR,
     pub FsMetadata: CF_FS_METADATA,
     pub FileIdentity: *const ::core::ffi::c_void,
     pub FileIdentityLength: u32,
     pub Flags: CF_PLACEHOLDER_CREATE_FLAGS,
-    pub Result: ::windows::core::HRESULT,
+    pub Result: ::windows_core::HRESULT,
     pub CreateUsn: i64,
 }
 #[cfg(feature = "Win32_Storage_FileSystem")]
@@ -3219,13 +3219,13 @@ impl ::core::fmt::Debug for CF_PLACEHOLDER_CREATE_INFO {
     }
 }
 #[cfg(feature = "Win32_Storage_FileSystem")]
-unsafe impl ::windows::core::Abi for CF_PLACEHOLDER_CREATE_INFO {
+unsafe impl ::windows_core::Abi for CF_PLACEHOLDER_CREATE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::cmp::PartialEq for CF_PLACEHOLDER_CREATE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_PLACEHOLDER_CREATE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_PLACEHOLDER_CREATE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Storage_FileSystem")]
@@ -3255,7 +3255,7 @@ impl ::core::default::Default for CF_PLACEHOLDER_INFO_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_PLACEHOLDER_INFO_CLASS {
+unsafe impl ::windows_core::Abi for CF_PLACEHOLDER_INFO_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_PLACEHOLDER_INFO_CLASS {
@@ -3286,7 +3286,7 @@ impl ::core::default::Default for CF_PLACEHOLDER_MANAGEMENT_POLICY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_PLACEHOLDER_MANAGEMENT_POLICY {
+unsafe impl ::windows_core::Abi for CF_PLACEHOLDER_MANAGEMENT_POLICY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_PLACEHOLDER_MANAGEMENT_POLICY {
@@ -3317,7 +3317,7 @@ impl ::core::default::Default for CF_PLACEHOLDER_RANGE_INFO_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_PLACEHOLDER_RANGE_INFO_CLASS {
+unsafe impl ::windows_core::Abi for CF_PLACEHOLDER_RANGE_INFO_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_PLACEHOLDER_RANGE_INFO_CLASS {
@@ -3361,12 +3361,12 @@ impl ::core::fmt::Debug for CF_PLACEHOLDER_STANDARD_INFO {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_PLACEHOLDER_STANDARD_INFO {
+unsafe impl ::windows_core::Abi for CF_PLACEHOLDER_STANDARD_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_PLACEHOLDER_STANDARD_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_PLACEHOLDER_STANDARD_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_PLACEHOLDER_STANDARD_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_PLACEHOLDER_STANDARD_INFO {}
@@ -3406,7 +3406,7 @@ impl ::core::default::Default for CF_PLACEHOLDER_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_PLACEHOLDER_STATE {
+unsafe impl ::windows_core::Abi for CF_PLACEHOLDER_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_PLACEHOLDER_STATE {
@@ -3460,12 +3460,12 @@ impl ::core::fmt::Debug for CF_PLATFORM_INFO {
         f.debug_struct("CF_PLATFORM_INFO").field("BuildNumber", &self.BuildNumber).field("RevisionNumber", &self.RevisionNumber).field("IntegrationNumber", &self.IntegrationNumber).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_PLATFORM_INFO {
+unsafe impl ::windows_core::Abi for CF_PLATFORM_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_PLATFORM_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_PLATFORM_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_PLATFORM_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_PLATFORM_INFO {}
@@ -3491,12 +3491,12 @@ impl ::core::fmt::Debug for CF_POPULATION_POLICY {
         f.debug_struct("CF_POPULATION_POLICY").field("Primary", &self.Primary).field("Modifier", &self.Modifier).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_POPULATION_POLICY {
+unsafe impl ::windows_core::Abi for CF_POPULATION_POLICY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_POPULATION_POLICY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_POPULATION_POLICY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_POPULATION_POLICY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_POPULATION_POLICY {}
@@ -3522,7 +3522,7 @@ impl ::core::default::Default for CF_POPULATION_POLICY_MODIFIER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_POPULATION_POLICY_MODIFIER {
+unsafe impl ::windows_core::Abi for CF_POPULATION_POLICY_MODIFIER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_POPULATION_POLICY_MODIFIER {
@@ -3574,12 +3574,12 @@ impl ::core::fmt::Debug for CF_POPULATION_POLICY_MODIFIER_USHORT {
         f.debug_struct("CF_POPULATION_POLICY_MODIFIER_USHORT").field("us", &self.us).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_POPULATION_POLICY_MODIFIER_USHORT {
+unsafe impl ::windows_core::Abi for CF_POPULATION_POLICY_MODIFIER_USHORT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_POPULATION_POLICY_MODIFIER_USHORT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_POPULATION_POLICY_MODIFIER_USHORT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_POPULATION_POLICY_MODIFIER_USHORT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_POPULATION_POLICY_MODIFIER_USHORT {}
@@ -3609,7 +3609,7 @@ impl ::core::default::Default for CF_POPULATION_POLICY_PRIMARY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_POPULATION_POLICY_PRIMARY {
+unsafe impl ::windows_core::Abi for CF_POPULATION_POLICY_PRIMARY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_POPULATION_POLICY_PRIMARY {
@@ -3633,12 +3633,12 @@ impl ::core::fmt::Debug for CF_POPULATION_POLICY_PRIMARY_USHORT {
         f.debug_struct("CF_POPULATION_POLICY_PRIMARY_USHORT").field("us", &self.us).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_POPULATION_POLICY_PRIMARY_USHORT {
+unsafe impl ::windows_core::Abi for CF_POPULATION_POLICY_PRIMARY_USHORT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_POPULATION_POLICY_PRIMARY_USHORT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_POPULATION_POLICY_PRIMARY_USHORT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_POPULATION_POLICY_PRIMARY_USHORT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_POPULATION_POLICY_PRIMARY_USHORT {}
@@ -3652,10 +3652,10 @@ impl ::core::default::Default for CF_POPULATION_POLICY_PRIMARY_USHORT {
 pub struct CF_PROCESS_INFO {
     pub StructSize: u32,
     pub ProcessId: u32,
-    pub ImagePath: ::windows::core::PCWSTR,
-    pub PackageName: ::windows::core::PCWSTR,
-    pub ApplicationId: ::windows::core::PCWSTR,
-    pub CommandLine: ::windows::core::PCWSTR,
+    pub ImagePath: ::windows_core::PCWSTR,
+    pub PackageName: ::windows_core::PCWSTR,
+    pub ApplicationId: ::windows_core::PCWSTR,
+    pub CommandLine: ::windows_core::PCWSTR,
     pub SessionId: u32,
 }
 impl ::core::marker::Copy for CF_PROCESS_INFO {}
@@ -3669,12 +3669,12 @@ impl ::core::fmt::Debug for CF_PROCESS_INFO {
         f.debug_struct("CF_PROCESS_INFO").field("StructSize", &self.StructSize).field("ProcessId", &self.ProcessId).field("ImagePath", &self.ImagePath).field("PackageName", &self.PackageName).field("ApplicationId", &self.ApplicationId).field("CommandLine", &self.CommandLine).field("SessionId", &self.SessionId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_PROCESS_INFO {
+unsafe impl ::windows_core::Abi for CF_PROCESS_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_PROCESS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_PROCESS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_PROCESS_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_PROCESS_INFO {}
@@ -3706,7 +3706,7 @@ impl ::core::default::Default for CF_REGISTER_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_REGISTER_FLAGS {
+unsafe impl ::windows_core::Abi for CF_REGISTER_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_REGISTER_FLAGS {
@@ -3761,7 +3761,7 @@ impl ::core::default::Default for CF_REVERT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_REVERT_FLAGS {
+unsafe impl ::windows_core::Abi for CF_REVERT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_REVERT_FLAGS {
@@ -3814,7 +3814,7 @@ impl ::core::default::Default for CF_SET_IN_SYNC_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_SET_IN_SYNC_FLAGS {
+unsafe impl ::windows_core::Abi for CF_SET_IN_SYNC_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_SET_IN_SYNC_FLAGS {
@@ -3873,7 +3873,7 @@ impl ::core::default::Default for CF_SET_PIN_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_SET_PIN_FLAGS {
+unsafe impl ::windows_core::Abi for CF_SET_PIN_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_SET_PIN_FLAGS {
@@ -3930,12 +3930,12 @@ impl ::core::fmt::Debug for CF_SYNC_POLICIES {
         f.debug_struct("CF_SYNC_POLICIES").field("StructSize", &self.StructSize).field("Hydration", &self.Hydration).field("Population", &self.Population).field("InSync", &self.InSync).field("HardLink", &self.HardLink).field("PlaceholderManagement", &self.PlaceholderManagement).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_SYNC_POLICIES {
+unsafe impl ::windows_core::Abi for CF_SYNC_POLICIES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_SYNC_POLICIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_SYNC_POLICIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_SYNC_POLICIES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_SYNC_POLICIES {}
@@ -3981,7 +3981,7 @@ impl ::core::default::Default for CF_SYNC_PROVIDER_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_SYNC_PROVIDER_STATUS {
+unsafe impl ::windows_core::Abi for CF_SYNC_PROVIDER_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_SYNC_PROVIDER_STATUS {
@@ -4021,13 +4021,13 @@ impl ::core::ops::Not for CF_SYNC_PROVIDER_STATUS {
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 pub struct CF_SYNC_REGISTRATION {
     pub StructSize: u32,
-    pub ProviderName: ::windows::core::PCWSTR,
-    pub ProviderVersion: ::windows::core::PCWSTR,
+    pub ProviderName: ::windows_core::PCWSTR,
+    pub ProviderVersion: ::windows_core::PCWSTR,
     pub SyncRootIdentity: *const ::core::ffi::c_void,
     pub SyncRootIdentityLength: u32,
     pub FileIdentity: *const ::core::ffi::c_void,
     pub FileIdentityLength: u32,
-    pub ProviderId: ::windows::core::GUID,
+    pub ProviderId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for CF_SYNC_REGISTRATION {}
 impl ::core::clone::Clone for CF_SYNC_REGISTRATION {
@@ -4040,12 +4040,12 @@ impl ::core::fmt::Debug for CF_SYNC_REGISTRATION {
         f.debug_struct("CF_SYNC_REGISTRATION").field("StructSize", &self.StructSize).field("ProviderName", &self.ProviderName).field("ProviderVersion", &self.ProviderVersion).field("SyncRootIdentity", &self.SyncRootIdentity).field("SyncRootIdentityLength", &self.SyncRootIdentityLength).field("FileIdentity", &self.FileIdentity).field("FileIdentityLength", &self.FileIdentityLength).field("ProviderId", &self.ProviderId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_SYNC_REGISTRATION {
+unsafe impl ::windows_core::Abi for CF_SYNC_REGISTRATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_SYNC_REGISTRATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_SYNC_REGISTRATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_SYNC_REGISTRATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_SYNC_REGISTRATION {}
@@ -4070,12 +4070,12 @@ impl ::core::fmt::Debug for CF_SYNC_ROOT_BASIC_INFO {
         f.debug_struct("CF_SYNC_ROOT_BASIC_INFO").field("SyncRootFileId", &self.SyncRootFileId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_SYNC_ROOT_BASIC_INFO {
+unsafe impl ::windows_core::Abi for CF_SYNC_ROOT_BASIC_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_SYNC_ROOT_BASIC_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_SYNC_ROOT_BASIC_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_SYNC_ROOT_BASIC_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_SYNC_ROOT_BASIC_INFO {}
@@ -4105,7 +4105,7 @@ impl ::core::default::Default for CF_SYNC_ROOT_INFO_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_SYNC_ROOT_INFO_CLASS {
+unsafe impl ::windows_core::Abi for CF_SYNC_ROOT_INFO_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_SYNC_ROOT_INFO_CLASS {
@@ -4131,12 +4131,12 @@ impl ::core::fmt::Debug for CF_SYNC_ROOT_PROVIDER_INFO {
         f.debug_struct("CF_SYNC_ROOT_PROVIDER_INFO").field("ProviderStatus", &self.ProviderStatus).field("ProviderName", &self.ProviderName).field("ProviderVersion", &self.ProviderVersion).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_SYNC_ROOT_PROVIDER_INFO {
+unsafe impl ::windows_core::Abi for CF_SYNC_ROOT_PROVIDER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_SYNC_ROOT_PROVIDER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_SYNC_ROOT_PROVIDER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_SYNC_ROOT_PROVIDER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_SYNC_ROOT_PROVIDER_INFO {}
@@ -4181,12 +4181,12 @@ impl ::core::fmt::Debug for CF_SYNC_ROOT_STANDARD_INFO {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_SYNC_ROOT_STANDARD_INFO {
+unsafe impl ::windows_core::Abi for CF_SYNC_ROOT_STANDARD_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_SYNC_ROOT_STANDARD_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_SYNC_ROOT_STANDARD_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_SYNC_ROOT_STANDARD_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_SYNC_ROOT_STANDARD_INFO {}
@@ -4216,12 +4216,12 @@ impl ::core::fmt::Debug for CF_SYNC_STATUS {
         f.debug_struct("CF_SYNC_STATUS").field("StructSize", &self.StructSize).field("Code", &self.Code).field("DescriptionOffset", &self.DescriptionOffset).field("DescriptionLength", &self.DescriptionLength).field("DeviceIdOffset", &self.DeviceIdOffset).field("DeviceIdLength", &self.DeviceIdLength).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CF_SYNC_STATUS {
+unsafe impl ::windows_core::Abi for CF_SYNC_STATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CF_SYNC_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_SYNC_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CF_SYNC_STATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CF_SYNC_STATUS {}
@@ -4269,7 +4269,7 @@ impl ::core::default::Default for CF_UPDATE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CF_UPDATE_FLAGS {
+unsafe impl ::windows_core::Abi for CF_UPDATE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CF_UPDATE_FLAGS {
@@ -4308,7 +4308,7 @@ impl ::core::ops::Not for CF_UPDATE_FLAGS {
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CfCloseHandle<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0) {
+pub unsafe fn CfCloseHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4323,12 +4323,12 @@ pub unsafe fn CfCloseHandle<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`, `\"Win32_System_CorrelationVector\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
 #[inline]
-pub unsafe fn CfConnectSyncRoot<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(syncrootpath: Param0, callbacktable: *const CF_CALLBACK_REGISTRATION, callbackcontext: *const ::core::ffi::c_void, connectflags: CF_CONNECT_FLAGS) -> ::windows::core::Result<CF_CONNECTION_KEY> {
+pub unsafe fn CfConnectSyncRoot<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(syncrootpath: Param0, callbacktable: *const CF_CALLBACK_REGISTRATION, callbackcontext: *const ::core::ffi::c_void, connectflags: CF_CONNECT_FLAGS) -> ::windows_core::Result<CF_CONNECTION_KEY> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfConnectSyncRoot(syncrootpath: ::windows::core::PCWSTR, callbacktable: *const CF_CALLBACK_REGISTRATION, callbackcontext: *const ::core::ffi::c_void, connectflags: CF_CONNECT_FLAGS, connectionkey: *mut CF_CONNECTION_KEY) -> ::windows::core::HRESULT;
+            fn CfConnectSyncRoot(syncrootpath: ::windows_core::PCWSTR, callbacktable: *const CF_CALLBACK_REGISTRATION, callbackcontext: *const ::core::ffi::c_void, connectflags: CF_CONNECT_FLAGS, connectionkey: *mut CF_CONNECTION_KEY) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<CF_CONNECTION_KEY>::zeroed();
         CfConnectSyncRoot(syncrootpath.into_param().abi(), ::core::mem::transmute(callbacktable), ::core::mem::transmute(callbackcontext), ::core::mem::transmute(connectflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<CF_CONNECTION_KEY>(result__)
@@ -4339,12 +4339,12 @@ pub unsafe fn CfConnectSyncRoot<'a, Param0: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`, `\"Win32_System_IO\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
-pub unsafe fn CfConvertToPlaceholder<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, convertflags: CF_CONVERT_FLAGS, convertusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::Result<()> {
+pub unsafe fn CfConvertToPlaceholder<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, convertflags: CF_CONVERT_FLAGS, convertusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfConvertToPlaceholder(filehandle: super::super::Foundation::HANDLE, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, convertflags: CF_CONVERT_FLAGS, convertusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::HRESULT;
+            fn CfConvertToPlaceholder(filehandle: super::super::Foundation::HANDLE, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, convertflags: CF_CONVERT_FLAGS, convertusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT;
         }
         CfConvertToPlaceholder(filehandle.into_param().abi(), ::core::mem::transmute(fileidentity), ::core::mem::transmute(fileidentitylength), ::core::mem::transmute(convertflags), ::core::mem::transmute(convertusn), ::core::mem::transmute(overlapped)).ok()
     }
@@ -4354,14 +4354,14 @@ pub unsafe fn CfConvertToPlaceholder<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Storage_FileSystem\"`*"]
 #[cfg(feature = "Win32_Storage_FileSystem")]
 #[inline]
-pub unsafe fn CfCreatePlaceholders<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(basedirectorypath: Param0, placeholderarray: &mut [CF_PLACEHOLDER_CREATE_INFO], createflags: CF_CREATE_FLAGS, entriesprocessed: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn CfCreatePlaceholders<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(basedirectorypath: Param0, placeholderarray: &mut [CF_PLACEHOLDER_CREATE_INFO], createflags: CF_CREATE_FLAGS, entriesprocessed: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfCreatePlaceholders(basedirectorypath: ::windows::core::PCWSTR, placeholderarray: *mut CF_PLACEHOLDER_CREATE_INFO, placeholdercount: u32, createflags: CF_CREATE_FLAGS, entriesprocessed: *mut u32) -> ::windows::core::HRESULT;
+            fn CfCreatePlaceholders(basedirectorypath: ::windows_core::PCWSTR, placeholderarray: *mut CF_PLACEHOLDER_CREATE_INFO, placeholdercount: u32, createflags: CF_CREATE_FLAGS, entriesprocessed: *mut u32) -> ::windows_core::HRESULT;
         }
-        CfCreatePlaceholders(basedirectorypath.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(placeholderarray)), placeholderarray.len() as _, ::core::mem::transmute(createflags), ::core::mem::transmute(entriesprocessed)).ok()
+        CfCreatePlaceholders(basedirectorypath.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(placeholderarray)), placeholderarray.len() as _, ::core::mem::transmute(createflags), ::core::mem::transmute(entriesprocessed)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4369,12 +4369,12 @@ pub unsafe fn CfCreatePlaceholders<'a, Param0: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`, `\"Win32_System_IO\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
-pub unsafe fn CfDehydratePlaceholder<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, startingoffset: i64, length: i64, dehydrateflags: CF_DEHYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::Result<()> {
+pub unsafe fn CfDehydratePlaceholder<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, startingoffset: i64, length: i64, dehydrateflags: CF_DEHYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfDehydratePlaceholder(filehandle: super::super::Foundation::HANDLE, startingoffset: i64, length: i64, dehydrateflags: CF_DEHYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::HRESULT;
+            fn CfDehydratePlaceholder(filehandle: super::super::Foundation::HANDLE, startingoffset: i64, length: i64, dehydrateflags: CF_DEHYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT;
         }
         CfDehydratePlaceholder(filehandle.into_param().abi(), ::core::mem::transmute(startingoffset), ::core::mem::transmute(length), ::core::mem::transmute(dehydrateflags), ::core::mem::transmute(overlapped)).ok()
     }
@@ -4383,12 +4383,12 @@ pub unsafe fn CfDehydratePlaceholder<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 #[inline]
-pub unsafe fn CfDisconnectSyncRoot<'a, Param0: ::windows::core::IntoParam<'a, CF_CONNECTION_KEY>>(connectionkey: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn CfDisconnectSyncRoot<'a, Param0: ::windows_core::IntoParam<'a, CF_CONNECTION_KEY>>(connectionkey: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfDisconnectSyncRoot(connectionkey: CF_CONNECTION_KEY) -> ::windows::core::HRESULT;
+            fn CfDisconnectSyncRoot(connectionkey: CF_CONNECTION_KEY) -> ::windows_core::HRESULT;
         }
         CfDisconnectSyncRoot(connectionkey.into_param().abi()).ok()
     }
@@ -4398,12 +4398,12 @@ pub unsafe fn CfDisconnectSyncRoot<'a, Param0: ::windows::core::IntoParam<'a, CF
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`, `\"Win32_Storage_FileSystem\"`, `\"Win32_System_CorrelationVector\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_CorrelationVector"))]
 #[inline]
-pub unsafe fn CfExecute(opinfo: *const CF_OPERATION_INFO, opparams: *mut CF_OPERATION_PARAMETERS) -> ::windows::core::Result<()> {
+pub unsafe fn CfExecute(opinfo: *const CF_OPERATION_INFO, opparams: *mut CF_OPERATION_PARAMETERS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfExecute(opinfo: *const CF_OPERATION_INFO, opparams: *mut CF_OPERATION_PARAMETERS) -> ::windows::core::HRESULT;
+            fn CfExecute(opinfo: *const CF_OPERATION_INFO, opparams: *mut CF_OPERATION_PARAMETERS) -> ::windows_core::HRESULT;
         }
         CfExecute(::core::mem::transmute(opinfo), ::core::mem::transmute(opparams)).ok()
     }
@@ -4413,12 +4413,12 @@ pub unsafe fn CfExecute(opinfo: *const CF_OPERATION_INFO, opparams: *mut CF_OPER
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`, `\"Win32_System_CorrelationVector\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
 #[inline]
-pub unsafe fn CfGetCorrelationVector<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0) -> ::windows::core::Result<super::super::System::CorrelationVector::CORRELATION_VECTOR> {
+pub unsafe fn CfGetCorrelationVector<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0) -> ::windows_core::Result<super::super::System::CorrelationVector::CORRELATION_VECTOR> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfGetCorrelationVector(filehandle: super::super::Foundation::HANDLE, correlationvector: *mut super::super::System::CorrelationVector::CORRELATION_VECTOR) -> ::windows::core::HRESULT;
+            fn CfGetCorrelationVector(filehandle: super::super::Foundation::HANDLE, correlationvector: *mut super::super::System::CorrelationVector::CORRELATION_VECTOR) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::super::System::CorrelationVector::CORRELATION_VECTOR>::zeroed();
         CfGetCorrelationVector(filehandle.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::CorrelationVector::CORRELATION_VECTOR>(result__)
@@ -4429,12 +4429,12 @@ pub unsafe fn CfGetCorrelationVector<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CfGetPlaceholderInfo<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, infoclass: CF_PLACEHOLDER_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn CfGetPlaceholderInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, infoclass: CF_PLACEHOLDER_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfGetPlaceholderInfo(filehandle: super::super::Foundation::HANDLE, infoclass: CF_PLACEHOLDER_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows::core::HRESULT;
+            fn CfGetPlaceholderInfo(filehandle: super::super::Foundation::HANDLE, infoclass: CF_PLACEHOLDER_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core::HRESULT;
         }
         CfGetPlaceholderInfo(filehandle.into_param().abi(), ::core::mem::transmute(infoclass), ::core::mem::transmute(infobuffer), ::core::mem::transmute(infobufferlength), ::core::mem::transmute(returnedlength)).ok()
     }
@@ -4444,12 +4444,12 @@ pub unsafe fn CfGetPlaceholderInfo<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CfGetPlaceholderRangeInfo<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, infoclass: CF_PLACEHOLDER_RANGE_INFO_CLASS, startingoffset: i64, length: i64, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn CfGetPlaceholderRangeInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, infoclass: CF_PLACEHOLDER_RANGE_INFO_CLASS, startingoffset: i64, length: i64, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfGetPlaceholderRangeInfo(filehandle: super::super::Foundation::HANDLE, infoclass: CF_PLACEHOLDER_RANGE_INFO_CLASS, startingoffset: i64, length: i64, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows::core::HRESULT;
+            fn CfGetPlaceholderRangeInfo(filehandle: super::super::Foundation::HANDLE, infoclass: CF_PLACEHOLDER_RANGE_INFO_CLASS, startingoffset: i64, length: i64, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core::HRESULT;
         }
         CfGetPlaceholderRangeInfo(filehandle.into_param().abi(), ::core::mem::transmute(infoclass), ::core::mem::transmute(startingoffset), ::core::mem::transmute(length), ::core::mem::transmute(infobuffer), ::core::mem::transmute(infobufferlength), ::core::mem::transmute(returnedlength)).ok()
     }
@@ -4502,12 +4502,12 @@ pub unsafe fn CfGetPlaceholderStateFromFindData(finddata: *const super::FileSyst
 }
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 #[inline]
-pub unsafe fn CfGetPlatformInfo() -> ::windows::core::Result<CF_PLATFORM_INFO> {
+pub unsafe fn CfGetPlatformInfo() -> ::windows_core::Result<CF_PLATFORM_INFO> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfGetPlatformInfo(platformversion: *mut CF_PLATFORM_INFO) -> ::windows::core::HRESULT;
+            fn CfGetPlatformInfo(platformversion: *mut CF_PLATFORM_INFO) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<CF_PLATFORM_INFO>::zeroed();
         CfGetPlatformInfo(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<CF_PLATFORM_INFO>(result__)
@@ -4518,12 +4518,12 @@ pub unsafe fn CfGetPlatformInfo() -> ::windows::core::Result<CF_PLATFORM_INFO> {
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CfGetSyncRootInfoByHandle<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn CfGetSyncRootInfoByHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfGetSyncRootInfoByHandle(filehandle: super::super::Foundation::HANDLE, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows::core::HRESULT;
+            fn CfGetSyncRootInfoByHandle(filehandle: super::super::Foundation::HANDLE, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core::HRESULT;
         }
         CfGetSyncRootInfoByHandle(filehandle.into_param().abi(), ::core::mem::transmute(infoclass), ::core::mem::transmute(infobuffer), ::core::mem::transmute(infobufferlength), ::core::mem::transmute(returnedlength)).ok()
     }
@@ -4532,12 +4532,12 @@ pub unsafe fn CfGetSyncRootInfoByHandle<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 #[inline]
-pub unsafe fn CfGetSyncRootInfoByPath<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(filepath: Param0, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn CfGetSyncRootInfoByPath<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(filepath: Param0, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfGetSyncRootInfoByPath(filepath: ::windows::core::PCWSTR, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows::core::HRESULT;
+            fn CfGetSyncRootInfoByPath(filepath: ::windows_core::PCWSTR, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core::HRESULT;
         }
         CfGetSyncRootInfoByPath(filepath.into_param().abi(), ::core::mem::transmute(infoclass), ::core::mem::transmute(infobuffer), ::core::mem::transmute(infobufferlength), ::core::mem::transmute(returnedlength)).ok()
     }
@@ -4547,12 +4547,12 @@ pub unsafe fn CfGetSyncRootInfoByPath<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CfGetTransferKey<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0) -> ::windows::core::Result<i64> {
+pub unsafe fn CfGetTransferKey<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0) -> ::windows_core::Result<i64> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfGetTransferKey(filehandle: super::super::Foundation::HANDLE, transferkey: *mut i64) -> ::windows::core::HRESULT;
+            fn CfGetTransferKey(filehandle: super::super::Foundation::HANDLE, transferkey: *mut i64) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<i64>::zeroed();
         CfGetTransferKey(filehandle.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i64>(result__)
@@ -4563,7 +4563,7 @@ pub unsafe fn CfGetTransferKey<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CfGetWin32HandleFromProtectedHandle<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(protectedhandle: Param0) -> super::super::Foundation::HANDLE {
+pub unsafe fn CfGetWin32HandleFromProtectedHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(protectedhandle: Param0) -> super::super::Foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4578,12 +4578,12 @@ pub unsafe fn CfGetWin32HandleFromProtectedHandle<'a, Param0: ::windows::core::I
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`, `\"Win32_System_IO\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
-pub unsafe fn CfHydratePlaceholder<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, startingoffset: i64, length: i64, hydrateflags: CF_HYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::Result<()> {
+pub unsafe fn CfHydratePlaceholder<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, startingoffset: i64, length: i64, hydrateflags: CF_HYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfHydratePlaceholder(filehandle: super::super::Foundation::HANDLE, startingoffset: i64, length: i64, hydrateflags: CF_HYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::HRESULT;
+            fn CfHydratePlaceholder(filehandle: super::super::Foundation::HANDLE, startingoffset: i64, length: i64, hydrateflags: CF_HYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT;
         }
         CfHydratePlaceholder(filehandle.into_param().abi(), ::core::mem::transmute(startingoffset), ::core::mem::transmute(length), ::core::mem::transmute(hydrateflags), ::core::mem::transmute(overlapped)).ok()
     }
@@ -4593,12 +4593,12 @@ pub unsafe fn CfHydratePlaceholder<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CfOpenFileWithOplock<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(filepath: Param0, flags: CF_OPEN_FILE_FLAGS) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn CfOpenFileWithOplock<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(filepath: Param0, flags: CF_OPEN_FILE_FLAGS) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfOpenFileWithOplock(filepath: ::windows::core::PCWSTR, flags: CF_OPEN_FILE_FLAGS, protectedhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn CfOpenFileWithOplock(filepath: ::windows_core::PCWSTR, flags: CF_OPEN_FILE_FLAGS, protectedhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
         CfOpenFileWithOplock(filepath.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
@@ -4608,12 +4608,12 @@ pub unsafe fn CfOpenFileWithOplock<'a, Param0: ::windows::core::IntoParam<'a, ::
 }
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 #[inline]
-pub unsafe fn CfQuerySyncProviderStatus<'a, Param0: ::windows::core::IntoParam<'a, CF_CONNECTION_KEY>>(connectionkey: Param0) -> ::windows::core::Result<CF_SYNC_PROVIDER_STATUS> {
+pub unsafe fn CfQuerySyncProviderStatus<'a, Param0: ::windows_core::IntoParam<'a, CF_CONNECTION_KEY>>(connectionkey: Param0) -> ::windows_core::Result<CF_SYNC_PROVIDER_STATUS> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfQuerySyncProviderStatus(connectionkey: CF_CONNECTION_KEY, providerstatus: *mut CF_SYNC_PROVIDER_STATUS) -> ::windows::core::HRESULT;
+            fn CfQuerySyncProviderStatus(connectionkey: CF_CONNECTION_KEY, providerstatus: *mut CF_SYNC_PROVIDER_STATUS) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<CF_SYNC_PROVIDER_STATUS>::zeroed();
         CfQuerySyncProviderStatus(connectionkey.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<CF_SYNC_PROVIDER_STATUS>(result__)
@@ -4624,7 +4624,7 @@ pub unsafe fn CfQuerySyncProviderStatus<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CfReferenceProtectedHandle<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(protectedhandle: Param0) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn CfReferenceProtectedHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(protectedhandle: Param0) -> super::super::Foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4638,12 +4638,12 @@ pub unsafe fn CfReferenceProtectedHandle<'a, Param0: ::windows::core::IntoParam<
 }
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 #[inline]
-pub unsafe fn CfRegisterSyncRoot<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(syncrootpath: Param0, registration: *const CF_SYNC_REGISTRATION, policies: *const CF_SYNC_POLICIES, registerflags: CF_REGISTER_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn CfRegisterSyncRoot<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(syncrootpath: Param0, registration: *const CF_SYNC_REGISTRATION, policies: *const CF_SYNC_POLICIES, registerflags: CF_REGISTER_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfRegisterSyncRoot(syncrootpath: ::windows::core::PCWSTR, registration: *const CF_SYNC_REGISTRATION, policies: *const CF_SYNC_POLICIES, registerflags: CF_REGISTER_FLAGS) -> ::windows::core::HRESULT;
+            fn CfRegisterSyncRoot(syncrootpath: ::windows_core::PCWSTR, registration: *const CF_SYNC_REGISTRATION, policies: *const CF_SYNC_POLICIES, registerflags: CF_REGISTER_FLAGS) -> ::windows_core::HRESULT;
         }
         CfRegisterSyncRoot(syncrootpath.into_param().abi(), ::core::mem::transmute(registration), ::core::mem::transmute(policies), ::core::mem::transmute(registerflags)).ok()
     }
@@ -4653,7 +4653,7 @@ pub unsafe fn CfRegisterSyncRoot<'a, Param0: ::windows::core::IntoParam<'a, ::wi
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CfReleaseProtectedHandle<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(protectedhandle: Param0) {
+pub unsafe fn CfReleaseProtectedHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(protectedhandle: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4668,7 +4668,7 @@ pub unsafe fn CfReleaseProtectedHandle<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CfReleaseTransferKey<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, transferkey: *mut i64) {
+pub unsafe fn CfReleaseTransferKey<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, transferkey: *mut i64) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4682,12 +4682,12 @@ pub unsafe fn CfReleaseTransferKey<'a, Param0: ::windows::core::IntoParam<'a, su
 }
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 #[inline]
-pub unsafe fn CfReportProviderProgress<'a, Param0: ::windows::core::IntoParam<'a, CF_CONNECTION_KEY>>(connectionkey: Param0, transferkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64) -> ::windows::core::Result<()> {
+pub unsafe fn CfReportProviderProgress<'a, Param0: ::windows_core::IntoParam<'a, CF_CONNECTION_KEY>>(connectionkey: Param0, transferkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfReportProviderProgress(connectionkey: CF_CONNECTION_KEY, transferkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64) -> ::windows::core::HRESULT;
+            fn CfReportProviderProgress(connectionkey: CF_CONNECTION_KEY, transferkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64) -> ::windows_core::HRESULT;
         }
         CfReportProviderProgress(connectionkey.into_param().abi(), ::core::mem::transmute(transferkey), ::core::mem::transmute(providerprogresstotal), ::core::mem::transmute(providerprogresscompleted)).ok()
     }
@@ -4696,12 +4696,12 @@ pub unsafe fn CfReportProviderProgress<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 #[inline]
-pub unsafe fn CfReportProviderProgress2<'a, Param0: ::windows::core::IntoParam<'a, CF_CONNECTION_KEY>>(connectionkey: Param0, transferkey: i64, requestkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64, targetsessionid: u32) -> ::windows::core::Result<()> {
+pub unsafe fn CfReportProviderProgress2<'a, Param0: ::windows_core::IntoParam<'a, CF_CONNECTION_KEY>>(connectionkey: Param0, transferkey: i64, requestkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64, targetsessionid: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfReportProviderProgress2(connectionkey: CF_CONNECTION_KEY, transferkey: i64, requestkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64, targetsessionid: u32) -> ::windows::core::HRESULT;
+            fn CfReportProviderProgress2(connectionkey: CF_CONNECTION_KEY, transferkey: i64, requestkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64, targetsessionid: u32) -> ::windows_core::HRESULT;
         }
         CfReportProviderProgress2(connectionkey.into_param().abi(), ::core::mem::transmute(transferkey), ::core::mem::transmute(requestkey), ::core::mem::transmute(providerprogresstotal), ::core::mem::transmute(providerprogresscompleted), ::core::mem::transmute(targetsessionid)).ok()
     }
@@ -4710,12 +4710,12 @@ pub unsafe fn CfReportProviderProgress2<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 #[inline]
-pub unsafe fn CfReportSyncStatus<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(syncrootpath: Param0, syncstatus: *const CF_SYNC_STATUS) -> ::windows::core::Result<()> {
+pub unsafe fn CfReportSyncStatus<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(syncrootpath: Param0, syncstatus: *const CF_SYNC_STATUS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfReportSyncStatus(syncrootpath: ::windows::core::PCWSTR, syncstatus: *const CF_SYNC_STATUS) -> ::windows::core::HRESULT;
+            fn CfReportSyncStatus(syncrootpath: ::windows_core::PCWSTR, syncstatus: *const CF_SYNC_STATUS) -> ::windows_core::HRESULT;
         }
         CfReportSyncStatus(syncrootpath.into_param().abi(), ::core::mem::transmute(syncstatus)).ok()
     }
@@ -4725,12 +4725,12 @@ pub unsafe fn CfReportSyncStatus<'a, Param0: ::windows::core::IntoParam<'a, ::wi
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`, `\"Win32_System_IO\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
-pub unsafe fn CfRevertPlaceholder<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, revertflags: CF_REVERT_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::Result<()> {
+pub unsafe fn CfRevertPlaceholder<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, revertflags: CF_REVERT_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfRevertPlaceholder(filehandle: super::super::Foundation::HANDLE, revertflags: CF_REVERT_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::HRESULT;
+            fn CfRevertPlaceholder(filehandle: super::super::Foundation::HANDLE, revertflags: CF_REVERT_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT;
         }
         CfRevertPlaceholder(filehandle.into_param().abi(), ::core::mem::transmute(revertflags), ::core::mem::transmute(overlapped)).ok()
     }
@@ -4740,12 +4740,12 @@ pub unsafe fn CfRevertPlaceholder<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`, `\"Win32_System_CorrelationVector\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
 #[inline]
-pub unsafe fn CfSetCorrelationVector<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, correlationvector: *const super::super::System::CorrelationVector::CORRELATION_VECTOR) -> ::windows::core::Result<()> {
+pub unsafe fn CfSetCorrelationVector<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, correlationvector: *const super::super::System::CorrelationVector::CORRELATION_VECTOR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfSetCorrelationVector(filehandle: super::super::Foundation::HANDLE, correlationvector: *const super::super::System::CorrelationVector::CORRELATION_VECTOR) -> ::windows::core::HRESULT;
+            fn CfSetCorrelationVector(filehandle: super::super::Foundation::HANDLE, correlationvector: *const super::super::System::CorrelationVector::CORRELATION_VECTOR) -> ::windows_core::HRESULT;
         }
         CfSetCorrelationVector(filehandle.into_param().abi(), ::core::mem::transmute(correlationvector)).ok()
     }
@@ -4755,12 +4755,12 @@ pub unsafe fn CfSetCorrelationVector<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CfSetInSyncState<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, insyncstate: CF_IN_SYNC_STATE, insyncflags: CF_SET_IN_SYNC_FLAGS, insyncusn: *mut i64) -> ::windows::core::Result<()> {
+pub unsafe fn CfSetInSyncState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, insyncstate: CF_IN_SYNC_STATE, insyncflags: CF_SET_IN_SYNC_FLAGS, insyncusn: *mut i64) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfSetInSyncState(filehandle: super::super::Foundation::HANDLE, insyncstate: CF_IN_SYNC_STATE, insyncflags: CF_SET_IN_SYNC_FLAGS, insyncusn: *mut i64) -> ::windows::core::HRESULT;
+            fn CfSetInSyncState(filehandle: super::super::Foundation::HANDLE, insyncstate: CF_IN_SYNC_STATE, insyncflags: CF_SET_IN_SYNC_FLAGS, insyncusn: *mut i64) -> ::windows_core::HRESULT;
         }
         CfSetInSyncState(filehandle.into_param().abi(), ::core::mem::transmute(insyncstate), ::core::mem::transmute(insyncflags), ::core::mem::transmute(insyncusn)).ok()
     }
@@ -4770,12 +4770,12 @@ pub unsafe fn CfSetInSyncState<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`, `\"Win32_System_IO\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
-pub unsafe fn CfSetPinState<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, pinstate: CF_PIN_STATE, pinflags: CF_SET_PIN_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::Result<()> {
+pub unsafe fn CfSetPinState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, pinstate: CF_PIN_STATE, pinflags: CF_SET_PIN_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfSetPinState(filehandle: super::super::Foundation::HANDLE, pinstate: CF_PIN_STATE, pinflags: CF_SET_PIN_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::HRESULT;
+            fn CfSetPinState(filehandle: super::super::Foundation::HANDLE, pinstate: CF_PIN_STATE, pinflags: CF_SET_PIN_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT;
         }
         CfSetPinState(filehandle.into_param().abi(), ::core::mem::transmute(pinstate), ::core::mem::transmute(pinflags), ::core::mem::transmute(overlapped)).ok()
     }
@@ -4784,12 +4784,12 @@ pub unsafe fn CfSetPinState<'a, Param0: ::windows::core::IntoParam<'a, super::su
 }
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 #[inline]
-pub unsafe fn CfUnregisterSyncRoot<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(syncrootpath: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn CfUnregisterSyncRoot<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(syncrootpath: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfUnregisterSyncRoot(syncrootpath: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn CfUnregisterSyncRoot(syncrootpath: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         CfUnregisterSyncRoot(syncrootpath.into_param().abi()).ok()
     }
@@ -4799,26 +4799,26 @@ pub unsafe fn CfUnregisterSyncRoot<'a, Param0: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`, `\"Win32_Foundation\"`, `\"Win32_Storage_FileSystem\"`, `\"Win32_System_IO\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_IO"))]
 #[inline]
-pub unsafe fn CfUpdatePlaceholder<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, fsmetadata: *const CF_FS_METADATA, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, dehydraterangearray: &[CF_FILE_RANGE], updateflags: CF_UPDATE_FLAGS, updateusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::Result<()> {
+pub unsafe fn CfUpdatePlaceholder<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filehandle: Param0, fsmetadata: *const CF_FS_METADATA, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, dehydraterangearray: &[CF_FILE_RANGE], updateflags: CF_UPDATE_FLAGS, updateusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfUpdatePlaceholder(filehandle: super::super::Foundation::HANDLE, fsmetadata: *const CF_FS_METADATA, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, dehydraterangearray: *const CF_FILE_RANGE, dehydraterangecount: u32, updateflags: CF_UPDATE_FLAGS, updateusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::HRESULT;
+            fn CfUpdatePlaceholder(filehandle: super::super::Foundation::HANDLE, fsmetadata: *const CF_FS_METADATA, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, dehydraterangearray: *const CF_FILE_RANGE, dehydraterangecount: u32, updateflags: CF_UPDATE_FLAGS, updateusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT;
         }
-        CfUpdatePlaceholder(filehandle.into_param().abi(), ::core::mem::transmute(fsmetadata), ::core::mem::transmute(fileidentity), ::core::mem::transmute(fileidentitylength), ::core::mem::transmute(::windows::core::as_ptr_or_null(dehydraterangearray)), dehydraterangearray.len() as _, ::core::mem::transmute(updateflags), ::core::mem::transmute(updateusn), ::core::mem::transmute(overlapped)).ok()
+        CfUpdatePlaceholder(filehandle.into_param().abi(), ::core::mem::transmute(fsmetadata), ::core::mem::transmute(fileidentity), ::core::mem::transmute(fileidentitylength), ::core::mem::transmute(::windows_core::as_ptr_or_null(dehydraterangearray)), dehydraterangearray.len() as _, ::core::mem::transmute(updateflags), ::core::mem::transmute(updateusn), ::core::mem::transmute(overlapped)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Storage_CloudFilters\"`*"]
 #[inline]
-pub unsafe fn CfUpdateSyncProviderStatus<'a, Param0: ::windows::core::IntoParam<'a, CF_CONNECTION_KEY>>(connectionkey: Param0, providerstatus: CF_SYNC_PROVIDER_STATUS) -> ::windows::core::Result<()> {
+pub unsafe fn CfUpdateSyncProviderStatus<'a, Param0: ::windows_core::IntoParam<'a, CF_CONNECTION_KEY>>(connectionkey: Param0, providerstatus: CF_SYNC_PROVIDER_STATUS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CfUpdateSyncProviderStatus(connectionkey: CF_CONNECTION_KEY, providerstatus: CF_SYNC_PROVIDER_STATUS) -> ::windows::core::HRESULT;
+            fn CfUpdateSyncProviderStatus(connectionkey: CF_CONNECTION_KEY, providerstatus: CF_SYNC_PROVIDER_STATUS) -> ::windows_core::HRESULT;
         }
         CfUpdateSyncProviderStatus(connectionkey.into_param().abi(), ::core::mem::transmute(providerstatus)).ok()
     }

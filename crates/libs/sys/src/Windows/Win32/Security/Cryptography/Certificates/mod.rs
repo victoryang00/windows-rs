@@ -1,42 +1,42 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvBackupClose(hbc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvBackupClose(hbc: *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvBackupEnd(hbc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvBackupEnd(hbc: *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
     pub fn CertSrvBackupFree(pv: *mut ::core::ffi::c_void);
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvBackupGetBackupLogsW(hbc: *const ::core::ffi::c_void, ppwszzbackuplogfiles: *mut ::windows_sys::core::PWSTR, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvBackupGetBackupLogsW(hbc: *const ::core::ffi::c_void, ppwszzbackuplogfiles: *mut ::windows_sys_core::PWSTR, pcbsize: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvBackupGetDatabaseNamesW(hbc: *const ::core::ffi::c_void, ppwszzattachmentinformation: *mut ::windows_sys::core::PWSTR, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvBackupGetDatabaseNamesW(hbc: *const ::core::ffi::c_void, ppwszzattachmentinformation: *mut ::windows_sys_core::PWSTR, pcbsize: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvBackupGetDynamicFileListW(hbc: *const ::core::ffi::c_void, ppwszzfilelist: *mut ::windows_sys::core::PWSTR, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvBackupGetDynamicFileListW(hbc: *const ::core::ffi::c_void, ppwszzfilelist: *mut ::windows_sys_core::PWSTR, pcbsize: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvBackupOpenFileW(hbc: *mut ::core::ffi::c_void, pwszattachmentname: ::windows_sys::core::PCWSTR, cbreadhintsize: u32, plifilesize: *mut i64) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvBackupOpenFileW(hbc: *mut ::core::ffi::c_void, pwszattachmentname: ::windows_sys_core::PCWSTR, cbreadhintsize: u32, plifilesize: *mut i64) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvBackupPrepareW(pwszservername: ::windows_sys::core::PCWSTR, grbitjet: u32, dwbackupflags: CSBACKUP_TYPE, phbc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvBackupPrepareW(pwszservername: ::windows_sys_core::PCWSTR, grbitjet: u32, dwbackupflags: CSBACKUP_TYPE, phbc: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvBackupRead(hbc: *mut ::core::ffi::c_void, pvbuffer: *mut ::core::ffi::c_void, cbbuffer: u32, pcbread: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvBackupRead(hbc: *mut ::core::ffi::c_void, pvbuffer: *mut ::core::ffi::c_void, cbbuffer: u32, pcbread: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvBackupTruncateLogs(hbc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvBackupTruncateLogs(hbc: *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CertSrvIsServerOnlineW(pwszservername: ::windows_sys::core::PCWSTR, pfserveronline: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvIsServerOnlineW(pwszservername: ::windows_sys_core::PCWSTR, pfserveronline: *mut super::super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvRestoreEnd(hbc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvRestoreEnd(hbc: *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvRestoreGetDatabaseLocationsW(hbc: *const ::core::ffi::c_void, ppwszzdatabaselocationlist: *mut ::windows_sys::core::PWSTR, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvRestoreGetDatabaseLocationsW(hbc: *const ::core::ffi::c_void, ppwszzdatabaselocationlist: *mut ::windows_sys_core::PWSTR, pcbsize: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvRestorePrepareW(pwszservername: ::windows_sys::core::PCWSTR, dwrestoreflags: u32, phbc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvRestorePrepareW(pwszservername: ::windows_sys_core::PCWSTR, dwrestoreflags: u32, phbc: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvRestoreRegisterComplete(hbc: *mut ::core::ffi::c_void, hrrestorestate: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvRestoreRegisterComplete(hbc: *mut ::core::ffi::c_void, hrrestorestate: ::windows_sys_core::HRESULT) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvRestoreRegisterThroughFile(hbc: *mut ::core::ffi::c_void, pwszcheckpointfilepath: ::windows_sys::core::PCWSTR, pwszlogpath: ::windows_sys::core::PCWSTR, rgrstmap: *mut CSEDB_RSTMAPW, crstmap: i32, pwszbackuplogpath: ::windows_sys::core::PCWSTR, genlow: u32, genhigh: u32) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvRestoreRegisterThroughFile(hbc: *mut ::core::ffi::c_void, pwszcheckpointfilepath: ::windows_sys_core::PCWSTR, pwszlogpath: ::windows_sys_core::PCWSTR, rgrstmap: *mut CSEDB_RSTMAPW, crstmap: i32, pwszbackuplogpath: ::windows_sys_core::PCWSTR, genlow: u32, genhigh: u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvRestoreRegisterW(hbc: *mut ::core::ffi::c_void, pwszcheckpointfilepath: ::windows_sys::core::PCWSTR, pwszlogpath: ::windows_sys::core::PCWSTR, rgrstmap: *mut CSEDB_RSTMAPW, crstmap: i32, pwszbackuplogpath: ::windows_sys::core::PCWSTR, genlow: u32, genhigh: u32) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvRestoreRegisterW(hbc: *mut ::core::ffi::c_void, pwszcheckpointfilepath: ::windows_sys_core::PCWSTR, pwszlogpath: ::windows_sys_core::PCWSTR, rgrstmap: *mut CSEDB_RSTMAPW, crstmap: i32, pwszbackuplogpath: ::windows_sys_core::PCWSTR, genlow: u32, genhigh: u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-    pub fn CertSrvServerControlW(pwszservername: ::windows_sys::core::PCWSTR, dwcontrolflags: u32, pcbout: *mut u32, ppbout: *mut *mut u8) -> ::windows_sys::core::HRESULT;
+    pub fn CertSrvServerControlW(pwszservername: ::windows_sys_core::PCWSTR, dwcontrolflags: u32, pcbout: *mut u32, ppbout: *mut *mut u8) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn PstAcquirePrivateKey(pcert: *const super::CERT_CONTEXT) -> super::super::super::Foundation::NTSTATUS;
@@ -60,7 +60,7 @@ extern "system" {
     pub fn PstMapCertificate(pcert: *const super::CERT_CONTEXT, ptokeninformationtype: *mut super::super::Authentication::Identity::LSA_TOKEN_INFORMATION_TYPE, pptokeninformation: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn PstValidate(ptargetname: *const super::super::super::Foundation::UNICODE_STRING, bisclient: super::super::super::Foundation::BOOL, prequestedissuancepolicy: *const super::CERT_USAGE_MATCH, phadditionalcertstore: *const super::HCERTSTORE, pcert: *const super::CERT_CONTEXT, pprovguid: *mut ::windows_sys::core::GUID) -> super::super::super::Foundation::NTSTATUS;
+    pub fn PstValidate(ptargetname: *const super::super::super::Foundation::UNICODE_STRING, bisclient: super::super::super::Foundation::BOOL, prequestedissuancepolicy: *const super::CERT_USAGE_MATCH, phadditionalcertstore: *const super::HCERTSTORE, pcert: *const super::CERT_CONTEXT, pprovguid: *mut ::windows_sys_core::GUID) -> super::super::super::Foundation::NTSTATUS;
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub type ADDED_CERT_TYPE = u32;
@@ -198,46 +198,46 @@ pub const CA_DISP_REVOKED: u32 = 2u32;
 pub const CA_DISP_UNDER_SUBMISSION: u32 = 5u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const CA_DISP_VALID: u32 = 3u32;
-pub const CAlternativeName: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821395, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CAlternativeNames: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821396, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CBinaryConverter: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821378, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CAlternativeName: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821395, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CAlternativeNames: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821396, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CBinaryConverter: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821378, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const CCLOCKSKEWMINUTESDEFAULT: u32 = 10u32;
-pub const CCertAdmin: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 938130160, data2: 32694, data3: 4560, data4: [136, 23, 0, 160, 201, 3, 184, 60] };
-pub const CCertConfig: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 925879864, data2: 17188, data3: 4560, data4: [136, 16, 0, 160, 201, 3, 184, 60] };
-pub const CCertEncodeAltName: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 486296794, data2: 4721, data3: 4561, data4: [155, 212, 0, 192, 79, 182, 131, 250] };
-pub const CCertEncodeBitString: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1835744472, data2: 4728, data3: 4561, data4: [155, 212, 0, 192, 79, 182, 131, 250] };
-pub const CCertEncodeCRLDistInfo: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 33185952, data2: 48127, data3: 4560, data4: [136, 37, 0, 160, 201, 3, 184, 60] };
-pub const CCertEncodeDateArray: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 807368624, data2: 42096, data3: 4560, data4: [136, 33, 0, 160, 201, 3, 184, 60] };
-pub const CCertEncodeLongArray: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1309048992, data2: 41122, data3: 4560, data4: [136, 33, 0, 160, 201, 3, 184, 60] };
-pub const CCertEncodeStringArray: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 430403552, data2: 29844, data3: 4560, data4: [136, 22, 0, 160, 201, 3, 184, 60] };
-pub const CCertGetConfig: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3335276976, data2: 52759, data3: 4560, data4: [136, 51, 0, 160, 201, 3, 184, 60] };
-pub const CCertProperties: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821423, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertProperty: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821422, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertPropertyArchived: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821431, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertPropertyArchivedKeyHash: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821435, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertPropertyAutoEnroll: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821426, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertPropertyBackedUp: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821432, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertPropertyDescription: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821425, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertPropertyEnrollment: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821433, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertPropertyEnrollmentPolicyServer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821452, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertPropertyFriendlyName: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821424, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertPropertyKeyProvInfo: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821430, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertPropertyRenewal: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821434, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertPropertyRequestOriginator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821427, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertPropertySHA1Hash: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821428, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertRequest: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2561668080, data2: 21796, data3: 4560, data4: [136, 18, 0, 160, 201, 3, 184, 60] };
-pub const CCertServerExit: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1279942208, data2: 29484, data3: 4560, data4: [136, 22, 0, 160, 201, 3, 184, 60] };
-pub const CCertServerPolicy: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2852129062, data2: 65470, data3: 4559, data4: [136, 0, 0, 160, 201, 3, 184, 60] };
-pub const CCertView: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2704084858, data2: 7812, data3: 4561, data4: [155, 214, 0, 192, 79, 182, 131, 250] };
-pub const CCertificateAttestationChallenge: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 325234081, data2: 60256, data3: 17770, data4: [182, 225, 17, 128, 80, 219, 116, 27] };
-pub const CCertificatePolicies: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821407, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCertificatePolicy: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821406, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCryptAttribute: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821420, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCryptAttributes: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821421, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCspInformation: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821383, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCspInformations: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821384, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CCspStatus: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821385, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertAdmin: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 938130160, data2: 32694, data3: 4560, data4: [136, 23, 0, 160, 201, 3, 184, 60] };
+pub const CCertConfig: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 925879864, data2: 17188, data3: 4560, data4: [136, 16, 0, 160, 201, 3, 184, 60] };
+pub const CCertEncodeAltName: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 486296794, data2: 4721, data3: 4561, data4: [155, 212, 0, 192, 79, 182, 131, 250] };
+pub const CCertEncodeBitString: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1835744472, data2: 4728, data3: 4561, data4: [155, 212, 0, 192, 79, 182, 131, 250] };
+pub const CCertEncodeCRLDistInfo: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 33185952, data2: 48127, data3: 4560, data4: [136, 37, 0, 160, 201, 3, 184, 60] };
+pub const CCertEncodeDateArray: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 807368624, data2: 42096, data3: 4560, data4: [136, 33, 0, 160, 201, 3, 184, 60] };
+pub const CCertEncodeLongArray: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1309048992, data2: 41122, data3: 4560, data4: [136, 33, 0, 160, 201, 3, 184, 60] };
+pub const CCertEncodeStringArray: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 430403552, data2: 29844, data3: 4560, data4: [136, 22, 0, 160, 201, 3, 184, 60] };
+pub const CCertGetConfig: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3335276976, data2: 52759, data3: 4560, data4: [136, 51, 0, 160, 201, 3, 184, 60] };
+pub const CCertProperties: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821423, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertProperty: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821422, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertPropertyArchived: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821431, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertPropertyArchivedKeyHash: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821435, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertPropertyAutoEnroll: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821426, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertPropertyBackedUp: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821432, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertPropertyDescription: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821425, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertPropertyEnrollment: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821433, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertPropertyEnrollmentPolicyServer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821452, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertPropertyFriendlyName: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821424, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertPropertyKeyProvInfo: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821430, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertPropertyRenewal: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821434, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertPropertyRequestOriginator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821427, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertPropertySHA1Hash: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821428, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertRequest: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2561668080, data2: 21796, data3: 4560, data4: [136, 18, 0, 160, 201, 3, 184, 60] };
+pub const CCertServerExit: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1279942208, data2: 29484, data3: 4560, data4: [136, 22, 0, 160, 201, 3, 184, 60] };
+pub const CCertServerPolicy: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2852129062, data2: 65470, data3: 4559, data4: [136, 0, 0, 160, 201, 3, 184, 60] };
+pub const CCertView: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2704084858, data2: 7812, data3: 4561, data4: [155, 214, 0, 192, 79, 182, 131, 250] };
+pub const CCertificateAttestationChallenge: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 325234081, data2: 60256, data3: 17770, data4: [182, 225, 17, 128, 80, 219, 116, 27] };
+pub const CCertificatePolicies: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821407, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCertificatePolicy: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821406, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCryptAttribute: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821420, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCryptAttributes: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821421, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCspInformation: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821383, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCspInformations: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821384, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CCspStatus: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821385, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub type CERTADMIN_GET_ROLES_FLAGS = u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
@@ -1469,14 +1469,14 @@ pub const CVR_SEEK_LT: CERT_VIEW_SEEK_OPERATOR_FLAGS = 2u32;
 pub const CVR_SEEK_GE: CERT_VIEW_SEEK_OPERATOR_FLAGS = 8u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const CVR_SEEK_GT: CERT_VIEW_SEEK_OPERATOR_FLAGS = 16u32;
-pub const CEnroll: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1140388489, data2: 31264, data3: 4560, data4: [143, 6, 0, 192, 79, 194, 149, 225] };
-pub const CEnroll2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 309762276, data2: 59184, data3: 20060, data4: [162, 177, 33, 73, 10, 112, 200, 161] };
+pub const CEnroll: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1140388489, data2: 31264, data3: 4560, data4: [143, 6, 0, 192, 79, 194, 149, 225] };
+pub const CEnroll2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 309762276, data2: 59184, data3: 20060, data4: [162, 177, 33, 73, 10, 112, 200, 161] };
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const CMM_READONLY: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const CMM_REFRESHONLY: u32 = 1u32;
-pub const CObjectId: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821376, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CObjectIds: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821377, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CObjectId: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821376, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CObjectIds: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821377, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const CPF_BADURL_ERROR: u32 = 32u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
@@ -1505,8 +1505,8 @@ pub const CPF_POSTPONED_BASE_LDAP_ERROR: u32 = 4096u32;
 pub const CPF_SHADOW: u32 = 8u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const CPF_SIGNATURE_ERROR: u32 = 128u32;
-pub const CPolicyQualifier: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821404, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CPolicyQualifiers: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821405, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CPolicyQualifier: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821404, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CPolicyQualifiers: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821405, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const CRLF_ALLOW_REQUEST_ATTRIBUTE_SUBJECT: u32 = 65536u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
@@ -1824,8 +1824,8 @@ pub const CSCONTROL_SUSPEND: u64 = 2u64;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub struct CSEDB_RSTMAPW {
-    pub pwszDatabaseName: ::windows_sys::core::PWSTR,
-    pub pwszNewDatabaseName: ::windows_sys::core::PWSTR,
+    pub pwszDatabaseName: ::windows_sys_core::PWSTR,
+    pub pwszNewDatabaseName: ::windows_sys_core::PWSTR,
 }
 impl ::core::marker::Copy for CSEDB_RSTMAPW {}
 impl ::core::clone::Clone for CSEDB_RSTMAPW {
@@ -1891,9 +1891,9 @@ pub const CSVER_MINOR_WIN7: u32 = 1u32;
 pub const CSVER_MINOR_WIN8: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const CSVER_MINOR_WINBLUE: u32 = 1u32;
-pub const CSignerCertificate: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821437, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CSmimeCapabilities: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821402, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CSmimeCapability: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821401, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CSignerCertificate: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821437, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CSmimeCapabilities: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821402, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CSmimeCapability: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821401, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const CVIEWAGEMINUTESDEFAULT: u32 = 16u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
@@ -1948,51 +1948,51 @@ pub const CV_OUT_HEXRAW: u32 = 12u32;
 pub const CV_OUT_NOCR: u32 = 2147483648u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const CV_OUT_NOCRLF: u32 = 1073741824u32;
-pub const CX500DistinguishedName: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821379, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509Attribute: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821410, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509AttributeArchiveKey: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821415, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509AttributeArchiveKeyHash: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821416, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509AttributeClientId: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821413, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509AttributeCspProvider: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821419, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509AttributeExtensions: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821412, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509AttributeOSVersion: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821418, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509AttributeRenewalCertificate: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821414, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509Attributes: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821411, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509CertificateRequestCertificate: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821443, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509CertificateRequestCmc: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821445, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509CertificateRequestPkcs10: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821442, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509CertificateRequestPkcs7: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821444, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509CertificateRevocationList: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821472, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509CertificateRevocationListEntries: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821471, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509CertificateRevocationListEntry: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821470, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509CertificateTemplateADWritable: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2201412387, data2: 11882, data3: 18948, data4: [147, 124, 84, 143, 104, 24, 57, 179] };
-pub const CX509EndorsementKey: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 295852573, data2: 47523, data3: 20189, data4: [175, 131, 59, 89, 173, 190, 211, 97] };
-pub const CX509Enrollment: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821446, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509EnrollmentHelper: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821456, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509EnrollmentPolicyActiveDirectory: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2448658471, data2: 8575, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509EnrollmentPolicyWebService: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2448658472, data2: 8575, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509EnrollmentWebClassFactory: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821449, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509Extension: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821389, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509ExtensionAlternativeNames: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821397, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509ExtensionAuthorityKeyIdentifier: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821400, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509ExtensionBasicConstraints: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821398, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509ExtensionCertificatePolicies: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821408, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509ExtensionEnhancedKeyUsage: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821392, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509ExtensionKeyUsage: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821391, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509ExtensionMSApplicationPolicies: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821409, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509ExtensionSmimeCapabilities: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821403, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509ExtensionSubjectKeyIdentifier: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821399, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509ExtensionTemplate: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821394, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509ExtensionTemplateName: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821393, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509Extensions: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821390, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509MachineEnrollmentFactory: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821457, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509NameValuePair: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821439, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509PolicyServerListManager: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2448658473, data2: 8575, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509PolicyServerUrl: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2448658474, data2: 8575, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509PrivateKey: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821388, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509PublicKey: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821387, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509SCEPEnrollment: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821473, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
-pub const CX509SCEPEnrollmentHelper: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821474, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX500DistinguishedName: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821379, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509Attribute: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821410, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509AttributeArchiveKey: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821415, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509AttributeArchiveKeyHash: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821416, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509AttributeClientId: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821413, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509AttributeCspProvider: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821419, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509AttributeExtensions: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821412, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509AttributeOSVersion: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821418, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509AttributeRenewalCertificate: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821414, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509Attributes: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821411, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509CertificateRequestCertificate: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821443, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509CertificateRequestCmc: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821445, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509CertificateRequestPkcs10: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821442, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509CertificateRequestPkcs7: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821444, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509CertificateRevocationList: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821472, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509CertificateRevocationListEntries: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821471, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509CertificateRevocationListEntry: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821470, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509CertificateTemplateADWritable: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2201412387, data2: 11882, data3: 18948, data4: [147, 124, 84, 143, 104, 24, 57, 179] };
+pub const CX509EndorsementKey: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 295852573, data2: 47523, data3: 20189, data4: [175, 131, 59, 89, 173, 190, 211, 97] };
+pub const CX509Enrollment: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821446, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509EnrollmentHelper: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821456, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509EnrollmentPolicyActiveDirectory: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2448658471, data2: 8575, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509EnrollmentPolicyWebService: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2448658472, data2: 8575, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509EnrollmentWebClassFactory: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821449, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509Extension: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821389, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509ExtensionAlternativeNames: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821397, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509ExtensionAuthorityKeyIdentifier: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821400, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509ExtensionBasicConstraints: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821398, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509ExtensionCertificatePolicies: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821408, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509ExtensionEnhancedKeyUsage: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821392, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509ExtensionKeyUsage: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821391, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509ExtensionMSApplicationPolicies: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821409, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509ExtensionSmimeCapabilities: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821403, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509ExtensionSubjectKeyIdentifier: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821399, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509ExtensionTemplate: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821394, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509ExtensionTemplateName: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821393, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509Extensions: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821390, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509MachineEnrollmentFactory: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821457, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509NameValuePair: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821439, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509PolicyServerListManager: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2448658473, data2: 8575, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509PolicyServerUrl: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2448658474, data2: 8575, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509PrivateKey: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821388, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509PublicKey: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821387, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509SCEPEnrollment: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821473, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+pub const CX509SCEPEnrollmentHelper: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2286821474, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub type CommitTemplateFlags = i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
@@ -2386,43 +2386,43 @@ pub const TemplatePropValidityPeriod: EnrollmentTemplateProperty = 30i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const TemplatePropRenewalPeriod: EnrollmentTemplateProperty = 31i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVBACKUPCLOSE = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVBACKUPCLOSE = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVBACKUPEND = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVBACKUPEND = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub type FNCERTSRVBACKUPFREE = ::core::option::Option<unsafe extern "system" fn(pv: *mut ::core::ffi::c_void)>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVBACKUPGETBACKUPLOGSW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, ppwszzbackuplogfiles: *mut *mut u16, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVBACKUPGETBACKUPLOGSW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, ppwszzbackuplogfiles: *mut *mut u16, pcbsize: *mut u32) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVBACKUPGETDATABASENAMESW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, ppwszzattachmentinformation: *mut *mut u16, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVBACKUPGETDATABASENAMESW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, ppwszzattachmentinformation: *mut *mut u16, pcbsize: *mut u32) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVBACKUPGETDYNAMICFILELISTW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, ppwszzfilelist: *mut *mut u16, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVBACKUPGETDYNAMICFILELISTW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, ppwszzfilelist: *mut *mut u16, pcbsize: *mut u32) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVBACKUPOPENFILEW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, pwszattachmentname: ::windows_sys::core::PCWSTR, cbreadhintsize: u32, plifilesize: *mut i64) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVBACKUPOPENFILEW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, pwszattachmentname: ::windows_sys_core::PCWSTR, cbreadhintsize: u32, plifilesize: *mut i64) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVBACKUPPREPAREW = ::core::option::Option<unsafe extern "system" fn(pwszservername: ::windows_sys::core::PCWSTR, grbitjet: u32, dwbackupflags: u32, phbc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVBACKUPPREPAREW = ::core::option::Option<unsafe extern "system" fn(pwszservername: ::windows_sys_core::PCWSTR, grbitjet: u32, dwbackupflags: u32, phbc: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVBACKUPREAD = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, pvbuffer: *mut ::core::ffi::c_void, cbbuffer: u32, pcbread: *mut u32) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVBACKUPREAD = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, pvbuffer: *mut ::core::ffi::c_void, cbbuffer: u32, pcbread: *mut u32) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVBACKUPTRUNCATELOGS = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVBACKUPTRUNCATELOGS = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type FNCERTSRVISSERVERONLINEW = ::core::option::Option<unsafe extern "system" fn(pwszservername: ::windows_sys::core::PCWSTR, pfserveronline: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVISSERVERONLINEW = ::core::option::Option<unsafe extern "system" fn(pwszservername: ::windows_sys_core::PCWSTR, pfserveronline: *mut super::super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVRESTOREEND = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVRESTOREEND = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVRESTOREGETDATABASELOCATIONSW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, ppwszzdatabaselocationlist: *mut *mut u16, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVRESTOREGETDATABASELOCATIONSW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, ppwszzdatabaselocationlist: *mut *mut u16, pcbsize: *mut u32) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVRESTOREPREPAREW = ::core::option::Option<unsafe extern "system" fn(pwszservername: ::windows_sys::core::PCWSTR, dwrestoreflags: u32, phbc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVRESTOREPREPAREW = ::core::option::Option<unsafe extern "system" fn(pwszservername: ::windows_sys_core::PCWSTR, dwrestoreflags: u32, phbc: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVRESTOREREGISTERCOMPLETE = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, hrrestorestate: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVRESTOREREGISTERCOMPLETE = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, hrrestorestate: ::windows_sys_core::HRESULT) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVRESTOREREGISTERW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, pwszcheckpointfilepath: ::windows_sys::core::PCWSTR, pwszlogpath: ::windows_sys::core::PCWSTR, rgrstmap: *mut CSEDB_RSTMAPW, crstmap: i32, pwszbackuplogpath: ::windows_sys::core::PCWSTR, genlow: u32, genhigh: u32) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVRESTOREREGISTERW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, pwszcheckpointfilepath: ::windows_sys_core::PCWSTR, pwszlogpath: ::windows_sys_core::PCWSTR, rgrstmap: *mut CSEDB_RSTMAPW, crstmap: i32, pwszbackuplogpath: ::windows_sys_core::PCWSTR, genlow: u32, genhigh: u32) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
-pub type FNCERTSRVSERVERCONTROLW = ::core::option::Option<unsafe extern "system" fn(pwszservername: ::windows_sys::core::PCWSTR, dwcontrolflags: u32, pcbout: *mut u32, ppbout: *mut *mut u8) -> ::windows_sys::core::HRESULT>;
+pub type FNCERTSRVSERVERCONTROLW = ::core::option::Option<unsafe extern "system" fn(pwszservername: ::windows_sys_core::PCWSTR, dwcontrolflags: u32, pcbout: *mut u32, ppbout: *mut *mut u8) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type FNIMPORTPFXTOPROVIDER = ::core::option::Option<unsafe extern "system" fn(hwndparent: super::super::super::Foundation::HWND, pbpfx: *const u8, cbpfx: u32, importflags: ImportPFXFlags, pwszpassword: ::windows_sys::core::PCWSTR, pwszprovidername: ::windows_sys::core::PCWSTR, pwszreadername: ::windows_sys::core::PCWSTR, pwszcontainernameprefix: ::windows_sys::core::PCWSTR, pwszpin: ::windows_sys::core::PCWSTR, pwszfriendlyname: ::windows_sys::core::PCWSTR, pccertout: *mut u32, prgpcertout: *mut *mut *mut super::CERT_CONTEXT) -> ::windows_sys::core::HRESULT>;
+pub type FNIMPORTPFXTOPROVIDER = ::core::option::Option<unsafe extern "system" fn(hwndparent: super::super::super::Foundation::HWND, pbpfx: *const u8, cbpfx: u32, importflags: ImportPFXFlags, pwszpassword: ::windows_sys_core::PCWSTR, pwszprovidername: ::windows_sys_core::PCWSTR, pwszreadername: ::windows_sys_core::PCWSTR, pwszcontainernameprefix: ::windows_sys_core::PCWSTR, pwszpin: ::windows_sys_core::PCWSTR, pwszfriendlyname: ::windows_sys_core::PCWSTR, pccertout: *mut u32, prgpcertout: *mut *mut *mut super::CERT_CONTEXT) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type FNIMPORTPFXTOPROVIDERFREEDATA = ::core::option::Option<unsafe extern "system" fn(ccert: u32, rgpcert: *const *const super::CERT_CONTEXT)>;
@@ -2767,8 +2767,8 @@ pub const SKIHashHPKP: KeyIdentifierHashAlgorithm = 5i32;
 pub const LDAPF_SIGNDISABLE: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const LDAPF_SSLENABLE: u32 = 1u32;
-pub const OCSPAdmin: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3556193553, data2: 37577, data3: 18379, data4: [143, 242, 141, 137, 26, 124, 77, 228] };
-pub const OCSPPropertyCollection: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4181042472, data2: 47754, data3: 19929, data4: [186, 121, 242, 131, 39, 92, 178, 222] };
+pub const OCSPAdmin: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3556193553, data2: 37577, data3: 18379, data4: [143, 242, 141, 137, 26, 124, 77, 228] };
+pub const OCSPPropertyCollection: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4181042472, data2: 47754, data3: 19929, data4: [186, 121, 242, 131, 39, 92, 178, 222] };
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub type OCSPRequestFlag = i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]

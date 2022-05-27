@@ -37,7 +37,7 @@ pub struct CHOOSECOLORA {
     pub Flags: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCCHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCSTR,
+    pub lpTemplateName: ::windows_core::PCSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -51,14 +51,14 @@ impl ::core::clone::Clone for CHOOSECOLORA {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CHOOSECOLORA {
+unsafe impl ::windows_core::Abi for CHOOSECOLORA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CHOOSECOLORA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSECOLORA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSECOLORA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -84,7 +84,7 @@ pub struct CHOOSECOLORA {
     pub Flags: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCCHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCSTR,
+    pub lpTemplateName: ::windows_core::PCSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -98,14 +98,14 @@ impl ::core::clone::Clone for CHOOSECOLORA {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CHOOSECOLORA {
+unsafe impl ::windows_core::Abi for CHOOSECOLORA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CHOOSECOLORA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSECOLORA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSECOLORA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -131,7 +131,7 @@ pub struct CHOOSECOLORW {
     pub Flags: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCCHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCWSTR,
+    pub lpTemplateName: ::windows_core::PCWSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -145,14 +145,14 @@ impl ::core::clone::Clone for CHOOSECOLORW {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CHOOSECOLORW {
+unsafe impl ::windows_core::Abi for CHOOSECOLORW {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CHOOSECOLORW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSECOLORW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSECOLORW>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -178,7 +178,7 @@ pub struct CHOOSECOLORW {
     pub Flags: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCCHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCWSTR,
+    pub lpTemplateName: ::windows_core::PCWSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -192,14 +192,14 @@ impl ::core::clone::Clone for CHOOSECOLORW {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CHOOSECOLORW {
+unsafe impl ::windows_core::Abi for CHOOSECOLORW {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CHOOSECOLORW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSECOLORW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSECOLORW>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -226,9 +226,9 @@ pub struct CHOOSEFONTA {
     pub rgbColors: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCFHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCSTR,
+    pub lpTemplateName: ::windows_core::PCSTR,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpszStyle: ::windows::core::PSTR,
+    pub lpszStyle: ::windows_core::PSTR,
     pub nFontType: CHOOSEFONT_FONT_TYPE,
     pub ___MISSING_ALIGNMENT__: u16,
     pub nSizeMin: i32,
@@ -246,14 +246,14 @@ impl ::core::clone::Clone for CHOOSEFONTA {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for CHOOSEFONTA {
+unsafe impl ::windows_core::Abi for CHOOSEFONTA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for CHOOSEFONTA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSEFONTA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSEFONTA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -280,9 +280,9 @@ pub struct CHOOSEFONTA {
     pub rgbColors: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCFHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCSTR,
+    pub lpTemplateName: ::windows_core::PCSTR,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpszStyle: ::windows::core::PSTR,
+    pub lpszStyle: ::windows_core::PSTR,
     pub nFontType: CHOOSEFONT_FONT_TYPE,
     pub ___MISSING_ALIGNMENT__: u16,
     pub nSizeMin: i32,
@@ -300,14 +300,14 @@ impl ::core::clone::Clone for CHOOSEFONTA {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for CHOOSEFONTA {
+unsafe impl ::windows_core::Abi for CHOOSEFONTA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for CHOOSEFONTA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSEFONTA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSEFONTA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -334,9 +334,9 @@ pub struct CHOOSEFONTW {
     pub rgbColors: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCFHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCWSTR,
+    pub lpTemplateName: ::windows_core::PCWSTR,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpszStyle: ::windows::core::PWSTR,
+    pub lpszStyle: ::windows_core::PWSTR,
     pub nFontType: CHOOSEFONT_FONT_TYPE,
     pub ___MISSING_ALIGNMENT__: u16,
     pub nSizeMin: i32,
@@ -354,14 +354,14 @@ impl ::core::clone::Clone for CHOOSEFONTW {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for CHOOSEFONTW {
+unsafe impl ::windows_core::Abi for CHOOSEFONTW {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for CHOOSEFONTW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSEFONTW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSEFONTW>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -388,9 +388,9 @@ pub struct CHOOSEFONTW {
     pub rgbColors: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCFHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCWSTR,
+    pub lpTemplateName: ::windows_core::PCWSTR,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpszStyle: ::windows::core::PWSTR,
+    pub lpszStyle: ::windows_core::PWSTR,
     pub nFontType: CHOOSEFONT_FONT_TYPE,
     pub ___MISSING_ALIGNMENT__: u16,
     pub nSizeMin: i32,
@@ -408,14 +408,14 @@ impl ::core::clone::Clone for CHOOSEFONTW {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for CHOOSEFONTW {
+unsafe impl ::windows_core::Abi for CHOOSEFONTW {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for CHOOSEFONTW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSEFONTW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHOOSEFONTW>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -501,7 +501,7 @@ impl ::core::default::Default for CHOOSEFONT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CHOOSEFONT_FLAGS {
+unsafe impl ::windows_core::Abi for CHOOSEFONT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CHOOSEFONT_FLAGS {
@@ -564,7 +564,7 @@ impl ::core::default::Default for CHOOSEFONT_FONT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CHOOSEFONT_FONT_TYPE {
+unsafe impl ::windows_core::Abi for CHOOSEFONT_FONT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CHOOSEFONT_FONT_TYPE {
@@ -755,7 +755,7 @@ impl ::core::default::Default for COMMON_DLG_ERRORS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for COMMON_DLG_ERRORS {
+unsafe impl ::windows_core::Abi for COMMON_DLG_ERRORS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for COMMON_DLG_ERRORS {
@@ -855,13 +855,13 @@ impl ::core::clone::Clone for DEVNAMES {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for DEVNAMES {
+unsafe impl ::windows_core::Abi for DEVNAMES {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for DEVNAMES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVNAMES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVNAMES>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -890,13 +890,13 @@ impl ::core::clone::Clone for DEVNAMES {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for DEVNAMES {
+unsafe impl ::windows_core::Abi for DEVNAMES {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for DEVNAMES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVNAMES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVNAMES>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -932,13 +932,13 @@ pub struct FINDREPLACEA {
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
     pub Flags: FINDREPLACE_FLAGS,
-    pub lpstrFindWhat: ::windows::core::PSTR,
-    pub lpstrReplaceWith: ::windows::core::PSTR,
+    pub lpstrFindWhat: ::windows_core::PSTR,
+    pub lpstrReplaceWith: ::windows_core::PSTR,
     pub wFindWhatLen: u16,
     pub wReplaceWithLen: u16,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPFRHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCSTR,
+    pub lpTemplateName: ::windows_core::PCSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -952,14 +952,14 @@ impl ::core::clone::Clone for FINDREPLACEA {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FINDREPLACEA {
+unsafe impl ::windows_core::Abi for FINDREPLACEA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FINDREPLACEA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FINDREPLACEA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FINDREPLACEA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -981,13 +981,13 @@ pub struct FINDREPLACEA {
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
     pub Flags: FINDREPLACE_FLAGS,
-    pub lpstrFindWhat: ::windows::core::PSTR,
-    pub lpstrReplaceWith: ::windows::core::PSTR,
+    pub lpstrFindWhat: ::windows_core::PSTR,
+    pub lpstrReplaceWith: ::windows_core::PSTR,
     pub wFindWhatLen: u16,
     pub wReplaceWithLen: u16,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPFRHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCSTR,
+    pub lpTemplateName: ::windows_core::PCSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -1001,14 +1001,14 @@ impl ::core::clone::Clone for FINDREPLACEA {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FINDREPLACEA {
+unsafe impl ::windows_core::Abi for FINDREPLACEA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FINDREPLACEA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FINDREPLACEA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FINDREPLACEA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -1030,13 +1030,13 @@ pub struct FINDREPLACEW {
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
     pub Flags: FINDREPLACE_FLAGS,
-    pub lpstrFindWhat: ::windows::core::PWSTR,
-    pub lpstrReplaceWith: ::windows::core::PWSTR,
+    pub lpstrFindWhat: ::windows_core::PWSTR,
+    pub lpstrReplaceWith: ::windows_core::PWSTR,
     pub wFindWhatLen: u16,
     pub wReplaceWithLen: u16,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPFRHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCWSTR,
+    pub lpTemplateName: ::windows_core::PCWSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -1050,14 +1050,14 @@ impl ::core::clone::Clone for FINDREPLACEW {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FINDREPLACEW {
+unsafe impl ::windows_core::Abi for FINDREPLACEW {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FINDREPLACEW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FINDREPLACEW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FINDREPLACEW>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -1079,13 +1079,13 @@ pub struct FINDREPLACEW {
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
     pub Flags: FINDREPLACE_FLAGS,
-    pub lpstrFindWhat: ::windows::core::PWSTR,
-    pub lpstrReplaceWith: ::windows::core::PWSTR,
+    pub lpstrFindWhat: ::windows_core::PWSTR,
+    pub lpstrReplaceWith: ::windows_core::PWSTR,
     pub wFindWhatLen: u16,
     pub wReplaceWithLen: u16,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPFRHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCWSTR,
+    pub lpTemplateName: ::windows_core::PCWSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -1099,14 +1099,14 @@ impl ::core::clone::Clone for FINDREPLACEW {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FINDREPLACEW {
+unsafe impl ::windows_core::Abi for FINDREPLACEW {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FINDREPLACEW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FINDREPLACEW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FINDREPLACEW>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -1168,7 +1168,7 @@ impl ::core::default::Default for FINDREPLACE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FINDREPLACE_FLAGS {
+unsafe impl ::windows_core::Abi for FINDREPLACE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FINDREPLACE_FLAGS {
@@ -1252,28 +1252,28 @@ pub unsafe fn FindTextW(param0: *mut FINDREPLACEW) -> super::super::super::Found
 }
 #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
 #[inline]
-pub unsafe fn GetFileTitleA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(param0: Param0, buf: &mut [u8]) -> i16 {
+pub unsafe fn GetFileTitleA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, buf: &mut [u8]) -> i16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetFileTitleA(param0: ::windows::core::PCSTR, buf: ::windows::core::PSTR, cchsize: u16) -> i16;
+            fn GetFileTitleA(param0: ::windows_core::PCSTR, buf: ::windows_core::PSTR, cchsize: u16) -> i16;
         }
-        ::core::mem::transmute(GetFileTitleA(param0.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buf)), buf.len() as _))
+        ::core::mem::transmute(GetFileTitleA(param0.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buf)), buf.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
 #[inline]
-pub unsafe fn GetFileTitleW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(param0: Param0, buf: &mut [u16]) -> i16 {
+pub unsafe fn GetFileTitleW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: Param0, buf: &mut [u16]) -> i16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetFileTitleW(param0: ::windows::core::PCWSTR, buf: ::windows::core::PWSTR, cchsize: u16) -> i16;
+            fn GetFileTitleW(param0: ::windows_core::PCWSTR, buf: ::windows_core::PWSTR, cchsize: u16) -> i16;
         }
-        ::core::mem::transmute(GetFileTitleW(param0.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buf)), buf.len() as _))
+        ::core::mem::transmute(GetFileTitleW(param0.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buf)), buf.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1346,40 +1346,40 @@ pub const HELPMSGSTRINGA: &str = "commdlg_help";
 pub const HELPMSGSTRINGW: &str = "commdlg_help";
 #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
 #[repr(transparent)]
-pub struct IPrintDialogCallback(::windows::core::IUnknown);
+pub struct IPrintDialogCallback(::windows_core::IUnknown);
 impl IPrintDialogCallback {
     #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
-    pub unsafe fn InitDone(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).InitDone)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn InitDone(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).InitDone)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
-    pub unsafe fn SelectionChange(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SelectionChange)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn SelectionChange(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SelectionChange)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn HandleMessage<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::super::Foundation::LPARAM>>(&self, hdlg: Param0, umsg: u32, wparam: Param2, lparam: Param3, presult: *mut super::super::super::Foundation::LRESULT) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).HandleMessage)(::windows::core::Interface::as_raw(self), hdlg.into_param().abi(), ::core::mem::transmute(umsg), wparam.into_param().abi(), lparam.into_param().abi(), ::core::mem::transmute(presult)).ok()
+    pub unsafe fn HandleMessage<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::super::Foundation::LPARAM>>(&self, hdlg: Param0, umsg: u32, wparam: Param2, lparam: Param3, presult: *mut super::super::super::Foundation::LRESULT) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).HandleMessage)(::windows_core::Interface::as_raw(self), hdlg.into_param().abi(), ::core::mem::transmute(umsg), wparam.into_param().abi(), lparam.into_param().abi(), ::core::mem::transmute(presult)).ok()
     }
 }
-impl ::core::convert::From<IPrintDialogCallback> for ::windows::core::IUnknown {
+impl ::core::convert::From<IPrintDialogCallback> for ::windows_core::IUnknown {
     fn from(value: IPrintDialogCallback) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IPrintDialogCallback> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IPrintDialogCallback> for ::windows_core::IUnknown {
     fn from(value: &IPrintDialogCallback) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IPrintDialogCallback {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IPrintDialogCallback {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IPrintDialogCallback {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintDialogCallback {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IPrintDialogCallback {
@@ -1398,57 +1398,57 @@ impl ::core::fmt::Debug for IPrintDialogCallback {
         f.debug_tuple("IPrintDialogCallback").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IPrintDialogCallback {
+unsafe impl ::windows_core::Interface for IPrintDialogCallback {
     type Vtable = IPrintDialogCallback_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5852a2c3_6530_11d1_b6a3_0000f8757bf9);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5852a2c3_6530_11d1_b6a3_0000f8757bf9);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintDialogCallback_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub InitDone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub SelectionChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub InitDone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub SelectionChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub HandleMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hdlg: super::super::super::Foundation::HWND, umsg: u32, wparam: super::super::super::Foundation::WPARAM, lparam: super::super::super::Foundation::LPARAM, presult: *mut super::super::super::Foundation::LRESULT) -> ::windows::core::HRESULT,
+    pub HandleMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hdlg: super::super::super::Foundation::HWND, umsg: u32, wparam: super::super::super::Foundation::WPARAM, lparam: super::super::super::Foundation::LPARAM, presult: *mut super::super::super::Foundation::LRESULT) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     HandleMessage: usize,
 }
 #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
 #[repr(transparent)]
-pub struct IPrintDialogServices(::windows::core::IUnknown);
+pub struct IPrintDialogServices(::windows_core::IUnknown);
 impl IPrintDialogServices {
     #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn GetCurrentDevMode(&self, pdevmode: *mut super::super::super::Graphics::Gdi::DEVMODEA, pcbsize: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).GetCurrentDevMode)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(pcbsize)).ok()
+    pub unsafe fn GetCurrentDevMode(&self, pdevmode: *mut super::super::super::Graphics::Gdi::DEVMODEA, pcbsize: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).GetCurrentDevMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(pcbsize)).ok()
     }
     #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
-    pub unsafe fn GetCurrentPrinterName(&self, pprintername: ::windows::core::PWSTR, pcchsize: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).GetCurrentPrinterName)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pprintername), ::core::mem::transmute(pcchsize)).ok()
+    pub unsafe fn GetCurrentPrinterName(&self, pprintername: ::windows_core::PWSTR, pcchsize: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).GetCurrentPrinterName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pprintername), ::core::mem::transmute(pcchsize)).ok()
     }
     #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
-    pub unsafe fn GetCurrentPortName(&self, pportname: ::windows::core::PWSTR, pcchsize: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).GetCurrentPortName)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pportname), ::core::mem::transmute(pcchsize)).ok()
+    pub unsafe fn GetCurrentPortName(&self, pportname: ::windows_core::PWSTR, pcchsize: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).GetCurrentPortName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pportname), ::core::mem::transmute(pcchsize)).ok()
     }
 }
-impl ::core::convert::From<IPrintDialogServices> for ::windows::core::IUnknown {
+impl ::core::convert::From<IPrintDialogServices> for ::windows_core::IUnknown {
     fn from(value: IPrintDialogServices) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IPrintDialogServices> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IPrintDialogServices> for ::windows_core::IUnknown {
     fn from(value: &IPrintDialogServices) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IPrintDialogServices {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IPrintDialogServices {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IPrintDialogServices {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintDialogServices {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IPrintDialogServices {
@@ -1467,20 +1467,20 @@ impl ::core::fmt::Debug for IPrintDialogServices {
         f.debug_tuple("IPrintDialogServices").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IPrintDialogServices {
+unsafe impl ::windows_core::Interface for IPrintDialogServices {
     type Vtable = IPrintDialogServices_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x509aaeda_5639_11d1_b6a1_0000f8757bf9);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x509aaeda_5639_11d1_b6a1_0000f8757bf9);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintDialogServices_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub GetCurrentDevMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdevmode: *mut super::super::super::Graphics::Gdi::DEVMODEA, pcbsize: *mut u32) -> ::windows::core::HRESULT,
+    pub GetCurrentDevMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdevmode: *mut super::super::super::Graphics::Gdi::DEVMODEA, pcbsize: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
     GetCurrentDevMode: usize,
-    pub GetCurrentPrinterName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprintername: ::windows::core::PWSTR, pcchsize: *mut u32) -> ::windows::core::HRESULT,
-    pub GetCurrentPortName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pportname: ::windows::core::PWSTR, pcchsize: *mut u32) -> ::windows::core::HRESULT,
+    pub GetCurrentPrinterName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprintername: ::windows_core::PWSTR, pcchsize: *mut u32) -> ::windows_core::HRESULT,
+    pub GetCurrentPortName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pportname: ::windows_core::PWSTR, pcchsize: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
 pub const LBSELCHSTRING: &str = "commdlg_LBSelChangedNotify";
@@ -1523,7 +1523,7 @@ pub const NUM_CUSTOM_COLORS: u32 = 16u32;
 pub struct OFNOTIFYA {
     pub hdr: super::NMHDR,
     pub lpOFN: *mut OPENFILENAMEA,
-    pub pszFile: ::windows::core::PSTR,
+    pub pszFile: ::windows_core::PSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -1537,14 +1537,14 @@ impl ::core::clone::Clone for OFNOTIFYA {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OFNOTIFYA {
+unsafe impl ::windows_core::Abi for OFNOTIFYA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OFNOTIFYA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -1564,7 +1564,7 @@ impl ::core::default::Default for OFNOTIFYA {
 pub struct OFNOTIFYA {
     pub hdr: super::NMHDR,
     pub lpOFN: *mut OPENFILENAMEA,
-    pub pszFile: ::windows::core::PSTR,
+    pub pszFile: ::windows_core::PSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -1578,14 +1578,14 @@ impl ::core::clone::Clone for OFNOTIFYA {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OFNOTIFYA {
+unsafe impl ::windows_core::Abi for OFNOTIFYA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OFNOTIFYA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -1620,14 +1620,14 @@ impl ::core::clone::Clone for OFNOTIFYEXA {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OFNOTIFYEXA {
+unsafe impl ::windows_core::Abi for OFNOTIFYEXA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OFNOTIFYEXA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYEXA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYEXA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -1662,14 +1662,14 @@ impl ::core::clone::Clone for OFNOTIFYEXA {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OFNOTIFYEXA {
+unsafe impl ::windows_core::Abi for OFNOTIFYEXA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OFNOTIFYEXA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYEXA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYEXA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -1704,14 +1704,14 @@ impl ::core::clone::Clone for OFNOTIFYEXW {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OFNOTIFYEXW {
+unsafe impl ::windows_core::Abi for OFNOTIFYEXW {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OFNOTIFYEXW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYEXW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYEXW>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -1746,14 +1746,14 @@ impl ::core::clone::Clone for OFNOTIFYEXW {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OFNOTIFYEXW {
+unsafe impl ::windows_core::Abi for OFNOTIFYEXW {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OFNOTIFYEXW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYEXW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYEXW>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -1773,7 +1773,7 @@ impl ::core::default::Default for OFNOTIFYEXW {
 pub struct OFNOTIFYW {
     pub hdr: super::NMHDR,
     pub lpOFN: *mut OPENFILENAMEW,
-    pub pszFile: ::windows::core::PWSTR,
+    pub pszFile: ::windows_core::PWSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -1787,14 +1787,14 @@ impl ::core::clone::Clone for OFNOTIFYW {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OFNOTIFYW {
+unsafe impl ::windows_core::Abi for OFNOTIFYW {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OFNOTIFYW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYW>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -1814,7 +1814,7 @@ impl ::core::default::Default for OFNOTIFYW {
 pub struct OFNOTIFYW {
     pub hdr: super::NMHDR,
     pub lpOFN: *mut OPENFILENAMEW,
-    pub pszFile: ::windows::core::PWSTR,
+    pub pszFile: ::windows_core::PWSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -1828,14 +1828,14 @@ impl ::core::clone::Clone for OFNOTIFYW {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OFNOTIFYW {
+unsafe impl ::windows_core::Abi for OFNOTIFYW {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OFNOTIFYW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFNOTIFYW>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -1862,23 +1862,23 @@ pub struct OPENFILENAMEA {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows::core::PCSTR,
-    pub lpstrCustomFilter: ::windows::core::PSTR,
+    pub lpstrFilter: ::windows_core::PCSTR,
+    pub lpstrCustomFilter: ::windows_core::PSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows::core::PSTR,
+    pub lpstrFile: ::windows_core::PSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows::core::PSTR,
+    pub lpstrFileTitle: ::windows_core::PSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows::core::PCSTR,
-    pub lpstrTitle: ::windows::core::PCSTR,
+    pub lpstrInitialDir: ::windows_core::PCSTR,
+    pub lpstrTitle: ::windows_core::PCSTR,
     pub Flags: OPEN_FILENAME_FLAGS,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows::core::PCSTR,
+    pub lpstrDefExt: ::windows_core::PCSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCSTR,
+    pub lpTemplateName: ::windows_core::PCSTR,
     pub pvReserved: *mut ::core::ffi::c_void,
     pub dwReserved: u32,
     pub FlagsEx: OPEN_FILENAME_FLAGS_EX,
@@ -1895,14 +1895,14 @@ impl ::core::clone::Clone for OPENFILENAMEA {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OPENFILENAMEA {
+unsafe impl ::windows_core::Abi for OPENFILENAMEA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPENFILENAMEA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAMEA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAMEA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -1923,23 +1923,23 @@ pub struct OPENFILENAMEA {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows::core::PCSTR,
-    pub lpstrCustomFilter: ::windows::core::PSTR,
+    pub lpstrFilter: ::windows_core::PCSTR,
+    pub lpstrCustomFilter: ::windows_core::PSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows::core::PSTR,
+    pub lpstrFile: ::windows_core::PSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows::core::PSTR,
+    pub lpstrFileTitle: ::windows_core::PSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows::core::PCSTR,
-    pub lpstrTitle: ::windows::core::PCSTR,
+    pub lpstrInitialDir: ::windows_core::PCSTR,
+    pub lpstrTitle: ::windows_core::PCSTR,
     pub Flags: OPEN_FILENAME_FLAGS,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows::core::PCSTR,
+    pub lpstrDefExt: ::windows_core::PCSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCSTR,
+    pub lpTemplateName: ::windows_core::PCSTR,
     pub pvReserved: *mut ::core::ffi::c_void,
     pub dwReserved: u32,
     pub FlagsEx: OPEN_FILENAME_FLAGS_EX,
@@ -1956,14 +1956,14 @@ impl ::core::clone::Clone for OPENFILENAMEA {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OPENFILENAMEA {
+unsafe impl ::windows_core::Abi for OPENFILENAMEA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPENFILENAMEA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAMEA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAMEA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -1984,23 +1984,23 @@ pub struct OPENFILENAMEW {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows::core::PCWSTR,
-    pub lpstrCustomFilter: ::windows::core::PWSTR,
+    pub lpstrFilter: ::windows_core::PCWSTR,
+    pub lpstrCustomFilter: ::windows_core::PWSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows::core::PWSTR,
+    pub lpstrFile: ::windows_core::PWSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows::core::PWSTR,
+    pub lpstrFileTitle: ::windows_core::PWSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows::core::PCWSTR,
-    pub lpstrTitle: ::windows::core::PCWSTR,
+    pub lpstrInitialDir: ::windows_core::PCWSTR,
+    pub lpstrTitle: ::windows_core::PCWSTR,
     pub Flags: OPEN_FILENAME_FLAGS,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows::core::PCWSTR,
+    pub lpstrDefExt: ::windows_core::PCWSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCWSTR,
+    pub lpTemplateName: ::windows_core::PCWSTR,
     pub pvReserved: *mut ::core::ffi::c_void,
     pub dwReserved: u32,
     pub FlagsEx: OPEN_FILENAME_FLAGS_EX,
@@ -2017,14 +2017,14 @@ impl ::core::clone::Clone for OPENFILENAMEW {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OPENFILENAMEW {
+unsafe impl ::windows_core::Abi for OPENFILENAMEW {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPENFILENAMEW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAMEW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAMEW>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -2045,23 +2045,23 @@ pub struct OPENFILENAMEW {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows::core::PCWSTR,
-    pub lpstrCustomFilter: ::windows::core::PWSTR,
+    pub lpstrFilter: ::windows_core::PCWSTR,
+    pub lpstrCustomFilter: ::windows_core::PWSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows::core::PWSTR,
+    pub lpstrFile: ::windows_core::PWSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows::core::PWSTR,
+    pub lpstrFileTitle: ::windows_core::PWSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows::core::PCWSTR,
-    pub lpstrTitle: ::windows::core::PCWSTR,
+    pub lpstrInitialDir: ::windows_core::PCWSTR,
+    pub lpstrTitle: ::windows_core::PCWSTR,
     pub Flags: OPEN_FILENAME_FLAGS,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows::core::PCWSTR,
+    pub lpstrDefExt: ::windows_core::PCWSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCWSTR,
+    pub lpTemplateName: ::windows_core::PCWSTR,
     pub pvReserved: *mut ::core::ffi::c_void,
     pub dwReserved: u32,
     pub FlagsEx: OPEN_FILENAME_FLAGS_EX,
@@ -2078,14 +2078,14 @@ impl ::core::clone::Clone for OPENFILENAMEW {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OPENFILENAMEW {
+unsafe impl ::windows_core::Abi for OPENFILENAMEW {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPENFILENAMEW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAMEW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAMEW>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -2106,23 +2106,23 @@ pub struct OPENFILENAME_NT4A {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows::core::PCSTR,
-    pub lpstrCustomFilter: ::windows::core::PSTR,
+    pub lpstrFilter: ::windows_core::PCSTR,
+    pub lpstrCustomFilter: ::windows_core::PSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows::core::PSTR,
+    pub lpstrFile: ::windows_core::PSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows::core::PSTR,
+    pub lpstrFileTitle: ::windows_core::PSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows::core::PCSTR,
-    pub lpstrTitle: ::windows::core::PCSTR,
+    pub lpstrInitialDir: ::windows_core::PCSTR,
+    pub lpstrTitle: ::windows_core::PCSTR,
     pub Flags: u32,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows::core::PCSTR,
+    pub lpstrDefExt: ::windows_core::PCSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCSTR,
+    pub lpTemplateName: ::windows_core::PCSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -2136,14 +2136,14 @@ impl ::core::clone::Clone for OPENFILENAME_NT4A {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OPENFILENAME_NT4A {
+unsafe impl ::windows_core::Abi for OPENFILENAME_NT4A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPENFILENAME_NT4A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAME_NT4A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAME_NT4A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -2164,23 +2164,23 @@ pub struct OPENFILENAME_NT4A {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows::core::PCSTR,
-    pub lpstrCustomFilter: ::windows::core::PSTR,
+    pub lpstrFilter: ::windows_core::PCSTR,
+    pub lpstrCustomFilter: ::windows_core::PSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows::core::PSTR,
+    pub lpstrFile: ::windows_core::PSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows::core::PSTR,
+    pub lpstrFileTitle: ::windows_core::PSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows::core::PCSTR,
-    pub lpstrTitle: ::windows::core::PCSTR,
+    pub lpstrInitialDir: ::windows_core::PCSTR,
+    pub lpstrTitle: ::windows_core::PCSTR,
     pub Flags: u32,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows::core::PCSTR,
+    pub lpstrDefExt: ::windows_core::PCSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCSTR,
+    pub lpTemplateName: ::windows_core::PCSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -2194,14 +2194,14 @@ impl ::core::clone::Clone for OPENFILENAME_NT4A {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OPENFILENAME_NT4A {
+unsafe impl ::windows_core::Abi for OPENFILENAME_NT4A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPENFILENAME_NT4A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAME_NT4A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAME_NT4A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -2222,23 +2222,23 @@ pub struct OPENFILENAME_NT4W {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows::core::PCWSTR,
-    pub lpstrCustomFilter: ::windows::core::PWSTR,
+    pub lpstrFilter: ::windows_core::PCWSTR,
+    pub lpstrCustomFilter: ::windows_core::PWSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows::core::PWSTR,
+    pub lpstrFile: ::windows_core::PWSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows::core::PWSTR,
+    pub lpstrFileTitle: ::windows_core::PWSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows::core::PCWSTR,
-    pub lpstrTitle: ::windows::core::PCWSTR,
+    pub lpstrInitialDir: ::windows_core::PCWSTR,
+    pub lpstrTitle: ::windows_core::PCWSTR,
     pub Flags: u32,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows::core::PCWSTR,
+    pub lpstrDefExt: ::windows_core::PCWSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCWSTR,
+    pub lpTemplateName: ::windows_core::PCWSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -2252,14 +2252,14 @@ impl ::core::clone::Clone for OPENFILENAME_NT4W {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OPENFILENAME_NT4W {
+unsafe impl ::windows_core::Abi for OPENFILENAME_NT4W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPENFILENAME_NT4W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAME_NT4W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAME_NT4W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -2280,23 +2280,23 @@ pub struct OPENFILENAME_NT4W {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows::core::PCWSTR,
-    pub lpstrCustomFilter: ::windows::core::PWSTR,
+    pub lpstrFilter: ::windows_core::PCWSTR,
+    pub lpstrCustomFilter: ::windows_core::PWSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows::core::PWSTR,
+    pub lpstrFile: ::windows_core::PWSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows::core::PWSTR,
+    pub lpstrFileTitle: ::windows_core::PWSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows::core::PCWSTR,
-    pub lpstrTitle: ::windows::core::PCWSTR,
+    pub lpstrInitialDir: ::windows_core::PCWSTR,
+    pub lpstrTitle: ::windows_core::PCWSTR,
     pub Flags: u32,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows::core::PCWSTR,
+    pub lpstrDefExt: ::windows_core::PCWSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows::core::PCWSTR,
+    pub lpTemplateName: ::windows_core::PCWSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -2310,14 +2310,14 @@ impl ::core::clone::Clone for OPENFILENAME_NT4W {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OPENFILENAME_NT4W {
+unsafe impl ::windows_core::Abi for OPENFILENAME_NT4W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPENFILENAME_NT4W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAME_NT4W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPENFILENAME_NT4W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -2397,7 +2397,7 @@ impl ::core::default::Default for OPEN_FILENAME_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for OPEN_FILENAME_FLAGS {
+unsafe impl ::windows_core::Abi for OPEN_FILENAME_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for OPEN_FILENAME_FLAGS {
@@ -2452,7 +2452,7 @@ impl ::core::default::Default for OPEN_FILENAME_FLAGS_EX {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for OPEN_FILENAME_FLAGS_EX {
+unsafe impl ::windows_core::Abi for OPEN_FILENAME_FLAGS_EX {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for OPEN_FILENAME_FLAGS_EX {
@@ -2505,7 +2505,7 @@ pub struct PAGESETUPDLGA {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPageSetupHook: LPPAGESETUPHOOK,
     pub lpfnPagePaintHook: LPPAGEPAINTHOOK,
-    pub lpPageSetupTemplateName: ::windows::core::PCSTR,
+    pub lpPageSetupTemplateName: ::windows_core::PCSTR,
     pub hPageSetupTemplate: isize,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -2520,14 +2520,14 @@ impl ::core::clone::Clone for PAGESETUPDLGA {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PAGESETUPDLGA {
+unsafe impl ::windows_core::Abi for PAGESETUPDLGA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PAGESETUPDLGA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PAGESETUPDLGA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PAGESETUPDLGA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -2557,7 +2557,7 @@ pub struct PAGESETUPDLGA {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPageSetupHook: LPPAGESETUPHOOK,
     pub lpfnPagePaintHook: LPPAGEPAINTHOOK,
-    pub lpPageSetupTemplateName: ::windows::core::PCSTR,
+    pub lpPageSetupTemplateName: ::windows_core::PCSTR,
     pub hPageSetupTemplate: isize,
 }
 #[cfg(target_arch = "x86")]
@@ -2572,14 +2572,14 @@ impl ::core::clone::Clone for PAGESETUPDLGA {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PAGESETUPDLGA {
+unsafe impl ::windows_core::Abi for PAGESETUPDLGA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PAGESETUPDLGA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PAGESETUPDLGA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PAGESETUPDLGA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -2609,7 +2609,7 @@ pub struct PAGESETUPDLGW {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPageSetupHook: LPPAGESETUPHOOK,
     pub lpfnPagePaintHook: LPPAGEPAINTHOOK,
-    pub lpPageSetupTemplateName: ::windows::core::PCWSTR,
+    pub lpPageSetupTemplateName: ::windows_core::PCWSTR,
     pub hPageSetupTemplate: isize,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -2624,14 +2624,14 @@ impl ::core::clone::Clone for PAGESETUPDLGW {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PAGESETUPDLGW {
+unsafe impl ::windows_core::Abi for PAGESETUPDLGW {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PAGESETUPDLGW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PAGESETUPDLGW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PAGESETUPDLGW>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -2661,7 +2661,7 @@ pub struct PAGESETUPDLGW {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPageSetupHook: LPPAGESETUPHOOK,
     pub lpfnPagePaintHook: LPPAGEPAINTHOOK,
-    pub lpPageSetupTemplateName: ::windows::core::PCWSTR,
+    pub lpPageSetupTemplateName: ::windows_core::PCWSTR,
     pub hPageSetupTemplate: isize,
 }
 #[cfg(target_arch = "x86")]
@@ -2676,14 +2676,14 @@ impl ::core::clone::Clone for PAGESETUPDLGW {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PAGESETUPDLGW {
+unsafe impl ::windows_core::Abi for PAGESETUPDLGW {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PAGESETUPDLGW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PAGESETUPDLGW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PAGESETUPDLGW>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -2749,7 +2749,7 @@ impl ::core::default::Default for PAGESETUPDLG_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PAGESETUPDLG_FLAGS {
+unsafe impl ::windows_core::Abi for PAGESETUPDLG_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PAGESETUPDLG_FLAGS {
@@ -2811,8 +2811,8 @@ pub struct PRINTDLGA {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPrintHook: LPPRINTHOOKPROC,
     pub lpfnSetupHook: LPSETUPHOOKPROC,
-    pub lpPrintTemplateName: ::windows::core::PCSTR,
-    pub lpSetupTemplateName: ::windows::core::PCSTR,
+    pub lpPrintTemplateName: ::windows_core::PCSTR,
+    pub lpSetupTemplateName: ::windows_core::PCSTR,
     pub hPrintTemplate: isize,
     pub hSetupTemplate: isize,
 }
@@ -2828,14 +2828,14 @@ impl ::core::clone::Clone for PRINTDLGA {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for PRINTDLGA {
+unsafe impl ::windows_core::Abi for PRINTDLGA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for PRINTDLGA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTDLGA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTDLGA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -2868,8 +2868,8 @@ pub struct PRINTDLGA {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPrintHook: LPPRINTHOOKPROC,
     pub lpfnSetupHook: LPSETUPHOOKPROC,
-    pub lpPrintTemplateName: ::windows::core::PCSTR,
-    pub lpSetupTemplateName: ::windows::core::PCSTR,
+    pub lpPrintTemplateName: ::windows_core::PCSTR,
+    pub lpSetupTemplateName: ::windows_core::PCSTR,
     pub hPrintTemplate: isize,
     pub hSetupTemplate: isize,
 }
@@ -2885,14 +2885,14 @@ impl ::core::clone::Clone for PRINTDLGA {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for PRINTDLGA {
+unsafe impl ::windows_core::Abi for PRINTDLGA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for PRINTDLGA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTDLGA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTDLGA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -2925,8 +2925,8 @@ pub struct PRINTDLGEXA {
     pub nMaxPage: u32,
     pub nCopies: u32,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpPrintTemplateName: ::windows::core::PCSTR,
-    pub lpCallback: ::core::option::Option<::windows::core::IUnknown>,
+    pub lpPrintTemplateName: ::windows_core::PCSTR,
+    pub lpCallback: ::core::option::Option<::windows_core::IUnknown>,
     pub nPropertyPages: u32,
     pub lphPropertyPages: *mut super::HPROPSHEETPAGE,
     pub nStartPage: u32,
@@ -2963,7 +2963,7 @@ impl ::core::clone::Clone for PRINTDLGEXA {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for PRINTDLGEXA {
+unsafe impl ::windows_core::Abi for PRINTDLGEXA {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -3023,8 +3023,8 @@ pub struct PRINTDLGEXA {
     pub nMaxPage: u32,
     pub nCopies: u32,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpPrintTemplateName: ::windows::core::PCSTR,
-    pub lpCallback: ::core::option::Option<::windows::core::IUnknown>,
+    pub lpPrintTemplateName: ::windows_core::PCSTR,
+    pub lpCallback: ::core::option::Option<::windows_core::IUnknown>,
     pub nPropertyPages: u32,
     pub lphPropertyPages: *mut super::HPROPSHEETPAGE,
     pub nStartPage: u32,
@@ -3032,14 +3032,14 @@ pub struct PRINTDLGEXA {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for PRINTDLGEXA {
+unsafe impl ::windows_core::Abi for PRINTDLGEXA {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for PRINTDLGEXA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTDLGEXA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTDLGEXA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -3072,8 +3072,8 @@ pub struct PRINTDLGEXW {
     pub nMaxPage: u32,
     pub nCopies: u32,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpPrintTemplateName: ::windows::core::PCWSTR,
-    pub lpCallback: ::core::option::Option<::windows::core::IUnknown>,
+    pub lpPrintTemplateName: ::windows_core::PCWSTR,
+    pub lpCallback: ::core::option::Option<::windows_core::IUnknown>,
     pub nPropertyPages: u32,
     pub lphPropertyPages: *mut super::HPROPSHEETPAGE,
     pub nStartPage: u32,
@@ -3110,7 +3110,7 @@ impl ::core::clone::Clone for PRINTDLGEXW {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for PRINTDLGEXW {
+unsafe impl ::windows_core::Abi for PRINTDLGEXW {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -3170,8 +3170,8 @@ pub struct PRINTDLGEXW {
     pub nMaxPage: u32,
     pub nCopies: u32,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpPrintTemplateName: ::windows::core::PCWSTR,
-    pub lpCallback: ::core::option::Option<::windows::core::IUnknown>,
+    pub lpPrintTemplateName: ::windows_core::PCWSTR,
+    pub lpCallback: ::core::option::Option<::windows_core::IUnknown>,
     pub nPropertyPages: u32,
     pub lphPropertyPages: *mut super::HPROPSHEETPAGE,
     pub nStartPage: u32,
@@ -3179,14 +3179,14 @@ pub struct PRINTDLGEXW {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for PRINTDLGEXW {
+unsafe impl ::windows_core::Abi for PRINTDLGEXW {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for PRINTDLGEXW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTDLGEXW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTDLGEXW>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -3270,7 +3270,7 @@ impl ::core::default::Default for PRINTDLGEX_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PRINTDLGEX_FLAGS {
+unsafe impl ::windows_core::Abi for PRINTDLGEX_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PRINTDLGEX_FLAGS {
@@ -3326,8 +3326,8 @@ pub struct PRINTDLGW {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPrintHook: LPPRINTHOOKPROC,
     pub lpfnSetupHook: LPSETUPHOOKPROC,
-    pub lpPrintTemplateName: ::windows::core::PCWSTR,
-    pub lpSetupTemplateName: ::windows::core::PCWSTR,
+    pub lpPrintTemplateName: ::windows_core::PCWSTR,
+    pub lpSetupTemplateName: ::windows_core::PCWSTR,
     pub hPrintTemplate: isize,
     pub hSetupTemplate: isize,
 }
@@ -3343,14 +3343,14 @@ impl ::core::clone::Clone for PRINTDLGW {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for PRINTDLGW {
+unsafe impl ::windows_core::Abi for PRINTDLGW {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for PRINTDLGW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTDLGW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTDLGW>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -3383,8 +3383,8 @@ pub struct PRINTDLGW {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPrintHook: LPPRINTHOOKPROC,
     pub lpfnSetupHook: LPSETUPHOOKPROC,
-    pub lpPrintTemplateName: ::windows::core::PCWSTR,
-    pub lpSetupTemplateName: ::windows::core::PCWSTR,
+    pub lpPrintTemplateName: ::windows_core::PCWSTR,
+    pub lpSetupTemplateName: ::windows_core::PCWSTR,
     pub hPrintTemplate: isize,
     pub hSetupTemplate: isize,
 }
@@ -3400,14 +3400,14 @@ impl ::core::clone::Clone for PRINTDLGW {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for PRINTDLGW {
+unsafe impl ::windows_core::Abi for PRINTDLGW {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for PRINTDLGW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTDLGW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTDLGW>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -3436,13 +3436,13 @@ impl ::core::clone::Clone for PRINTPAGERANGE {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for PRINTPAGERANGE {
+unsafe impl ::windows_core::Abi for PRINTPAGERANGE {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for PRINTPAGERANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTPAGERANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTPAGERANGE>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -3469,13 +3469,13 @@ impl ::core::clone::Clone for PRINTPAGERANGE {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for PRINTPAGERANGE {
+unsafe impl ::windows_core::Abi for PRINTPAGERANGE {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for PRINTPAGERANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTPAGERANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTPAGERANGE>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -3536,12 +3536,12 @@ pub unsafe fn PrintDlgA(ppd: *mut PRINTDLGA) -> super::super::super::Foundation:
 #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn PrintDlgExA(ppd: *mut PRINTDLGEXA) -> ::windows::core::Result<()> {
+pub unsafe fn PrintDlgExA(ppd: *mut PRINTDLGEXA) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PrintDlgExA(ppd: *mut PRINTDLGEXA) -> ::windows::core::HRESULT;
+            fn PrintDlgExA(ppd: *mut PRINTDLGEXA) -> ::windows_core::HRESULT;
         }
         PrintDlgExA(::core::mem::transmute(ppd)).ok()
     }
@@ -3551,12 +3551,12 @@ pub unsafe fn PrintDlgExA(ppd: *mut PRINTDLGEXA) -> ::windows::core::Result<()> 
 #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn PrintDlgExW(ppd: *mut PRINTDLGEXW) -> ::windows::core::Result<()> {
+pub unsafe fn PrintDlgExW(ppd: *mut PRINTDLGEXW) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PrintDlgExW(ppd: *mut PRINTDLGEXW) -> ::windows::core::HRESULT;
+            fn PrintDlgExW(ppd: *mut PRINTDLGEXW) -> ::windows_core::HRESULT;
         }
         PrintDlgExW(::core::mem::transmute(ppd)).ok()
     }

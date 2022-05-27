@@ -17,7 +17,7 @@ fn types() {
     let _: u32 = CS_HREDRAW | CS_VREDRAW;
 
     // Constant
-    let _: windows_sys::core::HRESULT = E_FAIL;
+    let _: windows_sys_core::HRESULT = E_FAIL;
 
     // Constant
     let _: NTSTATUS = DBG_APP_NOT_IDLE;

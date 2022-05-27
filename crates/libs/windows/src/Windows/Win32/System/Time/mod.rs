@@ -27,13 +27,13 @@ impl ::core::fmt::Debug for DYNAMIC_TIME_ZONE_INFORMATION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DYNAMIC_TIME_ZONE_INFORMATION {
+unsafe impl ::windows_core::Abi for DYNAMIC_TIME_ZONE_INFORMATION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DYNAMIC_TIME_ZONE_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DYNAMIC_TIME_ZONE_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DYNAMIC_TIME_ZONE_INFORMATION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -266,13 +266,13 @@ impl ::core::fmt::Debug for TIME_ZONE_INFORMATION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TIME_ZONE_INFORMATION {
+unsafe impl ::windows_core::Abi for TIME_ZONE_INFORMATION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TIME_ZONE_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TIME_ZONE_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TIME_ZONE_INFORMATION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]

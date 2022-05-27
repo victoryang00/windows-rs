@@ -1,0 +1,37 @@
+
+#![allow(non_snake_case, non_upper_case_globals, non_camel_case_types)]
+#![no_std]
+#[cfg(feature = "Accessibility")]
+pub mod Accessibility;
+#[cfg(feature = "Animation")]
+pub mod Animation;
+#[cfg(feature = "ColorSystem")]
+pub mod ColorSystem;
+#[cfg(feature = "Controls")]
+pub mod Controls;
+#[cfg(feature = "HiDpi")]
+pub mod HiDpi;
+#[cfg(feature = "Input")]
+pub mod Input;
+#[cfg(feature = "InteractionContext")]
+pub mod InteractionContext;
+#[cfg(feature = "LegacyWindowsEnvironmentFeatures")]
+pub mod LegacyWindowsEnvironmentFeatures;
+#[cfg(feature = "Magnification")]
+pub mod Magnification;
+#[cfg(feature = "Notifications")]
+pub mod Notifications;
+#[cfg(feature = "Ribbon")]
+pub mod Ribbon;
+#[cfg(feature = "Shell")]
+pub mod Shell;
+#[cfg(feature = "TabletPC")]
+pub mod TabletPC;
+#[cfg(feature = "TextServices")]
+pub mod TextServices;
+#[cfg(feature = "WindowsAndMessaging")]
+pub mod WindowsAndMessaging;
+#[cfg(feature = "Wpf")]
+pub mod Wpf;
+#[cfg(feature = "Xaml")]
+pub mod Xaml;

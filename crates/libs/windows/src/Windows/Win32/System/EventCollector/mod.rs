@@ -29,7 +29,7 @@ impl ::core::default::Default for EC_SUBSCRIPTION_CONFIGURATION_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EC_SUBSCRIPTION_CONFIGURATION_MODE {
+unsafe impl ::windows_core::Abi for EC_SUBSCRIPTION_CONFIGURATION_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EC_SUBSCRIPTION_CONFIGURATION_MODE {
@@ -56,7 +56,7 @@ impl ::core::default::Default for EC_SUBSCRIPTION_CONTENT_FORMAT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EC_SUBSCRIPTION_CONTENT_FORMAT {
+unsafe impl ::windows_core::Abi for EC_SUBSCRIPTION_CONTENT_FORMAT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EC_SUBSCRIPTION_CONTENT_FORMAT {
@@ -89,7 +89,7 @@ impl ::core::default::Default for EC_SUBSCRIPTION_CREDENTIALS_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EC_SUBSCRIPTION_CREDENTIALS_TYPE {
+unsafe impl ::windows_core::Abi for EC_SUBSCRIPTION_CREDENTIALS_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EC_SUBSCRIPTION_CREDENTIALS_TYPE {
@@ -116,7 +116,7 @@ impl ::core::default::Default for EC_SUBSCRIPTION_DELIVERY_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EC_SUBSCRIPTION_DELIVERY_MODE {
+unsafe impl ::windows_core::Abi for EC_SUBSCRIPTION_DELIVERY_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EC_SUBSCRIPTION_DELIVERY_MODE {
@@ -205,7 +205,7 @@ impl ::core::default::Default for EC_SUBSCRIPTION_PROPERTY_ID {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EC_SUBSCRIPTION_PROPERTY_ID {
+unsafe impl ::windows_core::Abi for EC_SUBSCRIPTION_PROPERTY_ID {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EC_SUBSCRIPTION_PROPERTY_ID {
@@ -236,7 +236,7 @@ impl ::core::default::Default for EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS {
+unsafe impl ::windows_core::Abi for EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS {
@@ -275,7 +275,7 @@ impl ::core::default::Default for EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID {
+unsafe impl ::windows_core::Abi for EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID {
@@ -302,7 +302,7 @@ impl ::core::default::Default for EC_SUBSCRIPTION_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EC_SUBSCRIPTION_TYPE {
+unsafe impl ::windows_core::Abi for EC_SUBSCRIPTION_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EC_SUBSCRIPTION_TYPE {
@@ -327,13 +327,13 @@ impl ::core::clone::Clone for EC_VARIANT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EC_VARIANT {
+unsafe impl ::windows_core::Abi for EC_VARIANT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EC_VARIANT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EC_VARIANT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EC_VARIANT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -351,11 +351,11 @@ pub union EC_VARIANT_0 {
     pub BooleanVal: super::super::Foundation::BOOL,
     pub UInt32Val: u32,
     pub DateTimeVal: u64,
-    pub StringVal: ::windows::core::PCWSTR,
+    pub StringVal: ::windows_core::PCWSTR,
     pub BinaryVal: *mut u8,
     pub BooleanArr: *mut super::super::Foundation::BOOL,
     pub Int32Arr: *mut i32,
-    pub StringArr: *mut ::windows::core::PWSTR,
+    pub StringArr: *mut ::windows_core::PWSTR,
     pub PropertyHandleVal: isize,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -367,13 +367,13 @@ impl ::core::clone::Clone for EC_VARIANT_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EC_VARIANT_0 {
+unsafe impl ::windows_core::Abi for EC_VARIANT_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EC_VARIANT_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EC_VARIANT_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EC_VARIANT_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -411,7 +411,7 @@ impl ::core::default::Default for EC_VARIANT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EC_VARIANT_TYPE {
+unsafe impl ::windows_core::Abi for EC_VARIANT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EC_VARIANT_TYPE {
@@ -443,12 +443,12 @@ pub unsafe fn EcClose(object: isize) -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_System_EventCollector\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcDeleteSubscription<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(subscriptionname: Param0, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EcDeleteSubscription<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(subscriptionname: Param0, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcDeleteSubscription(subscriptionname: ::windows::core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
+            fn EcDeleteSubscription(subscriptionname: ::windows_core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EcDeleteSubscription(subscriptionname.into_param().abi(), ::core::mem::transmute(flags)))
     }
@@ -463,9 +463,9 @@ pub unsafe fn EcEnumNextSubscription(subscriptionenum: isize, subscriptionnamebu
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcEnumNextSubscription(subscriptionenum: isize, subscriptionnamebuffersize: u32, subscriptionnamebuffer: ::windows::core::PWSTR, subscriptionnamebufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EcEnumNextSubscription(subscriptionenum: isize, subscriptionnamebuffersize: u32, subscriptionnamebuffer: ::windows_core::PWSTR, subscriptionnamebufferused: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(EcEnumNextSubscription(::core::mem::transmute(subscriptionenum), subscriptionnamebuffer.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(subscriptionnamebuffer)), ::core::mem::transmute(subscriptionnamebufferused)))
+        ::core::mem::transmute(EcEnumNextSubscription(::core::mem::transmute(subscriptionenum), subscriptionnamebuffer.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(subscriptionnamebuffer)), ::core::mem::transmute(subscriptionnamebufferused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -518,12 +518,12 @@ pub unsafe fn EcGetSubscriptionProperty(subscription: isize, propertyid: EC_SUBS
 #[doc = "*Required features: `\"Win32_System_EventCollector\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcGetSubscriptionRunTimeStatus<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(subscriptionname: Param0, statusinfoid: EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID, eventsourcename: Param2, flags: u32, statusvaluebuffersize: u32, statusvaluebuffer: *mut EC_VARIANT, statusvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EcGetSubscriptionRunTimeStatus<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(subscriptionname: Param0, statusinfoid: EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID, eventsourcename: Param2, flags: u32, statusvaluebuffersize: u32, statusvaluebuffer: *mut EC_VARIANT, statusvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcGetSubscriptionRunTimeStatus(subscriptionname: ::windows::core::PCWSTR, statusinfoid: EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID, eventsourcename: ::windows::core::PCWSTR, flags: u32, statusvaluebuffersize: u32, statusvaluebuffer: *mut EC_VARIANT, statusvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EcGetSubscriptionRunTimeStatus(subscriptionname: ::windows_core::PCWSTR, statusinfoid: EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID, eventsourcename: ::windows_core::PCWSTR, flags: u32, statusvaluebuffersize: u32, statusvaluebuffer: *mut EC_VARIANT, statusvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EcGetSubscriptionRunTimeStatus(subscriptionname.into_param().abi(), ::core::mem::transmute(statusinfoid), eventsourcename.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(statusvaluebuffersize), ::core::mem::transmute(statusvaluebuffer), ::core::mem::transmute(statusvaluebufferused)))
     }
@@ -547,12 +547,12 @@ pub unsafe fn EcInsertObjectArrayElement(objectarray: isize, arrayindex: u32) ->
 }
 #[doc = "*Required features: `\"Win32_System_EventCollector\"`*"]
 #[inline]
-pub unsafe fn EcOpenSubscription<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(subscriptionname: Param0, accessmask: u32, flags: u32) -> isize {
+pub unsafe fn EcOpenSubscription<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(subscriptionname: Param0, accessmask: u32, flags: u32) -> isize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcOpenSubscription(subscriptionname: ::windows::core::PCWSTR, accessmask: u32, flags: u32) -> isize;
+            fn EcOpenSubscription(subscriptionname: ::windows_core::PCWSTR, accessmask: u32, flags: u32) -> isize;
         }
         ::core::mem::transmute(EcOpenSubscription(subscriptionname.into_param().abi(), ::core::mem::transmute(accessmask), ::core::mem::transmute(flags)))
     }
@@ -591,12 +591,12 @@ pub unsafe fn EcRemoveObjectArrayElement(objectarray: isize, arrayindex: u32) ->
 #[doc = "*Required features: `\"Win32_System_EventCollector\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcRetrySubscription<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(subscriptionname: Param0, eventsourcename: Param1, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EcRetrySubscription<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(subscriptionname: Param0, eventsourcename: Param1, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcRetrySubscription(subscriptionname: ::windows::core::PCWSTR, eventsourcename: ::windows::core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
+            fn EcRetrySubscription(subscriptionname: ::windows_core::PCWSTR, eventsourcename: ::windows_core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EcRetrySubscription(subscriptionname.into_param().abi(), eventsourcename.into_param().abi(), ::core::mem::transmute(flags)))
     }

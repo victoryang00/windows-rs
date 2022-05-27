@@ -1,14 +1,14 @@
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[inline]
-pub unsafe fn DMLCreateDevice<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Graphics::Direct3D12::ID3D12Device>, T: ::windows::core::Interface>(d3d12device: Param0, flags: DML_CREATE_DEVICE_FLAGS, result__: *mut ::core::option::Option<T>) -> ::windows::core::Result<()> {
+pub unsafe fn DMLCreateDevice<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Direct3D12::ID3D12Device>, T: ::windows_core::Interface>(d3d12device: Param0, flags: DML_CREATE_DEVICE_FLAGS, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DMLCreateDevice(d3d12device: ::windows::core::RawPtr, flags: DML_CREATE_DEVICE_FLAGS, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn DMLCreateDevice(d3d12device: ::windows_core::RawPtr, flags: DML_CREATE_DEVICE_FLAGS, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
-        DMLCreateDevice(d3d12device.into_param().abi(), ::core::mem::transmute(flags), &<T as ::windows::core::Interface>::IID, result__ as *mut _ as *mut _).ok()
+        DMLCreateDevice(d3d12device.into_param().abi(), ::core::mem::transmute(flags), &<T as ::windows_core::Interface>::IID, result__ as *mut _ as *mut _).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16,14 +16,14 @@ pub unsafe fn DMLCreateDevice<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[inline]
-pub unsafe fn DMLCreateDevice1<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Graphics::Direct3D12::ID3D12Device>, T: ::windows::core::Interface>(d3d12device: Param0, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, result__: *mut ::core::option::Option<T>) -> ::windows::core::Result<()> {
+pub unsafe fn DMLCreateDevice1<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Direct3D12::ID3D12Device>, T: ::windows_core::Interface>(d3d12device: Param0, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DMLCreateDevice1(d3d12device: ::windows::core::RawPtr, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn DMLCreateDevice1(d3d12device: ::windows_core::RawPtr, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
-        DMLCreateDevice1(d3d12device.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(minimumfeaturelevel), &<T as ::windows::core::Interface>::IID, result__ as *mut _ as *mut _).ok()
+        DMLCreateDevice1(d3d12device.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(minimumfeaturelevel), &<T as ::windows_core::Interface>::IID, result__ as *mut _ as *mut _).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -46,12 +46,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_CELU_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_CELU_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Alpha", &self.Alpha).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_CELU_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_CELU_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_CELU_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_CELU_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_CELU_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_CELU_OPERATOR_DESC {}
@@ -78,12 +78,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_ELU_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_ELU_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Alpha", &self.Alpha).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_ELU_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_ELU_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_ELU_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_ELU_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_ELU_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_ELU_OPERATOR_DESC {}
@@ -109,12 +109,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_HARDMAX_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_HARDMAX_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_HARDMAX_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_HARDMAX_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_HARDMAX_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_HARDMAX_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_HARDMAX_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_HARDMAX_OPERATOR_DESC {}
@@ -142,12 +142,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Alpha", &self.Alpha).field("Beta", &self.Beta).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC {}
@@ -173,12 +173,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_IDENTITY_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_IDENTITY_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_IDENTITY_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_IDENTITY_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_IDENTITY_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_IDENTITY_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_IDENTITY_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_IDENTITY_OPERATOR_DESC {}
@@ -205,12 +205,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Alpha", &self.Alpha).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC {}
@@ -238,12 +238,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_LINEAR_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_LINEAR_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Alpha", &self.Alpha).field("Beta", &self.Beta).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_LINEAR_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_LINEAR_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_LINEAR_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_LINEAR_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_LINEAR_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_LINEAR_OPERATOR_DESC {}
@@ -269,12 +269,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC {}
@@ -301,12 +301,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("SlopeTensor", &self.SlopeTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC {}
@@ -334,12 +334,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Alpha", &self.Alpha).field("Beta", &self.Beta).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC {}
@@ -366,12 +366,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("InputGradientTensor", &self.InputGradientTensor).field("OutputGradientTensor", &self.OutputGradientTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC {}
@@ -397,12 +397,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_RELU_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_RELU_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_RELU_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_RELU_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_RELU_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_RELU_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_RELU_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_RELU_OPERATOR_DESC {}
@@ -430,12 +430,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Alpha", &self.Alpha).field("Gamma", &self.Gamma).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC {}
@@ -463,12 +463,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Alpha", &self.Alpha).field("Beta", &self.Beta).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC {}
@@ -496,12 +496,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_SHRINK_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_SHRINK_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Bias", &self.Bias).field("Threshold", &self.Threshold).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_SHRINK_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_SHRINK_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_SHRINK_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SHRINK_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SHRINK_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_SHRINK_OPERATOR_DESC {}
@@ -527,12 +527,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_SIGMOID_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_SIGMOID_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_SIGMOID_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_SIGMOID_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_SIGMOID_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SIGMOID_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SIGMOID_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_SIGMOID_OPERATOR_DESC {}
@@ -558,12 +558,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_SOFTMAX_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_SOFTMAX_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_SOFTMAX_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_SOFTMAX_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_SOFTMAX_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SOFTMAX_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SOFTMAX_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_SOFTMAX_OPERATOR_DESC {}
@@ -590,12 +590,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Steepness", &self.Steepness).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC {}
@@ -621,12 +621,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC {}
@@ -652,12 +652,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_TANH_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_TANH_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_TANH_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_TANH_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_TANH_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_TANH_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_TANH_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_TANH_OPERATOR_DESC {}
@@ -684,12 +684,12 @@ impl ::core::fmt::Debug for DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC {
         f.debug_struct("DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Alpha", &self.Alpha).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC {}
@@ -738,12 +738,12 @@ impl ::core::fmt::Debug for DML_ADAM_OPTIMIZER_OPERATOR_DESC {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ADAM_OPTIMIZER_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ADAM_OPTIMIZER_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ADAM_OPTIMIZER_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ADAM_OPTIMIZER_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ADAM_OPTIMIZER_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ADAM_OPTIMIZER_OPERATOR_DESC {}
@@ -772,12 +772,12 @@ impl ::core::fmt::Debug for DML_ARGMAX_OPERATOR_DESC {
         f.debug_struct("DML_ARGMAX_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("AxisCount", &self.AxisCount).field("Axes", &self.Axes).field("AxisDirection", &self.AxisDirection).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ARGMAX_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ARGMAX_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ARGMAX_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ARGMAX_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ARGMAX_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ARGMAX_OPERATOR_DESC {}
@@ -806,12 +806,12 @@ impl ::core::fmt::Debug for DML_ARGMIN_OPERATOR_DESC {
         f.debug_struct("DML_ARGMIN_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("AxisCount", &self.AxisCount).field("Axes", &self.Axes).field("AxisDirection", &self.AxisDirection).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ARGMIN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ARGMIN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ARGMIN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ARGMIN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ARGMIN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ARGMIN_OPERATOR_DESC {}
@@ -848,13 +848,13 @@ impl ::core::fmt::Debug for DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -893,13 +893,13 @@ impl ::core::fmt::Debug for DML_AVERAGE_POOLING_OPERATOR_DESC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DML_AVERAGE_POOLING_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_AVERAGE_POOLING_OPERATOR_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_AVERAGE_POOLING_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_AVERAGE_POOLING_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_AVERAGE_POOLING_OPERATOR_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -929,7 +929,7 @@ impl ::core::default::Default for DML_AXIS_DIRECTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_AXIS_DIRECTION {
+unsafe impl ::windows_core::Abi for DML_AXIS_DIRECTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_AXIS_DIRECTION {
@@ -971,12 +971,12 @@ impl ::core::fmt::Debug for DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC {}
@@ -1014,13 +1014,13 @@ impl ::core::fmt::Debug for DML_BATCH_NORMALIZATION_OPERATOR_DESC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DML_BATCH_NORMALIZATION_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_BATCH_NORMALIZATION_OPERATOR_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_BATCH_NORMALIZATION_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BATCH_NORMALIZATION_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BATCH_NORMALIZATION_OPERATOR_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1048,12 +1048,12 @@ impl ::core::fmt::Debug for DML_BINDING_DESC {
         f.debug_struct("DML_BINDING_DESC").field("Type", &self.Type).field("Desc", &self.Desc).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_BINDING_DESC {
+unsafe impl ::windows_core::Abi for DML_BINDING_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_BINDING_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BINDING_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BINDING_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_BINDING_DESC {}
@@ -1080,12 +1080,12 @@ impl ::core::fmt::Debug for DML_BINDING_PROPERTIES {
         f.debug_struct("DML_BINDING_PROPERTIES").field("RequiredDescriptorCount", &self.RequiredDescriptorCount).field("TemporaryResourceSize", &self.TemporaryResourceSize).field("PersistentResourceSize", &self.PersistentResourceSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_BINDING_PROPERTIES {
+unsafe impl ::windows_core::Abi for DML_BINDING_PROPERTIES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_BINDING_PROPERTIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BINDING_PROPERTIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BINDING_PROPERTIES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_BINDING_PROPERTIES {}
@@ -1121,7 +1121,7 @@ impl ::core::fmt::Debug for DML_BINDING_TABLE_DESC {
     }
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
-unsafe impl ::windows::core::Abi for DML_BINDING_TABLE_DESC {
+unsafe impl ::windows_core::Abi for DML_BINDING_TABLE_DESC {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
@@ -1159,7 +1159,7 @@ impl ::core::default::Default for DML_BINDING_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_BINDING_TYPE {
+unsafe impl ::windows_core::Abi for DML_BINDING_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_BINDING_TYPE {
@@ -1189,13 +1189,13 @@ impl ::core::fmt::Debug for DML_BUFFER_ARRAY_BINDING {
     }
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
-unsafe impl ::windows::core::Abi for DML_BUFFER_ARRAY_BINDING {
+unsafe impl ::windows_core::Abi for DML_BUFFER_ARRAY_BINDING {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 impl ::core::cmp::PartialEq for DML_BUFFER_ARRAY_BINDING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BUFFER_ARRAY_BINDING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BUFFER_ARRAY_BINDING>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
@@ -1227,7 +1227,7 @@ impl ::core::fmt::Debug for DML_BUFFER_BINDING {
     }
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
-unsafe impl ::windows::core::Abi for DML_BUFFER_BINDING {
+unsafe impl ::windows_core::Abi for DML_BUFFER_BINDING {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
@@ -1266,12 +1266,12 @@ impl ::core::fmt::Debug for DML_BUFFER_TENSOR_DESC {
         f.debug_struct("DML_BUFFER_TENSOR_DESC").field("DataType", &self.DataType).field("Flags", &self.Flags).field("DimensionCount", &self.DimensionCount).field("Sizes", &self.Sizes).field("Strides", &self.Strides).field("TotalTensorSizeInBytes", &self.TotalTensorSizeInBytes).field("GuaranteedBaseOffsetAlignment", &self.GuaranteedBaseOffsetAlignment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_BUFFER_TENSOR_DESC {
+unsafe impl ::windows_core::Abi for DML_BUFFER_TENSOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_BUFFER_TENSOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BUFFER_TENSOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BUFFER_TENSOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_BUFFER_TENSOR_DESC {}
@@ -1297,12 +1297,12 @@ impl ::core::fmt::Debug for DML_CAST_OPERATOR_DESC {
         f.debug_struct("DML_CAST_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_CAST_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_CAST_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_CAST_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_CAST_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_CAST_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_CAST_OPERATOR_DESC {}
@@ -1330,7 +1330,7 @@ impl ::core::default::Default for DML_CONVOLUTION_DIRECTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_CONVOLUTION_DIRECTION {
+unsafe impl ::windows_core::Abi for DML_CONVOLUTION_DIRECTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_CONVOLUTION_DIRECTION {
@@ -1376,12 +1376,12 @@ impl ::core::fmt::Debug for DML_CONVOLUTION_INTEGER_OPERATOR_DESC {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_CONVOLUTION_INTEGER_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_CONVOLUTION_INTEGER_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_CONVOLUTION_INTEGER_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_CONVOLUTION_INTEGER_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_CONVOLUTION_INTEGER_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_CONVOLUTION_INTEGER_OPERATOR_DESC {}
@@ -1409,7 +1409,7 @@ impl ::core::default::Default for DML_CONVOLUTION_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_CONVOLUTION_MODE {
+unsafe impl ::windows_core::Abi for DML_CONVOLUTION_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_CONVOLUTION_MODE {
@@ -1461,12 +1461,12 @@ impl ::core::fmt::Debug for DML_CONVOLUTION_OPERATOR_DESC {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_CONVOLUTION_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_CONVOLUTION_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_CONVOLUTION_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_CONVOLUTION_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_CONVOLUTION_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_CONVOLUTION_OPERATOR_DESC {}
@@ -1494,7 +1494,7 @@ impl ::core::default::Default for DML_CREATE_DEVICE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_CREATE_DEVICE_FLAGS {
+unsafe impl ::windows_core::Abi for DML_CREATE_DEVICE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_CREATE_DEVICE_FLAGS {
@@ -1555,13 +1555,13 @@ impl ::core::fmt::Debug for DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_CUMULATIVE_PRODUCT_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_CUMULATIVE_PRODUCT_OPERATOR_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1597,13 +1597,13 @@ impl ::core::fmt::Debug for DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_CUMULATIVE_SUMMATION_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_CUMULATIVE_SUMMATION_OPERATOR_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1633,7 +1633,7 @@ impl ::core::default::Default for DML_DEPTH_SPACE_ORDER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_DEPTH_SPACE_ORDER {
+unsafe impl ::windows_core::Abi for DML_DEPTH_SPACE_ORDER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_DEPTH_SPACE_ORDER {
@@ -1660,12 +1660,12 @@ impl ::core::fmt::Debug for DML_DEPTH_TO_SPACE1_OPERATOR_DESC {
         f.debug_struct("DML_DEPTH_TO_SPACE1_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("BlockSize", &self.BlockSize).field("Order", &self.Order).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_DEPTH_TO_SPACE1_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_DEPTH_TO_SPACE1_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_DEPTH_TO_SPACE1_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_DEPTH_TO_SPACE1_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_DEPTH_TO_SPACE1_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_DEPTH_TO_SPACE1_OPERATOR_DESC {}
@@ -1692,12 +1692,12 @@ impl ::core::fmt::Debug for DML_DEPTH_TO_SPACE_OPERATOR_DESC {
         f.debug_struct("DML_DEPTH_TO_SPACE_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("BlockSize", &self.BlockSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_DEPTH_TO_SPACE_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_DEPTH_TO_SPACE_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_DEPTH_TO_SPACE_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_DEPTH_TO_SPACE_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_DEPTH_TO_SPACE_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_DEPTH_TO_SPACE_OPERATOR_DESC {}
@@ -1724,12 +1724,12 @@ impl ::core::fmt::Debug for DML_DIAGONAL_MATRIX_OPERATOR_DESC {
         f.debug_struct("DML_DIAGONAL_MATRIX_OPERATOR_DESC").field("OutputTensor", &self.OutputTensor).field("Offset", &self.Offset).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_DIAGONAL_MATRIX_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_DIAGONAL_MATRIX_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_DIAGONAL_MATRIX_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_DIAGONAL_MATRIX_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_DIAGONAL_MATRIX_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_DIAGONAL_MATRIX_OPERATOR_DESC {}
@@ -1757,12 +1757,12 @@ impl ::core::fmt::Debug for DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC {
         f.debug_struct("DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("OutputScaleTensor", &self.OutputScaleTensor).field("OutputZeroPointTensor", &self.OutputZeroPointTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC {}
@@ -1789,12 +1789,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_ABS_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_ABS_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_ABS_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_ABS_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_ABS_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ABS_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ABS_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_ABS_OPERATOR_DESC {}
@@ -1821,12 +1821,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC {}
@@ -1853,12 +1853,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_ACOS_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_ACOS_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_ACOS_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_ACOS_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_ACOS_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ACOS_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ACOS_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_ACOS_OPERATOR_DESC {}
@@ -1886,12 +1886,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_ADD1_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_ADD1_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).field("FusedActivation", &self.FusedActivation).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_ADD1_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_ADD1_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_ADD1_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ADD1_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ADD1_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_ADD1_OPERATOR_DESC {}
@@ -1918,12 +1918,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_ADD_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_ADD_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_ADD_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_ADD_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_ADD_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ADD_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ADD_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_ADD_OPERATOR_DESC {}
@@ -1950,12 +1950,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_ASINH_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_ASINH_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_ASINH_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_ASINH_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_ASINH_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ASINH_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ASINH_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_ASINH_OPERATOR_DESC {}
@@ -1982,12 +1982,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_ASIN_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_ASIN_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_ASIN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_ASIN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_ASIN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ASIN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ASIN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_ASIN_OPERATOR_DESC {}
@@ -2014,12 +2014,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_ATANH_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_ATANH_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_ATANH_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_ATANH_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_ATANH_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ATANH_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ATANH_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_ATANH_OPERATOR_DESC {}
@@ -2046,12 +2046,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_ATAN_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_ATAN_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_ATAN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_ATAN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_ATAN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ATAN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ATAN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_ATAN_OPERATOR_DESC {}
@@ -2078,12 +2078,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_ATAN_YX_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_ATAN_YX_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_ATAN_YX_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_ATAN_YX_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_ATAN_YX_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ATAN_YX_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ATAN_YX_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_ATAN_YX_OPERATOR_DESC {}
@@ -2110,12 +2110,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_BIT_AND_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_BIT_AND_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_BIT_AND_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_BIT_AND_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_BIT_AND_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_AND_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_AND_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_BIT_AND_OPERATOR_DESC {}
@@ -2141,12 +2141,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_BIT_COUNT_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_BIT_COUNT_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_BIT_COUNT_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_BIT_COUNT_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_BIT_COUNT_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_COUNT_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_COUNT_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_BIT_COUNT_OPERATOR_DESC {}
@@ -2172,12 +2172,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC {}
@@ -2204,12 +2204,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC {}
@@ -2236,12 +2236,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_BIT_SHIFT_LEFT_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_BIT_SHIFT_LEFT_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_BIT_SHIFT_LEFT_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_BIT_SHIFT_LEFT_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_BIT_SHIFT_LEFT_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_SHIFT_LEFT_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_SHIFT_LEFT_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_BIT_SHIFT_LEFT_OPERATOR_DESC {}
@@ -2268,12 +2268,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_BIT_SHIFT_RIGHT_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_BIT_SHIFT_RIGHT_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_BIT_SHIFT_RIGHT_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_BIT_SHIFT_RIGHT_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_BIT_SHIFT_RIGHT_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_SHIFT_RIGHT_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_SHIFT_RIGHT_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_BIT_SHIFT_RIGHT_OPERATOR_DESC {}
@@ -2300,12 +2300,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_BIT_XOR_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_BIT_XOR_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_BIT_XOR_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_BIT_XOR_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_BIT_XOR_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_XOR_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_BIT_XOR_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_BIT_XOR_OPERATOR_DESC {}
@@ -2332,12 +2332,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_CEIL_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_CEIL_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_CEIL_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_CEIL_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_CEIL_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_CEIL_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_CEIL_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_CEIL_OPERATOR_DESC {}
@@ -2366,12 +2366,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("InputGradientTensor", &self.InputGradientTensor).field("OutputGradientTensor", &self.OutputGradientTensor).field("Min", &self.Min).field("Max", &self.Max).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC {}
@@ -2400,12 +2400,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_CLIP_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_CLIP_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).field("Min", &self.Min).field("Max", &self.Max).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_CLIP_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_CLIP_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_CLIP_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_CLIP_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_CLIP_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_CLIP_OPERATOR_DESC {}
@@ -2433,12 +2433,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).field("Exponent", &self.Exponent).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC {}
@@ -2465,12 +2465,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_COSH_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_COSH_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_COSH_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_COSH_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_COSH_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_COSH_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_COSH_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_COSH_OPERATOR_DESC {}
@@ -2497,12 +2497,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_COS_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_COS_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_COS_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_COS_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_COS_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_COS_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_COS_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_COS_OPERATOR_DESC {}
@@ -2530,12 +2530,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("ScaleTensor", &self.ScaleTensor).field("ZeroPointTensor", &self.ZeroPointTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC {}
@@ -2562,12 +2562,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_DIFFERENCE_SQUARE_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_DIFFERENCE_SQUARE_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_DIFFERENCE_SQUARE_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_DIFFERENCE_SQUARE_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_DIFFERENCE_SQUARE_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_DIFFERENCE_SQUARE_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_DIFFERENCE_SQUARE_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_DIFFERENCE_SQUARE_OPERATOR_DESC {}
@@ -2594,12 +2594,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC {}
@@ -2626,12 +2626,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_ERF_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_ERF_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_ERF_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_ERF_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_ERF_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ERF_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ERF_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_ERF_OPERATOR_DESC {}
@@ -2658,12 +2658,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_EXP_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_EXP_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_EXP_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_EXP_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_EXP_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_EXP_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_EXP_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_EXP_OPERATOR_DESC {}
@@ -2690,12 +2690,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC {}
@@ -2722,12 +2722,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC {}
@@ -2755,12 +2755,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_IF_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_IF_OPERATOR_DESC").field("ConditionTensor", &self.ConditionTensor).field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_IF_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_IF_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_IF_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_IF_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_IF_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_IF_OPERATOR_DESC {}
@@ -2787,12 +2787,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("InfinityMode", &self.InfinityMode).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC {}
@@ -2818,12 +2818,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC {}
@@ -2850,12 +2850,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC {}
@@ -2882,12 +2882,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC {}
@@ -2914,12 +2914,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC 
         f.debug_struct("DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC {}
@@ -2946,12 +2946,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OR_EQUAL_OPERA
         f.debug_struct("DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OR_EQUAL_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OR_EQUAL_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OR_EQUAL_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OR_EQUAL_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OR_EQUAL_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OR_EQUAL_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OR_EQUAL_OPERATOR_DESC {}
@@ -2978,12 +2978,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC {}
@@ -3010,12 +3010,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OR_EQUAL_OPERATOR
         f.debug_struct("DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OR_EQUAL_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OR_EQUAL_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OR_EQUAL_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OR_EQUAL_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OR_EQUAL_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OR_EQUAL_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OR_EQUAL_OPERATOR_DESC {}
@@ -3041,12 +3041,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC {}
@@ -3073,12 +3073,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC {}
@@ -3105,12 +3105,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC {}
@@ -3137,12 +3137,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_LOG_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_LOG_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_LOG_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_LOG_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_LOG_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOG_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_LOG_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_LOG_OPERATOR_DESC {}
@@ -3169,12 +3169,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_MAX_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_MAX_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_MAX_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_MAX_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_MAX_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_MAX_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_MAX_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_MAX_OPERATOR_DESC {}
@@ -3201,12 +3201,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_MEAN_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_MEAN_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_MEAN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_MEAN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_MEAN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_MEAN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_MEAN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_MEAN_OPERATOR_DESC {}
@@ -3233,12 +3233,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_MIN_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_MIN_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_MIN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_MIN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_MIN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_MIN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_MIN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_MIN_OPERATOR_DESC {}
@@ -3265,12 +3265,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_MODULUS_FLOOR_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_MODULUS_FLOOR_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_MODULUS_FLOOR_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_MODULUS_FLOOR_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_MODULUS_FLOOR_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_MODULUS_FLOOR_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_MODULUS_FLOOR_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_MODULUS_FLOOR_OPERATOR_DESC {}
@@ -3297,12 +3297,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC {}
@@ -3329,12 +3329,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC {}
@@ -3362,12 +3362,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_POW_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_POW_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("ExponentTensor", &self.ExponentTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_POW_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_POW_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_POW_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_POW_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_POW_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_POW_OPERATOR_DESC {}
@@ -3400,12 +3400,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_QUANTIZED_LINEAR_ADD_OPERATOR_DESC 
         f.debug_struct("DML_ELEMENT_WISE_QUANTIZED_LINEAR_ADD_OPERATOR_DESC").field("ATensor", &self.ATensor).field("AScaleTensor", &self.AScaleTensor).field("AZeroPointTensor", &self.AZeroPointTensor).field("BTensor", &self.BTensor).field("BScaleTensor", &self.BScaleTensor).field("BZeroPointTensor", &self.BZeroPointTensor).field("OutputScaleTensor", &self.OutputScaleTensor).field("OutputZeroPointTensor", &self.OutputZeroPointTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_QUANTIZED_LINEAR_ADD_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_QUANTIZED_LINEAR_ADD_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_QUANTIZED_LINEAR_ADD_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_QUANTIZED_LINEAR_ADD_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_QUANTIZED_LINEAR_ADD_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_QUANTIZED_LINEAR_ADD_OPERATOR_DESC {}
@@ -3433,12 +3433,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("ScaleTensor", &self.ScaleTensor).field("ZeroPointTensor", &self.ZeroPointTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC {}
@@ -3465,12 +3465,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_RECIP_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_RECIP_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_RECIP_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_RECIP_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_RECIP_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_RECIP_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_RECIP_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_RECIP_OPERATOR_DESC {}
@@ -3497,12 +3497,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_ROUND_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_ROUND_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("RoundingMode", &self.RoundingMode).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_ROUND_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_ROUND_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_ROUND_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ROUND_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_ROUND_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_ROUND_OPERATOR_DESC {}
@@ -3528,12 +3528,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_SIGN_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_SIGN_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_SIGN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_SIGN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_SIGN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_SIGN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_SIGN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_SIGN_OPERATOR_DESC {}
@@ -3560,12 +3560,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_SINH_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_SINH_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_SINH_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_SINH_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_SINH_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_SINH_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_SINH_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_SINH_OPERATOR_DESC {}
@@ -3592,12 +3592,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_SIN_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_SIN_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_SIN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_SIN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_SIN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_SIN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_SIN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_SIN_OPERATOR_DESC {}
@@ -3624,12 +3624,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_SQRT_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_SQRT_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_SQRT_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_SQRT_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_SQRT_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_SQRT_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_SQRT_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_SQRT_OPERATOR_DESC {}
@@ -3656,12 +3656,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC {}
@@ -3688,12 +3688,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_TANH_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_TANH_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_TANH_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_TANH_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_TANH_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_TANH_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_TANH_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_TANH_OPERATOR_DESC {}
@@ -3720,12 +3720,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_TAN_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_TAN_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_TAN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_TAN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_TAN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_TAN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_TAN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_TAN_OPERATOR_DESC {}
@@ -3753,12 +3753,12 @@ impl ::core::fmt::Debug for DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC {
         f.debug_struct("DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleBias", &self.ScaleBias).field("Min", &self.Min).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC {}
@@ -3790,7 +3790,7 @@ impl ::core::default::Default for DML_EXECUTION_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_EXECUTION_FLAGS {
+unsafe impl ::windows_core::Abi for DML_EXECUTION_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_EXECUTION_FLAGS {
@@ -3845,7 +3845,7 @@ impl ::core::default::Default for DML_FEATURE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_FEATURE {
+unsafe impl ::windows_core::Abi for DML_FEATURE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_FEATURE {
@@ -3869,12 +3869,12 @@ impl ::core::fmt::Debug for DML_FEATURE_DATA_FEATURE_LEVELS {
         f.debug_struct("DML_FEATURE_DATA_FEATURE_LEVELS").field("MaxSupportedFeatureLevel", &self.MaxSupportedFeatureLevel).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_FEATURE_DATA_FEATURE_LEVELS {
+unsafe impl ::windows_core::Abi for DML_FEATURE_DATA_FEATURE_LEVELS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_FEATURE_DATA_FEATURE_LEVELS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_FEATURE_DATA_FEATURE_LEVELS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_FEATURE_DATA_FEATURE_LEVELS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_FEATURE_DATA_FEATURE_LEVELS {}
@@ -3904,13 +3904,13 @@ impl ::core::fmt::Debug for DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {
+unsafe impl ::windows_core::Abi for DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3948,7 +3948,7 @@ impl ::core::default::Default for DML_FEATURE_LEVEL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_FEATURE_LEVEL {
+unsafe impl ::windows_core::Abi for DML_FEATURE_LEVEL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_FEATURE_LEVEL {
@@ -3973,12 +3973,12 @@ impl ::core::fmt::Debug for DML_FEATURE_QUERY_FEATURE_LEVELS {
         f.debug_struct("DML_FEATURE_QUERY_FEATURE_LEVELS").field("RequestedFeatureLevelCount", &self.RequestedFeatureLevelCount).field("RequestedFeatureLevels", &self.RequestedFeatureLevels).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_FEATURE_QUERY_FEATURE_LEVELS {
+unsafe impl ::windows_core::Abi for DML_FEATURE_QUERY_FEATURE_LEVELS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_FEATURE_QUERY_FEATURE_LEVELS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_FEATURE_QUERY_FEATURE_LEVELS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_FEATURE_QUERY_FEATURE_LEVELS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_FEATURE_QUERY_FEATURE_LEVELS {}
@@ -4003,12 +4003,12 @@ impl ::core::fmt::Debug for DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT {
         f.debug_struct("DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT").field("DataType", &self.DataType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT {
+unsafe impl ::windows_core::Abi for DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT {}
@@ -4030,12 +4030,12 @@ impl ::core::clone::Clone for DML_FILL_VALUE_CONSTANT_OPERATOR_DESC {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DML_FILL_VALUE_CONSTANT_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_FILL_VALUE_CONSTANT_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_FILL_VALUE_CONSTANT_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_FILL_VALUE_CONSTANT_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_FILL_VALUE_CONSTANT_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_FILL_VALUE_CONSTANT_OPERATOR_DESC {}
@@ -4058,12 +4058,12 @@ impl ::core::clone::Clone for DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC {}
@@ -4091,12 +4091,12 @@ impl ::core::fmt::Debug for DML_GATHER_ELEMENTS_OPERATOR_DESC {
         f.debug_struct("DML_GATHER_ELEMENTS_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("IndicesTensor", &self.IndicesTensor).field("OutputTensor", &self.OutputTensor).field("Axis", &self.Axis).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_GATHER_ELEMENTS_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_GATHER_ELEMENTS_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_GATHER_ELEMENTS_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GATHER_ELEMENTS_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GATHER_ELEMENTS_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_GATHER_ELEMENTS_OPERATOR_DESC {}
@@ -4126,12 +4126,12 @@ impl ::core::fmt::Debug for DML_GATHER_ND1_OPERATOR_DESC {
         f.debug_struct("DML_GATHER_ND1_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("IndicesTensor", &self.IndicesTensor).field("OutputTensor", &self.OutputTensor).field("InputDimensionCount", &self.InputDimensionCount).field("IndicesDimensionCount", &self.IndicesDimensionCount).field("BatchDimensionCount", &self.BatchDimensionCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_GATHER_ND1_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_GATHER_ND1_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_GATHER_ND1_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GATHER_ND1_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GATHER_ND1_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_GATHER_ND1_OPERATOR_DESC {}
@@ -4160,12 +4160,12 @@ impl ::core::fmt::Debug for DML_GATHER_ND_OPERATOR_DESC {
         f.debug_struct("DML_GATHER_ND_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("IndicesTensor", &self.IndicesTensor).field("OutputTensor", &self.OutputTensor).field("InputDimensionCount", &self.InputDimensionCount).field("IndicesDimensionCount", &self.IndicesDimensionCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_GATHER_ND_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_GATHER_ND_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_GATHER_ND_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GATHER_ND_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GATHER_ND_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_GATHER_ND_OPERATOR_DESC {}
@@ -4194,12 +4194,12 @@ impl ::core::fmt::Debug for DML_GATHER_OPERATOR_DESC {
         f.debug_struct("DML_GATHER_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("IndicesTensor", &self.IndicesTensor).field("OutputTensor", &self.OutputTensor).field("Axis", &self.Axis).field("IndexDimensions", &self.IndexDimensions).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_GATHER_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_GATHER_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_GATHER_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GATHER_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GATHER_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_GATHER_OPERATOR_DESC {}
@@ -4232,12 +4232,12 @@ impl ::core::fmt::Debug for DML_GEMM_OPERATOR_DESC {
         f.debug_struct("DML_GEMM_OPERATOR_DESC").field("ATensor", &self.ATensor).field("BTensor", &self.BTensor).field("CTensor", &self.CTensor).field("OutputTensor", &self.OutputTensor).field("TransA", &self.TransA).field("TransB", &self.TransB).field("Alpha", &self.Alpha).field("Beta", &self.Beta).field("FusedActivation", &self.FusedActivation).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_GEMM_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_GEMM_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_GEMM_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GEMM_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GEMM_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_GEMM_OPERATOR_DESC {}
@@ -4271,12 +4271,12 @@ impl ::core::fmt::Debug for DML_GRAPH_DESC {
         f.debug_struct("DML_GRAPH_DESC").field("InputCount", &self.InputCount).field("OutputCount", &self.OutputCount).field("NodeCount", &self.NodeCount).field("Nodes", &self.Nodes).field("InputEdgeCount", &self.InputEdgeCount).field("InputEdges", &self.InputEdges).field("OutputEdgeCount", &self.OutputEdgeCount).field("OutputEdges", &self.OutputEdges).field("IntermediateEdgeCount", &self.IntermediateEdgeCount).field("IntermediateEdges", &self.IntermediateEdges).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_GRAPH_DESC {
+unsafe impl ::windows_core::Abi for DML_GRAPH_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_GRAPH_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GRAPH_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GRAPH_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_GRAPH_DESC {}
@@ -4302,12 +4302,12 @@ impl ::core::fmt::Debug for DML_GRAPH_EDGE_DESC {
         f.debug_struct("DML_GRAPH_EDGE_DESC").field("Type", &self.Type).field("Desc", &self.Desc).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_GRAPH_EDGE_DESC {
+unsafe impl ::windows_core::Abi for DML_GRAPH_EDGE_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_GRAPH_EDGE_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GRAPH_EDGE_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GRAPH_EDGE_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_GRAPH_EDGE_DESC {}
@@ -4339,7 +4339,7 @@ impl ::core::default::Default for DML_GRAPH_EDGE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_GRAPH_EDGE_TYPE {
+unsafe impl ::windows_core::Abi for DML_GRAPH_EDGE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_GRAPH_EDGE_TYPE {
@@ -4364,12 +4364,12 @@ impl ::core::fmt::Debug for DML_GRAPH_NODE_DESC {
         f.debug_struct("DML_GRAPH_NODE_DESC").field("Type", &self.Type).field("Desc", &self.Desc).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_GRAPH_NODE_DESC {
+unsafe impl ::windows_core::Abi for DML_GRAPH_NODE_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_GRAPH_NODE_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GRAPH_NODE_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GRAPH_NODE_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_GRAPH_NODE_DESC {}
@@ -4397,7 +4397,7 @@ impl ::core::default::Default for DML_GRAPH_NODE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_GRAPH_NODE_TYPE {
+unsafe impl ::windows_core::Abi for DML_GRAPH_NODE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_GRAPH_NODE_TYPE {
@@ -4450,13 +4450,13 @@ impl ::core::fmt::Debug for DML_GRU_OPERATOR_DESC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DML_GRU_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_GRU_OPERATOR_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_GRU_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GRU_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GRU_OPERATOR_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4473,7 +4473,7 @@ pub struct DML_INPUT_GRAPH_EDGE_DESC {
     pub GraphInputIndex: u32,
     pub ToNodeIndex: u32,
     pub ToNodeInputIndex: u32,
-    pub Name: ::windows::core::PCSTR,
+    pub Name: ::windows_core::PCSTR,
 }
 impl ::core::marker::Copy for DML_INPUT_GRAPH_EDGE_DESC {}
 impl ::core::clone::Clone for DML_INPUT_GRAPH_EDGE_DESC {
@@ -4486,12 +4486,12 @@ impl ::core::fmt::Debug for DML_INPUT_GRAPH_EDGE_DESC {
         f.debug_struct("DML_INPUT_GRAPH_EDGE_DESC").field("GraphInputIndex", &self.GraphInputIndex).field("ToNodeIndex", &self.ToNodeIndex).field("ToNodeInputIndex", &self.ToNodeInputIndex).field("Name", &self.Name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_INPUT_GRAPH_EDGE_DESC {
+unsafe impl ::windows_core::Abi for DML_INPUT_GRAPH_EDGE_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_INPUT_GRAPH_EDGE_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_INPUT_GRAPH_EDGE_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_INPUT_GRAPH_EDGE_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_INPUT_GRAPH_EDGE_DESC {}
@@ -4507,7 +4507,7 @@ pub struct DML_INTERMEDIATE_GRAPH_EDGE_DESC {
     pub FromNodeOutputIndex: u32,
     pub ToNodeIndex: u32,
     pub ToNodeInputIndex: u32,
-    pub Name: ::windows::core::PCSTR,
+    pub Name: ::windows_core::PCSTR,
 }
 impl ::core::marker::Copy for DML_INTERMEDIATE_GRAPH_EDGE_DESC {}
 impl ::core::clone::Clone for DML_INTERMEDIATE_GRAPH_EDGE_DESC {
@@ -4520,12 +4520,12 @@ impl ::core::fmt::Debug for DML_INTERMEDIATE_GRAPH_EDGE_DESC {
         f.debug_struct("DML_INTERMEDIATE_GRAPH_EDGE_DESC").field("FromNodeIndex", &self.FromNodeIndex).field("FromNodeOutputIndex", &self.FromNodeOutputIndex).field("ToNodeIndex", &self.ToNodeIndex).field("ToNodeInputIndex", &self.ToNodeInputIndex).field("Name", &self.Name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_INTERMEDIATE_GRAPH_EDGE_DESC {
+unsafe impl ::windows_core::Abi for DML_INTERMEDIATE_GRAPH_EDGE_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_INTERMEDIATE_GRAPH_EDGE_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_INTERMEDIATE_GRAPH_EDGE_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_INTERMEDIATE_GRAPH_EDGE_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_INTERMEDIATE_GRAPH_EDGE_DESC {}
@@ -4553,7 +4553,7 @@ impl ::core::default::Default for DML_INTERPOLATION_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_INTERPOLATION_MODE {
+unsafe impl ::windows_core::Abi for DML_INTERPOLATION_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_INTERPOLATION_MODE {
@@ -4582,7 +4582,7 @@ impl ::core::default::Default for DML_IS_INFINITY_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_IS_INFINITY_MODE {
+unsafe impl ::windows_core::Abi for DML_IS_INFINITY_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_IS_INFINITY_MODE {
@@ -4609,12 +4609,12 @@ impl ::core::fmt::Debug for DML_JOIN_OPERATOR_DESC {
         f.debug_struct("DML_JOIN_OPERATOR_DESC").field("InputCount", &self.InputCount).field("InputTensors", &self.InputTensors).field("OutputTensor", &self.OutputTensor).field("Axis", &self.Axis).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_JOIN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_JOIN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_JOIN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_JOIN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_JOIN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_JOIN_OPERATOR_DESC {}
@@ -4651,13 +4651,13 @@ impl ::core::fmt::Debug for DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC 
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4695,13 +4695,13 @@ impl ::core::fmt::Debug for DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4732,12 +4732,12 @@ impl ::core::fmt::Debug for DML_LP_NORMALIZATION_OPERATOR_DESC {
         f.debug_struct("DML_LP_NORMALIZATION_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Axis", &self.Axis).field("Epsilon", &self.Epsilon).field("P", &self.P).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_LP_NORMALIZATION_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_LP_NORMALIZATION_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_LP_NORMALIZATION_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_LP_NORMALIZATION_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_LP_NORMALIZATION_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_LP_NORMALIZATION_OPERATOR_DESC {}
@@ -4769,12 +4769,12 @@ impl ::core::fmt::Debug for DML_LP_POOLING_OPERATOR_DESC {
         f.debug_struct("DML_LP_POOLING_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("DimensionCount", &self.DimensionCount).field("Strides", &self.Strides).field("WindowSize", &self.WindowSize).field("StartPadding", &self.StartPadding).field("EndPadding", &self.EndPadding).field("P", &self.P).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_LP_POOLING_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_LP_POOLING_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_LP_POOLING_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_LP_POOLING_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_LP_POOLING_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_LP_POOLING_OPERATOR_DESC {}
@@ -4838,13 +4838,13 @@ impl ::core::fmt::Debug for DML_LSTM_OPERATOR_DESC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DML_LSTM_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_LSTM_OPERATOR_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_LSTM_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_LSTM_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_LSTM_OPERATOR_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4875,12 +4875,12 @@ impl ::core::fmt::Debug for DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC {
         f.debug_struct("DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC").field("ATensor", &self.ATensor).field("AZeroPointTensor", &self.AZeroPointTensor).field("BTensor", &self.BTensor).field("BZeroPointTensor", &self.BZeroPointTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC {}
@@ -4908,7 +4908,7 @@ impl ::core::default::Default for DML_MATRIX_TRANSFORM {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_MATRIX_TRANSFORM {
+unsafe impl ::windows_core::Abi for DML_MATRIX_TRANSFORM {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_MATRIX_TRANSFORM {
@@ -4939,12 +4939,12 @@ impl ::core::fmt::Debug for DML_MAX_POOLING1_OPERATOR_DESC {
         f.debug_struct("DML_MAX_POOLING1_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("OutputIndicesTensor", &self.OutputIndicesTensor).field("DimensionCount", &self.DimensionCount).field("Strides", &self.Strides).field("WindowSize", &self.WindowSize).field("StartPadding", &self.StartPadding).field("EndPadding", &self.EndPadding).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_MAX_POOLING1_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_MAX_POOLING1_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_MAX_POOLING1_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MAX_POOLING1_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MAX_POOLING1_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_MAX_POOLING1_OPERATOR_DESC {}
@@ -4977,12 +4977,12 @@ impl ::core::fmt::Debug for DML_MAX_POOLING2_OPERATOR_DESC {
         f.debug_struct("DML_MAX_POOLING2_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("OutputIndicesTensor", &self.OutputIndicesTensor).field("DimensionCount", &self.DimensionCount).field("Strides", &self.Strides).field("WindowSize", &self.WindowSize).field("StartPadding", &self.StartPadding).field("EndPadding", &self.EndPadding).field("Dilations", &self.Dilations).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_MAX_POOLING2_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_MAX_POOLING2_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_MAX_POOLING2_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MAX_POOLING2_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MAX_POOLING2_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_MAX_POOLING2_OPERATOR_DESC {}
@@ -5015,12 +5015,12 @@ impl ::core::fmt::Debug for DML_MAX_POOLING_GRAD_OPERATOR_DESC {
         f.debug_struct("DML_MAX_POOLING_GRAD_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("InputGradientTensor", &self.InputGradientTensor).field("OutputGradientTensor", &self.OutputGradientTensor).field("DimensionCount", &self.DimensionCount).field("Strides", &self.Strides).field("WindowSize", &self.WindowSize).field("StartPadding", &self.StartPadding).field("EndPadding", &self.EndPadding).field("Dilations", &self.Dilations).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_MAX_POOLING_GRAD_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_MAX_POOLING_GRAD_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_MAX_POOLING_GRAD_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MAX_POOLING_GRAD_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MAX_POOLING_GRAD_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_MAX_POOLING_GRAD_OPERATOR_DESC {}
@@ -5051,12 +5051,12 @@ impl ::core::fmt::Debug for DML_MAX_POOLING_OPERATOR_DESC {
         f.debug_struct("DML_MAX_POOLING_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("DimensionCount", &self.DimensionCount).field("Strides", &self.Strides).field("WindowSize", &self.WindowSize).field("StartPadding", &self.StartPadding).field("EndPadding", &self.EndPadding).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_MAX_POOLING_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_MAX_POOLING_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_MAX_POOLING_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MAX_POOLING_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MAX_POOLING_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_MAX_POOLING_OPERATOR_DESC {}
@@ -5083,12 +5083,12 @@ impl ::core::fmt::Debug for DML_MAX_UNPOOLING_OPERATOR_DESC {
         f.debug_struct("DML_MAX_UNPOOLING_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("IndicesTensor", &self.IndicesTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_MAX_UNPOOLING_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_MAX_UNPOOLING_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_MAX_UNPOOLING_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MAX_UNPOOLING_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MAX_UNPOOLING_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_MAX_UNPOOLING_OPERATOR_DESC {}
@@ -5126,13 +5126,13 @@ impl ::core::fmt::Debug for DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5171,13 +5171,13 @@ impl ::core::fmt::Debug for DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5208,12 +5208,12 @@ impl ::core::fmt::Debug for DML_NONZERO_COORDINATES_OPERATOR_DESC {
         f.debug_struct("DML_NONZERO_COORDINATES_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputCountTensor", &self.OutputCountTensor).field("OutputCoordinatesTensor", &self.OutputCoordinatesTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_NONZERO_COORDINATES_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_NONZERO_COORDINATES_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_NONZERO_COORDINATES_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_NONZERO_COORDINATES_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_NONZERO_COORDINATES_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_NONZERO_COORDINATES_OPERATOR_DESC {}
@@ -5241,12 +5241,12 @@ impl ::core::fmt::Debug for DML_ONE_HOT_OPERATOR_DESC {
         f.debug_struct("DML_ONE_HOT_OPERATOR_DESC").field("IndicesTensor", &self.IndicesTensor).field("ValuesTensor", &self.ValuesTensor).field("OutputTensor", &self.OutputTensor).field("Axis", &self.Axis).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ONE_HOT_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ONE_HOT_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ONE_HOT_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ONE_HOT_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ONE_HOT_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ONE_HOT_OPERATOR_DESC {}
@@ -5272,12 +5272,12 @@ impl ::core::fmt::Debug for DML_OPERATOR_DESC {
         f.debug_struct("DML_OPERATOR_DESC").field("Type", &self.Type).field("Desc", &self.Desc).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_OPERATOR_DESC {}
@@ -5290,7 +5290,7 @@ impl ::core::default::Default for DML_OPERATOR_DESC {
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 pub struct DML_OPERATOR_GRAPH_NODE_DESC {
     pub Operator: ::core::option::Option<IDMLOperator>,
-    pub Name: ::windows::core::PCSTR,
+    pub Name: ::windows_core::PCSTR,
 }
 impl ::core::clone::Clone for DML_OPERATOR_GRAPH_NODE_DESC {
     fn clone(&self) -> Self {
@@ -5302,7 +5302,7 @@ impl ::core::fmt::Debug for DML_OPERATOR_GRAPH_NODE_DESC {
         f.debug_struct("DML_OPERATOR_GRAPH_NODE_DESC").field("Operator", &self.Operator).field("Name", &self.Name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_OPERATOR_GRAPH_NODE_DESC {
+unsafe impl ::windows_core::Abi for DML_OPERATOR_GRAPH_NODE_DESC {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 impl ::core::cmp::PartialEq for DML_OPERATOR_GRAPH_NODE_DESC {
@@ -5633,7 +5633,7 @@ impl ::core::default::Default for DML_OPERATOR_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_OPERATOR_TYPE {
+unsafe impl ::windows_core::Abi for DML_OPERATOR_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_OPERATOR_TYPE {
@@ -5647,7 +5647,7 @@ pub struct DML_OUTPUT_GRAPH_EDGE_DESC {
     pub FromNodeIndex: u32,
     pub FromNodeOutputIndex: u32,
     pub GraphOutputIndex: u32,
-    pub Name: ::windows::core::PCSTR,
+    pub Name: ::windows_core::PCSTR,
 }
 impl ::core::marker::Copy for DML_OUTPUT_GRAPH_EDGE_DESC {}
 impl ::core::clone::Clone for DML_OUTPUT_GRAPH_EDGE_DESC {
@@ -5660,12 +5660,12 @@ impl ::core::fmt::Debug for DML_OUTPUT_GRAPH_EDGE_DESC {
         f.debug_struct("DML_OUTPUT_GRAPH_EDGE_DESC").field("FromNodeIndex", &self.FromNodeIndex).field("FromNodeOutputIndex", &self.FromNodeOutputIndex).field("GraphOutputIndex", &self.GraphOutputIndex).field("Name", &self.Name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_OUTPUT_GRAPH_EDGE_DESC {
+unsafe impl ::windows_core::Abi for DML_OUTPUT_GRAPH_EDGE_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_OUTPUT_GRAPH_EDGE_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_OUTPUT_GRAPH_EDGE_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_OUTPUT_GRAPH_EDGE_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_OUTPUT_GRAPH_EDGE_DESC {}
@@ -5697,7 +5697,7 @@ impl ::core::default::Default for DML_PADDING_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_PADDING_MODE {
+unsafe impl ::windows_core::Abi for DML_PADDING_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_PADDING_MODE {
@@ -5727,12 +5727,12 @@ impl ::core::fmt::Debug for DML_PADDING_OPERATOR_DESC {
         f.debug_struct("DML_PADDING_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("PaddingMode", &self.PaddingMode).field("PaddingValue", &self.PaddingValue).field("DimensionCount", &self.DimensionCount).field("StartPadding", &self.StartPadding).field("EndPadding", &self.EndPadding).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_PADDING_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_PADDING_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_PADDING_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_PADDING_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_PADDING_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_PADDING_OPERATOR_DESC {}
@@ -5791,12 +5791,12 @@ impl ::core::fmt::Debug for DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC {}
@@ -5829,12 +5829,12 @@ impl ::core::fmt::Debug for DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC {
         f.debug_struct("DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC").field("ATensor", &self.ATensor).field("AScaleTensor", &self.AScaleTensor).field("AZeroPointTensor", &self.AZeroPointTensor).field("BTensor", &self.BTensor).field("BScaleTensor", &self.BScaleTensor).field("BZeroPointTensor", &self.BZeroPointTensor).field("OutputScaleTensor", &self.OutputScaleTensor).field("OutputZeroPointTensor", &self.OutputZeroPointTensor).field("OutputTensor", &self.OutputTensor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC {}
@@ -5862,12 +5862,12 @@ impl ::core::fmt::Debug for DML_RANDOM_GENERATOR_OPERATOR_DESC {
         f.debug_struct("DML_RANDOM_GENERATOR_OPERATOR_DESC").field("InputStateTensor", &self.InputStateTensor).field("OutputTensor", &self.OutputTensor).field("OutputStateTensor", &self.OutputStateTensor).field("Type", &self.Type).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_RANDOM_GENERATOR_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_RANDOM_GENERATOR_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_RANDOM_GENERATOR_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_RANDOM_GENERATOR_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_RANDOM_GENERATOR_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_RANDOM_GENERATOR_OPERATOR_DESC {}
@@ -5893,7 +5893,7 @@ impl ::core::default::Default for DML_RANDOM_GENERATOR_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_RANDOM_GENERATOR_TYPE {
+unsafe impl ::windows_core::Abi for DML_RANDOM_GENERATOR_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_RANDOM_GENERATOR_TYPE {
@@ -5922,7 +5922,7 @@ impl ::core::default::Default for DML_RECURRENT_NETWORK_DIRECTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_RECURRENT_NETWORK_DIRECTION {
+unsafe impl ::windows_core::Abi for DML_RECURRENT_NETWORK_DIRECTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_RECURRENT_NETWORK_DIRECTION {
@@ -5969,7 +5969,7 @@ impl ::core::default::Default for DML_REDUCE_FUNCTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_REDUCE_FUNCTION {
+unsafe impl ::windows_core::Abi for DML_REDUCE_FUNCTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_REDUCE_FUNCTION {
@@ -5997,12 +5997,12 @@ impl ::core::fmt::Debug for DML_REDUCE_OPERATOR_DESC {
         f.debug_struct("DML_REDUCE_OPERATOR_DESC").field("Function", &self.Function).field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("AxisCount", &self.AxisCount).field("Axes", &self.Axes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_REDUCE_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_REDUCE_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_REDUCE_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_REDUCE_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_REDUCE_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_REDUCE_OPERATOR_DESC {}
@@ -6033,12 +6033,12 @@ impl ::core::fmt::Debug for DML_RESAMPLE1_OPERATOR_DESC {
         f.debug_struct("DML_RESAMPLE1_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("InterpolationMode", &self.InterpolationMode).field("DimensionCount", &self.DimensionCount).field("Scales", &self.Scales).field("InputPixelOffsets", &self.InputPixelOffsets).field("OutputPixelOffsets", &self.OutputPixelOffsets).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_RESAMPLE1_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_RESAMPLE1_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_RESAMPLE1_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_RESAMPLE1_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_RESAMPLE1_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_RESAMPLE1_OPERATOR_DESC {}
@@ -6069,12 +6069,12 @@ impl ::core::fmt::Debug for DML_RESAMPLE_GRAD_OPERATOR_DESC {
         f.debug_struct("DML_RESAMPLE_GRAD_OPERATOR_DESC").field("InputGradientTensor", &self.InputGradientTensor).field("OutputGradientTensor", &self.OutputGradientTensor).field("InterpolationMode", &self.InterpolationMode).field("DimensionCount", &self.DimensionCount).field("Scales", &self.Scales).field("InputPixelOffsets", &self.InputPixelOffsets).field("OutputPixelOffsets", &self.OutputPixelOffsets).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_RESAMPLE_GRAD_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_RESAMPLE_GRAD_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_RESAMPLE_GRAD_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_RESAMPLE_GRAD_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_RESAMPLE_GRAD_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_RESAMPLE_GRAD_OPERATOR_DESC {}
@@ -6103,12 +6103,12 @@ impl ::core::fmt::Debug for DML_RESAMPLE_OPERATOR_DESC {
         f.debug_struct("DML_RESAMPLE_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("InterpolationMode", &self.InterpolationMode).field("ScaleCount", &self.ScaleCount).field("Scales", &self.Scales).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_RESAMPLE_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_RESAMPLE_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_RESAMPLE_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_RESAMPLE_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_RESAMPLE_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_RESAMPLE_OPERATOR_DESC {}
@@ -6136,12 +6136,12 @@ impl ::core::fmt::Debug for DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC {
         f.debug_struct("DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("SequenceLengthsTensor", &self.SequenceLengthsTensor).field("OutputTensor", &self.OutputTensor).field("Axis", &self.Axis).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC {}
@@ -6188,12 +6188,12 @@ impl ::core::fmt::Debug for DML_RNN_OPERATOR_DESC {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_RNN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_RNN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_RNN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_RNN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_RNN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_RNN_OPERATOR_DESC {}
@@ -6251,13 +6251,13 @@ impl ::core::fmt::Debug for DML_ROI_ALIGN1_OPERATOR_DESC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DML_ROI_ALIGN1_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ROI_ALIGN1_OPERATOR_DESC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_ROI_ALIGN1_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ROI_ALIGN1_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ROI_ALIGN1_OPERATOR_DESC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6306,12 +6306,12 @@ impl ::core::fmt::Debug for DML_ROI_ALIGN_OPERATOR_DESC {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ROI_ALIGN_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ROI_ALIGN_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ROI_ALIGN_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ROI_ALIGN_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ROI_ALIGN_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ROI_ALIGN_OPERATOR_DESC {}
@@ -6340,12 +6340,12 @@ impl ::core::fmt::Debug for DML_ROI_POOLING_OPERATOR_DESC {
         f.debug_struct("DML_ROI_POOLING_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("ROITensor", &self.ROITensor).field("OutputTensor", &self.OutputTensor).field("SpatialScale", &self.SpatialScale).field("PooledSize", &self.PooledSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_ROI_POOLING_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_ROI_POOLING_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_ROI_POOLING_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ROI_POOLING_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ROI_POOLING_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_ROI_POOLING_OPERATOR_DESC {}
@@ -6375,7 +6375,7 @@ impl ::core::default::Default for DML_ROUNDING_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_ROUNDING_MODE {
+unsafe impl ::windows_core::Abi for DML_ROUNDING_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_ROUNDING_MODE {
@@ -6404,12 +6404,12 @@ impl ::core::clone::Clone for DML_SCALAR_UNION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DML_SCALAR_UNION {
+unsafe impl ::windows_core::Abi for DML_SCALAR_UNION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_SCALAR_UNION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SCALAR_UNION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SCALAR_UNION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_SCALAR_UNION {}
@@ -6435,12 +6435,12 @@ impl ::core::fmt::Debug for DML_SCALE_BIAS {
         f.debug_struct("DML_SCALE_BIAS").field("Scale", &self.Scale).field("Bias", &self.Bias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_SCALE_BIAS {
+unsafe impl ::windows_core::Abi for DML_SCALE_BIAS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_SCALE_BIAS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SCALE_BIAS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SCALE_BIAS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_SCALE_BIAS {}
@@ -6470,12 +6470,12 @@ impl ::core::fmt::Debug for DML_SCATTER_ND_OPERATOR_DESC {
         f.debug_struct("DML_SCATTER_ND_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("IndicesTensor", &self.IndicesTensor).field("UpdatesTensor", &self.UpdatesTensor).field("OutputTensor", &self.OutputTensor).field("InputDimensionCount", &self.InputDimensionCount).field("IndicesDimensionCount", &self.IndicesDimensionCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_SCATTER_ND_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_SCATTER_ND_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_SCATTER_ND_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SCATTER_ND_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SCATTER_ND_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_SCATTER_ND_OPERATOR_DESC {}
@@ -6504,12 +6504,12 @@ impl ::core::fmt::Debug for DML_SCATTER_OPERATOR_DESC {
         f.debug_struct("DML_SCATTER_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("IndicesTensor", &self.IndicesTensor).field("UpdatesTensor", &self.UpdatesTensor).field("OutputTensor", &self.OutputTensor).field("Axis", &self.Axis).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_SCATTER_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_SCATTER_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_SCATTER_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SCATTER_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SCATTER_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_SCATTER_OPERATOR_DESC {}
@@ -6535,12 +6535,12 @@ impl ::core::fmt::Debug for DML_SIZE_2D {
         f.debug_struct("DML_SIZE_2D").field("Width", &self.Width).field("Height", &self.Height).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_SIZE_2D {
+unsafe impl ::windows_core::Abi for DML_SIZE_2D {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_SIZE_2D {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SIZE_2D>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SIZE_2D>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_SIZE_2D {}
@@ -6570,12 +6570,12 @@ impl ::core::fmt::Debug for DML_SLICE1_OPERATOR_DESC {
         f.debug_struct("DML_SLICE1_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("DimensionCount", &self.DimensionCount).field("InputWindowOffsets", &self.InputWindowOffsets).field("InputWindowSizes", &self.InputWindowSizes).field("InputWindowStrides", &self.InputWindowStrides).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_SLICE1_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_SLICE1_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_SLICE1_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SLICE1_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SLICE1_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_SLICE1_OPERATOR_DESC {}
@@ -6605,12 +6605,12 @@ impl ::core::fmt::Debug for DML_SLICE_GRAD_OPERATOR_DESC {
         f.debug_struct("DML_SLICE_GRAD_OPERATOR_DESC").field("InputGradientTensor", &self.InputGradientTensor).field("OutputGradientTensor", &self.OutputGradientTensor).field("DimensionCount", &self.DimensionCount).field("InputWindowOffsets", &self.InputWindowOffsets).field("InputWindowSizes", &self.InputWindowSizes).field("InputWindowStrides", &self.InputWindowStrides).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_SLICE_GRAD_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_SLICE_GRAD_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_SLICE_GRAD_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SLICE_GRAD_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SLICE_GRAD_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_SLICE_GRAD_OPERATOR_DESC {}
@@ -6640,12 +6640,12 @@ impl ::core::fmt::Debug for DML_SLICE_OPERATOR_DESC {
         f.debug_struct("DML_SLICE_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("DimensionCount", &self.DimensionCount).field("Offsets", &self.Offsets).field("Sizes", &self.Sizes).field("Strides", &self.Strides).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_SLICE_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_SLICE_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_SLICE_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SLICE_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SLICE_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_SLICE_OPERATOR_DESC {}
@@ -6673,12 +6673,12 @@ impl ::core::fmt::Debug for DML_SPACE_TO_DEPTH1_OPERATOR_DESC {
         f.debug_struct("DML_SPACE_TO_DEPTH1_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("BlockSize", &self.BlockSize).field("Order", &self.Order).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_SPACE_TO_DEPTH1_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_SPACE_TO_DEPTH1_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_SPACE_TO_DEPTH1_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SPACE_TO_DEPTH1_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SPACE_TO_DEPTH1_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_SPACE_TO_DEPTH1_OPERATOR_DESC {}
@@ -6705,12 +6705,12 @@ impl ::core::fmt::Debug for DML_SPACE_TO_DEPTH_OPERATOR_DESC {
         f.debug_struct("DML_SPACE_TO_DEPTH_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("BlockSize", &self.BlockSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_SPACE_TO_DEPTH_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_SPACE_TO_DEPTH_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_SPACE_TO_DEPTH_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SPACE_TO_DEPTH_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SPACE_TO_DEPTH_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_SPACE_TO_DEPTH_OPERATOR_DESC {}
@@ -6738,12 +6738,12 @@ impl ::core::fmt::Debug for DML_SPLIT_OPERATOR_DESC {
         f.debug_struct("DML_SPLIT_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputCount", &self.OutputCount).field("OutputTensors", &self.OutputTensors).field("Axis", &self.Axis).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_SPLIT_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_SPLIT_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_SPLIT_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SPLIT_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_SPLIT_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_SPLIT_OPERATOR_DESC {}
@@ -6795,7 +6795,7 @@ impl ::core::default::Default for DML_TENSOR_DATA_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_TENSOR_DATA_TYPE {
+unsafe impl ::windows_core::Abi for DML_TENSOR_DATA_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_TENSOR_DATA_TYPE {
@@ -6820,12 +6820,12 @@ impl ::core::fmt::Debug for DML_TENSOR_DESC {
         f.debug_struct("DML_TENSOR_DESC").field("Type", &self.Type).field("Desc", &self.Desc).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_TENSOR_DESC {
+unsafe impl ::windows_core::Abi for DML_TENSOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_TENSOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_TENSOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_TENSOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_TENSOR_DESC {}
@@ -6857,7 +6857,7 @@ impl ::core::default::Default for DML_TENSOR_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_TENSOR_FLAGS {
+unsafe impl ::windows_core::Abi for DML_TENSOR_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_TENSOR_FLAGS {
@@ -6912,7 +6912,7 @@ impl ::core::default::Default for DML_TENSOR_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DML_TENSOR_TYPE {
+unsafe impl ::windows_core::Abi for DML_TENSOR_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DML_TENSOR_TYPE {
@@ -6939,12 +6939,12 @@ impl ::core::fmt::Debug for DML_TILE_OPERATOR_DESC {
         f.debug_struct("DML_TILE_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("RepeatsCount", &self.RepeatsCount).field("Repeats", &self.Repeats).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_TILE_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_TILE_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_TILE_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_TILE_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_TILE_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_TILE_OPERATOR_DESC {}
@@ -6974,12 +6974,12 @@ impl ::core::fmt::Debug for DML_TOP_K1_OPERATOR_DESC {
         f.debug_struct("DML_TOP_K1_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputValueTensor", &self.OutputValueTensor).field("OutputIndexTensor", &self.OutputIndexTensor).field("Axis", &self.Axis).field("K", &self.K).field("AxisDirection", &self.AxisDirection).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_TOP_K1_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_TOP_K1_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_TOP_K1_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_TOP_K1_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_TOP_K1_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_TOP_K1_OPERATOR_DESC {}
@@ -7008,12 +7008,12 @@ impl ::core::fmt::Debug for DML_TOP_K_OPERATOR_DESC {
         f.debug_struct("DML_TOP_K_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputValueTensor", &self.OutputValueTensor).field("OutputIndexTensor", &self.OutputIndexTensor).field("Axis", &self.Axis).field("K", &self.K).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_TOP_K_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_TOP_K_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_TOP_K_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_TOP_K_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_TOP_K_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_TOP_K_OPERATOR_DESC {}
@@ -7041,12 +7041,12 @@ impl ::core::fmt::Debug for DML_UPSAMPLE_2D_OPERATOR_DESC {
         f.debug_struct("DML_UPSAMPLE_2D_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("ScaleSize", &self.ScaleSize).field("InterpolationMode", &self.InterpolationMode).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_UPSAMPLE_2D_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_UPSAMPLE_2D_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_UPSAMPLE_2D_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_UPSAMPLE_2D_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_UPSAMPLE_2D_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_UPSAMPLE_2D_OPERATOR_DESC {}
@@ -7075,12 +7075,12 @@ impl ::core::fmt::Debug for DML_VALUE_SCALE_2D_OPERATOR_DESC {
         f.debug_struct("DML_VALUE_SCALE_2D_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Scale", &self.Scale).field("ChannelCount", &self.ChannelCount).field("Bias", &self.Bias).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DML_VALUE_SCALE_2D_OPERATOR_DESC {
+unsafe impl ::windows_core::Abi for DML_VALUE_SCALE_2D_OPERATOR_DESC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DML_VALUE_SCALE_2D_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_VALUE_SCALE_2D_OPERATOR_DESC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_VALUE_SCALE_2D_OPERATOR_DESC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DML_VALUE_SCALE_2D_OPERATOR_DESC {}
@@ -7091,69 +7091,69 @@ impl ::core::default::Default for DML_VALUE_SCALE_2D_OPERATOR_DESC {
 }
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 #[repr(transparent)]
-pub struct IDMLBindingTable(::windows::core::IUnknown);
+pub struct IDMLBindingTable(::windows_core::IUnknown);
 impl IDMLBindingTable {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.GetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn GetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.GetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn SetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, guid: *const ::windows::core::GUID, data: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetPrivateDataInterface)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
+    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, data: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, name: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetName)(::windows::core::Interface::as_raw(self), name.into_param().abi()).ok()
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetDevice<T: ::windows::core::Interface>(&self) -> ::windows::core::Result<T> {
+    pub unsafe fn GetDevice<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).base__.GetDevice)(::windows::core::Interface::as_raw(self), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).base__.GetDevice)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
     pub unsafe fn BindInputs(&self, bindings: &[DML_BINDING_DESC]) {
-        (::windows::core::Interface::vtable(self).BindInputs)(::windows::core::Interface::as_raw(self), bindings.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(bindings)))
+        (::windows_core::Interface::vtable(self).BindInputs)(::windows_core::Interface::as_raw(self), bindings.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(bindings)))
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
     pub unsafe fn BindOutputs(&self, bindings: &[DML_BINDING_DESC]) {
-        (::windows::core::Interface::vtable(self).BindOutputs)(::windows::core::Interface::as_raw(self), bindings.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(bindings)))
+        (::windows_core::Interface::vtable(self).BindOutputs)(::windows_core::Interface::as_raw(self), bindings.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(bindings)))
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
     pub unsafe fn BindTemporaryResource(&self, binding: *const DML_BINDING_DESC) {
-        (::windows::core::Interface::vtable(self).BindTemporaryResource)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(binding))
+        (::windows_core::Interface::vtable(self).BindTemporaryResource)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(binding))
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
     pub unsafe fn BindPersistentResource(&self, binding: *const DML_BINDING_DESC) {
-        (::windows::core::Interface::vtable(self).BindPersistentResource)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(binding))
+        (::windows_core::Interface::vtable(self).BindPersistentResource)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(binding))
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`, `\"Win32_Graphics_Direct3D12\"`*"]
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub unsafe fn Reset(&self, desc: *const DML_BINDING_TABLE_DESC) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Reset)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(desc)).ok()
+    pub unsafe fn Reset(&self, desc: *const DML_BINDING_TABLE_DESC) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Reset)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(desc)).ok()
     }
 }
-impl ::core::convert::From<IDMLBindingTable> for ::windows::core::IUnknown {
+impl ::core::convert::From<IDMLBindingTable> for ::windows_core::IUnknown {
     fn from(value: IDMLBindingTable) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IDMLBindingTable> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IDMLBindingTable> for ::windows_core::IUnknown {
     fn from(value: &IDMLBindingTable) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDMLBindingTable {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IDMLBindingTable {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDMLBindingTable {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IDMLBindingTable {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLBindingTable> for IDMLObject {
@@ -7166,14 +7166,14 @@ impl ::core::convert::From<&IDMLBindingTable> for IDMLObject {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for IDMLBindingTable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for IDMLBindingTable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for &'a IDMLBindingTable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for &'a IDMLBindingTable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLBindingTable> for IDMLDeviceChild {
@@ -7186,14 +7186,14 @@ impl ::core::convert::From<&IDMLBindingTable> for IDMLDeviceChild {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for IDMLBindingTable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for IDMLBindingTable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLBindingTable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLBindingTable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IDMLBindingTable {
@@ -7212,9 +7212,9 @@ impl ::core::fmt::Debug for IDMLBindingTable {
         f.debug_tuple("IDMLBindingTable").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IDMLBindingTable {
+unsafe impl ::windows_core::Interface for IDMLBindingTable {
     type Vtable = IDMLBindingTable_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x29c687dc_de74_4e3b_ab00_1168f2fc3cfc);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x29c687dc_de74_4e3b_ab00_1168f2fc3cfc);
 }
 #[repr(C)]
 #[doc(hidden)]
@@ -7225,59 +7225,59 @@ pub struct IDMLBindingTable_Vtbl {
     pub BindTemporaryResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, binding: *const DML_BINDING_DESC),
     pub BindPersistentResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, binding: *const DML_BINDING_DESC),
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, desc: *const DML_BINDING_TABLE_DESC) -> ::windows::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, desc: *const DML_BINDING_TABLE_DESC) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
     Reset: usize,
 }
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 #[repr(transparent)]
-pub struct IDMLCommandRecorder(::windows::core::IUnknown);
+pub struct IDMLCommandRecorder(::windows_core::IUnknown);
 impl IDMLCommandRecorder {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.GetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn GetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.GetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn SetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, guid: *const ::windows::core::GUID, data: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetPrivateDataInterface)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
+    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, data: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, name: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetName)(::windows::core::Interface::as_raw(self), name.into_param().abi()).ok()
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetDevice<T: ::windows::core::Interface>(&self) -> ::windows::core::Result<T> {
+    pub unsafe fn GetDevice<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).base__.GetDevice)(::windows::core::Interface::as_raw(self), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).base__.GetDevice)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`, `\"Win32_Graphics_Direct3D12\"`*"]
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub unsafe fn RecordDispatch<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Graphics::Direct3D12::ID3D12CommandList>, Param1: ::windows::core::IntoParam<'a, IDMLDispatchable>, Param2: ::windows::core::IntoParam<'a, IDMLBindingTable>>(&self, commandlist: Param0, dispatchable: Param1, bindings: Param2) {
-        (::windows::core::Interface::vtable(self).RecordDispatch)(::windows::core::Interface::as_raw(self), commandlist.into_param().abi(), dispatchable.into_param().abi(), bindings.into_param().abi())
+    pub unsafe fn RecordDispatch<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Direct3D12::ID3D12CommandList>, Param1: ::windows_core::IntoParam<'a, IDMLDispatchable>, Param2: ::windows_core::IntoParam<'a, IDMLBindingTable>>(&self, commandlist: Param0, dispatchable: Param1, bindings: Param2) {
+        (::windows_core::Interface::vtable(self).RecordDispatch)(::windows_core::Interface::as_raw(self), commandlist.into_param().abi(), dispatchable.into_param().abi(), bindings.into_param().abi())
     }
 }
-impl ::core::convert::From<IDMLCommandRecorder> for ::windows::core::IUnknown {
+impl ::core::convert::From<IDMLCommandRecorder> for ::windows_core::IUnknown {
     fn from(value: IDMLCommandRecorder) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IDMLCommandRecorder> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IDMLCommandRecorder> for ::windows_core::IUnknown {
     fn from(value: &IDMLCommandRecorder) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDMLCommandRecorder {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IDMLCommandRecorder {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDMLCommandRecorder {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IDMLCommandRecorder {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLCommandRecorder> for IDMLObject {
@@ -7290,14 +7290,14 @@ impl ::core::convert::From<&IDMLCommandRecorder> for IDMLObject {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for IDMLCommandRecorder {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for IDMLCommandRecorder {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for &'a IDMLCommandRecorder {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for &'a IDMLCommandRecorder {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLCommandRecorder> for IDMLDeviceChild {
@@ -7310,14 +7310,14 @@ impl ::core::convert::From<&IDMLCommandRecorder> for IDMLDeviceChild {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for IDMLCommandRecorder {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for IDMLCommandRecorder {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLCommandRecorder {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLCommandRecorder {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IDMLCommandRecorder {
@@ -7336,69 +7336,69 @@ impl ::core::fmt::Debug for IDMLCommandRecorder {
         f.debug_tuple("IDMLCommandRecorder").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IDMLCommandRecorder {
+unsafe impl ::windows_core::Interface for IDMLCommandRecorder {
     type Vtable = IDMLCommandRecorder_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe6857a76_2e3e_4fdd_bff4_5d2ba10fb453);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe6857a76_2e3e_4fdd_bff4_5d2ba10fb453);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDMLCommandRecorder_Vtbl {
     pub base__: IDMLDeviceChild_Vtbl,
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub RecordDispatch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, commandlist: ::windows::core::RawPtr, dispatchable: ::windows::core::RawPtr, bindings: ::windows::core::RawPtr),
+    pub RecordDispatch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, commandlist: ::windows_core::RawPtr, dispatchable: ::windows_core::RawPtr, bindings: ::windows_core::RawPtr),
     #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
     RecordDispatch: usize,
 }
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 #[repr(transparent)]
-pub struct IDMLCompiledOperator(::windows::core::IUnknown);
+pub struct IDMLCompiledOperator(::windows_core::IUnknown);
 impl IDMLCompiledOperator {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.base__.base__.GetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn GetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.base__.base__.GetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.base__.base__.SetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn SetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.base__.base__.SetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, guid: *const ::windows::core::GUID, data: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.base__.base__.SetPrivateDataInterface)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
+    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, data: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.base__.base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, name: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.base__.base__.SetName)(::windows::core::Interface::as_raw(self), name.into_param().abi()).ok()
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.base__.base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetDevice<T: ::windows::core::Interface>(&self) -> ::windows::core::Result<T> {
+    pub unsafe fn GetDevice<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).base__.base__.base__.GetDevice)(::windows::core::Interface::as_raw(self), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).base__.base__.base__.GetDevice)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
     pub unsafe fn GetBindingProperties(&self) -> DML_BINDING_PROPERTIES {
         let mut result__: DML_BINDING_PROPERTIES = ::core::mem::zeroed();
-        (::windows::core::Interface::vtable(self).base__.GetBindingProperties)(::windows::core::Interface::as_raw(self), &mut result__);
+        (::windows_core::Interface::vtable(self).base__.GetBindingProperties)(::windows_core::Interface::as_raw(self), &mut result__);
         result__
     }
 }
-impl ::core::convert::From<IDMLCompiledOperator> for ::windows::core::IUnknown {
+impl ::core::convert::From<IDMLCompiledOperator> for ::windows_core::IUnknown {
     fn from(value: IDMLCompiledOperator) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IDMLCompiledOperator> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IDMLCompiledOperator> for ::windows_core::IUnknown {
     fn from(value: &IDMLCompiledOperator) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDMLCompiledOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IDMLCompiledOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDMLCompiledOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IDMLCompiledOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLCompiledOperator> for IDMLObject {
@@ -7411,14 +7411,14 @@ impl ::core::convert::From<&IDMLCompiledOperator> for IDMLObject {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for IDMLCompiledOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for IDMLCompiledOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for &'a IDMLCompiledOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for &'a IDMLCompiledOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLCompiledOperator> for IDMLDeviceChild {
@@ -7431,14 +7431,14 @@ impl ::core::convert::From<&IDMLCompiledOperator> for IDMLDeviceChild {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for IDMLCompiledOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for IDMLCompiledOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLCompiledOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLCompiledOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLCompiledOperator> for IDMLPageable {
@@ -7451,14 +7451,14 @@ impl ::core::convert::From<&IDMLCompiledOperator> for IDMLPageable {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLPageable> for IDMLCompiledOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLPageable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLPageable> for IDMLCompiledOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLPageable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLPageable> for &'a IDMLCompiledOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLPageable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLPageable> for &'a IDMLCompiledOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLPageable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLCompiledOperator> for IDMLDispatchable {
@@ -7471,14 +7471,14 @@ impl ::core::convert::From<&IDMLCompiledOperator> for IDMLDispatchable {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDispatchable> for IDMLCompiledOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDispatchable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDispatchable> for IDMLCompiledOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDispatchable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDispatchable> for &'a IDMLCompiledOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDispatchable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDispatchable> for &'a IDMLCompiledOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDispatchable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IDMLCompiledOperator {
@@ -7497,9 +7497,9 @@ impl ::core::fmt::Debug for IDMLCompiledOperator {
         f.debug_tuple("IDMLCompiledOperator").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IDMLCompiledOperator {
+unsafe impl ::windows_core::Interface for IDMLCompiledOperator {
     type Vtable = IDMLCompiledOperator_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6b15e56a_bf5c_4902_92d8_da3a650afea4);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6b15e56a_bf5c_4902_92d8_da3a650afea4);
 }
 #[repr(C)]
 #[doc(hidden)]
@@ -7508,32 +7508,32 @@ pub struct IDMLCompiledOperator_Vtbl {
 }
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 #[repr(transparent)]
-pub struct IDMLDebugDevice(::windows::core::IUnknown);
+pub struct IDMLDebugDevice(::windows_core::IUnknown);
 impl IDMLDebugDevice {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetMuteDebugOutput<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::BOOL>>(&self, mute: Param0) {
-        (::windows::core::Interface::vtable(self).SetMuteDebugOutput)(::windows::core::Interface::as_raw(self), mute.into_param().abi())
+    pub unsafe fn SetMuteDebugOutput<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(&self, mute: Param0) {
+        (::windows_core::Interface::vtable(self).SetMuteDebugOutput)(::windows_core::Interface::as_raw(self), mute.into_param().abi())
     }
 }
-impl ::core::convert::From<IDMLDebugDevice> for ::windows::core::IUnknown {
+impl ::core::convert::From<IDMLDebugDevice> for ::windows_core::IUnknown {
     fn from(value: IDMLDebugDevice) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IDMLDebugDevice> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IDMLDebugDevice> for ::windows_core::IUnknown {
     fn from(value: &IDMLDebugDevice) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDMLDebugDevice {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IDMLDebugDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDMLDebugDevice {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IDMLDebugDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IDMLDebugDevice {
@@ -7552,14 +7552,14 @@ impl ::core::fmt::Debug for IDMLDebugDevice {
         f.debug_tuple("IDMLDebugDevice").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IDMLDebugDevice {
+unsafe impl ::windows_core::Interface for IDMLDebugDevice {
     type Vtable = IDMLDebugDevice_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7d6f3ac9_394a_4ac3_92a7_390cc57a8217);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7d6f3ac9_394a_4ac3_92a7_390cc57a8217);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDMLDebugDevice_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
     pub SetMuteDebugOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mute: super::super::super::Foundation::BOOL),
     #[cfg(not(feature = "Win32_Foundation"))]
@@ -7567,88 +7567,88 @@ pub struct IDMLDebugDevice_Vtbl {
 }
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 #[repr(transparent)]
-pub struct IDMLDevice(::windows::core::IUnknown);
+pub struct IDMLDevice(::windows_core::IUnknown);
 impl IDMLDevice {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.GetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn GetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.GetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.SetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn SetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.SetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, guid: *const ::windows::core::GUID, data: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.SetPrivateDataInterface)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
+    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, data: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, name: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.SetName)(::windows::core::Interface::as_raw(self), name.into_param().abi()).ok()
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn CheckFeatureSupport(&self, feature: DML_FEATURE, featurequerydatasize: u32, featurequerydata: *const ::core::ffi::c_void, featuresupportdatasize: u32, featuresupportdata: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).CheckFeatureSupport)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(feature), ::core::mem::transmute(featurequerydatasize), ::core::mem::transmute(featurequerydata), ::core::mem::transmute(featuresupportdatasize), ::core::mem::transmute(featuresupportdata)).ok()
+    pub unsafe fn CheckFeatureSupport(&self, feature: DML_FEATURE, featurequerydatasize: u32, featurequerydata: *const ::core::ffi::c_void, featuresupportdatasize: u32, featuresupportdata: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).CheckFeatureSupport)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(feature), ::core::mem::transmute(featurequerydatasize), ::core::mem::transmute(featurequerydata), ::core::mem::transmute(featuresupportdatasize), ::core::mem::transmute(featuresupportdata)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn CreateOperator<T: ::windows::core::Interface>(&self, desc: *const DML_OPERATOR_DESC, result__: *mut ::core::option::Option<T>) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).CreateOperator)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(desc), &<T as ::windows::core::Interface>::IID, result__ as *mut _ as *mut _).ok()
+    pub unsafe fn CreateOperator<T: ::windows_core::Interface>(&self, desc: *const DML_OPERATOR_DESC, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).CreateOperator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(desc), &<T as ::windows_core::Interface>::IID, result__ as *mut _ as *mut _).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn CompileOperator<'a, Param0: ::windows::core::IntoParam<'a, IDMLOperator>, T: ::windows::core::Interface>(&self, op: Param0, flags: DML_EXECUTION_FLAGS, result__: *mut ::core::option::Option<T>) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).CompileOperator)(::windows::core::Interface::as_raw(self), op.into_param().abi(), ::core::mem::transmute(flags), &<T as ::windows::core::Interface>::IID, result__ as *mut _ as *mut _).ok()
+    pub unsafe fn CompileOperator<'a, Param0: ::windows_core::IntoParam<'a, IDMLOperator>, T: ::windows_core::Interface>(&self, op: Param0, flags: DML_EXECUTION_FLAGS, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).CompileOperator)(::windows_core::Interface::as_raw(self), op.into_param().abi(), ::core::mem::transmute(flags), &<T as ::windows_core::Interface>::IID, result__ as *mut _ as *mut _).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn CreateOperatorInitializer<T: ::windows::core::Interface>(&self, operators: &[::core::option::Option<IDMLCompiledOperator>]) -> ::windows::core::Result<T> {
+    pub unsafe fn CreateOperatorInitializer<T: ::windows_core::Interface>(&self, operators: &[::core::option::Option<IDMLCompiledOperator>]) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).CreateOperatorInitializer)(::windows::core::Interface::as_raw(self), operators.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(operators)), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).CreateOperatorInitializer)(::windows_core::Interface::as_raw(self), operators.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(operators)), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn CreateCommandRecorder<T: ::windows::core::Interface>(&self) -> ::windows::core::Result<T> {
+    pub unsafe fn CreateCommandRecorder<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).CreateCommandRecorder)(::windows::core::Interface::as_raw(self), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).CreateCommandRecorder)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`, `\"Win32_Graphics_Direct3D12\"`*"]
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub unsafe fn CreateBindingTable<T: ::windows::core::Interface>(&self, desc: *const DML_BINDING_TABLE_DESC) -> ::windows::core::Result<T> {
+    pub unsafe fn CreateBindingTable<T: ::windows_core::Interface>(&self, desc: *const DML_BINDING_TABLE_DESC) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).CreateBindingTable)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(desc), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).CreateBindingTable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(desc), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn Evict(&self, ppobjects: &[::core::option::Option<IDMLPageable>]) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Evict)(::windows::core::Interface::as_raw(self), ppobjects.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(ppobjects))).ok()
+    pub unsafe fn Evict(&self, ppobjects: &[::core::option::Option<IDMLPageable>]) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Evict)(::windows_core::Interface::as_raw(self), ppobjects.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppobjects))).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn MakeResident(&self, ppobjects: &[::core::option::Option<IDMLPageable>]) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).MakeResident)(::windows::core::Interface::as_raw(self), ppobjects.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(ppobjects))).ok()
+    pub unsafe fn MakeResident(&self, ppobjects: &[::core::option::Option<IDMLPageable>]) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).MakeResident)(::windows_core::Interface::as_raw(self), ppobjects.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppobjects))).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetDeviceRemovedReason(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).GetDeviceRemovedReason)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn GetDeviceRemovedReason(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).GetDeviceRemovedReason)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetParentDevice<T: ::windows::core::Interface>(&self) -> ::windows::core::Result<T> {
+    pub unsafe fn GetParentDevice<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).GetParentDevice)(::windows::core::Interface::as_raw(self), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).GetParentDevice)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
 }
-impl ::core::convert::From<IDMLDevice> for ::windows::core::IUnknown {
+impl ::core::convert::From<IDMLDevice> for ::windows_core::IUnknown {
     fn from(value: IDMLDevice) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IDMLDevice> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IDMLDevice> for ::windows_core::IUnknown {
     fn from(value: &IDMLDevice) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDMLDevice {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IDMLDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDMLDevice {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IDMLDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLDevice> for IDMLObject {
@@ -7661,14 +7661,14 @@ impl ::core::convert::From<&IDMLDevice> for IDMLObject {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for IDMLDevice {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for IDMLDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for &'a IDMLDevice {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for &'a IDMLDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IDMLDevice {
@@ -7687,116 +7687,116 @@ impl ::core::fmt::Debug for IDMLDevice {
         f.debug_tuple("IDMLDevice").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IDMLDevice {
+unsafe impl ::windows_core::Interface for IDMLDevice {
     type Vtable = IDMLDevice_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6dbd6437_96fd_423f_a98c_ae5e7c2a573f);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6dbd6437_96fd_423f_a98c_ae5e7c2a573f);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDMLDevice_Vtbl {
     pub base__: IDMLObject_Vtbl,
-    pub CheckFeatureSupport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, feature: DML_FEATURE, featurequerydatasize: u32, featurequerydata: *const ::core::ffi::c_void, featuresupportdatasize: u32, featuresupportdata: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub CreateOperator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, desc: *const DML_OPERATOR_DESC, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub CompileOperator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, op: ::windows::core::RawPtr, flags: DML_EXECUTION_FLAGS, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub CreateOperatorInitializer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, operatorcount: u32, operators: *const ::windows::core::RawPtr, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub CreateCommandRecorder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub CheckFeatureSupport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, feature: DML_FEATURE, featurequerydatasize: u32, featurequerydata: *const ::core::ffi::c_void, featuresupportdatasize: u32, featuresupportdata: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub CreateOperator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, desc: *const DML_OPERATOR_DESC, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub CompileOperator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, op: ::windows_core::RawPtr, flags: DML_EXECUTION_FLAGS, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub CreateOperatorInitializer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, operatorcount: u32, operators: *const ::windows_core::RawPtr, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub CreateCommandRecorder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub CreateBindingTable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, desc: *const DML_BINDING_TABLE_DESC, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub CreateBindingTable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, desc: *const DML_BINDING_TABLE_DESC, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
     CreateBindingTable: usize,
-    pub Evict: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: u32, ppobjects: *const ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub MakeResident: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: u32, ppobjects: *const ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetDeviceRemovedReason: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub GetParentDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub Evict: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: u32, ppobjects: *const ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub MakeResident: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: u32, ppobjects: *const ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetDeviceRemovedReason: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub GetParentDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 #[repr(transparent)]
-pub struct IDMLDevice1(::windows::core::IUnknown);
+pub struct IDMLDevice1(::windows_core::IUnknown);
 impl IDMLDevice1 {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.GetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn GetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.GetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn SetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, guid: *const ::windows::core::GUID, data: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetPrivateDataInterface)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
+    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, data: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, name: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetName)(::windows::core::Interface::as_raw(self), name.into_param().abi()).ok()
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn CheckFeatureSupport(&self, feature: DML_FEATURE, featurequerydatasize: u32, featurequerydata: *const ::core::ffi::c_void, featuresupportdatasize: u32, featuresupportdata: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.CheckFeatureSupport)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(feature), ::core::mem::transmute(featurequerydatasize), ::core::mem::transmute(featurequerydata), ::core::mem::transmute(featuresupportdatasize), ::core::mem::transmute(featuresupportdata)).ok()
+    pub unsafe fn CheckFeatureSupport(&self, feature: DML_FEATURE, featurequerydatasize: u32, featurequerydata: *const ::core::ffi::c_void, featuresupportdatasize: u32, featuresupportdata: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.CheckFeatureSupport)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(feature), ::core::mem::transmute(featurequerydatasize), ::core::mem::transmute(featurequerydata), ::core::mem::transmute(featuresupportdatasize), ::core::mem::transmute(featuresupportdata)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn CreateOperator<T: ::windows::core::Interface>(&self, desc: *const DML_OPERATOR_DESC, result__: *mut ::core::option::Option<T>) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.CreateOperator)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(desc), &<T as ::windows::core::Interface>::IID, result__ as *mut _ as *mut _).ok()
+    pub unsafe fn CreateOperator<T: ::windows_core::Interface>(&self, desc: *const DML_OPERATOR_DESC, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.CreateOperator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(desc), &<T as ::windows_core::Interface>::IID, result__ as *mut _ as *mut _).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn CompileOperator<'a, Param0: ::windows::core::IntoParam<'a, IDMLOperator>, T: ::windows::core::Interface>(&self, op: Param0, flags: DML_EXECUTION_FLAGS, result__: *mut ::core::option::Option<T>) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.CompileOperator)(::windows::core::Interface::as_raw(self), op.into_param().abi(), ::core::mem::transmute(flags), &<T as ::windows::core::Interface>::IID, result__ as *mut _ as *mut _).ok()
+    pub unsafe fn CompileOperator<'a, Param0: ::windows_core::IntoParam<'a, IDMLOperator>, T: ::windows_core::Interface>(&self, op: Param0, flags: DML_EXECUTION_FLAGS, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.CompileOperator)(::windows_core::Interface::as_raw(self), op.into_param().abi(), ::core::mem::transmute(flags), &<T as ::windows_core::Interface>::IID, result__ as *mut _ as *mut _).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn CreateOperatorInitializer<T: ::windows::core::Interface>(&self, operators: &[::core::option::Option<IDMLCompiledOperator>]) -> ::windows::core::Result<T> {
+    pub unsafe fn CreateOperatorInitializer<T: ::windows_core::Interface>(&self, operators: &[::core::option::Option<IDMLCompiledOperator>]) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).base__.CreateOperatorInitializer)(::windows::core::Interface::as_raw(self), operators.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(operators)), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).base__.CreateOperatorInitializer)(::windows_core::Interface::as_raw(self), operators.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(operators)), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn CreateCommandRecorder<T: ::windows::core::Interface>(&self) -> ::windows::core::Result<T> {
+    pub unsafe fn CreateCommandRecorder<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).base__.CreateCommandRecorder)(::windows::core::Interface::as_raw(self), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).base__.CreateCommandRecorder)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`, `\"Win32_Graphics_Direct3D12\"`*"]
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub unsafe fn CreateBindingTable<T: ::windows::core::Interface>(&self, desc: *const DML_BINDING_TABLE_DESC) -> ::windows::core::Result<T> {
+    pub unsafe fn CreateBindingTable<T: ::windows_core::Interface>(&self, desc: *const DML_BINDING_TABLE_DESC) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).base__.CreateBindingTable)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(desc), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).base__.CreateBindingTable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(desc), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn Evict(&self, ppobjects: &[::core::option::Option<IDMLPageable>]) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.Evict)(::windows::core::Interface::as_raw(self), ppobjects.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(ppobjects))).ok()
+    pub unsafe fn Evict(&self, ppobjects: &[::core::option::Option<IDMLPageable>]) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.Evict)(::windows_core::Interface::as_raw(self), ppobjects.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppobjects))).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn MakeResident(&self, ppobjects: &[::core::option::Option<IDMLPageable>]) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.MakeResident)(::windows::core::Interface::as_raw(self), ppobjects.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(ppobjects))).ok()
+    pub unsafe fn MakeResident(&self, ppobjects: &[::core::option::Option<IDMLPageable>]) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.MakeResident)(::windows_core::Interface::as_raw(self), ppobjects.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppobjects))).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetDeviceRemovedReason(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.GetDeviceRemovedReason)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn GetDeviceRemovedReason(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.GetDeviceRemovedReason)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetParentDevice<T: ::windows::core::Interface>(&self) -> ::windows::core::Result<T> {
+    pub unsafe fn GetParentDevice<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).base__.GetParentDevice)(::windows::core::Interface::as_raw(self), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).base__.GetParentDevice)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn CompileGraph<T: ::windows::core::Interface>(&self, desc: *const DML_GRAPH_DESC, flags: DML_EXECUTION_FLAGS, result__: *mut ::core::option::Option<T>) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).CompileGraph)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(desc), ::core::mem::transmute(flags), &<T as ::windows::core::Interface>::IID, result__ as *mut _ as *mut _).ok()
+    pub unsafe fn CompileGraph<T: ::windows_core::Interface>(&self, desc: *const DML_GRAPH_DESC, flags: DML_EXECUTION_FLAGS, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).CompileGraph)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(desc), ::core::mem::transmute(flags), &<T as ::windows_core::Interface>::IID, result__ as *mut _ as *mut _).ok()
     }
 }
-impl ::core::convert::From<IDMLDevice1> for ::windows::core::IUnknown {
+impl ::core::convert::From<IDMLDevice1> for ::windows_core::IUnknown {
     fn from(value: IDMLDevice1) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IDMLDevice1> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IDMLDevice1> for ::windows_core::IUnknown {
     fn from(value: &IDMLDevice1) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDMLDevice1 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IDMLDevice1 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDMLDevice1 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IDMLDevice1 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLDevice1> for IDMLObject {
@@ -7809,14 +7809,14 @@ impl ::core::convert::From<&IDMLDevice1> for IDMLObject {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for IDMLDevice1 {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for IDMLDevice1 {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for &'a IDMLDevice1 {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for &'a IDMLDevice1 {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLDevice1> for IDMLDevice {
@@ -7829,14 +7829,14 @@ impl ::core::convert::From<&IDMLDevice1> for IDMLDevice {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDevice> for IDMLDevice1 {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDevice> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDevice> for IDMLDevice1 {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDevice> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDevice> for &'a IDMLDevice1 {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDevice> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDevice> for &'a IDMLDevice1 {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDevice> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IDMLDevice1 {
@@ -7855,60 +7855,60 @@ impl ::core::fmt::Debug for IDMLDevice1 {
         f.debug_tuple("IDMLDevice1").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IDMLDevice1 {
+unsafe impl ::windows_core::Interface for IDMLDevice1 {
     type Vtable = IDMLDevice1_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa0884f9a_d2be_4355_aa5d_5901281ad1d2);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa0884f9a_d2be_4355_aa5d_5901281ad1d2);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDMLDevice1_Vtbl {
     pub base__: IDMLDevice_Vtbl,
-    pub CompileGraph: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, desc: *const DML_GRAPH_DESC, flags: DML_EXECUTION_FLAGS, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub CompileGraph: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, desc: *const DML_GRAPH_DESC, flags: DML_EXECUTION_FLAGS, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 #[repr(transparent)]
-pub struct IDMLDeviceChild(::windows::core::IUnknown);
+pub struct IDMLDeviceChild(::windows_core::IUnknown);
 impl IDMLDeviceChild {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.GetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn GetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.GetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.SetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn SetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.SetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, guid: *const ::windows::core::GUID, data: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.SetPrivateDataInterface)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
+    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, data: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, name: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.SetName)(::windows::core::Interface::as_raw(self), name.into_param().abi()).ok()
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetDevice<T: ::windows::core::Interface>(&self) -> ::windows::core::Result<T> {
+    pub unsafe fn GetDevice<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).GetDevice)(::windows::core::Interface::as_raw(self), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).GetDevice)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
 }
-impl ::core::convert::From<IDMLDeviceChild> for ::windows::core::IUnknown {
+impl ::core::convert::From<IDMLDeviceChild> for ::windows_core::IUnknown {
     fn from(value: IDMLDeviceChild) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IDMLDeviceChild> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IDMLDeviceChild> for ::windows_core::IUnknown {
     fn from(value: &IDMLDeviceChild) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDMLDeviceChild {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IDMLDeviceChild {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDMLDeviceChild {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IDMLDeviceChild {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLDeviceChild> for IDMLObject {
@@ -7921,14 +7921,14 @@ impl ::core::convert::From<&IDMLDeviceChild> for IDMLObject {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for IDMLDeviceChild {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for IDMLDeviceChild {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for &'a IDMLDeviceChild {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for &'a IDMLDeviceChild {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IDMLDeviceChild {
@@ -7947,66 +7947,66 @@ impl ::core::fmt::Debug for IDMLDeviceChild {
         f.debug_tuple("IDMLDeviceChild").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IDMLDeviceChild {
+unsafe impl ::windows_core::Interface for IDMLDeviceChild {
     type Vtable = IDMLDeviceChild_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x27e83142_8165_49e3_974e_2fd66e4cb69d);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x27e83142_8165_49e3_974e_2fd66e4cb69d);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDMLDeviceChild_Vtbl {
     pub base__: IDMLObject_Vtbl,
-    pub GetDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub GetDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 #[repr(transparent)]
-pub struct IDMLDispatchable(::windows::core::IUnknown);
+pub struct IDMLDispatchable(::windows_core::IUnknown);
 impl IDMLDispatchable {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.base__.GetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn GetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.base__.GetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.base__.SetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn SetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.base__.SetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, guid: *const ::windows::core::GUID, data: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.base__.SetPrivateDataInterface)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
+    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, data: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, name: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.base__.SetName)(::windows::core::Interface::as_raw(self), name.into_param().abi()).ok()
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetDevice<T: ::windows::core::Interface>(&self) -> ::windows::core::Result<T> {
+    pub unsafe fn GetDevice<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).base__.base__.GetDevice)(::windows::core::Interface::as_raw(self), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).base__.base__.GetDevice)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
     pub unsafe fn GetBindingProperties(&self) -> DML_BINDING_PROPERTIES {
         let mut result__: DML_BINDING_PROPERTIES = ::core::mem::zeroed();
-        (::windows::core::Interface::vtable(self).GetBindingProperties)(::windows::core::Interface::as_raw(self), &mut result__);
+        (::windows_core::Interface::vtable(self).GetBindingProperties)(::windows_core::Interface::as_raw(self), &mut result__);
         result__
     }
 }
-impl ::core::convert::From<IDMLDispatchable> for ::windows::core::IUnknown {
+impl ::core::convert::From<IDMLDispatchable> for ::windows_core::IUnknown {
     fn from(value: IDMLDispatchable) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IDMLDispatchable> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IDMLDispatchable> for ::windows_core::IUnknown {
     fn from(value: &IDMLDispatchable) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDMLDispatchable {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IDMLDispatchable {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDMLDispatchable {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IDMLDispatchable {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLDispatchable> for IDMLObject {
@@ -8019,14 +8019,14 @@ impl ::core::convert::From<&IDMLDispatchable> for IDMLObject {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for IDMLDispatchable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for IDMLDispatchable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for &'a IDMLDispatchable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for &'a IDMLDispatchable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLDispatchable> for IDMLDeviceChild {
@@ -8039,14 +8039,14 @@ impl ::core::convert::From<&IDMLDispatchable> for IDMLDeviceChild {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for IDMLDispatchable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for IDMLDispatchable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLDispatchable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLDispatchable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLDispatchable> for IDMLPageable {
@@ -8059,14 +8059,14 @@ impl ::core::convert::From<&IDMLDispatchable> for IDMLPageable {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLPageable> for IDMLDispatchable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLPageable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLPageable> for IDMLDispatchable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLPageable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLPageable> for &'a IDMLDispatchable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLPageable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLPageable> for &'a IDMLDispatchable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLPageable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IDMLDispatchable {
@@ -8085,9 +8085,9 @@ impl ::core::fmt::Debug for IDMLDispatchable {
         f.debug_tuple("IDMLDispatchable").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IDMLDispatchable {
+unsafe impl ::windows_core::Interface for IDMLDispatchable {
     type Vtable = IDMLDispatchable_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdcb821a8_1039_441e_9f1c_b1759c2f3cec);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdcb821a8_1039_441e_9f1c_b1759c2f3cec);
 }
 #[repr(C)]
 #[doc(hidden)]
@@ -8097,43 +8097,43 @@ pub struct IDMLDispatchable_Vtbl {
 }
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 #[repr(transparent)]
-pub struct IDMLObject(::windows::core::IUnknown);
+pub struct IDMLObject(::windows_core::IUnknown);
 impl IDMLObject {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).GetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn GetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).GetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn SetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, guid: *const ::windows::core::GUID, data: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetPrivateDataInterface)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
+    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, data: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, name: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetName)(::windows::core::Interface::as_raw(self), name.into_param().abi()).ok()
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
 }
-impl ::core::convert::From<IDMLObject> for ::windows::core::IUnknown {
+impl ::core::convert::From<IDMLObject> for ::windows_core::IUnknown {
     fn from(value: IDMLObject) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IDMLObject> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IDMLObject> for ::windows_core::IUnknown {
     fn from(value: &IDMLObject) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDMLObject {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IDMLObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDMLObject {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IDMLObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IDMLObject {
@@ -8152,63 +8152,63 @@ impl ::core::fmt::Debug for IDMLObject {
         f.debug_tuple("IDMLObject").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IDMLObject {
+unsafe impl ::windows_core::Interface for IDMLObject {
     type Vtable = IDMLObject_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc8263aac_9e0c_4a2d_9b8e_007521a3317c);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc8263aac_9e0c_4a2d_9b8e_007521a3317c);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDMLObject_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetPrivateData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, guid: *const ::windows::core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub SetPrivateData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, guid: *const ::windows::core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub SetPrivateDataInterface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, guid: *const ::windows::core::GUID, data: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::windows::core::PCWSTR) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetPrivateData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, guid: *const ::windows_core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub SetPrivateData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, guid: *const ::windows_core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub SetPrivateDataInterface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, guid: *const ::windows_core::GUID, data: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 #[repr(transparent)]
-pub struct IDMLOperator(::windows::core::IUnknown);
+pub struct IDMLOperator(::windows_core::IUnknown);
 impl IDMLOperator {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.GetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn GetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.GetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn SetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, guid: *const ::windows::core::GUID, data: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetPrivateDataInterface)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
+    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, data: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, name: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetName)(::windows::core::Interface::as_raw(self), name.into_param().abi()).ok()
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetDevice<T: ::windows::core::Interface>(&self) -> ::windows::core::Result<T> {
+    pub unsafe fn GetDevice<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).base__.GetDevice)(::windows::core::Interface::as_raw(self), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).base__.GetDevice)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
 }
-impl ::core::convert::From<IDMLOperator> for ::windows::core::IUnknown {
+impl ::core::convert::From<IDMLOperator> for ::windows_core::IUnknown {
     fn from(value: IDMLOperator) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IDMLOperator> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IDMLOperator> for ::windows_core::IUnknown {
     fn from(value: &IDMLOperator) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDMLOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IDMLOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDMLOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IDMLOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLOperator> for IDMLObject {
@@ -8221,14 +8221,14 @@ impl ::core::convert::From<&IDMLOperator> for IDMLObject {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for IDMLOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for IDMLOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for &'a IDMLOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for &'a IDMLOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLOperator> for IDMLDeviceChild {
@@ -8241,14 +8241,14 @@ impl ::core::convert::From<&IDMLOperator> for IDMLDeviceChild {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for IDMLOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for IDMLOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLOperator {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLOperator {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IDMLOperator {
@@ -8267,9 +8267,9 @@ impl ::core::fmt::Debug for IDMLOperator {
         f.debug_tuple("IDMLOperator").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IDMLOperator {
+unsafe impl ::windows_core::Interface for IDMLOperator {
     type Vtable = IDMLOperator_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x26caae7a_3081_4633_9581_226fbe57695d);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x26caae7a_3081_4633_9581_226fbe57695d);
 }
 #[repr(C)]
 #[doc(hidden)]
@@ -8278,58 +8278,58 @@ pub struct IDMLOperator_Vtbl {
 }
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 #[repr(transparent)]
-pub struct IDMLOperatorInitializer(::windows::core::IUnknown);
+pub struct IDMLOperatorInitializer(::windows_core::IUnknown);
 impl IDMLOperatorInitializer {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.base__.base__.GetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn GetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.base__.base__.GetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.base__.base__.SetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn SetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.base__.base__.SetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, guid: *const ::windows::core::GUID, data: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.base__.base__.SetPrivateDataInterface)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
+    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, data: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.base__.base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, name: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.base__.base__.SetName)(::windows::core::Interface::as_raw(self), name.into_param().abi()).ok()
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.base__.base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetDevice<T: ::windows::core::Interface>(&self) -> ::windows::core::Result<T> {
+    pub unsafe fn GetDevice<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).base__.base__.base__.GetDevice)(::windows::core::Interface::as_raw(self), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).base__.base__.base__.GetDevice)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
     pub unsafe fn GetBindingProperties(&self) -> DML_BINDING_PROPERTIES {
         let mut result__: DML_BINDING_PROPERTIES = ::core::mem::zeroed();
-        (::windows::core::Interface::vtable(self).base__.GetBindingProperties)(::windows::core::Interface::as_raw(self), &mut result__);
+        (::windows_core::Interface::vtable(self).base__.GetBindingProperties)(::windows_core::Interface::as_raw(self), &mut result__);
         result__
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn Reset(&self, operators: &[::core::option::Option<IDMLCompiledOperator>]) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Reset)(::windows::core::Interface::as_raw(self), operators.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(operators))).ok()
+    pub unsafe fn Reset(&self, operators: &[::core::option::Option<IDMLCompiledOperator>]) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Reset)(::windows_core::Interface::as_raw(self), operators.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(operators))).ok()
     }
 }
-impl ::core::convert::From<IDMLOperatorInitializer> for ::windows::core::IUnknown {
+impl ::core::convert::From<IDMLOperatorInitializer> for ::windows_core::IUnknown {
     fn from(value: IDMLOperatorInitializer) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IDMLOperatorInitializer> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IDMLOperatorInitializer> for ::windows_core::IUnknown {
     fn from(value: &IDMLOperatorInitializer) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDMLOperatorInitializer {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IDMLOperatorInitializer {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDMLOperatorInitializer {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IDMLOperatorInitializer {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLOperatorInitializer> for IDMLObject {
@@ -8342,14 +8342,14 @@ impl ::core::convert::From<&IDMLOperatorInitializer> for IDMLObject {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for IDMLOperatorInitializer {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for IDMLOperatorInitializer {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for &'a IDMLOperatorInitializer {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for &'a IDMLOperatorInitializer {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLOperatorInitializer> for IDMLDeviceChild {
@@ -8362,14 +8362,14 @@ impl ::core::convert::From<&IDMLOperatorInitializer> for IDMLDeviceChild {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for IDMLOperatorInitializer {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for IDMLOperatorInitializer {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLOperatorInitializer {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLOperatorInitializer {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLOperatorInitializer> for IDMLPageable {
@@ -8382,14 +8382,14 @@ impl ::core::convert::From<&IDMLOperatorInitializer> for IDMLPageable {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLPageable> for IDMLOperatorInitializer {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLPageable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLPageable> for IDMLOperatorInitializer {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLPageable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLPageable> for &'a IDMLOperatorInitializer {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLPageable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLPageable> for &'a IDMLOperatorInitializer {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLPageable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLOperatorInitializer> for IDMLDispatchable {
@@ -8402,14 +8402,14 @@ impl ::core::convert::From<&IDMLOperatorInitializer> for IDMLDispatchable {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDispatchable> for IDMLOperatorInitializer {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDispatchable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDispatchable> for IDMLOperatorInitializer {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDispatchable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDispatchable> for &'a IDMLOperatorInitializer {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDispatchable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDispatchable> for &'a IDMLOperatorInitializer {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDispatchable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IDMLOperatorInitializer {
@@ -8428,60 +8428,60 @@ impl ::core::fmt::Debug for IDMLOperatorInitializer {
         f.debug_tuple("IDMLOperatorInitializer").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IDMLOperatorInitializer {
+unsafe impl ::windows_core::Interface for IDMLOperatorInitializer {
     type Vtable = IDMLOperatorInitializer_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x427c1113_435c_469c_8676_4d5dd072f813);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x427c1113_435c_469c_8676_4d5dd072f813);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDMLOperatorInitializer_Vtbl {
     pub base__: IDMLDispatchable_Vtbl,
-    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, operatorcount: u32, operators: *const ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, operatorcount: u32, operators: *const ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 #[repr(transparent)]
-pub struct IDMLPageable(::windows::core::IUnknown);
+pub struct IDMLPageable(::windows_core::IUnknown);
 impl IDMLPageable {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.GetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn GetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.GetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateData(&self, guid: *const ::windows::core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetPrivateData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
+    pub unsafe fn SetPrivateData(&self, guid: *const ::windows_core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetPrivateData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), ::core::mem::transmute(datasize), ::core::mem::transmute(data)).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, guid: *const ::windows::core::GUID, data: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetPrivateDataInterface)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
+    pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, data: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), data.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn SetName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, name: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.SetName)(::windows::core::Interface::as_raw(self), name.into_param().abi()).ok()
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
-    pub unsafe fn GetDevice<T: ::windows::core::Interface>(&self) -> ::windows::core::Result<T> {
+    pub unsafe fn GetDevice<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
-        (::windows::core::Interface::vtable(self).base__.GetDevice)(::windows::core::Interface::as_raw(self), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+        (::windows_core::Interface::vtable(self).base__.GetDevice)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
 }
-impl ::core::convert::From<IDMLPageable> for ::windows::core::IUnknown {
+impl ::core::convert::From<IDMLPageable> for ::windows_core::IUnknown {
     fn from(value: IDMLPageable) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IDMLPageable> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IDMLPageable> for ::windows_core::IUnknown {
     fn from(value: &IDMLPageable) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDMLPageable {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IDMLPageable {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDMLPageable {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IDMLPageable {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLPageable> for IDMLObject {
@@ -8494,14 +8494,14 @@ impl ::core::convert::From<&IDMLPageable> for IDMLObject {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for IDMLPageable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for IDMLPageable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLObject> for &'a IDMLPageable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLObject> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLObject> for &'a IDMLPageable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLObject> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IDMLPageable> for IDMLDeviceChild {
@@ -8514,14 +8514,14 @@ impl ::core::convert::From<&IDMLPageable> for IDMLDeviceChild {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for IDMLPageable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for IDMLPageable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLPageable {
-    fn into_param(self) -> ::windows::core::Param<'a, IDMLDeviceChild> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IDMLDeviceChild> for &'a IDMLPageable {
+    fn into_param(self) -> ::windows_core::Param<'a, IDMLDeviceChild> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IDMLPageable {
@@ -8540,9 +8540,9 @@ impl ::core::fmt::Debug for IDMLPageable {
         f.debug_tuple("IDMLPageable").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IDMLPageable {
+unsafe impl ::windows_core::Interface for IDMLPageable {
     type Vtable = IDMLPageable_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb1ab0825_4542_4a4b_8617_6dde6e8f6201);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb1ab0825_4542_4a4b_8617_6dde6e8f6201);
 }
 #[repr(C)]
 #[doc(hidden)]

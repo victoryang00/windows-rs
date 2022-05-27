@@ -15,51 +15,51 @@ pub mod Urlmon;
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn BindMoniker(pmk: IMoniker, grfopt: u32, iidresult: *const ::windows_sys::core::GUID, ppvresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn BindMoniker(pmk: IMoniker, grfopt: u32, iidresult: *const ::windows_sys_core::GUID, ppvresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CLSIDFromProgID(lpszprogid: ::windows_sys::core::PCWSTR, lpclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn CLSIDFromProgID(lpszprogid: ::windows_sys_core::PCWSTR, lpclsid: *mut ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CLSIDFromProgIDEx(lpszprogid: ::windows_sys::core::PCWSTR, lpclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn CLSIDFromProgIDEx(lpszprogid: ::windows_sys_core::PCWSTR, lpclsid: *mut ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CLSIDFromString(lpsz: ::windows_sys::core::PCWSTR, pclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn CLSIDFromString(lpsz: ::windows_sys_core::PCWSTR, pclsid: *mut ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
     pub fn CoAddRefServerProcess() -> u32;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoAllowSetForegroundWindow(punk: ::windows_sys::core::IUnknown, lpvreserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoAllowSetForegroundWindow(punk: ::windows_sys_core::IUnknown, lpvreserved: *const ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoAllowUnmarshalerCLSID(clsid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn CoAllowUnmarshalerCLSID(clsid: *const ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
     pub fn CoBuildVersion() -> u32;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoCancelCall(dwthreadid: u32, ultimeout: u32) -> ::windows_sys::core::HRESULT;
+    pub fn CoCancelCall(dwthreadid: u32, ultimeout: u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoCopyProxy(pproxy: ::windows_sys::core::IUnknown, ppcopy: *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn CoCopyProxy(pproxy: ::windows_sys_core::IUnknown, ppcopy: *mut ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoCreateFreeThreadedMarshaler(punkouter: ::windows_sys::core::IUnknown, ppunkmarshal: *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn CoCreateFreeThreadedMarshaler(punkouter: ::windows_sys_core::IUnknown, ppunkmarshal: *mut ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoCreateGuid(pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn CoCreateGuid(pguid: *mut ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoCreateInstance(rclsid: *const ::windows_sys::core::GUID, punkouter: ::windows_sys::core::IUnknown, dwclscontext: CLSCTX, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoCreateInstance(rclsid: *const ::windows_sys_core::GUID, punkouter: ::windows_sys_core::IUnknown, dwclscontext: CLSCTX, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoCreateInstanceEx(clsid: *const ::windows_sys::core::GUID, punkouter: ::windows_sys::core::IUnknown, dwclsctx: CLSCTX, pserverinfo: *const COSERVERINFO, dwcount: u32, presults: *mut MULTI_QI) -> ::windows_sys::core::HRESULT;
+    pub fn CoCreateInstanceEx(clsid: *const ::windows_sys_core::GUID, punkouter: ::windows_sys_core::IUnknown, dwclsctx: CLSCTX, pserverinfo: *const COSERVERINFO, dwcount: u32, presults: *mut MULTI_QI) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoCreateInstanceFromApp(clsid: *const ::windows_sys::core::GUID, punkouter: ::windows_sys::core::IUnknown, dwclsctx: CLSCTX, reserved: *const ::core::ffi::c_void, dwcount: u32, presults: *mut MULTI_QI) -> ::windows_sys::core::HRESULT;
+    pub fn CoCreateInstanceFromApp(clsid: *const ::windows_sys_core::GUID, punkouter: ::windows_sys_core::IUnknown, dwclsctx: CLSCTX, reserved: *const ::core::ffi::c_void, dwcount: u32, presults: *mut MULTI_QI) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoDecrementMTAUsage(cookie: CO_MTA_USAGE_COOKIE) -> ::windows_sys::core::HRESULT;
+    pub fn CoDecrementMTAUsage(cookie: CO_MTA_USAGE_COOKIE) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoDisableCallCancellation(preserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoDisableCallCancellation(preserved: *const ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoDisconnectContext(dwtimeout: u32) -> ::windows_sys::core::HRESULT;
+    pub fn CoDisconnectContext(dwtimeout: u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoDisconnectObject(punk: ::windows_sys::core::IUnknown, dwreserved: u32) -> ::windows_sys::core::HRESULT;
+    pub fn CoDisconnectObject(punk: ::windows_sys_core::IUnknown, dwreserved: u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn CoDosDateTimeToFileTime(ndosdate: u16, ndostime: u16, lpfiletime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoEnableCallCancellation(preserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoEnableCallCancellation(preserved: *const ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CoFileTimeNow(lpfiletime: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT;
+    pub fn CoFileTimeNow(lpfiletime: *mut super::super::Foundation::FILETIME) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn CoFileTimeToDosDateTime(lpfiletime: *const super::super::Foundation::FILETIME, lpdosdate: *mut u16, lpdostime: *mut u16) -> super::super::Foundation::BOOL;
@@ -73,105 +73,105 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
     pub fn CoFreeUnusedLibrariesEx(dwunloaddelay: u32, dwreserved: u32);
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoGetApartmentType(papttype: *mut APTTYPE, paptqualifier: *mut APTTYPEQUALIFIER) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetApartmentType(papttype: *mut APTTYPE, paptqualifier: *mut APTTYPEQUALIFIER) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoGetCallContext(riid: *const ::windows_sys::core::GUID, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetCallContext(riid: *const ::windows_sys_core::GUID, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoGetCallerTID(lpdwtid: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetCallerTID(lpdwtid: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoGetCancelObject(dwthreadid: u32, iid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetCancelObject(dwthreadid: u32, iid: *const ::windows_sys_core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoGetClassObject(rclsid: *const ::windows_sys::core::GUID, dwclscontext: CLSCTX, pvreserved: *const ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetClassObject(rclsid: *const ::windows_sys_core::GUID, dwclscontext: CLSCTX, pvreserved: *const ::core::ffi::c_void, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoGetContextToken(ptoken: *mut usize) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetContextToken(ptoken: *mut usize) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoGetCurrentLogicalThreadId(pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetCurrentLogicalThreadId(pguid: *mut ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
     pub fn CoGetCurrentProcess() -> u32;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoGetMalloc(dwmemcontext: u32, ppmalloc: *mut IMalloc) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetMalloc(dwmemcontext: u32, ppmalloc: *mut IMalloc) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoGetObject(pszname: ::windows_sys::core::PCWSTR, pbindoptions: *const BIND_OPTS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetObject(pszname: ::windows_sys_core::PCWSTR, pbindoptions: *const BIND_OPTS, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoGetObjectContext(riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetObjectContext(riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoGetPSClsid(riid: *const ::windows_sys::core::GUID, pclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetPSClsid(riid: *const ::windows_sys_core::GUID, pclsid: *mut ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Security\"`*"]
     #[cfg(feature = "Win32_Security")]
-    pub fn CoGetSystemSecurityPermissions(comsdtype: COMSD, ppsd: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetSystemSecurityPermissions(comsdtype: COMSD, ppsd: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoGetTreatAsClass(clsidold: *const ::windows_sys::core::GUID, pclsidnew: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetTreatAsClass(clsidold: *const ::windows_sys_core::GUID, pclsidnew: *mut ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoImpersonateClient() -> ::windows_sys::core::HRESULT;
+    pub fn CoImpersonateClient() -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoIncrementMTAUsage(pcookie: *mut CO_MTA_USAGE_COOKIE) -> ::windows_sys::core::HRESULT;
+    pub fn CoIncrementMTAUsage(pcookie: *mut CO_MTA_USAGE_COOKIE) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoInitialize(pvreserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoInitialize(pvreserved: *const ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoInitializeEx(pvreserved: *const ::core::ffi::c_void, dwcoinit: COINIT) -> ::windows_sys::core::HRESULT;
+    pub fn CoInitializeEx(pvreserved: *const ::core::ffi::c_void, dwcoinit: COINIT) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Security\"`*"]
     #[cfg(feature = "Win32_Security")]
-    pub fn CoInitializeSecurity(psecdesc: super::super::Security::PSECURITY_DESCRIPTOR, cauthsvc: i32, asauthsvc: *const SOLE_AUTHENTICATION_SERVICE, preserved1: *const ::core::ffi::c_void, dwauthnlevel: RPC_C_AUTHN_LEVEL, dwimplevel: RPC_C_IMP_LEVEL, pauthlist: *const ::core::ffi::c_void, dwcapabilities: EOLE_AUTHENTICATION_CAPABILITIES, preserved3: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoInitializeSecurity(psecdesc: super::super::Security::PSECURITY_DESCRIPTOR, cauthsvc: i32, asauthsvc: *const SOLE_AUTHENTICATION_SERVICE, preserved1: *const ::core::ffi::c_void, dwauthnlevel: RPC_C_AUTHN_LEVEL, dwimplevel: RPC_C_IMP_LEVEL, pauthlist: *const ::core::ffi::c_void, dwcapabilities: EOLE_AUTHENTICATION_CAPABILITIES, preserved3: *const ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoInstall(pbc: IBindCtx, dwflags: u32, pclassspec: *const uCLSSPEC, pquery: *const QUERYCONTEXT, pszcodebase: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT;
+    pub fn CoInstall(pbc: IBindCtx, dwflags: u32, pclassspec: *const uCLSSPEC, pquery: *const QUERYCONTEXT, pszcodebase: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoInvalidateRemoteMachineBindings(pszmachinename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT;
+    pub fn CoInvalidateRemoteMachineBindings(pszmachinename: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CoIsHandlerConnected(punk: ::windows_sys::core::IUnknown) -> super::super::Foundation::BOOL;
+    pub fn CoIsHandlerConnected(punk: ::windows_sys_core::IUnknown) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CoIsOle1Class(rclsid: *const ::windows_sys::core::GUID) -> super::super::Foundation::BOOL;
+    pub fn CoIsOle1Class(rclsid: *const ::windows_sys_core::GUID) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CoLoadLibrary(lpszlibname: ::windows_sys::core::PCWSTR, bautofree: super::super::Foundation::BOOL) -> super::super::Foundation::HINSTANCE;
+    pub fn CoLoadLibrary(lpszlibname: ::windows_sys_core::PCWSTR, bautofree: super::super::Foundation::BOOL) -> super::super::Foundation::HINSTANCE;
     #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CoLockObjectExternal(punk: ::windows_sys::core::IUnknown, flock: super::super::Foundation::BOOL, flastunlockreleases: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
+    pub fn CoLockObjectExternal(punk: ::windows_sys_core::IUnknown, flock: super::super::Foundation::BOOL, flastunlockreleases: super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoQueryAuthenticationServices(pcauthsvc: *mut u32, asauthsvc: *mut *mut SOLE_AUTHENTICATION_SERVICE) -> ::windows_sys::core::HRESULT;
+    pub fn CoQueryAuthenticationServices(pcauthsvc: *mut u32, asauthsvc: *mut *mut SOLE_AUTHENTICATION_SERVICE) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoQueryClientBlanket(pauthnsvc: *mut u32, pauthzsvc: *mut u32, pserverprincname: *mut ::windows_sys::core::PWSTR, pauthnlevel: *mut u32, pimplevel: *mut u32, pprivs: *mut *mut ::core::ffi::c_void, pcapabilities: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn CoQueryClientBlanket(pauthnsvc: *mut u32, pauthzsvc: *mut u32, pserverprincname: *mut ::windows_sys_core::PWSTR, pauthnlevel: *mut u32, pimplevel: *mut u32, pprivs: *mut *mut ::core::ffi::c_void, pcapabilities: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoQueryProxyBlanket(pproxy: ::windows_sys::core::IUnknown, pwauthnsvc: *mut u32, pauthzsvc: *mut u32, pserverprincname: *mut ::windows_sys::core::PWSTR, pauthnlevel: *mut u32, pimplevel: *mut u32, pauthinfo: *mut *mut ::core::ffi::c_void, pcapabilites: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn CoQueryProxyBlanket(pproxy: ::windows_sys_core::IUnknown, pwauthnsvc: *mut u32, pauthzsvc: *mut u32, pserverprincname: *mut ::windows_sys_core::PWSTR, pauthnlevel: *mut u32, pimplevel: *mut u32, pauthinfo: *mut *mut ::core::ffi::c_void, pcapabilites: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoRegisterActivationFilter(pactivationfilter: IActivationFilter) -> ::windows_sys::core::HRESULT;
+    pub fn CoRegisterActivationFilter(pactivationfilter: IActivationFilter) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoRegisterChannelHook(extensionuuid: *const ::windows_sys::core::GUID, pchannelhook: IChannelHook) -> ::windows_sys::core::HRESULT;
+    pub fn CoRegisterChannelHook(extensionuuid: *const ::windows_sys_core::GUID, pchannelhook: IChannelHook) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoRegisterClassObject(rclsid: *const ::windows_sys::core::GUID, punk: ::windows_sys::core::IUnknown, dwclscontext: CLSCTX, flags: REGCLS, lpdwregister: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn CoRegisterClassObject(rclsid: *const ::windows_sys_core::GUID, punk: ::windows_sys_core::IUnknown, dwclscontext: CLSCTX, flags: REGCLS, lpdwregister: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoRegisterDeviceCatalog(deviceinstanceid: ::windows_sys::core::PCWSTR, cookie: *mut CO_DEVICE_CATALOG_COOKIE) -> ::windows_sys::core::HRESULT;
+    pub fn CoRegisterDeviceCatalog(deviceinstanceid: ::windows_sys_core::PCWSTR, cookie: *mut CO_DEVICE_CATALOG_COOKIE) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoRegisterInitializeSpy(pspy: IInitializeSpy, pulicookie: *mut u64) -> ::windows_sys::core::HRESULT;
+    pub fn CoRegisterInitializeSpy(pspy: IInitializeSpy, pulicookie: *mut u64) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoRegisterMallocSpy(pmallocspy: IMallocSpy) -> ::windows_sys::core::HRESULT;
+    pub fn CoRegisterMallocSpy(pmallocspy: IMallocSpy) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoRegisterPSClsid(riid: *const ::windows_sys::core::GUID, rclsid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn CoRegisterPSClsid(riid: *const ::windows_sys_core::GUID, rclsid: *const ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoRegisterSurrogate(psurrogate: ISurrogate) -> ::windows_sys::core::HRESULT;
+    pub fn CoRegisterSurrogate(psurrogate: ISurrogate) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
     pub fn CoReleaseServerProcess() -> u32;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoResumeClassObjects() -> ::windows_sys::core::HRESULT;
+    pub fn CoResumeClassObjects() -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoRevertToSelf() -> ::windows_sys::core::HRESULT;
+    pub fn CoRevertToSelf() -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoRevokeClassObject(dwregister: u32) -> ::windows_sys::core::HRESULT;
+    pub fn CoRevokeClassObject(dwregister: u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoRevokeDeviceCatalog(cookie: CO_DEVICE_CATALOG_COOKIE) -> ::windows_sys::core::HRESULT;
+    pub fn CoRevokeDeviceCatalog(cookie: CO_DEVICE_CATALOG_COOKIE) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoRevokeInitializeSpy(ulicookie: u64) -> ::windows_sys::core::HRESULT;
+    pub fn CoRevokeInitializeSpy(ulicookie: u64) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoRevokeMallocSpy() -> ::windows_sys::core::HRESULT;
+    pub fn CoRevokeMallocSpy() -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoSetCancelObject(punk: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn CoSetCancelObject(punk: ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoSetProxyBlanket(pproxy: ::windows_sys::core::IUnknown, dwauthnsvc: u32, dwauthzsvc: u32, pserverprincname: ::windows_sys::core::PCWSTR, dwauthnlevel: RPC_C_AUTHN_LEVEL, dwimplevel: RPC_C_IMP_LEVEL, pauthinfo: *const ::core::ffi::c_void, dwcapabilities: EOLE_AUTHENTICATION_CAPABILITIES) -> ::windows_sys::core::HRESULT;
+    pub fn CoSetProxyBlanket(pproxy: ::windows_sys_core::IUnknown, dwauthnsvc: u32, dwauthzsvc: u32, pserverprincname: ::windows_sys_core::PCWSTR, dwauthnlevel: RPC_C_AUTHN_LEVEL, dwimplevel: RPC_C_IMP_LEVEL, pauthinfo: *const ::core::ffi::c_void, dwcapabilities: EOLE_AUTHENTICATION_CAPABILITIES) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoSuspendClassObjects() -> ::windows_sys::core::HRESULT;
+    pub fn CoSuspendClassObjects() -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoSwitchCallContext(pnewobject: ::windows_sys::core::IUnknown, ppoldobject: *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn CoSwitchCallContext(pnewobject: ::windows_sys_core::IUnknown, ppoldobject: *mut ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
     pub fn CoTaskMemAlloc(cb: usize) -> *mut ::core::ffi::c_void;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
@@ -179,75 +179,75 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
     pub fn CoTaskMemRealloc(pv: *const ::core::ffi::c_void, cb: usize) -> *mut ::core::ffi::c_void;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoTestCancel() -> ::windows_sys::core::HRESULT;
+    pub fn CoTestCancel() -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CoTreatAsClass(clsidold: *const ::windows_sys::core::GUID, clsidnew: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn CoTreatAsClass(clsidold: *const ::windows_sys_core::GUID, clsidnew: *const ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
     pub fn CoUninitialize();
     #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CoWaitForMultipleHandles(dwflags: u32, dwtimeout: u32, chandles: u32, phandles: *const super::super::Foundation::HANDLE, lpdwindex: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn CoWaitForMultipleHandles(dwflags: u32, dwtimeout: u32, chandles: u32, phandles: *const super::super::Foundation::HANDLE, lpdwindex: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CoWaitForMultipleObjects(dwflags: u32, dwtimeout: u32, chandles: u32, phandles: *const super::super::Foundation::HANDLE, lpdwindex: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn CoWaitForMultipleObjects(dwflags: u32, dwtimeout: u32, chandles: u32, phandles: *const super::super::Foundation::HANDLE, lpdwindex: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreateAntiMoniker(ppmk: *mut IMoniker) -> ::windows_sys::core::HRESULT;
+    pub fn CreateAntiMoniker(ppmk: *mut IMoniker) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreateBindCtx(reserved: u32, ppbc: *mut IBindCtx) -> ::windows_sys::core::HRESULT;
+    pub fn CreateBindCtx(reserved: u32, ppbc: *mut IBindCtx) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreateClassMoniker(rclsid: *const ::windows_sys::core::GUID, ppmk: *mut IMoniker) -> ::windows_sys::core::HRESULT;
+    pub fn CreateClassMoniker(rclsid: *const ::windows_sys_core::GUID, ppmk: *mut IMoniker) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreateDataAdviseHolder(ppdaholder: *mut IDataAdviseHolder) -> ::windows_sys::core::HRESULT;
+    pub fn CreateDataAdviseHolder(ppdaholder: *mut IDataAdviseHolder) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreateDataCache(punkouter: ::windows_sys::core::IUnknown, rclsid: *const ::windows_sys::core::GUID, iid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CreateDataCache(punkouter: ::windows_sys_core::IUnknown, rclsid: *const ::windows_sys_core::GUID, iid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreateFileMoniker(lpszpathname: ::windows_sys::core::PCWSTR, ppmk: *mut IMoniker) -> ::windows_sys::core::HRESULT;
+    pub fn CreateFileMoniker(lpszpathname: ::windows_sys_core::PCWSTR, ppmk: *mut IMoniker) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreateGenericComposite(pmkfirst: IMoniker, pmkrest: IMoniker, ppmkcomposite: *mut IMoniker) -> ::windows_sys::core::HRESULT;
+    pub fn CreateGenericComposite(pmkfirst: IMoniker, pmkrest: IMoniker, ppmkcomposite: *mut IMoniker) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreateIUriBuilder(piuri: IUri, dwflags: u32, dwreserved: usize, ppiuribuilder: *mut IUriBuilder) -> ::windows_sys::core::HRESULT;
+    pub fn CreateIUriBuilder(piuri: IUri, dwflags: u32, dwreserved: usize, ppiuribuilder: *mut IUriBuilder) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreateItemMoniker(lpszdelim: ::windows_sys::core::PCWSTR, lpszitem: ::windows_sys::core::PCWSTR, ppmk: *mut IMoniker) -> ::windows_sys::core::HRESULT;
+    pub fn CreateItemMoniker(lpszdelim: ::windows_sys_core::PCWSTR, lpszitem: ::windows_sys_core::PCWSTR, ppmk: *mut IMoniker) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreateObjrefMoniker(punk: ::windows_sys::core::IUnknown, ppmk: *mut IMoniker) -> ::windows_sys::core::HRESULT;
+    pub fn CreateObjrefMoniker(punk: ::windows_sys_core::IUnknown, ppmk: *mut IMoniker) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreatePointerMoniker(punk: ::windows_sys::core::IUnknown, ppmk: *mut IMoniker) -> ::windows_sys::core::HRESULT;
+    pub fn CreatePointerMoniker(punk: ::windows_sys_core::IUnknown, ppmk: *mut IMoniker) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateStdProgressIndicator(hwndparent: super::super::Foundation::HWND, psztitle: ::windows_sys::core::PCWSTR, pibsccaller: IBindStatusCallback, ppibsc: *mut IBindStatusCallback) -> ::windows_sys::core::HRESULT;
+    pub fn CreateStdProgressIndicator(hwndparent: super::super::Foundation::HWND, psztitle: ::windows_sys_core::PCWSTR, pibsccaller: IBindStatusCallback, ppibsc: *mut IBindStatusCallback) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreateUri(pwzuri: ::windows_sys::core::PCWSTR, dwflags: URI_CREATE_FLAGS, dwreserved: usize, ppuri: *mut IUri) -> ::windows_sys::core::HRESULT;
+    pub fn CreateUri(pwzuri: ::windows_sys_core::PCWSTR, dwflags: URI_CREATE_FLAGS, dwreserved: usize, ppuri: *mut IUri) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreateUriFromMultiByteString(pszansiinputuri: ::windows_sys::core::PCSTR, dwencodingflags: u32, dwcodepage: u32, dwcreateflags: u32, dwreserved: usize, ppuri: *mut IUri) -> ::windows_sys::core::HRESULT;
+    pub fn CreateUriFromMultiByteString(pszansiinputuri: ::windows_sys_core::PCSTR, dwencodingflags: u32, dwcodepage: u32, dwcreateflags: u32, dwreserved: usize, ppuri: *mut IUri) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn CreateUriWithFragment(pwzuri: ::windows_sys::core::PCWSTR, pwzfragment: ::windows_sys::core::PCWSTR, dwflags: u32, dwreserved: usize, ppuri: *mut IUri) -> ::windows_sys::core::HRESULT;
+    pub fn CreateUriWithFragment(pwzuri: ::windows_sys_core::PCWSTR, pwzfragment: ::windows_sys_core::PCWSTR, dwflags: u32, dwreserved: usize, ppuri: *mut IUri) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn DcomChannelSetHResult(pvreserved: *const ::core::ffi::c_void, pulreserved: *const u32, appshr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT;
+    pub fn DcomChannelSetHResult(pvreserved: *const ::core::ffi::c_void, pulreserved: *const u32, appshr: ::windows_sys_core::HRESULT) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn GetClassFile(szfilename: ::windows_sys::core::PCWSTR, pclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn GetClassFile(szfilename: ::windows_sys_core::PCWSTR, pclsid: *mut ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn GetErrorInfo(dwreserved: u32, pperrinfo: *mut IErrorInfo) -> ::windows_sys::core::HRESULT;
+    pub fn GetErrorInfo(dwreserved: u32, pperrinfo: *mut IErrorInfo) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn GetRunningObjectTable(reserved: u32, pprot: *mut IRunningObjectTable) -> ::windows_sys::core::HRESULT;
+    pub fn GetRunningObjectTable(reserved: u32, pprot: *mut IRunningObjectTable) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn IIDFromString(lpsz: ::windows_sys::core::PCWSTR, lpiid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn IIDFromString(lpsz: ::windows_sys_core::PCWSTR, lpiid: *mut ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn MkParseDisplayName(pbc: IBindCtx, szusername: ::windows_sys::core::PCWSTR, pcheaten: *mut u32, ppmk: *mut IMoniker) -> ::windows_sys::core::HRESULT;
+    pub fn MkParseDisplayName(pbc: IBindCtx, szusername: ::windows_sys_core::PCWSTR, pcheaten: *mut u32, ppmk: *mut IMoniker) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn MonikerCommonPrefixWith(pmkthis: IMoniker, pmkother: IMoniker, ppmkcommon: *mut IMoniker) -> ::windows_sys::core::HRESULT;
+    pub fn MonikerCommonPrefixWith(pmkthis: IMoniker, pmkother: IMoniker, ppmkcommon: *mut IMoniker) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MonikerRelativePathTo(pmksrc: IMoniker, pmkdest: IMoniker, ppmkrelpath: *mut IMoniker, dwreserved: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
+    pub fn MonikerRelativePathTo(pmksrc: IMoniker, pmkdest: IMoniker, ppmkrelpath: *mut IMoniker, dwreserved: super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn ProgIDFromCLSID(clsid: *const ::windows_sys::core::GUID, lplpszprogid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT;
+    pub fn ProgIDFromCLSID(clsid: *const ::windows_sys_core::GUID, lplpszprogid: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn SetErrorInfo(dwreserved: u32, perrinfo: IErrorInfo) -> ::windows_sys::core::HRESULT;
+    pub fn SetErrorInfo(dwreserved: u32, perrinfo: IErrorInfo) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn StringFromCLSID(rclsid: *const ::windows_sys::core::GUID, lplpsz: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT;
+    pub fn StringFromCLSID(rclsid: *const ::windows_sys_core::GUID, lplpsz: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn StringFromGUID2(rguid: *const ::windows_sys::core::GUID, lpsz: ::windows_sys::core::PWSTR, cchmax: i32) -> i32;
+    pub fn StringFromGUID2(rguid: *const ::windows_sys_core::GUID, lpsz: ::windows_sys_core::PWSTR, cchmax: i32) -> i32;
     #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-    pub fn StringFromIID(rclsid: *const ::windows_sys::core::GUID, lplpsz: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT;
+    pub fn StringFromIID(rclsid: *const ::windows_sys_core::GUID, lplpsz: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
 }
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub type ADVF = i32;
@@ -359,18 +359,18 @@ pub type AsyncIUnknown = *mut ::core::ffi::c_void;
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
 pub struct BINDINFO {
     pub cbSize: u32,
-    pub szExtraInfo: ::windows_sys::core::PWSTR,
+    pub szExtraInfo: ::windows_sys_core::PWSTR,
     pub stgmedData: STGMEDIUM,
     pub grfBindInfoF: u32,
     pub dwBindVerb: u32,
-    pub szCustomVerb: ::windows_sys::core::PWSTR,
+    pub szCustomVerb: ::windows_sys_core::PWSTR,
     pub cbstgmedData: u32,
     pub dwOptions: u32,
     pub dwOptionsFlags: u32,
     pub dwCodePage: u32,
     pub securityAttributes: super::super::Security::SECURITY_ATTRIBUTES,
-    pub iid: ::windows_sys::core::GUID,
-    pub pUnk: ::windows_sys::core::IUnknown,
+    pub iid: ::windows_sys_core::GUID,
+    pub pUnk: ::windows_sys_core::IUnknown,
     pub dwReserved: u32,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
@@ -528,7 +528,7 @@ pub const CALLTYPE_ASYNC_CALLPENDING: CALLTYPE = 5i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub struct CATEGORYINFO {
-    pub catid: ::windows_sys::core::GUID,
+    pub catid: ::windows_sys_core::GUID,
     pub lcid: u32,
     pub szDescription: [u16; 128],
 }
@@ -620,7 +620,7 @@ impl ::core::clone::Clone for COAUTHIDENTITY {
 pub struct COAUTHINFO {
     pub dwAuthnSvc: u32,
     pub dwAuthzSvc: u32,
-    pub pwszServerPrincName: ::windows_sys::core::PWSTR,
+    pub pwszServerPrincName: ::windows_sys_core::PWSTR,
     pub dwAuthnLevel: u32,
     pub dwImpersonationLevel: u32,
     pub pAuthIdentityData: *mut COAUTHIDENTITY,
@@ -673,7 +673,7 @@ pub const COM_RIGHTS_RESERVED2: u32 = 64u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub struct CONNECTDATA {
-    pub pUnk: ::windows_sys::core::IUnknown,
+    pub pUnk: ::windows_sys_core::IUnknown,
     pub dwCookie: u32,
 }
 impl ::core::marker::Copy for CONNECTDATA {}
@@ -686,7 +686,7 @@ impl ::core::clone::Clone for CONNECTDATA {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub struct COSERVERINFO {
     pub dwReserved1: u32,
-    pub pwszName: ::windows_sys::core::PWSTR,
+    pub pwszName: ::windows_sys_core::PWSTR,
     pub pAuthInfo: *mut COAUTHINFO,
     pub dwReserved2: u32,
 }
@@ -785,7 +785,7 @@ impl ::core::clone::Clone for CUSTDATA {
 #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`, `\"Win32_System_Ole\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
 pub struct CUSTDATAITEM {
-    pub guid: ::windows_sys::core::GUID,
+    pub guid: ::windows_sys_core::GUID,
     pub varValue: VARIANT,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
@@ -1310,8 +1310,8 @@ pub type IMultiQI = *mut ::core::ffi::c_void;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub struct INTERFACEINFO {
-    pub pUnk: ::windows_sys::core::IUnknown,
-    pub iid: ::windows_sys::core::GUID,
+    pub pUnk: ::windows_sys_core::IUnknown,
+    pub iid: ::windows_sys_core::GUID,
     pub wMethod: u16,
 }
 impl ::core::marker::Copy for INTERFACEINFO {}
@@ -1395,11 +1395,11 @@ impl ::core::clone::Clone for LONG_SIZEDARR {
 }
 #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type LPEXCEPFINO_DEFERRED_FILLIN = ::core::option::Option<unsafe extern "system" fn(pexcepinfo: *mut EXCEPINFO) -> ::windows_sys::core::HRESULT>;
+pub type LPEXCEPFINO_DEFERRED_FILLIN = ::core::option::Option<unsafe extern "system" fn(pexcepinfo: *mut EXCEPINFO) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-pub type LPFNCANUNLOADNOW = ::core::option::Option<unsafe extern "system" fn() -> ::windows_sys::core::HRESULT>;
+pub type LPFNCANUNLOADNOW = ::core::option::Option<unsafe extern "system" fn() -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-pub type LPFNGETCLASSOBJECT = ::core::option::Option<unsafe extern "system" fn(param0: *const ::windows_sys::core::GUID, param1: *const ::windows_sys::core::GUID, param2: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type LPFNGETCLASSOBJECT = ::core::option::Option<unsafe extern "system" fn(param0: *const ::windows_sys_core::GUID, param1: *const ::windows_sys_core::GUID, param2: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub const MARSHALINTERFACE_MIN: u32 = 500u32;
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
@@ -1483,9 +1483,9 @@ pub const MSHLFLAGS_RESERVED4: MSHLFLAGS = 64i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub struct MULTI_QI {
-    pub pIID: *const ::windows_sys::core::GUID,
-    pub pItf: ::windows_sys::core::IUnknown,
-    pub hr: ::windows_sys::core::HRESULT,
+    pub pIID: *const ::windows_sys_core::GUID,
+    pub pItf: ::windows_sys_core::IUnknown,
+    pub hr: ::windows_sys_core::HRESULT,
 }
 impl ::core::marker::Copy for MULTI_QI {}
 impl ::core::clone::Clone for MULTI_QI {
@@ -1519,7 +1519,7 @@ pub const PENDINGTYPE_TOPLEVEL: PENDINGTYPE = 1i32;
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub const PENDINGTYPE_NESTED: PENDINGTYPE = 2i32;
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
-pub type PFNCONTEXTCALL = ::core::option::Option<unsafe extern "system" fn(pparam: *mut ComCallData) -> ::windows_sys::core::HRESULT>;
+pub type PFNCONTEXTCALL = ::core::option::Option<unsafe extern "system" fn(pparam: *mut ComCallData) -> ::windows_sys_core::HRESULT>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub struct QUERYCONTEXT {
@@ -1665,9 +1665,9 @@ impl ::core::clone::Clone for SAFEARRAYBOUND {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub struct SChannelHookCallInfo {
-    pub iid: ::windows_sys::core::GUID,
+    pub iid: ::windows_sys_core::GUID,
     pub cbSize: u32,
-    pub uCausality: ::windows_sys::core::GUID,
+    pub uCausality: ::windows_sys_core::GUID,
     pub dwServerPid: u32,
     pub iMethod: u32,
     pub pObject: *mut ::core::ffi::c_void,
@@ -1728,8 +1728,8 @@ impl ::core::clone::Clone for SOLE_AUTHENTICATION_LIST {
 pub struct SOLE_AUTHENTICATION_SERVICE {
     pub dwAuthnSvc: u32,
     pub dwAuthzSvc: u32,
-    pub pPrincipalName: ::windows_sys::core::PWSTR,
-    pub hr: ::windows_sys::core::HRESULT,
+    pub pPrincipalName: ::windows_sys_core::PWSTR,
+    pub hr: ::windows_sys_core::HRESULT,
 }
 impl ::core::marker::Copy for SOLE_AUTHENTICATION_SERVICE {}
 impl ::core::clone::Clone for SOLE_AUTHENTICATION_SERVICE {
@@ -1755,7 +1755,7 @@ impl ::core::clone::Clone for STATDATA {
 #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct STATSTG {
-    pub pwcsName: ::windows_sys::core::PWSTR,
+    pub pwcsName: ::windows_sys_core::PWSTR,
     pub r#type: u32,
     pub cbSize: u64,
     pub mtime: super::super::Foundation::FILETIME,
@@ -1763,7 +1763,7 @@ pub struct STATSTG {
     pub atime: super::super::Foundation::FILETIME,
     pub grfMode: u32,
     pub grfLocksSupported: u32,
-    pub clsid: ::windows_sys::core::GUID,
+    pub clsid: ::windows_sys_core::GUID,
     pub grfStateBits: u32,
     pub reserved: u32,
 }
@@ -1793,7 +1793,7 @@ pub const STGC_CONSOLIDATE: STGC = 8u32;
 pub struct STGMEDIUM {
     pub tymed: u32,
     pub Anonymous: STGMEDIUM_0,
-    pub pUnkForRelease: ::windows_sys::core::IUnknown,
+    pub pUnkForRelease: ::windows_sys_core::IUnknown,
 }
 #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
 impl ::core::marker::Copy for STGMEDIUM {}
@@ -1811,7 +1811,7 @@ pub union STGMEDIUM_0 {
     pub hMetaFilePict: *mut ::core::ffi::c_void,
     pub hEnhMetaFile: super::super::Graphics::Gdi::HENHMETAFILE,
     pub hGlobal: isize,
-    pub lpszFileName: ::windows_sys::core::PWSTR,
+    pub lpszFileName: ::windows_sys_core::PWSTR,
     pub pstm: IStream,
     pub pstg: StructuredStorage::IStorage,
 }
@@ -1869,7 +1869,7 @@ pub const ForcedShutdown: ShutdownType = 1i32;
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub struct StorageLayout {
     pub LayoutType: u32,
-    pub pwcsElementName: ::windows_sys::core::PWSTR,
+    pub pwcsElementName: ::windows_sys_core::PWSTR,
     pub cOffset: i64,
     pub cBytes: i64,
 }
@@ -1888,7 +1888,7 @@ pub const THDTYPE_PROCESSMESSAGES: THDTYPE = 1i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub struct TLIBATTR {
-    pub guid: ::windows_sys::core::GUID,
+    pub guid: ::windows_sys_core::GUID,
     pub lcid: u32,
     pub syskind: SYSKIND,
     pub wMajorVerNum: u16,
@@ -1923,12 +1923,12 @@ pub const TYMED_NULL: TYMED = 0i32;
 #[doc = "*Required features: `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
 #[cfg(feature = "Win32_System_Ole")]
 pub struct TYPEATTR {
-    pub guid: ::windows_sys::core::GUID,
+    pub guid: ::windows_sys_core::GUID,
     pub lcid: u32,
     pub dwReserved: u32,
     pub memidConstructor: i32,
     pub memidDestructor: i32,
-    pub lpstrSchema: ::windows_sys::core::PWSTR,
+    pub lpstrSchema: ::windows_sys_core::PWSTR,
     pub cbSizeInstance: u32,
     pub typekind: TYPEKIND,
     pub cFuncs: u16,
@@ -2108,7 +2108,7 @@ pub const Uri_PROPERTY_DWORD_LAST: Uri_PROPERTY = 18i32;
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
 pub struct VARDESC {
     pub memid: i32,
-    pub lpstrSchema: ::windows_sys::core::PWSTR,
+    pub lpstrSchema: ::windows_sys_core::PWSTR,
     pub Anonymous: VARDESC_0,
     pub elemdescVar: ELEMDESC,
     pub wVarFlags: u16,
@@ -2200,7 +2200,7 @@ pub union VARIANT_0_0_0 {
     pub cyVal: CY,
     pub date: f64,
     pub bstrVal: super::super::Foundation::BSTR,
-    pub punkVal: ::windows_sys::core::IUnknown,
+    pub punkVal: ::windows_sys_core::IUnknown,
     pub pdispVal: IDispatch,
     pub parray: *mut SAFEARRAY,
     pub pbVal: *mut u8,
@@ -2215,7 +2215,7 @@ pub union VARIANT_0_0_0 {
     pub pcyVal: *mut CY,
     pub pdate: *mut f64,
     pub pbstrVal: *mut super::super::Foundation::BSTR,
-    pub ppunkVal: *mut ::windows_sys::core::IUnknown,
+    pub ppunkVal: *mut ::windows_sys_core::IUnknown,
     pub ppdispVal: *mut IDispatch,
     pub pparray: *mut *mut SAFEARRAY,
     pub pvarVal: *mut VARIANT,
@@ -2227,7 +2227,7 @@ pub union VARIANT_0_0_0 {
     pub intVal: i32,
     pub uintVal: u32,
     pub pdecVal: *mut super::super::Foundation::DECIMAL,
-    pub pcVal: ::windows_sys::core::PSTR,
+    pub pcVal: ::windows_sys_core::PSTR,
     pub puiVal: *mut u16,
     pub pulVal: *mut u32,
     pub pullVal: *mut u64,
@@ -2297,11 +2297,11 @@ impl ::core::clone::Clone for uCLSSPEC {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub union uCLSSPEC_0 {
-    pub clsid: ::windows_sys::core::GUID,
-    pub pFileExt: ::windows_sys::core::PWSTR,
-    pub pMimeType: ::windows_sys::core::PWSTR,
-    pub pProgId: ::windows_sys::core::PWSTR,
-    pub pFileName: ::windows_sys::core::PWSTR,
+    pub clsid: ::windows_sys_core::GUID,
+    pub pFileExt: ::windows_sys_core::PWSTR,
+    pub pMimeType: ::windows_sys_core::PWSTR,
+    pub pProgId: ::windows_sys_core::PWSTR,
+    pub pFileName: ::windows_sys_core::PWSTR,
     pub ByName: uCLSSPEC_0_0,
     pub ByObjectId: uCLSSPEC_0_1,
 }
@@ -2314,8 +2314,8 @@ impl ::core::clone::Clone for uCLSSPEC_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub struct uCLSSPEC_0_0 {
-    pub pPackageName: ::windows_sys::core::PWSTR,
-    pub PolicyId: ::windows_sys::core::GUID,
+    pub pPackageName: ::windows_sys_core::PWSTR,
+    pub PolicyId: ::windows_sys_core::GUID,
 }
 impl ::core::marker::Copy for uCLSSPEC_0_0 {}
 impl ::core::clone::Clone for uCLSSPEC_0_0 {
@@ -2326,8 +2326,8 @@ impl ::core::clone::Clone for uCLSSPEC_0_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub struct uCLSSPEC_0_1 {
-    pub ObjectId: ::windows_sys::core::GUID,
-    pub PolicyId: ::windows_sys::core::GUID,
+    pub ObjectId: ::windows_sys_core::GUID,
+    pub PolicyId: ::windows_sys_core::GUID,
 }
 impl ::core::marker::Copy for uCLSSPEC_0_1 {}
 impl ::core::clone::Clone for uCLSSPEC_0_1 {
@@ -2351,7 +2351,7 @@ impl ::core::clone::Clone for userFLAG_STGMEDIUM {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 pub struct userSTGMEDIUM {
-    pub pUnkForRelease: ::windows_sys::core::IUnknown,
+    pub pUnkForRelease: ::windows_sys_core::IUnknown,
 }
 impl ::core::marker::Copy for userSTGMEDIUM {}
 impl ::core::clone::Clone for userSTGMEDIUM {
@@ -2382,7 +2382,7 @@ pub union userSTGMEDIUM_0_0 {
     pub hHEnhMetaFile: *mut super::SystemServices::userHENHMETAFILE,
     pub hGdiHandle: *mut GDI_OBJECT,
     pub hGlobal: *mut super::SystemServices::userHGLOBAL,
-    pub lpszFileName: ::windows_sys::core::PWSTR,
+    pub lpszFileName: ::windows_sys_core::PWSTR,
     pub pstm: *mut BYTE_BLOB,
     pub pstg: *mut BYTE_BLOB,
 }

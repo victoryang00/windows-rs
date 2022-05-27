@@ -6,7 +6,7 @@ pub const ComponentTypeEnforcementClientSoH: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_NetworkAccessProtection\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct CorrelationId {
-    pub connId: ::windows::core::GUID,
+    pub connId: ::windows_core::GUID,
     pub timeStamp: super::super::Foundation::FILETIME,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -24,13 +24,13 @@ impl ::core::fmt::Debug for CorrelationId {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CorrelationId {
+unsafe impl ::windows_core::Abi for CorrelationId {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CorrelationId {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CorrelationId>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CorrelationId>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -45,7 +45,7 @@ impl ::core::default::Default for CorrelationId {
 #[doc = "*Required features: `\"Win32_Security_NetworkAccessProtection\"`*"]
 pub struct CountedString {
     pub length: u16,
-    pub string: ::windows::core::PWSTR,
+    pub string: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CountedString {}
 impl ::core::clone::Clone for CountedString {
@@ -58,12 +58,12 @@ impl ::core::fmt::Debug for CountedString {
         f.debug_struct("CountedString").field("length", &self.length).field("string", &self.string).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CountedString {
+unsafe impl ::windows_core::Abi for CountedString {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CountedString {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CountedString>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CountedString>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CountedString {}
@@ -95,7 +95,7 @@ impl ::core::default::Default for ExtendedIsolationState {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ExtendedIsolationState {
+unsafe impl ::windows_core::Abi for ExtendedIsolationState {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ExtendedIsolationState {
@@ -130,7 +130,7 @@ impl ::core::default::Default for FailureCategory {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FailureCategory {
+unsafe impl ::windows_core::Abi for FailureCategory {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FailureCategory {
@@ -159,13 +159,13 @@ impl ::core::fmt::Debug for FailureCategoryMapping {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FailureCategoryMapping {
+unsafe impl ::windows_core::Abi for FailureCategoryMapping {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FailureCategoryMapping {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FailureCategoryMapping>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FailureCategoryMapping>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -195,12 +195,12 @@ impl ::core::fmt::Debug for FixupInfo {
         f.debug_struct("FixupInfo").field("state", &self.state).field("percentage", &self.percentage).field("resultCodes", &self.resultCodes).field("fixupMsgId", &self.fixupMsgId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FixupInfo {
+unsafe impl ::windows_core::Abi for FixupInfo {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FixupInfo {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FixupInfo>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FixupInfo>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FixupInfo {}
@@ -230,7 +230,7 @@ impl ::core::default::Default for FixupState {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FixupState {
+unsafe impl ::windows_core::Abi for FixupState {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FixupState {
@@ -254,12 +254,12 @@ impl ::core::fmt::Debug for Ipv4Address {
         f.debug_struct("Ipv4Address").field("addr", &self.addr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for Ipv4Address {
+unsafe impl ::windows_core::Abi for Ipv4Address {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for Ipv4Address {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Ipv4Address>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Ipv4Address>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Ipv4Address {}
@@ -284,12 +284,12 @@ impl ::core::fmt::Debug for Ipv6Address {
         f.debug_struct("Ipv6Address").field("addr", &self.addr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for Ipv6Address {
+unsafe impl ::windows_core::Abi for Ipv6Address {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for Ipv6Address {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Ipv6Address>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Ipv6Address>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Ipv6Address {}
@@ -321,13 +321,13 @@ impl ::core::fmt::Debug for IsolationInfo {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for IsolationInfo {
+unsafe impl ::windows_core::Abi for IsolationInfo {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IsolationInfo {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IsolationInfo>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IsolationInfo>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -362,13 +362,13 @@ impl ::core::fmt::Debug for IsolationInfoEx {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for IsolationInfoEx {
+unsafe impl ::windows_core::Abi for IsolationInfoEx {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IsolationInfoEx {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IsolationInfoEx>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IsolationInfoEx>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -400,7 +400,7 @@ impl ::core::default::Default for IsolationState {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for IsolationState {
+unsafe impl ::windows_core::Abi for IsolationState {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for IsolationState {
@@ -417,8 +417,8 @@ pub struct NapComponentRegistrationInfo {
     pub description: CountedString,
     pub version: CountedString,
     pub vendorName: CountedString,
-    pub infoClsid: ::windows::core::GUID,
-    pub configClsid: ::windows::core::GUID,
+    pub infoClsid: ::windows_core::GUID,
+    pub configClsid: ::windows_core::GUID,
     pub registrationDate: super::super::Foundation::FILETIME,
     pub componentType: u32,
 }
@@ -437,13 +437,13 @@ impl ::core::fmt::Debug for NapComponentRegistrationInfo {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for NapComponentRegistrationInfo {
+unsafe impl ::windows_core::Abi for NapComponentRegistrationInfo {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NapComponentRegistrationInfo {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NapComponentRegistrationInfo>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NapComponentRegistrationInfo>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -475,7 +475,7 @@ impl ::core::default::Default for NapNotifyType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NapNotifyType {
+unsafe impl ::windows_core::Abi for NapNotifyType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NapNotifyType {
@@ -506,7 +506,7 @@ impl ::core::default::Default for NapTracingLevel {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NapTracingLevel {
+unsafe impl ::windows_core::Abi for NapTracingLevel {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NapTracingLevel {
@@ -531,12 +531,12 @@ impl ::core::fmt::Debug for NetworkSoH {
         f.debug_struct("NetworkSoH").field("size", &self.size).field("data", &self.data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NetworkSoH {
+unsafe impl ::windows_core::Abi for NetworkSoH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NetworkSoH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NetworkSoH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NetworkSoH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NetworkSoH {}
@@ -562,12 +562,12 @@ impl ::core::fmt::Debug for PrivateData {
         f.debug_struct("PrivateData").field("size", &self.size).field("data", &self.data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PrivateData {
+unsafe impl ::windows_core::Abi for PrivateData {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PrivateData {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PrivateData>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PrivateData>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PrivateData {}
@@ -595,7 +595,7 @@ impl ::core::default::Default for RemoteConfigurationType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RemoteConfigurationType {
+unsafe impl ::windows_core::Abi for RemoteConfigurationType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RemoteConfigurationType {
@@ -607,7 +607,7 @@ impl ::core::fmt::Debug for RemoteConfigurationType {
 #[doc = "*Required features: `\"Win32_Security_NetworkAccessProtection\"`*"]
 pub struct ResultCodes {
     pub count: u16,
-    pub results: *mut ::windows::core::HRESULT,
+    pub results: *mut ::windows_core::HRESULT,
 }
 impl ::core::marker::Copy for ResultCodes {}
 impl ::core::clone::Clone for ResultCodes {
@@ -620,12 +620,12 @@ impl ::core::fmt::Debug for ResultCodes {
         f.debug_struct("ResultCodes").field("count", &self.count).field("results", &self.results).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ResultCodes {
+unsafe impl ::windows_core::Abi for ResultCodes {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ResultCodes {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ResultCodes>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ResultCodes>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ResultCodes {}
@@ -651,12 +651,12 @@ impl ::core::fmt::Debug for SoH {
         f.debug_struct("SoH").field("count", &self.count).field("attributes", &self.attributes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SoH {
+unsafe impl ::windows_core::Abi for SoH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SoH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SoH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SoH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SoH {}
@@ -683,12 +683,12 @@ impl ::core::fmt::Debug for SoHAttribute {
         f.debug_struct("SoHAttribute").field("type", &self.r#type).field("size", &self.size).field("value", &self.value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SoHAttribute {
+unsafe impl ::windows_core::Abi for SoHAttribute {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SoHAttribute {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SoHAttribute>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SoHAttribute>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SoHAttribute {}
@@ -716,12 +716,12 @@ impl ::core::fmt::Debug for SystemHealthAgentState {
         f.debug_struct("SystemHealthAgentState").field("id", &self.id).field("shaResultCodes", &self.shaResultCodes).field("failureCategory", &self.failureCategory).field("fixupInfo", &self.fixupInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SystemHealthAgentState {
+unsafe impl ::windows_core::Abi for SystemHealthAgentState {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SystemHealthAgentState {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SystemHealthAgentState>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SystemHealthAgentState>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SystemHealthAgentState {}

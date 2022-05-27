@@ -1,8 +1,8 @@
-pub const PERCEPTIONFIELD_StateStream_TimeStamps: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xaa886119_f32f_49bf_92ca_f9ddf784d297);
+pub const PERCEPTIONFIELD_StateStream_TimeStamps: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xaa886119_f32f_49bf_92ca_f9ddf784d297);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_MixedReality\"`*"]
 pub struct PERCEPTION_PAYLOAD_FIELD {
-    pub FieldId: ::windows::core::GUID,
+    pub FieldId: ::windows_core::GUID,
     pub OffsetInBytes: u32,
     pub SizeInBytes: u32,
 }
@@ -17,12 +17,12 @@ impl ::core::fmt::Debug for PERCEPTION_PAYLOAD_FIELD {
         f.debug_struct("PERCEPTION_PAYLOAD_FIELD").field("FieldId", &self.FieldId).field("OffsetInBytes", &self.OffsetInBytes).field("SizeInBytes", &self.SizeInBytes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PERCEPTION_PAYLOAD_FIELD {
+unsafe impl ::windows_core::Abi for PERCEPTION_PAYLOAD_FIELD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PERCEPTION_PAYLOAD_FIELD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERCEPTION_PAYLOAD_FIELD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERCEPTION_PAYLOAD_FIELD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PERCEPTION_PAYLOAD_FIELD {}
@@ -48,12 +48,12 @@ impl ::core::fmt::Debug for PERCEPTION_STATE_STREAM_TIMESTAMPS {
         f.debug_struct("PERCEPTION_STATE_STREAM_TIMESTAMPS").field("InputTimestampInQpcCounts", &self.InputTimestampInQpcCounts).field("AvailableTimestampInQpcCounts", &self.AvailableTimestampInQpcCounts).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PERCEPTION_STATE_STREAM_TIMESTAMPS {
+unsafe impl ::windows_core::Abi for PERCEPTION_STATE_STREAM_TIMESTAMPS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PERCEPTION_STATE_STREAM_TIMESTAMPS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERCEPTION_STATE_STREAM_TIMESTAMPS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERCEPTION_STATE_STREAM_TIMESTAMPS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PERCEPTION_STATE_STREAM_TIMESTAMPS {}

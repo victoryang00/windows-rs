@@ -1,6 +1,6 @@
 #![allow(non_snake_case)]
 
-use windows::core::*;
+use windows_core::*;
 use windows::Foundation::*;
 use windows::Win32::Foundation::HANDLE;
 use windows::Win32::System::WinRT::Composition::*;

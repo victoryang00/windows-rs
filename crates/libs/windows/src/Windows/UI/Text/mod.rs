@@ -19,7 +19,7 @@ impl ::core::default::Default for CaretType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CaretType {
+unsafe impl ::windows_core::Abi for CaretType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CaretType {
@@ -27,90 +27,90 @@ impl ::core::fmt::Debug for CaretType {
         f.debug_tuple("CaretType").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for CaretType {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.CaretType;i4)");
+unsafe impl ::windows_core::RuntimeType for CaretType {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.CaretType;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"UI_Text\"`*"]
 #[repr(transparent)]
-pub struct ContentLinkInfo(::windows::core::IUnknown);
+pub struct ContentLinkInfo(::windows_core::IUnknown);
 impl ContentLinkInfo {
-    pub fn new() -> ::windows::core::Result<Self> {
+    pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
     }
-    fn IActivationFactory<R, F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<ContentLinkInfo, ::windows::core::IGenericFactory> = ::windows::core::FactoryCache::new();
+    fn IActivationFactory<R, F: FnOnce(&::windows_core::IGenericFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<ContentLinkInfo, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<u32> {
+    pub fn Id(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetId(&self, value: u32) -> ::windows::core::Result<()> {
+    pub fn SetId(&self, value: u32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetId)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetId)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn DisplayText(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn DisplayText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).DisplayText)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).DisplayText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetDisplayText<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetDisplayText<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetDisplayText)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetDisplayText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SecondaryText(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn SecondaryText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).SecondaryText)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).SecondaryText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetSecondaryText<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetSecondaryText<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetSecondaryText)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetSecondaryText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Uri(&self) -> ::windows::core::Result<super::super::Foundation::Uri> {
+    pub fn Uri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Uri)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn SetUri<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetUri)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn LinkContentKind(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn LinkContentKind(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).LinkContentKind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).LinkContentKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetLinkContentKind<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetLinkContentKind<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetLinkContentKind)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetLinkContentKind)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
 }
 impl ::core::clone::Clone for ContentLinkInfo {
@@ -129,58 +129,58 @@ impl ::core::fmt::Debug for ContentLinkInfo {
         f.debug_tuple("ContentLinkInfo").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for ContentLinkInfo {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Text.ContentLinkInfo;{1ed52525-1c5f-48cb-b335-78b50a2ee642})");
+unsafe impl ::windows_core::RuntimeType for ContentLinkInfo {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Text.ContentLinkInfo;{1ed52525-1c5f-48cb-b335-78b50a2ee642})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ContentLinkInfo {
+unsafe impl ::windows_core::Interface for ContentLinkInfo {
     type Vtable = IContentLinkInfo_Vtbl;
-    const IID: ::windows::core::GUID = <IContentLinkInfo as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IContentLinkInfo as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for ContentLinkInfo {
+impl ::windows_core::RuntimeName for ContentLinkInfo {
     const NAME: &'static str = "Windows.UI.Text.ContentLinkInfo";
 }
-impl ::core::convert::From<ContentLinkInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<ContentLinkInfo> for ::windows_core::IUnknown {
     fn from(value: ContentLinkInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ContentLinkInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ContentLinkInfo> for ::windows_core::IUnknown {
     fn from(value: &ContentLinkInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ContentLinkInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ContentLinkInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ContentLinkInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ContentLinkInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<ContentLinkInfo> for ::windows::core::IInspectable {
+impl ::core::convert::From<ContentLinkInfo> for ::windows_core::IInspectable {
     fn from(value: ContentLinkInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ContentLinkInfo> for ::windows::core::IInspectable {
+impl ::core::convert::From<&ContentLinkInfo> for ::windows_core::IInspectable {
     fn from(value: &ContentLinkInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ContentLinkInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for ContentLinkInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ContentLinkInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a ContentLinkInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for ContentLinkInfo {}
@@ -205,7 +205,7 @@ impl ::core::default::Default for FindOptions {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FindOptions {
+unsafe impl ::windows_core::Abi for FindOptions {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FindOptions {
@@ -241,10 +241,10 @@ impl ::core::ops::Not for FindOptions {
         Self(self.0.not())
     }
 }
-unsafe impl ::windows::core::RuntimeType for FindOptions {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.FindOptions;u4)");
+unsafe impl ::windows_core::RuntimeType for FindOptions {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.FindOptions;u4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -275,7 +275,7 @@ impl ::core::default::Default for FontStretch {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FontStretch {
+unsafe impl ::windows_core::Abi for FontStretch {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FontStretch {
@@ -283,10 +283,10 @@ impl ::core::fmt::Debug for FontStretch {
         f.debug_tuple("FontStretch").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for FontStretch {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.FontStretch;i4)");
+unsafe impl ::windows_core::RuntimeType for FontStretch {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.FontStretch;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -310,7 +310,7 @@ impl ::core::default::Default for FontStyle {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FontStyle {
+unsafe impl ::windows_core::Abi for FontStyle {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FontStyle {
@@ -318,10 +318,10 @@ impl ::core::fmt::Debug for FontStyle {
         f.debug_tuple("FontStyle").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for FontStyle {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.FontStyle;i4)");
+unsafe impl ::windows_core::RuntimeType for FontStyle {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.FontStyle;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -341,19 +341,19 @@ impl ::core::fmt::Debug for FontWeight {
         f.debug_struct("FontWeight").field("Weight", &self.Weight).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FontWeight {
+unsafe impl ::windows_core::Abi for FontWeight {
     type Abi = Self;
 }
-unsafe impl ::windows::core::RuntimeType for FontWeight {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"struct(Windows.UI.Text.FontWeight;u2)");
+unsafe impl ::windows_core::RuntimeType for FontWeight {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.UI.Text.FontWeight;u2)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 impl ::core::cmp::PartialEq for FontWeight {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FontWeight>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FontWeight>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FontWeight {}
@@ -364,88 +364,88 @@ impl ::core::default::Default for FontWeight {
 }
 #[doc = "*Required features: `\"UI_Text\"`*"]
 #[repr(transparent)]
-pub struct FontWeights(::windows::core::IUnknown);
+pub struct FontWeights(::windows_core::IUnknown);
 impl FontWeights {
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Black() -> ::windows::core::Result<FontWeight> {
+    pub fn Black() -> ::windows_core::Result<FontWeight> {
         Self::IFontWeightsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontWeight>::zeroed();
-            (::windows::core::Interface::vtable(this).Black)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
+            (::windows_core::Interface::vtable(this).Black)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Bold() -> ::windows::core::Result<FontWeight> {
+    pub fn Bold() -> ::windows_core::Result<FontWeight> {
         Self::IFontWeightsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontWeight>::zeroed();
-            (::windows::core::Interface::vtable(this).Bold)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
+            (::windows_core::Interface::vtable(this).Bold)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ExtraBlack() -> ::windows::core::Result<FontWeight> {
+    pub fn ExtraBlack() -> ::windows_core::Result<FontWeight> {
         Self::IFontWeightsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontWeight>::zeroed();
-            (::windows::core::Interface::vtable(this).ExtraBlack)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
+            (::windows_core::Interface::vtable(this).ExtraBlack)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ExtraBold() -> ::windows::core::Result<FontWeight> {
+    pub fn ExtraBold() -> ::windows_core::Result<FontWeight> {
         Self::IFontWeightsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontWeight>::zeroed();
-            (::windows::core::Interface::vtable(this).ExtraBold)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
+            (::windows_core::Interface::vtable(this).ExtraBold)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ExtraLight() -> ::windows::core::Result<FontWeight> {
+    pub fn ExtraLight() -> ::windows_core::Result<FontWeight> {
         Self::IFontWeightsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontWeight>::zeroed();
-            (::windows::core::Interface::vtable(this).ExtraLight)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
+            (::windows_core::Interface::vtable(this).ExtraLight)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Light() -> ::windows::core::Result<FontWeight> {
+    pub fn Light() -> ::windows_core::Result<FontWeight> {
         Self::IFontWeightsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontWeight>::zeroed();
-            (::windows::core::Interface::vtable(this).Light)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
+            (::windows_core::Interface::vtable(this).Light)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Medium() -> ::windows::core::Result<FontWeight> {
+    pub fn Medium() -> ::windows_core::Result<FontWeight> {
         Self::IFontWeightsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontWeight>::zeroed();
-            (::windows::core::Interface::vtable(this).Medium)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
+            (::windows_core::Interface::vtable(this).Medium)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Normal() -> ::windows::core::Result<FontWeight> {
+    pub fn Normal() -> ::windows_core::Result<FontWeight> {
         Self::IFontWeightsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontWeight>::zeroed();
-            (::windows::core::Interface::vtable(this).Normal)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
+            (::windows_core::Interface::vtable(this).Normal)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SemiBold() -> ::windows::core::Result<FontWeight> {
+    pub fn SemiBold() -> ::windows_core::Result<FontWeight> {
         Self::IFontWeightsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontWeight>::zeroed();
-            (::windows::core::Interface::vtable(this).SemiBold)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
+            (::windows_core::Interface::vtable(this).SemiBold)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SemiLight() -> ::windows::core::Result<FontWeight> {
+    pub fn SemiLight() -> ::windows_core::Result<FontWeight> {
         Self::IFontWeightsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontWeight>::zeroed();
-            (::windows::core::Interface::vtable(this).SemiLight)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
+            (::windows_core::Interface::vtable(this).SemiLight)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Thin() -> ::windows::core::Result<FontWeight> {
+    pub fn Thin() -> ::windows_core::Result<FontWeight> {
         Self::IFontWeightsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontWeight>::zeroed();
-            (::windows::core::Interface::vtable(this).Thin)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
+            (::windows_core::Interface::vtable(this).Thin)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontWeight>(result__)
         })
     }
     #[doc(hidden)]
-    pub fn IFontWeightsStatics<R, F: FnOnce(&IFontWeightsStatics) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<FontWeights, IFontWeightsStatics> = ::windows::core::FactoryCache::new();
+    pub fn IFontWeightsStatics<R, F: FnOnce(&IFontWeightsStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<FontWeights, IFontWeightsStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
@@ -465,58 +465,58 @@ impl ::core::fmt::Debug for FontWeights {
         f.debug_tuple("FontWeights").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for FontWeights {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Text.FontWeights;{7880a444-01ab-4997-8517-df822a0c45f1})");
+unsafe impl ::windows_core::RuntimeType for FontWeights {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Text.FontWeights;{7880a444-01ab-4997-8517-df822a0c45f1})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for FontWeights {
+unsafe impl ::windows_core::Interface for FontWeights {
     type Vtable = IFontWeights_Vtbl;
-    const IID: ::windows::core::GUID = <IFontWeights as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IFontWeights as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for FontWeights {
+impl ::windows_core::RuntimeName for FontWeights {
     const NAME: &'static str = "Windows.UI.Text.FontWeights";
 }
-impl ::core::convert::From<FontWeights> for ::windows::core::IUnknown {
+impl ::core::convert::From<FontWeights> for ::windows_core::IUnknown {
     fn from(value: FontWeights) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&FontWeights> for ::windows::core::IUnknown {
+impl ::core::convert::From<&FontWeights> for ::windows_core::IUnknown {
     fn from(value: &FontWeights) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for FontWeights {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for FontWeights {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a FontWeights {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a FontWeights {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<FontWeights> for ::windows::core::IInspectable {
+impl ::core::convert::From<FontWeights> for ::windows_core::IInspectable {
     fn from(value: FontWeights) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&FontWeights> for ::windows::core::IInspectable {
+impl ::core::convert::From<&FontWeights> for ::windows_core::IInspectable {
     fn from(value: &FontWeights) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for FontWeights {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for FontWeights {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a FontWeights {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a FontWeights {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for FontWeights {}
@@ -542,7 +542,7 @@ impl ::core::default::Default for FormatEffect {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FormatEffect {
+unsafe impl ::windows_core::Abi for FormatEffect {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FormatEffect {
@@ -550,10 +550,10 @@ impl ::core::fmt::Debug for FormatEffect {
         f.debug_tuple("FormatEffect").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for FormatEffect {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.FormatEffect;i4)");
+unsafe impl ::windows_core::RuntimeType for FormatEffect {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.FormatEffect;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -577,7 +577,7 @@ impl ::core::default::Default for HorizontalCharacterAlignment {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HorizontalCharacterAlignment {
+unsafe impl ::windows_core::Abi for HorizontalCharacterAlignment {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HorizontalCharacterAlignment {
@@ -585,461 +585,461 @@ impl ::core::fmt::Debug for HorizontalCharacterAlignment {
         f.debug_tuple("HorizontalCharacterAlignment").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for HorizontalCharacterAlignment {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.HorizontalCharacterAlignment;i4)");
+unsafe impl ::windows_core::RuntimeType for HorizontalCharacterAlignment {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.HorizontalCharacterAlignment;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IContentLinkInfo(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IContentLinkInfo {
+pub struct IContentLinkInfo(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IContentLinkInfo {
     type Vtable = IContentLinkInfo_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1ed52525_1c5f_48cb_b335_78b50a2ee642);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1ed52525_1c5f_48cb_b335_78b50a2ee642);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IContentLinkInfo_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
-    pub SetId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows::core::HRESULT,
-    pub DisplayText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub SetDisplayText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub SecondaryText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub SetSecondaryText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
+    pub SetId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
+    pub DisplayText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub SetDisplayText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub SecondaryText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub SetSecondaryText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub Uri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Uri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Uri: usize,
     #[cfg(feature = "Foundation")]
-    pub SetUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SetUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetUri: usize,
-    pub LinkContentKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub SetLinkContentKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub LinkContentKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub SetLinkContentKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IFontWeights(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IFontWeights {
+pub struct IFontWeights(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IFontWeights {
     type Vtable = IFontWeights_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7880a444_01ab_4997_8517_df822a0c45f1);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7880a444_01ab_4997_8517_df822a0c45f1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFontWeights_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IFontWeightsStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IFontWeightsStatics {
+pub struct IFontWeightsStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IFontWeightsStatics {
     type Vtable = IFontWeightsStatics_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb3b579d5_1ba9_48eb_9dad_c095e8c23ba3);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb3b579d5_1ba9_48eb_9dad_c095e8c23ba3);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFontWeightsStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Black: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows::core::HRESULT,
-    pub Bold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows::core::HRESULT,
-    pub ExtraBlack: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows::core::HRESULT,
-    pub ExtraBold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows::core::HRESULT,
-    pub ExtraLight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows::core::HRESULT,
-    pub Light: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows::core::HRESULT,
-    pub Medium: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows::core::HRESULT,
-    pub Normal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows::core::HRESULT,
-    pub SemiBold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows::core::HRESULT,
-    pub SemiLight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows::core::HRESULT,
-    pub Thin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Black: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows_core::HRESULT,
+    pub Bold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows_core::HRESULT,
+    pub ExtraBlack: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows_core::HRESULT,
+    pub ExtraBold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows_core::HRESULT,
+    pub ExtraLight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows_core::HRESULT,
+    pub Light: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows_core::HRESULT,
+    pub Medium: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows_core::HRESULT,
+    pub Normal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows_core::HRESULT,
+    pub SemiBold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows_core::HRESULT,
+    pub SemiLight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows_core::HRESULT,
+    pub Thin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontWeight) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IRichEditTextRange(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IRichEditTextRange {
+pub struct IRichEditTextRange(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IRichEditTextRange {
     type Vtable = IRichEditTextRange_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x374e3515_ba8a_4a6e_8c59_0dde3d0cf5cd);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x374e3515_ba8a_4a6e_8c59_0dde3d0cf5cd);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IRichEditTextRange_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub ContentLinkInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SetContentLinkInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub ContentLinkInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetContentLinkInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"UI_Text\"`*"]
 #[repr(transparent)]
-pub struct ITextCharacterFormat(::windows::core::IUnknown);
+pub struct ITextCharacterFormat(::windows_core::IUnknown);
 impl ITextCharacterFormat {
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn AllCaps(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn AllCaps(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).AllCaps)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).AllCaps)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetAllCaps(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetAllCaps(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetAllCaps)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetAllCaps)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn BackgroundColor(&self) -> ::windows::core::Result<super::Color> {
+    pub fn BackgroundColor(&self) -> ::windows_core::Result<super::Color> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::Color>::zeroed();
-            (::windows::core::Interface::vtable(this).BackgroundColor)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Color>(result__)
+            (::windows_core::Interface::vtable(this).BackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Color>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetBackgroundColor<'a, Param0: ::windows::core::IntoParam<'a, super::Color>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::Color>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetBackgroundColor)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetBackgroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Bold(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn Bold(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).Bold)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).Bold)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetBold(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetBold(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetBold)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetBold)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn FontStretch(&self) -> ::windows::core::Result<FontStretch> {
+    pub fn FontStretch(&self) -> ::windows_core::Result<FontStretch> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontStretch>::zeroed();
-            (::windows::core::Interface::vtable(this).FontStretch)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontStretch>(result__)
+            (::windows_core::Interface::vtable(this).FontStretch)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontStretch>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetFontStretch(&self, value: FontStretch) -> ::windows::core::Result<()> {
+    pub fn SetFontStretch(&self, value: FontStretch) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetFontStretch)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetFontStretch)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn FontStyle(&self) -> ::windows::core::Result<FontStyle> {
+    pub fn FontStyle(&self) -> ::windows_core::Result<FontStyle> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontStyle>::zeroed();
-            (::windows::core::Interface::vtable(this).FontStyle)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontStyle>(result__)
+            (::windows_core::Interface::vtable(this).FontStyle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontStyle>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetFontStyle(&self, value: FontStyle) -> ::windows::core::Result<()> {
+    pub fn SetFontStyle(&self, value: FontStyle) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetFontStyle)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetFontStyle)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ForegroundColor(&self) -> ::windows::core::Result<super::Color> {
+    pub fn ForegroundColor(&self) -> ::windows_core::Result<super::Color> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::Color>::zeroed();
-            (::windows::core::Interface::vtable(this).ForegroundColor)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Color>(result__)
+            (::windows_core::Interface::vtable(this).ForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Color>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetForegroundColor<'a, Param0: ::windows::core::IntoParam<'a, super::Color>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetForegroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::Color>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetForegroundColor)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetForegroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Hidden(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn Hidden(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).Hidden)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).Hidden)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetHidden(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetHidden(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetHidden)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetHidden)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Italic(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn Italic(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).Italic)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).Italic)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetItalic(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetItalic(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetItalic)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetItalic)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Kerning(&self) -> ::windows::core::Result<f32> {
+    pub fn Kerning(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).Kerning)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+            (::windows_core::Interface::vtable(this).Kerning)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetKerning(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetKerning(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetKerning)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetKerning)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn LanguageTag(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn LanguageTag(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).LanguageTag)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).LanguageTag)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetLanguageTag<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetLanguageTag<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetLanguageTag)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetLanguageTag)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn LinkType(&self) -> ::windows::core::Result<LinkType> {
+    pub fn LinkType(&self) -> ::windows_core::Result<LinkType> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<LinkType>::zeroed();
-            (::windows::core::Interface::vtable(this).LinkType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LinkType>(result__)
+            (::windows_core::Interface::vtable(this).LinkType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LinkType>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Name(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Name(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Name)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Name)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetName)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Outline(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn Outline(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).Outline)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).Outline)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetOutline(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetOutline(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetOutline)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetOutline)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Position(&self) -> ::windows::core::Result<f32> {
+    pub fn Position(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).Position)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetPosition(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetPosition(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetPosition)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetPosition)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ProtectedText(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn ProtectedText(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).ProtectedText)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).ProtectedText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetProtectedText(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetProtectedText(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetProtectedText)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetProtectedText)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Size(&self) -> ::windows::core::Result<f32> {
+    pub fn Size(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).Size)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+            (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetSize(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetSize(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetSize)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SmallCaps(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn SmallCaps(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).SmallCaps)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).SmallCaps)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetSmallCaps(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetSmallCaps(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetSmallCaps)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetSmallCaps)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Spacing(&self) -> ::windows::core::Result<f32> {
+    pub fn Spacing(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).Spacing)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+            (::windows_core::Interface::vtable(this).Spacing)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetSpacing(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetSpacing(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetSpacing)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetSpacing)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Strikethrough(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn Strikethrough(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).Strikethrough)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).Strikethrough)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetStrikethrough(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetStrikethrough(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetStrikethrough)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetStrikethrough)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Subscript(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn Subscript(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).Subscript)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).Subscript)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetSubscript(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetSubscript(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetSubscript)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetSubscript)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Superscript(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn Superscript(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).Superscript)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).Superscript)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetSuperscript(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetSuperscript(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetSuperscript)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetSuperscript)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn TextScript(&self) -> ::windows::core::Result<TextScript> {
+    pub fn TextScript(&self) -> ::windows_core::Result<TextScript> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<TextScript>::zeroed();
-            (::windows::core::Interface::vtable(this).TextScript)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<TextScript>(result__)
+            (::windows_core::Interface::vtable(this).TextScript)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<TextScript>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetTextScript(&self, value: TextScript) -> ::windows::core::Result<()> {
+    pub fn SetTextScript(&self, value: TextScript) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetTextScript)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetTextScript)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Underline(&self) -> ::windows::core::Result<UnderlineType> {
+    pub fn Underline(&self) -> ::windows_core::Result<UnderlineType> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<UnderlineType>::zeroed();
-            (::windows::core::Interface::vtable(this).Underline)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UnderlineType>(result__)
+            (::windows_core::Interface::vtable(this).Underline)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UnderlineType>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetUnderline(&self, value: UnderlineType) -> ::windows::core::Result<()> {
+    pub fn SetUnderline(&self, value: UnderlineType) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetUnderline)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetUnderline)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Weight(&self) -> ::windows::core::Result<i32> {
+    pub fn Weight(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Weight)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).Weight)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetWeight(&self, value: i32) -> ::windows::core::Result<()> {
+    pub fn SetWeight(&self, value: i32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetWeight)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetWeight)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetClone<'a, Param0: ::windows::core::IntoParam<'a, ITextCharacterFormat>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetClone<'a, Param0: ::windows_core::IntoParam<'a, ITextCharacterFormat>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetClone)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetClone)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetClone(&self) -> ::windows::core::Result<ITextCharacterFormat> {
+    pub fn GetClone(&self) -> ::windows_core::Result<ITextCharacterFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetClone)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextCharacterFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetClone)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextCharacterFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn IsEqual<'a, Param0: ::windows::core::IntoParam<'a, ITextCharacterFormat>>(&self, format: Param0) -> ::windows::core::Result<bool> {
+    pub fn IsEqual<'a, Param0: ::windows_core::IntoParam<'a, ITextCharacterFormat>>(&self, format: Param0) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsEqual)(::windows::core::Interface::as_raw(this), format.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsEqual)(::windows_core::Interface::as_raw(this), format.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
 }
-impl ::core::convert::From<ITextCharacterFormat> for ::windows::core::IUnknown {
+impl ::core::convert::From<ITextCharacterFormat> for ::windows_core::IUnknown {
     fn from(value: ITextCharacterFormat) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ITextCharacterFormat> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ITextCharacterFormat> for ::windows_core::IUnknown {
     fn from(value: &ITextCharacterFormat) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITextCharacterFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ITextCharacterFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITextCharacterFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ITextCharacterFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<ITextCharacterFormat> for ::windows::core::IInspectable {
+impl ::core::convert::From<ITextCharacterFormat> for ::windows_core::IInspectable {
     fn from(value: ITextCharacterFormat) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ITextCharacterFormat> for ::windows::core::IInspectable {
+impl ::core::convert::From<&ITextCharacterFormat> for ::windows_core::IInspectable {
     fn from(value: &ITextCharacterFormat) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITextCharacterFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for ITextCharacterFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITextCharacterFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a ITextCharacterFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for ITextCharacterFormat {
@@ -1058,315 +1058,315 @@ impl ::core::fmt::Debug for ITextCharacterFormat {
         f.debug_tuple("ITextCharacterFormat").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for ITextCharacterFormat {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{5adef3db-05fb-442d-8065-642afea02ced}");
+unsafe impl ::windows_core::RuntimeType for ITextCharacterFormat {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{5adef3db-05fb-442d-8065-642afea02ced}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITextCharacterFormat {
+unsafe impl ::windows_core::Interface for ITextCharacterFormat {
     type Vtable = ITextCharacterFormat_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5adef3db_05fb_442d_8065_642afea02ced);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5adef3db_05fb_442d_8065_642afea02ced);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextCharacterFormat_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub AllCaps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetAllCaps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub BackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Color) -> ::windows::core::HRESULT,
-    pub SetBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Color) -> ::windows::core::HRESULT,
-    pub Bold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetBold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub FontStretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontStretch) -> ::windows::core::HRESULT,
-    pub SetFontStretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FontStretch) -> ::windows::core::HRESULT,
-    pub FontStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontStyle) -> ::windows::core::HRESULT,
-    pub SetFontStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FontStyle) -> ::windows::core::HRESULT,
-    pub ForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Color) -> ::windows::core::HRESULT,
-    pub SetForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Color) -> ::windows::core::HRESULT,
-    pub Hidden: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetHidden: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub Italic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetItalic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub Kerning: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows::core::HRESULT,
-    pub SetKerning: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows::core::HRESULT,
-    pub LanguageTag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub SetLanguageTag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub LinkType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut LinkType) -> ::windows::core::HRESULT,
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub Outline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetOutline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows::core::HRESULT,
-    pub SetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows::core::HRESULT,
-    pub ProtectedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetProtectedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows::core::HRESULT,
-    pub SetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows::core::HRESULT,
-    pub SmallCaps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetSmallCaps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub Spacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows::core::HRESULT,
-    pub SetSpacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows::core::HRESULT,
-    pub Strikethrough: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetStrikethrough: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub Subscript: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetSubscript: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub Superscript: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetSuperscript: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub TextScript: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut TextScript) -> ::windows::core::HRESULT,
-    pub SetTextScript: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TextScript) -> ::windows::core::HRESULT,
-    pub Underline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UnderlineType) -> ::windows::core::HRESULT,
-    pub SetUnderline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: UnderlineType) -> ::windows::core::HRESULT,
-    pub Weight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub SetWeight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows::core::HRESULT,
-    pub SetClone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetClone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub IsEqual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: ::windows::core::RawPtr, result__: *mut bool) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub AllCaps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetAllCaps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub BackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Color) -> ::windows_core::HRESULT,
+    pub SetBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Color) -> ::windows_core::HRESULT,
+    pub Bold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetBold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub FontStretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontStretch) -> ::windows_core::HRESULT,
+    pub SetFontStretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FontStretch) -> ::windows_core::HRESULT,
+    pub FontStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontStyle) -> ::windows_core::HRESULT,
+    pub SetFontStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FontStyle) -> ::windows_core::HRESULT,
+    pub ForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Color) -> ::windows_core::HRESULT,
+    pub SetForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Color) -> ::windows_core::HRESULT,
+    pub Hidden: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetHidden: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub Italic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetItalic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub Kerning: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
+    pub SetKerning: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
+    pub LanguageTag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub SetLanguageTag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub LinkType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut LinkType) -> ::windows_core::HRESULT,
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub Outline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetOutline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
+    pub SetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
+    pub ProtectedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetProtectedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
+    pub SetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
+    pub SmallCaps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetSmallCaps: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub Spacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
+    pub SetSpacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
+    pub Strikethrough: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetStrikethrough: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub Subscript: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetSubscript: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub Superscript: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetSuperscript: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub TextScript: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut TextScript) -> ::windows_core::HRESULT,
+    pub SetTextScript: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: TextScript) -> ::windows_core::HRESULT,
+    pub Underline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UnderlineType) -> ::windows_core::HRESULT,
+    pub SetUnderline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: UnderlineType) -> ::windows_core::HRESULT,
+    pub Weight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub SetWeight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows_core::HRESULT,
+    pub SetClone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetClone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub IsEqual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct ITextConstantsStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for ITextConstantsStatics {
+pub struct ITextConstantsStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for ITextConstantsStatics {
     type Vtable = ITextConstantsStatics_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x779e7c33_189d_4bfa_97c8_10db135d976e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x779e7c33_189d_4bfa_97c8_10db135d976e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextConstantsStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub AutoColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Color) -> ::windows::core::HRESULT,
-    pub MinUnitCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub MaxUnitCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub UndefinedColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Color) -> ::windows::core::HRESULT,
-    pub UndefinedFloatValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows::core::HRESULT,
-    pub UndefinedInt32Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub UndefinedFontStretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontStretch) -> ::windows::core::HRESULT,
-    pub UndefinedFontStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontStyle) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub AutoColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Color) -> ::windows_core::HRESULT,
+    pub MinUnitCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub MaxUnitCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub UndefinedColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Color) -> ::windows_core::HRESULT,
+    pub UndefinedFloatValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
+    pub UndefinedInt32Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub UndefinedFontStretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontStretch) -> ::windows_core::HRESULT,
+    pub UndefinedFontStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FontStyle) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"UI_Text\"`*"]
 #[repr(transparent)]
-pub struct ITextDocument(::windows::core::IUnknown);
+pub struct ITextDocument(::windows_core::IUnknown);
 impl ITextDocument {
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CaretType(&self) -> ::windows::core::Result<CaretType> {
+    pub fn CaretType(&self) -> ::windows_core::Result<CaretType> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<CaretType>::zeroed();
-            (::windows::core::Interface::vtable(this).CaretType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<CaretType>(result__)
+            (::windows_core::Interface::vtable(this).CaretType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<CaretType>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetCaretType(&self, value: CaretType) -> ::windows::core::Result<()> {
+    pub fn SetCaretType(&self, value: CaretType) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetCaretType)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetCaretType)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn DefaultTabStop(&self) -> ::windows::core::Result<f32> {
+    pub fn DefaultTabStop(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).DefaultTabStop)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+            (::windows_core::Interface::vtable(this).DefaultTabStop)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetDefaultTabStop(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetDefaultTabStop(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetDefaultTabStop)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetDefaultTabStop)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Selection(&self) -> ::windows::core::Result<ITextSelection> {
+    pub fn Selection(&self) -> ::windows_core::Result<ITextSelection> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Selection)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextSelection>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Selection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextSelection>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn UndoLimit(&self) -> ::windows::core::Result<u32> {
+    pub fn UndoLimit(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).UndoLimit)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).UndoLimit)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetUndoLimit(&self, value: u32) -> ::windows::core::Result<()> {
+    pub fn SetUndoLimit(&self, value: u32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetUndoLimit)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetUndoLimit)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CanCopy(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanCopy)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CanPaste(&self) -> ::windows::core::Result<bool> {
+    pub fn CanCopy(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanPaste)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).CanCopy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CanRedo(&self) -> ::windows::core::Result<bool> {
+    pub fn CanPaste(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanRedo)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).CanPaste)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CanUndo(&self) -> ::windows::core::Result<bool> {
+    pub fn CanRedo(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanUndo)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).CanRedo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ApplyDisplayUpdates(&self) -> ::windows::core::Result<i32> {
+    pub fn CanUndo(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
+            (::windows_core::Interface::vtable(this).CanUndo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+        }
+    }
+    #[doc = "*Required features: `\"UI_Text\"`*"]
+    pub fn ApplyDisplayUpdates(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).ApplyDisplayUpdates)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).ApplyDisplayUpdates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn BatchDisplayUpdates(&self) -> ::windows::core::Result<i32> {
+    pub fn BatchDisplayUpdates(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).BatchDisplayUpdates)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).BatchDisplayUpdates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn BeginUndoGroup(&self) -> ::windows::core::Result<()> {
+    pub fn BeginUndoGroup(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).BeginUndoGroup)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).BeginUndoGroup)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn EndUndoGroup(&self) -> ::windows::core::Result<()> {
+    pub fn EndUndoGroup(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).EndUndoGroup)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).EndUndoGroup)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetDefaultCharacterFormat(&self) -> ::windows::core::Result<ITextCharacterFormat> {
+    pub fn GetDefaultCharacterFormat(&self) -> ::windows_core::Result<ITextCharacterFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetDefaultCharacterFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextCharacterFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetDefaultCharacterFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextCharacterFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetDefaultParagraphFormat(&self) -> ::windows::core::Result<ITextParagraphFormat> {
+    pub fn GetDefaultParagraphFormat(&self) -> ::windows_core::Result<ITextParagraphFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetDefaultParagraphFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextParagraphFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetDefaultParagraphFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextParagraphFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetRange(&self, startposition: i32, endposition: i32) -> ::windows::core::Result<ITextRange> {
+    pub fn GetRange(&self, startposition: i32, endposition: i32) -> ::windows_core::Result<ITextRange> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetRange)(::windows::core::Interface::as_raw(this), startposition, endposition, result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetRange)(::windows_core::Interface::as_raw(this), startposition, endposition, result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetRangeFromPoint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::Point>>(&self, point: Param0, options: PointOptions) -> ::windows::core::Result<ITextRange> {
+    pub fn GetRangeFromPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Point>>(&self, point: Param0, options: PointOptions) -> ::windows_core::Result<ITextRange> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetRangeFromPoint)(::windows::core::Interface::as_raw(this), point.into_param().abi(), options, result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetRangeFromPoint)(::windows_core::Interface::as_raw(this), point.into_param().abi(), options, result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetText(&self, options: TextGetOptions, value: &mut ::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn GetText(&self, options: TextGetOptions, value: &mut ::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).GetText)(::windows::core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).GetText)(::windows_core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn LoadFromStream<'a, Param1: ::windows::core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows::core::Result<()> {
+    pub fn LoadFromStream<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).LoadFromStream)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).LoadFromStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Redo(&self) -> ::windows::core::Result<()> {
+    pub fn Redo(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Redo)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Redo)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn SaveToStream<'a, Param1: ::windows::core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows::core::Result<()> {
+    pub fn SaveToStream<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SaveToStream)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SaveToStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetDefaultCharacterFormat<'a, Param0: ::windows::core::IntoParam<'a, ITextCharacterFormat>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetDefaultCharacterFormat<'a, Param0: ::windows_core::IntoParam<'a, ITextCharacterFormat>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetDefaultCharacterFormat)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetDefaultCharacterFormat)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetDefaultParagraphFormat<'a, Param0: ::windows::core::IntoParam<'a, ITextParagraphFormat>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetDefaultParagraphFormat<'a, Param0: ::windows_core::IntoParam<'a, ITextParagraphFormat>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetDefaultParagraphFormat)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetDefaultParagraphFormat)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetText<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, options: TextSetOptions, value: Param1) -> ::windows::core::Result<()> {
+    pub fn SetText<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetText)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetText)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Undo(&self) -> ::windows::core::Result<()> {
+    pub fn Undo(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Undo)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Undo)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
-impl ::core::convert::From<ITextDocument> for ::windows::core::IUnknown {
+impl ::core::convert::From<ITextDocument> for ::windows_core::IUnknown {
     fn from(value: ITextDocument) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ITextDocument> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ITextDocument> for ::windows_core::IUnknown {
     fn from(value: &ITextDocument) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITextDocument {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ITextDocument {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITextDocument {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ITextDocument {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<ITextDocument> for ::windows::core::IInspectable {
+impl ::core::convert::From<ITextDocument> for ::windows_core::IInspectable {
     fn from(value: ITextDocument) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ITextDocument> for ::windows::core::IInspectable {
+impl ::core::convert::From<&ITextDocument> for ::windows_core::IInspectable {
     fn from(value: &ITextDocument) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITextDocument {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for ITextDocument {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITextDocument {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a ITextDocument {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for ITextDocument {
@@ -1385,457 +1385,457 @@ impl ::core::fmt::Debug for ITextDocument {
         f.debug_tuple("ITextDocument").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for ITextDocument {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{beee4ddb-90b2-408c-a2f6-0a0ac31e33e4}");
+unsafe impl ::windows_core::RuntimeType for ITextDocument {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{beee4ddb-90b2-408c-a2f6-0a0ac31e33e4}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITextDocument {
+unsafe impl ::windows_core::Interface for ITextDocument {
     type Vtable = ITextDocument_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xbeee4ddb_90b2_408c_a2f6_0a0ac31e33e4);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbeee4ddb_90b2_408c_a2f6_0a0ac31e33e4);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextDocument_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub CaretType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CaretType) -> ::windows::core::HRESULT,
-    pub SetCaretType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: CaretType) -> ::windows::core::HRESULT,
-    pub DefaultTabStop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows::core::HRESULT,
-    pub SetDefaultTabStop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows::core::HRESULT,
-    pub Selection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub UndoLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
-    pub SetUndoLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows::core::HRESULT,
-    pub CanCopy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub CanPaste: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub CanRedo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub CanUndo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub ApplyDisplayUpdates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub BatchDisplayUpdates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub BeginUndoGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub EndUndoGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub GetDefaultCharacterFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetDefaultParagraphFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startposition: i32, endposition: i32, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub CaretType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CaretType) -> ::windows_core::HRESULT,
+    pub SetCaretType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: CaretType) -> ::windows_core::HRESULT,
+    pub DefaultTabStop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
+    pub SetDefaultTabStop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
+    pub Selection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub UndoLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
+    pub SetUndoLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
+    pub CanCopy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub CanPaste: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub CanRedo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub CanUndo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub ApplyDisplayUpdates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub BatchDisplayUpdates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub BeginUndoGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub EndUndoGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub GetDefaultCharacterFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetDefaultParagraphFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startposition: i32, endposition: i32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub GetRangeFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, point: super::super::Foundation::Point, options: PointOptions, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetRangeFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, point: super::super::Foundation::Point, options: PointOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetRangeFromPoint: usize,
-    pub GetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextGetOptions, value: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub GetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextGetOptions, value: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
-    pub LoadFromStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextSetOptions, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub LoadFromStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextSetOptions, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     LoadFromStream: usize,
-    pub Redo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub Redo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
-    pub SaveToStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextGetOptions, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SaveToStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextGetOptions, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     SaveToStream: usize,
-    pub SetDefaultCharacterFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SetDefaultParagraphFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextSetOptions, value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub Undo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub SetDefaultCharacterFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetDefaultParagraphFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextSetOptions, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub Undo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct ITextDocument2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for ITextDocument2 {
+pub struct ITextDocument2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for ITextDocument2 {
     type Vtable = ITextDocument2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf2311112_8c89_49c9_9118_f057cbb814ee);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf2311112_8c89_49c9_9118_f057cbb814ee);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextDocument2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub AlignmentIncludesTrailingWhitespace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub SetAlignmentIncludesTrailingWhitespace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows::core::HRESULT,
-    pub IgnoreTrailingCharacterSpacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub SetIgnoreTrailingCharacterSpacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub AlignmentIncludesTrailingWhitespace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub SetAlignmentIncludesTrailingWhitespace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
+    pub IgnoreTrailingCharacterSpacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub SetIgnoreTrailingCharacterSpacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct ITextDocument3(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for ITextDocument3 {
+pub struct ITextDocument3(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for ITextDocument3 {
     type Vtable = ITextDocument3_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x75ab03a1_a6f8_441d_aa18_0a851d6e5e3c);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x75ab03a1_a6f8_441d_aa18_0a851d6e5e3c);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextDocument3_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub ClearUndoRedoHistory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub ClearUndoRedoHistory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct ITextDocument4(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for ITextDocument4 {
+pub struct ITextDocument4(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for ITextDocument4 {
     type Vtable = ITextDocument4_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x619c20f2_cb3b_4521_981f_2865b1b93f04);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x619c20f2_cb3b_4521_981f_2865b1b93f04);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextDocument4_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub SetMath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub GetMath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub SetMathMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mode: RichEditMathMode) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub SetMath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub GetMath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub SetMathMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mode: RichEditMathMode) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"UI_Text\"`*"]
 #[repr(transparent)]
-pub struct ITextParagraphFormat(::windows::core::IUnknown);
+pub struct ITextParagraphFormat(::windows_core::IUnknown);
 impl ITextParagraphFormat {
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Alignment(&self) -> ::windows::core::Result<ParagraphAlignment> {
+    pub fn Alignment(&self) -> ::windows_core::Result<ParagraphAlignment> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<ParagraphAlignment>::zeroed();
-            (::windows::core::Interface::vtable(this).Alignment)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ParagraphAlignment>(result__)
+            (::windows_core::Interface::vtable(this).Alignment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ParagraphAlignment>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetAlignment(&self, value: ParagraphAlignment) -> ::windows::core::Result<()> {
+    pub fn SetAlignment(&self, value: ParagraphAlignment) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetAlignment)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetAlignment)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn FirstLineIndent(&self) -> ::windows::core::Result<f32> {
+    pub fn FirstLineIndent(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).FirstLineIndent)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+            (::windows_core::Interface::vtable(this).FirstLineIndent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn KeepTogether(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn KeepTogether(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).KeepTogether)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).KeepTogether)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetKeepTogether(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetKeepTogether(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetKeepTogether)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetKeepTogether)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn KeepWithNext(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn KeepWithNext(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).KeepWithNext)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).KeepWithNext)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetKeepWithNext(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetKeepWithNext(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetKeepWithNext)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetKeepWithNext)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn LeftIndent(&self) -> ::windows::core::Result<f32> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).LeftIndent)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn LineSpacing(&self) -> ::windows::core::Result<f32> {
+    pub fn LeftIndent(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).LineSpacing)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+            (::windows_core::Interface::vtable(this).LeftIndent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn LineSpacingRule(&self) -> ::windows::core::Result<LineSpacingRule> {
+    pub fn LineSpacing(&self) -> ::windows_core::Result<f32> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
+            (::windows_core::Interface::vtable(this).LineSpacing)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+        }
+    }
+    #[doc = "*Required features: `\"UI_Text\"`*"]
+    pub fn LineSpacingRule(&self) -> ::windows_core::Result<LineSpacingRule> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<LineSpacingRule>::zeroed();
-            (::windows::core::Interface::vtable(this).LineSpacingRule)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LineSpacingRule>(result__)
+            (::windows_core::Interface::vtable(this).LineSpacingRule)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LineSpacingRule>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ListAlignment(&self) -> ::windows::core::Result<MarkerAlignment> {
+    pub fn ListAlignment(&self) -> ::windows_core::Result<MarkerAlignment> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<MarkerAlignment>::zeroed();
-            (::windows::core::Interface::vtable(this).ListAlignment)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MarkerAlignment>(result__)
+            (::windows_core::Interface::vtable(this).ListAlignment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MarkerAlignment>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetListAlignment(&self, value: MarkerAlignment) -> ::windows::core::Result<()> {
+    pub fn SetListAlignment(&self, value: MarkerAlignment) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetListAlignment)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetListAlignment)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ListLevelIndex(&self) -> ::windows::core::Result<i32> {
+    pub fn ListLevelIndex(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).ListLevelIndex)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).ListLevelIndex)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetListLevelIndex(&self, value: i32) -> ::windows::core::Result<()> {
+    pub fn SetListLevelIndex(&self, value: i32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetListLevelIndex)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetListLevelIndex)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ListStart(&self) -> ::windows::core::Result<i32> {
+    pub fn ListStart(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).ListStart)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).ListStart)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetListStart(&self, value: i32) -> ::windows::core::Result<()> {
+    pub fn SetListStart(&self, value: i32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetListStart)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetListStart)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ListStyle(&self) -> ::windows::core::Result<MarkerStyle> {
+    pub fn ListStyle(&self) -> ::windows_core::Result<MarkerStyle> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<MarkerStyle>::zeroed();
-            (::windows::core::Interface::vtable(this).ListStyle)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MarkerStyle>(result__)
+            (::windows_core::Interface::vtable(this).ListStyle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MarkerStyle>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetListStyle(&self, value: MarkerStyle) -> ::windows::core::Result<()> {
+    pub fn SetListStyle(&self, value: MarkerStyle) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetListStyle)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetListStyle)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ListTab(&self) -> ::windows::core::Result<f32> {
+    pub fn ListTab(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).ListTab)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+            (::windows_core::Interface::vtable(this).ListTab)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetListTab(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetListTab(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetListTab)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetListTab)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ListType(&self) -> ::windows::core::Result<MarkerType> {
+    pub fn ListType(&self) -> ::windows_core::Result<MarkerType> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<MarkerType>::zeroed();
-            (::windows::core::Interface::vtable(this).ListType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MarkerType>(result__)
+            (::windows_core::Interface::vtable(this).ListType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MarkerType>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetListType(&self, value: MarkerType) -> ::windows::core::Result<()> {
+    pub fn SetListType(&self, value: MarkerType) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetListType)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetListType)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn NoLineNumber(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn NoLineNumber(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).NoLineNumber)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).NoLineNumber)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetNoLineNumber(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetNoLineNumber(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetNoLineNumber)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetNoLineNumber)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn PageBreakBefore(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn PageBreakBefore(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).PageBreakBefore)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).PageBreakBefore)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetPageBreakBefore(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetPageBreakBefore(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetPageBreakBefore)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetPageBreakBefore)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn RightIndent(&self) -> ::windows::core::Result<f32> {
+    pub fn RightIndent(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).RightIndent)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+            (::windows_core::Interface::vtable(this).RightIndent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetRightIndent(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetRightIndent(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetRightIndent)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetRightIndent)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn RightToLeft(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn RightToLeft(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).RightToLeft)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).RightToLeft)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetRightToLeft(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetRightToLeft(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetRightToLeft)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetRightToLeft)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Style(&self) -> ::windows::core::Result<ParagraphStyle> {
+    pub fn Style(&self) -> ::windows_core::Result<ParagraphStyle> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<ParagraphStyle>::zeroed();
-            (::windows::core::Interface::vtable(this).Style)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ParagraphStyle>(result__)
+            (::windows_core::Interface::vtable(this).Style)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ParagraphStyle>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetStyle(&self, value: ParagraphStyle) -> ::windows::core::Result<()> {
+    pub fn SetStyle(&self, value: ParagraphStyle) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetStyle)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetStyle)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SpaceAfter(&self) -> ::windows::core::Result<f32> {
+    pub fn SpaceAfter(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).SpaceAfter)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+            (::windows_core::Interface::vtable(this).SpaceAfter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetSpaceAfter(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetSpaceAfter(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetSpaceAfter)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetSpaceAfter)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SpaceBefore(&self) -> ::windows::core::Result<f32> {
+    pub fn SpaceBefore(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).SpaceBefore)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+            (::windows_core::Interface::vtable(this).SpaceBefore)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetSpaceBefore(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetSpaceBefore(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetSpaceBefore)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetSpaceBefore)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn WidowControl(&self) -> ::windows::core::Result<FormatEffect> {
+    pub fn WidowControl(&self) -> ::windows_core::Result<FormatEffect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FormatEffect>::zeroed();
-            (::windows::core::Interface::vtable(this).WidowControl)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
+            (::windows_core::Interface::vtable(this).WidowControl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FormatEffect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetWidowControl(&self, value: FormatEffect) -> ::windows::core::Result<()> {
+    pub fn SetWidowControl(&self, value: FormatEffect) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetWidowControl)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetWidowControl)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn TabCount(&self) -> ::windows::core::Result<i32> {
+    pub fn TabCount(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).TabCount)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).TabCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn AddTab(&self, position: f32, align: TabAlignment, leader: TabLeader) -> ::windows::core::Result<()> {
+    pub fn AddTab(&self, position: f32, align: TabAlignment, leader: TabLeader) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).AddTab)(::windows::core::Interface::as_raw(this), position, align, leader).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).AddTab)(::windows_core::Interface::as_raw(this), position, align, leader).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ClearAllTabs(&self) -> ::windows::core::Result<()> {
+    pub fn ClearAllTabs(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).ClearAllTabs)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).ClearAllTabs)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn DeleteTab(&self, position: f32) -> ::windows::core::Result<()> {
+    pub fn DeleteTab(&self, position: f32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).DeleteTab)(::windows::core::Interface::as_raw(this), position).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).DeleteTab)(::windows_core::Interface::as_raw(this), position).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetClone(&self) -> ::windows::core::Result<ITextParagraphFormat> {
+    pub fn GetClone(&self) -> ::windows_core::Result<ITextParagraphFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetClone)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextParagraphFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetClone)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextParagraphFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetTab(&self, index: i32, position: &mut f32, align: &mut TabAlignment, leader: &mut TabLeader) -> ::windows::core::Result<()> {
+    pub fn GetTab(&self, index: i32, position: &mut f32, align: &mut TabAlignment, leader: &mut TabLeader) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).GetTab)(::windows::core::Interface::as_raw(this), index, position, align, leader).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).GetTab)(::windows_core::Interface::as_raw(this), index, position, align, leader).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn IsEqual<'a, Param0: ::windows::core::IntoParam<'a, ITextParagraphFormat>>(&self, format: Param0) -> ::windows::core::Result<bool> {
+    pub fn IsEqual<'a, Param0: ::windows_core::IntoParam<'a, ITextParagraphFormat>>(&self, format: Param0) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsEqual)(::windows::core::Interface::as_raw(this), format.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsEqual)(::windows_core::Interface::as_raw(this), format.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetClone<'a, Param0: ::windows::core::IntoParam<'a, ITextParagraphFormat>>(&self, format: Param0) -> ::windows::core::Result<()> {
+    pub fn SetClone<'a, Param0: ::windows_core::IntoParam<'a, ITextParagraphFormat>>(&self, format: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetClone)(::windows::core::Interface::as_raw(this), format.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetClone)(::windows_core::Interface::as_raw(this), format.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetIndents(&self, start: f32, left: f32, right: f32) -> ::windows::core::Result<()> {
+    pub fn SetIndents(&self, start: f32, left: f32, right: f32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetIndents)(::windows::core::Interface::as_raw(this), start, left, right).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetIndents)(::windows_core::Interface::as_raw(this), start, left, right).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetLineSpacing(&self, rule: LineSpacingRule, spacing: f32) -> ::windows::core::Result<()> {
+    pub fn SetLineSpacing(&self, rule: LineSpacingRule, spacing: f32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetLineSpacing)(::windows::core::Interface::as_raw(this), rule, spacing).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetLineSpacing)(::windows_core::Interface::as_raw(this), rule, spacing).ok() }
     }
 }
-impl ::core::convert::From<ITextParagraphFormat> for ::windows::core::IUnknown {
+impl ::core::convert::From<ITextParagraphFormat> for ::windows_core::IUnknown {
     fn from(value: ITextParagraphFormat) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ITextParagraphFormat> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ITextParagraphFormat> for ::windows_core::IUnknown {
     fn from(value: &ITextParagraphFormat) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITextParagraphFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ITextParagraphFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITextParagraphFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ITextParagraphFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<ITextParagraphFormat> for ::windows::core::IInspectable {
+impl ::core::convert::From<ITextParagraphFormat> for ::windows_core::IInspectable {
     fn from(value: ITextParagraphFormat) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ITextParagraphFormat> for ::windows::core::IInspectable {
+impl ::core::convert::From<&ITextParagraphFormat> for ::windows_core::IInspectable {
     fn from(value: &ITextParagraphFormat) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITextParagraphFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for ITextParagraphFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITextParagraphFormat {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a ITextParagraphFormat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for ITextParagraphFormat {
@@ -1854,454 +1854,454 @@ impl ::core::fmt::Debug for ITextParagraphFormat {
         f.debug_tuple("ITextParagraphFormat").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for ITextParagraphFormat {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{2cf8cfa6-4676-498a-93f5-bbdbfc0bd883}");
+unsafe impl ::windows_core::RuntimeType for ITextParagraphFormat {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{2cf8cfa6-4676-498a-93f5-bbdbfc0bd883}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITextParagraphFormat {
+unsafe impl ::windows_core::Interface for ITextParagraphFormat {
     type Vtable = ITextParagraphFormat_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2cf8cfa6_4676_498a_93f5_bbdbfc0bd883);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2cf8cfa6_4676_498a_93f5_bbdbfc0bd883);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextParagraphFormat_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Alignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ParagraphAlignment) -> ::windows::core::HRESULT,
-    pub SetAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ParagraphAlignment) -> ::windows::core::HRESULT,
-    pub FirstLineIndent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows::core::HRESULT,
-    pub KeepTogether: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetKeepTogether: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub KeepWithNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetKeepWithNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub LeftIndent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows::core::HRESULT,
-    pub LineSpacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows::core::HRESULT,
-    pub LineSpacingRule: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut LineSpacingRule) -> ::windows::core::HRESULT,
-    pub ListAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MarkerAlignment) -> ::windows::core::HRESULT,
-    pub SetListAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MarkerAlignment) -> ::windows::core::HRESULT,
-    pub ListLevelIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub SetListLevelIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows::core::HRESULT,
-    pub ListStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub SetListStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows::core::HRESULT,
-    pub ListStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MarkerStyle) -> ::windows::core::HRESULT,
-    pub SetListStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MarkerStyle) -> ::windows::core::HRESULT,
-    pub ListTab: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows::core::HRESULT,
-    pub SetListTab: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows::core::HRESULT,
-    pub ListType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MarkerType) -> ::windows::core::HRESULT,
-    pub SetListType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MarkerType) -> ::windows::core::HRESULT,
-    pub NoLineNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetNoLineNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub PageBreakBefore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetPageBreakBefore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub RightIndent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows::core::HRESULT,
-    pub SetRightIndent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows::core::HRESULT,
-    pub RightToLeft: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetRightToLeft: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub Style: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ParagraphStyle) -> ::windows::core::HRESULT,
-    pub SetStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ParagraphStyle) -> ::windows::core::HRESULT,
-    pub SpaceAfter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows::core::HRESULT,
-    pub SetSpaceAfter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows::core::HRESULT,
-    pub SpaceBefore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows::core::HRESULT,
-    pub SetSpaceBefore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows::core::HRESULT,
-    pub WidowControl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows::core::HRESULT,
-    pub SetWidowControl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows::core::HRESULT,
-    pub TabCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub AddTab: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: f32, align: TabAlignment, leader: TabLeader) -> ::windows::core::HRESULT,
-    pub ClearAllTabs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub DeleteTab: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: f32) -> ::windows::core::HRESULT,
-    pub GetClone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetTab: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: i32, position: *mut f32, align: *mut TabAlignment, leader: *mut TabLeader) -> ::windows::core::HRESULT,
-    pub IsEqual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: ::windows::core::RawPtr, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub SetClone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SetIndents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, start: f32, left: f32, right: f32) -> ::windows::core::HRESULT,
-    pub SetLineSpacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rule: LineSpacingRule, spacing: f32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Alignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ParagraphAlignment) -> ::windows_core::HRESULT,
+    pub SetAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ParagraphAlignment) -> ::windows_core::HRESULT,
+    pub FirstLineIndent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
+    pub KeepTogether: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetKeepTogether: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub KeepWithNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetKeepWithNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub LeftIndent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
+    pub LineSpacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
+    pub LineSpacingRule: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut LineSpacingRule) -> ::windows_core::HRESULT,
+    pub ListAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MarkerAlignment) -> ::windows_core::HRESULT,
+    pub SetListAlignment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MarkerAlignment) -> ::windows_core::HRESULT,
+    pub ListLevelIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub SetListLevelIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows_core::HRESULT,
+    pub ListStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub SetListStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows_core::HRESULT,
+    pub ListStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MarkerStyle) -> ::windows_core::HRESULT,
+    pub SetListStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MarkerStyle) -> ::windows_core::HRESULT,
+    pub ListTab: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
+    pub SetListTab: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
+    pub ListType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MarkerType) -> ::windows_core::HRESULT,
+    pub SetListType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MarkerType) -> ::windows_core::HRESULT,
+    pub NoLineNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetNoLineNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub PageBreakBefore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetPageBreakBefore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub RightIndent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
+    pub SetRightIndent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
+    pub RightToLeft: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetRightToLeft: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub Style: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ParagraphStyle) -> ::windows_core::HRESULT,
+    pub SetStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ParagraphStyle) -> ::windows_core::HRESULT,
+    pub SpaceAfter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
+    pub SetSpaceAfter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
+    pub SpaceBefore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
+    pub SetSpaceBefore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
+    pub WidowControl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut FormatEffect) -> ::windows_core::HRESULT,
+    pub SetWidowControl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: FormatEffect) -> ::windows_core::HRESULT,
+    pub TabCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub AddTab: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: f32, align: TabAlignment, leader: TabLeader) -> ::windows_core::HRESULT,
+    pub ClearAllTabs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub DeleteTab: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: f32) -> ::windows_core::HRESULT,
+    pub GetClone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetTab: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: i32, position: *mut f32, align: *mut TabAlignment, leader: *mut TabLeader) -> ::windows_core::HRESULT,
+    pub IsEqual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub SetClone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetIndents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, start: f32, left: f32, right: f32) -> ::windows_core::HRESULT,
+    pub SetLineSpacing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rule: LineSpacingRule, spacing: f32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"UI_Text\"`*"]
 #[repr(transparent)]
-pub struct ITextRange(::windows::core::IUnknown);
+pub struct ITextRange(::windows_core::IUnknown);
 impl ITextRange {
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Character(&self) -> ::windows::core::Result<u16> {
+    pub fn Character(&self) -> ::windows_core::Result<u16> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u16>::zeroed();
-            (::windows::core::Interface::vtable(this).Character)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u16>(result__)
+            (::windows_core::Interface::vtable(this).Character)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u16>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetCharacter(&self, value: u16) -> ::windows::core::Result<()> {
+    pub fn SetCharacter(&self, value: u16) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetCharacter)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetCharacter)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CharacterFormat(&self) -> ::windows::core::Result<ITextCharacterFormat> {
+    pub fn CharacterFormat(&self) -> ::windows_core::Result<ITextCharacterFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CharacterFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextCharacterFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CharacterFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextCharacterFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetCharacterFormat<'a, Param0: ::windows::core::IntoParam<'a, ITextCharacterFormat>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetCharacterFormat<'a, Param0: ::windows_core::IntoParam<'a, ITextCharacterFormat>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetCharacterFormat)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetCharacterFormat)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn FormattedText(&self) -> ::windows::core::Result<ITextRange> {
+    pub fn FormattedText(&self) -> ::windows_core::Result<ITextRange> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).FormattedText)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FormattedText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetFormattedText<'a, Param0: ::windows::core::IntoParam<'a, ITextRange>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetFormattedText<'a, Param0: ::windows_core::IntoParam<'a, ITextRange>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetFormattedText)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetFormattedText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn EndPosition(&self) -> ::windows::core::Result<i32> {
+    pub fn EndPosition(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).EndPosition)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).EndPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetEndPosition(&self, value: i32) -> ::windows::core::Result<()> {
+    pub fn SetEndPosition(&self, value: i32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetEndPosition)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetEndPosition)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Gravity(&self) -> ::windows::core::Result<RangeGravity> {
+    pub fn Gravity(&self) -> ::windows_core::Result<RangeGravity> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<RangeGravity>::zeroed();
-            (::windows::core::Interface::vtable(this).Gravity)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<RangeGravity>(result__)
+            (::windows_core::Interface::vtable(this).Gravity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<RangeGravity>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetGravity(&self, value: RangeGravity) -> ::windows::core::Result<()> {
+    pub fn SetGravity(&self, value: RangeGravity) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetGravity)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetGravity)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Length(&self) -> ::windows::core::Result<i32> {
+    pub fn Length(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Length)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).Length)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Link(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Link(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Link)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Link)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetLink<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetLink<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetLink)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetLink)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ParagraphFormat(&self) -> ::windows::core::Result<ITextParagraphFormat> {
+    pub fn ParagraphFormat(&self) -> ::windows_core::Result<ITextParagraphFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).ParagraphFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextParagraphFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).ParagraphFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextParagraphFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetParagraphFormat<'a, Param0: ::windows::core::IntoParam<'a, ITextParagraphFormat>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetParagraphFormat<'a, Param0: ::windows_core::IntoParam<'a, ITextParagraphFormat>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetParagraphFormat)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetParagraphFormat)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn StartPosition(&self) -> ::windows::core::Result<i32> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).StartPosition)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetStartPosition(&self, value: i32) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetStartPosition)(::windows::core::Interface::as_raw(this), value).ok() }
-    }
-    #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn StoryLength(&self) -> ::windows::core::Result<i32> {
+    pub fn StartPosition(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).StoryLength)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).StartPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Text(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn SetStartPosition(&self, value: i32) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe { (::windows_core::Interface::vtable(this).SetStartPosition)(::windows_core::Interface::as_raw(this), value).ok() }
+    }
+    #[doc = "*Required features: `\"UI_Text\"`*"]
+    pub fn StoryLength(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Text)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
+            (::windows_core::Interface::vtable(this).StoryLength)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetText<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn Text(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetText)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Text)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
+        }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CanPaste(&self, format: i32) -> ::windows::core::Result<bool> {
+    pub fn SetText<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe { (::windows_core::Interface::vtable(this).SetText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
+    }
+    #[doc = "*Required features: `\"UI_Text\"`*"]
+    pub fn CanPaste(&self, format: i32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanPaste)(::windows::core::Interface::as_raw(this), format, result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).CanPaste)(::windows_core::Interface::as_raw(this), format, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ChangeCase(&self, value: LetterCase) -> ::windows::core::Result<()> {
+    pub fn ChangeCase(&self, value: LetterCase) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).ChangeCase)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).ChangeCase)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Collapse(&self, value: bool) -> ::windows::core::Result<()> {
+    pub fn Collapse(&self, value: bool) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Collapse)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Collapse)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Copy(&self) -> ::windows::core::Result<()> {
+    pub fn Copy(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Copy)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Copy)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Cut(&self) -> ::windows::core::Result<()> {
+    pub fn Cut(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Cut)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Cut)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Delete(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32> {
+    pub fn Delete(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Delete)(::windows::core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).Delete)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn EndOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows::core::Result<i32> {
+    pub fn EndOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).EndOf)(::windows::core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).EndOf)(::windows_core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Expand(&self, unit: TextRangeUnit) -> ::windows::core::Result<i32> {
+    pub fn Expand(&self, unit: TextRangeUnit) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Expand)(::windows::core::Interface::as_raw(this), unit, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).Expand)(::windows_core::Interface::as_raw(this), unit, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn FindText<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0, scanlength: i32, options: FindOptions) -> ::windows::core::Result<i32> {
+    pub fn FindText<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0, scanlength: i32, options: FindOptions) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).FindText)(::windows::core::Interface::as_raw(this), value.into_param().abi(), scanlength, options, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).FindText)(::windows_core::Interface::as_raw(this), value.into_param().abi(), scanlength, options, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetCharacterUtf32(&self, value: &mut u32, offset: i32) -> ::windows::core::Result<()> {
+    pub fn GetCharacterUtf32(&self, value: &mut u32, offset: i32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).GetCharacterUtf32)(::windows::core::Interface::as_raw(this), value, offset).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).GetCharacterUtf32)(::windows_core::Interface::as_raw(this), value, offset).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetClone(&self) -> ::windows::core::Result<ITextRange> {
+    pub fn GetClone(&self) -> ::windows_core::Result<ITextRange> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetClone)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetClone)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetIndex(&self, unit: TextRangeUnit) -> ::windows::core::Result<i32> {
+    pub fn GetIndex(&self, unit: TextRangeUnit) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).GetIndex)(::windows::core::Interface::as_raw(this), unit, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).GetIndex)(::windows_core::Interface::as_raw(this), unit, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetPoint(&self, horizontalalign: HorizontalCharacterAlignment, verticalalign: VerticalCharacterAlignment, options: PointOptions, point: &mut super::super::Foundation::Point) -> ::windows::core::Result<()> {
+    pub fn GetPoint(&self, horizontalalign: HorizontalCharacterAlignment, verticalalign: VerticalCharacterAlignment, options: PointOptions, point: &mut super::super::Foundation::Point) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).GetPoint)(::windows::core::Interface::as_raw(this), horizontalalign, verticalalign, options, point).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).GetPoint)(::windows_core::Interface::as_raw(this), horizontalalign, verticalalign, options, point).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetRect(&self, options: PointOptions, rect: &mut super::super::Foundation::Rect, hit: &mut i32) -> ::windows::core::Result<()> {
+    pub fn GetRect(&self, options: PointOptions, rect: &mut super::super::Foundation::Rect, hit: &mut i32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).GetRect)(::windows::core::Interface::as_raw(this), options, rect, hit).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).GetRect)(::windows_core::Interface::as_raw(this), options, rect, hit).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetText(&self, options: TextGetOptions, value: &mut ::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn GetText(&self, options: TextGetOptions, value: &mut ::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).GetText)(::windows::core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).GetText)(::windows_core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetTextViaStream<'a, Param1: ::windows::core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows::core::Result<()> {
+    pub fn GetTextViaStream<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).GetTextViaStream)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).GetTextViaStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn InRange<'a, Param0: ::windows::core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows::core::Result<bool> {
+    pub fn InRange<'a, Param0: ::windows_core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).InRange)(::windows::core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).InRange)(::windows_core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn InsertImage<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>, Param5: ::windows::core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, width: i32, height: i32, ascent: i32, verticalalign: VerticalCharacterAlignment, alternatetext: Param4, value: Param5) -> ::windows::core::Result<()> {
+    pub fn InsertImage<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, width: i32, height: i32, ascent: i32, verticalalign: VerticalCharacterAlignment, alternatetext: Param4, value: Param5) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).InsertImage)(::windows::core::Interface::as_raw(this), width, height, ascent, verticalalign, alternatetext.into_param().abi(), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).InsertImage)(::windows_core::Interface::as_raw(this), width, height, ascent, verticalalign, alternatetext.into_param().abi(), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn InStory<'a, Param0: ::windows::core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows::core::Result<bool> {
+    pub fn InStory<'a, Param0: ::windows_core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).InStory)(::windows::core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).InStory)(::windows_core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn IsEqual<'a, Param0: ::windows::core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows::core::Result<bool> {
+    pub fn IsEqual<'a, Param0: ::windows_core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsEqual)(::windows::core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsEqual)(::windows_core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Move(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32> {
+    pub fn Move(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Move)(::windows::core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).Move)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MoveEnd(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32> {
+    pub fn MoveEnd(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MoveEnd)(::windows::core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).MoveEnd)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MoveStart(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32> {
+    pub fn MoveStart(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MoveStart)(::windows::core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).MoveStart)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Paste(&self, format: i32) -> ::windows::core::Result<()> {
+    pub fn Paste(&self, format: i32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Paste)(::windows::core::Interface::as_raw(this), format).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Paste)(::windows_core::Interface::as_raw(this), format).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ScrollIntoView(&self, value: PointOptions) -> ::windows::core::Result<()> {
+    pub fn ScrollIntoView(&self, value: PointOptions) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).ScrollIntoView)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).ScrollIntoView)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MatchSelection(&self) -> ::windows::core::Result<()> {
+    pub fn MatchSelection(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).MatchSelection)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).MatchSelection)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetIndex(&self, unit: TextRangeUnit, index: i32, extend: bool) -> ::windows::core::Result<()> {
+    pub fn SetIndex(&self, unit: TextRangeUnit, index: i32, extend: bool) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetIndex)(::windows::core::Interface::as_raw(this), unit, index, extend).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetIndex)(::windows_core::Interface::as_raw(this), unit, index, extend).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn SetPoint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::Point>>(&self, point: Param0, options: PointOptions, extend: bool) -> ::windows::core::Result<()> {
+    pub fn SetPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Point>>(&self, point: Param0, options: PointOptions, extend: bool) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetPoint)(::windows::core::Interface::as_raw(this), point.into_param().abi(), options, extend).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetPoint)(::windows_core::Interface::as_raw(this), point.into_param().abi(), options, extend).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetRange(&self, startposition: i32, endposition: i32) -> ::windows::core::Result<()> {
+    pub fn SetRange(&self, startposition: i32, endposition: i32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetRange)(::windows::core::Interface::as_raw(this), startposition, endposition).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetRange)(::windows_core::Interface::as_raw(this), startposition, endposition).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetText2<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, options: TextSetOptions, value: Param1) -> ::windows::core::Result<()> {
+    pub fn SetText2<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetText2)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetText2)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetTextViaStream<'a, Param1: ::windows::core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows::core::Result<()> {
+    pub fn SetTextViaStream<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetTextViaStream)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetTextViaStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn StartOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows::core::Result<i32> {
+    pub fn StartOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).StartOf)(::windows::core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).StartOf)(::windows_core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
 }
-impl ::core::convert::From<ITextRange> for ::windows::core::IUnknown {
+impl ::core::convert::From<ITextRange> for ::windows_core::IUnknown {
     fn from(value: ITextRange) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ITextRange> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ITextRange> for ::windows_core::IUnknown {
     fn from(value: &ITextRange) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ITextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ITextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<ITextRange> for ::windows::core::IInspectable {
+impl ::core::convert::From<ITextRange> for ::windows_core::IInspectable {
     fn from(value: ITextRange) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ITextRange> for ::windows::core::IInspectable {
+impl ::core::convert::From<&ITextRange> for ::windows_core::IInspectable {
     fn from(value: &ITextRange) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for ITextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a ITextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for ITextRange {
@@ -2320,572 +2320,572 @@ impl ::core::fmt::Debug for ITextRange {
         f.debug_tuple("ITextRange").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for ITextRange {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{5b9e4e57-c072-42a0-8945-af503ee54768}");
+unsafe impl ::windows_core::RuntimeType for ITextRange {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{5b9e4e57-c072-42a0-8945-af503ee54768}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITextRange {
+unsafe impl ::windows_core::Interface for ITextRange {
     type Vtable = ITextRange_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5b9e4e57_c072_42a0_8945_af503ee54768);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5b9e4e57_c072_42a0_8945_af503ee54768);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextRange_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Character: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows::core::HRESULT,
-    pub SetCharacter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u16) -> ::windows::core::HRESULT,
-    pub CharacterFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SetCharacterFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub FormattedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SetFormattedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub EndPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub SetEndPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows::core::HRESULT,
-    pub Gravity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut RangeGravity) -> ::windows::core::HRESULT,
-    pub SetGravity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: RangeGravity) -> ::windows::core::HRESULT,
-    pub Length: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub Link: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub SetLink: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub ParagraphFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SetParagraphFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub StartPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub SetStartPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows::core::HRESULT,
-    pub StoryLength: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub Text: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub SetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub CanPaste: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: i32, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub ChangeCase: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: LetterCase) -> ::windows::core::HRESULT,
-    pub Collapse: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows::core::HRESULT,
-    pub Copy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub Cut: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub Delete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub EndOf: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, extend: bool, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub Expand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub FindText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, scanlength: i32, options: FindOptions, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub GetCharacterUtf32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut u32, offset: i32) -> ::windows::core::HRESULT,
-    pub GetClone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, result__: *mut i32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Character: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
+    pub SetCharacter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u16) -> ::windows_core::HRESULT,
+    pub CharacterFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetCharacterFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub FormattedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetFormattedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub EndPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub SetEndPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows_core::HRESULT,
+    pub Gravity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut RangeGravity) -> ::windows_core::HRESULT,
+    pub SetGravity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: RangeGravity) -> ::windows_core::HRESULT,
+    pub Length: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub Link: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub SetLink: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub ParagraphFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetParagraphFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub StartPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub SetStartPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows_core::HRESULT,
+    pub StoryLength: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub Text: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub SetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub CanPaste: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: i32, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub ChangeCase: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: LetterCase) -> ::windows_core::HRESULT,
+    pub Collapse: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
+    pub Copy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Cut: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub EndOf: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, extend: bool, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub Expand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub FindText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, scanlength: i32, options: FindOptions, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub GetCharacterUtf32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut u32, offset: i32) -> ::windows_core::HRESULT,
+    pub GetClone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, result__: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub GetPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, horizontalalign: HorizontalCharacterAlignment, verticalalign: VerticalCharacterAlignment, options: PointOptions, point: *mut super::super::Foundation::Point) -> ::windows::core::HRESULT,
+    pub GetPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, horizontalalign: HorizontalCharacterAlignment, verticalalign: VerticalCharacterAlignment, options: PointOptions, point: *mut super::super::Foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetPoint: usize,
     #[cfg(feature = "Foundation")]
-    pub GetRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: PointOptions, rect: *mut super::super::Foundation::Rect, hit: *mut i32) -> ::windows::core::HRESULT,
+    pub GetRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: PointOptions, rect: *mut super::super::Foundation::Rect, hit: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetRect: usize,
-    pub GetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextGetOptions, value: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub GetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextGetOptions, value: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
-    pub GetTextViaStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextGetOptions, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetTextViaStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextGetOptions, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     GetTextViaStream: usize,
-    pub InRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, range: ::windows::core::RawPtr, result__: *mut bool) -> ::windows::core::HRESULT,
+    pub InRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, range: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
-    pub InsertImage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, width: i32, height: i32, ascent: i32, verticalalign: VerticalCharacterAlignment, alternatetext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub InsertImage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, width: i32, height: i32, ascent: i32, verticalalign: VerticalCharacterAlignment, alternatetext: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     InsertImage: usize,
-    pub InStory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, range: ::windows::core::RawPtr, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub IsEqual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, range: ::windows::core::RawPtr, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub Move: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub MoveEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub MoveStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub Paste: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: i32) -> ::windows::core::HRESULT,
-    pub ScrollIntoView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PointOptions) -> ::windows::core::HRESULT,
-    pub MatchSelection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub SetIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, index: i32, extend: bool) -> ::windows::core::HRESULT,
+    pub InStory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, range: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub IsEqual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, range: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub Move: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub MoveEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub MoveStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub Paste: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: i32) -> ::windows_core::HRESULT,
+    pub ScrollIntoView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PointOptions) -> ::windows_core::HRESULT,
+    pub MatchSelection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub SetIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, index: i32, extend: bool) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub SetPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, point: super::super::Foundation::Point, options: PointOptions, extend: bool) -> ::windows::core::HRESULT,
+    pub SetPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, point: super::super::Foundation::Point, options: PointOptions, extend: bool) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetPoint: usize,
-    pub SetRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startposition: i32, endposition: i32) -> ::windows::core::HRESULT,
-    pub SetText2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextSetOptions, value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub SetRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startposition: i32, endposition: i32) -> ::windows_core::HRESULT,
+    pub SetText2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextSetOptions, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
-    pub SetTextViaStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextSetOptions, value: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SetTextViaStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: TextSetOptions, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     SetTextViaStream: usize,
-    pub StartOf: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, extend: bool, result__: *mut i32) -> ::windows::core::HRESULT,
+    pub StartOf: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, extend: bool, result__: *mut i32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"UI_Text\"`*"]
 #[repr(transparent)]
-pub struct ITextSelection(::windows::core::IUnknown);
+pub struct ITextSelection(::windows_core::IUnknown);
 impl ITextSelection {
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Options(&self) -> ::windows::core::Result<SelectionOptions> {
+    pub fn Options(&self) -> ::windows_core::Result<SelectionOptions> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<SelectionOptions>::zeroed();
-            (::windows::core::Interface::vtable(this).Options)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SelectionOptions>(result__)
+            (::windows_core::Interface::vtable(this).Options)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SelectionOptions>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetOptions(&self, value: SelectionOptions) -> ::windows::core::Result<()> {
+    pub fn SetOptions(&self, value: SelectionOptions) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetOptions)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetOptions)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Type(&self) -> ::windows::core::Result<SelectionType> {
+    pub fn Type(&self) -> ::windows_core::Result<SelectionType> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<SelectionType>::zeroed();
-            (::windows::core::Interface::vtable(this).Type)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SelectionType>(result__)
+            (::windows_core::Interface::vtable(this).Type)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SelectionType>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn EndKey(&self, unit: TextRangeUnit, extend: bool) -> ::windows::core::Result<i32> {
+    pub fn EndKey(&self, unit: TextRangeUnit, extend: bool) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).EndKey)(::windows::core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).EndKey)(::windows_core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn HomeKey(&self, unit: TextRangeUnit, extend: bool) -> ::windows::core::Result<i32> {
+    pub fn HomeKey(&self, unit: TextRangeUnit, extend: bool) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).HomeKey)(::windows::core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).HomeKey)(::windows_core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MoveDown(&self, unit: TextRangeUnit, count: i32, extend: bool) -> ::windows::core::Result<i32> {
+    pub fn MoveDown(&self, unit: TextRangeUnit, count: i32, extend: bool) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MoveDown)(::windows::core::Interface::as_raw(this), unit, count, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).MoveDown)(::windows_core::Interface::as_raw(this), unit, count, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MoveLeft(&self, unit: TextRangeUnit, count: i32, extend: bool) -> ::windows::core::Result<i32> {
+    pub fn MoveLeft(&self, unit: TextRangeUnit, count: i32, extend: bool) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MoveLeft)(::windows::core::Interface::as_raw(this), unit, count, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).MoveLeft)(::windows_core::Interface::as_raw(this), unit, count, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MoveRight(&self, unit: TextRangeUnit, count: i32, extend: bool) -> ::windows::core::Result<i32> {
+    pub fn MoveRight(&self, unit: TextRangeUnit, count: i32, extend: bool) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MoveRight)(::windows::core::Interface::as_raw(this), unit, count, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).MoveRight)(::windows_core::Interface::as_raw(this), unit, count, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MoveUp(&self, unit: TextRangeUnit, count: i32, extend: bool) -> ::windows::core::Result<i32> {
+    pub fn MoveUp(&self, unit: TextRangeUnit, count: i32, extend: bool) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MoveUp)(::windows::core::Interface::as_raw(this), unit, count, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).MoveUp)(::windows_core::Interface::as_raw(this), unit, count, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn TypeText<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn TypeText<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).TypeText)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).TypeText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Character(&self) -> ::windows::core::Result<u16> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn Character(&self) -> ::windows_core::Result<u16> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u16>::zeroed();
-            (::windows::core::Interface::vtable(this).Character)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u16>(result__)
+            (::windows_core::Interface::vtable(this).Character)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u16>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetCharacter(&self, value: u16) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetCharacter)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetCharacter(&self, value: u16) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetCharacter)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CharacterFormat(&self) -> ::windows::core::Result<ITextCharacterFormat> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn CharacterFormat(&self) -> ::windows_core::Result<ITextCharacterFormat> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CharacterFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextCharacterFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CharacterFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextCharacterFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetCharacterFormat<'a, Param0: ::windows::core::IntoParam<'a, ITextCharacterFormat>>(&self, value: Param0) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetCharacterFormat)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+    pub fn SetCharacterFormat<'a, Param0: ::windows_core::IntoParam<'a, ITextCharacterFormat>>(&self, value: Param0) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetCharacterFormat)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn FormattedText(&self) -> ::windows::core::Result<ITextRange> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn FormattedText(&self) -> ::windows_core::Result<ITextRange> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).FormattedText)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FormattedText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetFormattedText<'a, Param0: ::windows::core::IntoParam<'a, ITextRange>>(&self, value: Param0) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetFormattedText)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+    pub fn SetFormattedText<'a, Param0: ::windows_core::IntoParam<'a, ITextRange>>(&self, value: Param0) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetFormattedText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn EndPosition(&self) -> ::windows::core::Result<i32> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn EndPosition(&self) -> ::windows_core::Result<i32> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).EndPosition)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).EndPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetEndPosition(&self, value: i32) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetEndPosition)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetEndPosition(&self, value: i32) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetEndPosition)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Gravity(&self) -> ::windows::core::Result<RangeGravity> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn Gravity(&self) -> ::windows_core::Result<RangeGravity> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<RangeGravity>::zeroed();
-            (::windows::core::Interface::vtable(this).Gravity)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<RangeGravity>(result__)
+            (::windows_core::Interface::vtable(this).Gravity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<RangeGravity>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetGravity(&self, value: RangeGravity) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetGravity)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetGravity(&self, value: RangeGravity) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetGravity)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Length(&self) -> ::windows::core::Result<i32> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn Length(&self) -> ::windows_core::Result<i32> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Length)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).Length)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Link(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn Link(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Link)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Link)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetLink<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetLink)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+    pub fn SetLink<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetLink)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ParagraphFormat(&self) -> ::windows::core::Result<ITextParagraphFormat> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn ParagraphFormat(&self) -> ::windows_core::Result<ITextParagraphFormat> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).ParagraphFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextParagraphFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).ParagraphFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextParagraphFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetParagraphFormat<'a, Param0: ::windows::core::IntoParam<'a, ITextParagraphFormat>>(&self, value: Param0) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetParagraphFormat)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+    pub fn SetParagraphFormat<'a, Param0: ::windows_core::IntoParam<'a, ITextParagraphFormat>>(&self, value: Param0) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetParagraphFormat)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn StartPosition(&self) -> ::windows::core::Result<i32> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).StartPosition)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetStartPosition(&self, value: i32) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetStartPosition)(::windows::core::Interface::as_raw(this), value).ok() }
-    }
-    #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn StoryLength(&self) -> ::windows::core::Result<i32> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn StartPosition(&self) -> ::windows_core::Result<i32> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).StoryLength)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).StartPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Text(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn SetStartPosition(&self, value: i32) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetStartPosition)(::windows_core::Interface::as_raw(this), value).ok() }
+    }
+    #[doc = "*Required features: `\"UI_Text\"`*"]
+    pub fn StoryLength(&self) -> ::windows_core::Result<i32> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Text)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
+            (::windows_core::Interface::vtable(this).StoryLength)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetText<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetText)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+    pub fn Text(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Text)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
+        }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CanPaste(&self, format: i32) -> ::windows::core::Result<bool> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn SetText<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
+    }
+    #[doc = "*Required features: `\"UI_Text\"`*"]
+    pub fn CanPaste(&self, format: i32) -> ::windows_core::Result<bool> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanPaste)(::windows::core::Interface::as_raw(this), format, result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).CanPaste)(::windows_core::Interface::as_raw(this), format, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ChangeCase(&self, value: LetterCase) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).ChangeCase)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn ChangeCase(&self, value: LetterCase) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).ChangeCase)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Collapse(&self, value: bool) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).Collapse)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn Collapse(&self, value: bool) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).Collapse)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Copy(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).Copy)(::windows::core::Interface::as_raw(this)).ok() }
+    pub fn Copy(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).Copy)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Cut(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).Cut)(::windows::core::Interface::as_raw(this)).ok() }
+    pub fn Cut(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).Cut)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Delete(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn Delete(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Delete)(::windows::core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).Delete)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn EndOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows::core::Result<i32> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn EndOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows_core::Result<i32> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).EndOf)(::windows::core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).EndOf)(::windows_core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Expand(&self, unit: TextRangeUnit) -> ::windows::core::Result<i32> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn Expand(&self, unit: TextRangeUnit) -> ::windows_core::Result<i32> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Expand)(::windows::core::Interface::as_raw(this), unit, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).Expand)(::windows_core::Interface::as_raw(this), unit, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn FindText<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0, scanlength: i32, options: FindOptions) -> ::windows::core::Result<i32> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn FindText<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0, scanlength: i32, options: FindOptions) -> ::windows_core::Result<i32> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).FindText)(::windows::core::Interface::as_raw(this), value.into_param().abi(), scanlength, options, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).FindText)(::windows_core::Interface::as_raw(this), value.into_param().abi(), scanlength, options, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetCharacterUtf32(&self, value: &mut u32, offset: i32) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).GetCharacterUtf32)(::windows::core::Interface::as_raw(this), value, offset).ok() }
+    pub fn GetCharacterUtf32(&self, value: &mut u32, offset: i32) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).GetCharacterUtf32)(::windows_core::Interface::as_raw(this), value, offset).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetClone(&self) -> ::windows::core::Result<ITextRange> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn GetClone(&self) -> ::windows_core::Result<ITextRange> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetClone)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetClone)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetIndex(&self, unit: TextRangeUnit) -> ::windows::core::Result<i32> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn GetIndex(&self, unit: TextRangeUnit) -> ::windows_core::Result<i32> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).GetIndex)(::windows::core::Interface::as_raw(this), unit, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).GetIndex)(::windows_core::Interface::as_raw(this), unit, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetPoint(&self, horizontalalign: HorizontalCharacterAlignment, verticalalign: VerticalCharacterAlignment, options: PointOptions, point: &mut super::super::Foundation::Point) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).GetPoint)(::windows::core::Interface::as_raw(this), horizontalalign, verticalalign, options, point).ok() }
+    pub fn GetPoint(&self, horizontalalign: HorizontalCharacterAlignment, verticalalign: VerticalCharacterAlignment, options: PointOptions, point: &mut super::super::Foundation::Point) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).GetPoint)(::windows_core::Interface::as_raw(this), horizontalalign, verticalalign, options, point).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetRect(&self, options: PointOptions, rect: &mut super::super::Foundation::Rect, hit: &mut i32) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).GetRect)(::windows::core::Interface::as_raw(this), options, rect, hit).ok() }
+    pub fn GetRect(&self, options: PointOptions, rect: &mut super::super::Foundation::Rect, hit: &mut i32) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).GetRect)(::windows_core::Interface::as_raw(this), options, rect, hit).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetText(&self, options: TextGetOptions, value: &mut ::windows::core::HSTRING) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).GetText)(::windows::core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
+    pub fn GetText(&self, options: TextGetOptions, value: &mut ::windows_core::HSTRING) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).GetText)(::windows_core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetTextViaStream<'a, Param1: ::windows::core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).GetTextViaStream)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+    pub fn GetTextViaStream<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).GetTextViaStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn InRange<'a, Param0: ::windows::core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows::core::Result<bool> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn InRange<'a, Param0: ::windows_core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows_core::Result<bool> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).InRange)(::windows::core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).InRange)(::windows_core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn InsertImage<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>, Param5: ::windows::core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, width: i32, height: i32, ascent: i32, verticalalign: VerticalCharacterAlignment, alternatetext: Param4, value: Param5) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).InsertImage)(::windows::core::Interface::as_raw(this), width, height, ascent, verticalalign, alternatetext.into_param().abi(), value.into_param().abi()).ok() }
+    pub fn InsertImage<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, width: i32, height: i32, ascent: i32, verticalalign: VerticalCharacterAlignment, alternatetext: Param4, value: Param5) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).InsertImage)(::windows_core::Interface::as_raw(this), width, height, ascent, verticalalign, alternatetext.into_param().abi(), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn InStory<'a, Param0: ::windows::core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows::core::Result<bool> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn InStory<'a, Param0: ::windows_core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows_core::Result<bool> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).InStory)(::windows::core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).InStory)(::windows_core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn IsEqual<'a, Param0: ::windows::core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows::core::Result<bool> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn IsEqual<'a, Param0: ::windows_core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows_core::Result<bool> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsEqual)(::windows::core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsEqual)(::windows_core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Move(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn Move(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Move)(::windows::core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).Move)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MoveEnd(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn MoveEnd(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MoveEnd)(::windows::core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).MoveEnd)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MoveStart(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn MoveStart(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MoveStart)(::windows::core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).MoveStart)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Paste(&self, format: i32) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).Paste)(::windows::core::Interface::as_raw(this), format).ok() }
+    pub fn Paste(&self, format: i32) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).Paste)(::windows_core::Interface::as_raw(this), format).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ScrollIntoView(&self, value: PointOptions) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).ScrollIntoView)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn ScrollIntoView(&self, value: PointOptions) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).ScrollIntoView)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MatchSelection(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).MatchSelection)(::windows::core::Interface::as_raw(this)).ok() }
+    pub fn MatchSelection(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).MatchSelection)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetIndex(&self, unit: TextRangeUnit, index: i32, extend: bool) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetIndex)(::windows::core::Interface::as_raw(this), unit, index, extend).ok() }
+    pub fn SetIndex(&self, unit: TextRangeUnit, index: i32, extend: bool) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetIndex)(::windows_core::Interface::as_raw(this), unit, index, extend).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn SetPoint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::Point>>(&self, point: Param0, options: PointOptions, extend: bool) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetPoint)(::windows::core::Interface::as_raw(this), point.into_param().abi(), options, extend).ok() }
+    pub fn SetPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Point>>(&self, point: Param0, options: PointOptions, extend: bool) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetPoint)(::windows_core::Interface::as_raw(this), point.into_param().abi(), options, extend).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetRange(&self, startposition: i32, endposition: i32) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetRange)(::windows::core::Interface::as_raw(this), startposition, endposition).ok() }
+    pub fn SetRange(&self, startposition: i32, endposition: i32) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetRange)(::windows_core::Interface::as_raw(this), startposition, endposition).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetText2<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, options: TextSetOptions, value: Param1) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetText2)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+    pub fn SetText2<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetText2)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetTextViaStream<'a, Param1: ::windows::core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetTextViaStream)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+    pub fn SetTextViaStream<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetTextViaStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn StartOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows::core::Result<i32> {
-        let this = &::windows::core::Interface::cast::<ITextRange>(self)?;
+    pub fn StartOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows_core::Result<i32> {
+        let this = &::windows_core::Interface::cast::<ITextRange>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).StartOf)(::windows::core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).StartOf)(::windows_core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
 }
-impl ::core::convert::From<ITextSelection> for ::windows::core::IUnknown {
+impl ::core::convert::From<ITextSelection> for ::windows_core::IUnknown {
     fn from(value: ITextSelection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ITextSelection> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ITextSelection> for ::windows_core::IUnknown {
     fn from(value: &ITextSelection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITextSelection {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ITextSelection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITextSelection {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ITextSelection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<ITextSelection> for ::windows::core::IInspectable {
+impl ::core::convert::From<ITextSelection> for ::windows_core::IInspectable {
     fn from(value: ITextSelection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ITextSelection> for ::windows::core::IInspectable {
+impl ::core::convert::From<&ITextSelection> for ::windows_core::IInspectable {
     fn from(value: &ITextSelection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITextSelection {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for ITextSelection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITextSelection {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a ITextSelection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<ITextSelection> for ITextRange {
-    type Error = ::windows::core::Error;
-    fn try_from(value: ITextSelection) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: ITextSelection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&ITextSelection> for ITextRange {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &ITextSelection) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &ITextSelection) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ITextRange> for ITextSelection {
-    fn into_param(self) -> ::windows::core::Param<'a, ITextRange> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, ITextRange> for ITextSelection {
+    fn into_param(self) -> ::windows_core::Param<'a, ITextRange> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ITextRange> for &ITextSelection {
-    fn into_param(self) -> ::windows::core::Param<'a, ITextRange> {
-        ::core::convert::TryInto::<ITextRange>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ITextRange> for &ITextSelection {
+    fn into_param(self) -> ::windows_core::Param<'a, ITextRange> {
+        ::core::convert::TryInto::<ITextRange>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::clone::Clone for ITextSelection {
@@ -2904,31 +2904,31 @@ impl ::core::fmt::Debug for ITextSelection {
         f.debug_tuple("ITextSelection").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for ITextSelection {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{a6d36724-f28f-430a-b2cf-c343671ec0e9}");
+unsafe impl ::windows_core::RuntimeType for ITextSelection {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{a6d36724-f28f-430a-b2cf-c343671ec0e9}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITextSelection {
+unsafe impl ::windows_core::Interface for ITextSelection {
     type Vtable = ITextSelection_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa6d36724_f28f_430a_b2cf_c343671ec0e9);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa6d36724_f28f_430a_b2cf_c343671ec0e9);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextSelection_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Options: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SelectionOptions) -> ::windows::core::HRESULT,
-    pub SetOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: SelectionOptions) -> ::windows::core::HRESULT,
-    pub Type: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SelectionType) -> ::windows::core::HRESULT,
-    pub EndKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, extend: bool, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub HomeKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, extend: bool, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub MoveDown: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, extend: bool, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub MoveLeft: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, extend: bool, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub MoveRight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, extend: bool, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub MoveUp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, extend: bool, result__: *mut i32) -> ::windows::core::HRESULT,
-    pub TypeText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Options: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SelectionOptions) -> ::windows_core::HRESULT,
+    pub SetOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: SelectionOptions) -> ::windows_core::HRESULT,
+    pub Type: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SelectionType) -> ::windows_core::HRESULT,
+    pub EndKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, extend: bool, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub HomeKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, extend: bool, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub MoveDown: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, extend: bool, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub MoveLeft: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, extend: bool, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub MoveRight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, extend: bool, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub MoveUp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unit: TextRangeUnit, count: i32, extend: bool, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub TypeText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"UI_Text\"`*"]
 #[repr(transparent)]
@@ -2949,7 +2949,7 @@ impl ::core::default::Default for LetterCase {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for LetterCase {
+unsafe impl ::windows_core::Abi for LetterCase {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for LetterCase {
@@ -2957,10 +2957,10 @@ impl ::core::fmt::Debug for LetterCase {
         f.debug_tuple("LetterCase").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for LetterCase {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.LetterCase;i4)");
+unsafe impl ::windows_core::RuntimeType for LetterCase {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.LetterCase;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -2989,7 +2989,7 @@ impl ::core::default::Default for LineSpacingRule {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for LineSpacingRule {
+unsafe impl ::windows_core::Abi for LineSpacingRule {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for LineSpacingRule {
@@ -2997,10 +2997,10 @@ impl ::core::fmt::Debug for LineSpacingRule {
         f.debug_tuple("LineSpacingRule").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for LineSpacingRule {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.LineSpacingRule;i4)");
+unsafe impl ::windows_core::RuntimeType for LineSpacingRule {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.LineSpacingRule;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -3030,7 +3030,7 @@ impl ::core::default::Default for LinkType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for LinkType {
+unsafe impl ::windows_core::Abi for LinkType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for LinkType {
@@ -3038,10 +3038,10 @@ impl ::core::fmt::Debug for LinkType {
         f.debug_tuple("LinkType").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for LinkType {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.LinkType;i4)");
+unsafe impl ::windows_core::RuntimeType for LinkType {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.LinkType;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -3066,7 +3066,7 @@ impl ::core::default::Default for MarkerAlignment {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MarkerAlignment {
+unsafe impl ::windows_core::Abi for MarkerAlignment {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MarkerAlignment {
@@ -3074,10 +3074,10 @@ impl ::core::fmt::Debug for MarkerAlignment {
         f.debug_tuple("MarkerAlignment").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MarkerAlignment {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.MarkerAlignment;i4)");
+unsafe impl ::windows_core::RuntimeType for MarkerAlignment {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.MarkerAlignment;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -3105,7 +3105,7 @@ impl ::core::default::Default for MarkerStyle {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MarkerStyle {
+unsafe impl ::windows_core::Abi for MarkerStyle {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MarkerStyle {
@@ -3113,10 +3113,10 @@ impl ::core::fmt::Debug for MarkerStyle {
         f.debug_tuple("MarkerStyle").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MarkerStyle {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.MarkerStyle;i4)");
+unsafe impl ::windows_core::RuntimeType for MarkerStyle {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.MarkerStyle;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -3162,7 +3162,7 @@ impl ::core::default::Default for MarkerType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MarkerType {
+unsafe impl ::windows_core::Abi for MarkerType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MarkerType {
@@ -3170,10 +3170,10 @@ impl ::core::fmt::Debug for MarkerType {
         f.debug_tuple("MarkerType").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for MarkerType {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.MarkerType;i4)");
+unsafe impl ::windows_core::RuntimeType for MarkerType {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.MarkerType;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -3199,7 +3199,7 @@ impl ::core::default::Default for ParagraphAlignment {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ParagraphAlignment {
+unsafe impl ::windows_core::Abi for ParagraphAlignment {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ParagraphAlignment {
@@ -3207,10 +3207,10 @@ impl ::core::fmt::Debug for ParagraphAlignment {
         f.debug_tuple("ParagraphAlignment").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for ParagraphAlignment {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.ParagraphAlignment;i4)");
+unsafe impl ::windows_core::RuntimeType for ParagraphAlignment {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.ParagraphAlignment;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -3243,7 +3243,7 @@ impl ::core::default::Default for ParagraphStyle {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ParagraphStyle {
+unsafe impl ::windows_core::Abi for ParagraphStyle {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ParagraphStyle {
@@ -3251,10 +3251,10 @@ impl ::core::fmt::Debug for ParagraphStyle {
         f.debug_tuple("ParagraphStyle").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for ParagraphStyle {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.ParagraphStyle;i4)");
+unsafe impl ::windows_core::RuntimeType for ParagraphStyle {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.ParagraphStyle;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -3283,7 +3283,7 @@ impl ::core::default::Default for PointOptions {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PointOptions {
+unsafe impl ::windows_core::Abi for PointOptions {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PointOptions {
@@ -3319,10 +3319,10 @@ impl ::core::ops::Not for PointOptions {
         Self(self.0.not())
     }
 }
-unsafe impl ::windows::core::RuntimeType for PointOptions {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.PointOptions;u4)");
+unsafe impl ::windows_core::RuntimeType for PointOptions {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.PointOptions;u4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -3348,7 +3348,7 @@ impl ::core::default::Default for RangeGravity {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RangeGravity {
+unsafe impl ::windows_core::Abi for RangeGravity {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RangeGravity {
@@ -3356,10 +3356,10 @@ impl ::core::fmt::Debug for RangeGravity {
         f.debug_tuple("RangeGravity").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for RangeGravity {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.RangeGravity;i4)");
+unsafe impl ::windows_core::RuntimeType for RangeGravity {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.RangeGravity;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -3382,7 +3382,7 @@ impl ::core::default::Default for RichEditMathMode {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RichEditMathMode {
+unsafe impl ::windows_core::Abi for RichEditMathMode {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RichEditMathMode {
@@ -3390,242 +3390,242 @@ impl ::core::fmt::Debug for RichEditMathMode {
         f.debug_tuple("RichEditMathMode").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for RichEditMathMode {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.RichEditMathMode;i4)");
+unsafe impl ::windows_core::RuntimeType for RichEditMathMode {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.RichEditMathMode;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"UI_Text\"`*"]
 #[repr(transparent)]
-pub struct RichEditTextDocument(::windows::core::IUnknown);
+pub struct RichEditTextDocument(::windows_core::IUnknown);
 impl RichEditTextDocument {
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CaretType(&self) -> ::windows::core::Result<CaretType> {
+    pub fn CaretType(&self) -> ::windows_core::Result<CaretType> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<CaretType>::zeroed();
-            (::windows::core::Interface::vtable(this).CaretType)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<CaretType>(result__)
+            (::windows_core::Interface::vtable(this).CaretType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<CaretType>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetCaretType(&self, value: CaretType) -> ::windows::core::Result<()> {
+    pub fn SetCaretType(&self, value: CaretType) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetCaretType)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetCaretType)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn DefaultTabStop(&self) -> ::windows::core::Result<f32> {
+    pub fn DefaultTabStop(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).DefaultTabStop)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+            (::windows_core::Interface::vtable(this).DefaultTabStop)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetDefaultTabStop(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetDefaultTabStop(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetDefaultTabStop)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetDefaultTabStop)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Selection(&self) -> ::windows::core::Result<ITextSelection> {
+    pub fn Selection(&self) -> ::windows_core::Result<ITextSelection> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Selection)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextSelection>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Selection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextSelection>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn UndoLimit(&self) -> ::windows::core::Result<u32> {
+    pub fn UndoLimit(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).UndoLimit)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).UndoLimit)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetUndoLimit(&self, value: u32) -> ::windows::core::Result<()> {
+    pub fn SetUndoLimit(&self, value: u32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetUndoLimit)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetUndoLimit)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CanCopy(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanCopy)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CanPaste(&self) -> ::windows::core::Result<bool> {
+    pub fn CanCopy(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanPaste)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).CanCopy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CanRedo(&self) -> ::windows::core::Result<bool> {
+    pub fn CanPaste(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanRedo)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).CanPaste)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CanUndo(&self) -> ::windows::core::Result<bool> {
+    pub fn CanRedo(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanUndo)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).CanRedo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ApplyDisplayUpdates(&self) -> ::windows::core::Result<i32> {
+    pub fn CanUndo(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
+            (::windows_core::Interface::vtable(this).CanUndo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+        }
+    }
+    #[doc = "*Required features: `\"UI_Text\"`*"]
+    pub fn ApplyDisplayUpdates(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).ApplyDisplayUpdates)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).ApplyDisplayUpdates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn BatchDisplayUpdates(&self) -> ::windows::core::Result<i32> {
+    pub fn BatchDisplayUpdates(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).BatchDisplayUpdates)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).BatchDisplayUpdates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn BeginUndoGroup(&self) -> ::windows::core::Result<()> {
+    pub fn BeginUndoGroup(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).BeginUndoGroup)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).BeginUndoGroup)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn EndUndoGroup(&self) -> ::windows::core::Result<()> {
+    pub fn EndUndoGroup(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).EndUndoGroup)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).EndUndoGroup)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetDefaultCharacterFormat(&self) -> ::windows::core::Result<ITextCharacterFormat> {
+    pub fn GetDefaultCharacterFormat(&self) -> ::windows_core::Result<ITextCharacterFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetDefaultCharacterFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextCharacterFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetDefaultCharacterFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextCharacterFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetDefaultParagraphFormat(&self) -> ::windows::core::Result<ITextParagraphFormat> {
+    pub fn GetDefaultParagraphFormat(&self) -> ::windows_core::Result<ITextParagraphFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetDefaultParagraphFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextParagraphFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetDefaultParagraphFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextParagraphFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetRange(&self, startposition: i32, endposition: i32) -> ::windows::core::Result<ITextRange> {
+    pub fn GetRange(&self, startposition: i32, endposition: i32) -> ::windows_core::Result<ITextRange> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetRange)(::windows::core::Interface::as_raw(this), startposition, endposition, result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetRange)(::windows_core::Interface::as_raw(this), startposition, endposition, result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetRangeFromPoint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::Point>>(&self, point: Param0, options: PointOptions) -> ::windows::core::Result<ITextRange> {
+    pub fn GetRangeFromPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Point>>(&self, point: Param0, options: PointOptions) -> ::windows_core::Result<ITextRange> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetRangeFromPoint)(::windows::core::Interface::as_raw(this), point.into_param().abi(), options, result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetRangeFromPoint)(::windows_core::Interface::as_raw(this), point.into_param().abi(), options, result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetText(&self, options: TextGetOptions, value: &mut ::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn GetText(&self, options: TextGetOptions, value: &mut ::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).GetText)(::windows::core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).GetText)(::windows_core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn LoadFromStream<'a, Param1: ::windows::core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows::core::Result<()> {
+    pub fn LoadFromStream<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).LoadFromStream)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).LoadFromStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Redo(&self) -> ::windows::core::Result<()> {
+    pub fn Redo(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Redo)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Redo)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn SaveToStream<'a, Param1: ::windows::core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows::core::Result<()> {
+    pub fn SaveToStream<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SaveToStream)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SaveToStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetDefaultCharacterFormat<'a, Param0: ::windows::core::IntoParam<'a, ITextCharacterFormat>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetDefaultCharacterFormat<'a, Param0: ::windows_core::IntoParam<'a, ITextCharacterFormat>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetDefaultCharacterFormat)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetDefaultCharacterFormat)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetDefaultParagraphFormat<'a, Param0: ::windows::core::IntoParam<'a, ITextParagraphFormat>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetDefaultParagraphFormat<'a, Param0: ::windows_core::IntoParam<'a, ITextParagraphFormat>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetDefaultParagraphFormat)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetDefaultParagraphFormat)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetText<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, options: TextSetOptions, value: Param1) -> ::windows::core::Result<()> {
+    pub fn SetText<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetText)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetText)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Undo(&self) -> ::windows::core::Result<()> {
+    pub fn Undo(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Undo)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Undo)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn AlignmentIncludesTrailingWhitespace(&self) -> ::windows::core::Result<bool> {
-        let this = &::windows::core::Interface::cast::<ITextDocument2>(self)?;
+    pub fn AlignmentIncludesTrailingWhitespace(&self) -> ::windows_core::Result<bool> {
+        let this = &::windows_core::Interface::cast::<ITextDocument2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).AlignmentIncludesTrailingWhitespace)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).AlignmentIncludesTrailingWhitespace)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetAlignmentIncludesTrailingWhitespace(&self, value: bool) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextDocument2>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetAlignmentIncludesTrailingWhitespace)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetAlignmentIncludesTrailingWhitespace(&self, value: bool) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextDocument2>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetAlignmentIncludesTrailingWhitespace)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn IgnoreTrailingCharacterSpacing(&self) -> ::windows::core::Result<bool> {
-        let this = &::windows::core::Interface::cast::<ITextDocument2>(self)?;
+    pub fn IgnoreTrailingCharacterSpacing(&self) -> ::windows_core::Result<bool> {
+        let this = &::windows_core::Interface::cast::<ITextDocument2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IgnoreTrailingCharacterSpacing)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IgnoreTrailingCharacterSpacing)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetIgnoreTrailingCharacterSpacing(&self, value: bool) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextDocument2>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetIgnoreTrailingCharacterSpacing)(::windows::core::Interface::as_raw(this), value).ok() }
+    pub fn SetIgnoreTrailingCharacterSpacing(&self, value: bool) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextDocument2>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetIgnoreTrailingCharacterSpacing)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ClearUndoRedoHistory(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextDocument3>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).ClearUndoRedoHistory)(::windows::core::Interface::as_raw(this)).ok() }
+    pub fn ClearUndoRedoHistory(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextDocument3>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).ClearUndoRedoHistory)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetMath<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextDocument4>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetMath)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+    pub fn SetMath<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextDocument4>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetMath)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetMath(&self, value: &mut ::windows::core::HSTRING) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextDocument4>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).GetMath)(::windows::core::Interface::as_raw(this), value as *mut _ as _).ok() }
+    pub fn GetMath(&self, value: &mut ::windows_core::HSTRING) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextDocument4>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).GetMath)(::windows_core::Interface::as_raw(this), value as *mut _ as _).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetMathMode(&self, mode: RichEditMathMode) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextDocument4>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetMathMode)(::windows::core::Interface::as_raw(this), mode).ok() }
+    pub fn SetMathMode(&self, mode: RichEditMathMode) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<ITextDocument4>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetMathMode)(::windows_core::Interface::as_raw(this), mode).ok() }
     }
 }
 impl ::core::clone::Clone for RichEditTextDocument {
@@ -3644,440 +3644,440 @@ impl ::core::fmt::Debug for RichEditTextDocument {
         f.debug_tuple("RichEditTextDocument").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for RichEditTextDocument {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Text.RichEditTextDocument;{beee4ddb-90b2-408c-a2f6-0a0ac31e33e4})");
+unsafe impl ::windows_core::RuntimeType for RichEditTextDocument {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Text.RichEditTextDocument;{beee4ddb-90b2-408c-a2f6-0a0ac31e33e4})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for RichEditTextDocument {
+unsafe impl ::windows_core::Interface for RichEditTextDocument {
     type Vtable = ITextDocument_Vtbl;
-    const IID: ::windows::core::GUID = <ITextDocument as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <ITextDocument as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for RichEditTextDocument {
+impl ::windows_core::RuntimeName for RichEditTextDocument {
     const NAME: &'static str = "Windows.UI.Text.RichEditTextDocument";
 }
-impl ::core::convert::From<RichEditTextDocument> for ::windows::core::IUnknown {
+impl ::core::convert::From<RichEditTextDocument> for ::windows_core::IUnknown {
     fn from(value: RichEditTextDocument) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&RichEditTextDocument> for ::windows::core::IUnknown {
+impl ::core::convert::From<&RichEditTextDocument> for ::windows_core::IUnknown {
     fn from(value: &RichEditTextDocument) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for RichEditTextDocument {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for RichEditTextDocument {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a RichEditTextDocument {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a RichEditTextDocument {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<RichEditTextDocument> for ::windows::core::IInspectable {
+impl ::core::convert::From<RichEditTextDocument> for ::windows_core::IInspectable {
     fn from(value: RichEditTextDocument) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&RichEditTextDocument> for ::windows::core::IInspectable {
+impl ::core::convert::From<&RichEditTextDocument> for ::windows_core::IInspectable {
     fn from(value: &RichEditTextDocument) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for RichEditTextDocument {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for RichEditTextDocument {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a RichEditTextDocument {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a RichEditTextDocument {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<RichEditTextDocument> for ITextDocument {
-    type Error = ::windows::core::Error;
-    fn try_from(value: RichEditTextDocument) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: RichEditTextDocument) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&RichEditTextDocument> for ITextDocument {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &RichEditTextDocument) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &RichEditTextDocument) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ITextDocument> for RichEditTextDocument {
-    fn into_param(self) -> ::windows::core::Param<'a, ITextDocument> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, ITextDocument> for RichEditTextDocument {
+    fn into_param(self) -> ::windows_core::Param<'a, ITextDocument> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ITextDocument> for &RichEditTextDocument {
-    fn into_param(self) -> ::windows::core::Param<'a, ITextDocument> {
-        ::core::convert::TryInto::<ITextDocument>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ITextDocument> for &RichEditTextDocument {
+    fn into_param(self) -> ::windows_core::Param<'a, ITextDocument> {
+        ::core::convert::TryInto::<ITextDocument>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for RichEditTextDocument {}
 unsafe impl ::core::marker::Sync for RichEditTextDocument {}
 #[doc = "*Required features: `\"UI_Text\"`*"]
 #[repr(transparent)]
-pub struct RichEditTextRange(::windows::core::IUnknown);
+pub struct RichEditTextRange(::windows_core::IUnknown);
 impl RichEditTextRange {
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ContentLinkInfo(&self) -> ::windows::core::Result<ContentLinkInfo> {
-        let this = &::windows::core::Interface::cast::<IRichEditTextRange>(self)?;
+    pub fn ContentLinkInfo(&self) -> ::windows_core::Result<ContentLinkInfo> {
+        let this = &::windows_core::Interface::cast::<IRichEditTextRange>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).ContentLinkInfo)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ContentLinkInfo>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).ContentLinkInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ContentLinkInfo>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetContentLinkInfo<'a, Param0: ::windows::core::IntoParam<'a, ContentLinkInfo>>(&self, value: Param0) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<IRichEditTextRange>(self)?;
-        unsafe { (::windows::core::Interface::vtable(this).SetContentLinkInfo)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+    pub fn SetContentLinkInfo<'a, Param0: ::windows_core::IntoParam<'a, ContentLinkInfo>>(&self, value: Param0) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<IRichEditTextRange>(self)?;
+        unsafe { (::windows_core::Interface::vtable(this).SetContentLinkInfo)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Character(&self) -> ::windows::core::Result<u16> {
+    pub fn Character(&self) -> ::windows_core::Result<u16> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u16>::zeroed();
-            (::windows::core::Interface::vtable(this).Character)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u16>(result__)
+            (::windows_core::Interface::vtable(this).Character)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u16>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetCharacter(&self, value: u16) -> ::windows::core::Result<()> {
+    pub fn SetCharacter(&self, value: u16) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetCharacter)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetCharacter)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CharacterFormat(&self) -> ::windows::core::Result<ITextCharacterFormat> {
+    pub fn CharacterFormat(&self) -> ::windows_core::Result<ITextCharacterFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CharacterFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextCharacterFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CharacterFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextCharacterFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetCharacterFormat<'a, Param0: ::windows::core::IntoParam<'a, ITextCharacterFormat>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetCharacterFormat<'a, Param0: ::windows_core::IntoParam<'a, ITextCharacterFormat>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetCharacterFormat)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetCharacterFormat)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn FormattedText(&self) -> ::windows::core::Result<ITextRange> {
+    pub fn FormattedText(&self) -> ::windows_core::Result<ITextRange> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).FormattedText)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FormattedText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetFormattedText<'a, Param0: ::windows::core::IntoParam<'a, ITextRange>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetFormattedText<'a, Param0: ::windows_core::IntoParam<'a, ITextRange>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetFormattedText)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetFormattedText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn EndPosition(&self) -> ::windows::core::Result<i32> {
+    pub fn EndPosition(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).EndPosition)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).EndPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetEndPosition(&self, value: i32) -> ::windows::core::Result<()> {
+    pub fn SetEndPosition(&self, value: i32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetEndPosition)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetEndPosition)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Gravity(&self) -> ::windows::core::Result<RangeGravity> {
+    pub fn Gravity(&self) -> ::windows_core::Result<RangeGravity> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<RangeGravity>::zeroed();
-            (::windows::core::Interface::vtable(this).Gravity)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<RangeGravity>(result__)
+            (::windows_core::Interface::vtable(this).Gravity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<RangeGravity>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetGravity(&self, value: RangeGravity) -> ::windows::core::Result<()> {
+    pub fn SetGravity(&self, value: RangeGravity) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetGravity)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetGravity)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Length(&self) -> ::windows::core::Result<i32> {
+    pub fn Length(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Length)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).Length)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Link(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Link(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Link)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Link)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetLink<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetLink<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetLink)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetLink)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ParagraphFormat(&self) -> ::windows::core::Result<ITextParagraphFormat> {
+    pub fn ParagraphFormat(&self) -> ::windows_core::Result<ITextParagraphFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).ParagraphFormat)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextParagraphFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).ParagraphFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextParagraphFormat>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetParagraphFormat<'a, Param0: ::windows::core::IntoParam<'a, ITextParagraphFormat>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn SetParagraphFormat<'a, Param0: ::windows_core::IntoParam<'a, ITextParagraphFormat>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetParagraphFormat)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetParagraphFormat)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn StartPosition(&self) -> ::windows::core::Result<i32> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).StartPosition)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetStartPosition(&self, value: i32) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetStartPosition)(::windows::core::Interface::as_raw(this), value).ok() }
-    }
-    #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn StoryLength(&self) -> ::windows::core::Result<i32> {
+    pub fn StartPosition(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).StoryLength)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).StartPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Text(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn SetStartPosition(&self, value: i32) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe { (::windows_core::Interface::vtable(this).SetStartPosition)(::windows_core::Interface::as_raw(this), value).ok() }
+    }
+    #[doc = "*Required features: `\"UI_Text\"`*"]
+    pub fn StoryLength(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).Text)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
+            (::windows_core::Interface::vtable(this).StoryLength)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetText<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0) -> ::windows::core::Result<()> {
+    pub fn Text(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetText)(::windows::core::Interface::as_raw(this), value.into_param().abi()).ok() }
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).Text)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
+        }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn CanPaste(&self, format: i32) -> ::windows::core::Result<bool> {
+    pub fn SetText<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe { (::windows_core::Interface::vtable(this).SetText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
+    }
+    #[doc = "*Required features: `\"UI_Text\"`*"]
+    pub fn CanPaste(&self, format: i32) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanPaste)(::windows::core::Interface::as_raw(this), format, result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).CanPaste)(::windows_core::Interface::as_raw(this), format, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ChangeCase(&self, value: LetterCase) -> ::windows::core::Result<()> {
+    pub fn ChangeCase(&self, value: LetterCase) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).ChangeCase)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).ChangeCase)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Collapse(&self, value: bool) -> ::windows::core::Result<()> {
+    pub fn Collapse(&self, value: bool) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Collapse)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Collapse)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Copy(&self) -> ::windows::core::Result<()> {
+    pub fn Copy(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Copy)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Copy)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Cut(&self) -> ::windows::core::Result<()> {
+    pub fn Cut(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Cut)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Cut)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Delete(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32> {
+    pub fn Delete(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Delete)(::windows::core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).Delete)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn EndOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows::core::Result<i32> {
+    pub fn EndOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).EndOf)(::windows::core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).EndOf)(::windows_core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Expand(&self, unit: TextRangeUnit) -> ::windows::core::Result<i32> {
+    pub fn Expand(&self, unit: TextRangeUnit) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Expand)(::windows::core::Interface::as_raw(this), unit, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).Expand)(::windows_core::Interface::as_raw(this), unit, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn FindText<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, value: Param0, scanlength: i32, options: FindOptions) -> ::windows::core::Result<i32> {
+    pub fn FindText<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0, scanlength: i32, options: FindOptions) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).FindText)(::windows::core::Interface::as_raw(this), value.into_param().abi(), scanlength, options, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).FindText)(::windows_core::Interface::as_raw(this), value.into_param().abi(), scanlength, options, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetCharacterUtf32(&self, value: &mut u32, offset: i32) -> ::windows::core::Result<()> {
+    pub fn GetCharacterUtf32(&self, value: &mut u32, offset: i32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).GetCharacterUtf32)(::windows::core::Interface::as_raw(this), value, offset).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).GetCharacterUtf32)(::windows_core::Interface::as_raw(this), value, offset).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetClone(&self) -> ::windows::core::Result<ITextRange> {
+    pub fn GetClone(&self) -> ::windows_core::Result<ITextRange> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetClone)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetClone)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ITextRange>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetIndex(&self, unit: TextRangeUnit) -> ::windows::core::Result<i32> {
+    pub fn GetIndex(&self, unit: TextRangeUnit) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).GetIndex)(::windows::core::Interface::as_raw(this), unit, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).GetIndex)(::windows_core::Interface::as_raw(this), unit, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetPoint(&self, horizontalalign: HorizontalCharacterAlignment, verticalalign: VerticalCharacterAlignment, options: PointOptions, point: &mut super::super::Foundation::Point) -> ::windows::core::Result<()> {
+    pub fn GetPoint(&self, horizontalalign: HorizontalCharacterAlignment, verticalalign: VerticalCharacterAlignment, options: PointOptions, point: &mut super::super::Foundation::Point) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).GetPoint)(::windows::core::Interface::as_raw(this), horizontalalign, verticalalign, options, point).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).GetPoint)(::windows_core::Interface::as_raw(this), horizontalalign, verticalalign, options, point).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn GetRect(&self, options: PointOptions, rect: &mut super::super::Foundation::Rect, hit: &mut i32) -> ::windows::core::Result<()> {
+    pub fn GetRect(&self, options: PointOptions, rect: &mut super::super::Foundation::Rect, hit: &mut i32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).GetRect)(::windows::core::Interface::as_raw(this), options, rect, hit).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).GetRect)(::windows_core::Interface::as_raw(this), options, rect, hit).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn GetText(&self, options: TextGetOptions, value: &mut ::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn GetText(&self, options: TextGetOptions, value: &mut ::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).GetText)(::windows::core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).GetText)(::windows_core::Interface::as_raw(this), options, value as *mut _ as _).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetTextViaStream<'a, Param1: ::windows::core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows::core::Result<()> {
+    pub fn GetTextViaStream<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextGetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).GetTextViaStream)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).GetTextViaStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn InRange<'a, Param0: ::windows::core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows::core::Result<bool> {
+    pub fn InRange<'a, Param0: ::windows_core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).InRange)(::windows::core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).InRange)(::windows_core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn InsertImage<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>, Param5: ::windows::core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, width: i32, height: i32, ascent: i32, verticalalign: VerticalCharacterAlignment, alternatetext: Param4, value: Param5) -> ::windows::core::Result<()> {
+    pub fn InsertImage<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, width: i32, height: i32, ascent: i32, verticalalign: VerticalCharacterAlignment, alternatetext: Param4, value: Param5) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).InsertImage)(::windows::core::Interface::as_raw(this), width, height, ascent, verticalalign, alternatetext.into_param().abi(), value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).InsertImage)(::windows_core::Interface::as_raw(this), width, height, ascent, verticalalign, alternatetext.into_param().abi(), value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn InStory<'a, Param0: ::windows::core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows::core::Result<bool> {
+    pub fn InStory<'a, Param0: ::windows_core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).InStory)(::windows::core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).InStory)(::windows_core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn IsEqual<'a, Param0: ::windows::core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows::core::Result<bool> {
+    pub fn IsEqual<'a, Param0: ::windows_core::IntoParam<'a, ITextRange>>(&self, range: Param0) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsEqual)(::windows::core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsEqual)(::windows_core::Interface::as_raw(this), range.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Move(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32> {
+    pub fn Move(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Move)(::windows::core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).Move)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MoveEnd(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32> {
+    pub fn MoveEnd(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MoveEnd)(::windows::core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).MoveEnd)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MoveStart(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32> {
+    pub fn MoveStart(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MoveStart)(::windows::core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).MoveStart)(::windows_core::Interface::as_raw(this), unit, count, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn Paste(&self, format: i32) -> ::windows::core::Result<()> {
+    pub fn Paste(&self, format: i32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).Paste)(::windows::core::Interface::as_raw(this), format).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).Paste)(::windows_core::Interface::as_raw(this), format).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn ScrollIntoView(&self, value: PointOptions) -> ::windows::core::Result<()> {
+    pub fn ScrollIntoView(&self, value: PointOptions) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).ScrollIntoView)(::windows::core::Interface::as_raw(this), value).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).ScrollIntoView)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MatchSelection(&self) -> ::windows::core::Result<()> {
+    pub fn MatchSelection(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).MatchSelection)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).MatchSelection)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetIndex(&self, unit: TextRangeUnit, index: i32, extend: bool) -> ::windows::core::Result<()> {
+    pub fn SetIndex(&self, unit: TextRangeUnit, index: i32, extend: bool) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetIndex)(::windows::core::Interface::as_raw(this), unit, index, extend).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetIndex)(::windows_core::Interface::as_raw(this), unit, index, extend).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn SetPoint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::Point>>(&self, point: Param0, options: PointOptions, extend: bool) -> ::windows::core::Result<()> {
+    pub fn SetPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Point>>(&self, point: Param0, options: PointOptions, extend: bool) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetPoint)(::windows::core::Interface::as_raw(this), point.into_param().abi(), options, extend).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetPoint)(::windows_core::Interface::as_raw(this), point.into_param().abi(), options, extend).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetRange(&self, startposition: i32, endposition: i32) -> ::windows::core::Result<()> {
+    pub fn SetRange(&self, startposition: i32, endposition: i32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetRange)(::windows::core::Interface::as_raw(this), startposition, endposition).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetRange)(::windows_core::Interface::as_raw(this), startposition, endposition).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn SetText2<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, options: TextSetOptions, value: Param1) -> ::windows::core::Result<()> {
+    pub fn SetText2<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetText2)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetText2)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`, `\"Storage_Streams\"`*"]
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetTextViaStream<'a, Param1: ::windows::core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows::core::Result<()> {
+    pub fn SetTextViaStream<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, options: TextSetOptions, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetTextViaStream)(::windows::core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetTextViaStream)(::windows_core::Interface::as_raw(this), options, value.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn StartOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows::core::Result<i32> {
+    pub fn StartOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).StartOf)(::windows::core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).StartOf)(::windows_core::Interface::as_raw(this), unit, extend, result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
 }
@@ -4097,80 +4097,80 @@ impl ::core::fmt::Debug for RichEditTextRange {
         f.debug_tuple("RichEditTextRange").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for RichEditTextRange {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Text.RichEditTextRange;{5b9e4e57-c072-42a0-8945-af503ee54768})");
+unsafe impl ::windows_core::RuntimeType for RichEditTextRange {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Text.RichEditTextRange;{5b9e4e57-c072-42a0-8945-af503ee54768})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for RichEditTextRange {
+unsafe impl ::windows_core::Interface for RichEditTextRange {
     type Vtable = ITextRange_Vtbl;
-    const IID: ::windows::core::GUID = <ITextRange as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <ITextRange as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for RichEditTextRange {
+impl ::windows_core::RuntimeName for RichEditTextRange {
     const NAME: &'static str = "Windows.UI.Text.RichEditTextRange";
 }
-impl ::core::convert::From<RichEditTextRange> for ::windows::core::IUnknown {
+impl ::core::convert::From<RichEditTextRange> for ::windows_core::IUnknown {
     fn from(value: RichEditTextRange) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&RichEditTextRange> for ::windows::core::IUnknown {
+impl ::core::convert::From<&RichEditTextRange> for ::windows_core::IUnknown {
     fn from(value: &RichEditTextRange) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for RichEditTextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for RichEditTextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a RichEditTextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a RichEditTextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<RichEditTextRange> for ::windows::core::IInspectable {
+impl ::core::convert::From<RichEditTextRange> for ::windows_core::IInspectable {
     fn from(value: RichEditTextRange) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&RichEditTextRange> for ::windows::core::IInspectable {
+impl ::core::convert::From<&RichEditTextRange> for ::windows_core::IInspectable {
     fn from(value: &RichEditTextRange) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for RichEditTextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for RichEditTextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a RichEditTextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a RichEditTextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<RichEditTextRange> for ITextRange {
-    type Error = ::windows::core::Error;
-    fn try_from(value: RichEditTextRange) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: RichEditTextRange) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&RichEditTextRange> for ITextRange {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &RichEditTextRange) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &RichEditTextRange) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ITextRange> for RichEditTextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ITextRange> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, ITextRange> for RichEditTextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ITextRange> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ITextRange> for &RichEditTextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ITextRange> {
-        ::core::convert::TryInto::<ITextRange>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ITextRange> for &RichEditTextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ITextRange> {
+        ::core::convert::TryInto::<ITextRange>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for RichEditTextRange {}
@@ -4197,7 +4197,7 @@ impl ::core::default::Default for SelectionOptions {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SelectionOptions {
+unsafe impl ::windows_core::Abi for SelectionOptions {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SelectionOptions {
@@ -4233,10 +4233,10 @@ impl ::core::ops::Not for SelectionOptions {
         Self(self.0.not())
     }
 }
-unsafe impl ::windows::core::RuntimeType for SelectionOptions {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.SelectionOptions;u4)");
+unsafe impl ::windows_core::RuntimeType for SelectionOptions {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.SelectionOptions;u4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -4262,7 +4262,7 @@ impl ::core::default::Default for SelectionType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SelectionType {
+unsafe impl ::windows_core::Abi for SelectionType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SelectionType {
@@ -4270,10 +4270,10 @@ impl ::core::fmt::Debug for SelectionType {
         f.debug_tuple("SelectionType").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for SelectionType {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.SelectionType;i4)");
+unsafe impl ::windows_core::RuntimeType for SelectionType {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.SelectionType;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -4299,7 +4299,7 @@ impl ::core::default::Default for TabAlignment {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TabAlignment {
+unsafe impl ::windows_core::Abi for TabAlignment {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TabAlignment {
@@ -4307,10 +4307,10 @@ impl ::core::fmt::Debug for TabAlignment {
         f.debug_tuple("TabAlignment").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for TabAlignment {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TabAlignment;i4)");
+unsafe impl ::windows_core::RuntimeType for TabAlignment {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TabAlignment;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -4337,7 +4337,7 @@ impl ::core::default::Default for TabLeader {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TabLeader {
+unsafe impl ::windows_core::Abi for TabLeader {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TabLeader {
@@ -4345,10 +4345,10 @@ impl ::core::fmt::Debug for TabLeader {
         f.debug_tuple("TabLeader").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for TabLeader {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TabLeader;i4)");
+unsafe impl ::windows_core::RuntimeType for TabLeader {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TabLeader;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -4356,68 +4356,68 @@ unsafe impl ::windows::core::RuntimeType for TabLeader {
 pub struct TextConstants;
 impl TextConstants {
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn AutoColor() -> ::windows::core::Result<super::Color> {
+    pub fn AutoColor() -> ::windows_core::Result<super::Color> {
         Self::ITextConstantsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::Color>::zeroed();
-            (::windows::core::Interface::vtable(this).AutoColor)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Color>(result__)
+            (::windows_core::Interface::vtable(this).AutoColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Color>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MinUnitCount() -> ::windows::core::Result<i32> {
+    pub fn MinUnitCount() -> ::windows_core::Result<i32> {
         Self::ITextConstantsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MinUnitCount)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).MinUnitCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn MaxUnitCount() -> ::windows::core::Result<i32> {
+    pub fn MaxUnitCount() -> ::windows_core::Result<i32> {
         Self::ITextConstantsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MaxUnitCount)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).MaxUnitCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn UndefinedColor() -> ::windows::core::Result<super::Color> {
+    pub fn UndefinedColor() -> ::windows_core::Result<super::Color> {
         Self::ITextConstantsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::Color>::zeroed();
-            (::windows::core::Interface::vtable(this).UndefinedColor)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Color>(result__)
+            (::windows_core::Interface::vtable(this).UndefinedColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Color>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn UndefinedFloatValue() -> ::windows::core::Result<f32> {
+    pub fn UndefinedFloatValue() -> ::windows_core::Result<f32> {
         Self::ITextConstantsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
-            (::windows::core::Interface::vtable(this).UndefinedFloatValue)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
+            (::windows_core::Interface::vtable(this).UndefinedFloatValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn UndefinedInt32Value() -> ::windows::core::Result<i32> {
+    pub fn UndefinedInt32Value() -> ::windows_core::Result<i32> {
         Self::ITextConstantsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).UndefinedInt32Value)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).UndefinedInt32Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn UndefinedFontStretch() -> ::windows::core::Result<FontStretch> {
+    pub fn UndefinedFontStretch() -> ::windows_core::Result<FontStretch> {
         Self::ITextConstantsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontStretch>::zeroed();
-            (::windows::core::Interface::vtable(this).UndefinedFontStretch)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontStretch>(result__)
+            (::windows_core::Interface::vtable(this).UndefinedFontStretch)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontStretch>(result__)
         })
     }
     #[doc = "*Required features: `\"UI_Text\"`*"]
-    pub fn UndefinedFontStyle() -> ::windows::core::Result<FontStyle> {
+    pub fn UndefinedFontStyle() -> ::windows_core::Result<FontStyle> {
         Self::ITextConstantsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<FontStyle>::zeroed();
-            (::windows::core::Interface::vtable(this).UndefinedFontStyle)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontStyle>(result__)
+            (::windows_core::Interface::vtable(this).UndefinedFontStyle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<FontStyle>(result__)
         })
     }
     #[doc(hidden)]
-    pub fn ITextConstantsStatics<R, F: FnOnce(&ITextConstantsStatics) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<TextConstants, ITextConstantsStatics> = ::windows::core::FactoryCache::new();
+    pub fn ITextConstantsStatics<R, F: FnOnce(&ITextConstantsStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<TextConstants, ITextConstantsStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
-impl ::windows::core::RuntimeName for TextConstants {
+impl ::windows_core::RuntimeName for TextConstants {
     const NAME: &'static str = "Windows.UI.Text.TextConstants";
 }
 #[doc = "*Required features: `\"UI_Text\"`*"]
@@ -4440,7 +4440,7 @@ impl ::core::default::Default for TextDecorations {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TextDecorations {
+unsafe impl ::windows_core::Abi for TextDecorations {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TextDecorations {
@@ -4476,10 +4476,10 @@ impl ::core::ops::Not for TextDecorations {
         Self(self.0.not())
     }
 }
-unsafe impl ::windows::core::RuntimeType for TextDecorations {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TextDecorations;u4)");
+unsafe impl ::windows_core::RuntimeType for TextDecorations {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TextDecorations;u4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -4509,7 +4509,7 @@ impl ::core::default::Default for TextGetOptions {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TextGetOptions {
+unsafe impl ::windows_core::Abi for TextGetOptions {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TextGetOptions {
@@ -4545,10 +4545,10 @@ impl ::core::ops::Not for TextGetOptions {
         Self(self.0.not())
     }
 }
-unsafe impl ::windows::core::RuntimeType for TextGetOptions {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TextGetOptions;u4)");
+unsafe impl ::windows_core::RuntimeType for TextGetOptions {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TextGetOptions;u4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -4602,7 +4602,7 @@ impl ::core::default::Default for TextRangeUnit {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TextRangeUnit {
+unsafe impl ::windows_core::Abi for TextRangeUnit {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TextRangeUnit {
@@ -4610,10 +4610,10 @@ impl ::core::fmt::Debug for TextRangeUnit {
         f.debug_tuple("TextRangeUnit").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for TextRangeUnit {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TextRangeUnit;i4)");
+unsafe impl ::windows_core::RuntimeType for TextRangeUnit {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TextRangeUnit;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -4698,7 +4698,7 @@ impl ::core::default::Default for TextScript {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TextScript {
+unsafe impl ::windows_core::Abi for TextScript {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TextScript {
@@ -4706,10 +4706,10 @@ impl ::core::fmt::Debug for TextScript {
         f.debug_tuple("TextScript").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for TextScript {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TextScript;i4)");
+unsafe impl ::windows_core::RuntimeType for TextScript {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TextScript;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -4737,7 +4737,7 @@ impl ::core::default::Default for TextSetOptions {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TextSetOptions {
+unsafe impl ::windows_core::Abi for TextSetOptions {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TextSetOptions {
@@ -4773,10 +4773,10 @@ impl ::core::ops::Not for TextSetOptions {
         Self(self.0.not())
     }
 }
-unsafe impl ::windows::core::RuntimeType for TextSetOptions {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TextSetOptions;u4)");
+unsafe impl ::windows_core::RuntimeType for TextSetOptions {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.TextSetOptions;u4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -4817,7 +4817,7 @@ impl ::core::default::Default for UnderlineType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for UnderlineType {
+unsafe impl ::windows_core::Abi for UnderlineType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for UnderlineType {
@@ -4825,10 +4825,10 @@ impl ::core::fmt::Debug for UnderlineType {
         f.debug_tuple("UnderlineType").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for UnderlineType {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.UnderlineType;i4)");
+unsafe impl ::windows_core::RuntimeType for UnderlineType {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.UnderlineType;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -4852,7 +4852,7 @@ impl ::core::default::Default for VerticalCharacterAlignment {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VerticalCharacterAlignment {
+unsafe impl ::windows_core::Abi for VerticalCharacterAlignment {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VerticalCharacterAlignment {
@@ -4860,10 +4860,10 @@ impl ::core::fmt::Debug for VerticalCharacterAlignment {
         f.debug_tuple("VerticalCharacterAlignment").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for VerticalCharacterAlignment {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.VerticalCharacterAlignment;i4)");
+unsafe impl ::windows_core::RuntimeType for VerticalCharacterAlignment {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Text.VerticalCharacterAlignment;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }

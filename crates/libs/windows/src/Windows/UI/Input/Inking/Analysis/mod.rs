@@ -1,184 +1,184 @@
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInkAnalysisInkBullet(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IInkAnalysisInkBullet {
+pub struct IInkAnalysisInkBullet(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInkAnalysisInkBullet {
     type Vtable = IInkAnalysisInkBullet_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xee049368_6110_4136_95f9_ee809fc20030);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xee049368_6110_4136_95f9_ee809fc20030);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInkAnalysisInkBullet_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInkAnalysisInkDrawing(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IInkAnalysisInkDrawing {
+pub struct IInkAnalysisInkDrawing(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInkAnalysisInkDrawing {
     type Vtable = IInkAnalysisInkDrawing_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6a85ed1f_1fe4_4e15_898c_8e112377e021);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6a85ed1f_1fe4_4e15_898c_8e112377e021);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInkAnalysisInkDrawing_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub DrawingKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut InkAnalysisDrawingKind) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub DrawingKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut InkAnalysisDrawingKind) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub Center: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows::core::HRESULT,
+    pub Center: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Center: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub Points: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Points: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Points: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInkAnalysisInkWord(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IInkAnalysisInkWord {
+pub struct IInkAnalysisInkWord(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInkAnalysisInkWord {
     type Vtable = IInkAnalysisInkWord_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4bd228ad_83af_4034_8f3b_f8687dfff436);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4bd228ad_83af_4034_8f3b_f8687dfff436);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInkAnalysisInkWord_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub TextAlternates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub TextAlternates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     TextAlternates: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInkAnalysisLine(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IInkAnalysisLine {
+pub struct IInkAnalysisLine(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInkAnalysisLine {
     type Vtable = IInkAnalysisLine_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa06d048d_2b8d_4754_ad5a_d0871193a956);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa06d048d_2b8d_4754_ad5a_d0871193a956);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInkAnalysisLine_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub IndentLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub IndentLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInkAnalysisListItem(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IInkAnalysisListItem {
+pub struct IInkAnalysisListItem(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInkAnalysisListItem {
     type Vtable = IInkAnalysisListItem_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb4e3c23f_c4c3_4c3a_a1a6_9d85547ee586);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb4e3c23f_c4c3_4c3a_a1a6_9d85547ee586);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInkAnalysisListItem_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
-pub struct IInkAnalysisNode(::windows::core::IUnknown);
+pub struct IInkAnalysisNode(::windows_core::IUnknown);
 impl IInkAnalysisNode {
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<u32> {
+    pub fn Id(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<InkAnalysisNodeKind> {
+    pub fn Kind(&self) -> ::windows_core::Result<InkAnalysisNodeKind> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<InkAnalysisNodeKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows::core::Interface::vtable(this).BoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).RotatedBoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Children)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Parent(&self) -> ::windows::core::Result<IInkAnalysisNode> {
+    pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Parent)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Parent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetStrokeIds)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
-impl ::core::convert::From<IInkAnalysisNode> for ::windows::core::IUnknown {
+impl ::core::convert::From<IInkAnalysisNode> for ::windows_core::IUnknown {
     fn from(value: IInkAnalysisNode) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IInkAnalysisNode> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IInkAnalysisNode> for ::windows_core::IUnknown {
     fn from(value: &IInkAnalysisNode) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IInkAnalysisNode {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IInkAnalysisNode {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IInkAnalysisNode {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IInkAnalysisNode {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<IInkAnalysisNode> for ::windows::core::IInspectable {
+impl ::core::convert::From<IInkAnalysisNode> for ::windows_core::IInspectable {
     fn from(value: IInkAnalysisNode) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IInkAnalysisNode> for ::windows::core::IInspectable {
+impl ::core::convert::From<&IInkAnalysisNode> for ::windows_core::IInspectable {
     fn from(value: &IInkAnalysisNode) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IInkAnalysisNode {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for IInkAnalysisNode {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IInkAnalysisNode {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IInkAnalysisNode {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IInkAnalysisNode {
@@ -197,179 +197,179 @@ impl ::core::fmt::Debug for IInkAnalysisNode {
         f.debug_tuple("IInkAnalysisNode").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for IInkAnalysisNode {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{30831f05-5f64-4a2c-ba37-4f4887879574}");
+unsafe impl ::windows_core::RuntimeType for IInkAnalysisNode {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{30831f05-5f64-4a2c-ba37-4f4887879574}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IInkAnalysisNode {
+unsafe impl ::windows_core::Interface for IInkAnalysisNode {
     type Vtable = IInkAnalysisNode_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x30831f05_5f64_4a2c_ba37_4f4887879574);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x30831f05_5f64_4a2c_ba37_4f4887879574);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInkAnalysisNode_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
-    pub Kind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut InkAnalysisNodeKind) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
+    pub Kind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut InkAnalysisNodeKind) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub BoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Rect) -> ::windows::core::HRESULT,
+    pub BoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     BoundingRect: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub RotatedBoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub RotatedBoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     RotatedBoundingRect: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub Children: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Children: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Children: usize,
-    pub Parent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Parent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub GetStrokeIds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetStrokeIds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetStrokeIds: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInkAnalysisParagraph(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IInkAnalysisParagraph {
+pub struct IInkAnalysisParagraph(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInkAnalysisParagraph {
     type Vtable = IInkAnalysisParagraph_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd9ad045c_0cd1_4dd4_a68b_eb1f12b3d727);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd9ad045c_0cd1_4dd4_a68b_eb1f12b3d727);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInkAnalysisParagraph_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInkAnalysisResult(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IInkAnalysisResult {
+pub struct IInkAnalysisResult(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInkAnalysisResult {
     type Vtable = IInkAnalysisResult_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8948ba79_a243_4aa3_a294_1f98bd0ff580);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8948ba79_a243_4aa3_a294_1f98bd0ff580);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInkAnalysisResult_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut InkAnalysisStatus) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut InkAnalysisStatus) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInkAnalysisRoot(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IInkAnalysisRoot {
+pub struct IInkAnalysisRoot(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInkAnalysisRoot {
     type Vtable = IInkAnalysisRoot_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3fb6a3c4_2fde_4061_8502_a90f32545b84);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3fb6a3c4_2fde_4061_8502_a90f32545b84);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInkAnalysisRoot_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub FindNodes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nodekind: InkAnalysisNodeKind, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub FindNodes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nodekind: InkAnalysisNodeKind, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     FindNodes: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInkAnalysisWritingRegion(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IInkAnalysisWritingRegion {
+pub struct IInkAnalysisWritingRegion(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInkAnalysisWritingRegion {
     type Vtable = IInkAnalysisWritingRegion_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdd6d6231_bd16_4663_b5ae_941d3043ef5b);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdd6d6231_bd16_4663_b5ae_941d3043ef5b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInkAnalysisWritingRegion_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub RecognizedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInkAnalyzer(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IInkAnalyzer {
+pub struct IInkAnalyzer(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInkAnalyzer {
     type Vtable = IInkAnalyzer_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf12b8f95_0866_4dc5_8c77_f88614dfe38c);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf12b8f95_0866_4dc5_8c77_f88614dfe38c);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInkAnalyzer_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub AnalysisRoot: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub IsAnalyzing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub AddDataForStroke: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stroke: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub AnalysisRoot: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub IsAnalyzing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub AddDataForStroke: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stroke: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub AddDataForStrokes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, strokes: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub AddDataForStrokes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, strokes: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     AddDataForStrokes: usize,
-    pub ClearDataForAllStrokes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub RemoveDataForStroke: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, strokeid: u32) -> ::windows::core::HRESULT,
+    pub ClearDataForAllStrokes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub RemoveDataForStroke: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, strokeid: u32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub RemoveDataForStrokes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, strokeids: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub RemoveDataForStrokes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, strokeids: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     RemoveDataForStrokes: usize,
-    pub ReplaceDataForStroke: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stroke: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SetStrokeDataKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, strokeid: u32, strokekind: InkAnalysisStrokeKind) -> ::windows::core::HRESULT,
+    pub ReplaceDataForStroke: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stroke: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetStrokeDataKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, strokeid: u32, strokekind: InkAnalysisStrokeKind) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation")]
-    pub AnalyzeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub AnalyzeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     AnalyzeAsync: usize,
 }
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
-pub struct IInkAnalyzerFactory(::windows::core::IUnknown);
+pub struct IInkAnalyzerFactory(::windows_core::IUnknown);
 impl IInkAnalyzerFactory {
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn CreateAnalyzer(&self) -> ::windows::core::Result<InkAnalyzer> {
+    pub fn CreateAnalyzer(&self) -> ::windows_core::Result<InkAnalyzer> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).CreateAnalyzer)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalyzer>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).CreateAnalyzer)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalyzer>(result__)
         }
     }
 }
-impl ::core::convert::From<IInkAnalyzerFactory> for ::windows::core::IUnknown {
+impl ::core::convert::From<IInkAnalyzerFactory> for ::windows_core::IUnknown {
     fn from(value: IInkAnalyzerFactory) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IInkAnalyzerFactory> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IInkAnalyzerFactory> for ::windows_core::IUnknown {
     fn from(value: &IInkAnalyzerFactory) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IInkAnalyzerFactory {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IInkAnalyzerFactory {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IInkAnalyzerFactory {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IInkAnalyzerFactory {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<IInkAnalyzerFactory> for ::windows::core::IInspectable {
+impl ::core::convert::From<IInkAnalyzerFactory> for ::windows_core::IInspectable {
     fn from(value: IInkAnalyzerFactory) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IInkAnalyzerFactory> for ::windows::core::IInspectable {
+impl ::core::convert::From<&IInkAnalyzerFactory> for ::windows_core::IInspectable {
     fn from(value: &IInkAnalyzerFactory) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IInkAnalyzerFactory {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for IInkAnalyzerFactory {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IInkAnalyzerFactory {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IInkAnalyzerFactory {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IInkAnalyzerFactory {
@@ -388,22 +388,22 @@ impl ::core::fmt::Debug for IInkAnalyzerFactory {
         f.debug_tuple("IInkAnalyzerFactory").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for IInkAnalyzerFactory {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{29138686-1963-49d8-9589-e14384c769e3}");
+unsafe impl ::windows_core::RuntimeType for IInkAnalyzerFactory {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{29138686-1963-49d8-9589-e14384c769e3}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IInkAnalyzerFactory {
+unsafe impl ::windows_core::Interface for IInkAnalyzerFactory {
     type Vtable = IInkAnalyzerFactory_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x29138686_1963_49d8_9589_e14384c769e3);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x29138686_1963_49d8_9589_e14384c769e3);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInkAnalyzerFactory_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub CreateAnalyzer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub CreateAnalyzer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
@@ -437,7 +437,7 @@ impl ::core::default::Default for InkAnalysisDrawingKind {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for InkAnalysisDrawingKind {
+unsafe impl ::windows_core::Abi for InkAnalysisDrawingKind {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for InkAnalysisDrawingKind {
@@ -445,83 +445,83 @@ impl ::core::fmt::Debug for InkAnalysisDrawingKind {
         f.debug_tuple("InkAnalysisDrawingKind").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisDrawingKind {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Input.Inking.Analysis.InkAnalysisDrawingKind;i4)");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisDrawingKind {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Input.Inking.Analysis.InkAnalysisDrawingKind;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
-pub struct InkAnalysisInkBullet(::windows::core::IUnknown);
+pub struct InkAnalysisInkBullet(::windows_core::IUnknown);
 impl InkAnalysisInkBullet {
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn RecognizedText(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn RecognizedText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).RecognizedText)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).RecognizedText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Id(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<InkAnalysisNodeKind> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Kind(&self) -> ::windows_core::Result<InkAnalysisNodeKind> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<InkAnalysisNodeKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Rect> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows::core::Interface::vtable(this).BoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).RotatedBoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Children)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Parent(&self) -> ::windows::core::Result<IInkAnalysisNode> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Parent)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Parent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetStrokeIds)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -541,172 +541,172 @@ impl ::core::fmt::Debug for InkAnalysisInkBullet {
         f.debug_tuple("InkAnalysisInkBullet").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisInkBullet {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisInkBullet;{ee049368-6110-4136-95f9-ee809fc20030})");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisInkBullet {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisInkBullet;{ee049368-6110-4136-95f9-ee809fc20030})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for InkAnalysisInkBullet {
+unsafe impl ::windows_core::Interface for InkAnalysisInkBullet {
     type Vtable = IInkAnalysisInkBullet_Vtbl;
-    const IID: ::windows::core::GUID = <IInkAnalysisInkBullet as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IInkAnalysisInkBullet as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for InkAnalysisInkBullet {
+impl ::windows_core::RuntimeName for InkAnalysisInkBullet {
     const NAME: &'static str = "Windows.UI.Input.Inking.Analysis.InkAnalysisInkBullet";
 }
-impl ::core::convert::From<InkAnalysisInkBullet> for ::windows::core::IUnknown {
+impl ::core::convert::From<InkAnalysisInkBullet> for ::windows_core::IUnknown {
     fn from(value: InkAnalysisInkBullet) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisInkBullet> for ::windows::core::IUnknown {
+impl ::core::convert::From<&InkAnalysisInkBullet> for ::windows_core::IUnknown {
     fn from(value: &InkAnalysisInkBullet) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for InkAnalysisInkBullet {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InkAnalysisInkBullet {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a InkAnalysisInkBullet {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InkAnalysisInkBullet {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<InkAnalysisInkBullet> for ::windows::core::IInspectable {
+impl ::core::convert::From<InkAnalysisInkBullet> for ::windows_core::IInspectable {
     fn from(value: InkAnalysisInkBullet) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisInkBullet> for ::windows::core::IInspectable {
+impl ::core::convert::From<&InkAnalysisInkBullet> for ::windows_core::IInspectable {
     fn from(value: &InkAnalysisInkBullet) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for InkAnalysisInkBullet {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InkAnalysisInkBullet {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a InkAnalysisInkBullet {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InkAnalysisInkBullet {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<InkAnalysisInkBullet> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InkAnalysisInkBullet) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: InkAnalysisInkBullet) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&InkAnalysisInkBullet> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InkAnalysisInkBullet) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &InkAnalysisInkBullet) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisInkBullet {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisInkBullet {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisInkBullet {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisInkBullet {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for InkAnalysisInkBullet {}
 unsafe impl ::core::marker::Sync for InkAnalysisInkBullet {}
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
-pub struct InkAnalysisInkDrawing(::windows::core::IUnknown);
+pub struct InkAnalysisInkDrawing(::windows_core::IUnknown);
 impl InkAnalysisInkDrawing {
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn DrawingKind(&self) -> ::windows::core::Result<InkAnalysisDrawingKind> {
+    pub fn DrawingKind(&self) -> ::windows_core::Result<InkAnalysisDrawingKind> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<InkAnalysisDrawingKind>::zeroed();
-            (::windows::core::Interface::vtable(this).DrawingKind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisDrawingKind>(result__)
+            (::windows_core::Interface::vtable(this).DrawingKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisDrawingKind>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn Center(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Point> {
+    pub fn Center(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows::core::Interface::vtable(this).Center)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            (::windows_core::Interface::vtable(this).Center)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Points(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn Points(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Points)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Points)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Id(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<InkAnalysisNodeKind> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Kind(&self) -> ::windows_core::Result<InkAnalysisNodeKind> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<InkAnalysisNodeKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Rect> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows::core::Interface::vtable(this).BoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).RotatedBoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Children)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Parent(&self) -> ::windows::core::Result<IInkAnalysisNode> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Parent)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Parent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetStrokeIds)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -726,163 +726,163 @@ impl ::core::fmt::Debug for InkAnalysisInkDrawing {
         f.debug_tuple("InkAnalysisInkDrawing").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisInkDrawing {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisInkDrawing;{6a85ed1f-1fe4-4e15-898c-8e112377e021})");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisInkDrawing {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisInkDrawing;{6a85ed1f-1fe4-4e15-898c-8e112377e021})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for InkAnalysisInkDrawing {
+unsafe impl ::windows_core::Interface for InkAnalysisInkDrawing {
     type Vtable = IInkAnalysisInkDrawing_Vtbl;
-    const IID: ::windows::core::GUID = <IInkAnalysisInkDrawing as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IInkAnalysisInkDrawing as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for InkAnalysisInkDrawing {
+impl ::windows_core::RuntimeName for InkAnalysisInkDrawing {
     const NAME: &'static str = "Windows.UI.Input.Inking.Analysis.InkAnalysisInkDrawing";
 }
-impl ::core::convert::From<InkAnalysisInkDrawing> for ::windows::core::IUnknown {
+impl ::core::convert::From<InkAnalysisInkDrawing> for ::windows_core::IUnknown {
     fn from(value: InkAnalysisInkDrawing) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisInkDrawing> for ::windows::core::IUnknown {
+impl ::core::convert::From<&InkAnalysisInkDrawing> for ::windows_core::IUnknown {
     fn from(value: &InkAnalysisInkDrawing) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for InkAnalysisInkDrawing {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InkAnalysisInkDrawing {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a InkAnalysisInkDrawing {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InkAnalysisInkDrawing {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<InkAnalysisInkDrawing> for ::windows::core::IInspectable {
+impl ::core::convert::From<InkAnalysisInkDrawing> for ::windows_core::IInspectable {
     fn from(value: InkAnalysisInkDrawing) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisInkDrawing> for ::windows::core::IInspectable {
+impl ::core::convert::From<&InkAnalysisInkDrawing> for ::windows_core::IInspectable {
     fn from(value: &InkAnalysisInkDrawing) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for InkAnalysisInkDrawing {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InkAnalysisInkDrawing {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a InkAnalysisInkDrawing {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InkAnalysisInkDrawing {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<InkAnalysisInkDrawing> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InkAnalysisInkDrawing) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: InkAnalysisInkDrawing) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&InkAnalysisInkDrawing> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InkAnalysisInkDrawing) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &InkAnalysisInkDrawing) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisInkDrawing {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisInkDrawing {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisInkDrawing {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisInkDrawing {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for InkAnalysisInkDrawing {}
 unsafe impl ::core::marker::Sync for InkAnalysisInkDrawing {}
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
-pub struct InkAnalysisInkWord(::windows::core::IUnknown);
+pub struct InkAnalysisInkWord(::windows_core::IUnknown);
 impl InkAnalysisInkWord {
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn RecognizedText(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn RecognizedText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).RecognizedText)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).RecognizedText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TextAlternates(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<::windows::core::HSTRING>> {
+    pub fn TextAlternates(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).TextAlternates)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<::windows::core::HSTRING>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).TextAlternates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Id(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<InkAnalysisNodeKind> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Kind(&self) -> ::windows_core::Result<InkAnalysisNodeKind> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<InkAnalysisNodeKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Rect> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows::core::Interface::vtable(this).BoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).RotatedBoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Children)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Parent(&self) -> ::windows::core::Result<IInkAnalysisNode> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Parent)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Parent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetStrokeIds)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -902,162 +902,162 @@ impl ::core::fmt::Debug for InkAnalysisInkWord {
         f.debug_tuple("InkAnalysisInkWord").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisInkWord {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisInkWord;{4bd228ad-83af-4034-8f3b-f8687dfff436})");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisInkWord {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisInkWord;{4bd228ad-83af-4034-8f3b-f8687dfff436})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for InkAnalysisInkWord {
+unsafe impl ::windows_core::Interface for InkAnalysisInkWord {
     type Vtable = IInkAnalysisInkWord_Vtbl;
-    const IID: ::windows::core::GUID = <IInkAnalysisInkWord as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IInkAnalysisInkWord as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for InkAnalysisInkWord {
+impl ::windows_core::RuntimeName for InkAnalysisInkWord {
     const NAME: &'static str = "Windows.UI.Input.Inking.Analysis.InkAnalysisInkWord";
 }
-impl ::core::convert::From<InkAnalysisInkWord> for ::windows::core::IUnknown {
+impl ::core::convert::From<InkAnalysisInkWord> for ::windows_core::IUnknown {
     fn from(value: InkAnalysisInkWord) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisInkWord> for ::windows::core::IUnknown {
+impl ::core::convert::From<&InkAnalysisInkWord> for ::windows_core::IUnknown {
     fn from(value: &InkAnalysisInkWord) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for InkAnalysisInkWord {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InkAnalysisInkWord {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a InkAnalysisInkWord {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InkAnalysisInkWord {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<InkAnalysisInkWord> for ::windows::core::IInspectable {
+impl ::core::convert::From<InkAnalysisInkWord> for ::windows_core::IInspectable {
     fn from(value: InkAnalysisInkWord) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisInkWord> for ::windows::core::IInspectable {
+impl ::core::convert::From<&InkAnalysisInkWord> for ::windows_core::IInspectable {
     fn from(value: &InkAnalysisInkWord) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for InkAnalysisInkWord {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InkAnalysisInkWord {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a InkAnalysisInkWord {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InkAnalysisInkWord {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<InkAnalysisInkWord> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InkAnalysisInkWord) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: InkAnalysisInkWord) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&InkAnalysisInkWord> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InkAnalysisInkWord) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &InkAnalysisInkWord) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisInkWord {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisInkWord {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisInkWord {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisInkWord {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for InkAnalysisInkWord {}
 unsafe impl ::core::marker::Sync for InkAnalysisInkWord {}
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
-pub struct InkAnalysisLine(::windows::core::IUnknown);
+pub struct InkAnalysisLine(::windows_core::IUnknown);
 impl InkAnalysisLine {
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn RecognizedText(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn RecognizedText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).RecognizedText)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).RecognizedText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn IndentLevel(&self) -> ::windows::core::Result<i32> {
+    pub fn IndentLevel(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).IndentLevel)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
+            (::windows_core::Interface::vtable(this).IndentLevel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Id(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<InkAnalysisNodeKind> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Kind(&self) -> ::windows_core::Result<InkAnalysisNodeKind> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<InkAnalysisNodeKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Rect> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows::core::Interface::vtable(this).BoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).RotatedBoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Children)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Parent(&self) -> ::windows::core::Result<IInkAnalysisNode> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Parent)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Parent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetStrokeIds)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -1077,154 +1077,154 @@ impl ::core::fmt::Debug for InkAnalysisLine {
         f.debug_tuple("InkAnalysisLine").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisLine {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisLine;{a06d048d-2b8d-4754-ad5a-d0871193a956})");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisLine {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisLine;{a06d048d-2b8d-4754-ad5a-d0871193a956})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for InkAnalysisLine {
+unsafe impl ::windows_core::Interface for InkAnalysisLine {
     type Vtable = IInkAnalysisLine_Vtbl;
-    const IID: ::windows::core::GUID = <IInkAnalysisLine as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IInkAnalysisLine as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for InkAnalysisLine {
+impl ::windows_core::RuntimeName for InkAnalysisLine {
     const NAME: &'static str = "Windows.UI.Input.Inking.Analysis.InkAnalysisLine";
 }
-impl ::core::convert::From<InkAnalysisLine> for ::windows::core::IUnknown {
+impl ::core::convert::From<InkAnalysisLine> for ::windows_core::IUnknown {
     fn from(value: InkAnalysisLine) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisLine> for ::windows::core::IUnknown {
+impl ::core::convert::From<&InkAnalysisLine> for ::windows_core::IUnknown {
     fn from(value: &InkAnalysisLine) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for InkAnalysisLine {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InkAnalysisLine {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a InkAnalysisLine {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InkAnalysisLine {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<InkAnalysisLine> for ::windows::core::IInspectable {
+impl ::core::convert::From<InkAnalysisLine> for ::windows_core::IInspectable {
     fn from(value: InkAnalysisLine) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisLine> for ::windows::core::IInspectable {
+impl ::core::convert::From<&InkAnalysisLine> for ::windows_core::IInspectable {
     fn from(value: &InkAnalysisLine) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for InkAnalysisLine {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InkAnalysisLine {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a InkAnalysisLine {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InkAnalysisLine {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<InkAnalysisLine> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InkAnalysisLine) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: InkAnalysisLine) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&InkAnalysisLine> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InkAnalysisLine) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &InkAnalysisLine) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisLine {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisLine {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisLine {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisLine {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for InkAnalysisLine {}
 unsafe impl ::core::marker::Sync for InkAnalysisLine {}
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
-pub struct InkAnalysisListItem(::windows::core::IUnknown);
+pub struct InkAnalysisListItem(::windows_core::IUnknown);
 impl InkAnalysisListItem {
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn RecognizedText(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn RecognizedText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).RecognizedText)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).RecognizedText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Id(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<InkAnalysisNodeKind> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Kind(&self) -> ::windows_core::Result<InkAnalysisNodeKind> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<InkAnalysisNodeKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Rect> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows::core::Interface::vtable(this).BoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).RotatedBoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Children)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Parent(&self) -> ::windows::core::Result<IInkAnalysisNode> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Parent)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Parent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetStrokeIds)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -1244,146 +1244,146 @@ impl ::core::fmt::Debug for InkAnalysisListItem {
         f.debug_tuple("InkAnalysisListItem").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisListItem {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisListItem;{b4e3c23f-c4c3-4c3a-a1a6-9d85547ee586})");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisListItem {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisListItem;{b4e3c23f-c4c3-4c3a-a1a6-9d85547ee586})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for InkAnalysisListItem {
+unsafe impl ::windows_core::Interface for InkAnalysisListItem {
     type Vtable = IInkAnalysisListItem_Vtbl;
-    const IID: ::windows::core::GUID = <IInkAnalysisListItem as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IInkAnalysisListItem as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for InkAnalysisListItem {
+impl ::windows_core::RuntimeName for InkAnalysisListItem {
     const NAME: &'static str = "Windows.UI.Input.Inking.Analysis.InkAnalysisListItem";
 }
-impl ::core::convert::From<InkAnalysisListItem> for ::windows::core::IUnknown {
+impl ::core::convert::From<InkAnalysisListItem> for ::windows_core::IUnknown {
     fn from(value: InkAnalysisListItem) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisListItem> for ::windows::core::IUnknown {
+impl ::core::convert::From<&InkAnalysisListItem> for ::windows_core::IUnknown {
     fn from(value: &InkAnalysisListItem) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for InkAnalysisListItem {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InkAnalysisListItem {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a InkAnalysisListItem {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InkAnalysisListItem {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<InkAnalysisListItem> for ::windows::core::IInspectable {
+impl ::core::convert::From<InkAnalysisListItem> for ::windows_core::IInspectable {
     fn from(value: InkAnalysisListItem) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisListItem> for ::windows::core::IInspectable {
+impl ::core::convert::From<&InkAnalysisListItem> for ::windows_core::IInspectable {
     fn from(value: &InkAnalysisListItem) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for InkAnalysisListItem {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InkAnalysisListItem {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a InkAnalysisListItem {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InkAnalysisListItem {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<InkAnalysisListItem> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InkAnalysisListItem) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: InkAnalysisListItem) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&InkAnalysisListItem> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InkAnalysisListItem) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &InkAnalysisListItem) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisListItem {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisListItem {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisListItem {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisListItem {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for InkAnalysisListItem {}
 unsafe impl ::core::marker::Sync for InkAnalysisListItem {}
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
-pub struct InkAnalysisNode(::windows::core::IUnknown);
+pub struct InkAnalysisNode(::windows_core::IUnknown);
 impl InkAnalysisNode {
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<u32> {
+    pub fn Id(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<InkAnalysisNodeKind> {
+    pub fn Kind(&self) -> ::windows_core::Result<InkAnalysisNodeKind> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<InkAnalysisNodeKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows::core::Interface::vtable(this).BoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).RotatedBoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Children)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Parent(&self) -> ::windows::core::Result<IInkAnalysisNode> {
+    pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Parent)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Parent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetStrokeIds)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -1403,80 +1403,80 @@ impl ::core::fmt::Debug for InkAnalysisNode {
         f.debug_tuple("InkAnalysisNode").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisNode {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisNode;{30831f05-5f64-4a2c-ba37-4f4887879574})");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisNode {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisNode;{30831f05-5f64-4a2c-ba37-4f4887879574})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for InkAnalysisNode {
+unsafe impl ::windows_core::Interface for InkAnalysisNode {
     type Vtable = IInkAnalysisNode_Vtbl;
-    const IID: ::windows::core::GUID = <IInkAnalysisNode as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IInkAnalysisNode as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for InkAnalysisNode {
+impl ::windows_core::RuntimeName for InkAnalysisNode {
     const NAME: &'static str = "Windows.UI.Input.Inking.Analysis.InkAnalysisNode";
 }
-impl ::core::convert::From<InkAnalysisNode> for ::windows::core::IUnknown {
+impl ::core::convert::From<InkAnalysisNode> for ::windows_core::IUnknown {
     fn from(value: InkAnalysisNode) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisNode> for ::windows::core::IUnknown {
+impl ::core::convert::From<&InkAnalysisNode> for ::windows_core::IUnknown {
     fn from(value: &InkAnalysisNode) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for InkAnalysisNode {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InkAnalysisNode {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a InkAnalysisNode {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InkAnalysisNode {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<InkAnalysisNode> for ::windows::core::IInspectable {
+impl ::core::convert::From<InkAnalysisNode> for ::windows_core::IInspectable {
     fn from(value: InkAnalysisNode) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisNode> for ::windows::core::IInspectable {
+impl ::core::convert::From<&InkAnalysisNode> for ::windows_core::IInspectable {
     fn from(value: &InkAnalysisNode) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for InkAnalysisNode {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InkAnalysisNode {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a InkAnalysisNode {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InkAnalysisNode {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<InkAnalysisNode> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InkAnalysisNode) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: InkAnalysisNode) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&InkAnalysisNode> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InkAnalysisNode) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &InkAnalysisNode) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisNode {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisNode {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisNode {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisNode {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for InkAnalysisNode {}
@@ -1507,7 +1507,7 @@ impl ::core::default::Default for InkAnalysisNodeKind {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for InkAnalysisNodeKind {
+unsafe impl ::windows_core::Abi for InkAnalysisNodeKind {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for InkAnalysisNodeKind {
@@ -1515,83 +1515,83 @@ impl ::core::fmt::Debug for InkAnalysisNodeKind {
         f.debug_tuple("InkAnalysisNodeKind").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisNodeKind {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind;i4)");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisNodeKind {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
-pub struct InkAnalysisParagraph(::windows::core::IUnknown);
+pub struct InkAnalysisParagraph(::windows_core::IUnknown);
 impl InkAnalysisParagraph {
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Id(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<InkAnalysisNodeKind> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Kind(&self) -> ::windows_core::Result<InkAnalysisNodeKind> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<InkAnalysisNodeKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Rect> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows::core::Interface::vtable(this).BoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).RotatedBoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Children)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Parent(&self) -> ::windows::core::Result<IInkAnalysisNode> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Parent)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Parent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetStrokeIds)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn RecognizedText(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn RecognizedText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).RecognizedText)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).RecognizedText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
 }
@@ -1611,94 +1611,94 @@ impl ::core::fmt::Debug for InkAnalysisParagraph {
         f.debug_tuple("InkAnalysisParagraph").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisParagraph {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisParagraph;{d9ad045c-0cd1-4dd4-a68b-eb1f12b3d727})");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisParagraph {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisParagraph;{d9ad045c-0cd1-4dd4-a68b-eb1f12b3d727})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for InkAnalysisParagraph {
+unsafe impl ::windows_core::Interface for InkAnalysisParagraph {
     type Vtable = IInkAnalysisParagraph_Vtbl;
-    const IID: ::windows::core::GUID = <IInkAnalysisParagraph as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IInkAnalysisParagraph as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for InkAnalysisParagraph {
+impl ::windows_core::RuntimeName for InkAnalysisParagraph {
     const NAME: &'static str = "Windows.UI.Input.Inking.Analysis.InkAnalysisParagraph";
 }
-impl ::core::convert::From<InkAnalysisParagraph> for ::windows::core::IUnknown {
+impl ::core::convert::From<InkAnalysisParagraph> for ::windows_core::IUnknown {
     fn from(value: InkAnalysisParagraph) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisParagraph> for ::windows::core::IUnknown {
+impl ::core::convert::From<&InkAnalysisParagraph> for ::windows_core::IUnknown {
     fn from(value: &InkAnalysisParagraph) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for InkAnalysisParagraph {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InkAnalysisParagraph {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a InkAnalysisParagraph {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InkAnalysisParagraph {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<InkAnalysisParagraph> for ::windows::core::IInspectable {
+impl ::core::convert::From<InkAnalysisParagraph> for ::windows_core::IInspectable {
     fn from(value: InkAnalysisParagraph) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisParagraph> for ::windows::core::IInspectable {
+impl ::core::convert::From<&InkAnalysisParagraph> for ::windows_core::IInspectable {
     fn from(value: &InkAnalysisParagraph) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for InkAnalysisParagraph {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InkAnalysisParagraph {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a InkAnalysisParagraph {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InkAnalysisParagraph {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<InkAnalysisParagraph> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InkAnalysisParagraph) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: InkAnalysisParagraph) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&InkAnalysisParagraph> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InkAnalysisParagraph) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &InkAnalysisParagraph) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisParagraph {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisParagraph {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisParagraph {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisParagraph {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for InkAnalysisParagraph {}
 unsafe impl ::core::marker::Sync for InkAnalysisParagraph {}
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
-pub struct InkAnalysisResult(::windows::core::IUnknown);
+pub struct InkAnalysisResult(::windows_core::IUnknown);
 impl InkAnalysisResult {
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Status(&self) -> ::windows::core::Result<InkAnalysisStatus> {
+    pub fn Status(&self) -> ::windows_core::Result<InkAnalysisStatus> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<InkAnalysisStatus>::zeroed();
-            (::windows::core::Interface::vtable(this).Status)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisStatus>(result__)
+            (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisStatus>(result__)
         }
     }
 }
@@ -1718,141 +1718,141 @@ impl ::core::fmt::Debug for InkAnalysisResult {
         f.debug_tuple("InkAnalysisResult").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisResult {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisResult;{8948ba79-a243-4aa3-a294-1f98bd0ff580})");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisResult {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisResult;{8948ba79-a243-4aa3-a294-1f98bd0ff580})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for InkAnalysisResult {
+unsafe impl ::windows_core::Interface for InkAnalysisResult {
     type Vtable = IInkAnalysisResult_Vtbl;
-    const IID: ::windows::core::GUID = <IInkAnalysisResult as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IInkAnalysisResult as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for InkAnalysisResult {
+impl ::windows_core::RuntimeName for InkAnalysisResult {
     const NAME: &'static str = "Windows.UI.Input.Inking.Analysis.InkAnalysisResult";
 }
-impl ::core::convert::From<InkAnalysisResult> for ::windows::core::IUnknown {
+impl ::core::convert::From<InkAnalysisResult> for ::windows_core::IUnknown {
     fn from(value: InkAnalysisResult) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisResult> for ::windows::core::IUnknown {
+impl ::core::convert::From<&InkAnalysisResult> for ::windows_core::IUnknown {
     fn from(value: &InkAnalysisResult) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for InkAnalysisResult {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InkAnalysisResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a InkAnalysisResult {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InkAnalysisResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<InkAnalysisResult> for ::windows::core::IInspectable {
+impl ::core::convert::From<InkAnalysisResult> for ::windows_core::IInspectable {
     fn from(value: InkAnalysisResult) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisResult> for ::windows::core::IInspectable {
+impl ::core::convert::From<&InkAnalysisResult> for ::windows_core::IInspectable {
     fn from(value: &InkAnalysisResult) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for InkAnalysisResult {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InkAnalysisResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a InkAnalysisResult {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InkAnalysisResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for InkAnalysisResult {}
 unsafe impl ::core::marker::Sync for InkAnalysisResult {}
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
-pub struct InkAnalysisRoot(::windows::core::IUnknown);
+pub struct InkAnalysisRoot(::windows_core::IUnknown);
 impl InkAnalysisRoot {
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Id(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<InkAnalysisNodeKind> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Kind(&self) -> ::windows_core::Result<InkAnalysisNodeKind> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<InkAnalysisNodeKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Rect> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows::core::Interface::vtable(this).BoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).RotatedBoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Children)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Parent(&self) -> ::windows::core::Result<IInkAnalysisNode> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Parent)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Parent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetStrokeIds)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn RecognizedText(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn RecognizedText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).RecognizedText)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).RecognizedText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindNodes(&self, nodekind: InkAnalysisNodeKind) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn FindNodes(&self, nodekind: InkAnalysisNodeKind) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).FindNodes)(::windows::core::Interface::as_raw(this), nodekind, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FindNodes)(::windows_core::Interface::as_raw(this), nodekind, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
 }
@@ -1872,80 +1872,80 @@ impl ::core::fmt::Debug for InkAnalysisRoot {
         f.debug_tuple("InkAnalysisRoot").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisRoot {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisRoot;{3fb6a3c4-2fde-4061-8502-a90f32545b84})");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisRoot {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisRoot;{3fb6a3c4-2fde-4061-8502-a90f32545b84})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for InkAnalysisRoot {
+unsafe impl ::windows_core::Interface for InkAnalysisRoot {
     type Vtable = IInkAnalysisRoot_Vtbl;
-    const IID: ::windows::core::GUID = <IInkAnalysisRoot as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IInkAnalysisRoot as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for InkAnalysisRoot {
+impl ::windows_core::RuntimeName for InkAnalysisRoot {
     const NAME: &'static str = "Windows.UI.Input.Inking.Analysis.InkAnalysisRoot";
 }
-impl ::core::convert::From<InkAnalysisRoot> for ::windows::core::IUnknown {
+impl ::core::convert::From<InkAnalysisRoot> for ::windows_core::IUnknown {
     fn from(value: InkAnalysisRoot) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisRoot> for ::windows::core::IUnknown {
+impl ::core::convert::From<&InkAnalysisRoot> for ::windows_core::IUnknown {
     fn from(value: &InkAnalysisRoot) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for InkAnalysisRoot {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InkAnalysisRoot {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a InkAnalysisRoot {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InkAnalysisRoot {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<InkAnalysisRoot> for ::windows::core::IInspectable {
+impl ::core::convert::From<InkAnalysisRoot> for ::windows_core::IInspectable {
     fn from(value: InkAnalysisRoot) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisRoot> for ::windows::core::IInspectable {
+impl ::core::convert::From<&InkAnalysisRoot> for ::windows_core::IInspectable {
     fn from(value: &InkAnalysisRoot) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for InkAnalysisRoot {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InkAnalysisRoot {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a InkAnalysisRoot {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InkAnalysisRoot {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<InkAnalysisRoot> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InkAnalysisRoot) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: InkAnalysisRoot) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&InkAnalysisRoot> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InkAnalysisRoot) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &InkAnalysisRoot) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisRoot {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisRoot {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisRoot {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisRoot {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for InkAnalysisRoot {}
@@ -1969,7 +1969,7 @@ impl ::core::default::Default for InkAnalysisStatus {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for InkAnalysisStatus {
+unsafe impl ::windows_core::Abi for InkAnalysisStatus {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for InkAnalysisStatus {
@@ -1977,10 +1977,10 @@ impl ::core::fmt::Debug for InkAnalysisStatus {
         f.debug_tuple("InkAnalysisStatus").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisStatus {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Input.Inking.Analysis.InkAnalysisStatus;i4)");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisStatus {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Input.Inking.Analysis.InkAnalysisStatus;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -2004,7 +2004,7 @@ impl ::core::default::Default for InkAnalysisStrokeKind {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for InkAnalysisStrokeKind {
+unsafe impl ::windows_core::Abi for InkAnalysisStrokeKind {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for InkAnalysisStrokeKind {
@@ -2012,83 +2012,83 @@ impl ::core::fmt::Debug for InkAnalysisStrokeKind {
         f.debug_tuple("InkAnalysisStrokeKind").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisStrokeKind {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Input.Inking.Analysis.InkAnalysisStrokeKind;i4)");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisStrokeKind {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.UI.Input.Inking.Analysis.InkAnalysisStrokeKind;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
-pub struct InkAnalysisWritingRegion(::windows::core::IUnknown);
+pub struct InkAnalysisWritingRegion(::windows_core::IUnknown);
 impl InkAnalysisWritingRegion {
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Id(&self) -> ::windows::core::Result<u32> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Id(&self) -> ::windows_core::Result<u32> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Id)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<InkAnalysisNodeKind> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Kind(&self) -> ::windows_core::Result<InkAnalysisNodeKind> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<InkAnalysisNodeKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Rect> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows::core::Interface::vtable(this).BoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).RotatedBoundingRect)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Children)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn Parent(&self) -> ::windows::core::Result<IInkAnalysisNode> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Parent)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Parent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<IInkAnalysisNode>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows::core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
-        let this = &::windows::core::Interface::cast::<IInkAnalysisNode>(self)?;
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+        let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).GetStrokeIds)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn RecognizedText(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn RecognizedText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).RecognizedText)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).RecognizedText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
 }
@@ -2108,155 +2108,155 @@ impl ::core::fmt::Debug for InkAnalysisWritingRegion {
         f.debug_tuple("InkAnalysisWritingRegion").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalysisWritingRegion {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisWritingRegion;{dd6d6231-bd16-4663-b5ae-941d3043ef5b})");
+unsafe impl ::windows_core::RuntimeType for InkAnalysisWritingRegion {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalysisWritingRegion;{dd6d6231-bd16-4663-b5ae-941d3043ef5b})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for InkAnalysisWritingRegion {
+unsafe impl ::windows_core::Interface for InkAnalysisWritingRegion {
     type Vtable = IInkAnalysisWritingRegion_Vtbl;
-    const IID: ::windows::core::GUID = <IInkAnalysisWritingRegion as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IInkAnalysisWritingRegion as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for InkAnalysisWritingRegion {
+impl ::windows_core::RuntimeName for InkAnalysisWritingRegion {
     const NAME: &'static str = "Windows.UI.Input.Inking.Analysis.InkAnalysisWritingRegion";
 }
-impl ::core::convert::From<InkAnalysisWritingRegion> for ::windows::core::IUnknown {
+impl ::core::convert::From<InkAnalysisWritingRegion> for ::windows_core::IUnknown {
     fn from(value: InkAnalysisWritingRegion) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisWritingRegion> for ::windows::core::IUnknown {
+impl ::core::convert::From<&InkAnalysisWritingRegion> for ::windows_core::IUnknown {
     fn from(value: &InkAnalysisWritingRegion) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for InkAnalysisWritingRegion {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InkAnalysisWritingRegion {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a InkAnalysisWritingRegion {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InkAnalysisWritingRegion {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<InkAnalysisWritingRegion> for ::windows::core::IInspectable {
+impl ::core::convert::From<InkAnalysisWritingRegion> for ::windows_core::IInspectable {
     fn from(value: InkAnalysisWritingRegion) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalysisWritingRegion> for ::windows::core::IInspectable {
+impl ::core::convert::From<&InkAnalysisWritingRegion> for ::windows_core::IInspectable {
     fn from(value: &InkAnalysisWritingRegion) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for InkAnalysisWritingRegion {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InkAnalysisWritingRegion {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a InkAnalysisWritingRegion {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InkAnalysisWritingRegion {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<InkAnalysisWritingRegion> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InkAnalysisWritingRegion) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: InkAnalysisWritingRegion) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&InkAnalysisWritingRegion> for IInkAnalysisNode {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InkAnalysisWritingRegion) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &InkAnalysisWritingRegion) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisWritingRegion {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for InkAnalysisWritingRegion {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisWritingRegion {
-    fn into_param(self) -> ::windows::core::Param<'a, IInkAnalysisNode> {
-        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IInkAnalysisNode> for &InkAnalysisWritingRegion {
+    fn into_param(self) -> ::windows_core::Param<'a, IInkAnalysisNode> {
+        ::core::convert::TryInto::<IInkAnalysisNode>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for InkAnalysisWritingRegion {}
 unsafe impl ::core::marker::Sync for InkAnalysisWritingRegion {}
 #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
 #[repr(transparent)]
-pub struct InkAnalyzer(::windows::core::IUnknown);
+pub struct InkAnalyzer(::windows_core::IUnknown);
 impl InkAnalyzer {
-    pub fn new() -> ::windows::core::Result<Self> {
+    pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
     }
-    fn IActivationFactory<R, F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<InkAnalyzer, ::windows::core::IGenericFactory> = ::windows::core::FactoryCache::new();
+    fn IActivationFactory<R, F: FnOnce(&::windows_core::IGenericFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<InkAnalyzer, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn AnalysisRoot(&self) -> ::windows::core::Result<InkAnalysisRoot> {
+    pub fn AnalysisRoot(&self) -> ::windows_core::Result<InkAnalysisRoot> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).AnalysisRoot)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisRoot>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).AnalysisRoot)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisRoot>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn IsAnalyzing(&self) -> ::windows::core::Result<bool> {
+    pub fn IsAnalyzing(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsAnalyzing)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsAnalyzing)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn AddDataForStroke<'a, Param0: ::windows::core::IntoParam<'a, super::InkStroke>>(&self, stroke: Param0) -> ::windows::core::Result<()> {
+    pub fn AddDataForStroke<'a, Param0: ::windows_core::IntoParam<'a, super::InkStroke>>(&self, stroke: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).AddDataForStroke)(::windows::core::Interface::as_raw(this), stroke.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).AddDataForStroke)(::windows_core::Interface::as_raw(this), stroke.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AddDataForStrokes<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::super::Foundation::Collections::IIterable<super::InkStroke>>>(&self, strokes: Param0) -> ::windows::core::Result<()> {
+    pub fn AddDataForStrokes<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IIterable<super::InkStroke>>>(&self, strokes: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).AddDataForStrokes)(::windows::core::Interface::as_raw(this), strokes.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).AddDataForStrokes)(::windows_core::Interface::as_raw(this), strokes.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn ClearDataForAllStrokes(&self) -> ::windows::core::Result<()> {
+    pub fn ClearDataForAllStrokes(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).ClearDataForAllStrokes)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).ClearDataForAllStrokes)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn RemoveDataForStroke(&self, strokeid: u32) -> ::windows::core::Result<()> {
+    pub fn RemoveDataForStroke(&self, strokeid: u32) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemoveDataForStroke)(::windows::core::Interface::as_raw(this), strokeid).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).RemoveDataForStroke)(::windows_core::Interface::as_raw(this), strokeid).ok() }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RemoveDataForStrokes<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::super::Foundation::Collections::IIterable<u32>>>(&self, strokeids: Param0) -> ::windows::core::Result<()> {
+    pub fn RemoveDataForStrokes<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IIterable<u32>>>(&self, strokeids: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).RemoveDataForStrokes)(::windows::core::Interface::as_raw(this), strokeids.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).RemoveDataForStrokes)(::windows_core::Interface::as_raw(this), strokeids.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn ReplaceDataForStroke<'a, Param0: ::windows::core::IntoParam<'a, super::InkStroke>>(&self, stroke: Param0) -> ::windows::core::Result<()> {
+    pub fn ReplaceDataForStroke<'a, Param0: ::windows_core::IntoParam<'a, super::InkStroke>>(&self, stroke: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).ReplaceDataForStroke)(::windows::core::Interface::as_raw(this), stroke.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).ReplaceDataForStroke)(::windows_core::Interface::as_raw(this), stroke.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`*"]
-    pub fn SetStrokeDataKind(&self, strokeid: u32, strokekind: InkAnalysisStrokeKind) -> ::windows::core::Result<()> {
+    pub fn SetStrokeDataKind(&self, strokeid: u32, strokekind: InkAnalysisStrokeKind) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).SetStrokeDataKind)(::windows::core::Interface::as_raw(this), strokeid, strokekind).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).SetStrokeDataKind)(::windows_core::Interface::as_raw(this), strokeid, strokekind).ok() }
     }
     #[doc = "*Required features: `\"UI_Input_Inking_Analysis\"`, `\"Foundation\"`*"]
     #[cfg(feature = "Foundation")]
-    pub fn AnalyzeAsync(&self) -> ::windows::core::Result<super::super::super::super::Foundation::IAsyncOperation<InkAnalysisResult>> {
+    pub fn AnalyzeAsync(&self) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<InkAnalysisResult>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).AnalyzeAsync)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<InkAnalysisResult>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).AnalyzeAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<InkAnalysisResult>>(result__)
         }
     }
 }
@@ -2276,58 +2276,58 @@ impl ::core::fmt::Debug for InkAnalyzer {
         f.debug_tuple("InkAnalyzer").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InkAnalyzer {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalyzer;{f12b8f95-0866-4dc5-8c77-f88614dfe38c})");
+unsafe impl ::windows_core::RuntimeType for InkAnalyzer {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.Input.Inking.Analysis.InkAnalyzer;{f12b8f95-0866-4dc5-8c77-f88614dfe38c})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for InkAnalyzer {
+unsafe impl ::windows_core::Interface for InkAnalyzer {
     type Vtable = IInkAnalyzer_Vtbl;
-    const IID: ::windows::core::GUID = <IInkAnalyzer as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IInkAnalyzer as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for InkAnalyzer {
+impl ::windows_core::RuntimeName for InkAnalyzer {
     const NAME: &'static str = "Windows.UI.Input.Inking.Analysis.InkAnalyzer";
 }
-impl ::core::convert::From<InkAnalyzer> for ::windows::core::IUnknown {
+impl ::core::convert::From<InkAnalyzer> for ::windows_core::IUnknown {
     fn from(value: InkAnalyzer) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalyzer> for ::windows::core::IUnknown {
+impl ::core::convert::From<&InkAnalyzer> for ::windows_core::IUnknown {
     fn from(value: &InkAnalyzer) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for InkAnalyzer {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InkAnalyzer {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a InkAnalyzer {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InkAnalyzer {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<InkAnalyzer> for ::windows::core::IInspectable {
+impl ::core::convert::From<InkAnalyzer> for ::windows_core::IInspectable {
     fn from(value: InkAnalyzer) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InkAnalyzer> for ::windows::core::IInspectable {
+impl ::core::convert::From<&InkAnalyzer> for ::windows_core::IInspectable {
     fn from(value: &InkAnalyzer) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for InkAnalyzer {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InkAnalyzer {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a InkAnalyzer {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InkAnalyzer {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for InkAnalyzer {}

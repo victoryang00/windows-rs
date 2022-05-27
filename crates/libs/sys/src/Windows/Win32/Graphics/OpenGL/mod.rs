@@ -723,7 +723,7 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_Graphics_OpenGL\"`*"]
     pub fn gluErrorString(errcode: u32) -> *mut u8;
     #[doc = "*Required features: `\"Win32_Graphics_OpenGL\"`*"]
-    pub fn gluErrorUnicodeStringEXT(errcode: u32) -> ::windows_sys::core::PWSTR;
+    pub fn gluErrorUnicodeStringEXT(errcode: u32) -> ::windows_sys_core::PWSTR;
     #[doc = "*Required features: `\"Win32_Graphics_OpenGL\"`*"]
     pub fn gluGetNurbsProperty(nobj: *mut GLUnurbs, property: u32, value: *mut f32);
     #[doc = "*Required features: `\"Win32_Graphics_OpenGL\"`*"]
@@ -819,7 +819,7 @@ extern "system" {
     pub fn wglGetLayerPaletteEntries(param0: super::Gdi::HDC, param1: i32, param2: i32, param3: i32, param4: *mut u32) -> i32;
     #[doc = "*Required features: `\"Win32_Graphics_OpenGL\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn wglGetProcAddress(param0: ::windows_sys::core::PCSTR) -> super::super::Foundation::PROC;
+    pub fn wglGetProcAddress(param0: ::windows_sys_core::PCSTR) -> super::super::Foundation::PROC;
     #[doc = "*Required features: `\"Win32_Graphics_OpenGL\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
     pub fn wglMakeCurrent(param0: super::Gdi::HDC, param1: HGLRC) -> super::super::Foundation::BOOL;

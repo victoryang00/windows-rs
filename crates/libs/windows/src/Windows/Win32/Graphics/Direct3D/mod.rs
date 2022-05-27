@@ -13,12 +13,12 @@ impl ::core::clone::Clone for D3DMATRIX {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for D3DMATRIX {
+unsafe impl ::windows_core::Abi for D3DMATRIX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D3DMATRIX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3DMATRIX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3DMATRIX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D3DMATRIX {}
@@ -39,12 +39,12 @@ impl ::core::clone::Clone for D3DMATRIX_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for D3DMATRIX_0 {
+unsafe impl ::windows_core::Abi for D3DMATRIX_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D3DMATRIX_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3DMATRIX_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3DMATRIX_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D3DMATRIX_0 {}
@@ -84,12 +84,12 @@ impl ::core::fmt::Debug for D3DMATRIX_0_0 {
         f.debug_struct("D3DMATRIX_0_0").field("_11", &self._11).field("_12", &self._12).field("_13", &self._13).field("_14", &self._14).field("_21", &self._21).field("_22", &self._22).field("_23", &self._23).field("_24", &self._24).field("_31", &self._31).field("_32", &self._32).field("_33", &self._33).field("_34", &self._34).field("_41", &self._41).field("_42", &self._42).field("_43", &self._43).field("_44", &self._44).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D3DMATRIX_0_0 {
+unsafe impl ::windows_core::Abi for D3DMATRIX_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D3DMATRIX_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3DMATRIX_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3DMATRIX_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D3DMATRIX_0_0 {}
@@ -116,12 +116,12 @@ impl ::core::fmt::Debug for D3DVECTOR {
         f.debug_struct("D3DVECTOR").field("x", &self.x).field("y", &self.y).field("z", &self.z).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D3DVECTOR {
+unsafe impl ::windows_core::Abi for D3DVECTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D3DVECTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3DVECTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3DVECTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D3DVECTOR {}
@@ -165,7 +165,7 @@ impl ::core::default::Default for D3D_CBUFFER_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_CBUFFER_TYPE {
+unsafe impl ::windows_core::Abi for D3D_CBUFFER_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_CBUFFER_TYPE {
@@ -208,7 +208,7 @@ impl ::core::default::Default for D3D_DRIVER_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_DRIVER_TYPE {
+unsafe impl ::windows_core::Abi for D3D_DRIVER_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_DRIVER_TYPE {
@@ -253,7 +253,7 @@ impl ::core::default::Default for D3D_FEATURE_LEVEL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_FEATURE_LEVEL {
+unsafe impl ::windows_core::Abi for D3D_FEATURE_LEVEL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_FEATURE_LEVEL {
@@ -316,7 +316,7 @@ impl ::core::default::Default for D3D_INCLUDE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_INCLUDE_TYPE {
+unsafe impl ::windows_core::Abi for D3D_INCLUDE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_INCLUDE_TYPE {
@@ -355,7 +355,7 @@ impl ::core::default::Default for D3D_INTERPOLATION_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_INTERPOLATION_MODE {
+unsafe impl ::windows_core::Abi for D3D_INTERPOLATION_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_INTERPOLATION_MODE {
@@ -394,7 +394,7 @@ impl ::core::default::Default for D3D_MIN_PRECISION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_MIN_PRECISION {
+unsafe impl ::windows_core::Abi for D3D_MIN_PRECISION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_MIN_PRECISION {
@@ -525,7 +525,7 @@ impl ::core::default::Default for D3D_NAME {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_NAME {
+unsafe impl ::windows_core::Abi for D3D_NAME {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_NAME {
@@ -556,7 +556,7 @@ impl ::core::default::Default for D3D_PARAMETER_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_PARAMETER_FLAGS {
+unsafe impl ::windows_core::Abi for D3D_PARAMETER_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_PARAMETER_FLAGS {
@@ -743,7 +743,7 @@ impl ::core::default::Default for D3D_PRIMITIVE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_PRIMITIVE {
+unsafe impl ::windows_core::Abi for D3D_PRIMITIVE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_PRIMITIVE {
@@ -954,7 +954,7 @@ impl ::core::default::Default for D3D_PRIMITIVE_TOPOLOGY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_PRIMITIVE_TOPOLOGY {
+unsafe impl ::windows_core::Abi for D3D_PRIMITIVE_TOPOLOGY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_PRIMITIVE_TOPOLOGY {
@@ -993,7 +993,7 @@ impl ::core::default::Default for D3D_REGISTER_COMPONENT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_REGISTER_COMPONENT_TYPE {
+unsafe impl ::windows_core::Abi for D3D_REGISTER_COMPONENT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_REGISTER_COMPONENT_TYPE {
@@ -1060,7 +1060,7 @@ impl ::core::default::Default for D3D_RESOURCE_RETURN_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_RESOURCE_RETURN_TYPE {
+unsafe impl ::windows_core::Abi for D3D_RESOURCE_RETURN_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_RESOURCE_RETURN_TYPE {
@@ -1089,7 +1089,7 @@ impl ::core::default::Default for D3D_SHADER_CBUFFER_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_SHADER_CBUFFER_FLAGS {
+unsafe impl ::windows_core::Abi for D3D_SHADER_CBUFFER_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_SHADER_CBUFFER_FLAGS {
@@ -1194,7 +1194,7 @@ impl ::core::default::Default for D3D_SHADER_INPUT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_SHADER_INPUT_FLAGS {
+unsafe impl ::windows_core::Abi for D3D_SHADER_INPUT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_SHADER_INPUT_FLAGS {
@@ -1269,7 +1269,7 @@ impl ::core::default::Default for D3D_SHADER_INPUT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_SHADER_INPUT_TYPE {
+unsafe impl ::windows_core::Abi for D3D_SHADER_INPUT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_SHADER_INPUT_TYPE {
@@ -1280,8 +1280,8 @@ impl ::core::fmt::Debug for D3D_SHADER_INPUT_TYPE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D\"`*"]
 pub struct D3D_SHADER_MACRO {
-    pub Name: ::windows::core::PCSTR,
-    pub Definition: ::windows::core::PCSTR,
+    pub Name: ::windows_core::PCSTR,
+    pub Definition: ::windows_core::PCSTR,
 }
 impl ::core::marker::Copy for D3D_SHADER_MACRO {}
 impl ::core::clone::Clone for D3D_SHADER_MACRO {
@@ -1294,12 +1294,12 @@ impl ::core::fmt::Debug for D3D_SHADER_MACRO {
         f.debug_struct("D3D_SHADER_MACRO").field("Name", &self.Name).field("Definition", &self.Definition).finish()
     }
 }
-unsafe impl ::windows::core::Abi for D3D_SHADER_MACRO {
+unsafe impl ::windows_core::Abi for D3D_SHADER_MACRO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for D3D_SHADER_MACRO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3D_SHADER_MACRO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3D_SHADER_MACRO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for D3D_SHADER_MACRO {}
@@ -1357,7 +1357,7 @@ impl ::core::default::Default for D3D_SHADER_VARIABLE_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_SHADER_VARIABLE_CLASS {
+unsafe impl ::windows_core::Abi for D3D_SHADER_VARIABLE_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_SHADER_VARIABLE_CLASS {
@@ -1398,7 +1398,7 @@ impl ::core::default::Default for D3D_SHADER_VARIABLE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_SHADER_VARIABLE_FLAGS {
+unsafe impl ::windows_core::Abi for D3D_SHADER_VARIABLE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_SHADER_VARIABLE_FLAGS {
@@ -1653,7 +1653,7 @@ impl ::core::default::Default for D3D_SHADER_VARIABLE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_SHADER_VARIABLE_TYPE {
+unsafe impl ::windows_core::Abi for D3D_SHADER_VARIABLE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_SHADER_VARIABLE_TYPE {
@@ -1766,7 +1766,7 @@ impl ::core::default::Default for D3D_SRV_DIMENSION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_SRV_DIMENSION {
+unsafe impl ::windows_core::Abi for D3D_SRV_DIMENSION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_SRV_DIMENSION {
@@ -1805,7 +1805,7 @@ impl ::core::default::Default for D3D_TESSELLATOR_DOMAIN {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_TESSELLATOR_DOMAIN {
+unsafe impl ::windows_core::Abi for D3D_TESSELLATOR_DOMAIN {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_TESSELLATOR_DOMAIN {
@@ -1848,7 +1848,7 @@ impl ::core::default::Default for D3D_TESSELLATOR_OUTPUT_PRIMITIVE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_TESSELLATOR_OUTPUT_PRIMITIVE {
+unsafe impl ::windows_core::Abi for D3D_TESSELLATOR_OUTPUT_PRIMITIVE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_TESSELLATOR_OUTPUT_PRIMITIVE {
@@ -1891,7 +1891,7 @@ impl ::core::default::Default for D3D_TESSELLATOR_PARTITIONING {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for D3D_TESSELLATOR_PARTITIONING {
+unsafe impl ::windows_core::Abi for D3D_TESSELLATOR_PARTITIONING {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for D3D_TESSELLATOR_PARTITIONING {
@@ -1899,39 +1899,39 @@ impl ::core::fmt::Debug for D3D_TESSELLATOR_PARTITIONING {
         f.debug_tuple("D3D_TESSELLATOR_PARTITIONING").field(&self.0).finish()
     }
 }
-pub const D3D_TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4c0f29e3_3f5f_4d35_84c9_bc0983b62c28);
-pub const D3D_TEXTURE_LAYOUT_ROW_MAJOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb5dc234f_72bb_4bec_9705_8cf258df6b6c);
+pub const D3D_TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4c0f29e3_3f5f_4d35_84c9_bc0983b62c28);
+pub const D3D_TEXTURE_LAYOUT_ROW_MAJOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb5dc234f_72bb_4bec_9705_8cf258df6b6c);
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D\"`*"]
 #[repr(transparent)]
-pub struct ID3DBlob(::windows::core::IUnknown);
+pub struct ID3DBlob(::windows_core::IUnknown);
 impl ID3DBlob {
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D\"`*"]
     pub unsafe fn GetBufferPointer(&self) -> *mut ::core::ffi::c_void {
-        ::core::mem::transmute((::windows::core::Interface::vtable(self).GetBufferPointer)(::windows::core::Interface::as_raw(self)))
+        ::core::mem::transmute((::windows_core::Interface::vtable(self).GetBufferPointer)(::windows_core::Interface::as_raw(self)))
     }
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D\"`*"]
     pub unsafe fn GetBufferSize(&self) -> usize {
-        ::core::mem::transmute((::windows::core::Interface::vtable(self).GetBufferSize)(::windows::core::Interface::as_raw(self)))
+        ::core::mem::transmute((::windows_core::Interface::vtable(self).GetBufferSize)(::windows_core::Interface::as_raw(self)))
     }
 }
-impl ::core::convert::From<ID3DBlob> for ::windows::core::IUnknown {
+impl ::core::convert::From<ID3DBlob> for ::windows_core::IUnknown {
     fn from(value: ID3DBlob) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ID3DBlob> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ID3DBlob> for ::windows_core::IUnknown {
     fn from(value: &ID3DBlob) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ID3DBlob {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ID3DBlob {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ID3DBlob {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ID3DBlob {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for ID3DBlob {
@@ -1952,49 +1952,49 @@ impl ::core::fmt::Debug for ID3DBlob {
 }
 unsafe impl ::core::marker::Send for ID3DBlob {}
 unsafe impl ::core::marker::Sync for ID3DBlob {}
-unsafe impl ::windows::core::Interface for ID3DBlob {
+unsafe impl ::windows_core::Interface for ID3DBlob {
     type Vtable = ID3DBlob_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8ba5fb08_5195_40e2_ac58_0d989c3a0102);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8ba5fb08_5195_40e2_ac58_0d989c3a0102);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ID3DBlob_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     pub GetBufferPointer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void,
     pub GetBufferSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> usize,
 }
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D\"`*"]
 #[repr(transparent)]
-pub struct ID3DDestructionNotifier(::windows::core::IUnknown);
+pub struct ID3DDestructionNotifier(::windows_core::IUnknown);
 impl ID3DDestructionNotifier {
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D\"`*"]
-    pub unsafe fn RegisterDestructionCallback(&self, callbackfn: PFN_DESTRUCTION_CALLBACK, pdata: *const ::core::ffi::c_void) -> ::windows::core::Result<u32> {
+    pub unsafe fn RegisterDestructionCallback(&self, callbackfn: PFN_DESTRUCTION_CALLBACK, pdata: *const ::core::ffi::c_void) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).RegisterDestructionCallback)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(callbackfn), ::core::mem::transmute(pdata), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).RegisterDestructionCallback)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(callbackfn), ::core::mem::transmute(pdata), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D\"`*"]
-    pub unsafe fn UnregisterDestructionCallback(&self, callbackid: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).UnregisterDestructionCallback)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(callbackid)).ok()
+    pub unsafe fn UnregisterDestructionCallback(&self, callbackid: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).UnregisterDestructionCallback)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(callbackid)).ok()
     }
 }
-impl ::core::convert::From<ID3DDestructionNotifier> for ::windows::core::IUnknown {
+impl ::core::convert::From<ID3DDestructionNotifier> for ::windows_core::IUnknown {
     fn from(value: ID3DDestructionNotifier) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&ID3DDestructionNotifier> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ID3DDestructionNotifier> for ::windows_core::IUnknown {
     fn from(value: &ID3DDestructionNotifier) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ID3DDestructionNotifier {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ID3DDestructionNotifier {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ID3DDestructionNotifier {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ID3DDestructionNotifier {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for ID3DDestructionNotifier {
@@ -2015,28 +2015,28 @@ impl ::core::fmt::Debug for ID3DDestructionNotifier {
 }
 unsafe impl ::core::marker::Send for ID3DDestructionNotifier {}
 unsafe impl ::core::marker::Sync for ID3DDestructionNotifier {}
-unsafe impl ::windows::core::Interface for ID3DDestructionNotifier {
+unsafe impl ::windows_core::Interface for ID3DDestructionNotifier {
     type Vtable = ID3DDestructionNotifier_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa06eb39a_50da_425b_8c31_4eecd6c270f3);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa06eb39a_50da_425b_8c31_4eecd6c270f3);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ID3DDestructionNotifier_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub RegisterDestructionCallback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, callbackfn: ::windows::core::RawPtr, pdata: *const ::core::ffi::c_void, pcallbackid: *mut u32) -> ::windows::core::HRESULT,
-    pub UnregisterDestructionCallback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, callbackid: u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub RegisterDestructionCallback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, callbackfn: ::windows_core::RawPtr, pdata: *const ::core::ffi::c_void, pcallbackid: *mut u32) -> ::windows_core::HRESULT,
+    pub UnregisterDestructionCallback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, callbackid: u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D\"`*"]
 #[repr(transparent)]
-pub struct ID3DInclude(::windows::core::IUnknown);
+pub struct ID3DInclude(::windows_core::IUnknown);
 impl ID3DInclude {
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D\"`*"]
-    pub unsafe fn Open<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(&self, includetype: D3D_INCLUDE_TYPE, pfilename: Param1, pparentdata: *const ::core::ffi::c_void, ppdata: *mut *mut ::core::ffi::c_void, pbytes: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Open)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(includetype), pfilename.into_param().abi(), ::core::mem::transmute(pparentdata), ::core::mem::transmute(ppdata), ::core::mem::transmute(pbytes)).ok()
+    pub unsafe fn Open<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, includetype: D3D_INCLUDE_TYPE, pfilename: Param1, pparentdata: *const ::core::ffi::c_void, ppdata: *mut *mut ::core::ffi::c_void, pbytes: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Open)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(includetype), pfilename.into_param().abi(), ::core::mem::transmute(pparentdata), ::core::mem::transmute(ppdata), ::core::mem::transmute(pbytes)).ok()
     }
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D\"`*"]
-    pub unsafe fn Close(&self, pdata: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Close)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pdata)).ok()
+    pub unsafe fn Close(&self, pdata: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Close)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdata)).ok()
     }
 }
 impl ::core::clone::Clone for ID3DInclude {
@@ -2057,21 +2057,21 @@ impl ::core::fmt::Debug for ID3DInclude {
 }
 unsafe impl ::core::marker::Send for ID3DInclude {}
 unsafe impl ::core::marker::Sync for ID3DInclude {}
-unsafe impl ::windows::core::Interface for ID3DInclude {
+unsafe impl ::windows_core::Interface for ID3DInclude {
     type Vtable = ID3DInclude_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::zeroed();
+    const IID: ::windows_core::GUID = ::windows_core::GUID::zeroed();
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ID3DInclude_Vtbl {
-    pub Open: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, includetype: D3D_INCLUDE_TYPE, pfilename: ::windows::core::PCSTR, pparentdata: *const ::core::ffi::c_void, ppdata: *mut *mut ::core::ffi::c_void, pbytes: *mut u32) -> ::windows::core::HRESULT,
-    pub Close: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *const ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub Open: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, includetype: D3D_INCLUDE_TYPE, pfilename: ::windows_core::PCSTR, pparentdata: *const ::core::ffi::c_void, ppdata: *mut *mut ::core::ffi::c_void, pbytes: *mut u32) -> ::windows_core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *const ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D\"`*"]
 pub type PFN_DESTRUCTION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pdata: *mut ::core::ffi::c_void)>;
-pub const WKPDID_CommentStringW: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd0149dc0_90e8_4ec8_8144_e900ad266bb2);
-pub const WKPDID_D3D12UniqueObjectId: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1b39de15_ec04_4bae_ba4d_8cef79fc04c1);
-pub const WKPDID_D3DDebugObjectName: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x429b8c22_9188_4b0c_8742_acb0bf85c200);
-pub const WKPDID_D3DDebugObjectNameW: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4cca5fd8_921f_42c8_8566_70caf2a9b741);
+pub const WKPDID_CommentStringW: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd0149dc0_90e8_4ec8_8144_e900ad266bb2);
+pub const WKPDID_D3D12UniqueObjectId: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1b39de15_ec04_4bae_ba4d_8cef79fc04c1);
+pub const WKPDID_D3DDebugObjectName: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x429b8c22_9188_4b0c_8742_acb0bf85c200);
+pub const WKPDID_D3DDebugObjectNameW: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4cca5fd8_921f_42c8_8566_70caf2a9b741);
 #[cfg(feature = "implement")]
 ::core::include!("impl.rs");

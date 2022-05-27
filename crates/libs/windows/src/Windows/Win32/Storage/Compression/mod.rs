@@ -22,7 +22,7 @@ impl ::core::fmt::Debug for COMPRESSOR_HANDLE {
         f.debug_tuple("COMPRESSOR_HANDLE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for COMPRESSOR_HANDLE {
+unsafe impl ::windows_core::Abi for COMPRESSOR_HANDLE {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Storage_Compression\"`*"]
@@ -48,7 +48,7 @@ impl ::core::default::Default for COMPRESS_ALGORITHM {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for COMPRESS_ALGORITHM {
+unsafe impl ::windows_core::Abi for COMPRESS_ALGORITHM {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for COMPRESS_ALGORITHM {
@@ -80,12 +80,12 @@ impl ::core::fmt::Debug for COMPRESS_ALLOCATION_ROUTINES {
         f.debug_struct("COMPRESS_ALLOCATION_ROUTINES").field("Allocate", &self.Allocate.map(|f| f as usize)).field("Free", &self.Free.map(|f| f as usize)).field("UserContext", &self.UserContext).finish()
     }
 }
-unsafe impl ::windows::core::Abi for COMPRESS_ALLOCATION_ROUTINES {
+unsafe impl ::windows_core::Abi for COMPRESS_ALLOCATION_ROUTINES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for COMPRESS_ALLOCATION_ROUTINES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COMPRESS_ALLOCATION_ROUTINES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COMPRESS_ALLOCATION_ROUTINES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for COMPRESS_ALLOCATION_ROUTINES {}
@@ -115,7 +115,7 @@ impl ::core::default::Default for COMPRESS_INFORMATION_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for COMPRESS_INFORMATION_CLASS {
+unsafe impl ::windows_core::Abi for COMPRESS_INFORMATION_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for COMPRESS_INFORMATION_CLASS {
@@ -128,7 +128,7 @@ pub const COMPRESS_RAW: u32 = 536870912u32;
 #[doc = "*Required features: `\"Win32_Storage_Compression\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CloseCompressor<'a, Param0: ::windows::core::IntoParam<'a, COMPRESSOR_HANDLE>>(compressorhandle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn CloseCompressor<'a, Param0: ::windows_core::IntoParam<'a, COMPRESSOR_HANDLE>>(compressorhandle: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -158,7 +158,7 @@ pub unsafe fn CloseDecompressor(decompressorhandle: isize) -> super::super::Foun
 #[doc = "*Required features: `\"Win32_Storage_Compression\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Compress<'a, Param0: ::windows::core::IntoParam<'a, COMPRESSOR_HANDLE>>(compressorhandle: Param0, uncompresseddata: *const ::core::ffi::c_void, uncompresseddatasize: usize, compressedbuffer: *mut ::core::ffi::c_void, compressedbuffersize: usize, compresseddatasize: *mut usize) -> super::super::Foundation::BOOL {
+pub unsafe fn Compress<'a, Param0: ::windows_core::IntoParam<'a, COMPRESSOR_HANDLE>>(compressorhandle: Param0, uncompresseddata: *const ::core::ffi::c_void, uncompresseddatasize: usize, compressedbuffer: *mut ::core::ffi::c_void, compressedbuffersize: usize, compresseddatasize: *mut usize) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -222,7 +222,7 @@ pub type PFN_COMPRESS_FREE = ::core::option::Option<unsafe extern "system" fn(us
 #[doc = "*Required features: `\"Win32_Storage_Compression\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QueryCompressorInformation<'a, Param0: ::windows::core::IntoParam<'a, COMPRESSOR_HANDLE>>(compressorhandle: Param0, compressinformationclass: COMPRESS_INFORMATION_CLASS, compressinformation: *mut ::core::ffi::c_void, compressinformationsize: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryCompressorInformation<'a, Param0: ::windows_core::IntoParam<'a, COMPRESSOR_HANDLE>>(compressorhandle: Param0, compressinformationclass: COMPRESS_INFORMATION_CLASS, compressinformation: *mut ::core::ffi::c_void, compressinformationsize: usize) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -252,7 +252,7 @@ pub unsafe fn QueryDecompressorInformation(decompressorhandle: isize, compressin
 #[doc = "*Required features: `\"Win32_Storage_Compression\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ResetCompressor<'a, Param0: ::windows::core::IntoParam<'a, COMPRESSOR_HANDLE>>(compressorhandle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn ResetCompressor<'a, Param0: ::windows_core::IntoParam<'a, COMPRESSOR_HANDLE>>(compressorhandle: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -282,7 +282,7 @@ pub unsafe fn ResetDecompressor(decompressorhandle: isize) -> super::super::Foun
 #[doc = "*Required features: `\"Win32_Storage_Compression\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCompressorInformation<'a, Param0: ::windows::core::IntoParam<'a, COMPRESSOR_HANDLE>>(compressorhandle: Param0, compressinformationclass: COMPRESS_INFORMATION_CLASS, compressinformation: *const ::core::ffi::c_void, compressinformationsize: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn SetCompressorInformation<'a, Param0: ::windows_core::IntoParam<'a, COMPRESSOR_HANDLE>>(compressorhandle: Param0, compressinformationclass: COMPRESS_INFORMATION_CLASS, compressinformation: *const ::core::ffi::c_void, compressinformationsize: usize) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]

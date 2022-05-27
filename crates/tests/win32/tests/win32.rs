@@ -17,7 +17,7 @@ use windows::{
 };
 
 use std::convert::TryInto;
-use windows::core::GUID;
+use windows_core::GUID;
 
 #[test]
 fn signed_enum32() {
@@ -90,7 +90,7 @@ fn constant() {
 }
 
 #[test]
-fn function() -> windows::core::Result<()> {
+fn function() -> windows_core::Result<()> {
     unsafe {
         let event = CreateEventW(core::ptr::null(), true, false, PCWSTR(core::ptr::null()))?;
         SetEvent(event).ok()?;
@@ -109,18 +109,18 @@ fn bool_as_error() {
         assert!(helpers::set_thread_ui_language("en-US"));
         assert!(!SetEvent(HANDLE(0)).as_bool());
 
-        let result: windows::core::Result<()> = SetEvent(HANDLE(0)).ok();
+        let result: windows_core::Result<()> = SetEvent(HANDLE(0)).ok();
         assert!(result.is_err());
 
-        let error: windows::core::Error = result.unwrap_err();
-        assert_eq!(error.code(), windows::core::HRESULT(-2147024890));
+        let error: windows_core::Error = result.unwrap_err();
+        assert_eq!(error.code(), windows_core::HRESULT(-2147024890));
         let message: String = error.message().try_into().unwrap();
         assert_eq!(message.trim_end(), "The handle is invalid.");
     }
 }
 
 #[test]
-fn com() -> windows::core::Result<()> {
+fn com() -> windows_core::Result<()> {
     unsafe {
         let stream = CreateStreamOnHGlobal(0, true)?;
         let values = vec![1, 20, 300, 4000];
@@ -130,8 +130,8 @@ fn com() -> windows::core::Result<()> {
         assert!(copied == (values.len() * core::mem::size_of::<i32>()) as u32);
 
         let mut copied = 0;
-        stream.Write(&UIAnimationTransitionLibrary as *const _ as _, core::mem::size_of::<windows::core::GUID>() as u32, &mut copied).ok()?;
-        assert!(copied == core::mem::size_of::<windows::core::GUID>() as u32);
+        stream.Write(&UIAnimationTransitionLibrary as *const _ as _, core::mem::size_of::<windows_core::GUID>() as u32, &mut copied).ok()?;
+        assert!(copied == core::mem::size_of::<windows_core::GUID>() as u32);
 
         let position = stream.Seek(0, STREAM_SEEK_SET)?;
         assert!(position == 0);
@@ -142,10 +142,10 @@ fn com() -> windows::core::Result<()> {
         assert!(copied == (values.len() * core::mem::size_of::<i32>()) as u32);
         assert!(values == vec![1, 20, 300, 4000]);
 
-        let mut value: windows::core::GUID = windows::core::GUID::default();
+        let mut value: windows_core::GUID = windows_core::GUID::default();
         let mut copied = 0;
-        stream.Read(&mut value as *mut _ as _, core::mem::size_of::<windows::core::GUID>() as u32, &mut copied).ok()?;
-        assert!(copied == core::mem::size_of::<windows::core::GUID>() as u32);
+        stream.Read(&mut value as *mut _ as _, core::mem::size_of::<windows_core::GUID>() as u32, &mut copied).ok()?;
+        assert!(copied == core::mem::size_of::<windows_core::GUID>() as u32);
         assert!(value == UIAnimationTransitionLibrary);
     }
 
@@ -176,11 +176,11 @@ fn com_inheritance() {
 
 // Tests for https://github.com/microsoft/windows-rs/issues/463
 #[test]
-fn onecore_imports() -> windows::core::Result<()> {
+fn onecore_imports() -> windows_core::Result<()> {
     unsafe {
         HasExpandedResources()?;
 
-        let uri = CreateUri(PCWSTR(windows::core::HSTRING::from("http://kennykerr.ca").as_wide().as_ptr()), Default::default(), 0)?;
+        let uri = CreateUri(PCWSTR(windows_core::HSTRING::from("http://kennykerr.ca").as_wide().as_ptr()), Default::default(), 0)?;
 
         let port = uri.GetPort()?;
         assert!(port == 80);
@@ -195,7 +195,7 @@ fn onecore_imports() -> windows::core::Result<()> {
 }
 
 #[test]
-fn interface() -> windows::core::Result<()> {
+fn interface() -> windows_core::Result<()> {
     unsafe {
         let uri = CreateUri("http://kennykerr.ca", Default::default(), 0)?;
 
@@ -212,7 +212,7 @@ fn callback() {
         assert!(BOOL(789) == a.unwrap()(HWND(123), PCSTR("hello a\0".as_ptr()), HANDLE(456)));
 
         let a: PROPENUMPROCW = Some(callback_w);
-        assert!(BOOL(789) == a.unwrap()(HWND(123), PCWSTR(windows::core::HSTRING::from("hello w\0").as_wide().as_ptr()), HANDLE(456)));
+        assert!(BOOL(789) == a.unwrap()(HWND(123), PCWSTR(windows_core::HSTRING::from("hello w\0").as_wide().as_ptr()), HANDLE(456)));
     }
 }
 

@@ -1,8 +1,8 @@
-use windows::core::Interface;
+use windows_core::Interface;
 use windows::Foundation::{PropertyValue, Uri};
 
 #[test]
-fn into() -> windows::core::Result<()> {
+fn into() -> windows_core::Result<()> {
     let uri = Uri::CreateUri("http://kennykerr.ca")?;
 
     let object = PropertyValue::CreateInspectable(&uri)?; // reference

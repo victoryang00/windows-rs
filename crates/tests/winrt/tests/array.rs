@@ -1,4 +1,4 @@
-use windows::core::Array;
+use windows_core::Array;
 use windows::Foundation::Uri;
 
 #[test]

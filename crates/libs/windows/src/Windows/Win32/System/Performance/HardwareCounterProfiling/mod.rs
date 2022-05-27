@@ -1,7 +1,7 @@
 #[doc = "*Required features: `\"Win32_System_Performance_HardwareCounterProfiling\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DisableThreadProfiling<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(performancedatahandle: Param0) -> u32 {
+pub unsafe fn DisableThreadProfiling<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(performancedatahandle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16,7 +16,7 @@ pub unsafe fn DisableThreadProfiling<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_System_Performance_HardwareCounterProfiling\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnableThreadProfiling<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(threadhandle: Param0, flags: u32, hardwarecounters: u64, performancedatahandle: *mut super::super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn EnableThreadProfiling<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(threadhandle: Param0, flags: u32, hardwarecounters: u64, performancedatahandle: *mut super::super::super::Foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -46,12 +46,12 @@ impl ::core::fmt::Debug for HARDWARE_COUNTER_DATA {
         f.debug_struct("HARDWARE_COUNTER_DATA").field("Type", &self.Type).field("Reserved", &self.Reserved).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HARDWARE_COUNTER_DATA {
+unsafe impl ::windows_core::Abi for HARDWARE_COUNTER_DATA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HARDWARE_COUNTER_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HARDWARE_COUNTER_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HARDWARE_COUNTER_DATA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HARDWARE_COUNTER_DATA {}
@@ -79,7 +79,7 @@ impl ::core::default::Default for HARDWARE_COUNTER_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HARDWARE_COUNTER_TYPE {
+unsafe impl ::windows_core::Abi for HARDWARE_COUNTER_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HARDWARE_COUNTER_TYPE {
@@ -111,12 +111,12 @@ impl ::core::fmt::Debug for PERFORMANCE_DATA {
         f.debug_struct("PERFORMANCE_DATA").field("Size", &self.Size).field("Version", &self.Version).field("HwCountersCount", &self.HwCountersCount).field("ContextSwitchCount", &self.ContextSwitchCount).field("WaitReasonBitMap", &self.WaitReasonBitMap).field("CycleTime", &self.CycleTime).field("RetryCount", &self.RetryCount).field("Reserved", &self.Reserved).field("HwCounters", &self.HwCounters).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PERFORMANCE_DATA {
+unsafe impl ::windows_core::Abi for PERFORMANCE_DATA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PERFORMANCE_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERFORMANCE_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERFORMANCE_DATA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PERFORMANCE_DATA {}
@@ -128,7 +128,7 @@ impl ::core::default::Default for PERFORMANCE_DATA {
 #[doc = "*Required features: `\"Win32_System_Performance_HardwareCounterProfiling\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QueryThreadProfiling<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(threadhandle: Param0, enabled: *mut super::super::super::Foundation::BOOLEAN) -> u32 {
+pub unsafe fn QueryThreadProfiling<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(threadhandle: Param0, enabled: *mut super::super::super::Foundation::BOOLEAN) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -143,7 +143,7 @@ pub unsafe fn QueryThreadProfiling<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_System_Performance_HardwareCounterProfiling\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadThreadProfilingData<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(performancedatahandle: Param0, flags: u32, performancedata: *mut PERFORMANCE_DATA) -> u32 {
+pub unsafe fn ReadThreadProfilingData<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(performancedatahandle: Param0, flags: u32, performancedata: *mut PERFORMANCE_DATA) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]

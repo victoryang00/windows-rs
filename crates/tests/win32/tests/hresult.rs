@@ -1,5 +1,5 @@
 use std::convert::TryInto;
-use windows::core::HRESULT;
+use windows_core::HRESULT;
 use windows::Win32::Foundation::*;
 
 #[test]

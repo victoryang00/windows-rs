@@ -1,7 +1,7 @@
 #![allow(non_snake_case)]
 
 use core::convert::TryInto;
-use windows::core::*;
+use windows_core::*;
 use windows::Foundation::Collections::*;
 use windows::Foundation::*;
 use windows::Win32::Foundation::E_BOUNDS;
@@ -11,9 +11,9 @@ use windows::Win32::Foundation::E_BOUNDS;
 )]
 struct Thing<T>(Vec<T::DefaultType>)
 where
-    T: ::windows::core::RuntimeType + 'static;
+    T: ::windows_core::RuntimeType + 'static;
 
-impl<T: ::windows::core::RuntimeType + 'static> IVectorView_Impl<T> for Thing<T> {
+impl<T: ::windows_core::RuntimeType + 'static> IVectorView_Impl<T> for Thing<T> {
     fn GetAt(&self, index: u32) -> Result<T> {
         match self.0.get(index as usize) {
             Some(value) => T::from_default(value),
@@ -40,7 +40,7 @@ impl<T: ::windows::core::RuntimeType + 'static> IVectorView_Impl<T> for Thing<T>
     }
 }
 
-impl<T: ::windows::core::RuntimeType + 'static> IIterable_Impl<T> for Thing<T> {
+impl<T: ::windows_core::RuntimeType + 'static> IIterable_Impl<T> for Thing<T> {
     fn First(&self) -> Result<IIterator<T>> {
         todo!()
     }

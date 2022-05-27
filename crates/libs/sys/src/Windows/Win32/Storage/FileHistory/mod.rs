@@ -2,72 +2,72 @@
 extern "system" {
     #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`, `\"Win32_System_WindowsProgramming\"`*"]
     #[cfg(feature = "Win32_System_WindowsProgramming")]
-    pub fn FhServiceBlockBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys::core::HRESULT;
+    pub fn FhServiceBlockBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`, `\"Win32_System_WindowsProgramming\"`*"]
     #[cfg(feature = "Win32_System_WindowsProgramming")]
-    pub fn FhServiceClosePipe(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys::core::HRESULT;
+    pub fn FhServiceClosePipe(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`, `\"Win32_Foundation\"`, `\"Win32_System_WindowsProgramming\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn FhServiceOpenPipe(startserviceifstopped: super::super::Foundation::BOOL, pipe: *mut super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys::core::HRESULT;
+    pub fn FhServiceOpenPipe(startserviceifstopped: super::super::Foundation::BOOL, pipe: *mut super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`, `\"Win32_System_WindowsProgramming\"`*"]
     #[cfg(feature = "Win32_System_WindowsProgramming")]
-    pub fn FhServiceReloadConfiguration(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys::core::HRESULT;
+    pub fn FhServiceReloadConfiguration(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`, `\"Win32_Foundation\"`, `\"Win32_System_WindowsProgramming\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn FhServiceStartBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, lowpriorityio: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
+    pub fn FhServiceStartBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, lowpriorityio: super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`, `\"Win32_Foundation\"`, `\"Win32_System_WindowsProgramming\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn FhServiceStopBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, stoptracking: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
+    pub fn FhServiceStopBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, stoptracking: super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`, `\"Win32_System_WindowsProgramming\"`*"]
     #[cfg(feature = "Win32_System_WindowsProgramming")]
-    pub fn FhServiceUnblockBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys::core::HRESULT;
+    pub fn FhServiceUnblockBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys_core::HRESULT;
 }
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_CONFIGURATION_PREVIOUSLY_LOADED: ::windows_sys::core::HRESULT = -2147220731i32;
+pub const FHCFG_E_CONFIGURATION_PREVIOUSLY_LOADED: ::windows_sys_core::HRESULT = -2147220731i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_CONFIG_ALREADY_EXISTS: ::windows_sys::core::HRESULT = -2147220734i32;
+pub const FHCFG_E_CONFIG_ALREADY_EXISTS: ::windows_sys_core::HRESULT = -2147220734i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_CONFIG_FILE_NOT_FOUND: ::windows_sys::core::HRESULT = -2147220735i32;
+pub const FHCFG_E_CONFIG_FILE_NOT_FOUND: ::windows_sys_core::HRESULT = -2147220735i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_CORRUPT_CONFIG_FILE: ::windows_sys::core::HRESULT = -2147220736i32;
+pub const FHCFG_E_CORRUPT_CONFIG_FILE: ::windows_sys_core::HRESULT = -2147220736i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_INVALID_REHYDRATION_STATE: ::windows_sys::core::HRESULT = -2147220726i32;
+pub const FHCFG_E_INVALID_REHYDRATION_STATE: ::windows_sys_core::HRESULT = -2147220726i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_LEGACY_BACKUP_NOT_FOUND: ::windows_sys::core::HRESULT = -2147220715i32;
+pub const FHCFG_E_LEGACY_BACKUP_NOT_FOUND: ::windows_sys_core::HRESULT = -2147220715i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_LEGACY_BACKUP_USER_EXCLUDED: ::windows_sys::core::HRESULT = -2147220716i32;
+pub const FHCFG_E_LEGACY_BACKUP_USER_EXCLUDED: ::windows_sys_core::HRESULT = -2147220716i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_LEGACY_TARGET_UNSUPPORTED: ::windows_sys::core::HRESULT = -2147220718i32;
+pub const FHCFG_E_LEGACY_TARGET_UNSUPPORTED: ::windows_sys_core::HRESULT = -2147220718i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_LEGACY_TARGET_VALIDATION_UNSUPPORTED: ::windows_sys::core::HRESULT = -2147220717i32;
+pub const FHCFG_E_LEGACY_TARGET_VALIDATION_UNSUPPORTED: ::windows_sys_core::HRESULT = -2147220717i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_NO_VALID_CONFIGURATION_LOADED: ::windows_sys::core::HRESULT = -2147220733i32;
+pub const FHCFG_E_NO_VALID_CONFIGURATION_LOADED: ::windows_sys_core::HRESULT = -2147220733i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_RECOMMENDATION_CHANGE_NOT_ALLOWED: ::windows_sys::core::HRESULT = -2147220720i32;
+pub const FHCFG_E_RECOMMENDATION_CHANGE_NOT_ALLOWED: ::windows_sys_core::HRESULT = -2147220720i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_TARGET_CANNOT_BE_USED: ::windows_sys::core::HRESULT = -2147220727i32;
+pub const FHCFG_E_TARGET_CANNOT_BE_USED: ::windows_sys_core::HRESULT = -2147220727i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_TARGET_NOT_CONFIGURED: ::windows_sys::core::HRESULT = -2147220729i32;
+pub const FHCFG_E_TARGET_NOT_CONFIGURED: ::windows_sys_core::HRESULT = -2147220729i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_TARGET_NOT_CONNECTED: ::windows_sys::core::HRESULT = -2147220732i32;
+pub const FHCFG_E_TARGET_NOT_CONNECTED: ::windows_sys_core::HRESULT = -2147220732i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_TARGET_NOT_ENOUGH_FREE_SPACE: ::windows_sys::core::HRESULT = -2147220728i32;
+pub const FHCFG_E_TARGET_NOT_ENOUGH_FREE_SPACE: ::windows_sys_core::HRESULT = -2147220728i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_TARGET_REHYDRATED_ELSEWHERE: ::windows_sys::core::HRESULT = -2147220719i32;
+pub const FHCFG_E_TARGET_REHYDRATED_ELSEWHERE: ::windows_sys_core::HRESULT = -2147220719i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHCFG_E_TARGET_VERIFICATION_FAILED: ::windows_sys::core::HRESULT = -2147220730i32;
+pub const FHCFG_E_TARGET_VERIFICATION_FAILED: ::windows_sys_core::HRESULT = -2147220730i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHSVC_E_BACKUP_BLOCKED: ::windows_sys::core::HRESULT = -2147219968i32;
+pub const FHSVC_E_BACKUP_BLOCKED: ::windows_sys_core::HRESULT = -2147219968i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHSVC_E_CONFIG_DISABLED: ::windows_sys::core::HRESULT = -2147219966i32;
+pub const FHSVC_E_CONFIG_DISABLED: ::windows_sys_core::HRESULT = -2147219966i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHSVC_E_CONFIG_DISABLED_GP: ::windows_sys::core::HRESULT = -2147219965i32;
+pub const FHSVC_E_CONFIG_DISABLED_GP: ::windows_sys_core::HRESULT = -2147219965i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHSVC_E_CONFIG_REHYDRATING: ::windows_sys::core::HRESULT = -2147219963i32;
+pub const FHSVC_E_CONFIG_REHYDRATING: ::windows_sys_core::HRESULT = -2147219963i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHSVC_E_FATAL_CONFIG_ERROR: ::windows_sys::core::HRESULT = -2147219964i32;
+pub const FHSVC_E_FATAL_CONFIG_ERROR: ::windows_sys_core::HRESULT = -2147219964i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
-pub const FHSVC_E_NOT_CONFIGURED: ::windows_sys::core::HRESULT = -2147219967i32;
+pub const FHSVC_E_NOT_CONFIGURED: ::windows_sys_core::HRESULT = -2147219967i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
 pub type FH_BACKUP_STATUS = i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
@@ -196,8 +196,8 @@ pub const BackupLimitUserIdleMachineOnDC: FhBackupStopReason = 2i32;
 pub const BackupLimitUserBusyMachineOnDC: FhBackupStopReason = 3i32;
 #[doc = "*Required features: `\"Win32_Storage_FileHistory\"`*"]
 pub const BackupCancelled: FhBackupStopReason = 4i32;
-pub const FhConfigMgr: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3980639036, data2: 2537, data3: 18826, data4: [157, 246, 33, 119, 36, 76, 109, 180] };
-pub const FhReassociation: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1299353141, data2: 5882, data3: 17184, data4: [158, 139, 191, 215, 16, 10, 136, 70] };
+pub const FhConfigMgr: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3980639036, data2: 2537, data3: 18826, data4: [157, 246, 33, 119, 36, 76, 109, 180] };
+pub const FhReassociation: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1299353141, data2: 5882, data3: 17184, data4: [158, 139, 191, 215, 16, 10, 136, 70] };
 pub type IFhConfigMgr = *mut ::core::ffi::c_void;
 pub type IFhReassociation = *mut ::core::ffi::c_void;
 pub type IFhScopeIterator = *mut ::core::ffi::c_void;

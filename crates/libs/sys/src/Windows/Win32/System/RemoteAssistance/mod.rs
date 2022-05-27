@@ -41,4 +41,4 @@ pub const RSS_CANCELLED: RENDEZVOUS_SESSION_STATE = 5i32;
 pub const RSS_DECLINED: RENDEZVOUS_SESSION_STATE = 6i32;
 #[doc = "*Required features: `\"Win32_System_RemoteAssistance\"`*"]
 pub const RSS_TERMINATED: RENDEZVOUS_SESSION_STATE = 7i32;
-pub const RendezvousApplication: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 192807322, data2: 46558, data3: 18426, data4: [137, 102, 144, 130, 248, 47, 177, 146] };
+pub const RendezvousApplication: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 192807322, data2: 46558, data3: 18426, data4: [137, 102, 144, 130, 248, 47, 177, 146] };

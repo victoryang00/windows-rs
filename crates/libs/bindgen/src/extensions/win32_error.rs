@@ -12,24 +12,24 @@ pub fn gen() -> TokenStream {
                 !self.is_ok()
             }
             #[inline]
-            pub const fn to_hresult(self) -> ::windows::core::HRESULT {
-                ::windows::core::HRESULT(if self.0 == 0 { self.0 } else { (self.0 & 0x0000_FFFF) | (7 << 16) | 0x8000_0000 } as _)
+            pub const fn to_hresult(self) -> ::windows_core::HRESULT {
+                ::windows_core::HRESULT(if self.0 == 0 { self.0 } else { (self.0 & 0x0000_FFFF) | (7 << 16) | 0x8000_0000 } as _)
             }
             #[inline]
-            pub const fn ok(self) -> ::windows::core::Result<()> {
+            pub const fn ok(self) -> ::windows_core::Result<()> {
                 if self.is_ok() {
                     Ok(())
                 } else {
-                    Err(::windows::core::Error{ code: self.to_hresult(), info: None })
+                    Err(::windows_core::Error{ code: self.to_hresult(), info: None })
                 }
             }
         }
-        impl ::core::convert::From<WIN32_ERROR> for ::windows::core::HRESULT {
+        impl ::core::convert::From<WIN32_ERROR> for ::windows_core::HRESULT {
             fn from(value: WIN32_ERROR) -> Self {
                 value.to_hresult()
             }
         }
-        impl ::core::convert::From<WIN32_ERROR> for ::windows::core::Error {
+        impl ::core::convert::From<WIN32_ERROR> for ::windows_core::Error {
             fn from(value: WIN32_ERROR) -> Self {
                 Self{ code: value.to_hresult(), info: None }
             }

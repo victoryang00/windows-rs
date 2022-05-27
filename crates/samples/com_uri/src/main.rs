@@ -1,6 +1,6 @@
 use windows::Win32::System::Com::CreateUri;
 
-fn main() -> windows::core::Result<()> {
+fn main() -> windows_core::Result<()> {
     unsafe {
         let uri = CreateUri("http://kennykerr.ca", Default::default(), 0)?;
 

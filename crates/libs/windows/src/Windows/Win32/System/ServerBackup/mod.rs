@@ -1,35 +1,35 @@
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
 #[repr(transparent)]
-pub struct IWsbApplicationAsync(::windows::core::IUnknown);
+pub struct IWsbApplicationAsync(::windows_core::IUnknown);
 impl IWsbApplicationAsync {
     #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
-    pub unsafe fn QueryStatus(&self) -> ::windows::core::Result<::windows::core::HRESULT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::HRESULT>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryStatus)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::HRESULT>(result__)
+    pub unsafe fn QueryStatus(&self) -> ::windows_core::Result<::windows_core::HRESULT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::HRESULT>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::HRESULT>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
-    pub unsafe fn Abort(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Abort)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Abort(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Abort)(::windows_core::Interface::as_raw(self)).ok()
     }
 }
-impl ::core::convert::From<IWsbApplicationAsync> for ::windows::core::IUnknown {
+impl ::core::convert::From<IWsbApplicationAsync> for ::windows_core::IUnknown {
     fn from(value: IWsbApplicationAsync) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IWsbApplicationAsync> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IWsbApplicationAsync> for ::windows_core::IUnknown {
     fn from(value: &IWsbApplicationAsync) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IWsbApplicationAsync {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWsbApplicationAsync {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IWsbApplicationAsync {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWsbApplicationAsync {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IWsbApplicationAsync {
@@ -48,45 +48,45 @@ impl ::core::fmt::Debug for IWsbApplicationAsync {
         f.debug_tuple("IWsbApplicationAsync").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IWsbApplicationAsync {
+unsafe impl ::windows_core::Interface for IWsbApplicationAsync {
     type Vtable = IWsbApplicationAsync_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0843f6f7_895c_44a6_b0c2_05a5022aa3a1);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0843f6f7_895c_44a6_b0c2_05a5022aa3a1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWsbApplicationAsync_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub QueryStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phrresult: *mut ::windows::core::HRESULT) -> ::windows::core::HRESULT,
-    pub Abort: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub QueryStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phrresult: *mut ::windows_core::HRESULT) -> ::windows_core::HRESULT,
+    pub Abort: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
 #[repr(transparent)]
-pub struct IWsbApplicationBackupSupport(::windows::core::IUnknown);
+pub struct IWsbApplicationBackupSupport(::windows_core::IUnknown);
 impl IWsbApplicationBackupSupport {
     #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
-    pub unsafe fn CheckConsistency<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, wszwritermetadata: Param0, wszcomponentname: Param1, wszcomponentlogicalpath: Param2, cvolumes: u32, rgwszsourcevolumepath: *const ::windows::core::PWSTR, rgwszsnapshotvolumepath: *const ::windows::core::PWSTR) -> ::windows::core::Result<IWsbApplicationAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).CheckConsistency)(::windows::core::Interface::as_raw(self), wszwritermetadata.into_param().abi(), wszcomponentname.into_param().abi(), wszcomponentlogicalpath.into_param().abi(), ::core::mem::transmute(cvolumes), ::core::mem::transmute(rgwszsourcevolumepath), ::core::mem::transmute(rgwszsnapshotvolumepath), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWsbApplicationAsync>(result__)
+    pub unsafe fn CheckConsistency<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wszwritermetadata: Param0, wszcomponentname: Param1, wszcomponentlogicalpath: Param2, cvolumes: u32, rgwszsourcevolumepath: *const ::windows_core::PWSTR, rgwszsnapshotvolumepath: *const ::windows_core::PWSTR) -> ::windows_core::Result<IWsbApplicationAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).CheckConsistency)(::windows_core::Interface::as_raw(self), wszwritermetadata.into_param().abi(), wszcomponentname.into_param().abi(), wszcomponentlogicalpath.into_param().abi(), ::core::mem::transmute(cvolumes), ::core::mem::transmute(rgwszsourcevolumepath), ::core::mem::transmute(rgwszsnapshotvolumepath), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWsbApplicationAsync>(result__)
     }
 }
-impl ::core::convert::From<IWsbApplicationBackupSupport> for ::windows::core::IUnknown {
+impl ::core::convert::From<IWsbApplicationBackupSupport> for ::windows_core::IUnknown {
     fn from(value: IWsbApplicationBackupSupport) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IWsbApplicationBackupSupport> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IWsbApplicationBackupSupport> for ::windows_core::IUnknown {
     fn from(value: &IWsbApplicationBackupSupport) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IWsbApplicationBackupSupport {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWsbApplicationBackupSupport {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IWsbApplicationBackupSupport {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWsbApplicationBackupSupport {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IWsbApplicationBackupSupport {
@@ -105,58 +105,58 @@ impl ::core::fmt::Debug for IWsbApplicationBackupSupport {
         f.debug_tuple("IWsbApplicationBackupSupport").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IWsbApplicationBackupSupport {
+unsafe impl ::windows_core::Interface for IWsbApplicationBackupSupport {
     type Vtable = IWsbApplicationBackupSupport_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1eff3510_4a27_46ad_b9e0_08332f0f4f6d);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1eff3510_4a27_46ad_b9e0_08332f0f4f6d);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWsbApplicationBackupSupport_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub CheckConsistency: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wszwritermetadata: ::windows::core::PCWSTR, wszcomponentname: ::windows::core::PCWSTR, wszcomponentlogicalpath: ::windows::core::PCWSTR, cvolumes: u32, rgwszsourcevolumepath: *const ::windows::core::PWSTR, rgwszsnapshotvolumepath: *const ::windows::core::PWSTR, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub CheckConsistency: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wszwritermetadata: ::windows_core::PCWSTR, wszcomponentname: ::windows_core::PCWSTR, wszcomponentlogicalpath: ::windows_core::PCWSTR, cvolumes: u32, rgwszsourcevolumepath: *const ::windows_core::PWSTR, rgwszsnapshotvolumepath: *const ::windows_core::PWSTR, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
 #[repr(transparent)]
-pub struct IWsbApplicationRestoreSupport(::windows::core::IUnknown);
+pub struct IWsbApplicationRestoreSupport(::windows_core::IUnknown);
 impl IWsbApplicationRestoreSupport {
     #[doc = "*Required features: `\"Win32_System_ServerBackup\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PreRestore<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(&self, wszwritermetadata: Param0, wszcomponentname: Param1, wszcomponentlogicalpath: Param2, bnorollforward: Param3) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).PreRestore)(::windows::core::Interface::as_raw(self), wszwritermetadata.into_param().abi(), wszcomponentname.into_param().abi(), wszcomponentlogicalpath.into_param().abi(), bnorollforward.into_param().abi()).ok()
+    pub unsafe fn PreRestore<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(&self, wszwritermetadata: Param0, wszcomponentname: Param1, wszcomponentlogicalpath: Param2, bnorollforward: Param3) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).PreRestore)(::windows_core::Interface::as_raw(self), wszwritermetadata.into_param().abi(), wszcomponentname.into_param().abi(), wszcomponentlogicalpath.into_param().abi(), bnorollforward.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_ServerBackup\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PostRestore<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(&self, wszwritermetadata: Param0, wszcomponentname: Param1, wszcomponentlogicalpath: Param2, bnorollforward: Param3) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).PostRestore)(::windows::core::Interface::as_raw(self), wszwritermetadata.into_param().abi(), wszcomponentname.into_param().abi(), wszcomponentlogicalpath.into_param().abi(), bnorollforward.into_param().abi()).ok()
+    pub unsafe fn PostRestore<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(&self, wszwritermetadata: Param0, wszcomponentname: Param1, wszcomponentlogicalpath: Param2, bnorollforward: Param3) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).PostRestore)(::windows_core::Interface::as_raw(self), wszwritermetadata.into_param().abi(), wszcomponentname.into_param().abi(), wszcomponentlogicalpath.into_param().abi(), bnorollforward.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
-    pub unsafe fn OrderComponents(&self, ccomponents: u32, rgcomponentname: *const ::windows::core::PWSTR, rgcomponentlogicalpaths: *const ::windows::core::PWSTR, prgcomponentname: *mut *mut ::windows::core::PWSTR, prgcomponentlogicalpath: *mut *mut ::windows::core::PWSTR) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).OrderComponents)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ccomponents), ::core::mem::transmute(rgcomponentname), ::core::mem::transmute(rgcomponentlogicalpaths), ::core::mem::transmute(prgcomponentname), ::core::mem::transmute(prgcomponentlogicalpath)).ok()
+    pub unsafe fn OrderComponents(&self, ccomponents: u32, rgcomponentname: *const ::windows_core::PWSTR, rgcomponentlogicalpaths: *const ::windows_core::PWSTR, prgcomponentname: *mut *mut ::windows_core::PWSTR, prgcomponentlogicalpath: *mut *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).OrderComponents)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ccomponents), ::core::mem::transmute(rgcomponentname), ::core::mem::transmute(rgcomponentlogicalpaths), ::core::mem::transmute(prgcomponentname), ::core::mem::transmute(prgcomponentlogicalpath)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
-    pub unsafe fn IsRollForwardSupported(&self) -> ::windows::core::Result<u8> {
+    pub unsafe fn IsRollForwardSupported(&self) -> ::windows_core::Result<u8> {
         let mut result__ = ::core::mem::MaybeUninit::<u8>::zeroed();
-        (::windows::core::Interface::vtable(self).IsRollForwardSupported)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u8>(result__)
+        (::windows_core::Interface::vtable(self).IsRollForwardSupported)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u8>(result__)
     }
 }
-impl ::core::convert::From<IWsbApplicationRestoreSupport> for ::windows::core::IUnknown {
+impl ::core::convert::From<IWsbApplicationRestoreSupport> for ::windows_core::IUnknown {
     fn from(value: IWsbApplicationRestoreSupport) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IWsbApplicationRestoreSupport> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IWsbApplicationRestoreSupport> for ::windows_core::IUnknown {
     fn from(value: &IWsbApplicationRestoreSupport) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IWsbApplicationRestoreSupport {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IWsbApplicationRestoreSupport {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IWsbApplicationRestoreSupport {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWsbApplicationRestoreSupport {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IWsbApplicationRestoreSupport {
@@ -175,27 +175,27 @@ impl ::core::fmt::Debug for IWsbApplicationRestoreSupport {
         f.debug_tuple("IWsbApplicationRestoreSupport").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IWsbApplicationRestoreSupport {
+unsafe impl ::windows_core::Interface for IWsbApplicationRestoreSupport {
     type Vtable = IWsbApplicationRestoreSupport_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8d3bdb38_4ee8_4718_85f9_c7dbc4ab77aa);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8d3bdb38_4ee8_4718_85f9_c7dbc4ab77aa);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWsbApplicationRestoreSupport_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub PreRestore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wszwritermetadata: ::windows::core::PCWSTR, wszcomponentname: ::windows::core::PCWSTR, wszcomponentlogicalpath: ::windows::core::PCWSTR, bnorollforward: super::super::Foundation::BOOLEAN) -> ::windows::core::HRESULT,
+    pub PreRestore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wszwritermetadata: ::windows_core::PCWSTR, wszcomponentname: ::windows_core::PCWSTR, wszcomponentlogicalpath: ::windows_core::PCWSTR, bnorollforward: super::super::Foundation::BOOLEAN) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     PreRestore: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub PostRestore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wszwritermetadata: ::windows::core::PCWSTR, wszcomponentname: ::windows::core::PCWSTR, wszcomponentlogicalpath: ::windows::core::PCWSTR, bnorollforward: super::super::Foundation::BOOLEAN) -> ::windows::core::HRESULT,
+    pub PostRestore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wszwritermetadata: ::windows_core::PCWSTR, wszcomponentname: ::windows_core::PCWSTR, wszcomponentlogicalpath: ::windows_core::PCWSTR, bnorollforward: super::super::Foundation::BOOLEAN) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     PostRestore: usize,
-    pub OrderComponents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ccomponents: u32, rgcomponentname: *const ::windows::core::PWSTR, rgcomponentlogicalpaths: *const ::windows::core::PWSTR, prgcomponentname: *mut *mut ::windows::core::PWSTR, prgcomponentlogicalpath: *mut *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT,
-    pub IsRollForwardSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbrollforwardsupported: *mut u8) -> ::windows::core::HRESULT,
+    pub OrderComponents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ccomponents: u32, rgcomponentname: *const ::windows_core::PWSTR, rgcomponentlogicalpaths: *const ::windows_core::PWSTR, prgcomponentname: *mut *mut ::windows_core::PWSTR, prgcomponentlogicalpath: *mut *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
+    pub IsRollForwardSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbrollforwardsupported: *mut u8) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
-pub const WSBAPP_ASYNC_IN_PROGRESS: ::windows::core::HRESULT = ::windows::core::HRESULT(7995396i32);
+pub const WSBAPP_ASYNC_IN_PROGRESS: ::windows_core::HRESULT = ::windows_core::HRESULT(7995396i32);
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
 pub const WSB_MAX_OB_STATUS_ENTRY: u32 = 5u32;
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
@@ -204,8 +204,8 @@ pub const WSB_MAX_OB_STATUS_VALUE_TYPE_PAIR: u32 = 5u32;
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct WSB_OB_REGISTRATION_INFO {
-    pub m_wszResourceDLL: ::windows::core::PWSTR,
-    pub m_guidSnapinId: ::windows::core::GUID,
+    pub m_wszResourceDLL: ::windows_core::PWSTR,
+    pub m_guidSnapinId: ::windows_core::GUID,
     pub m_dwProviderName: u32,
     pub m_dwProviderIcon: u32,
     pub m_bSupportsRemoting: super::super::Foundation::BOOLEAN,
@@ -225,13 +225,13 @@ impl ::core::fmt::Debug for WSB_OB_REGISTRATION_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WSB_OB_REGISTRATION_INFO {
+unsafe impl ::windows_core::Abi for WSB_OB_REGISTRATION_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WSB_OB_REGISTRATION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WSB_OB_REGISTRATION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WSB_OB_REGISTRATION_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -262,12 +262,12 @@ impl ::core::fmt::Debug for WSB_OB_STATUS_ENTRY {
         f.debug_struct("WSB_OB_STATUS_ENTRY").field("m_dwIcon", &self.m_dwIcon).field("m_dwStatusEntryName", &self.m_dwStatusEntryName).field("m_dwStatusEntryValue", &self.m_dwStatusEntryValue).field("m_cValueTypePair", &self.m_cValueTypePair).field("m_rgValueTypePair", &self.m_rgValueTypePair).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WSB_OB_STATUS_ENTRY {
+unsafe impl ::windows_core::Abi for WSB_OB_STATUS_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WSB_OB_STATUS_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WSB_OB_STATUS_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WSB_OB_STATUS_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WSB_OB_STATUS_ENTRY {}
@@ -305,7 +305,7 @@ impl ::core::default::Default for WSB_OB_STATUS_ENTRY_PAIR_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WSB_OB_STATUS_ENTRY_PAIR_TYPE {
+unsafe impl ::windows_core::Abi for WSB_OB_STATUS_ENTRY_PAIR_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WSB_OB_STATUS_ENTRY_PAIR_TYPE {
@@ -316,7 +316,7 @@ impl ::core::fmt::Debug for WSB_OB_STATUS_ENTRY_PAIR_TYPE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
 pub struct WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR {
-    pub m_wszObStatusEntryPairValue: ::windows::core::PWSTR,
+    pub m_wszObStatusEntryPairValue: ::windows_core::PWSTR,
     pub m_ObStatusEntryPairType: WSB_OB_STATUS_ENTRY_PAIR_TYPE,
 }
 impl ::core::marker::Copy for WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR {}
@@ -330,12 +330,12 @@ impl ::core::fmt::Debug for WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR {
         f.debug_struct("WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR").field("m_wszObStatusEntryPairValue", &self.m_wszObStatusEntryPairValue).field("m_ObStatusEntryPairType", &self.m_ObStatusEntryPairType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR {
+unsafe impl ::windows_core::Abi for WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR {}
@@ -347,7 +347,7 @@ impl ::core::default::Default for WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
 pub struct WSB_OB_STATUS_INFO {
-    pub m_guidSnapinId: ::windows::core::GUID,
+    pub m_guidSnapinId: ::windows_core::GUID,
     pub m_cStatusEntry: u32,
     pub m_rgStatusEntry: *mut WSB_OB_STATUS_ENTRY,
 }
@@ -362,12 +362,12 @@ impl ::core::fmt::Debug for WSB_OB_STATUS_INFO {
         f.debug_struct("WSB_OB_STATUS_INFO").field("m_guidSnapinId", &self.m_guidSnapinId).field("m_cStatusEntry", &self.m_cStatusEntry).field("m_rgStatusEntry", &self.m_rgStatusEntry).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WSB_OB_STATUS_INFO {
+unsafe impl ::windows_core::Abi for WSB_OB_STATUS_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WSB_OB_STATUS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WSB_OB_STATUS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WSB_OB_STATUS_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WSB_OB_STATUS_INFO {}

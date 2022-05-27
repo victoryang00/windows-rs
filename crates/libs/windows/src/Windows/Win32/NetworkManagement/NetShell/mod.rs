@@ -2,7 +2,7 @@
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct CMD_ENTRY {
-    pub pwszCmdToken: ::windows::core::PCWSTR,
+    pub pwszCmdToken: ::windows_core::PCWSTR,
     pub pfnCmdHandler: PFN_HANDLE_CMD,
     pub dwShortCmdHelpToken: u32,
     pub dwCmdHlpToken: u32,
@@ -24,13 +24,13 @@ impl ::core::fmt::Debug for CMD_ENTRY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMD_ENTRY {
+unsafe impl ::windows_core::Abi for CMD_ENTRY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMD_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMD_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMD_ENTRY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -45,7 +45,7 @@ impl ::core::default::Default for CMD_ENTRY {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct CMD_GROUP_ENTRY {
-    pub pwszCmdGroupToken: ::windows::core::PCWSTR,
+    pub pwszCmdGroupToken: ::windows_core::PCWSTR,
     pub dwShortCmdHelpToken: u32,
     pub ulCmdGroupSize: u32,
     pub dwFlags: u32,
@@ -67,13 +67,13 @@ impl ::core::fmt::Debug for CMD_GROUP_ENTRY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMD_GROUP_ENTRY {
+unsafe impl ::windows_core::Abi for CMD_GROUP_ENTRY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMD_GROUP_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMD_GROUP_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMD_GROUP_ENTRY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -135,12 +135,12 @@ pub const MAX_NAME_LEN: u32 = 48u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MatchEnumTag<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hmodule: Param0, pwcarg: Param1, dwnumarg: u32, penumtable: *const TOKEN_VALUE, pdwvalue: *mut u32) -> u32 {
+pub unsafe fn MatchEnumTag<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmodule: Param0, pwcarg: Param1, dwnumarg: u32, penumtable: *const TOKEN_VALUE, pdwvalue: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MatchEnumTag(hmodule: super::super::Foundation::HANDLE, pwcarg: ::windows::core::PCWSTR, dwnumarg: u32, penumtable: *const TOKEN_VALUE, pdwvalue: *mut u32) -> u32;
+            fn MatchEnumTag(hmodule: super::super::Foundation::HANDLE, pwcarg: ::windows_core::PCWSTR, dwnumarg: u32, penumtable: *const TOKEN_VALUE, pdwvalue: *mut u32) -> u32;
         }
         ::core::mem::transmute(MatchEnumTag(hmodule.into_param().abi(), pwcarg.into_param().abi(), ::core::mem::transmute(dwnumarg), ::core::mem::transmute(penumtable), ::core::mem::transmute(pdwvalue)))
     }
@@ -150,12 +150,12 @@ pub unsafe fn MatchEnumTag<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MatchToken<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszusertoken: Param0, pwszcmdtoken: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn MatchToken<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszusertoken: Param0, pwszcmdtoken: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MatchToken(pwszusertoken: ::windows::core::PCWSTR, pwszcmdtoken: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn MatchToken(pwszusertoken: ::windows_core::PCWSTR, pwszcmdtoken: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(MatchToken(pwszusertoken.into_param().abi(), pwszcmdtoken.into_param().abi()))
     }
@@ -205,7 +205,7 @@ impl ::core::default::Default for NS_CMD_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NS_CMD_FLAGS {
+unsafe impl ::windows_core::Abi for NS_CMD_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NS_CMD_FLAGS {
@@ -218,8 +218,8 @@ impl ::core::fmt::Debug for NS_CMD_FLAGS {
 #[cfg(feature = "Win32_Foundation")]
 pub struct NS_CONTEXT_ATTRIBUTES {
     pub Anonymous: NS_CONTEXT_ATTRIBUTES_0,
-    pub pwszContext: ::windows::core::PWSTR,
-    pub guidHelper: ::windows::core::GUID,
+    pub pwszContext: ::windows_core::PWSTR,
+    pub guidHelper: ::windows_core::GUID,
     pub dwFlags: u32,
     pub ulPriority: u32,
     pub ulNumTopCmds: u32,
@@ -241,13 +241,13 @@ impl ::core::clone::Clone for NS_CONTEXT_ATTRIBUTES {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for NS_CONTEXT_ATTRIBUTES {
+unsafe impl ::windows_core::Abi for NS_CONTEXT_ATTRIBUTES {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NS_CONTEXT_ATTRIBUTES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NS_CONTEXT_ATTRIBUTES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NS_CONTEXT_ATTRIBUTES>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -274,13 +274,13 @@ impl ::core::clone::Clone for NS_CONTEXT_ATTRIBUTES_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for NS_CONTEXT_ATTRIBUTES_0 {
+unsafe impl ::windows_core::Abi for NS_CONTEXT_ATTRIBUTES_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NS_CONTEXT_ATTRIBUTES_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NS_CONTEXT_ATTRIBUTES_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NS_CONTEXT_ATTRIBUTES_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -313,13 +313,13 @@ impl ::core::fmt::Debug for NS_CONTEXT_ATTRIBUTES_0_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for NS_CONTEXT_ATTRIBUTES_0_0 {
+unsafe impl ::windows_core::Abi for NS_CONTEXT_ATTRIBUTES_0_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NS_CONTEXT_ATTRIBUTES_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NS_CONTEXT_ATTRIBUTES_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NS_CONTEXT_ATTRIBUTES_0_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -355,7 +355,7 @@ impl ::core::default::Default for NS_EVENTS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NS_EVENTS {
+unsafe impl ::windows_core::Abi for NS_EVENTS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NS_EVENTS {
@@ -369,7 +369,7 @@ pub const NS_GET_EVENT_IDS_FN_NAME: &str = "GetEventIds";
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`*"]
 pub struct NS_HELPER_ATTRIBUTES {
     pub Anonymous: NS_HELPER_ATTRIBUTES_0,
-    pub guidHelper: ::windows::core::GUID,
+    pub guidHelper: ::windows_core::GUID,
     pub pfnStart: PNS_HELPER_START_FN,
     pub pfnStop: PNS_HELPER_STOP_FN,
 }
@@ -379,12 +379,12 @@ impl ::core::clone::Clone for NS_HELPER_ATTRIBUTES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for NS_HELPER_ATTRIBUTES {
+unsafe impl ::windows_core::Abi for NS_HELPER_ATTRIBUTES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NS_HELPER_ATTRIBUTES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NS_HELPER_ATTRIBUTES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NS_HELPER_ATTRIBUTES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NS_HELPER_ATTRIBUTES {}
@@ -405,12 +405,12 @@ impl ::core::clone::Clone for NS_HELPER_ATTRIBUTES_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for NS_HELPER_ATTRIBUTES_0 {
+unsafe impl ::windows_core::Abi for NS_HELPER_ATTRIBUTES_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NS_HELPER_ATTRIBUTES_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NS_HELPER_ATTRIBUTES_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NS_HELPER_ATTRIBUTES_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NS_HELPER_ATTRIBUTES_0 {}
@@ -436,12 +436,12 @@ impl ::core::fmt::Debug for NS_HELPER_ATTRIBUTES_0_0 {
         f.debug_struct("NS_HELPER_ATTRIBUTES_0_0").field("dwVersion", &self.dwVersion).field("dwReserved", &self.dwReserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NS_HELPER_ATTRIBUTES_0_0 {
+unsafe impl ::windows_core::Abi for NS_HELPER_ATTRIBUTES_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NS_HELPER_ATTRIBUTES_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NS_HELPER_ATTRIBUTES_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NS_HELPER_ATTRIBUTES_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NS_HELPER_ATTRIBUTES_0_0 {}
@@ -475,7 +475,7 @@ impl ::core::default::Default for NS_MODE_CHANGE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NS_MODE_CHANGE {
+unsafe impl ::windows_core::Abi for NS_MODE_CHANGE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NS_MODE_CHANGE {
@@ -506,7 +506,7 @@ impl ::core::default::Default for NS_REQS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NS_REQS {
+unsafe impl ::windows_core::Abi for NS_REQS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NS_REQS {
@@ -516,37 +516,37 @@ impl ::core::fmt::Debug for NS_REQS {
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_HANDLE_CMD = ::core::option::Option<unsafe extern "system" fn(pwszmachine: ::windows::core::PCWSTR, ppwcarguments: *mut ::windows::core::PWSTR, dwcurrentindex: u32, dwargcount: u32, dwflags: u32, pvdata: *const ::core::ffi::c_void, pbdone: *mut super::super::Foundation::BOOL) -> u32>;
+pub type PFN_HANDLE_CMD = ::core::option::Option<unsafe extern "system" fn(pwszmachine: ::windows_core::PCWSTR, ppwcarguments: *mut ::windows_core::PWSTR, dwcurrentindex: u32, dwargcount: u32, dwflags: u32, pvdata: *const ::core::ffi::c_void, pbdone: *mut super::super::Foundation::BOOL) -> u32>;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`*"]
-pub type PGET_RESOURCE_STRING_FN = ::core::option::Option<unsafe extern "system" fn(dwmsgid: u32, lpbuffer: ::windows::core::PCWSTR, nbuffermax: u32) -> u32>;
+pub type PGET_RESOURCE_STRING_FN = ::core::option::Option<unsafe extern "system" fn(dwmsgid: u32, lpbuffer: ::windows_core::PCWSTR, nbuffermax: u32) -> u32>;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`*"]
 pub type PNS_CONTEXT_COMMIT_FN = ::core::option::Option<unsafe extern "system" fn(dwaction: u32) -> u32>;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`*"]
-pub type PNS_CONTEXT_CONNECT_FN = ::core::option::Option<unsafe extern "system" fn(pwszmachine: ::windows::core::PCWSTR) -> u32>;
+pub type PNS_CONTEXT_CONNECT_FN = ::core::option::Option<unsafe extern "system" fn(pwszmachine: ::windows_core::PCWSTR) -> u32>;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`*"]
-pub type PNS_CONTEXT_DUMP_FN = ::core::option::Option<unsafe extern "system" fn(pwszrouter: ::windows::core::PCWSTR, ppwcarguments: *const ::windows::core::PWSTR, dwargcount: u32, pvdata: *const ::core::ffi::c_void) -> u32>;
+pub type PNS_CONTEXT_DUMP_FN = ::core::option::Option<unsafe extern "system" fn(pwszrouter: ::windows_core::PCWSTR, ppwcarguments: *const ::windows_core::PWSTR, dwargcount: u32, pvdata: *const ::core::ffi::c_void) -> u32>;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`*"]
 pub type PNS_DLL_INIT_FN = ::core::option::Option<unsafe extern "system" fn(dwnetshversion: u32, preserved: *mut ::core::ffi::c_void) -> u32>;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`*"]
 pub type PNS_DLL_STOP_FN = ::core::option::Option<unsafe extern "system" fn(dwreserved: u32) -> u32>;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`*"]
-pub type PNS_HELPER_START_FN = ::core::option::Option<unsafe extern "system" fn(pguidparent: *const ::windows::core::GUID, dwversion: u32) -> u32>;
+pub type PNS_HELPER_START_FN = ::core::option::Option<unsafe extern "system" fn(pguidparent: *const ::windows_core::GUID, dwversion: u32) -> u32>;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`*"]
 pub type PNS_HELPER_STOP_FN = ::core::option::Option<unsafe extern "system" fn(dwreserved: u32) -> u32>;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PNS_OSVERSIONCHECK = ::core::option::Option<unsafe extern "system" fn(cimostype: u32, cimosproductsuite: u32, cimosversion: ::windows::core::PCWSTR, cimosbuildnumber: ::windows::core::PCWSTR, cimservicepackmajorversion: ::windows::core::PCWSTR, cimservicepackminorversion: ::windows::core::PCWSTR, uireserved: u32, dwreserved: u32) -> super::super::Foundation::BOOL>;
+pub type PNS_OSVERSIONCHECK = ::core::option::Option<unsafe extern "system" fn(cimostype: u32, cimosproductsuite: u32, cimosversion: ::windows_core::PCWSTR, cimosbuildnumber: ::windows_core::PCWSTR, cimservicepackmajorversion: ::windows_core::PCWSTR, cimservicepackminorversion: ::windows_core::PCWSTR, uireserved: u32, dwreserved: u32) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PreprocessCommand<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmodule: Param0, ppwcarguments: &mut [::windows::core::PWSTR], dwcurrentindex: u32, ptttags: &mut [TAG_TYPE], dwminargs: u32, dwmaxargs: u32, pdwtagtype: *mut u32) -> u32 {
+pub unsafe fn PreprocessCommand<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmodule: Param0, ppwcarguments: &mut [::windows_core::PWSTR], dwcurrentindex: u32, ptttags: &mut [TAG_TYPE], dwminargs: u32, dwmaxargs: u32, pdwtagtype: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PreprocessCommand(hmodule: super::super::Foundation::HANDLE, ppwcarguments: *mut ::windows::core::PWSTR, dwcurrentindex: u32, dwargcount: u32, ptttags: *mut TAG_TYPE, dwtagcount: u32, dwminargs: u32, dwmaxargs: u32, pdwtagtype: *mut u32) -> u32;
+            fn PreprocessCommand(hmodule: super::super::Foundation::HANDLE, ppwcarguments: *mut ::windows_core::PWSTR, dwcurrentindex: u32, dwargcount: u32, ptttags: *mut TAG_TYPE, dwtagcount: u32, dwminargs: u32, dwmaxargs: u32, pdwtagtype: *mut u32) -> u32;
         }
-        ::core::mem::transmute(PreprocessCommand(hmodule.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(ppwcarguments)), ::core::mem::transmute(dwcurrentindex), ppwcarguments.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(ptttags)), ptttags.len() as _, ::core::mem::transmute(dwminargs), ::core::mem::transmute(dwmaxargs), ::core::mem::transmute(pdwtagtype)))
+        ::core::mem::transmute(PreprocessCommand(hmodule.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(ppwcarguments)), ::core::mem::transmute(dwcurrentindex), ppwcarguments.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(ptttags)), ptttags.len() as _, ::core::mem::transmute(dwminargs), ::core::mem::transmute(dwmaxargs), ::core::mem::transmute(pdwtagtype)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -554,7 +554,7 @@ pub unsafe fn PreprocessCommand<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PrintError<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmodule: Param0, dwerrid: u32) -> u32 {
+pub unsafe fn PrintError<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmodule: Param0, dwerrid: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -568,12 +568,12 @@ pub unsafe fn PrintError<'a, Param0: ::windows::core::IntoParam<'a, super::super
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`*"]
 #[inline]
-pub unsafe fn PrintMessage<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszformat: Param0) -> u32 {
+pub unsafe fn PrintMessage<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszformat: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PrintMessage(pwszformat: ::windows::core::PCWSTR) -> u32;
+            fn PrintMessage(pwszformat: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(PrintMessage(pwszformat.into_param().abi()))
     }
@@ -583,7 +583,7 @@ pub unsafe fn PrintMessage<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PrintMessageFromModule<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmodule: Param0, dwmsgid: u32) -> u32 {
+pub unsafe fn PrintMessageFromModule<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmodule: Param0, dwmsgid: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -612,12 +612,12 @@ pub unsafe fn RegisterContext(pchildcontext: *const NS_CONTEXT_ATTRIBUTES) -> u3
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`*"]
 #[inline]
-pub unsafe fn RegisterHelper(pguidparentcontext: *const ::windows::core::GUID, pfnregistersubcontext: *const NS_HELPER_ATTRIBUTES) -> u32 {
+pub unsafe fn RegisterHelper(pguidparentcontext: *const ::windows_core::GUID, pfnregistersubcontext: *const NS_HELPER_ATTRIBUTES) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterHelper(pguidparentcontext: *const ::windows::core::GUID, pfnregistersubcontext: *const NS_HELPER_ATTRIBUTES) -> u32;
+            fn RegisterHelper(pguidparentcontext: *const ::windows_core::GUID, pfnregistersubcontext: *const NS_HELPER_ATTRIBUTES) -> u32;
         }
         ::core::mem::transmute(RegisterHelper(::core::mem::transmute(pguidparentcontext), ::core::mem::transmute(pfnregistersubcontext)))
     }
@@ -628,7 +628,7 @@ pub unsafe fn RegisterHelper(pguidparentcontext: *const ::windows::core::GUID, p
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct TAG_TYPE {
-    pub pwszTag: ::windows::core::PCWSTR,
+    pub pwszTag: ::windows_core::PCWSTR,
     pub dwRequired: u32,
     pub bPresent: super::super::Foundation::BOOL,
 }
@@ -647,13 +647,13 @@ impl ::core::fmt::Debug for TAG_TYPE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TAG_TYPE {
+unsafe impl ::windows_core::Abi for TAG_TYPE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TAG_TYPE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TAG_TYPE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TAG_TYPE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -667,7 +667,7 @@ impl ::core::default::Default for TAG_TYPE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`*"]
 pub struct TOKEN_VALUE {
-    pub pwszToken: ::windows::core::PCWSTR,
+    pub pwszToken: ::windows_core::PCWSTR,
     pub dwValue: u32,
 }
 impl ::core::marker::Copy for TOKEN_VALUE {}
@@ -681,12 +681,12 @@ impl ::core::fmt::Debug for TOKEN_VALUE {
         f.debug_struct("TOKEN_VALUE").field("pwszToken", &self.pwszToken).field("dwValue", &self.dwValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TOKEN_VALUE {
+unsafe impl ::windows_core::Abi for TOKEN_VALUE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TOKEN_VALUE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TOKEN_VALUE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TOKEN_VALUE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TOKEN_VALUE {}

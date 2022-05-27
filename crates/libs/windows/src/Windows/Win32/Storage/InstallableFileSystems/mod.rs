@@ -11,12 +11,12 @@ impl ::core::clone::Clone for FILTER_AGGREGATE_BASIC_INFORMATION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_AGGREGATE_BASIC_INFORMATION {
+unsafe impl ::windows_core::Abi for FILTER_AGGREGATE_BASIC_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FILTER_AGGREGATE_BASIC_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_BASIC_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_BASIC_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FILTER_AGGREGATE_BASIC_INFORMATION {}
@@ -37,12 +37,12 @@ impl ::core::clone::Clone for FILTER_AGGREGATE_BASIC_INFORMATION_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_AGGREGATE_BASIC_INFORMATION_0 {
+unsafe impl ::windows_core::Abi for FILTER_AGGREGATE_BASIC_INFORMATION_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FILTER_AGGREGATE_BASIC_INFORMATION_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_BASIC_INFORMATION_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_BASIC_INFORMATION_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FILTER_AGGREGATE_BASIC_INFORMATION_0 {}
@@ -68,12 +68,12 @@ impl ::core::fmt::Debug for FILTER_AGGREGATE_BASIC_INFORMATION_0_0 {
         f.debug_struct("FILTER_AGGREGATE_BASIC_INFORMATION_0_0").field("FilterNameLength", &self.FilterNameLength).field("FilterNameBufferOffset", &self.FilterNameBufferOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_AGGREGATE_BASIC_INFORMATION_0_0 {
+unsafe impl ::windows_core::Abi for FILTER_AGGREGATE_BASIC_INFORMATION_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FILTER_AGGREGATE_BASIC_INFORMATION_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_BASIC_INFORMATION_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_BASIC_INFORMATION_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FILTER_AGGREGATE_BASIC_INFORMATION_0_0 {}
@@ -103,12 +103,12 @@ impl ::core::fmt::Debug for FILTER_AGGREGATE_BASIC_INFORMATION_0_1 {
         f.debug_struct("FILTER_AGGREGATE_BASIC_INFORMATION_0_1").field("FrameID", &self.FrameID).field("NumberOfInstances", &self.NumberOfInstances).field("FilterNameLength", &self.FilterNameLength).field("FilterNameBufferOffset", &self.FilterNameBufferOffset).field("FilterAltitudeLength", &self.FilterAltitudeLength).field("FilterAltitudeBufferOffset", &self.FilterAltitudeBufferOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_AGGREGATE_BASIC_INFORMATION_0_1 {
+unsafe impl ::windows_core::Abi for FILTER_AGGREGATE_BASIC_INFORMATION_0_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FILTER_AGGREGATE_BASIC_INFORMATION_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_BASIC_INFORMATION_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_BASIC_INFORMATION_0_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FILTER_AGGREGATE_BASIC_INFORMATION_0_1 {}
@@ -130,12 +130,12 @@ impl ::core::clone::Clone for FILTER_AGGREGATE_STANDARD_INFORMATION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_AGGREGATE_STANDARD_INFORMATION {
+unsafe impl ::windows_core::Abi for FILTER_AGGREGATE_STANDARD_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FILTER_AGGREGATE_STANDARD_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_STANDARD_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_STANDARD_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FILTER_AGGREGATE_STANDARD_INFORMATION {}
@@ -156,12 +156,12 @@ impl ::core::clone::Clone for FILTER_AGGREGATE_STANDARD_INFORMATION_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_AGGREGATE_STANDARD_INFORMATION_0 {
+unsafe impl ::windows_core::Abi for FILTER_AGGREGATE_STANDARD_INFORMATION_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FILTER_AGGREGATE_STANDARD_INFORMATION_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_STANDARD_INFORMATION_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_STANDARD_INFORMATION_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FILTER_AGGREGATE_STANDARD_INFORMATION_0 {}
@@ -190,12 +190,12 @@ impl ::core::fmt::Debug for FILTER_AGGREGATE_STANDARD_INFORMATION_0_0 {
         f.debug_struct("FILTER_AGGREGATE_STANDARD_INFORMATION_0_0").field("Flags", &self.Flags).field("FilterNameLength", &self.FilterNameLength).field("FilterNameBufferOffset", &self.FilterNameBufferOffset).field("FilterAltitudeLength", &self.FilterAltitudeLength).field("FilterAltitudeBufferOffset", &self.FilterAltitudeBufferOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_AGGREGATE_STANDARD_INFORMATION_0_0 {
+unsafe impl ::windows_core::Abi for FILTER_AGGREGATE_STANDARD_INFORMATION_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FILTER_AGGREGATE_STANDARD_INFORMATION_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_STANDARD_INFORMATION_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_STANDARD_INFORMATION_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FILTER_AGGREGATE_STANDARD_INFORMATION_0_0 {}
@@ -226,12 +226,12 @@ impl ::core::fmt::Debug for FILTER_AGGREGATE_STANDARD_INFORMATION_0_1 {
         f.debug_struct("FILTER_AGGREGATE_STANDARD_INFORMATION_0_1").field("Flags", &self.Flags).field("FrameID", &self.FrameID).field("NumberOfInstances", &self.NumberOfInstances).field("FilterNameLength", &self.FilterNameLength).field("FilterNameBufferOffset", &self.FilterNameBufferOffset).field("FilterAltitudeLength", &self.FilterAltitudeLength).field("FilterAltitudeBufferOffset", &self.FilterAltitudeBufferOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_AGGREGATE_STANDARD_INFORMATION_0_1 {
+unsafe impl ::windows_core::Abi for FILTER_AGGREGATE_STANDARD_INFORMATION_0_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FILTER_AGGREGATE_STANDARD_INFORMATION_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_STANDARD_INFORMATION_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_AGGREGATE_STANDARD_INFORMATION_0_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FILTER_AGGREGATE_STANDARD_INFORMATION_0_1 {}
@@ -260,12 +260,12 @@ impl ::core::fmt::Debug for FILTER_FULL_INFORMATION {
         f.debug_struct("FILTER_FULL_INFORMATION").field("NextEntryOffset", &self.NextEntryOffset).field("FrameID", &self.FrameID).field("NumberOfInstances", &self.NumberOfInstances).field("FilterNameLength", &self.FilterNameLength).field("FilterNameBuffer", &self.FilterNameBuffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_FULL_INFORMATION {
+unsafe impl ::windows_core::Abi for FILTER_FULL_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FILTER_FULL_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_FULL_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_FULL_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FILTER_FULL_INFORMATION {}
@@ -295,7 +295,7 @@ impl ::core::default::Default for FILTER_INFORMATION_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_INFORMATION_CLASS {
+unsafe impl ::windows_core::Abi for FILTER_INFORMATION_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FILTER_INFORMATION_CLASS {
@@ -320,12 +320,12 @@ impl ::core::fmt::Debug for FILTER_MESSAGE_HEADER {
         f.debug_struct("FILTER_MESSAGE_HEADER").field("ReplyLength", &self.ReplyLength).field("MessageId", &self.MessageId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_MESSAGE_HEADER {
+unsafe impl ::windows_core::Abi for FILTER_MESSAGE_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FILTER_MESSAGE_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_MESSAGE_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_MESSAGE_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FILTER_MESSAGE_HEADER {}
@@ -358,13 +358,13 @@ impl ::core::fmt::Debug for FILTER_REPLY_HEADER {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FILTER_REPLY_HEADER {
+unsafe impl ::windows_core::Abi for FILTER_REPLY_HEADER {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FILTER_REPLY_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_REPLY_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_REPLY_HEADER>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -392,12 +392,12 @@ impl ::core::fmt::Debug for FILTER_VOLUME_BASIC_INFORMATION {
         f.debug_struct("FILTER_VOLUME_BASIC_INFORMATION").field("FilterVolumeNameLength", &self.FilterVolumeNameLength).field("FilterVolumeName", &self.FilterVolumeName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_VOLUME_BASIC_INFORMATION {
+unsafe impl ::windows_core::Abi for FILTER_VOLUME_BASIC_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FILTER_VOLUME_BASIC_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_VOLUME_BASIC_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_VOLUME_BASIC_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FILTER_VOLUME_BASIC_INFORMATION {}
@@ -425,7 +425,7 @@ impl ::core::default::Default for FILTER_VOLUME_INFORMATION_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_VOLUME_INFORMATION_CLASS {
+unsafe impl ::windows_core::Abi for FILTER_VOLUME_INFORMATION_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FILTER_VOLUME_INFORMATION_CLASS {
@@ -454,12 +454,12 @@ impl ::core::fmt::Debug for FILTER_VOLUME_STANDARD_INFORMATION {
         f.debug_struct("FILTER_VOLUME_STANDARD_INFORMATION").field("NextEntryOffset", &self.NextEntryOffset).field("Flags", &self.Flags).field("FrameID", &self.FrameID).field("FileSystemType", &self.FileSystemType).field("FilterVolumeNameLength", &self.FilterVolumeNameLength).field("FilterVolumeName", &self.FilterVolumeName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FILTER_VOLUME_STANDARD_INFORMATION {
+unsafe impl ::windows_core::Abi for FILTER_VOLUME_STANDARD_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FILTER_VOLUME_STANDARD_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_VOLUME_STANDARD_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_VOLUME_STANDARD_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FILTER_VOLUME_STANDARD_INFORMATION {}
@@ -563,7 +563,7 @@ impl ::core::default::Default for FLT_FILESYSTEM_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FLT_FILESYSTEM_TYPE {
+unsafe impl ::windows_core::Abi for FLT_FILESYSTEM_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FLT_FILESYSTEM_TYPE {
@@ -575,12 +575,12 @@ impl ::core::fmt::Debug for FLT_FILESYSTEM_TYPE {
 pub const FLT_PORT_FLAG_SYNC_HANDLE: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterAttach<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpfiltername: Param0, lpvolumename: Param1, lpinstancename: Param2, dwcreatedinstancenamelength: u32, lpcreatedinstancename: ::windows::core::PWSTR) -> ::windows::core::Result<()> {
+pub unsafe fn FilterAttach<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpfiltername: Param0, lpvolumename: Param1, lpinstancename: Param2, dwcreatedinstancenamelength: u32, lpcreatedinstancename: ::windows_core::PWSTR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterAttach(lpfiltername: ::windows::core::PCWSTR, lpvolumename: ::windows::core::PCWSTR, lpinstancename: ::windows::core::PCWSTR, dwcreatedinstancenamelength: u32, lpcreatedinstancename: ::windows::core::PWSTR) -> ::windows::core::HRESULT;
+            fn FilterAttach(lpfiltername: ::windows_core::PCWSTR, lpvolumename: ::windows_core::PCWSTR, lpinstancename: ::windows_core::PCWSTR, dwcreatedinstancenamelength: u32, lpcreatedinstancename: ::windows_core::PWSTR) -> ::windows_core::HRESULT;
         }
         FilterAttach(lpfiltername.into_param().abi(), lpvolumename.into_param().abi(), lpinstancename.into_param().abi(), ::core::mem::transmute(dwcreatedinstancenamelength), ::core::mem::transmute(lpcreatedinstancename)).ok()
     }
@@ -589,12 +589,12 @@ pub unsafe fn FilterAttach<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterAttachAtAltitude<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpfiltername: Param0, lpvolumename: Param1, lpaltitude: Param2, lpinstancename: Param3, dwcreatedinstancenamelength: u32, lpcreatedinstancename: ::windows::core::PWSTR) -> ::windows::core::Result<()> {
+pub unsafe fn FilterAttachAtAltitude<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpfiltername: Param0, lpvolumename: Param1, lpaltitude: Param2, lpinstancename: Param3, dwcreatedinstancenamelength: u32, lpcreatedinstancename: ::windows_core::PWSTR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterAttachAtAltitude(lpfiltername: ::windows::core::PCWSTR, lpvolumename: ::windows::core::PCWSTR, lpaltitude: ::windows::core::PCWSTR, lpinstancename: ::windows::core::PCWSTR, dwcreatedinstancenamelength: u32, lpcreatedinstancename: ::windows::core::PWSTR) -> ::windows::core::HRESULT;
+            fn FilterAttachAtAltitude(lpfiltername: ::windows_core::PCWSTR, lpvolumename: ::windows_core::PCWSTR, lpaltitude: ::windows_core::PCWSTR, lpinstancename: ::windows_core::PCWSTR, dwcreatedinstancenamelength: u32, lpcreatedinstancename: ::windows_core::PWSTR) -> ::windows_core::HRESULT;
         }
         FilterAttachAtAltitude(lpfiltername.into_param().abi(), lpvolumename.into_param().abi(), lpaltitude.into_param().abi(), lpinstancename.into_param().abi(), ::core::mem::transmute(dwcreatedinstancenamelength), ::core::mem::transmute(lpcreatedinstancename)).ok()
     }
@@ -603,12 +603,12 @@ pub unsafe fn FilterAttachAtAltitude<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterClose<'a, Param0: ::windows::core::IntoParam<'a, HFILTER>>(hfilter: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterClose<'a, Param0: ::windows_core::IntoParam<'a, HFILTER>>(hfilter: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterClose(hfilter: HFILTER) -> ::windows::core::HRESULT;
+            fn FilterClose(hfilter: HFILTER) -> ::windows_core::HRESULT;
         }
         FilterClose(hfilter.into_param().abi()).ok()
     }
@@ -618,12 +618,12 @@ pub unsafe fn FilterClose<'a, Param0: ::windows::core::IntoParam<'a, HFILTER>>(h
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn FilterConnectCommunicationPort<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpportname: Param0, dwoptions: u32, lpcontext: *const ::core::ffi::c_void, wsizeofcontext: u16, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn FilterConnectCommunicationPort<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpportname: Param0, dwoptions: u32, lpcontext: *const ::core::ffi::c_void, wsizeofcontext: u16, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterConnectCommunicationPort(lpportname: ::windows::core::PCWSTR, dwoptions: u32, lpcontext: *const ::core::ffi::c_void, wsizeofcontext: u16, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, hport: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn FilterConnectCommunicationPort(lpportname: ::windows_core::PCWSTR, dwoptions: u32, lpcontext: *const ::core::ffi::c_void, wsizeofcontext: u16, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, hport: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
         FilterConnectCommunicationPort(lpportname.into_param().abi(), ::core::mem::transmute(dwoptions), ::core::mem::transmute(lpcontext), ::core::mem::transmute(wsizeofcontext), ::core::mem::transmute(lpsecurityattributes), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
@@ -633,12 +633,12 @@ pub unsafe fn FilterConnectCommunicationPort<'a, Param0: ::windows::core::IntoPa
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterCreate<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpfiltername: Param0) -> ::windows::core::Result<HFILTER> {
+pub unsafe fn FilterCreate<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpfiltername: Param0) -> ::windows_core::Result<HFILTER> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterCreate(lpfiltername: ::windows::core::PCWSTR, hfilter: *mut HFILTER) -> ::windows::core::HRESULT;
+            fn FilterCreate(lpfiltername: ::windows_core::PCWSTR, hfilter: *mut HFILTER) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<HFILTER>::zeroed();
         FilterCreate(lpfiltername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<HFILTER>(result__)
@@ -648,12 +648,12 @@ pub unsafe fn FilterCreate<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterDetach<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpfiltername: Param0, lpvolumename: Param1, lpinstancename: Param2) -> ::windows::core::Result<()> {
+pub unsafe fn FilterDetach<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpfiltername: Param0, lpvolumename: Param1, lpinstancename: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterDetach(lpfiltername: ::windows::core::PCWSTR, lpvolumename: ::windows::core::PCWSTR, lpinstancename: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn FilterDetach(lpfiltername: ::windows_core::PCWSTR, lpvolumename: ::windows_core::PCWSTR, lpinstancename: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         FilterDetach(lpfiltername.into_param().abi(), lpvolumename.into_param().abi(), lpinstancename.into_param().abi()).ok()
     }
@@ -663,12 +663,12 @@ pub unsafe fn FilterDetach<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterFindClose<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfilterfind: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterFindClose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfilterfind: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterFindClose(hfilterfind: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn FilterFindClose(hfilterfind: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         FilterFindClose(hfilterfind.into_param().abi()).ok()
     }
@@ -677,12 +677,12 @@ pub unsafe fn FilterFindClose<'a, Param0: ::windows::core::IntoParam<'a, super::
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterFindFirst(dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterfind: *mut FilterFindHandle) -> ::windows::core::Result<()> {
+pub unsafe fn FilterFindFirst(dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterfind: *mut FilterFindHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterFindFirst(dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterfind: *mut FilterFindHandle) -> ::windows::core::HRESULT;
+            fn FilterFindFirst(dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterfind: *mut FilterFindHandle) -> ::windows_core::HRESULT;
         }
         FilterFindFirst(::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned), ::core::mem::transmute(lpfilterfind)).ok()
     }
@@ -713,18 +713,18 @@ impl ::core::fmt::Debug for FilterFindHandle {
         f.debug_tuple("FilterFindHandle").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FilterFindHandle {
+unsafe impl ::windows_core::Abi for FilterFindHandle {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterFindNext<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfilterfind: Param0, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterFindNext<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfilterfind: Param0, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterFindNext(hfilterfind: super::super::Foundation::HANDLE, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;
+            fn FilterFindNext(hfilterfind: super::super::Foundation::HANDLE, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
         }
         FilterFindNext(hfilterfind.into_param().abi(), ::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned)).ok()
     }
@@ -733,26 +733,26 @@ pub unsafe fn FilterFindNext<'a, Param0: ::windows::core::IntoParam<'a, super::s
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterGetDosName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpvolumename: Param0, lpdosname: &mut [u16]) -> ::windows::core::Result<()> {
+pub unsafe fn FilterGetDosName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpvolumename: Param0, lpdosname: &mut [u16]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterGetDosName(lpvolumename: ::windows::core::PCWSTR, lpdosname: ::windows::core::PWSTR, dwdosnamebuffersize: u32) -> ::windows::core::HRESULT;
+            fn FilterGetDosName(lpvolumename: ::windows_core::PCWSTR, lpdosname: ::windows_core::PWSTR, dwdosnamebuffersize: u32) -> ::windows_core::HRESULT;
         }
-        FilterGetDosName(lpvolumename.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpdosname)), lpdosname.len() as _).ok()
+        FilterGetDosName(lpvolumename.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpdosname)), lpdosname.len() as _).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterGetInformation<'a, Param0: ::windows::core::IntoParam<'a, HFILTER>>(hfilter: Param0, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterGetInformation<'a, Param0: ::windows_core::IntoParam<'a, HFILTER>>(hfilter: Param0, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterGetInformation(hfilter: HFILTER, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;
+            fn FilterGetInformation(hfilter: HFILTER, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
         }
         FilterGetInformation(hfilter.into_param().abi(), ::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned)).ok()
     }
@@ -762,12 +762,12 @@ pub unsafe fn FilterGetInformation<'a, Param0: ::windows::core::IntoParam<'a, HF
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`, `\"Win32_System_IO\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
-pub unsafe fn FilterGetMessage<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hport: Param0, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::Result<()> {
+pub unsafe fn FilterGetMessage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hport: Param0, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterGetMessage(hport: super::super::Foundation::HANDLE, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::HRESULT;
+            fn FilterGetMessage(hport: super::super::Foundation::HANDLE, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT;
         }
         FilterGetMessage(hport.into_param().abi(), ::core::mem::transmute(lpmessagebuffer), ::core::mem::transmute(dwmessagebuffersize), ::core::mem::transmute(lpoverlapped)).ok()
     }
@@ -776,12 +776,12 @@ pub unsafe fn FilterGetMessage<'a, Param0: ::windows::core::IntoParam<'a, super:
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterInstanceClose<'a, Param0: ::windows::core::IntoParam<'a, HFILTER_INSTANCE>>(hinstance: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterInstanceClose<'a, Param0: ::windows_core::IntoParam<'a, HFILTER_INSTANCE>>(hinstance: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterInstanceClose(hinstance: HFILTER_INSTANCE) -> ::windows::core::HRESULT;
+            fn FilterInstanceClose(hinstance: HFILTER_INSTANCE) -> ::windows_core::HRESULT;
         }
         FilterInstanceClose(hinstance.into_param().abi()).ok()
     }
@@ -790,12 +790,12 @@ pub unsafe fn FilterInstanceClose<'a, Param0: ::windows::core::IntoParam<'a, HFI
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterInstanceCreate<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpfiltername: Param0, lpvolumename: Param1, lpinstancename: Param2) -> ::windows::core::Result<HFILTER_INSTANCE> {
+pub unsafe fn FilterInstanceCreate<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpfiltername: Param0, lpvolumename: Param1, lpinstancename: Param2) -> ::windows_core::Result<HFILTER_INSTANCE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterInstanceCreate(lpfiltername: ::windows::core::PCWSTR, lpvolumename: ::windows::core::PCWSTR, lpinstancename: ::windows::core::PCWSTR, hinstance: *mut HFILTER_INSTANCE) -> ::windows::core::HRESULT;
+            fn FilterInstanceCreate(lpfiltername: ::windows_core::PCWSTR, lpvolumename: ::windows_core::PCWSTR, lpinstancename: ::windows_core::PCWSTR, hinstance: *mut HFILTER_INSTANCE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<HFILTER_INSTANCE>::zeroed();
         FilterInstanceCreate(lpfiltername.into_param().abi(), lpvolumename.into_param().abi(), lpinstancename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<HFILTER_INSTANCE>(result__)
@@ -806,12 +806,12 @@ pub unsafe fn FilterInstanceCreate<'a, Param0: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterInstanceFindClose<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfilterinstancefind: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterInstanceFindClose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfilterinstancefind: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterInstanceFindClose(hfilterinstancefind: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn FilterInstanceFindClose(hfilterinstancefind: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         FilterInstanceFindClose(hfilterinstancefind.into_param().abi()).ok()
     }
@@ -820,12 +820,12 @@ pub unsafe fn FilterInstanceFindClose<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterInstanceFindFirst<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpfiltername: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterinstancefind: *mut FilterInstanceFindHandle) -> ::windows::core::Result<()> {
+pub unsafe fn FilterInstanceFindFirst<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpfiltername: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterinstancefind: *mut FilterInstanceFindHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterInstanceFindFirst(lpfiltername: ::windows::core::PCWSTR, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterinstancefind: *mut FilterInstanceFindHandle) -> ::windows::core::HRESULT;
+            fn FilterInstanceFindFirst(lpfiltername: ::windows_core::PCWSTR, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterinstancefind: *mut FilterInstanceFindHandle) -> ::windows_core::HRESULT;
         }
         FilterInstanceFindFirst(lpfiltername.into_param().abi(), ::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned), ::core::mem::transmute(lpfilterinstancefind)).ok()
     }
@@ -856,18 +856,18 @@ impl ::core::fmt::Debug for FilterInstanceFindHandle {
         f.debug_tuple("FilterInstanceFindHandle").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FilterInstanceFindHandle {
+unsafe impl ::windows_core::Abi for FilterInstanceFindHandle {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterInstanceFindNext<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfilterinstancefind: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterInstanceFindNext<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfilterinstancefind: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterInstanceFindNext(hfilterinstancefind: super::super::Foundation::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;
+            fn FilterInstanceFindNext(hfilterinstancefind: super::super::Foundation::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
         }
         FilterInstanceFindNext(hfilterinstancefind.into_param().abi(), ::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned)).ok()
     }
@@ -876,12 +876,12 @@ pub unsafe fn FilterInstanceFindNext<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterInstanceGetInformation<'a, Param0: ::windows::core::IntoParam<'a, HFILTER_INSTANCE>>(hinstance: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterInstanceGetInformation<'a, Param0: ::windows_core::IntoParam<'a, HFILTER_INSTANCE>>(hinstance: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterInstanceGetInformation(hinstance: HFILTER_INSTANCE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;
+            fn FilterInstanceGetInformation(hinstance: HFILTER_INSTANCE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
         }
         FilterInstanceGetInformation(hinstance.into_param().abi(), ::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned)).ok()
     }
@@ -890,12 +890,12 @@ pub unsafe fn FilterInstanceGetInformation<'a, Param0: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterLoad<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpfiltername: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterLoad<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpfiltername: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterLoad(lpfiltername: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn FilterLoad(lpfiltername: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         FilterLoad(lpfiltername.into_param().abi()).ok()
     }
@@ -905,12 +905,12 @@ pub unsafe fn FilterLoad<'a, Param0: ::windows::core::IntoParam<'a, ::windows::c
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterReplyMessage<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hport: Param0, lpreplybuffer: *const FILTER_REPLY_HEADER, dwreplybuffersize: u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterReplyMessage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hport: Param0, lpreplybuffer: *const FILTER_REPLY_HEADER, dwreplybuffersize: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterReplyMessage(hport: super::super::Foundation::HANDLE, lpreplybuffer: *const FILTER_REPLY_HEADER, dwreplybuffersize: u32) -> ::windows::core::HRESULT;
+            fn FilterReplyMessage(hport: super::super::Foundation::HANDLE, lpreplybuffer: *const FILTER_REPLY_HEADER, dwreplybuffersize: u32) -> ::windows_core::HRESULT;
         }
         FilterReplyMessage(hport.into_param().abi(), ::core::mem::transmute(lpreplybuffer), ::core::mem::transmute(dwreplybuffersize)).ok()
     }
@@ -920,12 +920,12 @@ pub unsafe fn FilterReplyMessage<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterSendMessage<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hport: Param0, lpinbuffer: *const ::core::ffi::c_void, dwinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, dwoutbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterSendMessage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hport: Param0, lpinbuffer: *const ::core::ffi::c_void, dwinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, dwoutbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterSendMessage(hport: super::super::Foundation::HANDLE, lpinbuffer: *const ::core::ffi::c_void, dwinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, dwoutbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;
+            fn FilterSendMessage(hport: super::super::Foundation::HANDLE, lpinbuffer: *const ::core::ffi::c_void, dwinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, dwoutbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
         }
         FilterSendMessage(hport.into_param().abi(), ::core::mem::transmute(lpinbuffer), ::core::mem::transmute(dwinbuffersize), ::core::mem::transmute(lpoutbuffer), ::core::mem::transmute(dwoutbuffersize), ::core::mem::transmute(lpbytesreturned)).ok()
     }
@@ -934,12 +934,12 @@ pub unsafe fn FilterSendMessage<'a, Param0: ::windows::core::IntoParam<'a, super
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterUnload<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpfiltername: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterUnload<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpfiltername: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterUnload(lpfiltername: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn FilterUnload(lpfiltername: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         FilterUnload(lpfiltername.into_param().abi()).ok()
     }
@@ -949,12 +949,12 @@ pub unsafe fn FilterUnload<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterVolumeFindClose<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hvolumefind: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterVolumeFindClose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hvolumefind: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterVolumeFindClose(hvolumefind: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn FilterVolumeFindClose(hvolumefind: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         FilterVolumeFindClose(hvolumefind.into_param().abi()).ok()
     }
@@ -963,12 +963,12 @@ pub unsafe fn FilterVolumeFindClose<'a, Param0: ::windows::core::IntoParam<'a, s
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterVolumeFindFirst(dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumefind: *mut FilterVolumeFindHandle) -> ::windows::core::Result<()> {
+pub unsafe fn FilterVolumeFindFirst(dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumefind: *mut FilterVolumeFindHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterVolumeFindFirst(dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumefind: *mut FilterVolumeFindHandle) -> ::windows::core::HRESULT;
+            fn FilterVolumeFindFirst(dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumefind: *mut FilterVolumeFindHandle) -> ::windows_core::HRESULT;
         }
         FilterVolumeFindFirst(::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned), ::core::mem::transmute(lpvolumefind)).ok()
     }
@@ -999,18 +999,18 @@ impl ::core::fmt::Debug for FilterVolumeFindHandle {
         f.debug_tuple("FilterVolumeFindHandle").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FilterVolumeFindHandle {
+unsafe impl ::windows_core::Abi for FilterVolumeFindHandle {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterVolumeFindNext<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hvolumefind: Param0, dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterVolumeFindNext<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hvolumefind: Param0, dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterVolumeFindNext(hvolumefind: super::super::Foundation::HANDLE, dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;
+            fn FilterVolumeFindNext(hvolumefind: super::super::Foundation::HANDLE, dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
         }
         FilterVolumeFindNext(hvolumefind.into_param().abi(), ::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned)).ok()
     }
@@ -1020,12 +1020,12 @@ pub unsafe fn FilterVolumeFindNext<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterVolumeInstanceFindClose<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hvolumeinstancefind: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterVolumeInstanceFindClose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hvolumeinstancefind: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterVolumeInstanceFindClose(hvolumeinstancefind: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn FilterVolumeInstanceFindClose(hvolumeinstancefind: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         FilterVolumeInstanceFindClose(hvolumeinstancefind.into_param().abi()).ok()
     }
@@ -1034,12 +1034,12 @@ pub unsafe fn FilterVolumeInstanceFindClose<'a, Param0: ::windows::core::IntoPar
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterVolumeInstanceFindFirst<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpvolumename: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumeinstancefind: *mut FilterVolumeInstanceFindHandle) -> ::windows::core::Result<()> {
+pub unsafe fn FilterVolumeInstanceFindFirst<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpvolumename: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumeinstancefind: *mut FilterVolumeInstanceFindHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterVolumeInstanceFindFirst(lpvolumename: ::windows::core::PCWSTR, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumeinstancefind: *mut FilterVolumeInstanceFindHandle) -> ::windows::core::HRESULT;
+            fn FilterVolumeInstanceFindFirst(lpvolumename: ::windows_core::PCWSTR, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumeinstancefind: *mut FilterVolumeInstanceFindHandle) -> ::windows_core::HRESULT;
         }
         FilterVolumeInstanceFindFirst(lpvolumename.into_param().abi(), ::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned), ::core::mem::transmute(lpvolumeinstancefind)).ok()
     }
@@ -1070,18 +1070,18 @@ impl ::core::fmt::Debug for FilterVolumeInstanceFindHandle {
         f.debug_tuple("FilterVolumeInstanceFindHandle").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FilterVolumeInstanceFindHandle {
+unsafe impl ::windows_core::Abi for FilterVolumeInstanceFindHandle {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterVolumeInstanceFindNext<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hvolumeinstancefind: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterVolumeInstanceFindNext<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hvolumeinstancefind: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterVolumeInstanceFindNext(hvolumeinstancefind: super::super::Foundation::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;
+            fn FilterVolumeInstanceFindNext(hvolumeinstancefind: super::super::Foundation::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
         }
         FilterVolumeInstanceFindNext(hvolumeinstancefind.into_param().abi(), ::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned)).ok()
     }
@@ -1112,7 +1112,7 @@ impl ::core::fmt::Debug for HFILTER {
         f.debug_tuple("HFILTER").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HFILTER {
+unsafe impl ::windows_core::Abi for HFILTER {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -1139,7 +1139,7 @@ impl ::core::fmt::Debug for HFILTER_INSTANCE {
         f.debug_tuple("HFILTER_INSTANCE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HFILTER_INSTANCE {
+unsafe impl ::windows_core::Abi for HFILTER_INSTANCE {
     type Abi = Self;
 }
 #[repr(C)]
@@ -1155,12 +1155,12 @@ impl ::core::clone::Clone for INSTANCE_AGGREGATE_STANDARD_INFORMATION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for INSTANCE_AGGREGATE_STANDARD_INFORMATION {
+unsafe impl ::windows_core::Abi for INSTANCE_AGGREGATE_STANDARD_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INSTANCE_AGGREGATE_STANDARD_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_AGGREGATE_STANDARD_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_AGGREGATE_STANDARD_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INSTANCE_AGGREGATE_STANDARD_INFORMATION {}
@@ -1181,12 +1181,12 @@ impl ::core::clone::Clone for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0 {
+unsafe impl ::windows_core::Abi for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_AGGREGATE_STANDARD_INFORMATION_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_AGGREGATE_STANDARD_INFORMATION_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0 {}
@@ -1218,12 +1218,12 @@ impl ::core::fmt::Debug for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_0 {
         f.debug_struct("INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_0").field("Flags", &self.Flags).field("AltitudeLength", &self.AltitudeLength).field("AltitudeBufferOffset", &self.AltitudeBufferOffset).field("VolumeNameLength", &self.VolumeNameLength).field("VolumeNameBufferOffset", &self.VolumeNameBufferOffset).field("FilterNameLength", &self.FilterNameLength).field("FilterNameBufferOffset", &self.FilterNameBufferOffset).field("SupportedFeatures", &self.SupportedFeatures).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_0 {
+unsafe impl ::windows_core::Abi for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_0 {}
@@ -1272,12 +1272,12 @@ impl ::core::fmt::Debug for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_1 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_1 {
+unsafe impl ::windows_core::Abi for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INSTANCE_AGGREGATE_STANDARD_INFORMATION_0_1 {}
@@ -1304,12 +1304,12 @@ impl ::core::fmt::Debug for INSTANCE_BASIC_INFORMATION {
         f.debug_struct("INSTANCE_BASIC_INFORMATION").field("NextEntryOffset", &self.NextEntryOffset).field("InstanceNameLength", &self.InstanceNameLength).field("InstanceNameBufferOffset", &self.InstanceNameBufferOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INSTANCE_BASIC_INFORMATION {
+unsafe impl ::windows_core::Abi for INSTANCE_BASIC_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INSTANCE_BASIC_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_BASIC_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_BASIC_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INSTANCE_BASIC_INFORMATION {}
@@ -1352,12 +1352,12 @@ impl ::core::fmt::Debug for INSTANCE_FULL_INFORMATION {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for INSTANCE_FULL_INFORMATION {
+unsafe impl ::windows_core::Abi for INSTANCE_FULL_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INSTANCE_FULL_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_FULL_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_FULL_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INSTANCE_FULL_INFORMATION {}
@@ -1389,7 +1389,7 @@ impl ::core::default::Default for INSTANCE_INFORMATION_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for INSTANCE_INFORMATION_CLASS {
+unsafe impl ::windows_core::Abi for INSTANCE_INFORMATION_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for INSTANCE_INFORMATION_CLASS {
@@ -1419,12 +1419,12 @@ impl ::core::fmt::Debug for INSTANCE_PARTIAL_INFORMATION {
         f.debug_struct("INSTANCE_PARTIAL_INFORMATION").field("NextEntryOffset", &self.NextEntryOffset).field("InstanceNameLength", &self.InstanceNameLength).field("InstanceNameBufferOffset", &self.InstanceNameBufferOffset).field("AltitudeLength", &self.AltitudeLength).field("AltitudeBufferOffset", &self.AltitudeBufferOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INSTANCE_PARTIAL_INFORMATION {
+unsafe impl ::windows_core::Abi for INSTANCE_PARTIAL_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INSTANCE_PARTIAL_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_PARTIAL_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INSTANCE_PARTIAL_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INSTANCE_PARTIAL_INFORMATION {}

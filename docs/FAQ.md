@@ -64,9 +64,9 @@ Then inside your project you define the interface in much the same way you defin
 
 ```rust
 /// My interface
-#[windows::core::interface("1FFDDAD0-4799-4BCD-9A28-A583DA58F605")]
+#[interface("1FFDDAD0-4799-4BCD-9A28-A583DA58F605")]
 unsafe trait IMyInterface: IUnknown {
-    unsafe fn MyFunction(&self) -> windows::core::HRESULT;
+    unsafe fn MyFunction(&self) -> HRESULT;
 }
 ```
 
@@ -81,11 +81,11 @@ windows = { version = "..", features = ["implement"] }
 Then you'll need to declare that your type implements a particular interface by adding the `#[implement]` proc macro to your type and then writing an `impl` block for the interface. For a trait called `IMyTrait` you will need to implement the `IMyTrait_Impl` trait (note the trailing `_Impl` in the name).
 
 ```rust
-#[windows::core::implement(IMyInterface)]
+#[implement(IMyInterface)]
 struct MyStruct;
 
 impl IMyInterface_Impl for MyStruct {
-    fn MyMethod(&self) -> windows::core::HRESULT {
+    fn MyMethod(&self) -> HRESULT {
         todo!("Your implementation goes here");
     }
 }

@@ -2,10 +2,10 @@
 extern "system" {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`, `\"Win32_Graphics_Direct3D12\"`*"]
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub fn DMLCreateDevice(d3d12device: super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn DMLCreateDevice(d3d12device: super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`, `\"Win32_Graphics_Direct3D12\"`*"]
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub fn DMLCreateDevice1(d3d12device: super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn DMLCreateDevice1(d3d12device: super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
@@ -1781,7 +1781,7 @@ pub struct DML_INPUT_GRAPH_EDGE_DESC {
     pub GraphInputIndex: u32,
     pub ToNodeIndex: u32,
     pub ToNodeInputIndex: u32,
-    pub Name: ::windows_sys::core::PCSTR,
+    pub Name: ::windows_sys_core::PCSTR,
 }
 impl ::core::marker::Copy for DML_INPUT_GRAPH_EDGE_DESC {}
 impl ::core::clone::Clone for DML_INPUT_GRAPH_EDGE_DESC {
@@ -1796,7 +1796,7 @@ pub struct DML_INTERMEDIATE_GRAPH_EDGE_DESC {
     pub FromNodeOutputIndex: u32,
     pub ToNodeIndex: u32,
     pub ToNodeInputIndex: u32,
-    pub Name: ::windows_sys::core::PCSTR,
+    pub Name: ::windows_sys_core::PCSTR,
 }
 impl ::core::marker::Copy for DML_INTERMEDIATE_GRAPH_EDGE_DESC {}
 impl ::core::clone::Clone for DML_INTERMEDIATE_GRAPH_EDGE_DESC {
@@ -2131,7 +2131,7 @@ impl ::core::clone::Clone for DML_OPERATOR_DESC {
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 pub struct DML_OPERATOR_GRAPH_NODE_DESC {
     pub Operator: IDMLOperator,
-    pub Name: ::windows_sys::core::PCSTR,
+    pub Name: ::windows_sys_core::PCSTR,
 }
 impl ::core::marker::Copy for DML_OPERATOR_GRAPH_NODE_DESC {}
 impl ::core::clone::Clone for DML_OPERATOR_GRAPH_NODE_DESC {
@@ -2449,7 +2449,7 @@ pub struct DML_OUTPUT_GRAPH_EDGE_DESC {
     pub FromNodeIndex: u32,
     pub FromNodeOutputIndex: u32,
     pub GraphOutputIndex: u32,
-    pub Name: ::windows_sys::core::PCSTR,
+    pub Name: ::windows_sys_core::PCSTR,
 }
 impl ::core::marker::Copy for DML_OUTPUT_GRAPH_EDGE_DESC {}
 impl ::core::clone::Clone for DML_OUTPUT_GRAPH_EDGE_DESC {

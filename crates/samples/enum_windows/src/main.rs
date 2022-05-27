@@ -3,7 +3,7 @@ use windows::{
     Win32::UI::WindowsAndMessaging::{EnumWindows, GetWindowTextW},
 };
 
-fn main() -> windows::core::Result<()> {
+fn main() -> windows_core::Result<()> {
     unsafe { EnumWindows(Some(enum_window), LPARAM(0)).ok() }
 }
 

@@ -52,32 +52,32 @@ pub fn gen() -> TokenStream {
         }
         impl ::core::convert::From<&str> for BSTR {
             fn from(value: &str) -> Self {
-                let value: ::windows::core::alloc::vec::Vec<u16> = value.encode_utf16().collect();
+                let value: ::windows_core::alloc::vec::Vec<u16> = value.encode_utf16().collect();
                 Self::from_wide(&value)
             }
         }
-        impl ::core::convert::From<::windows::core::alloc::string::String> for BSTR {
-            fn from(value: ::windows::core::alloc::string::String) -> Self {
+        impl ::core::convert::From<::windows_core::alloc::string::String> for BSTR {
+            fn from(value: ::windows_core::alloc::string::String) -> Self {
                 value.as_str().into()
             }
         }
-        impl  ::core::convert::From<&::windows::core::alloc::string::String> for BSTR {
-            fn from(value: &::windows::core::alloc::string::String) -> Self {
+        impl  ::core::convert::From<&::windows_core::alloc::string::String> for BSTR {
+            fn from(value: &::windows_core::alloc::string::String) -> Self {
                 value.as_str().into()
             }
         }
-        impl<'a> ::core::convert::TryFrom<&'a BSTR> for ::windows::core::alloc::string::String {
-            type Error = ::windows::core::alloc::string::FromUtf16Error;
+        impl<'a> ::core::convert::TryFrom<&'a BSTR> for ::windows_core::alloc::string::String {
+            type Error = ::windows_core::alloc::string::FromUtf16Error;
 
             fn try_from(value: &BSTR) -> ::core::result::Result<Self, Self::Error> {
-                ::windows::core::alloc::string::String::from_utf16(value.as_wide())
+                ::windows_core::alloc::string::String::from_utf16(value.as_wide())
             }
         }
-        impl ::core::convert::TryFrom<BSTR> for ::windows::core::alloc::string::String {
-            type Error = ::windows::core::alloc::string::FromUtf16Error;
+        impl ::core::convert::TryFrom<BSTR> for ::windows_core::alloc::string::String {
+            type Error = ::windows_core::alloc::string::FromUtf16Error;
 
             fn try_from(value: BSTR) -> ::core::result::Result<Self, Self::Error> {
-                ::windows::core::alloc::string::String::try_from(&value)
+                ::windows_core::alloc::string::String::try_from(&value)
             }
         }
         impl ::core::default::Default for BSTR {
@@ -105,8 +105,8 @@ pub fn gen() -> TokenStream {
             }
         }
         impl ::core::cmp::Eq for BSTR {}
-        impl ::core::cmp::PartialEq<::windows::core::alloc::string::String> for BSTR {
-            fn eq(&self, other: &::windows::core::alloc::string::String) -> bool {
+        impl ::core::cmp::PartialEq<::windows_core::alloc::string::String> for BSTR {
+            fn eq(&self, other: &::windows_core::alloc::string::String) -> bool {
                 self == other.as_str()
             }
         }
@@ -133,19 +133,19 @@ pub fn gen() -> TokenStream {
                 }
             }
         }
-        unsafe impl ::windows::core::Abi for BSTR {
+        unsafe impl ::windows_core::Abi for BSTR {
             type Abi = ::core::mem::ManuallyDrop<Self>;
         }
         #[cfg(feature = "alloc")]
-        impl<'a> ::windows::core::IntoParam<'a, BSTR> for &str {
-            fn into_param(self) -> ::windows::core::Param<'a, BSTR> {
-                ::windows::core::Param::Owned(self.into())
+        impl<'a> ::windows_core::IntoParam<'a, BSTR> for &str {
+            fn into_param(self) -> ::windows_core::Param<'a, BSTR> {
+                ::windows_core::Param::Owned(self.into())
             }
         }
         #[cfg(feature = "alloc")]
-        impl<'a> ::windows::core::IntoParam<'a, BSTR> for ::windows::core::alloc::string::String {
-            fn into_param(self) -> ::windows::core::Param<'a, BSTR> {
-                ::windows::core::Param::Owned(self.into())
+        impl<'a> ::windows_core::IntoParam<'a, BSTR> for ::windows_core::alloc::string::String {
+            fn into_param(self) -> ::windows_core::Param<'a, BSTR> {
+                ::windows_core::Param::Owned(self.into())
             }
         }
     }

@@ -1,7 +1,7 @@
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
-pub unsafe fn AdjustWindowRectExForDpi<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(lprect: *mut super::super::Foundation::RECT, dwstyle: super::WindowsAndMessaging::WINDOW_STYLE, bmenu: Param2, dwexstyle: super::WindowsAndMessaging::WINDOW_EX_STYLE, dpi: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn AdjustWindowRectExForDpi<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lprect: *mut super::super::Foundation::RECT, dwstyle: super::WindowsAndMessaging::WINDOW_STYLE, bmenu: Param2, dwexstyle: super::WindowsAndMessaging::WINDOW_EX_STYLE, dpi: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16,7 +16,7 @@ pub unsafe fn AdjustWindowRectExForDpi<'a, Param2: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AreDpiAwarenessContextsEqual<'a, Param0: ::windows::core::IntoParam<'a, DPI_AWARENESS_CONTEXT>, Param1: ::windows::core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(dpicontexta: Param0, dpicontextb: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn AreDpiAwarenessContextsEqual<'a, Param0: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>, Param1: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(dpicontexta: Param0, dpicontextb: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -49,7 +49,7 @@ impl ::core::default::Default for DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS {
+unsafe impl ::windows_core::Abi for DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS {
@@ -108,7 +108,7 @@ impl ::core::default::Default for DIALOG_DPI_CHANGE_BEHAVIORS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DIALOG_DPI_CHANGE_BEHAVIORS {
+unsafe impl ::windows_core::Abi for DIALOG_DPI_CHANGE_BEHAVIORS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DIALOG_DPI_CHANGE_BEHAVIORS {
@@ -167,7 +167,7 @@ impl ::core::default::Default for DPI_AWARENESS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DPI_AWARENESS {
+unsafe impl ::windows_core::Abi for DPI_AWARENESS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DPI_AWARENESS {
@@ -199,7 +199,7 @@ impl ::core::fmt::Debug for DPI_AWARENESS_CONTEXT {
         f.debug_tuple("DPI_AWARENESS_CONTEXT").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DPI_AWARENESS_CONTEXT {
+unsafe impl ::windows_core::Abi for DPI_AWARENESS_CONTEXT {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`*"]
@@ -233,7 +233,7 @@ impl ::core::default::Default for DPI_HOSTING_BEHAVIOR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DPI_HOSTING_BEHAVIOR {
+unsafe impl ::windows_core::Abi for DPI_HOSTING_BEHAVIOR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DPI_HOSTING_BEHAVIOR {
@@ -244,7 +244,7 @@ impl ::core::fmt::Debug for DPI_HOSTING_BEHAVIOR {
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnableNonClientDpiScaling<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn EnableNonClientDpiScaling<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -258,7 +258,7 @@ pub unsafe fn EnableNonClientDpiScaling<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`*"]
 #[inline]
-pub unsafe fn GetAwarenessFromDpiAwarenessContext<'a, Param0: ::windows::core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(value: Param0) -> DPI_AWARENESS {
+pub unsafe fn GetAwarenessFromDpiAwarenessContext<'a, Param0: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(value: Param0) -> DPI_AWARENESS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -273,7 +273,7 @@ pub unsafe fn GetAwarenessFromDpiAwarenessContext<'a, Param0: ::windows::core::I
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDialogControlDpiChangeBehavior<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS {
+pub unsafe fn GetDialogControlDpiChangeBehavior<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -288,7 +288,7 @@ pub unsafe fn GetDialogControlDpiChangeBehavior<'a, Param0: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDialogDpiChangeBehavior<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0) -> DIALOG_DPI_CHANGE_BEHAVIORS {
+pub unsafe fn GetDialogDpiChangeBehavior<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0) -> DIALOG_DPI_CHANGE_BEHAVIORS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -303,7 +303,7 @@ pub unsafe fn GetDialogDpiChangeBehavior<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDpiAwarenessContextForProcess<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> DPI_AWARENESS_CONTEXT {
+pub unsafe fn GetDpiAwarenessContextForProcess<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> DPI_AWARENESS_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -318,12 +318,12 @@ pub unsafe fn GetDpiAwarenessContextForProcess<'a, Param0: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn GetDpiForMonitor<'a, Param0: ::windows::core::IntoParam<'a, super::super::Graphics::Gdi::HMONITOR>>(hmonitor: Param0, dpitype: MONITOR_DPI_TYPE, dpix: *mut u32, dpiy: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn GetDpiForMonitor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HMONITOR>>(hmonitor: Param0, dpitype: MONITOR_DPI_TYPE, dpix: *mut u32, dpiy: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDpiForMonitor(hmonitor: super::super::Graphics::Gdi::HMONITOR, dpitype: MONITOR_DPI_TYPE, dpix: *mut u32, dpiy: *mut u32) -> ::windows::core::HRESULT;
+            fn GetDpiForMonitor(hmonitor: super::super::Graphics::Gdi::HMONITOR, dpitype: MONITOR_DPI_TYPE, dpix: *mut u32, dpiy: *mut u32) -> ::windows_core::HRESULT;
         }
         GetDpiForMonitor(hmonitor.into_param().abi(), ::core::mem::transmute(dpitype), ::core::mem::transmute(dpix), ::core::mem::transmute(dpiy)).ok()
     }
@@ -347,7 +347,7 @@ pub unsafe fn GetDpiForSystem() -> u32 {
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDpiForWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> u32 {
+pub unsafe fn GetDpiForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -361,7 +361,7 @@ pub unsafe fn GetDpiForWindow<'a, Param0: ::windows::core::IntoParam<'a, super::
 }
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`*"]
 #[inline]
-pub unsafe fn GetDpiFromDpiAwarenessContext<'a, Param0: ::windows::core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(value: Param0) -> u32 {
+pub unsafe fn GetDpiFromDpiAwarenessContext<'a, Param0: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(value: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -376,12 +376,12 @@ pub unsafe fn GetDpiFromDpiAwarenessContext<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetProcessDpiAwareness<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> ::windows::core::Result<PROCESS_DPI_AWARENESS> {
+pub unsafe fn GetProcessDpiAwareness<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> ::windows_core::Result<PROCESS_DPI_AWARENESS> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetProcessDpiAwareness(hprocess: super::super::Foundation::HANDLE, value: *mut PROCESS_DPI_AWARENESS) -> ::windows::core::HRESULT;
+            fn GetProcessDpiAwareness(hprocess: super::super::Foundation::HANDLE, value: *mut PROCESS_DPI_AWARENESS) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<PROCESS_DPI_AWARENESS>::zeroed();
         GetProcessDpiAwareness(hprocess.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROCESS_DPI_AWARENESS>(result__)
@@ -392,7 +392,7 @@ pub unsafe fn GetProcessDpiAwareness<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetSystemDpiForProcess<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> u32 {
+pub unsafe fn GetSystemDpiForProcess<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -449,7 +449,7 @@ pub unsafe fn GetThreadDpiHostingBehavior() -> DPI_HOSTING_BEHAVIOR {
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowDpiAwarenessContext<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> DPI_AWARENESS_CONTEXT {
+pub unsafe fn GetWindowDpiAwarenessContext<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> DPI_AWARENESS_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -464,7 +464,7 @@ pub unsafe fn GetWindowDpiAwarenessContext<'a, Param0: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowDpiHostingBehavior<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> DPI_HOSTING_BEHAVIOR {
+pub unsafe fn GetWindowDpiHostingBehavior<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> DPI_HOSTING_BEHAVIOR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -479,7 +479,7 @@ pub unsafe fn GetWindowDpiHostingBehavior<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsValidDpiAwarenessContext<'a, Param0: ::windows::core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(value: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsValidDpiAwarenessContext<'a, Param0: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(value: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -494,7 +494,7 @@ pub unsafe fn IsValidDpiAwarenessContext<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LogicalToPhysicalPointForPerMonitorDPI<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn LogicalToPhysicalPointForPerMonitorDPI<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -529,7 +529,7 @@ impl ::core::default::Default for MONITOR_DPI_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MONITOR_DPI_TYPE {
+unsafe impl ::windows_core::Abi for MONITOR_DPI_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MONITOR_DPI_TYPE {
@@ -540,12 +540,12 @@ impl ::core::fmt::Debug for MONITOR_DPI_TYPE {
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenThemeDataForDpi<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwnd: Param0, pszclasslist: Param1, dpi: u32) -> isize {
+pub unsafe fn OpenThemeDataForDpi<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, pszclasslist: Param1, dpi: u32) -> isize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenThemeDataForDpi(hwnd: super::super::Foundation::HWND, pszclasslist: ::windows::core::PCWSTR, dpi: u32) -> isize;
+            fn OpenThemeDataForDpi(hwnd: super::super::Foundation::HWND, pszclasslist: ::windows_core::PCWSTR, dpi: u32) -> isize;
         }
         ::core::mem::transmute(OpenThemeDataForDpi(hwnd.into_param().abi(), pszclasslist.into_param().abi(), ::core::mem::transmute(dpi)))
     }
@@ -573,7 +573,7 @@ impl ::core::default::Default for PROCESS_DPI_AWARENESS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PROCESS_DPI_AWARENESS {
+unsafe impl ::windows_core::Abi for PROCESS_DPI_AWARENESS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PROCESS_DPI_AWARENESS {
@@ -584,7 +584,7 @@ impl ::core::fmt::Debug for PROCESS_DPI_AWARENESS {
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PhysicalToLogicalPointForPerMonitorDPI<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn PhysicalToLogicalPointForPerMonitorDPI<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -599,7 +599,7 @@ pub unsafe fn PhysicalToLogicalPointForPerMonitorDPI<'a, Param0: ::windows::core
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetDialogControlDpiChangeBehavior<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, mask: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS, values: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetDialogControlDpiChangeBehavior<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, mask: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS, values: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -614,7 +614,7 @@ pub unsafe fn SetDialogControlDpiChangeBehavior<'a, Param0: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetDialogDpiChangeBehavior<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, mask: DIALOG_DPI_CHANGE_BEHAVIORS, values: DIALOG_DPI_CHANGE_BEHAVIORS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetDialogDpiChangeBehavior<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, mask: DIALOG_DPI_CHANGE_BEHAVIORS, values: DIALOG_DPI_CHANGE_BEHAVIORS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -628,12 +628,12 @@ pub unsafe fn SetDialogDpiChangeBehavior<'a, Param0: ::windows::core::IntoParam<
 }
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`*"]
 #[inline]
-pub unsafe fn SetProcessDpiAwareness(value: PROCESS_DPI_AWARENESS) -> ::windows::core::Result<()> {
+pub unsafe fn SetProcessDpiAwareness(value: PROCESS_DPI_AWARENESS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetProcessDpiAwareness(value: PROCESS_DPI_AWARENESS) -> ::windows::core::HRESULT;
+            fn SetProcessDpiAwareness(value: PROCESS_DPI_AWARENESS) -> ::windows_core::HRESULT;
         }
         SetProcessDpiAwareness(::core::mem::transmute(value)).ok()
     }
@@ -643,7 +643,7 @@ pub unsafe fn SetProcessDpiAwareness(value: PROCESS_DPI_AWARENESS) -> ::windows:
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetProcessDpiAwarenessContext<'a, Param0: ::windows::core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(value: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetProcessDpiAwarenessContext<'a, Param0: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(value: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -657,7 +657,7 @@ pub unsafe fn SetProcessDpiAwarenessContext<'a, Param0: ::windows::core::IntoPar
 }
 #[doc = "*Required features: `\"Win32_UI_HiDpi\"`*"]
 #[inline]
-pub unsafe fn SetThreadDpiAwarenessContext<'a, Param0: ::windows::core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(dpicontext: Param0) -> DPI_AWARENESS_CONTEXT {
+pub unsafe fn SetThreadDpiAwarenessContext<'a, Param0: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(dpicontext: Param0) -> DPI_AWARENESS_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]

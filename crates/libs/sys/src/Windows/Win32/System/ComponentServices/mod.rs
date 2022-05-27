@@ -1,26 +1,26 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
-    pub fn CoCreateActivity(piunknown: ::windows_sys::core::IUnknown, riid: *const ::windows_sys::core::GUID, ppobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoCreateActivity(piunknown: ::windows_sys_core::IUnknown, riid: *const ::windows_sys_core::GUID, ppobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
-    pub fn CoEnterServiceDomain(pconfigobject: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn CoEnterServiceDomain(pconfigobject: ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_ComponentServices\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn CoGetDefaultContext(apttype: super::Com::APTTYPE, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetDefaultContext(apttype: super::Com::APTTYPE, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
-    pub fn CoLeaveServiceDomain(punkstatus: ::windows_sys::core::IUnknown);
+    pub fn CoLeaveServiceDomain(punkstatus: ::windows_sys_core::IUnknown);
     #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
-    pub fn GetDispenserManager(param0: *mut IDispenserManager) -> ::windows_sys::core::HRESULT;
+    pub fn GetDispenserManager(param0: *mut IDispenserManager) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
-    pub fn GetManagedExtensions(dwexts: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn GetManagedExtensions(dwexts: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
-    pub fn MTSCreateActivity(riid: *const ::windows_sys::core::GUID, ppobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn MTSCreateActivity(riid: *const ::windows_sys_core::GUID, ppobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
-    pub fn RecycleSurrogate(lreasoncode: i32) -> ::windows_sys::core::HRESULT;
+    pub fn RecycleSurrogate(lreasoncode: i32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
-    pub fn SafeRef(rid: *const ::windows_sys::core::GUID, punk: ::windows_sys::core::IUnknown) -> *mut ::core::ffi::c_void;
+    pub fn SafeRef(rid: *const ::windows_sys_core::GUID, punk: ::windows_sys_core::IUnknown) -> *mut ::core::ffi::c_void;
 }
-pub const AppDomainHelper: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4012177033, data2: 5368, data3: 19858, data4: [180, 175, 215, 177, 240, 231, 15, 212] };
+pub const AppDomainHelper: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4012177033, data2: 5368, data3: 19858, data4: [180, 175, 215, 177, 240, 231, 15, 212] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -70,12 +70,12 @@ impl ::core::clone::Clone for ApplicationProcessStatistics {
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct ApplicationProcessSummary {
-    pub PartitionIdPrimaryApplication: ::windows_sys::core::GUID,
-    pub ApplicationIdPrimaryApplication: ::windows_sys::core::GUID,
-    pub ApplicationInstanceId: ::windows_sys::core::GUID,
+    pub PartitionIdPrimaryApplication: ::windows_sys_core::GUID,
+    pub ApplicationIdPrimaryApplication: ::windows_sys_core::GUID,
+    pub ApplicationInstanceId: ::windows_sys_core::GUID,
     pub ProcessId: u32,
     pub Type: COMPLUS_APPTYPE,
-    pub ProcessExeName: ::windows_sys::core::PWSTR,
+    pub ProcessExeName: ::windows_sys_core::PWSTR,
     pub IsService: super::super::Foundation::BOOL,
     pub IsPaused: super::super::Foundation::BOOL,
     pub IsRecycled: super::super::Foundation::BOOL,
@@ -91,11 +91,11 @@ impl ::core::clone::Clone for ApplicationProcessSummary {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub struct ApplicationSummary {
-    pub ApplicationInstanceId: ::windows_sys::core::GUID,
-    pub PartitionId: ::windows_sys::core::GUID,
-    pub ApplicationId: ::windows_sys::core::GUID,
+    pub ApplicationInstanceId: ::windows_sys_core::GUID,
+    pub PartitionId: ::windows_sys_core::GUID,
+    pub ApplicationId: ::windows_sys_core::GUID,
     pub Type: COMPLUS_APPTYPE,
-    pub ApplicationName: ::windows_sys::core::PWSTR,
+    pub ApplicationName: ::windows_sys_core::PWSTR,
     pub NumTrackedComponents: u32,
     pub NumComponentInstances: u32,
 }
@@ -159,7 +159,7 @@ pub const comqcErrMsgNotAuthenticated: AutoSvcs_Error_Constants = 2148599380u32;
 pub const comqcErrMsmqConnectorUsed: AutoSvcs_Error_Constants = 2148599381u32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub const comqcErrBadMarshaledObject: AutoSvcs_Error_Constants = 2148599382u32;
-pub const ByotServerEx: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674858, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const ByotServerEx: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674858, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub struct CAppData {
@@ -191,7 +191,7 @@ impl ::core::clone::Clone for CAppStatistics {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub struct CCLSIDData {
-    pub m_clsid: ::windows_sys::core::GUID,
+    pub m_clsid: ::windows_sys_core::GUID,
     pub m_cReferences: u32,
     pub m_cBound: u32,
     pub m_cPooled: u32,
@@ -209,11 +209,11 @@ impl ::core::clone::Clone for CCLSIDData {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub struct CCLSIDData2 {
-    pub m_clsid: ::windows_sys::core::GUID,
-    pub m_appid: ::windows_sys::core::GUID,
-    pub m_partid: ::windows_sys::core::GUID,
-    pub m_pwszAppName: ::windows_sys::core::PWSTR,
-    pub m_pwszCtxName: ::windows_sys::core::PWSTR,
+    pub m_clsid: ::windows_sys_core::GUID,
+    pub m_appid: ::windows_sys_core::GUID,
+    pub m_partid: ::windows_sys_core::GUID,
+    pub m_pwszAppName: ::windows_sys_core::PWSTR,
+    pub m_pwszCtxName: ::windows_sys_core::PWSTR,
     pub m_eAppType: COMPLUS_APPTYPE,
     pub m_cReferences: u32,
     pub m_cBound: u32,
@@ -287,9 +287,9 @@ pub const COMAdminAuthenticationPacket: COMAdminAuthenticationLevelOptions = 4i3
 pub const COMAdminAuthenticationIntegrity: COMAdminAuthenticationLevelOptions = 5i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub const COMAdminAuthenticationPrivacy: COMAdminAuthenticationLevelOptions = 6i32;
-pub const COMAdminCatalog: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4128818452, data2: 57272, data3: 4561, data4: [162, 207, 0, 128, 95, 199, 146, 53] };
-pub const COMAdminCatalogCollection: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4128818454, data2: 57272, data3: 4561, data4: [162, 207, 0, 128, 95, 199, 146, 53] };
-pub const COMAdminCatalogObject: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4128818453, data2: 57272, data3: 4561, data4: [162, 207, 0, 128, 95, 199, 146, 53] };
+pub const COMAdminCatalog: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4128818452, data2: 57272, data3: 4561, data4: [162, 207, 0, 128, 95, 199, 146, 53] };
+pub const COMAdminCatalogCollection: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4128818454, data2: 57272, data3: 4561, data4: [162, 207, 0, 128, 95, 199, 146, 53] };
+pub const COMAdminCatalogObject: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4128818453, data2: 57272, data3: 4561, data4: [162, 207, 0, 128, 95, 199, 146, 53] };
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub type COMAdminComponentFlags = i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
@@ -708,7 +708,7 @@ pub const COMAdminTxIsolationLevelReadCommitted: COMAdminTxIsolationLevelOptions
 pub const COMAdminTxIsolationLevelRepeatableRead: COMAdminTxIsolationLevelOptions = 3i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub const COMAdminTxIsolationLevelSerializable: COMAdminTxIsolationLevelOptions = 4i32;
-pub const COMEvents: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674859, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const COMEvents: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674859, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub type COMPLUS_APPTYPE = i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
@@ -727,8 +727,8 @@ pub struct COMSVCSEVENTINFO {
     pub lTime: i64,
     pub lMicroTime: i32,
     pub perfCount: i64,
-    pub guidApp: ::windows_sys::core::GUID,
-    pub sMachineName: ::windows_sys::core::PWSTR,
+    pub guidApp: ::windows_sys_core::GUID,
+    pub sMachineName: ::windows_sys_core::PWSTR,
 }
 impl ::core::marker::Copy for COMSVCSEVENTINFO {}
 impl ::core::clone::Clone for COMSVCSEVENTINFO {
@@ -736,7 +736,7 @@ impl ::core::clone::Clone for COMSVCSEVENTINFO {
         *self
     }
 }
-pub const CRMClerk: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674877, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const CRMClerk: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674877, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub type CRMFLAGS = i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
@@ -765,7 +765,7 @@ pub const CRMREGFLAG_ABORTPHASE: CRMREGFLAGS = 4i32;
 pub const CRMREGFLAG_ALLPHASES: CRMREGFLAGS = 7i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub const CRMREGFLAG_FAILIFINDOUBTSREMAIN: CRMREGFLAGS = 16i32;
-pub const CRMRecoveryClerk: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674878, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const CRMRecoveryClerk: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674878, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub const CRR_ACTIVATION_LIMIT: u32 = 4294967294u32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
@@ -854,11 +854,11 @@ pub const CSC_IfContainerIsTransactional: CSC_TransactionConfig = 1i32;
 pub const CSC_CreateTransactionIfNecessary: CSC_TransactionConfig = 2i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub const CSC_NewTransaction: CSC_TransactionConfig = 3i32;
-pub const CServiceConfig: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674888, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
-pub const ClrAssemblyLocator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1166713781, data2: 9818, data3: 19317, data4: [188, 5, 155, 234, 70, 48, 207, 24] };
-pub const CoMTSLocator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674860, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
-pub const ComServiceEvents: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674883, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
-pub const ComSystemAppEventData: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674886, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const CServiceConfig: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674888, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const ClrAssemblyLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1166713781, data2: 9818, data3: 19317, data4: [188, 5, 155, 234, 70, 48, 207, 24] };
+pub const CoMTSLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674860, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const ComServiceEvents: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674883, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const ComSystemAppEventData: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674886, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -901,12 +901,12 @@ impl ::core::clone::Clone for ComponentStatistics {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub struct ComponentSummary {
-    pub ApplicationInstanceId: ::windows_sys::core::GUID,
-    pub PartitionId: ::windows_sys::core::GUID,
-    pub ApplicationId: ::windows_sys::core::GUID,
-    pub Clsid: ::windows_sys::core::GUID,
-    pub ClassName: ::windows_sys::core::PWSTR,
-    pub ApplicationName: ::windows_sys::core::PWSTR,
+    pub ApplicationInstanceId: ::windows_sys_core::GUID,
+    pub PartitionId: ::windows_sys_core::GUID,
+    pub ApplicationId: ::windows_sys_core::GUID,
+    pub Clsid: ::windows_sys_core::GUID,
+    pub ClassName: ::windows_sys_core::PWSTR,
+    pub ApplicationName: ::windows_sys_core::PWSTR,
 }
 impl ::core::marker::Copy for ComponentSummary {}
 impl ::core::clone::Clone for ComponentSummary {
@@ -952,9 +952,9 @@ pub const DUMPTYPE_FULL: DUMPTYPE = 0i32;
 pub const DUMPTYPE_MINI: DUMPTYPE = 1i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub const DUMPTYPE_NONE: DUMPTYPE = 2i32;
-pub const DispenserManager: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674880, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
-pub const Dummy30040732: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674857, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
-pub const EventServer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674620, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const DispenserManager: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674880, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const Dummy30040732: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674857, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const EventServer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674620, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub const GUID_STRING_SIZE: u32 = 40u32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
@@ -969,7 +969,7 @@ pub const GATD_INCLUDE_SWC: GetAppTrackerDataFlags = 4i32;
 pub const GATD_INCLUDE_CLASS_NAME: GetAppTrackerDataFlags = 8i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub const GATD_INCLUDE_APPLICATION_NAME: GetAppTrackerDataFlags = 16i32;
-pub const GetSecurityCallContextAppObject: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674856, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const GetSecurityCallContextAppObject: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674856, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -1107,7 +1107,7 @@ pub type ITransactionProxy = *mut ::core::ffi::c_void;
 pub type ITransactionResourcePool = *mut ::core::ffi::c_void;
 pub type ITransactionStatus = *mut ::core::ffi::c_void;
 pub type ITxProxyHolder = *mut ::core::ffi::c_void;
-pub const LBEvents: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674881, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const LBEvents: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674881, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub type LockModes = i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
@@ -1116,15 +1116,15 @@ pub const LockSetGet: LockModes = 0i32;
 pub const LockMethod: LockModes = 1i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub const MTXDM_E_ENLISTRESOURCEFAILED: u32 = 2147803392u32;
-pub const MessageMover: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674879, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
-pub const MtsGrp: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1261344141, data2: 915, data3: 4561, data4: [177, 171, 0, 170, 0, 186, 50, 88] };
+pub const MessageMover: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674879, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const MtsGrp: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1261344141, data2: 915, data3: 4561, data4: [177, 171, 0, 170, 0, 186, 50, 88] };
 pub type ObjectContext = *mut ::core::ffi::c_void;
 pub type ObjectControl = *mut ::core::ffi::c_void;
-pub const PoolMgr: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674613, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const PoolMgr: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674613, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub struct RECYCLE_INFO {
-    pub guidCombaseProcessIdentifier: ::windows_sys::core::GUID,
+    pub guidCombaseProcessIdentifier: ::windows_sys_core::GUID,
     pub ProcessStartTime: i64,
     pub dwRecycleLifetimeLimit: u32,
     pub dwRecycleMemoryLimit: u32,
@@ -1142,15 +1142,15 @@ pub type ReleaseModes = i32;
 pub const Standard: ReleaseModes = 0i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub const Process: ReleaseModes = 1i32;
-pub const SecurityCallContext: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674855, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
-pub const SecurityCallers: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674854, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
-pub const SecurityIdentity: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674853, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const SecurityCallContext: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674855, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const SecurityCallers: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674854, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const SecurityIdentity: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674853, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
 pub type SecurityProperty = *mut ::core::ffi::c_void;
-pub const ServicePool: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674889, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
-pub const ServicePoolConfig: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674890, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
-pub const SharedProperty: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 704666629, data2: 42462, data3: 4559, data4: [158, 102, 0, 170, 0, 163, 244, 100] };
-pub const SharedPropertyGroup: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 704666635, data2: 42462, data3: 4559, data4: [158, 102, 0, 170, 0, 163, 244, 100] };
-pub const SharedPropertyGroupManager: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 704666641, data2: 42462, data3: 4559, data4: [158, 102, 0, 170, 0, 163, 244, 100] };
+pub const ServicePool: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674889, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const ServicePoolConfig: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674890, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const SharedProperty: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 704666629, data2: 42462, data3: 4559, data4: [158, 102, 0, 170, 0, 163, 244, 100] };
+pub const SharedPropertyGroup: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 704666635, data2: 42462, data3: 4559, data4: [158, 102, 0, 170, 0, 163, 244, 100] };
+pub const SharedPropertyGroupManager: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 704666641, data2: 42462, data3: 4559, data4: [158, 102, 0, 170, 0, 163, 244, 100] };
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub const TRACKER_INIT_EVENT: &str = "Global\\COM+ Tracker Init Event";
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
@@ -1163,9 +1163,9 @@ pub const TRKCOLL_PROCESSES: TRACKING_COLL_TYPE = 0i32;
 pub const TRKCOLL_APPLICATIONS: TRACKING_COLL_TYPE = 1i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub const TRKCOLL_COMPONENTS: TRACKING_COLL_TYPE = 2i32;
-pub const TrackerServer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3970674617, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
-pub const TransactionContext: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2040134693, data2: 54214, data3: 4559, data4: [172, 171, 0, 160, 36, 165, 90, 239] };
-pub const TransactionContextEx: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1555457648, data2: 54228, data3: 4559, data4: [172, 171, 0, 160, 36, 165, 90, 239] };
+pub const TrackerServer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3970674617, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
+pub const TransactionContext: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2040134693, data2: 54214, data3: 4559, data4: [172, 171, 0, 160, 36, 165, 90, 239] };
+pub const TransactionContextEx: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1555457648, data2: 54228, data3: 4559, data4: [172, 171, 0, 160, 36, 165, 90, 239] };
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 pub type TransactionVote = i32;
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]

@@ -12,11 +12,11 @@ pub fn gen() -> TokenStream {
             }
 
             #[inline]
-            pub fn ok(self) -> ::windows::core::Result<()> {
+            pub fn ok(self) -> ::windows_core::Result<()> {
                 if self.as_bool() {
                     Ok(())
                 } else {
-                    Err(::windows::core::Error::from_win32())
+                    Err(::windows_core::Error::from_win32())
                 }
             }
 
@@ -112,13 +112,13 @@ pub fn gen() -> TokenStream {
             }
         }
 
-        unsafe impl ::windows::core::Abi for BOOL {
+        unsafe impl ::windows_core::Abi for BOOL {
             type Abi = Self;
         }
 
-        impl<'a> ::windows::core::IntoParam<'a, BOOL> for bool {
-            fn into_param(self) -> ::windows::core::Param<'a, BOOL> {
-                ::windows::core::Param::Owned(self.into())
+        impl<'a> ::windows_core::IntoParam<'a, BOOL> for bool {
+            fn into_param(self) -> ::windows_core::Param<'a, BOOL> {
+                ::windows_core::Param::Owned(self.into())
             }
         }
     }

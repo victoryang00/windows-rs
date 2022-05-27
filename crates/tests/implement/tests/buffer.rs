@@ -1,4 +1,4 @@
-use windows::core::*;
+use windows_core::*;
 use windows::Storage::Streams::Buffer;
 use windows::Win32::System::WinRT::*;
 

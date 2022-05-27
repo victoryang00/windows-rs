@@ -48,53 +48,53 @@ impl ::core::fmt::Debug for HTASK {
         f.debug_tuple("HTASK").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HTASK {
+unsafe impl ::windows_core::Abi for HTASK {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Media\"`*"]
 #[repr(transparent)]
-pub struct IReferenceClock(::windows::core::IUnknown);
+pub struct IReferenceClock(::windows_core::IUnknown);
 impl IReferenceClock {
     #[doc = "*Required features: `\"Win32_Media\"`*"]
-    pub unsafe fn GetTime(&self) -> ::windows::core::Result<i64> {
+    pub unsafe fn GetTime(&self) -> ::windows_core::Result<i64> {
         let mut result__ = ::core::mem::MaybeUninit::<i64>::zeroed();
-        (::windows::core::Interface::vtable(self).GetTime)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i64>(result__)
+        (::windows_core::Interface::vtable(self).GetTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i64>(result__)
     }
     #[doc = "*Required features: `\"Win32_Media\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AdviseTime<'a, Param2: ::windows::core::IntoParam<'a, super::Foundation::HANDLE>>(&self, basetime: i64, streamtime: i64, hevent: Param2) -> ::windows::core::Result<usize> {
+    pub unsafe fn AdviseTime<'a, Param2: ::windows_core::IntoParam<'a, super::Foundation::HANDLE>>(&self, basetime: i64, streamtime: i64, hevent: Param2) -> ::windows_core::Result<usize> {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
-        (::windows::core::Interface::vtable(self).AdviseTime)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(basetime), ::core::mem::transmute(streamtime), hevent.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
+        (::windows_core::Interface::vtable(self).AdviseTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(basetime), ::core::mem::transmute(streamtime), hevent.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }
     #[doc = "*Required features: `\"Win32_Media\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AdvisePeriodic<'a, Param2: ::windows::core::IntoParam<'a, super::Foundation::HANDLE>>(&self, starttime: i64, periodtime: i64, hsemaphore: Param2) -> ::windows::core::Result<usize> {
+    pub unsafe fn AdvisePeriodic<'a, Param2: ::windows_core::IntoParam<'a, super::Foundation::HANDLE>>(&self, starttime: i64, periodtime: i64, hsemaphore: Param2) -> ::windows_core::Result<usize> {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
-        (::windows::core::Interface::vtable(self).AdvisePeriodic)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(starttime), ::core::mem::transmute(periodtime), hsemaphore.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
+        (::windows_core::Interface::vtable(self).AdvisePeriodic)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(starttime), ::core::mem::transmute(periodtime), hsemaphore.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }
     #[doc = "*Required features: `\"Win32_Media\"`*"]
-    pub unsafe fn Unadvise(&self, dwadvisecookie: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Unadvise)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwadvisecookie)).ok()
+    pub unsafe fn Unadvise(&self, dwadvisecookie: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Unadvise)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwadvisecookie)).ok()
     }
 }
-impl ::core::convert::From<IReferenceClock> for ::windows::core::IUnknown {
+impl ::core::convert::From<IReferenceClock> for ::windows_core::IUnknown {
     fn from(value: IReferenceClock) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IReferenceClock> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IReferenceClock> for ::windows_core::IUnknown {
     fn from(value: &IReferenceClock) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IReferenceClock {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IReferenceClock {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IReferenceClock {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IReferenceClock {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IReferenceClock {
@@ -113,69 +113,69 @@ impl ::core::fmt::Debug for IReferenceClock {
         f.debug_tuple("IReferenceClock").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IReferenceClock {
+unsafe impl ::windows_core::Interface for IReferenceClock {
     type Vtable = IReferenceClock_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x56a86897_0ad4_11ce_b03a_0020af0ba770);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x56a86897_0ad4_11ce_b03a_0020af0ba770);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IReferenceClock_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptime: *mut i64) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptime: *mut i64) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub AdviseTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, basetime: i64, streamtime: i64, hevent: super::Foundation::HANDLE, pdwadvisecookie: *mut usize) -> ::windows::core::HRESULT,
+    pub AdviseTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, basetime: i64, streamtime: i64, hevent: super::Foundation::HANDLE, pdwadvisecookie: *mut usize) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     AdviseTime: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub AdvisePeriodic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: i64, periodtime: i64, hsemaphore: super::Foundation::HANDLE, pdwadvisecookie: *mut usize) -> ::windows::core::HRESULT,
+    pub AdvisePeriodic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: i64, periodtime: i64, hsemaphore: super::Foundation::HANDLE, pdwadvisecookie: *mut usize) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     AdvisePeriodic: usize,
-    pub Unadvise: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwadvisecookie: usize) -> ::windows::core::HRESULT,
+    pub Unadvise: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwadvisecookie: usize) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Media\"`*"]
 #[repr(transparent)]
-pub struct IReferenceClock2(::windows::core::IUnknown);
+pub struct IReferenceClock2(::windows_core::IUnknown);
 impl IReferenceClock2 {
     #[doc = "*Required features: `\"Win32_Media\"`*"]
-    pub unsafe fn GetTime(&self) -> ::windows::core::Result<i64> {
+    pub unsafe fn GetTime(&self) -> ::windows_core::Result<i64> {
         let mut result__ = ::core::mem::MaybeUninit::<i64>::zeroed();
-        (::windows::core::Interface::vtable(self).base__.GetTime)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i64>(result__)
+        (::windows_core::Interface::vtable(self).base__.GetTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i64>(result__)
     }
     #[doc = "*Required features: `\"Win32_Media\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AdviseTime<'a, Param2: ::windows::core::IntoParam<'a, super::Foundation::HANDLE>>(&self, basetime: i64, streamtime: i64, hevent: Param2) -> ::windows::core::Result<usize> {
+    pub unsafe fn AdviseTime<'a, Param2: ::windows_core::IntoParam<'a, super::Foundation::HANDLE>>(&self, basetime: i64, streamtime: i64, hevent: Param2) -> ::windows_core::Result<usize> {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
-        (::windows::core::Interface::vtable(self).base__.AdviseTime)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(basetime), ::core::mem::transmute(streamtime), hevent.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
+        (::windows_core::Interface::vtable(self).base__.AdviseTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(basetime), ::core::mem::transmute(streamtime), hevent.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }
     #[doc = "*Required features: `\"Win32_Media\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AdvisePeriodic<'a, Param2: ::windows::core::IntoParam<'a, super::Foundation::HANDLE>>(&self, starttime: i64, periodtime: i64, hsemaphore: Param2) -> ::windows::core::Result<usize> {
+    pub unsafe fn AdvisePeriodic<'a, Param2: ::windows_core::IntoParam<'a, super::Foundation::HANDLE>>(&self, starttime: i64, periodtime: i64, hsemaphore: Param2) -> ::windows_core::Result<usize> {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
-        (::windows::core::Interface::vtable(self).base__.AdvisePeriodic)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(starttime), ::core::mem::transmute(periodtime), hsemaphore.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
+        (::windows_core::Interface::vtable(self).base__.AdvisePeriodic)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(starttime), ::core::mem::transmute(periodtime), hsemaphore.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }
     #[doc = "*Required features: `\"Win32_Media\"`*"]
-    pub unsafe fn Unadvise(&self, dwadvisecookie: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.Unadvise)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwadvisecookie)).ok()
+    pub unsafe fn Unadvise(&self, dwadvisecookie: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.Unadvise)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwadvisecookie)).ok()
     }
 }
-impl ::core::convert::From<IReferenceClock2> for ::windows::core::IUnknown {
+impl ::core::convert::From<IReferenceClock2> for ::windows_core::IUnknown {
     fn from(value: IReferenceClock2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IReferenceClock2> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IReferenceClock2> for ::windows_core::IUnknown {
     fn from(value: &IReferenceClock2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IReferenceClock2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IReferenceClock2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IReferenceClock2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IReferenceClock2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IReferenceClock2> for IReferenceClock {
@@ -188,14 +188,14 @@ impl ::core::convert::From<&IReferenceClock2> for IReferenceClock {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IReferenceClock> for IReferenceClock2 {
-    fn into_param(self) -> ::windows::core::Param<'a, IReferenceClock> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IReferenceClock> for IReferenceClock2 {
+    fn into_param(self) -> ::windows_core::Param<'a, IReferenceClock> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IReferenceClock> for &'a IReferenceClock2 {
-    fn into_param(self) -> ::windows::core::Param<'a, IReferenceClock> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IReferenceClock> for &'a IReferenceClock2 {
+    fn into_param(self) -> ::windows_core::Param<'a, IReferenceClock> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IReferenceClock2 {
@@ -214,9 +214,9 @@ impl ::core::fmt::Debug for IReferenceClock2 {
         f.debug_tuple("IReferenceClock2").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IReferenceClock2 {
+unsafe impl ::windows_core::Interface for IReferenceClock2 {
     type Vtable = IReferenceClock2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36b73885_c2c8_11cf_8b46_00805f6cef60);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36b73885_c2c8_11cf_8b46_00805f6cef60);
 }
 #[repr(C)]
 #[doc(hidden)]
@@ -225,36 +225,36 @@ pub struct IReferenceClock2_Vtbl {
 }
 #[doc = "*Required features: `\"Win32_Media\"`*"]
 #[repr(transparent)]
-pub struct IReferenceClockTimerControl(::windows::core::IUnknown);
+pub struct IReferenceClockTimerControl(::windows_core::IUnknown);
 impl IReferenceClockTimerControl {
     #[doc = "*Required features: `\"Win32_Media\"`*"]
-    pub unsafe fn SetDefaultTimerResolution(&self, timerresolution: i64) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetDefaultTimerResolution)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(timerresolution)).ok()
+    pub unsafe fn SetDefaultTimerResolution(&self, timerresolution: i64) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetDefaultTimerResolution)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(timerresolution)).ok()
     }
     #[doc = "*Required features: `\"Win32_Media\"`*"]
-    pub unsafe fn GetDefaultTimerResolution(&self) -> ::windows::core::Result<i64> {
+    pub unsafe fn GetDefaultTimerResolution(&self) -> ::windows_core::Result<i64> {
         let mut result__ = ::core::mem::MaybeUninit::<i64>::zeroed();
-        (::windows::core::Interface::vtable(self).GetDefaultTimerResolution)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i64>(result__)
+        (::windows_core::Interface::vtable(self).GetDefaultTimerResolution)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i64>(result__)
     }
 }
-impl ::core::convert::From<IReferenceClockTimerControl> for ::windows::core::IUnknown {
+impl ::core::convert::From<IReferenceClockTimerControl> for ::windows_core::IUnknown {
     fn from(value: IReferenceClockTimerControl) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IReferenceClockTimerControl> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IReferenceClockTimerControl> for ::windows_core::IUnknown {
     fn from(value: &IReferenceClockTimerControl) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IReferenceClockTimerControl {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IReferenceClockTimerControl {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IReferenceClockTimerControl {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IReferenceClockTimerControl {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IReferenceClockTimerControl {
@@ -273,16 +273,16 @@ impl ::core::fmt::Debug for IReferenceClockTimerControl {
         f.debug_tuple("IReferenceClockTimerControl").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IReferenceClockTimerControl {
+unsafe impl ::windows_core::Interface for IReferenceClockTimerControl {
     type Vtable = IReferenceClockTimerControl_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xebec459c_2eca_4d42_a8af_30df557614b8);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xebec459c_2eca_4d42_a8af_30df557614b8);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IReferenceClockTimerControl_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub SetDefaultTimerResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timerresolution: i64) -> ::windows::core::HRESULT,
-    pub GetDefaultTimerResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptimerresolution: *mut i64) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub SetDefaultTimerResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timerresolution: i64) -> ::windows_core::HRESULT,
+    pub GetDefaultTimerResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptimerresolution: *mut i64) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Media\"`*"]
 pub const JOYERR_BASE: u32 = 160u32;
@@ -371,12 +371,12 @@ impl ::core::clone::Clone for MMTIME {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MMTIME {
+unsafe impl ::windows_core::Abi for MMTIME {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MMTIME {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MMTIME>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MMTIME>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MMTIME {}
@@ -401,12 +401,12 @@ impl ::core::clone::Clone for MMTIME_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MMTIME_0 {
+unsafe impl ::windows_core::Abi for MMTIME_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MMTIME_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MMTIME_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MMTIME_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MMTIME_0 {}
@@ -426,12 +426,12 @@ impl ::core::clone::Clone for MMTIME_0_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MMTIME_0_0 {
+unsafe impl ::windows_core::Abi for MMTIME_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MMTIME_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MMTIME_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MMTIME_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MMTIME_0_0 {}
@@ -462,12 +462,12 @@ impl ::core::fmt::Debug for MMTIME_0_1 {
         f.debug_struct("MMTIME_0_1").field("hour", &self.hour).field("min", &self.min).field("sec", &self.sec).field("frame", &self.frame).field("fps", &self.fps).field("dummy", &self.dummy).field("pad", &self.pad).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MMTIME_0_1 {
+unsafe impl ::windows_core::Abi for MMTIME_0_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MMTIME_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MMTIME_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MMTIME_0_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MMTIME_0_1 {}
@@ -591,12 +591,12 @@ impl ::core::fmt::Debug for TIMECAPS {
         f.debug_struct("TIMECAPS").field("wPeriodMin", &self.wPeriodMin).field("wPeriodMax", &self.wPeriodMax).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TIMECAPS {
+unsafe impl ::windows_core::Abi for TIMECAPS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TIMECAPS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TIMECAPS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TIMECAPS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TIMECAPS {}
@@ -617,12 +617,12 @@ impl ::core::clone::Clone for TIMECODE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for TIMECODE {
+unsafe impl ::windows_core::Abi for TIMECODE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TIMECODE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TIMECODE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TIMECODE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TIMECODE {}
@@ -649,12 +649,12 @@ impl ::core::fmt::Debug for TIMECODE_0 {
         f.debug_struct("TIMECODE_0").field("wFrameRate", &self.wFrameRate).field("wFrameFract", &self.wFrameFract).field("dwFrames", &self.dwFrames).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TIMECODE_0 {
+unsafe impl ::windows_core::Abi for TIMECODE_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TIMECODE_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TIMECODE_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TIMECODE_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TIMECODE_0 {}
@@ -677,12 +677,12 @@ impl ::core::clone::Clone for TIMECODE_SAMPLE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for TIMECODE_SAMPLE {
+unsafe impl ::windows_core::Abi for TIMECODE_SAMPLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TIMECODE_SAMPLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TIMECODE_SAMPLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TIMECODE_SAMPLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TIMECODE_SAMPLE {}
@@ -712,7 +712,7 @@ impl ::core::default::Default for TIMECODE_SAMPLE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TIMECODE_SAMPLE_FLAGS {
+unsafe impl ::windows_core::Abi for TIMECODE_SAMPLE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TIMECODE_SAMPLE_FLAGS {
@@ -873,7 +873,7 @@ pub unsafe fn timeSetEvent(udelay: u32, uresolution: u32, fptc: LPTIMECALLBACK, 
     {
         #[link(name = "windows")]
         extern "system" {
-            fn timeSetEvent(udelay: u32, uresolution: u32, fptc: ::windows::core::RawPtr, dwuser: usize, fuevent: u32) -> u32;
+            fn timeSetEvent(udelay: u32, uresolution: u32, fptc: ::windows_core::RawPtr, dwuser: usize, fuevent: u32) -> u32;
         }
         ::core::mem::transmute(timeSetEvent(::core::mem::transmute(udelay), ::core::mem::transmute(uresolution), ::core::mem::transmute(fptc), ::core::mem::transmute(dwuser), ::core::mem::transmute(fuevent)))
     }

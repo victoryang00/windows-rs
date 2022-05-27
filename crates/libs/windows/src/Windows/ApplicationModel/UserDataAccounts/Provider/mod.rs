@@ -1,87 +1,87 @@
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IUserDataAccountPartnerAccountInfo(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IUserDataAccountPartnerAccountInfo {
+pub struct IUserDataAccountPartnerAccountInfo(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IUserDataAccountPartnerAccountInfo {
     type Vtable = IUserDataAccountPartnerAccountInfo_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5f200037_f6ef_4ec3_8630_012c59c1149f);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5f200037_f6ef_4ec3_8630_012c59c1149f);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IUserDataAccountPartnerAccountInfo_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub Priority: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows::core::HRESULT,
-    pub AccountKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UserDataAccountProviderPartnerAccountKind) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub Priority: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
+    pub AccountKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UserDataAccountProviderPartnerAccountKind) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IUserDataAccountProviderAddAccountOperation(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IUserDataAccountProviderAddAccountOperation {
+pub struct IUserDataAccountProviderAddAccountOperation(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IUserDataAccountProviderAddAccountOperation {
     type Vtable = IUserDataAccountProviderAddAccountOperation_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb9c72530_3f84_4b5d_8eaa_45e97aa842ed);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb9c72530_3f84_4b5d_8eaa_45e97aa842ed);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IUserDataAccountProviderAddAccountOperation_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub ContentKinds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::UserDataAccountContentKinds) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub ContentKinds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::UserDataAccountContentKinds) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub PartnerAccountInfos: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub PartnerAccountInfos: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     PartnerAccountInfos: usize,
-    pub ReportCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, userdataaccountid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub ReportCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, userdataaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
 #[repr(transparent)]
-pub struct IUserDataAccountProviderOperation(::windows::core::IUnknown);
+pub struct IUserDataAccountProviderOperation(::windows_core::IUnknown);
 impl IUserDataAccountProviderOperation {
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<UserDataAccountProviderOperationKind> {
+    pub fn Kind(&self) -> ::windows_core::Result<UserDataAccountProviderOperationKind> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<UserDataAccountProviderOperationKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserDataAccountProviderOperationKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserDataAccountProviderOperationKind>(result__)
         }
     }
 }
-impl ::core::convert::From<IUserDataAccountProviderOperation> for ::windows::core::IUnknown {
+impl ::core::convert::From<IUserDataAccountProviderOperation> for ::windows_core::IUnknown {
     fn from(value: IUserDataAccountProviderOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IUserDataAccountProviderOperation> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IUserDataAccountProviderOperation> for ::windows_core::IUnknown {
     fn from(value: &IUserDataAccountProviderOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IUserDataAccountProviderOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IUserDataAccountProviderOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IUserDataAccountProviderOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IUserDataAccountProviderOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<IUserDataAccountProviderOperation> for ::windows::core::IInspectable {
+impl ::core::convert::From<IUserDataAccountProviderOperation> for ::windows_core::IInspectable {
     fn from(value: IUserDataAccountProviderOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IUserDataAccountProviderOperation> for ::windows::core::IInspectable {
+impl ::core::convert::From<&IUserDataAccountProviderOperation> for ::windows_core::IInspectable {
     fn from(value: &IUserDataAccountProviderOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IUserDataAccountProviderOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for IUserDataAccountProviderOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IUserDataAccountProviderOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IUserDataAccountProviderOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IUserDataAccountProviderOperation {
@@ -100,77 +100,77 @@ impl ::core::fmt::Debug for IUserDataAccountProviderOperation {
         f.debug_tuple("IUserDataAccountProviderOperation").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for IUserDataAccountProviderOperation {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"{a20aad63-888c-4a62-a3dd-34d07a802b2b}");
+unsafe impl ::windows_core::RuntimeType for IUserDataAccountProviderOperation {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"{a20aad63-888c-4a62-a3dd-34d07a802b2b}");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IUserDataAccountProviderOperation {
+unsafe impl ::windows_core::Interface for IUserDataAccountProviderOperation {
     type Vtable = IUserDataAccountProviderOperation_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa20aad63_888c_4a62_a3dd_34d07a802b2b);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa20aad63_888c_4a62_a3dd_34d07a802b2b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IUserDataAccountProviderOperation_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Kind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UserDataAccountProviderOperationKind) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Kind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UserDataAccountProviderOperationKind) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IUserDataAccountProviderResolveErrorsOperation(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IUserDataAccountProviderResolveErrorsOperation {
+pub struct IUserDataAccountProviderResolveErrorsOperation(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IUserDataAccountProviderResolveErrorsOperation {
     type Vtable = IUserDataAccountProviderResolveErrorsOperation_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6235dc15_bfcb_41e1_9957_9759a28846cc);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6235dc15_bfcb_41e1_9957_9759a28846cc);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IUserDataAccountProviderResolveErrorsOperation_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub UserDataAccountId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub ReportCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub UserDataAccountId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub ReportCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IUserDataAccountProviderSettingsOperation(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IUserDataAccountProviderSettingsOperation {
+pub struct IUserDataAccountProviderSettingsOperation(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IUserDataAccountProviderSettingsOperation {
     type Vtable = IUserDataAccountProviderSettingsOperation_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x92034db7_8648_4f30_acfa_3002658ca80d);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x92034db7_8648_4f30_acfa_3002658ca80d);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IUserDataAccountProviderSettingsOperation_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub UserDataAccountId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub ReportCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub UserDataAccountId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub ReportCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
 #[repr(transparent)]
-pub struct UserDataAccountPartnerAccountInfo(::windows::core::IUnknown);
+pub struct UserDataAccountPartnerAccountInfo(::windows_core::IUnknown);
 impl UserDataAccountPartnerAccountInfo {
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
-    pub fn DisplayName(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn DisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).DisplayName)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).DisplayName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
-    pub fn Priority(&self) -> ::windows::core::Result<u32> {
+    pub fn Priority(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-            (::windows::core::Interface::vtable(this).Priority)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
+            (::windows_core::Interface::vtable(this).Priority)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
-    pub fn AccountKind(&self) -> ::windows::core::Result<UserDataAccountProviderPartnerAccountKind> {
+    pub fn AccountKind(&self) -> ::windows_core::Result<UserDataAccountProviderPartnerAccountKind> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<UserDataAccountProviderPartnerAccountKind>::zeroed();
-            (::windows::core::Interface::vtable(this).AccountKind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserDataAccountProviderPartnerAccountKind>(result__)
+            (::windows_core::Interface::vtable(this).AccountKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserDataAccountProviderPartnerAccountKind>(result__)
         }
     }
 }
@@ -190,94 +190,94 @@ impl ::core::fmt::Debug for UserDataAccountPartnerAccountInfo {
         f.debug_tuple("UserDataAccountPartnerAccountInfo").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for UserDataAccountPartnerAccountInfo {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccountInfo;{5f200037-f6ef-4ec3-8630-012c59c1149f})");
+unsafe impl ::windows_core::RuntimeType for UserDataAccountPartnerAccountInfo {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccountInfo;{5f200037-f6ef-4ec3-8630-012c59c1149f})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for UserDataAccountPartnerAccountInfo {
+unsafe impl ::windows_core::Interface for UserDataAccountPartnerAccountInfo {
     type Vtable = IUserDataAccountPartnerAccountInfo_Vtbl;
-    const IID: ::windows::core::GUID = <IUserDataAccountPartnerAccountInfo as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IUserDataAccountPartnerAccountInfo as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for UserDataAccountPartnerAccountInfo {
+impl ::windows_core::RuntimeName for UserDataAccountPartnerAccountInfo {
     const NAME: &'static str = "Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccountInfo";
 }
-impl ::core::convert::From<UserDataAccountPartnerAccountInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<UserDataAccountPartnerAccountInfo> for ::windows_core::IUnknown {
     fn from(value: UserDataAccountPartnerAccountInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&UserDataAccountPartnerAccountInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<&UserDataAccountPartnerAccountInfo> for ::windows_core::IUnknown {
     fn from(value: &UserDataAccountPartnerAccountInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for UserDataAccountPartnerAccountInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for UserDataAccountPartnerAccountInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a UserDataAccountPartnerAccountInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a UserDataAccountPartnerAccountInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<UserDataAccountPartnerAccountInfo> for ::windows::core::IInspectable {
+impl ::core::convert::From<UserDataAccountPartnerAccountInfo> for ::windows_core::IInspectable {
     fn from(value: UserDataAccountPartnerAccountInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&UserDataAccountPartnerAccountInfo> for ::windows::core::IInspectable {
+impl ::core::convert::From<&UserDataAccountPartnerAccountInfo> for ::windows_core::IInspectable {
     fn from(value: &UserDataAccountPartnerAccountInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for UserDataAccountPartnerAccountInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for UserDataAccountPartnerAccountInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a UserDataAccountPartnerAccountInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a UserDataAccountPartnerAccountInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for UserDataAccountPartnerAccountInfo {}
 unsafe impl ::core::marker::Sync for UserDataAccountPartnerAccountInfo {}
 #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
 #[repr(transparent)]
-pub struct UserDataAccountProviderAddAccountOperation(::windows::core::IUnknown);
+pub struct UserDataAccountProviderAddAccountOperation(::windows_core::IUnknown);
 impl UserDataAccountProviderAddAccountOperation {
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
-    pub fn ContentKinds(&self) -> ::windows::core::Result<super::UserDataAccountContentKinds> {
+    pub fn ContentKinds(&self) -> ::windows_core::Result<super::UserDataAccountContentKinds> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<super::UserDataAccountContentKinds>::zeroed();
-            (::windows::core::Interface::vtable(this).ContentKinds)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::UserDataAccountContentKinds>(result__)
+            (::windows_core::Interface::vtable(this).ContentKinds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::UserDataAccountContentKinds>(result__)
         }
     }
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`, `\"Foundation_Collections\"`*"]
     #[cfg(feature = "Foundation_Collections")]
-    pub fn PartnerAccountInfos(&self) -> ::windows::core::Result<super::super::super::Foundation::Collections::IVectorView<UserDataAccountPartnerAccountInfo>> {
+    pub fn PartnerAccountInfos(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<UserDataAccountPartnerAccountInfo>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).PartnerAccountInfos)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<UserDataAccountPartnerAccountInfo>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).PartnerAccountInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<UserDataAccountPartnerAccountInfo>>(result__)
         }
     }
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
-    pub fn ReportCompleted<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(&self, userdataaccountid: Param0) -> ::windows::core::Result<()> {
+    pub fn ReportCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, userdataaccountid: Param0) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).ReportCompleted)(::windows::core::Interface::as_raw(this), userdataaccountid.into_param().abi()).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).ReportCompleted)(::windows_core::Interface::as_raw(this), userdataaccountid.into_param().abi()).ok() }
     }
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<UserDataAccountProviderOperationKind> {
-        let this = &::windows::core::Interface::cast::<IUserDataAccountProviderOperation>(self)?;
+    pub fn Kind(&self) -> ::windows_core::Result<UserDataAccountProviderOperationKind> {
+        let this = &::windows_core::Interface::cast::<IUserDataAccountProviderOperation>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<UserDataAccountProviderOperationKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserDataAccountProviderOperationKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserDataAccountProviderOperationKind>(result__)
         }
     }
 }
@@ -297,80 +297,80 @@ impl ::core::fmt::Debug for UserDataAccountProviderAddAccountOperation {
         f.debug_tuple("UserDataAccountProviderAddAccountOperation").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for UserDataAccountProviderAddAccountOperation {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderAddAccountOperation;{b9c72530-3f84-4b5d-8eaa-45e97aa842ed})");
+unsafe impl ::windows_core::RuntimeType for UserDataAccountProviderAddAccountOperation {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderAddAccountOperation;{b9c72530-3f84-4b5d-8eaa-45e97aa842ed})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for UserDataAccountProviderAddAccountOperation {
+unsafe impl ::windows_core::Interface for UserDataAccountProviderAddAccountOperation {
     type Vtable = IUserDataAccountProviderAddAccountOperation_Vtbl;
-    const IID: ::windows::core::GUID = <IUserDataAccountProviderAddAccountOperation as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IUserDataAccountProviderAddAccountOperation as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for UserDataAccountProviderAddAccountOperation {
+impl ::windows_core::RuntimeName for UserDataAccountProviderAddAccountOperation {
     const NAME: &'static str = "Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderAddAccountOperation";
 }
-impl ::core::convert::From<UserDataAccountProviderAddAccountOperation> for ::windows::core::IUnknown {
+impl ::core::convert::From<UserDataAccountProviderAddAccountOperation> for ::windows_core::IUnknown {
     fn from(value: UserDataAccountProviderAddAccountOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&UserDataAccountProviderAddAccountOperation> for ::windows::core::IUnknown {
+impl ::core::convert::From<&UserDataAccountProviderAddAccountOperation> for ::windows_core::IUnknown {
     fn from(value: &UserDataAccountProviderAddAccountOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for UserDataAccountProviderAddAccountOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for UserDataAccountProviderAddAccountOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a UserDataAccountProviderAddAccountOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a UserDataAccountProviderAddAccountOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<UserDataAccountProviderAddAccountOperation> for ::windows::core::IInspectable {
+impl ::core::convert::From<UserDataAccountProviderAddAccountOperation> for ::windows_core::IInspectable {
     fn from(value: UserDataAccountProviderAddAccountOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&UserDataAccountProviderAddAccountOperation> for ::windows::core::IInspectable {
+impl ::core::convert::From<&UserDataAccountProviderAddAccountOperation> for ::windows_core::IInspectable {
     fn from(value: &UserDataAccountProviderAddAccountOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for UserDataAccountProviderAddAccountOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for UserDataAccountProviderAddAccountOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a UserDataAccountProviderAddAccountOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a UserDataAccountProviderAddAccountOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<UserDataAccountProviderAddAccountOperation> for IUserDataAccountProviderOperation {
-    type Error = ::windows::core::Error;
-    fn try_from(value: UserDataAccountProviderAddAccountOperation) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: UserDataAccountProviderAddAccountOperation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&UserDataAccountProviderAddAccountOperation> for IUserDataAccountProviderOperation {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &UserDataAccountProviderAddAccountOperation) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &UserDataAccountProviderAddAccountOperation) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IUserDataAccountProviderOperation> for UserDataAccountProviderAddAccountOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, IUserDataAccountProviderOperation> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IUserDataAccountProviderOperation> for UserDataAccountProviderAddAccountOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, IUserDataAccountProviderOperation> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IUserDataAccountProviderOperation> for &UserDataAccountProviderAddAccountOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, IUserDataAccountProviderOperation> {
-        ::core::convert::TryInto::<IUserDataAccountProviderOperation>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IUserDataAccountProviderOperation> for &UserDataAccountProviderAddAccountOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, IUserDataAccountProviderOperation> {
+        ::core::convert::TryInto::<IUserDataAccountProviderOperation>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for UserDataAccountProviderAddAccountOperation {}
@@ -395,7 +395,7 @@ impl ::core::default::Default for UserDataAccountProviderOperationKind {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for UserDataAccountProviderOperationKind {
+unsafe impl ::windows_core::Abi for UserDataAccountProviderOperationKind {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for UserDataAccountProviderOperationKind {
@@ -403,10 +403,10 @@ impl ::core::fmt::Debug for UserDataAccountProviderOperationKind {
         f.debug_tuple("UserDataAccountProviderOperationKind").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for UserDataAccountProviderOperationKind {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind;i4)");
+unsafe impl ::windows_core::RuntimeType for UserDataAccountProviderOperationKind {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -429,7 +429,7 @@ impl ::core::default::Default for UserDataAccountProviderPartnerAccountKind {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for UserDataAccountProviderPartnerAccountKind {
+unsafe impl ::windows_core::Abi for UserDataAccountProviderPartnerAccountKind {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for UserDataAccountProviderPartnerAccountKind {
@@ -437,37 +437,37 @@ impl ::core::fmt::Debug for UserDataAccountProviderPartnerAccountKind {
         f.debug_tuple("UserDataAccountProviderPartnerAccountKind").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for UserDataAccountProviderPartnerAccountKind {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderPartnerAccountKind;i4)");
+unsafe impl ::windows_core::RuntimeType for UserDataAccountProviderPartnerAccountKind {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderPartnerAccountKind;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
 #[repr(transparent)]
-pub struct UserDataAccountProviderResolveErrorsOperation(::windows::core::IUnknown);
+pub struct UserDataAccountProviderResolveErrorsOperation(::windows_core::IUnknown);
 impl UserDataAccountProviderResolveErrorsOperation {
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<UserDataAccountProviderOperationKind> {
-        let this = &::windows::core::Interface::cast::<IUserDataAccountProviderOperation>(self)?;
+    pub fn Kind(&self) -> ::windows_core::Result<UserDataAccountProviderOperationKind> {
+        let this = &::windows_core::Interface::cast::<IUserDataAccountProviderOperation>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<UserDataAccountProviderOperationKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserDataAccountProviderOperationKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserDataAccountProviderOperationKind>(result__)
         }
     }
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
-    pub fn UserDataAccountId(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn UserDataAccountId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).UserDataAccountId)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).UserDataAccountId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
-    pub fn ReportCompleted(&self) -> ::windows::core::Result<()> {
+    pub fn ReportCompleted(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).ReportCompleted)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).ReportCompleted)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
 impl ::core::clone::Clone for UserDataAccountProviderResolveErrorsOperation {
@@ -486,108 +486,108 @@ impl ::core::fmt::Debug for UserDataAccountProviderResolveErrorsOperation {
         f.debug_tuple("UserDataAccountProviderResolveErrorsOperation").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for UserDataAccountProviderResolveErrorsOperation {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderResolveErrorsOperation;{6235dc15-bfcb-41e1-9957-9759a28846cc})");
+unsafe impl ::windows_core::RuntimeType for UserDataAccountProviderResolveErrorsOperation {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderResolveErrorsOperation;{6235dc15-bfcb-41e1-9957-9759a28846cc})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for UserDataAccountProviderResolveErrorsOperation {
+unsafe impl ::windows_core::Interface for UserDataAccountProviderResolveErrorsOperation {
     type Vtable = IUserDataAccountProviderResolveErrorsOperation_Vtbl;
-    const IID: ::windows::core::GUID = <IUserDataAccountProviderResolveErrorsOperation as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IUserDataAccountProviderResolveErrorsOperation as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for UserDataAccountProviderResolveErrorsOperation {
+impl ::windows_core::RuntimeName for UserDataAccountProviderResolveErrorsOperation {
     const NAME: &'static str = "Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderResolveErrorsOperation";
 }
-impl ::core::convert::From<UserDataAccountProviderResolveErrorsOperation> for ::windows::core::IUnknown {
+impl ::core::convert::From<UserDataAccountProviderResolveErrorsOperation> for ::windows_core::IUnknown {
     fn from(value: UserDataAccountProviderResolveErrorsOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&UserDataAccountProviderResolveErrorsOperation> for ::windows::core::IUnknown {
+impl ::core::convert::From<&UserDataAccountProviderResolveErrorsOperation> for ::windows_core::IUnknown {
     fn from(value: &UserDataAccountProviderResolveErrorsOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for UserDataAccountProviderResolveErrorsOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for UserDataAccountProviderResolveErrorsOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a UserDataAccountProviderResolveErrorsOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a UserDataAccountProviderResolveErrorsOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<UserDataAccountProviderResolveErrorsOperation> for ::windows::core::IInspectable {
+impl ::core::convert::From<UserDataAccountProviderResolveErrorsOperation> for ::windows_core::IInspectable {
     fn from(value: UserDataAccountProviderResolveErrorsOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&UserDataAccountProviderResolveErrorsOperation> for ::windows::core::IInspectable {
+impl ::core::convert::From<&UserDataAccountProviderResolveErrorsOperation> for ::windows_core::IInspectable {
     fn from(value: &UserDataAccountProviderResolveErrorsOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for UserDataAccountProviderResolveErrorsOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for UserDataAccountProviderResolveErrorsOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a UserDataAccountProviderResolveErrorsOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a UserDataAccountProviderResolveErrorsOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<UserDataAccountProviderResolveErrorsOperation> for IUserDataAccountProviderOperation {
-    type Error = ::windows::core::Error;
-    fn try_from(value: UserDataAccountProviderResolveErrorsOperation) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: UserDataAccountProviderResolveErrorsOperation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&UserDataAccountProviderResolveErrorsOperation> for IUserDataAccountProviderOperation {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &UserDataAccountProviderResolveErrorsOperation) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &UserDataAccountProviderResolveErrorsOperation) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IUserDataAccountProviderOperation> for UserDataAccountProviderResolveErrorsOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, IUserDataAccountProviderOperation> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IUserDataAccountProviderOperation> for UserDataAccountProviderResolveErrorsOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, IUserDataAccountProviderOperation> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IUserDataAccountProviderOperation> for &UserDataAccountProviderResolveErrorsOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, IUserDataAccountProviderOperation> {
-        ::core::convert::TryInto::<IUserDataAccountProviderOperation>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IUserDataAccountProviderOperation> for &UserDataAccountProviderResolveErrorsOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, IUserDataAccountProviderOperation> {
+        ::core::convert::TryInto::<IUserDataAccountProviderOperation>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for UserDataAccountProviderResolveErrorsOperation {}
 unsafe impl ::core::marker::Sync for UserDataAccountProviderResolveErrorsOperation {}
 #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
 #[repr(transparent)]
-pub struct UserDataAccountProviderSettingsOperation(::windows::core::IUnknown);
+pub struct UserDataAccountProviderSettingsOperation(::windows_core::IUnknown);
 impl UserDataAccountProviderSettingsOperation {
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
-    pub fn Kind(&self) -> ::windows::core::Result<UserDataAccountProviderOperationKind> {
-        let this = &::windows::core::Interface::cast::<IUserDataAccountProviderOperation>(self)?;
+    pub fn Kind(&self) -> ::windows_core::Result<UserDataAccountProviderOperationKind> {
+        let this = &::windows_core::Interface::cast::<IUserDataAccountProviderOperation>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<UserDataAccountProviderOperationKind>::zeroed();
-            (::windows::core::Interface::vtable(this).Kind)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserDataAccountProviderOperationKind>(result__)
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserDataAccountProviderOperationKind>(result__)
         }
     }
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
-    pub fn UserDataAccountId(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn UserDataAccountId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).UserDataAccountId)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).UserDataAccountId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]
-    pub fn ReportCompleted(&self) -> ::windows::core::Result<()> {
+    pub fn ReportCompleted(&self) -> ::windows_core::Result<()> {
         let this = self;
-        unsafe { (::windows::core::Interface::vtable(this).ReportCompleted)(::windows::core::Interface::as_raw(this)).ok() }
+        unsafe { (::windows_core::Interface::vtable(this).ReportCompleted)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
 impl ::core::clone::Clone for UserDataAccountProviderSettingsOperation {
@@ -606,80 +606,80 @@ impl ::core::fmt::Debug for UserDataAccountProviderSettingsOperation {
         f.debug_tuple("UserDataAccountProviderSettingsOperation").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for UserDataAccountProviderSettingsOperation {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderSettingsOperation;{92034db7-8648-4f30-acfa-3002658ca80d})");
+unsafe impl ::windows_core::RuntimeType for UserDataAccountProviderSettingsOperation {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderSettingsOperation;{92034db7-8648-4f30-acfa-3002658ca80d})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for UserDataAccountProviderSettingsOperation {
+unsafe impl ::windows_core::Interface for UserDataAccountProviderSettingsOperation {
     type Vtable = IUserDataAccountProviderSettingsOperation_Vtbl;
-    const IID: ::windows::core::GUID = <IUserDataAccountProviderSettingsOperation as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IUserDataAccountProviderSettingsOperation as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for UserDataAccountProviderSettingsOperation {
+impl ::windows_core::RuntimeName for UserDataAccountProviderSettingsOperation {
     const NAME: &'static str = "Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderSettingsOperation";
 }
-impl ::core::convert::From<UserDataAccountProviderSettingsOperation> for ::windows::core::IUnknown {
+impl ::core::convert::From<UserDataAccountProviderSettingsOperation> for ::windows_core::IUnknown {
     fn from(value: UserDataAccountProviderSettingsOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&UserDataAccountProviderSettingsOperation> for ::windows::core::IUnknown {
+impl ::core::convert::From<&UserDataAccountProviderSettingsOperation> for ::windows_core::IUnknown {
     fn from(value: &UserDataAccountProviderSettingsOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for UserDataAccountProviderSettingsOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for UserDataAccountProviderSettingsOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a UserDataAccountProviderSettingsOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a UserDataAccountProviderSettingsOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<UserDataAccountProviderSettingsOperation> for ::windows::core::IInspectable {
+impl ::core::convert::From<UserDataAccountProviderSettingsOperation> for ::windows_core::IInspectable {
     fn from(value: UserDataAccountProviderSettingsOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&UserDataAccountProviderSettingsOperation> for ::windows::core::IInspectable {
+impl ::core::convert::From<&UserDataAccountProviderSettingsOperation> for ::windows_core::IInspectable {
     fn from(value: &UserDataAccountProviderSettingsOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for UserDataAccountProviderSettingsOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for UserDataAccountProviderSettingsOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a UserDataAccountProviderSettingsOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a UserDataAccountProviderSettingsOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::TryFrom<UserDataAccountProviderSettingsOperation> for IUserDataAccountProviderOperation {
-    type Error = ::windows::core::Error;
-    fn try_from(value: UserDataAccountProviderSettingsOperation) -> ::windows::core::Result<Self> {
+    type Error = ::windows_core::Error;
+    fn try_from(value: UserDataAccountProviderSettingsOperation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 impl ::core::convert::TryFrom<&UserDataAccountProviderSettingsOperation> for IUserDataAccountProviderOperation {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &UserDataAccountProviderSettingsOperation) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
+    type Error = ::windows_core::Error;
+    fn try_from(value: &UserDataAccountProviderSettingsOperation) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IUserDataAccountProviderOperation> for UserDataAccountProviderSettingsOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, IUserDataAccountProviderOperation> {
-        ::windows::core::IntoParam::into_param(&self)
+impl<'a> ::windows_core::IntoParam<'a, IUserDataAccountProviderOperation> for UserDataAccountProviderSettingsOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, IUserDataAccountProviderOperation> {
+        ::windows_core::IntoParam::into_param(&self)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IUserDataAccountProviderOperation> for &UserDataAccountProviderSettingsOperation {
-    fn into_param(self) -> ::windows::core::Param<'a, IUserDataAccountProviderOperation> {
-        ::core::convert::TryInto::<IUserDataAccountProviderOperation>::try_into(self).map(::windows::core::Param::Owned).unwrap_or(::windows::core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, IUserDataAccountProviderOperation> for &UserDataAccountProviderSettingsOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, IUserDataAccountProviderOperation> {
+        ::core::convert::TryInto::<IUserDataAccountProviderOperation>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for UserDataAccountProviderSettingsOperation {}

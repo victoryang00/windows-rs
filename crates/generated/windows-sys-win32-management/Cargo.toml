@@ -1,7 +1,7 @@
 
 [package]
 name = "windows-sys-win32-management"
-version = "0.22.6"
+version = "0.37.0"
 authors = ["Microsoft"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
@@ -9,3 +9,11 @@ description = "Rust for Windows"
 repository = "https://github.com/microsoft/windows-rs"
 readme = "../../../.github/readme.md"
 rust-version = "1.46"
+
+[dependencies]
+windows-sys-core = { path = "../../libs/windows-sys-core",  version = "0.37.0" }
+
+[features]
+default = []
+deprecated = []
+MobileDeviceManagementRegistration = []

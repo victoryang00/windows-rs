@@ -2,66 +2,66 @@
 pub struct ClassicAppManager;
 impl ClassicAppManager {
     #[doc = "*Required features: `\"Management_Deployment_Preview\"`*"]
-    pub fn FindInstalledApp<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(appuninstallkey: Param0) -> ::windows::core::Result<InstalledClassicAppInfo> {
+    pub fn FindInstalledApp<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(appuninstallkey: Param0) -> ::windows_core::Result<InstalledClassicAppInfo> {
         Self::IClassicAppManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).FindInstalledApp)(::windows::core::Interface::as_raw(this), appuninstallkey.into_param().abi(), result__.as_mut_ptr()).from_abi::<InstalledClassicAppInfo>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FindInstalledApp)(::windows_core::Interface::as_raw(this), appuninstallkey.into_param().abi(), result__.as_mut_ptr()).from_abi::<InstalledClassicAppInfo>(result__)
         })
     }
     #[doc(hidden)]
-    pub fn IClassicAppManagerStatics<R, F: FnOnce(&IClassicAppManagerStatics) -> ::windows::core::Result<R>>(callback: F) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<ClassicAppManager, IClassicAppManagerStatics> = ::windows::core::FactoryCache::new();
+    pub fn IClassicAppManagerStatics<R, F: FnOnce(&IClassicAppManagerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
+        static mut SHARED: ::windows_core::FactoryCache<ClassicAppManager, IClassicAppManagerStatics> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
 }
-impl ::windows::core::RuntimeName for ClassicAppManager {
+impl ::windows_core::RuntimeName for ClassicAppManager {
     const NAME: &'static str = "Windows.Management.Deployment.Preview.ClassicAppManager";
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IClassicAppManagerStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IClassicAppManagerStatics {
+pub struct IClassicAppManagerStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IClassicAppManagerStatics {
     type Vtable = IClassicAppManagerStatics_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe2fad668_882c_4f33_b035_0df7b90d67e6);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe2fad668_882c_4f33_b035_0df7b90d67e6);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IClassicAppManagerStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub FindInstalledApp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appuninstallkey: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub FindInstalledApp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appuninstallkey: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInstalledClassicAppInfo(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IInstalledClassicAppInfo {
+pub struct IInstalledClassicAppInfo(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInstalledClassicAppInfo {
     type Vtable = IInstalledClassicAppInfo_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0a7d3da3_65d0_4086_80d6_0610d760207d);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0a7d3da3_65d0_4086_80d6_0610d760207d);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInstalledClassicAppInfo_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub DisplayVersion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub DisplayVersion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Management_Deployment_Preview\"`*"]
 #[repr(transparent)]
-pub struct InstalledClassicAppInfo(::windows::core::IUnknown);
+pub struct InstalledClassicAppInfo(::windows_core::IUnknown);
 impl InstalledClassicAppInfo {
     #[doc = "*Required features: `\"Management_Deployment_Preview\"`*"]
-    pub fn DisplayName(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn DisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).DisplayName)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).DisplayName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"Management_Deployment_Preview\"`*"]
-    pub fn DisplayVersion(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn DisplayVersion(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).DisplayVersion)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).DisplayVersion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
 }
@@ -81,58 +81,58 @@ impl ::core::fmt::Debug for InstalledClassicAppInfo {
         f.debug_tuple("InstalledClassicAppInfo").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InstalledClassicAppInfo {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.Management.Deployment.Preview.InstalledClassicAppInfo;{0a7d3da3-65d0-4086-80d6-0610d760207d})");
+unsafe impl ::windows_core::RuntimeType for InstalledClassicAppInfo {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Management.Deployment.Preview.InstalledClassicAppInfo;{0a7d3da3-65d0-4086-80d6-0610d760207d})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for InstalledClassicAppInfo {
+unsafe impl ::windows_core::Interface for InstalledClassicAppInfo {
     type Vtable = IInstalledClassicAppInfo_Vtbl;
-    const IID: ::windows::core::GUID = <IInstalledClassicAppInfo as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IInstalledClassicAppInfo as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for InstalledClassicAppInfo {
+impl ::windows_core::RuntimeName for InstalledClassicAppInfo {
     const NAME: &'static str = "Windows.Management.Deployment.Preview.InstalledClassicAppInfo";
 }
-impl ::core::convert::From<InstalledClassicAppInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<InstalledClassicAppInfo> for ::windows_core::IUnknown {
     fn from(value: InstalledClassicAppInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InstalledClassicAppInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<&InstalledClassicAppInfo> for ::windows_core::IUnknown {
     fn from(value: &InstalledClassicAppInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for InstalledClassicAppInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for InstalledClassicAppInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a InstalledClassicAppInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a InstalledClassicAppInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<InstalledClassicAppInfo> for ::windows::core::IInspectable {
+impl ::core::convert::From<InstalledClassicAppInfo> for ::windows_core::IInspectable {
     fn from(value: InstalledClassicAppInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&InstalledClassicAppInfo> for ::windows::core::IInspectable {
+impl ::core::convert::From<&InstalledClassicAppInfo> for ::windows_core::IInspectable {
     fn from(value: &InstalledClassicAppInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for InstalledClassicAppInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for InstalledClassicAppInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a InstalledClassicAppInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InstalledClassicAppInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for InstalledClassicAppInfo {}

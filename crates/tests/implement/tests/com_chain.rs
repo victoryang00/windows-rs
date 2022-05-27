@@ -1,6 +1,6 @@
 #![allow(non_snake_case)]
 
-use windows::core::*;
+use windows_core::*;
 use windows::Win32::Foundation::{BOOL, S_OK};
 use windows::Win32::System::Com::*;
 

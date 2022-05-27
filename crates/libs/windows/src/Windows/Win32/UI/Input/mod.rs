@@ -22,7 +22,7 @@ pub unsafe fn DefRawInputProc(parawinput: &[*const RAWINPUT], cbsizeheader: u32)
         extern "system" {
             fn DefRawInputProc(parawinput: *const *const RAWINPUT, ninput: i32, cbsizeheader: u32) -> super::super::Foundation::LRESULT;
         }
-        ::core::mem::transmute(DefRawInputProc(::core::mem::transmute(::windows::core::as_ptr_or_null(parawinput)), parawinput.len() as _, ::core::mem::transmute(cbsizeheader)))
+        ::core::mem::transmute(DefRawInputProc(::core::mem::transmute(::windows_core::as_ptr_or_null(parawinput)), parawinput.len() as _, ::core::mem::transmute(cbsizeheader)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -74,7 +74,7 @@ pub unsafe fn GetRawInputBuffer(pdata: *mut RAWINPUT, pcbsize: *mut u32, cbsizeh
 }
 #[doc = "*Required features: `\"Win32_UI_Input\"`*"]
 #[inline]
-pub unsafe fn GetRawInputData<'a, Param0: ::windows::core::IntoParam<'a, HRAWINPUT>>(hrawinput: Param0, uicommand: RAW_INPUT_DATA_COMMAND_FLAGS, pdata: *mut ::core::ffi::c_void, pcbsize: *mut u32, cbsizeheader: u32) -> u32 {
+pub unsafe fn GetRawInputData<'a, Param0: ::windows_core::IntoParam<'a, HRAWINPUT>>(hrawinput: Param0, uicommand: RAW_INPUT_DATA_COMMAND_FLAGS, pdata: *mut ::core::ffi::c_void, pcbsize: *mut u32, cbsizeheader: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -89,7 +89,7 @@ pub unsafe fn GetRawInputData<'a, Param0: ::windows::core::IntoParam<'a, HRAWINP
 #[doc = "*Required features: `\"Win32_UI_Input\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetRawInputDeviceInfoA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hdevice: Param0, uicommand: RAW_INPUT_DEVICE_INFO_COMMAND, pdata: *mut ::core::ffi::c_void, pcbsize: *mut u32) -> u32 {
+pub unsafe fn GetRawInputDeviceInfoA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hdevice: Param0, uicommand: RAW_INPUT_DEVICE_INFO_COMMAND, pdata: *mut ::core::ffi::c_void, pcbsize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -104,7 +104,7 @@ pub unsafe fn GetRawInputDeviceInfoA<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_UI_Input\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetRawInputDeviceInfoW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hdevice: Param0, uicommand: RAW_INPUT_DEVICE_INFO_COMMAND, pdata: *mut ::core::ffi::c_void, pcbsize: *mut u32) -> u32 {
+pub unsafe fn GetRawInputDeviceInfoW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hdevice: Param0, uicommand: RAW_INPUT_DEVICE_INFO_COMMAND, pdata: *mut ::core::ffi::c_void, pcbsize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -170,7 +170,7 @@ impl ::core::fmt::Debug for HRAWINPUT {
         f.debug_tuple("HRAWINPUT").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HRAWINPUT {
+unsafe impl ::windows_core::Abi for HRAWINPUT {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_UI_Input\"`*"]
@@ -200,7 +200,7 @@ impl ::core::default::Default for INPUT_MESSAGE_DEVICE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for INPUT_MESSAGE_DEVICE_TYPE {
+unsafe impl ::windows_core::Abi for INPUT_MESSAGE_DEVICE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for INPUT_MESSAGE_DEVICE_TYPE {
@@ -231,7 +231,7 @@ impl ::core::default::Default for INPUT_MESSAGE_ORIGIN_ID {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for INPUT_MESSAGE_ORIGIN_ID {
+unsafe impl ::windows_core::Abi for INPUT_MESSAGE_ORIGIN_ID {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for INPUT_MESSAGE_ORIGIN_ID {
@@ -256,12 +256,12 @@ impl ::core::fmt::Debug for INPUT_MESSAGE_SOURCE {
         f.debug_struct("INPUT_MESSAGE_SOURCE").field("deviceType", &self.deviceType).field("originId", &self.originId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INPUT_MESSAGE_SOURCE {
+unsafe impl ::windows_core::Abi for INPUT_MESSAGE_SOURCE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INPUT_MESSAGE_SOURCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_MESSAGE_SOURCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_MESSAGE_SOURCE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INPUT_MESSAGE_SOURCE {}
@@ -288,12 +288,12 @@ impl ::core::fmt::Debug for RAWHID {
         f.debug_struct("RAWHID").field("dwSizeHid", &self.dwSizeHid).field("dwCount", &self.dwCount).field("bRawData", &self.bRawData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RAWHID {
+unsafe impl ::windows_core::Abi for RAWHID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RAWHID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWHID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWHID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RAWHID {}
@@ -318,13 +318,13 @@ impl ::core::clone::Clone for RAWINPUT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RAWINPUT {
+unsafe impl ::windows_core::Abi for RAWINPUT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAWINPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWINPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWINPUT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -352,13 +352,13 @@ impl ::core::clone::Clone for RAWINPUT_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RAWINPUT_0 {
+unsafe impl ::windows_core::Abi for RAWINPUT_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAWINPUT_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWINPUT_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWINPUT_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -393,13 +393,13 @@ impl ::core::fmt::Debug for RAWINPUTDEVICE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RAWINPUTDEVICE {
+unsafe impl ::windows_core::Abi for RAWINPUTDEVICE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAWINPUTDEVICE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWINPUTDEVICE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWINPUTDEVICE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -432,13 +432,13 @@ impl ::core::fmt::Debug for RAWINPUTDEVICELIST {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RAWINPUTDEVICELIST {
+unsafe impl ::windows_core::Abi for RAWINPUTDEVICELIST {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAWINPUTDEVICELIST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWINPUTDEVICELIST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWINPUTDEVICELIST>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -484,7 +484,7 @@ impl ::core::default::Default for RAWINPUTDEVICE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RAWINPUTDEVICE_FLAGS {
+unsafe impl ::windows_core::Abi for RAWINPUTDEVICE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RAWINPUTDEVICE_FLAGS {
@@ -544,13 +544,13 @@ impl ::core::fmt::Debug for RAWINPUTHEADER {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RAWINPUTHEADER {
+unsafe impl ::windows_core::Abi for RAWINPUTHEADER {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAWINPUTHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWINPUTHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWINPUTHEADER>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -582,12 +582,12 @@ impl ::core::fmt::Debug for RAWKEYBOARD {
         f.debug_struct("RAWKEYBOARD").field("MakeCode", &self.MakeCode).field("Flags", &self.Flags).field("Reserved", &self.Reserved).field("VKey", &self.VKey).field("Message", &self.Message).field("ExtraInformation", &self.ExtraInformation).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RAWKEYBOARD {
+unsafe impl ::windows_core::Abi for RAWKEYBOARD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RAWKEYBOARD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWKEYBOARD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWKEYBOARD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RAWKEYBOARD {}
@@ -612,12 +612,12 @@ impl ::core::clone::Clone for RAWMOUSE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for RAWMOUSE {
+unsafe impl ::windows_core::Abi for RAWMOUSE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RAWMOUSE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWMOUSE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWMOUSE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RAWMOUSE {}
@@ -638,12 +638,12 @@ impl ::core::clone::Clone for RAWMOUSE_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for RAWMOUSE_0 {
+unsafe impl ::windows_core::Abi for RAWMOUSE_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RAWMOUSE_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWMOUSE_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWMOUSE_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RAWMOUSE_0 {}
@@ -669,12 +669,12 @@ impl ::core::fmt::Debug for RAWMOUSE_0_0 {
         f.debug_struct("RAWMOUSE_0_0").field("usButtonFlags", &self.usButtonFlags).field("usButtonData", &self.usButtonData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RAWMOUSE_0_0 {
+unsafe impl ::windows_core::Abi for RAWMOUSE_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RAWMOUSE_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWMOUSE_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAWMOUSE_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RAWMOUSE_0_0 {}
@@ -702,7 +702,7 @@ impl ::core::default::Default for RAW_INPUT_DATA_COMMAND_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RAW_INPUT_DATA_COMMAND_FLAGS {
+unsafe impl ::windows_core::Abi for RAW_INPUT_DATA_COMMAND_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RAW_INPUT_DATA_COMMAND_FLAGS {
@@ -731,7 +731,7 @@ impl ::core::default::Default for RAW_INPUT_DEVICE_INFO_COMMAND {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RAW_INPUT_DEVICE_INFO_COMMAND {
+unsafe impl ::windows_core::Abi for RAW_INPUT_DEVICE_INFO_COMMAND {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RAW_INPUT_DEVICE_INFO_COMMAND {
@@ -756,13 +756,13 @@ impl ::core::clone::Clone for RID_DEVICE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RID_DEVICE_INFO {
+unsafe impl ::windows_core::Abi for RID_DEVICE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RID_DEVICE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RID_DEVICE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RID_DEVICE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -790,13 +790,13 @@ impl ::core::clone::Clone for RID_DEVICE_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RID_DEVICE_INFO_0 {
+unsafe impl ::windows_core::Abi for RID_DEVICE_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RID_DEVICE_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RID_DEVICE_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RID_DEVICE_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -827,12 +827,12 @@ impl ::core::fmt::Debug for RID_DEVICE_INFO_HID {
         f.debug_struct("RID_DEVICE_INFO_HID").field("dwVendorId", &self.dwVendorId).field("dwProductId", &self.dwProductId).field("dwVersionNumber", &self.dwVersionNumber).field("usUsagePage", &self.usUsagePage).field("usUsage", &self.usUsage).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RID_DEVICE_INFO_HID {
+unsafe impl ::windows_core::Abi for RID_DEVICE_INFO_HID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RID_DEVICE_INFO_HID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RID_DEVICE_INFO_HID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RID_DEVICE_INFO_HID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RID_DEVICE_INFO_HID {}
@@ -862,12 +862,12 @@ impl ::core::fmt::Debug for RID_DEVICE_INFO_KEYBOARD {
         f.debug_struct("RID_DEVICE_INFO_KEYBOARD").field("dwType", &self.dwType).field("dwSubType", &self.dwSubType).field("dwKeyboardMode", &self.dwKeyboardMode).field("dwNumberOfFunctionKeys", &self.dwNumberOfFunctionKeys).field("dwNumberOfIndicators", &self.dwNumberOfIndicators).field("dwNumberOfKeysTotal", &self.dwNumberOfKeysTotal).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RID_DEVICE_INFO_KEYBOARD {
+unsafe impl ::windows_core::Abi for RID_DEVICE_INFO_KEYBOARD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RID_DEVICE_INFO_KEYBOARD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RID_DEVICE_INFO_KEYBOARD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RID_DEVICE_INFO_KEYBOARD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RID_DEVICE_INFO_KEYBOARD {}
@@ -900,13 +900,13 @@ impl ::core::fmt::Debug for RID_DEVICE_INFO_MOUSE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RID_DEVICE_INFO_MOUSE {
+unsafe impl ::windows_core::Abi for RID_DEVICE_INFO_MOUSE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RID_DEVICE_INFO_MOUSE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RID_DEVICE_INFO_MOUSE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RID_DEVICE_INFO_MOUSE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -938,7 +938,7 @@ impl ::core::default::Default for RID_DEVICE_INFO_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RID_DEVICE_INFO_TYPE {
+unsafe impl ::windows_core::Abi for RID_DEVICE_INFO_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RID_DEVICE_INFO_TYPE {
@@ -956,7 +956,7 @@ pub unsafe fn RegisterRawInputDevices(prawinputdevices: &[RAWINPUTDEVICE], cbsiz
         extern "system" {
             fn RegisterRawInputDevices(prawinputdevices: *const RAWINPUTDEVICE, uinumdevices: u32, cbsize: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(RegisterRawInputDevices(::core::mem::transmute(::windows::core::as_ptr_or_null(prawinputdevices)), prawinputdevices.len() as _, ::core::mem::transmute(cbsize)))
+        ::core::mem::transmute(RegisterRawInputDevices(::core::mem::transmute(::windows_core::as_ptr_or_null(prawinputdevices)), prawinputdevices.len() as _, ::core::mem::transmute(cbsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");

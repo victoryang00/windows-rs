@@ -50,12 +50,12 @@ impl ::core::fmt::Debug for ATA_PASS_THROUGH_DIRECT {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for ATA_PASS_THROUGH_DIRECT {
+unsafe impl ::windows_core::Abi for ATA_PASS_THROUGH_DIRECT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ATA_PASS_THROUGH_DIRECT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ATA_PASS_THROUGH_DIRECT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ATA_PASS_THROUGH_DIRECT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ATA_PASS_THROUGH_DIRECT {}
@@ -109,13 +109,13 @@ impl ::core::fmt::Debug for ATA_PASS_THROUGH_DIRECT32 {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for ATA_PASS_THROUGH_DIRECT32 {
+unsafe impl ::windows_core::Abi for ATA_PASS_THROUGH_DIRECT32 {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for ATA_PASS_THROUGH_DIRECT32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ATA_PASS_THROUGH_DIRECT32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ATA_PASS_THROUGH_DIRECT32>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -166,12 +166,12 @@ impl ::core::fmt::Debug for ATA_PASS_THROUGH_EX {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for ATA_PASS_THROUGH_EX {
+unsafe impl ::windows_core::Abi for ATA_PASS_THROUGH_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ATA_PASS_THROUGH_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ATA_PASS_THROUGH_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ATA_PASS_THROUGH_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ATA_PASS_THROUGH_EX {}
@@ -225,13 +225,13 @@ impl ::core::fmt::Debug for ATA_PASS_THROUGH_EX32 {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for ATA_PASS_THROUGH_EX32 {
+unsafe impl ::windows_core::Abi for ATA_PASS_THROUGH_EX32 {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for ATA_PASS_THROUGH_EX32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ATA_PASS_THROUGH_EX32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ATA_PASS_THROUGH_EX32>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -244,12 +244,12 @@ impl ::core::default::Default for ATA_PASS_THROUGH_EX32 {
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn AddISNSServerA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(address: Param0) -> u32 {
+pub unsafe fn AddISNSServerA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(address: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddISNSServerA(address: ::windows::core::PCSTR) -> u32;
+            fn AddISNSServerA(address: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(AddISNSServerA(address.into_param().abi()))
     }
@@ -258,12 +258,12 @@ pub unsafe fn AddISNSServerA<'a, Param0: ::windows::core::IntoParam<'a, ::window
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn AddISNSServerW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(address: Param0) -> u32 {
+pub unsafe fn AddISNSServerW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(address: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddISNSServerW(address: ::windows::core::PCWSTR) -> u32;
+            fn AddISNSServerW(address: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(AddISNSServerW(address.into_param().abi()))
     }
@@ -278,9 +278,9 @@ pub unsafe fn AddIScsiConnectionA(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID,
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddIScsiConnectionA(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, reserved: *mut ::core::ffi::c_void, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALA, securityflags: u64, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows::core::PCSTR, connectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
+            fn AddIScsiConnectionA(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, reserved: *mut ::core::ffi::c_void, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALA, securityflags: u64, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows_core::PCSTR, connectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
         }
-        ::core::mem::transmute(AddIScsiConnectionA(::core::mem::transmute(uniquesessionid), ::core::mem::transmute(reserved), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(targetportal), ::core::mem::transmute(securityflags), ::core::mem::transmute(loginoptions), key.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(key)), ::core::mem::transmute(connectionid)))
+        ::core::mem::transmute(AddIScsiConnectionA(::core::mem::transmute(uniquesessionid), ::core::mem::transmute(reserved), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(targetportal), ::core::mem::transmute(securityflags), ::core::mem::transmute(loginoptions), key.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(key)), ::core::mem::transmute(connectionid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -292,9 +292,9 @@ pub unsafe fn AddIScsiConnectionW(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID,
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddIScsiConnectionW(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, reserved: *mut ::core::ffi::c_void, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALW, securityflags: u64, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows::core::PCSTR, connectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
+            fn AddIScsiConnectionW(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, reserved: *mut ::core::ffi::c_void, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALW, securityflags: u64, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows_core::PCSTR, connectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
         }
-        ::core::mem::transmute(AddIScsiConnectionW(::core::mem::transmute(uniquesessionid), ::core::mem::transmute(reserved), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(targetportal), ::core::mem::transmute(securityflags), ::core::mem::transmute(loginoptions), key.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(key)), ::core::mem::transmute(connectionid)))
+        ::core::mem::transmute(AddIScsiConnectionW(::core::mem::transmute(uniquesessionid), ::core::mem::transmute(reserved), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(targetportal), ::core::mem::transmute(securityflags), ::core::mem::transmute(loginoptions), key.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(key)), ::core::mem::transmute(connectionid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -302,12 +302,12 @@ pub unsafe fn AddIScsiConnectionW(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID,
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddIScsiSendTargetPortalA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, loginoptions: *mut ISCSI_LOGIN_OPTIONS, securityflags: u64, portal: *mut ISCSI_TARGET_PORTALA) -> u32 {
+pub unsafe fn AddIScsiSendTargetPortalA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, loginoptions: *mut ISCSI_LOGIN_OPTIONS, securityflags: u64, portal: *mut ISCSI_TARGET_PORTALA) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddIScsiSendTargetPortalA(initiatorinstance: ::windows::core::PCSTR, initiatorportnumber: u32, loginoptions: *mut ISCSI_LOGIN_OPTIONS, securityflags: u64, portal: *mut ISCSI_TARGET_PORTALA) -> u32;
+            fn AddIScsiSendTargetPortalA(initiatorinstance: ::windows_core::PCSTR, initiatorportnumber: u32, loginoptions: *mut ISCSI_LOGIN_OPTIONS, securityflags: u64, portal: *mut ISCSI_TARGET_PORTALA) -> u32;
         }
         ::core::mem::transmute(AddIScsiSendTargetPortalA(initiatorinstance.into_param().abi(), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(loginoptions), ::core::mem::transmute(securityflags), ::core::mem::transmute(portal)))
     }
@@ -316,12 +316,12 @@ pub unsafe fn AddIScsiSendTargetPortalA<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn AddIScsiSendTargetPortalW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, loginoptions: *mut ISCSI_LOGIN_OPTIONS, securityflags: u64, portal: *mut ISCSI_TARGET_PORTALW) -> u32 {
+pub unsafe fn AddIScsiSendTargetPortalW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, loginoptions: *mut ISCSI_LOGIN_OPTIONS, securityflags: u64, portal: *mut ISCSI_TARGET_PORTALW) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddIScsiSendTargetPortalW(initiatorinstance: ::windows::core::PCWSTR, initiatorportnumber: u32, loginoptions: *mut ISCSI_LOGIN_OPTIONS, securityflags: u64, portal: *mut ISCSI_TARGET_PORTALW) -> u32;
+            fn AddIScsiSendTargetPortalW(initiatorinstance: ::windows_core::PCWSTR, initiatorportnumber: u32, loginoptions: *mut ISCSI_LOGIN_OPTIONS, securityflags: u64, portal: *mut ISCSI_TARGET_PORTALW) -> u32;
         }
         ::core::mem::transmute(AddIScsiSendTargetPortalW(initiatorinstance.into_param().abi(), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(loginoptions), ::core::mem::transmute(securityflags), ::core::mem::transmute(portal)))
     }
@@ -331,12 +331,12 @@ pub unsafe fn AddIScsiSendTargetPortalW<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddIScsiStaticTargetA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(targetname: Param0, targetalias: Param1, targetflags: u32, persist: Param3, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPA) -> u32 {
+pub unsafe fn AddIScsiStaticTargetA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(targetname: Param0, targetalias: Param1, targetflags: u32, persist: Param3, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPA) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddIScsiStaticTargetA(targetname: ::windows::core::PCSTR, targetalias: ::windows::core::PCSTR, targetflags: u32, persist: super::super::Foundation::BOOLEAN, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPA) -> u32;
+            fn AddIScsiStaticTargetA(targetname: ::windows_core::PCSTR, targetalias: ::windows_core::PCSTR, targetflags: u32, persist: super::super::Foundation::BOOLEAN, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPA) -> u32;
         }
         ::core::mem::transmute(AddIScsiStaticTargetA(targetname.into_param().abi(), targetalias.into_param().abi(), ::core::mem::transmute(targetflags), persist.into_param().abi(), ::core::mem::transmute(mappings), ::core::mem::transmute(loginoptions), ::core::mem::transmute(portalgroup)))
     }
@@ -346,12 +346,12 @@ pub unsafe fn AddIScsiStaticTargetA<'a, Param0: ::windows::core::IntoParam<'a, :
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddIScsiStaticTargetW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(targetname: Param0, targetalias: Param1, targetflags: u32, persist: Param3, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPW) -> u32 {
+pub unsafe fn AddIScsiStaticTargetW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(targetname: Param0, targetalias: Param1, targetflags: u32, persist: Param3, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPW) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddIScsiStaticTargetW(targetname: ::windows::core::PCWSTR, targetalias: ::windows::core::PCWSTR, targetflags: u32, persist: super::super::Foundation::BOOLEAN, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPW) -> u32;
+            fn AddIScsiStaticTargetW(targetname: ::windows_core::PCWSTR, targetalias: ::windows_core::PCWSTR, targetflags: u32, persist: super::super::Foundation::BOOLEAN, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPW) -> u32;
         }
         ::core::mem::transmute(AddIScsiStaticTargetW(targetname.into_param().abi(), targetalias.into_param().abi(), ::core::mem::transmute(targetflags), persist.into_param().abi(), ::core::mem::transmute(mappings), ::core::mem::transmute(loginoptions), ::core::mem::transmute(portalgroup)))
     }
@@ -360,12 +360,12 @@ pub unsafe fn AddIScsiStaticTargetW<'a, Param0: ::windows::core::IntoParam<'a, :
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn AddPersistentIScsiDeviceA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(devicepath: Param0) -> u32 {
+pub unsafe fn AddPersistentIScsiDeviceA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(devicepath: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPersistentIScsiDeviceA(devicepath: ::windows::core::PCSTR) -> u32;
+            fn AddPersistentIScsiDeviceA(devicepath: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(AddPersistentIScsiDeviceA(devicepath.into_param().abi()))
     }
@@ -374,12 +374,12 @@ pub unsafe fn AddPersistentIScsiDeviceA<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn AddPersistentIScsiDeviceW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(devicepath: Param0) -> u32 {
+pub unsafe fn AddPersistentIScsiDeviceW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(devicepath: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPersistentIScsiDeviceW(devicepath: ::windows::core::PCWSTR) -> u32;
+            fn AddPersistentIScsiDeviceW(devicepath: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(AddPersistentIScsiDeviceW(devicepath.into_param().abi()))
     }
@@ -388,12 +388,12 @@ pub unsafe fn AddPersistentIScsiDeviceW<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn AddRadiusServerA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(address: Param0) -> u32 {
+pub unsafe fn AddRadiusServerA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(address: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddRadiusServerA(address: ::windows::core::PCSTR) -> u32;
+            fn AddRadiusServerA(address: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(AddRadiusServerA(address.into_param().abi()))
     }
@@ -402,12 +402,12 @@ pub unsafe fn AddRadiusServerA<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn AddRadiusServerW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(address: Param0) -> u32 {
+pub unsafe fn AddRadiusServerW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(address: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddRadiusServerW(address: ::windows::core::PCWSTR) -> u32;
+            fn AddRadiusServerW(address: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(AddRadiusServerW(address.into_param().abi()))
     }
@@ -452,12 +452,12 @@ impl ::core::fmt::Debug for DSM_NOTIFICATION_REQUEST_BLOCK {
         f.debug_struct("DSM_NOTIFICATION_REQUEST_BLOCK").field("Size", &self.Size).field("Version", &self.Version).field("NotifyFlags", &self.NotifyFlags).field("DataSetProfile", &self.DataSetProfile).field("Reserved", &self.Reserved).field("DataSetRangesCount", &self.DataSetRangesCount).field("DataSetRanges", &self.DataSetRanges).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DSM_NOTIFICATION_REQUEST_BLOCK {
+unsafe impl ::windows_core::Abi for DSM_NOTIFICATION_REQUEST_BLOCK {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DSM_NOTIFICATION_REQUEST_BLOCK {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DSM_NOTIFICATION_REQUEST_BLOCK>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DSM_NOTIFICATION_REQUEST_BLOCK>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DSM_NOTIFICATION_REQUEST_BLOCK {}
@@ -484,12 +484,12 @@ impl ::core::fmt::Debug for DUMP_DRIVER {
         f.debug_struct("DUMP_DRIVER").field("DumpDriverList", &self.DumpDriverList).field("DriverName", &self.DriverName).field("BaseName", &self.BaseName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DUMP_DRIVER {
+unsafe impl ::windows_core::Abi for DUMP_DRIVER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DUMP_DRIVER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DUMP_DRIVER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DUMP_DRIVER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DUMP_DRIVER {}
@@ -517,12 +517,12 @@ impl ::core::fmt::Debug for DUMP_DRIVER_EX {
         f.debug_struct("DUMP_DRIVER_EX").field("DumpDriverList", &self.DumpDriverList).field("DriverName", &self.DriverName).field("BaseName", &self.BaseName).field("DriverFullPath", &self.DriverFullPath).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DUMP_DRIVER_EX {
+unsafe impl ::windows_core::Abi for DUMP_DRIVER_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DUMP_DRIVER_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DUMP_DRIVER_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DUMP_DRIVER_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DUMP_DRIVER_EX {}
@@ -582,13 +582,13 @@ impl ::core::fmt::Debug for DUMP_POINTERS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DUMP_POINTERS {
+unsafe impl ::windows_core::Abi for DUMP_POINTERS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DUMP_POINTERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DUMP_POINTERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DUMP_POINTERS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -652,13 +652,13 @@ impl ::core::fmt::Debug for DUMP_POINTERS_EX {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DUMP_POINTERS_EX {
+unsafe impl ::windows_core::Abi for DUMP_POINTERS_EX {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DUMP_POINTERS_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DUMP_POINTERS_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DUMP_POINTERS_EX>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -686,12 +686,12 @@ impl ::core::fmt::Debug for DUMP_POINTERS_VERSION {
         f.debug_struct("DUMP_POINTERS_VERSION").field("Version", &self.Version).field("Size", &self.Size).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DUMP_POINTERS_VERSION {
+unsafe impl ::windows_core::Abi for DUMP_POINTERS_VERSION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DUMP_POINTERS_VERSION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DUMP_POINTERS_VERSION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DUMP_POINTERS_VERSION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DUMP_POINTERS_VERSION {}
@@ -737,12 +737,12 @@ impl ::core::fmt::Debug for FIRMWARE_REQUEST_BLOCK {
         f.debug_struct("FIRMWARE_REQUEST_BLOCK").field("Version", &self.Version).field("Size", &self.Size).field("Function", &self.Function).field("Flags", &self.Flags).field("DataBufferOffset", &self.DataBufferOffset).field("DataBufferLength", &self.DataBufferLength).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FIRMWARE_REQUEST_BLOCK {
+unsafe impl ::windows_core::Abi for FIRMWARE_REQUEST_BLOCK {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FIRMWARE_REQUEST_BLOCK {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FIRMWARE_REQUEST_BLOCK>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FIRMWARE_REQUEST_BLOCK>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FIRMWARE_REQUEST_BLOCK {}
@@ -831,12 +831,12 @@ pub unsafe fn GetDevicesForIScsiSessionW(uniquesessionid: *mut ISCSI_UNIQUE_SESS
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn GetIScsiIKEInfoA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(initiatorname: Param0, initiatorportnumber: u32, reserved: *mut u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION) -> u32 {
+pub unsafe fn GetIScsiIKEInfoA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(initiatorname: Param0, initiatorportnumber: u32, reserved: *mut u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetIScsiIKEInfoA(initiatorname: ::windows::core::PCSTR, initiatorportnumber: u32, reserved: *mut u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION) -> u32;
+            fn GetIScsiIKEInfoA(initiatorname: ::windows_core::PCSTR, initiatorportnumber: u32, reserved: *mut u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION) -> u32;
         }
         ::core::mem::transmute(GetIScsiIKEInfoA(initiatorname.into_param().abi(), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(reserved), ::core::mem::transmute(authinfo)))
     }
@@ -845,12 +845,12 @@ pub unsafe fn GetIScsiIKEInfoA<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn GetIScsiIKEInfoW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(initiatorname: Param0, initiatorportnumber: u32, reserved: *mut u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION) -> u32 {
+pub unsafe fn GetIScsiIKEInfoW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(initiatorname: Param0, initiatorportnumber: u32, reserved: *mut u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetIScsiIKEInfoW(initiatorname: ::windows::core::PCWSTR, initiatorportnumber: u32, reserved: *mut u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION) -> u32;
+            fn GetIScsiIKEInfoW(initiatorname: ::windows_core::PCWSTR, initiatorportnumber: u32, reserved: *mut u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION) -> u32;
         }
         ::core::mem::transmute(GetIScsiIKEInfoW(initiatorname.into_param().abi(), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(reserved), ::core::mem::transmute(authinfo)))
     }
@@ -859,12 +859,12 @@ pub unsafe fn GetIScsiIKEInfoW<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn GetIScsiInitiatorNodeNameA(initiatornodename: ::windows::core::PSTR) -> u32 {
+pub unsafe fn GetIScsiInitiatorNodeNameA(initiatornodename: ::windows_core::PSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetIScsiInitiatorNodeNameA(initiatornodename: ::windows::core::PSTR) -> u32;
+            fn GetIScsiInitiatorNodeNameA(initiatornodename: ::windows_core::PSTR) -> u32;
         }
         ::core::mem::transmute(GetIScsiInitiatorNodeNameA(::core::mem::transmute(initiatornodename)))
     }
@@ -873,12 +873,12 @@ pub unsafe fn GetIScsiInitiatorNodeNameA(initiatornodename: ::windows::core::PST
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn GetIScsiInitiatorNodeNameW(initiatornodename: ::windows::core::PWSTR) -> u32 {
+pub unsafe fn GetIScsiInitiatorNodeNameW(initiatornodename: ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetIScsiInitiatorNodeNameW(initiatornodename: ::windows::core::PWSTR) -> u32;
+            fn GetIScsiInitiatorNodeNameW(initiatornodename: ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(GetIScsiInitiatorNodeNameW(::core::mem::transmute(initiatornodename)))
     }
@@ -930,12 +930,12 @@ pub unsafe fn GetIScsiSessionListW(buffersize: *mut u32, sessioncount: *mut u32,
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn GetIScsiTargetInformationA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(targetname: Param0, discoverymechanism: Param1, infoclass: TARGET_INFORMATION_CLASS, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn GetIScsiTargetInformationA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(targetname: Param0, discoverymechanism: Param1, infoclass: TARGET_INFORMATION_CLASS, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetIScsiTargetInformationA(targetname: ::windows::core::PCSTR, discoverymechanism: ::windows::core::PCSTR, infoclass: TARGET_INFORMATION_CLASS, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
+            fn GetIScsiTargetInformationA(targetname: ::windows_core::PCSTR, discoverymechanism: ::windows_core::PCSTR, infoclass: TARGET_INFORMATION_CLASS, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(GetIScsiTargetInformationA(targetname.into_param().abi(), discoverymechanism.into_param().abi(), ::core::mem::transmute(infoclass), ::core::mem::transmute(buffersize), ::core::mem::transmute(buffer)))
     }
@@ -944,12 +944,12 @@ pub unsafe fn GetIScsiTargetInformationA<'a, Param0: ::windows::core::IntoParam<
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn GetIScsiTargetInformationW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(targetname: Param0, discoverymechanism: Param1, infoclass: TARGET_INFORMATION_CLASS, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn GetIScsiTargetInformationW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(targetname: Param0, discoverymechanism: Param1, infoclass: TARGET_INFORMATION_CLASS, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetIScsiTargetInformationW(targetname: ::windows::core::PCWSTR, discoverymechanism: ::windows::core::PCWSTR, infoclass: TARGET_INFORMATION_CLASS, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
+            fn GetIScsiTargetInformationW(targetname: ::windows_core::PCWSTR, discoverymechanism: ::windows_core::PCWSTR, infoclass: TARGET_INFORMATION_CLASS, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(GetIScsiTargetInformationW(targetname.into_param().abi(), discoverymechanism.into_param().abi(), ::core::mem::transmute(infoclass), ::core::mem::transmute(buffersize), ::core::mem::transmute(buffer)))
     }
@@ -992,12 +992,12 @@ impl ::core::fmt::Debug for HYBRID_DEMOTE_BY_SIZE {
         f.debug_struct("HYBRID_DEMOTE_BY_SIZE").field("Version", &self.Version).field("Size", &self.Size).field("SourcePriority", &self.SourcePriority).field("TargetPriority", &self.TargetPriority).field("Reserved0", &self.Reserved0).field("Reserved1", &self.Reserved1).field("LbaCount", &self.LbaCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HYBRID_DEMOTE_BY_SIZE {
+unsafe impl ::windows_core::Abi for HYBRID_DEMOTE_BY_SIZE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HYBRID_DEMOTE_BY_SIZE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_DEMOTE_BY_SIZE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_DEMOTE_BY_SIZE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HYBRID_DEMOTE_BY_SIZE {}
@@ -1025,12 +1025,12 @@ impl ::core::fmt::Debug for HYBRID_DIRTY_THRESHOLDS {
         f.debug_struct("HYBRID_DIRTY_THRESHOLDS").field("Version", &self.Version).field("Size", &self.Size).field("DirtyLowThreshold", &self.DirtyLowThreshold).field("DirtyHighThreshold", &self.DirtyHighThreshold).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HYBRID_DIRTY_THRESHOLDS {
+unsafe impl ::windows_core::Abi for HYBRID_DIRTY_THRESHOLDS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HYBRID_DIRTY_THRESHOLDS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_DIRTY_THRESHOLDS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_DIRTY_THRESHOLDS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HYBRID_DIRTY_THRESHOLDS {}
@@ -1079,13 +1079,13 @@ impl ::core::fmt::Debug for HYBRID_INFORMATION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for HYBRID_INFORMATION {
+unsafe impl ::windows_core::Abi for HYBRID_INFORMATION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HYBRID_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_INFORMATION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1117,13 +1117,13 @@ impl ::core::fmt::Debug for HYBRID_INFORMATION_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for HYBRID_INFORMATION_0 {
+unsafe impl ::windows_core::Abi for HYBRID_INFORMATION_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HYBRID_INFORMATION_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_INFORMATION_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_INFORMATION_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1162,13 +1162,13 @@ impl ::core::fmt::Debug for HYBRID_INFORMATION_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for HYBRID_INFORMATION_1 {
+unsafe impl ::windows_core::Abi for HYBRID_INFORMATION_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HYBRID_INFORMATION_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_INFORMATION_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_INFORMATION_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1203,13 +1203,13 @@ impl ::core::fmt::Debug for HYBRID_INFORMATION_1_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for HYBRID_INFORMATION_1_0 {
+unsafe impl ::windows_core::Abi for HYBRID_INFORMATION_1_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HYBRID_INFORMATION_1_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_INFORMATION_1_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_INFORMATION_1_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1241,12 +1241,12 @@ impl ::core::fmt::Debug for HYBRID_REQUEST_BLOCK {
         f.debug_struct("HYBRID_REQUEST_BLOCK").field("Version", &self.Version).field("Size", &self.Size).field("Function", &self.Function).field("Flags", &self.Flags).field("DataBufferOffset", &self.DataBufferOffset).field("DataBufferLength", &self.DataBufferLength).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HYBRID_REQUEST_BLOCK {
+unsafe impl ::windows_core::Abi for HYBRID_REQUEST_BLOCK {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HYBRID_REQUEST_BLOCK {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_REQUEST_BLOCK>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HYBRID_REQUEST_BLOCK>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HYBRID_REQUEST_BLOCK {}
@@ -1290,12 +1290,12 @@ impl ::core::fmt::Debug for IDE_IO_CONTROL {
         f.debug_struct("IDE_IO_CONTROL").field("HeaderLength", &self.HeaderLength).field("Signature", &self.Signature).field("Timeout", &self.Timeout).field("ControlCode", &self.ControlCode).field("ReturnStatus", &self.ReturnStatus).field("DataLength", &self.DataLength).finish()
     }
 }
-unsafe impl ::windows::core::Abi for IDE_IO_CONTROL {
+unsafe impl ::windows_core::Abi for IDE_IO_CONTROL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IDE_IO_CONTROL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IDE_IO_CONTROL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IDE_IO_CONTROL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IDE_IO_CONTROL {}
@@ -1324,12 +1324,12 @@ impl ::core::clone::Clone for IKE_AUTHENTICATION_INFORMATION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for IKE_AUTHENTICATION_INFORMATION {
+unsafe impl ::windows_core::Abi for IKE_AUTHENTICATION_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IKE_AUTHENTICATION_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKE_AUTHENTICATION_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKE_AUTHENTICATION_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IKE_AUTHENTICATION_INFORMATION {}
@@ -1349,12 +1349,12 @@ impl ::core::clone::Clone for IKE_AUTHENTICATION_INFORMATION_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for IKE_AUTHENTICATION_INFORMATION_0 {
+unsafe impl ::windows_core::Abi for IKE_AUTHENTICATION_INFORMATION_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IKE_AUTHENTICATION_INFORMATION_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKE_AUTHENTICATION_INFORMATION_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKE_AUTHENTICATION_INFORMATION_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IKE_AUTHENTICATION_INFORMATION_0 {}
@@ -1380,7 +1380,7 @@ impl ::core::default::Default for IKE_AUTHENTICATION_METHOD {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for IKE_AUTHENTICATION_METHOD {
+unsafe impl ::windows_core::Abi for IKE_AUTHENTICATION_METHOD {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for IKE_AUTHENTICATION_METHOD {
@@ -1409,12 +1409,12 @@ impl ::core::fmt::Debug for IKE_AUTHENTICATION_PRESHARED_KEY {
         f.debug_struct("IKE_AUTHENTICATION_PRESHARED_KEY").field("SecurityFlags", &self.SecurityFlags).field("IdType", &self.IdType).field("IdLengthInBytes", &self.IdLengthInBytes).field("Id", &self.Id).field("KeyLengthInBytes", &self.KeyLengthInBytes).field("Key", &self.Key).finish()
     }
 }
-unsafe impl ::windows::core::Abi for IKE_AUTHENTICATION_PRESHARED_KEY {
+unsafe impl ::windows_core::Abi for IKE_AUTHENTICATION_PRESHARED_KEY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IKE_AUTHENTICATION_PRESHARED_KEY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKE_AUTHENTICATION_PRESHARED_KEY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKE_AUTHENTICATION_PRESHARED_KEY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IKE_AUTHENTICATION_PRESHARED_KEY {}
@@ -1515,13 +1515,13 @@ impl ::core::fmt::Debug for IO_SCSI_CAPABILITIES {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for IO_SCSI_CAPABILITIES {
+unsafe impl ::windows_core::Abi for IO_SCSI_CAPABILITIES {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IO_SCSI_CAPABILITIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IO_SCSI_CAPABILITIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IO_SCSI_CAPABILITIES>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1553,7 +1553,7 @@ impl ::core::default::Default for ISCSI_AUTH_TYPES {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_AUTH_TYPES {
+unsafe impl ::windows_core::Abi for ISCSI_AUTH_TYPES {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ISCSI_AUTH_TYPES {
@@ -1565,8 +1565,8 @@ impl ::core::fmt::Debug for ISCSI_AUTH_TYPES {
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 pub struct ISCSI_CONNECTION_INFOA {
     pub ConnectionId: ISCSI_UNIQUE_SESSION_ID,
-    pub InitiatorAddress: ::windows::core::PSTR,
-    pub TargetAddress: ::windows::core::PSTR,
+    pub InitiatorAddress: ::windows_core::PSTR,
+    pub TargetAddress: ::windows_core::PSTR,
     pub InitiatorSocket: u16,
     pub TargetSocket: u16,
     pub CID: [u8; 2],
@@ -1582,12 +1582,12 @@ impl ::core::fmt::Debug for ISCSI_CONNECTION_INFOA {
         f.debug_struct("ISCSI_CONNECTION_INFOA").field("ConnectionId", &self.ConnectionId).field("InitiatorAddress", &self.InitiatorAddress).field("TargetAddress", &self.TargetAddress).field("InitiatorSocket", &self.InitiatorSocket).field("TargetSocket", &self.TargetSocket).field("CID", &self.CID).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_CONNECTION_INFOA {
+unsafe impl ::windows_core::Abi for ISCSI_CONNECTION_INFOA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ISCSI_CONNECTION_INFOA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_CONNECTION_INFOA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_CONNECTION_INFOA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ISCSI_CONNECTION_INFOA {}
@@ -1600,8 +1600,8 @@ impl ::core::default::Default for ISCSI_CONNECTION_INFOA {
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 pub struct ISCSI_CONNECTION_INFOW {
     pub ConnectionId: ISCSI_UNIQUE_SESSION_ID,
-    pub InitiatorAddress: ::windows::core::PWSTR,
-    pub TargetAddress: ::windows::core::PWSTR,
+    pub InitiatorAddress: ::windows_core::PWSTR,
+    pub TargetAddress: ::windows_core::PWSTR,
     pub InitiatorSocket: u16,
     pub TargetSocket: u16,
     pub CID: [u8; 2],
@@ -1617,12 +1617,12 @@ impl ::core::fmt::Debug for ISCSI_CONNECTION_INFOW {
         f.debug_struct("ISCSI_CONNECTION_INFOW").field("ConnectionId", &self.ConnectionId).field("InitiatorAddress", &self.InitiatorAddress).field("TargetAddress", &self.TargetAddress).field("InitiatorSocket", &self.InitiatorSocket).field("TargetSocket", &self.TargetSocket).field("CID", &self.CID).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_CONNECTION_INFOW {
+unsafe impl ::windows_core::Abi for ISCSI_CONNECTION_INFOW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ISCSI_CONNECTION_INFOW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_CONNECTION_INFOW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_CONNECTION_INFOW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ISCSI_CONNECTION_INFOW {}
@@ -1655,12 +1655,12 @@ impl ::core::fmt::Debug for ISCSI_CONNECTION_INFO_EX {
         f.debug_struct("ISCSI_CONNECTION_INFO_EX").field("ConnectionId", &self.ConnectionId).field("State", &self.State).field("Protocol", &self.Protocol).field("HeaderDigest", &self.HeaderDigest).field("DataDigest", &self.DataDigest).field("MaxRecvDataSegmentLength", &self.MaxRecvDataSegmentLength).field("AuthType", &self.AuthType).field("EstimatedThroughput", &self.EstimatedThroughput).field("MaxDatagramSize", &self.MaxDatagramSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_CONNECTION_INFO_EX {
+unsafe impl ::windows_core::Abi for ISCSI_CONNECTION_INFO_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ISCSI_CONNECTION_INFO_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_CONNECTION_INFO_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_CONNECTION_INFO_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ISCSI_CONNECTION_INFO_EX {}
@@ -1676,7 +1676,7 @@ pub struct ISCSI_DEVICE_ON_SESSIONA {
     pub InitiatorName: [super::super::Foundation::CHAR; 256],
     pub TargetName: [super::super::Foundation::CHAR; 224],
     pub ScsiAddress: SCSI_ADDRESS,
-    pub DeviceInterfaceType: ::windows::core::GUID,
+    pub DeviceInterfaceType: ::windows_core::GUID,
     pub DeviceInterfaceName: [super::super::Foundation::CHAR; 260],
     pub LegacyName: [super::super::Foundation::CHAR; 260],
     pub StorageDeviceNumber: super::super::System::Ioctl::STORAGE_DEVICE_NUMBER,
@@ -1697,13 +1697,13 @@ impl ::core::fmt::Debug for ISCSI_DEVICE_ON_SESSIONA {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ioctl"))]
-unsafe impl ::windows::core::Abi for ISCSI_DEVICE_ON_SESSIONA {
+unsafe impl ::windows_core::Abi for ISCSI_DEVICE_ON_SESSIONA {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ioctl"))]
 impl ::core::cmp::PartialEq for ISCSI_DEVICE_ON_SESSIONA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_DEVICE_ON_SESSIONA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_DEVICE_ON_SESSIONA>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ioctl"))]
@@ -1721,7 +1721,7 @@ pub struct ISCSI_DEVICE_ON_SESSIONW {
     pub InitiatorName: [u16; 256],
     pub TargetName: [u16; 224],
     pub ScsiAddress: SCSI_ADDRESS,
-    pub DeviceInterfaceType: ::windows::core::GUID,
+    pub DeviceInterfaceType: ::windows_core::GUID,
     pub DeviceInterfaceName: [u16; 260],
     pub LegacyName: [u16; 260],
     pub StorageDeviceNumber: super::super::System::Ioctl::STORAGE_DEVICE_NUMBER,
@@ -1742,13 +1742,13 @@ impl ::core::fmt::Debug for ISCSI_DEVICE_ON_SESSIONW {
     }
 }
 #[cfg(feature = "Win32_System_Ioctl")]
-unsafe impl ::windows::core::Abi for ISCSI_DEVICE_ON_SESSIONW {
+unsafe impl ::windows_core::Abi for ISCSI_DEVICE_ON_SESSIONW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Ioctl")]
 impl ::core::cmp::PartialEq for ISCSI_DEVICE_ON_SESSIONW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_DEVICE_ON_SESSIONW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_DEVICE_ON_SESSIONW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Ioctl")]
@@ -1778,7 +1778,7 @@ impl ::core::default::Default for ISCSI_DIGEST_TYPES {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_DIGEST_TYPES {
+unsafe impl ::windows_core::Abi for ISCSI_DIGEST_TYPES {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ISCSI_DIGEST_TYPES {
@@ -1840,12 +1840,12 @@ impl ::core::fmt::Debug for ISCSI_LOGIN_OPTIONS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_LOGIN_OPTIONS {
+unsafe impl ::windows_core::Abi for ISCSI_LOGIN_OPTIONS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ISCSI_LOGIN_OPTIONS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_LOGIN_OPTIONS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_LOGIN_OPTIONS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ISCSI_LOGIN_OPTIONS {}
@@ -1890,9 +1890,9 @@ pub const ISCSI_SECURITY_FLAG_VALID: &str = "0x00000001";
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 pub struct ISCSI_SESSION_INFOA {
     pub SessionId: ISCSI_UNIQUE_SESSION_ID,
-    pub InitiatorName: ::windows::core::PSTR,
-    pub TargetNodeName: ::windows::core::PSTR,
-    pub TargetName: ::windows::core::PSTR,
+    pub InitiatorName: ::windows_core::PSTR,
+    pub TargetNodeName: ::windows_core::PSTR,
+    pub TargetName: ::windows_core::PSTR,
     pub ISID: [u8; 6],
     pub TSID: [u8; 2],
     pub ConnectionCount: u32,
@@ -1909,12 +1909,12 @@ impl ::core::fmt::Debug for ISCSI_SESSION_INFOA {
         f.debug_struct("ISCSI_SESSION_INFOA").field("SessionId", &self.SessionId).field("InitiatorName", &self.InitiatorName).field("TargetNodeName", &self.TargetNodeName).field("TargetName", &self.TargetName).field("ISID", &self.ISID).field("TSID", &self.TSID).field("ConnectionCount", &self.ConnectionCount).field("Connections", &self.Connections).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_SESSION_INFOA {
+unsafe impl ::windows_core::Abi for ISCSI_SESSION_INFOA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ISCSI_SESSION_INFOA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_SESSION_INFOA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_SESSION_INFOA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ISCSI_SESSION_INFOA {}
@@ -1927,9 +1927,9 @@ impl ::core::default::Default for ISCSI_SESSION_INFOA {
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 pub struct ISCSI_SESSION_INFOW {
     pub SessionId: ISCSI_UNIQUE_SESSION_ID,
-    pub InitiatorName: ::windows::core::PWSTR,
-    pub TargetNodeName: ::windows::core::PWSTR,
-    pub TargetName: ::windows::core::PWSTR,
+    pub InitiatorName: ::windows_core::PWSTR,
+    pub TargetNodeName: ::windows_core::PWSTR,
+    pub TargetName: ::windows_core::PWSTR,
     pub ISID: [u8; 6],
     pub TSID: [u8; 2],
     pub ConnectionCount: u32,
@@ -1946,12 +1946,12 @@ impl ::core::fmt::Debug for ISCSI_SESSION_INFOW {
         f.debug_struct("ISCSI_SESSION_INFOW").field("SessionId", &self.SessionId).field("InitiatorName", &self.InitiatorName).field("TargetNodeName", &self.TargetNodeName).field("TargetName", &self.TargetName).field("ISID", &self.ISID).field("TSID", &self.TSID).field("ConnectionCount", &self.ConnectionCount).field("Connections", &self.Connections).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_SESSION_INFOW {
+unsafe impl ::windows_core::Abi for ISCSI_SESSION_INFOW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ISCSI_SESSION_INFOW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_SESSION_INFOW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_SESSION_INFOW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ISCSI_SESSION_INFOW {}
@@ -2007,13 +2007,13 @@ impl ::core::fmt::Debug for ISCSI_SESSION_INFO_EX {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for ISCSI_SESSION_INFO_EX {
+unsafe impl ::windows_core::Abi for ISCSI_SESSION_INFO_EX {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ISCSI_SESSION_INFO_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_SESSION_INFO_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_SESSION_INFO_EX>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2056,13 +2056,13 @@ impl ::core::fmt::Debug for ISCSI_TARGET_MAPPINGA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for ISCSI_TARGET_MAPPINGA {
+unsafe impl ::windows_core::Abi for ISCSI_TARGET_MAPPINGA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ISCSI_TARGET_MAPPINGA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_MAPPINGA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_MAPPINGA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2096,12 +2096,12 @@ impl ::core::fmt::Debug for ISCSI_TARGET_MAPPINGW {
         f.debug_struct("ISCSI_TARGET_MAPPINGW").field("InitiatorName", &self.InitiatorName).field("TargetName", &self.TargetName).field("OSDeviceName", &self.OSDeviceName).field("SessionId", &self.SessionId).field("OSBusNumber", &self.OSBusNumber).field("OSTargetNumber", &self.OSTargetNumber).field("LUNCount", &self.LUNCount).field("LUNList", &self.LUNList).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_TARGET_MAPPINGW {
+unsafe impl ::windows_core::Abi for ISCSI_TARGET_MAPPINGW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ISCSI_TARGET_MAPPINGW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_MAPPINGW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_MAPPINGW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ISCSI_TARGET_MAPPINGW {}
@@ -2133,13 +2133,13 @@ impl ::core::fmt::Debug for ISCSI_TARGET_PORTALA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for ISCSI_TARGET_PORTALA {
+unsafe impl ::windows_core::Abi for ISCSI_TARGET_PORTALA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ISCSI_TARGET_PORTALA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTALA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTALA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2168,12 +2168,12 @@ impl ::core::fmt::Debug for ISCSI_TARGET_PORTALW {
         f.debug_struct("ISCSI_TARGET_PORTALW").field("SymbolicName", &self.SymbolicName).field("Address", &self.Address).field("Socket", &self.Socket).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_TARGET_PORTALW {
+unsafe impl ::windows_core::Abi for ISCSI_TARGET_PORTALW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ISCSI_TARGET_PORTALW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTALW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTALW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ISCSI_TARGET_PORTALW {}
@@ -2204,13 +2204,13 @@ impl ::core::fmt::Debug for ISCSI_TARGET_PORTAL_GROUPA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for ISCSI_TARGET_PORTAL_GROUPA {
+unsafe impl ::windows_core::Abi for ISCSI_TARGET_PORTAL_GROUPA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ISCSI_TARGET_PORTAL_GROUPA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTAL_GROUPA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTAL_GROUPA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2238,12 +2238,12 @@ impl ::core::fmt::Debug for ISCSI_TARGET_PORTAL_GROUPW {
         f.debug_struct("ISCSI_TARGET_PORTAL_GROUPW").field("Count", &self.Count).field("Portals", &self.Portals).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_TARGET_PORTAL_GROUPW {
+unsafe impl ::windows_core::Abi for ISCSI_TARGET_PORTAL_GROUPW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ISCSI_TARGET_PORTAL_GROUPW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTAL_GROUPW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTAL_GROUPW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ISCSI_TARGET_PORTAL_GROUPW {}
@@ -2277,13 +2277,13 @@ impl ::core::fmt::Debug for ISCSI_TARGET_PORTAL_INFOA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for ISCSI_TARGET_PORTAL_INFOA {
+unsafe impl ::windows_core::Abi for ISCSI_TARGET_PORTAL_INFOA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ISCSI_TARGET_PORTAL_INFOA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTAL_INFOA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTAL_INFOA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2314,12 +2314,12 @@ impl ::core::fmt::Debug for ISCSI_TARGET_PORTAL_INFOW {
         f.debug_struct("ISCSI_TARGET_PORTAL_INFOW").field("InitiatorName", &self.InitiatorName).field("InitiatorPortNumber", &self.InitiatorPortNumber).field("SymbolicName", &self.SymbolicName).field("Address", &self.Address).field("Socket", &self.Socket).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_TARGET_PORTAL_INFOW {
+unsafe impl ::windows_core::Abi for ISCSI_TARGET_PORTAL_INFOW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ISCSI_TARGET_PORTAL_INFOW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTAL_INFOW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTAL_INFOW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ISCSI_TARGET_PORTAL_INFOW {}
@@ -2355,13 +2355,13 @@ impl ::core::fmt::Debug for ISCSI_TARGET_PORTAL_INFO_EXA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for ISCSI_TARGET_PORTAL_INFO_EXA {
+unsafe impl ::windows_core::Abi for ISCSI_TARGET_PORTAL_INFO_EXA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ISCSI_TARGET_PORTAL_INFO_EXA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTAL_INFO_EXA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTAL_INFO_EXA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2394,12 +2394,12 @@ impl ::core::fmt::Debug for ISCSI_TARGET_PORTAL_INFO_EXW {
         f.debug_struct("ISCSI_TARGET_PORTAL_INFO_EXW").field("InitiatorName", &self.InitiatorName).field("InitiatorPortNumber", &self.InitiatorPortNumber).field("SymbolicName", &self.SymbolicName).field("Address", &self.Address).field("Socket", &self.Socket).field("SecurityFlags", &self.SecurityFlags).field("LoginOptions", &self.LoginOptions).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_TARGET_PORTAL_INFO_EXW {
+unsafe impl ::windows_core::Abi for ISCSI_TARGET_PORTAL_INFO_EXW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ISCSI_TARGET_PORTAL_INFO_EXW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTAL_INFO_EXW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_TARGET_PORTAL_INFO_EXW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ISCSI_TARGET_PORTAL_INFO_EXW {}
@@ -2425,12 +2425,12 @@ impl ::core::fmt::Debug for ISCSI_UNIQUE_SESSION_ID {
         f.debug_struct("ISCSI_UNIQUE_SESSION_ID").field("AdapterUnique", &self.AdapterUnique).field("AdapterSpecific", &self.AdapterSpecific).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_UNIQUE_SESSION_ID {
+unsafe impl ::windows_core::Abi for ISCSI_UNIQUE_SESSION_ID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ISCSI_UNIQUE_SESSION_ID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_UNIQUE_SESSION_ID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_UNIQUE_SESSION_ID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ISCSI_UNIQUE_SESSION_ID {}
@@ -2457,12 +2457,12 @@ impl ::core::fmt::Debug for ISCSI_VERSION_INFO {
         f.debug_struct("ISCSI_VERSION_INFO").field("MajorVersion", &self.MajorVersion).field("MinorVersion", &self.MinorVersion).field("BuildNumber", &self.BuildNumber).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ISCSI_VERSION_INFO {
+unsafe impl ::windows_core::Abi for ISCSI_VERSION_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ISCSI_VERSION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_VERSION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ISCSI_VERSION_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ISCSI_VERSION_INFO {}
@@ -2474,12 +2474,12 @@ impl ::core::default::Default for ISCSI_VERSION_INFO {
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoginIScsiTargetA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param10: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(targetname: Param0, isinformationalsession: Param1, initiatorinstance: Param2, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALA, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, key: &[u8], ispersistent: Param10, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32 {
+pub unsafe fn LoginIScsiTargetA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param10: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(targetname: Param0, isinformationalsession: Param1, initiatorinstance: Param2, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALA, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, key: &[u8], ispersistent: Param10, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoginIScsiTargetA(targetname: ::windows::core::PCSTR, isinformationalsession: super::super::Foundation::BOOLEAN, initiatorinstance: ::windows::core::PCSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALA, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows::core::PCSTR, ispersistent: super::super::Foundation::BOOLEAN, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
+            fn LoginIScsiTargetA(targetname: ::windows_core::PCSTR, isinformationalsession: super::super::Foundation::BOOLEAN, initiatorinstance: ::windows_core::PCSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALA, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows_core::PCSTR, ispersistent: super::super::Foundation::BOOLEAN, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
         }
         ::core::mem::transmute(LoginIScsiTargetA(
             targetname.into_param().abi(),
@@ -2491,7 +2491,7 @@ pub unsafe fn LoginIScsiTargetA<'a, Param0: ::windows::core::IntoParam<'a, ::win
             ::core::mem::transmute(mappings),
             ::core::mem::transmute(loginoptions),
             key.len() as _,
-            ::core::mem::transmute(::windows::core::as_ptr_or_null(key)),
+            ::core::mem::transmute(::windows_core::as_ptr_or_null(key)),
             ispersistent.into_param().abi(),
             ::core::mem::transmute(uniquesessionid),
             ::core::mem::transmute(uniqueconnectionid),
@@ -2503,12 +2503,12 @@ pub unsafe fn LoginIScsiTargetA<'a, Param0: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoginIScsiTargetW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param10: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(targetname: Param0, isinformationalsession: Param1, initiatorinstance: Param2, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALW, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, key: &[u8], ispersistent: Param10, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32 {
+pub unsafe fn LoginIScsiTargetW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param10: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(targetname: Param0, isinformationalsession: Param1, initiatorinstance: Param2, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALW, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, key: &[u8], ispersistent: Param10, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoginIScsiTargetW(targetname: ::windows::core::PCWSTR, isinformationalsession: super::super::Foundation::BOOLEAN, initiatorinstance: ::windows::core::PCWSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALW, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows::core::PCSTR, ispersistent: super::super::Foundation::BOOLEAN, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
+            fn LoginIScsiTargetW(targetname: ::windows_core::PCWSTR, isinformationalsession: super::super::Foundation::BOOLEAN, initiatorinstance: ::windows_core::PCWSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALW, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows_core::PCSTR, ispersistent: super::super::Foundation::BOOLEAN, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
         }
         ::core::mem::transmute(LoginIScsiTargetW(
             targetname.into_param().abi(),
@@ -2520,7 +2520,7 @@ pub unsafe fn LoginIScsiTargetW<'a, Param0: ::windows::core::IntoParam<'a, ::win
             ::core::mem::transmute(mappings),
             ::core::mem::transmute(loginoptions),
             key.len() as _,
-            ::core::mem::transmute(::windows::core::as_ptr_or_null(key)),
+            ::core::mem::transmute(::windows_core::as_ptr_or_null(key)),
             ispersistent.into_param().abi(),
             ::core::mem::transmute(uniquesessionid),
             ::core::mem::transmute(uniqueconnectionid),
@@ -2604,12 +2604,12 @@ impl ::core::fmt::Debug for MPIO_PASS_THROUGH_PATH {
         f.debug_struct("MPIO_PASS_THROUGH_PATH").field("PassThrough", &self.PassThrough).field("Version", &self.Version).field("Length", &self.Length).field("Flags", &self.Flags).field("PortNumber", &self.PortNumber).field("MpioPathId", &self.MpioPathId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MPIO_PASS_THROUGH_PATH {
+unsafe impl ::windows_core::Abi for MPIO_PASS_THROUGH_PATH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MPIO_PASS_THROUGH_PATH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MPIO_PASS_THROUGH_PATH {}
@@ -2644,13 +2644,13 @@ impl ::core::fmt::Debug for MPIO_PASS_THROUGH_PATH32 {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for MPIO_PASS_THROUGH_PATH32 {
+unsafe impl ::windows_core::Abi for MPIO_PASS_THROUGH_PATH32 {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for MPIO_PASS_THROUGH_PATH32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH32>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -2687,13 +2687,13 @@ impl ::core::fmt::Debug for MPIO_PASS_THROUGH_PATH32_EX {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for MPIO_PASS_THROUGH_PATH32_EX {
+unsafe impl ::windows_core::Abi for MPIO_PASS_THROUGH_PATH32_EX {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for MPIO_PASS_THROUGH_PATH32_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH32_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH32_EX>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -2725,12 +2725,12 @@ impl ::core::fmt::Debug for MPIO_PASS_THROUGH_PATH_DIRECT {
         f.debug_struct("MPIO_PASS_THROUGH_PATH_DIRECT").field("PassThrough", &self.PassThrough).field("Version", &self.Version).field("Length", &self.Length).field("Flags", &self.Flags).field("PortNumber", &self.PortNumber).field("MpioPathId", &self.MpioPathId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MPIO_PASS_THROUGH_PATH_DIRECT {
+unsafe impl ::windows_core::Abi for MPIO_PASS_THROUGH_PATH_DIRECT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MPIO_PASS_THROUGH_PATH_DIRECT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH_DIRECT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH_DIRECT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MPIO_PASS_THROUGH_PATH_DIRECT {}
@@ -2765,13 +2765,13 @@ impl ::core::fmt::Debug for MPIO_PASS_THROUGH_PATH_DIRECT32 {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for MPIO_PASS_THROUGH_PATH_DIRECT32 {
+unsafe impl ::windows_core::Abi for MPIO_PASS_THROUGH_PATH_DIRECT32 {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for MPIO_PASS_THROUGH_PATH_DIRECT32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH_DIRECT32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH_DIRECT32>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -2808,13 +2808,13 @@ impl ::core::fmt::Debug for MPIO_PASS_THROUGH_PATH_DIRECT32_EX {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for MPIO_PASS_THROUGH_PATH_DIRECT32_EX {
+unsafe impl ::windows_core::Abi for MPIO_PASS_THROUGH_PATH_DIRECT32_EX {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for MPIO_PASS_THROUGH_PATH_DIRECT32_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH_DIRECT32_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH_DIRECT32_EX>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -2846,12 +2846,12 @@ impl ::core::fmt::Debug for MPIO_PASS_THROUGH_PATH_DIRECT_EX {
         f.debug_struct("MPIO_PASS_THROUGH_PATH_DIRECT_EX").field("PassThroughOffset", &self.PassThroughOffset).field("Version", &self.Version).field("Length", &self.Length).field("Flags", &self.Flags).field("PortNumber", &self.PortNumber).field("MpioPathId", &self.MpioPathId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MPIO_PASS_THROUGH_PATH_DIRECT_EX {
+unsafe impl ::windows_core::Abi for MPIO_PASS_THROUGH_PATH_DIRECT_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MPIO_PASS_THROUGH_PATH_DIRECT_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH_DIRECT_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH_DIRECT_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MPIO_PASS_THROUGH_PATH_DIRECT_EX {}
@@ -2881,12 +2881,12 @@ impl ::core::fmt::Debug for MPIO_PASS_THROUGH_PATH_EX {
         f.debug_struct("MPIO_PASS_THROUGH_PATH_EX").field("PassThroughOffset", &self.PassThroughOffset).field("Version", &self.Version).field("Length", &self.Length).field("Flags", &self.Flags).field("PortNumber", &self.PortNumber).field("MpioPathId", &self.MpioPathId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MPIO_PASS_THROUGH_PATH_EX {
+unsafe impl ::windows_core::Abi for MPIO_PASS_THROUGH_PATH_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MPIO_PASS_THROUGH_PATH_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPIO_PASS_THROUGH_PATH_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MPIO_PASS_THROUGH_PATH_EX {}
@@ -2912,12 +2912,12 @@ impl ::core::fmt::Debug for MP_DEVICE_DATA_SET_RANGE {
         f.debug_struct("MP_DEVICE_DATA_SET_RANGE").field("StartingOffset", &self.StartingOffset).field("LengthInBytes", &self.LengthInBytes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MP_DEVICE_DATA_SET_RANGE {
+unsafe impl ::windows_core::Abi for MP_DEVICE_DATA_SET_RANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MP_DEVICE_DATA_SET_RANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MP_DEVICE_DATA_SET_RANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MP_DEVICE_DATA_SET_RANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MP_DEVICE_DATA_SET_RANGE {}
@@ -2945,7 +2945,7 @@ impl ::core::default::Default for MP_STORAGE_DIAGNOSTIC_LEVEL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MP_STORAGE_DIAGNOSTIC_LEVEL {
+unsafe impl ::windows_core::Abi for MP_STORAGE_DIAGNOSTIC_LEVEL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MP_STORAGE_DIAGNOSTIC_LEVEL {
@@ -2976,7 +2976,7 @@ impl ::core::default::Default for MP_STORAGE_DIAGNOSTIC_TARGET_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MP_STORAGE_DIAGNOSTIC_TARGET_TYPE {
+unsafe impl ::windows_core::Abi for MP_STORAGE_DIAGNOSTIC_TARGET_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MP_STORAGE_DIAGNOSTIC_TARGET_TYPE {
@@ -3035,7 +3035,7 @@ pub const NRB_SUCCESS: u32 = 0u32;
 pub struct NTSCSI_UNICODE_STRING {
     pub Length: u16,
     pub MaximumLength: u16,
-    pub Buffer: ::windows::core::PWSTR,
+    pub Buffer: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for NTSCSI_UNICODE_STRING {}
 impl ::core::clone::Clone for NTSCSI_UNICODE_STRING {
@@ -3048,12 +3048,12 @@ impl ::core::fmt::Debug for NTSCSI_UNICODE_STRING {
         f.debug_struct("NTSCSI_UNICODE_STRING").field("Length", &self.Length).field("MaximumLength", &self.MaximumLength).field("Buffer", &self.Buffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NTSCSI_UNICODE_STRING {
+unsafe impl ::windows_core::Abi for NTSCSI_UNICODE_STRING {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NTSCSI_UNICODE_STRING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NTSCSI_UNICODE_STRING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NTSCSI_UNICODE_STRING>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NTSCSI_UNICODE_STRING {}
@@ -3104,12 +3104,12 @@ impl ::core::fmt::Debug for NVCACHE_HINT_PAYLOAD {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for NVCACHE_HINT_PAYLOAD {
+unsafe impl ::windows_core::Abi for NVCACHE_HINT_PAYLOAD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NVCACHE_HINT_PAYLOAD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NVCACHE_HINT_PAYLOAD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NVCACHE_HINT_PAYLOAD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NVCACHE_HINT_PAYLOAD {}
@@ -3148,12 +3148,12 @@ impl ::core::fmt::Debug for NVCACHE_PRIORITY_LEVEL_DESCRIPTOR {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for NVCACHE_PRIORITY_LEVEL_DESCRIPTOR {
+unsafe impl ::windows_core::Abi for NVCACHE_PRIORITY_LEVEL_DESCRIPTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NVCACHE_PRIORITY_LEVEL_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NVCACHE_PRIORITY_LEVEL_DESCRIPTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NVCACHE_PRIORITY_LEVEL_DESCRIPTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NVCACHE_PRIORITY_LEVEL_DESCRIPTOR {}
@@ -3186,12 +3186,12 @@ impl ::core::fmt::Debug for NVCACHE_REQUEST_BLOCK {
         f.debug_struct("NVCACHE_REQUEST_BLOCK").field("NRBSize", &self.NRBSize).field("Function", &self.Function).field("NRBFlags", &self.NRBFlags).field("NRBStatus", &self.NRBStatus).field("Count", &self.Count).field("LBA", &self.LBA).field("DataBufSize", &self.DataBufSize).field("NVCacheStatus", &self.NVCacheStatus).field("NVCacheSubStatus", &self.NVCacheSubStatus).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NVCACHE_REQUEST_BLOCK {
+unsafe impl ::windows_core::Abi for NVCACHE_REQUEST_BLOCK {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NVCACHE_REQUEST_BLOCK {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NVCACHE_REQUEST_BLOCK>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NVCACHE_REQUEST_BLOCK>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NVCACHE_REQUEST_BLOCK {}
@@ -3223,7 +3223,7 @@ impl ::core::default::Default for NVCACHE_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NVCACHE_STATUS {
+unsafe impl ::windows_core::Abi for NVCACHE_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NVCACHE_STATUS {
@@ -3254,7 +3254,7 @@ impl ::core::default::Default for NVCACHE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NVCACHE_TYPE {
+unsafe impl ::windows_core::Abi for NVCACHE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NVCACHE_TYPE {
@@ -3298,12 +3298,12 @@ impl ::core::fmt::Debug for NV_FEATURE_PARAMETER {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for NV_FEATURE_PARAMETER {
+unsafe impl ::windows_core::Abi for NV_FEATURE_PARAMETER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NV_FEATURE_PARAMETER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NV_FEATURE_PARAMETER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NV_FEATURE_PARAMETER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NV_FEATURE_PARAMETER {}
@@ -3328,12 +3328,12 @@ impl ::core::clone::Clone for NV_SEP_CACHE_PARAMETER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for NV_SEP_CACHE_PARAMETER {
+unsafe impl ::windows_core::Abi for NV_SEP_CACHE_PARAMETER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NV_SEP_CACHE_PARAMETER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NV_SEP_CACHE_PARAMETER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NV_SEP_CACHE_PARAMETER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NV_SEP_CACHE_PARAMETER {}
@@ -3354,12 +3354,12 @@ impl ::core::clone::Clone for NV_SEP_CACHE_PARAMETER_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for NV_SEP_CACHE_PARAMETER_0 {
+unsafe impl ::windows_core::Abi for NV_SEP_CACHE_PARAMETER_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NV_SEP_CACHE_PARAMETER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NV_SEP_CACHE_PARAMETER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NV_SEP_CACHE_PARAMETER_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NV_SEP_CACHE_PARAMETER_0 {}
@@ -3384,12 +3384,12 @@ impl ::core::fmt::Debug for NV_SEP_CACHE_PARAMETER_0_0 {
         f.debug_struct("NV_SEP_CACHE_PARAMETER_0_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NV_SEP_CACHE_PARAMETER_0_0 {
+unsafe impl ::windows_core::Abi for NV_SEP_CACHE_PARAMETER_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NV_SEP_CACHE_PARAMETER_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NV_SEP_CACHE_PARAMETER_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NV_SEP_CACHE_PARAMETER_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NV_SEP_CACHE_PARAMETER_0_0 {}
@@ -3425,7 +3425,7 @@ impl ::core::default::Default for NV_SEP_WRITE_CACHE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NV_SEP_WRITE_CACHE_TYPE {
+unsafe impl ::windows_core::Abi for NV_SEP_WRITE_CACHE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NV_SEP_WRITE_CACHE_TYPE {
@@ -3463,13 +3463,13 @@ impl ::core::fmt::Debug for PERSISTENT_ISCSI_LOGIN_INFOA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PERSISTENT_ISCSI_LOGIN_INFOA {
+unsafe impl ::windows_core::Abi for PERSISTENT_ISCSI_LOGIN_INFOA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PERSISTENT_ISCSI_LOGIN_INFOA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERSISTENT_ISCSI_LOGIN_INFOA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERSISTENT_ISCSI_LOGIN_INFOA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3508,13 +3508,13 @@ impl ::core::fmt::Debug for PERSISTENT_ISCSI_LOGIN_INFOW {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PERSISTENT_ISCSI_LOGIN_INFOW {
+unsafe impl ::windows_core::Abi for PERSISTENT_ISCSI_LOGIN_INFOW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PERSISTENT_ISCSI_LOGIN_INFOW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERSISTENT_ISCSI_LOGIN_INFOW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERSISTENT_ISCSI_LOGIN_INFOW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3527,12 +3527,12 @@ impl ::core::default::Default for PERSISTENT_ISCSI_LOGIN_INFOW {
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn RefreshISNSServerA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(address: Param0) -> u32 {
+pub unsafe fn RefreshISNSServerA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(address: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RefreshISNSServerA(address: ::windows::core::PCSTR) -> u32;
+            fn RefreshISNSServerA(address: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(RefreshISNSServerA(address.into_param().abi()))
     }
@@ -3541,12 +3541,12 @@ pub unsafe fn RefreshISNSServerA<'a, Param0: ::windows::core::IntoParam<'a, ::wi
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn RefreshISNSServerW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(address: Param0) -> u32 {
+pub unsafe fn RefreshISNSServerW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(address: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RefreshISNSServerW(address: ::windows::core::PCWSTR) -> u32;
+            fn RefreshISNSServerW(address: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(RefreshISNSServerW(address.into_param().abi()))
     }
@@ -3556,12 +3556,12 @@ pub unsafe fn RefreshISNSServerW<'a, Param0: ::windows::core::IntoParam<'a, ::wi
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RefreshIScsiSendTargetPortalA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALA) -> u32 {
+pub unsafe fn RefreshIScsiSendTargetPortalA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALA) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RefreshIScsiSendTargetPortalA(initiatorinstance: ::windows::core::PCSTR, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALA) -> u32;
+            fn RefreshIScsiSendTargetPortalA(initiatorinstance: ::windows_core::PCSTR, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALA) -> u32;
         }
         ::core::mem::transmute(RefreshIScsiSendTargetPortalA(initiatorinstance.into_param().abi(), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(portal)))
     }
@@ -3570,12 +3570,12 @@ pub unsafe fn RefreshIScsiSendTargetPortalA<'a, Param0: ::windows::core::IntoPar
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn RefreshIScsiSendTargetPortalW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALW) -> u32 {
+pub unsafe fn RefreshIScsiSendTargetPortalW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALW) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RefreshIScsiSendTargetPortalW(initiatorinstance: ::windows::core::PCWSTR, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALW) -> u32;
+            fn RefreshIScsiSendTargetPortalW(initiatorinstance: ::windows_core::PCWSTR, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALW) -> u32;
         }
         ::core::mem::transmute(RefreshIScsiSendTargetPortalW(initiatorinstance.into_param().abi(), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(portal)))
     }
@@ -3584,12 +3584,12 @@ pub unsafe fn RefreshIScsiSendTargetPortalW<'a, Param0: ::windows::core::IntoPar
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn RemoveISNSServerA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(address: Param0) -> u32 {
+pub unsafe fn RemoveISNSServerA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(address: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveISNSServerA(address: ::windows::core::PCSTR) -> u32;
+            fn RemoveISNSServerA(address: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(RemoveISNSServerA(address.into_param().abi()))
     }
@@ -3598,12 +3598,12 @@ pub unsafe fn RemoveISNSServerA<'a, Param0: ::windows::core::IntoParam<'a, ::win
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn RemoveISNSServerW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(address: Param0) -> u32 {
+pub unsafe fn RemoveISNSServerW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(address: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveISNSServerW(address: ::windows::core::PCWSTR) -> u32;
+            fn RemoveISNSServerW(address: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(RemoveISNSServerW(address.into_param().abi()))
     }
@@ -3627,12 +3627,12 @@ pub unsafe fn RemoveIScsiConnection(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_I
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RemoveIScsiPersistentTargetA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, targetname: Param2, portal: *mut ISCSI_TARGET_PORTALA) -> u32 {
+pub unsafe fn RemoveIScsiPersistentTargetA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, targetname: Param2, portal: *mut ISCSI_TARGET_PORTALA) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveIScsiPersistentTargetA(initiatorinstance: ::windows::core::PCSTR, initiatorportnumber: u32, targetname: ::windows::core::PCSTR, portal: *mut ISCSI_TARGET_PORTALA) -> u32;
+            fn RemoveIScsiPersistentTargetA(initiatorinstance: ::windows_core::PCSTR, initiatorportnumber: u32, targetname: ::windows_core::PCSTR, portal: *mut ISCSI_TARGET_PORTALA) -> u32;
         }
         ::core::mem::transmute(RemoveIScsiPersistentTargetA(initiatorinstance.into_param().abi(), ::core::mem::transmute(initiatorportnumber), targetname.into_param().abi(), ::core::mem::transmute(portal)))
     }
@@ -3641,12 +3641,12 @@ pub unsafe fn RemoveIScsiPersistentTargetA<'a, Param0: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn RemoveIScsiPersistentTargetW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, targetname: Param2, portal: *mut ISCSI_TARGET_PORTALW) -> u32 {
+pub unsafe fn RemoveIScsiPersistentTargetW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, targetname: Param2, portal: *mut ISCSI_TARGET_PORTALW) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveIScsiPersistentTargetW(initiatorinstance: ::windows::core::PCWSTR, initiatorportnumber: u32, targetname: ::windows::core::PCWSTR, portal: *mut ISCSI_TARGET_PORTALW) -> u32;
+            fn RemoveIScsiPersistentTargetW(initiatorinstance: ::windows_core::PCWSTR, initiatorportnumber: u32, targetname: ::windows_core::PCWSTR, portal: *mut ISCSI_TARGET_PORTALW) -> u32;
         }
         ::core::mem::transmute(RemoveIScsiPersistentTargetW(initiatorinstance.into_param().abi(), ::core::mem::transmute(initiatorportnumber), targetname.into_param().abi(), ::core::mem::transmute(portal)))
     }
@@ -3656,12 +3656,12 @@ pub unsafe fn RemoveIScsiPersistentTargetW<'a, Param0: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RemoveIScsiSendTargetPortalA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALA) -> u32 {
+pub unsafe fn RemoveIScsiSendTargetPortalA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALA) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveIScsiSendTargetPortalA(initiatorinstance: ::windows::core::PCSTR, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALA) -> u32;
+            fn RemoveIScsiSendTargetPortalA(initiatorinstance: ::windows_core::PCSTR, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALA) -> u32;
         }
         ::core::mem::transmute(RemoveIScsiSendTargetPortalA(initiatorinstance.into_param().abi(), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(portal)))
     }
@@ -3670,12 +3670,12 @@ pub unsafe fn RemoveIScsiSendTargetPortalA<'a, Param0: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn RemoveIScsiSendTargetPortalW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALW) -> u32 {
+pub unsafe fn RemoveIScsiSendTargetPortalW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(initiatorinstance: Param0, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALW) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveIScsiSendTargetPortalW(initiatorinstance: ::windows::core::PCWSTR, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALW) -> u32;
+            fn RemoveIScsiSendTargetPortalW(initiatorinstance: ::windows_core::PCWSTR, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALW) -> u32;
         }
         ::core::mem::transmute(RemoveIScsiSendTargetPortalW(initiatorinstance.into_param().abi(), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(portal)))
     }
@@ -3684,12 +3684,12 @@ pub unsafe fn RemoveIScsiSendTargetPortalW<'a, Param0: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn RemoveIScsiStaticTargetA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(targetname: Param0) -> u32 {
+pub unsafe fn RemoveIScsiStaticTargetA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(targetname: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveIScsiStaticTargetA(targetname: ::windows::core::PCSTR) -> u32;
+            fn RemoveIScsiStaticTargetA(targetname: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(RemoveIScsiStaticTargetA(targetname.into_param().abi()))
     }
@@ -3698,12 +3698,12 @@ pub unsafe fn RemoveIScsiStaticTargetA<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn RemoveIScsiStaticTargetW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(targetname: Param0) -> u32 {
+pub unsafe fn RemoveIScsiStaticTargetW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(targetname: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveIScsiStaticTargetW(targetname: ::windows::core::PCWSTR) -> u32;
+            fn RemoveIScsiStaticTargetW(targetname: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(RemoveIScsiStaticTargetW(targetname.into_param().abi()))
     }
@@ -3712,12 +3712,12 @@ pub unsafe fn RemoveIScsiStaticTargetW<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn RemovePersistentIScsiDeviceA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(devicepath: Param0) -> u32 {
+pub unsafe fn RemovePersistentIScsiDeviceA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(devicepath: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemovePersistentIScsiDeviceA(devicepath: ::windows::core::PCSTR) -> u32;
+            fn RemovePersistentIScsiDeviceA(devicepath: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(RemovePersistentIScsiDeviceA(devicepath.into_param().abi()))
     }
@@ -3726,12 +3726,12 @@ pub unsafe fn RemovePersistentIScsiDeviceA<'a, Param0: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn RemovePersistentIScsiDeviceW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(devicepath: Param0) -> u32 {
+pub unsafe fn RemovePersistentIScsiDeviceW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(devicepath: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemovePersistentIScsiDeviceW(devicepath: ::windows::core::PCWSTR) -> u32;
+            fn RemovePersistentIScsiDeviceW(devicepath: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(RemovePersistentIScsiDeviceW(devicepath.into_param().abi()))
     }
@@ -3740,12 +3740,12 @@ pub unsafe fn RemovePersistentIScsiDeviceW<'a, Param0: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn RemoveRadiusServerA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(address: Param0) -> u32 {
+pub unsafe fn RemoveRadiusServerA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(address: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveRadiusServerA(address: ::windows::core::PCSTR) -> u32;
+            fn RemoveRadiusServerA(address: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(RemoveRadiusServerA(address.into_param().abi()))
     }
@@ -3754,12 +3754,12 @@ pub unsafe fn RemoveRadiusServerA<'a, Param0: ::windows::core::IntoParam<'a, ::w
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn RemoveRadiusServerW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(address: Param0) -> u32 {
+pub unsafe fn RemoveRadiusServerW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(address: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveRadiusServerW(address: ::windows::core::PCWSTR) -> u32;
+            fn RemoveRadiusServerW(address: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(RemoveRadiusServerW(address.into_param().abi()))
     }
@@ -3797,12 +3797,12 @@ pub unsafe fn ReportActiveIScsiTargetMappingsW(buffersize: *mut u32, mappingcoun
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn ReportISNSServerListA(buffersizeinchar: *mut u32, buffer: ::windows::core::PSTR) -> u32 {
+pub unsafe fn ReportISNSServerListA(buffersizeinchar: *mut u32, buffer: ::windows_core::PSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportISNSServerListA(buffersizeinchar: *mut u32, buffer: ::windows::core::PSTR) -> u32;
+            fn ReportISNSServerListA(buffersizeinchar: *mut u32, buffer: ::windows_core::PSTR) -> u32;
         }
         ::core::mem::transmute(ReportISNSServerListA(::core::mem::transmute(buffersizeinchar), ::core::mem::transmute(buffer)))
     }
@@ -3811,12 +3811,12 @@ pub unsafe fn ReportISNSServerListA(buffersizeinchar: *mut u32, buffer: ::window
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn ReportISNSServerListW(buffersizeinchar: *mut u32, buffer: ::windows::core::PWSTR) -> u32 {
+pub unsafe fn ReportISNSServerListW(buffersizeinchar: *mut u32, buffer: ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportISNSServerListW(buffersizeinchar: *mut u32, buffer: ::windows::core::PWSTR) -> u32;
+            fn ReportISNSServerListW(buffersizeinchar: *mut u32, buffer: ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(ReportISNSServerListW(::core::mem::transmute(buffersizeinchar), ::core::mem::transmute(buffer)))
     }
@@ -3825,12 +3825,12 @@ pub unsafe fn ReportISNSServerListW(buffersizeinchar: *mut u32, buffer: ::window
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn ReportIScsiInitiatorListA(buffersize: *mut u32, buffer: ::windows::core::PSTR) -> u32 {
+pub unsafe fn ReportIScsiInitiatorListA(buffersize: *mut u32, buffer: ::windows_core::PSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportIScsiInitiatorListA(buffersize: *mut u32, buffer: ::windows::core::PSTR) -> u32;
+            fn ReportIScsiInitiatorListA(buffersize: *mut u32, buffer: ::windows_core::PSTR) -> u32;
         }
         ::core::mem::transmute(ReportIScsiInitiatorListA(::core::mem::transmute(buffersize), ::core::mem::transmute(buffer)))
     }
@@ -3839,12 +3839,12 @@ pub unsafe fn ReportIScsiInitiatorListA(buffersize: *mut u32, buffer: ::windows:
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn ReportIScsiInitiatorListW(buffersize: *mut u32, buffer: ::windows::core::PWSTR) -> u32 {
+pub unsafe fn ReportIScsiInitiatorListW(buffersize: *mut u32, buffer: ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportIScsiInitiatorListW(buffersize: *mut u32, buffer: ::windows::core::PWSTR) -> u32;
+            fn ReportIScsiInitiatorListW(buffersize: *mut u32, buffer: ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(ReportIScsiInitiatorListW(::core::mem::transmute(buffersize), ::core::mem::transmute(buffer)))
     }
@@ -3942,12 +3942,12 @@ pub unsafe fn ReportIScsiSendTargetPortalsW(portalcount: *mut u32, portalinfo: *
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReportIScsiTargetPortalsA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(initiatorname: Param0, targetname: Param1, targetportaltag: *mut u16, elementcount: *mut u32, portals: *mut ISCSI_TARGET_PORTALA) -> u32 {
+pub unsafe fn ReportIScsiTargetPortalsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(initiatorname: Param0, targetname: Param1, targetportaltag: *mut u16, elementcount: *mut u32, portals: *mut ISCSI_TARGET_PORTALA) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportIScsiTargetPortalsA(initiatorname: ::windows::core::PCSTR, targetname: ::windows::core::PCSTR, targetportaltag: *mut u16, elementcount: *mut u32, portals: *mut ISCSI_TARGET_PORTALA) -> u32;
+            fn ReportIScsiTargetPortalsA(initiatorname: ::windows_core::PCSTR, targetname: ::windows_core::PCSTR, targetportaltag: *mut u16, elementcount: *mut u32, portals: *mut ISCSI_TARGET_PORTALA) -> u32;
         }
         ::core::mem::transmute(ReportIScsiTargetPortalsA(initiatorname.into_param().abi(), targetname.into_param().abi(), ::core::mem::transmute(targetportaltag), ::core::mem::transmute(elementcount), ::core::mem::transmute(portals)))
     }
@@ -3956,12 +3956,12 @@ pub unsafe fn ReportIScsiTargetPortalsA<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn ReportIScsiTargetPortalsW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(initiatorname: Param0, targetname: Param1, targetportaltag: *mut u16, elementcount: *mut u32, portals: *mut ISCSI_TARGET_PORTALW) -> u32 {
+pub unsafe fn ReportIScsiTargetPortalsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(initiatorname: Param0, targetname: Param1, targetportaltag: *mut u16, elementcount: *mut u32, portals: *mut ISCSI_TARGET_PORTALW) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportIScsiTargetPortalsW(initiatorname: ::windows::core::PCWSTR, targetname: ::windows::core::PCWSTR, targetportaltag: *mut u16, elementcount: *mut u32, portals: *mut ISCSI_TARGET_PORTALW) -> u32;
+            fn ReportIScsiTargetPortalsW(initiatorname: ::windows_core::PCWSTR, targetname: ::windows_core::PCWSTR, targetportaltag: *mut u16, elementcount: *mut u32, portals: *mut ISCSI_TARGET_PORTALW) -> u32;
         }
         ::core::mem::transmute(ReportIScsiTargetPortalsW(initiatorname.into_param().abi(), targetname.into_param().abi(), ::core::mem::transmute(targetportaltag), ::core::mem::transmute(elementcount), ::core::mem::transmute(portals)))
     }
@@ -3971,12 +3971,12 @@ pub unsafe fn ReportIScsiTargetPortalsW<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReportIScsiTargetsA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(forceupdate: Param0, buffersize: *mut u32, buffer: ::windows::core::PSTR) -> u32 {
+pub unsafe fn ReportIScsiTargetsA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(forceupdate: Param0, buffersize: *mut u32, buffer: ::windows_core::PSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportIScsiTargetsA(forceupdate: super::super::Foundation::BOOLEAN, buffersize: *mut u32, buffer: ::windows::core::PSTR) -> u32;
+            fn ReportIScsiTargetsA(forceupdate: super::super::Foundation::BOOLEAN, buffersize: *mut u32, buffer: ::windows_core::PSTR) -> u32;
         }
         ::core::mem::transmute(ReportIScsiTargetsA(forceupdate.into_param().abi(), ::core::mem::transmute(buffersize), ::core::mem::transmute(buffer)))
     }
@@ -3986,12 +3986,12 @@ pub unsafe fn ReportIScsiTargetsA<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReportIScsiTargetsW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(forceupdate: Param0, buffersize: *mut u32, buffer: ::windows::core::PWSTR) -> u32 {
+pub unsafe fn ReportIScsiTargetsW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(forceupdate: Param0, buffersize: *mut u32, buffer: ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportIScsiTargetsW(forceupdate: super::super::Foundation::BOOLEAN, buffersize: *mut u32, buffer: ::windows::core::PWSTR) -> u32;
+            fn ReportIScsiTargetsW(forceupdate: super::super::Foundation::BOOLEAN, buffersize: *mut u32, buffer: ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(ReportIScsiTargetsW(forceupdate.into_param().abi(), ::core::mem::transmute(buffersize), ::core::mem::transmute(buffer)))
     }
@@ -4000,12 +4000,12 @@ pub unsafe fn ReportIScsiTargetsW<'a, Param0: ::windows::core::IntoParam<'a, sup
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn ReportPersistentIScsiDevicesA(buffersizeinchar: *mut u32, buffer: ::windows::core::PSTR) -> u32 {
+pub unsafe fn ReportPersistentIScsiDevicesA(buffersizeinchar: *mut u32, buffer: ::windows_core::PSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportPersistentIScsiDevicesA(buffersizeinchar: *mut u32, buffer: ::windows::core::PSTR) -> u32;
+            fn ReportPersistentIScsiDevicesA(buffersizeinchar: *mut u32, buffer: ::windows_core::PSTR) -> u32;
         }
         ::core::mem::transmute(ReportPersistentIScsiDevicesA(::core::mem::transmute(buffersizeinchar), ::core::mem::transmute(buffer)))
     }
@@ -4014,12 +4014,12 @@ pub unsafe fn ReportPersistentIScsiDevicesA(buffersizeinchar: *mut u32, buffer: 
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn ReportPersistentIScsiDevicesW(buffersizeinchar: *mut u32, buffer: ::windows::core::PWSTR) -> u32 {
+pub unsafe fn ReportPersistentIScsiDevicesW(buffersizeinchar: *mut u32, buffer: ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportPersistentIScsiDevicesW(buffersizeinchar: *mut u32, buffer: ::windows::core::PWSTR) -> u32;
+            fn ReportPersistentIScsiDevicesW(buffersizeinchar: *mut u32, buffer: ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(ReportPersistentIScsiDevicesW(::core::mem::transmute(buffersizeinchar), ::core::mem::transmute(buffer)))
     }
@@ -4028,12 +4028,12 @@ pub unsafe fn ReportPersistentIScsiDevicesW(buffersizeinchar: *mut u32, buffer: 
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn ReportRadiusServerListA(buffersizeinchar: *mut u32, buffer: ::windows::core::PSTR) -> u32 {
+pub unsafe fn ReportRadiusServerListA(buffersizeinchar: *mut u32, buffer: ::windows_core::PSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportRadiusServerListA(buffersizeinchar: *mut u32, buffer: ::windows::core::PSTR) -> u32;
+            fn ReportRadiusServerListA(buffersizeinchar: *mut u32, buffer: ::windows_core::PSTR) -> u32;
         }
         ::core::mem::transmute(ReportRadiusServerListA(::core::mem::transmute(buffersizeinchar), ::core::mem::transmute(buffer)))
     }
@@ -4042,12 +4042,12 @@ pub unsafe fn ReportRadiusServerListA(buffersizeinchar: *mut u32, buffer: ::wind
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn ReportRadiusServerListW(buffersizeinchar: *mut u32, buffer: ::windows::core::PWSTR) -> u32 {
+pub unsafe fn ReportRadiusServerListW(buffersizeinchar: *mut u32, buffer: ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportRadiusServerListW(buffersizeinchar: *mut u32, buffer: ::windows::core::PWSTR) -> u32;
+            fn ReportRadiusServerListW(buffersizeinchar: *mut u32, buffer: ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(ReportRadiusServerListW(::core::mem::transmute(buffersizeinchar), ::core::mem::transmute(buffer)))
     }
@@ -4071,12 +4071,12 @@ impl ::core::fmt::Debug for SCSI_ADAPTER_BUS_INFO {
         f.debug_struct("SCSI_ADAPTER_BUS_INFO").field("NumberOfBuses", &self.NumberOfBuses).field("BusData", &self.BusData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SCSI_ADAPTER_BUS_INFO {
+unsafe impl ::windows_core::Abi for SCSI_ADAPTER_BUS_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SCSI_ADAPTER_BUS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_ADAPTER_BUS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_ADAPTER_BUS_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SCSI_ADAPTER_BUS_INFO {}
@@ -4105,12 +4105,12 @@ impl ::core::fmt::Debug for SCSI_ADDRESS {
         f.debug_struct("SCSI_ADDRESS").field("Length", &self.Length).field("PortNumber", &self.PortNumber).field("PathId", &self.PathId).field("TargetId", &self.TargetId).field("Lun", &self.Lun).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SCSI_ADDRESS {
+unsafe impl ::windows_core::Abi for SCSI_ADDRESS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SCSI_ADDRESS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_ADDRESS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_ADDRESS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SCSI_ADDRESS {}
@@ -4137,12 +4137,12 @@ impl ::core::fmt::Debug for SCSI_BUS_DATA {
         f.debug_struct("SCSI_BUS_DATA").field("NumberOfLogicalUnits", &self.NumberOfLogicalUnits).field("InitiatorBusId", &self.InitiatorBusId).field("InquiryDataOffset", &self.InquiryDataOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SCSI_BUS_DATA {
+unsafe impl ::windows_core::Abi for SCSI_BUS_DATA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SCSI_BUS_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_BUS_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_BUS_DATA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SCSI_BUS_DATA {}
@@ -4178,13 +4178,13 @@ impl ::core::fmt::Debug for SCSI_INQUIRY_DATA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SCSI_INQUIRY_DATA {
+unsafe impl ::windows_core::Abi for SCSI_INQUIRY_DATA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SCSI_INQUIRY_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_INQUIRY_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_INQUIRY_DATA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4220,12 +4220,12 @@ impl ::core::fmt::Debug for SCSI_LUN_LIST {
         f.debug_struct("SCSI_LUN_LIST").field("OSLUN", &self.OSLUN).field("TargetLUN", &self.TargetLUN).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SCSI_LUN_LIST {
+unsafe impl ::windows_core::Abi for SCSI_LUN_LIST {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SCSI_LUN_LIST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_LUN_LIST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_LUN_LIST>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SCSI_LUN_LIST {}
@@ -4276,12 +4276,12 @@ impl ::core::fmt::Debug for SCSI_PASS_THROUGH {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for SCSI_PASS_THROUGH {
+unsafe impl ::windows_core::Abi for SCSI_PASS_THROUGH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SCSI_PASS_THROUGH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SCSI_PASS_THROUGH {}
@@ -4337,13 +4337,13 @@ impl ::core::fmt::Debug for SCSI_PASS_THROUGH32 {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SCSI_PASS_THROUGH32 {
+unsafe impl ::windows_core::Abi for SCSI_PASS_THROUGH32 {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SCSI_PASS_THROUGH32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH32>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -4407,13 +4407,13 @@ impl ::core::fmt::Debug for SCSI_PASS_THROUGH32_EX {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SCSI_PASS_THROUGH32_EX {
+unsafe impl ::windows_core::Abi for SCSI_PASS_THROUGH32_EX {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SCSI_PASS_THROUGH32_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH32_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH32_EX>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -4466,12 +4466,12 @@ impl ::core::fmt::Debug for SCSI_PASS_THROUGH_DIRECT {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for SCSI_PASS_THROUGH_DIRECT {
+unsafe impl ::windows_core::Abi for SCSI_PASS_THROUGH_DIRECT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SCSI_PASS_THROUGH_DIRECT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH_DIRECT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH_DIRECT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SCSI_PASS_THROUGH_DIRECT {}
@@ -4527,13 +4527,13 @@ impl ::core::fmt::Debug for SCSI_PASS_THROUGH_DIRECT32 {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SCSI_PASS_THROUGH_DIRECT32 {
+unsafe impl ::windows_core::Abi for SCSI_PASS_THROUGH_DIRECT32 {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SCSI_PASS_THROUGH_DIRECT32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH_DIRECT32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH_DIRECT32>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -4597,13 +4597,13 @@ impl ::core::fmt::Debug for SCSI_PASS_THROUGH_DIRECT32_EX {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SCSI_PASS_THROUGH_DIRECT32_EX {
+unsafe impl ::windows_core::Abi for SCSI_PASS_THROUGH_DIRECT32_EX {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SCSI_PASS_THROUGH_DIRECT32_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH_DIRECT32_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH_DIRECT32_EX>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -4662,12 +4662,12 @@ impl ::core::fmt::Debug for SCSI_PASS_THROUGH_DIRECT_EX {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for SCSI_PASS_THROUGH_DIRECT_EX {
+unsafe impl ::windows_core::Abi for SCSI_PASS_THROUGH_DIRECT_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SCSI_PASS_THROUGH_DIRECT_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH_DIRECT_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH_DIRECT_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SCSI_PASS_THROUGH_DIRECT_EX {}
@@ -4724,12 +4724,12 @@ impl ::core::fmt::Debug for SCSI_PASS_THROUGH_EX {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for SCSI_PASS_THROUGH_EX {
+unsafe impl ::windows_core::Abi for SCSI_PASS_THROUGH_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SCSI_PASS_THROUGH_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCSI_PASS_THROUGH_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SCSI_PASS_THROUGH_EX {}
@@ -4759,12 +4759,12 @@ impl ::core::fmt::Debug for SRB_IO_CONTROL {
         f.debug_struct("SRB_IO_CONTROL").field("HeaderLength", &self.HeaderLength).field("Signature", &self.Signature).field("Timeout", &self.Timeout).field("ControlCode", &self.ControlCode).field("ReturnCode", &self.ReturnCode).field("Length", &self.Length).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SRB_IO_CONTROL {
+unsafe impl ::windows_core::Abi for SRB_IO_CONTROL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SRB_IO_CONTROL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SRB_IO_CONTROL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SRB_IO_CONTROL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SRB_IO_CONTROL {}
@@ -4780,7 +4780,7 @@ pub struct STORAGE_DIAGNOSTIC_MP_REQUEST {
     pub Size: u32,
     pub TargetType: MP_STORAGE_DIAGNOSTIC_TARGET_TYPE,
     pub Level: MP_STORAGE_DIAGNOSTIC_LEVEL,
-    pub ProviderId: ::windows::core::GUID,
+    pub ProviderId: ::windows_core::GUID,
     pub BufferSize: u32,
     pub Reserved: u32,
     pub DataBuffer: [u8; 1],
@@ -4796,12 +4796,12 @@ impl ::core::fmt::Debug for STORAGE_DIAGNOSTIC_MP_REQUEST {
         f.debug_struct("STORAGE_DIAGNOSTIC_MP_REQUEST").field("Version", &self.Version).field("Size", &self.Size).field("TargetType", &self.TargetType).field("Level", &self.Level).field("ProviderId", &self.ProviderId).field("BufferSize", &self.BufferSize).field("Reserved", &self.Reserved).field("DataBuffer", &self.DataBuffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for STORAGE_DIAGNOSTIC_MP_REQUEST {
+unsafe impl ::windows_core::Abi for STORAGE_DIAGNOSTIC_MP_REQUEST {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STORAGE_DIAGNOSTIC_MP_REQUEST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_DIAGNOSTIC_MP_REQUEST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_DIAGNOSTIC_MP_REQUEST>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STORAGE_DIAGNOSTIC_MP_REQUEST {}
@@ -4842,12 +4842,12 @@ impl ::core::fmt::Debug for STORAGE_ENDURANCE_DATA_DESCRIPTOR {
         f.debug_struct("STORAGE_ENDURANCE_DATA_DESCRIPTOR").field("Version", &self.Version).field("Size", &self.Size).field("EnduranceInfo", &self.EnduranceInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for STORAGE_ENDURANCE_DATA_DESCRIPTOR {
+unsafe impl ::windows_core::Abi for STORAGE_ENDURANCE_DATA_DESCRIPTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STORAGE_ENDURANCE_DATA_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_ENDURANCE_DATA_DESCRIPTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_ENDURANCE_DATA_DESCRIPTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STORAGE_ENDURANCE_DATA_DESCRIPTOR {}
@@ -4877,12 +4877,12 @@ impl ::core::fmt::Debug for STORAGE_ENDURANCE_INFO {
         f.debug_struct("STORAGE_ENDURANCE_INFO").field("ValidFields", &self.ValidFields).field("GroupId", &self.GroupId).field("Flags", &self.Flags).field("LifePercentage", &self.LifePercentage).field("BytesReadCount", &self.BytesReadCount).field("ByteWriteCount", &self.ByteWriteCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for STORAGE_ENDURANCE_INFO {
+unsafe impl ::windows_core::Abi for STORAGE_ENDURANCE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STORAGE_ENDURANCE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_ENDURANCE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_ENDURANCE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STORAGE_ENDURANCE_INFO {}
@@ -4907,12 +4907,12 @@ impl ::core::fmt::Debug for STORAGE_ENDURANCE_INFO_0 {
         f.debug_struct("STORAGE_ENDURANCE_INFO_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for STORAGE_ENDURANCE_INFO_0 {
+unsafe impl ::windows_core::Abi for STORAGE_ENDURANCE_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STORAGE_ENDURANCE_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_ENDURANCE_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_ENDURANCE_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STORAGE_ENDURANCE_INFO_0 {}
@@ -4940,12 +4940,12 @@ impl ::core::fmt::Debug for STORAGE_FIRMWARE_ACTIVATE {
         f.debug_struct("STORAGE_FIRMWARE_ACTIVATE").field("Version", &self.Version).field("Size", &self.Size).field("SlotToActivate", &self.SlotToActivate).field("Reserved0", &self.Reserved0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for STORAGE_FIRMWARE_ACTIVATE {
+unsafe impl ::windows_core::Abi for STORAGE_FIRMWARE_ACTIVATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STORAGE_FIRMWARE_ACTIVATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_ACTIVATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_ACTIVATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STORAGE_FIRMWARE_ACTIVATE {}
@@ -4976,12 +4976,12 @@ impl ::core::fmt::Debug for STORAGE_FIRMWARE_DOWNLOAD {
         f.debug_struct("STORAGE_FIRMWARE_DOWNLOAD").field("Version", &self.Version).field("Size", &self.Size).field("Offset", &self.Offset).field("BufferSize", &self.BufferSize).field("ImageBuffer", &self.ImageBuffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for STORAGE_FIRMWARE_DOWNLOAD {
+unsafe impl ::windows_core::Abi for STORAGE_FIRMWARE_DOWNLOAD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STORAGE_FIRMWARE_DOWNLOAD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_DOWNLOAD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_DOWNLOAD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STORAGE_FIRMWARE_DOWNLOAD {}
@@ -5017,12 +5017,12 @@ impl ::core::fmt::Debug for STORAGE_FIRMWARE_DOWNLOAD_V2 {
         f.debug_struct("STORAGE_FIRMWARE_DOWNLOAD_V2").field("Version", &self.Version).field("Size", &self.Size).field("Offset", &self.Offset).field("BufferSize", &self.BufferSize).field("Slot", &self.Slot).field("Reserved", &self.Reserved).field("ImageSize", &self.ImageSize).field("ImageBuffer", &self.ImageBuffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for STORAGE_FIRMWARE_DOWNLOAD_V2 {
+unsafe impl ::windows_core::Abi for STORAGE_FIRMWARE_DOWNLOAD_V2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STORAGE_FIRMWARE_DOWNLOAD_V2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_DOWNLOAD_V2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_DOWNLOAD_V2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STORAGE_FIRMWARE_DOWNLOAD_V2 {}
@@ -5053,13 +5053,13 @@ impl ::core::clone::Clone for STORAGE_FIRMWARE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for STORAGE_FIRMWARE_INFO {
+unsafe impl ::windows_core::Abi for STORAGE_FIRMWARE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for STORAGE_FIRMWARE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5119,13 +5119,13 @@ impl ::core::fmt::Debug for STORAGE_FIRMWARE_INFO_V2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for STORAGE_FIRMWARE_INFO_V2 {
+unsafe impl ::windows_core::Abi for STORAGE_FIRMWARE_INFO_V2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for STORAGE_FIRMWARE_INFO_V2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_INFO_V2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_INFO_V2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5154,13 +5154,13 @@ impl ::core::clone::Clone for STORAGE_FIRMWARE_SLOT_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for STORAGE_FIRMWARE_SLOT_INFO {
+unsafe impl ::windows_core::Abi for STORAGE_FIRMWARE_SLOT_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for STORAGE_FIRMWARE_SLOT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_SLOT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_SLOT_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5187,13 +5187,13 @@ impl ::core::clone::Clone for STORAGE_FIRMWARE_SLOT_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for STORAGE_FIRMWARE_SLOT_INFO_0 {
+unsafe impl ::windows_core::Abi for STORAGE_FIRMWARE_SLOT_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for STORAGE_FIRMWARE_SLOT_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_SLOT_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_SLOT_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5228,13 +5228,13 @@ impl ::core::fmt::Debug for STORAGE_FIRMWARE_SLOT_INFO_V2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for STORAGE_FIRMWARE_SLOT_INFO_V2 {
+unsafe impl ::windows_core::Abi for STORAGE_FIRMWARE_SLOT_INFO_V2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for STORAGE_FIRMWARE_SLOT_INFO_V2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_SLOT_INFO_V2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STORAGE_FIRMWARE_SLOT_INFO_V2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5247,7 +5247,7 @@ impl ::core::default::Default for STORAGE_FIRMWARE_SLOT_INFO_V2 {
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 pub const STORAGE_FIRMWARE_SLOT_INFO_V2_REVISION_LENGTH: u32 = 16u32;
-pub const ScsiRawInterfaceGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x53f56309_b6bf_11d0_94f2_00a0c91efb8b);
+pub const ScsiRawInterfaceGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x53f56309_b6bf_11d0_94f2_00a0c91efb8b);
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
 pub unsafe fn SendScsiInquiry(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, lun: u64, evpdcmddt: u8, pagecode: u8, scsistatus: *mut u8, responsesize: *mut u32, responsebuffer: *mut u8, sensesize: *mut u32, sensebuffer: *mut u8) -> u32 {
@@ -5293,7 +5293,7 @@ pub unsafe fn SendScsiReportLuns(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, 
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetIScsiGroupPresharedKey<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(keylength: u32, key: *mut u8, persist: Param2) -> u32 {
+pub unsafe fn SetIScsiGroupPresharedKey<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(keylength: u32, key: *mut u8, persist: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5308,12 +5308,12 @@ pub unsafe fn SetIScsiGroupPresharedKey<'a, Param2: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetIScsiIKEInfoA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(initiatorname: Param0, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: Param3) -> u32 {
+pub unsafe fn SetIScsiIKEInfoA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(initiatorname: Param0, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetIScsiIKEInfoA(initiatorname: ::windows::core::PCSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: super::super::Foundation::BOOLEAN) -> u32;
+            fn SetIScsiIKEInfoA(initiatorname: ::windows_core::PCSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: super::super::Foundation::BOOLEAN) -> u32;
         }
         ::core::mem::transmute(SetIScsiIKEInfoA(initiatorname.into_param().abi(), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(authinfo), persist.into_param().abi()))
     }
@@ -5323,12 +5323,12 @@ pub unsafe fn SetIScsiIKEInfoA<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetIScsiIKEInfoW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(initiatorname: Param0, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: Param3) -> u32 {
+pub unsafe fn SetIScsiIKEInfoW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(initiatorname: Param0, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetIScsiIKEInfoW(initiatorname: ::windows::core::PCWSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: super::super::Foundation::BOOLEAN) -> u32;
+            fn SetIScsiIKEInfoW(initiatorname: ::windows_core::PCWSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: super::super::Foundation::BOOLEAN) -> u32;
         }
         ::core::mem::transmute(SetIScsiIKEInfoW(initiatorname.into_param().abi(), ::core::mem::transmute(initiatorportnumber), ::core::mem::transmute(authinfo), persist.into_param().abi()))
     }
@@ -5351,12 +5351,12 @@ pub unsafe fn SetIScsiInitiatorCHAPSharedSecret(sharedsecretlength: u32, shareds
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn SetIScsiInitiatorNodeNameA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(initiatornodename: Param0) -> u32 {
+pub unsafe fn SetIScsiInitiatorNodeNameA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(initiatornodename: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetIScsiInitiatorNodeNameA(initiatornodename: ::windows::core::PCSTR) -> u32;
+            fn SetIScsiInitiatorNodeNameA(initiatornodename: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(SetIScsiInitiatorNodeNameA(initiatornodename.into_param().abi()))
     }
@@ -5365,12 +5365,12 @@ pub unsafe fn SetIScsiInitiatorNodeNameA<'a, Param0: ::windows::core::IntoParam<
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn SetIScsiInitiatorNodeNameW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(initiatornodename: Param0) -> u32 {
+pub unsafe fn SetIScsiInitiatorNodeNameW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(initiatornodename: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetIScsiInitiatorNodeNameW(initiatornodename: ::windows::core::PCWSTR) -> u32;
+            fn SetIScsiInitiatorNodeNameW(initiatornodename: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(SetIScsiInitiatorNodeNameW(initiatornodename.into_param().abi()))
     }
@@ -5394,12 +5394,12 @@ pub unsafe fn SetIScsiInitiatorRADIUSSharedSecret(sharedsecretlength: u32, share
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetIScsiTunnelModeOuterAddressA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(initiatorname: Param0, initiatorportnumber: u32, destinationaddress: Param2, outermodeaddress: Param3, persist: Param4) -> u32 {
+pub unsafe fn SetIScsiTunnelModeOuterAddressA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(initiatorname: Param0, initiatorportnumber: u32, destinationaddress: Param2, outermodeaddress: Param3, persist: Param4) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetIScsiTunnelModeOuterAddressA(initiatorname: ::windows::core::PCSTR, initiatorportnumber: u32, destinationaddress: ::windows::core::PCSTR, outermodeaddress: ::windows::core::PCSTR, persist: super::super::Foundation::BOOLEAN) -> u32;
+            fn SetIScsiTunnelModeOuterAddressA(initiatorname: ::windows_core::PCSTR, initiatorportnumber: u32, destinationaddress: ::windows_core::PCSTR, outermodeaddress: ::windows_core::PCSTR, persist: super::super::Foundation::BOOLEAN) -> u32;
         }
         ::core::mem::transmute(SetIScsiTunnelModeOuterAddressA(initiatorname.into_param().abi(), ::core::mem::transmute(initiatorportnumber), destinationaddress.into_param().abi(), outermodeaddress.into_param().abi(), persist.into_param().abi()))
     }
@@ -5409,12 +5409,12 @@ pub unsafe fn SetIScsiTunnelModeOuterAddressA<'a, Param0: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetIScsiTunnelModeOuterAddressW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(initiatorname: Param0, initiatorportnumber: u32, destinationaddress: Param2, outermodeaddress: Param3, persist: Param4) -> u32 {
+pub unsafe fn SetIScsiTunnelModeOuterAddressW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(initiatorname: Param0, initiatorportnumber: u32, destinationaddress: Param2, outermodeaddress: Param3, persist: Param4) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetIScsiTunnelModeOuterAddressW(initiatorname: ::windows::core::PCWSTR, initiatorportnumber: u32, destinationaddress: ::windows::core::PCWSTR, outermodeaddress: ::windows::core::PCWSTR, persist: super::super::Foundation::BOOLEAN) -> u32;
+            fn SetIScsiTunnelModeOuterAddressW(initiatorname: ::windows_core::PCWSTR, initiatorportnumber: u32, destinationaddress: ::windows_core::PCWSTR, outermodeaddress: ::windows_core::PCWSTR, persist: super::super::Foundation::BOOLEAN) -> u32;
         }
         ::core::mem::transmute(SetIScsiTunnelModeOuterAddressW(initiatorname.into_param().abi(), ::core::mem::transmute(initiatorportnumber), destinationaddress.into_param().abi(), outermodeaddress.into_param().abi(), persist.into_param().abi()))
     }
@@ -5466,7 +5466,7 @@ impl ::core::default::Default for TARGETPROTOCOLTYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TARGETPROTOCOLTYPE {
+unsafe impl ::windows_core::Abi for TARGETPROTOCOLTYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TARGETPROTOCOLTYPE {
@@ -5505,7 +5505,7 @@ impl ::core::default::Default for TARGET_INFORMATION_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TARGET_INFORMATION_CLASS {
+unsafe impl ::windows_core::Abi for TARGET_INFORMATION_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TARGET_INFORMATION_CLASS {
@@ -5513,7 +5513,7 @@ impl ::core::fmt::Debug for TARGET_INFORMATION_CLASS {
         f.debug_tuple("TARGET_INFORMATION_CLASS").field(&self.0).finish()
     }
 }
-pub const WmiScsiAddressGuid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x53f5630f_b6bf_11d0_94f2_00a0c91efb8b);
+pub const WmiScsiAddressGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x53f5630f_b6bf_11d0_94f2_00a0c91efb8b);
 #[repr(C)]
 pub struct _ADAPTER_OBJECT(pub u8);
 #[cfg(feature = "implement")]

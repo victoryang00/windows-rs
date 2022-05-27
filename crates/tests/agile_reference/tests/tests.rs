@@ -1,4 +1,4 @@
-use windows::core::{AgileReference, Result};
+use windows_core::{AgileReference, Result};
 use windows::Media::Control::GlobalSystemMediaTransportControlsSessionManager;
 
 #[test]

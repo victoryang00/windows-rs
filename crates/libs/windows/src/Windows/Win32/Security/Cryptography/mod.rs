@@ -159,19 +159,19 @@ pub const ALG_TYPE_STREAM: u32 = 2048u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const ALG_TYPE_THIRDPARTY: u32 = 4096u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const AUDIT_CARD_DELETE: ::windows::core::HRESULT = ::windows::core::HRESULT(1074070017i32);
+pub const AUDIT_CARD_DELETE: ::windows_core::HRESULT = ::windows_core::HRESULT(1074070017i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const AUDIT_CARD_IMPORT: ::windows::core::HRESULT = ::windows::core::HRESULT(1074070018i32);
+pub const AUDIT_CARD_IMPORT: ::windows_core::HRESULT = ::windows_core::HRESULT(1074070018i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const AUDIT_CARD_WRITTEN: ::windows::core::HRESULT = ::windows::core::HRESULT(1074070016i32);
+pub const AUDIT_CARD_WRITTEN: ::windows_core::HRESULT = ::windows_core::HRESULT(1074070016i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const AUDIT_SERVICE_IDLE_STOP: ::windows::core::HRESULT = ::windows::core::HRESULT(1074070022i32);
+pub const AUDIT_SERVICE_IDLE_STOP: ::windows_core::HRESULT = ::windows_core::HRESULT(1074070022i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const AUDIT_STORE_DELETE: ::windows::core::HRESULT = ::windows::core::HRESULT(1074070021i32);
+pub const AUDIT_STORE_DELETE: ::windows_core::HRESULT = ::windows_core::HRESULT(1074070021i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const AUDIT_STORE_EXPORT: ::windows::core::HRESULT = ::windows::core::HRESULT(1074070020i32);
+pub const AUDIT_STORE_EXPORT: ::windows_core::HRESULT = ::windows_core::HRESULT(1074070020i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const AUDIT_STORE_IMPORT: ::windows::core::HRESULT = ::windows::core::HRESULT(1074070019i32);
+pub const AUDIT_STORE_IMPORT: ::windows_core::HRESULT = ::windows_core::HRESULT(1074070019i32);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA {
@@ -190,12 +190,12 @@ impl ::core::fmt::Debug for AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA {
         f.debug_struct("AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA").field("cbSize", &self.cbSize).field("dwRegPolicySettings", &self.dwRegPolicySettings).field("pSignerInfo", &self.pSignerInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA {
+unsafe impl ::windows_core::Abi for AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA {}
@@ -226,13 +226,13 @@ impl ::core::fmt::Debug for AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS {
+unsafe impl ::windows_core::Abi for AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -266,13 +266,13 @@ impl ::core::fmt::Debug for AUTHENTICODE_TS_EXTRA_CERT_CHAIN_POLICY_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for AUTHENTICODE_TS_EXTRA_CERT_CHAIN_POLICY_PARA {
+unsafe impl ::windows_core::Abi for AUTHENTICODE_TS_EXTRA_CERT_CHAIN_POLICY_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for AUTHENTICODE_TS_EXTRA_CERT_CHAIN_POLICY_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUTHENTICODE_TS_EXTRA_CERT_CHAIN_POLICY_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUTHENTICODE_TS_EXTRA_CERT_CHAIN_POLICY_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -330,7 +330,7 @@ pub const BCRYPT_AES_WRAP_KEY_BLOB: &str = "Rfc3565KeyWrapBlob";
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct BCRYPT_ALGORITHM_IDENTIFIER {
-    pub pszName: ::windows::core::PWSTR,
+    pub pszName: ::windows_core::PWSTR,
     pub dwClass: u32,
     pub dwFlags: u32,
 }
@@ -345,12 +345,12 @@ impl ::core::fmt::Debug for BCRYPT_ALGORITHM_IDENTIFIER {
         f.debug_struct("BCRYPT_ALGORITHM_IDENTIFIER").field("pszName", &self.pszName).field("dwClass", &self.dwClass).field("dwFlags", &self.dwFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_ALGORITHM_IDENTIFIER {
+unsafe impl ::windows_core::Abi for BCRYPT_ALGORITHM_IDENTIFIER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_ALGORITHM_IDENTIFIER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_ALGORITHM_IDENTIFIER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_ALGORITHM_IDENTIFIER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_ALGORITHM_IDENTIFIER {}
@@ -385,7 +385,7 @@ impl ::core::fmt::Debug for BCRYPT_ALG_HANDLE {
         f.debug_tuple("BCRYPT_ALG_HANDLE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_ALG_HANDLE {
+unsafe impl ::windows_core::Abi for BCRYPT_ALG_HANDLE {
     type Abi = Self;
 }
 #[repr(C)]
@@ -430,12 +430,12 @@ impl ::core::fmt::Debug for BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO {
+unsafe impl ::windows_core::Abi for BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO {}
@@ -521,12 +521,12 @@ impl ::core::fmt::Debug for BCRYPT_DH_KEY_BLOB {
         f.debug_struct("BCRYPT_DH_KEY_BLOB").field("dwMagic", &self.dwMagic).field("cbKey", &self.cbKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_DH_KEY_BLOB {
+unsafe impl ::windows_core::Abi for BCRYPT_DH_KEY_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_DH_KEY_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_DH_KEY_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_DH_KEY_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_DH_KEY_BLOB {}
@@ -554,7 +554,7 @@ impl ::core::default::Default for BCRYPT_DH_KEY_BLOB_MAGIC {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_DH_KEY_BLOB_MAGIC {
+unsafe impl ::windows_core::Abi for BCRYPT_DH_KEY_BLOB_MAGIC {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for BCRYPT_DH_KEY_BLOB_MAGIC {
@@ -584,12 +584,12 @@ impl ::core::fmt::Debug for BCRYPT_DH_PARAMETER_HEADER {
         f.debug_struct("BCRYPT_DH_PARAMETER_HEADER").field("cbLength", &self.cbLength).field("dwMagic", &self.dwMagic).field("cbKeyLength", &self.cbKeyLength).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_DH_PARAMETER_HEADER {
+unsafe impl ::windows_core::Abi for BCRYPT_DH_PARAMETER_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_DH_PARAMETER_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_DH_PARAMETER_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_DH_PARAMETER_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_DH_PARAMETER_HEADER {}
@@ -626,12 +626,12 @@ impl ::core::fmt::Debug for BCRYPT_DSA_KEY_BLOB {
         f.debug_struct("BCRYPT_DSA_KEY_BLOB").field("dwMagic", &self.dwMagic).field("cbKey", &self.cbKey).field("Count", &self.Count).field("Seed", &self.Seed).field("q", &self.q).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_DSA_KEY_BLOB {
+unsafe impl ::windows_core::Abi for BCRYPT_DSA_KEY_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_DSA_KEY_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_DSA_KEY_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_DSA_KEY_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_DSA_KEY_BLOB {}
@@ -662,12 +662,12 @@ impl ::core::fmt::Debug for BCRYPT_DSA_KEY_BLOB_V2 {
         f.debug_struct("BCRYPT_DSA_KEY_BLOB_V2").field("dwMagic", &self.dwMagic).field("cbKey", &self.cbKey).field("hashAlgorithm", &self.hashAlgorithm).field("standardVersion", &self.standardVersion).field("cbSeedLength", &self.cbSeedLength).field("cbGroupSize", &self.cbGroupSize).field("Count", &self.Count).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_DSA_KEY_BLOB_V2 {
+unsafe impl ::windows_core::Abi for BCRYPT_DSA_KEY_BLOB_V2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_DSA_KEY_BLOB_V2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_DSA_KEY_BLOB_V2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_DSA_KEY_BLOB_V2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_DSA_KEY_BLOB_V2 {}
@@ -695,7 +695,7 @@ impl ::core::default::Default for BCRYPT_DSA_MAGIC {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_DSA_MAGIC {
+unsafe impl ::windows_core::Abi for BCRYPT_DSA_MAGIC {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for BCRYPT_DSA_MAGIC {
@@ -730,12 +730,12 @@ impl ::core::fmt::Debug for BCRYPT_DSA_PARAMETER_HEADER {
         f.debug_struct("BCRYPT_DSA_PARAMETER_HEADER").field("cbLength", &self.cbLength).field("dwMagic", &self.dwMagic).field("cbKeyLength", &self.cbKeyLength).field("Count", &self.Count).field("Seed", &self.Seed).field("q", &self.q).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_DSA_PARAMETER_HEADER {
+unsafe impl ::windows_core::Abi for BCRYPT_DSA_PARAMETER_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_DSA_PARAMETER_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_DSA_PARAMETER_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_DSA_PARAMETER_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_DSA_PARAMETER_HEADER {}
@@ -767,12 +767,12 @@ impl ::core::fmt::Debug for BCRYPT_DSA_PARAMETER_HEADER_V2 {
         f.debug_struct("BCRYPT_DSA_PARAMETER_HEADER_V2").field("cbLength", &self.cbLength).field("dwMagic", &self.dwMagic).field("cbKeyLength", &self.cbKeyLength).field("hashAlgorithm", &self.hashAlgorithm).field("standardVersion", &self.standardVersion).field("cbSeedLength", &self.cbSeedLength).field("cbGroupSize", &self.cbGroupSize).field("Count", &self.Count).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_DSA_PARAMETER_HEADER_V2 {
+unsafe impl ::windows_core::Abi for BCRYPT_DSA_PARAMETER_HEADER_V2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_DSA_PARAMETER_HEADER_V2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_DSA_PARAMETER_HEADER_V2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_DSA_PARAMETER_HEADER_V2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_DSA_PARAMETER_HEADER_V2 {}
@@ -812,12 +812,12 @@ impl ::core::fmt::Debug for BCRYPT_ECCFULLKEY_BLOB {
         f.debug_struct("BCRYPT_ECCFULLKEY_BLOB").field("dwMagic", &self.dwMagic).field("dwVersion", &self.dwVersion).field("dwCurveType", &self.dwCurveType).field("dwCurveGenerationAlgId", &self.dwCurveGenerationAlgId).field("cbFieldLength", &self.cbFieldLength).field("cbSubgroupOrder", &self.cbSubgroupOrder).field("cbCofactor", &self.cbCofactor).field("cbSeed", &self.cbSeed).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_ECCFULLKEY_BLOB {
+unsafe impl ::windows_core::Abi for BCRYPT_ECCFULLKEY_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_ECCFULLKEY_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_ECCFULLKEY_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_ECCFULLKEY_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_ECCFULLKEY_BLOB {}
@@ -847,12 +847,12 @@ impl ::core::fmt::Debug for BCRYPT_ECCKEY_BLOB {
         f.debug_struct("BCRYPT_ECCKEY_BLOB").field("dwMagic", &self.dwMagic).field("cbKey", &self.cbKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_ECCKEY_BLOB {
+unsafe impl ::windows_core::Abi for BCRYPT_ECCKEY_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_ECCKEY_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_ECCKEY_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_ECCKEY_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_ECCKEY_BLOB {}
@@ -903,7 +903,7 @@ pub const BCRYPT_ECC_CURVE_NAME: &str = "ECCCurveName";
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct BCRYPT_ECC_CURVE_NAMES {
     pub dwEccCurveNames: u32,
-    pub pEccCurveNames: *mut ::windows::core::PWSTR,
+    pub pEccCurveNames: *mut ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for BCRYPT_ECC_CURVE_NAMES {}
 impl ::core::clone::Clone for BCRYPT_ECC_CURVE_NAMES {
@@ -916,12 +916,12 @@ impl ::core::fmt::Debug for BCRYPT_ECC_CURVE_NAMES {
         f.debug_struct("BCRYPT_ECC_CURVE_NAMES").field("dwEccCurveNames", &self.dwEccCurveNames).field("pEccCurveNames", &self.pEccCurveNames).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_ECC_CURVE_NAMES {
+unsafe impl ::windows_core::Abi for BCRYPT_ECC_CURVE_NAMES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_ECC_CURVE_NAMES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_ECC_CURVE_NAMES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_ECC_CURVE_NAMES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_ECC_CURVE_NAMES {}
@@ -1097,7 +1097,7 @@ impl ::core::default::Default for BCRYPT_HASH_OPERATION_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_HASH_OPERATION_TYPE {
+unsafe impl ::windows_core::Abi for BCRYPT_HASH_OPERATION_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for BCRYPT_HASH_OPERATION_TYPE {
@@ -1164,7 +1164,7 @@ impl ::core::default::Default for BCRYPT_INTERFACE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_INTERFACE {
+unsafe impl ::windows_core::Abi for BCRYPT_INTERFACE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for BCRYPT_INTERFACE {
@@ -1189,12 +1189,12 @@ impl ::core::fmt::Debug for BCRYPT_INTERFACE_VERSION {
         f.debug_struct("BCRYPT_INTERFACE_VERSION").field("MajorVersion", &self.MajorVersion).field("MinorVersion", &self.MinorVersion).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_INTERFACE_VERSION {
+unsafe impl ::windows_core::Abi for BCRYPT_INTERFACE_VERSION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_INTERFACE_VERSION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_INTERFACE_VERSION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_INTERFACE_VERSION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_INTERFACE_VERSION {}
@@ -1237,12 +1237,12 @@ impl ::core::fmt::Debug for BCRYPT_KEY_BLOB {
         f.debug_struct("BCRYPT_KEY_BLOB").field("Magic", &self.Magic).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_KEY_BLOB {
+unsafe impl ::windows_core::Abi for BCRYPT_KEY_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_KEY_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_KEY_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_KEY_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_KEY_BLOB {}
@@ -1271,12 +1271,12 @@ impl ::core::fmt::Debug for BCRYPT_KEY_DATA_BLOB_HEADER {
         f.debug_struct("BCRYPT_KEY_DATA_BLOB_HEADER").field("dwMagic", &self.dwMagic).field("dwVersion", &self.dwVersion).field("cbKeyData", &self.cbKeyData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_KEY_DATA_BLOB_HEADER {
+unsafe impl ::windows_core::Abi for BCRYPT_KEY_DATA_BLOB_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_KEY_DATA_BLOB_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_KEY_DATA_BLOB_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_KEY_DATA_BLOB_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_KEY_DATA_BLOB_HEADER {}
@@ -1317,7 +1317,7 @@ impl ::core::fmt::Debug for BCRYPT_KEY_HANDLE {
         f.debug_tuple("BCRYPT_KEY_HANDLE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_KEY_HANDLE {
+unsafe impl ::windows_core::Abi for BCRYPT_KEY_HANDLE {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -1342,12 +1342,12 @@ impl ::core::fmt::Debug for BCRYPT_KEY_LENGTHS_STRUCT {
         f.debug_struct("BCRYPT_KEY_LENGTHS_STRUCT").field("dwMinLength", &self.dwMinLength).field("dwMaxLength", &self.dwMaxLength).field("dwIncrement", &self.dwIncrement).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_KEY_LENGTHS_STRUCT {
+unsafe impl ::windows_core::Abi for BCRYPT_KEY_LENGTHS_STRUCT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_KEY_LENGTHS_STRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_KEY_LENGTHS_STRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_KEY_LENGTHS_STRUCT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_KEY_LENGTHS_STRUCT {}
@@ -1401,12 +1401,12 @@ impl ::core::fmt::Debug for BCRYPT_MULTI_HASH_OPERATION {
         f.debug_struct("BCRYPT_MULTI_HASH_OPERATION").field("iHash", &self.iHash).field("hashOperation", &self.hashOperation).field("pbBuffer", &self.pbBuffer).field("cbBuffer", &self.cbBuffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_MULTI_HASH_OPERATION {
+unsafe impl ::windows_core::Abi for BCRYPT_MULTI_HASH_OPERATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_MULTI_HASH_OPERATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_MULTI_HASH_OPERATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_MULTI_HASH_OPERATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_MULTI_HASH_OPERATION {}
@@ -1434,12 +1434,12 @@ impl ::core::fmt::Debug for BCRYPT_MULTI_OBJECT_LENGTH_STRUCT {
         f.debug_struct("BCRYPT_MULTI_OBJECT_LENGTH_STRUCT").field("cbPerObject", &self.cbPerObject).field("cbPerElement", &self.cbPerElement).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_MULTI_OBJECT_LENGTH_STRUCT {
+unsafe impl ::windows_core::Abi for BCRYPT_MULTI_OBJECT_LENGTH_STRUCT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_MULTI_OBJECT_LENGTH_STRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_MULTI_OBJECT_LENGTH_STRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_MULTI_OBJECT_LENGTH_STRUCT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_MULTI_OBJECT_LENGTH_STRUCT {}
@@ -1465,7 +1465,7 @@ impl ::core::default::Default for BCRYPT_MULTI_OPERATION_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_MULTI_OPERATION_TYPE {
+unsafe impl ::windows_core::Abi for BCRYPT_MULTI_OPERATION_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for BCRYPT_MULTI_OPERATION_TYPE {
@@ -1478,7 +1478,7 @@ pub const BCRYPT_NO_KEY_VALIDATION: u32 = 8u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct BCRYPT_OAEP_PADDING_INFO {
-    pub pszAlgId: ::windows::core::PCWSTR,
+    pub pszAlgId: ::windows_core::PCWSTR,
     pub pbLabel: *mut u8,
     pub cbLabel: u32,
 }
@@ -1493,12 +1493,12 @@ impl ::core::fmt::Debug for BCRYPT_OAEP_PADDING_INFO {
         f.debug_struct("BCRYPT_OAEP_PADDING_INFO").field("pszAlgId", &self.pszAlgId).field("pbLabel", &self.pbLabel).field("cbLabel", &self.cbLabel).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_OAEP_PADDING_INFO {
+unsafe impl ::windows_core::Abi for BCRYPT_OAEP_PADDING_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_OAEP_PADDING_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_OAEP_PADDING_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_OAEP_PADDING_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_OAEP_PADDING_INFO {}
@@ -1528,12 +1528,12 @@ impl ::core::fmt::Debug for BCRYPT_OID {
         f.debug_struct("BCRYPT_OID").field("cbOID", &self.cbOID).field("pbOID", &self.pbOID).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_OID {
+unsafe impl ::windows_core::Abi for BCRYPT_OID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_OID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_OID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_OID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_OID {}
@@ -1559,12 +1559,12 @@ impl ::core::fmt::Debug for BCRYPT_OID_LIST {
         f.debug_struct("BCRYPT_OID_LIST").field("dwOIDCount", &self.dwOIDCount).field("pOIDs", &self.pOIDs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_OID_LIST {
+unsafe impl ::windows_core::Abi for BCRYPT_OID_LIST {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_OID_LIST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_OID_LIST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_OID_LIST>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_OID_LIST {}
@@ -1596,7 +1596,7 @@ impl ::core::default::Default for BCRYPT_OPEN_ALGORITHM_PROVIDER_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_OPEN_ALGORITHM_PROVIDER_FLAGS {
+unsafe impl ::windows_core::Abi for BCRYPT_OPEN_ALGORITHM_PROVIDER_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for BCRYPT_OPEN_ALGORITHM_PROVIDER_FLAGS {
@@ -1659,7 +1659,7 @@ impl ::core::default::Default for BCRYPT_OPERATION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_OPERATION {
+unsafe impl ::windows_core::Abi for BCRYPT_OPERATION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for BCRYPT_OPERATION {
@@ -1710,7 +1710,7 @@ pub const BCRYPT_PCP_PROVIDER_VERSION_PROPERTY: &str = "PCP_PROVIDER_VERSION";
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct BCRYPT_PKCS1_PADDING_INFO {
-    pub pszAlgId: ::windows::core::PCWSTR,
+    pub pszAlgId: ::windows_core::PCWSTR,
 }
 impl ::core::marker::Copy for BCRYPT_PKCS1_PADDING_INFO {}
 impl ::core::clone::Clone for BCRYPT_PKCS1_PADDING_INFO {
@@ -1723,12 +1723,12 @@ impl ::core::fmt::Debug for BCRYPT_PKCS1_PADDING_INFO {
         f.debug_struct("BCRYPT_PKCS1_PADDING_INFO").field("pszAlgId", &self.pszAlgId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_PKCS1_PADDING_INFO {
+unsafe impl ::windows_core::Abi for BCRYPT_PKCS1_PADDING_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_PKCS1_PADDING_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_PKCS1_PADDING_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_PKCS1_PADDING_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_PKCS1_PADDING_INFO {}
@@ -1750,7 +1750,7 @@ pub const BCRYPT_PROVIDER_HANDLE: &str = "ProviderHandle";
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct BCRYPT_PROVIDER_NAME {
-    pub pszProviderName: ::windows::core::PWSTR,
+    pub pszProviderName: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for BCRYPT_PROVIDER_NAME {}
 impl ::core::clone::Clone for BCRYPT_PROVIDER_NAME {
@@ -1763,12 +1763,12 @@ impl ::core::fmt::Debug for BCRYPT_PROVIDER_NAME {
         f.debug_struct("BCRYPT_PROVIDER_NAME").field("pszProviderName", &self.pszProviderName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_PROVIDER_NAME {
+unsafe impl ::windows_core::Abi for BCRYPT_PROVIDER_NAME {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_PROVIDER_NAME {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_PROVIDER_NAME>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_PROVIDER_NAME>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_PROVIDER_NAME {}
@@ -1780,7 +1780,7 @@ impl ::core::default::Default for BCRYPT_PROVIDER_NAME {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct BCRYPT_PSS_PADDING_INFO {
-    pub pszAlgId: ::windows::core::PCWSTR,
+    pub pszAlgId: ::windows_core::PCWSTR,
     pub cbSalt: u32,
 }
 impl ::core::marker::Copy for BCRYPT_PSS_PADDING_INFO {}
@@ -1794,12 +1794,12 @@ impl ::core::fmt::Debug for BCRYPT_PSS_PADDING_INFO {
         f.debug_struct("BCRYPT_PSS_PADDING_INFO").field("pszAlgId", &self.pszAlgId).field("cbSalt", &self.cbSalt).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_PSS_PADDING_INFO {
+unsafe impl ::windows_core::Abi for BCRYPT_PSS_PADDING_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_PSS_PADDING_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_PSS_PADDING_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_PSS_PADDING_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_PSS_PADDING_INFO {}
@@ -1837,7 +1837,7 @@ impl ::core::default::Default for BCRYPT_QUERY_PROVIDER_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_QUERY_PROVIDER_MODE {
+unsafe impl ::windows_core::Abi for BCRYPT_QUERY_PROVIDER_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for BCRYPT_QUERY_PROVIDER_MODE {
@@ -1876,7 +1876,7 @@ impl ::core::default::Default for BCRYPT_RESOLVE_PROVIDERS_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_RESOLVE_PROVIDERS_FLAGS {
+unsafe impl ::windows_core::Abi for BCRYPT_RESOLVE_PROVIDERS_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for BCRYPT_RESOLVE_PROVIDERS_FLAGS {
@@ -1945,12 +1945,12 @@ impl ::core::fmt::Debug for BCRYPT_RSAKEY_BLOB {
         f.debug_struct("BCRYPT_RSAKEY_BLOB").field("Magic", &self.Magic).field("BitLength", &self.BitLength).field("cbPublicExp", &self.cbPublicExp).field("cbModulus", &self.cbModulus).field("cbPrime1", &self.cbPrime1).field("cbPrime2", &self.cbPrime2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_RSAKEY_BLOB {
+unsafe impl ::windows_core::Abi for BCRYPT_RSAKEY_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCRYPT_RSAKEY_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_RSAKEY_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCRYPT_RSAKEY_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCRYPT_RSAKEY_BLOB {}
@@ -1980,7 +1980,7 @@ impl ::core::default::Default for BCRYPT_RSAKEY_BLOB_MAGIC {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_RSAKEY_BLOB_MAGIC {
+unsafe impl ::windows_core::Abi for BCRYPT_RSAKEY_BLOB_MAGIC {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for BCRYPT_RSAKEY_BLOB_MAGIC {
@@ -2055,7 +2055,7 @@ impl ::core::default::Default for BCRYPT_TABLE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for BCRYPT_TABLE {
+unsafe impl ::windows_core::Abi for BCRYPT_TABLE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for BCRYPT_TABLE {
@@ -2082,12 +2082,12 @@ pub const BCRYPT_XTS_AES_ALG_HANDLE: BCRYPT_ALG_HANDLE = BCRYPT_ALG_HANDLE(897u3
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptAddContextFunction<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3, dwposition: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptAddContextFunction<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3, dwposition: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptAddContextFunction(dwtable: BCRYPT_TABLE, pszcontext: ::windows::core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows::core::PCWSTR, dwposition: u32) -> super::super::Foundation::NTSTATUS;
+            fn BCryptAddContextFunction(dwtable: BCRYPT_TABLE, pszcontext: ::windows_core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows_core::PCWSTR, dwposition: u32) -> super::super::Foundation::NTSTATUS;
         }
         BCryptAddContextFunction(::core::mem::transmute(dwtable), pszcontext.into_param().abi(), ::core::mem::transmute(dwinterface), pszfunction.into_param().abi(), ::core::mem::transmute(dwposition)).ok()
     }
@@ -2112,12 +2112,12 @@ impl ::core::fmt::Debug for BCryptBuffer {
         f.debug_struct("BCryptBuffer").field("cbBuffer", &self.cbBuffer).field("BufferType", &self.BufferType).field("pvBuffer", &self.pvBuffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCryptBuffer {
+unsafe impl ::windows_core::Abi for BCryptBuffer {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCryptBuffer {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCryptBuffer>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCryptBuffer>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCryptBuffer {}
@@ -2144,12 +2144,12 @@ impl ::core::fmt::Debug for BCryptBufferDesc {
         f.debug_struct("BCryptBufferDesc").field("ulVersion", &self.ulVersion).field("cBuffers", &self.cBuffers).field("pBuffers", &self.pBuffers).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BCryptBufferDesc {
+unsafe impl ::windows_core::Abi for BCryptBufferDesc {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BCryptBufferDesc {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCryptBufferDesc>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BCryptBufferDesc>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BCryptBufferDesc {}
@@ -2161,7 +2161,7 @@ impl ::core::default::Default for BCryptBufferDesc {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptCloseAlgorithmProvider<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptCloseAlgorithmProvider<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2176,12 +2176,12 @@ pub unsafe fn BCryptCloseAlgorithmProvider<'a, Param0: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptConfigureContext<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, pconfig: *const CRYPT_CONTEXT_CONFIG) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptConfigureContext<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, pconfig: *const CRYPT_CONTEXT_CONFIG) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptConfigureContext(dwtable: BCRYPT_TABLE, pszcontext: ::windows::core::PCWSTR, pconfig: *const CRYPT_CONTEXT_CONFIG) -> super::super::Foundation::NTSTATUS;
+            fn BCryptConfigureContext(dwtable: BCRYPT_TABLE, pszcontext: ::windows_core::PCWSTR, pconfig: *const CRYPT_CONTEXT_CONFIG) -> super::super::Foundation::NTSTATUS;
         }
         BCryptConfigureContext(::core::mem::transmute(dwtable), pszcontext.into_param().abi(), ::core::mem::transmute(pconfig)).ok()
     }
@@ -2191,12 +2191,12 @@ pub unsafe fn BCryptConfigureContext<'a, Param1: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptConfigureContextFunction<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3, pconfig: *const CRYPT_CONTEXT_FUNCTION_CONFIG) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptConfigureContextFunction<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3, pconfig: *const CRYPT_CONTEXT_FUNCTION_CONFIG) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptConfigureContextFunction(dwtable: BCRYPT_TABLE, pszcontext: ::windows::core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows::core::PCWSTR, pconfig: *const CRYPT_CONTEXT_FUNCTION_CONFIG) -> super::super::Foundation::NTSTATUS;
+            fn BCryptConfigureContextFunction(dwtable: BCRYPT_TABLE, pszcontext: ::windows_core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows_core::PCWSTR, pconfig: *const CRYPT_CONTEXT_FUNCTION_CONFIG) -> super::super::Foundation::NTSTATUS;
         }
         BCryptConfigureContextFunction(::core::mem::transmute(dwtable), pszcontext.into_param().abi(), ::core::mem::transmute(dwinterface), pszfunction.into_param().abi(), ::core::mem::transmute(pconfig)).ok()
     }
@@ -2206,12 +2206,12 @@ pub unsafe fn BCryptConfigureContextFunction<'a, Param1: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptCreateContext<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, pconfig: *const CRYPT_CONTEXT_CONFIG) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptCreateContext<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, pconfig: *const CRYPT_CONTEXT_CONFIG) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptCreateContext(dwtable: BCRYPT_TABLE, pszcontext: ::windows::core::PCWSTR, pconfig: *const CRYPT_CONTEXT_CONFIG) -> super::super::Foundation::NTSTATUS;
+            fn BCryptCreateContext(dwtable: BCRYPT_TABLE, pszcontext: ::windows_core::PCWSTR, pconfig: *const CRYPT_CONTEXT_CONFIG) -> super::super::Foundation::NTSTATUS;
         }
         BCryptCreateContext(::core::mem::transmute(dwtable), pszcontext.into_param().abi(), ::core::mem::transmute(pconfig)).ok()
     }
@@ -2221,7 +2221,7 @@ pub unsafe fn BCryptCreateContext<'a, Param1: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptCreateHash<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, phhash: *mut *mut ::core::ffi::c_void, pbhashobject: *mut u8, cbhashobject: u32, pbsecret: *const u8, cbsecret: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptCreateHash<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, phhash: *mut *mut ::core::ffi::c_void, pbhashobject: *mut u8, cbhashobject: u32, pbsecret: *const u8, cbsecret: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2236,7 +2236,7 @@ pub unsafe fn BCryptCreateHash<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptCreateMultiHash<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, phhash: *mut *mut ::core::ffi::c_void, nhashes: u32, pbhashobject: *mut u8, cbhashobject: u32, pbsecret: *const u8, cbsecret: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptCreateMultiHash<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, phhash: *mut *mut ::core::ffi::c_void, nhashes: u32, pbhashobject: *mut u8, cbhashobject: u32, pbsecret: *const u8, cbsecret: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2251,7 +2251,7 @@ pub unsafe fn BCryptCreateMultiHash<'a, Param0: ::windows::core::IntoParam<'a, B
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptDecrypt<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, pbinput: *const u8, cbinput: u32, ppaddinginfo: *const ::core::ffi::c_void, pbiv: *mut u8, cbiv: u32, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptDecrypt<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, pbinput: *const u8, cbinput: u32, ppaddinginfo: *const ::core::ffi::c_void, pbiv: *mut u8, cbiv: u32, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2266,12 +2266,12 @@ pub unsafe fn BCryptDecrypt<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_KE
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptDeleteContext<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptDeleteContext<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptDeleteContext(dwtable: BCRYPT_TABLE, pszcontext: ::windows::core::PCWSTR) -> super::super::Foundation::NTSTATUS;
+            fn BCryptDeleteContext(dwtable: BCRYPT_TABLE, pszcontext: ::windows_core::PCWSTR) -> super::super::Foundation::NTSTATUS;
         }
         BCryptDeleteContext(::core::mem::transmute(dwtable), pszcontext.into_param().abi()).ok()
     }
@@ -2281,12 +2281,12 @@ pub unsafe fn BCryptDeleteContext<'a, Param1: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptDeriveKey<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hsharedsecret: *const ::core::ffi::c_void, pwszkdf: Param1, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptDeriveKey<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hsharedsecret: *const ::core::ffi::c_void, pwszkdf: Param1, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptDeriveKey(hsharedsecret: *const ::core::ffi::c_void, pwszkdf: ::windows::core::PCWSTR, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> super::super::Foundation::NTSTATUS;
+            fn BCryptDeriveKey(hsharedsecret: *const ::core::ffi::c_void, pwszkdf: ::windows_core::PCWSTR, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> super::super::Foundation::NTSTATUS;
         }
         BCryptDeriveKey(::core::mem::transmute(hsharedsecret), pwszkdf.into_param().abi(), ::core::mem::transmute(pparameterlist), ::core::mem::transmute(pbderivedkey), ::core::mem::transmute(cbderivedkey), ::core::mem::transmute(pcbresult), ::core::mem::transmute(dwflags)).ok()
     }
@@ -2296,7 +2296,7 @@ pub unsafe fn BCryptDeriveKey<'a, Param1: ::windows::core::IntoParam<'a, ::windo
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptDeriveKeyCapi<'a, Param1: ::windows::core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(hhash: *const ::core::ffi::c_void, htargetalg: Param1, pbderivedkey: *mut u8, cbderivedkey: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptDeriveKeyCapi<'a, Param1: ::windows_core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(hhash: *const ::core::ffi::c_void, htargetalg: Param1, pbderivedkey: *mut u8, cbderivedkey: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2311,7 +2311,7 @@ pub unsafe fn BCryptDeriveKeyCapi<'a, Param1: ::windows::core::IntoParam<'a, BCR
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptDeriveKeyPBKDF2<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(hprf: Param0, pbpassword: *const u8, cbpassword: u32, pbsalt: *const u8, cbsalt: u32, citerations: u64, pbderivedkey: *mut u8, cbderivedkey: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptDeriveKeyPBKDF2<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(hprf: Param0, pbpassword: *const u8, cbpassword: u32, pbsalt: *const u8, cbsalt: u32, citerations: u64, pbderivedkey: *mut u8, cbderivedkey: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2326,7 +2326,7 @@ pub unsafe fn BCryptDeriveKeyPBKDF2<'a, Param0: ::windows::core::IntoParam<'a, B
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptDestroyHash(hhash: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptDestroyHash(hhash: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2341,7 +2341,7 @@ pub unsafe fn BCryptDestroyHash(hhash: *mut ::core::ffi::c_void) -> ::windows::c
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptDestroyKey<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptDestroyKey<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2356,7 +2356,7 @@ pub unsafe fn BCryptDestroyKey<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptDestroySecret(hsecret: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptDestroySecret(hsecret: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2371,7 +2371,7 @@ pub unsafe fn BCryptDestroySecret(hsecret: *mut ::core::ffi::c_void) -> ::window
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptDuplicateHash(hhash: *const ::core::ffi::c_void, phnewhash: *mut *mut ::core::ffi::c_void, pbhashobject: *mut u8, cbhashobject: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptDuplicateHash(hhash: *const ::core::ffi::c_void, phnewhash: *mut *mut ::core::ffi::c_void, pbhashobject: *mut u8, cbhashobject: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2386,7 +2386,7 @@ pub unsafe fn BCryptDuplicateHash(hhash: *const ::core::ffi::c_void, phnewhash: 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptDuplicateKey<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, phnewkey: *mut BCRYPT_KEY_HANDLE, pbkeyobject: *mut u8, cbkeyobject: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptDuplicateKey<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, phnewkey: *mut BCRYPT_KEY_HANDLE, pbkeyobject: *mut u8, cbkeyobject: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2401,7 +2401,7 @@ pub unsafe fn BCryptDuplicateKey<'a, Param0: ::windows::core::IntoParam<'a, BCRY
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptEncrypt<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, pbinput: *const u8, cbinput: u32, ppaddinginfo: *const ::core::ffi::c_void, pbiv: *mut u8, cbiv: u32, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptEncrypt<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, pbinput: *const u8, cbinput: u32, ppaddinginfo: *const ::core::ffi::c_void, pbiv: *mut u8, cbiv: u32, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2416,7 +2416,7 @@ pub unsafe fn BCryptEncrypt<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_KE
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptEnumAlgorithms(dwalgoperations: BCRYPT_OPERATION, palgcount: *mut u32, ppalglist: *mut *mut BCRYPT_ALGORITHM_IDENTIFIER, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptEnumAlgorithms(dwalgoperations: BCRYPT_OPERATION, palgcount: *mut u32, ppalglist: *mut *mut BCRYPT_ALGORITHM_IDENTIFIER, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2431,12 +2431,12 @@ pub unsafe fn BCryptEnumAlgorithms(dwalgoperations: BCRYPT_OPERATION, palgcount:
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptEnumContextFunctionProviders<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_FUNCTION_PROVIDERS) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptEnumContextFunctionProviders<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_FUNCTION_PROVIDERS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptEnumContextFunctionProviders(dwtable: BCRYPT_TABLE, pszcontext: ::windows::core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows::core::PCWSTR, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_FUNCTION_PROVIDERS) -> super::super::Foundation::NTSTATUS;
+            fn BCryptEnumContextFunctionProviders(dwtable: BCRYPT_TABLE, pszcontext: ::windows_core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows_core::PCWSTR, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_FUNCTION_PROVIDERS) -> super::super::Foundation::NTSTATUS;
         }
         BCryptEnumContextFunctionProviders(::core::mem::transmute(dwtable), pszcontext.into_param().abi(), ::core::mem::transmute(dwinterface), pszfunction.into_param().abi(), ::core::mem::transmute(pcbbuffer), ::core::mem::transmute(ppbuffer)).ok()
     }
@@ -2446,12 +2446,12 @@ pub unsafe fn BCryptEnumContextFunctionProviders<'a, Param1: ::windows::core::In
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptEnumContextFunctions<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_FUNCTIONS) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptEnumContextFunctions<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_FUNCTIONS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptEnumContextFunctions(dwtable: BCRYPT_TABLE, pszcontext: ::windows::core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_FUNCTIONS) -> super::super::Foundation::NTSTATUS;
+            fn BCryptEnumContextFunctions(dwtable: BCRYPT_TABLE, pszcontext: ::windows_core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_FUNCTIONS) -> super::super::Foundation::NTSTATUS;
         }
         BCryptEnumContextFunctions(::core::mem::transmute(dwtable), pszcontext.into_param().abi(), ::core::mem::transmute(dwinterface), ::core::mem::transmute(pcbbuffer), ::core::mem::transmute(ppbuffer)).ok()
     }
@@ -2461,7 +2461,7 @@ pub unsafe fn BCryptEnumContextFunctions<'a, Param1: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptEnumContexts(dwtable: BCRYPT_TABLE, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXTS) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptEnumContexts(dwtable: BCRYPT_TABLE, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXTS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2476,12 +2476,12 @@ pub unsafe fn BCryptEnumContexts(dwtable: BCRYPT_TABLE, pcbbuffer: *mut u32, ppb
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptEnumProviders<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszalgid: Param0, pimplcount: *mut u32, ppimpllist: *mut *mut BCRYPT_PROVIDER_NAME, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptEnumProviders<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszalgid: Param0, pimplcount: *mut u32, ppimpllist: *mut *mut BCRYPT_PROVIDER_NAME, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptEnumProviders(pszalgid: ::windows::core::PCWSTR, pimplcount: *mut u32, ppimpllist: *mut *mut BCRYPT_PROVIDER_NAME, dwflags: u32) -> super::super::Foundation::NTSTATUS;
+            fn BCryptEnumProviders(pszalgid: ::windows_core::PCWSTR, pimplcount: *mut u32, ppimpllist: *mut *mut BCRYPT_PROVIDER_NAME, dwflags: u32) -> super::super::Foundation::NTSTATUS;
         }
         BCryptEnumProviders(pszalgid.into_param().abi(), ::core::mem::transmute(pimplcount), ::core::mem::transmute(ppimpllist), ::core::mem::transmute(dwflags)).ok()
     }
@@ -2491,7 +2491,7 @@ pub unsafe fn BCryptEnumProviders<'a, Param0: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptEnumRegisteredProviders(pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_PROVIDERS) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptEnumRegisteredProviders(pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_PROVIDERS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2506,12 +2506,12 @@ pub unsafe fn BCryptEnumRegisteredProviders(pcbbuffer: *mut u32, ppbuffer: *mut 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptExportKey<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>, Param1: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hkey: Param0, hexportkey: Param1, pszblobtype: Param2, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptExportKey<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>, Param1: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, hexportkey: Param1, pszblobtype: Param2, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptExportKey(hkey: BCRYPT_KEY_HANDLE, hexportkey: BCRYPT_KEY_HANDLE, pszblobtype: ::windows::core::PCWSTR, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: u32) -> super::super::Foundation::NTSTATUS;
+            fn BCryptExportKey(hkey: BCRYPT_KEY_HANDLE, hexportkey: BCRYPT_KEY_HANDLE, pszblobtype: ::windows_core::PCWSTR, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: u32) -> super::super::Foundation::NTSTATUS;
         }
         BCryptExportKey(hkey.into_param().abi(), hexportkey.into_param().abi(), pszblobtype.into_param().abi(), ::core::mem::transmute(pboutput), ::core::mem::transmute(cboutput), ::core::mem::transmute(pcbresult), ::core::mem::transmute(dwflags)).ok()
     }
@@ -2521,7 +2521,7 @@ pub unsafe fn BCryptExportKey<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptFinalizeKeyPair<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptFinalizeKeyPair<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2536,7 +2536,7 @@ pub unsafe fn BCryptFinalizeKeyPair<'a, Param0: ::windows::core::IntoParam<'a, B
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptFinishHash(hhash: *mut ::core::ffi::c_void, pboutput: *mut u8, cboutput: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptFinishHash(hhash: *mut ::core::ffi::c_void, pboutput: *mut u8, cboutput: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2565,7 +2565,7 @@ pub unsafe fn BCryptFreeBuffer(pvbuffer: *const ::core::ffi::c_void) {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptGenRandom<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, pbbuffer: *mut u8, cbbuffer: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptGenRandom<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, pbbuffer: *mut u8, cbbuffer: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2580,7 +2580,7 @@ pub unsafe fn BCryptGenRandom<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptGenerateKeyPair<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, phkey: *mut BCRYPT_KEY_HANDLE, dwlength: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptGenerateKeyPair<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, phkey: *mut BCRYPT_KEY_HANDLE, dwlength: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2595,7 +2595,7 @@ pub unsafe fn BCryptGenerateKeyPair<'a, Param0: ::windows::core::IntoParam<'a, B
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptGenerateSymmetricKey<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, phkey: *mut BCRYPT_KEY_HANDLE, pbkeyobject: *mut u8, cbkeyobject: u32, pbsecret: *const u8, cbsecret: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptGenerateSymmetricKey<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, phkey: *mut BCRYPT_KEY_HANDLE, pbkeyobject: *mut u8, cbkeyobject: u32, pbsecret: *const u8, cbsecret: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2610,7 +2610,7 @@ pub unsafe fn BCryptGenerateSymmetricKey<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptGetFipsAlgorithmMode(pfenabled: *mut u8) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptGetFipsAlgorithmMode(pfenabled: *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2625,12 +2625,12 @@ pub unsafe fn BCryptGetFipsAlgorithmMode(pfenabled: *mut u8) -> ::windows::core:
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptGetProperty<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hobject: *const ::core::ffi::c_void, pszproperty: Param1, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptGetProperty<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hobject: *const ::core::ffi::c_void, pszproperty: Param1, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptGetProperty(hobject: *const ::core::ffi::c_void, pszproperty: ::windows::core::PCWSTR, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: u32) -> super::super::Foundation::NTSTATUS;
+            fn BCryptGetProperty(hobject: *const ::core::ffi::c_void, pszproperty: ::windows_core::PCWSTR, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: u32) -> super::super::Foundation::NTSTATUS;
         }
         BCryptGetProperty(::core::mem::transmute(hobject), pszproperty.into_param().abi(), ::core::mem::transmute(pboutput), ::core::mem::transmute(cboutput), ::core::mem::transmute(pcbresult), ::core::mem::transmute(dwflags)).ok()
     }
@@ -2640,7 +2640,7 @@ pub unsafe fn BCryptGetProperty<'a, Param1: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptHash<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, pbsecret: *const u8, cbsecret: u32, pbinput: *const u8, cbinput: u32, pboutput: *mut u8, cboutput: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptHash<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_ALG_HANDLE>>(halgorithm: Param0, pbsecret: *const u8, cbsecret: u32, pbinput: *const u8, cbinput: u32, pboutput: *mut u8, cboutput: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2655,7 +2655,7 @@ pub unsafe fn BCryptHash<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_ALG_H
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptHashData(hhash: *mut ::core::ffi::c_void, pbinput: *const u8, cbinput: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptHashData(hhash: *mut ::core::ffi::c_void, pbinput: *const u8, cbinput: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2670,12 +2670,12 @@ pub unsafe fn BCryptHashData(hhash: *mut ::core::ffi::c_void, pbinput: *const u8
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptImportKey<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_ALG_HANDLE>, Param1: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(halgorithm: Param0, himportkey: Param1, pszblobtype: Param2, phkey: *mut BCRYPT_KEY_HANDLE, pbkeyobject: *mut u8, cbkeyobject: u32, pbinput: *const u8, cbinput: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptImportKey<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_ALG_HANDLE>, Param1: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(halgorithm: Param0, himportkey: Param1, pszblobtype: Param2, phkey: *mut BCRYPT_KEY_HANDLE, pbkeyobject: *mut u8, cbkeyobject: u32, pbinput: *const u8, cbinput: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptImportKey(halgorithm: BCRYPT_ALG_HANDLE, himportkey: BCRYPT_KEY_HANDLE, pszblobtype: ::windows::core::PCWSTR, phkey: *mut BCRYPT_KEY_HANDLE, pbkeyobject: *mut u8, cbkeyobject: u32, pbinput: *const u8, cbinput: u32, dwflags: u32) -> super::super::Foundation::NTSTATUS;
+            fn BCryptImportKey(halgorithm: BCRYPT_ALG_HANDLE, himportkey: BCRYPT_KEY_HANDLE, pszblobtype: ::windows_core::PCWSTR, phkey: *mut BCRYPT_KEY_HANDLE, pbkeyobject: *mut u8, cbkeyobject: u32, pbinput: *const u8, cbinput: u32, dwflags: u32) -> super::super::Foundation::NTSTATUS;
         }
         BCryptImportKey(halgorithm.into_param().abi(), himportkey.into_param().abi(), pszblobtype.into_param().abi(), ::core::mem::transmute(phkey), ::core::mem::transmute(pbkeyobject), ::core::mem::transmute(cbkeyobject), ::core::mem::transmute(pbinput), ::core::mem::transmute(cbinput), ::core::mem::transmute(dwflags)).ok()
     }
@@ -2685,12 +2685,12 @@ pub unsafe fn BCryptImportKey<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptImportKeyPair<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_ALG_HANDLE>, Param1: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(halgorithm: Param0, himportkey: Param1, pszblobtype: Param2, phkey: *mut BCRYPT_KEY_HANDLE, pbinput: *const u8, cbinput: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptImportKeyPair<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_ALG_HANDLE>, Param1: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(halgorithm: Param0, himportkey: Param1, pszblobtype: Param2, phkey: *mut BCRYPT_KEY_HANDLE, pbinput: *const u8, cbinput: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptImportKeyPair(halgorithm: BCRYPT_ALG_HANDLE, himportkey: BCRYPT_KEY_HANDLE, pszblobtype: ::windows::core::PCWSTR, phkey: *mut BCRYPT_KEY_HANDLE, pbinput: *const u8, cbinput: u32, dwflags: u32) -> super::super::Foundation::NTSTATUS;
+            fn BCryptImportKeyPair(halgorithm: BCRYPT_ALG_HANDLE, himportkey: BCRYPT_KEY_HANDLE, pszblobtype: ::windows_core::PCWSTR, phkey: *mut BCRYPT_KEY_HANDLE, pbinput: *const u8, cbinput: u32, dwflags: u32) -> super::super::Foundation::NTSTATUS;
         }
         BCryptImportKeyPair(halgorithm.into_param().abi(), himportkey.into_param().abi(), pszblobtype.into_param().abi(), ::core::mem::transmute(phkey), ::core::mem::transmute(pbinput), ::core::mem::transmute(cbinput), ::core::mem::transmute(dwflags)).ok()
     }
@@ -2700,7 +2700,7 @@ pub unsafe fn BCryptImportKeyPair<'a, Param0: ::windows::core::IntoParam<'a, BCR
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptKeyDerivation<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptKeyDerivation<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2715,12 +2715,12 @@ pub unsafe fn BCryptKeyDerivation<'a, Param0: ::windows::core::IntoParam<'a, BCR
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptOpenAlgorithmProvider<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(phalgorithm: *mut BCRYPT_ALG_HANDLE, pszalgid: Param1, pszimplementation: Param2, dwflags: BCRYPT_OPEN_ALGORITHM_PROVIDER_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptOpenAlgorithmProvider<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(phalgorithm: *mut BCRYPT_ALG_HANDLE, pszalgid: Param1, pszimplementation: Param2, dwflags: BCRYPT_OPEN_ALGORITHM_PROVIDER_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptOpenAlgorithmProvider(phalgorithm: *mut BCRYPT_ALG_HANDLE, pszalgid: ::windows::core::PCWSTR, pszimplementation: ::windows::core::PCWSTR, dwflags: BCRYPT_OPEN_ALGORITHM_PROVIDER_FLAGS) -> super::super::Foundation::NTSTATUS;
+            fn BCryptOpenAlgorithmProvider(phalgorithm: *mut BCRYPT_ALG_HANDLE, pszalgid: ::windows_core::PCWSTR, pszimplementation: ::windows_core::PCWSTR, dwflags: BCRYPT_OPEN_ALGORITHM_PROVIDER_FLAGS) -> super::super::Foundation::NTSTATUS;
         }
         BCryptOpenAlgorithmProvider(::core::mem::transmute(phalgorithm), pszalgid.into_param().abi(), pszimplementation.into_param().abi(), ::core::mem::transmute(dwflags)).ok()
     }
@@ -2730,7 +2730,7 @@ pub unsafe fn BCryptOpenAlgorithmProvider<'a, Param1: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptProcessMultiOperations(hobject: *mut ::core::ffi::c_void, operationtype: BCRYPT_MULTI_OPERATION_TYPE, poperations: *const ::core::ffi::c_void, cboperations: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptProcessMultiOperations(hobject: *mut ::core::ffi::c_void, operationtype: BCRYPT_MULTI_OPERATION_TYPE, poperations: *const ::core::ffi::c_void, cboperations: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2745,12 +2745,12 @@ pub unsafe fn BCryptProcessMultiOperations(hobject: *mut ::core::ffi::c_void, op
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptQueryContextConfiguration<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_CONFIG) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptQueryContextConfiguration<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_CONFIG) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptQueryContextConfiguration(dwtable: BCRYPT_TABLE, pszcontext: ::windows::core::PCWSTR, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_CONFIG) -> super::super::Foundation::NTSTATUS;
+            fn BCryptQueryContextConfiguration(dwtable: BCRYPT_TABLE, pszcontext: ::windows_core::PCWSTR, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_CONFIG) -> super::super::Foundation::NTSTATUS;
         }
         BCryptQueryContextConfiguration(::core::mem::transmute(dwtable), pszcontext.into_param().abi(), ::core::mem::transmute(pcbbuffer), ::core::mem::transmute(ppbuffer)).ok()
     }
@@ -2760,12 +2760,12 @@ pub unsafe fn BCryptQueryContextConfiguration<'a, Param1: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptQueryContextFunctionConfiguration<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_FUNCTION_CONFIG) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptQueryContextFunctionConfiguration<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_FUNCTION_CONFIG) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptQueryContextFunctionConfiguration(dwtable: BCRYPT_TABLE, pszcontext: ::windows::core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows::core::PCWSTR, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_FUNCTION_CONFIG) -> super::super::Foundation::NTSTATUS;
+            fn BCryptQueryContextFunctionConfiguration(dwtable: BCRYPT_TABLE, pszcontext: ::windows_core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows_core::PCWSTR, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_CONTEXT_FUNCTION_CONFIG) -> super::super::Foundation::NTSTATUS;
         }
         BCryptQueryContextFunctionConfiguration(::core::mem::transmute(dwtable), pszcontext.into_param().abi(), ::core::mem::transmute(dwinterface), pszfunction.into_param().abi(), ::core::mem::transmute(pcbbuffer), ::core::mem::transmute(ppbuffer)).ok()
     }
@@ -2775,12 +2775,12 @@ pub unsafe fn BCryptQueryContextFunctionConfiguration<'a, Param1: ::windows::cor
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptQueryContextFunctionProperty<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3, pszproperty: Param4, pcbvalue: *mut u32, ppbvalue: *mut *mut u8) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptQueryContextFunctionProperty<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3, pszproperty: Param4, pcbvalue: *mut u32, ppbvalue: *mut *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptQueryContextFunctionProperty(dwtable: BCRYPT_TABLE, pszcontext: ::windows::core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows::core::PCWSTR, pszproperty: ::windows::core::PCWSTR, pcbvalue: *mut u32, ppbvalue: *mut *mut u8) -> super::super::Foundation::NTSTATUS;
+            fn BCryptQueryContextFunctionProperty(dwtable: BCRYPT_TABLE, pszcontext: ::windows_core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows_core::PCWSTR, pszproperty: ::windows_core::PCWSTR, pcbvalue: *mut u32, ppbvalue: *mut *mut u8) -> super::super::Foundation::NTSTATUS;
         }
         BCryptQueryContextFunctionProperty(::core::mem::transmute(dwtable), pszcontext.into_param().abi(), ::core::mem::transmute(dwinterface), pszfunction.into_param().abi(), pszproperty.into_param().abi(), ::core::mem::transmute(pcbvalue), ::core::mem::transmute(ppbvalue)).ok()
     }
@@ -2790,12 +2790,12 @@ pub unsafe fn BCryptQueryContextFunctionProperty<'a, Param1: ::windows::core::In
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptQueryProviderRegistration<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszprovider: Param0, dwmode: BCRYPT_QUERY_PROVIDER_MODE, dwinterface: BCRYPT_INTERFACE, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_PROVIDER_REG) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptQueryProviderRegistration<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszprovider: Param0, dwmode: BCRYPT_QUERY_PROVIDER_MODE, dwinterface: BCRYPT_INTERFACE, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_PROVIDER_REG) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptQueryProviderRegistration(pszprovider: ::windows::core::PCWSTR, dwmode: BCRYPT_QUERY_PROVIDER_MODE, dwinterface: BCRYPT_INTERFACE, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_PROVIDER_REG) -> super::super::Foundation::NTSTATUS;
+            fn BCryptQueryProviderRegistration(pszprovider: ::windows_core::PCWSTR, dwmode: BCRYPT_QUERY_PROVIDER_MODE, dwinterface: BCRYPT_INTERFACE, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_PROVIDER_REG) -> super::super::Foundation::NTSTATUS;
         }
         BCryptQueryProviderRegistration(pszprovider.into_param().abi(), ::core::mem::transmute(dwmode), ::core::mem::transmute(dwinterface), ::core::mem::transmute(pcbbuffer), ::core::mem::transmute(ppbuffer)).ok()
     }
@@ -2805,7 +2805,7 @@ pub unsafe fn BCryptQueryProviderRegistration<'a, Param0: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptRegisterConfigChangeNotify(phevent: *mut super::super::Foundation::HANDLE) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptRegisterConfigChangeNotify(phevent: *mut super::super::Foundation::HANDLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2820,12 +2820,12 @@ pub unsafe fn BCryptRegisterConfigChangeNotify(phevent: *mut super::super::Found
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptRemoveContextFunction<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptRemoveContextFunction<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptRemoveContextFunction(dwtable: BCRYPT_TABLE, pszcontext: ::windows::core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows::core::PCWSTR) -> super::super::Foundation::NTSTATUS;
+            fn BCryptRemoveContextFunction(dwtable: BCRYPT_TABLE, pszcontext: ::windows_core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows_core::PCWSTR) -> super::super::Foundation::NTSTATUS;
         }
         BCryptRemoveContextFunction(::core::mem::transmute(dwtable), pszcontext.into_param().abi(), ::core::mem::transmute(dwinterface), pszfunction.into_param().abi()).ok()
     }
@@ -2835,12 +2835,12 @@ pub unsafe fn BCryptRemoveContextFunction<'a, Param1: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptResolveProviders<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszcontext: Param0, dwinterface: u32, pszfunction: Param2, pszprovider: Param3, dwmode: BCRYPT_QUERY_PROVIDER_MODE, dwflags: BCRYPT_RESOLVE_PROVIDERS_FLAGS, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_PROVIDER_REFS) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptResolveProviders<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszcontext: Param0, dwinterface: u32, pszfunction: Param2, pszprovider: Param3, dwmode: BCRYPT_QUERY_PROVIDER_MODE, dwflags: BCRYPT_RESOLVE_PROVIDERS_FLAGS, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_PROVIDER_REFS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptResolveProviders(pszcontext: ::windows::core::PCWSTR, dwinterface: u32, pszfunction: ::windows::core::PCWSTR, pszprovider: ::windows::core::PCWSTR, dwmode: BCRYPT_QUERY_PROVIDER_MODE, dwflags: BCRYPT_RESOLVE_PROVIDERS_FLAGS, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_PROVIDER_REFS) -> super::super::Foundation::NTSTATUS;
+            fn BCryptResolveProviders(pszcontext: ::windows_core::PCWSTR, dwinterface: u32, pszfunction: ::windows_core::PCWSTR, pszprovider: ::windows_core::PCWSTR, dwmode: BCRYPT_QUERY_PROVIDER_MODE, dwflags: BCRYPT_RESOLVE_PROVIDERS_FLAGS, pcbbuffer: *mut u32, ppbuffer: *mut *mut CRYPT_PROVIDER_REFS) -> super::super::Foundation::NTSTATUS;
         }
         BCryptResolveProviders(pszcontext.into_param().abi(), ::core::mem::transmute(dwinterface), pszfunction.into_param().abi(), pszprovider.into_param().abi(), ::core::mem::transmute(dwmode), ::core::mem::transmute(dwflags), ::core::mem::transmute(pcbbuffer), ::core::mem::transmute(ppbuffer)).ok()
     }
@@ -2850,7 +2850,7 @@ pub unsafe fn BCryptResolveProviders<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptSecretAgreement<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>, Param1: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hprivkey: Param0, hpubkey: Param1, phagreedsecret: *mut *mut ::core::ffi::c_void, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptSecretAgreement<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>, Param1: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hprivkey: Param0, hpubkey: Param1, phagreedsecret: *mut *mut ::core::ffi::c_void, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2865,12 +2865,12 @@ pub unsafe fn BCryptSecretAgreement<'a, Param0: ::windows::core::IntoParam<'a, B
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptSetContextFunctionProperty<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3, pszproperty: Param4, cbvalue: u32, pbvalue: *const u8) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptSetContextFunctionProperty<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtable: BCRYPT_TABLE, pszcontext: Param1, dwinterface: BCRYPT_INTERFACE, pszfunction: Param3, pszproperty: Param4, cbvalue: u32, pbvalue: *const u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptSetContextFunctionProperty(dwtable: BCRYPT_TABLE, pszcontext: ::windows::core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows::core::PCWSTR, pszproperty: ::windows::core::PCWSTR, cbvalue: u32, pbvalue: *const u8) -> super::super::Foundation::NTSTATUS;
+            fn BCryptSetContextFunctionProperty(dwtable: BCRYPT_TABLE, pszcontext: ::windows_core::PCWSTR, dwinterface: BCRYPT_INTERFACE, pszfunction: ::windows_core::PCWSTR, pszproperty: ::windows_core::PCWSTR, cbvalue: u32, pbvalue: *const u8) -> super::super::Foundation::NTSTATUS;
         }
         BCryptSetContextFunctionProperty(::core::mem::transmute(dwtable), pszcontext.into_param().abi(), ::core::mem::transmute(dwinterface), pszfunction.into_param().abi(), pszproperty.into_param().abi(), ::core::mem::transmute(cbvalue), ::core::mem::transmute(pbvalue)).ok()
     }
@@ -2880,12 +2880,12 @@ pub unsafe fn BCryptSetContextFunctionProperty<'a, Param1: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptSetProperty<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hobject: *mut ::core::ffi::c_void, pszproperty: Param1, pbinput: *const u8, cbinput: u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptSetProperty<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hobject: *mut ::core::ffi::c_void, pszproperty: Param1, pbinput: *const u8, cbinput: u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BCryptSetProperty(hobject: *mut ::core::ffi::c_void, pszproperty: ::windows::core::PCWSTR, pbinput: *const u8, cbinput: u32, dwflags: u32) -> super::super::Foundation::NTSTATUS;
+            fn BCryptSetProperty(hobject: *mut ::core::ffi::c_void, pszproperty: ::windows_core::PCWSTR, pbinput: *const u8, cbinput: u32, dwflags: u32) -> super::super::Foundation::NTSTATUS;
         }
         BCryptSetProperty(::core::mem::transmute(hobject), pszproperty.into_param().abi(), ::core::mem::transmute(pbinput), ::core::mem::transmute(cbinput), ::core::mem::transmute(dwflags)).ok()
     }
@@ -2895,7 +2895,7 @@ pub unsafe fn BCryptSetProperty<'a, Param1: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptSignHash<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, ppaddinginfo: *const ::core::ffi::c_void, pbinput: *const u8, cbinput: u32, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptSignHash<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, ppaddinginfo: *const ::core::ffi::c_void, pbinput: *const u8, cbinput: u32, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2910,7 +2910,7 @@ pub unsafe fn BCryptSignHash<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_K
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptUnregisterConfigChangeNotify<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hevent: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptUnregisterConfigChangeNotify<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hevent: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2925,7 +2925,7 @@ pub unsafe fn BCryptUnregisterConfigChangeNotify<'a, Param0: ::windows::core::In
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BCryptVerifySignature<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, ppaddinginfo: *const ::core::ffi::c_void, pbhash: *const u8, cbhash: u32, pbsignature: *const u8, cbsignature: u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn BCryptVerifySignature<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hkey: Param0, ppaddinginfo: *const ::core::ffi::c_void, pbhash: *const u8, cbhash: u32, pbsignature: *const u8, cbsignature: u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2992,7 +2992,7 @@ impl ::core::default::Default for CASetupProperty {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CASetupProperty {
+unsafe impl ::windows_core::Abi for CASetupProperty {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CASetupProperty {
@@ -3000,10 +3000,10 @@ impl ::core::fmt::Debug for CASetupProperty {
         f.debug_tuple("CASetupProperty").field(&self.0).finish()
     }
 }
-pub const CCertSrvSetup: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x961f180f_f55c_413d_a9b3_7d2af4d8e42f);
-pub const CCertSrvSetupKeyInformation: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x38373906_5433_4633_b0fb_29b7e78262e1);
-pub const CCertificateEnrollmentPolicyServerSetup: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xafe2fa32_41b1_459d_a5de_49add8a72182);
-pub const CCertificateEnrollmentServerSetup: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9902f3bc_88af_4cf8_ae62_7140531552b6);
+pub const CCertSrvSetup: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x961f180f_f55c_413d_a9b3_7d2af4d8e42f);
+pub const CCertSrvSetupKeyInformation: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x38373906_5433_4633_b0fb_29b7e78262e1);
+pub const CCertificateEnrollmentPolicyServerSetup: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xafe2fa32_41b1_459d_a5de_49add8a72182);
+pub const CCertificateEnrollmentServerSetup: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9902f3bc_88af_4cf8_ae62_7140531552b6);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -3027,7 +3027,7 @@ impl ::core::default::Default for CEPSetupProperty {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CEPSetupProperty {
+unsafe impl ::windows_core::Abi for CEPSetupProperty {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CEPSetupProperty {
@@ -3052,12 +3052,12 @@ impl ::core::fmt::Debug for CERTIFICATE_CHAIN_BLOB {
         f.debug_struct("CERTIFICATE_CHAIN_BLOB").field("certCount", &self.certCount).field("rawCertificates", &self.rawCertificates).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERTIFICATE_CHAIN_BLOB {
+unsafe impl ::windows_core::Abi for CERTIFICATE_CHAIN_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERTIFICATE_CHAIN_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERTIFICATE_CHAIN_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERTIFICATE_CHAIN_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERTIFICATE_CHAIN_BLOB {}
@@ -3069,7 +3069,7 @@ impl ::core::default::Default for CERTIFICATE_CHAIN_BLOB {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_ACCESS_DESCRIPTION {
-    pub pszAccessMethod: ::windows::core::PSTR,
+    pub pszAccessMethod: ::windows_core::PSTR,
     pub AccessLocation: CERT_ALT_NAME_ENTRY,
 }
 impl ::core::marker::Copy for CERT_ACCESS_DESCRIPTION {}
@@ -3078,12 +3078,12 @@ impl ::core::clone::Clone for CERT_ACCESS_DESCRIPTION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_ACCESS_DESCRIPTION {
+unsafe impl ::windows_core::Abi for CERT_ACCESS_DESCRIPTION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_ACCESS_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ACCESS_DESCRIPTION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ACCESS_DESCRIPTION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_ACCESS_DESCRIPTION {}
@@ -3120,12 +3120,12 @@ impl ::core::clone::Clone for CERT_ALT_NAME_ENTRY {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_ALT_NAME_ENTRY {
+unsafe impl ::windows_core::Abi for CERT_ALT_NAME_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_ALT_NAME_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ALT_NAME_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ALT_NAME_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_ALT_NAME_ENTRY {}
@@ -3138,12 +3138,12 @@ impl ::core::default::Default for CERT_ALT_NAME_ENTRY {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub union CERT_ALT_NAME_ENTRY_0 {
     pub pOtherName: *mut CERT_OTHER_NAME,
-    pub pwszRfc822Name: ::windows::core::PWSTR,
-    pub pwszDNSName: ::windows::core::PWSTR,
+    pub pwszRfc822Name: ::windows_core::PWSTR,
+    pub pwszDNSName: ::windows_core::PWSTR,
     pub DirectoryName: CRYPTOAPI_BLOB,
-    pub pwszURL: ::windows::core::PWSTR,
+    pub pwszURL: ::windows_core::PWSTR,
     pub IPAddress: CRYPTOAPI_BLOB,
-    pub pszRegisteredID: ::windows::core::PSTR,
+    pub pszRegisteredID: ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for CERT_ALT_NAME_ENTRY_0 {}
 impl ::core::clone::Clone for CERT_ALT_NAME_ENTRY_0 {
@@ -3151,12 +3151,12 @@ impl ::core::clone::Clone for CERT_ALT_NAME_ENTRY_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_ALT_NAME_ENTRY_0 {
+unsafe impl ::windows_core::Abi for CERT_ALT_NAME_ENTRY_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_ALT_NAME_ENTRY_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ALT_NAME_ENTRY_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ALT_NAME_ENTRY_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_ALT_NAME_ENTRY_0 {}
@@ -3186,12 +3186,12 @@ impl ::core::fmt::Debug for CERT_ALT_NAME_INFO {
         f.debug_struct("CERT_ALT_NAME_INFO").field("cAltEntry", &self.cAltEntry).field("rgAltEntry", &self.rgAltEntry).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_ALT_NAME_INFO {
+unsafe impl ::windows_core::Abi for CERT_ALT_NAME_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_ALT_NAME_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ALT_NAME_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ALT_NAME_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_ALT_NAME_INFO {}
@@ -3227,12 +3227,12 @@ impl ::core::fmt::Debug for CERT_AUTHORITY_INFO_ACCESS {
         f.debug_struct("CERT_AUTHORITY_INFO_ACCESS").field("cAccDescr", &self.cAccDescr).field("rgAccDescr", &self.rgAccDescr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_AUTHORITY_INFO_ACCESS {
+unsafe impl ::windows_core::Abi for CERT_AUTHORITY_INFO_ACCESS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_AUTHORITY_INFO_ACCESS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_AUTHORITY_INFO_ACCESS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_AUTHORITY_INFO_ACCESS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_AUTHORITY_INFO_ACCESS {}
@@ -3261,12 +3261,12 @@ impl ::core::fmt::Debug for CERT_AUTHORITY_KEY_ID2_INFO {
         f.debug_struct("CERT_AUTHORITY_KEY_ID2_INFO").field("KeyId", &self.KeyId).field("AuthorityCertIssuer", &self.AuthorityCertIssuer).field("AuthorityCertSerialNumber", &self.AuthorityCertSerialNumber).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_AUTHORITY_KEY_ID2_INFO {
+unsafe impl ::windows_core::Abi for CERT_AUTHORITY_KEY_ID2_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_AUTHORITY_KEY_ID2_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_AUTHORITY_KEY_ID2_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_AUTHORITY_KEY_ID2_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_AUTHORITY_KEY_ID2_INFO {}
@@ -3293,12 +3293,12 @@ impl ::core::fmt::Debug for CERT_AUTHORITY_KEY_ID_INFO {
         f.debug_struct("CERT_AUTHORITY_KEY_ID_INFO").field("KeyId", &self.KeyId).field("CertIssuer", &self.CertIssuer).field("CertSerialNumber", &self.CertSerialNumber).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_AUTHORITY_KEY_ID_INFO {
+unsafe impl ::windows_core::Abi for CERT_AUTHORITY_KEY_ID_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_AUTHORITY_KEY_ID_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_AUTHORITY_KEY_ID_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_AUTHORITY_KEY_ID_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_AUTHORITY_KEY_ID_INFO {}
@@ -3368,13 +3368,13 @@ impl ::core::fmt::Debug for CERT_BASIC_CONSTRAINTS2_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_BASIC_CONSTRAINTS2_INFO {
+unsafe impl ::windows_core::Abi for CERT_BASIC_CONSTRAINTS2_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_BASIC_CONSTRAINTS2_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_BASIC_CONSTRAINTS2_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_BASIC_CONSTRAINTS2_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3410,13 +3410,13 @@ impl ::core::fmt::Debug for CERT_BASIC_CONSTRAINTS_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_BASIC_CONSTRAINTS_INFO {
+unsafe impl ::windows_core::Abi for CERT_BASIC_CONSTRAINTS_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_BASIC_CONSTRAINTS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_BASIC_CONSTRAINTS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_BASIC_CONSTRAINTS_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3440,12 +3440,12 @@ impl ::core::clone::Clone for CERT_BIOMETRIC_DATA {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_BIOMETRIC_DATA {
+unsafe impl ::windows_core::Abi for CERT_BIOMETRIC_DATA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_BIOMETRIC_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_BIOMETRIC_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_BIOMETRIC_DATA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_BIOMETRIC_DATA {}
@@ -3458,7 +3458,7 @@ impl ::core::default::Default for CERT_BIOMETRIC_DATA {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub union CERT_BIOMETRIC_DATA_0 {
     pub dwPredefined: u32,
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for CERT_BIOMETRIC_DATA_0 {}
 impl ::core::clone::Clone for CERT_BIOMETRIC_DATA_0 {
@@ -3466,12 +3466,12 @@ impl ::core::clone::Clone for CERT_BIOMETRIC_DATA_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_BIOMETRIC_DATA_0 {
+unsafe impl ::windows_core::Abi for CERT_BIOMETRIC_DATA_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_BIOMETRIC_DATA_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_BIOMETRIC_DATA_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_BIOMETRIC_DATA_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_BIOMETRIC_DATA_0 {}
@@ -3499,7 +3499,7 @@ impl ::core::default::Default for CERT_BIOMETRIC_DATA_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_BIOMETRIC_DATA_TYPE {
+unsafe impl ::windows_core::Abi for CERT_BIOMETRIC_DATA_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_BIOMETRIC_DATA_TYPE {
@@ -3524,12 +3524,12 @@ impl ::core::fmt::Debug for CERT_BIOMETRIC_EXT_INFO {
         f.debug_struct("CERT_BIOMETRIC_EXT_INFO").field("cBiometricData", &self.cBiometricData).field("rgBiometricData", &self.rgBiometricData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_BIOMETRIC_EXT_INFO {
+unsafe impl ::windows_core::Abi for CERT_BIOMETRIC_EXT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_BIOMETRIC_EXT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_BIOMETRIC_EXT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_BIOMETRIC_EXT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_BIOMETRIC_EXT_INFO {}
@@ -3574,12 +3574,12 @@ impl ::core::fmt::Debug for CERT_CHAIN {
         f.debug_struct("CERT_CHAIN").field("cCerts", &self.cCerts).field("certs", &self.certs).field("keyLocatorInfo", &self.keyLocatorInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_CHAIN {
+unsafe impl ::windows_core::Abi for CERT_CHAIN {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_CHAIN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_CHAIN {}
@@ -3641,7 +3641,7 @@ pub struct CERT_CHAIN_CONTEXT {
     pub fHasRevocationFreshnessTime: super::super::Foundation::BOOL,
     pub dwRevocationFreshnessTime: u32,
     pub dwCreateFlags: u32,
-    pub ChainId: ::windows::core::GUID,
+    pub ChainId: ::windows_core::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CERT_CHAIN_CONTEXT {}
@@ -3669,13 +3669,13 @@ impl ::core::fmt::Debug for CERT_CHAIN_CONTEXT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_CHAIN_CONTEXT {
+unsafe impl ::windows_core::Abi for CERT_CHAIN_CONTEXT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_CHAIN_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_CONTEXT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3752,7 +3752,7 @@ pub struct CERT_CHAIN_ELEMENT {
     pub pRevocationInfo: *mut CERT_REVOCATION_INFO,
     pub pIssuanceUsage: *mut CTL_USAGE,
     pub pApplicationUsage: *mut CTL_USAGE,
-    pub pwszExtendedErrorInfo: ::windows::core::PCWSTR,
+    pub pwszExtendedErrorInfo: ::windows_core::PCWSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CERT_CHAIN_ELEMENT {}
@@ -3769,13 +3769,13 @@ impl ::core::fmt::Debug for CERT_CHAIN_ELEMENT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_CHAIN_ELEMENT {
+unsafe impl ::windows_core::Abi for CERT_CHAIN_ELEMENT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_CHAIN_ELEMENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_ELEMENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_ELEMENT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3858,12 +3858,12 @@ impl ::core::fmt::Debug for CERT_CHAIN_ENGINE_CONFIG {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_CHAIN_ENGINE_CONFIG {
+unsafe impl ::windows_core::Abi for CERT_CHAIN_ENGINE_CONFIG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_CHAIN_ENGINE_CONFIG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_ENGINE_CONFIG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_ENGINE_CONFIG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_CHAIN_ENGINE_CONFIG {}
@@ -3881,7 +3881,7 @@ pub const CERT_CHAIN_FIND_BY_ISSUER: u32 = 1u32;
 #[cfg(feature = "Win32_Foundation")]
 pub struct CERT_CHAIN_FIND_BY_ISSUER_PARA {
     pub cbSize: u32,
-    pub pszUsageIdentifier: ::windows::core::PCSTR,
+    pub pszUsageIdentifier: ::windows_core::PCSTR,
     pub dwKeySpec: u32,
     pub dwAcquirePrivateKeyFlags: u32,
     pub cIssuer: u32,
@@ -3904,13 +3904,13 @@ impl ::core::fmt::Debug for CERT_CHAIN_FIND_BY_ISSUER_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_CHAIN_FIND_BY_ISSUER_PARA {
+unsafe impl ::windows_core::Abi for CERT_CHAIN_FIND_BY_ISSUER_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_CHAIN_FIND_BY_ISSUER_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_FIND_BY_ISSUER_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_FIND_BY_ISSUER_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3988,12 +3988,12 @@ impl ::core::fmt::Debug for CERT_CHAIN_PARA {
         f.debug_struct("CERT_CHAIN_PARA").field("cbSize", &self.cbSize).field("RequestedUsage", &self.RequestedUsage).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_CHAIN_PARA {
+unsafe impl ::windows_core::Abi for CERT_CHAIN_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_CHAIN_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_CHAIN_PARA {}
@@ -4003,15 +4003,15 @@ impl ::core::default::Default for CERT_CHAIN_PARA {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_CHAIN_POLICY_AUTHENTICODE: ::windows::core::PCSTR = ::windows::core::PCSTR(2i32 as _);
+pub const CERT_CHAIN_POLICY_AUTHENTICODE: ::windows_core::PCSTR = ::windows_core::PCSTR(2i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_CHAIN_POLICY_AUTHENTICODE_TS: ::windows::core::PCSTR = ::windows::core::PCSTR(3i32 as _);
+pub const CERT_CHAIN_POLICY_AUTHENTICODE_TS: ::windows_core::PCSTR = ::windows_core::PCSTR(3i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_CHAIN_POLICY_BASE: ::windows::core::PCSTR = ::windows::core::PCSTR(1i32 as _);
+pub const CERT_CHAIN_POLICY_BASE: ::windows_core::PCSTR = ::windows_core::PCSTR(1i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_CHAIN_POLICY_BASIC_CONSTRAINTS: ::windows::core::PCSTR = ::windows::core::PCSTR(5i32 as _);
+pub const CERT_CHAIN_POLICY_BASIC_CONSTRAINTS: ::windows_core::PCSTR = ::windows_core::PCSTR(5i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_CHAIN_POLICY_EV: ::windows::core::PCSTR = ::windows::core::PCSTR(8i32 as _);
+pub const CERT_CHAIN_POLICY_EV: ::windows_core::PCSTR = ::windows_core::PCSTR(8i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -4063,7 +4063,7 @@ impl ::core::default::Default for CERT_CHAIN_POLICY_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_CHAIN_POLICY_FLAGS {
+unsafe impl ::windows_core::Abi for CERT_CHAIN_POLICY_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_CHAIN_POLICY_FLAGS {
@@ -4074,9 +4074,9 @@ impl ::core::fmt::Debug for CERT_CHAIN_POLICY_FLAGS {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_CHAIN_POLICY_IGNORE_WEAK_SIGNATURE_FLAG: u32 = 134217728u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_CHAIN_POLICY_MICROSOFT_ROOT: ::windows::core::PCSTR = ::windows::core::PCSTR(7i32 as _);
+pub const CERT_CHAIN_POLICY_MICROSOFT_ROOT: ::windows_core::PCSTR = ::windows_core::PCSTR(7i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_CHAIN_POLICY_NT_AUTH: ::windows::core::PCSTR = ::windows::core::PCSTR(6i32 as _);
+pub const CERT_CHAIN_POLICY_NT_AUTH: ::windows_core::PCSTR = ::windows_core::PCSTR(6i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_CHAIN_POLICY_PARA {
@@ -4095,12 +4095,12 @@ impl ::core::fmt::Debug for CERT_CHAIN_POLICY_PARA {
         f.debug_struct("CERT_CHAIN_POLICY_PARA").field("cbSize", &self.cbSize).field("dwFlags", &self.dwFlags).field("pvExtraPolicyPara", &self.pvExtraPolicyPara).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_CHAIN_POLICY_PARA {
+unsafe impl ::windows_core::Abi for CERT_CHAIN_POLICY_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_CHAIN_POLICY_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_POLICY_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_POLICY_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_CHAIN_POLICY_PARA {}
@@ -4110,9 +4110,9 @@ impl ::core::default::Default for CERT_CHAIN_POLICY_PARA {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_CHAIN_POLICY_SSL: ::windows::core::PCSTR = ::windows::core::PCSTR(4i32 as _);
+pub const CERT_CHAIN_POLICY_SSL: ::windows_core::PCSTR = ::windows_core::PCSTR(4i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_CHAIN_POLICY_SSL_F12: ::windows::core::PCSTR = ::windows::core::PCSTR(9i32 as _);
+pub const CERT_CHAIN_POLICY_SSL_F12: ::windows_core::PCSTR = ::windows_core::PCSTR(9i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_CHAIN_POLICY_SSL_F12_ERROR_LEVEL: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -4126,9 +4126,9 @@ pub const CERT_CHAIN_POLICY_SSL_F12_WARNING_LEVEL: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_CHAIN_POLICY_SSL_F12_WEAK_CRYPTO_CATEGORY: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_CHAIN_POLICY_SSL_HPKP_HEADER: ::windows::core::PCSTR = ::windows::core::PCSTR(10i32 as _);
+pub const CERT_CHAIN_POLICY_SSL_HPKP_HEADER: ::windows_core::PCSTR = ::windows_core::PCSTR(10i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_CHAIN_POLICY_SSL_KEY_PIN: ::windows::core::PCSTR = ::windows::core::PCSTR(12i32 as _);
+pub const CERT_CHAIN_POLICY_SSL_KEY_PIN: ::windows_core::PCSTR = ::windows_core::PCSTR(12i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_CHAIN_POLICY_SSL_KEY_PIN_MISMATCH_ERROR: i32 = -2i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -4159,12 +4159,12 @@ impl ::core::fmt::Debug for CERT_CHAIN_POLICY_STATUS {
         f.debug_struct("CERT_CHAIN_POLICY_STATUS").field("cbSize", &self.cbSize).field("dwError", &self.dwError).field("lChainIndex", &self.lChainIndex).field("lElementIndex", &self.lElementIndex).field("pvExtraPolicyStatus", &self.pvExtraPolicyStatus).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_CHAIN_POLICY_STATUS {
+unsafe impl ::windows_core::Abi for CERT_CHAIN_POLICY_STATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_CHAIN_POLICY_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_POLICY_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CHAIN_POLICY_STATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_CHAIN_POLICY_STATUS {}
@@ -4174,7 +4174,7 @@ impl ::core::default::Default for CERT_CHAIN_POLICY_STATUS {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_CHAIN_POLICY_THIRD_PARTY_ROOT: ::windows::core::PCSTR = ::windows::core::PCSTR(11i32 as _);
+pub const CERT_CHAIN_POLICY_THIRD_PARTY_ROOT: ::windows_core::PCSTR = ::windows_core::PCSTR(11i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_CHAIN_RETURN_LOWER_QUALITY_CONTEXTS: u32 = 128u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -4312,13 +4312,13 @@ impl ::core::fmt::Debug for CERT_CONTEXT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_CONTEXT {
+unsafe impl ::windows_core::Abi for CERT_CONTEXT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CONTEXT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4352,7 +4352,7 @@ impl ::core::default::Default for CERT_CONTROL_STORE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_CONTROL_STORE_FLAGS {
+unsafe impl ::windows_core::Abi for CERT_CONTROL_STORE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_CONTROL_STORE_FLAGS {
@@ -4391,13 +4391,13 @@ impl ::core::fmt::Debug for CERT_CREATE_CONTEXT_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_CREATE_CONTEXT_PARA {
+unsafe impl ::windows_core::Abi for CERT_CREATE_CONTEXT_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_CREATE_CONTEXT_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CREATE_CONTEXT_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CREATE_CONTEXT_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4429,7 +4429,7 @@ impl ::core::default::Default for CERT_CREATE_SELFSIGN_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_CREATE_SELFSIGN_FLAGS {
+unsafe impl ::windows_core::Abi for CERT_CREATE_SELFSIGN_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_CREATE_SELFSIGN_FLAGS {
@@ -4487,13 +4487,13 @@ impl ::core::fmt::Debug for CERT_CRL_CONTEXT_PAIR {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_CRL_CONTEXT_PAIR {
+unsafe impl ::windows_core::Abi for CERT_CRL_CONTEXT_PAIR {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_CRL_CONTEXT_PAIR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CRL_CONTEXT_PAIR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CRL_CONTEXT_PAIR>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4539,12 +4539,12 @@ impl ::core::fmt::Debug for CERT_DH_PARAMETERS {
         f.debug_struct("CERT_DH_PARAMETERS").field("p", &self.p).field("g", &self.g).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_DH_PARAMETERS {
+unsafe impl ::windows_core::Abi for CERT_DH_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_DH_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_DH_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_DH_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_DH_PARAMETERS {}
@@ -4595,12 +4595,12 @@ impl ::core::fmt::Debug for CERT_DSS_PARAMETERS {
         f.debug_struct("CERT_DSS_PARAMETERS").field("p", &self.p).field("q", &self.q).field("g", &self.g).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_DSS_PARAMETERS {
+unsafe impl ::windows_core::Abi for CERT_DSS_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_DSS_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_DSS_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_DSS_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_DSS_PARAMETERS {}
@@ -4630,12 +4630,12 @@ impl ::core::fmt::Debug for CERT_ECC_SIGNATURE {
         f.debug_struct("CERT_ECC_SIGNATURE").field("r", &self.r).field("s", &self.s).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_ECC_SIGNATURE {
+unsafe impl ::windows_core::Abi for CERT_ECC_SIGNATURE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_ECC_SIGNATURE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ECC_SIGNATURE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ECC_SIGNATURE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_ECC_SIGNATURE {}
@@ -4668,7 +4668,7 @@ pub const CERT_EXTENDED_ERROR_INFO_PROP_ID: u32 = 30u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct CERT_EXTENSION {
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub fCritical: super::super::Foundation::BOOL,
     pub Value: CRYPTOAPI_BLOB,
 }
@@ -4687,13 +4687,13 @@ impl ::core::fmt::Debug for CERT_EXTENSION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_EXTENSION {
+unsafe impl ::windows_core::Abi for CERT_EXTENSION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_EXTENSION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_EXTENSION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_EXTENSION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4726,13 +4726,13 @@ impl ::core::fmt::Debug for CERT_EXTENSIONS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_EXTENSIONS {
+unsafe impl ::windows_core::Abi for CERT_EXTENSIONS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_EXTENSIONS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_EXTENSIONS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_EXTENSIONS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4774,7 +4774,7 @@ impl ::core::default::Default for CERT_FIND_CHAIN_IN_STORE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_FIND_CHAIN_IN_STORE_FLAGS {
+unsafe impl ::windows_core::Abi for CERT_FIND_CHAIN_IN_STORE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_FIND_CHAIN_IN_STORE_FLAGS {
@@ -4909,7 +4909,7 @@ impl ::core::default::Default for CERT_FIND_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_FIND_FLAGS {
+unsafe impl ::windows_core::Abi for CERT_FIND_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_FIND_FLAGS {
@@ -4974,7 +4974,7 @@ impl ::core::default::Default for CERT_FIND_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_FIND_TYPE {
+unsafe impl ::windows_core::Abi for CERT_FIND_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_FIND_TYPE {
@@ -5004,12 +5004,12 @@ impl ::core::fmt::Debug for CERT_FORTEZZA_DATA_PROP {
         f.debug_struct("CERT_FORTEZZA_DATA_PROP").field("SerialNumber", &self.SerialNumber).field("CertIndex", &self.CertIndex).field("CertLabel", &self.CertLabel).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_FORTEZZA_DATA_PROP {
+unsafe impl ::windows_core::Abi for CERT_FORTEZZA_DATA_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_FORTEZZA_DATA_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_FORTEZZA_DATA_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_FORTEZZA_DATA_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_FORTEZZA_DATA_PROP {}
@@ -5040,13 +5040,13 @@ impl ::core::clone::Clone for CERT_GENERAL_SUBTREE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_GENERAL_SUBTREE {
+unsafe impl ::windows_core::Abi for CERT_GENERAL_SUBTREE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_GENERAL_SUBTREE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_GENERAL_SUBTREE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_GENERAL_SUBTREE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5064,7 +5064,7 @@ pub const CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH: &str = "Software\\Policies\\Mi
 pub struct CERT_HASHED_URL {
     pub HashAlgorithm: CRYPT_ALGORITHM_IDENTIFIER,
     pub Hash: CRYPTOAPI_BLOB,
-    pub pwszUrl: ::windows::core::PWSTR,
+    pub pwszUrl: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CERT_HASHED_URL {}
 impl ::core::clone::Clone for CERT_HASHED_URL {
@@ -5077,12 +5077,12 @@ impl ::core::fmt::Debug for CERT_HASHED_URL {
         f.debug_struct("CERT_HASHED_URL").field("HashAlgorithm", &self.HashAlgorithm).field("Hash", &self.Hash).field("pwszUrl", &self.pwszUrl).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_HASHED_URL {
+unsafe impl ::windows_core::Abi for CERT_HASHED_URL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_HASHED_URL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_HASHED_URL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_HASHED_URL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_HASHED_URL {}
@@ -5109,12 +5109,12 @@ impl ::core::clone::Clone for CERT_ID {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_ID {
+unsafe impl ::windows_core::Abi for CERT_ID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_ID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_ID {}
@@ -5136,12 +5136,12 @@ impl ::core::clone::Clone for CERT_ID_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_ID_0 {
+unsafe impl ::windows_core::Abi for CERT_ID_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_ID_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ID_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ID_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_ID_0 {}
@@ -5171,7 +5171,7 @@ impl ::core::default::Default for CERT_ID_OPTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_ID_OPTION {
+unsafe impl ::windows_core::Abi for CERT_ID_OPTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_ID_OPTION {
@@ -5228,13 +5228,13 @@ impl ::core::fmt::Debug for CERT_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_INFO {
+unsafe impl ::windows_core::Abi for CERT_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5294,12 +5294,12 @@ impl ::core::fmt::Debug for CERT_ISSUER_SERIAL_NUMBER {
         f.debug_struct("CERT_ISSUER_SERIAL_NUMBER").field("Issuer", &self.Issuer).field("SerialNumber", &self.SerialNumber).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_ISSUER_SERIAL_NUMBER {
+unsafe impl ::windows_core::Abi for CERT_ISSUER_SERIAL_NUMBER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_ISSUER_SERIAL_NUMBER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ISSUER_SERIAL_NUMBER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_ISSUER_SERIAL_NUMBER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_ISSUER_SERIAL_NUMBER {}
@@ -5315,7 +5315,7 @@ pub const CERT_ISSUER_SERIAL_NUMBER_MD5_HASH_PROP_ID: u32 = 28u32;
 pub struct CERT_KEYGEN_REQUEST_INFO {
     pub dwVersion: u32,
     pub SubjectPublicKeyInfo: CERT_PUBLIC_KEY_INFO,
-    pub pwszChallengeString: ::windows::core::PWSTR,
+    pub pwszChallengeString: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CERT_KEYGEN_REQUEST_INFO {}
 impl ::core::clone::Clone for CERT_KEYGEN_REQUEST_INFO {
@@ -5328,12 +5328,12 @@ impl ::core::fmt::Debug for CERT_KEYGEN_REQUEST_INFO {
         f.debug_struct("CERT_KEYGEN_REQUEST_INFO").field("dwVersion", &self.dwVersion).field("SubjectPublicKeyInfo", &self.SubjectPublicKeyInfo).field("pwszChallengeString", &self.pwszChallengeString).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_KEYGEN_REQUEST_INFO {
+unsafe impl ::windows_core::Abi for CERT_KEYGEN_REQUEST_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_KEYGEN_REQUEST_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_KEYGEN_REQUEST_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_KEYGEN_REQUEST_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_KEYGEN_REQUEST_INFO {}
@@ -5369,13 +5369,13 @@ impl ::core::fmt::Debug for CERT_KEY_ATTRIBUTES_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_KEY_ATTRIBUTES_INFO {
+unsafe impl ::windows_core::Abi for CERT_KEY_ATTRIBUTES_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_KEY_ATTRIBUTES_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_KEY_ATTRIBUTES_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_KEY_ATTRIBUTES_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5403,12 +5403,12 @@ impl ::core::clone::Clone for CERT_KEY_CONTEXT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_KEY_CONTEXT {
+unsafe impl ::windows_core::Abi for CERT_KEY_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_KEY_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_KEY_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_KEY_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_KEY_CONTEXT {}
@@ -5429,12 +5429,12 @@ impl ::core::clone::Clone for CERT_KEY_CONTEXT_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_KEY_CONTEXT_0 {
+unsafe impl ::windows_core::Abi for CERT_KEY_CONTEXT_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_KEY_CONTEXT_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_KEY_CONTEXT_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_KEY_CONTEXT_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_KEY_CONTEXT_0 {}
@@ -5476,7 +5476,7 @@ impl ::core::default::Default for CERT_KEY_SPEC {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_KEY_SPEC {
+unsafe impl ::windows_core::Abi for CERT_KEY_SPEC {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_KEY_SPEC {
@@ -5504,12 +5504,12 @@ impl ::core::fmt::Debug for CERT_KEY_USAGE_RESTRICTION_INFO {
         f.debug_struct("CERT_KEY_USAGE_RESTRICTION_INFO").field("cCertPolicyId", &self.cCertPolicyId).field("rgCertPolicyId", &self.rgCertPolicyId).field("RestrictedKeyUsage", &self.RestrictedKeyUsage).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_KEY_USAGE_RESTRICTION_INFO {
+unsafe impl ::windows_core::Abi for CERT_KEY_USAGE_RESTRICTION_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_KEY_USAGE_RESTRICTION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_KEY_USAGE_RESTRICTION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_KEY_USAGE_RESTRICTION_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_KEY_USAGE_RESTRICTION_INFO {}
@@ -5530,7 +5530,7 @@ pub const CERT_LDAP_STORE_OPENED_FLAG: u32 = 262144u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_LDAP_STORE_OPENED_PARA {
     pub pvLdapSessionHandle: *mut ::core::ffi::c_void,
-    pub pwszLdapUrl: ::windows::core::PCWSTR,
+    pub pwszLdapUrl: ::windows_core::PCWSTR,
 }
 impl ::core::marker::Copy for CERT_LDAP_STORE_OPENED_PARA {}
 impl ::core::clone::Clone for CERT_LDAP_STORE_OPENED_PARA {
@@ -5543,12 +5543,12 @@ impl ::core::fmt::Debug for CERT_LDAP_STORE_OPENED_PARA {
         f.debug_struct("CERT_LDAP_STORE_OPENED_PARA").field("pvLdapSessionHandle", &self.pvLdapSessionHandle).field("pwszLdapUrl", &self.pwszLdapUrl).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LDAP_STORE_OPENED_PARA {
+unsafe impl ::windows_core::Abi for CERT_LDAP_STORE_OPENED_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_LDAP_STORE_OPENED_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LDAP_STORE_OPENED_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LDAP_STORE_OPENED_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_LDAP_STORE_OPENED_PARA {}
@@ -5580,12 +5580,12 @@ impl ::core::fmt::Debug for CERT_LOGOTYPE_AUDIO {
         f.debug_struct("CERT_LOGOTYPE_AUDIO").field("LogotypeDetails", &self.LogotypeDetails).field("pLogotypeAudioInfo", &self.pLogotypeAudioInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_AUDIO {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_AUDIO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_LOGOTYPE_AUDIO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_AUDIO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_AUDIO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_LOGOTYPE_AUDIO {}
@@ -5601,7 +5601,7 @@ pub struct CERT_LOGOTYPE_AUDIO_INFO {
     pub dwPlayTime: u32,
     pub dwChannels: u32,
     pub dwSampleRate: u32,
-    pub pwszLanguage: ::windows::core::PWSTR,
+    pub pwszLanguage: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CERT_LOGOTYPE_AUDIO_INFO {}
 impl ::core::clone::Clone for CERT_LOGOTYPE_AUDIO_INFO {
@@ -5614,12 +5614,12 @@ impl ::core::fmt::Debug for CERT_LOGOTYPE_AUDIO_INFO {
         f.debug_struct("CERT_LOGOTYPE_AUDIO_INFO").field("dwFileSize", &self.dwFileSize).field("dwPlayTime", &self.dwPlayTime).field("dwChannels", &self.dwChannels).field("dwSampleRate", &self.dwSampleRate).field("pwszLanguage", &self.pwszLanguage).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_AUDIO_INFO {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_AUDIO_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_LOGOTYPE_AUDIO_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_AUDIO_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_AUDIO_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_LOGOTYPE_AUDIO_INFO {}
@@ -5649,7 +5649,7 @@ impl ::core::default::Default for CERT_LOGOTYPE_CHOICE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_CHOICE {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_CHOICE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_LOGOTYPE_CHOICE {
@@ -5676,12 +5676,12 @@ impl ::core::fmt::Debug for CERT_LOGOTYPE_DATA {
         f.debug_struct("CERT_LOGOTYPE_DATA").field("cLogotypeImage", &self.cLogotypeImage).field("rgLogotypeImage", &self.rgLogotypeImage).field("cLogotypeAudio", &self.cLogotypeAudio).field("rgLogotypeAudio", &self.rgLogotypeAudio).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_DATA {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_DATA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_LOGOTYPE_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_DATA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_LOGOTYPE_DATA {}
@@ -5693,7 +5693,7 @@ impl ::core::default::Default for CERT_LOGOTYPE_DATA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_LOGOTYPE_DETAILS {
-    pub pwszMimeType: ::windows::core::PWSTR,
+    pub pwszMimeType: ::windows_core::PWSTR,
     pub cHashedUrl: u32,
     pub rgHashedUrl: *mut CERT_HASHED_URL,
 }
@@ -5708,12 +5708,12 @@ impl ::core::fmt::Debug for CERT_LOGOTYPE_DETAILS {
         f.debug_struct("CERT_LOGOTYPE_DETAILS").field("pwszMimeType", &self.pwszMimeType).field("cHashedUrl", &self.cHashedUrl).field("rgHashedUrl", &self.rgHashedUrl).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_DETAILS {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_DETAILS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_LOGOTYPE_DETAILS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_DETAILS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_DETAILS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_LOGOTYPE_DETAILS {}
@@ -5743,12 +5743,12 @@ impl ::core::fmt::Debug for CERT_LOGOTYPE_EXT_INFO {
         f.debug_struct("CERT_LOGOTYPE_EXT_INFO").field("cCommunityLogo", &self.cCommunityLogo).field("rgCommunityLogo", &self.rgCommunityLogo).field("pIssuerLogo", &self.pIssuerLogo).field("pSubjectLogo", &self.pSubjectLogo).field("cOtherLogo", &self.cOtherLogo).field("rgOtherLogo", &self.rgOtherLogo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_EXT_INFO {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_EXT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_LOGOTYPE_EXT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_EXT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_EXT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_LOGOTYPE_EXT_INFO {}
@@ -5774,12 +5774,12 @@ impl ::core::fmt::Debug for CERT_LOGOTYPE_IMAGE {
         f.debug_struct("CERT_LOGOTYPE_IMAGE").field("LogotypeDetails", &self.LogotypeDetails).field("pLogotypeImageInfo", &self.pLogotypeImageInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_IMAGE {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_IMAGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_LOGOTYPE_IMAGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_IMAGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_IMAGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_LOGOTYPE_IMAGE {}
@@ -5797,7 +5797,7 @@ pub struct CERT_LOGOTYPE_IMAGE_INFO {
     pub dwYSize: u32,
     pub dwLogotypeImageResolutionChoice: CERT_LOGOTYPE_CHOICE,
     pub Anonymous: CERT_LOGOTYPE_IMAGE_INFO_0,
-    pub pwszLanguage: ::windows::core::PWSTR,
+    pub pwszLanguage: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CERT_LOGOTYPE_IMAGE_INFO {}
 impl ::core::clone::Clone for CERT_LOGOTYPE_IMAGE_INFO {
@@ -5805,12 +5805,12 @@ impl ::core::clone::Clone for CERT_LOGOTYPE_IMAGE_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_IMAGE_INFO {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_IMAGE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_LOGOTYPE_IMAGE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_IMAGE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_IMAGE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_LOGOTYPE_IMAGE_INFO {}
@@ -5831,12 +5831,12 @@ impl ::core::clone::Clone for CERT_LOGOTYPE_IMAGE_INFO_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_IMAGE_INFO_0 {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_IMAGE_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_LOGOTYPE_IMAGE_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_IMAGE_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_IMAGE_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_LOGOTYPE_IMAGE_INFO_0 {}
@@ -5864,7 +5864,7 @@ impl ::core::default::Default for CERT_LOGOTYPE_IMAGE_INFO_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_IMAGE_INFO_TYPE {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_IMAGE_INFO_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_LOGOTYPE_IMAGE_INFO_TYPE {
@@ -5884,12 +5884,12 @@ impl ::core::clone::Clone for CERT_LOGOTYPE_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_INFO {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_LOGOTYPE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_LOGOTYPE_INFO {}
@@ -5910,12 +5910,12 @@ impl ::core::clone::Clone for CERT_LOGOTYPE_INFO_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_INFO_0 {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_LOGOTYPE_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_LOGOTYPE_INFO_0 {}
@@ -5943,7 +5943,7 @@ impl ::core::default::Default for CERT_LOGOTYPE_OPTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_OPTION {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_OPTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_LOGOTYPE_OPTION {
@@ -5968,12 +5968,12 @@ impl ::core::fmt::Debug for CERT_LOGOTYPE_REFERENCE {
         f.debug_struct("CERT_LOGOTYPE_REFERENCE").field("cHashedUrl", &self.cHashedUrl).field("rgHashedUrl", &self.rgHashedUrl).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_LOGOTYPE_REFERENCE {
+unsafe impl ::windows_core::Abi for CERT_LOGOTYPE_REFERENCE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_LOGOTYPE_REFERENCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_REFERENCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_LOGOTYPE_REFERENCE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_LOGOTYPE_REFERENCE {}
@@ -6010,13 +6010,13 @@ impl ::core::fmt::Debug for CERT_NAME_CONSTRAINTS_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_NAME_CONSTRAINTS_INFO {
+unsafe impl ::windows_core::Abi for CERT_NAME_CONSTRAINTS_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_NAME_CONSTRAINTS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_NAME_CONSTRAINTS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_NAME_CONSTRAINTS_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6052,12 +6052,12 @@ impl ::core::fmt::Debug for CERT_NAME_INFO {
         f.debug_struct("CERT_NAME_INFO").field("cRDN", &self.cRDN).field("rgRDN", &self.rgRDN).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_NAME_INFO {
+unsafe impl ::windows_core::Abi for CERT_NAME_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_NAME_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_NAME_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_NAME_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_NAME_INFO {}
@@ -6121,12 +6121,12 @@ impl ::core::fmt::Debug for CERT_NAME_VALUE {
         f.debug_struct("CERT_NAME_VALUE").field("dwValueType", &self.dwValueType).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_NAME_VALUE {
+unsafe impl ::windows_core::Abi for CERT_NAME_VALUE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_NAME_VALUE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_NAME_VALUE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_NAME_VALUE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_NAME_VALUE {}
@@ -6206,7 +6206,7 @@ impl ::core::default::Default for CERT_OPEN_STORE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_OPEN_STORE_FLAGS {
+unsafe impl ::windows_core::Abi for CERT_OPEN_STORE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_OPEN_STORE_FLAGS {
@@ -6232,12 +6232,12 @@ impl ::core::fmt::Debug for CERT_OR_CRL_BLOB {
         f.debug_struct("CERT_OR_CRL_BLOB").field("dwChoice", &self.dwChoice).field("cbEncoded", &self.cbEncoded).field("pbEncoded", &self.pbEncoded).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_OR_CRL_BLOB {
+unsafe impl ::windows_core::Abi for CERT_OR_CRL_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_OR_CRL_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_OR_CRL_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_OR_CRL_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_OR_CRL_BLOB {}
@@ -6263,12 +6263,12 @@ impl ::core::fmt::Debug for CERT_OR_CRL_BUNDLE {
         f.debug_struct("CERT_OR_CRL_BUNDLE").field("cItem", &self.cItem).field("rgItem", &self.rgItem).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_OR_CRL_BUNDLE {
+unsafe impl ::windows_core::Abi for CERT_OR_CRL_BUNDLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_OR_CRL_BUNDLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_OR_CRL_BUNDLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_OR_CRL_BUNDLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_OR_CRL_BUNDLE {}
@@ -6280,7 +6280,7 @@ impl ::core::default::Default for CERT_OR_CRL_BUNDLE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_OTHER_LOGOTYPE_INFO {
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub LogotypeInfo: CERT_LOGOTYPE_INFO,
 }
 impl ::core::marker::Copy for CERT_OTHER_LOGOTYPE_INFO {}
@@ -6289,12 +6289,12 @@ impl ::core::clone::Clone for CERT_OTHER_LOGOTYPE_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_OTHER_LOGOTYPE_INFO {
+unsafe impl ::windows_core::Abi for CERT_OTHER_LOGOTYPE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_OTHER_LOGOTYPE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_OTHER_LOGOTYPE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_OTHER_LOGOTYPE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_OTHER_LOGOTYPE_INFO {}
@@ -6306,7 +6306,7 @@ impl ::core::default::Default for CERT_OTHER_LOGOTYPE_INFO {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_OTHER_NAME {
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub Value: CRYPTOAPI_BLOB,
 }
 impl ::core::marker::Copy for CERT_OTHER_NAME {}
@@ -6320,12 +6320,12 @@ impl ::core::fmt::Debug for CERT_OTHER_NAME {
         f.debug_struct("CERT_OTHER_NAME").field("pszObjId", &self.pszObjId).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_OTHER_NAME {
+unsafe impl ::windows_core::Abi for CERT_OTHER_NAME {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_OTHER_NAME {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_OTHER_NAME>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_OTHER_NAME>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_OTHER_NAME {}
@@ -6351,12 +6351,12 @@ impl ::core::fmt::Debug for CERT_PAIR {
         f.debug_struct("CERT_PAIR").field("Forward", &self.Forward).field("Reverse", &self.Reverse).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_PAIR {
+unsafe impl ::windows_core::Abi for CERT_PAIR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_PAIR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_PAIR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_PAIR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_PAIR {}
@@ -6381,7 +6381,7 @@ pub const CERT_PHYSICAL_STORE_GROUP_POLICY_NAME: &str = ".GroupPolicy";
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_PHYSICAL_STORE_INFO {
     pub cbSize: u32,
-    pub pszOpenStoreProvider: ::windows::core::PSTR,
+    pub pszOpenStoreProvider: ::windows_core::PSTR,
     pub dwOpenEncodingType: u32,
     pub dwOpenFlags: u32,
     pub OpenParameters: CRYPTOAPI_BLOB,
@@ -6399,12 +6399,12 @@ impl ::core::fmt::Debug for CERT_PHYSICAL_STORE_INFO {
         f.debug_struct("CERT_PHYSICAL_STORE_INFO").field("cbSize", &self.cbSize).field("pszOpenStoreProvider", &self.pszOpenStoreProvider).field("dwOpenEncodingType", &self.dwOpenEncodingType).field("dwOpenFlags", &self.dwOpenFlags).field("OpenParameters", &self.OpenParameters).field("dwFlags", &self.dwFlags).field("dwPriority", &self.dwPriority).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_PHYSICAL_STORE_INFO {
+unsafe impl ::windows_core::Abi for CERT_PHYSICAL_STORE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_PHYSICAL_STORE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_PHYSICAL_STORE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_PHYSICAL_STORE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_PHYSICAL_STORE_INFO {}
@@ -6460,12 +6460,12 @@ impl ::core::fmt::Debug for CERT_POLICIES_INFO {
         f.debug_struct("CERT_POLICIES_INFO").field("cPolicyInfo", &self.cPolicyInfo).field("rgPolicyInfo", &self.rgPolicyInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_POLICIES_INFO {
+unsafe impl ::windows_core::Abi for CERT_POLICIES_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_POLICIES_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICIES_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICIES_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_POLICIES_INFO {}
@@ -6477,9 +6477,9 @@ impl ::core::default::Default for CERT_POLICIES_INFO {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_POLICY95_QUALIFIER1 {
-    pub pszPracticesReference: ::windows::core::PWSTR,
-    pub pszNoticeIdentifier: ::windows::core::PSTR,
-    pub pszNSINoticeIdentifier: ::windows::core::PSTR,
+    pub pszPracticesReference: ::windows_core::PWSTR,
+    pub pszNoticeIdentifier: ::windows_core::PSTR,
+    pub pszNSINoticeIdentifier: ::windows_core::PSTR,
     pub cCPSURLs: u32,
     pub rgCPSURLs: *mut CPS_URLS,
 }
@@ -6494,12 +6494,12 @@ impl ::core::fmt::Debug for CERT_POLICY95_QUALIFIER1 {
         f.debug_struct("CERT_POLICY95_QUALIFIER1").field("pszPracticesReference", &self.pszPracticesReference).field("pszNoticeIdentifier", &self.pszNoticeIdentifier).field("pszNSINoticeIdentifier", &self.pszNSINoticeIdentifier).field("cCPSURLs", &self.cCPSURLs).field("rgCPSURLs", &self.rgCPSURLs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_POLICY95_QUALIFIER1 {
+unsafe impl ::windows_core::Abi for CERT_POLICY95_QUALIFIER1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_POLICY95_QUALIFIER1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY95_QUALIFIER1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY95_QUALIFIER1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_POLICY95_QUALIFIER1 {}
@@ -6532,13 +6532,13 @@ impl ::core::fmt::Debug for CERT_POLICY_CONSTRAINTS_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_POLICY_CONSTRAINTS_INFO {
+unsafe impl ::windows_core::Abi for CERT_POLICY_CONSTRAINTS_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_POLICY_CONSTRAINTS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_CONSTRAINTS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_CONSTRAINTS_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6553,7 +6553,7 @@ impl ::core::default::Default for CERT_POLICY_CONSTRAINTS_INFO {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_POLICY_ID {
     pub cCertPolicyElementId: u32,
-    pub rgpszCertPolicyElementId: *mut ::windows::core::PSTR,
+    pub rgpszCertPolicyElementId: *mut ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for CERT_POLICY_ID {}
 impl ::core::clone::Clone for CERT_POLICY_ID {
@@ -6566,12 +6566,12 @@ impl ::core::fmt::Debug for CERT_POLICY_ID {
         f.debug_struct("CERT_POLICY_ID").field("cCertPolicyElementId", &self.cCertPolicyElementId).field("rgpszCertPolicyElementId", &self.rgpszCertPolicyElementId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_POLICY_ID {
+unsafe impl ::windows_core::Abi for CERT_POLICY_ID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_POLICY_ID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_ID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_ID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_POLICY_ID {}
@@ -6583,7 +6583,7 @@ impl ::core::default::Default for CERT_POLICY_ID {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_POLICY_INFO {
-    pub pszPolicyIdentifier: ::windows::core::PSTR,
+    pub pszPolicyIdentifier: ::windows_core::PSTR,
     pub cPolicyQualifier: u32,
     pub rgPolicyQualifier: *mut CERT_POLICY_QUALIFIER_INFO,
 }
@@ -6598,12 +6598,12 @@ impl ::core::fmt::Debug for CERT_POLICY_INFO {
         f.debug_struct("CERT_POLICY_INFO").field("pszPolicyIdentifier", &self.pszPolicyIdentifier).field("cPolicyQualifier", &self.cPolicyQualifier).field("rgPolicyQualifier", &self.rgPolicyQualifier).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_POLICY_INFO {
+unsafe impl ::windows_core::Abi for CERT_POLICY_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_POLICY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_POLICY_INFO {}
@@ -6615,8 +6615,8 @@ impl ::core::default::Default for CERT_POLICY_INFO {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_POLICY_MAPPING {
-    pub pszIssuerDomainPolicy: ::windows::core::PSTR,
-    pub pszSubjectDomainPolicy: ::windows::core::PSTR,
+    pub pszIssuerDomainPolicy: ::windows_core::PSTR,
+    pub pszSubjectDomainPolicy: ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for CERT_POLICY_MAPPING {}
 impl ::core::clone::Clone for CERT_POLICY_MAPPING {
@@ -6629,12 +6629,12 @@ impl ::core::fmt::Debug for CERT_POLICY_MAPPING {
         f.debug_struct("CERT_POLICY_MAPPING").field("pszIssuerDomainPolicy", &self.pszIssuerDomainPolicy).field("pszSubjectDomainPolicy", &self.pszSubjectDomainPolicy).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_POLICY_MAPPING {
+unsafe impl ::windows_core::Abi for CERT_POLICY_MAPPING {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_POLICY_MAPPING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_MAPPING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_MAPPING>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_POLICY_MAPPING {}
@@ -6660,12 +6660,12 @@ impl ::core::fmt::Debug for CERT_POLICY_MAPPINGS_INFO {
         f.debug_struct("CERT_POLICY_MAPPINGS_INFO").field("cPolicyMapping", &self.cPolicyMapping).field("rgPolicyMapping", &self.rgPolicyMapping).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_POLICY_MAPPINGS_INFO {
+unsafe impl ::windows_core::Abi for CERT_POLICY_MAPPINGS_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_POLICY_MAPPINGS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_MAPPINGS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_MAPPINGS_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_POLICY_MAPPINGS_INFO {}
@@ -6677,7 +6677,7 @@ impl ::core::default::Default for CERT_POLICY_MAPPINGS_INFO {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_POLICY_QUALIFIER_INFO {
-    pub pszPolicyQualifierId: ::windows::core::PSTR,
+    pub pszPolicyQualifierId: ::windows_core::PSTR,
     pub Qualifier: CRYPTOAPI_BLOB,
 }
 impl ::core::marker::Copy for CERT_POLICY_QUALIFIER_INFO {}
@@ -6691,12 +6691,12 @@ impl ::core::fmt::Debug for CERT_POLICY_QUALIFIER_INFO {
         f.debug_struct("CERT_POLICY_QUALIFIER_INFO").field("pszPolicyQualifierId", &self.pszPolicyQualifierId).field("Qualifier", &self.Qualifier).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_POLICY_QUALIFIER_INFO {
+unsafe impl ::windows_core::Abi for CERT_POLICY_QUALIFIER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_POLICY_QUALIFIER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_QUALIFIER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_QUALIFIER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_POLICY_QUALIFIER_INFO {}
@@ -6708,7 +6708,7 @@ impl ::core::default::Default for CERT_POLICY_QUALIFIER_INFO {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_POLICY_QUALIFIER_NOTICE_REFERENCE {
-    pub pszOrganization: ::windows::core::PSTR,
+    pub pszOrganization: ::windows_core::PSTR,
     pub cNoticeNumbers: u32,
     pub rgNoticeNumbers: *mut i32,
 }
@@ -6723,12 +6723,12 @@ impl ::core::fmt::Debug for CERT_POLICY_QUALIFIER_NOTICE_REFERENCE {
         f.debug_struct("CERT_POLICY_QUALIFIER_NOTICE_REFERENCE").field("pszOrganization", &self.pszOrganization).field("cNoticeNumbers", &self.cNoticeNumbers).field("rgNoticeNumbers", &self.rgNoticeNumbers).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_POLICY_QUALIFIER_NOTICE_REFERENCE {
+unsafe impl ::windows_core::Abi for CERT_POLICY_QUALIFIER_NOTICE_REFERENCE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_POLICY_QUALIFIER_NOTICE_REFERENCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_QUALIFIER_NOTICE_REFERENCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_QUALIFIER_NOTICE_REFERENCE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_POLICY_QUALIFIER_NOTICE_REFERENCE {}
@@ -6741,7 +6741,7 @@ impl ::core::default::Default for CERT_POLICY_QUALIFIER_NOTICE_REFERENCE {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_POLICY_QUALIFIER_USER_NOTICE {
     pub pNoticeReference: *mut CERT_POLICY_QUALIFIER_NOTICE_REFERENCE,
-    pub pszDisplayText: ::windows::core::PWSTR,
+    pub pszDisplayText: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CERT_POLICY_QUALIFIER_USER_NOTICE {}
 impl ::core::clone::Clone for CERT_POLICY_QUALIFIER_USER_NOTICE {
@@ -6754,12 +6754,12 @@ impl ::core::fmt::Debug for CERT_POLICY_QUALIFIER_USER_NOTICE {
         f.debug_struct("CERT_POLICY_QUALIFIER_USER_NOTICE").field("pNoticeReference", &self.pNoticeReference).field("pszDisplayText", &self.pszDisplayText).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_POLICY_QUALIFIER_USER_NOTICE {
+unsafe impl ::windows_core::Abi for CERT_POLICY_QUALIFIER_USER_NOTICE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_POLICY_QUALIFIER_USER_NOTICE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_QUALIFIER_USER_NOTICE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_POLICY_QUALIFIER_USER_NOTICE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_POLICY_QUALIFIER_USER_NOTICE {}
@@ -6790,13 +6790,13 @@ impl ::core::fmt::Debug for CERT_PRIVATE_KEY_VALIDITY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_PRIVATE_KEY_VALIDITY {
+unsafe impl ::windows_core::Abi for CERT_PRIVATE_KEY_VALIDITY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_PRIVATE_KEY_VALIDITY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_PRIVATE_KEY_VALIDITY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_PRIVATE_KEY_VALIDITY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6850,12 +6850,12 @@ impl ::core::fmt::Debug for CERT_PUBLIC_KEY_INFO {
         f.debug_struct("CERT_PUBLIC_KEY_INFO").field("Algorithm", &self.Algorithm).field("PublicKey", &self.PublicKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_PUBLIC_KEY_INFO {
+unsafe impl ::windows_core::Abi for CERT_PUBLIC_KEY_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_PUBLIC_KEY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_PUBLIC_KEY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_PUBLIC_KEY_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_PUBLIC_KEY_INFO {}
@@ -6871,7 +6871,7 @@ pub const CERT_PVK_FILE_PROP_ID: u32 = 12u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_QC_STATEMENT {
-    pub pszStatementId: ::windows::core::PSTR,
+    pub pszStatementId: ::windows_core::PSTR,
     pub StatementInfo: CRYPTOAPI_BLOB,
 }
 impl ::core::marker::Copy for CERT_QC_STATEMENT {}
@@ -6885,12 +6885,12 @@ impl ::core::fmt::Debug for CERT_QC_STATEMENT {
         f.debug_struct("CERT_QC_STATEMENT").field("pszStatementId", &self.pszStatementId).field("StatementInfo", &self.StatementInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_QC_STATEMENT {
+unsafe impl ::windows_core::Abi for CERT_QC_STATEMENT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_QC_STATEMENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_QC_STATEMENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_QC_STATEMENT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_QC_STATEMENT {}
@@ -6916,12 +6916,12 @@ impl ::core::fmt::Debug for CERT_QC_STATEMENTS_EXT_INFO {
         f.debug_struct("CERT_QC_STATEMENTS_EXT_INFO").field("cStatement", &self.cStatement).field("rgStatement", &self.rgStatement).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_QC_STATEMENTS_EXT_INFO {
+unsafe impl ::windows_core::Abi for CERT_QC_STATEMENTS_EXT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_QC_STATEMENTS_EXT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_QC_STATEMENTS_EXT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_QC_STATEMENTS_EXT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_QC_STATEMENTS_EXT_INFO {}
@@ -6973,7 +6973,7 @@ impl ::core::default::Default for CERT_QUERY_CONTENT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_QUERY_CONTENT_TYPE {
+unsafe impl ::windows_core::Abi for CERT_QUERY_CONTENT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_QUERY_CONTENT_TYPE {
@@ -7028,7 +7028,7 @@ impl ::core::default::Default for CERT_QUERY_CONTENT_TYPE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_QUERY_CONTENT_TYPE_FLAGS {
+unsafe impl ::windows_core::Abi for CERT_QUERY_CONTENT_TYPE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_QUERY_CONTENT_TYPE_FLAGS {
@@ -7055,7 +7055,7 @@ impl ::core::default::Default for CERT_QUERY_ENCODING_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_QUERY_ENCODING_TYPE {
+unsafe impl ::windows_core::Abi for CERT_QUERY_ENCODING_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_QUERY_ENCODING_TYPE {
@@ -7084,7 +7084,7 @@ impl ::core::default::Default for CERT_QUERY_FORMAT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_QUERY_FORMAT_TYPE {
+unsafe impl ::windows_core::Abi for CERT_QUERY_FORMAT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_QUERY_FORMAT_TYPE {
@@ -7115,7 +7115,7 @@ impl ::core::default::Default for CERT_QUERY_FORMAT_TYPE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_QUERY_FORMAT_TYPE_FLAGS {
+unsafe impl ::windows_core::Abi for CERT_QUERY_FORMAT_TYPE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_QUERY_FORMAT_TYPE_FLAGS {
@@ -7142,7 +7142,7 @@ impl ::core::default::Default for CERT_QUERY_OBJECT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_QUERY_OBJECT_TYPE {
+unsafe impl ::windows_core::Abi for CERT_QUERY_OBJECT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_QUERY_OBJECT_TYPE {
@@ -7167,12 +7167,12 @@ impl ::core::fmt::Debug for CERT_RDN {
         f.debug_struct("CERT_RDN").field("cRDNAttr", &self.cRDNAttr).field("rgRDNAttr", &self.rgRDNAttr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_RDN {
+unsafe impl ::windows_core::Abi for CERT_RDN {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_RDN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_RDN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_RDN>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_RDN {}
@@ -7184,7 +7184,7 @@ impl ::core::default::Default for CERT_RDN {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_RDN_ATTR {
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub dwValueType: CERT_RDN_ATTR_VALUE_TYPE,
     pub Value: CRYPTOAPI_BLOB,
 }
@@ -7199,12 +7199,12 @@ impl ::core::fmt::Debug for CERT_RDN_ATTR {
         f.debug_struct("CERT_RDN_ATTR").field("pszObjId", &self.pszObjId).field("dwValueType", &self.dwValueType).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_RDN_ATTR {
+unsafe impl ::windows_core::Abi for CERT_RDN_ATTR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_RDN_ATTR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_RDN_ATTR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_RDN_ATTR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_RDN_ATTR {}
@@ -7264,7 +7264,7 @@ impl ::core::default::Default for CERT_RDN_ATTR_VALUE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_RDN_ATTR_VALUE_TYPE {
+unsafe impl ::windows_core::Abi for CERT_RDN_ATTR_VALUE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_RDN_ATTR_VALUE_TYPE {
@@ -7295,7 +7295,7 @@ pub const CERT_REGISTRY_STORE_CLIENT_GPT_FLAG: u32 = 2147483648u32;
 #[cfg(feature = "Win32_System_Registry")]
 pub struct CERT_REGISTRY_STORE_CLIENT_GPT_PARA {
     pub hKeyBase: super::super::System::Registry::HKEY,
-    pub pwszRegPath: ::windows::core::PWSTR,
+    pub pwszRegPath: ::windows_core::PWSTR,
 }
 #[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for CERT_REGISTRY_STORE_CLIENT_GPT_PARA {}
@@ -7312,13 +7312,13 @@ impl ::core::fmt::Debug for CERT_REGISTRY_STORE_CLIENT_GPT_PARA {
     }
 }
 #[cfg(feature = "Win32_System_Registry")]
-unsafe impl ::windows::core::Abi for CERT_REGISTRY_STORE_CLIENT_GPT_PARA {
+unsafe impl ::windows_core::Abi for CERT_REGISTRY_STORE_CLIENT_GPT_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Registry")]
 impl ::core::cmp::PartialEq for CERT_REGISTRY_STORE_CLIENT_GPT_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REGISTRY_STORE_CLIENT_GPT_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REGISTRY_STORE_CLIENT_GPT_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Registry")]
@@ -7344,7 +7344,7 @@ pub const CERT_REGISTRY_STORE_ROAMING_FLAG: u32 = 262144u32;
 #[cfg(feature = "Win32_System_Registry")]
 pub struct CERT_REGISTRY_STORE_ROAMING_PARA {
     pub hKey: super::super::System::Registry::HKEY,
-    pub pwszStoreDirectory: ::windows::core::PWSTR,
+    pub pwszStoreDirectory: ::windows_core::PWSTR,
 }
 #[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for CERT_REGISTRY_STORE_ROAMING_PARA {}
@@ -7361,13 +7361,13 @@ impl ::core::fmt::Debug for CERT_REGISTRY_STORE_ROAMING_PARA {
     }
 }
 #[cfg(feature = "Win32_System_Registry")]
-unsafe impl ::windows::core::Abi for CERT_REGISTRY_STORE_ROAMING_PARA {
+unsafe impl ::windows_core::Abi for CERT_REGISTRY_STORE_ROAMING_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Registry")]
 impl ::core::cmp::PartialEq for CERT_REGISTRY_STORE_ROAMING_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REGISTRY_STORE_ROAMING_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REGISTRY_STORE_ROAMING_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Registry")]
@@ -7402,12 +7402,12 @@ impl ::core::fmt::Debug for CERT_REQUEST_INFO {
         f.debug_struct("CERT_REQUEST_INFO").field("dwVersion", &self.dwVersion).field("Subject", &self.Subject).field("SubjectPublicKeyInfo", &self.SubjectPublicKeyInfo).field("cAttribute", &self.cAttribute).field("rgAttribute", &self.rgAttribute).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_REQUEST_INFO {
+unsafe impl ::windows_core::Abi for CERT_REQUEST_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_REQUEST_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REQUEST_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REQUEST_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_REQUEST_INFO {}
@@ -7421,13 +7421,13 @@ pub const CERT_REQUEST_ORIGINATOR_PROP_ID: u32 = 71u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_REQUEST_V1: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_RETRIEVE_BIOMETRIC_PREDEFINED_BASE_TYPE: ::windows::core::PCSTR = ::windows::core::PCSTR(1000i32 as _);
+pub const CERT_RETRIEVE_BIOMETRIC_PREDEFINED_BASE_TYPE: ::windows_core::PCSTR = ::windows_core::PCSTR(1000i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_RETRIEVE_COMMUNITY_LOGO: ::windows::core::PCSTR = ::windows::core::PCSTR(3i32 as _);
+pub const CERT_RETRIEVE_COMMUNITY_LOGO: ::windows_core::PCSTR = ::windows_core::PCSTR(3i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_RETRIEVE_ISSUER_LOGO: ::windows::core::PCSTR = ::windows::core::PCSTR(1i32 as _);
+pub const CERT_RETRIEVE_ISSUER_LOGO: ::windows_core::PCSTR = ::windows_core::PCSTR(1i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_RETRIEVE_SUBJECT_LOGO: ::windows::core::PCSTR = ::windows::core::PCSTR(2i32 as _);
+pub const CERT_RETRIEVE_SUBJECT_LOGO: ::windows_core::PCSTR = ::windows_core::PCSTR(2i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_RETR_BEHAVIOR_FILE_VALUE_NAME: &str = "AllowFileUrlScheme";
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -7464,13 +7464,13 @@ impl ::core::fmt::Debug for CERT_REVOCATION_CHAIN_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_REVOCATION_CHAIN_PARA {
+unsafe impl ::windows_core::Abi for CERT_REVOCATION_CHAIN_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_REVOCATION_CHAIN_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REVOCATION_CHAIN_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REVOCATION_CHAIN_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7506,13 +7506,13 @@ impl ::core::fmt::Debug for CERT_REVOCATION_CRL_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_REVOCATION_CRL_INFO {
+unsafe impl ::windows_core::Abi for CERT_REVOCATION_CRL_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_REVOCATION_CRL_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REVOCATION_CRL_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REVOCATION_CRL_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7529,7 +7529,7 @@ impl ::core::default::Default for CERT_REVOCATION_CRL_INFO {
 pub struct CERT_REVOCATION_INFO {
     pub cbSize: u32,
     pub dwRevocationResult: u32,
-    pub pszRevocationOid: ::windows::core::PCSTR,
+    pub pszRevocationOid: ::windows_core::PCSTR,
     pub pvOidSpecificInfo: *mut ::core::ffi::c_void,
     pub fHasFreshnessTime: super::super::Foundation::BOOL,
     pub dwFreshnessTime: u32,
@@ -7550,13 +7550,13 @@ impl ::core::fmt::Debug for CERT_REVOCATION_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_REVOCATION_INFO {
+unsafe impl ::windows_core::Abi for CERT_REVOCATION_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_REVOCATION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REVOCATION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REVOCATION_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7593,13 +7593,13 @@ impl ::core::fmt::Debug for CERT_REVOCATION_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_REVOCATION_PARA {
+unsafe impl ::windows_core::Abi for CERT_REVOCATION_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_REVOCATION_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REVOCATION_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REVOCATION_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7636,13 +7636,13 @@ impl ::core::fmt::Debug for CERT_REVOCATION_STATUS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_REVOCATION_STATUS {
+unsafe impl ::windows_core::Abi for CERT_REVOCATION_STATUS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_REVOCATION_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REVOCATION_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_REVOCATION_STATUS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7684,7 +7684,7 @@ impl ::core::default::Default for CERT_REVOCATION_STATUS_REASON {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_REVOCATION_STATUS_REASON {
+unsafe impl ::windows_core::Abi for CERT_REVOCATION_STATUS_REASON {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_REVOCATION_STATUS_REASON {
@@ -7717,7 +7717,7 @@ impl ::core::default::Default for CERT_ROOT_PROGRAM_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_ROOT_PROGRAM_FLAGS {
+unsafe impl ::windows_core::Abi for CERT_ROOT_PROGRAM_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_ROOT_PROGRAM_FLAGS {
@@ -7818,13 +7818,13 @@ impl ::core::fmt::Debug for CERT_SELECT_CHAIN_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_SELECT_CHAIN_PARA {
+unsafe impl ::windows_core::Abi for CERT_SELECT_CHAIN_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_SELECT_CHAIN_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SELECT_CHAIN_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SELECT_CHAIN_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7853,12 +7853,12 @@ impl ::core::fmt::Debug for CERT_SELECT_CRITERIA {
         f.debug_struct("CERT_SELECT_CRITERIA").field("dwType", &self.dwType).field("cPara", &self.cPara).field("ppPara", &self.ppPara).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_SELECT_CRITERIA {
+unsafe impl ::windows_core::Abi for CERT_SELECT_CRITERIA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_SELECT_CRITERIA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SELECT_CRITERIA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SELECT_CRITERIA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_SELECT_CRITERIA {}
@@ -7904,7 +7904,7 @@ impl ::core::default::Default for CERT_SELECT_CRITERIA_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_SELECT_CRITERIA_TYPE {
+unsafe impl ::windows_core::Abi for CERT_SELECT_CRITERIA_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_SELECT_CRITERIA_TYPE {
@@ -7954,12 +7954,12 @@ impl ::core::fmt::Debug for CERT_SERVER_OCSP_RESPONSE_CONTEXT {
         f.debug_struct("CERT_SERVER_OCSP_RESPONSE_CONTEXT").field("cbSize", &self.cbSize).field("pbEncodedOcspResponse", &self.pbEncodedOcspResponse).field("cbEncodedOcspResponse", &self.cbEncodedOcspResponse).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_SERVER_OCSP_RESPONSE_CONTEXT {
+unsafe impl ::windows_core::Abi for CERT_SERVER_OCSP_RESPONSE_CONTEXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_SERVER_OCSP_RESPONSE_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SERVER_OCSP_RESPONSE_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SERVER_OCSP_RESPONSE_CONTEXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_SERVER_OCSP_RESPONSE_CONTEXT {}
@@ -7975,7 +7975,7 @@ pub struct CERT_SERVER_OCSP_RESPONSE_OPEN_PARA {
     pub cbSize: u32,
     pub dwFlags: u32,
     pub pcbUsedSize: *mut u32,
-    pub pwszOcspDirectory: ::windows::core::PWSTR,
+    pub pwszOcspDirectory: ::windows_core::PWSTR,
     pub pfnUpdateCallback: PFN_CERT_SERVER_OCSP_RESPONSE_UPDATE_CALLBACK,
     pub pvUpdateCallbackArg: *mut ::core::ffi::c_void,
 }
@@ -7994,13 +7994,13 @@ impl ::core::fmt::Debug for CERT_SERVER_OCSP_RESPONSE_OPEN_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_SERVER_OCSP_RESPONSE_OPEN_PARA {
+unsafe impl ::windows_core::Abi for CERT_SERVER_OCSP_RESPONSE_OPEN_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_SERVER_OCSP_RESPONSE_OPEN_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SERVER_OCSP_RESPONSE_OPEN_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SERVER_OCSP_RESPONSE_OPEN_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8043,12 +8043,12 @@ impl ::core::fmt::Debug for CERT_SIGNED_CONTENT_INFO {
         f.debug_struct("CERT_SIGNED_CONTENT_INFO").field("ToBeSigned", &self.ToBeSigned).field("SignatureAlgorithm", &self.SignatureAlgorithm).field("Signature", &self.Signature).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_SIGNED_CONTENT_INFO {
+unsafe impl ::windows_core::Abi for CERT_SIGNED_CONTENT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_SIGNED_CONTENT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SIGNED_CONTENT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SIGNED_CONTENT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_SIGNED_CONTENT_INFO {}
@@ -8086,13 +8086,13 @@ impl ::core::fmt::Debug for CERT_SIMPLE_CHAIN {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_SIMPLE_CHAIN {
+unsafe impl ::windows_core::Abi for CERT_SIMPLE_CHAIN {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_SIMPLE_CHAIN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SIMPLE_CHAIN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SIMPLE_CHAIN>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8176,7 +8176,7 @@ pub const CERT_STORE_NO_ISSUER_FLAG: u32 = 131072u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_CLOSE_FUNC: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_COLLECTION: ::windows::core::PCSTR = ::windows::core::PCSTR(11i32 as _);
+pub const CERT_STORE_PROV_COLLECTION: ::windows_core::PCSTR = ::windows_core::PCSTR(11i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_CONTROL_FUNC: u32 = 13u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -8186,13 +8186,13 @@ pub const CERT_STORE_PROV_DELETE_CRL_FUNC: u32 = 7u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_DELETE_CTL_FUNC: u32 = 11u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_FILE: ::windows::core::PCSTR = ::windows::core::PCSTR(3i32 as _);
+pub const CERT_STORE_PROV_FILE: ::windows_core::PCSTR = ::windows_core::PCSTR(3i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_FILENAME: i32 = 8i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_FILENAME_A: ::windows::core::PCSTR = ::windows::core::PCSTR(7i32 as _);
+pub const CERT_STORE_PROV_FILENAME_A: ::windows_core::PCSTR = ::windows_core::PCSTR(7i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_FILENAME_W: ::windows::core::PCSTR = ::windows::core::PCSTR(8i32 as _);
+pub const CERT_STORE_PROV_FILENAME_W: ::windows_core::PCSTR = ::windows_core::PCSTR(8i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_FIND_CERT_FUNC: u32 = 14u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -8219,12 +8219,12 @@ impl ::core::fmt::Debug for CERT_STORE_PROV_FIND_INFO {
         f.debug_struct("CERT_STORE_PROV_FIND_INFO").field("cbSize", &self.cbSize).field("dwMsgAndCertEncodingType", &self.dwMsgAndCertEncodingType).field("dwFindFlags", &self.dwFindFlags).field("dwFindType", &self.dwFindType).field("pvFindPara", &self.pvFindPara).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_STORE_PROV_FIND_INFO {
+unsafe impl ::windows_core::Abi for CERT_STORE_PROV_FIND_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_STORE_PROV_FIND_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_STORE_PROV_FIND_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_STORE_PROV_FIND_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_STORE_PROV_FIND_INFO {}
@@ -8258,7 +8258,7 @@ impl ::core::default::Default for CERT_STORE_PROV_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_STORE_PROV_FLAGS {
+unsafe impl ::windows_core::Abi for CERT_STORE_PROV_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_STORE_PROV_FLAGS {
@@ -8329,12 +8329,12 @@ impl ::core::fmt::Debug for CERT_STORE_PROV_INFO {
         f.debug_struct("CERT_STORE_PROV_INFO").field("cbSize", &self.cbSize).field("cStoreProvFunc", &self.cStoreProvFunc).field("rgpvStoreProvFunc", &self.rgpvStoreProvFunc).field("hStoreProv", &self.hStoreProv).field("dwStoreProvFlags", &self.dwStoreProvFlags).field("hStoreProvFuncAddr2", &self.hStoreProvFuncAddr2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_STORE_PROV_INFO {
+unsafe impl ::windows_core::Abi for CERT_STORE_PROV_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_STORE_PROV_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_STORE_PROV_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_STORE_PROV_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_STORE_PROV_INFO {}
@@ -8346,19 +8346,19 @@ impl ::core::default::Default for CERT_STORE_PROV_INFO {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_LDAP: i32 = 16i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_LDAP_W: ::windows::core::PCSTR = ::windows::core::PCSTR(16i32 as _);
+pub const CERT_STORE_PROV_LDAP_W: ::windows_core::PCSTR = ::windows_core::PCSTR(16i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_MEMORY: ::windows::core::PCSTR = ::windows::core::PCSTR(2i32 as _);
+pub const CERT_STORE_PROV_MEMORY: ::windows_core::PCSTR = ::windows_core::PCSTR(2i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_MSG: ::windows::core::PCSTR = ::windows::core::PCSTR(1i32 as _);
+pub const CERT_STORE_PROV_MSG: ::windows_core::PCSTR = ::windows_core::PCSTR(1i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_PHYSICAL: i32 = 14i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_PHYSICAL_W: ::windows::core::PCSTR = ::windows::core::PCSTR(14i32 as _);
+pub const CERT_STORE_PROV_PHYSICAL_W: ::windows_core::PCSTR = ::windows_core::PCSTR(14i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_PKCS12: ::windows::core::PCSTR = ::windows::core::PCSTR(17i32 as _);
+pub const CERT_STORE_PROV_PKCS12: ::windows_core::PCSTR = ::windows_core::PCSTR(17i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_PKCS7: ::windows::core::PCSTR = ::windows::core::PCSTR(5i32 as _);
+pub const CERT_STORE_PROV_PKCS7: ::windows_core::PCSTR = ::windows_core::PCSTR(5i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_READ_CERT_FUNC: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -8366,9 +8366,9 @@ pub const CERT_STORE_PROV_READ_CRL_FUNC: u32 = 5u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_READ_CTL_FUNC: u32 = 9u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_REG: ::windows::core::PCSTR = ::windows::core::PCSTR(4i32 as _);
+pub const CERT_STORE_PROV_REG: ::windows_core::PCSTR = ::windows_core::PCSTR(4i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_SERIALIZED: ::windows::core::PCSTR = ::windows::core::PCSTR(6i32 as _);
+pub const CERT_STORE_PROV_SERIALIZED: ::windows_core::PCSTR = ::windows_core::PCSTR(6i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_SET_CERT_PROPERTY_FUNC: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -8380,19 +8380,19 @@ pub const CERT_STORE_PROV_SHARED_USER_FLAG: u32 = 64u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_SMART_CARD: i32 = 15i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_SMART_CARD_W: ::windows::core::PCSTR = ::windows::core::PCSTR(15i32 as _);
+pub const CERT_STORE_PROV_SMART_CARD_W: ::windows_core::PCSTR = ::windows_core::PCSTR(15i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_SYSTEM: i32 = 10i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_SYSTEM_A: ::windows::core::PCSTR = ::windows::core::PCSTR(9i32 as _);
+pub const CERT_STORE_PROV_SYSTEM_A: ::windows_core::PCSTR = ::windows_core::PCSTR(9i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_SYSTEM_REGISTRY: i32 = 13i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_SYSTEM_REGISTRY_A: ::windows::core::PCSTR = ::windows::core::PCSTR(12i32 as _);
+pub const CERT_STORE_PROV_SYSTEM_REGISTRY_A: ::windows_core::PCSTR = ::windows_core::PCSTR(12i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_SYSTEM_REGISTRY_W: ::windows::core::PCSTR = ::windows::core::PCSTR(13i32 as _);
+pub const CERT_STORE_PROV_SYSTEM_REGISTRY_W: ::windows_core::PCSTR = ::windows_core::PCSTR(13i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CERT_STORE_PROV_SYSTEM_W: ::windows::core::PCSTR = ::windows::core::PCSTR(10i32 as _);
+pub const CERT_STORE_PROV_SYSTEM_W: ::windows_core::PCSTR = ::windows_core::PCSTR(10i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CERT_STORE_PROV_WRITE_ADD_FLAG: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -8422,7 +8422,7 @@ impl ::core::default::Default for CERT_STORE_SAVE_AS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_STORE_SAVE_AS {
+unsafe impl ::windows_core::Abi for CERT_STORE_SAVE_AS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_STORE_SAVE_AS {
@@ -8457,7 +8457,7 @@ impl ::core::default::Default for CERT_STORE_SAVE_TO {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_STORE_SAVE_TO {
+unsafe impl ::windows_core::Abi for CERT_STORE_SAVE_TO {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_STORE_SAVE_TO {
@@ -8494,7 +8494,7 @@ impl ::core::default::Default for CERT_STRING_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_STRING_TYPE {
+unsafe impl ::windows_core::Abi for CERT_STRING_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_STRING_TYPE {
@@ -8523,7 +8523,7 @@ impl ::core::default::Default for CERT_STRONG_SIGN_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_STRONG_SIGN_FLAGS {
+unsafe impl ::windows_core::Abi for CERT_STRONG_SIGN_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_STRONG_SIGN_FLAGS {
@@ -8574,12 +8574,12 @@ impl ::core::clone::Clone for CERT_STRONG_SIGN_PARA {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_STRONG_SIGN_PARA {
+unsafe impl ::windows_core::Abi for CERT_STRONG_SIGN_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_STRONG_SIGN_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_STRONG_SIGN_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_STRONG_SIGN_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_STRONG_SIGN_PARA {}
@@ -8593,7 +8593,7 @@ impl ::core::default::Default for CERT_STRONG_SIGN_PARA {
 pub union CERT_STRONG_SIGN_PARA_0 {
     pub pvInfo: *mut ::core::ffi::c_void,
     pub pSerializedInfo: *mut CERT_STRONG_SIGN_SERIALIZED_INFO,
-    pub pszOID: ::windows::core::PSTR,
+    pub pszOID: ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for CERT_STRONG_SIGN_PARA_0 {}
 impl ::core::clone::Clone for CERT_STRONG_SIGN_PARA_0 {
@@ -8601,12 +8601,12 @@ impl ::core::clone::Clone for CERT_STRONG_SIGN_PARA_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CERT_STRONG_SIGN_PARA_0 {
+unsafe impl ::windows_core::Abi for CERT_STRONG_SIGN_PARA_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_STRONG_SIGN_PARA_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_STRONG_SIGN_PARA_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_STRONG_SIGN_PARA_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_STRONG_SIGN_PARA_0 {}
@@ -8619,8 +8619,8 @@ impl ::core::default::Default for CERT_STRONG_SIGN_PARA_0 {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_STRONG_SIGN_SERIALIZED_INFO {
     pub dwFlags: CERT_STRONG_SIGN_FLAGS,
-    pub pwszCNGSignHashAlgids: ::windows::core::PWSTR,
-    pub pwszCNGPubKeyMinBitLengths: ::windows::core::PWSTR,
+    pub pwszCNGSignHashAlgids: ::windows_core::PWSTR,
+    pub pwszCNGPubKeyMinBitLengths: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CERT_STRONG_SIGN_SERIALIZED_INFO {}
 impl ::core::clone::Clone for CERT_STRONG_SIGN_SERIALIZED_INFO {
@@ -8633,12 +8633,12 @@ impl ::core::fmt::Debug for CERT_STRONG_SIGN_SERIALIZED_INFO {
         f.debug_struct("CERT_STRONG_SIGN_SERIALIZED_INFO").field("dwFlags", &self.dwFlags).field("pwszCNGSignHashAlgids", &self.pwszCNGSignHashAlgids).field("pwszCNGPubKeyMinBitLengths", &self.pwszCNGPubKeyMinBitLengths).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_STRONG_SIGN_SERIALIZED_INFO {
+unsafe impl ::windows_core::Abi for CERT_STRONG_SIGN_SERIALIZED_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_STRONG_SIGN_SERIALIZED_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_STRONG_SIGN_SERIALIZED_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_STRONG_SIGN_SERIALIZED_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_STRONG_SIGN_SERIALIZED_INFO {}
@@ -8679,12 +8679,12 @@ impl ::core::fmt::Debug for CERT_SUPPORTED_ALGORITHM_INFO {
         f.debug_struct("CERT_SUPPORTED_ALGORITHM_INFO").field("Algorithm", &self.Algorithm).field("IntendedKeyUsage", &self.IntendedKeyUsage).field("IntendedCertPolicies", &self.IntendedCertPolicies).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_SUPPORTED_ALGORITHM_INFO {
+unsafe impl ::windows_core::Abi for CERT_SUPPORTED_ALGORITHM_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_SUPPORTED_ALGORITHM_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SUPPORTED_ALGORITHM_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SUPPORTED_ALGORITHM_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_SUPPORTED_ALGORITHM_INFO {}
@@ -8720,7 +8720,7 @@ impl ::core::default::Default for CERT_SYSTEM_STORE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CERT_SYSTEM_STORE_FLAGS {
+unsafe impl ::windows_core::Abi for CERT_SYSTEM_STORE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CERT_SYSTEM_STORE_FLAGS {
@@ -8744,12 +8744,12 @@ impl ::core::fmt::Debug for CERT_SYSTEM_STORE_INFO {
         f.debug_struct("CERT_SYSTEM_STORE_INFO").field("cbSize", &self.cbSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_SYSTEM_STORE_INFO {
+unsafe impl ::windows_core::Abi for CERT_SYSTEM_STORE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_SYSTEM_STORE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SYSTEM_STORE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SYSTEM_STORE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_SYSTEM_STORE_INFO {}
@@ -8786,13 +8786,13 @@ impl ::core::clone::Clone for CERT_SYSTEM_STORE_RELOCATE_PARA {
     }
 }
 #[cfg(feature = "Win32_System_Registry")]
-unsafe impl ::windows::core::Abi for CERT_SYSTEM_STORE_RELOCATE_PARA {
+unsafe impl ::windows_core::Abi for CERT_SYSTEM_STORE_RELOCATE_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Registry")]
 impl ::core::cmp::PartialEq for CERT_SYSTEM_STORE_RELOCATE_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SYSTEM_STORE_RELOCATE_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SYSTEM_STORE_RELOCATE_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Registry")]
@@ -8819,13 +8819,13 @@ impl ::core::clone::Clone for CERT_SYSTEM_STORE_RELOCATE_PARA_0 {
     }
 }
 #[cfg(feature = "Win32_System_Registry")]
-unsafe impl ::windows::core::Abi for CERT_SYSTEM_STORE_RELOCATE_PARA_0 {
+unsafe impl ::windows_core::Abi for CERT_SYSTEM_STORE_RELOCATE_PARA_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Registry")]
 impl ::core::cmp::PartialEq for CERT_SYSTEM_STORE_RELOCATE_PARA_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SYSTEM_STORE_RELOCATE_PARA_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SYSTEM_STORE_RELOCATE_PARA_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Registry")]
@@ -8841,8 +8841,8 @@ impl ::core::default::Default for CERT_SYSTEM_STORE_RELOCATE_PARA_0 {
 #[cfg(feature = "Win32_System_Registry")]
 pub union CERT_SYSTEM_STORE_RELOCATE_PARA_1 {
     pub pvSystemStore: *mut ::core::ffi::c_void,
-    pub pszSystemStore: ::windows::core::PCSTR,
-    pub pwszSystemStore: ::windows::core::PCWSTR,
+    pub pszSystemStore: ::windows_core::PCSTR,
+    pub pwszSystemStore: ::windows_core::PCWSTR,
 }
 #[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for CERT_SYSTEM_STORE_RELOCATE_PARA_1 {}
@@ -8853,13 +8853,13 @@ impl ::core::clone::Clone for CERT_SYSTEM_STORE_RELOCATE_PARA_1 {
     }
 }
 #[cfg(feature = "Win32_System_Registry")]
-unsafe impl ::windows::core::Abi for CERT_SYSTEM_STORE_RELOCATE_PARA_1 {
+unsafe impl ::windows_core::Abi for CERT_SYSTEM_STORE_RELOCATE_PARA_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Registry")]
 impl ::core::cmp::PartialEq for CERT_SYSTEM_STORE_RELOCATE_PARA_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SYSTEM_STORE_RELOCATE_PARA_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_SYSTEM_STORE_RELOCATE_PARA_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Registry")]
@@ -8880,7 +8880,7 @@ pub const CERT_SYSTEM_STORE_USERS_ID: u32 = 6u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct CERT_TEMPLATE_EXT {
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub dwMajorVersion: u32,
     pub fMinorVersion: super::super::Foundation::BOOL,
     pub dwMinorVersion: u32,
@@ -8900,13 +8900,13 @@ impl ::core::fmt::Debug for CERT_TEMPLATE_EXT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_TEMPLATE_EXT {
+unsafe impl ::windows_core::Abi for CERT_TEMPLATE_EXT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_TEMPLATE_EXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_TEMPLATE_EXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_TEMPLATE_EXT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8922,7 +8922,7 @@ pub const CERT_TIMESTAMP_HASH_USE_TYPE: u32 = 2u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CERT_TPM_SPECIFICATION_INFO {
-    pub pwszFamily: ::windows::core::PWSTR,
+    pub pwszFamily: ::windows_core::PWSTR,
     pub dwLevel: u32,
     pub dwRevision: u32,
 }
@@ -8937,12 +8937,12 @@ impl ::core::fmt::Debug for CERT_TPM_SPECIFICATION_INFO {
         f.debug_struct("CERT_TPM_SPECIFICATION_INFO").field("pwszFamily", &self.pwszFamily).field("dwLevel", &self.dwLevel).field("dwRevision", &self.dwRevision).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_TPM_SPECIFICATION_INFO {
+unsafe impl ::windows_core::Abi for CERT_TPM_SPECIFICATION_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_TPM_SPECIFICATION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_TPM_SPECIFICATION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_TPM_SPECIFICATION_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_TPM_SPECIFICATION_INFO {}
@@ -9056,13 +9056,13 @@ impl ::core::fmt::Debug for CERT_TRUST_LIST_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CERT_TRUST_LIST_INFO {
+unsafe impl ::windows_core::Abi for CERT_TRUST_LIST_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CERT_TRUST_LIST_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_TRUST_LIST_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_TRUST_LIST_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9122,12 +9122,12 @@ impl ::core::fmt::Debug for CERT_TRUST_STATUS {
         f.debug_struct("CERT_TRUST_STATUS").field("dwErrorStatus", &self.dwErrorStatus).field("dwInfoStatus", &self.dwInfoStatus).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_TRUST_STATUS {
+unsafe impl ::windows_core::Abi for CERT_TRUST_STATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_TRUST_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_TRUST_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_TRUST_STATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_TRUST_STATUS {}
@@ -9167,12 +9167,12 @@ impl ::core::fmt::Debug for CERT_USAGE_MATCH {
         f.debug_struct("CERT_USAGE_MATCH").field("dwType", &self.dwType).field("Usage", &self.Usage).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_USAGE_MATCH {
+unsafe impl ::windows_core::Abi for CERT_USAGE_MATCH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_USAGE_MATCH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_USAGE_MATCH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_USAGE_MATCH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_USAGE_MATCH {}
@@ -9229,12 +9229,12 @@ impl ::core::fmt::Debug for CERT_X942_DH_PARAMETERS {
         f.debug_struct("CERT_X942_DH_PARAMETERS").field("p", &self.p).field("g", &self.g).field("q", &self.q).field("j", &self.j).field("pValidationParams", &self.pValidationParams).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_X942_DH_PARAMETERS {
+unsafe impl ::windows_core::Abi for CERT_X942_DH_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_X942_DH_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_X942_DH_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_X942_DH_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_X942_DH_PARAMETERS {}
@@ -9260,12 +9260,12 @@ impl ::core::fmt::Debug for CERT_X942_DH_VALIDATION_PARAMS {
         f.debug_struct("CERT_X942_DH_VALIDATION_PARAMS").field("seed", &self.seed).field("pgenCounter", &self.pgenCounter).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CERT_X942_DH_VALIDATION_PARAMS {
+unsafe impl ::windows_core::Abi for CERT_X942_DH_VALIDATION_PARAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CERT_X942_DH_VALIDATION_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_X942_DH_VALIDATION_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_X942_DH_VALIDATION_PARAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CERT_X942_DH_VALIDATION_PARAMS {}
@@ -9305,7 +9305,7 @@ impl ::core::default::Default for CESSetupProperty {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CESSetupProperty {
+unsafe impl ::windows_core::Abi for CESSetupProperty {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CESSetupProperty {
@@ -9317,7 +9317,7 @@ impl ::core::fmt::Debug for CESSetupProperty {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CLAIMLIST {
     pub count: u32,
-    pub claims: *mut ::windows::core::PWSTR,
+    pub claims: *mut ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CLAIMLIST {}
 impl ::core::clone::Clone for CLAIMLIST {
@@ -9330,12 +9330,12 @@ impl ::core::fmt::Debug for CLAIMLIST {
         f.debug_struct("CLAIMLIST").field("count", &self.count).field("claims", &self.claims).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CLAIMLIST {
+unsafe impl ::windows_core::Abi for CLAIMLIST {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CLAIMLIST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CLAIMLIST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CLAIMLIST>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CLAIMLIST {}
@@ -9345,7 +9345,7 @@ impl ::core::default::Default for CLAIMLIST {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CMC_ADD_ATTRIBUTES: ::windows::core::PCSTR = ::windows::core::PCSTR(63i32 as _);
+pub const CMC_ADD_ATTRIBUTES: ::windows_core::PCSTR = ::windows_core::PCSTR(63i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CMC_ADD_ATTRIBUTES_INFO {
@@ -9366,12 +9366,12 @@ impl ::core::fmt::Debug for CMC_ADD_ATTRIBUTES_INFO {
         f.debug_struct("CMC_ADD_ATTRIBUTES_INFO").field("dwCmcDataReference", &self.dwCmcDataReference).field("cCertReference", &self.cCertReference).field("rgdwCertReference", &self.rgdwCertReference).field("cAttribute", &self.cAttribute).field("rgAttribute", &self.rgAttribute).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMC_ADD_ATTRIBUTES_INFO {
+unsafe impl ::windows_core::Abi for CMC_ADD_ATTRIBUTES_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMC_ADD_ATTRIBUTES_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_ADD_ATTRIBUTES_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_ADD_ATTRIBUTES_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMC_ADD_ATTRIBUTES_INFO {}
@@ -9381,7 +9381,7 @@ impl ::core::default::Default for CMC_ADD_ATTRIBUTES_INFO {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CMC_ADD_EXTENSIONS: ::windows::core::PCSTR = ::windows::core::PCSTR(62i32 as _);
+pub const CMC_ADD_EXTENSIONS: ::windows_core::PCSTR = ::windows_core::PCSTR(62i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -9407,13 +9407,13 @@ impl ::core::fmt::Debug for CMC_ADD_EXTENSIONS_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMC_ADD_EXTENSIONS_INFO {
+unsafe impl ::windows_core::Abi for CMC_ADD_EXTENSIONS_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMC_ADD_EXTENSIONS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_ADD_EXTENSIONS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_ADD_EXTENSIONS_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9425,7 +9425,7 @@ impl ::core::default::Default for CMC_ADD_EXTENSIONS_INFO {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CMC_DATA: ::windows::core::PCSTR = ::windows::core::PCSTR(59i32 as _);
+pub const CMC_DATA: ::windows_core::PCSTR = ::windows_core::PCSTR(59i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CMC_DATA_INFO {
@@ -9449,12 +9449,12 @@ impl ::core::fmt::Debug for CMC_DATA_INFO {
         f.debug_struct("CMC_DATA_INFO").field("cTaggedAttribute", &self.cTaggedAttribute).field("rgTaggedAttribute", &self.rgTaggedAttribute).field("cTaggedRequest", &self.cTaggedRequest).field("rgTaggedRequest", &self.rgTaggedRequest).field("cTaggedContentInfo", &self.cTaggedContentInfo).field("rgTaggedContentInfo", &self.rgTaggedContentInfo).field("cTaggedOtherMsg", &self.cTaggedOtherMsg).field("rgTaggedOtherMsg", &self.rgTaggedOtherMsg).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMC_DATA_INFO {
+unsafe impl ::windows_core::Abi for CMC_DATA_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMC_DATA_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_DATA_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_DATA_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMC_DATA_INFO {}
@@ -9517,13 +9517,13 @@ impl ::core::fmt::Debug for CMC_PEND_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMC_PEND_INFO {
+unsafe impl ::windows_core::Abi for CMC_PEND_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMC_PEND_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_PEND_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_PEND_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9535,7 +9535,7 @@ impl ::core::default::Default for CMC_PEND_INFO {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CMC_RESPONSE: ::windows::core::PCSTR = ::windows::core::PCSTR(60i32 as _);
+pub const CMC_RESPONSE: ::windows_core::PCSTR = ::windows_core::PCSTR(60i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CMC_RESPONSE_INFO {
@@ -9557,12 +9557,12 @@ impl ::core::fmt::Debug for CMC_RESPONSE_INFO {
         f.debug_struct("CMC_RESPONSE_INFO").field("cTaggedAttribute", &self.cTaggedAttribute).field("rgTaggedAttribute", &self.rgTaggedAttribute).field("cTaggedContentInfo", &self.cTaggedContentInfo).field("rgTaggedContentInfo", &self.rgTaggedContentInfo).field("cTaggedOtherMsg", &self.cTaggedOtherMsg).field("rgTaggedOtherMsg", &self.rgTaggedOtherMsg).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMC_RESPONSE_INFO {
+unsafe impl ::windows_core::Abi for CMC_RESPONSE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMC_RESPONSE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_RESPONSE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_RESPONSE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMC_RESPONSE_INFO {}
@@ -9572,7 +9572,7 @@ impl ::core::default::Default for CMC_RESPONSE_INFO {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CMC_STATUS: ::windows::core::PCSTR = ::windows::core::PCSTR(61i32 as _);
+pub const CMC_STATUS: ::windows_core::PCSTR = ::windows_core::PCSTR(61i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CMC_STATUS_CONFIRM_REQUIRED: u32 = 5u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -9584,7 +9584,7 @@ pub struct CMC_STATUS_INFO {
     pub dwStatus: u32,
     pub cBodyList: u32,
     pub rgdwBodyList: *mut u32,
-    pub pwszStatusString: ::windows::core::PWSTR,
+    pub pwszStatusString: ::windows_core::PWSTR,
     pub dwOtherInfoChoice: u32,
     pub Anonymous: CMC_STATUS_INFO_0,
 }
@@ -9597,13 +9597,13 @@ impl ::core::clone::Clone for CMC_STATUS_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMC_STATUS_INFO {
+unsafe impl ::windows_core::Abi for CMC_STATUS_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMC_STATUS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_STATUS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_STATUS_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9630,13 +9630,13 @@ impl ::core::clone::Clone for CMC_STATUS_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMC_STATUS_INFO_0 {
+unsafe impl ::windows_core::Abi for CMC_STATUS_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMC_STATUS_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_STATUS_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_STATUS_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9670,12 +9670,12 @@ impl ::core::fmt::Debug for CMC_TAGGED_ATTRIBUTE {
         f.debug_struct("CMC_TAGGED_ATTRIBUTE").field("dwBodyPartID", &self.dwBodyPartID).field("Attribute", &self.Attribute).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMC_TAGGED_ATTRIBUTE {
+unsafe impl ::windows_core::Abi for CMC_TAGGED_ATTRIBUTE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMC_TAGGED_ATTRIBUTE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_TAGGED_ATTRIBUTE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_TAGGED_ATTRIBUTE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMC_TAGGED_ATTRIBUTE {}
@@ -9701,12 +9701,12 @@ impl ::core::fmt::Debug for CMC_TAGGED_CERT_REQUEST {
         f.debug_struct("CMC_TAGGED_CERT_REQUEST").field("dwBodyPartID", &self.dwBodyPartID).field("SignedCertRequest", &self.SignedCertRequest).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMC_TAGGED_CERT_REQUEST {
+unsafe impl ::windows_core::Abi for CMC_TAGGED_CERT_REQUEST {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMC_TAGGED_CERT_REQUEST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_TAGGED_CERT_REQUEST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_TAGGED_CERT_REQUEST>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMC_TAGGED_CERT_REQUEST {}
@@ -9734,12 +9734,12 @@ impl ::core::fmt::Debug for CMC_TAGGED_CONTENT_INFO {
         f.debug_struct("CMC_TAGGED_CONTENT_INFO").field("dwBodyPartID", &self.dwBodyPartID).field("EncodedContentInfo", &self.EncodedContentInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMC_TAGGED_CONTENT_INFO {
+unsafe impl ::windows_core::Abi for CMC_TAGGED_CONTENT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMC_TAGGED_CONTENT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_TAGGED_CONTENT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_TAGGED_CONTENT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMC_TAGGED_CONTENT_INFO {}
@@ -9752,7 +9752,7 @@ impl ::core::default::Default for CMC_TAGGED_CONTENT_INFO {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CMC_TAGGED_OTHER_MSG {
     pub dwBodyPartID: u32,
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub Value: CRYPTOAPI_BLOB,
 }
 impl ::core::marker::Copy for CMC_TAGGED_OTHER_MSG {}
@@ -9766,12 +9766,12 @@ impl ::core::fmt::Debug for CMC_TAGGED_OTHER_MSG {
         f.debug_struct("CMC_TAGGED_OTHER_MSG").field("dwBodyPartID", &self.dwBodyPartID).field("pszObjId", &self.pszObjId).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMC_TAGGED_OTHER_MSG {
+unsafe impl ::windows_core::Abi for CMC_TAGGED_OTHER_MSG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMC_TAGGED_OTHER_MSG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_TAGGED_OTHER_MSG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_TAGGED_OTHER_MSG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMC_TAGGED_OTHER_MSG {}
@@ -9792,12 +9792,12 @@ impl ::core::clone::Clone for CMC_TAGGED_REQUEST {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CMC_TAGGED_REQUEST {
+unsafe impl ::windows_core::Abi for CMC_TAGGED_REQUEST {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMC_TAGGED_REQUEST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_TAGGED_REQUEST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_TAGGED_REQUEST>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMC_TAGGED_REQUEST {}
@@ -9817,12 +9817,12 @@ impl ::core::clone::Clone for CMC_TAGGED_REQUEST_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CMC_TAGGED_REQUEST_0 {
+unsafe impl ::windows_core::Abi for CMC_TAGGED_REQUEST_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMC_TAGGED_REQUEST_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_TAGGED_REQUEST_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMC_TAGGED_REQUEST_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMC_TAGGED_REQUEST_0 {}
@@ -9831,7 +9831,7 @@ impl ::core::default::Default for CMC_TAGGED_REQUEST_0 {
         unsafe { ::core::mem::zeroed() }
     }
 }
-pub const CMSCEPSetup: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xaa4f5c02_8e7c_49c4_94fa_67a5cc5eadb4);
+pub const CMSCEPSetup: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xaa4f5c02_8e7c_49c4_94fa_67a5cc5eadb4);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CMSG_ATTR_CERT_COUNT_PARAM: u32 = 31u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -9872,13 +9872,13 @@ impl ::core::clone::Clone for CMSG_CMS_RECIPIENT_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_CMS_RECIPIENT_INFO {
+unsafe impl ::windows_core::Abi for CMSG_CMS_RECIPIENT_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_CMS_RECIPIENT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CMS_RECIPIENT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CMS_RECIPIENT_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9906,13 +9906,13 @@ impl ::core::clone::Clone for CMSG_CMS_RECIPIENT_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_CMS_RECIPIENT_INFO_0 {
+unsafe impl ::windows_core::Abi for CMSG_CMS_RECIPIENT_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_CMS_RECIPIENT_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CMS_RECIPIENT_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CMS_RECIPIENT_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9942,12 +9942,12 @@ impl ::core::clone::Clone for CMSG_CMS_SIGNER_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_CMS_SIGNER_INFO {
+unsafe impl ::windows_core::Abi for CMSG_CMS_SIGNER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_CMS_SIGNER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CMS_SIGNER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CMS_SIGNER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_CMS_SIGNER_INFO {}
@@ -9992,12 +9992,12 @@ impl ::core::fmt::Debug for CMSG_CNG_CONTENT_DECRYPT_INFO {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_CNG_CONTENT_DECRYPT_INFO {
+unsafe impl ::windows_core::Abi for CMSG_CNG_CONTENT_DECRYPT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_CNG_CONTENT_DECRYPT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CNG_CONTENT_DECRYPT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CNG_CONTENT_DECRYPT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_CNG_CONTENT_DECRYPT_INFO {}
@@ -10043,13 +10043,13 @@ impl ::core::clone::Clone for CMSG_CONTENT_ENCRYPT_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_CONTENT_ENCRYPT_INFO {
+unsafe impl ::windows_core::Abi for CMSG_CONTENT_ENCRYPT_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_CONTENT_ENCRYPT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CONTENT_ENCRYPT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CONTENT_ENCRYPT_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10076,13 +10076,13 @@ impl ::core::clone::Clone for CMSG_CONTENT_ENCRYPT_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_CONTENT_ENCRYPT_INFO_0 {
+unsafe impl ::windows_core::Abi for CMSG_CONTENT_ENCRYPT_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_CONTENT_ENCRYPT_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CONTENT_ENCRYPT_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CONTENT_ENCRYPT_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10135,12 +10135,12 @@ impl ::core::fmt::Debug for CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA {
         f.debug_struct("CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA").field("cbSize", &self.cbSize).field("dwSignerIndex", &self.dwSignerIndex).field("blob", &self.blob).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA {
+unsafe impl ::windows_core::Abi for CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA {}
@@ -10165,12 +10165,12 @@ impl ::core::clone::Clone for CMSG_CTRL_DECRYPT_PARA {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_CTRL_DECRYPT_PARA {
+unsafe impl ::windows_core::Abi for CMSG_CTRL_DECRYPT_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_CTRL_DECRYPT_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_DECRYPT_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_DECRYPT_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_CTRL_DECRYPT_PARA {}
@@ -10191,12 +10191,12 @@ impl ::core::clone::Clone for CMSG_CTRL_DECRYPT_PARA_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_CTRL_DECRYPT_PARA_0 {
+unsafe impl ::windows_core::Abi for CMSG_CTRL_DECRYPT_PARA_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_CTRL_DECRYPT_PARA_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_DECRYPT_PARA_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_DECRYPT_PARA_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_CTRL_DECRYPT_PARA_0 {}
@@ -10233,12 +10233,12 @@ impl ::core::fmt::Debug for CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA {
         f.debug_struct("CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA").field("cbSize", &self.cbSize).field("dwSignerIndex", &self.dwSignerIndex).field("dwUnauthAttrIndex", &self.dwUnauthAttrIndex).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA {
+unsafe impl ::windows_core::Abi for CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA {}
@@ -10272,13 +10272,13 @@ impl ::core::clone::Clone for CMSG_CTRL_KEY_AGREE_DECRYPT_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_CTRL_KEY_AGREE_DECRYPT_PARA {
+unsafe impl ::windows_core::Abi for CMSG_CTRL_KEY_AGREE_DECRYPT_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_CTRL_KEY_AGREE_DECRYPT_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_KEY_AGREE_DECRYPT_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_KEY_AGREE_DECRYPT_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10305,13 +10305,13 @@ impl ::core::clone::Clone for CMSG_CTRL_KEY_AGREE_DECRYPT_PARA_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_CTRL_KEY_AGREE_DECRYPT_PARA_0 {
+unsafe impl ::windows_core::Abi for CMSG_CTRL_KEY_AGREE_DECRYPT_PARA_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_CTRL_KEY_AGREE_DECRYPT_PARA_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_KEY_AGREE_DECRYPT_PARA_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_KEY_AGREE_DECRYPT_PARA_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10339,12 +10339,12 @@ impl ::core::clone::Clone for CMSG_CTRL_KEY_TRANS_DECRYPT_PARA {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_CTRL_KEY_TRANS_DECRYPT_PARA {
+unsafe impl ::windows_core::Abi for CMSG_CTRL_KEY_TRANS_DECRYPT_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_CTRL_KEY_TRANS_DECRYPT_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_KEY_TRANS_DECRYPT_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_KEY_TRANS_DECRYPT_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_CTRL_KEY_TRANS_DECRYPT_PARA {}
@@ -10365,12 +10365,12 @@ impl ::core::clone::Clone for CMSG_CTRL_KEY_TRANS_DECRYPT_PARA_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_CTRL_KEY_TRANS_DECRYPT_PARA_0 {
+unsafe impl ::windows_core::Abi for CMSG_CTRL_KEY_TRANS_DECRYPT_PARA_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_CTRL_KEY_TRANS_DECRYPT_PARA_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_KEY_TRANS_DECRYPT_PARA_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_KEY_TRANS_DECRYPT_PARA_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_CTRL_KEY_TRANS_DECRYPT_PARA_0 {}
@@ -10401,13 +10401,13 @@ impl ::core::clone::Clone for CMSG_CTRL_MAIL_LIST_DECRYPT_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_CTRL_MAIL_LIST_DECRYPT_PARA {
+unsafe impl ::windows_core::Abi for CMSG_CTRL_MAIL_LIST_DECRYPT_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_CTRL_MAIL_LIST_DECRYPT_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_MAIL_LIST_DECRYPT_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_MAIL_LIST_DECRYPT_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10434,13 +10434,13 @@ impl ::core::clone::Clone for CMSG_CTRL_MAIL_LIST_DECRYPT_PARA_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_CTRL_MAIL_LIST_DECRYPT_PARA_0 {
+unsafe impl ::windows_core::Abi for CMSG_CTRL_MAIL_LIST_DECRYPT_PARA_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_CTRL_MAIL_LIST_DECRYPT_PARA_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_MAIL_LIST_DECRYPT_PARA_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_MAIL_LIST_DECRYPT_PARA_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10477,12 +10477,12 @@ impl ::core::fmt::Debug for CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA {
         f.debug_struct("CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA").field("cbSize", &self.cbSize).field("hCryptProv", &self.hCryptProv).field("dwSignerIndex", &self.dwSignerIndex).field("dwSignerType", &self.dwSignerType).field("pvSigner", &self.pvSigner).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA {
+unsafe impl ::windows_core::Abi for CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA {}
@@ -10492,7 +10492,7 @@ impl ::core::default::Default for CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CMSG_DEFAULT_INSTALLABLE_FUNC_OID: ::windows::core::PCSTR = ::windows::core::PCSTR(1i32 as _);
+pub const CMSG_DEFAULT_INSTALLABLE_FUNC_OID: ::windows_core::PCSTR = ::windows_core::PCSTR(1i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CMSG_DETACHED_FLAG: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -10527,12 +10527,12 @@ impl ::core::fmt::Debug for CMSG_ENCRYPTED_ENCODE_INFO {
         f.debug_struct("CMSG_ENCRYPTED_ENCODE_INFO").field("cbSize", &self.cbSize).field("ContentEncryptionAlgorithm", &self.ContentEncryptionAlgorithm).field("pvEncryptionAuxInfo", &self.pvEncryptionAuxInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_ENCRYPTED_ENCODE_INFO {
+unsafe impl ::windows_core::Abi for CMSG_ENCRYPTED_ENCODE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_ENCRYPTED_ENCODE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_ENCRYPTED_ENCODE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_ENCRYPTED_ENCODE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_ENCRYPTED_ENCODE_INFO {}
@@ -10577,13 +10577,13 @@ impl ::core::fmt::Debug for CMSG_ENVELOPED_ENCODE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_ENVELOPED_ENCODE_INFO {
+unsafe impl ::windows_core::Abi for CMSG_ENVELOPED_ENCODE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_ENVELOPED_ENCODE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_ENVELOPED_ENCODE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_ENVELOPED_ENCODE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10631,12 +10631,12 @@ impl ::core::fmt::Debug for CMSG_HASHED_ENCODE_INFO {
         f.debug_struct("CMSG_HASHED_ENCODE_INFO").field("cbSize", &self.cbSize).field("hCryptProv", &self.hCryptProv).field("HashAlgorithm", &self.HashAlgorithm).field("pvHashAuxInfo", &self.pvHashAuxInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_HASHED_ENCODE_INFO {
+unsafe impl ::windows_core::Abi for CMSG_HASHED_ENCODE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_HASHED_ENCODE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_HASHED_ENCODE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_HASHED_ENCODE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_HASHED_ENCODE_INFO {}
@@ -10684,12 +10684,12 @@ impl ::core::clone::Clone for CMSG_KEY_AGREE_ENCRYPT_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_KEY_AGREE_ENCRYPT_INFO {
+unsafe impl ::windows_core::Abi for CMSG_KEY_AGREE_ENCRYPT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_KEY_AGREE_ENCRYPT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_ENCRYPT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_ENCRYPT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_KEY_AGREE_ENCRYPT_INFO {}
@@ -10710,12 +10710,12 @@ impl ::core::clone::Clone for CMSG_KEY_AGREE_ENCRYPT_INFO_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_KEY_AGREE_ENCRYPT_INFO_0 {
+unsafe impl ::windows_core::Abi for CMSG_KEY_AGREE_ENCRYPT_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_KEY_AGREE_ENCRYPT_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_ENCRYPT_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_ENCRYPT_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_KEY_AGREE_ENCRYPT_INFO_0 {}
@@ -10741,12 +10741,12 @@ impl ::core::fmt::Debug for CMSG_KEY_AGREE_KEY_ENCRYPT_INFO {
         f.debug_struct("CMSG_KEY_AGREE_KEY_ENCRYPT_INFO").field("cbSize", &self.cbSize).field("EncryptedKey", &self.EncryptedKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_KEY_AGREE_KEY_ENCRYPT_INFO {
+unsafe impl ::windows_core::Abi for CMSG_KEY_AGREE_KEY_ENCRYPT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_KEY_AGREE_KEY_ENCRYPT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_KEY_ENCRYPT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_KEY_ENCRYPT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_KEY_AGREE_KEY_ENCRYPT_INFO {}
@@ -10774,7 +10774,7 @@ impl ::core::default::Default for CMSG_KEY_AGREE_OPTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_KEY_AGREE_OPTION {
+unsafe impl ::windows_core::Abi for CMSG_KEY_AGREE_OPTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CMSG_KEY_AGREE_OPTION {
@@ -10801,7 +10801,7 @@ impl ::core::default::Default for CMSG_KEY_AGREE_ORIGINATOR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_KEY_AGREE_ORIGINATOR {
+unsafe impl ::windows_core::Abi for CMSG_KEY_AGREE_ORIGINATOR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CMSG_KEY_AGREE_ORIGINATOR {
@@ -10837,13 +10837,13 @@ impl ::core::clone::Clone for CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO {
+unsafe impl ::windows_core::Abi for CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10870,13 +10870,13 @@ impl ::core::clone::Clone for CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO_0 {
+unsafe impl ::windows_core::Abi for CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10908,13 +10908,13 @@ impl ::core::clone::Clone for CMSG_KEY_AGREE_RECIPIENT_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_KEY_AGREE_RECIPIENT_INFO {
+unsafe impl ::windows_core::Abi for CMSG_KEY_AGREE_RECIPIENT_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_KEY_AGREE_RECIPIENT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_RECIPIENT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_RECIPIENT_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10941,13 +10941,13 @@ impl ::core::clone::Clone for CMSG_KEY_AGREE_RECIPIENT_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_KEY_AGREE_RECIPIENT_INFO_0 {
+unsafe impl ::windows_core::Abi for CMSG_KEY_AGREE_RECIPIENT_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_KEY_AGREE_RECIPIENT_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_RECIPIENT_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_AGREE_RECIPIENT_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10986,12 +10986,12 @@ impl ::core::fmt::Debug for CMSG_KEY_TRANS_ENCRYPT_INFO {
         f.debug_struct("CMSG_KEY_TRANS_ENCRYPT_INFO").field("cbSize", &self.cbSize).field("dwRecipientIndex", &self.dwRecipientIndex).field("KeyEncryptionAlgorithm", &self.KeyEncryptionAlgorithm).field("EncryptedKey", &self.EncryptedKey).field("dwFlags", &self.dwFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_KEY_TRANS_ENCRYPT_INFO {
+unsafe impl ::windows_core::Abi for CMSG_KEY_TRANS_ENCRYPT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_KEY_TRANS_ENCRYPT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_TRANS_ENCRYPT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_TRANS_ENCRYPT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_KEY_TRANS_ENCRYPT_INFO {}
@@ -11020,12 +11020,12 @@ impl ::core::clone::Clone for CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO {
+unsafe impl ::windows_core::Abi for CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO {}
@@ -11048,12 +11048,12 @@ impl ::core::clone::Clone for CMSG_KEY_TRANS_RECIPIENT_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_KEY_TRANS_RECIPIENT_INFO {
+unsafe impl ::windows_core::Abi for CMSG_KEY_TRANS_RECIPIENT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_KEY_TRANS_RECIPIENT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_TRANS_RECIPIENT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_KEY_TRANS_RECIPIENT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_KEY_TRANS_RECIPIENT_INFO {}
@@ -11088,12 +11088,12 @@ impl ::core::fmt::Debug for CMSG_MAIL_LIST_ENCRYPT_INFO {
         f.debug_struct("CMSG_MAIL_LIST_ENCRYPT_INFO").field("cbSize", &self.cbSize).field("dwRecipientIndex", &self.dwRecipientIndex).field("KeyEncryptionAlgorithm", &self.KeyEncryptionAlgorithm).field("EncryptedKey", &self.EncryptedKey).field("dwFlags", &self.dwFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_MAIL_LIST_ENCRYPT_INFO {
+unsafe impl ::windows_core::Abi for CMSG_MAIL_LIST_ENCRYPT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_MAIL_LIST_ENCRYPT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_MAIL_LIST_ENCRYPT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_MAIL_LIST_ENCRYPT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_MAIL_LIST_ENCRYPT_INFO {}
@@ -11129,13 +11129,13 @@ impl ::core::clone::Clone for CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO {
+unsafe impl ::windows_core::Abi for CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11162,13 +11162,13 @@ impl ::core::clone::Clone for CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO_0 {
+unsafe impl ::windows_core::Abi for CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11205,13 +11205,13 @@ impl ::core::fmt::Debug for CMSG_MAIL_LIST_RECIPIENT_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_MAIL_LIST_RECIPIENT_INFO {
+unsafe impl ::windows_core::Abi for CMSG_MAIL_LIST_RECIPIENT_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_MAIL_LIST_RECIPIENT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_MAIL_LIST_RECIPIENT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_MAIL_LIST_RECIPIENT_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11289,12 +11289,12 @@ impl ::core::fmt::Debug for CMSG_RC2_AUX_INFO {
         f.debug_struct("CMSG_RC2_AUX_INFO").field("cbSize", &self.cbSize).field("dwBitLen", &self.dwBitLen).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_RC2_AUX_INFO {
+unsafe impl ::windows_core::Abi for CMSG_RC2_AUX_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_RC2_AUX_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_RC2_AUX_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_RC2_AUX_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_RC2_AUX_INFO {}
@@ -11320,12 +11320,12 @@ impl ::core::fmt::Debug for CMSG_RC4_AUX_INFO {
         f.debug_struct("CMSG_RC4_AUX_INFO").field("cbSize", &self.cbSize).field("dwBitLen", &self.dwBitLen).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_RC4_AUX_INFO {
+unsafe impl ::windows_core::Abi for CMSG_RC4_AUX_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_RC4_AUX_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_RC4_AUX_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_RC4_AUX_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_RC4_AUX_INFO {}
@@ -11354,13 +11354,13 @@ impl ::core::clone::Clone for CMSG_RECIPIENT_ENCODE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_RECIPIENT_ENCODE_INFO {
+unsafe impl ::windows_core::Abi for CMSG_RECIPIENT_ENCODE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_RECIPIENT_ENCODE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_RECIPIENT_ENCODE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_RECIPIENT_ENCODE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11388,13 +11388,13 @@ impl ::core::clone::Clone for CMSG_RECIPIENT_ENCODE_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_RECIPIENT_ENCODE_INFO_0 {
+unsafe impl ::windows_core::Abi for CMSG_RECIPIENT_ENCODE_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_RECIPIENT_ENCODE_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_RECIPIENT_ENCODE_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_RECIPIENT_ENCODE_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11424,13 +11424,13 @@ impl ::core::clone::Clone for CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO {
+unsafe impl ::windows_core::Abi for CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11459,13 +11459,13 @@ impl ::core::clone::Clone for CMSG_RECIPIENT_ENCRYPTED_KEY_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_RECIPIENT_ENCRYPTED_KEY_INFO {
+unsafe impl ::windows_core::Abi for CMSG_RECIPIENT_ENCRYPTED_KEY_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_RECIPIENT_ENCRYPTED_KEY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_RECIPIENT_ENCRYPTED_KEY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_RECIPIENT_ENCRYPTED_KEY_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11503,13 +11503,13 @@ impl ::core::fmt::Debug for CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO {
+unsafe impl ::windows_core::Abi for CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11557,13 +11557,13 @@ impl ::core::fmt::Debug for CMSG_SIGNED_ENCODE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_SIGNED_ENCODE_INFO {
+unsafe impl ::windows_core::Abi for CMSG_SIGNED_ENCODE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_SIGNED_ENCODE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_SIGNED_ENCODE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_SIGNED_ENCODE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11606,13 +11606,13 @@ impl ::core::clone::Clone for CMSG_SIGNER_ENCODE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_SIGNER_ENCODE_INFO {
+unsafe impl ::windows_core::Abi for CMSG_SIGNER_ENCODE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_SIGNER_ENCODE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_SIGNER_ENCODE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_SIGNER_ENCODE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11639,13 +11639,13 @@ impl ::core::clone::Clone for CMSG_SIGNER_ENCODE_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_SIGNER_ENCODE_INFO_0 {
+unsafe impl ::windows_core::Abi for CMSG_SIGNER_ENCODE_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_SIGNER_ENCODE_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_SIGNER_ENCODE_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_SIGNER_ENCODE_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11681,12 +11681,12 @@ impl ::core::fmt::Debug for CMSG_SIGNER_INFO {
         f.debug_struct("CMSG_SIGNER_INFO").field("dwVersion", &self.dwVersion).field("Issuer", &self.Issuer).field("SerialNumber", &self.SerialNumber).field("HashAlgorithm", &self.HashAlgorithm).field("HashEncryptionAlgorithm", &self.HashEncryptionAlgorithm).field("EncryptedHash", &self.EncryptedHash).field("AuthAttrs", &self.AuthAttrs).field("UnauthAttrs", &self.UnauthAttrs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_SIGNER_INFO {
+unsafe impl ::windows_core::Abi for CMSG_SIGNER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_SIGNER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_SIGNER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_SIGNER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_SIGNER_INFO {}
@@ -11726,12 +11726,12 @@ impl ::core::fmt::Debug for CMSG_SP3_COMPATIBLE_AUX_INFO {
         f.debug_struct("CMSG_SP3_COMPATIBLE_AUX_INFO").field("cbSize", &self.cbSize).field("dwFlags", &self.dwFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMSG_SP3_COMPATIBLE_AUX_INFO {
+unsafe impl ::windows_core::Abi for CMSG_SP3_COMPATIBLE_AUX_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMSG_SP3_COMPATIBLE_AUX_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_SP3_COMPATIBLE_AUX_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_SP3_COMPATIBLE_AUX_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMSG_SP3_COMPATIBLE_AUX_INFO {}
@@ -11765,13 +11765,13 @@ impl ::core::fmt::Debug for CMSG_STREAM_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CMSG_STREAM_INFO {
+unsafe impl ::windows_core::Abi for CMSG_STREAM_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CMSG_STREAM_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_STREAM_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMSG_STREAM_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11807,7 +11807,7 @@ pub const CMSG_VERSION_PARAM: u32 = 30u32;
 pub struct CMS_DH_KEY_INFO {
     pub dwVersion: u32,
     pub Algid: u32,
-    pub pszContentEncObjId: ::windows::core::PSTR,
+    pub pszContentEncObjId: ::windows_core::PSTR,
     pub PubInfo: CRYPTOAPI_BLOB,
     pub pReserved: *mut ::core::ffi::c_void,
 }
@@ -11822,12 +11822,12 @@ impl ::core::fmt::Debug for CMS_DH_KEY_INFO {
         f.debug_struct("CMS_DH_KEY_INFO").field("dwVersion", &self.dwVersion).field("Algid", &self.Algid).field("pszContentEncObjId", &self.pszContentEncObjId).field("PubInfo", &self.PubInfo).field("pReserved", &self.pReserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMS_DH_KEY_INFO {
+unsafe impl ::windows_core::Abi for CMS_DH_KEY_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMS_DH_KEY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMS_DH_KEY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMS_DH_KEY_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMS_DH_KEY_INFO {}
@@ -11855,12 +11855,12 @@ impl ::core::fmt::Debug for CMS_KEY_INFO {
         f.debug_struct("CMS_KEY_INFO").field("dwVersion", &self.dwVersion).field("Algid", &self.Algid).field("pbOID", &self.pbOID).field("cbOID", &self.cbOID).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CMS_KEY_INFO {
+unsafe impl ::windows_core::Abi for CMS_KEY_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CMS_KEY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMS_KEY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CMS_KEY_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CMS_KEY_INFO {}
@@ -11870,29 +11870,29 @@ impl ::core::default::Default for CMS_KEY_INFO {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CMS_SIGNER_INFO: ::windows::core::PCSTR = ::windows::core::PCSTR(501i32 as _);
+pub const CMS_SIGNER_INFO: ::windows_core::PCSTR = ::windows_core::PCSTR(501i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CNG_RSA_PRIVATE_KEY_BLOB: ::windows::core::PCSTR = ::windows::core::PCSTR(83i32 as _);
+pub const CNG_RSA_PRIVATE_KEY_BLOB: ::windows_core::PCSTR = ::windows_core::PCSTR(83i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CNG_RSA_PUBLIC_KEY_BLOB: ::windows::core::PCSTR = ::windows::core::PCSTR(72i32 as _);
+pub const CNG_RSA_PUBLIC_KEY_BLOB: ::windows_core::PCSTR = ::windows_core::PCSTR(72i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CONTEXT_OID_CAPI2_ANY: ::windows::core::PCSTR = ::windows::core::PCSTR(5i32 as _);
+pub const CONTEXT_OID_CAPI2_ANY: ::windows_core::PCSTR = ::windows_core::PCSTR(5i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CONTEXT_OID_CERTIFICATE: ::windows::core::PCSTR = ::windows::core::PCSTR(1i32 as _);
+pub const CONTEXT_OID_CERTIFICATE: ::windows_core::PCSTR = ::windows_core::PCSTR(1i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CONTEXT_OID_CREATE_OBJECT_CONTEXT_FUNC: &str = "ContextDllCreateObjectContext";
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CONTEXT_OID_CRL: ::windows::core::PCSTR = ::windows::core::PCSTR(2i32 as _);
+pub const CONTEXT_OID_CRL: ::windows_core::PCSTR = ::windows_core::PCSTR(2i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CONTEXT_OID_CTL: ::windows::core::PCSTR = ::windows::core::PCSTR(3i32 as _);
+pub const CONTEXT_OID_CTL: ::windows_core::PCSTR = ::windows_core::PCSTR(3i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CONTEXT_OID_OCSP_RESP: ::windows::core::PCSTR = ::windows::core::PCSTR(6i32 as _);
+pub const CONTEXT_OID_OCSP_RESP: ::windows_core::PCSTR = ::windows_core::PCSTR(6i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CONTEXT_OID_PKCS7: ::windows::core::PCSTR = ::windows::core::PCSTR(4i32 as _);
+pub const CONTEXT_OID_PKCS7: ::windows_core::PCSTR = ::windows_core::PCSTR(4i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CPS_URLS {
-    pub pszURL: ::windows::core::PWSTR,
+    pub pszURL: ::windows_core::PWSTR,
     pub pAlgorithm: *mut CRYPT_ALGORITHM_IDENTIFIER,
     pub pDigest: *mut CRYPTOAPI_BLOB,
 }
@@ -11907,12 +11907,12 @@ impl ::core::fmt::Debug for CPS_URLS {
         f.debug_struct("CPS_URLS").field("pszURL", &self.pszURL).field("pAlgorithm", &self.pAlgorithm).field("pDigest", &self.pDigest).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CPS_URLS {
+unsafe impl ::windows_core::Abi for CPS_URLS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CPS_URLS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CPS_URLS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CPS_URLS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CPS_URLS {}
@@ -11924,9 +11924,9 @@ impl ::core::default::Default for CPS_URLS {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CREDENTIAL_OID_PASSWORD_CREDENTIALS: i32 = 2i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CREDENTIAL_OID_PASSWORD_CREDENTIALS_A: ::windows::core::PCSTR = ::windows::core::PCSTR(1i32 as _);
+pub const CREDENTIAL_OID_PASSWORD_CREDENTIALS_A: ::windows_core::PCSTR = ::windows_core::PCSTR(1i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CREDENTIAL_OID_PASSWORD_CREDENTIALS_W: ::windows::core::PCSTR = ::windows::core::PCSTR(2i32 as _);
+pub const CREDENTIAL_OID_PASSWORD_CREDENTIALS_W: ::windows_core::PCSTR = ::windows_core::PCSTR(2i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -11952,13 +11952,13 @@ impl ::core::fmt::Debug for CRL_CONTEXT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRL_CONTEXT {
+unsafe impl ::windows_core::Abi for CRL_CONTEXT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRL_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_CONTEXT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11982,12 +11982,12 @@ impl ::core::clone::Clone for CRL_DIST_POINT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CRL_DIST_POINT {
+unsafe impl ::windows_core::Abi for CRL_DIST_POINT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRL_DIST_POINT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_DIST_POINT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_DIST_POINT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRL_DIST_POINT {}
@@ -12013,12 +12013,12 @@ impl ::core::fmt::Debug for CRL_DIST_POINTS_INFO {
         f.debug_struct("CRL_DIST_POINTS_INFO").field("cDistPoint", &self.cDistPoint).field("rgDistPoint", &self.rgDistPoint).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRL_DIST_POINTS_INFO {
+unsafe impl ::windows_core::Abi for CRL_DIST_POINTS_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRL_DIST_POINTS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_DIST_POINTS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_DIST_POINTS_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRL_DIST_POINTS_INFO {}
@@ -12049,12 +12049,12 @@ impl ::core::clone::Clone for CRL_DIST_POINT_NAME {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CRL_DIST_POINT_NAME {
+unsafe impl ::windows_core::Abi for CRL_DIST_POINT_NAME {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRL_DIST_POINT_NAME {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_DIST_POINT_NAME>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_DIST_POINT_NAME>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRL_DIST_POINT_NAME {}
@@ -12074,12 +12074,12 @@ impl ::core::clone::Clone for CRL_DIST_POINT_NAME_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CRL_DIST_POINT_NAME_0 {
+unsafe impl ::windows_core::Abi for CRL_DIST_POINT_NAME_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRL_DIST_POINT_NAME_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_DIST_POINT_NAME_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_DIST_POINT_NAME_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRL_DIST_POINT_NAME_0 {}
@@ -12114,13 +12114,13 @@ impl ::core::fmt::Debug for CRL_ENTRY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRL_ENTRY {
+unsafe impl ::windows_core::Abi for CRL_ENTRY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRL_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_ENTRY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12169,13 +12169,13 @@ impl ::core::fmt::Debug for CRL_FIND_ISSUED_FOR_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRL_FIND_ISSUED_FOR_PARA {
+unsafe impl ::windows_core::Abi for CRL_FIND_ISSUED_FOR_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRL_FIND_ISSUED_FOR_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_FIND_ISSUED_FOR_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_FIND_ISSUED_FOR_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12217,13 +12217,13 @@ impl ::core::fmt::Debug for CRL_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRL_INFO {
+unsafe impl ::windows_core::Abi for CRL_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRL_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12253,13 +12253,13 @@ impl ::core::clone::Clone for CRL_ISSUING_DIST_POINT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRL_ISSUING_DIST_POINT {
+unsafe impl ::windows_core::Abi for CRL_ISSUING_DIST_POINT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRL_ISSUING_DIST_POINT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_ISSUING_DIST_POINT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_ISSUING_DIST_POINT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12315,13 +12315,13 @@ impl ::core::fmt::Debug for CRL_REVOCATION_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRL_REVOCATION_INFO {
+unsafe impl ::windows_core::Abi for CRL_REVOCATION_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRL_REVOCATION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_REVOCATION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRL_REVOCATION_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12354,12 +12354,12 @@ impl ::core::fmt::Debug for CROSS_CERT_DIST_POINTS_INFO {
         f.debug_struct("CROSS_CERT_DIST_POINTS_INFO").field("dwSyncDeltaTime", &self.dwSyncDeltaTime).field("cDistPoint", &self.cDistPoint).field("rgDistPoint", &self.rgDistPoint).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CROSS_CERT_DIST_POINTS_INFO {
+unsafe impl ::windows_core::Abi for CROSS_CERT_DIST_POINTS_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CROSS_CERT_DIST_POINTS_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CROSS_CERT_DIST_POINTS_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CROSS_CERT_DIST_POINTS_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CROSS_CERT_DIST_POINTS_INFO {}
@@ -12469,13 +12469,13 @@ impl ::core::fmt::Debug for CRYPTNET_URL_CACHE_FLUSH_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPTNET_URL_CACHE_FLUSH_INFO {
+unsafe impl ::windows_core::Abi for CRYPTNET_URL_CACHE_FLUSH_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPTNET_URL_CACHE_FLUSH_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTNET_URL_CACHE_FLUSH_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTNET_URL_CACHE_FLUSH_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12521,13 +12521,13 @@ impl ::core::fmt::Debug for CRYPTNET_URL_CACHE_PRE_FETCH_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPTNET_URL_CACHE_PRE_FETCH_INFO {
+unsafe impl ::windows_core::Abi for CRYPTNET_URL_CACHE_PRE_FETCH_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPTNET_URL_CACHE_PRE_FETCH_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTNET_URL_CACHE_PRE_FETCH_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTNET_URL_CACHE_PRE_FETCH_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12555,7 +12555,7 @@ pub struct CRYPTNET_URL_CACHE_RESPONSE_INFO {
     pub wResponseFlags: u16,
     pub LastModifiedTime: super::super::Foundation::FILETIME,
     pub dwMaxAge: u32,
-    pub pwszETag: ::windows::core::PCWSTR,
+    pub pwszETag: ::windows_core::PCWSTR,
     pub dwProxyId: u32,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12573,13 +12573,13 @@ impl ::core::fmt::Debug for CRYPTNET_URL_CACHE_RESPONSE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPTNET_URL_CACHE_RESPONSE_INFO {
+unsafe impl ::windows_core::Abi for CRYPTNET_URL_CACHE_RESPONSE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPTNET_URL_CACHE_RESPONSE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTNET_URL_CACHE_RESPONSE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTNET_URL_CACHE_RESPONSE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12611,12 +12611,12 @@ impl ::core::fmt::Debug for CRYPTOAPI_BLOB {
         f.debug_struct("CRYPTOAPI_BLOB").field("cbData", &self.cbData).field("pbData", &self.pbData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPTOAPI_BLOB {
+unsafe impl ::windows_core::Abi for CRYPTOAPI_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPTOAPI_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTOAPI_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTOAPI_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPTOAPI_BLOB {}
@@ -12654,7 +12654,7 @@ pub struct CRYPTPROTECT_PROMPTSTRUCT {
     pub cbSize: u32,
     pub dwPromptFlags: u32,
     pub hwndApp: super::super::Foundation::HWND,
-    pub szPrompt: ::windows::core::PCWSTR,
+    pub szPrompt: ::windows_core::PCWSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CRYPTPROTECT_PROMPTSTRUCT {}
@@ -12671,13 +12671,13 @@ impl ::core::fmt::Debug for CRYPTPROTECT_PROMPTSTRUCT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPTPROTECT_PROMPTSTRUCT {
+unsafe impl ::windows_core::Abi for CRYPTPROTECT_PROMPTSTRUCT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPTPROTECT_PROMPTSTRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTPROTECT_PROMPTSTRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPTPROTECT_PROMPTSTRUCT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12720,12 +12720,12 @@ impl ::core::fmt::Debug for CRYPT_3DES_KEY_STATE {
         f.debug_struct("CRYPT_3DES_KEY_STATE").field("Key", &self.Key).field("IV", &self.IV).field("Feedback", &self.Feedback).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_3DES_KEY_STATE {
+unsafe impl ::windows_core::Abi for CRYPT_3DES_KEY_STATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_3DES_KEY_STATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_3DES_KEY_STATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_3DES_KEY_STATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_3DES_KEY_STATE {}
@@ -12763,7 +12763,7 @@ impl ::core::default::Default for CRYPT_ACQUIRE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_ACQUIRE_FLAGS {
+unsafe impl ::windows_core::Abi for CRYPT_ACQUIRE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_ACQUIRE_FLAGS {
@@ -12827,12 +12827,12 @@ impl ::core::fmt::Debug for CRYPT_AES_128_KEY_STATE {
         f.debug_struct("CRYPT_AES_128_KEY_STATE").field("Key", &self.Key).field("IV", &self.IV).field("EncryptionState", &self.EncryptionState).field("DecryptionState", &self.DecryptionState).field("Feedback", &self.Feedback).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_AES_128_KEY_STATE {
+unsafe impl ::windows_core::Abi for CRYPT_AES_128_KEY_STATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_AES_128_KEY_STATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_AES_128_KEY_STATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_AES_128_KEY_STATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_AES_128_KEY_STATE {}
@@ -12861,12 +12861,12 @@ impl ::core::fmt::Debug for CRYPT_AES_256_KEY_STATE {
         f.debug_struct("CRYPT_AES_256_KEY_STATE").field("Key", &self.Key).field("IV", &self.IV).field("EncryptionState", &self.EncryptionState).field("DecryptionState", &self.DecryptionState).field("Feedback", &self.Feedback).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_AES_256_KEY_STATE {
+unsafe impl ::windows_core::Abi for CRYPT_AES_256_KEY_STATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_AES_256_KEY_STATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_AES_256_KEY_STATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_AES_256_KEY_STATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_AES_256_KEY_STATE {}
@@ -12880,7 +12880,7 @@ pub const CRYPT_AIA_RETRIEVAL: u32 = 524288u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_ALGORITHM_IDENTIFIER {
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub Parameters: CRYPTOAPI_BLOB,
 }
 impl ::core::marker::Copy for CRYPT_ALGORITHM_IDENTIFIER {}
@@ -12894,12 +12894,12 @@ impl ::core::fmt::Debug for CRYPT_ALGORITHM_IDENTIFIER {
         f.debug_struct("CRYPT_ALGORITHM_IDENTIFIER").field("pszObjId", &self.pszObjId).field("Parameters", &self.Parameters).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_ALGORITHM_IDENTIFIER {
+unsafe impl ::windows_core::Abi for CRYPT_ALGORITHM_IDENTIFIER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_ALGORITHM_IDENTIFIER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ALGORITHM_IDENTIFIER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ALGORITHM_IDENTIFIER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_ALGORITHM_IDENTIFIER {}
@@ -12931,12 +12931,12 @@ impl ::core::fmt::Debug for CRYPT_ASYNC_RETRIEVAL_COMPLETION {
         f.debug_struct("CRYPT_ASYNC_RETRIEVAL_COMPLETION").field("pfnCompletion", &self.pfnCompletion.map(|f| f as usize)).field("pvCompletion", &self.pvCompletion).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_ASYNC_RETRIEVAL_COMPLETION {
+unsafe impl ::windows_core::Abi for CRYPT_ASYNC_RETRIEVAL_COMPLETION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_ASYNC_RETRIEVAL_COMPLETION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ASYNC_RETRIEVAL_COMPLETION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ASYNC_RETRIEVAL_COMPLETION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_ASYNC_RETRIEVAL_COMPLETION {}
@@ -12948,7 +12948,7 @@ impl ::core::default::Default for CRYPT_ASYNC_RETRIEVAL_COMPLETION {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_ATTRIBUTE {
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub cValue: u32,
     pub rgValue: *mut CRYPTOAPI_BLOB,
 }
@@ -12963,12 +12963,12 @@ impl ::core::fmt::Debug for CRYPT_ATTRIBUTE {
         f.debug_struct("CRYPT_ATTRIBUTE").field("pszObjId", &self.pszObjId).field("cValue", &self.cValue).field("rgValue", &self.rgValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_ATTRIBUTE {
+unsafe impl ::windows_core::Abi for CRYPT_ATTRIBUTE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_ATTRIBUTE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ATTRIBUTE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ATTRIBUTE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_ATTRIBUTE {}
@@ -12994,12 +12994,12 @@ impl ::core::fmt::Debug for CRYPT_ATTRIBUTES {
         f.debug_struct("CRYPT_ATTRIBUTES").field("cAttr", &self.cAttr).field("rgAttr", &self.rgAttr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_ATTRIBUTES {
+unsafe impl ::windows_core::Abi for CRYPT_ATTRIBUTES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_ATTRIBUTES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ATTRIBUTES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ATTRIBUTES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_ATTRIBUTES {}
@@ -13011,7 +13011,7 @@ impl ::core::default::Default for CRYPT_ATTRIBUTES {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_ATTRIBUTE_TYPE_VALUE {
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub Value: CRYPTOAPI_BLOB,
 }
 impl ::core::marker::Copy for CRYPT_ATTRIBUTE_TYPE_VALUE {}
@@ -13025,12 +13025,12 @@ impl ::core::fmt::Debug for CRYPT_ATTRIBUTE_TYPE_VALUE {
         f.debug_struct("CRYPT_ATTRIBUTE_TYPE_VALUE").field("pszObjId", &self.pszObjId).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_ATTRIBUTE_TYPE_VALUE {
+unsafe impl ::windows_core::Abi for CRYPT_ATTRIBUTE_TYPE_VALUE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_ATTRIBUTE_TYPE_VALUE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ATTRIBUTE_TYPE_VALUE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ATTRIBUTE_TYPE_VALUE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_ATTRIBUTE_TYPE_VALUE {}
@@ -13057,12 +13057,12 @@ impl ::core::fmt::Debug for CRYPT_BIT_BLOB {
         f.debug_struct("CRYPT_BIT_BLOB").field("cbData", &self.cbData).field("pbData", &self.pbData).field("cUnusedBits", &self.cUnusedBits).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_BIT_BLOB {
+unsafe impl ::windows_core::Abi for CRYPT_BIT_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_BIT_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_BIT_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_BIT_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_BIT_BLOB {}
@@ -13088,12 +13088,12 @@ impl ::core::fmt::Debug for CRYPT_BLOB_ARRAY {
         f.debug_struct("CRYPT_BLOB_ARRAY").field("cBlob", &self.cBlob).field("rgBlob", &self.rgBlob).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_BLOB_ARRAY {
+unsafe impl ::windows_core::Abi for CRYPT_BLOB_ARRAY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_BLOB_ARRAY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_BLOB_ARRAY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_BLOB_ARRAY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_BLOB_ARRAY {}
@@ -13109,7 +13109,7 @@ pub const CRYPT_CHECK_FRESHNESS_TIME_VALIDITY: u32 = 1024u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_CONTENT_INFO {
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub Content: CRYPTOAPI_BLOB,
 }
 impl ::core::marker::Copy for CRYPT_CONTENT_INFO {}
@@ -13123,12 +13123,12 @@ impl ::core::fmt::Debug for CRYPT_CONTENT_INFO {
         f.debug_struct("CRYPT_CONTENT_INFO").field("pszObjId", &self.pszObjId).field("Content", &self.Content).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_CONTENT_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_CONTENT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_CONTENT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTENT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTENT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_CONTENT_INFO {}
@@ -13140,7 +13140,7 @@ impl ::core::default::Default for CRYPT_CONTENT_INFO {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY {
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub cValue: u32,
     pub rgValue: *mut CRYPTOAPI_BLOB,
 }
@@ -13155,12 +13155,12 @@ impl ::core::fmt::Debug for CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY {
         f.debug_struct("CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY").field("pszObjId", &self.pszObjId).field("cValue", &self.cValue).field("rgValue", &self.rgValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY {
+unsafe impl ::windows_core::Abi for CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY {}
@@ -13173,7 +13173,7 @@ impl ::core::default::Default for CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_CONTEXTS {
     pub cContexts: u32,
-    pub rgpszContexts: *mut ::windows::core::PWSTR,
+    pub rgpszContexts: *mut ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CRYPT_CONTEXTS {}
 impl ::core::clone::Clone for CRYPT_CONTEXTS {
@@ -13186,12 +13186,12 @@ impl ::core::fmt::Debug for CRYPT_CONTEXTS {
         f.debug_struct("CRYPT_CONTEXTS").field("cContexts", &self.cContexts).field("rgpszContexts", &self.rgpszContexts).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_CONTEXTS {
+unsafe impl ::windows_core::Abi for CRYPT_CONTEXTS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_CONTEXTS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTEXTS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTEXTS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_CONTEXTS {}
@@ -13217,12 +13217,12 @@ impl ::core::fmt::Debug for CRYPT_CONTEXT_CONFIG {
         f.debug_struct("CRYPT_CONTEXT_CONFIG").field("dwFlags", &self.dwFlags).field("dwReserved", &self.dwReserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_CONTEXT_CONFIG {
+unsafe impl ::windows_core::Abi for CRYPT_CONTEXT_CONFIG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_CONTEXT_CONFIG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTEXT_CONFIG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTEXT_CONFIG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_CONTEXT_CONFIG {}
@@ -13250,7 +13250,7 @@ impl ::core::default::Default for CRYPT_CONTEXT_CONFIG_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_CONTEXT_CONFIG_FLAGS {
+unsafe impl ::windows_core::Abi for CRYPT_CONTEXT_CONFIG_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_CONTEXT_CONFIG_FLAGS {
@@ -13290,7 +13290,7 @@ impl ::core::ops::Not for CRYPT_CONTEXT_CONFIG_FLAGS {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_CONTEXT_FUNCTIONS {
     pub cFunctions: u32,
-    pub rgpszFunctions: *mut ::windows::core::PWSTR,
+    pub rgpszFunctions: *mut ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CRYPT_CONTEXT_FUNCTIONS {}
 impl ::core::clone::Clone for CRYPT_CONTEXT_FUNCTIONS {
@@ -13303,12 +13303,12 @@ impl ::core::fmt::Debug for CRYPT_CONTEXT_FUNCTIONS {
         f.debug_struct("CRYPT_CONTEXT_FUNCTIONS").field("cFunctions", &self.cFunctions).field("rgpszFunctions", &self.rgpszFunctions).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_CONTEXT_FUNCTIONS {
+unsafe impl ::windows_core::Abi for CRYPT_CONTEXT_FUNCTIONS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_CONTEXT_FUNCTIONS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTEXT_FUNCTIONS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTEXT_FUNCTIONS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_CONTEXT_FUNCTIONS {}
@@ -13334,12 +13334,12 @@ impl ::core::fmt::Debug for CRYPT_CONTEXT_FUNCTION_CONFIG {
         f.debug_struct("CRYPT_CONTEXT_FUNCTION_CONFIG").field("dwFlags", &self.dwFlags).field("dwReserved", &self.dwReserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_CONTEXT_FUNCTION_CONFIG {
+unsafe impl ::windows_core::Abi for CRYPT_CONTEXT_FUNCTION_CONFIG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_CONTEXT_FUNCTION_CONFIG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTEXT_FUNCTION_CONFIG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTEXT_FUNCTION_CONFIG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_CONTEXT_FUNCTION_CONFIG {}
@@ -13352,7 +13352,7 @@ impl ::core::default::Default for CRYPT_CONTEXT_FUNCTION_CONFIG {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_CONTEXT_FUNCTION_PROVIDERS {
     pub cProviders: u32,
-    pub rgpszProviders: *mut ::windows::core::PWSTR,
+    pub rgpszProviders: *mut ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CRYPT_CONTEXT_FUNCTION_PROVIDERS {}
 impl ::core::clone::Clone for CRYPT_CONTEXT_FUNCTION_PROVIDERS {
@@ -13365,12 +13365,12 @@ impl ::core::fmt::Debug for CRYPT_CONTEXT_FUNCTION_PROVIDERS {
         f.debug_struct("CRYPT_CONTEXT_FUNCTION_PROVIDERS").field("cProviders", &self.cProviders).field("rgpszProviders", &self.rgpszProviders).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_CONTEXT_FUNCTION_PROVIDERS {
+unsafe impl ::windows_core::Abi for CRYPT_CONTEXT_FUNCTION_PROVIDERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_CONTEXT_FUNCTION_PROVIDERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTEXT_FUNCTION_PROVIDERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CONTEXT_FUNCTION_PROVIDERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_CONTEXT_FUNCTION_PROVIDERS {}
@@ -13385,7 +13385,7 @@ pub const CRYPT_CREATE_NEW_FLUSH_ENTRY: u32 = 268435456u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_CREDENTIALS {
     pub cbSize: u32,
-    pub pszCredentialsOid: ::windows::core::PCSTR,
+    pub pszCredentialsOid: ::windows_core::PCSTR,
     pub pvCredentials: *mut ::core::ffi::c_void,
 }
 impl ::core::marker::Copy for CRYPT_CREDENTIALS {}
@@ -13399,12 +13399,12 @@ impl ::core::fmt::Debug for CRYPT_CREDENTIALS {
         f.debug_struct("CRYPT_CREDENTIALS").field("cbSize", &self.cbSize).field("pszCredentialsOid", &self.pszCredentialsOid).field("pvCredentials", &self.pvCredentials).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_CREDENTIALS {
+unsafe impl ::windows_core::Abi for CRYPT_CREDENTIALS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_CREDENTIALS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CREDENTIALS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CREDENTIALS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_CREDENTIALS {}
@@ -13417,7 +13417,7 @@ impl ::core::default::Default for CRYPT_CREDENTIALS {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_CSP_PROVIDER {
     pub dwKeySpec: u32,
-    pub pwszProviderName: ::windows::core::PWSTR,
+    pub pwszProviderName: ::windows_core::PWSTR,
     pub Signature: CRYPT_BIT_BLOB,
 }
 impl ::core::marker::Copy for CRYPT_CSP_PROVIDER {}
@@ -13431,12 +13431,12 @@ impl ::core::fmt::Debug for CRYPT_CSP_PROVIDER {
         f.debug_struct("CRYPT_CSP_PROVIDER").field("dwKeySpec", &self.dwKeySpec).field("pwszProviderName", &self.pwszProviderName).field("Signature", &self.Signature).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_CSP_PROVIDER {
+unsafe impl ::windows_core::Abi for CRYPT_CSP_PROVIDER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_CSP_PROVIDER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CSP_PROVIDER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_CSP_PROVIDER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_CSP_PROVIDER {}
@@ -13473,12 +13473,12 @@ impl ::core::fmt::Debug for CRYPT_DECODE_PARA {
         f.debug_struct("CRYPT_DECODE_PARA").field("cbSize", &self.cbSize).field("pfnAlloc", &self.pfnAlloc.map(|f| f as usize)).field("pfnFree", &self.pfnFree.map(|f| f as usize)).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_DECODE_PARA {
+unsafe impl ::windows_core::Abi for CRYPT_DECODE_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_DECODE_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_DECODE_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_DECODE_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_DECODE_PARA {}
@@ -13512,12 +13512,12 @@ impl ::core::fmt::Debug for CRYPT_DECRYPT_MESSAGE_PARA {
         f.debug_struct("CRYPT_DECRYPT_MESSAGE_PARA").field("cbSize", &self.cbSize).field("dwMsgAndCertEncodingType", &self.dwMsgAndCertEncodingType).field("cCertStore", &self.cCertStore).field("rghCertStore", &self.rghCertStore).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_DECRYPT_MESSAGE_PARA {
+unsafe impl ::windows_core::Abi for CRYPT_DECRYPT_MESSAGE_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_DECRYPT_MESSAGE_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_DECRYPT_MESSAGE_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_DECRYPT_MESSAGE_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_DECRYPT_MESSAGE_PARA {}
@@ -13551,7 +13551,7 @@ impl ::core::default::Default for CRYPT_DEFAULT_CONTEXT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_DEFAULT_CONTEXT_FLAGS {
+unsafe impl ::windows_core::Abi for CRYPT_DEFAULT_CONTEXT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_DEFAULT_CONTEXT_FLAGS {
@@ -13591,7 +13591,7 @@ impl ::core::ops::Not for CRYPT_DEFAULT_CONTEXT_FLAGS {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA {
     pub cOID: u32,
-    pub rgpszOID: *mut ::windows::core::PSTR,
+    pub rgpszOID: *mut ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA {}
 impl ::core::clone::Clone for CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA {
@@ -13604,12 +13604,12 @@ impl ::core::fmt::Debug for CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA {
         f.debug_struct("CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA").field("cOID", &self.cOID).field("rgpszOID", &self.rgpszOID).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA {
+unsafe impl ::windows_core::Abi for CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA {}
@@ -13637,7 +13637,7 @@ impl ::core::default::Default for CRYPT_DEFAULT_CONTEXT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_DEFAULT_CONTEXT_TYPE {
+unsafe impl ::windows_core::Abi for CRYPT_DEFAULT_CONTEXT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_DEFAULT_CONTEXT_TYPE {
@@ -13671,12 +13671,12 @@ impl ::core::fmt::Debug for CRYPT_DES_KEY_STATE {
         f.debug_struct("CRYPT_DES_KEY_STATE").field("Key", &self.Key).field("IV", &self.IV).field("Feedback", &self.Feedback).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_DES_KEY_STATE {
+unsafe impl ::windows_core::Abi for CRYPT_DES_KEY_STATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_DES_KEY_STATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_DES_KEY_STATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_DES_KEY_STATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_DES_KEY_STATE {}
@@ -13709,12 +13709,12 @@ impl ::core::fmt::Debug for CRYPT_ECC_CMS_SHARED_INFO {
         f.debug_struct("CRYPT_ECC_CMS_SHARED_INFO").field("Algorithm", &self.Algorithm).field("EntityUInfo", &self.EntityUInfo).field("rgbSuppPubInfo", &self.rgbSuppPubInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_ECC_CMS_SHARED_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_ECC_CMS_SHARED_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_ECC_CMS_SHARED_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ECC_CMS_SHARED_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ECC_CMS_SHARED_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_ECC_CMS_SHARED_INFO {}
@@ -13730,7 +13730,7 @@ pub const CRYPT_ECC_CMS_SHARED_INFO_SUPPPUBINFO_BYTE_LENGTH: u32 = 4u32;
 pub struct CRYPT_ECC_PRIVATE_KEY_INFO {
     pub dwVersion: u32,
     pub PrivateKey: CRYPTOAPI_BLOB,
-    pub szCurveOid: ::windows::core::PSTR,
+    pub szCurveOid: ::windows_core::PSTR,
     pub PublicKey: CRYPT_BIT_BLOB,
 }
 impl ::core::marker::Copy for CRYPT_ECC_PRIVATE_KEY_INFO {}
@@ -13744,12 +13744,12 @@ impl ::core::fmt::Debug for CRYPT_ECC_PRIVATE_KEY_INFO {
         f.debug_struct("CRYPT_ECC_PRIVATE_KEY_INFO").field("dwVersion", &self.dwVersion).field("PrivateKey", &self.PrivateKey).field("szCurveOid", &self.szCurveOid).field("PublicKey", &self.PublicKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_ECC_PRIVATE_KEY_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_ECC_PRIVATE_KEY_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_ECC_PRIVATE_KEY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ECC_PRIVATE_KEY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ECC_PRIVATE_KEY_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_ECC_PRIVATE_KEY_INFO {}
@@ -13795,7 +13795,7 @@ impl ::core::default::Default for CRYPT_ENCODE_OBJECT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_ENCODE_OBJECT_FLAGS {
+unsafe impl ::windows_core::Abi for CRYPT_ENCODE_OBJECT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_ENCODE_OBJECT_FLAGS {
@@ -13849,12 +13849,12 @@ impl ::core::fmt::Debug for CRYPT_ENCODE_PARA {
         f.debug_struct("CRYPT_ENCODE_PARA").field("cbSize", &self.cbSize).field("pfnAlloc", &self.pfnAlloc.map(|f| f as usize)).field("pfnFree", &self.pfnFree.map(|f| f as usize)).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_ENCODE_PARA {
+unsafe impl ::windows_core::Abi for CRYPT_ENCODE_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_ENCODE_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ENCODE_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ENCODE_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_ENCODE_PARA {}
@@ -13882,12 +13882,12 @@ impl ::core::fmt::Debug for CRYPT_ENCRYPTED_PRIVATE_KEY_INFO {
         f.debug_struct("CRYPT_ENCRYPTED_PRIVATE_KEY_INFO").field("EncryptionAlgorithm", &self.EncryptionAlgorithm).field("EncryptedPrivateKey", &self.EncryptedPrivateKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_ENCRYPTED_PRIVATE_KEY_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_ENCRYPTED_PRIVATE_KEY_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_ENCRYPTED_PRIVATE_KEY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ENCRYPTED_PRIVATE_KEY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ENCRYPTED_PRIVATE_KEY_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_ENCRYPTED_PRIVATE_KEY_INFO {}
@@ -13920,12 +13920,12 @@ impl ::core::fmt::Debug for CRYPT_ENCRYPT_MESSAGE_PARA {
         f.debug_struct("CRYPT_ENCRYPT_MESSAGE_PARA").field("cbSize", &self.cbSize).field("dwMsgEncodingType", &self.dwMsgEncodingType).field("hCryptProv", &self.hCryptProv).field("ContentEncryptionAlgorithm", &self.ContentEncryptionAlgorithm).field("pvEncryptionAuxInfo", &self.pvEncryptionAuxInfo).field("dwFlags", &self.dwFlags).field("dwInnerContentType", &self.dwInnerContentType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_ENCRYPT_MESSAGE_PARA {
+unsafe impl ::windows_core::Abi for CRYPT_ENCRYPT_MESSAGE_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_ENCRYPT_MESSAGE_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ENCRYPT_MESSAGE_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ENCRYPT_MESSAGE_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_ENCRYPT_MESSAGE_PARA {}
@@ -13939,8 +13939,8 @@ pub const CRYPT_ENHKEY_USAGE_OID_GROUP_ID: u32 = 7u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_ENROLLMENT_NAME_VALUE_PAIR {
-    pub pwszName: ::windows::core::PWSTR,
-    pub pwszValue: ::windows::core::PWSTR,
+    pub pwszName: ::windows_core::PWSTR,
+    pub pwszValue: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CRYPT_ENROLLMENT_NAME_VALUE_PAIR {}
 impl ::core::clone::Clone for CRYPT_ENROLLMENT_NAME_VALUE_PAIR {
@@ -13953,12 +13953,12 @@ impl ::core::fmt::Debug for CRYPT_ENROLLMENT_NAME_VALUE_PAIR {
         f.debug_struct("CRYPT_ENROLLMENT_NAME_VALUE_PAIR").field("pwszName", &self.pwszName).field("pwszValue", &self.pwszValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_ENROLLMENT_NAME_VALUE_PAIR {
+unsafe impl ::windows_core::Abi for CRYPT_ENROLLMENT_NAME_VALUE_PAIR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_ENROLLMENT_NAME_VALUE_PAIR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ENROLLMENT_NAME_VALUE_PAIR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_ENROLLMENT_NAME_VALUE_PAIR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_ENROLLMENT_NAME_VALUE_PAIR {}
@@ -13998,7 +13998,7 @@ impl ::core::default::Default for CRYPT_FIND_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_FIND_FLAGS {
+unsafe impl ::windows_core::Abi for CRYPT_FIND_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_FIND_FLAGS {
@@ -14075,13 +14075,13 @@ impl ::core::fmt::Debug for CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14115,7 +14115,7 @@ impl ::core::default::Default for CRYPT_GET_URL_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_GET_URL_FLAGS {
+unsafe impl ::windows_core::Abi for CRYPT_GET_URL_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_GET_URL_FLAGS {
@@ -14170,12 +14170,12 @@ impl ::core::fmt::Debug for CRYPT_HASH_INFO {
         f.debug_struct("CRYPT_HASH_INFO").field("HashAlgorithm", &self.HashAlgorithm).field("Hash", &self.Hash).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_HASH_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_HASH_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_HASH_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_HASH_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_HASH_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_HASH_INFO {}
@@ -14204,12 +14204,12 @@ impl ::core::fmt::Debug for CRYPT_HASH_MESSAGE_PARA {
         f.debug_struct("CRYPT_HASH_MESSAGE_PARA").field("cbSize", &self.cbSize).field("dwMsgEncodingType", &self.dwMsgEncodingType).field("hCryptProv", &self.hCryptProv).field("HashAlgorithm", &self.HashAlgorithm).field("pvHashAuxInfo", &self.pvHashAuxInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_HASH_MESSAGE_PARA {
+unsafe impl ::windows_core::Abi for CRYPT_HASH_MESSAGE_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_HASH_MESSAGE_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_HASH_MESSAGE_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_HASH_MESSAGE_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_HASH_MESSAGE_PARA {}
@@ -14223,7 +14223,7 @@ pub const CRYPT_HTTP_POST_RETRIEVAL: u32 = 1048576u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_IMAGE_REF {
-    pub pszImage: ::windows::core::PWSTR,
+    pub pszImage: ::windows_core::PWSTR,
     pub dwFlags: CRYPT_IMAGE_REF_FLAGS,
 }
 impl ::core::marker::Copy for CRYPT_IMAGE_REF {}
@@ -14237,12 +14237,12 @@ impl ::core::fmt::Debug for CRYPT_IMAGE_REF {
         f.debug_struct("CRYPT_IMAGE_REF").field("pszImage", &self.pszImage).field("dwFlags", &self.dwFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_IMAGE_REF {
+unsafe impl ::windows_core::Abi for CRYPT_IMAGE_REF {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_IMAGE_REF {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_IMAGE_REF>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_IMAGE_REF>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_IMAGE_REF {}
@@ -14270,7 +14270,7 @@ impl ::core::default::Default for CRYPT_IMAGE_REF_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_IMAGE_REF_FLAGS {
+unsafe impl ::windows_core::Abi for CRYPT_IMAGE_REF_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_IMAGE_REF_FLAGS {
@@ -14309,7 +14309,7 @@ impl ::core::ops::Not for CRYPT_IMAGE_REF_FLAGS {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_IMAGE_REG {
-    pub pszImage: ::windows::core::PWSTR,
+    pub pszImage: ::windows_core::PWSTR,
     pub cInterfaces: u32,
     pub rgpInterfaces: *mut *mut CRYPT_INTERFACE_REG,
 }
@@ -14324,12 +14324,12 @@ impl ::core::fmt::Debug for CRYPT_IMAGE_REG {
         f.debug_struct("CRYPT_IMAGE_REG").field("pszImage", &self.pszImage).field("cInterfaces", &self.cInterfaces).field("rgpInterfaces", &self.rgpInterfaces).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_IMAGE_REG {
+unsafe impl ::windows_core::Abi for CRYPT_IMAGE_REG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_IMAGE_REG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_IMAGE_REG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_IMAGE_REG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_IMAGE_REG {}
@@ -14369,7 +14369,7 @@ impl ::core::default::Default for CRYPT_IMPORT_PUBLIC_KEY_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_IMPORT_PUBLIC_KEY_FLAGS {
+unsafe impl ::windows_core::Abi for CRYPT_IMPORT_PUBLIC_KEY_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_IMPORT_PUBLIC_KEY_FLAGS {
@@ -14415,7 +14415,7 @@ pub struct CRYPT_INTERFACE_REG {
     pub dwInterface: BCRYPT_INTERFACE,
     pub dwFlags: BCRYPT_TABLE,
     pub cFunctions: u32,
-    pub rgpszFunctions: *mut ::windows::core::PWSTR,
+    pub rgpszFunctions: *mut ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CRYPT_INTERFACE_REG {}
 impl ::core::clone::Clone for CRYPT_INTERFACE_REG {
@@ -14428,12 +14428,12 @@ impl ::core::fmt::Debug for CRYPT_INTERFACE_REG {
         f.debug_struct("CRYPT_INTERFACE_REG").field("dwInterface", &self.dwInterface).field("dwFlags", &self.dwFlags).field("cFunctions", &self.cFunctions).field("rgpszFunctions", &self.rgpszFunctions).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_INTERFACE_REG {
+unsafe impl ::windows_core::Abi for CRYPT_INTERFACE_REG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_INTERFACE_REG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_INTERFACE_REG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_INTERFACE_REG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_INTERFACE_REG {}
@@ -14531,7 +14531,7 @@ impl ::core::default::Default for CRYPT_KEY_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_KEY_FLAGS {
+unsafe impl ::windows_core::Abi for CRYPT_KEY_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_KEY_FLAGS {
@@ -14598,7 +14598,7 @@ impl ::core::default::Default for CRYPT_KEY_PARAM_ID {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_KEY_PARAM_ID {
+unsafe impl ::windows_core::Abi for CRYPT_KEY_PARAM_ID {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_KEY_PARAM_ID {
@@ -14609,8 +14609,8 @@ impl ::core::fmt::Debug for CRYPT_KEY_PARAM_ID {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_KEY_PROV_INFO {
-    pub pwszContainerName: ::windows::core::PWSTR,
-    pub pwszProvName: ::windows::core::PWSTR,
+    pub pwszContainerName: ::windows_core::PWSTR,
+    pub pwszProvName: ::windows_core::PWSTR,
     pub dwProvType: u32,
     pub dwFlags: CRYPT_KEY_FLAGS,
     pub cProvParam: u32,
@@ -14628,12 +14628,12 @@ impl ::core::fmt::Debug for CRYPT_KEY_PROV_INFO {
         f.debug_struct("CRYPT_KEY_PROV_INFO").field("pwszContainerName", &self.pwszContainerName).field("pwszProvName", &self.pwszProvName).field("dwProvType", &self.dwProvType).field("dwFlags", &self.dwFlags).field("cProvParam", &self.cProvParam).field("rgProvParam", &self.rgProvParam).field("dwKeySpec", &self.dwKeySpec).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_KEY_PROV_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_KEY_PROV_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_KEY_PROV_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_KEY_PROV_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_KEY_PROV_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_KEY_PROV_INFO {}
@@ -14661,12 +14661,12 @@ impl ::core::fmt::Debug for CRYPT_KEY_PROV_PARAM {
         f.debug_struct("CRYPT_KEY_PROV_PARAM").field("dwParam", &self.dwParam).field("pbData", &self.pbData).field("cbData", &self.cbData).field("dwFlags", &self.dwFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_KEY_PROV_PARAM {
+unsafe impl ::windows_core::Abi for CRYPT_KEY_PROV_PARAM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_KEY_PROV_PARAM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_KEY_PROV_PARAM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_KEY_PROV_PARAM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_KEY_PROV_PARAM {}
@@ -14692,12 +14692,12 @@ impl ::core::clone::Clone for CRYPT_KEY_SIGN_MESSAGE_PARA {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_KEY_SIGN_MESSAGE_PARA {
+unsafe impl ::windows_core::Abi for CRYPT_KEY_SIGN_MESSAGE_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_KEY_SIGN_MESSAGE_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_KEY_SIGN_MESSAGE_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_KEY_SIGN_MESSAGE_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_KEY_SIGN_MESSAGE_PARA {}
@@ -14718,12 +14718,12 @@ impl ::core::clone::Clone for CRYPT_KEY_SIGN_MESSAGE_PARA_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_KEY_SIGN_MESSAGE_PARA_0 {
+unsafe impl ::windows_core::Abi for CRYPT_KEY_SIGN_MESSAGE_PARA_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_KEY_SIGN_MESSAGE_PARA_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_KEY_SIGN_MESSAGE_PARA_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_KEY_SIGN_MESSAGE_PARA_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_KEY_SIGN_MESSAGE_PARA_0 {}
@@ -14750,12 +14750,12 @@ impl ::core::fmt::Debug for CRYPT_KEY_VERIFY_MESSAGE_PARA {
         f.debug_struct("CRYPT_KEY_VERIFY_MESSAGE_PARA").field("cbSize", &self.cbSize).field("dwMsgEncodingType", &self.dwMsgEncodingType).field("hCryptProv", &self.hCryptProv).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_KEY_VERIFY_MESSAGE_PARA {
+unsafe impl ::windows_core::Abi for CRYPT_KEY_VERIFY_MESSAGE_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_KEY_VERIFY_MESSAGE_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_KEY_VERIFY_MESSAGE_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_KEY_VERIFY_MESSAGE_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_KEY_VERIFY_MESSAGE_PARA {}
@@ -14789,7 +14789,7 @@ pub const CRYPT_MACHINE_DEFAULT: u32 = 1u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_MASK_GEN_ALGORITHM {
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub HashAlgorithm: CRYPT_ALGORITHM_IDENTIFIER,
 }
 impl ::core::marker::Copy for CRYPT_MASK_GEN_ALGORITHM {}
@@ -14803,12 +14803,12 @@ impl ::core::fmt::Debug for CRYPT_MASK_GEN_ALGORITHM {
         f.debug_struct("CRYPT_MASK_GEN_ALGORITHM").field("pszObjId", &self.pszObjId).field("HashAlgorithm", &self.HashAlgorithm).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_MASK_GEN_ALGORITHM {
+unsafe impl ::windows_core::Abi for CRYPT_MASK_GEN_ALGORITHM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_MASK_GEN_ALGORITHM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_MASK_GEN_ALGORITHM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_MASK_GEN_ALGORITHM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_MASK_GEN_ALGORITHM {}
@@ -14874,7 +14874,7 @@ impl ::core::default::Default for CRYPT_MSG_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_MSG_TYPE {
+unsafe impl ::windows_core::Abi for CRYPT_MSG_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_MSG_TYPE {
@@ -14928,13 +14928,13 @@ impl ::core::fmt::Debug for CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE {
+unsafe impl ::windows_core::Abi for CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14968,7 +14968,7 @@ impl ::core::default::Default for CRYPT_OBJECT_LOCATOR_RELEASE_REASON {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_OBJECT_LOCATOR_RELEASE_REASON {
+unsafe impl ::windows_core::Abi for CRYPT_OBJECT_LOCATOR_RELEASE_REASON {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_OBJECT_LOCATOR_RELEASE_REASON {
@@ -14982,7 +14982,7 @@ pub const CRYPT_OBJECT_LOCATOR_SPN_NAME_TYPE: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_OBJID_TABLE {
     pub dwAlgId: u32,
-    pub pszObjId: ::windows::core::PCSTR,
+    pub pszObjId: ::windows_core::PCSTR,
 }
 impl ::core::marker::Copy for CRYPT_OBJID_TABLE {}
 impl ::core::clone::Clone for CRYPT_OBJID_TABLE {
@@ -14995,12 +14995,12 @@ impl ::core::fmt::Debug for CRYPT_OBJID_TABLE {
         f.debug_struct("CRYPT_OBJID_TABLE").field("dwAlgId", &self.dwAlgId).field("pszObjId", &self.pszObjId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_OBJID_TABLE {
+unsafe impl ::windows_core::Abi for CRYPT_OBJID_TABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_OBJID_TABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_OBJID_TABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_OBJID_TABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_OBJID_TABLE {}
@@ -15048,7 +15048,7 @@ pub const CRYPT_OID_FORMAT_OBJECT_FUNC: &str = "CryptDllFormatObject";
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_OID_FUNC_ENTRY {
-    pub pszOID: ::windows::core::PCSTR,
+    pub pszOID: ::windows_core::PCSTR,
     pub pvFuncAddr: *mut ::core::ffi::c_void,
 }
 impl ::core::marker::Copy for CRYPT_OID_FUNC_ENTRY {}
@@ -15062,12 +15062,12 @@ impl ::core::fmt::Debug for CRYPT_OID_FUNC_ENTRY {
         f.debug_struct("CRYPT_OID_FUNC_ENTRY").field("pszOID", &self.pszOID).field("pvFuncAddr", &self.pvFuncAddr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_OID_FUNC_ENTRY {
+unsafe impl ::windows_core::Abi for CRYPT_OID_FUNC_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_OID_FUNC_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_OID_FUNC_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_OID_FUNC_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_OID_FUNC_ENTRY {}
@@ -15086,8 +15086,8 @@ pub const CRYPT_OID_IMPORT_PUBLIC_KEY_INFO_FUNC: &str = "CryptDllImportPublicKey
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_OID_INFO {
     pub cbSize: u32,
-    pub pszOID: ::windows::core::PCSTR,
-    pub pwszName: ::windows::core::PCWSTR,
+    pub pszOID: ::windows_core::PCSTR,
+    pub pwszName: ::windows_core::PCWSTR,
     pub dwGroupId: u32,
     pub Anonymous: CRYPT_OID_INFO_0,
     pub ExtraInfo: CRYPTOAPI_BLOB,
@@ -15098,12 +15098,12 @@ impl ::core::clone::Clone for CRYPT_OID_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_OID_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_OID_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_OID_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_OID_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_OID_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_OID_INFO {}
@@ -15125,12 +15125,12 @@ impl ::core::clone::Clone for CRYPT_OID_INFO_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_OID_INFO_0 {
+unsafe impl ::windows_core::Abi for CRYPT_OID_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_OID_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_OID_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_OID_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_OID_INFO_0 {}
@@ -15228,15 +15228,15 @@ pub const CRYPT_OVERWRITE: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const CRYPT_OWF_REPL_LM_HASH: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_PARAM_ASYNC_RETRIEVAL_COMPLETION: ::windows::core::PCSTR = ::windows::core::PCSTR(1i32 as _);
+pub const CRYPT_PARAM_ASYNC_RETRIEVAL_COMPLETION: ::windows_core::PCSTR = ::windows_core::PCSTR(1i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_PARAM_CANCEL_ASYNC_RETRIEVAL: ::windows::core::PCSTR = ::windows::core::PCSTR(2i32 as _);
+pub const CRYPT_PARAM_CANCEL_ASYNC_RETRIEVAL: ::windows_core::PCSTR = ::windows_core::PCSTR(2i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_PASSWORD_CREDENTIALSA {
     pub cbSize: u32,
-    pub pszUsername: ::windows::core::PSTR,
-    pub pszPassword: ::windows::core::PSTR,
+    pub pszUsername: ::windows_core::PSTR,
+    pub pszPassword: ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for CRYPT_PASSWORD_CREDENTIALSA {}
 impl ::core::clone::Clone for CRYPT_PASSWORD_CREDENTIALSA {
@@ -15249,12 +15249,12 @@ impl ::core::fmt::Debug for CRYPT_PASSWORD_CREDENTIALSA {
         f.debug_struct("CRYPT_PASSWORD_CREDENTIALSA").field("cbSize", &self.cbSize).field("pszUsername", &self.pszUsername).field("pszPassword", &self.pszPassword).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_PASSWORD_CREDENTIALSA {
+unsafe impl ::windows_core::Abi for CRYPT_PASSWORD_CREDENTIALSA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_PASSWORD_CREDENTIALSA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PASSWORD_CREDENTIALSA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PASSWORD_CREDENTIALSA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_PASSWORD_CREDENTIALSA {}
@@ -15267,8 +15267,8 @@ impl ::core::default::Default for CRYPT_PASSWORD_CREDENTIALSA {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_PASSWORD_CREDENTIALSW {
     pub cbSize: u32,
-    pub pszUsername: ::windows::core::PWSTR,
-    pub pszPassword: ::windows::core::PWSTR,
+    pub pszUsername: ::windows_core::PWSTR,
+    pub pszPassword: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CRYPT_PASSWORD_CREDENTIALSW {}
 impl ::core::clone::Clone for CRYPT_PASSWORD_CREDENTIALSW {
@@ -15281,12 +15281,12 @@ impl ::core::fmt::Debug for CRYPT_PASSWORD_CREDENTIALSW {
         f.debug_struct("CRYPT_PASSWORD_CREDENTIALSW").field("cbSize", &self.cbSize).field("pszUsername", &self.pszUsername).field("pszPassword", &self.pszPassword).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_PASSWORD_CREDENTIALSW {
+unsafe impl ::windows_core::Abi for CRYPT_PASSWORD_CREDENTIALSW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_PASSWORD_CREDENTIALSW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PASSWORD_CREDENTIALSW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PASSWORD_CREDENTIALSW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_PASSWORD_CREDENTIALSW {}
@@ -15312,12 +15312,12 @@ impl ::core::fmt::Debug for CRYPT_PKCS12_PBE_PARAMS {
         f.debug_struct("CRYPT_PKCS12_PBE_PARAMS").field("iIterations", &self.iIterations).field("cbSalt", &self.cbSalt).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_PKCS12_PBE_PARAMS {
+unsafe impl ::windows_core::Abi for CRYPT_PKCS12_PBE_PARAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_PKCS12_PBE_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PKCS12_PBE_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PKCS12_PBE_PARAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_PKCS12_PBE_PARAMS {}
@@ -15332,7 +15332,7 @@ impl ::core::default::Default for CRYPT_PKCS12_PBE_PARAMS {
 pub struct CRYPT_PKCS8_EXPORT_PARAMS {
     pub hCryptProv: usize,
     pub dwKeySpec: u32,
-    pub pszPrivateKeyObjId: ::windows::core::PSTR,
+    pub pszPrivateKeyObjId: ::windows_core::PSTR,
     pub pEncryptPrivateKeyFunc: PCRYPT_ENCRYPT_PRIVATE_KEY_FUNC,
     pub pVoidEncryptFunc: *mut ::core::ffi::c_void,
 }
@@ -15351,13 +15351,13 @@ impl ::core::fmt::Debug for CRYPT_PKCS8_EXPORT_PARAMS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPT_PKCS8_EXPORT_PARAMS {
+unsafe impl ::windows_core::Abi for CRYPT_PKCS8_EXPORT_PARAMS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPT_PKCS8_EXPORT_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PKCS8_EXPORT_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PKCS8_EXPORT_PARAMS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -15393,13 +15393,13 @@ impl ::core::fmt::Debug for CRYPT_PKCS8_IMPORT_PARAMS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPT_PKCS8_IMPORT_PARAMS {
+unsafe impl ::windows_core::Abi for CRYPT_PKCS8_IMPORT_PARAMS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPT_PKCS8_IMPORT_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PKCS8_IMPORT_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PKCS8_IMPORT_PARAMS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -15435,12 +15435,12 @@ impl ::core::fmt::Debug for CRYPT_PRIVATE_KEY_INFO {
         f.debug_struct("CRYPT_PRIVATE_KEY_INFO").field("Version", &self.Version).field("Algorithm", &self.Algorithm).field("PrivateKey", &self.PrivateKey).field("pAttributes", &self.pAttributes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_PRIVATE_KEY_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_PRIVATE_KEY_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_PRIVATE_KEY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PRIVATE_KEY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PRIVATE_KEY_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_PRIVATE_KEY_INFO {}
@@ -15452,7 +15452,7 @@ impl ::core::default::Default for CRYPT_PRIVATE_KEY_INFO {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_PROPERTY_REF {
-    pub pszProperty: ::windows::core::PWSTR,
+    pub pszProperty: ::windows_core::PWSTR,
     pub cbValue: u32,
     pub pbValue: *mut u8,
 }
@@ -15467,12 +15467,12 @@ impl ::core::fmt::Debug for CRYPT_PROPERTY_REF {
         f.debug_struct("CRYPT_PROPERTY_REF").field("pszProperty", &self.pszProperty).field("cbValue", &self.cbValue).field("pbValue", &self.pbValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_PROPERTY_REF {
+unsafe impl ::windows_core::Abi for CRYPT_PROPERTY_REF {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_PROPERTY_REF {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PROPERTY_REF>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PROPERTY_REF>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_PROPERTY_REF {}
@@ -15485,7 +15485,7 @@ impl ::core::default::Default for CRYPT_PROPERTY_REF {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_PROVIDERS {
     pub cProviders: u32,
-    pub rgpszProviders: *mut ::windows::core::PWSTR,
+    pub rgpszProviders: *mut ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CRYPT_PROVIDERS {}
 impl ::core::clone::Clone for CRYPT_PROVIDERS {
@@ -15498,12 +15498,12 @@ impl ::core::fmt::Debug for CRYPT_PROVIDERS {
         f.debug_struct("CRYPT_PROVIDERS").field("cProviders", &self.cProviders).field("rgpszProviders", &self.rgpszProviders).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_PROVIDERS {
+unsafe impl ::windows_core::Abi for CRYPT_PROVIDERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_PROVIDERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PROVIDERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PROVIDERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_PROVIDERS {}
@@ -15516,8 +15516,8 @@ impl ::core::default::Default for CRYPT_PROVIDERS {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_PROVIDER_REF {
     pub dwInterface: u32,
-    pub pszFunction: ::windows::core::PWSTR,
-    pub pszProvider: ::windows::core::PWSTR,
+    pub pszFunction: ::windows_core::PWSTR,
+    pub pszProvider: ::windows_core::PWSTR,
     pub cProperties: u32,
     pub rgpProperties: *mut *mut CRYPT_PROPERTY_REF,
     pub pUM: *mut CRYPT_IMAGE_REF,
@@ -15534,12 +15534,12 @@ impl ::core::fmt::Debug for CRYPT_PROVIDER_REF {
         f.debug_struct("CRYPT_PROVIDER_REF").field("dwInterface", &self.dwInterface).field("pszFunction", &self.pszFunction).field("pszProvider", &self.pszProvider).field("cProperties", &self.cProperties).field("rgpProperties", &self.rgpProperties).field("pUM", &self.pUM).field("pKM", &self.pKM).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_PROVIDER_REF {
+unsafe impl ::windows_core::Abi for CRYPT_PROVIDER_REF {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_PROVIDER_REF {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PROVIDER_REF>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PROVIDER_REF>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_PROVIDER_REF {}
@@ -15565,12 +15565,12 @@ impl ::core::fmt::Debug for CRYPT_PROVIDER_REFS {
         f.debug_struct("CRYPT_PROVIDER_REFS").field("cProviders", &self.cProviders).field("rgpProviders", &self.rgpProviders).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_PROVIDER_REFS {
+unsafe impl ::windows_core::Abi for CRYPT_PROVIDER_REFS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_PROVIDER_REFS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PROVIDER_REFS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PROVIDER_REFS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_PROVIDER_REFS {}
@@ -15583,7 +15583,7 @@ impl ::core::default::Default for CRYPT_PROVIDER_REFS {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_PROVIDER_REG {
     pub cAliases: u32,
-    pub rgpszAliases: *mut ::windows::core::PWSTR,
+    pub rgpszAliases: *mut ::windows_core::PWSTR,
     pub pUM: *mut CRYPT_IMAGE_REG,
     pub pKM: *mut CRYPT_IMAGE_REG,
 }
@@ -15598,12 +15598,12 @@ impl ::core::fmt::Debug for CRYPT_PROVIDER_REG {
         f.debug_struct("CRYPT_PROVIDER_REG").field("cAliases", &self.cAliases).field("rgpszAliases", &self.rgpszAliases).field("pUM", &self.pUM).field("pKM", &self.pKM).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_PROVIDER_REG {
+unsafe impl ::windows_core::Abi for CRYPT_PROVIDER_REG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_PROVIDER_REG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PROVIDER_REG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PROVIDER_REG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_PROVIDER_REG {}
@@ -15617,7 +15617,7 @@ pub const CRYPT_PROXY_CACHE_RETRIEVAL: u32 = 2097152u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_PSOURCE_ALGORITHM {
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub EncodingParameters: CRYPTOAPI_BLOB,
 }
 impl ::core::marker::Copy for CRYPT_PSOURCE_ALGORITHM {}
@@ -15631,12 +15631,12 @@ impl ::core::fmt::Debug for CRYPT_PSOURCE_ALGORITHM {
         f.debug_struct("CRYPT_PSOURCE_ALGORITHM").field("pszObjId", &self.pszObjId).field("EncodingParameters", &self.EncodingParameters).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_PSOURCE_ALGORITHM {
+unsafe impl ::windows_core::Abi for CRYPT_PSOURCE_ALGORITHM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_PSOURCE_ALGORITHM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PSOURCE_ALGORITHM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_PSOURCE_ALGORITHM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_PSOURCE_ALGORITHM {}
@@ -15682,13 +15682,13 @@ impl ::core::fmt::Debug for CRYPT_RC2_CBC_PARAMETERS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPT_RC2_CBC_PARAMETERS {
+unsafe impl ::windows_core::Abi for CRYPT_RC2_CBC_PARAMETERS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPT_RC2_CBC_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_RC2_CBC_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_RC2_CBC_PARAMETERS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -15718,12 +15718,12 @@ impl ::core::fmt::Debug for CRYPT_RC4_KEY_STATE {
         f.debug_struct("CRYPT_RC4_KEY_STATE").field("Key", &self.Key).field("SBox", &self.SBox).field("i", &self.i).field("j", &self.j).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_RC4_KEY_STATE {
+unsafe impl ::windows_core::Abi for CRYPT_RC4_KEY_STATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_RC4_KEY_STATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_RC4_KEY_STATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_RC4_KEY_STATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_RC4_KEY_STATE {}
@@ -15750,11 +15750,11 @@ pub struct CRYPT_RETRIEVE_AUX_INFO {
     pub pPreFetchInfo: *mut CRYPTNET_URL_CACHE_PRE_FETCH_INFO,
     pub pFlushInfo: *mut CRYPTNET_URL_CACHE_FLUSH_INFO,
     pub ppResponseInfo: *mut *mut CRYPTNET_URL_CACHE_RESPONSE_INFO,
-    pub pwszCacheFileNamePrefix: ::windows::core::PWSTR,
+    pub pwszCacheFileNamePrefix: ::windows_core::PWSTR,
     pub pftCacheResync: *mut super::super::Foundation::FILETIME,
     pub fProxyCacheRetrieval: super::super::Foundation::BOOL,
     pub dwHttpStatusCode: u32,
-    pub ppwszErrorResponseHeaders: *mut ::windows::core::PWSTR,
+    pub ppwszErrorResponseHeaders: *mut ::windows_core::PWSTR,
     pub ppErrorContentBlob: *mut *mut CRYPTOAPI_BLOB,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -15785,13 +15785,13 @@ impl ::core::fmt::Debug for CRYPT_RETRIEVE_AUX_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPT_RETRIEVE_AUX_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_RETRIEVE_AUX_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPT_RETRIEVE_AUX_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_RETRIEVE_AUX_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_RETRIEVE_AUX_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -15824,12 +15824,12 @@ impl ::core::fmt::Debug for CRYPT_RSAES_OAEP_PARAMETERS {
         f.debug_struct("CRYPT_RSAES_OAEP_PARAMETERS").field("HashAlgorithm", &self.HashAlgorithm).field("MaskGenAlgorithm", &self.MaskGenAlgorithm).field("PSourceAlgorithm", &self.PSourceAlgorithm).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_RSAES_OAEP_PARAMETERS {
+unsafe impl ::windows_core::Abi for CRYPT_RSAES_OAEP_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_RSAES_OAEP_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_RSAES_OAEP_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_RSAES_OAEP_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_RSAES_OAEP_PARAMETERS {}
@@ -15857,12 +15857,12 @@ impl ::core::fmt::Debug for CRYPT_RSA_SSA_PSS_PARAMETERS {
         f.debug_struct("CRYPT_RSA_SSA_PSS_PARAMETERS").field("HashAlgorithm", &self.HashAlgorithm).field("MaskGenAlgorithm", &self.MaskGenAlgorithm).field("dwSaltLength", &self.dwSaltLength).field("dwTrailerField", &self.dwTrailerField).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_RSA_SSA_PSS_PARAMETERS {
+unsafe impl ::windows_core::Abi for CRYPT_RSA_SSA_PSS_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_RSA_SSA_PSS_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_RSA_SSA_PSS_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_RSA_SSA_PSS_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_RSA_SSA_PSS_PARAMETERS {}
@@ -15892,12 +15892,12 @@ impl ::core::fmt::Debug for CRYPT_SEQUENCE_OF_ANY {
         f.debug_struct("CRYPT_SEQUENCE_OF_ANY").field("cValue", &self.cValue).field("rgValue", &self.rgValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_SEQUENCE_OF_ANY {
+unsafe impl ::windows_core::Abi for CRYPT_SEQUENCE_OF_ANY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_SEQUENCE_OF_ANY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_SEQUENCE_OF_ANY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_SEQUENCE_OF_ANY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_SEQUENCE_OF_ANY {}
@@ -15927,7 +15927,7 @@ impl ::core::default::Default for CRYPT_SET_HASH_PARAM {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_SET_HASH_PARAM {
+unsafe impl ::windows_core::Abi for CRYPT_SET_HASH_PARAM {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_SET_HASH_PARAM {
@@ -15984,7 +15984,7 @@ impl ::core::default::Default for CRYPT_SET_PROV_PARAM_ID {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_SET_PROV_PARAM_ID {
+unsafe impl ::windows_core::Abi for CRYPT_SET_PROV_PARAM_ID {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_SET_PROV_PARAM_ID {
@@ -16049,13 +16049,13 @@ impl ::core::fmt::Debug for CRYPT_SIGN_MESSAGE_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPT_SIGN_MESSAGE_PARA {
+unsafe impl ::windows_core::Abi for CRYPT_SIGN_MESSAGE_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPT_SIGN_MESSAGE_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_SIGN_MESSAGE_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_SIGN_MESSAGE_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16085,12 +16085,12 @@ impl ::core::fmt::Debug for CRYPT_SMART_CARD_ROOT_INFO {
         f.debug_struct("CRYPT_SMART_CARD_ROOT_INFO").field("rgbCardID", &self.rgbCardID).field("luid", &self.luid).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_SMART_CARD_ROOT_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_SMART_CARD_ROOT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_SMART_CARD_ROOT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_SMART_CARD_ROOT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_SMART_CARD_ROOT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_SMART_CARD_ROOT_INFO {}
@@ -16116,12 +16116,12 @@ impl ::core::fmt::Debug for CRYPT_SMIME_CAPABILITIES {
         f.debug_struct("CRYPT_SMIME_CAPABILITIES").field("cCapability", &self.cCapability).field("rgCapability", &self.rgCapability).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_SMIME_CAPABILITIES {
+unsafe impl ::windows_core::Abi for CRYPT_SMIME_CAPABILITIES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_SMIME_CAPABILITIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_SMIME_CAPABILITIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_SMIME_CAPABILITIES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_SMIME_CAPABILITIES {}
@@ -16133,7 +16133,7 @@ impl ::core::default::Default for CRYPT_SMIME_CAPABILITIES {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_SMIME_CAPABILITY {
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub Parameters: CRYPTOAPI_BLOB,
 }
 impl ::core::marker::Copy for CRYPT_SMIME_CAPABILITY {}
@@ -16147,12 +16147,12 @@ impl ::core::fmt::Debug for CRYPT_SMIME_CAPABILITY {
         f.debug_struct("CRYPT_SMIME_CAPABILITY").field("pszObjId", &self.pszObjId).field("Parameters", &self.Parameters).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_SMIME_CAPABILITY {
+unsafe impl ::windows_core::Abi for CRYPT_SMIME_CAPABILITY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_SMIME_CAPABILITY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_SMIME_CAPABILITY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_SMIME_CAPABILITY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_SMIME_CAPABILITY {}
@@ -16208,7 +16208,7 @@ impl ::core::default::Default for CRYPT_STRING {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_STRING {
+unsafe impl ::windows_core::Abi for CRYPT_STRING {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_STRING {
@@ -16254,12 +16254,12 @@ impl ::core::fmt::Debug for CRYPT_TIMESTAMP_ACCURACY {
         f.debug_struct("CRYPT_TIMESTAMP_ACCURACY").field("dwSeconds", &self.dwSeconds).field("dwMillis", &self.dwMillis).field("dwMicros", &self.dwMicros).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_TIMESTAMP_ACCURACY {
+unsafe impl ::windows_core::Abi for CRYPT_TIMESTAMP_ACCURACY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_TIMESTAMP_ACCURACY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIMESTAMP_ACCURACY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIMESTAMP_ACCURACY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_TIMESTAMP_ACCURACY {}
@@ -16291,13 +16291,13 @@ impl ::core::fmt::Debug for CRYPT_TIMESTAMP_CONTEXT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPT_TIMESTAMP_CONTEXT {
+unsafe impl ::windows_core::Abi for CRYPT_TIMESTAMP_CONTEXT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPT_TIMESTAMP_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIMESTAMP_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIMESTAMP_CONTEXT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16313,7 +16313,7 @@ impl ::core::default::Default for CRYPT_TIMESTAMP_CONTEXT {
 #[cfg(feature = "Win32_Foundation")]
 pub struct CRYPT_TIMESTAMP_INFO {
     pub dwVersion: u32,
-    pub pszTSAPolicyId: ::windows::core::PSTR,
+    pub pszTSAPolicyId: ::windows_core::PSTR,
     pub HashAlgorithm: CRYPT_ALGORITHM_IDENTIFIER,
     pub HashedMessage: CRYPTOAPI_BLOB,
     pub SerialNumber: CRYPTOAPI_BLOB,
@@ -16353,13 +16353,13 @@ impl ::core::fmt::Debug for CRYPT_TIMESTAMP_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPT_TIMESTAMP_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_TIMESTAMP_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPT_TIMESTAMP_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIMESTAMP_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIMESTAMP_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16374,7 +16374,7 @@ impl ::core::default::Default for CRYPT_TIMESTAMP_INFO {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct CRYPT_TIMESTAMP_PARA {
-    pub pszTSAPolicyId: ::windows::core::PCSTR,
+    pub pszTSAPolicyId: ::windows_core::PCSTR,
     pub fRequestCerts: super::super::Foundation::BOOL,
     pub Nonce: CRYPTOAPI_BLOB,
     pub cExtension: u32,
@@ -16395,13 +16395,13 @@ impl ::core::fmt::Debug for CRYPT_TIMESTAMP_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPT_TIMESTAMP_PARA {
+unsafe impl ::windows_core::Abi for CRYPT_TIMESTAMP_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPT_TIMESTAMP_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIMESTAMP_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIMESTAMP_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16419,7 +16419,7 @@ pub struct CRYPT_TIMESTAMP_REQUEST {
     pub dwVersion: CRYPT_TIMESTAMP_VERSION,
     pub HashAlgorithm: CRYPT_ALGORITHM_IDENTIFIER,
     pub HashedMessage: CRYPTOAPI_BLOB,
-    pub pszTSAPolicyId: ::windows::core::PSTR,
+    pub pszTSAPolicyId: ::windows_core::PSTR,
     pub Nonce: CRYPTOAPI_BLOB,
     pub fCertReq: super::super::Foundation::BOOL,
     pub cExtension: u32,
@@ -16440,13 +16440,13 @@ impl ::core::fmt::Debug for CRYPT_TIMESTAMP_REQUEST {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPT_TIMESTAMP_REQUEST {
+unsafe impl ::windows_core::Abi for CRYPT_TIMESTAMP_REQUEST {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPT_TIMESTAMP_REQUEST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIMESTAMP_REQUEST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIMESTAMP_REQUEST>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16462,7 +16462,7 @@ impl ::core::default::Default for CRYPT_TIMESTAMP_REQUEST {
 pub struct CRYPT_TIMESTAMP_RESPONSE {
     pub dwStatus: CRYPT_TIMESTAMP_RESPONSE_STATUS,
     pub cFreeText: u32,
-    pub rgFreeText: *mut ::windows::core::PWSTR,
+    pub rgFreeText: *mut ::windows_core::PWSTR,
     pub FailureInfo: CRYPT_BIT_BLOB,
     pub ContentInfo: CRYPTOAPI_BLOB,
 }
@@ -16477,12 +16477,12 @@ impl ::core::fmt::Debug for CRYPT_TIMESTAMP_RESPONSE {
         f.debug_struct("CRYPT_TIMESTAMP_RESPONSE").field("dwStatus", &self.dwStatus).field("cFreeText", &self.cFreeText).field("rgFreeText", &self.rgFreeText).field("FailureInfo", &self.FailureInfo).field("ContentInfo", &self.ContentInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_TIMESTAMP_RESPONSE {
+unsafe impl ::windows_core::Abi for CRYPT_TIMESTAMP_RESPONSE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_TIMESTAMP_RESPONSE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIMESTAMP_RESPONSE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIMESTAMP_RESPONSE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_TIMESTAMP_RESPONSE {}
@@ -16518,7 +16518,7 @@ impl ::core::default::Default for CRYPT_TIMESTAMP_RESPONSE_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_TIMESTAMP_RESPONSE_STATUS {
+unsafe impl ::windows_core::Abi for CRYPT_TIMESTAMP_RESPONSE_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_TIMESTAMP_RESPONSE_STATUS {
@@ -16543,7 +16543,7 @@ impl ::core::default::Default for CRYPT_TIMESTAMP_VERSION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_TIMESTAMP_VERSION {
+unsafe impl ::windows_core::Abi for CRYPT_TIMESTAMP_VERSION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_TIMESTAMP_VERSION {
@@ -16554,8 +16554,8 @@ impl ::core::fmt::Debug for CRYPT_TIMESTAMP_VERSION {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_TIME_STAMP_REQUEST_INFO {
-    pub pszTimeStampAlgorithm: ::windows::core::PSTR,
-    pub pszContentType: ::windows::core::PSTR,
+    pub pszTimeStampAlgorithm: ::windows_core::PSTR,
+    pub pszContentType: ::windows_core::PSTR,
     pub Content: CRYPTOAPI_BLOB,
     pub cAttribute: u32,
     pub rgAttribute: *mut CRYPT_ATTRIBUTE,
@@ -16571,12 +16571,12 @@ impl ::core::fmt::Debug for CRYPT_TIME_STAMP_REQUEST_INFO {
         f.debug_struct("CRYPT_TIME_STAMP_REQUEST_INFO").field("pszTimeStampAlgorithm", &self.pszTimeStampAlgorithm).field("pszContentType", &self.pszContentType).field("Content", &self.Content).field("cAttribute", &self.cAttribute).field("rgAttribute", &self.rgAttribute).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_TIME_STAMP_REQUEST_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_TIME_STAMP_REQUEST_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_TIME_STAMP_REQUEST_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIME_STAMP_REQUEST_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_TIME_STAMP_REQUEST_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_TIME_STAMP_REQUEST_INFO {}
@@ -16599,7 +16599,7 @@ pub const CRYPT_UPDATE_KEY: u32 = 8u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_URL_ARRAY {
     pub cUrl: u32,
-    pub rgwszUrl: *mut ::windows::core::PWSTR,
+    pub rgwszUrl: *mut ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CRYPT_URL_ARRAY {}
 impl ::core::clone::Clone for CRYPT_URL_ARRAY {
@@ -16612,12 +16612,12 @@ impl ::core::fmt::Debug for CRYPT_URL_ARRAY {
         f.debug_struct("CRYPT_URL_ARRAY").field("cUrl", &self.cUrl).field("rgwszUrl", &self.rgwszUrl).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_URL_ARRAY {
+unsafe impl ::windows_core::Abi for CRYPT_URL_ARRAY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_URL_ARRAY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_URL_ARRAY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_URL_ARRAY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_URL_ARRAY {}
@@ -16645,12 +16645,12 @@ impl ::core::fmt::Debug for CRYPT_URL_INFO {
         f.debug_struct("CRYPT_URL_INFO").field("cbSize", &self.cbSize).field("dwSyncDeltaTime", &self.dwSyncDeltaTime).field("cGroup", &self.cGroup).field("rgcGroupEntry", &self.rgcGroupEntry).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_URL_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_URL_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_URL_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_URL_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_URL_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_URL_INFO {}
@@ -16688,7 +16688,7 @@ impl ::core::default::Default for CRYPT_VERIFY_CERT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_VERIFY_CERT_FLAGS {
+unsafe impl ::windows_core::Abi for CRYPT_VERIFY_CERT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_VERIFY_CERT_FLAGS {
@@ -16723,12 +16723,12 @@ impl ::core::fmt::Debug for CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO {
         f.debug_struct("CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO").field("CertSignHashCNGAlgPropData", &self.CertSignHashCNGAlgPropData).field("CertIssuerPubKeyBitLengthPropData", &self.CertIssuerPubKeyBitLengthPropData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO {}
@@ -16749,7 +16749,7 @@ pub const CRYPT_VERIFY_CERT_SIGN_SUBJECT_OCSP_BASIC_SIGNED_RESPONSE: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO {
     pub cCNGHashAlgid: u32,
-    pub rgpwszCNGHashAlgid: *mut ::windows::core::PWSTR,
+    pub rgpwszCNGHashAlgid: *mut ::windows_core::PWSTR,
     pub dwWeakIndex: u32,
 }
 impl ::core::marker::Copy for CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO {}
@@ -16763,12 +16763,12 @@ impl ::core::fmt::Debug for CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO {
         f.debug_struct("CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO").field("cCNGHashAlgid", &self.cCNGHashAlgid).field("rgpwszCNGHashAlgid", &self.rgpwszCNGHashAlgid).field("dwWeakIndex", &self.dwWeakIndex).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO {}
@@ -16806,13 +16806,13 @@ impl ::core::fmt::Debug for CRYPT_VERIFY_MESSAGE_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CRYPT_VERIFY_MESSAGE_PARA {
+unsafe impl ::windows_core::Abi for CRYPT_VERIFY_MESSAGE_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CRYPT_VERIFY_MESSAGE_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_VERIFY_MESSAGE_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_VERIFY_MESSAGE_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16836,7 +16836,7 @@ pub const CRYPT_X942_KEY_LENGTH_BYTE_LENGTH: u32 = 4u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_X942_OTHER_INFO {
-    pub pszContentEncryptionObjId: ::windows::core::PSTR,
+    pub pszContentEncryptionObjId: ::windows_core::PSTR,
     pub rgbCounter: [u8; 4],
     pub rgbKeyLength: [u8; 4],
     pub PubInfo: CRYPTOAPI_BLOB,
@@ -16852,12 +16852,12 @@ impl ::core::fmt::Debug for CRYPT_X942_OTHER_INFO {
         f.debug_struct("CRYPT_X942_OTHER_INFO").field("pszContentEncryptionObjId", &self.pszContentEncryptionObjId).field("rgbCounter", &self.rgbCounter).field("rgbKeyLength", &self.rgbKeyLength).field("PubInfo", &self.PubInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_X942_OTHER_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_X942_OTHER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_X942_OTHER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_X942_OTHER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_X942_OTHER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_X942_OTHER_INFO {}
@@ -16870,7 +16870,7 @@ impl ::core::default::Default for CRYPT_X942_OTHER_INFO {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_XML_ALGORITHM {
     pub cbSize: u32,
-    pub wszAlgorithm: ::windows::core::PCWSTR,
+    pub wszAlgorithm: ::windows_core::PCWSTR,
     pub Encoded: CRYPT_XML_BLOB,
 }
 impl ::core::marker::Copy for CRYPT_XML_ALGORITHM {}
@@ -16884,12 +16884,12 @@ impl ::core::fmt::Debug for CRYPT_XML_ALGORITHM {
         f.debug_struct("CRYPT_XML_ALGORITHM").field("cbSize", &self.cbSize).field("wszAlgorithm", &self.wszAlgorithm).field("Encoded", &self.Encoded).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_ALGORITHM {
+unsafe impl ::windows_core::Abi for CRYPT_XML_ALGORITHM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_ALGORITHM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_ALGORITHM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_ALGORITHM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_ALGORITHM {}
@@ -16902,11 +16902,11 @@ impl ::core::default::Default for CRYPT_XML_ALGORITHM {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_XML_ALGORITHM_INFO {
     pub cbSize: u32,
-    pub wszAlgorithmURI: ::windows::core::PWSTR,
-    pub wszName: ::windows::core::PWSTR,
+    pub wszAlgorithmURI: ::windows_core::PWSTR,
+    pub wszName: ::windows_core::PWSTR,
     pub dwGroupId: CRYPT_XML_GROUP_ID,
-    pub wszCNGAlgid: ::windows::core::PWSTR,
-    pub wszCNGExtraAlgid: ::windows::core::PWSTR,
+    pub wszCNGAlgid: ::windows_core::PWSTR,
+    pub wszCNGExtraAlgid: ::windows_core::PWSTR,
     pub dwSignFlags: u32,
     pub dwVerifyFlags: u32,
     pub pvPaddingInfo: *mut ::core::ffi::c_void,
@@ -16923,12 +16923,12 @@ impl ::core::fmt::Debug for CRYPT_XML_ALGORITHM_INFO {
         f.debug_struct("CRYPT_XML_ALGORITHM_INFO").field("cbSize", &self.cbSize).field("wszAlgorithmURI", &self.wszAlgorithmURI).field("wszName", &self.wszName).field("dwGroupId", &self.dwGroupId).field("wszCNGAlgid", &self.wszCNGAlgid).field("wszCNGExtraAlgid", &self.wszCNGExtraAlgid).field("dwSignFlags", &self.dwSignFlags).field("dwVerifyFlags", &self.dwVerifyFlags).field("pvPaddingInfo", &self.pvPaddingInfo).field("pvExtraInfo", &self.pvExtraInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_ALGORITHM_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_XML_ALGORITHM_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_ALGORITHM_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_ALGORITHM_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_ALGORITHM_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_ALGORITHM_INFO {}
@@ -16963,12 +16963,12 @@ impl ::core::fmt::Debug for CRYPT_XML_BLOB {
         f.debug_struct("CRYPT_XML_BLOB").field("dwCharset", &self.dwCharset).field("cbData", &self.cbData).field("pbData", &self.pbData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_BLOB {
+unsafe impl ::windows_core::Abi for CRYPT_XML_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_BLOB {}
@@ -17002,7 +17002,7 @@ impl ::core::default::Default for CRYPT_XML_CHARSET {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_CHARSET {
+unsafe impl ::windows_core::Abi for CRYPT_XML_CHARSET {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_XML_CHARSET {
@@ -17044,12 +17044,12 @@ impl ::core::fmt::Debug for CRYPT_XML_CRYPTOGRAPHIC_INTERFACE {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_CRYPTOGRAPHIC_INTERFACE {
+unsafe impl ::windows_core::Abi for CRYPT_XML_CRYPTOGRAPHIC_INTERFACE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_CRYPTOGRAPHIC_INTERFACE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_CRYPTOGRAPHIC_INTERFACE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_CRYPTOGRAPHIC_INTERFACE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_CRYPTOGRAPHIC_INTERFACE {}
@@ -17075,12 +17075,12 @@ impl ::core::fmt::Debug for CRYPT_XML_DATA_BLOB {
         f.debug_struct("CRYPT_XML_DATA_BLOB").field("cbData", &self.cbData).field("pbData", &self.pbData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_DATA_BLOB {
+unsafe impl ::windows_core::Abi for CRYPT_XML_DATA_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_DATA_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_DATA_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_DATA_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_DATA_BLOB {}
@@ -17108,12 +17108,12 @@ impl ::core::fmt::Debug for CRYPT_XML_DATA_PROVIDER {
         f.debug_struct("CRYPT_XML_DATA_PROVIDER").field("pvCallbackState", &self.pvCallbackState).field("cbBufferSize", &self.cbBufferSize).field("pfnRead", &self.pfnRead.map(|f| f as usize)).field("pfnClose", &self.pfnClose.map(|f| f as usize)).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_DATA_PROVIDER {
+unsafe impl ::windows_core::Abi for CRYPT_XML_DATA_PROVIDER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_DATA_PROVIDER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_DATA_PROVIDER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_DATA_PROVIDER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_DATA_PROVIDER {}
@@ -17146,12 +17146,12 @@ impl ::core::fmt::Debug for CRYPT_XML_DOC_CTXT {
         f.debug_struct("CRYPT_XML_DOC_CTXT").field("cbSize", &self.cbSize).field("hDocCtxt", &self.hDocCtxt).field("pTransformsConfig", &self.pTransformsConfig).field("cSignature", &self.cSignature).field("rgpSignature", &self.rgpSignature).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_DOC_CTXT {
+unsafe impl ::windows_core::Abi for CRYPT_XML_DOC_CTXT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_DOC_CTXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_DOC_CTXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_DOC_CTXT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_DOC_CTXT {}
@@ -17161,45 +17161,45 @@ impl ::core::default::Default for CRYPT_XML_DOC_CTXT {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_ALGORITHM: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885372i32);
+pub const CRYPT_XML_E_ALGORITHM: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885372i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_BASE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885376i32);
+pub const CRYPT_XML_E_BASE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885376i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_ENCODING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885373i32);
+pub const CRYPT_XML_E_ENCODING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885373i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_HANDLE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885370i32);
+pub const CRYPT_XML_E_HANDLE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885370i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_HASH_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885365i32);
+pub const CRYPT_XML_E_HASH_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885365i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_INVALID_DIGEST: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885367i32);
+pub const CRYPT_XML_E_INVALID_DIGEST: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885367i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_INVALID_KEYVALUE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885361i32);
+pub const CRYPT_XML_E_INVALID_KEYVALUE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885361i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_INVALID_SIGNATURE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885366i32);
+pub const CRYPT_XML_E_INVALID_SIGNATURE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885366i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_LARGE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885375i32);
+pub const CRYPT_XML_E_LARGE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885375i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_LAST: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885358i32);
+pub const CRYPT_XML_E_LAST: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885358i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_NON_UNIQUE_ID: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885358i32);
+pub const CRYPT_XML_E_NON_UNIQUE_ID: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885358i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_OPERATION: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885369i32);
+pub const CRYPT_XML_E_OPERATION: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885369i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_SIGNER: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885359i32);
+pub const CRYPT_XML_E_SIGNER: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885359i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_SIGN_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885364i32);
+pub const CRYPT_XML_E_SIGN_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885364i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_TOO_MANY_SIGNATURES: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885362i32);
+pub const CRYPT_XML_E_TOO_MANY_SIGNATURES: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885362i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_TOO_MANY_TRANSFORMS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885374i32);
+pub const CRYPT_XML_E_TOO_MANY_TRANSFORMS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885374i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_TRANSFORM: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885371i32);
+pub const CRYPT_XML_E_TRANSFORM: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885371i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_UNEXPECTED_XML: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885360i32);
+pub const CRYPT_XML_E_UNEXPECTED_XML: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885360i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_UNRESOLVED_REFERENCE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885368i32);
+pub const CRYPT_XML_E_UNRESOLVED_REFERENCE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885368i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const CRYPT_XML_E_VERIFY_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2146885363i32);
+pub const CRYPT_XML_E_VERIFY_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2146885363i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -17221,7 +17221,7 @@ impl ::core::default::Default for CRYPT_XML_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_FLAGS {
+unsafe impl ::windows_core::Abi for CRYPT_XML_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_XML_FLAGS {
@@ -17260,7 +17260,7 @@ impl ::core::default::Default for CRYPT_XML_GROUP_ID {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_GROUP_ID {
+unsafe impl ::windows_core::Abi for CRYPT_XML_GROUP_ID {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_XML_GROUP_ID {
@@ -17273,8 +17273,8 @@ pub const CRYPT_XML_ID_MAX: u32 = 256u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_XML_ISSUER_SERIAL {
-    pub wszIssuer: ::windows::core::PCWSTR,
-    pub wszSerial: ::windows::core::PCWSTR,
+    pub wszIssuer: ::windows_core::PCWSTR,
+    pub wszSerial: ::windows_core::PCWSTR,
 }
 impl ::core::marker::Copy for CRYPT_XML_ISSUER_SERIAL {}
 impl ::core::clone::Clone for CRYPT_XML_ISSUER_SERIAL {
@@ -17287,12 +17287,12 @@ impl ::core::fmt::Debug for CRYPT_XML_ISSUER_SERIAL {
         f.debug_struct("CRYPT_XML_ISSUER_SERIAL").field("wszIssuer", &self.wszIssuer).field("wszSerial", &self.wszSerial).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_ISSUER_SERIAL {
+unsafe impl ::windows_core::Abi for CRYPT_XML_ISSUER_SERIAL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_ISSUER_SERIAL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_ISSUER_SERIAL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_ISSUER_SERIAL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_ISSUER_SERIAL {}
@@ -17304,10 +17304,10 @@ impl ::core::default::Default for CRYPT_XML_ISSUER_SERIAL {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_XML_KEYINFO_PARAM {
-    pub wszId: ::windows::core::PCWSTR,
-    pub wszKeyName: ::windows::core::PCWSTR,
+    pub wszId: ::windows_core::PCWSTR,
+    pub wszKeyName: ::windows_core::PCWSTR,
     pub SKI: CRYPTOAPI_BLOB,
-    pub wszSubjectName: ::windows::core::PCWSTR,
+    pub wszSubjectName: ::windows_core::PCWSTR,
     pub cCertificate: u32,
     pub rgCertificate: *mut CRYPTOAPI_BLOB,
     pub cCRL: u32,
@@ -17324,12 +17324,12 @@ impl ::core::fmt::Debug for CRYPT_XML_KEYINFO_PARAM {
         f.debug_struct("CRYPT_XML_KEYINFO_PARAM").field("wszId", &self.wszId).field("wszKeyName", &self.wszKeyName).field("SKI", &self.SKI).field("wszSubjectName", &self.wszSubjectName).field("cCertificate", &self.cCertificate).field("rgCertificate", &self.rgCertificate).field("cCRL", &self.cCRL).field("rgCRL", &self.rgCRL).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_KEYINFO_PARAM {
+unsafe impl ::windows_core::Abi for CRYPT_XML_KEYINFO_PARAM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_KEYINFO_PARAM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEYINFO_PARAM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEYINFO_PARAM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_KEYINFO_PARAM {}
@@ -17359,7 +17359,7 @@ impl ::core::default::Default for CRYPT_XML_KEYINFO_SPEC {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_KEYINFO_SPEC {
+unsafe impl ::windows_core::Abi for CRYPT_XML_KEYINFO_SPEC {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_XML_KEYINFO_SPEC {
@@ -17392,7 +17392,7 @@ impl ::core::default::Default for CRYPT_XML_KEYINFO_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_KEYINFO_TYPE {
+unsafe impl ::windows_core::Abi for CRYPT_XML_KEYINFO_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_XML_KEYINFO_TYPE {
@@ -17422,12 +17422,12 @@ impl ::core::fmt::Debug for CRYPT_XML_KEY_DSA_KEY_VALUE {
         f.debug_struct("CRYPT_XML_KEY_DSA_KEY_VALUE").field("P", &self.P).field("Q", &self.Q).field("G", &self.G).field("Y", &self.Y).field("J", &self.J).field("Seed", &self.Seed).field("Counter", &self.Counter).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_KEY_DSA_KEY_VALUE {
+unsafe impl ::windows_core::Abi for CRYPT_XML_KEY_DSA_KEY_VALUE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_KEY_DSA_KEY_VALUE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_DSA_KEY_VALUE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_DSA_KEY_VALUE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_KEY_DSA_KEY_VALUE {}
@@ -17439,7 +17439,7 @@ impl ::core::default::Default for CRYPT_XML_KEY_DSA_KEY_VALUE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_XML_KEY_ECDSA_KEY_VALUE {
-    pub wszNamedCurve: ::windows::core::PCWSTR,
+    pub wszNamedCurve: ::windows_core::PCWSTR,
     pub X: CRYPT_XML_DATA_BLOB,
     pub Y: CRYPT_XML_DATA_BLOB,
     pub ExplicitPara: CRYPT_XML_BLOB,
@@ -17455,12 +17455,12 @@ impl ::core::fmt::Debug for CRYPT_XML_KEY_ECDSA_KEY_VALUE {
         f.debug_struct("CRYPT_XML_KEY_ECDSA_KEY_VALUE").field("wszNamedCurve", &self.wszNamedCurve).field("X", &self.X).field("Y", &self.Y).field("ExplicitPara", &self.ExplicitPara).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_KEY_ECDSA_KEY_VALUE {
+unsafe impl ::windows_core::Abi for CRYPT_XML_KEY_ECDSA_KEY_VALUE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_KEY_ECDSA_KEY_VALUE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_ECDSA_KEY_VALUE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_ECDSA_KEY_VALUE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_KEY_ECDSA_KEY_VALUE {}
@@ -17473,7 +17473,7 @@ impl ::core::default::Default for CRYPT_XML_KEY_ECDSA_KEY_VALUE {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_XML_KEY_INFO {
     pub cbSize: u32,
-    pub wszId: ::windows::core::PCWSTR,
+    pub wszId: ::windows_core::PCWSTR,
     pub cKeyInfo: u32,
     pub rgKeyInfo: *mut CRYPT_XML_KEY_INFO_ITEM,
     pub hVerifyKey: BCRYPT_KEY_HANDLE,
@@ -17489,12 +17489,12 @@ impl ::core::fmt::Debug for CRYPT_XML_KEY_INFO {
         f.debug_struct("CRYPT_XML_KEY_INFO").field("cbSize", &self.cbSize).field("wszId", &self.wszId).field("cKeyInfo", &self.cKeyInfo).field("rgKeyInfo", &self.rgKeyInfo).field("hVerifyKey", &self.hVerifyKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_KEY_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_XML_KEY_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_KEY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_KEY_INFO {}
@@ -17515,12 +17515,12 @@ impl ::core::clone::Clone for CRYPT_XML_KEY_INFO_ITEM {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_KEY_INFO_ITEM {
+unsafe impl ::windows_core::Abi for CRYPT_XML_KEY_INFO_ITEM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_KEY_INFO_ITEM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_INFO_ITEM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_INFO_ITEM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_KEY_INFO_ITEM {}
@@ -17532,7 +17532,7 @@ impl ::core::default::Default for CRYPT_XML_KEY_INFO_ITEM {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub union CRYPT_XML_KEY_INFO_ITEM_0 {
-    pub wszKeyName: ::windows::core::PCWSTR,
+    pub wszKeyName: ::windows_core::PCWSTR,
     pub KeyValue: CRYPT_XML_KEY_VALUE,
     pub RetrievalMethod: CRYPT_XML_BLOB,
     pub X509Data: CRYPT_XML_X509DATA,
@@ -17544,12 +17544,12 @@ impl ::core::clone::Clone for CRYPT_XML_KEY_INFO_ITEM_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_KEY_INFO_ITEM_0 {
+unsafe impl ::windows_core::Abi for CRYPT_XML_KEY_INFO_ITEM_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_KEY_INFO_ITEM_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_INFO_ITEM_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_INFO_ITEM_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_KEY_INFO_ITEM_0 {}
@@ -17575,12 +17575,12 @@ impl ::core::fmt::Debug for CRYPT_XML_KEY_RSA_KEY_VALUE {
         f.debug_struct("CRYPT_XML_KEY_RSA_KEY_VALUE").field("Modulus", &self.Modulus).field("Exponent", &self.Exponent).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_KEY_RSA_KEY_VALUE {
+unsafe impl ::windows_core::Abi for CRYPT_XML_KEY_RSA_KEY_VALUE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_KEY_RSA_KEY_VALUE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_RSA_KEY_VALUE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_RSA_KEY_VALUE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_KEY_RSA_KEY_VALUE {}
@@ -17601,12 +17601,12 @@ impl ::core::clone::Clone for CRYPT_XML_KEY_VALUE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_KEY_VALUE {
+unsafe impl ::windows_core::Abi for CRYPT_XML_KEY_VALUE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_KEY_VALUE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_VALUE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_VALUE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_KEY_VALUE {}
@@ -17629,12 +17629,12 @@ impl ::core::clone::Clone for CRYPT_XML_KEY_VALUE_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_KEY_VALUE_0 {
+unsafe impl ::windows_core::Abi for CRYPT_XML_KEY_VALUE_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_KEY_VALUE_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_VALUE_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_KEY_VALUE_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_KEY_VALUE_0 {}
@@ -17666,7 +17666,7 @@ impl ::core::default::Default for CRYPT_XML_KEY_VALUE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_KEY_VALUE_TYPE {
+unsafe impl ::windows_core::Abi for CRYPT_XML_KEY_VALUE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_XML_KEY_VALUE_TYPE {
@@ -17679,9 +17679,9 @@ impl ::core::fmt::Debug for CRYPT_XML_KEY_VALUE_TYPE {
 pub struct CRYPT_XML_OBJECT {
     pub cbSize: u32,
     pub hObject: *mut ::core::ffi::c_void,
-    pub wszId: ::windows::core::PCWSTR,
-    pub wszMimeType: ::windows::core::PCWSTR,
-    pub wszEncoding: ::windows::core::PCWSTR,
+    pub wszId: ::windows_core::PCWSTR,
+    pub wszMimeType: ::windows_core::PCWSTR,
+    pub wszEncoding: ::windows_core::PCWSTR,
     pub Manifest: CRYPT_XML_REFERENCES,
     pub Encoded: CRYPT_XML_BLOB,
 }
@@ -17696,12 +17696,12 @@ impl ::core::fmt::Debug for CRYPT_XML_OBJECT {
         f.debug_struct("CRYPT_XML_OBJECT").field("cbSize", &self.cbSize).field("hObject", &self.hObject).field("wszId", &self.wszId).field("wszMimeType", &self.wszMimeType).field("wszEncoding", &self.wszEncoding).field("Manifest", &self.Manifest).field("Encoded", &self.Encoded).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_OBJECT {
+unsafe impl ::windows_core::Abi for CRYPT_XML_OBJECT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_OBJECT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_OBJECT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_OBJECT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_OBJECT {}
@@ -17730,12 +17730,12 @@ impl ::core::fmt::Debug for CRYPT_XML_PROPERTY {
         f.debug_struct("CRYPT_XML_PROPERTY").field("dwPropId", &self.dwPropId).field("pvValue", &self.pvValue).field("cbValue", &self.cbValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_PROPERTY {
+unsafe impl ::windows_core::Abi for CRYPT_XML_PROPERTY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_PROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_PROPERTY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_PROPERTY {}
@@ -17769,7 +17769,7 @@ impl ::core::default::Default for CRYPT_XML_PROPERTY_ID {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_PROPERTY_ID {
+unsafe impl ::windows_core::Abi for CRYPT_XML_PROPERTY_ID {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_XML_PROPERTY_ID {
@@ -17782,9 +17782,9 @@ impl ::core::fmt::Debug for CRYPT_XML_PROPERTY_ID {
 pub struct CRYPT_XML_REFERENCE {
     pub cbSize: u32,
     pub hReference: *mut ::core::ffi::c_void,
-    pub wszId: ::windows::core::PCWSTR,
-    pub wszUri: ::windows::core::PCWSTR,
-    pub wszType: ::windows::core::PCWSTR,
+    pub wszId: ::windows_core::PCWSTR,
+    pub wszUri: ::windows_core::PCWSTR,
+    pub wszType: ::windows_core::PCWSTR,
     pub DigestMethod: CRYPT_XML_ALGORITHM,
     pub DigestValue: CRYPTOAPI_BLOB,
     pub cTransform: u32,
@@ -17801,12 +17801,12 @@ impl ::core::fmt::Debug for CRYPT_XML_REFERENCE {
         f.debug_struct("CRYPT_XML_REFERENCE").field("cbSize", &self.cbSize).field("hReference", &self.hReference).field("wszId", &self.wszId).field("wszUri", &self.wszUri).field("wszType", &self.wszType).field("DigestMethod", &self.DigestMethod).field("DigestValue", &self.DigestValue).field("cTransform", &self.cTransform).field("rgTransform", &self.rgTransform).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_REFERENCE {
+unsafe impl ::windows_core::Abi for CRYPT_XML_REFERENCE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_REFERENCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_REFERENCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_REFERENCE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_REFERENCE {}
@@ -17832,12 +17832,12 @@ impl ::core::fmt::Debug for CRYPT_XML_REFERENCES {
         f.debug_struct("CRYPT_XML_REFERENCES").field("cReference", &self.cReference).field("rgpReference", &self.rgpReference).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_REFERENCES {
+unsafe impl ::windows_core::Abi for CRYPT_XML_REFERENCES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_REFERENCES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_REFERENCES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_REFERENCES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_REFERENCES {}
@@ -17853,7 +17853,7 @@ pub const CRYPT_XML_REFERENCES_MAX: u32 = 32760u32;
 pub struct CRYPT_XML_SIGNATURE {
     pub cbSize: u32,
     pub hSignature: *mut ::core::ffi::c_void,
-    pub wszId: ::windows::core::PCWSTR,
+    pub wszId: ::windows_core::PCWSTR,
     pub SignedInfo: CRYPT_XML_SIGNED_INFO,
     pub SignatureValue: CRYPTOAPI_BLOB,
     pub pKeyInfo: *mut CRYPT_XML_KEY_INFO,
@@ -17871,12 +17871,12 @@ impl ::core::fmt::Debug for CRYPT_XML_SIGNATURE {
         f.debug_struct("CRYPT_XML_SIGNATURE").field("cbSize", &self.cbSize).field("hSignature", &self.hSignature).field("wszId", &self.wszId).field("SignedInfo", &self.SignedInfo).field("SignatureValue", &self.SignatureValue).field("pKeyInfo", &self.pKeyInfo).field("cObject", &self.cObject).field("rgpObject", &self.rgpObject).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_SIGNATURE {
+unsafe impl ::windows_core::Abi for CRYPT_XML_SIGNATURE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_SIGNATURE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_SIGNATURE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_SIGNATURE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_SIGNATURE {}
@@ -17893,7 +17893,7 @@ pub const CRYPT_XML_SIGNATURE_VALUE_MAX: u32 = 2048u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_XML_SIGNED_INFO {
     pub cbSize: u32,
-    pub wszId: ::windows::core::PCWSTR,
+    pub wszId: ::windows_core::PCWSTR,
     pub Canonicalization: CRYPT_XML_ALGORITHM,
     pub SignatureMethod: CRYPT_XML_ALGORITHM,
     pub cReference: u32,
@@ -17911,12 +17911,12 @@ impl ::core::fmt::Debug for CRYPT_XML_SIGNED_INFO {
         f.debug_struct("CRYPT_XML_SIGNED_INFO").field("cbSize", &self.cbSize).field("wszId", &self.wszId).field("Canonicalization", &self.Canonicalization).field("SignatureMethod", &self.SignatureMethod).field("cReference", &self.cReference).field("rgpReference", &self.rgpReference).field("Encoded", &self.Encoded).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_SIGNED_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_XML_SIGNED_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_SIGNED_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_SIGNED_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_SIGNED_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_SIGNED_INFO {}
@@ -17943,12 +17943,12 @@ impl ::core::fmt::Debug for CRYPT_XML_STATUS {
         f.debug_struct("CRYPT_XML_STATUS").field("cbSize", &self.cbSize).field("dwErrorStatus", &self.dwErrorStatus).field("dwInfoStatus", &self.dwInfoStatus).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_STATUS {
+unsafe impl ::windows_core::Abi for CRYPT_XML_STATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_STATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_STATUS {}
@@ -17984,7 +17984,7 @@ impl ::core::default::Default for CRYPT_XML_STATUS_ERROR_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_STATUS_ERROR_STATUS {
+unsafe impl ::windows_core::Abi for CRYPT_XML_STATUS_ERROR_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_XML_STATUS_ERROR_STATUS {
@@ -18019,7 +18019,7 @@ impl ::core::default::Default for CRYPT_XML_STATUS_INFO_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_STATUS_INFO_STATUS {
+unsafe impl ::windows_core::Abi for CRYPT_XML_STATUS_INFO_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_XML_STATUS_INFO_STATUS {
@@ -18047,12 +18047,12 @@ impl ::core::fmt::Debug for CRYPT_XML_TRANSFORM_CHAIN_CONFIG {
         f.debug_struct("CRYPT_XML_TRANSFORM_CHAIN_CONFIG").field("cbSize", &self.cbSize).field("cTransformInfo", &self.cTransformInfo).field("rgpTransformInfo", &self.rgpTransformInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_TRANSFORM_CHAIN_CONFIG {
+unsafe impl ::windows_core::Abi for CRYPT_XML_TRANSFORM_CHAIN_CONFIG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_TRANSFORM_CHAIN_CONFIG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_TRANSFORM_CHAIN_CONFIG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_TRANSFORM_CHAIN_CONFIG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_TRANSFORM_CHAIN_CONFIG {}
@@ -18082,7 +18082,7 @@ impl ::core::default::Default for CRYPT_XML_TRANSFORM_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_TRANSFORM_FLAGS {
+unsafe impl ::windows_core::Abi for CRYPT_XML_TRANSFORM_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_XML_TRANSFORM_FLAGS {
@@ -18122,7 +18122,7 @@ impl ::core::ops::Not for CRYPT_XML_TRANSFORM_FLAGS {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CRYPT_XML_TRANSFORM_INFO {
     pub cbSize: u32,
-    pub wszAlgorithm: ::windows::core::PCWSTR,
+    pub wszAlgorithm: ::windows_core::PCWSTR,
     pub cbBufferSize: u32,
     pub dwFlags: CRYPT_XML_TRANSFORM_FLAGS,
     pub pfnCreateTransform: PFN_CRYPT_XML_CREATE_TRANSFORM,
@@ -18138,12 +18138,12 @@ impl ::core::fmt::Debug for CRYPT_XML_TRANSFORM_INFO {
         f.debug_struct("CRYPT_XML_TRANSFORM_INFO").field("cbSize", &self.cbSize).field("wszAlgorithm", &self.wszAlgorithm).field("cbBufferSize", &self.cbBufferSize).field("dwFlags", &self.dwFlags).field("pfnCreateTransform", &self.pfnCreateTransform.map(|f| f as usize)).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_TRANSFORM_INFO {
+unsafe impl ::windows_core::Abi for CRYPT_XML_TRANSFORM_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_TRANSFORM_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_TRANSFORM_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_TRANSFORM_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_TRANSFORM_INFO {}
@@ -18171,12 +18171,12 @@ impl ::core::fmt::Debug for CRYPT_XML_X509DATA {
         f.debug_struct("CRYPT_XML_X509DATA").field("cX509Data", &self.cX509Data).field("rgX509Data", &self.rgX509Data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_X509DATA {
+unsafe impl ::windows_core::Abi for CRYPT_XML_X509DATA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_X509DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_X509DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_X509DATA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_X509DATA {}
@@ -18197,12 +18197,12 @@ impl ::core::clone::Clone for CRYPT_XML_X509DATA_ITEM {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_X509DATA_ITEM {
+unsafe impl ::windows_core::Abi for CRYPT_XML_X509DATA_ITEM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_X509DATA_ITEM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_X509DATA_ITEM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_X509DATA_ITEM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_X509DATA_ITEM {}
@@ -18216,7 +18216,7 @@ impl ::core::default::Default for CRYPT_XML_X509DATA_ITEM {
 pub union CRYPT_XML_X509DATA_ITEM_0 {
     pub IssuerSerial: CRYPT_XML_ISSUER_SERIAL,
     pub SKI: CRYPT_XML_DATA_BLOB,
-    pub wszSubjectName: ::windows::core::PCWSTR,
+    pub wszSubjectName: ::windows_core::PCWSTR,
     pub Certificate: CRYPT_XML_DATA_BLOB,
     pub CRL: CRYPT_XML_DATA_BLOB,
     pub Custom: CRYPT_XML_BLOB,
@@ -18227,12 +18227,12 @@ impl ::core::clone::Clone for CRYPT_XML_X509DATA_ITEM_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_X509DATA_ITEM_0 {
+unsafe impl ::windows_core::Abi for CRYPT_XML_X509DATA_ITEM_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CRYPT_XML_X509DATA_ITEM_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_X509DATA_ITEM_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CRYPT_XML_X509DATA_ITEM_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CRYPT_XML_X509DATA_ITEM_0 {}
@@ -18268,7 +18268,7 @@ impl ::core::default::Default for CRYPT_XML_X509DATA_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CRYPT_XML_X509DATA_TYPE {
+unsafe impl ::windows_core::Abi for CRYPT_XML_X509DATA_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CRYPT_XML_X509DATA_TYPE {
@@ -18293,12 +18293,12 @@ impl ::core::fmt::Debug for CTL_ANY_SUBJECT_INFO {
         f.debug_struct("CTL_ANY_SUBJECT_INFO").field("SubjectAlgorithm", &self.SubjectAlgorithm).field("SubjectIdentifier", &self.SubjectIdentifier).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CTL_ANY_SUBJECT_INFO {
+unsafe impl ::windows_core::Abi for CTL_ANY_SUBJECT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CTL_ANY_SUBJECT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_ANY_SUBJECT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_ANY_SUBJECT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CTL_ANY_SUBJECT_INFO {}
@@ -18339,13 +18339,13 @@ impl ::core::fmt::Debug for CTL_CONTEXT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CTL_CONTEXT {
+unsafe impl ::windows_core::Abi for CTL_CONTEXT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CTL_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_CONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_CONTEXT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18374,12 +18374,12 @@ impl ::core::fmt::Debug for CTL_ENTRY {
         f.debug_struct("CTL_ENTRY").field("SubjectIdentifier", &self.SubjectIdentifier).field("cAttribute", &self.cAttribute).field("rgAttribute", &self.rgAttribute).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CTL_ENTRY {
+unsafe impl ::windows_core::Abi for CTL_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CTL_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CTL_ENTRY {}
@@ -18416,13 +18416,13 @@ impl ::core::fmt::Debug for CTL_FIND_SUBJECT_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CTL_FIND_SUBJECT_PARA {
+unsafe impl ::windows_core::Abi for CTL_FIND_SUBJECT_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CTL_FIND_SUBJECT_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_FIND_SUBJECT_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_FIND_SUBJECT_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18457,13 +18457,13 @@ impl ::core::fmt::Debug for CTL_FIND_USAGE_PARA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CTL_FIND_USAGE_PARA {
+unsafe impl ::windows_core::Abi for CTL_FIND_USAGE_PARA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CTL_FIND_USAGE_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_FIND_USAGE_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_FIND_USAGE_PARA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18517,13 +18517,13 @@ impl ::core::fmt::Debug for CTL_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CTL_INFO {
+unsafe impl ::windows_core::Abi for CTL_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CTL_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18538,7 +18538,7 @@ impl ::core::default::Default for CTL_INFO {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct CTL_USAGE {
     pub cUsageIdentifier: u32,
-    pub rgpszUsageIdentifier: *mut ::windows::core::PSTR,
+    pub rgpszUsageIdentifier: *mut ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for CTL_USAGE {}
 impl ::core::clone::Clone for CTL_USAGE {
@@ -18551,12 +18551,12 @@ impl ::core::fmt::Debug for CTL_USAGE {
         f.debug_struct("CTL_USAGE").field("cUsageIdentifier", &self.cUsageIdentifier).field("rgpszUsageIdentifier", &self.rgpszUsageIdentifier).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CTL_USAGE {
+unsafe impl ::windows_core::Abi for CTL_USAGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CTL_USAGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_USAGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_USAGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CTL_USAGE {}
@@ -18582,12 +18582,12 @@ impl ::core::fmt::Debug for CTL_USAGE_MATCH {
         f.debug_struct("CTL_USAGE_MATCH").field("dwType", &self.dwType).field("Usage", &self.Usage).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CTL_USAGE_MATCH {
+unsafe impl ::windows_core::Abi for CTL_USAGE_MATCH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CTL_USAGE_MATCH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_USAGE_MATCH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_USAGE_MATCH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CTL_USAGE_MATCH {}
@@ -18619,12 +18619,12 @@ impl ::core::fmt::Debug for CTL_VERIFY_USAGE_PARA {
         f.debug_struct("CTL_VERIFY_USAGE_PARA").field("cbSize", &self.cbSize).field("ListIdentifier", &self.ListIdentifier).field("cCtlStore", &self.cCtlStore).field("rghCtlStore", &self.rghCtlStore).field("cSignerStore", &self.cSignerStore).field("rghSignerStore", &self.rghSignerStore).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CTL_VERIFY_USAGE_PARA {
+unsafe impl ::windows_core::Abi for CTL_VERIFY_USAGE_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CTL_VERIFY_USAGE_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_VERIFY_USAGE_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_VERIFY_USAGE_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CTL_VERIFY_USAGE_PARA {}
@@ -18660,13 +18660,13 @@ impl ::core::fmt::Debug for CTL_VERIFY_USAGE_STATUS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CTL_VERIFY_USAGE_STATUS {
+unsafe impl ::windows_core::Abi for CTL_VERIFY_USAGE_STATUS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CTL_VERIFY_USAGE_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_VERIFY_USAGE_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CTL_VERIFY_USAGE_STATUS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18682,7 +18682,7 @@ pub const CUR_BLOB_VERSION: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddCRLContextToStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pcrlcontext: *const CRL_CONTEXT, dwadddisposition: u32, ppstorecontext: *mut *mut CRL_CONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddCRLContextToStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pcrlcontext: *const CRL_CONTEXT, dwadddisposition: u32, ppstorecontext: *mut *mut CRL_CONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18697,7 +18697,7 @@ pub unsafe fn CertAddCRLContextToStore<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddCRLLinkToStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pcrlcontext: *const CRL_CONTEXT, dwadddisposition: u32, ppstorecontext: *mut *mut CRL_CONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddCRLLinkToStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pcrlcontext: *const CRL_CONTEXT, dwadddisposition: u32, ppstorecontext: *mut *mut CRL_CONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18712,7 +18712,7 @@ pub unsafe fn CertAddCRLLinkToStore<'a, Param0: ::windows::core::IntoParam<'a, H
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddCTLContextToStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pctlcontext: *const CTL_CONTEXT, dwadddisposition: u32, ppstorecontext: *mut *mut CTL_CONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddCTLContextToStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pctlcontext: *const CTL_CONTEXT, dwadddisposition: u32, ppstorecontext: *mut *mut CTL_CONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18727,7 +18727,7 @@ pub unsafe fn CertAddCTLContextToStore<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddCTLLinkToStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pctlcontext: *const CTL_CONTEXT, dwadddisposition: u32, ppstorecontext: *mut *mut CTL_CONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddCTLLinkToStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pctlcontext: *const CTL_CONTEXT, dwadddisposition: u32, ppstorecontext: *mut *mut CTL_CONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18742,7 +18742,7 @@ pub unsafe fn CertAddCTLLinkToStore<'a, Param0: ::windows::core::IntoParam<'a, H
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddCertificateContextToStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pcertcontext: *const CERT_CONTEXT, dwadddisposition: u32, ppstorecontext: *mut *mut CERT_CONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddCertificateContextToStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pcertcontext: *const CERT_CONTEXT, dwadddisposition: u32, ppstorecontext: *mut *mut CERT_CONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18757,7 +18757,7 @@ pub unsafe fn CertAddCertificateContextToStore<'a, Param0: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddCertificateLinkToStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pcertcontext: *const CERT_CONTEXT, dwadddisposition: u32, ppstorecontext: *mut *mut CERT_CONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddCertificateLinkToStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pcertcontext: *const CERT_CONTEXT, dwadddisposition: u32, ppstorecontext: *mut *mut CERT_CONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18772,7 +18772,7 @@ pub unsafe fn CertAddCertificateLinkToStore<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddEncodedCRLToStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwcertencodingtype: u32, pbcrlencoded: *const u8, cbcrlencoded: u32, dwadddisposition: u32, ppcrlcontext: *mut *mut CRL_CONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddEncodedCRLToStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwcertencodingtype: u32, pbcrlencoded: *const u8, cbcrlencoded: u32, dwadddisposition: u32, ppcrlcontext: *mut *mut CRL_CONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18787,7 +18787,7 @@ pub unsafe fn CertAddEncodedCRLToStore<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddEncodedCTLToStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwmsgandcertencodingtype: u32, pbctlencoded: *const u8, cbctlencoded: u32, dwadddisposition: u32, ppctlcontext: *mut *mut CTL_CONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddEncodedCTLToStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwmsgandcertencodingtype: u32, pbctlencoded: *const u8, cbctlencoded: u32, dwadddisposition: u32, ppctlcontext: *mut *mut CTL_CONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18802,7 +18802,7 @@ pub unsafe fn CertAddEncodedCTLToStore<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddEncodedCertificateToStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwcertencodingtype: u32, pbcertencoded: *const u8, cbcertencoded: u32, dwadddisposition: u32, ppcertcontext: *mut *mut CERT_CONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddEncodedCertificateToStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwcertencodingtype: u32, pbcertencoded: *const u8, cbcertencoded: u32, dwadddisposition: u32, ppcertcontext: *mut *mut CERT_CONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18817,12 +18817,12 @@ pub unsafe fn CertAddEncodedCertificateToStore<'a, Param0: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddEncodedCertificateToSystemStoreA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(szcertstorename: Param0, pbcertencoded: *const u8, cbcertencoded: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddEncodedCertificateToSystemStoreA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(szcertstorename: Param0, pbcertencoded: *const u8, cbcertencoded: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertAddEncodedCertificateToSystemStoreA(szcertstorename: ::windows::core::PCSTR, pbcertencoded: *const u8, cbcertencoded: u32) -> super::super::Foundation::BOOL;
+            fn CertAddEncodedCertificateToSystemStoreA(szcertstorename: ::windows_core::PCSTR, pbcertencoded: *const u8, cbcertencoded: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertAddEncodedCertificateToSystemStoreA(szcertstorename.into_param().abi(), ::core::mem::transmute(pbcertencoded), ::core::mem::transmute(cbcertencoded)))
     }
@@ -18832,12 +18832,12 @@ pub unsafe fn CertAddEncodedCertificateToSystemStoreA<'a, Param0: ::windows::cor
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddEncodedCertificateToSystemStoreW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(szcertstorename: Param0, pbcertencoded: *const u8, cbcertencoded: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddEncodedCertificateToSystemStoreW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(szcertstorename: Param0, pbcertencoded: *const u8, cbcertencoded: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertAddEncodedCertificateToSystemStoreW(szcertstorename: ::windows::core::PCWSTR, pbcertencoded: *const u8, cbcertencoded: u32) -> super::super::Foundation::BOOL;
+            fn CertAddEncodedCertificateToSystemStoreW(szcertstorename: ::windows_core::PCWSTR, pbcertencoded: *const u8, cbcertencoded: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertAddEncodedCertificateToSystemStoreW(szcertstorename.into_param().abi(), ::core::mem::transmute(pbcertencoded), ::core::mem::transmute(cbcertencoded)))
     }
@@ -18847,12 +18847,12 @@ pub unsafe fn CertAddEncodedCertificateToSystemStoreW<'a, Param0: ::windows::cor
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddEnhancedKeyUsageIdentifier<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pcertcontext: *const CERT_CONTEXT, pszusageidentifier: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddEnhancedKeyUsageIdentifier<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pcertcontext: *const CERT_CONTEXT, pszusageidentifier: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertAddEnhancedKeyUsageIdentifier(pcertcontext: *const CERT_CONTEXT, pszusageidentifier: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn CertAddEnhancedKeyUsageIdentifier(pcertcontext: *const CERT_CONTEXT, pszusageidentifier: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertAddEnhancedKeyUsageIdentifier(::core::mem::transmute(pcertcontext), pszusageidentifier.into_param().abi()))
     }
@@ -18890,7 +18890,7 @@ pub unsafe fn CertAddRefServerOcspResponseContext(pserverocspresponsecontext: *c
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddSerializedElementToStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pbelement: *const u8, cbelement: u32, dwadddisposition: u32, dwflags: u32, dwcontexttypeflags: u32, pdwcontexttype: *mut u32, ppvcontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddSerializedElementToStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pbelement: *const u8, cbelement: u32, dwadddisposition: u32, dwflags: u32, dwcontexttypeflags: u32, pdwcontexttype: *mut u32, ppvcontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18905,7 +18905,7 @@ pub unsafe fn CertAddSerializedElementToStore<'a, Param0: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertAddStoreToCollection<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>, Param1: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcollectionstore: Param0, hsiblingstore: Param1, dwupdateflags: u32, dwpriority: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CertAddStoreToCollection<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>, Param1: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcollectionstore: Param0, hsiblingstore: Param1, dwupdateflags: u32, dwpriority: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -18919,12 +18919,12 @@ pub unsafe fn CertAddStoreToCollection<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CertAlgIdToOID(dwalgid: u32) -> ::windows::core::PSTR {
+pub unsafe fn CertAlgIdToOID(dwalgid: u32) -> ::windows_core::PSTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertAlgIdToOID(dwalgid: u32) -> ::windows::core::PSTR;
+            fn CertAlgIdToOID(dwalgid: u32) -> ::windows_core::PSTR;
         }
         ::core::mem::transmute(CertAlgIdToOID(::core::mem::transmute(dwalgid)))
     }
@@ -18948,7 +18948,7 @@ pub unsafe fn CertCloseServerOcspResponse(hserverocspresponse: *const ::core::ff
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertCloseStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CertCloseStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19023,7 +19023,7 @@ pub unsafe fn CertComparePublicKeyInfo(dwcertencodingtype: u32, ppublickey1: *co
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertControlStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwflags: CERT_CONTROL_STORE_FLAGS, dwctrltype: u32, pvctrlpara: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn CertControlStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwflags: CERT_CONTROL_STORE_FLAGS, dwctrltype: u32, pvctrlpara: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19075,7 +19075,7 @@ pub unsafe fn CertCreateCTLEntryFromCertificateContextProperties(pcertcontext: *
         extern "system" {
             fn CertCreateCTLEntryFromCertificateContextProperties(pcertcontext: *const CERT_CONTEXT, coptattr: u32, rgoptattr: *const CRYPT_ATTRIBUTE, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, pctlentry: *mut CTL_ENTRY, pcbctlentry: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CertCreateCTLEntryFromCertificateContextProperties(::core::mem::transmute(pcertcontext), rgoptattr.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rgoptattr)), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvreserved), ::core::mem::transmute(pctlentry), ::core::mem::transmute(pcbctlentry)))
+        ::core::mem::transmute(CertCreateCTLEntryFromCertificateContextProperties(::core::mem::transmute(pcertcontext), rgoptattr.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rgoptattr)), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvreserved), ::core::mem::transmute(pctlentry), ::core::mem::transmute(pcbctlentry)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -19128,7 +19128,7 @@ pub unsafe fn CertCreateContext(dwcontexttype: u32, dwencodingtype: u32, pbencod
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertCreateSelfSignCertificate<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>>(hcryptprovorncryptkey: Param0, psubjectissuerblob: *const CRYPTOAPI_BLOB, dwflags: CERT_CREATE_SELFSIGN_FLAGS, pkeyprovinfo: *const CRYPT_KEY_PROV_INFO, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, pstarttime: *const super::super::Foundation::SYSTEMTIME, pendtime: *const super::super::Foundation::SYSTEMTIME, pextensions: *const CERT_EXTENSIONS) -> *mut CERT_CONTEXT {
+pub unsafe fn CertCreateSelfSignCertificate<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>>(hcryptprovorncryptkey: Param0, psubjectissuerblob: *const CRYPTOAPI_BLOB, dwflags: CERT_CREATE_SELFSIGN_FLAGS, pkeyprovinfo: *const CRYPT_KEY_PROV_INFO, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, pstarttime: *const super::super::Foundation::SYSTEMTIME, pendtime: *const super::super::Foundation::SYSTEMTIME, pextensions: *const CERT_EXTENSIONS) -> *mut CERT_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19247,7 +19247,7 @@ pub unsafe fn CertDuplicateCertificateContext(pcertcontext: *const CERT_CONTEXT)
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CertDuplicateStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0) -> HCERTSTORE {
+pub unsafe fn CertDuplicateStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0) -> HCERTSTORE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19277,7 +19277,7 @@ pub unsafe fn CertEnumCRLContextProperties(pcrlcontext: *const CRL_CONTEXT, dwpr
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertEnumCRLsInStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pprevcrlcontext: *const CRL_CONTEXT) -> *mut CRL_CONTEXT {
+pub unsafe fn CertEnumCRLsInStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pprevcrlcontext: *const CRL_CONTEXT) -> *mut CRL_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19307,7 +19307,7 @@ pub unsafe fn CertEnumCTLContextProperties(pctlcontext: *const CTL_CONTEXT, dwpr
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertEnumCTLsInStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pprevctlcontext: *const CTL_CONTEXT) -> *mut CTL_CONTEXT {
+pub unsafe fn CertEnumCTLsInStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pprevctlcontext: *const CTL_CONTEXT) -> *mut CTL_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19337,7 +19337,7 @@ pub unsafe fn CertEnumCertificateContextProperties(pcertcontext: *const CERT_CON
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertEnumCertificatesInStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pprevcertcontext: *const CERT_CONTEXT) -> *mut CERT_CONTEXT {
+pub unsafe fn CertEnumCertificatesInStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pprevcertcontext: *const CERT_CONTEXT) -> *mut CERT_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19357,7 +19357,7 @@ pub unsafe fn CertEnumPhysicalStore(pvsystemstore: *const ::core::ffi::c_void, d
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertEnumPhysicalStore(pvsystemstore: *const ::core::ffi::c_void, dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenum: ::windows::core::RawPtr) -> super::super::Foundation::BOOL;
+            fn CertEnumPhysicalStore(pvsystemstore: *const ::core::ffi::c_void, dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenum: ::windows_core::RawPtr) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertEnumPhysicalStore(::core::mem::transmute(pvsystemstore), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvarg), ::core::mem::transmute(pfnenum)))
     }
@@ -19387,7 +19387,7 @@ pub unsafe fn CertEnumSystemStore(dwflags: u32, pvsystemstorelocationpara: *cons
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertEnumSystemStore(dwflags: u32, pvsystemstorelocationpara: *const ::core::ffi::c_void, pvarg: *mut ::core::ffi::c_void, pfnenum: ::windows::core::RawPtr) -> super::super::Foundation::BOOL;
+            fn CertEnumSystemStore(dwflags: u32, pvsystemstorelocationpara: *const ::core::ffi::c_void, pvarg: *mut ::core::ffi::c_void, pfnenum: ::windows_core::RawPtr) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertEnumSystemStore(::core::mem::transmute(dwflags), ::core::mem::transmute(pvsystemstorelocationpara), ::core::mem::transmute(pvarg), ::core::mem::transmute(pfnenum)))
     }
@@ -19402,7 +19402,7 @@ pub unsafe fn CertEnumSystemStoreLocation(dwflags: u32, pvarg: *mut ::core::ffi:
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertEnumSystemStoreLocation(dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenum: ::windows::core::RawPtr) -> super::super::Foundation::BOOL;
+            fn CertEnumSystemStoreLocation(dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenum: ::windows_core::RawPtr) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertEnumSystemStoreLocation(::core::mem::transmute(dwflags), ::core::mem::transmute(pvarg), ::core::mem::transmute(pfnenum)))
     }
@@ -19411,14 +19411,14 @@ pub unsafe fn CertEnumSystemStoreLocation(dwflags: u32, pvarg: *mut ::core::ffi:
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CertFindAttribute<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszobjid: Param0, rgattr: &[CRYPT_ATTRIBUTE]) -> *mut CRYPT_ATTRIBUTE {
+pub unsafe fn CertFindAttribute<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszobjid: Param0, rgattr: &[CRYPT_ATTRIBUTE]) -> *mut CRYPT_ATTRIBUTE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertFindAttribute(pszobjid: ::windows::core::PCSTR, cattr: u32, rgattr: *const CRYPT_ATTRIBUTE) -> *mut CRYPT_ATTRIBUTE;
+            fn CertFindAttribute(pszobjid: ::windows_core::PCSTR, cattr: u32, rgattr: *const CRYPT_ATTRIBUTE) -> *mut CRYPT_ATTRIBUTE;
         }
-        ::core::mem::transmute(CertFindAttribute(pszobjid.into_param().abi(), rgattr.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rgattr))))
+        ::core::mem::transmute(CertFindAttribute(pszobjid.into_param().abi(), rgattr.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rgattr))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -19426,7 +19426,7 @@ pub unsafe fn CertFindAttribute<'a, Param0: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertFindCRLInStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwcertencodingtype: u32, dwfindflags: u32, dwfindtype: u32, pvfindpara: *const ::core::ffi::c_void, pprevcrlcontext: *const CRL_CONTEXT) -> *mut CRL_CONTEXT {
+pub unsafe fn CertFindCRLInStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwcertencodingtype: u32, dwfindflags: u32, dwfindtype: u32, pvfindpara: *const ::core::ffi::c_void, pprevcrlcontext: *const CRL_CONTEXT) -> *mut CRL_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19441,7 +19441,7 @@ pub unsafe fn CertFindCRLInStore<'a, Param0: ::windows::core::IntoParam<'a, HCER
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertFindCTLInStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwmsgandcertencodingtype: u32, dwfindflags: u32, dwfindtype: CERT_FIND_TYPE, pvfindpara: *const ::core::ffi::c_void, pprevctlcontext: *const CTL_CONTEXT) -> *mut CTL_CONTEXT {
+pub unsafe fn CertFindCTLInStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwmsgandcertencodingtype: u32, dwfindflags: u32, dwfindtype: CERT_FIND_TYPE, pvfindpara: *const ::core::ffi::c_void, pprevctlcontext: *const CTL_CONTEXT) -> *mut CTL_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19471,7 +19471,7 @@ pub unsafe fn CertFindCertificateInCRL(pcert: *const CERT_CONTEXT, pcrlcontext: 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertFindCertificateInStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwcertencodingtype: u32, dwfindflags: u32, dwfindtype: CERT_FIND_FLAGS, pvfindpara: *const ::core::ffi::c_void, pprevcertcontext: *const CERT_CONTEXT) -> *mut CERT_CONTEXT {
+pub unsafe fn CertFindCertificateInStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwcertencodingtype: u32, dwfindflags: u32, dwfindtype: CERT_FIND_FLAGS, pvfindpara: *const ::core::ffi::c_void, pprevcertcontext: *const CERT_CONTEXT) -> *mut CERT_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19486,7 +19486,7 @@ pub unsafe fn CertFindCertificateInStore<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertFindChainInStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwcertencodingtype: u32, dwfindflags: CERT_FIND_CHAIN_IN_STORE_FLAGS, dwfindtype: u32, pvfindpara: *const ::core::ffi::c_void, pprevchaincontext: *const CERT_CHAIN_CONTEXT) -> *mut CERT_CHAIN_CONTEXT {
+pub unsafe fn CertFindChainInStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwcertencodingtype: u32, dwfindflags: CERT_FIND_CHAIN_IN_STORE_FLAGS, dwfindtype: u32, pvfindpara: *const ::core::ffi::c_void, pprevchaincontext: *const CERT_CHAIN_CONTEXT) -> *mut CERT_CHAIN_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19501,26 +19501,26 @@ pub unsafe fn CertFindChainInStore<'a, Param0: ::windows::core::IntoParam<'a, HC
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertFindExtension<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszobjid: Param0, rgextensions: &[CERT_EXTENSION]) -> *mut CERT_EXTENSION {
+pub unsafe fn CertFindExtension<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszobjid: Param0, rgextensions: &[CERT_EXTENSION]) -> *mut CERT_EXTENSION {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertFindExtension(pszobjid: ::windows::core::PCSTR, cextensions: u32, rgextensions: *const CERT_EXTENSION) -> *mut CERT_EXTENSION;
+            fn CertFindExtension(pszobjid: ::windows_core::PCSTR, cextensions: u32, rgextensions: *const CERT_EXTENSION) -> *mut CERT_EXTENSION;
         }
-        ::core::mem::transmute(CertFindExtension(pszobjid.into_param().abi(), rgextensions.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rgextensions))))
+        ::core::mem::transmute(CertFindExtension(pszobjid.into_param().abi(), rgextensions.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rgextensions))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CertFindRDNAttr<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszobjid: Param0, pname: *const CERT_NAME_INFO) -> *mut CERT_RDN_ATTR {
+pub unsafe fn CertFindRDNAttr<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszobjid: Param0, pname: *const CERT_NAME_INFO) -> *mut CERT_RDN_ATTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertFindRDNAttr(pszobjid: ::windows::core::PCSTR, pname: *const CERT_NAME_INFO) -> *mut CERT_RDN_ATTR;
+            fn CertFindRDNAttr(pszobjid: ::windows_core::PCSTR, pname: *const CERT_NAME_INFO) -> *mut CERT_RDN_ATTR;
         }
         ::core::mem::transmute(CertFindRDNAttr(pszobjid.into_param().abi(), ::core::mem::transmute(pname)))
     }
@@ -19604,7 +19604,7 @@ pub unsafe fn CertFreeCertificateChain(pchaincontext: *const CERT_CHAIN_CONTEXT)
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CertFreeCertificateChainEngine<'a, Param0: ::windows::core::IntoParam<'a, HCERTCHAINENGINE>>(hchainengine: Param0) {
+pub unsafe fn CertFreeCertificateChainEngine<'a, Param0: ::windows_core::IntoParam<'a, HCERTCHAINENGINE>>(hchainengine: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19678,7 +19678,7 @@ pub unsafe fn CertGetCRLContextProperty(pcrlcontext: *const CRL_CONTEXT, dwpropi
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertGetCRLFromStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pissuercontext: *const CERT_CONTEXT, pprevcrlcontext: *const CRL_CONTEXT, pdwflags: *mut u32) -> *mut CRL_CONTEXT {
+pub unsafe fn CertGetCRLFromStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, pissuercontext: *const CERT_CONTEXT, pprevcrlcontext: *const CRL_CONTEXT, pdwflags: *mut u32) -> *mut CRL_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19708,7 +19708,7 @@ pub unsafe fn CertGetCTLContextProperty(pctlcontext: *const CTL_CONTEXT, dwpropi
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertGetCertificateChain<'a, Param0: ::windows::core::IntoParam<'a, HCERTCHAINENGINE>, Param3: ::windows::core::IntoParam<'a, HCERTSTORE>>(hchainengine: Param0, pcertcontext: *const CERT_CONTEXT, ptime: *const super::super::Foundation::FILETIME, hadditionalstore: Param3, pchainpara: *const CERT_CHAIN_PARA, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, ppchaincontext: *mut *mut CERT_CHAIN_CONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn CertGetCertificateChain<'a, Param0: ::windows_core::IntoParam<'a, HCERTCHAINENGINE>, Param3: ::windows_core::IntoParam<'a, HCERTSTORE>>(hchainengine: Param0, pcertcontext: *const CERT_CONTEXT, ptime: *const super::super::Foundation::FILETIME, hadditionalstore: Param3, pchainpara: *const CERT_CHAIN_PARA, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, ppchaincontext: *mut *mut CERT_CHAIN_CONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19768,7 +19768,7 @@ pub unsafe fn CertGetIntendedKeyUsage(dwcertencodingtype: u32, pcertinfo: *const
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertGetIssuerCertificateFromStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, psubjectcontext: *const CERT_CONTEXT, pprevissuercontext: *const CERT_CONTEXT, pdwflags: *mut u32) -> *mut CERT_CONTEXT {
+pub unsafe fn CertGetIssuerCertificateFromStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, psubjectcontext: *const CERT_CONTEXT, pprevissuercontext: *const CERT_CONTEXT, pdwflags: *mut u32) -> *mut CERT_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19788,9 +19788,9 @@ pub unsafe fn CertGetNameStringA(pcertcontext: *const CERT_CONTEXT, dwtype: u32,
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertGetNameStringA(pcertcontext: *const CERT_CONTEXT, dwtype: u32, dwflags: u32, pvtypepara: *const ::core::ffi::c_void, psznamestring: ::windows::core::PSTR, cchnamestring: u32) -> u32;
+            fn CertGetNameStringA(pcertcontext: *const CERT_CONTEXT, dwtype: u32, dwflags: u32, pvtypepara: *const ::core::ffi::c_void, psznamestring: ::windows_core::PSTR, cchnamestring: u32) -> u32;
         }
-        ::core::mem::transmute(CertGetNameStringA(::core::mem::transmute(pcertcontext), ::core::mem::transmute(dwtype), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvtypepara), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(psznamestring)), psznamestring.len() as _))
+        ::core::mem::transmute(CertGetNameStringA(::core::mem::transmute(pcertcontext), ::core::mem::transmute(dwtype), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvtypepara), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(psznamestring)), psznamestring.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -19803,9 +19803,9 @@ pub unsafe fn CertGetNameStringW(pcertcontext: *const CERT_CONTEXT, dwtype: u32,
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertGetNameStringW(pcertcontext: *const CERT_CONTEXT, dwtype: u32, dwflags: u32, pvtypepara: *const ::core::ffi::c_void, psznamestring: ::windows::core::PWSTR, cchnamestring: u32) -> u32;
+            fn CertGetNameStringW(pcertcontext: *const CERT_CONTEXT, dwtype: u32, dwflags: u32, pvtypepara: *const ::core::ffi::c_void, psznamestring: ::windows_core::PWSTR, cchnamestring: u32) -> u32;
         }
-        ::core::mem::transmute(CertGetNameStringW(::core::mem::transmute(pcertcontext), ::core::mem::transmute(dwtype), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvtypepara), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(psznamestring)), psznamestring.len() as _))
+        ::core::mem::transmute(CertGetNameStringW(::core::mem::transmute(pcertcontext), ::core::mem::transmute(dwtype), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvtypepara), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(psznamestring)), psznamestring.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -19841,7 +19841,7 @@ pub unsafe fn CertGetServerOcspResponseContext(hserverocspresponse: *const ::cor
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertGetStoreProperty<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwpropid: u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CertGetStoreProperty<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwpropid: u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19856,7 +19856,7 @@ pub unsafe fn CertGetStoreProperty<'a, Param0: ::windows::core::IntoParam<'a, HC
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertGetSubjectCertificateFromStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwcertencodingtype: u32, pcertid: *const CERT_INFO) -> *mut CERT_CONTEXT {
+pub unsafe fn CertGetSubjectCertificateFromStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwcertencodingtype: u32, pcertid: *const CERT_INFO) -> *mut CERT_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -19871,14 +19871,14 @@ pub unsafe fn CertGetSubjectCertificateFromStore<'a, Param0: ::windows::core::In
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertGetValidUsages(rghcerts: &[*const CERT_CONTEXT], cnumoids: *mut i32, rghoids: *mut ::windows::core::PSTR, pcboids: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CertGetValidUsages(rghcerts: &[*const CERT_CONTEXT], cnumoids: *mut i32, rghoids: *mut ::windows_core::PSTR, pcboids: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertGetValidUsages(ccerts: u32, rghcerts: *const *const CERT_CONTEXT, cnumoids: *mut i32, rghoids: *mut ::windows::core::PSTR, pcboids: *mut u32) -> super::super::Foundation::BOOL;
+            fn CertGetValidUsages(ccerts: u32, rghcerts: *const *const CERT_CONTEXT, cnumoids: *mut i32, rghoids: *mut ::windows_core::PSTR, pcboids: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CertGetValidUsages(rghcerts.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rghcerts)), ::core::mem::transmute(cnumoids), ::core::mem::transmute(rghoids), ::core::mem::transmute(pcboids)))
+        ::core::mem::transmute(CertGetValidUsages(rghcerts.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rghcerts)), ::core::mem::transmute(cnumoids), ::core::mem::transmute(rghoids), ::core::mem::transmute(pcboids)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -19901,12 +19901,12 @@ pub unsafe fn CertIsRDNAttrsInCertificateName(dwcertencodingtype: u32, dwflags: 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertIsStrongHashToSign<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pstrongsignpara: *const CERT_STRONG_SIGN_PARA, pwszcnghashalgid: Param1, psigningcert: *const CERT_CONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn CertIsStrongHashToSign<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pstrongsignpara: *const CERT_STRONG_SIGN_PARA, pwszcnghashalgid: Param1, psigningcert: *const CERT_CONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertIsStrongHashToSign(pstrongsignpara: *const CERT_STRONG_SIGN_PARA, pwszcnghashalgid: ::windows::core::PCWSTR, psigningcert: *const CERT_CONTEXT) -> super::super::Foundation::BOOL;
+            fn CertIsStrongHashToSign(pstrongsignpara: *const CERT_STRONG_SIGN_PARA, pwszcnghashalgid: ::windows_core::PCWSTR, psigningcert: *const CERT_CONTEXT) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertIsStrongHashToSign(::core::mem::transmute(pstrongsignpara), pwszcnghashalgid.into_param().abi(), ::core::mem::transmute(psigningcert)))
     }
@@ -19931,12 +19931,12 @@ pub unsafe fn CertIsValidCRLForCertificate(pcert: *const CERT_CONTEXT, pcrl: *co
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertIsWeakHash<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwhashusetype: u32, pwszcnghashalgid: Param1, dwchainflags: u32, psignerchaincontext: *const CERT_CHAIN_CONTEXT, ptimestamp: *const super::super::Foundation::FILETIME, pwszfilename: Param5) -> super::super::Foundation::BOOL {
+pub unsafe fn CertIsWeakHash<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwhashusetype: u32, pwszcnghashalgid: Param1, dwchainflags: u32, psignerchaincontext: *const CERT_CHAIN_CONTEXT, ptimestamp: *const super::super::Foundation::FILETIME, pwszfilename: Param5) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertIsWeakHash(dwhashusetype: u32, pwszcnghashalgid: ::windows::core::PCWSTR, dwchainflags: u32, psignerchaincontext: *const CERT_CHAIN_CONTEXT, ptimestamp: *const super::super::Foundation::FILETIME, pwszfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn CertIsWeakHash(dwhashusetype: u32, pwszcnghashalgid: ::windows_core::PCWSTR, dwchainflags: u32, psignerchaincontext: *const CERT_CHAIN_CONTEXT, ptimestamp: *const super::super::Foundation::FILETIME, pwszfilename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertIsWeakHash(::core::mem::transmute(dwhashusetype), pwszcnghashalgid.into_param().abi(), ::core::mem::transmute(dwchainflags), ::core::mem::transmute(psignerchaincontext), ::core::mem::transmute(ptimestamp), pwszfilename.into_param().abi()))
     }
@@ -19976,7 +19976,7 @@ impl ::core::default::Default for CertKeyType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CertKeyType {
+unsafe impl ::windows_core::Abi for CertKeyType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CertKeyType {
@@ -19991,9 +19991,9 @@ pub unsafe fn CertNameToStrA(dwcertencodingtype: u32, pname: *const CRYPTOAPI_BL
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertNameToStrA(dwcertencodingtype: u32, pname: *const CRYPTOAPI_BLOB, dwstrtype: CERT_STRING_TYPE, psz: ::windows::core::PSTR, csz: u32) -> u32;
+            fn CertNameToStrA(dwcertencodingtype: u32, pname: *const CRYPTOAPI_BLOB, dwstrtype: CERT_STRING_TYPE, psz: ::windows_core::PSTR, csz: u32) -> u32;
         }
-        ::core::mem::transmute(CertNameToStrA(::core::mem::transmute(dwcertencodingtype), ::core::mem::transmute(pname), ::core::mem::transmute(dwstrtype), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(psz)), psz.len() as _))
+        ::core::mem::transmute(CertNameToStrA(::core::mem::transmute(dwcertencodingtype), ::core::mem::transmute(pname), ::core::mem::transmute(dwstrtype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(psz)), psz.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -20005,21 +20005,21 @@ pub unsafe fn CertNameToStrW(dwcertencodingtype: u32, pname: *const CRYPTOAPI_BL
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertNameToStrW(dwcertencodingtype: u32, pname: *const CRYPTOAPI_BLOB, dwstrtype: CERT_STRING_TYPE, psz: ::windows::core::PWSTR, csz: u32) -> u32;
+            fn CertNameToStrW(dwcertencodingtype: u32, pname: *const CRYPTOAPI_BLOB, dwstrtype: CERT_STRING_TYPE, psz: ::windows_core::PWSTR, csz: u32) -> u32;
         }
-        ::core::mem::transmute(CertNameToStrW(::core::mem::transmute(dwcertencodingtype), ::core::mem::transmute(pname), ::core::mem::transmute(dwstrtype), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(psz)), psz.len() as _))
+        ::core::mem::transmute(CertNameToStrW(::core::mem::transmute(dwcertencodingtype), ::core::mem::transmute(pname), ::core::mem::transmute(dwstrtype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(psz)), psz.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CertOIDToAlgId<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszobjid: Param0) -> u32 {
+pub unsafe fn CertOIDToAlgId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszobjid: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertOIDToAlgId(pszobjid: ::windows::core::PCSTR) -> u32;
+            fn CertOIDToAlgId(pszobjid: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(CertOIDToAlgId(pszobjid.into_param().abi()))
     }
@@ -20043,45 +20043,45 @@ pub unsafe fn CertOpenServerOcspResponse(pchaincontext: *const CERT_CHAIN_CONTEX
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CertOpenStore<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, HCRYPTPROV_LEGACY>>(lpszstoreprovider: Param0, dwencodingtype: CERT_QUERY_ENCODING_TYPE, hcryptprov: Param2, dwflags: CERT_OPEN_STORE_FLAGS, pvpara: *const ::core::ffi::c_void) -> ::windows::core::Result<HCERTSTORE> {
+pub unsafe fn CertOpenStore<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, HCRYPTPROV_LEGACY>>(lpszstoreprovider: Param0, dwencodingtype: CERT_QUERY_ENCODING_TYPE, hcryptprov: Param2, dwflags: CERT_OPEN_STORE_FLAGS, pvpara: *const ::core::ffi::c_void) -> ::windows_core::Result<HCERTSTORE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertOpenStore(lpszstoreprovider: ::windows::core::PCSTR, dwencodingtype: CERT_QUERY_ENCODING_TYPE, hcryptprov: HCRYPTPROV_LEGACY, dwflags: CERT_OPEN_STORE_FLAGS, pvpara: *const ::core::ffi::c_void) -> HCERTSTORE;
+            fn CertOpenStore(lpszstoreprovider: ::windows_core::PCSTR, dwencodingtype: CERT_QUERY_ENCODING_TYPE, hcryptprov: HCRYPTPROV_LEGACY, dwflags: CERT_OPEN_STORE_FLAGS, pvpara: *const ::core::ffi::c_void) -> HCERTSTORE;
         }
         let result__ = CertOpenStore(lpszstoreprovider.into_param().abi(), ::core::mem::transmute(dwencodingtype), hcryptprov.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvpara));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CertOpenSystemStoreA<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_LEGACY>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hprov: Param0, szsubsystemprotocol: Param1) -> ::windows::core::Result<HCERTSTORE> {
+pub unsafe fn CertOpenSystemStoreA<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_LEGACY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprov: Param0, szsubsystemprotocol: Param1) -> ::windows_core::Result<HCERTSTORE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertOpenSystemStoreA(hprov: HCRYPTPROV_LEGACY, szsubsystemprotocol: ::windows::core::PCSTR) -> HCERTSTORE;
+            fn CertOpenSystemStoreA(hprov: HCRYPTPROV_LEGACY, szsubsystemprotocol: ::windows_core::PCSTR) -> HCERTSTORE;
         }
         let result__ = CertOpenSystemStoreA(hprov.into_param().abi(), szsubsystemprotocol.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CertOpenSystemStoreW<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_LEGACY>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hprov: Param0, szsubsystemprotocol: Param1) -> ::windows::core::Result<HCERTSTORE> {
+pub unsafe fn CertOpenSystemStoreW<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_LEGACY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprov: Param0, szsubsystemprotocol: Param1) -> ::windows_core::Result<HCERTSTORE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertOpenSystemStoreW(hprov: HCRYPTPROV_LEGACY, szsubsystemprotocol: ::windows::core::PCWSTR) -> HCERTSTORE;
+            fn CertOpenSystemStoreW(hprov: HCRYPTPROV_LEGACY, szsubsystemprotocol: ::windows_core::PCWSTR) -> HCERTSTORE;
         }
         let result__ = CertOpenSystemStoreW(hprov.into_param().abi(), szsubsystemprotocol.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -20093,9 +20093,9 @@ pub unsafe fn CertRDNValueToStrA(dwvaluetype: u32, pvalue: *const CRYPTOAPI_BLOB
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertRDNValueToStrA(dwvaluetype: u32, pvalue: *const CRYPTOAPI_BLOB, psz: ::windows::core::PSTR, csz: u32) -> u32;
+            fn CertRDNValueToStrA(dwvaluetype: u32, pvalue: *const CRYPTOAPI_BLOB, psz: ::windows_core::PSTR, csz: u32) -> u32;
         }
-        ::core::mem::transmute(CertRDNValueToStrA(::core::mem::transmute(dwvaluetype), ::core::mem::transmute(pvalue), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(psz)), psz.len() as _))
+        ::core::mem::transmute(CertRDNValueToStrA(::core::mem::transmute(dwvaluetype), ::core::mem::transmute(pvalue), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(psz)), psz.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -20107,9 +20107,9 @@ pub unsafe fn CertRDNValueToStrW(dwvaluetype: u32, pvalue: *const CRYPTOAPI_BLOB
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertRDNValueToStrW(dwvaluetype: u32, pvalue: *const CRYPTOAPI_BLOB, psz: ::windows::core::PWSTR, csz: u32) -> u32;
+            fn CertRDNValueToStrW(dwvaluetype: u32, pvalue: *const CRYPTOAPI_BLOB, psz: ::windows_core::PWSTR, csz: u32) -> u32;
         }
-        ::core::mem::transmute(CertRDNValueToStrW(::core::mem::transmute(dwvaluetype), ::core::mem::transmute(pvalue), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(psz)), psz.len() as _))
+        ::core::mem::transmute(CertRDNValueToStrW(::core::mem::transmute(dwvaluetype), ::core::mem::transmute(pvalue), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(psz)), psz.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -20117,12 +20117,12 @@ pub unsafe fn CertRDNValueToStrW(dwvaluetype: u32, pvalue: *const CRYPTOAPI_BLOB
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertRegisterPhysicalStore<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pvsystemstore: *const ::core::ffi::c_void, dwflags: u32, pwszstorename: Param2, pstoreinfo: *const CERT_PHYSICAL_STORE_INFO, pvreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn CertRegisterPhysicalStore<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pvsystemstore: *const ::core::ffi::c_void, dwflags: u32, pwszstorename: Param2, pstoreinfo: *const CERT_PHYSICAL_STORE_INFO, pvreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertRegisterPhysicalStore(pvsystemstore: *const ::core::ffi::c_void, dwflags: u32, pwszstorename: ::windows::core::PCWSTR, pstoreinfo: *const CERT_PHYSICAL_STORE_INFO, pvreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn CertRegisterPhysicalStore(pvsystemstore: *const ::core::ffi::c_void, dwflags: u32, pwszstorename: ::windows_core::PCWSTR, pstoreinfo: *const CERT_PHYSICAL_STORE_INFO, pvreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertRegisterPhysicalStore(::core::mem::transmute(pvsystemstore), ::core::mem::transmute(dwflags), pwszstorename.into_param().abi(), ::core::mem::transmute(pstoreinfo), ::core::mem::transmute(pvreserved)))
     }
@@ -20147,12 +20147,12 @@ pub unsafe fn CertRegisterSystemStore(pvsystemstore: *const ::core::ffi::c_void,
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertRemoveEnhancedKeyUsageIdentifier<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pcertcontext: *const CERT_CONTEXT, pszusageidentifier: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn CertRemoveEnhancedKeyUsageIdentifier<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pcertcontext: *const CERT_CONTEXT, pszusageidentifier: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertRemoveEnhancedKeyUsageIdentifier(pcertcontext: *const CERT_CONTEXT, pszusageidentifier: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn CertRemoveEnhancedKeyUsageIdentifier(pcertcontext: *const CERT_CONTEXT, pszusageidentifier: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertRemoveEnhancedKeyUsageIdentifier(::core::mem::transmute(pcertcontext), pszusageidentifier.into_param().abi()))
     }
@@ -20161,7 +20161,7 @@ pub unsafe fn CertRemoveEnhancedKeyUsageIdentifier<'a, Param1: ::windows::core::
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CertRemoveStoreFromCollection<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>, Param1: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcollectionstore: Param0, hsiblingstore: Param1) {
+pub unsafe fn CertRemoveStoreFromCollection<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>, Param1: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcollectionstore: Param0, hsiblingstore: Param1) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -20176,7 +20176,7 @@ pub unsafe fn CertRemoveStoreFromCollection<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertResyncCertificateChainEngine<'a, Param0: ::windows::core::IntoParam<'a, HCERTCHAINENGINE>>(hchainengine: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn CertResyncCertificateChainEngine<'a, Param0: ::windows_core::IntoParam<'a, HCERTCHAINENGINE>>(hchainengine: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -20191,12 +20191,12 @@ pub unsafe fn CertResyncCertificateChainEngine<'a, Param0: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertRetrieveLogoOrBiometricInfo<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pcertcontext: *const CERT_CONTEXT, lpszlogoorbiometrictype: Param1, dwretrievalflags: u32, dwtimeout: u32, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, ppbdata: *mut *mut u8, pcbdata: *mut u32, ppwszmimetype: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn CertRetrieveLogoOrBiometricInfo<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pcertcontext: *const CERT_CONTEXT, lpszlogoorbiometrictype: Param1, dwretrievalflags: u32, dwtimeout: u32, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, ppbdata: *mut *mut u8, pcbdata: *mut u32, ppwszmimetype: *mut ::windows_core::PWSTR) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertRetrieveLogoOrBiometricInfo(pcertcontext: *const CERT_CONTEXT, lpszlogoorbiometrictype: ::windows::core::PCSTR, dwretrievalflags: u32, dwtimeout: u32, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, ppbdata: *mut *mut u8, pcbdata: *mut u32, ppwszmimetype: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
+            fn CertRetrieveLogoOrBiometricInfo(pcertcontext: *const CERT_CONTEXT, lpszlogoorbiometrictype: ::windows_core::PCSTR, dwretrievalflags: u32, dwtimeout: u32, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, ppbdata: *mut *mut u8, pcbdata: *mut u32, ppwszmimetype: *mut ::windows_core::PWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertRetrieveLogoOrBiometricInfo(::core::mem::transmute(pcertcontext), lpszlogoorbiometrictype.into_param().abi(), ::core::mem::transmute(dwretrievalflags), ::core::mem::transmute(dwtimeout), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvreserved), ::core::mem::transmute(ppbdata), ::core::mem::transmute(pcbdata), ::core::mem::transmute(ppwszmimetype)))
     }
@@ -20206,7 +20206,7 @@ pub unsafe fn CertRetrieveLogoOrBiometricInfo<'a, Param1: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertSaveStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwencodingtype: CERT_QUERY_ENCODING_TYPE, dwsaveas: CERT_STORE_SAVE_AS, dwsaveto: CERT_STORE_SAVE_TO, pvsavetopara: *mut ::core::ffi::c_void, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CertSaveStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwencodingtype: CERT_QUERY_ENCODING_TYPE, dwsaveas: CERT_STORE_SAVE_AS, dwsaveto: CERT_STORE_SAVE_TO, pvsavetopara: *mut ::core::ffi::c_void, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -20221,14 +20221,14 @@ pub unsafe fn CertSaveStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTOR
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertSelectCertificateChains<'a, Param5: ::windows::core::IntoParam<'a, HCERTSTORE>>(pselectioncontext: *const ::windows::core::GUID, dwflags: u32, pchainparameters: *const CERT_SELECT_CHAIN_PARA, rgpcriteria: &[CERT_SELECT_CRITERIA], hstore: Param5, pcselection: *mut u32, pprgpselection: *mut *mut *mut CERT_CHAIN_CONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn CertSelectCertificateChains<'a, Param5: ::windows_core::IntoParam<'a, HCERTSTORE>>(pselectioncontext: *const ::windows_core::GUID, dwflags: u32, pchainparameters: *const CERT_SELECT_CHAIN_PARA, rgpcriteria: &[CERT_SELECT_CRITERIA], hstore: Param5, pcselection: *mut u32, pprgpselection: *mut *mut *mut CERT_CHAIN_CONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertSelectCertificateChains(pselectioncontext: *const ::windows::core::GUID, dwflags: u32, pchainparameters: *const CERT_SELECT_CHAIN_PARA, ccriteria: u32, rgpcriteria: *const CERT_SELECT_CRITERIA, hstore: HCERTSTORE, pcselection: *mut u32, pprgpselection: *mut *mut *mut CERT_CHAIN_CONTEXT) -> super::super::Foundation::BOOL;
+            fn CertSelectCertificateChains(pselectioncontext: *const ::windows_core::GUID, dwflags: u32, pchainparameters: *const CERT_SELECT_CHAIN_PARA, ccriteria: u32, rgpcriteria: *const CERT_SELECT_CRITERIA, hstore: HCERTSTORE, pcselection: *mut u32, pprgpselection: *mut *mut *mut CERT_CHAIN_CONTEXT) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CertSelectCertificateChains(::core::mem::transmute(pselectioncontext), ::core::mem::transmute(dwflags), ::core::mem::transmute(pchainparameters), rgpcriteria.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rgpcriteria)), hstore.into_param().abi(), ::core::mem::transmute(pcselection), ::core::mem::transmute(pprgpselection)))
+        ::core::mem::transmute(CertSelectCertificateChains(::core::mem::transmute(pselectioncontext), ::core::mem::transmute(dwflags), ::core::mem::transmute(pchainparameters), rgpcriteria.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rgpcriteria)), hstore.into_param().abi(), ::core::mem::transmute(pcselection), ::core::mem::transmute(pprgpselection)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -20356,7 +20356,7 @@ pub unsafe fn CertSetEnhancedKeyUsage(pcertcontext: *const CERT_CONTEXT, pusage:
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertSetStoreProperty<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwpropid: u32, dwflags: u32, pvdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn CertSetStoreProperty<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>>(hcertstore: Param0, dwpropid: u32, dwflags: u32, pvdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -20371,12 +20371,12 @@ pub unsafe fn CertSetStoreProperty<'a, Param0: ::windows::core::IntoParam<'a, HC
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertStrToNameA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwcertencodingtype: u32, pszx500: Param1, dwstrtype: CERT_STRING_TYPE, pvreserved: *mut ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32, ppszerror: *mut ::windows::core::PSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn CertStrToNameA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwcertencodingtype: u32, pszx500: Param1, dwstrtype: CERT_STRING_TYPE, pvreserved: *mut ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32, ppszerror: *mut ::windows_core::PSTR) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertStrToNameA(dwcertencodingtype: u32, pszx500: ::windows::core::PCSTR, dwstrtype: CERT_STRING_TYPE, pvreserved: *mut ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32, ppszerror: *mut ::windows::core::PSTR) -> super::super::Foundation::BOOL;
+            fn CertStrToNameA(dwcertencodingtype: u32, pszx500: ::windows_core::PCSTR, dwstrtype: CERT_STRING_TYPE, pvreserved: *mut ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32, ppszerror: *mut ::windows_core::PSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertStrToNameA(::core::mem::transmute(dwcertencodingtype), pszx500.into_param().abi(), ::core::mem::transmute(dwstrtype), ::core::mem::transmute(pvreserved), ::core::mem::transmute(pbencoded), ::core::mem::transmute(pcbencoded), ::core::mem::transmute(ppszerror)))
     }
@@ -20386,12 +20386,12 @@ pub unsafe fn CertStrToNameA<'a, Param1: ::windows::core::IntoParam<'a, ::window
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertStrToNameW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwcertencodingtype: u32, pszx500: Param1, dwstrtype: CERT_STRING_TYPE, pvreserved: *mut ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32, ppszerror: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn CertStrToNameW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwcertencodingtype: u32, pszx500: Param1, dwstrtype: CERT_STRING_TYPE, pvreserved: *mut ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32, ppszerror: *mut ::windows_core::PWSTR) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertStrToNameW(dwcertencodingtype: u32, pszx500: ::windows::core::PCWSTR, dwstrtype: CERT_STRING_TYPE, pvreserved: *mut ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32, ppszerror: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
+            fn CertStrToNameW(dwcertencodingtype: u32, pszx500: ::windows_core::PCWSTR, dwstrtype: CERT_STRING_TYPE, pvreserved: *mut ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32, ppszerror: *mut ::windows_core::PWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertStrToNameW(::core::mem::transmute(dwcertencodingtype), pszx500.into_param().abi(), ::core::mem::transmute(dwstrtype), ::core::mem::transmute(pvreserved), ::core::mem::transmute(pbencoded), ::core::mem::transmute(pcbencoded), ::core::mem::transmute(ppszerror)))
     }
@@ -20401,12 +20401,12 @@ pub unsafe fn CertStrToNameW<'a, Param1: ::windows::core::IntoParam<'a, ::window
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertUnregisterPhysicalStore<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pvsystemstore: *const ::core::ffi::c_void, dwflags: u32, pwszstorename: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn CertUnregisterPhysicalStore<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pvsystemstore: *const ::core::ffi::c_void, dwflags: u32, pwszstorename: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertUnregisterPhysicalStore(pvsystemstore: *const ::core::ffi::c_void, dwflags: u32, pwszstorename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn CertUnregisterPhysicalStore(pvsystemstore: *const ::core::ffi::c_void, dwflags: u32, pwszstorename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertUnregisterPhysicalStore(::core::mem::transmute(pvsystemstore), ::core::mem::transmute(dwflags), pwszstorename.into_param().abi()))
     }
@@ -20438,7 +20438,7 @@ pub unsafe fn CertVerifyCRLRevocation(dwcertencodingtype: u32, pcertid: *const C
         extern "system" {
             fn CertVerifyCRLRevocation(dwcertencodingtype: u32, pcertid: *const CERT_INFO, ccrlinfo: u32, rgpcrlinfo: *const *const CRL_INFO) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CertVerifyCRLRevocation(::core::mem::transmute(dwcertencodingtype), ::core::mem::transmute(pcertid), rgpcrlinfo.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rgpcrlinfo))))
+        ::core::mem::transmute(CertVerifyCRLRevocation(::core::mem::transmute(dwcertencodingtype), ::core::mem::transmute(pcertid), rgpcrlinfo.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rgpcrlinfo))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -20476,12 +20476,12 @@ pub unsafe fn CertVerifyCTLUsage(dwencodingtype: u32, dwsubjecttype: u32, pvsubj
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CertVerifyCertificateChainPolicy<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszpolicyoid: Param0, pchaincontext: *const CERT_CHAIN_CONTEXT, ppolicypara: *const CERT_CHAIN_POLICY_PARA, ppolicystatus: *mut CERT_CHAIN_POLICY_STATUS) -> super::super::Foundation::BOOL {
+pub unsafe fn CertVerifyCertificateChainPolicy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszpolicyoid: Param0, pchaincontext: *const CERT_CHAIN_CONTEXT, ppolicypara: *const CERT_CHAIN_POLICY_PARA, ppolicystatus: *mut CERT_CHAIN_POLICY_STATUS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CertVerifyCertificateChainPolicy(pszpolicyoid: ::windows::core::PCSTR, pchaincontext: *const CERT_CHAIN_CONTEXT, ppolicypara: *const CERT_CHAIN_POLICY_PARA, ppolicystatus: *mut CERT_CHAIN_POLICY_STATUS) -> super::super::Foundation::BOOL;
+            fn CertVerifyCertificateChainPolicy(pszpolicyoid: ::windows_core::PCSTR, pchaincontext: *const CERT_CHAIN_CONTEXT, ppolicypara: *const CERT_CHAIN_POLICY_PARA, ppolicystatus: *mut CERT_CHAIN_POLICY_STATUS) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CertVerifyCertificateChainPolicy(pszpolicyoid.into_param().abi(), ::core::mem::transmute(pchaincontext), ::core::mem::transmute(ppolicypara), ::core::mem::transmute(ppolicystatus)))
     }
@@ -20498,7 +20498,7 @@ pub unsafe fn CertVerifyRevocation(dwencodingtype: u32, dwrevtype: u32, rgpvcont
         extern "system" {
             fn CertVerifyRevocation(dwencodingtype: u32, dwrevtype: u32, ccontext: u32, rgpvcontext: *const *const ::core::ffi::c_void, dwflags: u32, prevpara: *const CERT_REVOCATION_PARA, prevstatus: *mut CERT_REVOCATION_STATUS) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CertVerifyRevocation(::core::mem::transmute(dwencodingtype), ::core::mem::transmute(dwrevtype), rgpvcontext.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rgpvcontext)), ::core::mem::transmute(dwflags), ::core::mem::transmute(prevpara), ::core::mem::transmute(prevstatus)))
+        ::core::mem::transmute(CertVerifyRevocation(::core::mem::transmute(dwencodingtype), ::core::mem::transmute(dwrevtype), rgpvcontext.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rgpvcontext)), ::core::mem::transmute(dwflags), ::core::mem::transmute(prevpara), ::core::mem::transmute(prevstatus)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -20550,12 +20550,12 @@ pub unsafe fn CertVerifyValidityNesting(psubjectinfo: *const CERT_INFO, pissueri
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CloseCryptoHandle(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows::core::Result<()> {
+pub unsafe fn CloseCryptoHandle(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CloseCryptoHandle(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows::core::HRESULT;
+            fn CloseCryptoHandle(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows_core::HRESULT;
         }
         CloseCryptoHandle(::core::mem::transmute(hcrypto)).ok()
     }
@@ -20580,12 +20580,12 @@ pub unsafe fn CryptAcquireCertificatePrivateKey(pcert: *const CERT_CONTEXT, dwfl
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptAcquireContextA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(phprov: *mut usize, szcontainer: Param1, szprovider: Param2, dwprovtype: u32, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptAcquireContextA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(phprov: *mut usize, szcontainer: Param1, szprovider: Param2, dwprovtype: u32, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptAcquireContextA(phprov: *mut usize, szcontainer: ::windows::core::PCSTR, szprovider: ::windows::core::PCSTR, dwprovtype: u32, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn CryptAcquireContextA(phprov: *mut usize, szcontainer: ::windows_core::PCSTR, szprovider: ::windows_core::PCSTR, dwprovtype: u32, dwflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptAcquireContextA(::core::mem::transmute(phprov), szcontainer.into_param().abi(), szprovider.into_param().abi(), ::core::mem::transmute(dwprovtype), ::core::mem::transmute(dwflags)))
     }
@@ -20595,12 +20595,12 @@ pub unsafe fn CryptAcquireContextA<'a, Param1: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptAcquireContextW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(phprov: *mut usize, szcontainer: Param1, szprovider: Param2, dwprovtype: u32, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptAcquireContextW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(phprov: *mut usize, szcontainer: Param1, szprovider: Param2, dwprovtype: u32, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptAcquireContextW(phprov: *mut usize, szcontainer: ::windows::core::PCWSTR, szprovider: ::windows::core::PCWSTR, dwprovtype: u32, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn CryptAcquireContextW(phprov: *mut usize, szcontainer: ::windows_core::PCWSTR, szprovider: ::windows_core::PCWSTR, dwprovtype: u32, dwflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptAcquireContextW(::core::mem::transmute(phprov), szcontainer.into_param().abi(), szprovider.into_param().abi(), ::core::mem::transmute(dwprovtype), ::core::mem::transmute(dwflags)))
     }
@@ -20610,12 +20610,12 @@ pub unsafe fn CryptAcquireContextW<'a, Param1: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptBinaryToStringA(pbbinary: *const u8, cbbinary: u32, dwflags: CRYPT_STRING, pszstring: ::windows::core::PSTR, pcchstring: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptBinaryToStringA(pbbinary: *const u8, cbbinary: u32, dwflags: CRYPT_STRING, pszstring: ::windows_core::PSTR, pcchstring: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptBinaryToStringA(pbbinary: *const u8, cbbinary: u32, dwflags: CRYPT_STRING, pszstring: ::windows::core::PSTR, pcchstring: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptBinaryToStringA(pbbinary: *const u8, cbbinary: u32, dwflags: CRYPT_STRING, pszstring: ::windows_core::PSTR, pcchstring: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptBinaryToStringA(::core::mem::transmute(pbbinary), ::core::mem::transmute(cbbinary), ::core::mem::transmute(dwflags), ::core::mem::transmute(pszstring), ::core::mem::transmute(pcchstring)))
     }
@@ -20625,12 +20625,12 @@ pub unsafe fn CryptBinaryToStringA(pbbinary: *const u8, cbbinary: u32, dwflags: 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptBinaryToStringW(pbbinary: *const u8, cbbinary: u32, dwflags: CRYPT_STRING, pszstring: ::windows::core::PWSTR, pcchstring: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptBinaryToStringW(pbbinary: *const u8, cbbinary: u32, dwflags: CRYPT_STRING, pszstring: ::windows_core::PWSTR, pcchstring: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptBinaryToStringW(pbbinary: *const u8, cbbinary: u32, dwflags: CRYPT_STRING, pszstring: ::windows::core::PWSTR, pcchstring: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptBinaryToStringW(pbbinary: *const u8, cbbinary: u32, dwflags: CRYPT_STRING, pszstring: ::windows_core::PWSTR, pcchstring: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptBinaryToStringW(::core::mem::transmute(pbbinary), ::core::mem::transmute(cbbinary), ::core::mem::transmute(dwflags), ::core::mem::transmute(pszstring), ::core::mem::transmute(pcchstring)))
     }
@@ -20640,7 +20640,7 @@ pub unsafe fn CryptBinaryToStringW(pbbinary: *const u8, cbbinary: u32, dwflags: 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptCloseAsyncHandle<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTASYNC>>(hasync: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptCloseAsyncHandle<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTASYNC>>(hasync: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -20700,12 +20700,12 @@ pub unsafe fn CryptCreateHash(hprov: usize, algid: u32, hkey: usize, dwflags: u3
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptCreateKeyIdentifierFromCSP<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwcertencodingtype: u32, pszpubkeyoid: Param1, ppubkeystruc: *const PUBLICKEYSTRUC, cbpubkeystruc: u32, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, pbhash: *mut u8, pcbhash: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptCreateKeyIdentifierFromCSP<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwcertencodingtype: u32, pszpubkeyoid: Param1, ppubkeystruc: *const PUBLICKEYSTRUC, cbpubkeystruc: u32, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, pbhash: *mut u8, pcbhash: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptCreateKeyIdentifierFromCSP(dwcertencodingtype: u32, pszpubkeyoid: ::windows::core::PCSTR, ppubkeystruc: *const PUBLICKEYSTRUC, cbpubkeystruc: u32, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, pbhash: *mut u8, pcbhash: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptCreateKeyIdentifierFromCSP(dwcertencodingtype: u32, pszpubkeyoid: ::windows_core::PCSTR, ppubkeystruc: *const PUBLICKEYSTRUC, cbpubkeystruc: u32, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, pbhash: *mut u8, pcbhash: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptCreateKeyIdentifierFromCSP(::core::mem::transmute(dwcertencodingtype), pszpubkeyoid.into_param().abi(), ::core::mem::transmute(ppubkeystruc), ::core::mem::transmute(cbpubkeystruc), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvreserved), ::core::mem::transmute(pbhash), ::core::mem::transmute(pcbhash)))
     }
@@ -20744,12 +20744,12 @@ pub unsafe fn CryptDecodeMessage(dwmsgtypeflags: u32, pdecryptpara: *const CRYPT
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptDecodeObject<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwcertencodingtype: u32, lpszstructtype: Param1, pbencoded: *const u8, cbencoded: u32, dwflags: u32, pvstructinfo: *mut ::core::ffi::c_void, pcbstructinfo: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptDecodeObject<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwcertencodingtype: u32, lpszstructtype: Param1, pbencoded: *const u8, cbencoded: u32, dwflags: u32, pvstructinfo: *mut ::core::ffi::c_void, pcbstructinfo: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptDecodeObject(dwcertencodingtype: u32, lpszstructtype: ::windows::core::PCSTR, pbencoded: *const u8, cbencoded: u32, dwflags: u32, pvstructinfo: *mut ::core::ffi::c_void, pcbstructinfo: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptDecodeObject(dwcertencodingtype: u32, lpszstructtype: ::windows_core::PCSTR, pbencoded: *const u8, cbencoded: u32, dwflags: u32, pvstructinfo: *mut ::core::ffi::c_void, pcbstructinfo: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptDecodeObject(::core::mem::transmute(dwcertencodingtype), lpszstructtype.into_param().abi(), ::core::mem::transmute(pbencoded), ::core::mem::transmute(cbencoded), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvstructinfo), ::core::mem::transmute(pcbstructinfo)))
     }
@@ -20759,12 +20759,12 @@ pub unsafe fn CryptDecodeObject<'a, Param1: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptDecodeObjectEx<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwcertencodingtype: u32, lpszstructtype: Param1, pbencoded: *const u8, cbencoded: u32, dwflags: u32, pdecodepara: *const CRYPT_DECODE_PARA, pvstructinfo: *mut ::core::ffi::c_void, pcbstructinfo: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptDecodeObjectEx<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwcertencodingtype: u32, lpszstructtype: Param1, pbencoded: *const u8, cbencoded: u32, dwflags: u32, pdecodepara: *const CRYPT_DECODE_PARA, pvstructinfo: *mut ::core::ffi::c_void, pcbstructinfo: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptDecodeObjectEx(dwcertencodingtype: u32, lpszstructtype: ::windows::core::PCSTR, pbencoded: *const u8, cbencoded: u32, dwflags: u32, pdecodepara: *const CRYPT_DECODE_PARA, pvstructinfo: *mut ::core::ffi::c_void, pcbstructinfo: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptDecodeObjectEx(dwcertencodingtype: u32, lpszstructtype: ::windows_core::PCSTR, pbencoded: *const u8, cbencoded: u32, dwflags: u32, pdecodepara: *const CRYPT_DECODE_PARA, pvstructinfo: *mut ::core::ffi::c_void, pcbstructinfo: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptDecodeObjectEx(::core::mem::transmute(dwcertencodingtype), lpszstructtype.into_param().abi(), ::core::mem::transmute(pbencoded), ::core::mem::transmute(cbencoded), ::core::mem::transmute(dwflags), ::core::mem::transmute(pdecodepara), ::core::mem::transmute(pvstructinfo), ::core::mem::transmute(pcbstructinfo)))
     }
@@ -20774,7 +20774,7 @@ pub unsafe fn CryptDecodeObjectEx<'a, Param1: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptDecrypt<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hkey: usize, hhash: usize, r#final: Param2, dwflags: u32, pbdata: *mut u8, pdwdatalen: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptDecrypt<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hkey: usize, hhash: usize, r#final: Param2, dwflags: u32, pbdata: *mut u8, pdwdatalen: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -20894,12 +20894,12 @@ pub unsafe fn CryptDuplicateKey(hkey: usize, pdwreserved: *mut u32, dwflags: u32
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptEncodeObject<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwcertencodingtype: u32, lpszstructtype: Param1, pvstructinfo: *const ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptEncodeObject<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwcertencodingtype: u32, lpszstructtype: Param1, pvstructinfo: *const ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptEncodeObject(dwcertencodingtype: u32, lpszstructtype: ::windows::core::PCSTR, pvstructinfo: *const ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptEncodeObject(dwcertencodingtype: u32, lpszstructtype: ::windows_core::PCSTR, pvstructinfo: *const ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptEncodeObject(::core::mem::transmute(dwcertencodingtype), lpszstructtype.into_param().abi(), ::core::mem::transmute(pvstructinfo), ::core::mem::transmute(pbencoded), ::core::mem::transmute(pcbencoded)))
     }
@@ -20909,12 +20909,12 @@ pub unsafe fn CryptEncodeObject<'a, Param1: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptEncodeObjectEx<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwcertencodingtype: CERT_QUERY_ENCODING_TYPE, lpszstructtype: Param1, pvstructinfo: *const ::core::ffi::c_void, dwflags: CRYPT_ENCODE_OBJECT_FLAGS, pencodepara: *const CRYPT_ENCODE_PARA, pvencoded: *mut ::core::ffi::c_void, pcbencoded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptEncodeObjectEx<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwcertencodingtype: CERT_QUERY_ENCODING_TYPE, lpszstructtype: Param1, pvstructinfo: *const ::core::ffi::c_void, dwflags: CRYPT_ENCODE_OBJECT_FLAGS, pencodepara: *const CRYPT_ENCODE_PARA, pvencoded: *mut ::core::ffi::c_void, pcbencoded: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptEncodeObjectEx(dwcertencodingtype: CERT_QUERY_ENCODING_TYPE, lpszstructtype: ::windows::core::PCSTR, pvstructinfo: *const ::core::ffi::c_void, dwflags: CRYPT_ENCODE_OBJECT_FLAGS, pencodepara: *const CRYPT_ENCODE_PARA, pvencoded: *mut ::core::ffi::c_void, pcbencoded: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptEncodeObjectEx(dwcertencodingtype: CERT_QUERY_ENCODING_TYPE, lpszstructtype: ::windows_core::PCSTR, pvstructinfo: *const ::core::ffi::c_void, dwflags: CRYPT_ENCODE_OBJECT_FLAGS, pencodepara: *const CRYPT_ENCODE_PARA, pvencoded: *mut ::core::ffi::c_void, pcbencoded: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptEncodeObjectEx(::core::mem::transmute(dwcertencodingtype), lpszstructtype.into_param().abi(), ::core::mem::transmute(pvstructinfo), ::core::mem::transmute(dwflags), ::core::mem::transmute(pencodepara), ::core::mem::transmute(pvencoded), ::core::mem::transmute(pcbencoded)))
     }
@@ -20924,7 +20924,7 @@ pub unsafe fn CryptEncodeObjectEx<'a, Param1: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptEncrypt<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hkey: usize, hhash: usize, r#final: Param2, dwflags: u32, pbdata: *mut u8, pdwdatalen: *mut u32, dwbuflen: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptEncrypt<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hkey: usize, hhash: usize, r#final: Param2, dwflags: u32, pbdata: *mut u8, pdwdatalen: *mut u32, dwbuflen: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -20946,7 +20946,7 @@ pub unsafe fn CryptEncryptMessage(pencryptpara: *const CRYPT_ENCRYPT_MESSAGE_PAR
         extern "system" {
             fn CryptEncryptMessage(pencryptpara: *const CRYPT_ENCRYPT_MESSAGE_PARA, crecipientcert: u32, rgprecipientcert: *const *const CERT_CONTEXT, pbtobeencrypted: *const u8, cbtobeencrypted: u32, pbencryptedblob: *mut u8, pcbencryptedblob: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CryptEncryptMessage(::core::mem::transmute(pencryptpara), rgprecipientcert.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rgprecipientcert)), ::core::mem::transmute(pbtobeencrypted), ::core::mem::transmute(cbtobeencrypted), ::core::mem::transmute(pbencryptedblob), ::core::mem::transmute(pcbencryptedblob)))
+        ::core::mem::transmute(CryptEncryptMessage(::core::mem::transmute(pencryptpara), rgprecipientcert.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rgprecipientcert)), ::core::mem::transmute(pbtobeencrypted), ::core::mem::transmute(cbtobeencrypted), ::core::mem::transmute(pbencryptedblob), ::core::mem::transmute(pcbencryptedblob)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -20954,12 +20954,12 @@ pub unsafe fn CryptEncryptMessage(pencryptpara: *const CRYPT_ENCRYPT_MESSAGE_PAR
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptEnumKeyIdentifierProperties<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pkeyidentifier: *const CRYPTOAPI_BLOB, dwpropid: u32, dwflags: u32, pwszcomputername: Param3, pvreserved: *mut ::core::ffi::c_void, pvarg: *mut ::core::ffi::c_void, pfnenum: PFN_CRYPT_ENUM_KEYID_PROP) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptEnumKeyIdentifierProperties<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pkeyidentifier: *const CRYPTOAPI_BLOB, dwpropid: u32, dwflags: u32, pwszcomputername: Param3, pvreserved: *mut ::core::ffi::c_void, pvarg: *mut ::core::ffi::c_void, pfnenum: PFN_CRYPT_ENUM_KEYID_PROP) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptEnumKeyIdentifierProperties(pkeyidentifier: *const CRYPTOAPI_BLOB, dwpropid: u32, dwflags: u32, pwszcomputername: ::windows::core::PCWSTR, pvreserved: *mut ::core::ffi::c_void, pvarg: *mut ::core::ffi::c_void, pfnenum: ::windows::core::RawPtr) -> super::super::Foundation::BOOL;
+            fn CryptEnumKeyIdentifierProperties(pkeyidentifier: *const CRYPTOAPI_BLOB, dwpropid: u32, dwflags: u32, pwszcomputername: ::windows_core::PCWSTR, pvreserved: *mut ::core::ffi::c_void, pvarg: *mut ::core::ffi::c_void, pfnenum: ::windows_core::RawPtr) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptEnumKeyIdentifierProperties(::core::mem::transmute(pkeyidentifier), ::core::mem::transmute(dwpropid), ::core::mem::transmute(dwflags), pwszcomputername.into_param().abi(), ::core::mem::transmute(pvreserved), ::core::mem::transmute(pvarg), ::core::mem::transmute(pfnenum)))
     }
@@ -20969,12 +20969,12 @@ pub unsafe fn CryptEnumKeyIdentifierProperties<'a, Param3: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptEnumOIDFunction<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwencodingtype: u32, pszfuncname: Param1, pszoid: Param2, dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenumoidfunc: PFN_CRYPT_ENUM_OID_FUNC) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptEnumOIDFunction<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwencodingtype: u32, pszfuncname: Param1, pszoid: Param2, dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenumoidfunc: PFN_CRYPT_ENUM_OID_FUNC) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptEnumOIDFunction(dwencodingtype: u32, pszfuncname: ::windows::core::PCSTR, pszoid: ::windows::core::PCSTR, dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenumoidfunc: ::windows::core::RawPtr) -> super::super::Foundation::BOOL;
+            fn CryptEnumOIDFunction(dwencodingtype: u32, pszfuncname: ::windows_core::PCSTR, pszoid: ::windows_core::PCSTR, dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenumoidfunc: ::windows_core::RawPtr) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptEnumOIDFunction(::core::mem::transmute(dwencodingtype), pszfuncname.into_param().abi(), pszoid.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvarg), ::core::mem::transmute(pfnenumoidfunc)))
     }
@@ -20989,7 +20989,7 @@ pub unsafe fn CryptEnumOIDInfo(dwgroupid: u32, dwflags: u32, pvarg: *mut ::core:
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptEnumOIDInfo(dwgroupid: u32, dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenumoidinfo: ::windows::core::RawPtr) -> super::super::Foundation::BOOL;
+            fn CryptEnumOIDInfo(dwgroupid: u32, dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenumoidinfo: ::windows_core::RawPtr) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptEnumOIDInfo(::core::mem::transmute(dwgroupid), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvarg), ::core::mem::transmute(pfnenumoidinfo)))
     }
@@ -20999,12 +20999,12 @@ pub unsafe fn CryptEnumOIDInfo(dwgroupid: u32, dwflags: u32, pvarg: *mut ::core:
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptEnumProviderTypesA(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, sztypename: ::windows::core::PSTR, pcbtypename: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptEnumProviderTypesA(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, sztypename: ::windows_core::PSTR, pcbtypename: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptEnumProviderTypesA(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, sztypename: ::windows::core::PSTR, pcbtypename: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptEnumProviderTypesA(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, sztypename: ::windows_core::PSTR, pcbtypename: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptEnumProviderTypesA(::core::mem::transmute(dwindex), ::core::mem::transmute(pdwreserved), ::core::mem::transmute(dwflags), ::core::mem::transmute(pdwprovtype), ::core::mem::transmute(sztypename), ::core::mem::transmute(pcbtypename)))
     }
@@ -21014,12 +21014,12 @@ pub unsafe fn CryptEnumProviderTypesA(dwindex: u32, pdwreserved: *mut u32, dwfla
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptEnumProviderTypesW(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, sztypename: ::windows::core::PWSTR, pcbtypename: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptEnumProviderTypesW(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, sztypename: ::windows_core::PWSTR, pcbtypename: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptEnumProviderTypesW(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, sztypename: ::windows::core::PWSTR, pcbtypename: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptEnumProviderTypesW(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, sztypename: ::windows_core::PWSTR, pcbtypename: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptEnumProviderTypesW(::core::mem::transmute(dwindex), ::core::mem::transmute(pdwreserved), ::core::mem::transmute(dwflags), ::core::mem::transmute(pdwprovtype), ::core::mem::transmute(sztypename), ::core::mem::transmute(pcbtypename)))
     }
@@ -21029,12 +21029,12 @@ pub unsafe fn CryptEnumProviderTypesW(dwindex: u32, pdwreserved: *mut u32, dwfla
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptEnumProvidersA(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, szprovname: ::windows::core::PSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptEnumProvidersA(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, szprovname: ::windows_core::PSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptEnumProvidersA(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, szprovname: ::windows::core::PSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptEnumProvidersA(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, szprovname: ::windows_core::PSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptEnumProvidersA(::core::mem::transmute(dwindex), ::core::mem::transmute(pdwreserved), ::core::mem::transmute(dwflags), ::core::mem::transmute(pdwprovtype), ::core::mem::transmute(szprovname), ::core::mem::transmute(pcbprovname)))
     }
@@ -21044,12 +21044,12 @@ pub unsafe fn CryptEnumProvidersA(dwindex: u32, pdwreserved: *mut u32, dwflags: 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptEnumProvidersW(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, szprovname: ::windows::core::PWSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptEnumProvidersW(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, szprovname: ::windows_core::PWSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptEnumProvidersW(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, szprovname: ::windows::core::PWSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptEnumProvidersW(dwindex: u32, pdwreserved: *mut u32, dwflags: u32, pdwprovtype: *mut u32, szprovname: ::windows_core::PWSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptEnumProvidersW(::core::mem::transmute(dwindex), ::core::mem::transmute(pdwreserved), ::core::mem::transmute(dwflags), ::core::mem::transmute(pdwprovtype), ::core::mem::transmute(szprovname), ::core::mem::transmute(pcbprovname)))
     }
@@ -21074,12 +21074,12 @@ pub unsafe fn CryptExportKey(hkey: usize, hexpkey: usize, dwblobtype: u32, dwfla
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptExportPKCS8<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hcryptprov: usize, dwkeyspec: u32, pszprivatekeyobjid: Param2, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pbprivatekeyblob: *mut u8, pcbprivatekeyblob: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptExportPKCS8<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hcryptprov: usize, dwkeyspec: u32, pszprivatekeyobjid: Param2, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pbprivatekeyblob: *mut u8, pcbprivatekeyblob: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptExportPKCS8(hcryptprov: usize, dwkeyspec: u32, pszprivatekeyobjid: ::windows::core::PCSTR, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pbprivatekeyblob: *mut u8, pcbprivatekeyblob: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptExportPKCS8(hcryptprov: usize, dwkeyspec: u32, pszprivatekeyobjid: ::windows_core::PCSTR, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pbprivatekeyblob: *mut u8, pcbprivatekeyblob: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptExportPKCS8(::core::mem::transmute(hcryptprov), ::core::mem::transmute(dwkeyspec), pszprivatekeyobjid.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvauxinfo), ::core::mem::transmute(pbprivatekeyblob), ::core::mem::transmute(pcbprivatekeyblob)))
     }
@@ -21089,7 +21089,7 @@ pub unsafe fn CryptExportPKCS8<'a, Param2: ::windows::core::IntoParam<'a, ::wind
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptExportPublicKeyInfo<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>>(hcryptprovorncryptkey: Param0, dwkeyspec: u32, dwcertencodingtype: u32, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptExportPublicKeyInfo<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>>(hcryptprovorncryptkey: Param0, dwkeyspec: u32, dwcertencodingtype: u32, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -21104,12 +21104,12 @@ pub unsafe fn CryptExportPublicKeyInfo<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptExportPublicKeyInfoEx<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hcryptprovorncryptkey: Param0, dwkeyspec: u32, dwcertencodingtype: u32, pszpublickeyobjid: Param3, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptExportPublicKeyInfoEx<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hcryptprovorncryptkey: Param0, dwkeyspec: u32, dwcertencodingtype: u32, pszpublickeyobjid: Param3, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptExportPublicKeyInfoEx(hcryptprovorncryptkey: HCRYPTPROV_OR_NCRYPT_KEY_HANDLE, dwkeyspec: u32, dwcertencodingtype: u32, pszpublickeyobjid: ::windows::core::PCSTR, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptExportPublicKeyInfoEx(hcryptprovorncryptkey: HCRYPTPROV_OR_NCRYPT_KEY_HANDLE, dwkeyspec: u32, dwcertencodingtype: u32, pszpublickeyobjid: ::windows_core::PCSTR, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptExportPublicKeyInfoEx(hcryptprovorncryptkey.into_param().abi(), ::core::mem::transmute(dwkeyspec), ::core::mem::transmute(dwcertencodingtype), pszpublickeyobjid.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvauxinfo), ::core::mem::transmute(pinfo), ::core::mem::transmute(pcbinfo)))
     }
@@ -21119,12 +21119,12 @@ pub unsafe fn CryptExportPublicKeyInfoEx<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptExportPublicKeyInfoFromBCryptKeyHandle<'a, Param0: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hbcryptkey: Param0, dwcertencodingtype: u32, pszpublickeyobjid: Param2, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptExportPublicKeyInfoFromBCryptKeyHandle<'a, Param0: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hbcryptkey: Param0, dwcertencodingtype: u32, pszpublickeyobjid: Param2, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptExportPublicKeyInfoFromBCryptKeyHandle(hbcryptkey: BCRYPT_KEY_HANDLE, dwcertencodingtype: u32, pszpublickeyobjid: ::windows::core::PCSTR, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptExportPublicKeyInfoFromBCryptKeyHandle(hbcryptkey: BCRYPT_KEY_HANDLE, dwcertencodingtype: u32, pszpublickeyobjid: ::windows_core::PCSTR, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptExportPublicKeyInfoFromBCryptKeyHandle(hbcryptkey.into_param().abi(), ::core::mem::transmute(dwcertencodingtype), pszpublickeyobjid.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvauxinfo), ::core::mem::transmute(pinfo), ::core::mem::transmute(pcbinfo)))
     }
@@ -21148,12 +21148,12 @@ pub unsafe fn CryptFindCertificateKeyProvInfo(pcert: *const CERT_CONTEXT, dwflag
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptFindLocalizedName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszcryptname: Param0) -> ::windows::core::PWSTR {
+pub unsafe fn CryptFindLocalizedName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszcryptname: Param0) -> ::windows_core::PWSTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptFindLocalizedName(pwszcryptname: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
+            fn CryptFindLocalizedName(pwszcryptname: ::windows_core::PCWSTR) -> ::windows_core::PWSTR;
         }
         ::core::mem::transmute(CryptFindLocalizedName(pwszcryptname.into_param().abi()))
     }
@@ -21177,12 +21177,12 @@ pub unsafe fn CryptFindOIDInfo(dwkeytype: u32, pvkey: *const ::core::ffi::c_void
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptFormatObject<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwcertencodingtype: u32, dwformattype: u32, dwformatstrtype: u32, pformatstruct: *const ::core::ffi::c_void, lpszstructtype: Param4, pbencoded: *const u8, cbencoded: u32, pbformat: *mut ::core::ffi::c_void, pcbformat: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptFormatObject<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwcertencodingtype: u32, dwformattype: u32, dwformatstrtype: u32, pformatstruct: *const ::core::ffi::c_void, lpszstructtype: Param4, pbencoded: *const u8, cbencoded: u32, pbformat: *mut ::core::ffi::c_void, pcbformat: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptFormatObject(dwcertencodingtype: u32, dwformattype: u32, dwformatstrtype: u32, pformatstruct: *const ::core::ffi::c_void, lpszstructtype: ::windows::core::PCSTR, pbencoded: *const u8, cbencoded: u32, pbformat: *mut ::core::ffi::c_void, pcbformat: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptFormatObject(dwcertencodingtype: u32, dwformattype: u32, dwformatstrtype: u32, pformatstruct: *const ::core::ffi::c_void, lpszstructtype: ::windows_core::PCSTR, pbencoded: *const u8, cbencoded: u32, pbformat: *mut ::core::ffi::c_void, pcbformat: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptFormatObject(::core::mem::transmute(dwcertencodingtype), ::core::mem::transmute(dwformattype), ::core::mem::transmute(dwformatstrtype), ::core::mem::transmute(pformatstruct), lpszstructtype.into_param().abi(), ::core::mem::transmute(pbencoded), ::core::mem::transmute(cbencoded), ::core::mem::transmute(pbformat), ::core::mem::transmute(pcbformat)))
     }
@@ -21237,12 +21237,12 @@ pub unsafe fn CryptGenRandom(hprov: usize, dwlen: u32, pbbuffer: *mut u8) -> sup
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptGetAsyncParam<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTASYNC>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hasync: Param0, pszparamoid: Param1, ppvparam: *mut *mut ::core::ffi::c_void, ppfnfree: *mut PFN_CRYPT_ASYNC_PARAM_FREE_FUNC) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptGetAsyncParam<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTASYNC>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hasync: Param0, pszparamoid: Param1, ppvparam: *mut *mut ::core::ffi::c_void, ppfnfree: *mut PFN_CRYPT_ASYNC_PARAM_FREE_FUNC) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptGetAsyncParam(hasync: HCRYPTASYNC, pszparamoid: ::windows::core::PCSTR, ppvparam: *mut *mut ::core::ffi::c_void, ppfnfree: *mut ::windows::core::RawPtr) -> super::super::Foundation::BOOL;
+            fn CryptGetAsyncParam(hasync: HCRYPTASYNC, pszparamoid: ::windows_core::PCSTR, ppvparam: *mut *mut ::core::ffi::c_void, ppfnfree: *mut ::windows_core::RawPtr) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptGetAsyncParam(hasync.into_param().abi(), pszparamoid.into_param().abi(), ::core::mem::transmute(ppvparam), ::core::mem::transmute(ppfnfree)))
     }
@@ -21252,12 +21252,12 @@ pub unsafe fn CryptGetAsyncParam<'a, Param0: ::windows::core::IntoParam<'a, HCRY
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptGetDefaultOIDDllList(hfuncset: *const ::core::ffi::c_void, dwencodingtype: u32, pwszdlllist: ::windows::core::PWSTR, pcchdlllist: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptGetDefaultOIDDllList(hfuncset: *const ::core::ffi::c_void, dwencodingtype: u32, pwszdlllist: ::windows_core::PWSTR, pcchdlllist: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptGetDefaultOIDDllList(hfuncset: *const ::core::ffi::c_void, dwencodingtype: u32, pwszdlllist: ::windows::core::PWSTR, pcchdlllist: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptGetDefaultOIDDllList(hfuncset: *const ::core::ffi::c_void, dwencodingtype: u32, pwszdlllist: ::windows_core::PWSTR, pcchdlllist: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptGetDefaultOIDDllList(::core::mem::transmute(hfuncset), ::core::mem::transmute(dwencodingtype), ::core::mem::transmute(pwszdlllist), ::core::mem::transmute(pcchdlllist)))
     }
@@ -21267,12 +21267,12 @@ pub unsafe fn CryptGetDefaultOIDDllList(hfuncset: *const ::core::ffi::c_void, dw
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptGetDefaultOIDFunctionAddress<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hfuncset: *const ::core::ffi::c_void, dwencodingtype: u32, pwszdll: Param2, dwflags: u32, ppvfuncaddr: *mut *mut ::core::ffi::c_void, phfuncaddr: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptGetDefaultOIDFunctionAddress<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hfuncset: *const ::core::ffi::c_void, dwencodingtype: u32, pwszdll: Param2, dwflags: u32, ppvfuncaddr: *mut *mut ::core::ffi::c_void, phfuncaddr: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptGetDefaultOIDFunctionAddress(hfuncset: *const ::core::ffi::c_void, dwencodingtype: u32, pwszdll: ::windows::core::PCWSTR, dwflags: u32, ppvfuncaddr: *mut *mut ::core::ffi::c_void, phfuncaddr: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn CryptGetDefaultOIDFunctionAddress(hfuncset: *const ::core::ffi::c_void, dwencodingtype: u32, pwszdll: ::windows_core::PCWSTR, dwflags: u32, ppvfuncaddr: *mut *mut ::core::ffi::c_void, phfuncaddr: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptGetDefaultOIDFunctionAddress(::core::mem::transmute(hfuncset), ::core::mem::transmute(dwencodingtype), pwszdll.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(ppvfuncaddr), ::core::mem::transmute(phfuncaddr)))
     }
@@ -21282,12 +21282,12 @@ pub unsafe fn CryptGetDefaultOIDFunctionAddress<'a, Param2: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptGetDefaultProviderA(dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32, pszprovname: ::windows::core::PSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptGetDefaultProviderA(dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32, pszprovname: ::windows_core::PSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptGetDefaultProviderA(dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32, pszprovname: ::windows::core::PSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptGetDefaultProviderA(dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32, pszprovname: ::windows_core::PSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptGetDefaultProviderA(::core::mem::transmute(dwprovtype), ::core::mem::transmute(pdwreserved), ::core::mem::transmute(dwflags), ::core::mem::transmute(pszprovname), ::core::mem::transmute(pcbprovname)))
     }
@@ -21297,12 +21297,12 @@ pub unsafe fn CryptGetDefaultProviderA(dwprovtype: u32, pdwreserved: *mut u32, d
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptGetDefaultProviderW(dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32, pszprovname: ::windows::core::PWSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptGetDefaultProviderW(dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32, pszprovname: ::windows_core::PWSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptGetDefaultProviderW(dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32, pszprovname: ::windows::core::PWSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptGetDefaultProviderW(dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32, pszprovname: ::windows_core::PWSTR, pcbprovname: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptGetDefaultProviderW(::core::mem::transmute(dwprovtype), ::core::mem::transmute(pdwreserved), ::core::mem::transmute(dwflags), ::core::mem::transmute(pszprovname), ::core::mem::transmute(pcbprovname)))
     }
@@ -21327,12 +21327,12 @@ pub unsafe fn CryptGetHashParam(hhash: usize, dwparam: u32, pbdata: *mut u8, pdw
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptGetKeyIdentifierProperty<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pkeyidentifier: *const CRYPTOAPI_BLOB, dwpropid: u32, dwflags: u32, pwszcomputername: Param3, pvreserved: *mut ::core::ffi::c_void, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptGetKeyIdentifierProperty<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pkeyidentifier: *const CRYPTOAPI_BLOB, dwpropid: u32, dwflags: u32, pwszcomputername: Param3, pvreserved: *mut ::core::ffi::c_void, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptGetKeyIdentifierProperty(pkeyidentifier: *const CRYPTOAPI_BLOB, dwpropid: u32, dwflags: u32, pwszcomputername: ::windows::core::PCWSTR, pvreserved: *mut ::core::ffi::c_void, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptGetKeyIdentifierProperty(pkeyidentifier: *const CRYPTOAPI_BLOB, dwpropid: u32, dwflags: u32, pwszcomputername: ::windows_core::PCWSTR, pvreserved: *mut ::core::ffi::c_void, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptGetKeyIdentifierProperty(::core::mem::transmute(pkeyidentifier), ::core::mem::transmute(dwpropid), ::core::mem::transmute(dwflags), pwszcomputername.into_param().abi(), ::core::mem::transmute(pvreserved), ::core::mem::transmute(pvdata), ::core::mem::transmute(pcbdata)))
     }
@@ -21356,7 +21356,7 @@ pub unsafe fn CryptGetKeyParam(hkey: usize, dwparam: CRYPT_KEY_PARAM_ID, pbdata:
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptGetMessageCertificates<'a, Param1: ::windows::core::IntoParam<'a, HCRYPTPROV_LEGACY>>(dwmsgandcertencodingtype: u32, hcryptprov: Param1, dwflags: u32, pbsignedblob: *const u8, cbsignedblob: u32) -> ::windows::core::Result<HCERTSTORE> {
+pub unsafe fn CryptGetMessageCertificates<'a, Param1: ::windows_core::IntoParam<'a, HCRYPTPROV_LEGACY>>(dwmsgandcertencodingtype: u32, hcryptprov: Param1, dwflags: u32, pbsignedblob: *const u8, cbsignedblob: u32) -> ::windows_core::Result<HCERTSTORE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -21364,7 +21364,7 @@ pub unsafe fn CryptGetMessageCertificates<'a, Param1: ::windows::core::IntoParam
             fn CryptGetMessageCertificates(dwmsgandcertencodingtype: u32, hcryptprov: HCRYPTPROV_LEGACY, dwflags: u32, pbsignedblob: *const u8, cbsignedblob: u32) -> HCERTSTORE;
         }
         let result__ = CryptGetMessageCertificates(::core::mem::transmute(dwmsgandcertencodingtype), hcryptprov.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pbsignedblob), ::core::mem::transmute(cbsignedblob));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -21386,12 +21386,12 @@ pub unsafe fn CryptGetMessageSignerCount(dwmsgencodingtype: u32, pbsignedblob: *
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptGetOIDFunctionAddress<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hfuncset: *const ::core::ffi::c_void, dwencodingtype: u32, pszoid: Param2, dwflags: u32, ppvfuncaddr: *mut *mut ::core::ffi::c_void, phfuncaddr: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptGetOIDFunctionAddress<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hfuncset: *const ::core::ffi::c_void, dwencodingtype: u32, pszoid: Param2, dwflags: u32, ppvfuncaddr: *mut *mut ::core::ffi::c_void, phfuncaddr: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptGetOIDFunctionAddress(hfuncset: *const ::core::ffi::c_void, dwencodingtype: u32, pszoid: ::windows::core::PCSTR, dwflags: u32, ppvfuncaddr: *mut *mut ::core::ffi::c_void, phfuncaddr: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn CryptGetOIDFunctionAddress(hfuncset: *const ::core::ffi::c_void, dwencodingtype: u32, pszoid: ::windows_core::PCSTR, dwflags: u32, ppvfuncaddr: *mut *mut ::core::ffi::c_void, phfuncaddr: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptGetOIDFunctionAddress(::core::mem::transmute(hfuncset), ::core::mem::transmute(dwencodingtype), pszoid.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(ppvfuncaddr), ::core::mem::transmute(phfuncaddr)))
     }
@@ -21401,12 +21401,12 @@ pub unsafe fn CryptGetOIDFunctionAddress<'a, Param2: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptGetOIDFunctionValue<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwencodingtype: u32, pszfuncname: Param1, pszoid: Param2, pwszvaluename: Param3, pdwvaluetype: *mut u32, pbvaluedata: *mut u8, pcbvaluedata: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptGetOIDFunctionValue<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwencodingtype: u32, pszfuncname: Param1, pszoid: Param2, pwszvaluename: Param3, pdwvaluetype: *mut u32, pbvaluedata: *mut u8, pcbvaluedata: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptGetOIDFunctionValue(dwencodingtype: u32, pszfuncname: ::windows::core::PCSTR, pszoid: ::windows::core::PCSTR, pwszvaluename: ::windows::core::PCWSTR, pdwvaluetype: *mut u32, pbvaluedata: *mut u8, pcbvaluedata: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptGetOIDFunctionValue(dwencodingtype: u32, pszfuncname: ::windows_core::PCSTR, pszoid: ::windows_core::PCSTR, pwszvaluename: ::windows_core::PCWSTR, pdwvaluetype: *mut u32, pbvaluedata: *mut u8, pcbvaluedata: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptGetOIDFunctionValue(::core::mem::transmute(dwencodingtype), pszfuncname.into_param().abi(), pszoid.into_param().abi(), pwszvaluename.into_param().abi(), ::core::mem::transmute(pdwvaluetype), ::core::mem::transmute(pbvaluedata), ::core::mem::transmute(pcbvaluedata)))
     }
@@ -21416,12 +21416,12 @@ pub unsafe fn CryptGetOIDFunctionValue<'a, Param1: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptGetObjectUrl<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszurloid: Param0, pvpara: *const ::core::ffi::c_void, dwflags: CRYPT_GET_URL_FLAGS, purlarray: *mut CRYPT_URL_ARRAY, pcburlarray: *mut u32, purlinfo: *mut CRYPT_URL_INFO, pcburlinfo: *mut u32, pvreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptGetObjectUrl<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszurloid: Param0, pvpara: *const ::core::ffi::c_void, dwflags: CRYPT_GET_URL_FLAGS, purlarray: *mut CRYPT_URL_ARRAY, pcburlarray: *mut u32, purlinfo: *mut CRYPT_URL_INFO, pcburlinfo: *mut u32, pvreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptGetObjectUrl(pszurloid: ::windows::core::PCSTR, pvpara: *const ::core::ffi::c_void, dwflags: CRYPT_GET_URL_FLAGS, purlarray: *mut CRYPT_URL_ARRAY, pcburlarray: *mut u32, purlinfo: *mut CRYPT_URL_INFO, pcburlinfo: *mut u32, pvreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn CryptGetObjectUrl(pszurloid: ::windows_core::PCSTR, pvpara: *const ::core::ffi::c_void, dwflags: CRYPT_GET_URL_FLAGS, purlarray: *mut CRYPT_URL_ARRAY, pcburlarray: *mut u32, purlinfo: *mut CRYPT_URL_INFO, pcburlinfo: *mut u32, pvreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptGetObjectUrl(pszurloid.into_param().abi(), ::core::mem::transmute(pvpara), ::core::mem::transmute(dwflags), ::core::mem::transmute(purlarray), ::core::mem::transmute(pcburlarray), ::core::mem::transmute(purlinfo), ::core::mem::transmute(pcburlinfo), ::core::mem::transmute(pvreserved)))
     }
@@ -21461,7 +21461,7 @@ pub unsafe fn CryptGetUserKey(hprov: usize, dwkeyspec: u32, phuserkey: *mut usiz
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptHashCertificate<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, algid: u32, dwflags: u32, pbencoded: *const u8, cbencoded: u32, pbcomputedhash: *mut u8, pcbcomputedhash: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptHashCertificate<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, algid: u32, dwflags: u32, pbencoded: *const u8, cbencoded: u32, pbcomputedhash: *mut u8, pcbcomputedhash: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -21476,12 +21476,12 @@ pub unsafe fn CryptHashCertificate<'a, Param0: ::windows::core::IntoParam<'a, HC
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptHashCertificate2<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszcnghashalgid: Param0, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, pbencoded: *const u8, cbencoded: u32, pbcomputedhash: *mut u8, pcbcomputedhash: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptHashCertificate2<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszcnghashalgid: Param0, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, pbencoded: *const u8, cbencoded: u32, pbcomputedhash: *mut u8, pcbcomputedhash: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptHashCertificate2(pwszcnghashalgid: ::windows::core::PCWSTR, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, pbencoded: *const u8, cbencoded: u32, pbcomputedhash: *mut u8, pcbcomputedhash: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptHashCertificate2(pwszcnghashalgid: ::windows_core::PCWSTR, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, pbencoded: *const u8, cbencoded: u32, pbcomputedhash: *mut u8, pcbcomputedhash: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptHashCertificate2(pwszcnghashalgid.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvreserved), ::core::mem::transmute(pbencoded), ::core::mem::transmute(cbencoded), ::core::mem::transmute(pbcomputedhash), ::core::mem::transmute(pcbcomputedhash)))
     }
@@ -21506,7 +21506,7 @@ pub unsafe fn CryptHashData(hhash: usize, pbdata: *const u8, dwdatalen: u32, dwf
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptHashMessage<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(phashpara: *const CRYPT_HASH_MESSAGE_PARA, fdetachedhash: Param1, ctobehashed: u32, rgpbtobehashed: *const *const u8, rgcbtobehashed: *const u32, pbhashedblob: *mut u8, pcbhashedblob: *mut u32, pbcomputedhash: *mut u8, pcbcomputedhash: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptHashMessage<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(phashpara: *const CRYPT_HASH_MESSAGE_PARA, fdetachedhash: Param1, ctobehashed: u32, rgpbtobehashed: *const *const u8, rgcbtobehashed: *const u32, pbhashedblob: *mut u8, pcbhashedblob: *mut u32, pbcomputedhash: *mut u8, pcbcomputedhash: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -21521,7 +21521,7 @@ pub unsafe fn CryptHashMessage<'a, Param1: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptHashPublicKeyInfo<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, algid: u32, dwflags: u32, dwcertencodingtype: u32, pinfo: *const CERT_PUBLIC_KEY_INFO, pbcomputedhash: *mut u8, pcbcomputedhash: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptHashPublicKeyInfo<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, algid: u32, dwflags: u32, dwcertencodingtype: u32, pinfo: *const CERT_PUBLIC_KEY_INFO, pbcomputedhash: *mut u8, pcbcomputedhash: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -21551,7 +21551,7 @@ pub unsafe fn CryptHashSessionKey(hhash: usize, hkey: usize, dwflags: u32) -> su
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptHashToBeSigned<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, dwcertencodingtype: u32, pbencoded: *const u8, cbencoded: u32, pbcomputedhash: *mut u8, pcbcomputedhash: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptHashToBeSigned<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, dwcertencodingtype: u32, pbencoded: *const u8, cbencoded: u32, pbcomputedhash: *mut u8, pcbcomputedhash: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -21581,7 +21581,7 @@ pub unsafe fn CryptImportKey(hprov: usize, pbdata: *const u8, dwdatalen: u32, hp
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptImportPKCS8<'a, Param0: ::windows::core::IntoParam<'a, CRYPT_PKCS8_IMPORT_PARAMS>>(sprivatekeyandparams: Param0, dwflags: CRYPT_KEY_FLAGS, phcryptprov: *mut usize, pvauxinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptImportPKCS8<'a, Param0: ::windows_core::IntoParam<'a, CRYPT_PKCS8_IMPORT_PARAMS>>(sprivatekeyandparams: Param0, dwflags: CRYPT_KEY_FLAGS, phcryptprov: *mut usize, pvauxinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -21640,12 +21640,12 @@ pub unsafe fn CryptImportPublicKeyInfoEx2(dwcertencodingtype: u32, pinfo: *const
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptInitOIDFunctionSet<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszfuncname: Param0, dwflags: u32) -> *mut ::core::ffi::c_void {
+pub unsafe fn CryptInitOIDFunctionSet<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszfuncname: Param0, dwflags: u32) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptInitOIDFunctionSet(pszfuncname: ::windows::core::PCSTR, dwflags: u32) -> *mut ::core::ffi::c_void;
+            fn CryptInitOIDFunctionSet(pszfuncname: ::windows_core::PCSTR, dwflags: u32) -> *mut ::core::ffi::c_void;
         }
         ::core::mem::transmute(CryptInitOIDFunctionSet(pszfuncname.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
@@ -21660,7 +21660,7 @@ pub unsafe fn CryptInstallCancelRetrieval(pfncancel: PFN_CRYPT_CANCEL_RETRIEVAL,
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptInstallCancelRetrieval(pfncancel: ::windows::core::RawPtr, pvarg: *const ::core::ffi::c_void, dwflags: u32, pvreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn CryptInstallCancelRetrieval(pfncancel: ::windows_core::RawPtr, pvarg: *const ::core::ffi::c_void, dwflags: u32, pvreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptInstallCancelRetrieval(::core::mem::transmute(pfncancel), ::core::mem::transmute(pvarg), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvreserved)))
     }
@@ -21685,14 +21685,14 @@ pub unsafe fn CryptInstallDefaultContext(hcryptprov: usize, dwdefaulttype: CRYPT
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptInstallOIDFunctionAddress<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hmodule: Param0, dwencodingtype: u32, pszfuncname: Param2, rgfuncentry: &[CRYPT_OID_FUNC_ENTRY], dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptInstallOIDFunctionAddress<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hmodule: Param0, dwencodingtype: u32, pszfuncname: Param2, rgfuncentry: &[CRYPT_OID_FUNC_ENTRY], dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptInstallOIDFunctionAddress(hmodule: super::super::Foundation::HINSTANCE, dwencodingtype: u32, pszfuncname: ::windows::core::PCSTR, cfuncentry: u32, rgfuncentry: *const CRYPT_OID_FUNC_ENTRY, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn CryptInstallOIDFunctionAddress(hmodule: super::super::Foundation::HINSTANCE, dwencodingtype: u32, pszfuncname: ::windows_core::PCSTR, cfuncentry: u32, rgfuncentry: *const CRYPT_OID_FUNC_ENTRY, dwflags: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CryptInstallOIDFunctionAddress(hmodule.into_param().abi(), ::core::mem::transmute(dwencodingtype), pszfuncname.into_param().abi(), rgfuncentry.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rgfuncentry)), ::core::mem::transmute(dwflags)))
+        ::core::mem::transmute(CryptInstallOIDFunctionAddress(hmodule.into_param().abi(), ::core::mem::transmute(dwencodingtype), pszfuncname.into_param().abi(), rgfuncentry.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rgfuncentry)), ::core::mem::transmute(dwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -21741,12 +21741,12 @@ pub unsafe fn CryptMemRealloc(pv: *const ::core::ffi::c_void, cbsize: u32) -> *m
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptMsgCalculateEncodedLength<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwmsgencodingtype: u32, dwflags: u32, dwmsgtype: u32, pvmsgencodeinfo: *const ::core::ffi::c_void, pszinnercontentobjid: Param4, cbdata: u32) -> u32 {
+pub unsafe fn CryptMsgCalculateEncodedLength<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwmsgencodingtype: u32, dwflags: u32, dwmsgtype: u32, pvmsgencodeinfo: *const ::core::ffi::c_void, pszinnercontentobjid: Param4, cbdata: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptMsgCalculateEncodedLength(dwmsgencodingtype: u32, dwflags: u32, dwmsgtype: u32, pvmsgencodeinfo: *const ::core::ffi::c_void, pszinnercontentobjid: ::windows::core::PCSTR, cbdata: u32) -> u32;
+            fn CryptMsgCalculateEncodedLength(dwmsgencodingtype: u32, dwflags: u32, dwmsgtype: u32, pvmsgencodeinfo: *const ::core::ffi::c_void, pszinnercontentobjid: ::windows_core::PCSTR, cbdata: u32) -> u32;
         }
         ::core::mem::transmute(CryptMsgCalculateEncodedLength(::core::mem::transmute(dwmsgencodingtype), ::core::mem::transmute(dwflags), ::core::mem::transmute(dwmsgtype), ::core::mem::transmute(pvmsgencodeinfo), pszinnercontentobjid.into_param().abi(), ::core::mem::transmute(cbdata)))
     }
@@ -21793,7 +21793,7 @@ pub unsafe fn CryptMsgCountersign(hcryptmsg: *const ::core::ffi::c_void, dwindex
         extern "system" {
             fn CryptMsgCountersign(hcryptmsg: *const ::core::ffi::c_void, dwindex: u32, ccountersigners: u32, rgcountersigners: *const CMSG_SIGNER_ENCODE_INFO) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CryptMsgCountersign(::core::mem::transmute(hcryptmsg), ::core::mem::transmute(dwindex), rgcountersigners.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rgcountersigners))))
+        ::core::mem::transmute(CryptMsgCountersign(::core::mem::transmute(hcryptmsg), ::core::mem::transmute(dwindex), rgcountersigners.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rgcountersigners))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -21808,7 +21808,7 @@ pub unsafe fn CryptMsgCountersignEncoded(dwencodingtype: u32, pbsignerinfo: *con
         extern "system" {
             fn CryptMsgCountersignEncoded(dwencodingtype: u32, pbsignerinfo: *const u8, cbsignerinfo: u32, ccountersigners: u32, rgcountersigners: *const CMSG_SIGNER_ENCODE_INFO, pbcountersignature: *mut u8, pcbcountersignature: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CryptMsgCountersignEncoded(::core::mem::transmute(dwencodingtype), ::core::mem::transmute(pbsignerinfo), ::core::mem::transmute(cbsignerinfo), rgcountersigners.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rgcountersigners)), ::core::mem::transmute(pbcountersignature), ::core::mem::transmute(pcbcountersignature)))
+        ::core::mem::transmute(CryptMsgCountersignEncoded(::core::mem::transmute(dwencodingtype), ::core::mem::transmute(pbsignerinfo), ::core::mem::transmute(cbsignerinfo), rgcountersigners.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rgcountersigners)), ::core::mem::transmute(pbcountersignature), ::core::mem::transmute(pcbcountersignature)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -21852,7 +21852,7 @@ pub unsafe fn CryptMsgGetAndVerifySigner(hcryptmsg: *const ::core::ffi::c_void, 
         extern "system" {
             fn CryptMsgGetAndVerifySigner(hcryptmsg: *const ::core::ffi::c_void, csignerstore: u32, rghsignerstore: *const HCERTSTORE, dwflags: u32, ppsigner: *mut *mut CERT_CONTEXT, pdwsignerindex: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CryptMsgGetAndVerifySigner(::core::mem::transmute(hcryptmsg), rghsignerstore.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rghsignerstore)), ::core::mem::transmute(dwflags), ::core::mem::transmute(ppsigner), ::core::mem::transmute(pdwsignerindex)))
+        ::core::mem::transmute(CryptMsgGetAndVerifySigner(::core::mem::transmute(hcryptmsg), rghsignerstore.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rghsignerstore)), ::core::mem::transmute(dwflags), ::core::mem::transmute(ppsigner), ::core::mem::transmute(pdwsignerindex)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -21875,7 +21875,7 @@ pub unsafe fn CryptMsgGetParam(hcryptmsg: *const ::core::ffi::c_void, dwparamtyp
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptMsgOpenToDecode<'a, Param3: ::windows::core::IntoParam<'a, HCRYPTPROV_LEGACY>>(dwmsgencodingtype: u32, dwflags: u32, dwmsgtype: u32, hcryptprov: Param3, precipientinfo: *mut CERT_INFO, pstreaminfo: *const CMSG_STREAM_INFO) -> *mut ::core::ffi::c_void {
+pub unsafe fn CryptMsgOpenToDecode<'a, Param3: ::windows_core::IntoParam<'a, HCRYPTPROV_LEGACY>>(dwmsgencodingtype: u32, dwflags: u32, dwmsgtype: u32, hcryptprov: Param3, precipientinfo: *mut CERT_INFO, pstreaminfo: *const CMSG_STREAM_INFO) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -21890,12 +21890,12 @@ pub unsafe fn CryptMsgOpenToDecode<'a, Param3: ::windows::core::IntoParam<'a, HC
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptMsgOpenToEncode<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwmsgencodingtype: u32, dwflags: u32, dwmsgtype: CRYPT_MSG_TYPE, pvmsgencodeinfo: *const ::core::ffi::c_void, pszinnercontentobjid: Param4, pstreaminfo: *const CMSG_STREAM_INFO) -> *mut ::core::ffi::c_void {
+pub unsafe fn CryptMsgOpenToEncode<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwmsgencodingtype: u32, dwflags: u32, dwmsgtype: CRYPT_MSG_TYPE, pvmsgencodeinfo: *const ::core::ffi::c_void, pszinnercontentobjid: Param4, pstreaminfo: *const CMSG_STREAM_INFO) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptMsgOpenToEncode(dwmsgencodingtype: u32, dwflags: u32, dwmsgtype: CRYPT_MSG_TYPE, pvmsgencodeinfo: *const ::core::ffi::c_void, pszinnercontentobjid: ::windows::core::PCSTR, pstreaminfo: *const CMSG_STREAM_INFO) -> *mut ::core::ffi::c_void;
+            fn CryptMsgOpenToEncode(dwmsgencodingtype: u32, dwflags: u32, dwmsgtype: CRYPT_MSG_TYPE, pvmsgencodeinfo: *const ::core::ffi::c_void, pszinnercontentobjid: ::windows_core::PCSTR, pstreaminfo: *const CMSG_STREAM_INFO) -> *mut ::core::ffi::c_void;
         }
         ::core::mem::transmute(CryptMsgOpenToEncode(::core::mem::transmute(dwmsgencodingtype), ::core::mem::transmute(dwflags), ::core::mem::transmute(dwmsgtype), ::core::mem::transmute(pvmsgencodeinfo), pszinnercontentobjid.into_param().abi(), ::core::mem::transmute(pstreaminfo)))
     }
@@ -21920,7 +21920,7 @@ pub unsafe fn CryptMsgSignCTL(dwmsgencodingtype: u32, pbctlcontent: *const u8, c
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptMsgUpdate<'a, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hcryptmsg: *const ::core::ffi::c_void, pbdata: *const u8, cbdata: u32, ffinal: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptMsgUpdate<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hcryptmsg: *const ::core::ffi::c_void, pbdata: *const u8, cbdata: u32, ffinal: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -21935,7 +21935,7 @@ pub unsafe fn CryptMsgUpdate<'a, Param3: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptMsgVerifyCountersignatureEncoded<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, dwencodingtype: u32, pbsignerinfo: *const u8, cbsignerinfo: u32, pbsignerinfocountersignature: *const u8, cbsignerinfocountersignature: u32, pcicountersigner: *const CERT_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptMsgVerifyCountersignatureEncoded<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, dwencodingtype: u32, pbsignerinfo: *const u8, cbsignerinfo: u32, pbsignerinfocountersignature: *const u8, cbsignerinfocountersignature: u32, pcicountersigner: *const CERT_INFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -21950,7 +21950,7 @@ pub unsafe fn CryptMsgVerifyCountersignatureEncoded<'a, Param0: ::windows::core:
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptMsgVerifyCountersignatureEncodedEx<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, dwencodingtype: u32, pbsignerinfo: *const u8, cbsignerinfo: u32, pbsignerinfocountersignature: *const u8, cbsignerinfocountersignature: u32, dwsignertype: u32, pvsigner: *const ::core::ffi::c_void, dwflags: u32, pvextra: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptMsgVerifyCountersignatureEncodedEx<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, dwencodingtype: u32, pbsignerinfo: *const u8, cbsignerinfo: u32, pbsignerinfocountersignature: *const u8, cbsignerinfocountersignature: u32, dwsignertype: u32, pvsigner: *const ::core::ffi::c_void, dwflags: u32, pvextra: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -21965,12 +21965,12 @@ pub unsafe fn CryptMsgVerifyCountersignatureEncodedEx<'a, Param0: ::windows::cor
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptProtectData<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pdatain: *const CRYPTOAPI_BLOB, szdatadescr: Param1, poptionalentropy: *const CRYPTOAPI_BLOB, pvreserved: *mut ::core::ffi::c_void, ppromptstruct: *const CRYPTPROTECT_PROMPTSTRUCT, dwflags: u32, pdataout: *mut CRYPTOAPI_BLOB) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptProtectData<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pdatain: *const CRYPTOAPI_BLOB, szdatadescr: Param1, poptionalentropy: *const CRYPTOAPI_BLOB, pvreserved: *mut ::core::ffi::c_void, ppromptstruct: *const CRYPTPROTECT_PROMPTSTRUCT, dwflags: u32, pdataout: *mut CRYPTOAPI_BLOB) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptProtectData(pdatain: *const CRYPTOAPI_BLOB, szdatadescr: ::windows::core::PCWSTR, poptionalentropy: *const CRYPTOAPI_BLOB, pvreserved: *mut ::core::ffi::c_void, ppromptstruct: *const CRYPTPROTECT_PROMPTSTRUCT, dwflags: u32, pdataout: *mut CRYPTOAPI_BLOB) -> super::super::Foundation::BOOL;
+            fn CryptProtectData(pdatain: *const CRYPTOAPI_BLOB, szdatadescr: ::windows_core::PCWSTR, poptionalentropy: *const CRYPTOAPI_BLOB, pvreserved: *mut ::core::ffi::c_void, ppromptstruct: *const CRYPTPROTECT_PROMPTSTRUCT, dwflags: u32, pdataout: *mut CRYPTOAPI_BLOB) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptProtectData(::core::mem::transmute(pdatain), szdatadescr.into_param().abi(), ::core::mem::transmute(poptionalentropy), ::core::mem::transmute(pvreserved), ::core::mem::transmute(ppromptstruct), ::core::mem::transmute(dwflags), ::core::mem::transmute(pdataout)))
     }
@@ -22010,12 +22010,12 @@ pub unsafe fn CryptQueryObject(dwobjecttype: CERT_QUERY_OBJECT_TYPE, pvobject: *
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptRegisterDefaultOIDFunction<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwencodingtype: u32, pszfuncname: Param1, dwindex: u32, pwszdll: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptRegisterDefaultOIDFunction<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwencodingtype: u32, pszfuncname: Param1, dwindex: u32, pwszdll: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptRegisterDefaultOIDFunction(dwencodingtype: u32, pszfuncname: ::windows::core::PCSTR, dwindex: u32, pwszdll: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn CryptRegisterDefaultOIDFunction(dwencodingtype: u32, pszfuncname: ::windows_core::PCSTR, dwindex: u32, pwszdll: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptRegisterDefaultOIDFunction(::core::mem::transmute(dwencodingtype), pszfuncname.into_param().abi(), ::core::mem::transmute(dwindex), pwszdll.into_param().abi()))
     }
@@ -22025,12 +22025,12 @@ pub unsafe fn CryptRegisterDefaultOIDFunction<'a, Param1: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptRegisterOIDFunction<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwencodingtype: u32, pszfuncname: Param1, pszoid: Param2, pwszdll: Param3, pszoverridefuncname: Param4) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptRegisterOIDFunction<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwencodingtype: u32, pszfuncname: Param1, pszoid: Param2, pwszdll: Param3, pszoverridefuncname: Param4) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptRegisterOIDFunction(dwencodingtype: u32, pszfuncname: ::windows::core::PCSTR, pszoid: ::windows::core::PCSTR, pwszdll: ::windows::core::PCWSTR, pszoverridefuncname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn CryptRegisterOIDFunction(dwencodingtype: u32, pszfuncname: ::windows_core::PCSTR, pszoid: ::windows_core::PCSTR, pwszdll: ::windows_core::PCWSTR, pszoverridefuncname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptRegisterOIDFunction(::core::mem::transmute(dwencodingtype), pszfuncname.into_param().abi(), pszoid.into_param().abi(), pwszdll.into_param().abi(), pszoverridefuncname.into_param().abi()))
     }
@@ -22070,12 +22070,12 @@ pub unsafe fn CryptReleaseContext(hprov: usize, dwflags: u32) -> super::super::F
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptRetrieveObjectByUrlA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param5: ::windows::core::IntoParam<'a, HCRYPTASYNC>>(pszurl: Param0, pszobjectoid: Param1, dwretrievalflags: u32, dwtimeout: u32, ppvobject: *mut *mut ::core::ffi::c_void, hasyncretrieve: Param5, pcredentials: *const CRYPT_CREDENTIALS, pvverify: *const ::core::ffi::c_void, pauxinfo: *mut CRYPT_RETRIEVE_AUX_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptRetrieveObjectByUrlA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, HCRYPTASYNC>>(pszurl: Param0, pszobjectoid: Param1, dwretrievalflags: u32, dwtimeout: u32, ppvobject: *mut *mut ::core::ffi::c_void, hasyncretrieve: Param5, pcredentials: *const CRYPT_CREDENTIALS, pvverify: *const ::core::ffi::c_void, pauxinfo: *mut CRYPT_RETRIEVE_AUX_INFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptRetrieveObjectByUrlA(pszurl: ::windows::core::PCSTR, pszobjectoid: ::windows::core::PCSTR, dwretrievalflags: u32, dwtimeout: u32, ppvobject: *mut *mut ::core::ffi::c_void, hasyncretrieve: HCRYPTASYNC, pcredentials: *const CRYPT_CREDENTIALS, pvverify: *const ::core::ffi::c_void, pauxinfo: *mut CRYPT_RETRIEVE_AUX_INFO) -> super::super::Foundation::BOOL;
+            fn CryptRetrieveObjectByUrlA(pszurl: ::windows_core::PCSTR, pszobjectoid: ::windows_core::PCSTR, dwretrievalflags: u32, dwtimeout: u32, ppvobject: *mut *mut ::core::ffi::c_void, hasyncretrieve: HCRYPTASYNC, pcredentials: *const CRYPT_CREDENTIALS, pvverify: *const ::core::ffi::c_void, pauxinfo: *mut CRYPT_RETRIEVE_AUX_INFO) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptRetrieveObjectByUrlA(pszurl.into_param().abi(), pszobjectoid.into_param().abi(), ::core::mem::transmute(dwretrievalflags), ::core::mem::transmute(dwtimeout), ::core::mem::transmute(ppvobject), hasyncretrieve.into_param().abi(), ::core::mem::transmute(pcredentials), ::core::mem::transmute(pvverify), ::core::mem::transmute(pauxinfo)))
     }
@@ -22085,12 +22085,12 @@ pub unsafe fn CryptRetrieveObjectByUrlA<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptRetrieveObjectByUrlW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param5: ::windows::core::IntoParam<'a, HCRYPTASYNC>>(pszurl: Param0, pszobjectoid: Param1, dwretrievalflags: u32, dwtimeout: u32, ppvobject: *mut *mut ::core::ffi::c_void, hasyncretrieve: Param5, pcredentials: *const CRYPT_CREDENTIALS, pvverify: *const ::core::ffi::c_void, pauxinfo: *mut CRYPT_RETRIEVE_AUX_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptRetrieveObjectByUrlW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, HCRYPTASYNC>>(pszurl: Param0, pszobjectoid: Param1, dwretrievalflags: u32, dwtimeout: u32, ppvobject: *mut *mut ::core::ffi::c_void, hasyncretrieve: Param5, pcredentials: *const CRYPT_CREDENTIALS, pvverify: *const ::core::ffi::c_void, pauxinfo: *mut CRYPT_RETRIEVE_AUX_INFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptRetrieveObjectByUrlW(pszurl: ::windows::core::PCWSTR, pszobjectoid: ::windows::core::PCSTR, dwretrievalflags: u32, dwtimeout: u32, ppvobject: *mut *mut ::core::ffi::c_void, hasyncretrieve: HCRYPTASYNC, pcredentials: *const CRYPT_CREDENTIALS, pvverify: *const ::core::ffi::c_void, pauxinfo: *mut CRYPT_RETRIEVE_AUX_INFO) -> super::super::Foundation::BOOL;
+            fn CryptRetrieveObjectByUrlW(pszurl: ::windows_core::PCWSTR, pszobjectoid: ::windows_core::PCSTR, dwretrievalflags: u32, dwtimeout: u32, ppvobject: *mut *mut ::core::ffi::c_void, hasyncretrieve: HCRYPTASYNC, pcredentials: *const CRYPT_CREDENTIALS, pvverify: *const ::core::ffi::c_void, pauxinfo: *mut CRYPT_RETRIEVE_AUX_INFO) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptRetrieveObjectByUrlW(pszurl.into_param().abi(), pszobjectoid.into_param().abi(), ::core::mem::transmute(dwretrievalflags), ::core::mem::transmute(dwtimeout), ::core::mem::transmute(ppvobject), hasyncretrieve.into_param().abi(), ::core::mem::transmute(pcredentials), ::core::mem::transmute(pvverify), ::core::mem::transmute(pauxinfo)))
     }
@@ -22100,12 +22100,12 @@ pub unsafe fn CryptRetrieveObjectByUrlW<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptRetrieveTimeStamp<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(wszurl: Param0, dwretrievalflags: u32, dwtimeout: u32, pszhashid: Param3, ppara: *const CRYPT_TIMESTAMP_PARA, pbdata: *const u8, cbdata: u32, pptscontext: *mut *mut CRYPT_TIMESTAMP_CONTEXT, pptssigner: *mut *mut CERT_CONTEXT, phstore: *mut HCERTSTORE) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptRetrieveTimeStamp<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(wszurl: Param0, dwretrievalflags: u32, dwtimeout: u32, pszhashid: Param3, ppara: *const CRYPT_TIMESTAMP_PARA, pbdata: *const u8, cbdata: u32, pptscontext: *mut *mut CRYPT_TIMESTAMP_CONTEXT, pptssigner: *mut *mut CERT_CONTEXT, phstore: *mut HCERTSTORE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptRetrieveTimeStamp(wszurl: ::windows::core::PCWSTR, dwretrievalflags: u32, dwtimeout: u32, pszhashid: ::windows::core::PCSTR, ppara: *const CRYPT_TIMESTAMP_PARA, pbdata: *const u8, cbdata: u32, pptscontext: *mut *mut CRYPT_TIMESTAMP_CONTEXT, pptssigner: *mut *mut CERT_CONTEXT, phstore: *mut HCERTSTORE) -> super::super::Foundation::BOOL;
+            fn CryptRetrieveTimeStamp(wszurl: ::windows_core::PCWSTR, dwretrievalflags: u32, dwtimeout: u32, pszhashid: ::windows_core::PCSTR, ppara: *const CRYPT_TIMESTAMP_PARA, pbdata: *const u8, cbdata: u32, pptscontext: *mut *mut CRYPT_TIMESTAMP_CONTEXT, pptssigner: *mut *mut CERT_CONTEXT, phstore: *mut HCERTSTORE) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptRetrieveTimeStamp(wszurl.into_param().abi(), ::core::mem::transmute(dwretrievalflags), ::core::mem::transmute(dwtimeout), pszhashid.into_param().abi(), ::core::mem::transmute(ppara), ::core::mem::transmute(pbdata), ::core::mem::transmute(cbdata), ::core::mem::transmute(pptscontext), ::core::mem::transmute(pptssigner), ::core::mem::transmute(phstore)))
     }
@@ -22115,12 +22115,12 @@ pub unsafe fn CryptRetrieveTimeStamp<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptSetAsyncParam<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTASYNC>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hasync: Param0, pszparamoid: Param1, pvparam: *const ::core::ffi::c_void, pfnfree: PFN_CRYPT_ASYNC_PARAM_FREE_FUNC) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptSetAsyncParam<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTASYNC>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hasync: Param0, pszparamoid: Param1, pvparam: *const ::core::ffi::c_void, pfnfree: PFN_CRYPT_ASYNC_PARAM_FREE_FUNC) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptSetAsyncParam(hasync: HCRYPTASYNC, pszparamoid: ::windows::core::PCSTR, pvparam: *const ::core::ffi::c_void, pfnfree: ::windows::core::RawPtr) -> super::super::Foundation::BOOL;
+            fn CryptSetAsyncParam(hasync: HCRYPTASYNC, pszparamoid: ::windows_core::PCSTR, pvparam: *const ::core::ffi::c_void, pfnfree: ::windows_core::RawPtr) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptSetAsyncParam(hasync.into_param().abi(), pszparamoid.into_param().abi(), ::core::mem::transmute(pvparam), ::core::mem::transmute(pfnfree)))
     }
@@ -22145,12 +22145,12 @@ pub unsafe fn CryptSetHashParam(hhash: usize, dwparam: CRYPT_SET_HASH_PARAM, pbd
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptSetKeyIdentifierProperty<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pkeyidentifier: *const CRYPTOAPI_BLOB, dwpropid: u32, dwflags: u32, pwszcomputername: Param3, pvreserved: *mut ::core::ffi::c_void, pvdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptSetKeyIdentifierProperty<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pkeyidentifier: *const CRYPTOAPI_BLOB, dwpropid: u32, dwflags: u32, pwszcomputername: Param3, pvreserved: *mut ::core::ffi::c_void, pvdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptSetKeyIdentifierProperty(pkeyidentifier: *const CRYPTOAPI_BLOB, dwpropid: u32, dwflags: u32, pwszcomputername: ::windows::core::PCWSTR, pvreserved: *mut ::core::ffi::c_void, pvdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn CryptSetKeyIdentifierProperty(pkeyidentifier: *const CRYPTOAPI_BLOB, dwpropid: u32, dwflags: u32, pwszcomputername: ::windows_core::PCWSTR, pvreserved: *mut ::core::ffi::c_void, pvdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptSetKeyIdentifierProperty(::core::mem::transmute(pkeyidentifier), ::core::mem::transmute(dwpropid), ::core::mem::transmute(dwflags), pwszcomputername.into_param().abi(), ::core::mem::transmute(pvreserved), ::core::mem::transmute(pvdata)))
     }
@@ -22175,12 +22175,12 @@ pub unsafe fn CryptSetKeyParam(hkey: usize, dwparam: CRYPT_KEY_PARAM_ID, pbdata:
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 #[inline]
-pub unsafe fn CryptSetOIDFunctionValue<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwencodingtype: u32, pszfuncname: Param1, pszoid: Param2, pwszvaluename: Param3, dwvaluetype: super::super::System::Registry::REG_VALUE_TYPE, pbvaluedata: *const u8, cbvaluedata: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptSetOIDFunctionValue<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwencodingtype: u32, pszfuncname: Param1, pszoid: Param2, pwszvaluename: Param3, dwvaluetype: super::super::System::Registry::REG_VALUE_TYPE, pbvaluedata: *const u8, cbvaluedata: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptSetOIDFunctionValue(dwencodingtype: u32, pszfuncname: ::windows::core::PCSTR, pszoid: ::windows::core::PCSTR, pwszvaluename: ::windows::core::PCWSTR, dwvaluetype: super::super::System::Registry::REG_VALUE_TYPE, pbvaluedata: *const u8, cbvaluedata: u32) -> super::super::Foundation::BOOL;
+            fn CryptSetOIDFunctionValue(dwencodingtype: u32, pszfuncname: ::windows_core::PCSTR, pszoid: ::windows_core::PCSTR, pwszvaluename: ::windows_core::PCWSTR, dwvaluetype: super::super::System::Registry::REG_VALUE_TYPE, pbvaluedata: *const u8, cbvaluedata: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptSetOIDFunctionValue(::core::mem::transmute(dwencodingtype), pszfuncname.into_param().abi(), pszoid.into_param().abi(), pwszvaluename.into_param().abi(), ::core::mem::transmute(dwvaluetype), ::core::mem::transmute(pbvaluedata), ::core::mem::transmute(cbvaluedata)))
     }
@@ -22205,12 +22205,12 @@ pub unsafe fn CryptSetProvParam(hprov: usize, dwparam: CRYPT_SET_PROV_PARAM_ID, 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptSetProviderA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszprovname: Param0, dwprovtype: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptSetProviderA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszprovname: Param0, dwprovtype: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptSetProviderA(pszprovname: ::windows::core::PCSTR, dwprovtype: u32) -> super::super::Foundation::BOOL;
+            fn CryptSetProviderA(pszprovname: ::windows_core::PCSTR, dwprovtype: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptSetProviderA(pszprovname.into_param().abi(), ::core::mem::transmute(dwprovtype)))
     }
@@ -22220,12 +22220,12 @@ pub unsafe fn CryptSetProviderA<'a, Param0: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptSetProviderExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszprovname: Param0, dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptSetProviderExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszprovname: Param0, dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptSetProviderExA(pszprovname: ::windows::core::PCSTR, dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn CryptSetProviderExA(pszprovname: ::windows_core::PCSTR, dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptSetProviderExA(pszprovname.into_param().abi(), ::core::mem::transmute(dwprovtype), ::core::mem::transmute(pdwreserved), ::core::mem::transmute(dwflags)))
     }
@@ -22235,12 +22235,12 @@ pub unsafe fn CryptSetProviderExA<'a, Param0: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptSetProviderExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszprovname: Param0, dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptSetProviderExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszprovname: Param0, dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptSetProviderExW(pszprovname: ::windows::core::PCWSTR, dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn CryptSetProviderExW(pszprovname: ::windows_core::PCWSTR, dwprovtype: u32, pdwreserved: *mut u32, dwflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptSetProviderExW(pszprovname.into_param().abi(), ::core::mem::transmute(dwprovtype), ::core::mem::transmute(pdwreserved), ::core::mem::transmute(dwflags)))
     }
@@ -22250,12 +22250,12 @@ pub unsafe fn CryptSetProviderExW<'a, Param0: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptSetProviderW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszprovname: Param0, dwprovtype: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptSetProviderW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszprovname: Param0, dwprovtype: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptSetProviderW(pszprovname: ::windows::core::PCWSTR, dwprovtype: u32) -> super::super::Foundation::BOOL;
+            fn CryptSetProviderW(pszprovname: ::windows_core::PCWSTR, dwprovtype: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptSetProviderW(pszprovname.into_param().abi(), ::core::mem::transmute(dwprovtype)))
     }
@@ -22265,12 +22265,12 @@ pub unsafe fn CryptSetProviderW<'a, Param0: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptSignAndEncodeCertificate<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hcryptprovorncryptkey: Param0, dwkeyspec: CERT_KEY_SPEC, dwcertencodingtype: u32, lpszstructtype: Param3, pvstructinfo: *const ::core::ffi::c_void, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, pvhashauxinfo: *const ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptSignAndEncodeCertificate<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hcryptprovorncryptkey: Param0, dwkeyspec: CERT_KEY_SPEC, dwcertencodingtype: u32, lpszstructtype: Param3, pvstructinfo: *const ::core::ffi::c_void, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, pvhashauxinfo: *const ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptSignAndEncodeCertificate(hcryptprovorncryptkey: HCRYPTPROV_OR_NCRYPT_KEY_HANDLE, dwkeyspec: CERT_KEY_SPEC, dwcertencodingtype: u32, lpszstructtype: ::windows::core::PCSTR, pvstructinfo: *const ::core::ffi::c_void, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, pvhashauxinfo: *const ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptSignAndEncodeCertificate(hcryptprovorncryptkey: HCRYPTPROV_OR_NCRYPT_KEY_HANDLE, dwkeyspec: CERT_KEY_SPEC, dwcertencodingtype: u32, lpszstructtype: ::windows_core::PCSTR, pvstructinfo: *const ::core::ffi::c_void, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, pvhashauxinfo: *const ::core::ffi::c_void, pbencoded: *mut u8, pcbencoded: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptSignAndEncodeCertificate(hcryptprovorncryptkey.into_param().abi(), ::core::mem::transmute(dwkeyspec), ::core::mem::transmute(dwcertencodingtype), lpszstructtype.into_param().abi(), ::core::mem::transmute(pvstructinfo), ::core::mem::transmute(psignaturealgorithm), ::core::mem::transmute(pvhashauxinfo), ::core::mem::transmute(pbencoded), ::core::mem::transmute(pcbencoded)))
     }
@@ -22287,7 +22287,7 @@ pub unsafe fn CryptSignAndEncryptMessage(psignpara: *const CRYPT_SIGN_MESSAGE_PA
         extern "system" {
             fn CryptSignAndEncryptMessage(psignpara: *const CRYPT_SIGN_MESSAGE_PARA, pencryptpara: *const CRYPT_ENCRYPT_MESSAGE_PARA, crecipientcert: u32, rgprecipientcert: *const *const CERT_CONTEXT, pbtobesignedandencrypted: *const u8, cbtobesignedandencrypted: u32, pbsignedandencryptedblob: *mut u8, pcbsignedandencryptedblob: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CryptSignAndEncryptMessage(::core::mem::transmute(psignpara), ::core::mem::transmute(pencryptpara), rgprecipientcert.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rgprecipientcert)), ::core::mem::transmute(pbtobesignedandencrypted), ::core::mem::transmute(cbtobesignedandencrypted), ::core::mem::transmute(pbsignedandencryptedblob), ::core::mem::transmute(pcbsignedandencryptedblob)))
+        ::core::mem::transmute(CryptSignAndEncryptMessage(::core::mem::transmute(psignpara), ::core::mem::transmute(pencryptpara), rgprecipientcert.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rgprecipientcert)), ::core::mem::transmute(pbtobesignedandencrypted), ::core::mem::transmute(cbtobesignedandencrypted), ::core::mem::transmute(pbsignedandencryptedblob), ::core::mem::transmute(pcbsignedandencryptedblob)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -22295,7 +22295,7 @@ pub unsafe fn CryptSignAndEncryptMessage(psignpara: *const CRYPT_SIGN_MESSAGE_PA
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptSignCertificate<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>>(hcryptprovorncryptkey: Param0, dwkeyspec: u32, dwcertencodingtype: u32, pbencodedtobesigned: *const u8, cbencodedtobesigned: u32, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, pvhashauxinfo: *const ::core::ffi::c_void, pbsignature: *mut u8, pcbsignature: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptSignCertificate<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>>(hcryptprovorncryptkey: Param0, dwkeyspec: u32, dwcertencodingtype: u32, pbencodedtobesigned: *const u8, cbencodedtobesigned: u32, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, pvhashauxinfo: *const ::core::ffi::c_void, pbsignature: *mut u8, pcbsignature: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -22310,12 +22310,12 @@ pub unsafe fn CryptSignCertificate<'a, Param0: ::windows::core::IntoParam<'a, HC
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptSignHashA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hhash: usize, dwkeyspec: u32, szdescription: Param2, dwflags: u32, pbsignature: *mut u8, pdwsiglen: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptSignHashA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hhash: usize, dwkeyspec: u32, szdescription: Param2, dwflags: u32, pbsignature: *mut u8, pdwsiglen: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptSignHashA(hhash: usize, dwkeyspec: u32, szdescription: ::windows::core::PCSTR, dwflags: u32, pbsignature: *mut u8, pdwsiglen: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptSignHashA(hhash: usize, dwkeyspec: u32, szdescription: ::windows_core::PCSTR, dwflags: u32, pbsignature: *mut u8, pdwsiglen: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptSignHashA(::core::mem::transmute(hhash), ::core::mem::transmute(dwkeyspec), szdescription.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pbsignature), ::core::mem::transmute(pdwsiglen)))
     }
@@ -22325,12 +22325,12 @@ pub unsafe fn CryptSignHashA<'a, Param2: ::windows::core::IntoParam<'a, ::window
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptSignHashW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hhash: usize, dwkeyspec: u32, szdescription: Param2, dwflags: u32, pbsignature: *mut u8, pdwsiglen: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptSignHashW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hhash: usize, dwkeyspec: u32, szdescription: Param2, dwflags: u32, pbsignature: *mut u8, pdwsiglen: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptSignHashW(hhash: usize, dwkeyspec: u32, szdescription: ::windows::core::PCWSTR, dwflags: u32, pbsignature: *mut u8, pdwsiglen: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptSignHashW(hhash: usize, dwkeyspec: u32, szdescription: ::windows_core::PCWSTR, dwflags: u32, pbsignature: *mut u8, pdwsiglen: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptSignHashW(::core::mem::transmute(hhash), ::core::mem::transmute(dwkeyspec), szdescription.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pbsignature), ::core::mem::transmute(pdwsiglen)))
     }
@@ -22340,7 +22340,7 @@ pub unsafe fn CryptSignHashW<'a, Param2: ::windows::core::IntoParam<'a, ::window
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptSignMessage<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(psignpara: *const CRYPT_SIGN_MESSAGE_PARA, fdetachedsignature: Param1, ctobesigned: u32, rgpbtobesigned: *const *const u8, rgcbtobesigned: *const u32, pbsignedblob: *mut u8, pcbsignedblob: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptSignMessage<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(psignpara: *const CRYPT_SIGN_MESSAGE_PARA, fdetachedsignature: Param1, ctobesigned: u32, rgpbtobesigned: *const *const u8, rgcbtobesigned: *const u32, pbsignedblob: *mut u8, pcbsignedblob: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -22375,9 +22375,9 @@ pub unsafe fn CryptStringToBinaryA(pszstring: &[u8], dwflags: CRYPT_STRING, pbbi
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptStringToBinaryA(pszstring: ::windows::core::PCSTR, cchstring: u32, dwflags: CRYPT_STRING, pbbinary: *mut u8, pcbbinary: *mut u32, pdwskip: *mut u32, pdwflags: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptStringToBinaryA(pszstring: ::windows_core::PCSTR, cchstring: u32, dwflags: CRYPT_STRING, pbbinary: *mut u8, pcbbinary: *mut u32, pdwskip: *mut u32, pdwflags: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CryptStringToBinaryA(::core::mem::transmute(::windows::core::as_ptr_or_null(pszstring)), pszstring.len() as _, ::core::mem::transmute(dwflags), ::core::mem::transmute(pbbinary), ::core::mem::transmute(pcbbinary), ::core::mem::transmute(pdwskip), ::core::mem::transmute(pdwflags)))
+        ::core::mem::transmute(CryptStringToBinaryA(::core::mem::transmute(::windows_core::as_ptr_or_null(pszstring)), pszstring.len() as _, ::core::mem::transmute(dwflags), ::core::mem::transmute(pbbinary), ::core::mem::transmute(pcbbinary), ::core::mem::transmute(pdwskip), ::core::mem::transmute(pdwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -22390,9 +22390,9 @@ pub unsafe fn CryptStringToBinaryW(pszstring: &[u16], dwflags: CRYPT_STRING, pbb
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptStringToBinaryW(pszstring: ::windows::core::PCWSTR, cchstring: u32, dwflags: CRYPT_STRING, pbbinary: *mut u8, pcbbinary: *mut u32, pdwskip: *mut u32, pdwflags: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptStringToBinaryW(pszstring: ::windows_core::PCWSTR, cchstring: u32, dwflags: CRYPT_STRING, pbbinary: *mut u8, pcbbinary: *mut u32, pdwskip: *mut u32, pdwflags: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CryptStringToBinaryW(::core::mem::transmute(::windows::core::as_ptr_or_null(pszstring)), pszstring.len() as _, ::core::mem::transmute(dwflags), ::core::mem::transmute(pbbinary), ::core::mem::transmute(pcbbinary), ::core::mem::transmute(pdwskip), ::core::mem::transmute(pdwflags)))
+        ::core::mem::transmute(CryptStringToBinaryW(::core::mem::transmute(::windows_core::as_ptr_or_null(pszstring)), pszstring.len() as _, ::core::mem::transmute(dwflags), ::core::mem::transmute(pbbinary), ::core::mem::transmute(pcbbinary), ::core::mem::transmute(pdwskip), ::core::mem::transmute(pdwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -22430,12 +22430,12 @@ pub unsafe fn CryptUninstallDefaultContext(hdefaultcontext: *const ::core::ffi::
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptUnprotectData(pdatain: *const CRYPTOAPI_BLOB, ppszdatadescr: *mut ::windows::core::PWSTR, poptionalentropy: *const CRYPTOAPI_BLOB, pvreserved: *mut ::core::ffi::c_void, ppromptstruct: *const CRYPTPROTECT_PROMPTSTRUCT, dwflags: u32, pdataout: *mut CRYPTOAPI_BLOB) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptUnprotectData(pdatain: *const CRYPTOAPI_BLOB, ppszdatadescr: *mut ::windows_core::PWSTR, poptionalentropy: *const CRYPTOAPI_BLOB, pvreserved: *mut ::core::ffi::c_void, ppromptstruct: *const CRYPTPROTECT_PROMPTSTRUCT, dwflags: u32, pdataout: *mut CRYPTOAPI_BLOB) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptUnprotectData(pdatain: *const CRYPTOAPI_BLOB, ppszdatadescr: *mut ::windows::core::PWSTR, poptionalentropy: *const CRYPTOAPI_BLOB, pvreserved: *mut ::core::ffi::c_void, ppromptstruct: *const CRYPTPROTECT_PROMPTSTRUCT, dwflags: u32, pdataout: *mut CRYPTOAPI_BLOB) -> super::super::Foundation::BOOL;
+            fn CryptUnprotectData(pdatain: *const CRYPTOAPI_BLOB, ppszdatadescr: *mut ::windows_core::PWSTR, poptionalentropy: *const CRYPTOAPI_BLOB, pvreserved: *mut ::core::ffi::c_void, ppromptstruct: *const CRYPTPROTECT_PROMPTSTRUCT, dwflags: u32, pdataout: *mut CRYPTOAPI_BLOB) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptUnprotectData(::core::mem::transmute(pdatain), ::core::mem::transmute(ppszdatadescr), ::core::mem::transmute(poptionalentropy), ::core::mem::transmute(pvreserved), ::core::mem::transmute(ppromptstruct), ::core::mem::transmute(dwflags), ::core::mem::transmute(pdataout)))
     }
@@ -22460,12 +22460,12 @@ pub unsafe fn CryptUnprotectMemory(pdatain: *mut ::core::ffi::c_void, cbdatain: 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptUnregisterDefaultOIDFunction<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwencodingtype: u32, pszfuncname: Param1, pwszdll: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptUnregisterDefaultOIDFunction<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwencodingtype: u32, pszfuncname: Param1, pwszdll: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptUnregisterDefaultOIDFunction(dwencodingtype: u32, pszfuncname: ::windows::core::PCSTR, pwszdll: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn CryptUnregisterDefaultOIDFunction(dwencodingtype: u32, pszfuncname: ::windows_core::PCSTR, pwszdll: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptUnregisterDefaultOIDFunction(::core::mem::transmute(dwencodingtype), pszfuncname.into_param().abi(), pwszdll.into_param().abi()))
     }
@@ -22475,12 +22475,12 @@ pub unsafe fn CryptUnregisterDefaultOIDFunction<'a, Param1: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptUnregisterOIDFunction<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwencodingtype: u32, pszfuncname: Param1, pszoid: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptUnregisterOIDFunction<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwencodingtype: u32, pszfuncname: Param1, pszoid: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptUnregisterOIDFunction(dwencodingtype: u32, pszfuncname: ::windows::core::PCSTR, pszoid: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn CryptUnregisterOIDFunction(dwencodingtype: u32, pszfuncname: ::windows_core::PCSTR, pszoid: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptUnregisterOIDFunction(::core::mem::transmute(dwencodingtype), pszfuncname.into_param().abi(), pszoid.into_param().abi()))
     }
@@ -22505,12 +22505,12 @@ pub unsafe fn CryptUnregisterOIDInfo(pinfo: *const CRYPT_OID_INFO) -> super::sup
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptUpdateProtectedState<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::PSID>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(poldsid: Param0, pwszoldpassword: Param1, dwflags: u32, pdwsuccesscount: *mut u32, pdwfailurecount: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptUpdateProtectedState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::PSID>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(poldsid: Param0, pwszoldpassword: Param1, dwflags: u32, pdwsuccesscount: *mut u32, pdwfailurecount: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptUpdateProtectedState(poldsid: super::super::Foundation::PSID, pwszoldpassword: ::windows::core::PCWSTR, dwflags: u32, pdwsuccesscount: *mut u32, pdwfailurecount: *mut u32) -> super::super::Foundation::BOOL;
+            fn CryptUpdateProtectedState(poldsid: super::super::Foundation::PSID, pwszoldpassword: ::windows_core::PCWSTR, dwflags: u32, pdwsuccesscount: *mut u32, pdwfailurecount: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptUpdateProtectedState(poldsid.into_param().abi(), pwszoldpassword.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pdwsuccesscount), ::core::mem::transmute(pdwfailurecount)))
     }
@@ -22520,7 +22520,7 @@ pub unsafe fn CryptUpdateProtectedState<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptVerifyCertificateSignature<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, dwcertencodingtype: u32, pbencoded: *const u8, cbencoded: u32, ppublickey: *const CERT_PUBLIC_KEY_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptVerifyCertificateSignature<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, dwcertencodingtype: u32, pbencoded: *const u8, cbencoded: u32, ppublickey: *const CERT_PUBLIC_KEY_INFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -22535,7 +22535,7 @@ pub unsafe fn CryptVerifyCertificateSignature<'a, Param0: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptVerifyCertificateSignatureEx<'a, Param0: ::windows::core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, dwcertencodingtype: u32, dwsubjecttype: u32, pvsubject: *const ::core::ffi::c_void, dwissuertype: u32, pvissuer: *const ::core::ffi::c_void, dwflags: CRYPT_VERIFY_CERT_FLAGS, pvextra: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptVerifyCertificateSignatureEx<'a, Param0: ::windows_core::IntoParam<'a, HCRYPTPROV_LEGACY>>(hcryptprov: Param0, dwcertencodingtype: u32, dwsubjecttype: u32, pvsubject: *const ::core::ffi::c_void, dwissuertype: u32, pvissuer: *const ::core::ffi::c_void, dwflags: CRYPT_VERIFY_CERT_FLAGS, pvextra: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -22625,12 +22625,12 @@ pub unsafe fn CryptVerifyMessageSignatureWithKey(pverifypara: *const CRYPT_KEY_V
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptVerifySignatureA<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hhash: usize, pbsignature: *const u8, dwsiglen: u32, hpubkey: usize, szdescription: Param4, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptVerifySignatureA<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hhash: usize, pbsignature: *const u8, dwsiglen: u32, hpubkey: usize, szdescription: Param4, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptVerifySignatureA(hhash: usize, pbsignature: *const u8, dwsiglen: u32, hpubkey: usize, szdescription: ::windows::core::PCSTR, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn CryptVerifySignatureA(hhash: usize, pbsignature: *const u8, dwsiglen: u32, hpubkey: usize, szdescription: ::windows_core::PCSTR, dwflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptVerifySignatureA(::core::mem::transmute(hhash), ::core::mem::transmute(pbsignature), ::core::mem::transmute(dwsiglen), ::core::mem::transmute(hpubkey), szdescription.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
@@ -22640,12 +22640,12 @@ pub unsafe fn CryptVerifySignatureA<'a, Param4: ::windows::core::IntoParam<'a, :
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptVerifySignatureW<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hhash: usize, pbsignature: *const u8, dwsiglen: u32, hpubkey: usize, szdescription: Param4, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptVerifySignatureW<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hhash: usize, pbsignature: *const u8, dwsiglen: u32, hpubkey: usize, szdescription: Param4, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptVerifySignatureW(hhash: usize, pbsignature: *const u8, dwsiglen: u32, hpubkey: usize, szdescription: ::windows::core::PCWSTR, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn CryptVerifySignatureW(hhash: usize, pbsignature: *const u8, dwsiglen: u32, hpubkey: usize, szdescription: ::windows_core::PCWSTR, dwflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CryptVerifySignatureW(::core::mem::transmute(hhash), ::core::mem::transmute(pbsignature), ::core::mem::transmute(dwsiglen), ::core::mem::transmute(hpubkey), szdescription.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
@@ -22655,7 +22655,7 @@ pub unsafe fn CryptVerifySignatureW<'a, Param4: ::windows::core::IntoParam<'a, :
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptVerifyTimeStampSignature<'a, Param4: ::windows::core::IntoParam<'a, HCERTSTORE>>(pbtscontentinfo: *const u8, cbtscontentinfo: u32, pbdata: *const u8, cbdata: u32, hadditionalstore: Param4, pptscontext: *mut *mut CRYPT_TIMESTAMP_CONTEXT, pptssigner: *mut *mut CERT_CONTEXT, phstore: *mut HCERTSTORE) -> super::super::Foundation::BOOL {
+pub unsafe fn CryptVerifyTimeStampSignature<'a, Param4: ::windows_core::IntoParam<'a, HCERTSTORE>>(pbtscontentinfo: *const u8, cbtscontentinfo: u32, pbdata: *const u8, cbdata: u32, hadditionalstore: Param4, pptscontext: *mut *mut CRYPT_TIMESTAMP_CONTEXT, pptssigner: *mut *mut CERT_CONTEXT, phstore: *mut HCERTSTORE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -22669,27 +22669,27 @@ pub unsafe fn CryptVerifyTimeStampSignature<'a, Param4: ::windows::core::IntoPar
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlAddObject(hsignatureorobject: *const ::core::ffi::c_void, dwflags: u32, rgproperty: &[CRYPT_XML_PROPERTY], pencoded: *const CRYPT_XML_BLOB) -> ::windows::core::Result<*mut CRYPT_XML_OBJECT> {
+pub unsafe fn CryptXmlAddObject(hsignatureorobject: *const ::core::ffi::c_void, dwflags: u32, rgproperty: &[CRYPT_XML_PROPERTY], pencoded: *const CRYPT_XML_BLOB) -> ::windows_core::Result<*mut CRYPT_XML_OBJECT> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlAddObject(hsignatureorobject: *const ::core::ffi::c_void, dwflags: u32, rgproperty: *const CRYPT_XML_PROPERTY, cproperty: u32, pencoded: *const CRYPT_XML_BLOB, ppobject: *mut *mut CRYPT_XML_OBJECT) -> ::windows::core::HRESULT;
+            fn CryptXmlAddObject(hsignatureorobject: *const ::core::ffi::c_void, dwflags: u32, rgproperty: *const CRYPT_XML_PROPERTY, cproperty: u32, pencoded: *const CRYPT_XML_BLOB, ppobject: *mut *mut CRYPT_XML_OBJECT) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<*mut CRYPT_XML_OBJECT>::zeroed();
-        CryptXmlAddObject(::core::mem::transmute(hsignatureorobject), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows::core::as_ptr_or_null(rgproperty)), rgproperty.len() as _, ::core::mem::transmute(pencoded), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut CRYPT_XML_OBJECT>(result__)
+        CryptXmlAddObject(::core::mem::transmute(hsignatureorobject), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows_core::as_ptr_or_null(rgproperty)), rgproperty.len() as _, ::core::mem::transmute(pencoded), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut CRYPT_XML_OBJECT>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlClose(hcryptxml: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn CryptXmlClose(hcryptxml: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlClose(hcryptxml: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn CryptXmlClose(hcryptxml: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         CryptXmlClose(::core::mem::transmute(hcryptxml)).ok()
     }
@@ -22698,26 +22698,26 @@ pub unsafe fn CryptXmlClose(hcryptxml: *const ::core::ffi::c_void) -> ::windows:
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlCreateReference<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hcryptxml: *const ::core::ffi::c_void, dwflags: u32, wszid: Param2, wszuri: Param3, wsztype: Param4, pdigestmethod: *const CRYPT_XML_ALGORITHM, rgtransform: &[CRYPT_XML_ALGORITHM], phreference: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn CryptXmlCreateReference<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hcryptxml: *const ::core::ffi::c_void, dwflags: u32, wszid: Param2, wszuri: Param3, wsztype: Param4, pdigestmethod: *const CRYPT_XML_ALGORITHM, rgtransform: &[CRYPT_XML_ALGORITHM], phreference: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlCreateReference(hcryptxml: *const ::core::ffi::c_void, dwflags: u32, wszid: ::windows::core::PCWSTR, wszuri: ::windows::core::PCWSTR, wsztype: ::windows::core::PCWSTR, pdigestmethod: *const CRYPT_XML_ALGORITHM, ctransform: u32, rgtransform: *const CRYPT_XML_ALGORITHM, phreference: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn CryptXmlCreateReference(hcryptxml: *const ::core::ffi::c_void, dwflags: u32, wszid: ::windows_core::PCWSTR, wszuri: ::windows_core::PCWSTR, wsztype: ::windows_core::PCWSTR, pdigestmethod: *const CRYPT_XML_ALGORITHM, ctransform: u32, rgtransform: *const CRYPT_XML_ALGORITHM, phreference: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
-        CryptXmlCreateReference(::core::mem::transmute(hcryptxml), ::core::mem::transmute(dwflags), wszid.into_param().abi(), wszuri.into_param().abi(), wsztype.into_param().abi(), ::core::mem::transmute(pdigestmethod), rgtransform.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(rgtransform)), ::core::mem::transmute(phreference)).ok()
+        CryptXmlCreateReference(::core::mem::transmute(hcryptxml), ::core::mem::transmute(dwflags), wszid.into_param().abi(), wszuri.into_param().abi(), wsztype.into_param().abi(), ::core::mem::transmute(pdigestmethod), rgtransform.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(rgtransform)), ::core::mem::transmute(phreference)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlDigestReference(hreference: *const ::core::ffi::c_void, dwflags: u32, pdataproviderin: *const CRYPT_XML_DATA_PROVIDER) -> ::windows::core::Result<()> {
+pub unsafe fn CryptXmlDigestReference(hreference: *const ::core::ffi::c_void, dwflags: u32, pdataproviderin: *const CRYPT_XML_DATA_PROVIDER) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlDigestReference(hreference: *const ::core::ffi::c_void, dwflags: u32, pdataproviderin: *const CRYPT_XML_DATA_PROVIDER) -> ::windows::core::HRESULT;
+            fn CryptXmlDigestReference(hreference: *const ::core::ffi::c_void, dwflags: u32, pdataproviderin: *const CRYPT_XML_DATA_PROVIDER) -> ::windows_core::HRESULT;
         }
         CryptXmlDigestReference(::core::mem::transmute(hreference), ::core::mem::transmute(dwflags), ::core::mem::transmute(pdataproviderin)).ok()
     }
@@ -22725,37 +22725,37 @@ pub unsafe fn CryptXmlDigestReference(hreference: *const ::core::ffi::c_void, dw
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type CryptXmlDllCloseDigest = ::core::option::Option<unsafe extern "system" fn(hdigest: *const ::core::ffi::c_void) -> ::windows::core::HRESULT>;
+pub type CryptXmlDllCloseDigest = ::core::option::Option<unsafe extern "system" fn(hdigest: *const ::core::ffi::c_void) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type CryptXmlDllCreateDigest = ::core::option::Option<unsafe extern "system" fn(pdigestmethod: *const CRYPT_XML_ALGORITHM, pcbsize: *mut u32, phdigest: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT>;
+pub type CryptXmlDllCreateDigest = ::core::option::Option<unsafe extern "system" fn(pdigestmethod: *const CRYPT_XML_ALGORITHM, pcbsize: *mut u32, phdigest: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type CryptXmlDllCreateKey = ::core::option::Option<unsafe extern "system" fn(pencoded: *const CRYPT_XML_BLOB, phkey: *mut BCRYPT_KEY_HANDLE) -> ::windows::core::HRESULT>;
+pub type CryptXmlDllCreateKey = ::core::option::Option<unsafe extern "system" fn(pencoded: *const CRYPT_XML_BLOB, phkey: *mut BCRYPT_KEY_HANDLE) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type CryptXmlDllDigestData = ::core::option::Option<unsafe extern "system" fn(hdigest: *const ::core::ffi::c_void, pbdata: *const u8, cbdata: u32) -> ::windows::core::HRESULT>;
+pub type CryptXmlDllDigestData = ::core::option::Option<unsafe extern "system" fn(hdigest: *const ::core::ffi::c_void, pbdata: *const u8, cbdata: u32) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type CryptXmlDllEncodeAlgorithm = ::core::option::Option<unsafe extern "system" fn(palginfo: *const CRYPT_XML_ALGORITHM_INFO, dwcharset: CRYPT_XML_CHARSET, pvcallbackstate: *mut ::core::ffi::c_void, pfnwrite: PFN_CRYPT_XML_WRITE_CALLBACK) -> ::windows::core::HRESULT>;
+pub type CryptXmlDllEncodeAlgorithm = ::core::option::Option<unsafe extern "system" fn(palginfo: *const CRYPT_XML_ALGORITHM_INFO, dwcharset: CRYPT_XML_CHARSET, pvcallbackstate: *mut ::core::ffi::c_void, pfnwrite: PFN_CRYPT_XML_WRITE_CALLBACK) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type CryptXmlDllEncodeKeyValue = ::core::option::Option<unsafe extern "system" fn(hkey: NCRYPT_KEY_HANDLE, dwcharset: CRYPT_XML_CHARSET, pvcallbackstate: *mut ::core::ffi::c_void, pfnwrite: PFN_CRYPT_XML_WRITE_CALLBACK) -> ::windows::core::HRESULT>;
+pub type CryptXmlDllEncodeKeyValue = ::core::option::Option<unsafe extern "system" fn(hkey: NCRYPT_KEY_HANDLE, dwcharset: CRYPT_XML_CHARSET, pvcallbackstate: *mut ::core::ffi::c_void, pfnwrite: PFN_CRYPT_XML_WRITE_CALLBACK) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type CryptXmlDllFinalizeDigest = ::core::option::Option<unsafe extern "system" fn(hdigest: *const ::core::ffi::c_void, pbdigest: *mut u8, cbdigest: u32) -> ::windows::core::HRESULT>;
+pub type CryptXmlDllFinalizeDigest = ::core::option::Option<unsafe extern "system" fn(hdigest: *const ::core::ffi::c_void, pbdigest: *mut u8, cbdigest: u32) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type CryptXmlDllGetAlgorithmInfo = ::core::option::Option<unsafe extern "system" fn(pxmlalgorithm: *const CRYPT_XML_ALGORITHM, ppalginfo: *mut *mut CRYPT_XML_ALGORITHM_INFO) -> ::windows::core::HRESULT>;
+pub type CryptXmlDllGetAlgorithmInfo = ::core::option::Option<unsafe extern "system" fn(pxmlalgorithm: *const CRYPT_XML_ALGORITHM, ppalginfo: *mut *mut CRYPT_XML_ALGORITHM_INFO) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type CryptXmlDllGetInterface = ::core::option::Option<unsafe extern "system" fn(dwflags: u32, pmethod: *const CRYPT_XML_ALGORITHM_INFO, pinterface: *mut CRYPT_XML_CRYPTOGRAPHIC_INTERFACE) -> ::windows::core::HRESULT>;
+pub type CryptXmlDllGetInterface = ::core::option::Option<unsafe extern "system" fn(dwflags: u32, pmethod: *const CRYPT_XML_ALGORITHM_INFO, pinterface: *mut CRYPT_XML_CRYPTOGRAPHIC_INTERFACE) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type CryptXmlDllSignData = ::core::option::Option<unsafe extern "system" fn(psignaturemethod: *const CRYPT_XML_ALGORITHM, hcryptprovorncryptkey: HCRYPTPROV_OR_NCRYPT_KEY_HANDLE, dwkeyspec: u32, pbinput: *const u8, cbinput: u32, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32) -> ::windows::core::HRESULT>;
+pub type CryptXmlDllSignData = ::core::option::Option<unsafe extern "system" fn(psignaturemethod: *const CRYPT_XML_ALGORITHM, hcryptprovorncryptkey: HCRYPTPROV_OR_NCRYPT_KEY_HANDLE, dwkeyspec: u32, pbinput: *const u8, cbinput: u32, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type CryptXmlDllVerifySignature = ::core::option::Option<unsafe extern "system" fn(psignaturemethod: *const CRYPT_XML_ALGORITHM, hkey: BCRYPT_KEY_HANDLE, pbinput: *const u8, cbinput: u32, pbsignature: *const u8, cbsignature: u32) -> ::windows::core::HRESULT>;
+pub type CryptXmlDllVerifySignature = ::core::option::Option<unsafe extern "system" fn(psignaturemethod: *const CRYPT_XML_ALGORITHM, hkey: BCRYPT_KEY_HANDLE, pbinput: *const u8, cbinput: u32, pbsignature: *const u8, cbsignature: u32) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlEncode(hcryptxml: *const ::core::ffi::c_void, dwcharset: CRYPT_XML_CHARSET, rgproperty: &[CRYPT_XML_PROPERTY], pvcallbackstate: *mut ::core::ffi::c_void, pfnwrite: PFN_CRYPT_XML_WRITE_CALLBACK) -> ::windows::core::Result<()> {
+pub unsafe fn CryptXmlEncode(hcryptxml: *const ::core::ffi::c_void, dwcharset: CRYPT_XML_CHARSET, rgproperty: &[CRYPT_XML_PROPERTY], pvcallbackstate: *mut ::core::ffi::c_void, pfnwrite: PFN_CRYPT_XML_WRITE_CALLBACK) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlEncode(hcryptxml: *const ::core::ffi::c_void, dwcharset: CRYPT_XML_CHARSET, rgproperty: *const CRYPT_XML_PROPERTY, cproperty: u32, pvcallbackstate: *mut ::core::ffi::c_void, pfnwrite: ::windows::core::RawPtr) -> ::windows::core::HRESULT;
+            fn CryptXmlEncode(hcryptxml: *const ::core::ffi::c_void, dwcharset: CRYPT_XML_CHARSET, rgproperty: *const CRYPT_XML_PROPERTY, cproperty: u32, pvcallbackstate: *mut ::core::ffi::c_void, pfnwrite: ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
-        CryptXmlEncode(::core::mem::transmute(hcryptxml), ::core::mem::transmute(dwcharset), ::core::mem::transmute(::windows::core::as_ptr_or_null(rgproperty)), rgproperty.len() as _, ::core::mem::transmute(pvcallbackstate), ::core::mem::transmute(pfnwrite)).ok()
+        CryptXmlEncode(::core::mem::transmute(hcryptxml), ::core::mem::transmute(dwcharset), ::core::mem::transmute(::windows_core::as_ptr_or_null(rgproperty)), rgproperty.len() as _, ::core::mem::transmute(pvcallbackstate), ::core::mem::transmute(pfnwrite)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -22763,12 +22763,12 @@ pub unsafe fn CryptXmlEncode(hcryptxml: *const ::core::ffi::c_void, dwcharset: C
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CryptXmlEnumAlgorithmInfo(dwgroupid: u32, dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenumalginfo: PFN_CRYPT_XML_ENUM_ALG_INFO) -> ::windows::core::Result<()> {
+pub unsafe fn CryptXmlEnumAlgorithmInfo(dwgroupid: u32, dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenumalginfo: PFN_CRYPT_XML_ENUM_ALG_INFO) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlEnumAlgorithmInfo(dwgroupid: u32, dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenumalginfo: ::windows::core::RawPtr) -> ::windows::core::HRESULT;
+            fn CryptXmlEnumAlgorithmInfo(dwgroupid: u32, dwflags: u32, pvarg: *mut ::core::ffi::c_void, pfnenumalginfo: ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         CryptXmlEnumAlgorithmInfo(::core::mem::transmute(dwgroupid), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvarg), ::core::mem::transmute(pfnenumalginfo)).ok()
     }
@@ -22791,12 +22791,12 @@ pub unsafe fn CryptXmlFindAlgorithmInfo(dwfindbytype: u32, pvfindby: *const ::co
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlGetAlgorithmInfo(pxmlalgorithm: *const CRYPT_XML_ALGORITHM, dwflags: CRYPT_XML_FLAGS) -> ::windows::core::Result<*mut CRYPT_XML_ALGORITHM_INFO> {
+pub unsafe fn CryptXmlGetAlgorithmInfo(pxmlalgorithm: *const CRYPT_XML_ALGORITHM, dwflags: CRYPT_XML_FLAGS) -> ::windows_core::Result<*mut CRYPT_XML_ALGORITHM_INFO> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlGetAlgorithmInfo(pxmlalgorithm: *const CRYPT_XML_ALGORITHM, dwflags: CRYPT_XML_FLAGS, ppalginfo: *mut *mut CRYPT_XML_ALGORITHM_INFO) -> ::windows::core::HRESULT;
+            fn CryptXmlGetAlgorithmInfo(pxmlalgorithm: *const CRYPT_XML_ALGORITHM, dwflags: CRYPT_XML_FLAGS, ppalginfo: *mut *mut CRYPT_XML_ALGORITHM_INFO) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<*mut CRYPT_XML_ALGORITHM_INFO>::zeroed();
         CryptXmlGetAlgorithmInfo(::core::mem::transmute(pxmlalgorithm), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut CRYPT_XML_ALGORITHM_INFO>(result__)
@@ -22806,12 +22806,12 @@ pub unsafe fn CryptXmlGetAlgorithmInfo(pxmlalgorithm: *const CRYPT_XML_ALGORITHM
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlGetDocContext(hcryptxml: *const ::core::ffi::c_void) -> ::windows::core::Result<*mut CRYPT_XML_DOC_CTXT> {
+pub unsafe fn CryptXmlGetDocContext(hcryptxml: *const ::core::ffi::c_void) -> ::windows_core::Result<*mut CRYPT_XML_DOC_CTXT> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlGetDocContext(hcryptxml: *const ::core::ffi::c_void, ppstruct: *mut *mut CRYPT_XML_DOC_CTXT) -> ::windows::core::HRESULT;
+            fn CryptXmlGetDocContext(hcryptxml: *const ::core::ffi::c_void, ppstruct: *mut *mut CRYPT_XML_DOC_CTXT) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<*mut CRYPT_XML_DOC_CTXT>::zeroed();
         CryptXmlGetDocContext(::core::mem::transmute(hcryptxml), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut CRYPT_XML_DOC_CTXT>(result__)
@@ -22821,12 +22821,12 @@ pub unsafe fn CryptXmlGetDocContext(hcryptxml: *const ::core::ffi::c_void) -> ::
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlGetReference(hcryptxml: *const ::core::ffi::c_void) -> ::windows::core::Result<*mut CRYPT_XML_REFERENCE> {
+pub unsafe fn CryptXmlGetReference(hcryptxml: *const ::core::ffi::c_void) -> ::windows_core::Result<*mut CRYPT_XML_REFERENCE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlGetReference(hcryptxml: *const ::core::ffi::c_void, ppstruct: *mut *mut CRYPT_XML_REFERENCE) -> ::windows::core::HRESULT;
+            fn CryptXmlGetReference(hcryptxml: *const ::core::ffi::c_void, ppstruct: *mut *mut CRYPT_XML_REFERENCE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<*mut CRYPT_XML_REFERENCE>::zeroed();
         CryptXmlGetReference(::core::mem::transmute(hcryptxml), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut CRYPT_XML_REFERENCE>(result__)
@@ -22836,12 +22836,12 @@ pub unsafe fn CryptXmlGetReference(hcryptxml: *const ::core::ffi::c_void) -> ::w
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlGetSignature(hcryptxml: *const ::core::ffi::c_void) -> ::windows::core::Result<*mut CRYPT_XML_SIGNATURE> {
+pub unsafe fn CryptXmlGetSignature(hcryptxml: *const ::core::ffi::c_void) -> ::windows_core::Result<*mut CRYPT_XML_SIGNATURE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlGetSignature(hcryptxml: *const ::core::ffi::c_void, ppstruct: *mut *mut CRYPT_XML_SIGNATURE) -> ::windows::core::HRESULT;
+            fn CryptXmlGetSignature(hcryptxml: *const ::core::ffi::c_void, ppstruct: *mut *mut CRYPT_XML_SIGNATURE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<*mut CRYPT_XML_SIGNATURE>::zeroed();
         CryptXmlGetSignature(::core::mem::transmute(hcryptxml), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut CRYPT_XML_SIGNATURE>(result__)
@@ -22851,12 +22851,12 @@ pub unsafe fn CryptXmlGetSignature(hcryptxml: *const ::core::ffi::c_void) -> ::w
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlGetStatus(hcryptxml: *const ::core::ffi::c_void) -> ::windows::core::Result<CRYPT_XML_STATUS> {
+pub unsafe fn CryptXmlGetStatus(hcryptxml: *const ::core::ffi::c_void) -> ::windows_core::Result<CRYPT_XML_STATUS> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlGetStatus(hcryptxml: *const ::core::ffi::c_void, pstatus: *mut CRYPT_XML_STATUS) -> ::windows::core::HRESULT;
+            fn CryptXmlGetStatus(hcryptxml: *const ::core::ffi::c_void, pstatus: *mut CRYPT_XML_STATUS) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<CRYPT_XML_STATUS>::zeroed();
         CryptXmlGetStatus(::core::mem::transmute(hcryptxml), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<CRYPT_XML_STATUS>(result__)
@@ -22866,12 +22866,12 @@ pub unsafe fn CryptXmlGetStatus(hcryptxml: *const ::core::ffi::c_void) -> ::wind
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlGetTransforms() -> ::windows::core::Result<*mut CRYPT_XML_TRANSFORM_CHAIN_CONFIG> {
+pub unsafe fn CryptXmlGetTransforms() -> ::windows_core::Result<*mut CRYPT_XML_TRANSFORM_CHAIN_CONFIG> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlGetTransforms(ppconfig: *mut *mut CRYPT_XML_TRANSFORM_CHAIN_CONFIG) -> ::windows::core::HRESULT;
+            fn CryptXmlGetTransforms(ppconfig: *mut *mut CRYPT_XML_TRANSFORM_CHAIN_CONFIG) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<*mut CRYPT_XML_TRANSFORM_CHAIN_CONFIG>::zeroed();
         CryptXmlGetTransforms(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut CRYPT_XML_TRANSFORM_CHAIN_CONFIG>(result__)
@@ -22881,12 +22881,12 @@ pub unsafe fn CryptXmlGetTransforms() -> ::windows::core::Result<*mut CRYPT_XML_
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlImportPublicKey(dwflags: CRYPT_XML_FLAGS, pkeyvalue: *const CRYPT_XML_KEY_VALUE) -> ::windows::core::Result<BCRYPT_KEY_HANDLE> {
+pub unsafe fn CryptXmlImportPublicKey(dwflags: CRYPT_XML_FLAGS, pkeyvalue: *const CRYPT_XML_KEY_VALUE) -> ::windows_core::Result<BCRYPT_KEY_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlImportPublicKey(dwflags: CRYPT_XML_FLAGS, pkeyvalue: *const CRYPT_XML_KEY_VALUE, phkey: *mut BCRYPT_KEY_HANDLE) -> ::windows::core::HRESULT;
+            fn CryptXmlImportPublicKey(dwflags: CRYPT_XML_FLAGS, pkeyvalue: *const CRYPT_XML_KEY_VALUE, phkey: *mut BCRYPT_KEY_HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<BCRYPT_KEY_HANDLE>::zeroed();
         CryptXmlImportPublicKey(::core::mem::transmute(dwflags), ::core::mem::transmute(pkeyvalue), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BCRYPT_KEY_HANDLE>(result__)
@@ -22896,40 +22896,40 @@ pub unsafe fn CryptXmlImportPublicKey(dwflags: CRYPT_XML_FLAGS, pkeyvalue: *cons
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlOpenToDecode(pconfig: *const CRYPT_XML_TRANSFORM_CHAIN_CONFIG, dwflags: CRYPT_XML_FLAGS, rgproperty: &[CRYPT_XML_PROPERTY], pencoded: *const CRYPT_XML_BLOB, phcryptxml: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn CryptXmlOpenToDecode(pconfig: *const CRYPT_XML_TRANSFORM_CHAIN_CONFIG, dwflags: CRYPT_XML_FLAGS, rgproperty: &[CRYPT_XML_PROPERTY], pencoded: *const CRYPT_XML_BLOB, phcryptxml: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlOpenToDecode(pconfig: *const CRYPT_XML_TRANSFORM_CHAIN_CONFIG, dwflags: CRYPT_XML_FLAGS, rgproperty: *const CRYPT_XML_PROPERTY, cproperty: u32, pencoded: *const CRYPT_XML_BLOB, phcryptxml: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn CryptXmlOpenToDecode(pconfig: *const CRYPT_XML_TRANSFORM_CHAIN_CONFIG, dwflags: CRYPT_XML_FLAGS, rgproperty: *const CRYPT_XML_PROPERTY, cproperty: u32, pencoded: *const CRYPT_XML_BLOB, phcryptxml: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
-        CryptXmlOpenToDecode(::core::mem::transmute(pconfig), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows::core::as_ptr_or_null(rgproperty)), rgproperty.len() as _, ::core::mem::transmute(pencoded), ::core::mem::transmute(phcryptxml)).ok()
+        CryptXmlOpenToDecode(::core::mem::transmute(pconfig), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows_core::as_ptr_or_null(rgproperty)), rgproperty.len() as _, ::core::mem::transmute(pencoded), ::core::mem::transmute(phcryptxml)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlOpenToEncode<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pconfig: *const CRYPT_XML_TRANSFORM_CHAIN_CONFIG, dwflags: CRYPT_XML_FLAGS, wszid: Param2, rgproperty: &[CRYPT_XML_PROPERTY], pencoded: *const CRYPT_XML_BLOB, phsignature: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn CryptXmlOpenToEncode<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pconfig: *const CRYPT_XML_TRANSFORM_CHAIN_CONFIG, dwflags: CRYPT_XML_FLAGS, wszid: Param2, rgproperty: &[CRYPT_XML_PROPERTY], pencoded: *const CRYPT_XML_BLOB, phsignature: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlOpenToEncode(pconfig: *const CRYPT_XML_TRANSFORM_CHAIN_CONFIG, dwflags: CRYPT_XML_FLAGS, wszid: ::windows::core::PCWSTR, rgproperty: *const CRYPT_XML_PROPERTY, cproperty: u32, pencoded: *const CRYPT_XML_BLOB, phsignature: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn CryptXmlOpenToEncode(pconfig: *const CRYPT_XML_TRANSFORM_CHAIN_CONFIG, dwflags: CRYPT_XML_FLAGS, wszid: ::windows_core::PCWSTR, rgproperty: *const CRYPT_XML_PROPERTY, cproperty: u32, pencoded: *const CRYPT_XML_BLOB, phsignature: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
-        CryptXmlOpenToEncode(::core::mem::transmute(pconfig), ::core::mem::transmute(dwflags), wszid.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(rgproperty)), rgproperty.len() as _, ::core::mem::transmute(pencoded), ::core::mem::transmute(phsignature)).ok()
+        CryptXmlOpenToEncode(::core::mem::transmute(pconfig), ::core::mem::transmute(dwflags), wszid.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(rgproperty)), rgproperty.len() as _, ::core::mem::transmute(pencoded), ::core::mem::transmute(phsignature)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlSetHMACSecret(hsignature: *const ::core::ffi::c_void, pbsecret: *const u8, cbsecret: u32) -> ::windows::core::Result<()> {
+pub unsafe fn CryptXmlSetHMACSecret(hsignature: *const ::core::ffi::c_void, pbsecret: *const u8, cbsecret: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlSetHMACSecret(hsignature: *const ::core::ffi::c_void, pbsecret: *const u8, cbsecret: u32) -> ::windows::core::HRESULT;
+            fn CryptXmlSetHMACSecret(hsignature: *const ::core::ffi::c_void, pbsecret: *const u8, cbsecret: u32) -> ::windows_core::HRESULT;
         }
         CryptXmlSetHMACSecret(::core::mem::transmute(hsignature), ::core::mem::transmute(pbsecret), ::core::mem::transmute(cbsecret)).ok()
     }
@@ -22938,12 +22938,12 @@ pub unsafe fn CryptXmlSetHMACSecret(hsignature: *const ::core::ffi::c_void, pbse
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlSign<'a, Param1: ::windows::core::IntoParam<'a, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>>(hsignature: *const ::core::ffi::c_void, hkey: Param1, dwkeyspec: CERT_KEY_SPEC, dwflags: CRYPT_XML_FLAGS, dwkeyinfospec: CRYPT_XML_KEYINFO_SPEC, pvkeyinfospec: *const ::core::ffi::c_void, psignaturemethod: *const CRYPT_XML_ALGORITHM, pcanonicalization: *const CRYPT_XML_ALGORITHM) -> ::windows::core::Result<()> {
+pub unsafe fn CryptXmlSign<'a, Param1: ::windows_core::IntoParam<'a, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>>(hsignature: *const ::core::ffi::c_void, hkey: Param1, dwkeyspec: CERT_KEY_SPEC, dwflags: CRYPT_XML_FLAGS, dwkeyinfospec: CRYPT_XML_KEYINFO_SPEC, pvkeyinfospec: *const ::core::ffi::c_void, psignaturemethod: *const CRYPT_XML_ALGORITHM, pcanonicalization: *const CRYPT_XML_ALGORITHM) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlSign(hsignature: *const ::core::ffi::c_void, hkey: HCRYPTPROV_OR_NCRYPT_KEY_HANDLE, dwkeyspec: CERT_KEY_SPEC, dwflags: CRYPT_XML_FLAGS, dwkeyinfospec: CRYPT_XML_KEYINFO_SPEC, pvkeyinfospec: *const ::core::ffi::c_void, psignaturemethod: *const CRYPT_XML_ALGORITHM, pcanonicalization: *const CRYPT_XML_ALGORITHM) -> ::windows::core::HRESULT;
+            fn CryptXmlSign(hsignature: *const ::core::ffi::c_void, hkey: HCRYPTPROV_OR_NCRYPT_KEY_HANDLE, dwkeyspec: CERT_KEY_SPEC, dwflags: CRYPT_XML_FLAGS, dwkeyinfospec: CRYPT_XML_KEYINFO_SPEC, pvkeyinfospec: *const ::core::ffi::c_void, psignaturemethod: *const CRYPT_XML_ALGORITHM, pcanonicalization: *const CRYPT_XML_ALGORITHM) -> ::windows_core::HRESULT;
         }
         CryptXmlSign(::core::mem::transmute(hsignature), hkey.into_param().abi(), ::core::mem::transmute(dwkeyspec), ::core::mem::transmute(dwflags), ::core::mem::transmute(dwkeyinfospec), ::core::mem::transmute(pvkeyinfospec), ::core::mem::transmute(psignaturemethod), ::core::mem::transmute(pcanonicalization)).ok()
     }
@@ -22952,12 +22952,12 @@ pub unsafe fn CryptXmlSign<'a, Param1: ::windows::core::IntoParam<'a, HCRYPTPROV
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn CryptXmlVerifySignature<'a, Param1: ::windows::core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hsignature: *const ::core::ffi::c_void, hkey: Param1, dwflags: CRYPT_XML_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn CryptXmlVerifySignature<'a, Param1: ::windows_core::IntoParam<'a, BCRYPT_KEY_HANDLE>>(hsignature: *const ::core::ffi::c_void, hkey: Param1, dwflags: CRYPT_XML_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CryptXmlVerifySignature(hsignature: *const ::core::ffi::c_void, hkey: BCRYPT_KEY_HANDLE, dwflags: CRYPT_XML_FLAGS) -> ::windows::core::HRESULT;
+            fn CryptXmlVerifySignature(hsignature: *const ::core::ffi::c_void, hkey: BCRYPT_KEY_HANDLE, dwflags: CRYPT_XML_FLAGS) -> ::windows_core::HRESULT;
         }
         CryptXmlVerifySignature(::core::mem::transmute(hsignature), hkey.into_param().abi(), ::core::mem::transmute(dwflags)).ok()
     }
@@ -22983,7 +22983,7 @@ impl ::core::default::Default for DSAFIPSVERSION_ENUM {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DSAFIPSVERSION_ENUM {
+unsafe impl ::windows_core::Abi for DSAFIPSVERSION_ENUM {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DSAFIPSVERSION_ENUM {
@@ -23008,12 +23008,12 @@ impl ::core::fmt::Debug for DSSSEED {
         f.debug_struct("DSSSEED").field("counter", &self.counter).field("seed", &self.seed).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DSSSEED {
+unsafe impl ::windows_core::Abi for DSSSEED {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DSSSEED {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DSSSEED>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DSSSEED>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DSSSEED {}
@@ -23025,12 +23025,12 @@ impl ::core::default::Default for DSSSEED {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Decrypt<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, foaep: Param1, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows::core::Result<()> {
+pub unsafe fn Decrypt<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, foaep: Param1, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn Decrypt(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, foaep: super::super::Foundation::BOOL, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows::core::HRESULT;
+            fn Decrypt(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, foaep: super::super::Foundation::BOOL, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows_core::HRESULT;
         }
         Decrypt(::core::mem::transmute(hcrypto), foaep.into_param().abi(), ::core::mem::transmute(cbindata), ::core::mem::transmute(pindata), ::core::mem::transmute(pcboutdata), ::core::mem::transmute(ppoutdata)).ok()
     }
@@ -23056,7 +23056,7 @@ impl ::core::default::Default for Direction {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for Direction {
+unsafe impl ::windows_core::Abi for Direction {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for Direction {
@@ -23065,7 +23065,7 @@ impl ::core::fmt::Debug for Direction {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const ECC_CMS_SHARED_INFO: ::windows::core::PCSTR = ::windows::core::PCSTR(77i32 as _);
+pub const ECC_CMS_SHARED_INFO: ::windows_core::PCSTR = ::windows_core::PCSTR(77i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -23083,7 +23083,7 @@ impl ::core::default::Default for ECC_CURVE_ALG_ID_ENUM {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ECC_CURVE_ALG_ID_ENUM {
+unsafe impl ::windows_core::Abi for ECC_CURVE_ALG_ID_ENUM {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ECC_CURVE_ALG_ID_ENUM {
@@ -23112,7 +23112,7 @@ impl ::core::default::Default for ECC_CURVE_TYPE_ENUM {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ECC_CURVE_TYPE_ENUM {
+unsafe impl ::windows_core::Abi for ECC_CURVE_TYPE_ENUM {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ECC_CURVE_TYPE_ENUM {
@@ -23123,8 +23123,8 @@ impl ::core::fmt::Debug for ECC_CURVE_TYPE_ENUM {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct ENDPOINTADDRESS {
-    pub serviceUrl: ::windows::core::PCWSTR,
-    pub policyUrl: ::windows::core::PCWSTR,
+    pub serviceUrl: ::windows_core::PCWSTR,
+    pub policyUrl: ::windows_core::PCWSTR,
     pub rawCertificate: CRYPTOAPI_BLOB,
 }
 impl ::core::marker::Copy for ENDPOINTADDRESS {}
@@ -23138,12 +23138,12 @@ impl ::core::fmt::Debug for ENDPOINTADDRESS {
         f.debug_struct("ENDPOINTADDRESS").field("serviceUrl", &self.serviceUrl).field("policyUrl", &self.policyUrl).field("rawCertificate", &self.rawCertificate).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ENDPOINTADDRESS {
+unsafe impl ::windows_core::Abi for ENDPOINTADDRESS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ENDPOINTADDRESS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENDPOINTADDRESS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENDPOINTADDRESS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ENDPOINTADDRESS {}
@@ -23155,8 +23155,8 @@ impl ::core::default::Default for ENDPOINTADDRESS {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct ENDPOINTADDRESS2 {
-    pub serviceUrl: ::windows::core::PCWSTR,
-    pub policyUrl: ::windows::core::PCWSTR,
+    pub serviceUrl: ::windows_core::PCWSTR,
+    pub policyUrl: ::windows_core::PCWSTR,
     pub identityType: u32,
     pub identityBytes: *mut ::core::ffi::c_void,
 }
@@ -23171,12 +23171,12 @@ impl ::core::fmt::Debug for ENDPOINTADDRESS2 {
         f.debug_struct("ENDPOINTADDRESS2").field("serviceUrl", &self.serviceUrl).field("policyUrl", &self.policyUrl).field("identityType", &self.identityType).field("identityBytes", &self.identityBytes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ENDPOINTADDRESS2 {
+unsafe impl ::windows_core::Abi for ENDPOINTADDRESS2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ENDPOINTADDRESS2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENDPOINTADDRESS2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENDPOINTADDRESS2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ENDPOINTADDRESS2 {}
@@ -23202,12 +23202,12 @@ impl ::core::fmt::Debug for EV_EXTRA_CERT_CHAIN_POLICY_PARA {
         f.debug_struct("EV_EXTRA_CERT_CHAIN_POLICY_PARA").field("cbSize", &self.cbSize).field("dwRootProgramQualifierFlags", &self.dwRootProgramQualifierFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EV_EXTRA_CERT_CHAIN_POLICY_PARA {
+unsafe impl ::windows_core::Abi for EV_EXTRA_CERT_CHAIN_POLICY_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EV_EXTRA_CERT_CHAIN_POLICY_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EV_EXTRA_CERT_CHAIN_POLICY_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EV_EXTRA_CERT_CHAIN_POLICY_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EV_EXTRA_CERT_CHAIN_POLICY_PARA {}
@@ -23234,12 +23234,12 @@ impl ::core::fmt::Debug for EV_EXTRA_CERT_CHAIN_POLICY_STATUS {
         f.debug_struct("EV_EXTRA_CERT_CHAIN_POLICY_STATUS").field("cbSize", &self.cbSize).field("dwQualifiers", &self.dwQualifiers).field("dwIssuanceUsageIndex", &self.dwIssuanceUsageIndex).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EV_EXTRA_CERT_CHAIN_POLICY_STATUS {
+unsafe impl ::windows_core::Abi for EV_EXTRA_CERT_CHAIN_POLICY_STATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EV_EXTRA_CERT_CHAIN_POLICY_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EV_EXTRA_CERT_CHAIN_POLICY_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EV_EXTRA_CERT_CHAIN_POLICY_STATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EV_EXTRA_CERT_CHAIN_POLICY_STATUS {}
@@ -23255,70 +23255,70 @@ pub const EXPO_OFFLOAD_FUNC_NAME: &str = "OffloadModExpo";
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const EXPO_OFFLOAD_REG_VALUE: &str = "ExpoOffload";
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_ARGUMENT: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413883i32);
+pub const E_ICARD_ARGUMENT: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413883i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_COMMUNICATION: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413888i32);
+pub const E_ICARD_COMMUNICATION: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413888i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_DATA_ACCESS: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413887i32);
+pub const E_ICARD_DATA_ACCESS: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413887i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_EXPORT: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413886i32);
+pub const E_ICARD_EXPORT: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413886i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_FAIL: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413867i32);
+pub const E_ICARD_FAIL: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413867i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_FAILED_REQUIRED_CLAIMS: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413756i32);
+pub const E_ICARD_FAILED_REQUIRED_CLAIMS: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413756i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_IDENTITY: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413885i32);
+pub const E_ICARD_IDENTITY: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413885i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_IMPORT: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413884i32);
+pub const E_ICARD_IMPORT: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413884i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_INFORMATIONCARD: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413881i32);
+pub const E_ICARD_INFORMATIONCARD: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413881i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_INVALID_PROOF_KEY: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413758i32);
+pub const E_ICARD_INVALID_PROOF_KEY: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413758i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_LOGOVALIDATION: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413879i32);
+pub const E_ICARD_LOGOVALIDATION: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413879i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_MISSING_APPLIESTO: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413759i32);
+pub const E_ICARD_MISSING_APPLIESTO: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413759i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_PASSWORDVALIDATION: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413878i32);
+pub const E_ICARD_PASSWORDVALIDATION: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413878i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_POLICY: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413877i32);
+pub const E_ICARD_POLICY: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413877i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_PROCESSDIED: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413876i32);
+pub const E_ICARD_PROCESSDIED: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413876i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_REFRESH_REQUIRED: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413760i32);
+pub const E_ICARD_REFRESH_REQUIRED: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413760i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_REQUEST: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413882i32);
+pub const E_ICARD_REQUEST: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413882i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_SERVICE: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413874i32);
+pub const E_ICARD_SERVICE: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413874i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_SERVICEBUSY: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413875i32);
+pub const E_ICARD_SERVICEBUSY: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413875i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_SHUTTINGDOWN: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413873i32);
+pub const E_ICARD_SHUTTINGDOWN: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413873i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_STOREKEY: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413880i32);
+pub const E_ICARD_STOREKEY: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413880i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_STORE_IMPORT: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413868i32);
+pub const E_ICARD_STORE_IMPORT: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413868i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_TOKENCREATION: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413872i32);
+pub const E_ICARD_TOKENCREATION: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413872i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_TRUSTEXCHANGE: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413871i32);
+pub const E_ICARD_TRUSTEXCHANGE: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413871i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_UI_INITIALIZATION: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413862i32);
+pub const E_ICARD_UI_INITIALIZATION: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413862i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_UNKNOWN_REFERENCE: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413757i32);
+pub const E_ICARD_UNKNOWN_REFERENCE: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413757i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_UNTRUSTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413870i32);
+pub const E_ICARD_UNTRUSTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413870i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const E_ICARD_USERCANCELLED: ::windows::core::HRESULT = ::windows::core::HRESULT(-1073413869i32);
+pub const E_ICARD_USERCANCELLED: ::windows_core::HRESULT = ::windows_core::HRESULT(-1073413869i32);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Encrypt<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, foaep: Param1, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows::core::Result<()> {
+pub unsafe fn Encrypt<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, foaep: Param1, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn Encrypt(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, foaep: super::super::Foundation::BOOL, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows::core::HRESULT;
+            fn Encrypt(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, foaep: super::super::Foundation::BOOL, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows_core::HRESULT;
         }
         Encrypt(::core::mem::transmute(hcrypto), foaep.into_param().abi(), ::core::mem::transmute(cbindata), ::core::mem::transmute(pindata), ::core::mem::transmute(pcboutdata), ::core::mem::transmute(ppoutdata)).ok()
     }
@@ -23327,12 +23327,12 @@ pub unsafe fn Encrypt<'a, Param1: ::windows::core::IntoParam<'a, super::super::F
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn FindCertsByIssuer<'a, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pcertchains: *mut CERT_CHAIN, pcbcertchains: *mut u32, pccertchains: *mut u32, pbencodedissuername: *const u8, cbencodedissuername: u32, pwszpurpose: Param5, dwkeyspec: u32) -> ::windows::core::Result<()> {
+pub unsafe fn FindCertsByIssuer<'a, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pcertchains: *mut CERT_CHAIN, pcbcertchains: *mut u32, pccertchains: *mut u32, pbencodedissuername: *const u8, cbencodedissuername: u32, pwszpurpose: Param5, dwkeyspec: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FindCertsByIssuer(pcertchains: *mut CERT_CHAIN, pcbcertchains: *mut u32, pccertchains: *mut u32, pbencodedissuername: *const u8, cbencodedissuername: u32, pwszpurpose: ::windows::core::PCWSTR, dwkeyspec: u32) -> ::windows::core::HRESULT;
+            fn FindCertsByIssuer(pcertchains: *mut CERT_CHAIN, pcbcertchains: *mut u32, pccertchains: *mut u32, pbencodedissuername: *const u8, cbencodedissuername: u32, pwszpurpose: ::windows_core::PCWSTR, dwkeyspec: u32) -> ::windows_core::HRESULT;
         }
         FindCertsByIssuer(::core::mem::transmute(pcertchains), ::core::mem::transmute(pcbcertchains), ::core::mem::transmute(pccertchains), ::core::mem::transmute(pbencodedissuername), ::core::mem::transmute(cbencodedissuername), pwszpurpose.into_param().abi(), ::core::mem::transmute(dwkeyspec)).ok()
     }
@@ -23360,9 +23360,9 @@ pub unsafe fn FreeToken(pallocmemory: *const GENERIC_XML_TOKEN) -> super::super:
 pub struct GENERIC_XML_TOKEN {
     pub createDate: super::super::Foundation::FILETIME,
     pub expiryDate: super::super::Foundation::FILETIME,
-    pub xmlToken: ::windows::core::PWSTR,
-    pub internalTokenReference: ::windows::core::PWSTR,
-    pub externalTokenReference: ::windows::core::PWSTR,
+    pub xmlToken: ::windows_core::PWSTR,
+    pub internalTokenReference: ::windows_core::PWSTR,
+    pub externalTokenReference: ::windows_core::PWSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GENERIC_XML_TOKEN {}
@@ -23373,13 +23373,13 @@ impl ::core::clone::Clone for GENERIC_XML_TOKEN {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for GENERIC_XML_TOKEN {
+unsafe impl ::windows_core::Abi for GENERIC_XML_TOKEN {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GENERIC_XML_TOKEN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GENERIC_XML_TOKEN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GENERIC_XML_TOKEN>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -23392,12 +23392,12 @@ impl ::core::default::Default for GENERIC_XML_TOKEN {
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn GenerateDerivedKey<'a, Param7: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cblabel: u32, plabel: *const u8, cbnonce: u32, pnonce: *const u8, derivedkeylength: u32, offset: u32, algid: Param7, pcbkey: *mut u32, ppkey: *mut *mut u8) -> ::windows::core::Result<()> {
+pub unsafe fn GenerateDerivedKey<'a, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cblabel: u32, plabel: *const u8, cbnonce: u32, pnonce: *const u8, derivedkeylength: u32, offset: u32, algid: Param7, pcbkey: *mut u32, ppkey: *mut *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GenerateDerivedKey(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cblabel: u32, plabel: *const u8, cbnonce: u32, pnonce: *const u8, derivedkeylength: u32, offset: u32, algid: ::windows::core::PCWSTR, pcbkey: *mut u32, ppkey: *mut *mut u8) -> ::windows::core::HRESULT;
+            fn GenerateDerivedKey(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cblabel: u32, plabel: *const u8, cbnonce: u32, pnonce: *const u8, derivedkeylength: u32, offset: u32, algid: ::windows_core::PCWSTR, pcbkey: *mut u32, ppkey: *mut *mut u8) -> ::windows_core::HRESULT;
         }
         GenerateDerivedKey(::core::mem::transmute(hcrypto), ::core::mem::transmute(cblabel), ::core::mem::transmute(plabel), ::core::mem::transmute(cbnonce), ::core::mem::transmute(pnonce), ::core::mem::transmute(derivedkeylength), ::core::mem::transmute(offset), algid.into_param().abi(), ::core::mem::transmute(pcbkey), ::core::mem::transmute(ppkey)).ok()
     }
@@ -23406,12 +23406,12 @@ pub unsafe fn GenerateDerivedKey<'a, Param7: ::windows::core::IntoParam<'a, ::wi
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn GetBrowserToken(dwparamtype: u32, pparam: *const ::core::ffi::c_void, pcbtoken: *mut u32, pptoken: *mut *mut u8) -> ::windows::core::Result<()> {
+pub unsafe fn GetBrowserToken(dwparamtype: u32, pparam: *const ::core::ffi::c_void, pcbtoken: *mut u32, pptoken: *mut *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetBrowserToken(dwparamtype: u32, pparam: *const ::core::ffi::c_void, pcbtoken: *mut u32, pptoken: *mut *mut u8) -> ::windows::core::HRESULT;
+            fn GetBrowserToken(dwparamtype: u32, pparam: *const ::core::ffi::c_void, pcbtoken: *mut u32, pptoken: *mut *mut u8) -> ::windows_core::HRESULT;
         }
         GetBrowserToken(::core::mem::transmute(dwparamtype), ::core::mem::transmute(pparam), ::core::mem::transmute(pcbtoken), ::core::mem::transmute(pptoken)).ok()
     }
@@ -23420,12 +23420,12 @@ pub unsafe fn GetBrowserToken(dwparamtype: u32, pparam: *const ::core::ffi::c_vo
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn GetCryptoTransform(hsymmetriccrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, mode: u32, padding: PaddingMode, feedbacksize: u32, direction: Direction, cbiv: u32, piv: *const u8) -> ::windows::core::Result<*mut INFORMATIONCARD_CRYPTO_HANDLE> {
+pub unsafe fn GetCryptoTransform(hsymmetriccrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, mode: u32, padding: PaddingMode, feedbacksize: u32, direction: Direction, cbiv: u32, piv: *const u8) -> ::windows_core::Result<*mut INFORMATIONCARD_CRYPTO_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCryptoTransform(hsymmetriccrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, mode: u32, padding: PaddingMode, feedbacksize: u32, direction: Direction, cbiv: u32, piv: *const u8, pphtransform: *mut *mut INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows::core::HRESULT;
+            fn GetCryptoTransform(hsymmetriccrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, mode: u32, padding: PaddingMode, feedbacksize: u32, direction: Direction, cbiv: u32, piv: *const u8, pphtransform: *mut *mut INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<*mut INFORMATIONCARD_CRYPTO_HANDLE>::zeroed();
         GetCryptoTransform(::core::mem::transmute(hsymmetriccrypto), ::core::mem::transmute(mode), ::core::mem::transmute(padding), ::core::mem::transmute(feedbacksize), ::core::mem::transmute(direction), ::core::mem::transmute(cbiv), ::core::mem::transmute(piv), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut INFORMATIONCARD_CRYPTO_HANDLE>(result__)
@@ -23435,12 +23435,12 @@ pub unsafe fn GetCryptoTransform(hsymmetriccrypto: *const INFORMATIONCARD_CRYPTO
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn GetKeyedHash(hsymmetriccrypto: *const INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows::core::Result<*mut INFORMATIONCARD_CRYPTO_HANDLE> {
+pub unsafe fn GetKeyedHash(hsymmetriccrypto: *const INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows_core::Result<*mut INFORMATIONCARD_CRYPTO_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetKeyedHash(hsymmetriccrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, pphhash: *mut *mut INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows::core::HRESULT;
+            fn GetKeyedHash(hsymmetriccrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, pphhash: *mut *mut INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<*mut INFORMATIONCARD_CRYPTO_HANDLE>::zeroed();
         GetKeyedHash(::core::mem::transmute(hsymmetriccrypto), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut INFORMATIONCARD_CRYPTO_HANDLE>(result__)
@@ -23451,14 +23451,14 @@ pub unsafe fn GetKeyedHash(hsymmetriccrypto: *const INFORMATIONCARD_CRYPTO_HANDL
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetToken(ppolicychain: &[POLICY_ELEMENT], securitytoken: *mut *mut GENERIC_XML_TOKEN, phprooftokencrypto: *mut *mut INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows::core::Result<()> {
+pub unsafe fn GetToken(ppolicychain: &[POLICY_ELEMENT], securitytoken: *mut *mut GENERIC_XML_TOKEN, phprooftokencrypto: *mut *mut INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetToken(cpolicychain: u32, ppolicychain: *const POLICY_ELEMENT, securitytoken: *mut *mut GENERIC_XML_TOKEN, phprooftokencrypto: *mut *mut INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows::core::HRESULT;
+            fn GetToken(cpolicychain: u32, ppolicychain: *const POLICY_ELEMENT, securitytoken: *mut *mut GENERIC_XML_TOKEN, phprooftokencrypto: *mut *mut INFORMATIONCARD_CRYPTO_HANDLE) -> ::windows_core::HRESULT;
         }
-        GetToken(ppolicychain.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(ppolicychain)), ::core::mem::transmute(securitytoken), ::core::mem::transmute(phprooftokencrypto)).ok()
+        GetToken(ppolicychain.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppolicychain)), ::core::mem::transmute(securitytoken), ::core::mem::transmute(phprooftokencrypto)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -23484,7 +23484,7 @@ impl ::core::default::Default for HASHALGORITHM_ENUM {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HASHALGORITHM_ENUM {
+unsafe impl ::windows_core::Abi for HASHALGORITHM_ENUM {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HASHALGORITHM_ENUM {
@@ -23516,7 +23516,7 @@ impl ::core::fmt::Debug for HCERTCHAINENGINE {
         f.debug_tuple("HCERTCHAINENGINE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HCERTCHAINENGINE {
+unsafe impl ::windows_core::Abi for HCERTCHAINENGINE {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -23543,7 +23543,7 @@ impl ::core::fmt::Debug for HCERTSTORE {
         f.debug_tuple("HCERTSTORE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HCERTSTORE {
+unsafe impl ::windows_core::Abi for HCERTSTORE {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -23570,7 +23570,7 @@ impl ::core::fmt::Debug for HCERTSTOREPROV {
         f.debug_tuple("HCERTSTOREPROV").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HCERTSTOREPROV {
+unsafe impl ::windows_core::Abi for HCERTSTOREPROV {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -23597,7 +23597,7 @@ impl ::core::fmt::Debug for HCRYPTASYNC {
         f.debug_tuple("HCRYPTASYNC").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HCRYPTASYNC {
+unsafe impl ::windows_core::Abi for HCRYPTASYNC {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -23624,7 +23624,7 @@ impl ::core::fmt::Debug for HCRYPTPROV_LEGACY {
         f.debug_tuple("HCRYPTPROV_LEGACY").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HCRYPTPROV_LEGACY {
+unsafe impl ::windows_core::Abi for HCRYPTPROV_LEGACY {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -23651,7 +23651,7 @@ impl ::core::fmt::Debug for HCRYPTPROV_OR_NCRYPT_KEY_HANDLE {
         f.debug_tuple("HCRYPTPROV_OR_NCRYPT_KEY_HANDLE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HCRYPTPROV_OR_NCRYPT_KEY_HANDLE {
+unsafe impl ::windows_core::Abi for HCRYPTPROV_OR_NCRYPT_KEY_HANDLE {
     type Abi = Self;
 }
 #[repr(C)]
@@ -23674,12 +23674,12 @@ impl ::core::fmt::Debug for HMAC_Info {
         f.debug_struct("HMAC_Info").field("HashAlgid", &self.HashAlgid).field("pbInnerString", &self.pbInnerString).field("cbInnerString", &self.cbInnerString).field("pbOuterString", &self.pbOuterString).field("cbOuterString", &self.cbOuterString).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HMAC_Info {
+unsafe impl ::windows_core::Abi for HMAC_Info {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HMAC_Info {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HMAC_Info>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HMAC_Info>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HMAC_Info {}
@@ -23715,7 +23715,7 @@ impl ::core::default::Default for HTTPSPOLICY_CALLBACK_DATA_AUTH_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HTTPSPOLICY_CALLBACK_DATA_AUTH_TYPE {
+unsafe impl ::windows_core::Abi for HTTPSPOLICY_CALLBACK_DATA_AUTH_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HTTPSPOLICY_CALLBACK_DATA_AUTH_TYPE {
@@ -23729,7 +23729,7 @@ pub struct HTTPSPolicyCallbackData {
     pub Anonymous: HTTPSPolicyCallbackData_0,
     pub dwAuthType: HTTPSPOLICY_CALLBACK_DATA_AUTH_TYPE,
     pub fdwChecks: u32,
-    pub pwszServerName: ::windows::core::PWSTR,
+    pub pwszServerName: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for HTTPSPolicyCallbackData {}
 impl ::core::clone::Clone for HTTPSPolicyCallbackData {
@@ -23737,12 +23737,12 @@ impl ::core::clone::Clone for HTTPSPolicyCallbackData {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for HTTPSPolicyCallbackData {
+unsafe impl ::windows_core::Abi for HTTPSPolicyCallbackData {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HTTPSPolicyCallbackData {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HTTPSPolicyCallbackData>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HTTPSPolicyCallbackData>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HTTPSPolicyCallbackData {}
@@ -23763,12 +23763,12 @@ impl ::core::clone::Clone for HTTPSPolicyCallbackData_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for HTTPSPolicyCallbackData_0 {
+unsafe impl ::windows_core::Abi for HTTPSPolicyCallbackData_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HTTPSPolicyCallbackData_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HTTPSPolicyCallbackData_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HTTPSPolicyCallbackData_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HTTPSPolicyCallbackData_0 {}
@@ -23798,7 +23798,7 @@ impl ::core::default::Default for HandleType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HandleType {
+unsafe impl ::windows_core::Abi for HandleType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HandleType {
@@ -23808,12 +23808,12 @@ impl ::core::fmt::Debug for HandleType {
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn HashCore(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8) -> ::windows::core::Result<()> {
+pub unsafe fn HashCore(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HashCore(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8) -> ::windows::core::HRESULT;
+            fn HashCore(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8) -> ::windows_core::HRESULT;
         }
         HashCore(::core::mem::transmute(hcrypto), ::core::mem::transmute(cbindata), ::core::mem::transmute(pindata)).ok()
     }
@@ -23822,12 +23822,12 @@ pub unsafe fn HashCore(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: 
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn HashFinal(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows::core::Result<()> {
+pub unsafe fn HashFinal(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HashFinal(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows::core::HRESULT;
+            fn HashFinal(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows_core::HRESULT;
         }
         HashFinal(::core::mem::transmute(hcrypto), ::core::mem::transmute(cbindata), ::core::mem::transmute(pindata), ::core::mem::transmute(pcboutdata), ::core::mem::transmute(ppoutdata)).ok()
     }
@@ -23837,137 +23837,137 @@ pub unsafe fn HashFinal(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata:
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
-pub struct ICertSrvSetup(::windows::core::IUnknown);
+pub struct ICertSrvSetup(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl ICertSrvSetup {
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn CAErrorId(&self) -> ::windows::core::Result<i32> {
+    pub unsafe fn CAErrorId(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-        (::windows::core::Interface::vtable(self).CAErrorId)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
+        (::windows_core::Interface::vtable(self).CAErrorId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CAErrorString(&self) -> ::windows::core::Result<super::super::Foundation::BSTR> {
+    pub unsafe fn CAErrorString(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows::core::Interface::vtable(self).CAErrorString)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+        (::windows_core::Interface::vtable(self).CAErrorString)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn InitializeDefaults(&self, bserver: i16, bclient: i16) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).InitializeDefaults)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(bserver), ::core::mem::transmute(bclient)).ok()
+    pub unsafe fn InitializeDefaults(&self, bserver: i16, bclient: i16) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).InitializeDefaults)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bserver), ::core::mem::transmute(bclient)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetCASetupProperty(&self, propertyid: CASetupProperty) -> ::windows::core::Result<super::super::System::Com::VARIANT> {
+    pub unsafe fn GetCASetupProperty(&self, propertyid: CASetupProperty) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows::core::Interface::vtable(self).GetCASetupProperty)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+        (::windows_core::Interface::vtable(self).GetCASetupProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetCASetupProperty(&self, propertyid: CASetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetCASetupProperty)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(ppropertyvalue)).ok()
+    pub unsafe fn SetCASetupProperty(&self, propertyid: CASetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetCASetupProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(ppropertyvalue)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn IsPropertyEditable(&self, propertyid: CASetupProperty) -> ::windows::core::Result<i16> {
+    pub unsafe fn IsPropertyEditable(&self, propertyid: CASetupProperty) -> ::windows_core::Result<i16> {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
-        (::windows::core::Interface::vtable(self).IsPropertyEditable)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
+        (::windows_core::Interface::vtable(self).IsPropertyEditable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetSupportedCATypes(&self) -> ::windows::core::Result<super::super::System::Com::VARIANT> {
+    pub unsafe fn GetSupportedCATypes(&self) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows::core::Interface::vtable(self).GetSupportedCATypes)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+        (::windows_core::Interface::vtable(self).GetSupportedCATypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetProviderNameList(&self) -> ::windows::core::Result<super::super::System::Com::VARIANT> {
+    pub unsafe fn GetProviderNameList(&self) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProviderNameList)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+        (::windows_core::Interface::vtable(self).GetProviderNameList)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetKeyLengthList<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrprovidername: Param0) -> ::windows::core::Result<super::super::System::Com::VARIANT> {
+    pub unsafe fn GetKeyLengthList<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrprovidername: Param0) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows::core::Interface::vtable(self).GetKeyLengthList)(::windows::core::Interface::as_raw(self), bstrprovidername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+        (::windows_core::Interface::vtable(self).GetKeyLengthList)(::windows_core::Interface::as_raw(self), bstrprovidername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetHashAlgorithmList<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrprovidername: Param0) -> ::windows::core::Result<super::super::System::Com::VARIANT> {
+    pub unsafe fn GetHashAlgorithmList<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrprovidername: Param0) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows::core::Interface::vtable(self).GetHashAlgorithmList)(::windows::core::Interface::as_raw(self), bstrprovidername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+        (::windows_core::Interface::vtable(self).GetHashAlgorithmList)(::windows_core::Interface::as_raw(self), bstrprovidername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetPrivateKeyContainerList<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrprovidername: Param0) -> ::windows::core::Result<super::super::System::Com::VARIANT> {
+    pub unsafe fn GetPrivateKeyContainerList<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrprovidername: Param0) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows::core::Interface::vtable(self).GetPrivateKeyContainerList)(::windows::core::Interface::as_raw(self), bstrprovidername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+        (::windows_core::Interface::vtable(self).GetPrivateKeyContainerList)(::windows_core::Interface::as_raw(self), bstrprovidername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetExistingCACertificates(&self) -> ::windows::core::Result<ICertSrvSetupKeyInformationCollection> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetExistingCACertificates)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ICertSrvSetupKeyInformationCollection>(result__)
+    pub unsafe fn GetExistingCACertificates(&self) -> ::windows_core::Result<ICertSrvSetupKeyInformationCollection> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetExistingCACertificates)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ICertSrvSetupKeyInformationCollection>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CAImportPFX<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrfilename: Param0, bstrpasswd: Param1, boverwriteexistingkey: i16) -> ::windows::core::Result<ICertSrvSetupKeyInformation> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).CAImportPFX)(::windows::core::Interface::as_raw(self), bstrfilename.into_param().abi(), bstrpasswd.into_param().abi(), ::core::mem::transmute(boverwriteexistingkey), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ICertSrvSetupKeyInformation>(result__)
+    pub unsafe fn CAImportPFX<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrfilename: Param0, bstrpasswd: Param1, boverwriteexistingkey: i16) -> ::windows_core::Result<ICertSrvSetupKeyInformation> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).CAImportPFX)(::windows_core::Interface::as_raw(self), bstrfilename.into_param().abi(), bstrpasswd.into_param().abi(), ::core::mem::transmute(boverwriteexistingkey), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ICertSrvSetupKeyInformation>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCADistinguishedName<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcadn: Param0, bignoreunicode: i16, boverwriteexistingkey: i16, boverwriteexistingcainds: i16) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetCADistinguishedName)(::windows::core::Interface::as_raw(self), bstrcadn.into_param().abi(), ::core::mem::transmute(bignoreunicode), ::core::mem::transmute(boverwriteexistingkey), ::core::mem::transmute(boverwriteexistingcainds)).ok()
+    pub unsafe fn SetCADistinguishedName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcadn: Param0, bignoreunicode: i16, boverwriteexistingkey: i16, boverwriteexistingcainds: i16) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetCADistinguishedName)(::windows_core::Interface::as_raw(self), bstrcadn.into_param().abi(), ::core::mem::transmute(bignoreunicode), ::core::mem::transmute(boverwriteexistingkey), ::core::mem::transmute(boverwriteexistingcainds)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDatabaseInformation<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrdbdirectory: Param0, bstrlogdirectory: Param1, bstrsharedfolder: Param2, bforceoverwrite: i16) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetDatabaseInformation)(::windows::core::Interface::as_raw(self), bstrdbdirectory.into_param().abi(), bstrlogdirectory.into_param().abi(), bstrsharedfolder.into_param().abi(), ::core::mem::transmute(bforceoverwrite)).ok()
+    pub unsafe fn SetDatabaseInformation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrdbdirectory: Param0, bstrlogdirectory: Param1, bstrsharedfolder: Param2, bforceoverwrite: i16) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetDatabaseInformation)(::windows_core::Interface::as_raw(self), bstrdbdirectory.into_param().abi(), bstrlogdirectory.into_param().abi(), bstrsharedfolder.into_param().abi(), ::core::mem::transmute(bforceoverwrite)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetParentCAInformation<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcaconfiguration: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetParentCAInformation)(::windows::core::Interface::as_raw(self), bstrcaconfiguration.into_param().abi()).ok()
+    pub unsafe fn SetParentCAInformation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcaconfiguration: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetParentCAInformation)(::windows_core::Interface::as_raw(self), bstrcaconfiguration.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetWebCAInformation<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcaconfiguration: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetWebCAInformation)(::windows::core::Interface::as_raw(self), bstrcaconfiguration.into_param().abi()).ok()
+    pub unsafe fn SetWebCAInformation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcaconfiguration: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetWebCAInformation)(::windows_core::Interface::as_raw(self), bstrcaconfiguration.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn Install(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Install)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Install(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Install)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn PreUnInstall(&self, bclientonly: i16) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).PreUnInstall)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(bclientonly)).ok()
+    pub unsafe fn PreUnInstall(&self, bclientonly: i16) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).PreUnInstall)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bclientonly)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn PostUnInstall(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).PostUnInstall)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn PostUnInstall(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).PostUnInstall)(::windows_core::Interface::as_raw(self)).ok()
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<ICertSrvSetup> for ::windows::core::IUnknown {
+impl ::core::convert::From<ICertSrvSetup> for ::windows_core::IUnknown {
     fn from(value: ICertSrvSetup) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&ICertSrvSetup> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ICertSrvSetup> for ::windows_core::IUnknown {
     fn from(value: &ICertSrvSetup) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ICertSrvSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ICertSrvSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ICertSrvSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ICertSrvSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -23983,15 +23983,15 @@ impl ::core::convert::From<&ICertSrvSetup> for super::super::System::Com::IDispa
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::System::Com::IDispatch> for ICertSrvSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::System::Com::IDispatch> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for ICertSrvSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ICertSrvSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::System::Com::IDispatch> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ICertSrvSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -24015,169 +24015,169 @@ impl ::core::fmt::Debug for ICertSrvSetup {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Interface for ICertSrvSetup {
+unsafe impl ::windows_core::Interface for ICertSrvSetup {
     type Vtable = ICertSrvSetup_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb760a1bb_4784_44c0_8f12_555f0780ff25);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb760a1bb_4784_44c0_8f12_555f0780ff25);
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ICertSrvSetup_Vtbl {
     pub base__: super::super::System::Com::IDispatch_Vtbl,
-    pub CAErrorId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut i32) -> ::windows::core::HRESULT,
+    pub CAErrorId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub CAErrorString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows::core::HRESULT,
+    pub CAErrorString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CAErrorString: usize,
-    pub InitializeDefaults: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bserver: i16, bclient: i16) -> ::windows::core::HRESULT,
+    pub InitializeDefaults: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bserver: i16, bclient: i16) -> ::windows_core::HRESULT,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetCASetupProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CASetupProperty, ppropertyvalue: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub GetCASetupProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CASetupProperty, ppropertyvalue: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetCASetupProperty: usize,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub SetCASetupProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CASetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub SetCASetupProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CASetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetCASetupProperty: usize,
-    pub IsPropertyEditable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CASetupProperty, pbeditable: *mut i16) -> ::windows::core::HRESULT,
+    pub IsPropertyEditable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CASetupProperty, pbeditable: *mut i16) -> ::windows_core::HRESULT,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetSupportedCATypes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcatypes: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub GetSupportedCATypes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcatypes: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetSupportedCATypes: usize,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetProviderNameList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub GetProviderNameList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetProviderNameList: usize,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetKeyLengthList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrprovidername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pval: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub GetKeyLengthList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrprovidername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pval: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetKeyLengthList: usize,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetHashAlgorithmList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrprovidername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pval: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub GetHashAlgorithmList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrprovidername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pval: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetHashAlgorithmList: usize,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetPrivateKeyContainerList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrprovidername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pval: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub GetPrivateKeyContainerList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrprovidername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pval: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetPrivateKeyContainerList: usize,
     #[cfg(feature = "Win32_System_Com")]
-    pub GetExistingCACertificates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppval: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetExistingCACertificates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetExistingCACertificates: usize,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub CAImportPFX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpasswd: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, boverwriteexistingkey: i16, ppval: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CAImportPFX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpasswd: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, boverwriteexistingkey: i16, ppval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     CAImportPFX: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub SetCADistinguishedName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcadn: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bignoreunicode: i16, boverwriteexistingkey: i16, boverwriteexistingcainds: i16) -> ::windows::core::HRESULT,
+    pub SetCADistinguishedName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcadn: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bignoreunicode: i16, boverwriteexistingkey: i16, boverwriteexistingcainds: i16) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetCADistinguishedName: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub SetDatabaseInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdbdirectory: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrlogdirectory: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrsharedfolder: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bforceoverwrite: i16) -> ::windows::core::HRESULT,
+    pub SetDatabaseInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdbdirectory: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrlogdirectory: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrsharedfolder: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bforceoverwrite: i16) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetDatabaseInformation: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub SetParentCAInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcaconfiguration: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows::core::HRESULT,
+    pub SetParentCAInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcaconfiguration: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetParentCAInformation: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub SetWebCAInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcaconfiguration: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows::core::HRESULT,
+    pub SetWebCAInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcaconfiguration: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetWebCAInformation: usize,
-    pub Install: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub PreUnInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bclientonly: i16) -> ::windows::core::HRESULT,
-    pub PostUnInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub Install: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub PreUnInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bclientonly: i16) -> ::windows_core::HRESULT,
+    pub PostUnInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
-pub struct ICertSrvSetupKeyInformation(::windows::core::IUnknown);
+pub struct ICertSrvSetupKeyInformation(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl ICertSrvSetupKeyInformation {
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ProviderName(&self) -> ::windows::core::Result<super::super::Foundation::BSTR> {
+    pub unsafe fn ProviderName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows::core::Interface::vtable(self).ProviderName)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+        (::windows_core::Interface::vtable(self).ProviderName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetProviderName<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrval: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetProviderName)(::windows::core::Interface::as_raw(self), bstrval.into_param().abi()).ok()
+    pub unsafe fn SetProviderName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrval: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetProviderName)(::windows_core::Interface::as_raw(self), bstrval.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn Length(&self) -> ::windows::core::Result<i32> {
+    pub unsafe fn Length(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-        (::windows::core::Interface::vtable(self).Length)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
+        (::windows_core::Interface::vtable(self).Length)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn SetLength(&self, lval: i32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetLength)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(lval)).ok()
+    pub unsafe fn SetLength(&self, lval: i32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetLength)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lval)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn Existing(&self) -> ::windows::core::Result<i16> {
+    pub unsafe fn Existing(&self) -> ::windows_core::Result<i16> {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
-        (::windows::core::Interface::vtable(self).Existing)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
+        (::windows_core::Interface::vtable(self).Existing)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn SetExisting(&self, bval: i16) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetExisting)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(bval)).ok()
+    pub unsafe fn SetExisting(&self, bval: i16) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetExisting)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bval)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ContainerName(&self) -> ::windows::core::Result<super::super::Foundation::BSTR> {
+    pub unsafe fn ContainerName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows::core::Interface::vtable(self).ContainerName)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+        (::windows_core::Interface::vtable(self).ContainerName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetContainerName<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrval: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetContainerName)(::windows::core::Interface::as_raw(self), bstrval.into_param().abi()).ok()
+    pub unsafe fn SetContainerName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrval: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetContainerName)(::windows_core::Interface::as_raw(self), bstrval.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn HashAlgorithm(&self) -> ::windows::core::Result<super::super::Foundation::BSTR> {
+    pub unsafe fn HashAlgorithm(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows::core::Interface::vtable(self).HashAlgorithm)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+        (::windows_core::Interface::vtable(self).HashAlgorithm)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetHashAlgorithm<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrval: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetHashAlgorithm)(::windows::core::Interface::as_raw(self), bstrval.into_param().abi()).ok()
+    pub unsafe fn SetHashAlgorithm<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrval: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetHashAlgorithm)(::windows_core::Interface::as_raw(self), bstrval.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn ExistingCACertificate(&self) -> ::windows::core::Result<super::super::System::Com::VARIANT> {
+    pub unsafe fn ExistingCACertificate(&self) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows::core::Interface::vtable(self).ExistingCACertificate)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+        (::windows_core::Interface::vtable(self).ExistingCACertificate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetExistingCACertificate<'a, Param0: ::windows::core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, varval: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetExistingCACertificate)(::windows::core::Interface::as_raw(self), varval.into_param().abi()).ok()
+    pub unsafe fn SetExistingCACertificate<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, varval: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetExistingCACertificate)(::windows_core::Interface::as_raw(self), varval.into_param().abi()).ok()
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<ICertSrvSetupKeyInformation> for ::windows::core::IUnknown {
+impl ::core::convert::From<ICertSrvSetupKeyInformation> for ::windows_core::IUnknown {
     fn from(value: ICertSrvSetupKeyInformation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&ICertSrvSetupKeyInformation> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ICertSrvSetupKeyInformation> for ::windows_core::IUnknown {
     fn from(value: &ICertSrvSetupKeyInformation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ICertSrvSetupKeyInformation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ICertSrvSetupKeyInformation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ICertSrvSetupKeyInformation {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ICertSrvSetupKeyInformation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -24193,15 +24193,15 @@ impl ::core::convert::From<&ICertSrvSetupKeyInformation> for super::super::Syste
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::System::Com::IDispatch> for ICertSrvSetupKeyInformation {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::System::Com::IDispatch> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for ICertSrvSetupKeyInformation {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ICertSrvSetupKeyInformation {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::System::Com::IDispatch> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ICertSrvSetupKeyInformation {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -24225,9 +24225,9 @@ impl ::core::fmt::Debug for ICertSrvSetupKeyInformation {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Interface for ICertSrvSetupKeyInformation {
+unsafe impl ::windows_core::Interface for ICertSrvSetupKeyInformation {
     type Vtable = ICertSrvSetupKeyInformation_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6ba73778_36da_4c39_8a85_bcfa7d000793);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6ba73778_36da_4c39_8a85_bcfa7d000793);
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -24235,92 +24235,92 @@ unsafe impl ::windows::core::Interface for ICertSrvSetupKeyInformation {
 pub struct ICertSrvSetupKeyInformation_Vtbl {
     pub base__: super::super::System::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub ProviderName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows::core::HRESULT,
+    pub ProviderName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ProviderName: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub SetProviderName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows::core::HRESULT,
+    pub SetProviderName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetProviderName: usize,
-    pub Length: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut i32) -> ::windows::core::HRESULT,
-    pub SetLength: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lval: i32) -> ::windows::core::HRESULT,
-    pub Existing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut i16) -> ::windows::core::HRESULT,
-    pub SetExisting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bval: i16) -> ::windows::core::HRESULT,
+    pub Length: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut i32) -> ::windows_core::HRESULT,
+    pub SetLength: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lval: i32) -> ::windows_core::HRESULT,
+    pub Existing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut i16) -> ::windows_core::HRESULT,
+    pub SetExisting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bval: i16) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub ContainerName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows::core::HRESULT,
+    pub ContainerName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ContainerName: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub SetContainerName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows::core::HRESULT,
+    pub SetContainerName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetContainerName: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub HashAlgorithm: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows::core::HRESULT,
+    pub HashAlgorithm: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     HashAlgorithm: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub SetHashAlgorithm: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows::core::HRESULT,
+    pub SetHashAlgorithm: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetHashAlgorithm: usize,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub ExistingCACertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub ExistingCACertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     ExistingCACertificate: usize,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub SetExistingCACertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varval: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows::core::HRESULT,
+    pub SetExistingCACertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, varval: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetExistingCACertificate: usize,
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
-pub struct ICertSrvSetupKeyInformationCollection(::windows::core::IUnknown);
+pub struct ICertSrvSetupKeyInformationCollection(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl ICertSrvSetupKeyInformationCollection {
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn _NewEnum(&self) -> ::windows::core::Result<::windows::core::IUnknown> {
+    pub unsafe fn _NewEnum(&self) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-        (::windows::core::Interface::vtable(self)._NewEnum)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::IUnknown>(result__)
+        (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn get_Item(&self, index: i32) -> ::windows::core::Result<super::super::System::Com::VARIANT> {
+    pub unsafe fn get_Item(&self, index: i32) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows::core::Interface::vtable(self).get_Item)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+        (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn Count(&self) -> ::windows::core::Result<i32> {
+    pub unsafe fn Count(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-        (::windows::core::Interface::vtable(self).Count)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
+        (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Add<'a, Param0: ::windows::core::IntoParam<'a, ICertSrvSetupKeyInformation>>(&self, pikeyinformation: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Add)(::windows::core::Interface::as_raw(self), pikeyinformation.into_param().abi()).ok()
+    pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, ICertSrvSetupKeyInformation>>(&self, pikeyinformation: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), pikeyinformation.into_param().abi()).ok()
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<ICertSrvSetupKeyInformationCollection> for ::windows::core::IUnknown {
+impl ::core::convert::From<ICertSrvSetupKeyInformationCollection> for ::windows_core::IUnknown {
     fn from(value: ICertSrvSetupKeyInformationCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&ICertSrvSetupKeyInformationCollection> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ICertSrvSetupKeyInformationCollection> for ::windows_core::IUnknown {
     fn from(value: &ICertSrvSetupKeyInformationCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ICertSrvSetupKeyInformationCollection {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ICertSrvSetupKeyInformationCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ICertSrvSetupKeyInformationCollection {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ICertSrvSetupKeyInformationCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -24336,15 +24336,15 @@ impl ::core::convert::From<&ICertSrvSetupKeyInformationCollection> for super::su
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::System::Com::IDispatch> for ICertSrvSetupKeyInformationCollection {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::System::Com::IDispatch> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for ICertSrvSetupKeyInformationCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ICertSrvSetupKeyInformationCollection {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::System::Com::IDispatch> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ICertSrvSetupKeyInformationCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -24368,85 +24368,85 @@ impl ::core::fmt::Debug for ICertSrvSetupKeyInformationCollection {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Interface for ICertSrvSetupKeyInformationCollection {
+unsafe impl ::windows_core::Interface for ICertSrvSetupKeyInformationCollection {
     type Vtable = ICertSrvSetupKeyInformationCollection_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe65c8b00_e58f_41f9_a9ec_a28d7427c844);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe65c8b00_e58f_41f9_a9ec_a28d7427c844);
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct ICertSrvSetupKeyInformationCollection_Vtbl {
     pub base__: super::super::System::Com::IDispatch_Vtbl,
-    pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppval: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppval: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: i32, pval: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: i32, pval: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
-    pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut i32) -> ::windows::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
-    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pikeyinformation: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pikeyinformation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Add: usize,
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
-pub struct ICertificateEnrollmentPolicyServerSetup(::windows::core::IUnknown);
+pub struct ICertificateEnrollmentPolicyServerSetup(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl ICertificateEnrollmentPolicyServerSetup {
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ErrorString(&self) -> ::windows::core::Result<super::super::Foundation::BSTR> {
+    pub unsafe fn ErrorString(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows::core::Interface::vtable(self).ErrorString)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+        (::windows_core::Interface::vtable(self).ErrorString)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn InitializeInstallDefaults(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).InitializeInstallDefaults)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn InitializeInstallDefaults(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).InitializeInstallDefaults)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetProperty(&self, propertyid: CEPSetupProperty) -> ::windows::core::Result<super::super::System::Com::VARIANT> {
+    pub unsafe fn GetProperty(&self, propertyid: CEPSetupProperty) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperty)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+        (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetProperty(&self, propertyid: CEPSetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetProperty)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(ppropertyvalue)).ok()
+    pub unsafe fn SetProperty(&self, propertyid: CEPSetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(ppropertyvalue)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn Install(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Install)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Install(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Install)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn UnInstall(&self, pauthkeybasedrenewal: *const super::super::System::Com::VARIANT) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).UnInstall)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pauthkeybasedrenewal)).ok()
+    pub unsafe fn UnInstall(&self, pauthkeybasedrenewal: *const super::super::System::Com::VARIANT) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).UnInstall)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pauthkeybasedrenewal)).ok()
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<ICertificateEnrollmentPolicyServerSetup> for ::windows::core::IUnknown {
+impl ::core::convert::From<ICertificateEnrollmentPolicyServerSetup> for ::windows_core::IUnknown {
     fn from(value: ICertificateEnrollmentPolicyServerSetup) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&ICertificateEnrollmentPolicyServerSetup> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ICertificateEnrollmentPolicyServerSetup> for ::windows_core::IUnknown {
     fn from(value: &ICertificateEnrollmentPolicyServerSetup) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ICertificateEnrollmentPolicyServerSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ICertificateEnrollmentPolicyServerSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ICertificateEnrollmentPolicyServerSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ICertificateEnrollmentPolicyServerSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -24462,15 +24462,15 @@ impl ::core::convert::From<&ICertificateEnrollmentPolicyServerSetup> for super::
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::System::Com::IDispatch> for ICertificateEnrollmentPolicyServerSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::System::Com::IDispatch> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for ICertificateEnrollmentPolicyServerSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ICertificateEnrollmentPolicyServerSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::System::Com::IDispatch> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ICertificateEnrollmentPolicyServerSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -24494,9 +24494,9 @@ impl ::core::fmt::Debug for ICertificateEnrollmentPolicyServerSetup {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Interface for ICertificateEnrollmentPolicyServerSetup {
+unsafe impl ::windows_core::Interface for ICertificateEnrollmentPolicyServerSetup {
     type Vtable = ICertificateEnrollmentPolicyServerSetup_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x859252cc_238c_4a88_b8fd_a37e7d04e68b);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x859252cc_238c_4a88_b8fd_a37e7d04e68b);
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -24504,88 +24504,88 @@ unsafe impl ::windows::core::Interface for ICertificateEnrollmentPolicyServerSet
 pub struct ICertificateEnrollmentPolicyServerSetup_Vtbl {
     pub base__: super::super::System::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub ErrorString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows::core::HRESULT,
+    pub ErrorString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ErrorString: usize,
-    pub InitializeInstallDefaults: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub InitializeInstallDefaults: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CEPSetupProperty, ppropertyvalue: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CEPSetupProperty, ppropertyvalue: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetProperty: usize,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub SetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CEPSetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub SetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CEPSetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetProperty: usize,
-    pub Install: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub Install: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub UnInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pauthkeybasedrenewal: *const super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub UnInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pauthkeybasedrenewal: *const super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     UnInstall: usize,
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
-pub struct ICertificateEnrollmentServerSetup(::windows::core::IUnknown);
+pub struct ICertificateEnrollmentServerSetup(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl ICertificateEnrollmentServerSetup {
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ErrorString(&self) -> ::windows::core::Result<super::super::Foundation::BSTR> {
+    pub unsafe fn ErrorString(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows::core::Interface::vtable(self).ErrorString)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+        (::windows_core::Interface::vtable(self).ErrorString)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn InitializeInstallDefaults(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).InitializeInstallDefaults)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn InitializeInstallDefaults(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).InitializeInstallDefaults)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetProperty(&self, propertyid: CESSetupProperty) -> ::windows::core::Result<super::super::System::Com::VARIANT> {
+    pub unsafe fn GetProperty(&self, propertyid: CESSetupProperty) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperty)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+        (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetProperty(&self, propertyid: CESSetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetProperty)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(ppropertyvalue)).ok()
+    pub unsafe fn SetProperty(&self, propertyid: CESSetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(ppropertyvalue)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetApplicationPoolCredentials<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0, bstrpassword: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetApplicationPoolCredentials)(::windows::core::Interface::as_raw(self), bstrusername.into_param().abi(), bstrpassword.into_param().abi()).ok()
+    pub unsafe fn SetApplicationPoolCredentials<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0, bstrpassword: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetApplicationPoolCredentials)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi(), bstrpassword.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn Install(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Install)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Install(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Install)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn UnInstall(&self, pcaconfig: *const super::super::System::Com::VARIANT, pauthentication: *const super::super::System::Com::VARIANT) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).UnInstall)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pcaconfig), ::core::mem::transmute(pauthentication)).ok()
+    pub unsafe fn UnInstall(&self, pcaconfig: *const super::super::System::Com::VARIANT, pauthentication: *const super::super::System::Com::VARIANT) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).UnInstall)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pcaconfig), ::core::mem::transmute(pauthentication)).ok()
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<ICertificateEnrollmentServerSetup> for ::windows::core::IUnknown {
+impl ::core::convert::From<ICertificateEnrollmentServerSetup> for ::windows_core::IUnknown {
     fn from(value: ICertificateEnrollmentServerSetup) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&ICertificateEnrollmentServerSetup> for ::windows::core::IUnknown {
+impl ::core::convert::From<&ICertificateEnrollmentServerSetup> for ::windows_core::IUnknown {
     fn from(value: &ICertificateEnrollmentServerSetup) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ICertificateEnrollmentServerSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for ICertificateEnrollmentServerSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ICertificateEnrollmentServerSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ICertificateEnrollmentServerSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -24601,15 +24601,15 @@ impl ::core::convert::From<&ICertificateEnrollmentServerSetup> for super::super:
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::System::Com::IDispatch> for ICertificateEnrollmentServerSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::System::Com::IDispatch> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for ICertificateEnrollmentServerSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ICertificateEnrollmentServerSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::System::Com::IDispatch> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ICertificateEnrollmentServerSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -24633,9 +24633,9 @@ impl ::core::fmt::Debug for ICertificateEnrollmentServerSetup {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Interface for ICertificateEnrollmentServerSetup {
+unsafe impl ::windows_core::Interface for ICertificateEnrollmentServerSetup {
     type Vtable = ICertificateEnrollmentServerSetup_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x70027fdb_9dd9_4921_8944_b35cb31bd2ec);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x70027fdb_9dd9_4921_8944_b35cb31bd2ec);
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -24643,25 +24643,25 @@ unsafe impl ::windows::core::Interface for ICertificateEnrollmentServerSetup {
 pub struct ICertificateEnrollmentServerSetup_Vtbl {
     pub base__: super::super::System::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub ErrorString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows::core::HRESULT,
+    pub ErrorString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ErrorString: usize,
-    pub InitializeInstallDefaults: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub InitializeInstallDefaults: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CESSetupProperty, ppropertyvalue: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CESSetupProperty, ppropertyvalue: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetProperty: usize,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub SetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CESSetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub SetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: CESSetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetProperty: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub SetApplicationPoolCredentials: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows::core::HRESULT,
+    pub SetApplicationPoolCredentials: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetApplicationPoolCredentials: usize,
-    pub Install: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub Install: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub UnInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcaconfig: *const super::super::System::Com::VARIANT, pauthentication: *const super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub UnInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcaconfig: *const super::super::System::Com::VARIANT, pauthentication: *const super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     UnInstall: usize,
 }
@@ -24674,92 +24674,92 @@ pub const IFX_RSA_KEYGEN_VUL_NOT_AFFECTED: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
-pub struct IMSCEPSetup(::windows::core::IUnknown);
+pub struct IMSCEPSetup(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IMSCEPSetup {
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn MSCEPErrorId(&self) -> ::windows::core::Result<i32> {
+    pub unsafe fn MSCEPErrorId(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-        (::windows::core::Interface::vtable(self).MSCEPErrorId)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
+        (::windows_core::Interface::vtable(self).MSCEPErrorId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MSCEPErrorString(&self) -> ::windows::core::Result<super::super::Foundation::BSTR> {
+    pub unsafe fn MSCEPErrorString(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows::core::Interface::vtable(self).MSCEPErrorString)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+        (::windows_core::Interface::vtable(self).MSCEPErrorString)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn InitializeDefaults(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).InitializeDefaults)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn InitializeDefaults(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).InitializeDefaults)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetMSCEPSetupProperty(&self, propertyid: MSCEPSetupProperty) -> ::windows::core::Result<super::super::System::Com::VARIANT> {
+    pub unsafe fn GetMSCEPSetupProperty(&self, propertyid: MSCEPSetupProperty) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows::core::Interface::vtable(self).GetMSCEPSetupProperty)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+        (::windows_core::Interface::vtable(self).GetMSCEPSetupProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetMSCEPSetupProperty(&self, propertyid: MSCEPSetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetMSCEPSetupProperty)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(ppropertyvalue)).ok()
+    pub unsafe fn SetMSCEPSetupProperty(&self, propertyid: MSCEPSetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetMSCEPSetupProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(ppropertyvalue)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetAccountInformation<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0, bstrpassword: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetAccountInformation)(::windows::core::Interface::as_raw(self), bstrusername.into_param().abi(), bstrpassword.into_param().abi()).ok()
+    pub unsafe fn SetAccountInformation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0, bstrpassword: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetAccountInformation)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi(), bstrpassword.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn IsMSCEPStoreEmpty(&self) -> ::windows::core::Result<i16> {
+    pub unsafe fn IsMSCEPStoreEmpty(&self) -> ::windows_core::Result<i16> {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
-        (::windows::core::Interface::vtable(self).IsMSCEPStoreEmpty)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
+        (::windows_core::Interface::vtable(self).IsMSCEPStoreEmpty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetProviderNameList(&self, bexchange: i16) -> ::windows::core::Result<super::super::System::Com::VARIANT> {
+    pub unsafe fn GetProviderNameList(&self, bexchange: i16) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProviderNameList)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(bexchange), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+        (::windows_core::Interface::vtable(self).GetProviderNameList)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bexchange), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetKeyLengthList<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bexchange: i16, bstrprovidername: Param1) -> ::windows::core::Result<super::super::System::Com::VARIANT> {
+    pub unsafe fn GetKeyLengthList<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bexchange: i16, bstrprovidername: Param1) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows::core::Interface::vtable(self).GetKeyLengthList)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(bexchange), bstrprovidername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+        (::windows_core::Interface::vtable(self).GetKeyLengthList)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bexchange), bstrprovidername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn Install(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Install)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Install(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Install)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn PreUnInstall(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).PreUnInstall)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn PreUnInstall(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).PreUnInstall)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-    pub unsafe fn PostUnInstall(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).PostUnInstall)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn PostUnInstall(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).PostUnInstall)(::windows_core::Interface::as_raw(self)).ok()
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IMSCEPSetup> for ::windows::core::IUnknown {
+impl ::core::convert::From<IMSCEPSetup> for ::windows_core::IUnknown {
     fn from(value: IMSCEPSetup) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IMSCEPSetup> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IMSCEPSetup> for ::windows_core::IUnknown {
     fn from(value: &IMSCEPSetup) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IMSCEPSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IMSCEPSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IMSCEPSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IMSCEPSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -24775,15 +24775,15 @@ impl ::core::convert::From<&IMSCEPSetup> for super::super::System::Com::IDispatc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::System::Com::IDispatch> for IMSCEPSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::System::Com::IDispatch> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IMSCEPSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows::core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IMSCEPSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::System::Com::IDispatch> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IMSCEPSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -24807,52 +24807,52 @@ impl ::core::fmt::Debug for IMSCEPSetup {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-unsafe impl ::windows::core::Interface for IMSCEPSetup {
+unsafe impl ::windows_core::Interface for IMSCEPSetup {
     type Vtable = IMSCEPSetup_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4f7761bb_9f3b_4592_9ee0_9a73259c313e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4f7761bb_9f3b_4592_9ee0_9a73259c313e);
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMSCEPSetup_Vtbl {
     pub base__: super::super::System::Com::IDispatch_Vtbl,
-    pub MSCEPErrorId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut i32) -> ::windows::core::HRESULT,
+    pub MSCEPErrorId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub MSCEPErrorString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows::core::HRESULT,
+    pub MSCEPErrorString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     MSCEPErrorString: usize,
-    pub InitializeDefaults: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub InitializeDefaults: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetMSCEPSetupProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: MSCEPSetupProperty, pval: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub GetMSCEPSetupProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: MSCEPSetupProperty, pval: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetMSCEPSetupProperty: usize,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub SetMSCEPSetupProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: MSCEPSetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub SetMSCEPSetupProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: MSCEPSetupProperty, ppropertyvalue: *const super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetMSCEPSetupProperty: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub SetAccountInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows::core::HRESULT,
+    pub SetAccountInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetAccountInformation: usize,
-    pub IsMSCEPStoreEmpty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbempty: *mut i16) -> ::windows::core::HRESULT,
+    pub IsMSCEPStoreEmpty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbempty: *mut i16) -> ::windows_core::HRESULT,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetProviderNameList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bexchange: i16, pval: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub GetProviderNameList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bexchange: i16, pval: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetProviderNameList: usize,
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetKeyLengthList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bexchange: i16, bstrprovidername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pval: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT,
+    pub GetKeyLengthList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bexchange: i16, bstrprovidername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pval: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetKeyLengthList: usize,
-    pub Install: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub PreUnInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub PostUnInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub Install: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub PreUnInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub PostUnInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct INFORMATIONCARD_ASYMMETRIC_CRYPTO_PARAMETERS {
     pub keySize: i32,
-    pub keyExchangeAlgorithm: ::windows::core::PWSTR,
-    pub signatureAlgorithm: ::windows::core::PWSTR,
+    pub keyExchangeAlgorithm: ::windows_core::PWSTR,
+    pub signatureAlgorithm: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for INFORMATIONCARD_ASYMMETRIC_CRYPTO_PARAMETERS {}
 impl ::core::clone::Clone for INFORMATIONCARD_ASYMMETRIC_CRYPTO_PARAMETERS {
@@ -24865,12 +24865,12 @@ impl ::core::fmt::Debug for INFORMATIONCARD_ASYMMETRIC_CRYPTO_PARAMETERS {
         f.debug_struct("INFORMATIONCARD_ASYMMETRIC_CRYPTO_PARAMETERS").field("keySize", &self.keySize).field("keyExchangeAlgorithm", &self.keyExchangeAlgorithm).field("signatureAlgorithm", &self.signatureAlgorithm).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INFORMATIONCARD_ASYMMETRIC_CRYPTO_PARAMETERS {
+unsafe impl ::windows_core::Abi for INFORMATIONCARD_ASYMMETRIC_CRYPTO_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INFORMATIONCARD_ASYMMETRIC_CRYPTO_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFORMATIONCARD_ASYMMETRIC_CRYPTO_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFORMATIONCARD_ASYMMETRIC_CRYPTO_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INFORMATIONCARD_ASYMMETRIC_CRYPTO_PARAMETERS {}
@@ -24897,12 +24897,12 @@ impl ::core::fmt::Debug for INFORMATIONCARD_CRYPTO_HANDLE {
         f.debug_struct("INFORMATIONCARD_CRYPTO_HANDLE").field("type", &self.r#type).field("expiration", &self.expiration).field("cryptoParameters", &self.cryptoParameters).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INFORMATIONCARD_CRYPTO_HANDLE {
+unsafe impl ::windows_core::Abi for INFORMATIONCARD_CRYPTO_HANDLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INFORMATIONCARD_CRYPTO_HANDLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFORMATIONCARD_CRYPTO_HANDLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFORMATIONCARD_CRYPTO_HANDLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INFORMATIONCARD_CRYPTO_HANDLE {}
@@ -24933,13 +24933,13 @@ impl ::core::fmt::Debug for INFORMATIONCARD_HASH_CRYPTO_PARAMETERS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for INFORMATIONCARD_HASH_CRYPTO_PARAMETERS {
+unsafe impl ::windows_core::Abi for INFORMATIONCARD_HASH_CRYPTO_PARAMETERS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for INFORMATIONCARD_HASH_CRYPTO_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFORMATIONCARD_HASH_CRYPTO_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFORMATIONCARD_HASH_CRYPTO_PARAMETERS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -24968,12 +24968,12 @@ impl ::core::fmt::Debug for INFORMATIONCARD_SYMMETRIC_CRYPTO_PARAMETERS {
         f.debug_struct("INFORMATIONCARD_SYMMETRIC_CRYPTO_PARAMETERS").field("keySize", &self.keySize).field("blockSize", &self.blockSize).field("feedbackSize", &self.feedbackSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INFORMATIONCARD_SYMMETRIC_CRYPTO_PARAMETERS {
+unsafe impl ::windows_core::Abi for INFORMATIONCARD_SYMMETRIC_CRYPTO_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INFORMATIONCARD_SYMMETRIC_CRYPTO_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFORMATIONCARD_SYMMETRIC_CRYPTO_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFORMATIONCARD_SYMMETRIC_CRYPTO_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INFORMATIONCARD_SYMMETRIC_CRYPTO_PARAMETERS {}
@@ -25006,13 +25006,13 @@ impl ::core::fmt::Debug for INFORMATIONCARD_TRANSFORM_CRYPTO_PARAMETERS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for INFORMATIONCARD_TRANSFORM_CRYPTO_PARAMETERS {
+unsafe impl ::windows_core::Abi for INFORMATIONCARD_TRANSFORM_CRYPTO_PARAMETERS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for INFORMATIONCARD_TRANSFORM_CRYPTO_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFORMATIONCARD_TRANSFORM_CRYPTO_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFORMATIONCARD_TRANSFORM_CRYPTO_PARAMETERS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -25027,12 +25027,12 @@ impl ::core::default::Default for INFORMATIONCARD_TRANSFORM_CRYPTO_PARAMETERS {
 pub const INTERNATIONAL_USAGE: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn ImportInformationCard<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(filename: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn ImportInformationCard<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(filename: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ImportInformationCard(filename: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn ImportInformationCard(filename: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         ImportInformationCard(filename.into_param().abi()).ok()
     }
@@ -25091,8 +25091,8 @@ pub const KEY_LENGTH_MASK: u32 = 4294901760u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct KEY_TYPE_SUBTYPE {
     pub dwKeySpec: u32,
-    pub Type: ::windows::core::GUID,
-    pub Subtype: ::windows::core::GUID,
+    pub Type: ::windows_core::GUID,
+    pub Subtype: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for KEY_TYPE_SUBTYPE {}
 impl ::core::clone::Clone for KEY_TYPE_SUBTYPE {
@@ -25105,12 +25105,12 @@ impl ::core::fmt::Debug for KEY_TYPE_SUBTYPE {
         f.debug_struct("KEY_TYPE_SUBTYPE").field("dwKeySpec", &self.dwKeySpec).field("Type", &self.Type).field("Subtype", &self.Subtype).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KEY_TYPE_SUBTYPE {
+unsafe impl ::windows_core::Abi for KEY_TYPE_SUBTYPE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KEY_TYPE_SUBTYPE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KEY_TYPE_SUBTYPE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KEY_TYPE_SUBTYPE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KEY_TYPE_SUBTYPE {}
@@ -25258,7 +25258,7 @@ impl ::core::default::Default for MSCEPSetupProperty {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MSCEPSetupProperty {
+unsafe impl ::windows_core::Abi for MSCEPSetupProperty {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MSCEPSetupProperty {
@@ -25354,12 +25354,12 @@ pub const MS_STRONG_PROV_A: &str = "Microsoft Strong Cryptographic Provider";
 pub const MS_STRONG_PROV_W: &str = "Microsoft Strong Cryptographic Provider";
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn ManageCardSpace() -> ::windows::core::Result<()> {
+pub unsafe fn ManageCardSpace() -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ManageCardSpace() -> ::windows::core::HRESULT;
+            fn ManageCardSpace() -> ::windows_core::HRESULT;
         }
         ManageCardSpace().ok()
     }
@@ -25467,7 +25467,7 @@ impl ::core::default::Default for NCRYPT_ALGORITHM_NAME_CLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_ALGORITHM_NAME_CLASS {
+unsafe impl ::windows_core::Abi for NCRYPT_ALGORITHM_NAME_CLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NCRYPT_ALGORITHM_NAME_CLASS {
@@ -25495,12 +25495,12 @@ impl ::core::fmt::Debug for NCRYPT_ALLOC_PARA {
         f.debug_struct("NCRYPT_ALLOC_PARA").field("cbSize", &self.cbSize).field("pfnAlloc", &self.pfnAlloc.map(|f| f as usize)).field("pfnFree", &self.pfnFree.map(|f| f as usize)).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_ALLOC_PARA {
+unsafe impl ::windows_core::Abi for NCRYPT_ALLOC_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_ALLOC_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_ALLOC_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_ALLOC_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_ALLOC_PARA {}
@@ -25580,12 +25580,12 @@ impl ::core::fmt::Debug for NCRYPT_CIPHER_PADDING_INFO {
         f.debug_struct("NCRYPT_CIPHER_PADDING_INFO").field("cbSize", &self.cbSize).field("dwFlags", &self.dwFlags).field("pbIV", &self.pbIV).field("cbIV", &self.cbIV).field("pbOtherInfo", &self.pbOtherInfo).field("cbOtherInfo", &self.cbOtherInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_CIPHER_PADDING_INFO {
+unsafe impl ::windows_core::Abi for NCRYPT_CIPHER_PADDING_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_CIPHER_PADDING_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_CIPHER_PADDING_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_CIPHER_PADDING_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_CIPHER_PADDING_INFO {}
@@ -25676,12 +25676,12 @@ impl ::core::fmt::Debug for NCRYPT_EXPORTED_ISOLATED_KEY_ENVELOPE {
         f.debug_struct("NCRYPT_EXPORTED_ISOLATED_KEY_ENVELOPE").field("Header", &self.Header).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_EXPORTED_ISOLATED_KEY_ENVELOPE {
+unsafe impl ::windows_core::Abi for NCRYPT_EXPORTED_ISOLATED_KEY_ENVELOPE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_EXPORTED_ISOLATED_KEY_ENVELOPE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_EXPORTED_ISOLATED_KEY_ENVELOPE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_EXPORTED_ISOLATED_KEY_ENVELOPE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_EXPORTED_ISOLATED_KEY_ENVELOPE {}
@@ -25713,12 +25713,12 @@ impl ::core::fmt::Debug for NCRYPT_EXPORTED_ISOLATED_KEY_HEADER {
         f.debug_struct("NCRYPT_EXPORTED_ISOLATED_KEY_HEADER").field("Version", &self.Version).field("KeyUsage", &self.KeyUsage).field("_bitfield", &self._bitfield).field("cbAlgName", &self.cbAlgName).field("cbNonce", &self.cbNonce).field("cbAuthTag", &self.cbAuthTag).field("cbWrappingKey", &self.cbWrappingKey).field("cbIsolatedKey", &self.cbIsolatedKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_EXPORTED_ISOLATED_KEY_HEADER {
+unsafe impl ::windows_core::Abi for NCRYPT_EXPORTED_ISOLATED_KEY_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_EXPORTED_ISOLATED_KEY_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_EXPORTED_ISOLATED_KEY_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_EXPORTED_ISOLATED_KEY_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_EXPORTED_ISOLATED_KEY_HEADER {}
@@ -25786,7 +25786,7 @@ impl ::core::default::Default for NCRYPT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_FLAGS {
+unsafe impl ::windows_core::Abi for NCRYPT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NCRYPT_FLAGS {
@@ -25846,7 +25846,7 @@ impl ::core::fmt::Debug for NCRYPT_HANDLE {
         f.debug_tuple("NCRYPT_HANDLE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_HANDLE {
+unsafe impl ::windows_core::Abi for NCRYPT_HANDLE {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -25873,7 +25873,7 @@ impl ::core::fmt::Debug for NCRYPT_HASH_HANDLE {
         f.debug_tuple("NCRYPT_HASH_HANDLE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_HASH_HANDLE {
+unsafe impl ::windows_core::Abi for NCRYPT_HASH_HANDLE {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -25912,12 +25912,12 @@ impl ::core::fmt::Debug for NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES {
         f.debug_struct("NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES").field("Version", &self.Version).field("Flags", &self.Flags).field("cbPublicKeyBlob", &self.cbPublicKeyBlob).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES {
+unsafe impl ::windows_core::Abi for NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES {}
@@ -25961,12 +25961,12 @@ impl ::core::fmt::Debug for NCRYPT_KEY_ACCESS_POLICY_BLOB {
         f.debug_struct("NCRYPT_KEY_ACCESS_POLICY_BLOB").field("dwVersion", &self.dwVersion).field("dwPolicyFlags", &self.dwPolicyFlags).field("cbUserSid", &self.cbUserSid).field("cbApplicationSid", &self.cbApplicationSid).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_KEY_ACCESS_POLICY_BLOB {
+unsafe impl ::windows_core::Abi for NCRYPT_KEY_ACCESS_POLICY_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_KEY_ACCESS_POLICY_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_KEY_ACCESS_POLICY_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_KEY_ACCESS_POLICY_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_KEY_ACCESS_POLICY_BLOB {}
@@ -26001,12 +26001,12 @@ impl ::core::fmt::Debug for NCRYPT_KEY_ATTEST_PADDING_INFO {
         f.debug_struct("NCRYPT_KEY_ATTEST_PADDING_INFO").field("magic", &self.magic).field("pbKeyBlob", &self.pbKeyBlob).field("cbKeyBlob", &self.cbKeyBlob).field("pbKeyAuth", &self.pbKeyAuth).field("cbKeyAuth", &self.cbKeyAuth).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_KEY_ATTEST_PADDING_INFO {
+unsafe impl ::windows_core::Abi for NCRYPT_KEY_ATTEST_PADDING_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_KEY_ATTEST_PADDING_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_KEY_ATTEST_PADDING_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_KEY_ATTEST_PADDING_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_KEY_ATTEST_PADDING_INFO {}
@@ -26034,12 +26034,12 @@ impl ::core::fmt::Debug for NCRYPT_KEY_BLOB_HEADER {
         f.debug_struct("NCRYPT_KEY_BLOB_HEADER").field("cbSize", &self.cbSize).field("dwMagic", &self.dwMagic).field("cbAlgName", &self.cbAlgName).field("cbKeyData", &self.cbKeyData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_KEY_BLOB_HEADER {
+unsafe impl ::windows_core::Abi for NCRYPT_KEY_BLOB_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_KEY_BLOB_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_KEY_BLOB_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_KEY_BLOB_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_KEY_BLOB_HEADER {}
@@ -26078,7 +26078,7 @@ impl ::core::fmt::Debug for NCRYPT_KEY_HANDLE {
         f.debug_tuple("NCRYPT_KEY_HANDLE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_KEY_HANDLE {
+unsafe impl ::windows_core::Abi for NCRYPT_KEY_HANDLE {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -26166,7 +26166,7 @@ impl ::core::default::Default for NCRYPT_OPERATION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_OPERATION {
+unsafe impl ::windows_core::Abi for NCRYPT_OPERATION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NCRYPT_OPERATION {
@@ -26256,12 +26256,12 @@ impl ::core::fmt::Debug for NCRYPT_PCP_HMAC_AUTH_SIGNATURE_INFO {
         f.debug_struct("NCRYPT_PCP_HMAC_AUTH_SIGNATURE_INFO").field("dwVersion", &self.dwVersion).field("iExpiration", &self.iExpiration).field("pabNonce", &self.pabNonce).field("pabPolicyRef", &self.pabPolicyRef).field("pabHMAC", &self.pabHMAC).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_PCP_HMAC_AUTH_SIGNATURE_INFO {
+unsafe impl ::windows_core::Abi for NCRYPT_PCP_HMAC_AUTH_SIGNATURE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_PCP_HMAC_AUTH_SIGNATURE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PCP_HMAC_AUTH_SIGNATURE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PCP_HMAC_AUTH_SIGNATURE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_PCP_HMAC_AUTH_SIGNATURE_INFO {}
@@ -26329,12 +26329,12 @@ impl ::core::fmt::Debug for NCRYPT_PCP_RAW_POLICYDIGEST {
         f.debug_struct("NCRYPT_PCP_RAW_POLICYDIGEST").field("dwVersion", &self.dwVersion).field("cbDigest", &self.cbDigest).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_PCP_RAW_POLICYDIGEST {
+unsafe impl ::windows_core::Abi for NCRYPT_PCP_RAW_POLICYDIGEST {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_PCP_RAW_POLICYDIGEST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PCP_RAW_POLICYDIGEST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PCP_RAW_POLICYDIGEST>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_PCP_RAW_POLICYDIGEST {}
@@ -26394,12 +26394,12 @@ impl ::core::fmt::Debug for NCRYPT_PCP_TPM_FW_VERSION_INFO {
         f.debug_struct("NCRYPT_PCP_TPM_FW_VERSION_INFO").field("major1", &self.major1).field("major2", &self.major2).field("minor1", &self.minor1).field("minor2", &self.minor2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_PCP_TPM_FW_VERSION_INFO {
+unsafe impl ::windows_core::Abi for NCRYPT_PCP_TPM_FW_VERSION_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_PCP_TPM_FW_VERSION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PCP_TPM_FW_VERSION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PCP_TPM_FW_VERSION_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_PCP_TPM_FW_VERSION_INFO {}
@@ -26439,12 +26439,12 @@ impl ::core::fmt::Debug for NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT {
         f.debug_struct("NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT").field("Magic", &self.Magic).field("Version", &self.Version).field("HeaderSize", &self.HeaderSize).field("cbCertifyInfo", &self.cbCertifyInfo).field("cbSignature", &self.cbSignature).field("cbTpmPublic", &self.cbTpmPublic).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT {
+unsafe impl ::windows_core::Abi for NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT {}
@@ -26506,12 +26506,12 @@ impl ::core::fmt::Debug for NCRYPT_PLATFORM_ATTEST_PADDING_INFO {
         f.debug_struct("NCRYPT_PLATFORM_ATTEST_PADDING_INFO").field("magic", &self.magic).field("pcrMask", &self.pcrMask).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_PLATFORM_ATTEST_PADDING_INFO {
+unsafe impl ::windows_core::Abi for NCRYPT_PLATFORM_ATTEST_PADDING_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_PLATFORM_ATTEST_PADDING_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PLATFORM_ATTEST_PADDING_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PLATFORM_ATTEST_PADDING_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_PLATFORM_ATTEST_PADDING_INFO {}
@@ -26550,13 +26550,13 @@ impl ::core::fmt::Debug for NCRYPT_PROTECT_STREAM_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for NCRYPT_PROTECT_STREAM_INFO {
+unsafe impl ::windows_core::Abi for NCRYPT_PROTECT_STREAM_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NCRYPT_PROTECT_STREAM_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PROTECT_STREAM_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PROTECT_STREAM_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -26589,13 +26589,13 @@ impl ::core::fmt::Debug for NCRYPT_PROTECT_STREAM_INFO_EX {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for NCRYPT_PROTECT_STREAM_INFO_EX {
+unsafe impl ::windows_core::Abi for NCRYPT_PROTECT_STREAM_INFO_EX {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NCRYPT_PROTECT_STREAM_INFO_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PROTECT_STREAM_INFO_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_PROTECT_STREAM_INFO_EX>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -26634,7 +26634,7 @@ impl ::core::fmt::Debug for NCRYPT_PROV_HANDLE {
         f.debug_tuple("NCRYPT_PROV_HANDLE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_PROV_HANDLE {
+unsafe impl ::windows_core::Abi for NCRYPT_PROV_HANDLE {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -26687,7 +26687,7 @@ impl ::core::fmt::Debug for NCRYPT_SECRET_HANDLE {
         f.debug_tuple("NCRYPT_SECRET_HANDLE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_SECRET_HANDLE {
+unsafe impl ::windows_core::Abi for NCRYPT_SECRET_HANDLE {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -26731,12 +26731,12 @@ impl ::core::fmt::Debug for NCRYPT_SUPPORTED_LENGTHS {
         f.debug_struct("NCRYPT_SUPPORTED_LENGTHS").field("dwMinLength", &self.dwMinLength).field("dwMaxLength", &self.dwMaxLength).field("dwIncrement", &self.dwIncrement).field("dwDefaultLength", &self.dwDefaultLength).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_SUPPORTED_LENGTHS {
+unsafe impl ::windows_core::Abi for NCRYPT_SUPPORTED_LENGTHS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_SUPPORTED_LENGTHS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_SUPPORTED_LENGTHS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_SUPPORTED_LENGTHS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_SUPPORTED_LENGTHS {}
@@ -26769,12 +26769,12 @@ impl ::core::fmt::Debug for NCRYPT_TPM_LOADABLE_KEY_BLOB_HEADER {
         f.debug_struct("NCRYPT_TPM_LOADABLE_KEY_BLOB_HEADER").field("magic", &self.magic).field("cbHeader", &self.cbHeader).field("cbPublic", &self.cbPublic).field("cbPrivate", &self.cbPrivate).field("cbName", &self.cbName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_TPM_LOADABLE_KEY_BLOB_HEADER {
+unsafe impl ::windows_core::Abi for NCRYPT_TPM_LOADABLE_KEY_BLOB_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_TPM_LOADABLE_KEY_BLOB_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_TPM_LOADABLE_KEY_BLOB_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_TPM_LOADABLE_KEY_BLOB_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_TPM_LOADABLE_KEY_BLOB_HEADER {}
@@ -26808,12 +26808,12 @@ impl ::core::fmt::Debug for NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT {
         f.debug_struct("NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT").field("Magic", &self.Magic).field("Version", &self.Version).field("pcrAlg", &self.pcrAlg).field("cbSignature", &self.cbSignature).field("cbQuote", &self.cbQuote).field("cbPcrs", &self.cbPcrs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT {
+unsafe impl ::windows_core::Abi for NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT {}
@@ -26845,9 +26845,9 @@ pub const NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG: u32 = 2u32;
 pub struct NCRYPT_UI_POLICY {
     pub dwVersion: u32,
     pub dwFlags: u32,
-    pub pszCreationTitle: ::windows::core::PCWSTR,
-    pub pszFriendlyName: ::windows::core::PCWSTR,
-    pub pszDescription: ::windows::core::PCWSTR,
+    pub pszCreationTitle: ::windows_core::PCWSTR,
+    pub pszFriendlyName: ::windows_core::PCWSTR,
+    pub pszDescription: ::windows_core::PCWSTR,
 }
 impl ::core::marker::Copy for NCRYPT_UI_POLICY {}
 impl ::core::clone::Clone for NCRYPT_UI_POLICY {
@@ -26860,12 +26860,12 @@ impl ::core::fmt::Debug for NCRYPT_UI_POLICY {
         f.debug_struct("NCRYPT_UI_POLICY").field("dwVersion", &self.dwVersion).field("dwFlags", &self.dwFlags).field("pszCreationTitle", &self.pszCreationTitle).field("pszFriendlyName", &self.pszFriendlyName).field("pszDescription", &self.pszDescription).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_UI_POLICY {
+unsafe impl ::windows_core::Abi for NCRYPT_UI_POLICY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_UI_POLICY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_UI_POLICY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_UI_POLICY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_UI_POLICY {}
@@ -26919,12 +26919,12 @@ impl ::core::fmt::Debug for NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS {
         f.debug_struct("NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS").field("Version", &self.Version).field("TrustletId", &self.TrustletId).field("MinSvn", &self.MinSvn).field("FlagsMask", &self.FlagsMask).field("FlagsExpected", &self.FlagsExpected).field("_bitfield", &self._bitfield).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS {
+unsafe impl ::windows_core::Abi for NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS {}
@@ -26957,12 +26957,12 @@ impl ::core::fmt::Debug for NCRYPT_VSM_KEY_ATTESTATION_STATEMENT {
         f.debug_struct("NCRYPT_VSM_KEY_ATTESTATION_STATEMENT").field("Magic", &self.Magic).field("Version", &self.Version).field("cbSignature", &self.cbSignature).field("cbReport", &self.cbReport).field("cbAttributes", &self.cbAttributes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCRYPT_VSM_KEY_ATTESTATION_STATEMENT {
+unsafe impl ::windows_core::Abi for NCRYPT_VSM_KEY_ATTESTATION_STATEMENT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCRYPT_VSM_KEY_ATTESTATION_STATEMENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_VSM_KEY_ATTESTATION_STATEMENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCRYPT_VSM_KEY_ATTESTATION_STATEMENT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCRYPT_VSM_KEY_ATTESTATION_STATEMENT {}
@@ -26980,7 +26980,7 @@ pub const NCRYPT_WINDOW_HANDLE_PROPERTY: &str = "HWND Handle";
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct NCryptAlgorithmName {
-    pub pszName: ::windows::core::PWSTR,
+    pub pszName: ::windows_core::PWSTR,
     pub dwClass: NCRYPT_ALGORITHM_NAME_CLASS,
     pub dwAlgOperations: NCRYPT_OPERATION,
     pub dwFlags: u32,
@@ -26996,12 +26996,12 @@ impl ::core::fmt::Debug for NCryptAlgorithmName {
         f.debug_struct("NCryptAlgorithmName").field("pszName", &self.pszName).field("dwClass", &self.dwClass).field("dwAlgOperations", &self.dwAlgOperations).field("dwFlags", &self.dwFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCryptAlgorithmName {
+unsafe impl ::windows_core::Abi for NCryptAlgorithmName {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCryptAlgorithmName {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCryptAlgorithmName>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCryptAlgorithmName>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCryptAlgorithmName {}
@@ -27012,12 +27012,12 @@ impl ::core::default::Default for NCryptAlgorithmName {
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptCloseProtectionDescriptor<'a, Param0: ::windows::core::IntoParam<'a, super::NCRYPT_DESCRIPTOR_HANDLE>>(hdescriptor: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptCloseProtectionDescriptor<'a, Param0: ::windows_core::IntoParam<'a, super::NCRYPT_DESCRIPTOR_HANDLE>>(hdescriptor: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptCloseProtectionDescriptor(hdescriptor: super::NCRYPT_DESCRIPTOR_HANDLE) -> ::windows::core::HRESULT;
+            fn NCryptCloseProtectionDescriptor(hdescriptor: super::NCRYPT_DESCRIPTOR_HANDLE) -> ::windows_core::HRESULT;
         }
         NCryptCloseProtectionDescriptor(hdescriptor.into_param().abi()).ok()
     }
@@ -27026,12 +27026,12 @@ pub unsafe fn NCryptCloseProtectionDescriptor<'a, Param0: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptCreateClaim<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>, Param1: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hsubjectkey: Param0, hauthoritykey: Param1, dwclaimtype: u32, pparameterlist: *const BCryptBufferDesc, pbclaimblob: *mut u8, cbclaimblob: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptCreateClaim<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>, Param1: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hsubjectkey: Param0, hauthoritykey: Param1, dwclaimtype: u32, pparameterlist: *const BCryptBufferDesc, pbclaimblob: *mut u8, cbclaimblob: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptCreateClaim(hsubjectkey: NCRYPT_KEY_HANDLE, hauthoritykey: NCRYPT_KEY_HANDLE, dwclaimtype: u32, pparameterlist: *const BCryptBufferDesc, pbclaimblob: *mut u8, cbclaimblob: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
+            fn NCryptCreateClaim(hsubjectkey: NCRYPT_KEY_HANDLE, hauthoritykey: NCRYPT_KEY_HANDLE, dwclaimtype: u32, pparameterlist: *const BCryptBufferDesc, pbclaimblob: *mut u8, cbclaimblob: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows_core::HRESULT;
         }
         NCryptCreateClaim(hsubjectkey.into_param().abi(), hauthoritykey.into_param().abi(), ::core::mem::transmute(dwclaimtype), ::core::mem::transmute(pparameterlist), ::core::mem::transmute(pbclaimblob), ::core::mem::transmute(cbclaimblob), ::core::mem::transmute(pcbresult), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27040,12 +27040,12 @@ pub unsafe fn NCryptCreateClaim<'a, Param0: ::windows::core::IntoParam<'a, NCRYP
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptCreatePersistedKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_PROV_HANDLE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hprovider: Param0, phkey: *mut NCRYPT_KEY_HANDLE, pszalgid: Param2, pszkeyname: Param3, dwlegacykeyspec: CERT_KEY_SPEC, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptCreatePersistedKey<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_PROV_HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprovider: Param0, phkey: *mut NCRYPT_KEY_HANDLE, pszalgid: Param2, pszkeyname: Param3, dwlegacykeyspec: CERT_KEY_SPEC, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptCreatePersistedKey(hprovider: NCRYPT_PROV_HANDLE, phkey: *mut NCRYPT_KEY_HANDLE, pszalgid: ::windows::core::PCWSTR, pszkeyname: ::windows::core::PCWSTR, dwlegacykeyspec: CERT_KEY_SPEC, dwflags: NCRYPT_FLAGS) -> ::windows::core::HRESULT;
+            fn NCryptCreatePersistedKey(hprovider: NCRYPT_PROV_HANDLE, phkey: *mut NCRYPT_KEY_HANDLE, pszalgid: ::windows_core::PCWSTR, pszkeyname: ::windows_core::PCWSTR, dwlegacykeyspec: CERT_KEY_SPEC, dwflags: NCRYPT_FLAGS) -> ::windows_core::HRESULT;
         }
         NCryptCreatePersistedKey(hprovider.into_param().abi(), ::core::mem::transmute(phkey), pszalgid.into_param().abi(), pszkeyname.into_param().abi(), ::core::mem::transmute(dwlegacykeyspec), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27054,12 +27054,12 @@ pub unsafe fn NCryptCreatePersistedKey<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptCreateProtectionDescriptor<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszdescriptorstring: Param0, dwflags: u32) -> ::windows::core::Result<super::NCRYPT_DESCRIPTOR_HANDLE> {
+pub unsafe fn NCryptCreateProtectionDescriptor<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszdescriptorstring: Param0, dwflags: u32) -> ::windows_core::Result<super::NCRYPT_DESCRIPTOR_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptCreateProtectionDescriptor(pwszdescriptorstring: ::windows::core::PCWSTR, dwflags: u32, phdescriptor: *mut super::NCRYPT_DESCRIPTOR_HANDLE) -> ::windows::core::HRESULT;
+            fn NCryptCreateProtectionDescriptor(pwszdescriptorstring: ::windows_core::PCWSTR, dwflags: u32, phdescriptor: *mut super::NCRYPT_DESCRIPTOR_HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::NCRYPT_DESCRIPTOR_HANDLE>::zeroed();
         NCryptCreateProtectionDescriptor(pwszdescriptorstring.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::NCRYPT_DESCRIPTOR_HANDLE>(result__)
@@ -27069,12 +27069,12 @@ pub unsafe fn NCryptCreateProtectionDescriptor<'a, Param0: ::windows::core::Into
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptDecrypt<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, pbinput: *const u8, cbinput: u32, ppaddinginfo: *const ::core::ffi::c_void, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptDecrypt<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, pbinput: *const u8, cbinput: u32, ppaddinginfo: *const ::core::ffi::c_void, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptDecrypt(hkey: NCRYPT_KEY_HANDLE, pbinput: *const u8, cbinput: u32, ppaddinginfo: *const ::core::ffi::c_void, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::HRESULT;
+            fn NCryptDecrypt(hkey: NCRYPT_KEY_HANDLE, pbinput: *const u8, cbinput: u32, ppaddinginfo: *const ::core::ffi::c_void, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::HRESULT;
         }
         NCryptDecrypt(hkey.into_param().abi(), ::core::mem::transmute(pbinput), ::core::mem::transmute(cbinput), ::core::mem::transmute(ppaddinginfo), ::core::mem::transmute(pboutput), ::core::mem::transmute(cboutput), ::core::mem::transmute(pcbresult), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27083,12 +27083,12 @@ pub unsafe fn NCryptDecrypt<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KE
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptDeleteKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptDeleteKey<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptDeleteKey(hkey: NCRYPT_KEY_HANDLE, dwflags: u32) -> ::windows::core::HRESULT;
+            fn NCryptDeleteKey(hkey: NCRYPT_KEY_HANDLE, dwflags: u32) -> ::windows_core::HRESULT;
         }
         NCryptDeleteKey(hkey.into_param().abi(), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27097,12 +27097,12 @@ pub unsafe fn NCryptDeleteKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptDeriveKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_SECRET_HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hsharedsecret: Param0, pwszkdf: Param1, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptDeriveKey<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_SECRET_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hsharedsecret: Param0, pwszkdf: Param1, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptDeriveKey(hsharedsecret: NCRYPT_SECRET_HANDLE, pwszkdf: ::windows::core::PCWSTR, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
+            fn NCryptDeriveKey(hsharedsecret: NCRYPT_SECRET_HANDLE, pwszkdf: ::windows_core::PCWSTR, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows_core::HRESULT;
         }
         NCryptDeriveKey(hsharedsecret.into_param().abi(), pwszkdf.into_param().abi(), ::core::mem::transmute(pparameterlist), ::core::mem::transmute(pbderivedkey), ::core::mem::transmute(cbderivedkey), ::core::mem::transmute(pcbresult), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27111,12 +27111,12 @@ pub unsafe fn NCryptDeriveKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptEncrypt<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, pbinput: *const u8, cbinput: u32, ppaddinginfo: *const ::core::ffi::c_void, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptEncrypt<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, pbinput: *const u8, cbinput: u32, ppaddinginfo: *const ::core::ffi::c_void, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptEncrypt(hkey: NCRYPT_KEY_HANDLE, pbinput: *const u8, cbinput: u32, ppaddinginfo: *const ::core::ffi::c_void, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::HRESULT;
+            fn NCryptEncrypt(hkey: NCRYPT_KEY_HANDLE, pbinput: *const u8, cbinput: u32, ppaddinginfo: *const ::core::ffi::c_void, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::HRESULT;
         }
         NCryptEncrypt(hkey.into_param().abi(), ::core::mem::transmute(pbinput), ::core::mem::transmute(cbinput), ::core::mem::transmute(ppaddinginfo), ::core::mem::transmute(pboutput), ::core::mem::transmute(cboutput), ::core::mem::transmute(pcbresult), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27125,12 +27125,12 @@ pub unsafe fn NCryptEncrypt<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KE
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptEnumAlgorithms<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_PROV_HANDLE>>(hprovider: Param0, dwalgoperations: NCRYPT_OPERATION, pdwalgcount: *mut u32, ppalglist: *mut *mut NCryptAlgorithmName, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptEnumAlgorithms<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_PROV_HANDLE>>(hprovider: Param0, dwalgoperations: NCRYPT_OPERATION, pdwalgcount: *mut u32, ppalglist: *mut *mut NCryptAlgorithmName, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptEnumAlgorithms(hprovider: NCRYPT_PROV_HANDLE, dwalgoperations: NCRYPT_OPERATION, pdwalgcount: *mut u32, ppalglist: *mut *mut NCryptAlgorithmName, dwflags: u32) -> ::windows::core::HRESULT;
+            fn NCryptEnumAlgorithms(hprovider: NCRYPT_PROV_HANDLE, dwalgoperations: NCRYPT_OPERATION, pdwalgcount: *mut u32, ppalglist: *mut *mut NCryptAlgorithmName, dwflags: u32) -> ::windows_core::HRESULT;
         }
         NCryptEnumAlgorithms(hprovider.into_param().abi(), ::core::mem::transmute(dwalgoperations), ::core::mem::transmute(pdwalgcount), ::core::mem::transmute(ppalglist), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27139,12 +27139,12 @@ pub unsafe fn NCryptEnumAlgorithms<'a, Param0: ::windows::core::IntoParam<'a, NC
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptEnumKeys<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_PROV_HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hprovider: Param0, pszscope: Param1, ppkeyname: *mut *mut NCryptKeyName, ppenumstate: *mut *mut ::core::ffi::c_void, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptEnumKeys<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_PROV_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprovider: Param0, pszscope: Param1, ppkeyname: *mut *mut NCryptKeyName, ppenumstate: *mut *mut ::core::ffi::c_void, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptEnumKeys(hprovider: NCRYPT_PROV_HANDLE, pszscope: ::windows::core::PCWSTR, ppkeyname: *mut *mut NCryptKeyName, ppenumstate: *mut *mut ::core::ffi::c_void, dwflags: NCRYPT_FLAGS) -> ::windows::core::HRESULT;
+            fn NCryptEnumKeys(hprovider: NCRYPT_PROV_HANDLE, pszscope: ::windows_core::PCWSTR, ppkeyname: *mut *mut NCryptKeyName, ppenumstate: *mut *mut ::core::ffi::c_void, dwflags: NCRYPT_FLAGS) -> ::windows_core::HRESULT;
         }
         NCryptEnumKeys(hprovider.into_param().abi(), pszscope.into_param().abi(), ::core::mem::transmute(ppkeyname), ::core::mem::transmute(ppenumstate), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27153,12 +27153,12 @@ pub unsafe fn NCryptEnumKeys<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_P
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptEnumStorageProviders(pdwprovidercount: *mut u32, ppproviderlist: *mut *mut NCryptProviderName, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptEnumStorageProviders(pdwprovidercount: *mut u32, ppproviderlist: *mut *mut NCryptProviderName, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptEnumStorageProviders(pdwprovidercount: *mut u32, ppproviderlist: *mut *mut NCryptProviderName, dwflags: u32) -> ::windows::core::HRESULT;
+            fn NCryptEnumStorageProviders(pdwprovidercount: *mut u32, ppproviderlist: *mut *mut NCryptProviderName, dwflags: u32) -> ::windows_core::HRESULT;
         }
         NCryptEnumStorageProviders(::core::mem::transmute(pdwprovidercount), ::core::mem::transmute(ppproviderlist), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27167,12 +27167,12 @@ pub unsafe fn NCryptEnumStorageProviders(pdwprovidercount: *mut u32, ppproviderl
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptExportKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>, Param1: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hkey: Param0, hexportkey: Param1, pszblobtype: Param2, pparameterlist: *const BCryptBufferDesc, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptExportKey<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>, Param1: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, hexportkey: Param1, pszblobtype: Param2, pparameterlist: *const BCryptBufferDesc, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptExportKey(hkey: NCRYPT_KEY_HANDLE, hexportkey: NCRYPT_KEY_HANDLE, pszblobtype: ::windows::core::PCWSTR, pparameterlist: *const BCryptBufferDesc, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::HRESULT;
+            fn NCryptExportKey(hkey: NCRYPT_KEY_HANDLE, hexportkey: NCRYPT_KEY_HANDLE, pszblobtype: ::windows_core::PCWSTR, pparameterlist: *const BCryptBufferDesc, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::HRESULT;
         }
         NCryptExportKey(hkey.into_param().abi(), hexportkey.into_param().abi(), pszblobtype.into_param().abi(), ::core::mem::transmute(pparameterlist), ::core::mem::transmute(pboutput), ::core::mem::transmute(cboutput), ::core::mem::transmute(pcbresult), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27181,12 +27181,12 @@ pub unsafe fn NCryptExportKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptFinalizeKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptFinalizeKey<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptFinalizeKey(hkey: NCRYPT_KEY_HANDLE, dwflags: NCRYPT_FLAGS) -> ::windows::core::HRESULT;
+            fn NCryptFinalizeKey(hkey: NCRYPT_KEY_HANDLE, dwflags: NCRYPT_FLAGS) -> ::windows_core::HRESULT;
         }
         NCryptFinalizeKey(hkey.into_param().abi(), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27195,12 +27195,12 @@ pub unsafe fn NCryptFinalizeKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYP
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptFreeBuffer(pvinput: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptFreeBuffer(pvinput: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptFreeBuffer(pvinput: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn NCryptFreeBuffer(pvinput: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         NCryptFreeBuffer(::core::mem::transmute(pvinput)).ok()
     }
@@ -27209,12 +27209,12 @@ pub unsafe fn NCryptFreeBuffer(pvinput: *mut ::core::ffi::c_void) -> ::windows::
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptFreeObject<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_HANDLE>>(hobject: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptFreeObject<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_HANDLE>>(hobject: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptFreeObject(hobject: NCRYPT_HANDLE) -> ::windows::core::HRESULT;
+            fn NCryptFreeObject(hobject: NCRYPT_HANDLE) -> ::windows_core::HRESULT;
         }
         NCryptFreeObject(hobject.into_param().abi()).ok()
     }
@@ -27223,12 +27223,12 @@ pub unsafe fn NCryptFreeObject<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptGetProperty<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hobject: Param0, pszproperty: Param1, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: super::OBJECT_SECURITY_INFORMATION) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptGetProperty<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hobject: Param0, pszproperty: Param1, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: super::OBJECT_SECURITY_INFORMATION) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptGetProperty(hobject: NCRYPT_HANDLE, pszproperty: ::windows::core::PCWSTR, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: super::OBJECT_SECURITY_INFORMATION) -> ::windows::core::HRESULT;
+            fn NCryptGetProperty(hobject: NCRYPT_HANDLE, pszproperty: ::windows_core::PCWSTR, pboutput: *mut u8, cboutput: u32, pcbresult: *mut u32, dwflags: super::OBJECT_SECURITY_INFORMATION) -> ::windows_core::HRESULT;
         }
         NCryptGetProperty(hobject.into_param().abi(), pszproperty.into_param().abi(), ::core::mem::transmute(pboutput), ::core::mem::transmute(cboutput), ::core::mem::transmute(pcbresult), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27237,12 +27237,12 @@ pub unsafe fn NCryptGetProperty<'a, Param0: ::windows::core::IntoParam<'a, NCRYP
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptGetProtectionDescriptorInfo<'a, Param0: ::windows::core::IntoParam<'a, super::NCRYPT_DESCRIPTOR_HANDLE>>(hdescriptor: Param0, pmempara: *const NCRYPT_ALLOC_PARA, dwinfotype: u32, ppvinfo: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptGetProtectionDescriptorInfo<'a, Param0: ::windows_core::IntoParam<'a, super::NCRYPT_DESCRIPTOR_HANDLE>>(hdescriptor: Param0, pmempara: *const NCRYPT_ALLOC_PARA, dwinfotype: u32, ppvinfo: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptGetProtectionDescriptorInfo(hdescriptor: super::NCRYPT_DESCRIPTOR_HANDLE, pmempara: *const NCRYPT_ALLOC_PARA, dwinfotype: u32, ppvinfo: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn NCryptGetProtectionDescriptorInfo(hdescriptor: super::NCRYPT_DESCRIPTOR_HANDLE, pmempara: *const NCRYPT_ALLOC_PARA, dwinfotype: u32, ppvinfo: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         NCryptGetProtectionDescriptorInfo(hdescriptor.into_param().abi(), ::core::mem::transmute(pmempara), ::core::mem::transmute(dwinfotype), ::core::mem::transmute(ppvinfo)).ok()
     }
@@ -27251,12 +27251,12 @@ pub unsafe fn NCryptGetProtectionDescriptorInfo<'a, Param0: ::windows::core::Int
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptImportKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_PROV_HANDLE>, Param1: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hprovider: Param0, himportkey: Param1, pszblobtype: Param2, pparameterlist: *const BCryptBufferDesc, phkey: *mut NCRYPT_KEY_HANDLE, pbdata: *const u8, cbdata: u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptImportKey<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_PROV_HANDLE>, Param1: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprovider: Param0, himportkey: Param1, pszblobtype: Param2, pparameterlist: *const BCryptBufferDesc, phkey: *mut NCRYPT_KEY_HANDLE, pbdata: *const u8, cbdata: u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptImportKey(hprovider: NCRYPT_PROV_HANDLE, himportkey: NCRYPT_KEY_HANDLE, pszblobtype: ::windows::core::PCWSTR, pparameterlist: *const BCryptBufferDesc, phkey: *mut NCRYPT_KEY_HANDLE, pbdata: *const u8, cbdata: u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::HRESULT;
+            fn NCryptImportKey(hprovider: NCRYPT_PROV_HANDLE, himportkey: NCRYPT_KEY_HANDLE, pszblobtype: ::windows_core::PCWSTR, pparameterlist: *const BCryptBufferDesc, phkey: *mut NCRYPT_KEY_HANDLE, pbdata: *const u8, cbdata: u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::HRESULT;
         }
         NCryptImportKey(hprovider.into_param().abi(), himportkey.into_param().abi(), pszblobtype.into_param().abi(), ::core::mem::transmute(pparameterlist), ::core::mem::transmute(phkey), ::core::mem::transmute(pbdata), ::core::mem::transmute(cbdata), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27265,12 +27265,12 @@ pub unsafe fn NCryptImportKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptIsAlgSupported<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_PROV_HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hprovider: Param0, pszalgid: Param1, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptIsAlgSupported<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_PROV_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprovider: Param0, pszalgid: Param1, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptIsAlgSupported(hprovider: NCRYPT_PROV_HANDLE, pszalgid: ::windows::core::PCWSTR, dwflags: u32) -> ::windows::core::HRESULT;
+            fn NCryptIsAlgSupported(hprovider: NCRYPT_PROV_HANDLE, pszalgid: ::windows_core::PCWSTR, dwflags: u32) -> ::windows_core::HRESULT;
         }
         NCryptIsAlgSupported(hprovider.into_param().abi(), pszalgid.into_param().abi(), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27280,7 +27280,7 @@ pub unsafe fn NCryptIsAlgSupported<'a, Param0: ::windows::core::IntoParam<'a, NC
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NCryptIsKeyHandle<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn NCryptIsKeyHandle<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -27294,12 +27294,12 @@ pub unsafe fn NCryptIsKeyHandle<'a, Param0: ::windows::core::IntoParam<'a, NCRYP
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptKeyDerivation<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptKeyDerivation<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptKeyDerivation(hkey: NCRYPT_KEY_HANDLE, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
+            fn NCryptKeyDerivation(hkey: NCRYPT_KEY_HANDLE, pparameterlist: *const BCryptBufferDesc, pbderivedkey: *mut u8, cbderivedkey: u32, pcbresult: *mut u32, dwflags: u32) -> ::windows_core::HRESULT;
         }
         NCryptKeyDerivation(hkey.into_param().abi(), ::core::mem::transmute(pparameterlist), ::core::mem::transmute(pbderivedkey), ::core::mem::transmute(cbderivedkey), ::core::mem::transmute(pcbresult), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27309,8 +27309,8 @@ pub unsafe fn NCryptKeyDerivation<'a, Param0: ::windows::core::IntoParam<'a, NCR
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct NCryptKeyName {
-    pub pszName: ::windows::core::PWSTR,
-    pub pszAlgid: ::windows::core::PWSTR,
+    pub pszName: ::windows_core::PWSTR,
+    pub pszAlgid: ::windows_core::PWSTR,
     pub dwLegacyKeySpec: CERT_KEY_SPEC,
     pub dwFlags: u32,
 }
@@ -27325,12 +27325,12 @@ impl ::core::fmt::Debug for NCryptKeyName {
         f.debug_struct("NCryptKeyName").field("pszName", &self.pszName).field("pszAlgid", &self.pszAlgid).field("dwLegacyKeySpec", &self.dwLegacyKeySpec).field("dwFlags", &self.dwFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCryptKeyName {
+unsafe impl ::windows_core::Abi for NCryptKeyName {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCryptKeyName {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCryptKeyName>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCryptKeyName>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCryptKeyName {}
@@ -27342,12 +27342,12 @@ impl ::core::default::Default for NCryptKeyName {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NCryptNotifyChangeKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_PROV_HANDLE>>(hprovider: Param0, phevent: *mut super::super::Foundation::HANDLE, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptNotifyChangeKey<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_PROV_HANDLE>>(hprovider: Param0, phevent: *mut super::super::Foundation::HANDLE, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptNotifyChangeKey(hprovider: NCRYPT_PROV_HANDLE, phevent: *mut super::super::Foundation::HANDLE, dwflags: NCRYPT_FLAGS) -> ::windows::core::HRESULT;
+            fn NCryptNotifyChangeKey(hprovider: NCRYPT_PROV_HANDLE, phevent: *mut super::super::Foundation::HANDLE, dwflags: NCRYPT_FLAGS) -> ::windows_core::HRESULT;
         }
         NCryptNotifyChangeKey(hprovider.into_param().abi(), ::core::mem::transmute(phevent), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27356,12 +27356,12 @@ pub unsafe fn NCryptNotifyChangeKey<'a, Param0: ::windows::core::IntoParam<'a, N
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptOpenKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_PROV_HANDLE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hprovider: Param0, phkey: *mut NCRYPT_KEY_HANDLE, pszkeyname: Param2, dwlegacykeyspec: CERT_KEY_SPEC, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptOpenKey<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_PROV_HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprovider: Param0, phkey: *mut NCRYPT_KEY_HANDLE, pszkeyname: Param2, dwlegacykeyspec: CERT_KEY_SPEC, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptOpenKey(hprovider: NCRYPT_PROV_HANDLE, phkey: *mut NCRYPT_KEY_HANDLE, pszkeyname: ::windows::core::PCWSTR, dwlegacykeyspec: CERT_KEY_SPEC, dwflags: NCRYPT_FLAGS) -> ::windows::core::HRESULT;
+            fn NCryptOpenKey(hprovider: NCRYPT_PROV_HANDLE, phkey: *mut NCRYPT_KEY_HANDLE, pszkeyname: ::windows_core::PCWSTR, dwlegacykeyspec: CERT_KEY_SPEC, dwflags: NCRYPT_FLAGS) -> ::windows_core::HRESULT;
         }
         NCryptOpenKey(hprovider.into_param().abi(), ::core::mem::transmute(phkey), pszkeyname.into_param().abi(), ::core::mem::transmute(dwlegacykeyspec), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27370,12 +27370,12 @@ pub unsafe fn NCryptOpenKey<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_PR
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptOpenStorageProvider<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(phprovider: *mut NCRYPT_PROV_HANDLE, pszprovidername: Param1, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptOpenStorageProvider<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(phprovider: *mut NCRYPT_PROV_HANDLE, pszprovidername: Param1, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptOpenStorageProvider(phprovider: *mut NCRYPT_PROV_HANDLE, pszprovidername: ::windows::core::PCWSTR, dwflags: u32) -> ::windows::core::HRESULT;
+            fn NCryptOpenStorageProvider(phprovider: *mut NCRYPT_PROV_HANDLE, pszprovidername: ::windows_core::PCWSTR, dwflags: u32) -> ::windows_core::HRESULT;
         }
         NCryptOpenStorageProvider(::core::mem::transmute(phprovider), pszprovidername.into_param().abi(), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27385,12 +27385,12 @@ pub unsafe fn NCryptOpenStorageProvider<'a, Param1: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NCryptProtectSecret<'a, Param0: ::windows::core::IntoParam<'a, super::NCRYPT_DESCRIPTOR_HANDLE>, Param5: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hdescriptor: Param0, dwflags: u32, pbdata: *const u8, cbdata: u32, pmempara: *const NCRYPT_ALLOC_PARA, hwnd: Param5, ppbprotectedblob: *mut *mut u8, pcbprotectedblob: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptProtectSecret<'a, Param0: ::windows_core::IntoParam<'a, super::NCRYPT_DESCRIPTOR_HANDLE>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdescriptor: Param0, dwflags: u32, pbdata: *const u8, cbdata: u32, pmempara: *const NCRYPT_ALLOC_PARA, hwnd: Param5, ppbprotectedblob: *mut *mut u8, pcbprotectedblob: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptProtectSecret(hdescriptor: super::NCRYPT_DESCRIPTOR_HANDLE, dwflags: u32, pbdata: *const u8, cbdata: u32, pmempara: *const NCRYPT_ALLOC_PARA, hwnd: super::super::Foundation::HWND, ppbprotectedblob: *mut *mut u8, pcbprotectedblob: *mut u32) -> ::windows::core::HRESULT;
+            fn NCryptProtectSecret(hdescriptor: super::NCRYPT_DESCRIPTOR_HANDLE, dwflags: u32, pbdata: *const u8, cbdata: u32, pmempara: *const NCRYPT_ALLOC_PARA, hwnd: super::super::Foundation::HWND, ppbprotectedblob: *mut *mut u8, pcbprotectedblob: *mut u32) -> ::windows_core::HRESULT;
         }
         NCryptProtectSecret(hdescriptor.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pbdata), ::core::mem::transmute(cbdata), ::core::mem::transmute(pmempara), hwnd.into_param().abi(), ::core::mem::transmute(ppbprotectedblob), ::core::mem::transmute(pcbprotectedblob)).ok()
     }
@@ -27400,8 +27400,8 @@ pub unsafe fn NCryptProtectSecret<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct NCryptProviderName {
-    pub pszName: ::windows::core::PWSTR,
-    pub pszComment: ::windows::core::PWSTR,
+    pub pszName: ::windows_core::PWSTR,
+    pub pszComment: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for NCryptProviderName {}
 impl ::core::clone::Clone for NCryptProviderName {
@@ -27414,12 +27414,12 @@ impl ::core::fmt::Debug for NCryptProviderName {
         f.debug_struct("NCryptProviderName").field("pszName", &self.pszName).field("pszComment", &self.pszComment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NCryptProviderName {
+unsafe impl ::windows_core::Abi for NCryptProviderName {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NCryptProviderName {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCryptProviderName>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCryptProviderName>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NCryptProviderName {}
@@ -27430,12 +27430,12 @@ impl ::core::default::Default for NCryptProviderName {
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptQueryProtectionDescriptorName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszname: Param0, pwszdescriptorstring: ::windows::core::PWSTR, pcdescriptorstring: *mut usize, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptQueryProtectionDescriptorName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszname: Param0, pwszdescriptorstring: ::windows_core::PWSTR, pcdescriptorstring: *mut usize, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptQueryProtectionDescriptorName(pwszname: ::windows::core::PCWSTR, pwszdescriptorstring: ::windows::core::PWSTR, pcdescriptorstring: *mut usize, dwflags: u32) -> ::windows::core::HRESULT;
+            fn NCryptQueryProtectionDescriptorName(pwszname: ::windows_core::PCWSTR, pwszdescriptorstring: ::windows_core::PWSTR, pcdescriptorstring: *mut usize, dwflags: u32) -> ::windows_core::HRESULT;
         }
         NCryptQueryProtectionDescriptorName(pwszname.into_param().abi(), ::core::mem::transmute(pwszdescriptorstring), ::core::mem::transmute(pcdescriptorstring), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27444,12 +27444,12 @@ pub unsafe fn NCryptQueryProtectionDescriptorName<'a, Param0: ::windows::core::I
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptRegisterProtectionDescriptorName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszname: Param0, pwszdescriptorstring: Param1, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptRegisterProtectionDescriptorName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszname: Param0, pwszdescriptorstring: Param1, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptRegisterProtectionDescriptorName(pwszname: ::windows::core::PCWSTR, pwszdescriptorstring: ::windows::core::PCWSTR, dwflags: u32) -> ::windows::core::HRESULT;
+            fn NCryptRegisterProtectionDescriptorName(pwszname: ::windows_core::PCWSTR, pwszdescriptorstring: ::windows_core::PCWSTR, dwflags: u32) -> ::windows_core::HRESULT;
         }
         NCryptRegisterProtectionDescriptorName(pwszname.into_param().abi(), pwszdescriptorstring.into_param().abi(), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27458,12 +27458,12 @@ pub unsafe fn NCryptRegisterProtectionDescriptorName<'a, Param0: ::windows::core
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptSecretAgreement<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>, Param1: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hprivkey: Param0, hpubkey: Param1, phagreedsecret: *mut NCRYPT_SECRET_HANDLE, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptSecretAgreement<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>, Param1: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hprivkey: Param0, hpubkey: Param1, phagreedsecret: *mut NCRYPT_SECRET_HANDLE, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptSecretAgreement(hprivkey: NCRYPT_KEY_HANDLE, hpubkey: NCRYPT_KEY_HANDLE, phagreedsecret: *mut NCRYPT_SECRET_HANDLE, dwflags: NCRYPT_FLAGS) -> ::windows::core::HRESULT;
+            fn NCryptSecretAgreement(hprivkey: NCRYPT_KEY_HANDLE, hpubkey: NCRYPT_KEY_HANDLE, phagreedsecret: *mut NCRYPT_SECRET_HANDLE, dwflags: NCRYPT_FLAGS) -> ::windows_core::HRESULT;
         }
         NCryptSecretAgreement(hprivkey.into_param().abi(), hpubkey.into_param().abi(), ::core::mem::transmute(phagreedsecret), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27472,12 +27472,12 @@ pub unsafe fn NCryptSecretAgreement<'a, Param0: ::windows::core::IntoParam<'a, N
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptSetProperty<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hobject: Param0, pszproperty: Param1, pbinput: *const u8, cbinput: u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptSetProperty<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hobject: Param0, pszproperty: Param1, pbinput: *const u8, cbinput: u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptSetProperty(hobject: NCRYPT_HANDLE, pszproperty: ::windows::core::PCWSTR, pbinput: *const u8, cbinput: u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::HRESULT;
+            fn NCryptSetProperty(hobject: NCRYPT_HANDLE, pszproperty: ::windows_core::PCWSTR, pbinput: *const u8, cbinput: u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::HRESULT;
         }
         NCryptSetProperty(hobject.into_param().abi(), pszproperty.into_param().abi(), ::core::mem::transmute(pbinput), ::core::mem::transmute(cbinput), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27486,12 +27486,12 @@ pub unsafe fn NCryptSetProperty<'a, Param0: ::windows::core::IntoParam<'a, NCRYP
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptSignHash<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, ppaddinginfo: *const ::core::ffi::c_void, pbhashvalue: *const u8, cbhashvalue: u32, pbsignature: *mut u8, cbsignature: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptSignHash<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, ppaddinginfo: *const ::core::ffi::c_void, pbhashvalue: *const u8, cbhashvalue: u32, pbsignature: *mut u8, cbsignature: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptSignHash(hkey: NCRYPT_KEY_HANDLE, ppaddinginfo: *const ::core::ffi::c_void, pbhashvalue: *const u8, cbhashvalue: u32, pbsignature: *mut u8, cbsignature: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::HRESULT;
+            fn NCryptSignHash(hkey: NCRYPT_KEY_HANDLE, ppaddinginfo: *const ::core::ffi::c_void, pbhashvalue: *const u8, cbhashvalue: u32, pbsignature: *mut u8, cbsignature: u32, pcbresult: *mut u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::HRESULT;
         }
         NCryptSignHash(hkey.into_param().abi(), ::core::mem::transmute(ppaddinginfo), ::core::mem::transmute(pbhashvalue), ::core::mem::transmute(cbhashvalue), ::core::mem::transmute(pbsignature), ::core::mem::transmute(cbsignature), ::core::mem::transmute(pcbresult), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27500,12 +27500,12 @@ pub unsafe fn NCryptSignHash<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_K
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptStreamClose<'a, Param0: ::windows::core::IntoParam<'a, super::NCRYPT_STREAM_HANDLE>>(hstream: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptStreamClose<'a, Param0: ::windows_core::IntoParam<'a, super::NCRYPT_STREAM_HANDLE>>(hstream: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptStreamClose(hstream: super::NCRYPT_STREAM_HANDLE) -> ::windows::core::HRESULT;
+            fn NCryptStreamClose(hstream: super::NCRYPT_STREAM_HANDLE) -> ::windows_core::HRESULT;
         }
         NCryptStreamClose(hstream.into_param().abi()).ok()
     }
@@ -27515,12 +27515,12 @@ pub unsafe fn NCryptStreamClose<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NCryptStreamOpenToProtect<'a, Param0: ::windows::core::IntoParam<'a, super::NCRYPT_DESCRIPTOR_HANDLE>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hdescriptor: Param0, dwflags: u32, hwnd: Param2, pstreaminfo: *const NCRYPT_PROTECT_STREAM_INFO) -> ::windows::core::Result<super::NCRYPT_STREAM_HANDLE> {
+pub unsafe fn NCryptStreamOpenToProtect<'a, Param0: ::windows_core::IntoParam<'a, super::NCRYPT_DESCRIPTOR_HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdescriptor: Param0, dwflags: u32, hwnd: Param2, pstreaminfo: *const NCRYPT_PROTECT_STREAM_INFO) -> ::windows_core::Result<super::NCRYPT_STREAM_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptStreamOpenToProtect(hdescriptor: super::NCRYPT_DESCRIPTOR_HANDLE, dwflags: u32, hwnd: super::super::Foundation::HWND, pstreaminfo: *const NCRYPT_PROTECT_STREAM_INFO, phstream: *mut super::NCRYPT_STREAM_HANDLE) -> ::windows::core::HRESULT;
+            fn NCryptStreamOpenToProtect(hdescriptor: super::NCRYPT_DESCRIPTOR_HANDLE, dwflags: u32, hwnd: super::super::Foundation::HWND, pstreaminfo: *const NCRYPT_PROTECT_STREAM_INFO, phstream: *mut super::NCRYPT_STREAM_HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::NCRYPT_STREAM_HANDLE>::zeroed();
         NCryptStreamOpenToProtect(hdescriptor.into_param().abi(), ::core::mem::transmute(dwflags), hwnd.into_param().abi(), ::core::mem::transmute(pstreaminfo), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::NCRYPT_STREAM_HANDLE>(result__)
@@ -27531,12 +27531,12 @@ pub unsafe fn NCryptStreamOpenToProtect<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NCryptStreamOpenToUnprotect<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(pstreaminfo: *const NCRYPT_PROTECT_STREAM_INFO, dwflags: u32, hwnd: Param2) -> ::windows::core::Result<super::NCRYPT_STREAM_HANDLE> {
+pub unsafe fn NCryptStreamOpenToUnprotect<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(pstreaminfo: *const NCRYPT_PROTECT_STREAM_INFO, dwflags: u32, hwnd: Param2) -> ::windows_core::Result<super::NCRYPT_STREAM_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptStreamOpenToUnprotect(pstreaminfo: *const NCRYPT_PROTECT_STREAM_INFO, dwflags: u32, hwnd: super::super::Foundation::HWND, phstream: *mut super::NCRYPT_STREAM_HANDLE) -> ::windows::core::HRESULT;
+            fn NCryptStreamOpenToUnprotect(pstreaminfo: *const NCRYPT_PROTECT_STREAM_INFO, dwflags: u32, hwnd: super::super::Foundation::HWND, phstream: *mut super::NCRYPT_STREAM_HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::NCRYPT_STREAM_HANDLE>::zeroed();
         NCryptStreamOpenToUnprotect(::core::mem::transmute(pstreaminfo), ::core::mem::transmute(dwflags), hwnd.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::NCRYPT_STREAM_HANDLE>(result__)
@@ -27547,12 +27547,12 @@ pub unsafe fn NCryptStreamOpenToUnprotect<'a, Param2: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NCryptStreamOpenToUnprotectEx<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(pstreaminfo: *const NCRYPT_PROTECT_STREAM_INFO_EX, dwflags: u32, hwnd: Param2) -> ::windows::core::Result<super::NCRYPT_STREAM_HANDLE> {
+pub unsafe fn NCryptStreamOpenToUnprotectEx<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(pstreaminfo: *const NCRYPT_PROTECT_STREAM_INFO_EX, dwflags: u32, hwnd: Param2) -> ::windows_core::Result<super::NCRYPT_STREAM_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptStreamOpenToUnprotectEx(pstreaminfo: *const NCRYPT_PROTECT_STREAM_INFO_EX, dwflags: u32, hwnd: super::super::Foundation::HWND, phstream: *mut super::NCRYPT_STREAM_HANDLE) -> ::windows::core::HRESULT;
+            fn NCryptStreamOpenToUnprotectEx(pstreaminfo: *const NCRYPT_PROTECT_STREAM_INFO_EX, dwflags: u32, hwnd: super::super::Foundation::HWND, phstream: *mut super::NCRYPT_STREAM_HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::NCRYPT_STREAM_HANDLE>::zeroed();
         NCryptStreamOpenToUnprotectEx(::core::mem::transmute(pstreaminfo), ::core::mem::transmute(dwflags), hwnd.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::NCRYPT_STREAM_HANDLE>(result__)
@@ -27563,12 +27563,12 @@ pub unsafe fn NCryptStreamOpenToUnprotectEx<'a, Param2: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NCryptStreamUpdate<'a, Param0: ::windows::core::IntoParam<'a, super::NCRYPT_STREAM_HANDLE>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hstream: Param0, pbdata: *const u8, cbdata: usize, ffinal: Param3) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptStreamUpdate<'a, Param0: ::windows_core::IntoParam<'a, super::NCRYPT_STREAM_HANDLE>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hstream: Param0, pbdata: *const u8, cbdata: usize, ffinal: Param3) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptStreamUpdate(hstream: super::NCRYPT_STREAM_HANDLE, pbdata: *const u8, cbdata: usize, ffinal: super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn NCryptStreamUpdate(hstream: super::NCRYPT_STREAM_HANDLE, pbdata: *const u8, cbdata: usize, ffinal: super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
         NCryptStreamUpdate(hstream.into_param().abi(), ::core::mem::transmute(pbdata), ::core::mem::transmute(cbdata), ffinal.into_param().abi()).ok()
     }
@@ -27577,12 +27577,12 @@ pub unsafe fn NCryptStreamUpdate<'a, Param0: ::windows::core::IntoParam<'a, supe
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptTranslateHandle(phprovider: *mut NCRYPT_PROV_HANDLE, phkey: *mut NCRYPT_KEY_HANDLE, hlegacyprov: usize, hlegacykey: usize, dwlegacykeyspec: CERT_KEY_SPEC, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptTranslateHandle(phprovider: *mut NCRYPT_PROV_HANDLE, phkey: *mut NCRYPT_KEY_HANDLE, hlegacyprov: usize, hlegacykey: usize, dwlegacykeyspec: CERT_KEY_SPEC, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptTranslateHandle(phprovider: *mut NCRYPT_PROV_HANDLE, phkey: *mut NCRYPT_KEY_HANDLE, hlegacyprov: usize, hlegacykey: usize, dwlegacykeyspec: CERT_KEY_SPEC, dwflags: u32) -> ::windows::core::HRESULT;
+            fn NCryptTranslateHandle(phprovider: *mut NCRYPT_PROV_HANDLE, phkey: *mut NCRYPT_KEY_HANDLE, hlegacyprov: usize, hlegacykey: usize, dwlegacykeyspec: CERT_KEY_SPEC, dwflags: u32) -> ::windows_core::HRESULT;
         }
         NCryptTranslateHandle(::core::mem::transmute(phprovider), ::core::mem::transmute(phkey), ::core::mem::transmute(hlegacyprov), ::core::mem::transmute(hlegacykey), ::core::mem::transmute(dwlegacykeyspec), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27592,12 +27592,12 @@ pub unsafe fn NCryptTranslateHandle(phprovider: *mut NCRYPT_PROV_HANDLE, phkey: 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NCryptUnprotectSecret<'a, Param5: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(phdescriptor: *mut super::NCRYPT_DESCRIPTOR_HANDLE, dwflags: NCRYPT_FLAGS, pbprotectedblob: *const u8, cbprotectedblob: u32, pmempara: *const NCRYPT_ALLOC_PARA, hwnd: Param5, ppbdata: *mut *mut u8, pcbdata: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptUnprotectSecret<'a, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(phdescriptor: *mut super::NCRYPT_DESCRIPTOR_HANDLE, dwflags: NCRYPT_FLAGS, pbprotectedblob: *const u8, cbprotectedblob: u32, pmempara: *const NCRYPT_ALLOC_PARA, hwnd: Param5, ppbdata: *mut *mut u8, pcbdata: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptUnprotectSecret(phdescriptor: *mut super::NCRYPT_DESCRIPTOR_HANDLE, dwflags: NCRYPT_FLAGS, pbprotectedblob: *const u8, cbprotectedblob: u32, pmempara: *const NCRYPT_ALLOC_PARA, hwnd: super::super::Foundation::HWND, ppbdata: *mut *mut u8, pcbdata: *mut u32) -> ::windows::core::HRESULT;
+            fn NCryptUnprotectSecret(phdescriptor: *mut super::NCRYPT_DESCRIPTOR_HANDLE, dwflags: NCRYPT_FLAGS, pbprotectedblob: *const u8, cbprotectedblob: u32, pmempara: *const NCRYPT_ALLOC_PARA, hwnd: super::super::Foundation::HWND, ppbdata: *mut *mut u8, pcbdata: *mut u32) -> ::windows_core::HRESULT;
         }
         NCryptUnprotectSecret(::core::mem::transmute(phdescriptor), ::core::mem::transmute(dwflags), ::core::mem::transmute(pbprotectedblob), ::core::mem::transmute(cbprotectedblob), ::core::mem::transmute(pmempara), hwnd.into_param().abi(), ::core::mem::transmute(ppbdata), ::core::mem::transmute(pcbdata)).ok()
     }
@@ -27606,12 +27606,12 @@ pub unsafe fn NCryptUnprotectSecret<'a, Param5: ::windows::core::IntoParam<'a, s
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptVerifyClaim<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>, Param1: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hsubjectkey: Param0, hauthoritykey: Param1, dwclaimtype: u32, pparameterlist: *const BCryptBufferDesc, pbclaimblob: *const u8, cbclaimblob: u32, poutput: *mut BCryptBufferDesc, dwflags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptVerifyClaim<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>, Param1: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hsubjectkey: Param0, hauthoritykey: Param1, dwclaimtype: u32, pparameterlist: *const BCryptBufferDesc, pbclaimblob: *const u8, cbclaimblob: u32, poutput: *mut BCryptBufferDesc, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptVerifyClaim(hsubjectkey: NCRYPT_KEY_HANDLE, hauthoritykey: NCRYPT_KEY_HANDLE, dwclaimtype: u32, pparameterlist: *const BCryptBufferDesc, pbclaimblob: *const u8, cbclaimblob: u32, poutput: *mut BCryptBufferDesc, dwflags: u32) -> ::windows::core::HRESULT;
+            fn NCryptVerifyClaim(hsubjectkey: NCRYPT_KEY_HANDLE, hauthoritykey: NCRYPT_KEY_HANDLE, dwclaimtype: u32, pparameterlist: *const BCryptBufferDesc, pbclaimblob: *const u8, cbclaimblob: u32, poutput: *mut BCryptBufferDesc, dwflags: u32) -> ::windows_core::HRESULT;
         }
         NCryptVerifyClaim(hsubjectkey.into_param().abi(), hauthoritykey.into_param().abi(), ::core::mem::transmute(dwclaimtype), ::core::mem::transmute(pparameterlist), ::core::mem::transmute(pbclaimblob), ::core::mem::transmute(cbclaimblob), ::core::mem::transmute(poutput), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27620,12 +27620,12 @@ pub unsafe fn NCryptVerifyClaim<'a, Param0: ::windows::core::IntoParam<'a, NCRYP
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn NCryptVerifySignature<'a, Param0: ::windows::core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, ppaddinginfo: *const ::core::ffi::c_void, pbhashvalue: *const u8, cbhashvalue: u32, pbsignature: *const u8, cbsignature: u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn NCryptVerifySignature<'a, Param0: ::windows_core::IntoParam<'a, NCRYPT_KEY_HANDLE>>(hkey: Param0, ppaddinginfo: *const ::core::ffi::c_void, pbhashvalue: *const u8, cbhashvalue: u32, pbsignature: *const u8, cbsignature: u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NCryptVerifySignature(hkey: NCRYPT_KEY_HANDLE, ppaddinginfo: *const ::core::ffi::c_void, pbhashvalue: *const u8, cbhashvalue: u32, pbsignature: *const u8, cbsignature: u32, dwflags: NCRYPT_FLAGS) -> ::windows::core::HRESULT;
+            fn NCryptVerifySignature(hkey: NCRYPT_KEY_HANDLE, ppaddinginfo: *const ::core::ffi::c_void, pbhashvalue: *const u8, cbhashvalue: u32, pbsignature: *const u8, cbsignature: u32, dwflags: NCRYPT_FLAGS) -> ::windows_core::HRESULT;
         }
         NCryptVerifySignature(hkey.into_param().abi(), ::core::mem::transmute(ppaddinginfo), ::core::mem::transmute(pbhashvalue), ::core::mem::transmute(cbhashvalue), ::core::mem::transmute(pbsignature), ::core::mem::transmute(cbsignature), ::core::mem::transmute(dwflags)).ok()
     }
@@ -27653,7 +27653,7 @@ pub const OCSP_BASIC_BY_NAME_RESPONDER_ID: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const OCSP_BASIC_GOOD_CERT_STATUS: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const OCSP_BASIC_RESPONSE: ::windows::core::PCSTR = ::windows::core::PCSTR(69i32 as _);
+pub const OCSP_BASIC_RESPONSE: ::windows_core::PCSTR = ::windows_core::PCSTR(69i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -27675,13 +27675,13 @@ impl ::core::clone::Clone for OCSP_BASIC_RESPONSE_ENTRY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OCSP_BASIC_RESPONSE_ENTRY {
+unsafe impl ::windows_core::Abi for OCSP_BASIC_RESPONSE_ENTRY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OCSP_BASIC_RESPONSE_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_BASIC_RESPONSE_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_BASIC_RESPONSE_ENTRY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -27707,13 +27707,13 @@ impl ::core::clone::Clone for OCSP_BASIC_RESPONSE_ENTRY_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OCSP_BASIC_RESPONSE_ENTRY_0 {
+unsafe impl ::windows_core::Abi for OCSP_BASIC_RESPONSE_ENTRY_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OCSP_BASIC_RESPONSE_ENTRY_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_BASIC_RESPONSE_ENTRY_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_BASIC_RESPONSE_ENTRY_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -27746,13 +27746,13 @@ impl ::core::clone::Clone for OCSP_BASIC_RESPONSE_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OCSP_BASIC_RESPONSE_INFO {
+unsafe impl ::windows_core::Abi for OCSP_BASIC_RESPONSE_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OCSP_BASIC_RESPONSE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_BASIC_RESPONSE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_BASIC_RESPONSE_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -27779,13 +27779,13 @@ impl ::core::clone::Clone for OCSP_BASIC_RESPONSE_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OCSP_BASIC_RESPONSE_INFO_0 {
+unsafe impl ::windows_core::Abi for OCSP_BASIC_RESPONSE_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OCSP_BASIC_RESPONSE_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_BASIC_RESPONSE_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_BASIC_RESPONSE_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -27822,13 +27822,13 @@ impl ::core::fmt::Debug for OCSP_BASIC_REVOKED_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OCSP_BASIC_REVOKED_INFO {
+unsafe impl ::windows_core::Abi for OCSP_BASIC_REVOKED_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OCSP_BASIC_REVOKED_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_BASIC_REVOKED_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_BASIC_REVOKED_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -27840,7 +27840,7 @@ impl ::core::default::Default for OCSP_BASIC_REVOKED_INFO {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const OCSP_BASIC_SIGNED_RESPONSE: ::windows::core::PCSTR = ::windows::core::PCSTR(68i32 as _);
+pub const OCSP_BASIC_SIGNED_RESPONSE: ::windows_core::PCSTR = ::windows_core::PCSTR(68i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct OCSP_BASIC_SIGNED_RESPONSE_INFO {
@@ -27858,12 +27858,12 @@ impl ::core::fmt::Debug for OCSP_BASIC_SIGNED_RESPONSE_INFO {
         f.debug_struct("OCSP_BASIC_SIGNED_RESPONSE_INFO").field("ToBeSigned", &self.ToBeSigned).field("SignatureInfo", &self.SignatureInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for OCSP_BASIC_SIGNED_RESPONSE_INFO {
+unsafe impl ::windows_core::Abi for OCSP_BASIC_SIGNED_RESPONSE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for OCSP_BASIC_SIGNED_RESPONSE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_BASIC_SIGNED_RESPONSE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_BASIC_SIGNED_RESPONSE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for OCSP_BASIC_SIGNED_RESPONSE_INFO {}
@@ -27893,12 +27893,12 @@ impl ::core::fmt::Debug for OCSP_CERT_ID {
         f.debug_struct("OCSP_CERT_ID").field("HashAlgorithm", &self.HashAlgorithm).field("IssuerNameHash", &self.IssuerNameHash).field("IssuerKeyHash", &self.IssuerKeyHash).field("SerialNumber", &self.SerialNumber).finish()
     }
 }
-unsafe impl ::windows::core::Abi for OCSP_CERT_ID {
+unsafe impl ::windows_core::Abi for OCSP_CERT_ID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for OCSP_CERT_ID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_CERT_ID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_CERT_ID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for OCSP_CERT_ID {}
@@ -27912,7 +27912,7 @@ pub const OCSP_INTERNAL_ERROR_RESPONSE: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const OCSP_MALFORMED_REQUEST_RESPONSE: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const OCSP_REQUEST: ::windows::core::PCSTR = ::windows::core::PCSTR(66i32 as _);
+pub const OCSP_REQUEST: ::windows_core::PCSTR = ::windows_core::PCSTR(66i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -27936,13 +27936,13 @@ impl ::core::fmt::Debug for OCSP_REQUEST_ENTRY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OCSP_REQUEST_ENTRY {
+unsafe impl ::windows_core::Abi for OCSP_REQUEST_ENTRY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OCSP_REQUEST_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_REQUEST_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_REQUEST_ENTRY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -27979,13 +27979,13 @@ impl ::core::fmt::Debug for OCSP_REQUEST_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OCSP_REQUEST_INFO {
+unsafe impl ::windows_core::Abi for OCSP_REQUEST_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OCSP_REQUEST_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_REQUEST_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_REQUEST_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -27999,12 +27999,12 @@ impl ::core::default::Default for OCSP_REQUEST_INFO {
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const OCSP_REQUEST_V1: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const OCSP_RESPONSE: ::windows::core::PCSTR = ::windows::core::PCSTR(67i32 as _);
+pub const OCSP_RESPONSE: ::windows_core::PCSTR = ::windows_core::PCSTR(67i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct OCSP_RESPONSE_INFO {
     pub dwStatus: u32,
-    pub pszObjId: ::windows::core::PSTR,
+    pub pszObjId: ::windows_core::PSTR,
     pub Value: CRYPTOAPI_BLOB,
 }
 impl ::core::marker::Copy for OCSP_RESPONSE_INFO {}
@@ -28018,12 +28018,12 @@ impl ::core::fmt::Debug for OCSP_RESPONSE_INFO {
         f.debug_struct("OCSP_RESPONSE_INFO").field("dwStatus", &self.dwStatus).field("pszObjId", &self.pszObjId).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for OCSP_RESPONSE_INFO {
+unsafe impl ::windows_core::Abi for OCSP_RESPONSE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for OCSP_RESPONSE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_RESPONSE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_RESPONSE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for OCSP_RESPONSE_INFO {}
@@ -28051,12 +28051,12 @@ impl ::core::fmt::Debug for OCSP_SIGNATURE_INFO {
         f.debug_struct("OCSP_SIGNATURE_INFO").field("SignatureAlgorithm", &self.SignatureAlgorithm).field("Signature", &self.Signature).field("cCertEncoded", &self.cCertEncoded).field("rgCertEncoded", &self.rgCertEncoded).finish()
     }
 }
-unsafe impl ::windows::core::Abi for OCSP_SIGNATURE_INFO {
+unsafe impl ::windows_core::Abi for OCSP_SIGNATURE_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for OCSP_SIGNATURE_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_SIGNATURE_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_SIGNATURE_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for OCSP_SIGNATURE_INFO {}
@@ -28066,7 +28066,7 @@ impl ::core::default::Default for OCSP_SIGNATURE_INFO {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const OCSP_SIGNED_REQUEST: ::windows::core::PCSTR = ::windows::core::PCSTR(65i32 as _);
+pub const OCSP_SIGNED_REQUEST: ::windows_core::PCSTR = ::windows_core::PCSTR(65i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct OCSP_SIGNED_REQUEST_INFO {
@@ -28084,12 +28084,12 @@ impl ::core::fmt::Debug for OCSP_SIGNED_REQUEST_INFO {
         f.debug_struct("OCSP_SIGNED_REQUEST_INFO").field("ToBeSigned", &self.ToBeSigned).field("pOptionalSignatureInfo", &self.pOptionalSignatureInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for OCSP_SIGNED_REQUEST_INFO {
+unsafe impl ::windows_core::Abi for OCSP_SIGNED_REQUEST_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for OCSP_SIGNED_REQUEST_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_SIGNED_REQUEST_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OCSP_SIGNED_REQUEST_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for OCSP_SIGNED_REQUEST_INFO {}
@@ -28119,10 +28119,10 @@ pub type PCRYPT_ENCRYPT_PRIVATE_KEY_FUNC = ::core::option::Option<unsafe extern 
 pub type PCRYPT_RESOLVE_HCRYPTPROV_FUNC = ::core::option::Option<unsafe extern "system" fn(pprivatekeyinfo: *mut CRYPT_PRIVATE_KEY_INFO, phcryptprov: *mut usize, pvoidresolvefunc: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFNCryptStreamOutputCallback = ::core::option::Option<unsafe extern "system" fn(pvcallbackctxt: *const ::core::ffi::c_void, pbdata: *const u8, cbdata: usize, ffinal: super::super::Foundation::BOOL) -> ::windows::core::HRESULT>;
+pub type PFNCryptStreamOutputCallback = ::core::option::Option<unsafe extern "system" fn(pvcallbackctxt: *const ::core::ffi::c_void, pbdata: *const u8, cbdata: usize, ffinal: super::super::Foundation::BOOL) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFNCryptStreamOutputCallbackEx = ::core::option::Option<unsafe extern "system" fn(pvcallbackctxt: *const ::core::ffi::c_void, pbdata: *const u8, cbdata: usize, hdescriptor: super::NCRYPT_DESCRIPTOR_HANDLE, ffinal: super::super::Foundation::BOOL) -> ::windows::core::HRESULT>;
+pub type PFNCryptStreamOutputCallbackEx = ::core::option::Option<unsafe extern "system" fn(pvcallbackctxt: *const ::core::ffi::c_void, pbdata: *const u8, cbdata: usize, hdescriptor: super::NCRYPT_DESCRIPTOR_HANDLE, ffinal: super::super::Foundation::BOOL) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_CANCEL_ASYNC_RETRIEVAL_FUNC = ::core::option::Option<unsafe extern "system" fn(hasyncretrieve: HCRYPTASYNC) -> super::super::Foundation::BOOL>;
@@ -28134,19 +28134,19 @@ pub type PFN_CERT_CHAIN_FIND_BY_ISSUER_CALLBACK = ::core::option::Option<unsafe 
 pub type PFN_CERT_CREATE_CONTEXT_SORT_FUNC = ::core::option::Option<unsafe extern "system" fn(cbtotalencoded: u32, cbremainencoded: u32, centry: u32, pvsort: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_CERT_DLL_OPEN_STORE_PROV_FUNC = ::core::option::Option<unsafe extern "system" fn(lpszstoreprovider: ::windows::core::PCSTR, dwencodingtype: CERT_QUERY_ENCODING_TYPE, hcryptprov: HCRYPTPROV_LEGACY, dwflags: CERT_OPEN_STORE_FLAGS, pvpara: *const ::core::ffi::c_void, hcertstore: HCERTSTORE, pstoreprovinfo: *mut CERT_STORE_PROV_INFO) -> super::super::Foundation::BOOL>;
+pub type PFN_CERT_DLL_OPEN_STORE_PROV_FUNC = ::core::option::Option<unsafe extern "system" fn(lpszstoreprovider: ::windows_core::PCSTR, dwencodingtype: CERT_QUERY_ENCODING_TYPE, hcryptprov: HCRYPTPROV_LEGACY, dwflags: CERT_OPEN_STORE_FLAGS, pvpara: *const ::core::ffi::c_void, hcertstore: HCERTSTORE, pstoreprovinfo: *mut CERT_STORE_PROV_INFO) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_CERT_ENUM_PHYSICAL_STORE = ::core::option::Option<unsafe extern "system" fn(pvsystemstore: *const ::core::ffi::c_void, dwflags: u32, pwszstorename: ::windows::core::PCWSTR, pstoreinfo: *const CERT_PHYSICAL_STORE_INFO, pvreserved: *mut ::core::ffi::c_void, pvarg: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
+pub type PFN_CERT_ENUM_PHYSICAL_STORE = ::core::option::Option<unsafe extern "system" fn(pvsystemstore: *const ::core::ffi::c_void, dwflags: u32, pwszstorename: ::windows_core::PCWSTR, pstoreinfo: *const CERT_PHYSICAL_STORE_INFO, pvreserved: *mut ::core::ffi::c_void, pvarg: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_CERT_ENUM_SYSTEM_STORE = ::core::option::Option<unsafe extern "system" fn(pvsystemstore: *const ::core::ffi::c_void, dwflags: CERT_SYSTEM_STORE_FLAGS, pstoreinfo: *const CERT_SYSTEM_STORE_INFO, pvreserved: *mut ::core::ffi::c_void, pvarg: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_CERT_ENUM_SYSTEM_STORE_LOCATION = ::core::option::Option<unsafe extern "system" fn(pwszstorelocation: ::windows::core::PCWSTR, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, pvarg: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
+pub type PFN_CERT_ENUM_SYSTEM_STORE_LOCATION = ::core::option::Option<unsafe extern "system" fn(pwszstorelocation: ::windows_core::PCWSTR, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, pvarg: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_CERT_IS_WEAK_HASH = ::core::option::Option<unsafe extern "system" fn(dwhashusetype: u32, pwszcnghashalgid: ::windows::core::PCWSTR, dwchainflags: u32, psignerchaincontext: *const CERT_CHAIN_CONTEXT, ptimestamp: *const super::super::Foundation::FILETIME, pwszfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL>;
+pub type PFN_CERT_IS_WEAK_HASH = ::core::option::Option<unsafe extern "system" fn(dwhashusetype: u32, pwszcnghashalgid: ::windows_core::PCWSTR, dwchainflags: u32, psignerchaincontext: *const CERT_CHAIN_CONTEXT, ptimestamp: *const super::super::Foundation::FILETIME, pwszfilename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_CERT_SERVER_OCSP_RESPONSE_UPDATE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pchaincontext: *const CERT_CHAIN_CONTEXT, pserverocspresponsecontext: *const CERT_SERVER_OCSP_RESPONSE_CONTEXT, pnewcrlcontext: *const CRL_CONTEXT, pprevcrlcontext: *const CRL_CONTEXT, pvarg: *mut ::core::ffi::c_void, dwwriteocspfileerror: u32)>;
@@ -28267,9 +28267,9 @@ pub type PFN_CMSG_STREAM_OUTPUT = ::core::option::Option<unsafe extern "system" 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub type PFN_CRYPT_ALLOC = ::core::option::Option<unsafe extern "system" fn(cbsize: usize) -> *mut ::core::ffi::c_void>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type PFN_CRYPT_ASYNC_PARAM_FREE_FUNC = ::core::option::Option<unsafe extern "system" fn(pszparamoid: ::windows::core::PCSTR, pvparam: *const ::core::ffi::c_void)>;
+pub type PFN_CRYPT_ASYNC_PARAM_FREE_FUNC = ::core::option::Option<unsafe extern "system" fn(pszparamoid: ::windows_core::PCSTR, pvparam: *const ::core::ffi::c_void)>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type PFN_CRYPT_ASYNC_RETRIEVAL_COMPLETION_FUNC = ::core::option::Option<unsafe extern "system" fn(pvcompletion: *mut ::core::ffi::c_void, dwcompletioncode: u32, pszurl: ::windows::core::PCSTR, pszobjectoid: ::windows::core::PCSTR, pvobject: *const ::core::ffi::c_void)>;
+pub type PFN_CRYPT_ASYNC_RETRIEVAL_COMPLETION_FUNC = ::core::option::Option<unsafe extern "system" fn(pvcompletion: *mut ::core::ffi::c_void, dwcompletioncode: u32, pszurl: ::windows_core::PCSTR, pszobjectoid: ::windows_core::PCSTR, pvobject: *const ::core::ffi::c_void)>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_CRYPT_CANCEL_RETRIEVAL = ::core::option::Option<unsafe extern "system" fn(dwflags: u32, pvarg: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
@@ -28278,19 +28278,19 @@ pub type PFN_CRYPT_CANCEL_RETRIEVAL = ::core::option::Option<unsafe extern "syst
 pub type PFN_CRYPT_ENUM_KEYID_PROP = ::core::option::Option<unsafe extern "system" fn(pkeyidentifier: *const CRYPTOAPI_BLOB, dwflags: u32, pvreserved: *mut ::core::ffi::c_void, pvarg: *mut ::core::ffi::c_void, cprop: u32, rgdwpropid: *const u32, rgpvdata: *const *const ::core::ffi::c_void, rgcbdata: *const u32) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_CRYPT_ENUM_OID_FUNC = ::core::option::Option<unsafe extern "system" fn(dwencodingtype: u32, pszfuncname: ::windows::core::PCSTR, pszoid: ::windows::core::PCSTR, cvalue: u32, rgdwvaluetype: *const u32, rgpwszvaluename: *const ::windows::core::PWSTR, rgpbvaluedata: *const *const u8, rgcbvaluedata: *const u32, pvarg: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
+pub type PFN_CRYPT_ENUM_OID_FUNC = ::core::option::Option<unsafe extern "system" fn(dwencodingtype: u32, pszfuncname: ::windows_core::PCSTR, pszoid: ::windows_core::PCSTR, cvalue: u32, rgdwvaluetype: *const u32, rgpwszvaluename: *const ::windows_core::PWSTR, rgpbvaluedata: *const *const u8, rgcbvaluedata: *const u32, pvarg: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_CRYPT_ENUM_OID_INFO = ::core::option::Option<unsafe extern "system" fn(pinfo: *const CRYPT_OID_INFO, pvarg: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_EX2_FUNC = ::core::option::Option<unsafe extern "system" fn(hncryptkey: NCRYPT_KEY_HANDLE, dwcertencodingtype: u32, pszpublickeyobjid: ::windows::core::PCSTR, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL>;
+pub type PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_EX2_FUNC = ::core::option::Option<unsafe extern "system" fn(hncryptkey: NCRYPT_KEY_HANDLE, dwcertencodingtype: u32, pszpublickeyobjid: ::windows_core::PCSTR, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_FROM_BCRYPT_HANDLE_FUNC = ::core::option::Option<unsafe extern "system" fn(hbcryptkey: BCRYPT_KEY_HANDLE, dwcertencodingtype: u32, pszpublickeyobjid: ::windows::core::PCSTR, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL>;
+pub type PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_FROM_BCRYPT_HANDLE_FUNC = ::core::option::Option<unsafe extern "system" fn(hbcryptkey: BCRYPT_KEY_HANDLE, dwcertencodingtype: u32, pszpublickeyobjid: ::windows_core::PCSTR, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pinfo: *mut CERT_PUBLIC_KEY_INFO, pcbinfo: *mut u32) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_CRYPT_EXTRACT_ENCODED_SIGNATURE_PARAMETERS_FUNC = ::core::option::Option<unsafe extern "system" fn(dwcertencodingtype: u32, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, ppvdecodedsignpara: *mut *mut ::core::ffi::c_void, ppwszcnghashalgid: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL>;
+pub type PFN_CRYPT_EXTRACT_ENCODED_SIGNATURE_PARAMETERS_FUNC = ::core::option::Option<unsafe extern "system" fn(dwcertencodingtype: u32, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, ppvdecodedsignpara: *mut *mut ::core::ffi::c_void, ppwszcnghashalgid: *mut ::windows_core::PWSTR) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub type PFN_CRYPT_FREE = ::core::option::Option<unsafe extern "system" fn(pv: *const ::core::ffi::c_void)>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
@@ -28304,10 +28304,10 @@ pub type PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE = ::core::option::Option<unsafe 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub type PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIER = ::core::option::Option<unsafe extern "system" fn(pplugincontext: *const ::core::ffi::c_void, pidentifier: *const CRYPTOAPI_BLOB)>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORD = ::core::option::Option<unsafe extern "system" fn(pplugincontext: *const ::core::ffi::c_void, pwszpassword: ::windows::core::PCWSTR)>;
+pub type PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORD = ::core::option::Option<unsafe extern "system" fn(pplugincontext: *const ::core::ffi::c_void, pwszpassword: ::windows_core::PCWSTR)>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET = ::core::option::Option<unsafe extern "system" fn(pplugincontext: *const ::core::ffi::c_void, pidentifier: *const CRYPTOAPI_BLOB, dwnametype: u32, pnameblob: *const CRYPTOAPI_BLOB, ppbcontent: *mut *mut u8, pcbcontent: *mut u32, ppwszpassword: *mut ::windows::core::PWSTR, ppidentifier: *mut *mut CRYPTOAPI_BLOB) -> super::super::Foundation::BOOL>;
+pub type PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET = ::core::option::Option<unsafe extern "system" fn(pplugincontext: *const ::core::ffi::c_void, pidentifier: *const CRYPTOAPI_BLOB, dwnametype: u32, pnameblob: *const CRYPTOAPI_BLOB, ppbcontent: *mut *mut u8, pcbcontent: *mut u32, ppwszpassword: *mut ::windows_core::PWSTR, ppidentifier: *mut *mut CRYPTOAPI_BLOB) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZE = ::core::option::Option<unsafe extern "system" fn(pfnflush: PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FLUSH, pcontext: *const ::core::ffi::c_void, pdwexpectedobjectcount: *mut u32, ppfunctable: *mut *mut CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE, ppplugincontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
@@ -28315,26 +28315,26 @@ pub type PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZE = ::core::option::Option<u
 pub type PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASE = ::core::option::Option<unsafe extern "system" fn(dwreason: CRYPT_OBJECT_LOCATOR_RELEASE_REASON, pplugincontext: *const ::core::ffi::c_void)>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_CRYPT_SIGN_AND_ENCODE_HASH_FUNC = ::core::option::Option<unsafe extern "system" fn(hkey: NCRYPT_KEY_HANDLE, dwcertencodingtype: u32, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, pvdecodedsignpara: *const ::core::ffi::c_void, pwszcngpubkeyalgid: ::windows::core::PCWSTR, pwszcnghashalgid: ::windows::core::PCWSTR, pbcomputedhash: *const u8, cbcomputedhash: u32, pbsignature: *mut u8, pcbsignature: *mut u32) -> super::super::Foundation::BOOL>;
+pub type PFN_CRYPT_SIGN_AND_ENCODE_HASH_FUNC = ::core::option::Option<unsafe extern "system" fn(hkey: NCRYPT_KEY_HANDLE, dwcertencodingtype: u32, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, pvdecodedsignpara: *const ::core::ffi::c_void, pwszcngpubkeyalgid: ::windows_core::PCWSTR, pwszcnghashalgid: ::windows_core::PCWSTR, pbcomputedhash: *const u8, cbcomputedhash: u32, pbsignature: *mut u8, pcbsignature: *mut u32) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_CRYPT_VERIFY_ENCODED_SIGNATURE_FUNC = ::core::option::Option<unsafe extern "system" fn(dwcertencodingtype: u32, ppubkeyinfo: *const CERT_PUBLIC_KEY_INFO, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, pvdecodedsignpara: *const ::core::ffi::c_void, pwszcngpubkeyalgid: ::windows::core::PCWSTR, pwszcnghashalgid: ::windows::core::PCWSTR, pbcomputedhash: *const u8, cbcomputedhash: u32, pbsignature: *const u8, cbsignature: u32) -> super::super::Foundation::BOOL>;
+pub type PFN_CRYPT_VERIFY_ENCODED_SIGNATURE_FUNC = ::core::option::Option<unsafe extern "system" fn(dwcertencodingtype: u32, ppubkeyinfo: *const CERT_PUBLIC_KEY_INFO, psignaturealgorithm: *const CRYPT_ALGORITHM_IDENTIFIER, pvdecodedsignpara: *const ::core::ffi::c_void, pwszcngpubkeyalgid: ::windows_core::PCWSTR, pwszcnghashalgid: ::windows_core::PCWSTR, pbcomputedhash: *const u8, cbcomputedhash: u32, pbsignature: *const u8, cbsignature: u32) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type PFN_CRYPT_XML_CREATE_TRANSFORM = ::core::option::Option<unsafe extern "system" fn(ptransform: *const CRYPT_XML_ALGORITHM, pproviderin: *const CRYPT_XML_DATA_PROVIDER, pproviderout: *mut CRYPT_XML_DATA_PROVIDER) -> ::windows::core::HRESULT>;
+pub type PFN_CRYPT_XML_CREATE_TRANSFORM = ::core::option::Option<unsafe extern "system" fn(ptransform: *const CRYPT_XML_ALGORITHM, pproviderin: *const CRYPT_XML_DATA_PROVIDER, pproviderout: *mut CRYPT_XML_DATA_PROVIDER) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type PFN_CRYPT_XML_DATA_PROVIDER_CLOSE = ::core::option::Option<unsafe extern "system" fn(pvcallbackstate: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT>;
+pub type PFN_CRYPT_XML_DATA_PROVIDER_CLOSE = ::core::option::Option<unsafe extern "system" fn(pvcallbackstate: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type PFN_CRYPT_XML_DATA_PROVIDER_READ = ::core::option::Option<unsafe extern "system" fn(pvcallbackstate: *mut ::core::ffi::c_void, pbdata: *mut u8, cbdata: u32, pcbread: *mut u32) -> ::windows::core::HRESULT>;
+pub type PFN_CRYPT_XML_DATA_PROVIDER_READ = ::core::option::Option<unsafe extern "system" fn(pvcallbackstate: *mut ::core::ffi::c_void, pbdata: *mut u8, cbdata: u32, pcbread: *mut u32) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_CRYPT_XML_ENUM_ALG_INFO = ::core::option::Option<unsafe extern "system" fn(pinfo: *const CRYPT_XML_ALGORITHM_INFO, pvarg: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type PFN_CRYPT_XML_WRITE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pvcallbackstate: *mut ::core::ffi::c_void, pbdata: *const u8, cbdata: u32) -> ::windows::core::HRESULT>;
+pub type PFN_CRYPT_XML_WRITE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pvcallbackstate: *mut ::core::ffi::c_void, pbdata: *const u8, cbdata: u32) -> ::windows_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_EXPORT_PRIV_KEY_FUNC = ::core::option::Option<unsafe extern "system" fn(hcryptprov: usize, dwkeyspec: u32, pszprivatekeyobjid: ::windows::core::PCSTR, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pprivatekeyinfo: *mut CRYPT_PRIVATE_KEY_INFO, pcbprivatekeyinfo: *mut u32) -> super::super::Foundation::BOOL>;
+pub type PFN_EXPORT_PRIV_KEY_FUNC = ::core::option::Option<unsafe extern "system" fn(hcryptprov: usize, dwkeyspec: u32, pszprivatekeyobjid: ::windows_core::PCSTR, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void, pprivatekeyinfo: *mut CRYPT_PRIVATE_KEY_INFO, pcbprivatekeyinfo: *mut u32) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub type PFN_FREE_ENCODED_OBJECT_FUNC = ::core::option::Option<unsafe extern "system" fn(pszobjectoid: ::windows::core::PCSTR, pobject: *mut CRYPT_BLOB_ARRAY, pvfreecontext: *mut ::core::ffi::c_void)>;
+pub type PFN_FREE_ENCODED_OBJECT_FUNC = ::core::option::Option<unsafe extern "system" fn(pszobjectoid: ::windows_core::PCSTR, pobject: *mut CRYPT_BLOB_ARRAY, pvfreecontext: *mut ::core::ffi::c_void)>;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_IMPORT_PRIV_KEY_FUNC = ::core::option::Option<unsafe extern "system" fn(hcryptprov: usize, pprivatekeyinfo: *const CRYPT_PRIVATE_KEY_INFO, dwflags: u32, pvauxinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
@@ -28348,12 +28348,12 @@ pub type PFN_NCRYPT_FREE = ::core::option::Option<unsafe extern "system" fn(pv: 
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PFXExportCertStore<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hstore: Param0, ppfx: *mut CRYPTOAPI_BLOB, szpassword: Param2, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn PFXExportCertStore<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hstore: Param0, ppfx: *mut CRYPTOAPI_BLOB, szpassword: Param2, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PFXExportCertStore(hstore: HCERTSTORE, ppfx: *mut CRYPTOAPI_BLOB, szpassword: ::windows::core::PCWSTR, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn PFXExportCertStore(hstore: HCERTSTORE, ppfx: *mut CRYPTOAPI_BLOB, szpassword: ::windows_core::PCWSTR, dwflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(PFXExportCertStore(hstore.into_param().abi(), ::core::mem::transmute(ppfx), szpassword.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
@@ -28363,12 +28363,12 @@ pub unsafe fn PFXExportCertStore<'a, Param0: ::windows::core::IntoParam<'a, HCER
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PFXExportCertStoreEx<'a, Param0: ::windows::core::IntoParam<'a, HCERTSTORE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hstore: Param0, ppfx: *mut CRYPTOAPI_BLOB, szpassword: Param2, pvpara: *const ::core::ffi::c_void, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn PFXExportCertStoreEx<'a, Param0: ::windows_core::IntoParam<'a, HCERTSTORE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hstore: Param0, ppfx: *mut CRYPTOAPI_BLOB, szpassword: Param2, pvpara: *const ::core::ffi::c_void, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PFXExportCertStoreEx(hstore: HCERTSTORE, ppfx: *mut CRYPTOAPI_BLOB, szpassword: ::windows::core::PCWSTR, pvpara: *const ::core::ffi::c_void, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn PFXExportCertStoreEx(hstore: HCERTSTORE, ppfx: *mut CRYPTOAPI_BLOB, szpassword: ::windows_core::PCWSTR, pvpara: *const ::core::ffi::c_void, dwflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(PFXExportCertStoreEx(hstore.into_param().abi(), ::core::mem::transmute(ppfx), szpassword.into_param().abi(), ::core::mem::transmute(pvpara), ::core::mem::transmute(dwflags)))
     }
@@ -28377,15 +28377,15 @@ pub unsafe fn PFXExportCertStoreEx<'a, Param0: ::windows::core::IntoParam<'a, HC
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn PFXImportCertStore<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(ppfx: *const CRYPTOAPI_BLOB, szpassword: Param1, dwflags: CRYPT_KEY_FLAGS) -> ::windows::core::Result<HCERTSTORE> {
+pub unsafe fn PFXImportCertStore<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ppfx: *const CRYPTOAPI_BLOB, szpassword: Param1, dwflags: CRYPT_KEY_FLAGS) -> ::windows_core::Result<HCERTSTORE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PFXImportCertStore(ppfx: *const CRYPTOAPI_BLOB, szpassword: ::windows::core::PCWSTR, dwflags: CRYPT_KEY_FLAGS) -> HCERTSTORE;
+            fn PFXImportCertStore(ppfx: *const CRYPTOAPI_BLOB, szpassword: ::windows_core::PCWSTR, dwflags: CRYPT_KEY_FLAGS) -> HCERTSTORE;
         }
         let result__ = PFXImportCertStore(::core::mem::transmute(ppfx), szpassword.into_param().abi(), ::core::mem::transmute(dwflags));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -28408,12 +28408,12 @@ pub unsafe fn PFXIsPFXBlob(ppfx: *const CRYPTOAPI_BLOB) -> super::super::Foundat
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PFXVerifyPassword<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(ppfx: *const CRYPTOAPI_BLOB, szpassword: Param1, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn PFXVerifyPassword<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ppfx: *const CRYPTOAPI_BLOB, szpassword: Param1, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PFXVerifyPassword(ppfx: *const CRYPTOAPI_BLOB, szpassword: ::windows::core::PCWSTR, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn PFXVerifyPassword(ppfx: *const CRYPTOAPI_BLOB, szpassword: ::windows_core::PCWSTR, dwflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(PFXVerifyPassword(::core::mem::transmute(ppfx), szpassword.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
@@ -28459,7 +28459,7 @@ pub const PKCS12_PBES2_ALG_AES256_SHA256: &str = "AES256-SHA256";
 pub struct PKCS12_PBES2_EXPORT_PARAMS {
     pub dwSize: u32,
     pub hNcryptDescriptor: *mut ::core::ffi::c_void,
-    pub pwszPbes2Alg: ::windows::core::PWSTR,
+    pub pwszPbes2Alg: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for PKCS12_PBES2_EXPORT_PARAMS {}
 impl ::core::clone::Clone for PKCS12_PBES2_EXPORT_PARAMS {
@@ -28472,12 +28472,12 @@ impl ::core::fmt::Debug for PKCS12_PBES2_EXPORT_PARAMS {
         f.debug_struct("PKCS12_PBES2_EXPORT_PARAMS").field("dwSize", &self.dwSize).field("hNcryptDescriptor", &self.hNcryptDescriptor).field("pwszPbes2Alg", &self.pwszPbes2Alg).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PKCS12_PBES2_EXPORT_PARAMS {
+unsafe impl ::windows_core::Abi for PKCS12_PBES2_EXPORT_PARAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PKCS12_PBES2_EXPORT_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PKCS12_PBES2_EXPORT_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PKCS12_PBES2_EXPORT_PARAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PKCS12_PBES2_EXPORT_PARAMS {}
@@ -28501,51 +28501,51 @@ pub const PKCS12_VIRTUAL_ISOLATION_KEY: u32 = 65536u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const PKCS5_PADDING: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS7_SIGNER_INFO: ::windows::core::PCSTR = ::windows::core::PCSTR(500i32 as _);
+pub const PKCS7_SIGNER_INFO: ::windows_core::PCSTR = ::windows_core::PCSTR(500i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const PKCS_7_NDR_ENCODING: u32 = 131072u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_ATTRIBUTE: ::windows::core::PCSTR = ::windows::core::PCSTR(22i32 as _);
+pub const PKCS_ATTRIBUTE: ::windows_core::PCSTR = ::windows_core::PCSTR(22i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_ATTRIBUTES: ::windows::core::PCSTR = ::windows::core::PCSTR(48i32 as _);
+pub const PKCS_ATTRIBUTES: ::windows_core::PCSTR = ::windows_core::PCSTR(48i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_CONTENT_INFO: ::windows::core::PCSTR = ::windows::core::PCSTR(33i32 as _);
+pub const PKCS_CONTENT_INFO: ::windows_core::PCSTR = ::windows_core::PCSTR(33i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_CONTENT_INFO_SEQUENCE_OF_ANY: ::windows::core::PCSTR = ::windows::core::PCSTR(23i32 as _);
+pub const PKCS_CONTENT_INFO_SEQUENCE_OF_ANY: ::windows_core::PCSTR = ::windows_core::PCSTR(23i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_CTL: ::windows::core::PCSTR = ::windows::core::PCSTR(37i32 as _);
+pub const PKCS_CTL: ::windows_core::PCSTR = ::windows_core::PCSTR(37i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_ENCRYPTED_PRIVATE_KEY_INFO: ::windows::core::PCSTR = ::windows::core::PCSTR(45i32 as _);
+pub const PKCS_ENCRYPTED_PRIVATE_KEY_INFO: ::windows_core::PCSTR = ::windows_core::PCSTR(45i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_PRIVATE_KEY_INFO: ::windows::core::PCSTR = ::windows::core::PCSTR(44i32 as _);
+pub const PKCS_PRIVATE_KEY_INFO: ::windows_core::PCSTR = ::windows_core::PCSTR(44i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_RC2_CBC_PARAMETERS: ::windows::core::PCSTR = ::windows::core::PCSTR(41i32 as _);
+pub const PKCS_RC2_CBC_PARAMETERS: ::windows_core::PCSTR = ::windows_core::PCSTR(41i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_RSAES_OAEP_PARAMETERS: ::windows::core::PCSTR = ::windows::core::PCSTR(76i32 as _);
+pub const PKCS_RSAES_OAEP_PARAMETERS: ::windows_core::PCSTR = ::windows_core::PCSTR(76i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_RSA_PRIVATE_KEY: ::windows::core::PCSTR = ::windows::core::PCSTR(43i32 as _);
+pub const PKCS_RSA_PRIVATE_KEY: ::windows_core::PCSTR = ::windows_core::PCSTR(43i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_RSA_SSA_PSS_PARAMETERS: ::windows::core::PCSTR = ::windows::core::PCSTR(75i32 as _);
+pub const PKCS_RSA_SSA_PSS_PARAMETERS: ::windows_core::PCSTR = ::windows_core::PCSTR(75i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const PKCS_RSA_SSA_PSS_TRAILER_FIELD_BC: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_SMIME_CAPABILITIES: ::windows::core::PCSTR = ::windows::core::PCSTR(42i32 as _);
+pub const PKCS_SMIME_CAPABILITIES: ::windows_core::PCSTR = ::windows_core::PCSTR(42i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_SORTED_CTL: ::windows::core::PCSTR = ::windows::core::PCSTR(49i32 as _);
+pub const PKCS_SORTED_CTL: ::windows_core::PCSTR = ::windows_core::PCSTR(49i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_TIME_REQUEST: ::windows::core::PCSTR = ::windows::core::PCSTR(18i32 as _);
+pub const PKCS_TIME_REQUEST: ::windows_core::PCSTR = ::windows_core::PCSTR(18i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const PKCS_UTC_TIME: ::windows::core::PCSTR = ::windows::core::PCSTR(17i32 as _);
+pub const PKCS_UTC_TIME: ::windows_core::PCSTR = ::windows_core::PCSTR(17i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const PLAINTEXTKEYBLOB: u32 = 8u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct POLICY_ELEMENT {
-    pub targetEndpointAddress: ::windows::core::PCWSTR,
-    pub issuerEndpointAddress: ::windows::core::PCWSTR,
-    pub issuedTokenParameters: ::windows::core::PCWSTR,
-    pub privacyNoticeLink: ::windows::core::PCWSTR,
+    pub targetEndpointAddress: ::windows_core::PCWSTR,
+    pub issuerEndpointAddress: ::windows_core::PCWSTR,
+    pub issuedTokenParameters: ::windows_core::PCWSTR,
+    pub privacyNoticeLink: ::windows_core::PCWSTR,
     pub privacyNoticeVersion: u32,
     pub useManagedPresentation: super::super::Foundation::BOOL,
 }
@@ -28564,13 +28564,13 @@ impl ::core::fmt::Debug for POLICY_ELEMENT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for POLICY_ELEMENT {
+unsafe impl ::windows_core::Abi for POLICY_ELEMENT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for POLICY_ELEMENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POLICY_ELEMENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POLICY_ELEMENT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -28664,12 +28664,12 @@ impl ::core::fmt::Debug for PRIVKEYVER3 {
         f.debug_struct("PRIVKEYVER3").field("magic", &self.magic).field("bitlenP", &self.bitlenP).field("bitlenQ", &self.bitlenQ).field("bitlenJ", &self.bitlenJ).field("bitlenX", &self.bitlenX).field("DSSSeed", &self.DSSSeed).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PRIVKEYVER3 {
+unsafe impl ::windows_core::Abi for PRIVKEYVER3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PRIVKEYVER3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRIVKEYVER3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRIVKEYVER3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PRIVKEYVER3 {}
@@ -28716,13 +28716,13 @@ impl ::core::fmt::Debug for PROV_ENUMALGS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PROV_ENUMALGS {
+unsafe impl ::windows_core::Abi for PROV_ENUMALGS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PROV_ENUMALGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROV_ENUMALGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROV_ENUMALGS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -28762,13 +28762,13 @@ impl ::core::fmt::Debug for PROV_ENUMALGS_EX {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PROV_ENUMALGS_EX {
+unsafe impl ::windows_core::Abi for PROV_ENUMALGS_EX {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PROV_ENUMALGS_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROV_ENUMALGS_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROV_ENUMALGS_EX>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -28828,12 +28828,12 @@ impl ::core::fmt::Debug for PUBKEY {
         f.debug_struct("PUBKEY").field("magic", &self.magic).field("bitlen", &self.bitlen).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PUBKEY {
+unsafe impl ::windows_core::Abi for PUBKEY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PUBKEY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PUBKEY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PUBKEY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PUBKEY {}
@@ -28862,12 +28862,12 @@ impl ::core::fmt::Debug for PUBKEYVER3 {
         f.debug_struct("PUBKEYVER3").field("magic", &self.magic).field("bitlenP", &self.bitlenP).field("bitlenQ", &self.bitlenQ).field("bitlenJ", &self.bitlenJ).field("DSSSeed", &self.DSSSeed).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PUBKEYVER3 {
+unsafe impl ::windows_core::Abi for PUBKEYVER3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PUBKEYVER3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PUBKEYVER3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PUBKEYVER3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PUBKEYVER3 {}
@@ -28899,12 +28899,12 @@ impl ::core::fmt::Debug for PUBLICKEYSTRUC {
         f.debug_struct("PUBLICKEYSTRUC").field("bType", &self.bType).field("bVersion", &self.bVersion).field("reserved", &self.reserved).field("aiKeyAlg", &self.aiKeyAlg).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PUBLICKEYSTRUC {
+unsafe impl ::windows_core::Abi for PUBLICKEYSTRUC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PUBLICKEYSTRUC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PUBLICKEYSTRUC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PUBLICKEYSTRUC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PUBLICKEYSTRUC {}
@@ -28935,7 +28935,7 @@ impl ::core::default::Default for PaddingMode {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PaddingMode {
+unsafe impl ::windows_core::Abi for PaddingMode {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PaddingMode {
@@ -28950,10 +28950,10 @@ pub const RANDOM_PADDING: u32 = 2u32;
 pub struct RECIPIENTPOLICY {
     pub recipient: ENDPOINTADDRESS,
     pub issuer: ENDPOINTADDRESS,
-    pub tokenType: ::windows::core::PCWSTR,
+    pub tokenType: ::windows_core::PCWSTR,
     pub requiredClaims: CLAIMLIST,
     pub optionalClaims: CLAIMLIST,
-    pub privacyUrl: ::windows::core::PCWSTR,
+    pub privacyUrl: ::windows_core::PCWSTR,
     pub privacyVersion: u32,
 }
 impl ::core::marker::Copy for RECIPIENTPOLICY {}
@@ -28967,12 +28967,12 @@ impl ::core::fmt::Debug for RECIPIENTPOLICY {
         f.debug_struct("RECIPIENTPOLICY").field("recipient", &self.recipient).field("issuer", &self.issuer).field("tokenType", &self.tokenType).field("requiredClaims", &self.requiredClaims).field("optionalClaims", &self.optionalClaims).field("privacyUrl", &self.privacyUrl).field("privacyVersion", &self.privacyVersion).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RECIPIENTPOLICY {
+unsafe impl ::windows_core::Abi for RECIPIENTPOLICY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RECIPIENTPOLICY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RECIPIENTPOLICY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RECIPIENTPOLICY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RECIPIENTPOLICY {}
@@ -28986,10 +28986,10 @@ impl ::core::default::Default for RECIPIENTPOLICY {
 pub struct RECIPIENTPOLICY2 {
     pub recipient: ENDPOINTADDRESS2,
     pub issuer: ENDPOINTADDRESS2,
-    pub tokenType: ::windows::core::PCWSTR,
+    pub tokenType: ::windows_core::PCWSTR,
     pub requiredClaims: CLAIMLIST,
     pub optionalClaims: CLAIMLIST,
-    pub privacyUrl: ::windows::core::PCWSTR,
+    pub privacyUrl: ::windows_core::PCWSTR,
     pub privacyVersion: u32,
 }
 impl ::core::marker::Copy for RECIPIENTPOLICY2 {}
@@ -29003,12 +29003,12 @@ impl ::core::fmt::Debug for RECIPIENTPOLICY2 {
         f.debug_struct("RECIPIENTPOLICY2").field("recipient", &self.recipient).field("issuer", &self.issuer).field("tokenType", &self.tokenType).field("requiredClaims", &self.requiredClaims).field("optionalClaims", &self.optionalClaims).field("privacyUrl", &self.privacyUrl).field("privacyVersion", &self.privacyVersion).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RECIPIENTPOLICY2 {
+unsafe impl ::windows_core::Abi for RECIPIENTPOLICY2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RECIPIENTPOLICY2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RECIPIENTPOLICY2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RECIPIENTPOLICY2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RECIPIENTPOLICY2 {}
@@ -29026,7 +29026,7 @@ pub const REPORT_NOT_ABLE_TO_EXPORT_PRIVATE_KEY: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const REPORT_NO_PRIVATE_KEY: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const REVOCATION_OID_CRL_REVOCATION: ::windows::core::PCSTR = ::windows::core::PCSTR(1i32 as _);
+pub const REVOCATION_OID_CRL_REVOCATION: ::windows_core::PCSTR = ::windows_core::PCSTR(1i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct ROOT_INFO_LUID {
@@ -29044,12 +29044,12 @@ impl ::core::fmt::Debug for ROOT_INFO_LUID {
         f.debug_struct("ROOT_INFO_LUID").field("LowPart", &self.LowPart).field("HighPart", &self.HighPart).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ROOT_INFO_LUID {
+unsafe impl ::windows_core::Abi for ROOT_INFO_LUID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ROOT_INFO_LUID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ROOT_INFO_LUID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ROOT_INFO_LUID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ROOT_INFO_LUID {}
@@ -29078,12 +29078,12 @@ impl ::core::fmt::Debug for RSAPUBKEY {
         f.debug_struct("RSAPUBKEY").field("magic", &self.magic).field("bitlen", &self.bitlen).field("pubexp", &self.pubexp).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RSAPUBKEY {
+unsafe impl ::windows_core::Abi for RSAPUBKEY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RSAPUBKEY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RSAPUBKEY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RSAPUBKEY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RSAPUBKEY {}
@@ -29093,7 +29093,7 @@ impl ::core::default::Default for RSAPUBKEY {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const RSA_CSP_PUBLICKEYBLOB: ::windows::core::PCSTR = ::windows::core::PCSTR(19i32 as _);
+pub const RSA_CSP_PUBLICKEYBLOB: ::windows_core::PCSTR = ::windows_core::PCSTR(19i32 as _);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub struct SCHANNEL_ALG {
@@ -29114,12 +29114,12 @@ impl ::core::fmt::Debug for SCHANNEL_ALG {
         f.debug_struct("SCHANNEL_ALG").field("dwUse", &self.dwUse).field("Algid", &self.Algid).field("cBits", &self.cBits).field("dwFlags", &self.dwFlags).field("dwReserved", &self.dwReserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SCHANNEL_ALG {
+unsafe impl ::windows_core::Abi for SCHANNEL_ALG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SCHANNEL_ALG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCHANNEL_ALG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCHANNEL_ALG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SCHANNEL_ALG {}
@@ -29161,12 +29161,12 @@ impl ::core::fmt::Debug for SSL_ECCKEY_BLOB {
         f.debug_struct("SSL_ECCKEY_BLOB").field("dwCurveType", &self.dwCurveType).field("cbKey", &self.cbKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SSL_ECCKEY_BLOB {
+unsafe impl ::windows_core::Abi for SSL_ECCKEY_BLOB {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SSL_ECCKEY_BLOB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSL_ECCKEY_BLOB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSL_ECCKEY_BLOB>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SSL_ECCKEY_BLOB {}
@@ -29199,12 +29199,12 @@ impl ::core::fmt::Debug for SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS {
         f.debug_struct("SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS").field("cbSize", &self.cbSize).field("dwErrorLevel", &self.dwErrorLevel).field("dwErrorCategory", &self.dwErrorCategory).field("dwReserved", &self.dwReserved).field("wszErrorText", &self.wszErrorText).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS {
+unsafe impl ::windows_core::Abi for SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS {}
@@ -29220,8 +29220,8 @@ pub const SSL_HPKP_HEADER_COUNT: u32 = 2u32;
 pub struct SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA {
     pub cbSize: u32,
     pub dwReserved: u32,
-    pub pwszServerName: ::windows::core::PWSTR,
-    pub rgpszHpkpValue: [::windows::core::PSTR; 2],
+    pub pwszServerName: ::windows_core::PWSTR,
+    pub rgpszHpkpValue: [::windows_core::PSTR; 2],
 }
 impl ::core::marker::Copy for SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA {}
 impl ::core::clone::Clone for SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA {
@@ -29234,12 +29234,12 @@ impl ::core::fmt::Debug for SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA {
         f.debug_struct("SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA").field("cbSize", &self.cbSize).field("dwReserved", &self.dwReserved).field("pwszServerName", &self.pwszServerName).field("rgpszHpkpValue", &self.rgpszHpkpValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA {
+unsafe impl ::windows_core::Abi for SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA {}
@@ -29259,7 +29259,7 @@ pub const SSL_KEY_PIN_ERROR_TEXT_LENGTH: u32 = 512u32;
 pub struct SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA {
     pub cbSize: u32,
     pub dwReserved: u32,
-    pub pwszServerName: ::windows::core::PCWSTR,
+    pub pwszServerName: ::windows_core::PCWSTR,
 }
 impl ::core::marker::Copy for SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA {}
 impl ::core::clone::Clone for SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA {
@@ -29272,12 +29272,12 @@ impl ::core::fmt::Debug for SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA {
         f.debug_struct("SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA").field("cbSize", &self.cbSize).field("dwReserved", &self.dwReserved).field("pwszServerName", &self.pwszServerName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA {
+unsafe impl ::windows_core::Abi for SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA {}
@@ -29304,12 +29304,12 @@ impl ::core::fmt::Debug for SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS {
         f.debug_struct("SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS").field("cbSize", &self.cbSize).field("lError", &self.lError).field("wszErrorText", &self.wszErrorText).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS {
+unsafe impl ::windows_core::Abi for SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS {}
@@ -29328,12 +29328,12 @@ pub const SSL_OBJECT_LOCATOR_PFX_FUNC: &str = "SslObjectLocatorInitializePfx";
 pub const SYMMETRICWRAPKEYBLOB: u32 = 11u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn SignHash<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbhash: u32, phash: *const u8, hashalgoid: Param3, pcbsig: *mut u32, ppsig: *mut *mut u8) -> ::windows::core::Result<()> {
+pub unsafe fn SignHash<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbhash: u32, phash: *const u8, hashalgoid: Param3, pcbsig: *mut u32, ppsig: *mut *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SignHash(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbhash: u32, phash: *const u8, hashalgoid: ::windows::core::PCWSTR, pcbsig: *mut u32, ppsig: *mut *mut u8) -> ::windows::core::HRESULT;
+            fn SignHash(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbhash: u32, phash: *const u8, hashalgoid: ::windows_core::PCWSTR, pcbsig: *mut u32, ppsig: *mut *mut u8) -> ::windows_core::HRESULT;
         }
         SignHash(::core::mem::transmute(hcrypto), ::core::mem::transmute(cbhash), ::core::mem::transmute(phash), hashalgoid.into_param().abi(), ::core::mem::transmute(pcbsig), ::core::mem::transmute(ppsig)).ok()
     }
@@ -29359,49 +29359,49 @@ pub const TIMESTAMP_FAILURE_SYSTEM_FAILURE: u32 = 25u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const TIMESTAMP_FAILURE_TIME_NOT_AVAILABLE: u32 = 14u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const TIMESTAMP_INFO: ::windows::core::PCSTR = ::windows::core::PCSTR(80i32 as _);
+pub const TIMESTAMP_INFO: ::windows_core::PCSTR = ::windows_core::PCSTR(80i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const TIMESTAMP_NO_AUTH_RETRIEVAL: u32 = 131072u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const TIMESTAMP_REQUEST: ::windows::core::PCSTR = ::windows::core::PCSTR(78i32 as _);
+pub const TIMESTAMP_REQUEST: ::windows_core::PCSTR = ::windows_core::PCSTR(78i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const TIMESTAMP_RESPONSE: ::windows::core::PCSTR = ::windows::core::PCSTR(79i32 as _);
+pub const TIMESTAMP_RESPONSE: ::windows_core::PCSTR = ::windows_core::PCSTR(79i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const TIMESTAMP_VERIFY_CONTEXT_SIGNATURE: u32 = 32u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const TIME_VALID_OID_FLUSH_CRL: ::windows::core::PCSTR = ::windows::core::PCSTR(2i32 as _);
+pub const TIME_VALID_OID_FLUSH_CRL: ::windows_core::PCSTR = ::windows_core::PCSTR(2i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const TIME_VALID_OID_FLUSH_CRL_FROM_CERT: ::windows::core::PCSTR = ::windows::core::PCSTR(3i32 as _);
+pub const TIME_VALID_OID_FLUSH_CRL_FROM_CERT: ::windows_core::PCSTR = ::windows_core::PCSTR(3i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const TIME_VALID_OID_FLUSH_CTL: ::windows::core::PCSTR = ::windows::core::PCSTR(1i32 as _);
+pub const TIME_VALID_OID_FLUSH_CTL: ::windows_core::PCSTR = ::windows_core::PCSTR(1i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const TIME_VALID_OID_FLUSH_FRESHEST_CRL_FROM_CERT: ::windows::core::PCSTR = ::windows::core::PCSTR(4i32 as _);
+pub const TIME_VALID_OID_FLUSH_FRESHEST_CRL_FROM_CERT: ::windows_core::PCSTR = ::windows_core::PCSTR(4i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const TIME_VALID_OID_FLUSH_FRESHEST_CRL_FROM_CRL: ::windows::core::PCSTR = ::windows::core::PCSTR(5i32 as _);
+pub const TIME_VALID_OID_FLUSH_FRESHEST_CRL_FROM_CRL: ::windows_core::PCSTR = ::windows_core::PCSTR(5i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const TIME_VALID_OID_FLUSH_OBJECT_FUNC: &str = "TimeValidDllFlushObject";
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const TIME_VALID_OID_GET_CRL: ::windows::core::PCSTR = ::windows::core::PCSTR(2i32 as _);
+pub const TIME_VALID_OID_GET_CRL: ::windows_core::PCSTR = ::windows_core::PCSTR(2i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const TIME_VALID_OID_GET_CRL_FROM_CERT: ::windows::core::PCSTR = ::windows::core::PCSTR(3i32 as _);
+pub const TIME_VALID_OID_GET_CRL_FROM_CERT: ::windows_core::PCSTR = ::windows_core::PCSTR(3i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const TIME_VALID_OID_GET_CTL: ::windows::core::PCSTR = ::windows::core::PCSTR(1i32 as _);
+pub const TIME_VALID_OID_GET_CTL: ::windows_core::PCSTR = ::windows_core::PCSTR(1i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const TIME_VALID_OID_GET_FRESHEST_CRL_FROM_CERT: ::windows::core::PCSTR = ::windows::core::PCSTR(4i32 as _);
+pub const TIME_VALID_OID_GET_FRESHEST_CRL_FROM_CERT: ::windows_core::PCSTR = ::windows_core::PCSTR(4i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const TIME_VALID_OID_GET_FRESHEST_CRL_FROM_CRL: ::windows::core::PCSTR = ::windows::core::PCSTR(5i32 as _);
+pub const TIME_VALID_OID_GET_FRESHEST_CRL_FROM_CRL: ::windows_core::PCSTR = ::windows_core::PCSTR(5i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const TIME_VALID_OID_GET_OBJECT_FUNC: &str = "TimeValidDllGetObject";
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const TPM_RSA_SRK_SEAL_KEY: &str = "MICROSOFT_PCP_KSP_RSA_SEAL_KEY_3BD1C4BF-004E-4E2F-8A4D-0BF633DCB074";
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn TransformBlock(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows::core::Result<()> {
+pub unsafe fn TransformBlock(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TransformBlock(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows::core::HRESULT;
+            fn TransformBlock(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows_core::HRESULT;
         }
         TransformBlock(::core::mem::transmute(hcrypto), ::core::mem::transmute(cbindata), ::core::mem::transmute(pindata), ::core::mem::transmute(pcboutdata), ::core::mem::transmute(ppoutdata)).ok()
     }
@@ -29410,12 +29410,12 @@ pub unsafe fn TransformBlock(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbin
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 #[inline]
-pub unsafe fn TransformFinalBlock(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows::core::Result<()> {
+pub unsafe fn TransformFinalBlock(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TransformFinalBlock(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows::core::HRESULT;
+            fn TransformFinalBlock(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbindata: u32, pindata: *const u8, pcboutdata: *mut u32, ppoutdata: *mut *mut u8) -> ::windows_core::HRESULT;
         }
         TransformFinalBlock(::core::mem::transmute(hcrypto), ::core::mem::transmute(cbindata), ::core::mem::transmute(pindata), ::core::mem::transmute(pcboutdata), ::core::mem::transmute(ppoutdata)).ok()
     }
@@ -29423,31 +29423,31 @@ pub unsafe fn TransformFinalBlock(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE,
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const URL_OID_CERTIFICATE_CRL_DIST_POINT: ::windows::core::PCSTR = ::windows::core::PCSTR(2i32 as _);
+pub const URL_OID_CERTIFICATE_CRL_DIST_POINT: ::windows_core::PCSTR = ::windows_core::PCSTR(2i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const URL_OID_CERTIFICATE_CRL_DIST_POINT_AND_OCSP: ::windows::core::PCSTR = ::windows::core::PCSTR(11i32 as _);
+pub const URL_OID_CERTIFICATE_CRL_DIST_POINT_AND_OCSP: ::windows_core::PCSTR = ::windows_core::PCSTR(11i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const URL_OID_CERTIFICATE_FRESHEST_CRL: ::windows::core::PCSTR = ::windows::core::PCSTR(6i32 as _);
+pub const URL_OID_CERTIFICATE_FRESHEST_CRL: ::windows_core::PCSTR = ::windows_core::PCSTR(6i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const URL_OID_CERTIFICATE_ISSUER: ::windows::core::PCSTR = ::windows::core::PCSTR(1i32 as _);
+pub const URL_OID_CERTIFICATE_ISSUER: ::windows_core::PCSTR = ::windows_core::PCSTR(1i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const URL_OID_CERTIFICATE_OCSP: ::windows::core::PCSTR = ::windows::core::PCSTR(9i32 as _);
+pub const URL_OID_CERTIFICATE_OCSP: ::windows_core::PCSTR = ::windows_core::PCSTR(9i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const URL_OID_CERTIFICATE_OCSP_AND_CRL_DIST_POINT: ::windows::core::PCSTR = ::windows::core::PCSTR(10i32 as _);
+pub const URL_OID_CERTIFICATE_OCSP_AND_CRL_DIST_POINT: ::windows_core::PCSTR = ::windows_core::PCSTR(10i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const URL_OID_CERTIFICATE_ONLY_OCSP: ::windows::core::PCSTR = ::windows::core::PCSTR(13i32 as _);
+pub const URL_OID_CERTIFICATE_ONLY_OCSP: ::windows_core::PCSTR = ::windows_core::PCSTR(13i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const URL_OID_CRL_FRESHEST_CRL: ::windows::core::PCSTR = ::windows::core::PCSTR(7i32 as _);
+pub const URL_OID_CRL_FRESHEST_CRL: ::windows_core::PCSTR = ::windows_core::PCSTR(7i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const URL_OID_CRL_ISSUER: ::windows::core::PCSTR = ::windows::core::PCSTR(5i32 as _);
+pub const URL_OID_CRL_ISSUER: ::windows_core::PCSTR = ::windows_core::PCSTR(5i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const URL_OID_CROSS_CERT_DIST_POINT: ::windows::core::PCSTR = ::windows::core::PCSTR(8i32 as _);
+pub const URL_OID_CROSS_CERT_DIST_POINT: ::windows_core::PCSTR = ::windows_core::PCSTR(8i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const URL_OID_CROSS_CERT_SUBJECT_INFO_ACCESS: ::windows::core::PCSTR = ::windows::core::PCSTR(12i32 as _);
+pub const URL_OID_CROSS_CERT_SUBJECT_INFO_ACCESS: ::windows_core::PCSTR = ::windows_core::PCSTR(12i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const URL_OID_CTL_ISSUER: ::windows::core::PCSTR = ::windows::core::PCSTR(3i32 as _);
+pub const URL_OID_CTL_ISSUER: ::windows_core::PCSTR = ::windows_core::PCSTR(3i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const URL_OID_CTL_NEXT_UPDATE: ::windows::core::PCSTR = ::windows::core::PCSTR(4i32 as _);
+pub const URL_OID_CTL_NEXT_UPDATE: ::windows_core::PCSTR = ::windows_core::PCSTR(4i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const URL_OID_GET_OBJECT_URL_FUNC: &str = "UrlDllGetObjectUrl";
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
@@ -29457,12 +29457,12 @@ pub const USAGE_MATCH_TYPE_OR: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn VerifyHash<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbhash: u32, phash: *const u8, hashalgoid: Param3, cbsig: u32, psig: *const u8) -> ::windows::core::Result<super::super::Foundation::BOOL> {
+pub unsafe fn VerifyHash<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbhash: u32, phash: *const u8, hashalgoid: Param3, cbsig: u32, psig: *const u8) -> ::windows_core::Result<super::super::Foundation::BOOL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn VerifyHash(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbhash: u32, phash: *const u8, hashalgoid: ::windows::core::PCWSTR, cbsig: u32, psig: *const u8, pfverified: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
+            fn VerifyHash(hcrypto: *const INFORMATIONCARD_CRYPTO_HANDLE, cbhash: u32, phash: *const u8, hashalgoid: ::windows_core::PCWSTR, cbsig: u32, psig: *const u8, pfverified: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
         VerifyHash(::core::mem::transmute(hcrypto), ::core::mem::transmute(cbhash), ::core::mem::transmute(phash), hashalgoid.into_param().abi(), ::core::mem::transmute(cbsig), ::core::mem::transmute(psig), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
@@ -29471,129 +29471,129 @@ pub unsafe fn VerifyHash<'a, Param3: ::windows::core::IntoParam<'a, ::windows::c
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_ALGORITHM_IDENTIFIER: ::windows::core::PCSTR = ::windows::core::PCSTR(74i32 as _);
+pub const X509_ALGORITHM_IDENTIFIER: ::windows_core::PCSTR = ::windows_core::PCSTR(74i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_ALTERNATE_NAME: ::windows::core::PCSTR = ::windows::core::PCSTR(12i32 as _);
+pub const X509_ALTERNATE_NAME: ::windows_core::PCSTR = ::windows_core::PCSTR(12i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const X509_ANY_STRING: i32 = 6i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_AUTHORITY_INFO_ACCESS: ::windows::core::PCSTR = ::windows::core::PCSTR(32i32 as _);
+pub const X509_AUTHORITY_INFO_ACCESS: ::windows_core::PCSTR = ::windows_core::PCSTR(32i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_AUTHORITY_KEY_ID: ::windows::core::PCSTR = ::windows::core::PCSTR(9i32 as _);
+pub const X509_AUTHORITY_KEY_ID: ::windows_core::PCSTR = ::windows_core::PCSTR(9i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_AUTHORITY_KEY_ID2: ::windows::core::PCSTR = ::windows::core::PCSTR(31i32 as _);
+pub const X509_AUTHORITY_KEY_ID2: ::windows_core::PCSTR = ::windows_core::PCSTR(31i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_BASIC_CONSTRAINTS: ::windows::core::PCSTR = ::windows::core::PCSTR(13i32 as _);
+pub const X509_BASIC_CONSTRAINTS: ::windows_core::PCSTR = ::windows_core::PCSTR(13i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_BASIC_CONSTRAINTS2: ::windows::core::PCSTR = ::windows::core::PCSTR(15i32 as _);
+pub const X509_BASIC_CONSTRAINTS2: ::windows_core::PCSTR = ::windows_core::PCSTR(15i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_BIOMETRIC_EXT: ::windows::core::PCSTR = ::windows::core::PCSTR(71i32 as _);
+pub const X509_BIOMETRIC_EXT: ::windows_core::PCSTR = ::windows_core::PCSTR(71i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_BITS: ::windows::core::PCSTR = ::windows::core::PCSTR(26i32 as _);
+pub const X509_BITS: ::windows_core::PCSTR = ::windows_core::PCSTR(26i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_BITS_WITHOUT_TRAILING_ZEROES: ::windows::core::PCSTR = ::windows::core::PCSTR(51i32 as _);
+pub const X509_BITS_WITHOUT_TRAILING_ZEROES: ::windows_core::PCSTR = ::windows_core::PCSTR(51i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_CERT: ::windows::core::PCSTR = ::windows::core::PCSTR(1i32 as _);
+pub const X509_CERT: ::windows_core::PCSTR = ::windows_core::PCSTR(1i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_CERTIFICATE_TEMPLATE: ::windows::core::PCSTR = ::windows::core::PCSTR(64i32 as _);
+pub const X509_CERTIFICATE_TEMPLATE: ::windows_core::PCSTR = ::windows_core::PCSTR(64i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_CERT_BUNDLE: ::windows::core::PCSTR = ::windows::core::PCSTR(81i32 as _);
+pub const X509_CERT_BUNDLE: ::windows_core::PCSTR = ::windows_core::PCSTR(81i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_CERT_CRL_TO_BE_SIGNED: ::windows::core::PCSTR = ::windows::core::PCSTR(3i32 as _);
+pub const X509_CERT_CRL_TO_BE_SIGNED: ::windows_core::PCSTR = ::windows_core::PCSTR(3i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_CERT_PAIR: ::windows::core::PCSTR = ::windows::core::PCSTR(53i32 as _);
+pub const X509_CERT_PAIR: ::windows_core::PCSTR = ::windows_core::PCSTR(53i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_CERT_POLICIES: ::windows::core::PCSTR = ::windows::core::PCSTR(16i32 as _);
+pub const X509_CERT_POLICIES: ::windows_core::PCSTR = ::windows_core::PCSTR(16i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_CERT_REQUEST_TO_BE_SIGNED: ::windows::core::PCSTR = ::windows::core::PCSTR(4i32 as _);
+pub const X509_CERT_REQUEST_TO_BE_SIGNED: ::windows_core::PCSTR = ::windows_core::PCSTR(4i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_CERT_TO_BE_SIGNED: ::windows::core::PCSTR = ::windows::core::PCSTR(2i32 as _);
+pub const X509_CERT_TO_BE_SIGNED: ::windows_core::PCSTR = ::windows_core::PCSTR(2i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_CHOICE_OF_TIME: ::windows::core::PCSTR = ::windows::core::PCSTR(30i32 as _);
+pub const X509_CHOICE_OF_TIME: ::windows_core::PCSTR = ::windows_core::PCSTR(30i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_CRL_DIST_POINTS: ::windows::core::PCSTR = ::windows::core::PCSTR(35i32 as _);
+pub const X509_CRL_DIST_POINTS: ::windows_core::PCSTR = ::windows_core::PCSTR(35i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const X509_CRL_REASON_CODE: i32 = 29i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_CROSS_CERT_DIST_POINTS: ::windows::core::PCSTR = ::windows::core::PCSTR(58i32 as _);
+pub const X509_CROSS_CERT_DIST_POINTS: ::windows_core::PCSTR = ::windows_core::PCSTR(58i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_DH_PARAMETERS: ::windows::core::PCSTR = ::windows::core::PCSTR(47i32 as _);
+pub const X509_DH_PARAMETERS: ::windows_core::PCSTR = ::windows_core::PCSTR(47i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const X509_DH_PUBLICKEY: i32 = 38i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_DSS_PARAMETERS: ::windows::core::PCSTR = ::windows::core::PCSTR(39i32 as _);
+pub const X509_DSS_PARAMETERS: ::windows_core::PCSTR = ::windows_core::PCSTR(39i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const X509_DSS_PUBLICKEY: i32 = 38i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_DSS_SIGNATURE: ::windows::core::PCSTR = ::windows::core::PCSTR(40i32 as _);
+pub const X509_DSS_SIGNATURE: ::windows_core::PCSTR = ::windows_core::PCSTR(40i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_ECC_PARAMETERS: ::windows::core::PCSTR = ::windows::core::PCSTR(85i32 as _);
+pub const X509_ECC_PARAMETERS: ::windows_core::PCSTR = ::windows_core::PCSTR(85i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_ECC_PRIVATE_KEY: ::windows::core::PCSTR = ::windows::core::PCSTR(82i32 as _);
+pub const X509_ECC_PRIVATE_KEY: ::windows_core::PCSTR = ::windows_core::PCSTR(82i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_ECC_SIGNATURE: ::windows::core::PCSTR = ::windows::core::PCSTR(47i32 as _);
+pub const X509_ECC_SIGNATURE: ::windows_core::PCSTR = ::windows_core::PCSTR(47i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_ENHANCED_KEY_USAGE: ::windows::core::PCSTR = ::windows::core::PCSTR(36i32 as _);
+pub const X509_ENHANCED_KEY_USAGE: ::windows_core::PCSTR = ::windows_core::PCSTR(36i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_ENUMERATED: ::windows::core::PCSTR = ::windows::core::PCSTR(29i32 as _);
+pub const X509_ENUMERATED: ::windows_core::PCSTR = ::windows_core::PCSTR(29i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_EXTENSIONS: ::windows::core::PCSTR = ::windows::core::PCSTR(5i32 as _);
+pub const X509_EXTENSIONS: ::windows_core::PCSTR = ::windows_core::PCSTR(5i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_INTEGER: ::windows::core::PCSTR = ::windows::core::PCSTR(27i32 as _);
+pub const X509_INTEGER: ::windows_core::PCSTR = ::windows_core::PCSTR(27i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_ISSUING_DIST_POINT: ::windows::core::PCSTR = ::windows::core::PCSTR(54i32 as _);
+pub const X509_ISSUING_DIST_POINT: ::windows_core::PCSTR = ::windows_core::PCSTR(54i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_KEYGEN_REQUEST_TO_BE_SIGNED: ::windows::core::PCSTR = ::windows::core::PCSTR(21i32 as _);
+pub const X509_KEYGEN_REQUEST_TO_BE_SIGNED: ::windows_core::PCSTR = ::windows_core::PCSTR(21i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_KEY_ATTRIBUTES: ::windows::core::PCSTR = ::windows::core::PCSTR(10i32 as _);
+pub const X509_KEY_ATTRIBUTES: ::windows_core::PCSTR = ::windows_core::PCSTR(10i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_KEY_USAGE: ::windows::core::PCSTR = ::windows::core::PCSTR(14i32 as _);
+pub const X509_KEY_USAGE: ::windows_core::PCSTR = ::windows_core::PCSTR(14i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_KEY_USAGE_RESTRICTION: ::windows::core::PCSTR = ::windows::core::PCSTR(11i32 as _);
+pub const X509_KEY_USAGE_RESTRICTION: ::windows_core::PCSTR = ::windows_core::PCSTR(11i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_LOGOTYPE_EXT: ::windows::core::PCSTR = ::windows::core::PCSTR(70i32 as _);
+pub const X509_LOGOTYPE_EXT: ::windows_core::PCSTR = ::windows_core::PCSTR(70i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_MULTI_BYTE_INTEGER: ::windows::core::PCSTR = ::windows::core::PCSTR(28i32 as _);
+pub const X509_MULTI_BYTE_INTEGER: ::windows_core::PCSTR = ::windows_core::PCSTR(28i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_MULTI_BYTE_UINT: ::windows::core::PCSTR = ::windows::core::PCSTR(38i32 as _);
+pub const X509_MULTI_BYTE_UINT: ::windows_core::PCSTR = ::windows_core::PCSTR(38i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_NAME: ::windows::core::PCSTR = ::windows::core::PCSTR(7i32 as _);
+pub const X509_NAME: ::windows_core::PCSTR = ::windows_core::PCSTR(7i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_NAME_CONSTRAINTS: ::windows::core::PCSTR = ::windows::core::PCSTR(55i32 as _);
+pub const X509_NAME_CONSTRAINTS: ::windows_core::PCSTR = ::windows_core::PCSTR(55i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_NAME_VALUE: ::windows::core::PCSTR = ::windows::core::PCSTR(6i32 as _);
+pub const X509_NAME_VALUE: ::windows_core::PCSTR = ::windows_core::PCSTR(6i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const X509_NDR_ENCODING: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_OBJECT_IDENTIFIER: ::windows::core::PCSTR = ::windows::core::PCSTR(73i32 as _);
+pub const X509_OBJECT_IDENTIFIER: ::windows_core::PCSTR = ::windows_core::PCSTR(73i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_OCTET_STRING: ::windows::core::PCSTR = ::windows::core::PCSTR(25i32 as _);
+pub const X509_OCTET_STRING: ::windows_core::PCSTR = ::windows_core::PCSTR(25i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_PKIX_POLICY_QUALIFIER_USERNOTICE: ::windows::core::PCSTR = ::windows::core::PCSTR(46i32 as _);
+pub const X509_PKIX_POLICY_QUALIFIER_USERNOTICE: ::windows_core::PCSTR = ::windows_core::PCSTR(46i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_POLICY_CONSTRAINTS: ::windows::core::PCSTR = ::windows::core::PCSTR(57i32 as _);
+pub const X509_POLICY_CONSTRAINTS: ::windows_core::PCSTR = ::windows_core::PCSTR(57i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_POLICY_MAPPINGS: ::windows::core::PCSTR = ::windows::core::PCSTR(56i32 as _);
+pub const X509_POLICY_MAPPINGS: ::windows_core::PCSTR = ::windows_core::PCSTR(56i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_PUBLIC_KEY_INFO: ::windows::core::PCSTR = ::windows::core::PCSTR(8i32 as _);
+pub const X509_PUBLIC_KEY_INFO: ::windows_core::PCSTR = ::windows_core::PCSTR(8i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_QC_STATEMENTS_EXT: ::windows::core::PCSTR = ::windows::core::PCSTR(42i32 as _);
+pub const X509_QC_STATEMENTS_EXT: ::windows_core::PCSTR = ::windows_core::PCSTR(42i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_SEQUENCE_OF_ANY: ::windows::core::PCSTR = ::windows::core::PCSTR(34i32 as _);
+pub const X509_SEQUENCE_OF_ANY: ::windows_core::PCSTR = ::windows_core::PCSTR(34i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_SUBJECT_DIR_ATTRS: ::windows::core::PCSTR = ::windows::core::PCSTR(84i32 as _);
+pub const X509_SUBJECT_DIR_ATTRS: ::windows_core::PCSTR = ::windows_core::PCSTR(84i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const X509_SUBJECT_INFO_ACCESS: i32 = 32i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const X509_UNICODE_ANY_STRING: i32 = 24i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_UNICODE_NAME: ::windows::core::PCSTR = ::windows::core::PCSTR(20i32 as _);
+pub const X509_UNICODE_NAME: ::windows_core::PCSTR = ::windows_core::PCSTR(20i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X509_UNICODE_NAME_VALUE: ::windows::core::PCSTR = ::windows::core::PCSTR(24i32 as _);
+pub const X509_UNICODE_NAME_VALUE: ::windows_core::PCSTR = ::windows_core::PCSTR(24i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X942_DH_PARAMETERS: ::windows::core::PCSTR = ::windows::core::PCSTR(50i32 as _);
+pub const X942_DH_PARAMETERS: ::windows_core::PCSTR = ::windows_core::PCSTR(50i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
-pub const X942_OTHER_INFO: ::windows::core::PCSTR = ::windows::core::PCSTR(52i32 as _);
+pub const X942_OTHER_INFO: ::windows_core::PCSTR = ::windows_core::PCSTR(52i32 as _);
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const ZERO_PADDING: u32 = 3u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]

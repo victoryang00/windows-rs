@@ -1,5 +1,5 @@
 use std::convert::TryFrom;
-use windows::core::*;
+use windows_core::*;
 
 #[test]
 fn hstring_works() {
@@ -190,7 +190,7 @@ fn hstring_compat() -> Result<()> {
         // An HSTRING reference a.k.a. "fast pass" string is a kind of stack-based HSTRING used by C++ callers
         // to avoid the heap allocation in some cases. It's not used in Rust since it assumes a wide character
         // string literal, which is inconvenient to create in Rust. Here we again use windows-sys to make one
-        // and thereby excercise the windows::core::HSTRING support for HSTRING reference duplication.
+        // and thereby excercise the windows_core::HSTRING support for HSTRING reference duplication.
         let mut header: windows_sys::Win32::System::WinRT::HSTRING_HEADER = std::mem::zeroed();
         let mut stack_hstring: windows_sys::core::HSTRING = std::mem::zeroed();
         let hresult = windows_sys::Win32::System::WinRT::WindowsCreateStringReference([87, 111, 114, 108, 100, 0].as_ptr(), 5, &mut header, &mut stack_hstring);

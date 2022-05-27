@@ -8,5 +8,5 @@ Learn more about Rust for Windows here: <https://github.com/microsoft/windows-rs
 
 extern crate self as windows_sys;
 mod Windows;
-pub mod core;
+pub use windows_sys_core as core;
 pub use Windows::*;

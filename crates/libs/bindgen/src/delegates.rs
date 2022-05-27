@@ -71,17 +71,17 @@ fn gen_win_delegate(gen: &Gen, def: TypeDef) -> TokenStream {
         #doc
         #features
         #[repr(transparent)]
-        pub struct #ident(pub ::windows::core::IUnknown, #phantoms) where #constraints;
+        pub struct #ident(pub ::windows_core::IUnknown, #phantoms) where #constraints;
         #features
         impl<#constraints> #ident {
             pub fn new<#fn_constraint>(invoke: F) -> Self {
                 let com = #boxed::<#generic_names F> {
                     vtable: &#boxed::<#generic_names F>::VTABLE,
-                    count: ::windows::core::RefCount::new(1),
+                    count: ::windows_core::RefCount::new(1),
                     invoke,
                 };
                 unsafe {
-                    ::core::mem::transmute(::windows::core::alloc::boxed::Box::new(com))
+                    ::core::mem::transmute(::windows_core::alloc::boxed::Box::new(com))
                 }
             }
             #invoke
@@ -91,21 +91,21 @@ fn gen_win_delegate(gen: &Gen, def: TypeDef) -> TokenStream {
         struct #boxed<#generic_names #fn_constraint> where #constraints {
             vtable: *const #vtbl<#generic_names>,
             invoke: F,
-            count: ::windows::core::RefCount,
+            count: ::windows_core::RefCount,
         }
         #features
         impl<#constraints #fn_constraint> #boxed<#generic_names F> {
             const VTABLE: #vtbl<#generic_names> = #vtbl::<#generic_names>{
-                base__: ::windows::core::IUnknownVtbl{QueryInterface: Self::QueryInterface, AddRef: Self::AddRef, Release: Self::Release},
+                base__: ::windows_core::IUnknownVtbl{QueryInterface: Self::QueryInterface, AddRef: Self::AddRef, Release: Self::Release},
                 Invoke: Self::Invoke,
                 #(#named_phantoms)*
             };
-            unsafe extern "system" fn QueryInterface(this: ::windows::core::RawPtr, iid: &::windows::core::GUID, interface: *mut *const ::core::ffi::c_void) -> ::windows::core::HRESULT {
-                let this = this as *mut ::windows::core::RawPtr as *mut Self;
+            unsafe extern "system" fn QueryInterface(this: ::windows_core::RawPtr, iid: &::windows_core::GUID, interface: *mut *const ::core::ffi::c_void) -> ::windows_core::HRESULT {
+                let this = this as *mut ::windows_core::RawPtr as *mut Self;
 
-                *interface = if iid == &<#ident as ::windows::core::Interface>::IID ||
-                    iid == &<::windows::core::IUnknown as ::windows::core::Interface>::IID ||
-                    iid == &<::windows::core::IAgileObject as ::windows::core::Interface>::IID {
+                *interface = if iid == &<#ident as ::windows_core::Interface>::IID ||
+                    iid == &<::windows_core::IUnknown as ::windows_core::Interface>::IID ||
+                    iid == &<::windows_core::IAgileObject as ::windows_core::Interface>::IID {
                         &mut (*this).vtable as *mut _ as _
                     } else {
                         ::core::ptr::null_mut()
@@ -114,28 +114,28 @@ fn gen_win_delegate(gen: &Gen, def: TypeDef) -> TokenStream {
                 // TODO: implement IMarshal
 
                 if (*interface).is_null() {
-                    ::windows::core::HRESULT(-2147467262) // E_NOINTERFACE
+                    ::windows_core::HRESULT(-2147467262) // E_NOINTERFACE
                 } else {
                     (*this).count.add_ref();
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
             }
-            unsafe extern "system" fn AddRef(this: ::windows::core::RawPtr) -> u32 {
-                let this = this as *mut ::windows::core::RawPtr as *mut Self;
+            unsafe extern "system" fn AddRef(this: ::windows_core::RawPtr) -> u32 {
+                let this = this as *mut ::windows_core::RawPtr as *mut Self;
                 (*this).count.add_ref()
             }
-            unsafe extern "system" fn Release(this: ::windows::core::RawPtr) -> u32 {
-                let this = this as *mut ::windows::core::RawPtr as *mut Self;
+            unsafe extern "system" fn Release(this: ::windows_core::RawPtr) -> u32 {
+                let this = this as *mut ::windows_core::RawPtr as *mut Self;
                 let remaining = (*this).count.release();
 
                 if remaining == 0 {
-                    ::windows::core::alloc::boxed::Box::from_raw(this);
+                    ::windows_core::alloc::boxed::Box::from_raw(this);
                 }
 
                 remaining
             }
             unsafe extern "system" fn Invoke #vtbl_signature {
-                let this = this as *mut ::windows::core::RawPtr as *mut Self;
+                let this = this as *mut ::windows_core::RawPtr as *mut Self;
                 #invoke_upcall
             }
         }

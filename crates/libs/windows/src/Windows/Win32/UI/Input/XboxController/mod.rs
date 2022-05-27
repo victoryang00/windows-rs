@@ -37,12 +37,12 @@ impl ::core::fmt::Debug for XINPUT_BATTERY_INFORMATION {
         f.debug_struct("XINPUT_BATTERY_INFORMATION").field("BatteryType", &self.BatteryType).field("BatteryLevel", &self.BatteryLevel).finish()
     }
 }
-unsafe impl ::windows::core::Abi for XINPUT_BATTERY_INFORMATION {
+unsafe impl ::windows_core::Abi for XINPUT_BATTERY_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for XINPUT_BATTERY_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XINPUT_BATTERY_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XINPUT_BATTERY_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for XINPUT_BATTERY_INFORMATION {}
@@ -71,12 +71,12 @@ impl ::core::fmt::Debug for XINPUT_CAPABILITIES {
         f.debug_struct("XINPUT_CAPABILITIES").field("Type", &self.Type).field("SubType", &self.SubType).field("Flags", &self.Flags).field("Gamepad", &self.Gamepad).field("Vibration", &self.Vibration).finish()
     }
 }
-unsafe impl ::windows::core::Abi for XINPUT_CAPABILITIES {
+unsafe impl ::windows_core::Abi for XINPUT_CAPABILITIES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for XINPUT_CAPABILITIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XINPUT_CAPABILITIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XINPUT_CAPABILITIES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for XINPUT_CAPABILITIES {}
@@ -149,12 +149,12 @@ impl ::core::fmt::Debug for XINPUT_GAMEPAD {
         f.debug_struct("XINPUT_GAMEPAD").field("wButtons", &self.wButtons).field("bLeftTrigger", &self.bLeftTrigger).field("bRightTrigger", &self.bRightTrigger).field("sThumbLX", &self.sThumbLX).field("sThumbLY", &self.sThumbLY).field("sThumbRX", &self.sThumbRX).field("sThumbRY", &self.sThumbRY).finish()
     }
 }
-unsafe impl ::windows::core::Abi for XINPUT_GAMEPAD {
+unsafe impl ::windows_core::Abi for XINPUT_GAMEPAD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for XINPUT_GAMEPAD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XINPUT_GAMEPAD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XINPUT_GAMEPAD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for XINPUT_GAMEPAD {}
@@ -217,12 +217,12 @@ impl ::core::fmt::Debug for XINPUT_KEYSTROKE {
         f.debug_struct("XINPUT_KEYSTROKE").field("VirtualKey", &self.VirtualKey).field("Unicode", &self.Unicode).field("Flags", &self.Flags).field("UserIndex", &self.UserIndex).field("HidCode", &self.HidCode).finish()
     }
 }
-unsafe impl ::windows::core::Abi for XINPUT_KEYSTROKE {
+unsafe impl ::windows_core::Abi for XINPUT_KEYSTROKE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for XINPUT_KEYSTROKE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XINPUT_KEYSTROKE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XINPUT_KEYSTROKE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for XINPUT_KEYSTROKE {}
@@ -254,12 +254,12 @@ impl ::core::fmt::Debug for XINPUT_STATE {
         f.debug_struct("XINPUT_STATE").field("dwPacketNumber", &self.dwPacketNumber).field("Gamepad", &self.Gamepad).finish()
     }
 }
-unsafe impl ::windows::core::Abi for XINPUT_STATE {
+unsafe impl ::windows_core::Abi for XINPUT_STATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for XINPUT_STATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XINPUT_STATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XINPUT_STATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for XINPUT_STATE {}
@@ -285,12 +285,12 @@ impl ::core::fmt::Debug for XINPUT_VIBRATION {
         f.debug_struct("XINPUT_VIBRATION").field("wLeftMotorSpeed", &self.wLeftMotorSpeed).field("wRightMotorSpeed", &self.wRightMotorSpeed).finish()
     }
 }
-unsafe impl ::windows::core::Abi for XINPUT_VIBRATION {
+unsafe impl ::windows_core::Abi for XINPUT_VIBRATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for XINPUT_VIBRATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XINPUT_VIBRATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XINPUT_VIBRATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for XINPUT_VIBRATION {}
@@ -378,7 +378,7 @@ impl ::core::default::Default for XINPUT_VIRTUAL_KEY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for XINPUT_VIRTUAL_KEY {
+unsafe impl ::windows_core::Abi for XINPUT_VIRTUAL_KEY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for XINPUT_VIRTUAL_KEY {
@@ -389,7 +389,7 @@ impl ::core::fmt::Debug for XINPUT_VIRTUAL_KEY {
 #[doc = "*Required features: `\"Win32_UI_Input_XboxController\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn XInputEnable<'a, Param0: ::windows::core::IntoParam<'a, super::super::super::Foundation::BOOL>>(enable: Param0) {
+pub unsafe fn XInputEnable<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(enable: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -403,12 +403,12 @@ pub unsafe fn XInputEnable<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 }
 #[doc = "*Required features: `\"Win32_UI_Input_XboxController\"`*"]
 #[inline]
-pub unsafe fn XInputGetAudioDeviceIds(dwuserindex: u32, prenderdeviceid: ::windows::core::PWSTR, prendercount: *mut u32, pcapturedeviceid: ::windows::core::PWSTR, pcapturecount: *mut u32) -> u32 {
+pub unsafe fn XInputGetAudioDeviceIds(dwuserindex: u32, prenderdeviceid: ::windows_core::PWSTR, prendercount: *mut u32, pcapturedeviceid: ::windows_core::PWSTR, pcapturecount: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn XInputGetAudioDeviceIds(dwuserindex: u32, prenderdeviceid: ::windows::core::PWSTR, prendercount: *mut u32, pcapturedeviceid: ::windows::core::PWSTR, pcapturecount: *mut u32) -> u32;
+            fn XInputGetAudioDeviceIds(dwuserindex: u32, prenderdeviceid: ::windows_core::PWSTR, prendercount: *mut u32, pcapturedeviceid: ::windows_core::PWSTR, pcapturecount: *mut u32) -> u32;
         }
         ::core::mem::transmute(XInputGetAudioDeviceIds(::core::mem::transmute(dwuserindex), ::core::mem::transmute(prenderdeviceid), ::core::mem::transmute(prendercount), ::core::mem::transmute(pcapturedeviceid), ::core::mem::transmute(pcapturecount)))
     }

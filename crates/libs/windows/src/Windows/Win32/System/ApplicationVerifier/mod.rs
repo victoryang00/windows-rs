@@ -16,12 +16,12 @@ impl ::core::fmt::Debug for AVRF_BACKTRACE_INFORMATION {
         f.debug_struct("AVRF_BACKTRACE_INFORMATION").field("Depth", &self.Depth).field("Index", &self.Index).field("ReturnAddresses", &self.ReturnAddresses).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AVRF_BACKTRACE_INFORMATION {
+unsafe impl ::windows_core::Abi for AVRF_BACKTRACE_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AVRF_BACKTRACE_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AVRF_BACKTRACE_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AVRF_BACKTRACE_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AVRF_BACKTRACE_INFORMATION {}
@@ -53,12 +53,12 @@ impl ::core::fmt::Debug for AVRF_HANDLE_OPERATION {
         f.debug_struct("AVRF_HANDLE_OPERATION").field("Handle", &self.Handle).field("ProcessId", &self.ProcessId).field("ThreadId", &self.ThreadId).field("OperationType", &self.OperationType).field("Spare0", &self.Spare0).field("BackTraceInformation", &self.BackTraceInformation).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AVRF_HANDLE_OPERATION {
+unsafe impl ::windows_core::Abi for AVRF_HANDLE_OPERATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AVRF_HANDLE_OPERATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AVRF_HANDLE_OPERATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AVRF_HANDLE_OPERATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AVRF_HANDLE_OPERATION {}
@@ -93,12 +93,12 @@ impl ::core::fmt::Debug for AVRF_HEAP_ALLOCATION {
         f.debug_struct("AVRF_HEAP_ALLOCATION").field("HeapHandle", &self.HeapHandle).field("UserAllocation", &self.UserAllocation).field("UserAllocationSize", &self.UserAllocationSize).field("Allocation", &self.Allocation).field("AllocationSize", &self.AllocationSize).field("UserAllocationState", &self.UserAllocationState).field("HeapState", &self.HeapState).field("HeapContext", &self.HeapContext).field("BackTraceInformation", &self.BackTraceInformation).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AVRF_HEAP_ALLOCATION {
+unsafe impl ::windows_core::Abi for AVRF_HEAP_ALLOCATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AVRF_HEAP_ALLOCATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AVRF_HEAP_ALLOCATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AVRF_HEAP_ALLOCATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AVRF_HEAP_ALLOCATION {}
@@ -130,7 +130,7 @@ impl ::core::default::Default for VERIFIER_ENUM_RESOURCE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VERIFIER_ENUM_RESOURCE_FLAGS {
+unsafe impl ::windows_core::Abi for VERIFIER_ENUM_RESOURCE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VERIFIER_ENUM_RESOURCE_FLAGS {
@@ -169,12 +169,12 @@ impl ::core::ops::Not for VERIFIER_ENUM_RESOURCE_FLAGS {
 #[doc = "*Required features: `\"Win32_System_ApplicationVerifier\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn VerifierEnumerateResource<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(process: Param0, flags: VERIFIER_ENUM_RESOURCE_FLAGS, resourcetype: eAvrfResourceTypes, resourcecallback: AVRF_RESOURCE_ENUMERATE_CALLBACK, enumerationcontext: *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn VerifierEnumerateResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(process: Param0, flags: VERIFIER_ENUM_RESOURCE_FLAGS, resourcetype: eAvrfResourceTypes, resourcecallback: AVRF_RESOURCE_ENUMERATE_CALLBACK, enumerationcontext: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn VerifierEnumerateResource(process: super::super::Foundation::HANDLE, flags: VERIFIER_ENUM_RESOURCE_FLAGS, resourcetype: eAvrfResourceTypes, resourcecallback: ::windows::core::RawPtr, enumerationcontext: *mut ::core::ffi::c_void) -> u32;
+            fn VerifierEnumerateResource(process: super::super::Foundation::HANDLE, flags: VERIFIER_ENUM_RESOURCE_FLAGS, resourcetype: eAvrfResourceTypes, resourcecallback: ::windows_core::RawPtr, enumerationcontext: *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(VerifierEnumerateResource(process.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(resourcetype), ::core::mem::transmute(resourcecallback), ::core::mem::transmute(enumerationcontext)))
     }
@@ -202,7 +202,7 @@ impl ::core::default::Default for eAvrfResourceTypes {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for eAvrfResourceTypes {
+unsafe impl ::windows_core::Abi for eAvrfResourceTypes {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for eAvrfResourceTypes {
@@ -233,7 +233,7 @@ impl ::core::default::Default for eHANDLE_TRACE_OPERATIONS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for eHANDLE_TRACE_OPERATIONS {
+unsafe impl ::windows_core::Abi for eHANDLE_TRACE_OPERATIONS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for eHANDLE_TRACE_OPERATIONS {
@@ -262,7 +262,7 @@ impl ::core::default::Default for eHeapAllocationState {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for eHeapAllocationState {
+unsafe impl ::windows_core::Abi for eHeapAllocationState {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for eHeapAllocationState {
@@ -289,7 +289,7 @@ impl ::core::default::Default for eHeapEnumerationLevel {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for eHeapEnumerationLevel {
+unsafe impl ::windows_core::Abi for eHeapEnumerationLevel {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for eHeapEnumerationLevel {
@@ -318,7 +318,7 @@ impl ::core::default::Default for eUserAllocationState {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for eUserAllocationState {
+unsafe impl ::windows_core::Abi for eUserAllocationState {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for eUserAllocationState {

@@ -17,7 +17,7 @@ impl ::core::default::Default for COMPARTMENT_ID {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for COMPARTMENT_ID {
+unsafe impl ::windows_core::Abi for COMPARTMENT_ID {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for COMPARTMENT_ID {
@@ -30,7 +30,7 @@ impl ::core::fmt::Debug for COMPARTMENT_ID {
 pub struct CSTRING {
     pub Length: u16,
     pub MaximumLength: u16,
-    pub Buffer: ::windows::core::PCSTR,
+    pub Buffer: ::windows_core::PCSTR,
 }
 impl ::core::marker::Copy for CSTRING {}
 impl ::core::clone::Clone for CSTRING {
@@ -43,12 +43,12 @@ impl ::core::fmt::Debug for CSTRING {
         f.debug_struct("CSTRING").field("Length", &self.Length).field("MaximumLength", &self.MaximumLength).field("Buffer", &self.Buffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CSTRING {
+unsafe impl ::windows_core::Abi for CSTRING {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CSTRING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CSTRING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CSTRING>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CSTRING {}
@@ -76,7 +76,7 @@ impl ::core::default::Default for EVENT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EVENT_TYPE {
+unsafe impl ::windows_core::Abi for EVENT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EVENT_TYPE {
@@ -107,7 +107,7 @@ impl ::core::default::Default for EXCEPTION_DISPOSITION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EXCEPTION_DISPOSITION {
+unsafe impl ::windows_core::Abi for EXCEPTION_DISPOSITION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EXCEPTION_DISPOSITION {
@@ -137,13 +137,13 @@ impl ::core::fmt::Debug for EXCEPTION_REGISTRATION_RECORD {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-unsafe impl ::windows::core::Abi for EXCEPTION_REGISTRATION_RECORD {
+unsafe impl ::windows_core::Abi for EXCEPTION_REGISTRATION_RECORD {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
 impl ::core::cmp::PartialEq for EXCEPTION_REGISTRATION_RECORD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXCEPTION_REGISTRATION_RECORD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXCEPTION_REGISTRATION_RECORD>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
@@ -186,13 +186,13 @@ impl ::core::fmt::Debug for FLOATING_SAVE_AREA {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for FLOATING_SAVE_AREA {
+unsafe impl ::windows_core::Abi for FLOATING_SAVE_AREA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for FLOATING_SAVE_AREA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FLOATING_SAVE_AREA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FLOATING_SAVE_AREA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -232,13 +232,13 @@ impl ::core::fmt::Debug for FLOATING_SAVE_AREA {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for FLOATING_SAVE_AREA {
+unsafe impl ::windows_core::Abi for FLOATING_SAVE_AREA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for FLOATING_SAVE_AREA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FLOATING_SAVE_AREA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FLOATING_SAVE_AREA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -266,12 +266,12 @@ impl ::core::fmt::Debug for LIST_ENTRY {
         f.debug_struct("LIST_ENTRY").field("Flink", &self.Flink).field("Blink", &self.Blink).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LIST_ENTRY {
+unsafe impl ::windows_core::Abi for LIST_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LIST_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIST_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIST_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LIST_ENTRY {}
@@ -297,12 +297,12 @@ impl ::core::fmt::Debug for LIST_ENTRY32 {
         f.debug_struct("LIST_ENTRY32").field("Flink", &self.Flink).field("Blink", &self.Blink).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LIST_ENTRY32 {
+unsafe impl ::windows_core::Abi for LIST_ENTRY32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LIST_ENTRY32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIST_ENTRY32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIST_ENTRY32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LIST_ENTRY32 {}
@@ -328,12 +328,12 @@ impl ::core::fmt::Debug for LIST_ENTRY64 {
         f.debug_struct("LIST_ENTRY64").field("Flink", &self.Flink).field("Blink", &self.Blink).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LIST_ENTRY64 {
+unsafe impl ::windows_core::Abi for LIST_ENTRY64 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LIST_ENTRY64 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIST_ENTRY64>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LIST_ENTRY64>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LIST_ENTRY64 {}
@@ -369,7 +369,7 @@ impl ::core::default::Default for NT_PRODUCT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NT_PRODUCT_TYPE {
+unsafe impl ::windows_core::Abi for NT_PRODUCT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NT_PRODUCT_TYPE {
@@ -398,13 +398,13 @@ impl ::core::clone::Clone for NT_TIB {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-unsafe impl ::windows::core::Abi for NT_TIB {
+unsafe impl ::windows_core::Abi for NT_TIB {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
 impl ::core::cmp::PartialEq for NT_TIB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NT_TIB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NT_TIB>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
@@ -431,13 +431,13 @@ impl ::core::clone::Clone for NT_TIB_0 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-unsafe impl ::windows::core::Abi for NT_TIB_0 {
+unsafe impl ::windows_core::Abi for NT_TIB_0 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
 impl ::core::cmp::PartialEq for NT_TIB_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NT_TIB_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NT_TIB_0>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
@@ -453,7 +453,7 @@ pub const NULL64: u32 = 0u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Kernel\"`*"]
 pub struct OBJECTID {
-    pub Lineage: ::windows::core::GUID,
+    pub Lineage: ::windows_core::GUID,
     pub Uniquifier: u32,
 }
 impl ::core::marker::Copy for OBJECTID {}
@@ -467,12 +467,12 @@ impl ::core::fmt::Debug for OBJECTID {
         f.debug_struct("OBJECTID").field("Lineage", &self.Lineage).field("Uniquifier", &self.Uniquifier).finish()
     }
 }
-unsafe impl ::windows::core::Abi for OBJECTID {
+unsafe impl ::windows_core::Abi for OBJECTID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for OBJECTID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OBJECTID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OBJECTID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for OBJECTID {}
@@ -502,12 +502,12 @@ impl ::core::fmt::Debug for OBJECT_ATTRIBUTES32 {
         f.debug_struct("OBJECT_ATTRIBUTES32").field("Length", &self.Length).field("RootDirectory", &self.RootDirectory).field("ObjectName", &self.ObjectName).field("Attributes", &self.Attributes).field("SecurityDescriptor", &self.SecurityDescriptor).field("SecurityQualityOfService", &self.SecurityQualityOfService).finish()
     }
 }
-unsafe impl ::windows::core::Abi for OBJECT_ATTRIBUTES32 {
+unsafe impl ::windows_core::Abi for OBJECT_ATTRIBUTES32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for OBJECT_ATTRIBUTES32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OBJECT_ATTRIBUTES32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OBJECT_ATTRIBUTES32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for OBJECT_ATTRIBUTES32 {}
@@ -537,12 +537,12 @@ impl ::core::fmt::Debug for OBJECT_ATTRIBUTES64 {
         f.debug_struct("OBJECT_ATTRIBUTES64").field("Length", &self.Length).field("RootDirectory", &self.RootDirectory).field("ObjectName", &self.ObjectName).field("Attributes", &self.Attributes).field("SecurityDescriptor", &self.SecurityDescriptor).field("SecurityQualityOfService", &self.SecurityQualityOfService).finish()
     }
 }
-unsafe impl ::windows::core::Abi for OBJECT_ATTRIBUTES64 {
+unsafe impl ::windows_core::Abi for OBJECT_ATTRIBUTES64 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for OBJECT_ATTRIBUTES64 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OBJECT_ATTRIBUTES64>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OBJECT_ATTRIBUTES64>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for OBJECT_ATTRIBUTES64 {}
@@ -593,12 +593,12 @@ impl ::core::fmt::Debug for PROCESSOR_NUMBER {
         f.debug_struct("PROCESSOR_NUMBER").field("Group", &self.Group).field("Number", &self.Number).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PROCESSOR_NUMBER {
+unsafe impl ::windows_core::Abi for PROCESSOR_NUMBER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PROCESSOR_NUMBER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROCESSOR_NUMBER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROCESSOR_NUMBER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PROCESSOR_NUMBER {}
@@ -618,12 +618,12 @@ impl ::core::clone::Clone for QUAD {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for QUAD {
+unsafe impl ::windows_core::Abi for QUAD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for QUAD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QUAD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QUAD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for QUAD {}
@@ -644,12 +644,12 @@ impl ::core::clone::Clone for QUAD_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for QUAD_0 {
+unsafe impl ::windows_core::Abi for QUAD_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for QUAD_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QUAD_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QUAD_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for QUAD_0 {}
@@ -670,12 +670,12 @@ impl ::core::clone::Clone for RTL_BALANCED_NODE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for RTL_BALANCED_NODE {
+unsafe impl ::windows_core::Abi for RTL_BALANCED_NODE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RTL_BALANCED_NODE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTL_BALANCED_NODE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTL_BALANCED_NODE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RTL_BALANCED_NODE {}
@@ -696,12 +696,12 @@ impl ::core::clone::Clone for RTL_BALANCED_NODE_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for RTL_BALANCED_NODE_0 {
+unsafe impl ::windows_core::Abi for RTL_BALANCED_NODE_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RTL_BALANCED_NODE_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTL_BALANCED_NODE_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTL_BALANCED_NODE_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RTL_BALANCED_NODE_0 {}
@@ -727,12 +727,12 @@ impl ::core::fmt::Debug for RTL_BALANCED_NODE_0_0 {
         f.debug_struct("RTL_BALANCED_NODE_0_0").field("Left", &self.Left).field("Right", &self.Right).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RTL_BALANCED_NODE_0_0 {
+unsafe impl ::windows_core::Abi for RTL_BALANCED_NODE_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RTL_BALANCED_NODE_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTL_BALANCED_NODE_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTL_BALANCED_NODE_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RTL_BALANCED_NODE_0_0 {}
@@ -753,12 +753,12 @@ impl ::core::clone::Clone for RTL_BALANCED_NODE_1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for RTL_BALANCED_NODE_1 {
+unsafe impl ::windows_core::Abi for RTL_BALANCED_NODE_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RTL_BALANCED_NODE_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTL_BALANCED_NODE_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTL_BALANCED_NODE_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RTL_BALANCED_NODE_1 {}
@@ -883,12 +883,12 @@ impl ::core::fmt::Debug for SINGLE_LIST_ENTRY {
         f.debug_struct("SINGLE_LIST_ENTRY").field("Next", &self.Next).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SINGLE_LIST_ENTRY {
+unsafe impl ::windows_core::Abi for SINGLE_LIST_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SINGLE_LIST_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SINGLE_LIST_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SINGLE_LIST_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SINGLE_LIST_ENTRY {}
@@ -913,12 +913,12 @@ impl ::core::fmt::Debug for SINGLE_LIST_ENTRY32 {
         f.debug_struct("SINGLE_LIST_ENTRY32").field("Next", &self.Next).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SINGLE_LIST_ENTRY32 {
+unsafe impl ::windows_core::Abi for SINGLE_LIST_ENTRY32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SINGLE_LIST_ENTRY32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SINGLE_LIST_ENTRY32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SINGLE_LIST_ENTRY32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SINGLE_LIST_ENTRY32 {}
@@ -943,12 +943,12 @@ impl ::core::fmt::Debug for SLIST_ENTRY {
         f.debug_struct("SLIST_ENTRY").field("Next", &self.Next).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SLIST_ENTRY {
+unsafe impl ::windows_core::Abi for SLIST_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SLIST_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SLIST_ENTRY {}
@@ -973,13 +973,13 @@ impl ::core::clone::Clone for SLIST_HEADER {
     }
 }
 #[cfg(target_arch = "aarch64")]
-unsafe impl ::windows::core::Abi for SLIST_HEADER {
+unsafe impl ::windows_core::Abi for SLIST_HEADER {
     type Abi = Self;
 }
 #[cfg(target_arch = "aarch64")]
 impl ::core::cmp::PartialEq for SLIST_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER>()) == 0 }
     }
 }
 #[cfg(target_arch = "aarch64")]
@@ -1012,13 +1012,13 @@ impl ::core::fmt::Debug for SLIST_HEADER_0 {
     }
 }
 #[cfg(target_arch = "aarch64")]
-unsafe impl ::windows::core::Abi for SLIST_HEADER_0 {
+unsafe impl ::windows_core::Abi for SLIST_HEADER_0 {
     type Abi = Self;
 }
 #[cfg(target_arch = "aarch64")]
 impl ::core::cmp::PartialEq for SLIST_HEADER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER_0>()) == 0 }
     }
 }
 #[cfg(target_arch = "aarch64")]
@@ -1051,13 +1051,13 @@ impl ::core::fmt::Debug for SLIST_HEADER_1 {
     }
 }
 #[cfg(target_arch = "aarch64")]
-unsafe impl ::windows::core::Abi for SLIST_HEADER_1 {
+unsafe impl ::windows_core::Abi for SLIST_HEADER_1 {
     type Abi = Self;
 }
 #[cfg(target_arch = "aarch64")]
 impl ::core::cmp::PartialEq for SLIST_HEADER_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER_1>()) == 0 }
     }
 }
 #[cfg(target_arch = "aarch64")]
@@ -1084,13 +1084,13 @@ impl ::core::clone::Clone for SLIST_HEADER {
     }
 }
 #[cfg(target_arch = "x86_64")]
-unsafe impl ::windows::core::Abi for SLIST_HEADER {
+unsafe impl ::windows_core::Abi for SLIST_HEADER {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86_64")]
 impl ::core::cmp::PartialEq for SLIST_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86_64")]
@@ -1123,13 +1123,13 @@ impl ::core::fmt::Debug for SLIST_HEADER_0 {
     }
 }
 #[cfg(target_arch = "x86_64")]
-unsafe impl ::windows::core::Abi for SLIST_HEADER_0 {
+unsafe impl ::windows_core::Abi for SLIST_HEADER_0 {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86_64")]
 impl ::core::cmp::PartialEq for SLIST_HEADER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER_0>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86_64")]
@@ -1162,13 +1162,13 @@ impl ::core::fmt::Debug for SLIST_HEADER_1 {
     }
 }
 #[cfg(target_arch = "x86_64")]
-unsafe impl ::windows::core::Abi for SLIST_HEADER_1 {
+unsafe impl ::windows_core::Abi for SLIST_HEADER_1 {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86_64")]
 impl ::core::cmp::PartialEq for SLIST_HEADER_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER_1>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86_64")]
@@ -1195,13 +1195,13 @@ impl ::core::clone::Clone for SLIST_HEADER {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SLIST_HEADER {
+unsafe impl ::windows_core::Abi for SLIST_HEADER {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SLIST_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -1235,13 +1235,13 @@ impl ::core::fmt::Debug for SLIST_HEADER_0 {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SLIST_HEADER_0 {
+unsafe impl ::windows_core::Abi for SLIST_HEADER_0 {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SLIST_HEADER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SLIST_HEADER_0>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -1257,7 +1257,7 @@ impl ::core::default::Default for SLIST_HEADER_0 {
 pub struct STRING {
     pub Length: u16,
     pub MaximumLength: u16,
-    pub Buffer: ::windows::core::PSTR,
+    pub Buffer: ::windows_core::PSTR,
 }
 impl ::core::marker::Copy for STRING {}
 impl ::core::clone::Clone for STRING {
@@ -1270,12 +1270,12 @@ impl ::core::fmt::Debug for STRING {
         f.debug_struct("STRING").field("Length", &self.Length).field("MaximumLength", &self.MaximumLength).field("Buffer", &self.Buffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for STRING {
+unsafe impl ::windows_core::Abi for STRING {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STRING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STRING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STRING>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STRING {}
@@ -1302,12 +1302,12 @@ impl ::core::fmt::Debug for STRING32 {
         f.debug_struct("STRING32").field("Length", &self.Length).field("MaximumLength", &self.MaximumLength).field("Buffer", &self.Buffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for STRING32 {
+unsafe impl ::windows_core::Abi for STRING32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STRING32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STRING32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STRING32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STRING32 {}
@@ -1334,12 +1334,12 @@ impl ::core::fmt::Debug for STRING64 {
         f.debug_struct("STRING64").field("Length", &self.Length).field("MaximumLength", &self.MaximumLength).field("Buffer", &self.Buffer).finish()
     }
 }
-unsafe impl ::windows::core::Abi for STRING64 {
+unsafe impl ::windows_core::Abi for STRING64 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STRING64 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STRING64>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STRING64>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STRING64 {}
@@ -1401,7 +1401,7 @@ impl ::core::default::Default for SUITE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SUITE_TYPE {
+unsafe impl ::windows_core::Abi for SUITE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SUITE_TYPE {
@@ -1428,7 +1428,7 @@ impl ::core::default::Default for TIMER_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TIMER_TYPE {
+unsafe impl ::windows_core::Abi for TIMER_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TIMER_TYPE {
@@ -1461,7 +1461,7 @@ impl ::core::default::Default for WAIT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WAIT_TYPE {
+unsafe impl ::windows_core::Abi for WAIT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WAIT_TYPE {
@@ -1485,12 +1485,12 @@ impl ::core::fmt::Debug for WNF_STATE_NAME {
         f.debug_struct("WNF_STATE_NAME").field("Data", &self.Data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WNF_STATE_NAME {
+unsafe impl ::windows_core::Abi for WNF_STATE_NAME {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WNF_STATE_NAME {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNF_STATE_NAME>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNF_STATE_NAME>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WNF_STATE_NAME {}

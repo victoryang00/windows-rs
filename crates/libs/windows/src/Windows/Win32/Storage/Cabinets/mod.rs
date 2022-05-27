@@ -53,13 +53,13 @@ impl ::core::fmt::Debug for CCAB {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CCAB {
+unsafe impl ::windows_core::Abi for CCAB {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CCAB {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CCAB>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CCAB>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -93,13 +93,13 @@ impl ::core::fmt::Debug for ERF {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for ERF {
+unsafe impl ::windows_core::Abi for ERF {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ERF {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ERF>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ERF>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -113,12 +113,12 @@ impl ::core::default::Default for ERF {
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FCIAddFile<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hfci: *const ::core::ffi::c_void, pszsourcefile: Param1, pszfilename: Param2, fexecute: Param3, pfnfcignc: PFNFCIGETNEXTCABINET, pfnfcis: PFNFCISTATUS, pfnfcigoi: PFNFCIGETOPENINFO, typecompress: u16) -> super::super::Foundation::BOOL {
+pub unsafe fn FCIAddFile<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hfci: *const ::core::ffi::c_void, pszsourcefile: Param1, pszfilename: Param2, fexecute: Param3, pfnfcignc: PFNFCIGETNEXTCABINET, pfnfcis: PFNFCISTATUS, pfnfcigoi: PFNFCIGETOPENINFO, typecompress: u16) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FCIAddFile(hfci: *const ::core::ffi::c_void, pszsourcefile: ::windows::core::PCSTR, pszfilename: ::windows::core::PCSTR, fexecute: super::super::Foundation::BOOL, pfnfcignc: ::windows::core::RawPtr, pfnfcis: ::windows::core::RawPtr, pfnfcigoi: ::windows::core::RawPtr, typecompress: u16) -> super::super::Foundation::BOOL;
+            fn FCIAddFile(hfci: *const ::core::ffi::c_void, pszsourcefile: ::windows_core::PCSTR, pszfilename: ::windows_core::PCSTR, fexecute: super::super::Foundation::BOOL, pfnfcignc: ::windows_core::RawPtr, pfnfcis: ::windows_core::RawPtr, pfnfcigoi: ::windows_core::RawPtr, typecompress: u16) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(FCIAddFile(::core::mem::transmute(hfci), pszsourcefile.into_param().abi(), pszfilename.into_param().abi(), fexecute.into_param().abi(), ::core::mem::transmute(pfnfcignc), ::core::mem::transmute(pfnfcis), ::core::mem::transmute(pfnfcigoi), ::core::mem::transmute(typecompress)))
     }
@@ -133,7 +133,7 @@ pub unsafe fn FCICreate(perf: *const ERF, pfnfcifp: PFNFCIFILEPLACED, pfna: PFNF
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FCICreate(perf: *const ERF, pfnfcifp: ::windows::core::RawPtr, pfna: ::windows::core::RawPtr, pfnf: ::windows::core::RawPtr, pfnopen: ::windows::core::RawPtr, pfnread: ::windows::core::RawPtr, pfnwrite: ::windows::core::RawPtr, pfnclose: ::windows::core::RawPtr, pfnseek: ::windows::core::RawPtr, pfndelete: ::windows::core::RawPtr, pfnfcigtf: ::windows::core::RawPtr, pccab: *const CCAB, pv: *const ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
+            fn FCICreate(perf: *const ERF, pfnfcifp: ::windows_core::RawPtr, pfna: ::windows_core::RawPtr, pfnf: ::windows_core::RawPtr, pfnopen: ::windows_core::RawPtr, pfnread: ::windows_core::RawPtr, pfnwrite: ::windows_core::RawPtr, pfnclose: ::windows_core::RawPtr, pfnseek: ::windows_core::RawPtr, pfndelete: ::windows_core::RawPtr, pfnfcigtf: ::windows_core::RawPtr, pccab: *const CCAB, pv: *const ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
         }
         ::core::mem::transmute(FCICreate(::core::mem::transmute(perf), ::core::mem::transmute(pfnfcifp), ::core::mem::transmute(pfna), ::core::mem::transmute(pfnf), ::core::mem::transmute(pfnopen), ::core::mem::transmute(pfnread), ::core::mem::transmute(pfnwrite), ::core::mem::transmute(pfnclose), ::core::mem::transmute(pfnseek), ::core::mem::transmute(pfndelete), ::core::mem::transmute(pfnfcigtf), ::core::mem::transmute(pccab), ::core::mem::transmute(pv)))
     }
@@ -190,7 +190,7 @@ impl ::core::default::Default for FCIERROR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FCIERROR {
+unsafe impl ::windows_core::Abi for FCIERROR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FCIERROR {
@@ -201,12 +201,12 @@ impl ::core::fmt::Debug for FCIERROR {
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FCIFlushCabinet<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hfci: *const ::core::ffi::c_void, fgetnextcab: Param1, pfnfcignc: PFNFCIGETNEXTCABINET, pfnfcis: PFNFCISTATUS) -> super::super::Foundation::BOOL {
+pub unsafe fn FCIFlushCabinet<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hfci: *const ::core::ffi::c_void, fgetnextcab: Param1, pfnfcignc: PFNFCIGETNEXTCABINET, pfnfcis: PFNFCISTATUS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FCIFlushCabinet(hfci: *const ::core::ffi::c_void, fgetnextcab: super::super::Foundation::BOOL, pfnfcignc: ::windows::core::RawPtr, pfnfcis: ::windows::core::RawPtr) -> super::super::Foundation::BOOL;
+            fn FCIFlushCabinet(hfci: *const ::core::ffi::c_void, fgetnextcab: super::super::Foundation::BOOL, pfnfcignc: ::windows_core::RawPtr, pfnfcis: ::windows_core::RawPtr) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(FCIFlushCabinet(::core::mem::transmute(hfci), fgetnextcab.into_param().abi(), ::core::mem::transmute(pfnfcignc), ::core::mem::transmute(pfnfcis)))
     }
@@ -221,7 +221,7 @@ pub unsafe fn FCIFlushFolder(hfci: *const ::core::ffi::c_void, pfnfcignc: PFNFCI
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FCIFlushFolder(hfci: *const ::core::ffi::c_void, pfnfcignc: ::windows::core::RawPtr, pfnfcis: ::windows::core::RawPtr) -> super::super::Foundation::BOOL;
+            fn FCIFlushFolder(hfci: *const ::core::ffi::c_void, pfnfcignc: ::windows_core::RawPtr, pfnfcis: ::windows_core::RawPtr) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(FCIFlushFolder(::core::mem::transmute(hfci), ::core::mem::transmute(pfnfcignc), ::core::mem::transmute(pfnfcis)))
     }
@@ -256,13 +256,13 @@ impl ::core::fmt::Debug for FDICABINETINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FDICABINETINFO {
+unsafe impl ::windows_core::Abi for FDICABINETINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FDICABINETINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDICABINETINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDICABINETINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -294,7 +294,7 @@ impl ::core::default::Default for FDICREATE_CPU_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FDICREATE_CPU_TYPE {
+unsafe impl ::windows_core::Abi for FDICREATE_CPU_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FDICREATE_CPU_TYPE {
@@ -305,12 +305,12 @@ impl ::core::fmt::Debug for FDICREATE_CPU_TYPE {
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FDICopy<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hfdi: *const ::core::ffi::c_void, pszcabinet: Param1, pszcabpath: Param2, flags: i32, pfnfdin: PFNFDINOTIFY, pfnfdid: PFNFDIDECRYPT, pvuser: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn FDICopy<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hfdi: *const ::core::ffi::c_void, pszcabinet: Param1, pszcabpath: Param2, flags: i32, pfnfdin: PFNFDINOTIFY, pfnfdid: PFNFDIDECRYPT, pvuser: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FDICopy(hfdi: *const ::core::ffi::c_void, pszcabinet: ::windows::core::PCSTR, pszcabpath: ::windows::core::PCSTR, flags: i32, pfnfdin: ::windows::core::RawPtr, pfnfdid: ::windows::core::RawPtr, pvuser: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn FDICopy(hfdi: *const ::core::ffi::c_void, pszcabinet: ::windows_core::PCSTR, pszcabpath: ::windows_core::PCSTR, flags: i32, pfnfdin: ::windows_core::RawPtr, pfnfdid: ::windows_core::RawPtr, pvuser: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(FDICopy(::core::mem::transmute(hfdi), pszcabinet.into_param().abi(), pszcabpath.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(pfnfdin), ::core::mem::transmute(pfnfdid), ::core::mem::transmute(pvuser)))
     }
@@ -325,7 +325,7 @@ pub unsafe fn FDICreate(pfnalloc: PFNALLOC, pfnfree: PFNFREE, pfnopen: PFNOPEN, 
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FDICreate(pfnalloc: ::windows::core::RawPtr, pfnfree: ::windows::core::RawPtr, pfnopen: ::windows::core::RawPtr, pfnread: ::windows::core::RawPtr, pfnwrite: ::windows::core::RawPtr, pfnclose: ::windows::core::RawPtr, pfnseek: ::windows::core::RawPtr, cputype: FDICREATE_CPU_TYPE, perf: *mut ERF) -> *mut ::core::ffi::c_void;
+            fn FDICreate(pfnalloc: ::windows_core::RawPtr, pfnfree: ::windows_core::RawPtr, pfnopen: ::windows_core::RawPtr, pfnread: ::windows_core::RawPtr, pfnwrite: ::windows_core::RawPtr, pfnclose: ::windows_core::RawPtr, pfnseek: ::windows_core::RawPtr, cputype: FDICREATE_CPU_TYPE, perf: *mut ERF) -> *mut ::core::ffi::c_void;
         }
         ::core::mem::transmute(FDICreate(::core::mem::transmute(pfnalloc), ::core::mem::transmute(pfnfree), ::core::mem::transmute(pfnopen), ::core::mem::transmute(pfnread), ::core::mem::transmute(pfnwrite), ::core::mem::transmute(pfnclose), ::core::mem::transmute(pfnseek), ::core::mem::transmute(cputype), ::core::mem::transmute(perf)))
     }
@@ -349,13 +349,13 @@ impl ::core::clone::Clone for FDIDECRYPT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FDIDECRYPT {
+unsafe impl ::windows_core::Abi for FDIDECRYPT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FDIDECRYPT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDIDECRYPT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDIDECRYPT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -383,13 +383,13 @@ impl ::core::clone::Clone for FDIDECRYPT_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FDIDECRYPT_0 {
+unsafe impl ::windows_core::Abi for FDIDECRYPT_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FDIDECRYPT_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDIDECRYPT_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDIDECRYPT_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -424,13 +424,13 @@ impl ::core::fmt::Debug for FDIDECRYPT_0_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FDIDECRYPT_0_0 {
+unsafe impl ::windows_core::Abi for FDIDECRYPT_0_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FDIDECRYPT_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDIDECRYPT_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDIDECRYPT_0_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -467,13 +467,13 @@ impl ::core::fmt::Debug for FDIDECRYPT_0_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FDIDECRYPT_0_1 {
+unsafe impl ::windows_core::Abi for FDIDECRYPT_0_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FDIDECRYPT_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDIDECRYPT_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDIDECRYPT_0_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -507,13 +507,13 @@ impl ::core::fmt::Debug for FDIDECRYPT_0_2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FDIDECRYPT_0_2 {
+unsafe impl ::windows_core::Abi for FDIDECRYPT_0_2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FDIDECRYPT_0_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDIDECRYPT_0_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDIDECRYPT_0_2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -545,7 +545,7 @@ impl ::core::default::Default for FDIDECRYPTTYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FDIDECRYPTTYPE {
+unsafe impl ::windows_core::Abi for FDIDECRYPTTYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FDIDECRYPTTYPE {
@@ -609,7 +609,7 @@ impl ::core::default::Default for FDIERROR {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FDIERROR {
+unsafe impl ::windows_core::Abi for FDIERROR {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FDIERROR {
@@ -636,9 +636,9 @@ pub unsafe fn FDIIsCabinet(hfdi: *const ::core::ffi::c_void, hf: isize, pfdici: 
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`*"]
 pub struct FDINOTIFICATION {
     pub cb: i32,
-    pub psz1: ::windows::core::PSTR,
-    pub psz2: ::windows::core::PSTR,
-    pub psz3: ::windows::core::PSTR,
+    pub psz1: ::windows_core::PSTR,
+    pub psz2: ::windows_core::PSTR,
+    pub psz3: ::windows_core::PSTR,
     pub pv: *mut ::core::ffi::c_void,
     pub hf: isize,
     pub date: u16,
@@ -660,12 +660,12 @@ impl ::core::fmt::Debug for FDINOTIFICATION {
         f.debug_struct("FDINOTIFICATION").field("cb", &self.cb).field("psz1", &self.psz1).field("psz2", &self.psz2).field("psz3", &self.psz3).field("pv", &self.pv).field("hf", &self.hf).field("date", &self.date).field("time", &self.time).field("attribs", &self.attribs).field("setID", &self.setID).field("iCabinet", &self.iCabinet).field("iFolder", &self.iFolder).field("fdie", &self.fdie).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FDINOTIFICATION {
+unsafe impl ::windows_core::Abi for FDINOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FDINOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDINOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDINOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FDINOTIFICATION {}
@@ -701,7 +701,7 @@ impl ::core::default::Default for FDINOTIFICATIONTYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FDINOTIFICATIONTYPE {
+unsafe impl ::windows_core::Abi for FDINOTIFICATIONTYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FDINOTIFICATIONTYPE {
@@ -729,14 +729,14 @@ impl ::core::clone::Clone for FDISPILLFILE {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FDISPILLFILE {
+unsafe impl ::windows_core::Abi for FDISPILLFILE {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FDISPILLFILE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDISPILLFILE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDISPILLFILE>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -769,14 +769,14 @@ impl ::core::clone::Clone for FDISPILLFILE {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FDISPILLFILE {
+unsafe impl ::windows_core::Abi for FDISPILLFILE {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FDISPILLFILE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDISPILLFILE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FDISPILLFILE>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -792,12 +792,12 @@ impl ::core::default::Default for FDISPILLFILE {
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FDITruncateCabinet<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hfdi: *const ::core::ffi::c_void, pszcabinetname: Param1, ifoldertodelete: u16) -> super::super::Foundation::BOOL {
+pub unsafe fn FDITruncateCabinet<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hfdi: *const ::core::ffi::c_void, pszcabinetname: Param1, ifoldertodelete: u16) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FDITruncateCabinet(hfdi: *const ::core::ffi::c_void, pszcabinetname: ::windows::core::PCSTR, ifoldertodelete: u16) -> super::super::Foundation::BOOL;
+            fn FDITruncateCabinet(hfdi: *const ::core::ffi::c_void, pszcabinetname: ::windows_core::PCSTR, ifoldertodelete: u16) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(FDITruncateCabinet(::core::mem::transmute(hfdi), pszcabinetname.into_param().abi(), ::core::mem::transmute(ifoldertodelete)))
     }
@@ -819,22 +819,22 @@ pub type PFNFCIALLOC = ::core::option::Option<unsafe extern "system" fn(cb: u32)
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`*"]
 pub type PFNFCICLOSE = ::core::option::Option<unsafe extern "system" fn(hf: isize, err: *mut i32, pv: *mut ::core::ffi::c_void) -> i32>;
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`*"]
-pub type PFNFCIDELETE = ::core::option::Option<unsafe extern "system" fn(pszfile: ::windows::core::PCSTR, err: *mut i32, pv: *mut ::core::ffi::c_void) -> i32>;
+pub type PFNFCIDELETE = ::core::option::Option<unsafe extern "system" fn(pszfile: ::windows_core::PCSTR, err: *mut i32, pv: *mut ::core::ffi::c_void) -> i32>;
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFNFCIFILEPLACED = ::core::option::Option<unsafe extern "system" fn(pccab: *mut CCAB, pszfile: ::windows::core::PCSTR, cbfile: i32, fcontinuation: super::super::Foundation::BOOL, pv: *mut ::core::ffi::c_void) -> i32>;
+pub type PFNFCIFILEPLACED = ::core::option::Option<unsafe extern "system" fn(pccab: *mut CCAB, pszfile: ::windows_core::PCSTR, cbfile: i32, fcontinuation: super::super::Foundation::BOOL, pv: *mut ::core::ffi::c_void) -> i32>;
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`*"]
 pub type PFNFCIFREE = ::core::option::Option<unsafe extern "system" fn(memory: *mut ::core::ffi::c_void)>;
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFNFCIGETNEXTCABINET = ::core::option::Option<unsafe extern "system" fn(pccab: *mut CCAB, cbprevcab: u32, pv: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`*"]
-pub type PFNFCIGETOPENINFO = ::core::option::Option<unsafe extern "system" fn(pszname: ::windows::core::PCSTR, pdate: *mut u16, ptime: *mut u16, pattribs: *mut u16, err: *mut i32, pv: *mut ::core::ffi::c_void) -> isize>;
+pub type PFNFCIGETOPENINFO = ::core::option::Option<unsafe extern "system" fn(pszname: ::windows_core::PCSTR, pdate: *mut u16, ptime: *mut u16, pattribs: *mut u16, err: *mut i32, pv: *mut ::core::ffi::c_void) -> isize>;
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFNFCIGETTEMPFILE = ::core::option::Option<unsafe extern "system" fn(psztempname: ::windows::core::PSTR, cbtempname: i32, pv: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
+pub type PFNFCIGETTEMPFILE = ::core::option::Option<unsafe extern "system" fn(psztempname: ::windows_core::PSTR, cbtempname: i32, pv: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`*"]
-pub type PFNFCIOPEN = ::core::option::Option<unsafe extern "system" fn(pszfile: ::windows::core::PCSTR, oflag: i32, pmode: i32, err: *mut i32, pv: *mut ::core::ffi::c_void) -> isize>;
+pub type PFNFCIOPEN = ::core::option::Option<unsafe extern "system" fn(pszfile: ::windows_core::PCSTR, oflag: i32, pmode: i32, err: *mut i32, pv: *mut ::core::ffi::c_void) -> isize>;
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`*"]
 pub type PFNFCIREAD = ::core::option::Option<unsafe extern "system" fn(hf: isize, memory: *mut ::core::ffi::c_void, cb: u32, err: *mut i32, pv: *mut ::core::ffi::c_void) -> u32>;
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`*"]
@@ -851,7 +851,7 @@ pub type PFNFDINOTIFY = ::core::option::Option<unsafe extern "system" fn(fdint: 
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`*"]
 pub type PFNFREE = ::core::option::Option<unsafe extern "system" fn(pv: *const ::core::ffi::c_void)>;
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`*"]
-pub type PFNOPEN = ::core::option::Option<unsafe extern "system" fn(pszfile: ::windows::core::PCSTR, oflag: i32, pmode: i32) -> isize>;
+pub type PFNOPEN = ::core::option::Option<unsafe extern "system" fn(pszfile: ::windows_core::PCSTR, oflag: i32, pmode: i32) -> isize>;
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`*"]
 pub type PFNREAD = ::core::option::Option<unsafe extern "system" fn(hf: isize, pv: *mut ::core::ffi::c_void, cb: u32) -> u32>;
 #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`*"]

@@ -2,7 +2,7 @@ pub type IWsbApplicationAsync = *mut ::core::ffi::c_void;
 pub type IWsbApplicationBackupSupport = *mut ::core::ffi::c_void;
 pub type IWsbApplicationRestoreSupport = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
-pub const WSBAPP_ASYNC_IN_PROGRESS: ::windows_sys::core::HRESULT = 7995396i32;
+pub const WSBAPP_ASYNC_IN_PROGRESS: ::windows_sys_core::HRESULT = 7995396i32;
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
 pub const WSB_MAX_OB_STATUS_ENTRY: u32 = 5u32;
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
@@ -11,8 +11,8 @@ pub const WSB_MAX_OB_STATUS_VALUE_TYPE_PAIR: u32 = 5u32;
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct WSB_OB_REGISTRATION_INFO {
-    pub m_wszResourceDLL: ::windows_sys::core::PWSTR,
-    pub m_guidSnapinId: ::windows_sys::core::GUID,
+    pub m_wszResourceDLL: ::windows_sys_core::PWSTR,
+    pub m_guidSnapinId: ::windows_sys_core::GUID,
     pub m_dwProviderName: u32,
     pub m_dwProviderIcon: u32,
     pub m_bSupportsRemoting: super::super::Foundation::BOOLEAN,
@@ -59,7 +59,7 @@ pub const WSB_OB_ET_MAX: WSB_OB_STATUS_ENTRY_PAIR_TYPE = 6i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
 pub struct WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR {
-    pub m_wszObStatusEntryPairValue: ::windows_sys::core::PWSTR,
+    pub m_wszObStatusEntryPairValue: ::windows_sys_core::PWSTR,
     pub m_ObStatusEntryPairType: WSB_OB_STATUS_ENTRY_PAIR_TYPE,
 }
 impl ::core::marker::Copy for WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR {}
@@ -71,7 +71,7 @@ impl ::core::clone::Clone for WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
 pub struct WSB_OB_STATUS_INFO {
-    pub m_guidSnapinId: ::windows_sys::core::GUID,
+    pub m_guidSnapinId: ::windows_sys_core::GUID,
     pub m_cStatusEntry: u32,
     pub m_rgStatusEntry: *mut WSB_OB_STATUS_ENTRY,
 }

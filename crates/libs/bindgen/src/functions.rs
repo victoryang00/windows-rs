@@ -74,7 +74,7 @@ fn gen_win_function(gen: &Gen, def: MethodDef) -> TokenStream {
                 #doc
                 #features
                 #[inline]
-                pub unsafe fn #name<#constraints T: ::windows::core::Interface>(#params) -> ::windows::core::Result<T> {
+                pub unsafe fn #name<#constraints T: ::windows_core::Interface>(#params) -> ::windows_core::Result<T> {
                     #[cfg(windows)]
                     {
                         #link_attr
@@ -82,7 +82,7 @@ fn gen_win_function(gen: &Gen, def: MethodDef) -> TokenStream {
                             fn #name(#(#abi_params),*) #abi_return_type;
                         }
                         let mut result__ = ::core::option::Option::None;
-                        #name(#args &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
+                        #name(#args &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
                     }
                     #[cfg(not(windows))]
                     unimplemented!("Unsupported target OS");
@@ -98,14 +98,14 @@ fn gen_win_function(gen: &Gen, def: MethodDef) -> TokenStream {
                 #doc
                 #features
                 #[inline]
-                pub unsafe fn #name<#constraints T: ::windows::core::Interface>(#params result__: *mut ::core::option::Option<T>) -> ::windows::core::Result<()> {
+                pub unsafe fn #name<#constraints T: ::windows_core::Interface>(#params result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
                     #[cfg(windows)]
                     {
                         #link_attr
                         extern "system" {
                             fn #name(#(#abi_params),*) #abi_return_type;
                         }
-                        #name(#args &<T as ::windows::core::Interface>::IID, result__ as *mut _ as *mut _).ok()
+                        #name(#args &<T as ::windows_core::Interface>::IID, result__ as *mut _ as *mut _).ok()
                     }
                     #[cfg(not(windows))]
                     unimplemented!("Unsupported target OS");
@@ -124,7 +124,7 @@ fn gen_win_function(gen: &Gen, def: MethodDef) -> TokenStream {
                 #doc
                 #features
                 #[inline]
-                pub unsafe fn #name<#constraints>(#params) -> ::windows::core::Result<#return_type_tokens> {
+                pub unsafe fn #name<#constraints>(#params) -> ::windows_core::Result<#return_type_tokens> {
                     #[cfg(windows)]
                     {
                         #link_attr
@@ -147,7 +147,7 @@ fn gen_win_function(gen: &Gen, def: MethodDef) -> TokenStream {
                 #doc
                 #features
                 #[inline]
-                pub unsafe fn #name<#constraints>(#params) -> ::windows::core::Result<()> {
+                pub unsafe fn #name<#constraints>(#params) -> ::windows_core::Result<()> {
                     #[cfg(windows)]
                     {
                         #link_attr
@@ -171,7 +171,7 @@ fn gen_win_function(gen: &Gen, def: MethodDef) -> TokenStream {
                     #doc
                     #features
                     #[inline]
-                    pub unsafe fn #name<#constraints>(#params) -> ::windows::core::Result<#return_type> {
+                    pub unsafe fn #name<#constraints>(#params) -> ::windows_core::Result<#return_type> {
                         #[cfg(windows)]
                         {
                             #link_attr
@@ -179,7 +179,7 @@ fn gen_win_function(gen: &Gen, def: MethodDef) -> TokenStream {
                                 fn #name(#(#abi_params),*) -> #return_type;
                             }
                             let result__ = #name(#args);
-                            (!result__.is_invalid()).then(||result__).ok_or_else(::windows::core::Error::from_win32)
+                            (!result__.is_invalid()).then(||result__).ok_or_else(::windows_core::Error::from_win32)
                         }
                         #[cfg(not(windows))]
                         unimplemented!("Unsupported target OS");

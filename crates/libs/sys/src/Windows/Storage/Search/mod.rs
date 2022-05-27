@@ -106,7 +106,7 @@ pub type QueryOptions = *mut ::core::ffi::c_void;
 #[repr(C)]
 #[doc = "*Required features: `\"Storage_Search\"`*"]
 pub struct SortEntry {
-    pub PropertyName: ::windows_sys::core::HSTRING,
+    pub PropertyName: ::windows_sys_core::HSTRING,
     pub AscendingOrder: bool,
 }
 impl ::core::marker::Copy for SortEntry {}

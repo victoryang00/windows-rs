@@ -79,7 +79,7 @@ fn main() -> std::io::Result<()> {
         tokens += &bindgen::define(gen, name);
     }
 
-    let path = std::path::Path::new("crates/libs/windows/src/core/bindings.rs");
+    let path = std::path::Path::new("crates/libs/windows-core/src/bindings.rs");
     std::fs::write(&path, tokens)?;
 
     let mut cmd = ::std::process::Command::new("rustfmt");

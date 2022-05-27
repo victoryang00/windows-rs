@@ -82,7 +82,7 @@ impl ::core::clone::Clone for StorePackageUpdateState {
 #[repr(C)]
 #[doc = "*Required features: `\"Services_Store\"`*"]
 pub struct StorePackageUpdateStatus {
-    pub PackageFamilyName: ::windows_sys::core::HSTRING,
+    pub PackageFamilyName: ::windows_sys_core::HSTRING,
     pub PackageDownloadSizeInBytes: u64,
     pub PackageBytesDownloaded: u64,
     pub PackageDownloadProgress: f64,

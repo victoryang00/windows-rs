@@ -3,9 +3,9 @@ pub mod Xml;
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-    pub fn AMGetErrorTextA(hr: ::windows_sys::core::HRESULT, pbuffer: ::windows_sys::core::PSTR, maxlen: u32) -> u32;
+    pub fn AMGetErrorTextA(hr: ::windows_sys_core::HRESULT, pbuffer: ::windows_sys_core::PSTR, maxlen: u32) -> u32;
     #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-    pub fn AMGetErrorTextW(hr: ::windows_sys::core::HRESULT, pbuffer: ::windows_sys::core::PWSTR, maxlen: u32) -> u32;
+    pub fn AMGetErrorTextW(hr: ::windows_sys_core::HRESULT, pbuffer: ::windows_sys_core::PWSTR, maxlen: u32) -> u32;
 }
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type ADVISE_TYPE = u32;
@@ -46,8 +46,8 @@ pub const AMCONTROL_USED: u32 = 1u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct AMCOPPCommand {
-    pub macKDI: ::windows_sys::core::GUID,
-    pub guidCommandID: ::windows_sys::core::GUID,
+    pub macKDI: ::windows_sys_core::GUID,
+    pub guidCommandID: ::windows_sys_core::GUID,
     pub dwSequence: u32,
     pub cbSizeData: u32,
     pub CommandData: [u8; 4056],
@@ -72,8 +72,8 @@ impl ::core::clone::Clone for AMCOPPSignature {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct AMCOPPStatusInput {
-    pub rApp: ::windows_sys::core::GUID,
-    pub guidStatusRequestID: ::windows_sys::core::GUID,
+    pub rApp: ::windows_sys_core::GUID,
+    pub guidStatusRequestID: ::windows_sys_core::GUID,
     pub dwSequence: u32,
     pub cbSizeData: u32,
     pub StatusData: [u8; 4056],
@@ -87,7 +87,7 @@ impl ::core::clone::Clone for AMCOPPStatusInput {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct AMCOPPStatusOutput {
-    pub macKDI: ::windows_sys::core::GUID,
+    pub macKDI: ::windows_sys_core::GUID,
     pub cbSizeData: u32,
     pub COPPStatus: [u8; 4076],
 }
@@ -141,10 +141,10 @@ pub const AM_EXSEEK_SENDS_VIDEOFRAMEREADY: AMExtendedSeekingCapabilities = 64i32
 pub const AMF_AUTOMATICGAIN: f64 = -1f64;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type AMGETERRORTEXTPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_sys::core::HRESULT, param1: ::windows_sys::core::PCSTR, param2: u32) -> super::super::Foundation::BOOL>;
+pub type AMGETERRORTEXTPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_sys_core::HRESULT, param1: ::windows_sys_core::PCSTR, param2: u32) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type AMGETERRORTEXTPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_sys::core::HRESULT, param1: ::windows_sys::core::PCWSTR, param2: u32) -> super::super::Foundation::BOOL>;
+pub type AMGETERRORTEXTPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_sys_core::HRESULT, param1: ::windows_sys_core::PCWSTR, param2: u32) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const AMINTERLACE_1FieldPerSample: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -749,7 +749,7 @@ pub const AM_DVD_NOT_COPYRIGHTED: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct AM_DVD_RENDERSTATUS {
-    pub hrVPEStatus: ::windows_sys::core::HRESULT,
+    pub hrVPEStatus: ::windows_sys_core::HRESULT,
     pub bDvdVolInvalid: super::super::Foundation::BOOL,
     pub bDvdVolUnknown: super::super::Foundation::BOOL,
     pub bNoLine21In: super::super::Foundation::BOOL,
@@ -1351,17 +1351,17 @@ impl ::core::clone::Clone for ANALOGVIDEOINFO {
         *self
     }
 }
-pub const ANALOG_AUXIN_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1949235303, data2: 2529, data3: 16547, data4: [130, 211, 150, 105, 186, 53, 50, 95] };
-pub const ANALOG_FM_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1999112315, data2: 11193, data3: 20016, data4: [128, 120, 68, 148, 118, 229, 157, 187] };
-pub const ANALOG_TV_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3089160318, data2: 57571, data3: 18319, data4: [138, 56, 78, 19, 247, 179, 223, 66] };
-pub const ATSCChannelTuneRequest: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 57259238, data2: 17846, data3: 4563, data4: [182, 80, 0, 192, 79, 121, 73, 142] };
-pub const ATSCComponentType: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2833052629, data2: 1920, data3: 20212, data4: [138, 131, 44, 255, 170, 203, 138, 206] };
+pub const ANALOG_AUXIN_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1949235303, data2: 2529, data3: 16547, data4: [130, 211, 150, 105, 186, 53, 50, 95] };
+pub const ANALOG_FM_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1999112315, data2: 11193, data3: 20016, data4: [128, 120, 68, 148, 118, 229, 157, 187] };
+pub const ANALOG_TV_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3089160318, data2: 57571, data3: 18319, data4: [138, 56, 78, 19, 247, 179, 223, 66] };
+pub const ATSCChannelTuneRequest: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 57259238, data2: 17846, data3: 4563, data4: [182, 80, 0, 192, 79, 121, 73, 142] };
+pub const ATSCComponentType: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2833052629, data2: 1920, data3: 20212, data4: [138, 131, 44, 255, 170, 203, 138, 206] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type ATSCComponentTypeFlags = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const ATSCCT_AC3: ATSCComponentTypeFlags = 1i32;
-pub const ATSCLocator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2289237787, data2: 39162, data3: 19834, data4: [141, 147, 201, 241, 5, 95, 133, 187] };
-pub const ATSCTuningSpace: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2732787536, data2: 27709, data3: 4563, data4: [182, 83, 0, 192, 79, 121, 73, 142] };
+pub const ATSCLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2289237787, data2: 39162, data3: 19834, data4: [141, 147, 201, 241, 5, 95, 133, 187] };
+pub const ATSCTuningSpace: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2732787536, data2: 27709, data3: 4563, data4: [182, 83, 0, 192, 79, 121, 73, 142] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const ATSC_EIT_TID: u32 = 203u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -1403,7 +1403,7 @@ pub const ATSC_RRT_TID: u32 = 202u32;
 pub const ATSC_STT_PID: u32 = 8187u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const ATSC_STT_TID: u32 = 205u32;
-pub const ATSC_TERRESTRIAL_TV_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 229453789, data2: 24535, data3: 4563, data4: [143, 80, 0, 192, 79, 121, 113, 226] };
+pub const ATSC_TERRESTRIAL_TV_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 229453789, data2: 24535, data3: 4563, data4: [143, 80, 0, 192, 79, 121, 113, 226] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const ATSC_VCT_CABL_TID: u32 = 201u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -1413,7 +1413,7 @@ pub const ATSC_VCT_TERR_TID: u32 = 200u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct AUDIO_STREAM_CONFIG_CAPS {
-    pub guid: ::windows_sys::core::GUID,
+    pub guid: ::windows_sys_core::GUID,
     pub MinimumChannels: u32,
     pub MaximumChannels: u32,
     pub ChannelsGranularity: u32,
@@ -1805,10 +1805,10 @@ pub const AVI_INDEX_OF_TIMED_CHUNKS: u32 = 2u32;
 pub const AVI_INDEX_SUB_2FIELD: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const AVI_INDEX_SUB_DEFAULT: u32 = 0u32;
-pub const AnalogAudioComponentType: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 682295301, data2: 59461, data3: 20474, data4: [170, 155, 244, 102, 82, 54, 20, 28] };
-pub const AnalogLocator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1231260561, data2: 18603, data3: 18615, data4: [164, 122, 125, 14, 117, 160, 142, 222] };
-pub const AnalogRadioTuningSpace: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2322025292, data2: 8035, data3: 4563, data4: [182, 76, 0, 192, 79, 121, 73, 142] };
-pub const AnalogTVTuningSpace: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2322025293, data2: 8035, data3: 4563, data4: [182, 76, 0, 192, 79, 121, 73, 142] };
+pub const AnalogAudioComponentType: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 682295301, data2: 59461, data3: 20474, data4: [170, 155, 244, 102, 82, 54, 20, 28] };
+pub const AnalogLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1231260561, data2: 18603, data3: 18615, data4: [164, 122, 125, 14, 117, 160, 142, 222] };
+pub const AnalogRadioTuningSpace: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2322025292, data2: 8035, data3: 4563, data4: [182, 76, 0, 192, 79, 121, 73, 142] };
+pub const AnalogTVTuningSpace: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2322025293, data2: 8035, data3: 4563, data4: [182, 76, 0, 192, 79, 121, 73, 142] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type AnalogVideoStandard = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -1903,14 +1903,14 @@ pub const AudioType_Standard: u32 = 0u32;
 pub const AudioType_Visually_Impaired: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const AudioType_Voiceover: u32 = 7u32;
-pub const AuxInTuningSpace: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4185299462, data2: 31434, data3: 20025, data4: [156, 251, 151, 187, 53, 240, 231, 126] };
-pub const BDANETWORKTYPE_ATSC: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811281, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const AuxInTuningSpace: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4185299462, data2: 31434, data3: 20025, data4: [156, 251, 151, 187, 53, 240, 231, 126] };
+pub const BDANETWORKTYPE_ATSC: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811281, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct BDANODE_DESCRIPTOR {
     pub ulBdaNodeType: u32,
-    pub guidFunction: ::windows_sys::core::GUID,
-    pub guidName: ::windows_sys::core::GUID,
+    pub guidFunction: ::windows_sys_core::GUID,
+    pub guidName: ::windows_sys_core::GUID,
 }
 impl ::core::marker::Copy for BDANODE_DESCRIPTOR {}
 impl ::core::clone::Clone for BDANODE_DESCRIPTOR {
@@ -1971,7 +1971,7 @@ impl ::core::clone::Clone for BDA_CAS_CLOSE_MMIDIALOG {
 pub struct BDA_CAS_OPENMMIDATA {
     pub ulDialogNumber: u32,
     pub ulDialogRequest: u32,
-    pub uuidDialogType: ::windows_sys::core::GUID,
+    pub uuidDialogType: ::windows_sys_core::GUID,
     pub usDialogDataLength: u16,
     pub argbDialogData: [u8; 1],
 }
@@ -2072,7 +2072,7 @@ pub const BDACOMP_INCLUDE_COMPONENTS_IN_TR: BDA_Comp_Flags = 4i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct BDA_DEBUG_DATA {
     pub lResult: i32,
-    pub uuidDebugDataType: ::windows_sys::core::GUID,
+    pub uuidDebugDataType: ::windows_sys_core::GUID,
     pub ulDataSize: u32,
     pub argbDebugData: [u8; 1],
 }
@@ -2082,8 +2082,8 @@ impl ::core::clone::Clone for BDA_DEBUG_DATA {
         *self
     }
 }
-pub const BDA_DEBUG_DATA_AVAILABLE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1774341972, data2: 39299, data3: 18814, data4: [180, 21, 40, 43, 228, 197, 85, 251] };
-pub const BDA_DEBUG_DATA_TYPE_STRING: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2819024743, data2: 56924, data3: 17164, data4: [128, 191, 162, 30, 190, 6, 199, 72] };
+pub const BDA_DEBUG_DATA_AVAILABLE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1774341972, data2: 39299, data3: 18814, data4: [180, 21, 40, 43, 228, 197, 85, 251] };
+pub const BDA_DEBUG_DATA_TYPE_STRING: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2819024743, data2: 56924, data3: 17164, data4: [128, 191, 162, 30, 190, 6, 199, 72] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type BDA_DISCOVERY_STATE = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -2122,9 +2122,9 @@ impl ::core::clone::Clone for BDA_DISEQC_SEND {
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct BDA_DRM_DRMSTATUS {
     pub lResult: i32,
-    pub DRMuuid: ::windows_sys::core::GUID,
+    pub DRMuuid: ::windows_sys_core::GUID,
     pub ulDrmUuidListStringSize: u32,
-    pub argbDrmUuidListString: [::windows_sys::core::GUID; 1],
+    pub argbDrmUuidListString: [::windows_sys_core::GUID; 1],
 }
 impl ::core::marker::Copy for BDA_DRM_DRMSTATUS {}
 impl ::core::clone::Clone for BDA_DRM_DRMSTATUS {
@@ -2224,7 +2224,7 @@ impl ::core::clone::Clone for BDA_ETHERNET_ADDRESS_LIST {
 pub struct BDA_EVENT_DATA {
     pub lResult: i32,
     pub ulEventID: u32,
-    pub uuidEventType: ::windows_sys::core::GUID,
+    pub uuidEventType: ::windows_sys_core::GUID,
     pub ulEventDataLength: u32,
     pub argbEventData: [u8; 1],
 }
@@ -2277,97 +2277,97 @@ pub const BDA_EVENT_SMART_CARD_INSERTED: BDA_EVENT_ID = 18i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const BDA_EVENT_SMART_CARD_REMOVED: BDA_EVENT_ID = 19i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_ACCESS_DENIED: ::windows_sys::core::HRESULT = -1073479671i32;
+pub const BDA_E_ACCESS_DENIED: ::windows_sys_core::HRESULT = -1073479671i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_BUFFER_TOO_SMALL: ::windows_sys::core::HRESULT = -1073479669i32;
+pub const BDA_E_BUFFER_TOO_SMALL: ::windows_sys_core::HRESULT = -1073479669i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_DISABLED: ::windows_sys::core::HRESULT = -1073479666i32;
+pub const BDA_E_DISABLED: ::windows_sys_core::HRESULT = -1073479666i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_FAILURE: ::windows_sys::core::HRESULT = -1073479679i32;
+pub const BDA_E_FAILURE: ::windows_sys_core::HRESULT = -1073479679i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_INVALID_CAPTURE_TOKEN: ::windows_sys::core::HRESULT = -1073463294i32;
+pub const BDA_E_INVALID_CAPTURE_TOKEN: ::windows_sys_core::HRESULT = -1073463294i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_INVALID_ENTITLEMENT_TOKEN: ::windows_sys::core::HRESULT = -1073463295i32;
+pub const BDA_E_INVALID_ENTITLEMENT_TOKEN: ::windows_sys_core::HRESULT = -1073463295i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_INVALID_HANDLE: ::windows_sys::core::HRESULT = -1073479674i32;
+pub const BDA_E_INVALID_HANDLE: ::windows_sys_core::HRESULT = -1073479674i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_INVALID_LANGUAGE: ::windows_sys::core::HRESULT = -1073479664i32;
+pub const BDA_E_INVALID_LANGUAGE: ::windows_sys_core::HRESULT = -1073479664i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_INVALID_PURCHASE_TOKEN: ::windows_sys::core::HRESULT = -1073463292i32;
+pub const BDA_E_INVALID_PURCHASE_TOKEN: ::windows_sys_core::HRESULT = -1073463292i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_INVALID_SCHEMA: ::windows_sys::core::HRESULT = -1073479675i32;
+pub const BDA_E_INVALID_SCHEMA: ::windows_sys_core::HRESULT = -1073479675i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_INVALID_TUNE_REQUEST: ::windows_sys::core::HRESULT = -1073467388i32;
+pub const BDA_E_INVALID_TUNE_REQUEST: ::windows_sys_core::HRESULT = -1073467388i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_INVALID_TYPE: ::windows_sys::core::HRESULT = -1073479673i32;
+pub const BDA_E_INVALID_TYPE: ::windows_sys_core::HRESULT = -1073479673i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_IPNETWORK_ADDRESS_NOT_FOUND: ::windows_sys::core::HRESULT = -1073459198i32;
+pub const BDA_E_IPNETWORK_ADDRESS_NOT_FOUND: ::windows_sys_core::HRESULT = -1073459198i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_IPNETWORK_ERROR: ::windows_sys::core::HRESULT = -1073459199i32;
+pub const BDA_E_IPNETWORK_ERROR: ::windows_sys_core::HRESULT = -1073459199i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_IPNETWORK_TIMEOUT: ::windows_sys::core::HRESULT = -1073459197i32;
+pub const BDA_E_IPNETWORK_TIMEOUT: ::windows_sys_core::HRESULT = -1073459197i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_IPNETWORK_UNAVAILABLE: ::windows_sys::core::HRESULT = -1073459196i32;
+pub const BDA_E_IPNETWORK_UNAVAILABLE: ::windows_sys_core::HRESULT = -1073459196i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_NOT_FOUND: ::windows_sys::core::HRESULT = -1073479670i32;
+pub const BDA_E_NOT_FOUND: ::windows_sys_core::HRESULT = -1073479670i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_NOT_IMPLEMENTED: ::windows_sys::core::HRESULT = -1073479678i32;
+pub const BDA_E_NOT_IMPLEMENTED: ::windows_sys_core::HRESULT = -1073479678i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_NO_HANDLER: ::windows_sys::core::HRESULT = -1073479665i32;
+pub const BDA_E_NO_HANDLER: ::windows_sys_core::HRESULT = -1073479665i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_NO_MORE_DATA: ::windows_sys::core::HRESULT = -1073475582i32;
+pub const BDA_E_NO_MORE_DATA: ::windows_sys_core::HRESULT = -1073475582i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_NO_MORE_EVENTS: ::windows_sys::core::HRESULT = -1073475583i32;
+pub const BDA_E_NO_MORE_EVENTS: ::windows_sys_core::HRESULT = -1073475583i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_NO_SUCH_COMMAND: ::windows_sys::core::HRESULT = -1073479677i32;
+pub const BDA_E_NO_SUCH_COMMAND: ::windows_sys_core::HRESULT = -1073479677i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_OUT_OF_BOUNDS: ::windows_sys::core::HRESULT = -1073479676i32;
+pub const BDA_E_OUT_OF_BOUNDS: ::windows_sys_core::HRESULT = -1073479676i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_OUT_OF_MEMORY: ::windows_sys::core::HRESULT = -1073479667i32;
+pub const BDA_E_OUT_OF_MEMORY: ::windows_sys_core::HRESULT = -1073479667i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_OUT_OF_RESOURCES: ::windows_sys::core::HRESULT = -1073479668i32;
+pub const BDA_E_OUT_OF_RESOURCES: ::windows_sys_core::HRESULT = -1073479668i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_READ_ONLY: ::windows_sys::core::HRESULT = -1073479672i32;
+pub const BDA_E_READ_ONLY: ::windows_sys_core::HRESULT = -1073479672i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_TIMEOUT_ELAPSED: ::windows_sys::core::HRESULT = -1073479663i32;
+pub const BDA_E_TIMEOUT_ELAPSED: ::windows_sys_core::HRESULT = -1073479663i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_TUNER_CONFLICT: ::windows_sys::core::HRESULT = -1073467389i32;
+pub const BDA_E_TUNER_CONFLICT: ::windows_sys_core::HRESULT = -1073467389i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_TUNER_INITIALIZING: ::windows_sys::core::HRESULT = -1073467391i32;
+pub const BDA_E_TUNER_INITIALIZING: ::windows_sys_core::HRESULT = -1073467391i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_TUNER_REQUIRED: ::windows_sys::core::HRESULT = -1073467390i32;
+pub const BDA_E_TUNER_REQUIRED: ::windows_sys_core::HRESULT = -1073467390i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_TUNE_FAILED_SDV01: ::windows_sys::core::HRESULT = -1073455103i32;
+pub const BDA_E_TUNE_FAILED_SDV01: ::windows_sys_core::HRESULT = -1073455103i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_TUNE_FAILED_SDV02: ::windows_sys::core::HRESULT = -1073455102i32;
+pub const BDA_E_TUNE_FAILED_SDV02: ::windows_sys_core::HRESULT = -1073455102i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_TUNE_FAILED_SDV03: ::windows_sys::core::HRESULT = -1073455101i32;
+pub const BDA_E_TUNE_FAILED_SDV03: ::windows_sys_core::HRESULT = -1073455101i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_TUNE_FAILED_SDV04: ::windows_sys::core::HRESULT = -1073455100i32;
+pub const BDA_E_TUNE_FAILED_SDV04: ::windows_sys_core::HRESULT = -1073455100i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_TUNE_FAILED_SDV05: ::windows_sys::core::HRESULT = -1073455099i32;
+pub const BDA_E_TUNE_FAILED_SDV05: ::windows_sys_core::HRESULT = -1073455099i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_TUNE_FAILED_SDV06: ::windows_sys::core::HRESULT = -1073455098i32;
+pub const BDA_E_TUNE_FAILED_SDV06: ::windows_sys_core::HRESULT = -1073455098i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_TUNE_FAILED_SDV07: ::windows_sys::core::HRESULT = -1073455097i32;
+pub const BDA_E_TUNE_FAILED_SDV07: ::windows_sys_core::HRESULT = -1073455097i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_TUNE_FAILED_SDV08: ::windows_sys::core::HRESULT = -1073455096i32;
+pub const BDA_E_TUNE_FAILED_SDV08: ::windows_sys_core::HRESULT = -1073455096i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_TUNE_FAILED_SDVFF: ::windows_sys::core::HRESULT = -1073454849i32;
+pub const BDA_E_TUNE_FAILED_SDVFF: ::windows_sys_core::HRESULT = -1073454849i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_WMDRM_INVALID_CERTIFICATE: ::windows_sys::core::HRESULT = -1073418238i32;
+pub const BDA_E_WMDRM_INVALID_CERTIFICATE: ::windows_sys_core::HRESULT = -1073418238i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_WMDRM_INVALID_DATE: ::windows_sys::core::HRESULT = -1073418235i32;
+pub const BDA_E_WMDRM_INVALID_DATE: ::windows_sys_core::HRESULT = -1073418235i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_WMDRM_INVALID_PROXIMITY: ::windows_sys::core::HRESULT = -1073418234i32;
+pub const BDA_E_WMDRM_INVALID_PROXIMITY: ::windows_sys_core::HRESULT = -1073418234i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_WMDRM_INVALID_SIGNATURE: ::windows_sys::core::HRESULT = -1073418239i32;
+pub const BDA_E_WMDRM_INVALID_SIGNATURE: ::windows_sys_core::HRESULT = -1073418239i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_WMDRM_INVALID_VERSION: ::windows_sys::core::HRESULT = -1073418236i32;
+pub const BDA_E_WMDRM_INVALID_VERSION: ::windows_sys_core::HRESULT = -1073418236i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_WMDRM_KEY_ID_NOT_FOUND: ::windows_sys::core::HRESULT = -1073418232i32;
+pub const BDA_E_WMDRM_KEY_ID_NOT_FOUND: ::windows_sys_core::HRESULT = -1073418232i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const BDA_E_WOULD_DISRUPT_STREAMING: ::windows_sys::core::HRESULT = -1073463293i32;
+pub const BDA_E_WOULD_DISRUPT_STREAMING: ::windows_sys_core::HRESULT = -1073463293i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type BDA_Frequency = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -2398,7 +2398,7 @@ impl ::core::clone::Clone for BDA_GDDS_DATA {
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct BDA_GDDS_DATATYPE {
     pub lResult: i32,
-    pub uuidDataType: ::windows_sys::core::GUID,
+    pub uuidDataType: ::windows_sys_core::GUID,
 }
 impl ::core::marker::Copy for BDA_GDDS_DATATYPE {}
 impl ::core::clone::Clone for BDA_GDDS_DATATYPE {
@@ -2730,7 +2730,7 @@ impl ::core::clone::Clone for BDA_TRANSPORT_INFO {
 pub struct BDA_TS_SELECTORINFO {
     pub bTSInfolength: u8,
     pub bReserved: [u8; 2],
-    pub guidNetworkType: ::windows_sys::core::GUID,
+    pub guidNetworkType: ::windows_sys_core::GUID,
     pub bTSIDCount: u8,
     pub usTSID: [u16; 1],
 }
@@ -2794,7 +2794,7 @@ impl ::core::clone::Clone for BDA_USERACTIVITY_INTERVAL {
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct BDA_WMDRMTUNER_PIDPROTECTION {
     pub lResult: i32,
-    pub uuidKeyID: ::windows_sys::core::GUID,
+    pub uuidKeyID: ::windows_sys_core::GUID,
 }
 impl ::core::marker::Copy for BDA_WMDRMTUNER_PIDPROTECTION {}
 impl ::core::clone::Clone for BDA_WMDRMTUNER_PIDPROTECTION {
@@ -2821,7 +2821,7 @@ impl ::core::clone::Clone for BDA_WMDRMTUNER_PURCHASEENTITLEMENT {
 pub struct BDA_WMDRM_KEYINFOLIST {
     pub lResult: i32,
     pub ulKeyuuidBufferLen: u32,
-    pub argKeyuuidBuffer: [::windows_sys::core::GUID; 1],
+    pub argKeyuuidBuffer: [::windows_sys_core::GUID; 1],
 }
 impl ::core::marker::Copy for BDA_WMDRM_KEYINFOLIST {}
 impl ::core::clone::Clone for BDA_WMDRM_KEYINFOLIST {
@@ -2863,11 +2863,11 @@ impl ::core::clone::Clone for BDA_WMDRM_STATUS {
         *self
     }
 }
-pub const BSKYB_TERRESTRIAL_TV_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2661172934, data2: 15034, data3: 20232, data4: [173, 14, 204, 90, 200, 20, 140, 43] };
+pub const BSKYB_TERRESTRIAL_TV_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2661172934, data2: 15034, data3: 20232, data4: [173, 14, 204, 90, 200, 20, 140, 43] };
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct BadSampleInfo {
-    pub hrReason: ::windows_sys::core::HRESULT,
+    pub hrReason: ::windows_sys_core::HRESULT,
 }
 impl ::core::marker::Copy for BadSampleInfo {}
 impl ::core::clone::Clone for BadSampleInfo {
@@ -2965,7 +2965,7 @@ pub const BDA_BCC_RATE_8_9: BinaryConvolutionCodeRate = 13i32;
 pub const BDA_BCC_RATE_9_10: BinaryConvolutionCodeRate = 14i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const BDA_BCC_RATE_MAX: BinaryConvolutionCodeRate = 15i32;
-pub const BroadcastEventService: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 188742546, data2: 2329, data3: 18740, data4: [157, 91, 97, 156, 113, 157, 2, 2] };
+pub const BroadcastEventService: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 188742546, data2: 2329, data3: 18740, data4: [157, 91, 97, 156, 113, 157, 2, 2] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct CAPTURE_STREAMTIME {
@@ -2997,26 +2997,26 @@ pub const CDEF_MERIT_ABOVE_DO_NOT_USE: u32 = 8u32;
 pub const CFSTR_VFW_FILTERLIST: &str = "Video for Windows 4 Filters";
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const CHARS_IN_GUID: u32 = 39u32;
-pub const CLSID_AMAudioData: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4064707968, data2: 44938, data3: 4560, data4: [130, 18, 0, 192, 79, 195, 44, 69] };
-pub const CLSID_AMAudioStream: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2224480320, data2: 44876, data3: 4560, data4: [130, 18, 0, 192, 79, 195, 44, 69] };
-pub const CLSID_AMDirectDrawStream: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1237613796, data2: 39844, data3: 4560, data4: [130, 18, 0, 192, 79, 195, 44, 69] };
-pub const CLSID_AMMediaTypeStream: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3473878908, data2: 63423, data3: 4560, data4: [144, 13, 0, 192, 79, 217, 24, 157] };
-pub const CLSID_AMMultiMediaStream: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1237613797, data2: 39844, data3: 4560, data4: [130, 18, 0, 192, 79, 195, 44, 69] };
-pub const CLSID_CPCAFiltersCategory: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229820, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const CLSID_DMOFilterCategory: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3168106860, data2: 48466, data3: 19760, data4: [171, 118, 112, 249, 117, 184, 145, 153] };
-pub const CLSID_DMOWrapperFilter: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2485743683, data2: 48514, data3: 19965, data4: [176, 222, 129, 119, 115, 156, 109, 32] };
-pub const CLSID_DTFilterEncProperties: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229698, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const CLSID_DTFilterTagProperties: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229714, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const CLSID_ETFilterEncProperties: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229697, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const CLSID_ETFilterTagProperties: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229713, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const CLSID_Mpeg2TableFilter: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1965573617, data2: 30095, data3: 19587, data4: [160, 67, 66, 112, 197, 147, 48, 142] };
-pub const CLSID_PBDA_AUX_DATA_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4249183091, data2: 13091, data3: 16528, data4: [173, 202, 142, 212, 95, 85, 207, 16] };
-pub const CLSID_PBDA_Encoder_DATA_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1922029244, data2: 21830, data3: 18198, data4: [177, 3, 248, 153, 245, 161, 250, 104] };
-pub const CLSID_PBDA_FDC_DATA_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3889953184, data2: 8875, data3: 16455, data4: [142, 103, 239, 154, 213, 4, 231, 41] };
-pub const CLSID_PBDA_GDDS_DATA_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3356233203, data2: 24658, data3: 19478, data4: [159, 86, 196, 76, 33, 247, 60, 69] };
-pub const CLSID_PTFilter: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2631079447, data2: 45827, data3: 20374, data4: [131, 48, 46, 177, 115, 234, 77, 198] };
-pub const CLSID_XDSCodecProperties: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229699, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const CLSID_XDSCodecTagProperties: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229715, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const CLSID_AMAudioData: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4064707968, data2: 44938, data3: 4560, data4: [130, 18, 0, 192, 79, 195, 44, 69] };
+pub const CLSID_AMAudioStream: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2224480320, data2: 44876, data3: 4560, data4: [130, 18, 0, 192, 79, 195, 44, 69] };
+pub const CLSID_AMDirectDrawStream: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1237613796, data2: 39844, data3: 4560, data4: [130, 18, 0, 192, 79, 195, 44, 69] };
+pub const CLSID_AMMediaTypeStream: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3473878908, data2: 63423, data3: 4560, data4: [144, 13, 0, 192, 79, 217, 24, 157] };
+pub const CLSID_AMMultiMediaStream: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1237613797, data2: 39844, data3: 4560, data4: [130, 18, 0, 192, 79, 195, 44, 69] };
+pub const CLSID_CPCAFiltersCategory: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229820, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const CLSID_DMOFilterCategory: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3168106860, data2: 48466, data3: 19760, data4: [171, 118, 112, 249, 117, 184, 145, 153] };
+pub const CLSID_DMOWrapperFilter: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2485743683, data2: 48514, data3: 19965, data4: [176, 222, 129, 119, 115, 156, 109, 32] };
+pub const CLSID_DTFilterEncProperties: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229698, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const CLSID_DTFilterTagProperties: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229714, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const CLSID_ETFilterEncProperties: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229697, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const CLSID_ETFilterTagProperties: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229713, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const CLSID_Mpeg2TableFilter: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1965573617, data2: 30095, data3: 19587, data4: [160, 67, 66, 112, 197, 147, 48, 142] };
+pub const CLSID_PBDA_AUX_DATA_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4249183091, data2: 13091, data3: 16528, data4: [173, 202, 142, 212, 95, 85, 207, 16] };
+pub const CLSID_PBDA_Encoder_DATA_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1922029244, data2: 21830, data3: 18198, data4: [177, 3, 248, 153, 245, 161, 250, 104] };
+pub const CLSID_PBDA_FDC_DATA_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3889953184, data2: 8875, data3: 16455, data4: [142, 103, 239, 154, 213, 4, 231, 41] };
+pub const CLSID_PBDA_GDDS_DATA_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3356233203, data2: 24658, data3: 19478, data4: [159, 86, 196, 76, 33, 247, 60, 69] };
+pub const CLSID_PTFilter: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2631079447, data2: 45827, data3: 20374, data4: [131, 48, 46, 177, 115, 234, 77, 198] };
+pub const CLSID_XDSCodecProperties: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229699, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const CLSID_XDSCodecTagProperties: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229715, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct COLORKEY {
@@ -3317,7 +3317,7 @@ pub type CROSSBAR_DEFAULT_FLAGS = i32;
 pub const DEF_MODE_PROFILE: CROSSBAR_DEFAULT_FLAGS = 1i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DEF_MODE_STREAMS: CROSSBAR_DEFAULT_FLAGS = 2i32;
-pub const CXDSData: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229812, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const CXDSData: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229812, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type CameraControlFlags = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -3358,8 +3358,8 @@ pub type ChannelChangeSpanningEvent_State = i32;
 pub const ChannelChangeSpanningEvent_Start: ChannelChangeSpanningEvent_State = 0i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const ChannelChangeSpanningEvent_End: ChannelChangeSpanningEvent_State = 2i32;
-pub const ChannelIDTuneRequest: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 982788263, data2: 12708, data3: 17897, data4: [158, 251, 224, 85, 191, 123, 179, 219] };
-pub const ChannelIDTuningSpace: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3431111215, data2: 13157, data3: 17983, data4: [175, 19, 129, 219, 182, 243, 165, 85] };
+pub const ChannelIDTuneRequest: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 982788263, data2: 12708, data3: 17897, data4: [158, 251, 224, 85, 191, 123, 179, 219] };
+pub const ChannelIDTuningSpace: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3431111215, data2: 13157, data3: 17983, data4: [175, 19, 129, 219, 182, 243, 165, 85] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct ChannelInfo {
@@ -3420,7 +3420,7 @@ impl ::core::clone::Clone for ChannelInfo_0_2 {
         *self
     }
 }
-pub const ChannelTuneRequest: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 57259237, data2: 17846, data3: 4563, data4: [182, 80, 0, 192, 79, 121, 73, 142] };
+pub const ChannelTuneRequest: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 57259237, data2: 17846, data3: 4563, data4: [182, 80, 0, 192, 79, 121, 73, 142] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type ChannelType = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -3453,7 +3453,7 @@ impl ::core::clone::Clone for ChannelTypeInfo {
         *self
     }
 }
-pub const Component: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1507608488, data2: 4460, data3: 4563, data4: [157, 142, 0, 192, 79, 114, 217, 128] };
+pub const Component: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1507608488, data2: 4460, data3: 4563, data4: [157, 142, 0, 192, 79, 114, 217, 128] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type ComponentCategory = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -3484,9 +3484,9 @@ pub const StatusActive: ComponentStatus = 0i32;
 pub const StatusInactive: ComponentStatus = 1i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const StatusUnavailable: ComponentStatus = 2i32;
-pub const ComponentType: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2184525216, data2: 792, data3: 4563, data4: [157, 142, 0, 192, 79, 114, 217, 128] };
-pub const ComponentTypes: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2711794116, data2: 3642, data3: 4563, data4: [157, 142, 0, 192, 79, 114, 217, 128] };
-pub const Components: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2157667937, data2: 38084, data3: 18918, data4: [182, 236, 63, 15, 134, 34, 21, 170] };
+pub const ComponentType: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2184525216, data2: 792, data3: 4563, data4: [157, 142, 0, 192, 79, 114, 217, 128] };
+pub const ComponentTypes: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2711794116, data2: 3642, data3: 4563, data4: [157, 142, 0, 192, 79, 114, 217, 128] };
+pub const Components: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2157667937, data2: 38084, data3: 18918, data4: [182, 236, 63, 15, 134, 34, 21, 170] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type CompressionCaps = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -3499,7 +3499,7 @@ pub const CompressionCaps_CanKeyFrame: CompressionCaps = 4i32;
 pub const CompressionCaps_CanBFrame: CompressionCaps = 8i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const CompressionCaps_CanWindow: CompressionCaps = 16i32;
-pub const CreatePropBagOnRegKey: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2322025289, data2: 8035, data3: 4563, data4: [182, 76, 0, 192, 79, 121, 73, 142] };
+pub const CreatePropBagOnRegKey: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2322025289, data2: 8035, data3: 4563, data4: [182, 76, 0, 192, 79, 121, 73, 142] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type DDSFF_FLAGS = u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -3542,8 +3542,8 @@ pub const DESC_LINKAGE_RESERVED1: DESC_LINKAGE_TYPE = 7i32;
 pub const DESC_LINKAGE_USER: DESC_LINKAGE_TYPE = 8i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DESC_LINKAGE_RESERVED2: DESC_LINKAGE_TYPE = 255i32;
-pub const DIGITAL_CABLE_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 339224491, data2: 63355, data3: 18829, data4: [129, 202, 90, 0, 122, 236, 40, 191] };
-pub const DIRECT_TV_SATELLITE_TV_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2478206901, data2: 37844, data3: 17187, data4: [146, 28, 193, 245, 45, 246, 29, 63] };
+pub const DIGITAL_CABLE_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 339224491, data2: 63355, data3: 18829, data4: [129, 202, 90, 0, 122, 236, 40, 191] };
+pub const DIRECT_TV_SATELLITE_TV_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2478206901, data2: 37844, data3: 17187, data4: [146, 28, 193, 245, 45, 246, 29, 63] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type DISPID_TUNER = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -3770,8 +3770,8 @@ pub const DISPID_MP2TUNER_TSID: DISPID_TUNER = 101i32;
 pub const DISPID_MP2TUNER_PROGNO: DISPID_TUNER = 102i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DISPID_MP2TUNERFACTORY_CREATETUNEREQUEST: DISPID_TUNER = 1i32;
-pub const DSATTRIB_BadSampleInfo: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3833884122, data2: 22584, data3: 17076, data4: [184, 151, 111, 126, 95, 170, 47, 47] };
-pub const DSATTRIB_WMDRMProtectionInfo: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1081382275, data2: 27549, data3: 20204, data4: [180, 60, 103, 161, 128, 30, 26, 155] };
+pub const DSATTRIB_BadSampleInfo: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3833884122, data2: 22584, data3: 17076, data4: [184, 151, 111, 126, 95, 170, 47, 47] };
+pub const DSATTRIB_WMDRMProtectionInfo: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1081382275, data2: 27549, data3: 20204, data4: [180, 60, 103, 161, 128, 30, 26, 155] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -3881,7 +3881,7 @@ impl ::core::clone::Clone for DSMCC_SECTION_1 {
         *self
     }
 }
-pub const DTFilter: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229810, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const DTFilter: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229810, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DTV_CardStatus_Error: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -3900,9 +3900,9 @@ pub const DTV_Entitlement_TechnicalFailure: u32 = 2u32;
 pub const DTV_MMIMessage_Close: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DTV_MMIMessage_Open: u32 = 0u32;
-pub const DVBCLocator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3308378621, data2: 38533, data3: 16424, data4: [139, 104, 110, 18, 50, 7, 159, 30] };
-pub const DVBSLocator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 502780198, data2: 16464, data3: 18416, data4: [167, 207, 76, 76, 169, 36, 19, 51] };
-pub const DVBSTuningSpace: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3057653491, data2: 51618, data3: 16486, data4: [150, 240, 189, 149, 99, 49, 71, 38] };
+pub const DVBCLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3308378621, data2: 38533, data3: 16424, data4: [139, 104, 110, 18, 50, 7, 159, 30] };
+pub const DVBSLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 502780198, data2: 16464, data3: 18416, data4: [167, 207, 76, 76, 169, 36, 19, 51] };
+pub const DVBSTuningSpace: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3057653491, data2: 51618, data3: 16486, data4: [150, 240, 189, 149, 99, 49, 71, 38] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DVBS_SCAN_TABLE_MAX_SIZE: u32 = 400u32;
 #[repr(C)]
@@ -3932,15 +3932,15 @@ pub const DVB_Satellite: DVBSystemType = 2i32;
 pub const ISDB_Terrestrial: DVBSystemType = 3i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const ISDB_Satellite: DVBSystemType = 4i32;
-pub const DVBTLocator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2631288577, data2: 48627, data3: 19732, data4: [142, 3, 241, 41, 131, 216, 102, 100] };
-pub const DVBTLocator2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4024695298, data2: 17879, data3: 18720, data4: [190, 150, 83, 250, 127, 53, 176, 230] };
-pub const DVBTuneRequest: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 366366794, data2: 21652, data3: 18844, data4: [136, 108, 151, 60, 158, 83, 185, 241] };
-pub const DVBTuningSpace: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3333507890, data2: 30378, data3: 19078, data4: [167, 172, 92, 121, 170, 245, 141, 167] };
+pub const DVBTLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2631288577, data2: 48627, data3: 19732, data4: [142, 3, 241, 41, 131, 216, 102, 100] };
+pub const DVBTLocator2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4024695298, data2: 17879, data3: 18720, data4: [190, 150, 83, 250, 127, 53, 176, 230] };
+pub const DVBTuneRequest: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 366366794, data2: 21652, data3: 18844, data4: [136, 108, 151, 60, 158, 83, 185, 241] };
+pub const DVBTuningSpace: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3333507890, data2: 30378, data3: 19078, data4: [167, 172, 92, 121, 170, 245, 141, 167] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DVB_BAT_PID: u32 = 17u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DVB_BAT_TID: u32 = 74u32;
-pub const DVB_CABLE_TV_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3691778023, data2: 1157, data3: 16998, data4: [185, 63, 104, 251, 248, 14, 216, 52] };
+pub const DVB_CABLE_TV_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3691778023, data2: 1157, data3: 16998, data4: [185, 63, 104, 251, 248, 14, 216, 52] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DVB_DIT_PID: u32 = 30u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -3976,7 +3976,7 @@ pub const DVB_NIT_PID: u32 = 16u32;
 pub const DVB_RST_PID: u32 = 19u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DVB_RST_TID: u32 = 113u32;
-pub const DVB_SATELLITE_TV_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4199233370, data2: 17844, data3: 19781, data4: [132, 64, 38, 57, 87, 177, 22, 35] };
+pub const DVB_SATELLITE_TV_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4199233370, data2: 17844, data3: 19781, data4: [132, 64, 38, 57, 87, 177, 22, 35] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DVB_SDT_ACTUAL_TID: u32 = 66u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -4013,7 +4013,7 @@ pub const DVB_ST_TID: u32 = 114u32;
 pub const DVB_TDT_PID: u32 = 20u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DVB_TDT_TID: u32 = 112u32;
-pub const DVB_TERRESTRIAL_TV_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 560751327, data2: 28031, data3: 20122, data4: [133, 113, 5, 241, 78, 219, 118, 106] };
+pub const DVB_TERRESTRIAL_TV_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 560751327, data2: 28031, data3: 20122, data4: [133, 113, 5, 241, 78, 219, 118, 106] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DVB_TOT_PID: u32 = 20u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -4928,8 +4928,8 @@ pub struct DVR_STREAM_DESC {
     pub Default: super::super::Foundation::BOOL,
     pub Creation: super::super::Foundation::BOOL,
     pub Reserved: u32,
-    pub guidSubMediaType: ::windows_sys::core::GUID,
-    pub guidFormatType: ::windows_sys::core::GUID,
+    pub guidSubMediaType: ::windows_sys_core::GUID,
+    pub guidFormatType: ::windows_sys_core::GUID,
     pub MediaType: super::MediaFoundation::AM_MEDIA_TYPE,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Media_MediaFoundation"))]
@@ -4988,8 +4988,8 @@ impl ::core::clone::Clone for DXVA2TraceVideoProcessBltData {
         *self
     }
 }
-pub const DXVA2Trace_Control: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2688052853, data2: 63244, data3: 17996, data4: [169, 206, 51, 196, 78, 9, 22, 35] };
-pub const DXVA2Trace_DecodeDevBeginFrame: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2681318646, data2: 17611, data3: 17975, data4: [188, 98, 44, 17, 169, 96, 143, 144] };
+pub const DXVA2Trace_Control: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2688052853, data2: 63244, data3: 17996, data4: [169, 206, 51, 196, 78, 9, 22, 35] };
+pub const DXVA2Trace_DecodeDevBeginFrame: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2681318646, data2: 17611, data3: 17975, data4: [188, 98, 44, 17, 169, 96, 143, 144] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Etw\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Etw"))]
@@ -5007,7 +5007,7 @@ impl ::core::clone::Clone for DXVA2Trace_DecodeDevBeginFrameData {
         *self
     }
 }
-pub const DXVA2Trace_DecodeDevCreated: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3034453921, data2: 50610, data3: 17662, data4: [134, 213, 217, 122, 100, 129, 20, 255] };
+pub const DXVA2Trace_DecodeDevCreated: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3034453921, data2: 50610, data3: 17662, data4: [134, 213, 217, 122, 100, 129, 20, 255] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Etw\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Etw"))]
@@ -5015,7 +5015,7 @@ pub struct DXVA2Trace_DecodeDevCreatedData {
     pub wmiHeader: super::super::System::Diagnostics::Etw::EVENT_TRACE_HEADER,
     pub pObject: u64,
     pub pD3DDevice: u64,
-    pub DeviceGuid: ::windows_sys::core::GUID,
+    pub DeviceGuid: ::windows_sys_core::GUID,
     pub Width: u32,
     pub Height: u32,
     pub Enter: super::super::Foundation::BOOL,
@@ -5028,10 +5028,10 @@ impl ::core::clone::Clone for DXVA2Trace_DecodeDevCreatedData {
         *self
     }
 }
-pub const DXVA2Trace_DecodeDevDestroyed: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2235481586, data2: 16736, data3: 16925, data4: [136, 147, 99, 220, 234, 79, 24, 187] };
-pub const DXVA2Trace_DecodeDevEndFrame: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2679360307, data2: 18396, data3: 18585, data4: [152, 200, 192, 198, 205, 124, 211, 203] };
-pub const DXVA2Trace_DecodeDevExecute: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2232085324, data2: 53658, data3: 17929, data4: [179, 180, 188, 191, 14, 34, 18, 30] };
-pub const DXVA2Trace_DecodeDevGetBuffer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1471228155, data2: 29387, data3: 16695, data4: [165, 117, 217, 31, 163, 22, 8, 151] };
+pub const DXVA2Trace_DecodeDevDestroyed: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2235481586, data2: 16736, data3: 16925, data4: [136, 147, 99, 220, 234, 79, 24, 187] };
+pub const DXVA2Trace_DecodeDevEndFrame: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2679360307, data2: 18396, data3: 18585, data4: [152, 200, 192, 198, 205, 124, 211, 203] };
+pub const DXVA2Trace_DecodeDevExecute: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2232085324, data2: 53658, data3: 17929, data4: [179, 180, 188, 191, 14, 34, 18, 30] };
+pub const DXVA2Trace_DecodeDevGetBuffer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1471228155, data2: 29387, data3: 16695, data4: [165, 117, 217, 31, 163, 22, 8, 151] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Etw\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Etw"))]
@@ -5065,8 +5065,8 @@ impl ::core::clone::Clone for DXVA2Trace_DecodeDeviceData {
         *self
     }
 }
-pub const DXVA2Trace_VideoProcessBlt: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1762172096, data2: 29099, data3: 17104, data4: [149, 58, 40, 135, 191, 5, 168, 175] };
-pub const DXVA2Trace_VideoProcessDevCreated: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2304051398, data2: 21517, data3: 19591, data4: [152, 248, 141, 203, 242, 218, 187, 42] };
+pub const DXVA2Trace_VideoProcessBlt: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1762172096, data2: 29099, data3: 17104, data4: [149, 58, 40, 135, 191, 5, 168, 175] };
+pub const DXVA2Trace_VideoProcessDevCreated: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2304051398, data2: 21517, data3: 19591, data4: [152, 248, 141, 203, 242, 218, 187, 42] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Etw\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Etw"))]
@@ -5074,7 +5074,7 @@ pub struct DXVA2Trace_VideoProcessDevCreatedData {
     pub wmiHeader: super::super::System::Diagnostics::Etw::EVENT_TRACE_HEADER,
     pub pObject: u64,
     pub pD3DDevice: u64,
-    pub DeviceGuid: ::windows_sys::core::GUID,
+    pub DeviceGuid: ::windows_sys_core::GUID,
     pub RTFourCC: u32,
     pub Width: u32,
     pub Height: u32,
@@ -5088,7 +5088,7 @@ impl ::core::clone::Clone for DXVA2Trace_VideoProcessDevCreatedData {
         *self
     }
 }
-pub const DXVA2Trace_VideoProcessDevDestroyed: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4185862321, data2: 64329, data3: 17095, data4: [142, 232, 136, 189, 250, 146, 212, 226] };
+pub const DXVA2Trace_VideoProcessDevDestroyed: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4185862321, data2: 64329, data3: 17095, data4: [142, 232, 136, 189, 250, 146, 212, 226] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Etw\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Etw"))]
@@ -5245,24 +5245,24 @@ pub const DXVA_CONFIG_DATA_TYPE_DPXD: u32 = 2u32;
 pub const DXVA_CONFIG_DATA_TYPE_IA44: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DXVA_COPPCommandFnCode: u32 = 4u32;
-pub const DXVA_COPPDevice: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3527768797, data2: 35225, data3: 17901, data4: [138, 138, 209, 170, 4, 123, 164, 213] };
+pub const DXVA_COPPDevice: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3527768797, data2: 35225, data3: 17901, data4: [138, 138, 209, 170, 4, 123, 164, 213] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DXVA_COPPGetCertificateLengthFnCode: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DXVA_COPPKeyExchangeFnCode: u32 = 2u32;
-pub const DXVA_COPPQueryBusData: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3337934451, data2: 24948, data3: 16772, data4: [142, 53, 246, 219, 82, 0, 188, 186] };
-pub const DXVA_COPPQueryConnectorType: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2177941461, data2: 27390, data3: 18626, data4: [153, 192, 149, 160, 143, 151, 197, 218] };
-pub const DXVA_COPPQueryDisplayData: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3619625891, data2: 44307, data3: 20366, data4: [175, 152, 13, 203, 60, 162, 4, 204] };
-pub const DXVA_COPPQueryGlobalProtectionLevel: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 425140490, data2: 30566, data3: 17706, data4: [185, 154, 210, 122, 237, 84, 240, 58] };
-pub const DXVA_COPPQueryHDCPKeyData: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 230006132, data2: 43410, data3: 18734, data4: [160, 189, 194, 63, 218, 86, 78, 0] };
-pub const DXVA_COPPQueryLocalProtectionLevel: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2986825815, data2: 16090, data3: 19805, data4: [136, 219, 116, 143, 140, 26, 5, 73] };
-pub const DXVA_COPPQueryProtectionType: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 955426817, data2: 39532, data3: 18619, data4: [145, 7, 182, 105, 110, 111, 23, 151] };
-pub const DXVA_COPPQuerySignaling: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1714005393, data2: 15225, data3: 19699, data4: [146, 74, 17, 232, 231, 129, 22, 113] };
+pub const DXVA_COPPQueryBusData: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3337934451, data2: 24948, data3: 16772, data4: [142, 53, 246, 219, 82, 0, 188, 186] };
+pub const DXVA_COPPQueryConnectorType: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2177941461, data2: 27390, data3: 18626, data4: [153, 192, 149, 160, 143, 151, 197, 218] };
+pub const DXVA_COPPQueryDisplayData: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3619625891, data2: 44307, data3: 20366, data4: [175, 152, 13, 203, 60, 162, 4, 204] };
+pub const DXVA_COPPQueryGlobalProtectionLevel: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 425140490, data2: 30566, data3: 17706, data4: [185, 154, 210, 122, 237, 84, 240, 58] };
+pub const DXVA_COPPQueryHDCPKeyData: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 230006132, data2: 43410, data3: 18734, data4: [160, 189, 194, 63, 218, 86, 78, 0] };
+pub const DXVA_COPPQueryLocalProtectionLevel: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2986825815, data2: 16090, data3: 19805, data4: [136, 219, 116, 143, 140, 26, 5, 73] };
+pub const DXVA_COPPQueryProtectionType: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 955426817, data2: 39532, data3: 18619, data4: [145, 7, 182, 105, 110, 111, 23, 151] };
+pub const DXVA_COPPQuerySignaling: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1714005393, data2: 15225, data3: 19699, data4: [146, 74, 17, 232, 231, 129, 22, 113] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DXVA_COPPQueryStatusFnCode: u32 = 5u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DXVA_COPPSequenceStartFnCode: u32 = 3u32;
-pub const DXVA_COPPSetProtectionLevel: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2612605564, data2: 20149, data3: 18215, data4: [159, 0, 180, 43, 9, 25, 192, 218] };
+pub const DXVA_COPPSetProtectionLevel: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2612605564, data2: 20149, data3: 18215, data4: [159, 0, 180, 43, 9, 25, 192, 218] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct DXVA_COPPSetProtectionLevelCmdData {
@@ -5277,7 +5277,7 @@ impl ::core::clone::Clone for DXVA_COPPSetProtectionLevelCmdData {
         *self
     }
 }
-pub const DXVA_COPPSetSignaling: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 161886629, data2: 54916, data3: 19552, data4: [142, 77, 211, 187, 15, 11, 227, 238] };
+pub const DXVA_COPPSetSignaling: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 161886629, data2: 54916, data3: 19552, data4: [142, 77, 211, 187, 15, 11, 227, 238] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct DXVA_COPPSetSignalingCmdData {
@@ -5301,7 +5301,7 @@ impl ::core::clone::Clone for DXVA_COPPSetSignalingCmdData {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct DXVA_COPPStatusData {
-    pub rApp: ::windows_sys::core::GUID,
+    pub rApp: ::windows_sys_core::GUID,
     pub dwFlags: u32,
     pub dwData: u32,
     pub ExtendedInfoValidMask: u32,
@@ -5316,7 +5316,7 @@ impl ::core::clone::Clone for DXVA_COPPStatusData {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct DXVA_COPPStatusDisplayData {
-    pub rApp: ::windows_sys::core::GUID,
+    pub rApp: ::windows_sys_core::GUID,
     pub dwFlags: u32,
     pub DisplayWidth: u32,
     pub DisplayHeight: u32,
@@ -5334,12 +5334,12 @@ impl ::core::clone::Clone for DXVA_COPPStatusDisplayData {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct DXVA_COPPStatusHDCPKeyData {
-    pub rApp: ::windows_sys::core::GUID,
+    pub rApp: ::windows_sys_core::GUID,
     pub dwFlags: u32,
     pub dwHDCPFlags: u32,
-    pub BKey: ::windows_sys::core::GUID,
-    pub Reserved1: ::windows_sys::core::GUID,
-    pub Reserved2: ::windows_sys::core::GUID,
+    pub BKey: ::windows_sys_core::GUID,
+    pub Reserved1: ::windows_sys_core::GUID,
+    pub Reserved2: ::windows_sys_core::GUID,
 }
 impl ::core::marker::Copy for DXVA_COPPStatusHDCPKeyData {}
 impl ::core::clone::Clone for DXVA_COPPStatusHDCPKeyData {
@@ -5350,7 +5350,7 @@ impl ::core::clone::Clone for DXVA_COPPStatusHDCPKeyData {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct DXVA_COPPStatusSignalingCmdData {
-    pub rApp: ::windows_sys::core::GUID,
+    pub rApp: ::windows_sys_core::GUID,
     pub dwFlags: u32,
     pub AvailableTVProtectionStandards: u32,
     pub ActiveTVProtectionStandard: u32,
@@ -5382,8 +5382,8 @@ pub const DXVA_DPXD_SURFACE_BUFFER: u32 = 10u32;
 pub const DXVA_DeinterlaceBltExFnCode: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DXVA_DeinterlaceBltFnCode: u32 = 1u32;
-pub const DXVA_DeinterlaceBobDevice: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 861578094, data2: 30852, data3: 17316, data4: [156, 145, 127, 135, 250, 243, 227, 126] };
-pub const DXVA_DeinterlaceContainerDevice: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 243649427, data2: 12358, data3: 20464, data4: [174, 204, 213, 140, 181, 240, 53, 253] };
+pub const DXVA_DeinterlaceBobDevice: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 861578094, data2: 30852, data3: 17316, data4: [156, 145, 127, 135, 250, 243, 227, 126] };
+pub const DXVA_DeinterlaceContainerDevice: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 243649427, data2: 12358, data3: 20464, data4: [174, 204, 213, 140, 181, 240, 53, 253] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DXVA_DeinterlaceQueryAvailableModesFnCode: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -5424,58 +5424,58 @@ pub const DXVA_MV_PRECISION_AND_CHROMA_RELATION_H261: u32 = 2u32;
 pub const DXVA_MV_PRECISION_AND_CHROMA_RELATION_H263: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DXVA_MV_PRECISION_AND_CHROMA_RELATION_MPEG2: u32 = 0u32;
-pub const DXVA_ModeAV1_VLD_12bit_Profile2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 387084297, data2: 40975, data3: 19681, data4: [153, 78, 191, 64, 129, 246, 243, 240] };
-pub const DXVA_ModeAV1_VLD_12bit_Profile2_420: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 763412182, data2: 40108, data3: 18485, data4: [158, 145, 50, 123, 188, 79, 158, 232] };
-pub const DXVA_ModeAV1_VLD_Profile0: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3099479243, data2: 53075, data3: 18106, data4: [141, 89, 214, 184, 166, 218, 93, 42] };
-pub const DXVA_ModeAV1_VLD_Profile1: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1765211919, data2: 17841, data3: 16739, data4: [156, 193, 100, 110, 246, 148, 97, 8] };
-pub const DXVA_ModeAV1_VLD_Profile2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 207563425, data2: 58689, data3: 16521, data4: [187, 123, 152, 17, 10, 25, 215, 200] };
-pub const DXVA_ModeH261_A: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487617, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH261_B: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487618, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH263_A: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487619, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH263_B: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487620, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH263_C: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487621, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH263_D: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487622, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH263_E: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487623, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH263_F: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487624, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH264_A: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487716, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH264_B: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487717, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH264_C: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487718, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH264_D: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487719, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH264_E: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487720, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH264_F: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487721, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeH264_VLD_Multiview_NoFGT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1885052290, data2: 30415, data3: 18902, data4: [183, 230, 172, 136, 114, 219, 1, 60] };
-pub const DXVA_ModeH264_VLD_Stereo_NoFGT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4188720315, data2: 49846, data3: 19708, data4: [135, 121, 87, 7, 177, 118, 5, 82] };
-pub const DXVA_ModeH264_VLD_Stereo_Progressive_NoFGT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3617319130, data2: 3313, data3: 19585, data4: [184, 42, 105, 164, 226, 54, 244, 61] };
-pub const DXVA_ModeH264_VLD_WithFMOASO_NoFGT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3589296121, data2: 13336, data3: 17880, data4: [149, 97, 50, 167, 106, 174, 45, 221] };
-pub const DXVA_ModeHEVC_VLD_Main: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1527895323, data2: 12108, data3: 17490, data4: [188, 195, 9, 242, 161, 22, 12, 192] };
-pub const DXVA_ModeHEVC_VLD_Main10: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 276492512, data2: 61210, data3: 19737, data4: [171, 168, 103, 161, 99, 7, 61, 19] };
-pub const DXVA_ModeMPEG1_A: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487625, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeMPEG1_VLD: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1866385177, data2: 14133, data3: 17100, data4: [128, 99, 101, 204, 60, 179, 102, 22] };
-pub const DXVA_ModeMPEG2_A: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487626, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeMPEG2_B: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487627, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeMPEG2_C: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487628, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeMPEG2_D: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487629, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeMPEG2and1_VLD: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2255052562, data2: 13326, data3: 20228, data4: [159, 211, 146, 83, 221, 50, 116, 96] };
-pub const DXVA_ModeMPEG4pt2_VLD_AdvSimple_GMC: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2878966619, data2: 16984, data3: 17577, data4: [159, 235, 148, 229, 151, 166, 186, 174] };
-pub const DXVA_ModeMPEG4pt2_VLD_AdvSimple_NoGMC: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3980495519, data2: 269, data3: 20186, data4: [154, 227, 154, 101, 53, 141, 141, 46] };
-pub const DXVA_ModeMPEG4pt2_VLD_Simple: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4023799156, data2: 51688, data3: 16855, data4: [165, 233, 233, 176, 227, 159, 163, 25] };
-pub const DXVA_ModeNone: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487616, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeVC1_A: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487776, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeVC1_B: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487777, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeVC1_C: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487778, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeVC1_D: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487779, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeVC1_D2010: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487780, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeVP8_VLD: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2428017130, data2: 14946, data3: 18181, data4: [136, 179, 141, 240, 75, 39, 68, 231] };
-pub const DXVA_ModeVP9_VLD_10bit_Profile2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2764524015, data2: 28367, data3: 18602, data4: [132, 72, 80, 167, 161, 22, 95, 247] };
-pub const DXVA_ModeVP9_VLD_Profile0: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1178011640, data2: 41424, data3: 17797, data4: [135, 109, 131, 170, 109, 96, 184, 158] };
-pub const DXVA_ModeWMV8_A: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487744, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeWMV8_B: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487745, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeWMV9_A: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487760, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeWMV9_B: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487761, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
-pub const DXVA_ModeWMV9_C: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487764, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeAV1_VLD_12bit_Profile2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 387084297, data2: 40975, data3: 19681, data4: [153, 78, 191, 64, 129, 246, 243, 240] };
+pub const DXVA_ModeAV1_VLD_12bit_Profile2_420: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 763412182, data2: 40108, data3: 18485, data4: [158, 145, 50, 123, 188, 79, 158, 232] };
+pub const DXVA_ModeAV1_VLD_Profile0: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3099479243, data2: 53075, data3: 18106, data4: [141, 89, 214, 184, 166, 218, 93, 42] };
+pub const DXVA_ModeAV1_VLD_Profile1: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1765211919, data2: 17841, data3: 16739, data4: [156, 193, 100, 110, 246, 148, 97, 8] };
+pub const DXVA_ModeAV1_VLD_Profile2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 207563425, data2: 58689, data3: 16521, data4: [187, 123, 152, 17, 10, 25, 215, 200] };
+pub const DXVA_ModeH261_A: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487617, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH261_B: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487618, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH263_A: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487619, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH263_B: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487620, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH263_C: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487621, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH263_D: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487622, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH263_E: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487623, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH263_F: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487624, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH264_A: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487716, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH264_B: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487717, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH264_C: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487718, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH264_D: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487719, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH264_E: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487720, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH264_F: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487721, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeH264_VLD_Multiview_NoFGT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1885052290, data2: 30415, data3: 18902, data4: [183, 230, 172, 136, 114, 219, 1, 60] };
+pub const DXVA_ModeH264_VLD_Stereo_NoFGT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4188720315, data2: 49846, data3: 19708, data4: [135, 121, 87, 7, 177, 118, 5, 82] };
+pub const DXVA_ModeH264_VLD_Stereo_Progressive_NoFGT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3617319130, data2: 3313, data3: 19585, data4: [184, 42, 105, 164, 226, 54, 244, 61] };
+pub const DXVA_ModeH264_VLD_WithFMOASO_NoFGT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3589296121, data2: 13336, data3: 17880, data4: [149, 97, 50, 167, 106, 174, 45, 221] };
+pub const DXVA_ModeHEVC_VLD_Main: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1527895323, data2: 12108, data3: 17490, data4: [188, 195, 9, 242, 161, 22, 12, 192] };
+pub const DXVA_ModeHEVC_VLD_Main10: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 276492512, data2: 61210, data3: 19737, data4: [171, 168, 103, 161, 99, 7, 61, 19] };
+pub const DXVA_ModeMPEG1_A: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487625, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeMPEG1_VLD: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1866385177, data2: 14133, data3: 17100, data4: [128, 99, 101, 204, 60, 179, 102, 22] };
+pub const DXVA_ModeMPEG2_A: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487626, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeMPEG2_B: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487627, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeMPEG2_C: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487628, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeMPEG2_D: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487629, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeMPEG2and1_VLD: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2255052562, data2: 13326, data3: 20228, data4: [159, 211, 146, 83, 221, 50, 116, 96] };
+pub const DXVA_ModeMPEG4pt2_VLD_AdvSimple_GMC: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2878966619, data2: 16984, data3: 17577, data4: [159, 235, 148, 229, 151, 166, 186, 174] };
+pub const DXVA_ModeMPEG4pt2_VLD_AdvSimple_NoGMC: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3980495519, data2: 269, data3: 20186, data4: [154, 227, 154, 101, 53, 141, 141, 46] };
+pub const DXVA_ModeMPEG4pt2_VLD_Simple: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4023799156, data2: 51688, data3: 16855, data4: [165, 233, 233, 176, 227, 159, 163, 25] };
+pub const DXVA_ModeNone: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487616, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeVC1_A: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487776, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeVC1_B: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487777, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeVC1_C: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487778, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeVC1_D: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487779, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeVC1_D2010: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487780, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeVP8_VLD: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2428017130, data2: 14946, data3: 18181, data4: [136, 179, 141, 240, 75, 39, 68, 231] };
+pub const DXVA_ModeVP9_VLD_10bit_Profile2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2764524015, data2: 28367, data3: 18602, data4: [132, 72, 80, 167, 161, 22, 95, 247] };
+pub const DXVA_ModeVP9_VLD_Profile0: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1178011640, data2: 41424, data3: 17797, data4: [135, 109, 131, 170, 109, 96, 184, 158] };
+pub const DXVA_ModeWMV8_A: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487744, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeWMV8_B: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487745, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeWMV9_A: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487760, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeWMV9_B: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487761, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_ModeWMV9_C: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487764, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DXVA_NUM_TYPES_COMP_BUFFERS: u32 = 18u32;
-pub const DXVA_NoEncrypt: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461487824, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
+pub const DXVA_NoEncrypt: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 461487824, data2: 41159, data3: 4563, data4: [185, 132, 0, 192, 79, 46, 115, 197] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DXVA_NumMV_OBMC_off_BinPBwith4MV_off: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -5500,7 +5500,7 @@ pub const DXVA_PICTURE_STRUCTURE_FRAME: u32 = 3u32;
 pub const DXVA_PICTURE_STRUCTURE_TOP_FIELD: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DXVA_ProcAmpControlBltFnCode: u32 = 1u32;
-pub const DXVA_ProcAmpControlDevice: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2669676819, data2: 12285, data3: 16470, data4: [159, 30, 225, 181, 8, 242, 45, 207] };
+pub const DXVA_ProcAmpControlDevice: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2669676819, data2: 12285, data3: 16470, data4: [159, 30, 225, 181, 8, 242, 45, 207] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DXVA_ProcAmpControlQueryCapsFnCode: u32 = 3u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -5647,10 +5647,10 @@ pub const DXVA_STATUS_REPORTING_FUNCTION: u32 = 7u32;
 pub const DXVA_USUAL_BLOCK_HEIGHT: u32 = 8u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DXVA_USUAL_BLOCK_WIDTH: u32 = 8u32;
-pub const DigitalCableLocator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 62940182, data2: 53543, data3: 16506, data4: [171, 76, 253, 210, 121, 171, 190, 93] };
-pub const DigitalCableTuneRequest: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 653003619, data2: 43664, data3: 17802, data4: [141, 244, 86, 89, 242, 200, 161, 138] };
-pub const DigitalCableTuningSpace: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3652930798, data2: 47226, data3: 18417, data4: [172, 146, 176, 141, 156, 120, 19, 252] };
-pub const DigitalLocator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1850788877, data2: 49563, data3: 19446, data4: [129, 11, 91, 214, 7, 97, 245, 204] };
+pub const DigitalCableLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 62940182, data2: 53543, data3: 16506, data4: [171, 76, 253, 210, 121, 171, 190, 93] };
+pub const DigitalCableTuneRequest: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 653003619, data2: 43664, data3: 17802, data4: [141, 244, 86, 89, 242, 200, 161, 138] };
+pub const DigitalCableTuningSpace: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3652930798, data2: 47226, data3: 18417, data4: [172, 146, 176, 141, 156, 120, 19, 252] };
+pub const DigitalLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1850788877, data2: 49563, data3: 19446, data4: [129, 11, 91, 214, 7, 97, 245, 204] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type DisplaySizeList = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -5735,7 +5735,7 @@ impl ::core::clone::Clone for EALocationCodeType {
         *self
     }
 }
-pub const ECHOSTAR_SATELLITE_TV_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3304502043, data2: 50879, data3: 18265, data4: [136, 111, 167, 56, 109, 202, 39, 160] };
+pub const ECHOSTAR_SATELLITE_TV_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3304502043, data2: 50879, data3: 18265, data4: [136, 111, 167, 56, 109, 202, 39, 160] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const EC_ACTIVATE: u32 = 19u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -5946,102 +5946,102 @@ pub const EC_WMT_EVENT: u32 = 594u32;
 pub const EC_WMT_EVENT_BASE: u32 = 593u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const EC_WMT_INDEX_EVENT: u32 = 593u32;
-pub const ESEventFactory: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2391410650, data2: 29176, data3: 16577, data4: [169, 41, 94, 58, 134, 138, 194, 198] };
-pub const ESEventService: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3255060476, data2: 60512, data3: 18270, data4: [129, 63, 210, 176, 166, 222, 206, 254] };
-pub const ETFilter: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229809, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_ARIBcontentSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 982859907, data2: 37840, data3: 17982, data4: [144, 178, 7, 66, 196, 150, 237, 240] };
-pub const EVENTID_AudioDescriptorSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 276550684, data2: 42714, data3: 18065, data4: [131, 105, 17, 178, 205, 170, 40, 142] };
-pub const EVENTID_AudioTypeSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1344061374, data2: 47177, data3: 17102, data4: [155, 233, 61, 184, 105, 251, 130, 179] };
-pub const EVENTID_BDAConditionalAccessTAG: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4022576217, data2: 44683, data3: 19274, data4: [143, 233, 121, 160, 208, 151, 243, 234] };
-pub const EVENTID_BDAEventingServicePendingEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1554323217, data2: 24028, data3: 16806, data4: [148, 48, 228, 27, 139, 59, 188, 91] };
-pub const EVENTID_BDA_CASBroadcastMMI: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1734899440, data2: 4402, data3: 16460, data4: [167, 202, 231, 32, 105, 169, 213, 79] };
-pub const EVENTID_BDA_CASCloseMMI: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1561285903, data2: 56878, data3: 18333, data4: [131, 69, 236, 14, 149, 87, 232, 162] };
-pub const EVENTID_BDA_CASOpenMMI: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2245708053, data2: 58771, data3: 16653, data4: [132, 113, 214, 129, 33, 5, 242, 142] };
-pub const EVENTID_BDA_CASReleaseTuner: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 549560683, data2: 17439, data3: 18853, data4: [187, 92, 233, 160, 68, 149, 198, 193] };
-pub const EVENTID_BDA_CASRequestTuner: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3476662744, data2: 62931, data3: 18053, data4: [190, 87, 237, 129, 219, 164, 107, 39] };
-pub const EVENTID_BDA_DiseqCResponseAvailable: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4020644088, data2: 7980, data3: 19303, data4: [158, 165, 172, 246, 250, 154, 31, 54] };
-pub const EVENTID_BDA_EncoderSignalLock: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1590234809, data2: 14842, data3: 19708, data4: [185, 63, 0, 187, 17, 7, 127, 94] };
-pub const EVENTID_BDA_FdcStatus: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 99767142, data2: 53483, data3: 17362, data4: [188, 60, 104, 43, 134, 61, 241, 66] };
-pub const EVENTID_BDA_FdcTableSection: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1779226455, data2: 19683, data3: 20059, data4: [148, 68, 113, 135, 184, 113, 82, 197] };
-pub const EVENTID_BDA_GPNVValueUpdate: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4285908620, data2: 62486, data3: 20094, data4: [191, 23, 109, 85, 197, 223, 21, 117] };
-pub const EVENTID_BDA_GuideDataAvailable: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2564518266, data2: 18314, data3: 19668, data4: [146, 208, 149, 246, 107, 137, 229, 177] };
-pub const EVENTID_BDA_GuideDataError: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2889073736, data2: 28531, data3: 20439, data4: [179, 65, 89, 76, 54, 13, 141, 116] };
-pub const EVENTID_BDA_GuideServiceInformationUpdated: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2713971243, data2: 5983, data3: 17496, data4: [183, 53, 80, 125, 34, 219, 35, 166] };
-pub const EVENTID_BDA_IsdbCASResponse: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3570080102, data2: 16828, data3: 19693, data4: [154, 32, 253, 206, 172, 120, 247, 13] };
-pub const EVENTID_BDA_LbigsCloseConnectionHandle: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3270544281, data2: 26095, data3: 17172, data4: [150, 113, 233, 157, 76, 206, 11, 174] };
-pub const EVENTID_BDA_LbigsOpenConnection: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 895616946, data2: 28465, data3: 20144, data4: [162, 113, 179, 250, 107, 183, 104, 15] };
-pub const EVENTID_BDA_LbigsSendData: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 287516539, data2: 61894, data3: 16724, data4: [139, 13, 72, 230, 21, 112, 89, 170] };
-pub const EVENTID_BDA_RatingPinReset: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3336587456, data2: 50548, data3: 19494, data4: [188, 218, 47, 77, 53, 235, 94, 133] };
-pub const EVENTID_BDA_TransprtStreamSelectorInfo: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3289358213, data2: 2512, data3: 18588, data4: [158, 156, 10, 187, 181, 105, 81, 176] };
-pub const EVENTID_BDA_TunerNoSignal: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3801823275, data2: 7901, data3: 18736, data4: [188, 70, 104, 47, 215, 45, 45, 251] };
-pub const EVENTID_BDA_TunerSignalLock: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 410183488, data2: 62835, data3: 17051, data4: [160, 14, 217, 193, 228, 8, 175, 9] };
-pub const EVENTID_BDA_UpdateDrmStatus: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1705440897, data2: 5218, data3: 18235, data4: [136, 206, 203, 115, 20, 39, 189, 181] };
-pub const EVENTID_BDA_UpdateScanState: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1433414480, data2: 31561, data3: 17080, data4: [168, 47, 74, 251, 105, 27, 6, 40] };
-pub const EVENTID_CADenialCountChanged: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 711312680, data2: 8777, data3: 16496, data4: [172, 22, 0, 57, 12, 223, 178, 221] };
-pub const EVENTID_CASFailureSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3940037038, data2: 21801, data3: 19743, data4: [175, 206, 13, 140, 209, 37, 125, 48] };
-pub const EVENTID_CSDescriptorSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4024924633, data2: 38896, data3: 18310, data4: [128, 13, 149, 207, 80, 93, 220, 102] };
-pub const EVENTID_CandidatePostTuneData: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2667762640, data2: 40710, data3: 17257, data4: [159, 30, 58, 214, 202, 25, 128, 126] };
-pub const EVENTID_CardStatusChanged: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2724592362, data2: 63604, data3: 19256, data4: [159, 247, 197, 61, 2, 150, 153, 150] };
-pub const EVENTID_ChannelChangeSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2422719973, data2: 19548, data3: 16901, data4: [134, 200, 122, 254, 32, 254, 30, 250] };
-pub const EVENTID_ChannelInfoSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1106472320, data2: 16690, data3: 19650, data4: [177, 33, 1, 164, 50, 25, 216, 27] };
-pub const EVENTID_ChannelTypeSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1923816785, data2: 34770, data3: 18587, data4: [186, 17, 14, 8, 220, 33, 2, 67] };
-pub const EVENTID_CtxADescriptorSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 984916710, data2: 16967, data3: 19252, data4: [137, 108, 48, 175, 165, 210, 28, 36] };
-pub const EVENTID_DFNWithNoActualAVData: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4117274622, data2: 22009, data3: 19379, data4: [150, 190, 174, 151, 28, 99, 186, 224] };
-pub const EVENTID_DRMParingStatusChanged: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 591605, data2: 61649, data3: 16854, data4: [167, 223, 64, 40, 105, 118, 105, 246] };
-pub const EVENTID_DRMParingStepComplete: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1529790328, data2: 46930, data3: 17440, data4: [180, 30, 164, 114, 220, 149, 130, 142] };
-pub const EVENTID_DTFilterCOPPBlock: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229802, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_DTFilterCOPPUnblock: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229800, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_DTFilterDataFormatFailure: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229805, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_DTFilterDataFormatOK: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229804, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_DTFilterRatingChange: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229794, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_DTFilterRatingsBlock: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229795, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_DTFilterRatingsUnblock: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229796, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_DTFilterXDSPacket: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229797, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_DVBScramblingControlSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1272242628, data2: 37025, data3: 16649, data4: [130, 54, 39, 240, 14, 125, 204, 91] };
-pub const EVENTID_DemultiplexerFilterDiscontinuity: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 370497392, data2: 44757, data3: 18268, data4: [187, 152, 149, 163, 48, 112, 223, 12] };
-pub const EVENTID_DualMonoSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2846006102, data2: 43083, data3: 18572, data4: [137, 213, 13, 78, 118, 87, 200, 206] };
-pub const EVENTID_DvbParentalRatingDescriptor: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 711435661, data2: 60581, data3: 20140, data4: [171, 203, 231, 52, 211, 119, 109, 10] };
-pub const EVENTID_EASMessageReceived: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3507354069, data2: 49761, data3: 19333, data4: [158, 138, 81, 123, 50, 153, 202, 178] };
-pub const EVENTID_ETDTFilterLicenseFailure: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229807, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_ETDTFilterLicenseOK: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229806, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_ETFilterCopyNever: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229808, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_ETFilterCopyOnce: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229803, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_ETFilterEncryptionOff: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229799, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_ETFilterEncryptionOn: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229798, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_EmmMessageSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1810891368, data2: 20350, data3: 17044, data4: [170, 135, 233, 233, 83, 228, 63, 20] };
-pub const EVENTID_EncDecFilterError: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229801, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_EncDecFilterEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1243301467, data2: 4025, data3: 16729, data4: [175, 189, 227, 48, 6, 160, 249, 244] };
-pub const EVENTID_EntitlementChanged: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2423369053, data2: 9049, data3: 19605, data4: [134, 148, 175, 168, 29, 112, 191, 213] };
-pub const EVENTID_FormatNotSupportedEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 615655434, data2: 45738, data3: 18295, data4: [191, 101, 99, 243, 94, 123, 2, 74] };
-pub const EVENTID_LanguageSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3801245293, data2: 39938, data3: 17549, data4: [170, 141, 120, 26, 147, 253, 195, 149] };
-pub const EVENTID_MMIMessage: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 86780335, data2: 2468, data3: 19347, data4: [137, 15, 189, 106, 52, 137, 104, 164] };
-pub const EVENTID_NewSignalAcquired: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3363751213, data2: 52504, data3: 16458, data4: [160, 118, 192, 42, 39, 61, 61, 231] };
-pub const EVENTID_PBDAParentalControlEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4182223493, data2: 64338, data3: 18664, data4: [185, 197, 225, 225, 244, 17, 165, 26] };
-pub const EVENTID_PIDListSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1207734117, data2: 58043, data3: 17972, data4: [156, 239, 253, 191, 230, 38, 29, 92] };
-pub const EVENTID_PSITable: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 463222531, data2: 54343, data3: 19990, data4: [151, 187, 1, 121, 159, 192, 49, 237] };
-pub const EVENTID_RRTSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4140812532, data2: 55955, data3: 20271, data4: [191, 248, 186, 30, 230, 252, 163, 162] };
-pub const EVENTID_SBE2RecControlStarted: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2305206430, data2: 63550, data3: 19470, data4: [188, 59, 191, 167, 100, 158, 4, 203] };
-pub const EVENTID_SBE2RecControlStopped: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1162550984, data2: 3227, data3: 19626, data4: [177, 161, 30, 122, 38, 102, 246, 195] };
-pub const EVENTID_STBChannelNumber: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 398776112, data2: 53488, data3: 16698, data4: [140, 153, 80, 4, 105, 222, 53, 173] };
-pub const EVENTID_ServiceTerminated: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 169695516, data2: 57554, data3: 20366, data4: [137, 96, 35, 53, 190, 244, 92, 203] };
-pub const EVENTID_SignalAndServiceStatusSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2154350027, data2: 15364, data3: 18731, data4: [180, 125, 3, 8, 130, 13, 206, 81] };
-pub const EVENTID_SignalStatusChanged: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1839004402, data2: 28717, data3: 19201, data4: [141, 255, 104, 146, 173, 32, 209, 145] };
-pub const EVENTID_StreamIDSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3404835688, data2: 57683, data3: 19777, data4: [166, 179, 167, 201, 152, 219, 117, 238] };
-pub const EVENTID_StreamTypeSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2192518844, data2: 12454, data3: 16996, data4: [168, 11, 173, 46, 19, 114, 172, 96] };
-pub const EVENTID_SubtitleSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1573830728, data2: 53433, data3: 16739, data4: [135, 44, 79, 50, 34, 59, 232, 138] };
-pub const EVENTID_TeletextSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2509887824, data2: 24371, data3: 17943, data4: [175, 124, 30, 84, 181, 16, 218, 163] };
-pub const EVENTID_TuneFailureEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3648161714, data2: 11773, data3: 17258, data4: [148, 133, 153, 215, 212, 171, 90, 105] };
-pub const EVENTID_TuneFailureSpanningEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1871357013, data2: 24289, data3: 18603, data4: [162, 124, 76, 141, 112, 185, 174, 186] };
-pub const EVENTID_TuningChanged: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2642305589, data2: 19325, data3: 16989, data4: [166, 209, 215, 23, 195, 59, 156, 76] };
-pub const EVENTID_TuningChanging: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2199403523, data2: 49310, data3: 17860, data4: [167, 25, 128, 122, 148, 149, 43, 249] };
-pub const EVENTID_XDSCodecDuplicateXDSRating: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229791, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_XDSCodecNewXDSPacket: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229793, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTID_XDSCodecNewXDSRating: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229792, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const EVENTTYPE_CASDescrambleFailureEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2987556162, data2: 31717, data3: 20299, data4: [145, 48, 102, 121, 137, 159, 79, 75] };
+pub const ESEventFactory: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2391410650, data2: 29176, data3: 16577, data4: [169, 41, 94, 58, 134, 138, 194, 198] };
+pub const ESEventService: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3255060476, data2: 60512, data3: 18270, data4: [129, 63, 210, 176, 166, 222, 206, 254] };
+pub const ETFilter: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229809, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_ARIBcontentSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 982859907, data2: 37840, data3: 17982, data4: [144, 178, 7, 66, 196, 150, 237, 240] };
+pub const EVENTID_AudioDescriptorSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 276550684, data2: 42714, data3: 18065, data4: [131, 105, 17, 178, 205, 170, 40, 142] };
+pub const EVENTID_AudioTypeSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1344061374, data2: 47177, data3: 17102, data4: [155, 233, 61, 184, 105, 251, 130, 179] };
+pub const EVENTID_BDAConditionalAccessTAG: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4022576217, data2: 44683, data3: 19274, data4: [143, 233, 121, 160, 208, 151, 243, 234] };
+pub const EVENTID_BDAEventingServicePendingEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1554323217, data2: 24028, data3: 16806, data4: [148, 48, 228, 27, 139, 59, 188, 91] };
+pub const EVENTID_BDA_CASBroadcastMMI: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1734899440, data2: 4402, data3: 16460, data4: [167, 202, 231, 32, 105, 169, 213, 79] };
+pub const EVENTID_BDA_CASCloseMMI: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1561285903, data2: 56878, data3: 18333, data4: [131, 69, 236, 14, 149, 87, 232, 162] };
+pub const EVENTID_BDA_CASOpenMMI: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2245708053, data2: 58771, data3: 16653, data4: [132, 113, 214, 129, 33, 5, 242, 142] };
+pub const EVENTID_BDA_CASReleaseTuner: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 549560683, data2: 17439, data3: 18853, data4: [187, 92, 233, 160, 68, 149, 198, 193] };
+pub const EVENTID_BDA_CASRequestTuner: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3476662744, data2: 62931, data3: 18053, data4: [190, 87, 237, 129, 219, 164, 107, 39] };
+pub const EVENTID_BDA_DiseqCResponseAvailable: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4020644088, data2: 7980, data3: 19303, data4: [158, 165, 172, 246, 250, 154, 31, 54] };
+pub const EVENTID_BDA_EncoderSignalLock: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1590234809, data2: 14842, data3: 19708, data4: [185, 63, 0, 187, 17, 7, 127, 94] };
+pub const EVENTID_BDA_FdcStatus: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 99767142, data2: 53483, data3: 17362, data4: [188, 60, 104, 43, 134, 61, 241, 66] };
+pub const EVENTID_BDA_FdcTableSection: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1779226455, data2: 19683, data3: 20059, data4: [148, 68, 113, 135, 184, 113, 82, 197] };
+pub const EVENTID_BDA_GPNVValueUpdate: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4285908620, data2: 62486, data3: 20094, data4: [191, 23, 109, 85, 197, 223, 21, 117] };
+pub const EVENTID_BDA_GuideDataAvailable: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2564518266, data2: 18314, data3: 19668, data4: [146, 208, 149, 246, 107, 137, 229, 177] };
+pub const EVENTID_BDA_GuideDataError: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2889073736, data2: 28531, data3: 20439, data4: [179, 65, 89, 76, 54, 13, 141, 116] };
+pub const EVENTID_BDA_GuideServiceInformationUpdated: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2713971243, data2: 5983, data3: 17496, data4: [183, 53, 80, 125, 34, 219, 35, 166] };
+pub const EVENTID_BDA_IsdbCASResponse: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3570080102, data2: 16828, data3: 19693, data4: [154, 32, 253, 206, 172, 120, 247, 13] };
+pub const EVENTID_BDA_LbigsCloseConnectionHandle: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3270544281, data2: 26095, data3: 17172, data4: [150, 113, 233, 157, 76, 206, 11, 174] };
+pub const EVENTID_BDA_LbigsOpenConnection: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 895616946, data2: 28465, data3: 20144, data4: [162, 113, 179, 250, 107, 183, 104, 15] };
+pub const EVENTID_BDA_LbigsSendData: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 287516539, data2: 61894, data3: 16724, data4: [139, 13, 72, 230, 21, 112, 89, 170] };
+pub const EVENTID_BDA_RatingPinReset: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3336587456, data2: 50548, data3: 19494, data4: [188, 218, 47, 77, 53, 235, 94, 133] };
+pub const EVENTID_BDA_TransprtStreamSelectorInfo: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3289358213, data2: 2512, data3: 18588, data4: [158, 156, 10, 187, 181, 105, 81, 176] };
+pub const EVENTID_BDA_TunerNoSignal: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3801823275, data2: 7901, data3: 18736, data4: [188, 70, 104, 47, 215, 45, 45, 251] };
+pub const EVENTID_BDA_TunerSignalLock: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 410183488, data2: 62835, data3: 17051, data4: [160, 14, 217, 193, 228, 8, 175, 9] };
+pub const EVENTID_BDA_UpdateDrmStatus: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1705440897, data2: 5218, data3: 18235, data4: [136, 206, 203, 115, 20, 39, 189, 181] };
+pub const EVENTID_BDA_UpdateScanState: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1433414480, data2: 31561, data3: 17080, data4: [168, 47, 74, 251, 105, 27, 6, 40] };
+pub const EVENTID_CADenialCountChanged: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 711312680, data2: 8777, data3: 16496, data4: [172, 22, 0, 57, 12, 223, 178, 221] };
+pub const EVENTID_CASFailureSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3940037038, data2: 21801, data3: 19743, data4: [175, 206, 13, 140, 209, 37, 125, 48] };
+pub const EVENTID_CSDescriptorSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4024924633, data2: 38896, data3: 18310, data4: [128, 13, 149, 207, 80, 93, 220, 102] };
+pub const EVENTID_CandidatePostTuneData: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2667762640, data2: 40710, data3: 17257, data4: [159, 30, 58, 214, 202, 25, 128, 126] };
+pub const EVENTID_CardStatusChanged: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2724592362, data2: 63604, data3: 19256, data4: [159, 247, 197, 61, 2, 150, 153, 150] };
+pub const EVENTID_ChannelChangeSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2422719973, data2: 19548, data3: 16901, data4: [134, 200, 122, 254, 32, 254, 30, 250] };
+pub const EVENTID_ChannelInfoSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1106472320, data2: 16690, data3: 19650, data4: [177, 33, 1, 164, 50, 25, 216, 27] };
+pub const EVENTID_ChannelTypeSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1923816785, data2: 34770, data3: 18587, data4: [186, 17, 14, 8, 220, 33, 2, 67] };
+pub const EVENTID_CtxADescriptorSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 984916710, data2: 16967, data3: 19252, data4: [137, 108, 48, 175, 165, 210, 28, 36] };
+pub const EVENTID_DFNWithNoActualAVData: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4117274622, data2: 22009, data3: 19379, data4: [150, 190, 174, 151, 28, 99, 186, 224] };
+pub const EVENTID_DRMParingStatusChanged: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 591605, data2: 61649, data3: 16854, data4: [167, 223, 64, 40, 105, 118, 105, 246] };
+pub const EVENTID_DRMParingStepComplete: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1529790328, data2: 46930, data3: 17440, data4: [180, 30, 164, 114, 220, 149, 130, 142] };
+pub const EVENTID_DTFilterCOPPBlock: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229802, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_DTFilterCOPPUnblock: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229800, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_DTFilterDataFormatFailure: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229805, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_DTFilterDataFormatOK: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229804, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_DTFilterRatingChange: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229794, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_DTFilterRatingsBlock: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229795, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_DTFilterRatingsUnblock: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229796, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_DTFilterXDSPacket: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229797, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_DVBScramblingControlSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1272242628, data2: 37025, data3: 16649, data4: [130, 54, 39, 240, 14, 125, 204, 91] };
+pub const EVENTID_DemultiplexerFilterDiscontinuity: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 370497392, data2: 44757, data3: 18268, data4: [187, 152, 149, 163, 48, 112, 223, 12] };
+pub const EVENTID_DualMonoSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2846006102, data2: 43083, data3: 18572, data4: [137, 213, 13, 78, 118, 87, 200, 206] };
+pub const EVENTID_DvbParentalRatingDescriptor: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 711435661, data2: 60581, data3: 20140, data4: [171, 203, 231, 52, 211, 119, 109, 10] };
+pub const EVENTID_EASMessageReceived: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3507354069, data2: 49761, data3: 19333, data4: [158, 138, 81, 123, 50, 153, 202, 178] };
+pub const EVENTID_ETDTFilterLicenseFailure: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229807, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_ETDTFilterLicenseOK: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229806, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_ETFilterCopyNever: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229808, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_ETFilterCopyOnce: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229803, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_ETFilterEncryptionOff: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229799, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_ETFilterEncryptionOn: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229798, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_EmmMessageSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1810891368, data2: 20350, data3: 17044, data4: [170, 135, 233, 233, 83, 228, 63, 20] };
+pub const EVENTID_EncDecFilterError: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229801, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_EncDecFilterEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1243301467, data2: 4025, data3: 16729, data4: [175, 189, 227, 48, 6, 160, 249, 244] };
+pub const EVENTID_EntitlementChanged: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2423369053, data2: 9049, data3: 19605, data4: [134, 148, 175, 168, 29, 112, 191, 213] };
+pub const EVENTID_FormatNotSupportedEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 615655434, data2: 45738, data3: 18295, data4: [191, 101, 99, 243, 94, 123, 2, 74] };
+pub const EVENTID_LanguageSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3801245293, data2: 39938, data3: 17549, data4: [170, 141, 120, 26, 147, 253, 195, 149] };
+pub const EVENTID_MMIMessage: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 86780335, data2: 2468, data3: 19347, data4: [137, 15, 189, 106, 52, 137, 104, 164] };
+pub const EVENTID_NewSignalAcquired: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3363751213, data2: 52504, data3: 16458, data4: [160, 118, 192, 42, 39, 61, 61, 231] };
+pub const EVENTID_PBDAParentalControlEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4182223493, data2: 64338, data3: 18664, data4: [185, 197, 225, 225, 244, 17, 165, 26] };
+pub const EVENTID_PIDListSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1207734117, data2: 58043, data3: 17972, data4: [156, 239, 253, 191, 230, 38, 29, 92] };
+pub const EVENTID_PSITable: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 463222531, data2: 54343, data3: 19990, data4: [151, 187, 1, 121, 159, 192, 49, 237] };
+pub const EVENTID_RRTSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4140812532, data2: 55955, data3: 20271, data4: [191, 248, 186, 30, 230, 252, 163, 162] };
+pub const EVENTID_SBE2RecControlStarted: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2305206430, data2: 63550, data3: 19470, data4: [188, 59, 191, 167, 100, 158, 4, 203] };
+pub const EVENTID_SBE2RecControlStopped: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1162550984, data2: 3227, data3: 19626, data4: [177, 161, 30, 122, 38, 102, 246, 195] };
+pub const EVENTID_STBChannelNumber: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 398776112, data2: 53488, data3: 16698, data4: [140, 153, 80, 4, 105, 222, 53, 173] };
+pub const EVENTID_ServiceTerminated: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 169695516, data2: 57554, data3: 20366, data4: [137, 96, 35, 53, 190, 244, 92, 203] };
+pub const EVENTID_SignalAndServiceStatusSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2154350027, data2: 15364, data3: 18731, data4: [180, 125, 3, 8, 130, 13, 206, 81] };
+pub const EVENTID_SignalStatusChanged: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1839004402, data2: 28717, data3: 19201, data4: [141, 255, 104, 146, 173, 32, 209, 145] };
+pub const EVENTID_StreamIDSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3404835688, data2: 57683, data3: 19777, data4: [166, 179, 167, 201, 152, 219, 117, 238] };
+pub const EVENTID_StreamTypeSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2192518844, data2: 12454, data3: 16996, data4: [168, 11, 173, 46, 19, 114, 172, 96] };
+pub const EVENTID_SubtitleSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1573830728, data2: 53433, data3: 16739, data4: [135, 44, 79, 50, 34, 59, 232, 138] };
+pub const EVENTID_TeletextSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2509887824, data2: 24371, data3: 17943, data4: [175, 124, 30, 84, 181, 16, 218, 163] };
+pub const EVENTID_TuneFailureEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3648161714, data2: 11773, data3: 17258, data4: [148, 133, 153, 215, 212, 171, 90, 105] };
+pub const EVENTID_TuneFailureSpanningEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1871357013, data2: 24289, data3: 18603, data4: [162, 124, 76, 141, 112, 185, 174, 186] };
+pub const EVENTID_TuningChanged: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2642305589, data2: 19325, data3: 16989, data4: [166, 209, 215, 23, 195, 59, 156, 76] };
+pub const EVENTID_TuningChanging: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2199403523, data2: 49310, data3: 17860, data4: [167, 25, 128, 122, 148, 149, 43, 249] };
+pub const EVENTID_XDSCodecDuplicateXDSRating: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229791, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_XDSCodecNewXDSPacket: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229793, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTID_XDSCodecNewXDSRating: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229792, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const EVENTTYPE_CASDescrambleFailureEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2987556162, data2: 31717, data3: 20299, data4: [145, 48, 102, 121, 137, 159, 79, 75] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const E_PROP_ID_UNSUPPORTED: ::windows_sys::core::HRESULT = -2147023728i32;
+pub const E_PROP_ID_UNSUPPORTED: ::windows_sys_core::HRESULT = -2147023728i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const E_PROP_SET_UNSUPPORTED: ::windows_sys::core::HRESULT = -2147023726i32;
+pub const E_PROP_SET_UNSUPPORTED: ::windows_sys_core::HRESULT = -2147023726i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type EnTag_Mode = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -6214,7 +6214,7 @@ pub const Entitled: EntitlementType = 0i32;
 pub const NotEntitled: EntitlementType = 1i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const TechnicalFailure: EntitlementType = 2i32;
-pub const EvalRat: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3318072817, data2: 15036, data3: 4566, data4: [178, 91, 0, 192, 79, 160, 192, 38] };
+pub const EvalRat: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3318072817, data2: 15036, data3: 4566, data4: [178, 91, 0, 192, 79, 160, 192, 38] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type FECMethod = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -6253,18 +6253,18 @@ pub const State_Stopped: FILTER_STATE = 0i32;
 pub const State_Paused: FILTER_STATE = 1i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const State_Running: FILTER_STATE = 2i32;
-pub const FORMATTYPE_CPFilters_Processed: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1731834735, data2: 7519, data3: 19138, data4: [129, 146, 40, 187, 14, 115, 209, 106] };
-pub const FORMATTYPE_ETDTFilter_Tagged: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229777, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const FilgraphManager: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3828804531, data2: 21071, data3: 4558, data4: [159, 83, 0, 32, 175, 11, 167, 112] };
+pub const FORMATTYPE_CPFilters_Processed: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1731834735, data2: 7519, data3: 19138, data4: [129, 146, 40, 187, 14, 115, 209, 106] };
+pub const FORMATTYPE_ETDTFilter_Tagged: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229777, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const FilgraphManager: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3828804531, data2: 21071, data3: 4558, data4: [159, 83, 0, 32, 175, 11, 167, 112] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type FormatNotSupportedEvents = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const FORMATNOTSUPPORTED_CLEAR: FormatNotSupportedEvents = 0i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const FORMATNOTSUPPORTED_NOTSUPPORTED: FormatNotSupportedEvents = 1i32;
-pub const GUID_TIME_MUSIC: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 91538589, data2: 23300, data3: 19221, data4: [165, 66, 174, 40, 32, 48, 17, 123] };
-pub const GUID_TIME_REFERENCE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2477617451, data2: 55968, data3: 20478, data4: [188, 129, 176, 206, 80, 15, 205, 217] };
-pub const GUID_TIME_SAMPLES: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2824420613, data2: 3139, data3: 18820, data4: [154, 99, 151, 175, 158, 2, 196, 192] };
+pub const GUID_TIME_MUSIC: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 91538589, data2: 23300, data3: 19221, data4: [165, 66, 174, 40, 32, 48, 17, 123] };
+pub const GUID_TIME_REFERENCE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2477617451, data2: 55968, data3: 20478, data4: [188, 129, 176, 206, 80, 15, 205, 217] };
+pub const GUID_TIME_SAMPLES: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2824420613, data2: 3139, data3: 18820, data4: [154, 99, 151, 175, 158, 2, 196, 192] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type GuardInterval = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -6844,12 +6844,12 @@ pub type ISDBCAS_REQUEST_ID = i32;
 pub const ISDBCAS_REQUEST_ID_EMG: ISDBCAS_REQUEST_ID = 56i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const ISDBCAS_REQUEST_ID_EMD: ISDBCAS_REQUEST_ID = 58i32;
-pub const ISDBSLocator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1694805997, data2: 42537, data3: 17756, data4: [167, 241, 4, 150, 77, 234, 92, 196] };
+pub const ISDBSLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1694805997, data2: 42537, data3: 17756, data4: [167, 241, 4, 150, 77, 234, 92, 196] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const ISDB_BIT_PID: u32 = 36u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const ISDB_BIT_TID: u32 = 196u32;
-pub const ISDB_CABLE_TV_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3379879349, data2: 16894, data3: 19237, data4: [151, 65, 146, 240, 73, 241, 213, 209] };
+pub const ISDB_CABLE_TV_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3379879349, data2: 16894, data3: 19237, data4: [151, 65, 146, 240, 73, 241, 213, 209] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const ISDB_CDT_PID: u32 = 41u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -6866,7 +6866,7 @@ pub const ISDB_NBIT_MSG_TID: u32 = 197u32;
 pub const ISDB_NBIT_PID: u32 = 37u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const ISDB_NBIT_REF_TID: u32 = 198u32;
-pub const ISDB_SATELLITE_TV_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2963596960, data2: 27162, data3: 19331, data4: [187, 91, 144, 62, 29, 144, 230, 182] };
+pub const ISDB_SATELLITE_TV_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2963596960, data2: 27162, data3: 19331, data4: [187, 91, 144, 62, 29, 144, 230, 182] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const ISDB_SDTT_ALT_PID: u32 = 40u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -6875,9 +6875,9 @@ pub const ISDB_SDTT_PID: u32 = 35u32;
 pub const ISDB_SDTT_TID: u32 = 195u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const ISDB_ST_TID: u32 = 114u32;
-pub const ISDB_S_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2716303874, data2: 5209, data3: 16817, data4: [156, 169, 42, 146, 88, 122, 66, 204] };
-pub const ISDB_TERRESTRIAL_TV_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2500034415, data2: 15047, data3: 17490, data4: [182, 196, 69, 169, 206, 146, 146, 162] };
-pub const ISDB_T_NETWORK_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4231550374, data2: 51457, data3: 20270, data4: [171, 168, 144, 129, 90, 252, 108, 131] };
+pub const ISDB_S_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2716303874, data2: 5209, data3: 16817, data4: [156, 169, 42, 146, 88, 122, 66, 204] };
+pub const ISDB_TERRESTRIAL_TV_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2500034415, data2: 15047, data3: 17490, data4: [182, 196, 69, 169, 206, 146, 146, 162] };
+pub const ISDB_T_NETWORK_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4231550374, data2: 51457, data3: 20270, data4: [171, 168, 144, 129, 90, 252, 108, 131] };
 pub type ISIInbandEPG = *mut ::core::ffi::c_void;
 pub type ISIInbandEPGEvent = *mut ::core::ffi::c_void;
 pub type IScanningTuner = *mut ::core::ffi::c_void;
@@ -6971,29 +6971,29 @@ pub const INTERLEAVE_CAPTURE: InterleavingMode = 1i32;
 pub const INTERLEAVE_FULL: InterleavingMode = 2i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const INTERLEAVE_NONE_BUFFERED: InterleavingMode = 3i32;
-pub const KSCATEGORY_BDA_IP_SINK: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811274, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
-pub const KSCATEGORY_BDA_NETWORK_EPG: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811273, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
-pub const KSCATEGORY_BDA_NETWORK_PROVIDER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811275, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
-pub const KSCATEGORY_BDA_NETWORK_TUNER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811272, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
-pub const KSCATEGORY_BDA_RECEIVER_COMPONENT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4245314292, data2: 46109, data3: 4562, data4: [156, 149, 0, 192, 79, 121, 113, 224] };
-pub const KSCATEGORY_BDA_TRANSPORT_INFORMATION: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2732787535, data2: 27709, data3: 4563, data4: [182, 83, 0, 192, 79, 121, 73, 142] };
-pub const KSDATAFORMAT_SPECIFIER_BDA_IP: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1804145696, data2: 56073, data3: 4562, data4: [143, 50, 0, 192, 79, 121, 113, 226] };
-pub const KSDATAFORMAT_SPECIFIER_BDA_TRANSPORT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2381162237, data2: 44127, data3: 17204, data4: [142, 207, 164, 186, 143, 167, 208, 240] };
-pub const KSDATAFORMAT_SUBTYPE_ATSC_SI: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3016178044, data2: 54019, data3: 16717, data4: [179, 60, 78, 210, 201, 210, 151, 51] };
-pub const KSDATAFORMAT_SUBTYPE_BDA_IP: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1520050492, data2: 56072, data3: 4562, data4: [143, 50, 0, 192, 79, 121, 113, 226] };
-pub const KSDATAFORMAT_SUBTYPE_BDA_IP_CONTROL: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1234720488, data2: 59483, data3: 18669, data4: [155, 234, 65, 13, 13, 212, 239, 129] };
-pub const KSDATAFORMAT_SUBTYPE_BDA_MPEG2_TRANSPORT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4105089858, data2: 809, data3: 20445, data4: [168, 253, 74, 255, 73, 38, 201, 120] };
-pub const KSDATAFORMAT_SUBTYPE_BDA_OPENCABLE_OOB_PSIP: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2501322715, data2: 53966, data3: 17704, data4: [150, 246, 51, 1, 250, 187, 45, 224] };
-pub const KSDATAFORMAT_SUBTYPE_BDA_OPENCABLE_PSIP: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1982742374, data2: 13167, data3: 18641, data4: [191, 131, 43, 0, 53, 44, 17, 240] };
-pub const KSDATAFORMAT_SUBTYPE_DVB_SI: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3923587491, data2: 8733, data3: 19163, data4: [133, 50, 154, 243, 9, 193, 164, 8] };
-pub const KSDATAFORMAT_SUBTYPE_ISDB_SI: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1244588953, data2: 25688, data3: 17720, data4: [177, 135, 4, 1, 124, 65, 65, 63] };
-pub const KSDATAFORMAT_SUBTYPE_PBDA_TRANSPORT_RAW: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 226159938, data2: 52122, data3: 4571, data4: [151, 5, 0, 80, 86, 192, 0, 8] };
-pub const KSDATAFORMAT_TYPE_BDA_ANTENNA: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811265, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
-pub const KSDATAFORMAT_TYPE_BDA_IF_SIGNAL: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1639844679, data2: 42475, data3: 18843, data4: [154, 133, 91, 22, 192, 127, 18, 88] };
-pub const KSDATAFORMAT_TYPE_BDA_IP: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3797908366, data2: 52428, data3: 4562, data4: [143, 37, 0, 192, 79, 121, 113, 226] };
-pub const KSDATAFORMAT_TYPE_BDA_IP_CONTROL: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3671938969, data2: 32091, data3: 19299, data4: [128, 251, 209, 68, 47, 38, 182, 33] };
-pub const KSDATAFORMAT_TYPE_MPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1163859820, data2: 19206, data3: 18382, data4: [154, 239, 140, 174, 247, 61, 247, 181] };
-pub const KSDATAFORMAT_TYPE_MPEG2_SECTIONS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1163859820, data2: 19206, data3: 18382, data4: [154, 239, 140, 174, 247, 61, 247, 181] };
+pub const KSCATEGORY_BDA_IP_SINK: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811274, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSCATEGORY_BDA_NETWORK_EPG: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811273, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSCATEGORY_BDA_NETWORK_PROVIDER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811275, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSCATEGORY_BDA_NETWORK_TUNER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811272, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSCATEGORY_BDA_RECEIVER_COMPONENT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4245314292, data2: 46109, data3: 4562, data4: [156, 149, 0, 192, 79, 121, 113, 224] };
+pub const KSCATEGORY_BDA_TRANSPORT_INFORMATION: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2732787535, data2: 27709, data3: 4563, data4: [182, 83, 0, 192, 79, 121, 73, 142] };
+pub const KSDATAFORMAT_SPECIFIER_BDA_IP: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1804145696, data2: 56073, data3: 4562, data4: [143, 50, 0, 192, 79, 121, 113, 226] };
+pub const KSDATAFORMAT_SPECIFIER_BDA_TRANSPORT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2381162237, data2: 44127, data3: 17204, data4: [142, 207, 164, 186, 143, 167, 208, 240] };
+pub const KSDATAFORMAT_SUBTYPE_ATSC_SI: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3016178044, data2: 54019, data3: 16717, data4: [179, 60, 78, 210, 201, 210, 151, 51] };
+pub const KSDATAFORMAT_SUBTYPE_BDA_IP: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1520050492, data2: 56072, data3: 4562, data4: [143, 50, 0, 192, 79, 121, 113, 226] };
+pub const KSDATAFORMAT_SUBTYPE_BDA_IP_CONTROL: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1234720488, data2: 59483, data3: 18669, data4: [155, 234, 65, 13, 13, 212, 239, 129] };
+pub const KSDATAFORMAT_SUBTYPE_BDA_MPEG2_TRANSPORT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4105089858, data2: 809, data3: 20445, data4: [168, 253, 74, 255, 73, 38, 201, 120] };
+pub const KSDATAFORMAT_SUBTYPE_BDA_OPENCABLE_OOB_PSIP: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2501322715, data2: 53966, data3: 17704, data4: [150, 246, 51, 1, 250, 187, 45, 224] };
+pub const KSDATAFORMAT_SUBTYPE_BDA_OPENCABLE_PSIP: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1982742374, data2: 13167, data3: 18641, data4: [191, 131, 43, 0, 53, 44, 17, 240] };
+pub const KSDATAFORMAT_SUBTYPE_DVB_SI: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3923587491, data2: 8733, data3: 19163, data4: [133, 50, 154, 243, 9, 193, 164, 8] };
+pub const KSDATAFORMAT_SUBTYPE_ISDB_SI: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1244588953, data2: 25688, data3: 17720, data4: [177, 135, 4, 1, 124, 65, 65, 63] };
+pub const KSDATAFORMAT_SUBTYPE_PBDA_TRANSPORT_RAW: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 226159938, data2: 52122, data3: 4571, data4: [151, 5, 0, 80, 86, 192, 0, 8] };
+pub const KSDATAFORMAT_TYPE_BDA_ANTENNA: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811265, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSDATAFORMAT_TYPE_BDA_IF_SIGNAL: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1639844679, data2: 42475, data3: 18843, data4: [154, 133, 91, 22, 192, 127, 18, 88] };
+pub const KSDATAFORMAT_TYPE_BDA_IP: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3797908366, data2: 52428, data3: 4562, data4: [143, 37, 0, 192, 79, 121, 113, 226] };
+pub const KSDATAFORMAT_TYPE_BDA_IP_CONTROL: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3671938969, data2: 32091, data3: 19299, data4: [128, 251, 209, 68, 47, 38, 182, 33] };
+pub const KSDATAFORMAT_TYPE_MPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1163859820, data2: 19206, data3: 18382, data4: [154, 239, 140, 174, 247, 61, 247, 181] };
+pub const KSDATAFORMAT_TYPE_MPEG2_SECTIONS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1163859820, data2: 19206, data3: 18382, data4: [154, 239, 140, 174, 247, 61, 247, 181] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`, `\"Win32_Media_KernelStreaming\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Media_KernelStreaming"))]
@@ -7011,11 +7011,11 @@ impl ::core::clone::Clone for KSEVENTDATA_BDA_RF_TUNER_SCAN_S {
         *self
     }
 }
-pub const KSEVENTSETID_BdaCAEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1217154252, data2: 46952, data3: 16681, data4: [142, 177, 176, 10, 7, 31, 144, 104] };
-pub const KSEVENTSETID_BdaDiseqCEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2333719536, data2: 16772, data3: 17324, data4: [173, 60, 12, 136, 155, 228, 194, 18] };
-pub const KSEVENTSETID_BdaEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2927515058, data2: 38615, data3: 20009, data4: [144, 143, 98, 249, 91, 42, 22, 121] };
-pub const KSEVENTSETID_BdaPinEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 273121741, data2: 20669, data3: 16597, data4: [149, 251, 8, 126, 14, 134, 165, 145] };
-pub const KSEVENTSETID_BdaTunerEvent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2864029207, data2: 457, data3: 20159, data4: [147, 242, 252, 59, 121, 180, 111, 145] };
+pub const KSEVENTSETID_BdaCAEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1217154252, data2: 46952, data3: 16681, data4: [142, 177, 176, 10, 7, 31, 144, 104] };
+pub const KSEVENTSETID_BdaDiseqCEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2333719536, data2: 16772, data3: 17324, data4: [173, 60, 12, 136, 155, 228, 194, 18] };
+pub const KSEVENTSETID_BdaEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2927515058, data2: 38615, data3: 20009, data4: [144, 143, 98, 249, 91, 42, 22, 121] };
+pub const KSEVENTSETID_BdaPinEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 273121741, data2: 20669, data3: 16597, data4: [149, 251, 8, 126, 14, 134, 165, 145] };
+pub const KSEVENTSETID_BdaTunerEvent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2864029207, data2: 457, data3: 20159, data4: [147, 242, 252, 59, 121, 180, 111, 145] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type KSEVENT_BDA_EVENT_TYPE = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -7024,23 +7024,23 @@ pub const KSEVENT_BDA_EVENT_PENDINGEVENT: KSEVENT_BDA_EVENT_TYPE = 0i32;
 pub type KSEVENT_BDA_TUNER = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const KSEVENT_BDA_TUNER_SCAN: KSEVENT_BDA_TUNER = 0i32;
-pub const KSMETHODSETID_BdaChangeSync: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4245314291, data2: 46109, data3: 4562, data4: [156, 149, 0, 192, 79, 121, 113, 224] };
-pub const KSMETHODSETID_BdaConditionalAccessService: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 281990068, data2: 12811, data3: 16831, data4: [152, 36, 27, 46, 104, 231, 30, 185] };
-pub const KSMETHODSETID_BdaDebug: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 222990572, data2: 50845, data3: 20194, data4: [140, 90, 251, 31, 99, 165, 13, 161] };
-pub const KSMETHODSETID_BdaDeviceConfiguration: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811269, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
-pub const KSMETHODSETID_BdaDrmService: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3220616635, data2: 45230, data3: 18508, data4: [157, 202, 115, 82, 143, 176, 180, 110] };
-pub const KSMETHODSETID_BdaEventing: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4187263706, data2: 24979, data3: 20144, data4: [134, 144, 102, 134, 203, 255, 113, 62] };
-pub const KSMETHODSETID_BdaGuideDataDeliveryService: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2375898466, data2: 5513, data3: 16765, data4: [153, 206, 172, 83, 29, 218, 25, 249] };
-pub const KSMETHODSETID_BdaIsdbConditionalAccess: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1583924775, data2: 5826, data3: 20076, data4: [177, 226, 208, 1, 112, 205, 170, 15] };
-pub const KSMETHODSETID_BdaMux: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2485825516, data2: 19461, data3: 19572, data4: [184, 235, 135, 6, 194, 164, 148, 63] };
-pub const KSMETHODSETID_BdaNameValue: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 920679172, data2: 40717, data3: 20104, data4: [145, 24, 172, 11, 163, 23, 183, 242] };
-pub const KSMETHODSETID_BdaNameValueA: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 203688301, data2: 24565, data3: 18398, data4: [168, 86, 6, 46, 88, 126, 55, 39] };
-pub const KSMETHODSETID_BdaScanning: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 317409759, data2: 25161, data3: 18419, data4: [177, 144, 226, 30, 110, 47, 138, 156] };
-pub const KSMETHODSETID_BdaTSSelector: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 500150249, data2: 46174, data3: 16819, data4: [187, 42, 86, 30, 177, 41, 174, 152] };
-pub const KSMETHODSETID_BdaTuner: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3077836847, data2: 44039, data3: 18314, data4: [130, 40, 39, 66, 217, 97, 250, 126] };
-pub const KSMETHODSETID_BdaUserActivity: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3987064884, data2: 17713, data3: 18492, data4: [190, 10, 148, 230, 201, 111, 243, 150] };
-pub const KSMETHODSETID_BdaWmdrmSession: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1273428541, data2: 1997, data3: 16697, data4: [139, 128, 140, 24, 186, 58, 236, 136] };
-pub const KSMETHODSETID_BdaWmdrmTuner: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2262399439, data2: 43175, data3: 20372, data4: [181, 251, 20, 192, 172, 166, 143, 230] };
+pub const KSMETHODSETID_BdaChangeSync: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4245314291, data2: 46109, data3: 4562, data4: [156, 149, 0, 192, 79, 121, 113, 224] };
+pub const KSMETHODSETID_BdaConditionalAccessService: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 281990068, data2: 12811, data3: 16831, data4: [152, 36, 27, 46, 104, 231, 30, 185] };
+pub const KSMETHODSETID_BdaDebug: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 222990572, data2: 50845, data3: 20194, data4: [140, 90, 251, 31, 99, 165, 13, 161] };
+pub const KSMETHODSETID_BdaDeviceConfiguration: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811269, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSMETHODSETID_BdaDrmService: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3220616635, data2: 45230, data3: 18508, data4: [157, 202, 115, 82, 143, 176, 180, 110] };
+pub const KSMETHODSETID_BdaEventing: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4187263706, data2: 24979, data3: 20144, data4: [134, 144, 102, 134, 203, 255, 113, 62] };
+pub const KSMETHODSETID_BdaGuideDataDeliveryService: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2375898466, data2: 5513, data3: 16765, data4: [153, 206, 172, 83, 29, 218, 25, 249] };
+pub const KSMETHODSETID_BdaIsdbConditionalAccess: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1583924775, data2: 5826, data3: 20076, data4: [177, 226, 208, 1, 112, 205, 170, 15] };
+pub const KSMETHODSETID_BdaMux: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2485825516, data2: 19461, data3: 19572, data4: [184, 235, 135, 6, 194, 164, 148, 63] };
+pub const KSMETHODSETID_BdaNameValue: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 920679172, data2: 40717, data3: 20104, data4: [145, 24, 172, 11, 163, 23, 183, 242] };
+pub const KSMETHODSETID_BdaNameValueA: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 203688301, data2: 24565, data3: 18398, data4: [168, 86, 6, 46, 88, 126, 55, 39] };
+pub const KSMETHODSETID_BdaScanning: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 317409759, data2: 25161, data3: 18419, data4: [177, 144, 226, 30, 110, 47, 138, 156] };
+pub const KSMETHODSETID_BdaTSSelector: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 500150249, data2: 46174, data3: 16819, data4: [187, 42, 86, 30, 177, 41, 174, 152] };
+pub const KSMETHODSETID_BdaTuner: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3077836847, data2: 44039, data3: 18314, data4: [130, 40, 39, 66, 217, 97, 250, 126] };
+pub const KSMETHODSETID_BdaUserActivity: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3987064884, data2: 17713, data3: 18492, data4: [190, 10, 148, 230, 201, 111, 243, 150] };
+pub const KSMETHODSETID_BdaWmdrmSession: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1273428541, data2: 1997, data3: 16697, data4: [139, 128, 140, 24, 186, 58, 236, 136] };
+pub const KSMETHODSETID_BdaWmdrmTuner: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2262399439, data2: 43175, data3: 20372, data4: [181, 251, 20, 192, 172, 166, 143, 230] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type KSMETHOD_BDA_CAS_SERVICE = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -7299,7 +7299,7 @@ impl ::core::clone::Clone for KSM_BDA_DEBUG_LEVEL {
 #[cfg(feature = "Win32_Media_KernelStreaming")]
 pub struct KSM_BDA_DRM_SETDRM {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
-    pub NewDRMuuid: ::windows_sys::core::GUID,
+    pub NewDRMuuid: ::windows_sys_core::GUID,
 }
 #[cfg(feature = "Win32_Media_KernelStreaming")]
 impl ::core::marker::Copy for KSM_BDA_DRM_SETDRM {}
@@ -7506,7 +7506,7 @@ impl ::core::clone::Clone for KSM_BDA_PIN_PAIR_1 {
 #[cfg(feature = "Win32_Media_KernelStreaming")]
 pub struct KSM_BDA_SCAN_CAPABILTIES {
     pub Method: super::KernelStreaming::KSIDENTIFIER,
-    pub uuidBroadcastStandard: ::windows_sys::core::GUID,
+    pub uuidBroadcastStandard: ::windows_sys_core::GUID,
 }
 #[cfg(feature = "Win32_Media_KernelStreaming")]
 impl ::core::marker::Copy for KSM_BDA_SCAN_CAPABILTIES {}
@@ -7634,7 +7634,7 @@ impl ::core::clone::Clone for KSM_BDA_WMDRMTUNER_PURCHASEENTITLEMENT {
 pub struct KSM_BDA_WMDRMTUNER_SETPIDPROTECTION {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
     pub ulPID: u32,
-    pub uuidKeyID: ::windows_sys::core::GUID,
+    pub uuidKeyID: ::windows_sys_core::GUID,
 }
 #[cfg(feature = "Win32_Media_KernelStreaming")]
 impl ::core::marker::Copy for KSM_BDA_WMDRMTUNER_SETPIDPROTECTION {}
@@ -7664,7 +7664,7 @@ impl ::core::clone::Clone for KSM_BDA_WMDRMTUNER_SYNCVALUE {
 #[cfg(feature = "Win32_Media_KernelStreaming")]
 pub struct KSM_BDA_WMDRM_LICENSE {
     pub NodeMethod: super::KernelStreaming::KSM_NODE,
-    pub uuidKeyID: ::windows_sys::core::GUID,
+    pub uuidKeyID: ::windows_sys_core::GUID,
 }
 #[cfg(feature = "Win32_Media_KernelStreaming")]
 impl ::core::marker::Copy for KSM_BDA_WMDRM_LICENSE {}
@@ -7691,27 +7691,27 @@ impl ::core::clone::Clone for KSM_BDA_WMDRM_RENEWLICENSE {
         *self
     }
 }
-pub const KSNODE_BDA_8PSK_DEMODULATOR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3914834151, data2: 56728, data3: 19004, data4: [129, 11, 53, 37, 21, 122, 182, 46] };
-pub const KSNODE_BDA_8VSB_DEMODULATOR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811279, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
-pub const KSNODE_BDA_ANALOG_DEMODULATOR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1666036121, data2: 10205, data3: 18104, data4: [172, 251, 236, 201, 142, 97, 162, 173] };
-pub const KSNODE_BDA_COFDM_DEMODULATOR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 766275077, data2: 60862, data3: 19356, data4: [179, 135, 27, 111, 173, 125, 100, 149] };
-pub const KSNODE_BDA_COMMON_CA_POD: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3628005628, data2: 62392, data3: 17835, data4: [139, 113, 236, 247, 195, 57, 222, 180] };
-pub const KSNODE_BDA_DRI_DRM: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1335209332, data2: 52987, data3: 17106, data4: [148, 169, 104, 197, 178, 193, 170, 190] };
-pub const KSNODE_BDA_IP_SINK: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811278, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
-pub const KSNODE_BDA_ISDB_S_DEMODULATOR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3990758154, data2: 36998, data3: 17197, data4: [184, 165, 102, 112, 38, 56, 7, 233] };
-pub const KSNODE_BDA_ISDB_T_DEMODULATOR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4243208931, data2: 11442, data3: 17997, data4: [143, 93, 48, 92, 11, 183, 120, 162] };
-pub const KSNODE_BDA_OPENCABLE_POD: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 878187168, data2: 64380, data3: 18320, data4: [170, 126, 177, 219, 136, 172, 25, 201] };
-pub const KSNODE_BDA_PBDA_CAS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3223750303, data2: 28969, data3: 20081, data4: [134, 150, 236, 143, 117, 41, 155, 119] };
-pub const KSNODE_BDA_PBDA_DRM: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2666446083, data2: 61089, data3: 17679, data4: [150, 174, 99, 62, 109, 230, 60, 206] };
-pub const KSNODE_BDA_PBDA_ISDBCAS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4073663155, data2: 23453, data3: 16558, data4: [171, 124, 78, 122, 208, 189, 28, 82] };
-pub const KSNODE_BDA_PBDA_MUX: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4169955207, data2: 26232, data3: 20299, data4: [161, 62, 218, 9, 134, 29, 104, 43] };
-pub const KSNODE_BDA_PBDA_TUNER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2858320518, data2: 22844, data3: 18809, data4: [148, 148, 70, 162, 169, 223, 224, 118] };
-pub const KSNODE_BDA_PID_FILTER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4114687881, data2: 45216, data3: 17633, data4: [174, 79, 238, 153, 155, 27, 127, 190] };
-pub const KSNODE_BDA_QAM_DEMODULATOR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811277, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
-pub const KSNODE_BDA_QPSK_DEMODULATOR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1670433029, data2: 10177, data3: 19815, data4: [189, 183, 119, 197, 13, 7, 147, 0] };
-pub const KSNODE_BDA_RF_TUNER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811276, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
-pub const KSNODE_BDA_TS_SELECTOR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1591603589, data2: 65233, data3: 20293, data4: [150, 133, 187, 183, 60, 50, 60, 252] };
-pub const KSNODE_BDA_VIDEO_ENCODER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3649317347, data2: 26057, data3: 19140, data4: [147, 170, 118, 103, 130, 131, 59, 122] };
+pub const KSNODE_BDA_8PSK_DEMODULATOR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3914834151, data2: 56728, data3: 19004, data4: [129, 11, 53, 37, 21, 122, 182, 46] };
+pub const KSNODE_BDA_8VSB_DEMODULATOR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811279, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSNODE_BDA_ANALOG_DEMODULATOR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1666036121, data2: 10205, data3: 18104, data4: [172, 251, 236, 201, 142, 97, 162, 173] };
+pub const KSNODE_BDA_COFDM_DEMODULATOR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 766275077, data2: 60862, data3: 19356, data4: [179, 135, 27, 111, 173, 125, 100, 149] };
+pub const KSNODE_BDA_COMMON_CA_POD: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3628005628, data2: 62392, data3: 17835, data4: [139, 113, 236, 247, 195, 57, 222, 180] };
+pub const KSNODE_BDA_DRI_DRM: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1335209332, data2: 52987, data3: 17106, data4: [148, 169, 104, 197, 178, 193, 170, 190] };
+pub const KSNODE_BDA_IP_SINK: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811278, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSNODE_BDA_ISDB_S_DEMODULATOR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3990758154, data2: 36998, data3: 17197, data4: [184, 165, 102, 112, 38, 56, 7, 233] };
+pub const KSNODE_BDA_ISDB_T_DEMODULATOR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4243208931, data2: 11442, data3: 17997, data4: [143, 93, 48, 92, 11, 183, 120, 162] };
+pub const KSNODE_BDA_OPENCABLE_POD: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 878187168, data2: 64380, data3: 18320, data4: [170, 126, 177, 219, 136, 172, 25, 201] };
+pub const KSNODE_BDA_PBDA_CAS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3223750303, data2: 28969, data3: 20081, data4: [134, 150, 236, 143, 117, 41, 155, 119] };
+pub const KSNODE_BDA_PBDA_DRM: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2666446083, data2: 61089, data3: 17679, data4: [150, 174, 99, 62, 109, 230, 60, 206] };
+pub const KSNODE_BDA_PBDA_ISDBCAS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4073663155, data2: 23453, data3: 16558, data4: [171, 124, 78, 122, 208, 189, 28, 82] };
+pub const KSNODE_BDA_PBDA_MUX: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4169955207, data2: 26232, data3: 20299, data4: [161, 62, 218, 9, 134, 29, 104, 43] };
+pub const KSNODE_BDA_PBDA_TUNER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2858320518, data2: 22844, data3: 18809, data4: [148, 148, 70, 162, 169, 223, 224, 118] };
+pub const KSNODE_BDA_PID_FILTER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4114687881, data2: 45216, data3: 17633, data4: [174, 79, 238, 153, 155, 27, 127, 190] };
+pub const KSNODE_BDA_QAM_DEMODULATOR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811277, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSNODE_BDA_QPSK_DEMODULATOR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1670433029, data2: 10177, data3: 19815, data4: [189, 183, 119, 197, 13, 7, 147, 0] };
+pub const KSNODE_BDA_RF_TUNER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811276, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSNODE_BDA_TS_SELECTOR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1591603589, data2: 65233, data3: 20293, data4: [150, 133, 187, 183, 60, 50, 60, 252] };
+pub const KSNODE_BDA_VIDEO_ENCODER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3649317347, data2: 26057, data3: 19140, data4: [147, 170, 118, 103, 130, 131, 59, 122] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type KSPROPERTY_BDA_AUTODEMODULATE = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -7992,22 +7992,22 @@ pub const KSPROPERTY_IPSINK_MULTICASTLIST: KSPROPERTY_IPSINK = 0u32;
 pub const KSPROPERTY_IPSINK_ADAPTER_DESCRIPTION: KSPROPERTY_IPSINK = 1u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const KSPROPERTY_IPSINK_ADAPTER_ADDRESS: KSPROPERTY_IPSINK = 2u32;
-pub const KSPROPSETID_BdaAutodemodulate: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3723582226, data2: 48421, data3: 4562, data4: [156, 160, 0, 192, 79, 121, 113, 224] };
-pub const KSPROPSETID_BdaCA: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2959685478, data2: 21112, data3: 20166, data4: [185, 225, 60, 228, 5, 96, 239, 90] };
-pub const KSPROPSETID_BdaDigitalDemodulator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4012962681, data2: 39003, data3: 19728, data4: [182, 64, 167, 157, 94, 4, 225, 224] };
-pub const KSPROPSETID_BdaDiseqCommand: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4165872304, data2: 15467, data3: 17891, data4: [160, 252, 134, 105, 212, 184, 31, 17] };
-pub const KSPROPSETID_BdaEthernetFilter: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811267, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
-pub const KSPROPSETID_BdaFrequencyFilter: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811271, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
-pub const KSPROPSETID_BdaIPv4Filter: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811268, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
-pub const KSPROPSETID_BdaIPv6Filter: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3782761076, data2: 10787, data3: 20403, data4: [146, 69, 168, 248, 128, 23, 239, 51] };
-pub const KSPROPSETID_BdaLNBInfo: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2569859330, data2: 18937, data3: 18201, data4: [166, 100, 196, 242, 62, 36, 8, 244] };
-pub const KSPROPSETID_BdaNullTransform: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3723582221, data2: 48421, data3: 4562, data4: [156, 160, 0, 192, 79, 121, 113, 224] };
-pub const KSPROPSETID_BdaPIDFilter: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3500572005, data2: 2271, data3: 20460, data4: [133, 51, 229, 181, 80, 65, 11, 133] };
-pub const KSPROPSETID_BdaPinControl: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 233654741, data2: 43191, data3: 19805, data4: [151, 161, 18, 176, 193, 149, 135, 77] };
-pub const KSPROPSETID_BdaSignalStats: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 323473670, data2: 53050, data3: 17034, data4: [165, 203, 172, 13, 154, 42, 67, 56] };
-pub const KSPROPSETID_BdaTableSection: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1366006213, data2: 38684, data3: 19119, data4: [179, 243, 217, 253, 168, 161, 94, 22] };
-pub const KSPROPSETID_BdaTopology: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2706303029, data2: 2595, data3: 4563, data4: [156, 199, 0, 192, 79, 121, 113, 224] };
-pub const KSPROPSETID_BdaVoidTransform: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905811270, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSPROPSETID_BdaAutodemodulate: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3723582226, data2: 48421, data3: 4562, data4: [156, 160, 0, 192, 79, 121, 113, 224] };
+pub const KSPROPSETID_BdaCA: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2959685478, data2: 21112, data3: 20166, data4: [185, 225, 60, 228, 5, 96, 239, 90] };
+pub const KSPROPSETID_BdaDigitalDemodulator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4012962681, data2: 39003, data3: 19728, data4: [182, 64, 167, 157, 94, 4, 225, 224] };
+pub const KSPROPSETID_BdaDiseqCommand: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4165872304, data2: 15467, data3: 17891, data4: [160, 252, 134, 105, 212, 184, 31, 17] };
+pub const KSPROPSETID_BdaEthernetFilter: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811267, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSPROPSETID_BdaFrequencyFilter: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811271, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSPROPSETID_BdaIPv4Filter: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811268, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
+pub const KSPROPSETID_BdaIPv6Filter: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3782761076, data2: 10787, data3: 20403, data4: [146, 69, 168, 248, 128, 23, 239, 51] };
+pub const KSPROPSETID_BdaLNBInfo: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2569859330, data2: 18937, data3: 18201, data4: [166, 100, 196, 242, 62, 36, 8, 244] };
+pub const KSPROPSETID_BdaNullTransform: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3723582221, data2: 48421, data3: 4562, data4: [156, 160, 0, 192, 79, 121, 113, 224] };
+pub const KSPROPSETID_BdaPIDFilter: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3500572005, data2: 2271, data3: 20460, data4: [133, 51, 229, 181, 80, 65, 11, 133] };
+pub const KSPROPSETID_BdaPinControl: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 233654741, data2: 43191, data3: 19805, data4: [151, 161, 18, 176, 193, 149, 135, 77] };
+pub const KSPROPSETID_BdaSignalStats: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 323473670, data2: 53050, data3: 17034, data4: [165, 203, 172, 13, 154, 42, 67, 56] };
+pub const KSPROPSETID_BdaTableSection: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1366006213, data2: 38684, data3: 19119, data4: [179, 243, 217, 253, 168, 161, 94, 22] };
+pub const KSPROPSETID_BdaTopology: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2706303029, data2: 2595, data3: 4563, data4: [156, 199, 0, 192, 79, 121, 113, 224] };
+pub const KSPROPSETID_BdaVoidTransform: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1905811270, data2: 7329, data3: 4563, data4: [156, 200, 0, 192, 79, 121, 113, 224] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Media_KernelStreaming\"`*"]
 #[cfg(feature = "Win32_Media_KernelStreaming")]
@@ -8085,8 +8085,8 @@ impl ::core::clone::Clone for KS_DATARANGE_BDA_TRANSPORT {
         *self
     }
 }
-pub const LIBID_QuartzNetTypeLib: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1453877425, data2: 2772, data3: 4558, data4: [176, 58, 0, 32, 175, 11, 167, 112] };
-pub const LIBID_QuartzTypeLib: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1453877424, data2: 2772, data3: 4558, data4: [176, 58, 0, 32, 175, 11, 167, 112] };
+pub const LIBID_QuartzNetTypeLib: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1453877425, data2: 2772, data3: 4558, data4: [176, 58, 0, 32, 175, 11, 167, 112] };
+pub const LIBID_QuartzTypeLib: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1453877424, data2: 2772, data3: 4558, data4: [176, 58, 0, 32, 175, 11, 167, 112] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type LNB_Source = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -8144,7 +8144,7 @@ impl ::core::clone::Clone for LONG_SECTION_1 {
         *self
     }
 }
-pub const LanguageComponentType: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 467967792, data2: 3611, data3: 4563, data4: [157, 142, 0, 192, 79, 114, 217, 128] };
+pub const LanguageComponentType: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 467967792, data2: 3611, data3: 4563, data4: [157, 142, 0, 192, 79, 114, 217, 128] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct LanguageInfo {
@@ -8173,7 +8173,7 @@ pub const LIC_ExtenderBlocked: LicenseEventBlockReason = 4i32;
 pub type LocationCodeSchemeType = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const SCTE_18: LocationCodeSchemeType = 0i32;
-pub const Locator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 143181955, data2: 44111, data3: 18755, data4: [181, 22, 44, 56, 217, 179, 69, 98] };
+pub const Locator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 143181955, data2: 44111, data3: 18755, data4: [181, 22, 44, 56, 217, 179, 69, 98] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const MAX_COUNTRY_CODE_STRING: u32 = 3u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -8188,9 +8188,9 @@ pub const MAX_FILTER_NAME: u32 = 128u32;
 pub const MAX_PIN_NAME: u32 = 128u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const MAX_SIZE_MPEG1_SEQUENCE_INFO: u32 = 140u32;
-pub const MEDIASUBTYPE_CPFilters_Processed: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1185791272, data2: 28624, data3: 18326, data4: [147, 178, 21, 92, 81, 220, 4, 141] };
-pub const MEDIASUBTYPE_ETDTFilter_Tagged: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229776, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const MEDIATYPE_MPEG2_PACK: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 911358739, data2: 36581, data3: 4561, data4: [140, 163, 0, 96, 176, 87, 102, 74] };
+pub const MEDIASUBTYPE_CPFilters_Processed: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1185791272, data2: 28624, data3: 18326, data4: [147, 178, 21, 92, 81, 220, 4, 141] };
+pub const MEDIASUBTYPE_ETDTFilter_Tagged: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229776, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const MEDIATYPE_MPEG2_PACK: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 911358739, data2: 36581, data3: 4561, data4: [140, 163, 0, 96, 176, 87, 102, 74] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type MEDIA_SAMPLE_CONTENT = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -8237,8 +8237,8 @@ impl ::core::clone::Clone for MPEG1WAVEFORMAT {
         *self
     }
 }
-pub const MPEG2Component: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 89961175, data2: 10601, data3: 17869, data4: [145, 75, 118, 137, 7, 34, 241, 18] };
-pub const MPEG2ComponentType: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1098909939, data2: 53095, data3: 18024, data4: [150, 40, 16, 220, 82, 190, 29, 8] };
+pub const MPEG2Component: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 89961175, data2: 10601, data3: 17869, data4: [145, 75, 118, 137, 7, 34, 241, 18] };
+pub const MPEG2ComponentType: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1098909939, data2: 53095, data3: 18024, data4: [150, 40, 16, 220, 82, 190, 29, 8] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type MPEG2StreamType = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -8313,70 +8313,70 @@ pub const ISO_IEC_USER_PRIVATE: MPEG2StreamType = 128i32;
 pub const DOLBY_AC3_AUDIO: MPEG2StreamType = 129i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const DOLBY_DIGITAL_PLUS_AUDIO_ATSC: MPEG2StreamType = 135i32;
-pub const MPEG2TuneRequest: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 156609634, data2: 48942, data3: 19642, data4: [162, 185, 166, 63, 119, 45, 70, 207] };
-pub const MPEG2TuneRequestFactory: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 744744171, data2: 19690, data3: 16824, data4: [145, 156, 233, 71, 234, 25, 167, 124] };
+pub const MPEG2TuneRequest: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 156609634, data2: 48942, data3: 19642, data4: [162, 185, 166, 63, 119, 45, 70, 207] };
+pub const MPEG2TuneRequestFactory: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 744744171, data2: 19690, data3: 16824, data4: [145, 156, 233, 71, 234, 25, 167, 124] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const MPEG2_BASE: u32 = 512u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_ALREADY_INITIALIZED: ::windows_sys::core::HRESULT = -2147220991i32;
+pub const MPEG2_E_ALREADY_INITIALIZED: ::windows_sys_core::HRESULT = -2147220991i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_BUFFER_TOO_SMALL: ::windows_sys::core::HRESULT = -2147220967i32;
+pub const MPEG2_E_BUFFER_TOO_SMALL: ::windows_sys_core::HRESULT = -2147220967i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_DATA_SOURCE_FAILED: ::windows_sys::core::HRESULT = -2147220970i32;
+pub const MPEG2_E_DATA_SOURCE_FAILED: ::windows_sys_core::HRESULT = -2147220970i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_DII_NOT_FOUND: ::windows_sys::core::HRESULT = -2147220969i32;
+pub const MPEG2_E_DII_NOT_FOUND: ::windows_sys_core::HRESULT = -2147220969i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_DSHOW_PIN_NOT_FOUND: ::windows_sys::core::HRESULT = -2147220968i32;
+pub const MPEG2_E_DSHOW_PIN_NOT_FOUND: ::windows_sys_core::HRESULT = -2147220968i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_DSI_NOT_FOUND: ::windows_sys::core::HRESULT = -2147220982i32;
+pub const MPEG2_E_DSI_NOT_FOUND: ::windows_sys_core::HRESULT = -2147220982i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_FILE_OFFSET_TOO_BIG: ::windows_sys::core::HRESULT = -2147220974i32;
+pub const MPEG2_E_FILE_OFFSET_TOO_BIG: ::windows_sys_core::HRESULT = -2147220974i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_INCORRECT_DESCRIPTOR_TAG: ::windows_sys::core::HRESULT = -2147220963i32;
+pub const MPEG2_E_INCORRECT_DESCRIPTOR_TAG: ::windows_sys_core::HRESULT = -2147220963i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_INVALID_CAROUSEL_ID: ::windows_sys::core::HRESULT = -2147220980i32;
+pub const MPEG2_E_INVALID_CAROUSEL_ID: ::windows_sys_core::HRESULT = -2147220980i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_INVALID_SG_OBJECT_KIND: ::windows_sys::core::HRESULT = -2147220978i32;
+pub const MPEG2_E_INVALID_SG_OBJECT_KIND: ::windows_sys_core::HRESULT = -2147220978i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_INVALID_UDP_PORT: ::windows_sys::core::HRESULT = -2147220971i32;
+pub const MPEG2_E_INVALID_UDP_PORT: ::windows_sys_core::HRESULT = -2147220971i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_MALFORMED_DSMCC_MESSAGE: ::windows_sys::core::HRESULT = -2147220979i32;
+pub const MPEG2_E_MALFORMED_DSMCC_MESSAGE: ::windows_sys_core::HRESULT = -2147220979i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_MALFORMED_TABLE: ::windows_sys::core::HRESULT = -2147220989i32;
+pub const MPEG2_E_MALFORMED_TABLE: ::windows_sys_core::HRESULT = -2147220989i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_MISSING_SECTIONS: ::windows_sys::core::HRESULT = -2147220966i32;
+pub const MPEG2_E_MISSING_SECTIONS: ::windows_sys_core::HRESULT = -2147220966i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_NEXT_TABLE_OPS_NOT_AVAILABLE: ::windows_sys::core::HRESULT = -2147220964i32;
+pub const MPEG2_E_NEXT_TABLE_OPS_NOT_AVAILABLE: ::windows_sys_core::HRESULT = -2147220964i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_NOT_PRESENT: ::windows_sys::core::HRESULT = -2147220987i32;
+pub const MPEG2_E_NOT_PRESENT: ::windows_sys_core::HRESULT = -2147220987i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_OBJECT_KIND_NOT_A_DIRECTORY: ::windows_sys::core::HRESULT = -2147220976i32;
+pub const MPEG2_E_OBJECT_KIND_NOT_A_DIRECTORY: ::windows_sys_core::HRESULT = -2147220976i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_OBJECT_KIND_NOT_A_FILE: ::windows_sys::core::HRESULT = -2147220975i32;
+pub const MPEG2_E_OBJECT_KIND_NOT_A_FILE: ::windows_sys_core::HRESULT = -2147220975i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_OBJECT_NOT_FOUND: ::windows_sys::core::HRESULT = -2147220977i32;
+pub const MPEG2_E_OBJECT_NOT_FOUND: ::windows_sys_core::HRESULT = -2147220977i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_OUT_OF_BOUNDS: ::windows_sys::core::HRESULT = -2147220990i32;
+pub const MPEG2_E_OUT_OF_BOUNDS: ::windows_sys_core::HRESULT = -2147220990i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_REGISTRY_ACCESS_FAILED: ::windows_sys::core::HRESULT = -2147220972i32;
+pub const MPEG2_E_REGISTRY_ACCESS_FAILED: ::windows_sys_core::HRESULT = -2147220972i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_SECTION_NOT_FOUND: ::windows_sys::core::HRESULT = -2147220986i32;
+pub const MPEG2_E_SECTION_NOT_FOUND: ::windows_sys_core::HRESULT = -2147220986i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_SERVER_UNAVAILABLE: ::windows_sys::core::HRESULT = -2147220981i32;
+pub const MPEG2_E_SERVER_UNAVAILABLE: ::windows_sys_core::HRESULT = -2147220981i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_SERVICE_ID_NOT_FOUND: ::windows_sys::core::HRESULT = -2147220984i32;
+pub const MPEG2_E_SERVICE_ID_NOT_FOUND: ::windows_sys_core::HRESULT = -2147220984i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_SERVICE_PMT_NOT_FOUND: ::windows_sys::core::HRESULT = -2147220983i32;
+pub const MPEG2_E_SERVICE_PMT_NOT_FOUND: ::windows_sys_core::HRESULT = -2147220983i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_STREAM_STOPPED: ::windows_sys::core::HRESULT = -2147220973i32;
+pub const MPEG2_E_STREAM_STOPPED: ::windows_sys_core::HRESULT = -2147220973i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_TOO_MANY_SECTIONS: ::windows_sys::core::HRESULT = -2147220965i32;
+pub const MPEG2_E_TOO_MANY_SECTIONS: ::windows_sys_core::HRESULT = -2147220965i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_TX_STREAM_UNAVAILABLE: ::windows_sys::core::HRESULT = -2147220985i32;
+pub const MPEG2_E_TX_STREAM_UNAVAILABLE: ::windows_sys_core::HRESULT = -2147220985i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_UNDEFINED: ::windows_sys::core::HRESULT = -2147220988i32;
+pub const MPEG2_E_UNDEFINED: ::windows_sys_core::HRESULT = -2147220988i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_E_UNINITIALIZED: ::windows_sys::core::HRESULT = -2147220992i32;
+pub const MPEG2_E_UNINITIALIZED: ::windows_sys_core::HRESULT = -2147220992i32;
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -8485,19 +8485,19 @@ pub const MPEG2_PROGRAM_STREAM_MAP: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const MPEG2_PROGRAM_SYSTEM_HEADER: u32 = 5u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_S_MORE_DATA_AVAILABLE: ::windows_sys::core::HRESULT = 262656i32;
+pub const MPEG2_S_MORE_DATA_AVAILABLE: ::windows_sys_core::HRESULT = 262656i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_S_MPE_INFO_FOUND: ::windows_sys::core::HRESULT = 262660i32;
+pub const MPEG2_S_MPE_INFO_FOUND: ::windows_sys_core::HRESULT = 262660i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_S_MPE_INFO_NOT_FOUND: ::windows_sys::core::HRESULT = 262661i32;
+pub const MPEG2_S_MPE_INFO_NOT_FOUND: ::windows_sys_core::HRESULT = 262661i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_S_NEW_MODULE_VERSION: ::windows_sys::core::HRESULT = 262662i32;
+pub const MPEG2_S_NEW_MODULE_VERSION: ::windows_sys_core::HRESULT = 262662i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_S_NO_MORE_DATA_AVAILABLE: ::windows_sys::core::HRESULT = 262657i32;
+pub const MPEG2_S_NO_MORE_DATA_AVAILABLE: ::windows_sys_core::HRESULT = 262657i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_S_SG_INFO_FOUND: ::windows_sys::core::HRESULT = 262658i32;
+pub const MPEG2_S_SG_INFO_FOUND: ::windows_sys_core::HRESULT = 262658i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MPEG2_S_SG_INFO_NOT_FOUND: ::windows_sys::core::HRESULT = 262659i32;
+pub const MPEG2_S_SG_INFO_NOT_FOUND: ::windows_sys_core::HRESULT = 262659i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct MPEG2_TRANSPORT_STRIDE {
@@ -8742,7 +8742,7 @@ impl ::core::clone::Clone for MPEG_SERVICE_RESPONSE {
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct MPEG_STREAM_BUFFER {
-    pub hr: ::windows_sys::core::HRESULT,
+    pub hr: ::windows_sys_core::HRESULT,
     pub dwDataBufferSize: u32,
     pub dwSizeOfDataRead: u32,
     pub pDataBuffer: *mut u8,
@@ -8882,24 +8882,24 @@ pub const MPT_ENUM: MP_TYPE = 3i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const MPT_MAX: MP_TYPE = 4i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MSDRI_S_MMI_PENDING: ::windows_sys::core::HRESULT = 2i32;
+pub const MSDRI_S_MMI_PENDING: ::windows_sys_core::HRESULT = 2i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const MSDRI_S_PENDING: ::windows_sys::core::HRESULT = 1i32;
-pub const MSEventBinder: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1467984408, data2: 17688, data3: 17502, data4: [143, 112, 20, 115, 248, 207, 75, 164] };
-pub const MSPID_PrimaryAudio: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2740974955, data2: 40922, data3: 4560, data4: [143, 223, 0, 192, 79, 217, 24, 157] };
-pub const MSPID_PrimaryVideo: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2740974954, data2: 40922, data3: 4560, data4: [143, 223, 0, 192, 79, 217, 24, 157] };
-pub const MSVidAnalogCaptureToCCA: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2485877001, data2: 41614, data3: 18849, data4: [162, 7, 52, 235, 203, 203, 75, 59] };
-pub const MSVidAnalogCaptureToDataServices: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3312463062, data2: 39801, data3: 4563, data4: [182, 84, 0, 192, 79, 121, 73, 142] };
-pub const MSVidAnalogCaptureToOverlayMixer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3783980890, data2: 2223, data3: 4563, data4: [182, 74, 0, 192, 79, 121, 73, 142] };
-pub const MSVidAnalogCaptureToStreamBufferSink: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2672879793, data2: 38192, data3: 19932, data4: [130, 94, 26, 248, 29, 71, 174, 214] };
-pub const MSVidAnalogCaptureToXDS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 893441088, data2: 23325, data3: 18891, data4: [130, 26, 232, 75, 140, 240, 101, 167] };
-pub const MSVidAnalogTVToEncoder: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 680867425, data2: 561, data3: 16859, data4: [137, 134, 33, 255, 67, 136, 238, 155] };
-pub const MSVidAnalogTunerDevice: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 471192708, data2: 37149, data3: 4562, data4: [182, 50, 0, 192, 79, 121, 73, 142] };
-pub const MSVidAudioRenderer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 934294852, data2: 42184, data3: 4562, data4: [182, 52, 0, 192, 79, 121, 73, 142] };
-pub const MSVidAudioRendererDevices: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3312463055, data2: 39801, data3: 4563, data4: [182, 84, 0, 192, 79, 121, 73, 142] };
-pub const MSVidBDATunerDevice: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2732787534, data2: 27709, data3: 4563, data4: [182, 83, 0, 192, 79, 121, 73, 142] };
-pub const MSVidCCA: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2249529383, data2: 58491, data3: 17902, data4: [132, 33, 209, 14, 110, 105, 9, 121] };
-pub const MSVidCCAToStreamBufferSink: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1056402792, data2: 34401, data3: 18499, data4: [139, 143, 195, 113, 99, 216, 201, 206] };
+pub const MSDRI_S_PENDING: ::windows_sys_core::HRESULT = 1i32;
+pub const MSEventBinder: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1467984408, data2: 17688, data3: 17502, data4: [143, 112, 20, 115, 248, 207, 75, 164] };
+pub const MSPID_PrimaryAudio: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2740974955, data2: 40922, data3: 4560, data4: [143, 223, 0, 192, 79, 217, 24, 157] };
+pub const MSPID_PrimaryVideo: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2740974954, data2: 40922, data3: 4560, data4: [143, 223, 0, 192, 79, 217, 24, 157] };
+pub const MSVidAnalogCaptureToCCA: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2485877001, data2: 41614, data3: 18849, data4: [162, 7, 52, 235, 203, 203, 75, 59] };
+pub const MSVidAnalogCaptureToDataServices: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3312463062, data2: 39801, data3: 4563, data4: [182, 84, 0, 192, 79, 121, 73, 142] };
+pub const MSVidAnalogCaptureToOverlayMixer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3783980890, data2: 2223, data3: 4563, data4: [182, 74, 0, 192, 79, 121, 73, 142] };
+pub const MSVidAnalogCaptureToStreamBufferSink: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2672879793, data2: 38192, data3: 19932, data4: [130, 94, 26, 248, 29, 71, 174, 214] };
+pub const MSVidAnalogCaptureToXDS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 893441088, data2: 23325, data3: 18891, data4: [130, 26, 232, 75, 140, 240, 101, 167] };
+pub const MSVidAnalogTVToEncoder: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 680867425, data2: 561, data3: 16859, data4: [137, 134, 33, 255, 67, 136, 238, 155] };
+pub const MSVidAnalogTunerDevice: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 471192708, data2: 37149, data3: 4562, data4: [182, 50, 0, 192, 79, 121, 73, 142] };
+pub const MSVidAudioRenderer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 934294852, data2: 42184, data3: 4562, data4: [182, 52, 0, 192, 79, 121, 73, 142] };
+pub const MSVidAudioRendererDevices: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3312463055, data2: 39801, data3: 4563, data4: [182, 84, 0, 192, 79, 121, 73, 142] };
+pub const MSVidBDATunerDevice: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2732787534, data2: 27709, data3: 4563, data4: [182, 83, 0, 192, 79, 121, 73, 142] };
+pub const MSVidCCA: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2249529383, data2: 58491, data3: 17902, data4: [132, 33, 209, 14, 110, 105, 9, 121] };
+pub const MSVidCCAToStreamBufferSink: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1056402792, data2: 34401, data3: 18499, data4: [139, 143, 195, 113, 99, 216, 201, 206] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 #[repr(transparent)]
 pub struct MSVidCCService(pub i32);
@@ -8917,11 +8917,11 @@ impl ::core::clone::Clone for MSVidCCService {
         *self
     }
 }
-pub const MSVidCCToAR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3613603018, data2: 55454, data3: 19375, data4: [134, 171, 221, 181, 147, 114, 175, 194] };
-pub const MSVidCCToVMR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3300861828, data2: 44544, data3: 16826, data4: [152, 40, 156, 149, 59, 211, 197, 74] };
-pub const MSVidClosedCaptioning: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2140975437, data2: 18660, data3: 17334, data4: [147, 70, 26, 235, 195, 156, 100, 211] };
-pub const MSVidClosedCaptioningSI: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2465040575, data2: 34718, data3: 17551, data4: [182, 182, 163, 133, 188, 235, 132, 109] };
-pub const MSVidCtl: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2968383843, data2: 37130, data3: 4562, data4: [182, 50, 0, 192, 79, 121, 73, 142] };
+pub const MSVidCCToAR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3613603018, data2: 55454, data3: 19375, data4: [134, 171, 221, 181, 147, 114, 175, 194] };
+pub const MSVidCCToVMR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3300861828, data2: 44544, data3: 16826, data4: [152, 40, 156, 149, 59, 211, 197, 74] };
+pub const MSVidClosedCaptioning: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2140975437, data2: 18660, data3: 17334, data4: [147, 70, 26, 235, 195, 156, 100, 211] };
+pub const MSVidClosedCaptioningSI: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2465040575, data2: 34718, data3: 17551, data4: [182, 182, 163, 133, 188, 235, 132, 109] };
+pub const MSVidCtl: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2968383843, data2: 37130, data3: 4562, data4: [182, 50, 0, 192, 79, 121, 73, 142] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type MSVidCtlButtonstate = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -8950,36 +8950,36 @@ pub const STATE_STOP: MSVidCtlStateList = 0i32;
 pub const STATE_PAUSE: MSVidCtlStateList = 1i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const STATE_PLAY: MSVidCtlStateList = 2i32;
-pub const MSVidDataServices: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 859907520, data2: 30693, data3: 4563, data4: [182, 83, 0, 192, 79, 121, 73, 142] };
-pub const MSVidDataServicesToStreamBufferSink: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 955266086, data2: 59451, data3: 20072, data4: [182, 91, 220, 174, 115, 48, 72, 56] };
-pub const MSVidDataServicesToXDS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 69856366, data2: 4420, data3: 19437, data4: [184, 139, 47, 185, 137, 154, 74, 61] };
-pub const MSVidDevice: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1849706351, data2: 40009, data3: 19518, data4: [139, 185, 133, 135, 149, 142, 255, 116] };
-pub const MSVidDevice2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 815366013, data2: 46005, data3: 18972, data4: [152, 58, 31, 232, 9, 140, 183, 125] };
-pub const MSVidDigitalCaptureToCCA: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1943093815, data2: 47579, data3: 20218, data4: [166, 221, 132, 53, 4, 33, 251, 47] };
-pub const MSVidDigitalCaptureToITV: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1569616887, data2: 18825, data3: 19144, data4: [138, 152, 57, 186, 13, 50, 83, 2] };
-pub const MSVidDigitalCaptureToStreamBufferSink: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2883846197, data2: 10179, data3: 18991, data4: [129, 83, 102, 36, 71, 22, 8, 175] };
-pub const MSVidEVR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3293735074, data2: 64129, data3: 19993, data4: [177, 227, 114, 237, 189, 96, 174, 218] };
-pub const MSVidEncoder: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3142782051, data2: 55775, data3: 19273, data4: [148, 57, 99, 69, 57, 98, 229, 152] };
-pub const MSVidEncoderToStreamBufferSink: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2696524951, data2: 44988, data3: 17837, data4: [168, 166, 155, 7, 124, 64, 212, 242] };
-pub const MSVidFeature: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2001228555, data2: 49290, data3: 18410, data4: [178, 76, 190, 134, 149, 255, 64, 95] };
-pub const MSVidFeatures: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3312463056, data2: 39801, data3: 4563, data4: [182, 84, 0, 192, 79, 121, 73, 142] };
-pub const MSVidFilePlaybackDevice: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 934294844, data2: 42184, data3: 4562, data4: [182, 52, 0, 192, 79, 121, 73, 142] };
-pub const MSVidFilePlaybackToAudioRenderer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3424908599, data2: 6356, data3: 20174, data4: [147, 189, 32, 122, 132, 114, 105, 121] };
-pub const MSVidFilePlaybackToVideoRenderer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3020015083, data2: 33879, data3: 17023, data4: [132, 234, 164, 210, 54, 51, 100, 176] };
-pub const MSVidGenericComposite: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 660913381, data2: 52281, data3: 4562, data4: [182, 57, 0, 192, 79, 121, 73, 142] };
-pub const MSVidGenericSink: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1247308239, data2: 37533, data3: 16448, data4: [174, 3, 252, 175, 197, 185, 205, 66] };
-pub const MSVidITVCapture: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1463853826, data2: 61195, data3: 17870, data4: [191, 59, 68, 112, 161, 74, 137, 128] };
-pub const MSVidITVPlayback: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2658762448, data2: 21075, data3: 16963, data4: [169, 183, 189, 6, 197, 143, 142, 243] };
-pub const MSVidITVToStreamBufferSink: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2461616168, data2: 6903, data3: 20078, data4: [158, 191, 119, 6, 87, 247, 122, 245] };
-pub const MSVidInputDevice: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2887348978, data2: 5002, data3: 19619, data4: [144, 218, 174, 81, 17, 46, 218, 40] };
-pub const MSVidInputDevices: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3312463052, data2: 39801, data3: 4563, data4: [182, 84, 0, 192, 79, 121, 73, 142] };
-pub const MSVidMPEG2DecoderToClosedCaptioning: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1792184033, data2: 20482, data3: 20081, data4: [170, 247, 189, 7, 121, 7, 177, 164] };
-pub const MSVidOutput: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2280360205, data2: 941, data3: 20125, data4: [152, 102, 55, 110, 94, 197, 114, 237] };
-pub const MSVidOutputDevices: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3312463053, data2: 39801, data3: 4563, data4: [182, 84, 0, 192, 79, 121, 73, 142] };
-pub const MSVidRect: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3410130662, data2: 32095, data3: 19697, data4: [151, 39, 98, 156, 94, 109, 182, 174] };
-pub const MSVidSBESourceToCC: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2442373369, data2: 3258, data3: 16398, data4: [170, 151, 235, 71, 9, 22, 69, 118] };
-pub const MSVidSBESourceToGenericSink: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2568857573, data2: 38207, data3: 17243, data4: [190, 94, 185, 42, 5, 237, 252, 66] };
-pub const MSVidSBESourceToITV: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 579946380, data2: 24291, data3: 19439, data4: [171, 93, 181, 255, 44, 245, 131, 82] };
+pub const MSVidDataServices: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 859907520, data2: 30693, data3: 4563, data4: [182, 83, 0, 192, 79, 121, 73, 142] };
+pub const MSVidDataServicesToStreamBufferSink: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 955266086, data2: 59451, data3: 20072, data4: [182, 91, 220, 174, 115, 48, 72, 56] };
+pub const MSVidDataServicesToXDS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 69856366, data2: 4420, data3: 19437, data4: [184, 139, 47, 185, 137, 154, 74, 61] };
+pub const MSVidDevice: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1849706351, data2: 40009, data3: 19518, data4: [139, 185, 133, 135, 149, 142, 255, 116] };
+pub const MSVidDevice2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 815366013, data2: 46005, data3: 18972, data4: [152, 58, 31, 232, 9, 140, 183, 125] };
+pub const MSVidDigitalCaptureToCCA: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1943093815, data2: 47579, data3: 20218, data4: [166, 221, 132, 53, 4, 33, 251, 47] };
+pub const MSVidDigitalCaptureToITV: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1569616887, data2: 18825, data3: 19144, data4: [138, 152, 57, 186, 13, 50, 83, 2] };
+pub const MSVidDigitalCaptureToStreamBufferSink: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2883846197, data2: 10179, data3: 18991, data4: [129, 83, 102, 36, 71, 22, 8, 175] };
+pub const MSVidEVR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3293735074, data2: 64129, data3: 19993, data4: [177, 227, 114, 237, 189, 96, 174, 218] };
+pub const MSVidEncoder: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3142782051, data2: 55775, data3: 19273, data4: [148, 57, 99, 69, 57, 98, 229, 152] };
+pub const MSVidEncoderToStreamBufferSink: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2696524951, data2: 44988, data3: 17837, data4: [168, 166, 155, 7, 124, 64, 212, 242] };
+pub const MSVidFeature: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2001228555, data2: 49290, data3: 18410, data4: [178, 76, 190, 134, 149, 255, 64, 95] };
+pub const MSVidFeatures: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3312463056, data2: 39801, data3: 4563, data4: [182, 84, 0, 192, 79, 121, 73, 142] };
+pub const MSVidFilePlaybackDevice: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 934294844, data2: 42184, data3: 4562, data4: [182, 52, 0, 192, 79, 121, 73, 142] };
+pub const MSVidFilePlaybackToAudioRenderer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3424908599, data2: 6356, data3: 20174, data4: [147, 189, 32, 122, 132, 114, 105, 121] };
+pub const MSVidFilePlaybackToVideoRenderer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3020015083, data2: 33879, data3: 17023, data4: [132, 234, 164, 210, 54, 51, 100, 176] };
+pub const MSVidGenericComposite: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 660913381, data2: 52281, data3: 4562, data4: [182, 57, 0, 192, 79, 121, 73, 142] };
+pub const MSVidGenericSink: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1247308239, data2: 37533, data3: 16448, data4: [174, 3, 252, 175, 197, 185, 205, 66] };
+pub const MSVidITVCapture: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1463853826, data2: 61195, data3: 17870, data4: [191, 59, 68, 112, 161, 74, 137, 128] };
+pub const MSVidITVPlayback: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2658762448, data2: 21075, data3: 16963, data4: [169, 183, 189, 6, 197, 143, 142, 243] };
+pub const MSVidITVToStreamBufferSink: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2461616168, data2: 6903, data3: 20078, data4: [158, 191, 119, 6, 87, 247, 122, 245] };
+pub const MSVidInputDevice: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2887348978, data2: 5002, data3: 19619, data4: [144, 218, 174, 81, 17, 46, 218, 40] };
+pub const MSVidInputDevices: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3312463052, data2: 39801, data3: 4563, data4: [182, 84, 0, 192, 79, 121, 73, 142] };
+pub const MSVidMPEG2DecoderToClosedCaptioning: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1792184033, data2: 20482, data3: 20081, data4: [170, 247, 189, 7, 121, 7, 177, 164] };
+pub const MSVidOutput: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2280360205, data2: 941, data3: 20125, data4: [152, 102, 55, 110, 94, 197, 114, 237] };
+pub const MSVidOutputDevices: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3312463053, data2: 39801, data3: 4563, data4: [182, 84, 0, 192, 79, 121, 73, 142] };
+pub const MSVidRect: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3410130662, data2: 32095, data3: 19697, data4: [151, 39, 98, 156, 94, 109, 182, 174] };
+pub const MSVidSBESourceToCC: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2442373369, data2: 3258, data3: 16398, data4: [170, 151, 235, 71, 9, 22, 69, 118] };
+pub const MSVidSBESourceToGenericSink: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2568857573, data2: 38207, data3: 17243, data4: [190, 94, 185, 42, 5, 237, 252, 66] };
+pub const MSVidSBESourceToITV: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 579946380, data2: 24291, data3: 19439, data4: [171, 93, 181, 255, 44, 245, 131, 82] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type MSVidSegmentType = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -8996,21 +8996,21 @@ pub const MSVidSink_Video: MSVidSinkStreams = 1i32;
 pub const MSVidSink_Audio: MSVidSinkStreams = 2i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const MSVidSink_Other: MSVidSinkStreams = 4i32;
-pub const MSVidStreamBufferRecordingControl: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3400523139, data2: 52988, data3: 20029, data4: [186, 3, 23, 95, 23, 162, 79, 145] };
-pub const MSVidStreamBufferSink: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2658642628, data2: 13797, data3: 17057, data4: [189, 194, 143, 63, 243, 153, 132, 124] };
-pub const MSVidStreamBufferSource: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2911785229, data2: 8575, data3: 16539, data4: [128, 118, 41, 197, 231, 59, 152, 232] };
-pub const MSVidStreamBufferSourceToVideoRenderer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1011288284, data2: 45441, data3: 18088, data4: [141, 168, 74, 176, 55, 23, 88, 205] };
-pub const MSVidStreamBufferV2Source: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4248116897, data2: 16755, data3: 19188, data4: [130, 29, 128, 212, 174, 151, 144, 72] };
-pub const MSVidVMR9: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 618412405, data2: 2495, data3: 16945, data4: [134, 85, 62, 231, 31, 67, 131, 125] };
-pub const MSVidVideoInputDevice: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2515829259, data2: 47930, data3: 20013, data4: [188, 100, 91, 129, 123, 194, 195, 14] };
-pub const MSVidVideoPlaybackDevice: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 428922420, data2: 6750, data3: 16497, data4: [163, 74, 83, 170, 255, 206, 159, 54] };
-pub const MSVidVideoRenderer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 934294851, data2: 42184, data3: 4562, data4: [182, 52, 0, 192, 79, 121, 73, 142] };
-pub const MSVidVideoRendererDevices: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3312463054, data2: 39801, data3: 4563, data4: [182, 84, 0, 192, 79, 121, 73, 142] };
-pub const MSVidWebDVD: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 18560537, data2: 65123, data3: 18452, data4: [138, 132, 21, 161, 148, 206, 156, 227] };
-pub const MSVidWebDVDAdm: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4202444635, data2: 26279, data3: 17024, data4: [135, 157, 253, 69, 156, 132, 187, 2] };
-pub const MSVidWebDVDToAudioRenderer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2365858702, data2: 40913, data3: 16838, data4: [141, 227, 158, 30, 227, 9, 233, 53] };
-pub const MSVidWebDVDToVideoRenderer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 645771443, data2: 21987, data3: 18690, data4: [148, 155, 223, 143, 92, 236, 1, 145] };
-pub const MSVidXDS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 21622495, data2: 53391, data3: 16706, data4: [141, 115, 210, 57, 3, 210, 30, 144] };
+pub const MSVidStreamBufferRecordingControl: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3400523139, data2: 52988, data3: 20029, data4: [186, 3, 23, 95, 23, 162, 79, 145] };
+pub const MSVidStreamBufferSink: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2658642628, data2: 13797, data3: 17057, data4: [189, 194, 143, 63, 243, 153, 132, 124] };
+pub const MSVidStreamBufferSource: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2911785229, data2: 8575, data3: 16539, data4: [128, 118, 41, 197, 231, 59, 152, 232] };
+pub const MSVidStreamBufferSourceToVideoRenderer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1011288284, data2: 45441, data3: 18088, data4: [141, 168, 74, 176, 55, 23, 88, 205] };
+pub const MSVidStreamBufferV2Source: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4248116897, data2: 16755, data3: 19188, data4: [130, 29, 128, 212, 174, 151, 144, 72] };
+pub const MSVidVMR9: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 618412405, data2: 2495, data3: 16945, data4: [134, 85, 62, 231, 31, 67, 131, 125] };
+pub const MSVidVideoInputDevice: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2515829259, data2: 47930, data3: 20013, data4: [188, 100, 91, 129, 123, 194, 195, 14] };
+pub const MSVidVideoPlaybackDevice: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 428922420, data2: 6750, data3: 16497, data4: [163, 74, 83, 170, 255, 206, 159, 54] };
+pub const MSVidVideoRenderer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 934294851, data2: 42184, data3: 4562, data4: [182, 52, 0, 192, 79, 121, 73, 142] };
+pub const MSVidVideoRendererDevices: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3312463054, data2: 39801, data3: 4563, data4: [182, 84, 0, 192, 79, 121, 73, 142] };
+pub const MSVidWebDVD: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 18560537, data2: 65123, data3: 18452, data4: [138, 132, 21, 161, 148, 206, 156, 227] };
+pub const MSVidWebDVDAdm: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4202444635, data2: 26279, data3: 17024, data4: [135, 157, 253, 69, 156, 132, 187, 2] };
+pub const MSVidWebDVDToAudioRenderer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2365858702, data2: 40913, data3: 16838, data4: [141, 227, 158, 30, 227, 9, 233, 53] };
+pub const MSVidWebDVDToVideoRenderer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 645771443, data2: 21987, data3: 18690, data4: [148, 155, 223, 143, 92, 236, 1, 145] };
+pub const MSVidXDS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 21622495, data2: 53391, data3: 16706, data4: [141, 115, 210, 57, 3, 210, 30, 144] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type MSViddispidList = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -9178,9 +9178,9 @@ pub const BDA_MOD_ISDB_T_TMCC: ModulationType = 34i32;
 pub const BDA_MOD_ISDB_S_TMCC: ModulationType = 35i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const BDA_MOD_MAX: ModulationType = 36i32;
-pub const Mpeg2Data: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3328631061, data2: 47970, data3: 16423, data4: [161, 19, 130, 214, 67, 254, 45, 153] };
-pub const Mpeg2DataLib: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3685706779, data2: 46756, data3: 18584, data4: [174, 101, 32, 79, 13, 149, 9, 161] };
-pub const Mpeg2Stream: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4179465927, data2: 34057, data3: 19723, data4: [171, 38, 160, 221, 16, 144, 75, 183] };
+pub const Mpeg2Data: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3328631061, data2: 47970, data3: 16423, data4: [161, 19, 130, 214, 67, 254, 45, 153] };
+pub const Mpeg2DataLib: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3685706779, data2: 46756, data3: 18584, data4: [174, 101, 32, 79, 13, 149, 9, 161] };
+pub const Mpeg2Stream: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4179465927, data2: 34057, data3: 19723, data4: [171, 38, 160, 221, 16, 144, 75, 183] };
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct Mpeg2TableSampleHdr {
@@ -9252,9 +9252,9 @@ impl ::core::clone::Clone for PBDAParentalControl {
         *self
     }
 }
-pub const PBDA_ALWAYS_TUNE_IN_MUX: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 505246017, data2: 22591, data3: 19138, data4: [176, 25, 31, 67, 14, 218, 15, 76] };
-pub const PBDA_AUX_CONNECTOR_TYPE_Composite: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4129917772, data2: 50981, data3: 19778, data4: [132, 155, 65, 11, 187, 20, 234, 98] };
-pub const PBDA_AUX_CONNECTOR_TYPE_SVideo: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2699625972, data2: 9417, data3: 19028, data4: [183, 97, 33, 51, 85, 239, 193, 58] };
+pub const PBDA_ALWAYS_TUNE_IN_MUX: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 505246017, data2: 22591, data3: 19138, data4: [176, 25, 31, 67, 14, 218, 15, 76] };
+pub const PBDA_AUX_CONNECTOR_TYPE_Composite: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4129917772, data2: 50981, data3: 19778, data4: [132, 155, 65, 11, 187, 20, 234, 98] };
+pub const PBDA_AUX_CONNECTOR_TYPE_SVideo: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2699625972, data2: 9417, data3: 19028, data4: [183, 97, 33, 51, 85, 239, 193, 58] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const PBDA_Encoder_Audio_AlgorithmType_AC3: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -9278,7 +9278,7 @@ pub const PBDA_PAIRING_PROTOCOL_VERSION: u32 = 3u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct PBDA_TAG_ATTRIBUTE {
-    pub TableUUId: ::windows_sys::core::GUID,
+    pub TableUUId: ::windows_sys_core::GUID,
     pub TableId: u8,
     pub VersionNo: u16,
     pub TableDataSize: u32,
@@ -9292,43 +9292,43 @@ impl ::core::clone::Clone for PBDA_TAG_ATTRIBUTE {
 }
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Direct3D9\"`, `\"Win32_Media_MediaFoundation\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
-pub type PDXVA2SW_CREATEVIDEOPROCESSDEVICE = ::core::option::Option<unsafe extern "system" fn(pd3dd9: super::super::Graphics::Direct3D9::IDirect3DDevice9, pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, maxsubstreams: u32, phdevice: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT>;
+pub type PDXVA2SW_CREATEVIDEOPROCESSDEVICE = ::core::option::Option<unsafe extern "system" fn(pd3dd9: super::super::Graphics::Direct3D9::IDirect3DDevice9, pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, maxsubstreams: u32, phdevice: *mut super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PDXVA2SW_DESTROYVIDEOPROCESSDEVICE = ::core::option::Option<unsafe extern "system" fn(hdevice: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT>;
+pub type PDXVA2SW_DESTROYVIDEOPROCESSDEVICE = ::core::option::Option<unsafe extern "system" fn(hdevice: super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Graphics_Direct3D9\"`, `\"Win32_Media_MediaFoundation\"`*"]
 #[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
-pub type PDXVA2SW_GETFILTERPROPERTYRANGE = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, filtersetting: u32, prange: *mut super::MediaFoundation::DXVA2_ValueRange) -> ::windows_sys::core::HRESULT>;
+pub type PDXVA2SW_GETFILTERPROPERTYRANGE = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, filtersetting: u32, prange: *mut super::MediaFoundation::DXVA2_ValueRange) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Graphics_Direct3D9\"`, `\"Win32_Media_MediaFoundation\"`*"]
 #[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
-pub type PDXVA2SW_GETPROCAMPRANGE = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, procampcap: u32, prange: *mut super::MediaFoundation::DXVA2_ValueRange) -> ::windows_sys::core::HRESULT>;
+pub type PDXVA2SW_GETPROCAMPRANGE = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, procampcap: u32, prange: *mut super::MediaFoundation::DXVA2_ValueRange) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Graphics_Direct3D9\"`, `\"Win32_Media_MediaFoundation\"`*"]
 #[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
-pub type PDXVA2SW_GETVIDEOPROCESSORCAPS = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, pcaps: *mut super::MediaFoundation::DXVA2_VideoProcessorCaps) -> ::windows_sys::core::HRESULT>;
+pub type PDXVA2SW_GETVIDEOPROCESSORCAPS = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, pcaps: *mut super::MediaFoundation::DXVA2_VideoProcessorCaps) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Graphics_Direct3D9\"`, `\"Win32_Media_MediaFoundation\"`*"]
 #[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
-pub type PDXVA2SW_GETVIDEOPROCESSORRENDERTARGETCOUNT = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, pcount: *mut u32) -> ::windows_sys::core::HRESULT>;
+pub type PDXVA2SW_GETVIDEOPROCESSORRENDERTARGETCOUNT = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, pcount: *mut u32) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Graphics_Direct3D9\"`, `\"Win32_Media_MediaFoundation\"`*"]
 #[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
-pub type PDXVA2SW_GETVIDEOPROCESSORRENDERTARGETS = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, count: u32, pformats: *mut super::super::Graphics::Direct3D9::D3DFORMAT) -> ::windows_sys::core::HRESULT>;
+pub type PDXVA2SW_GETVIDEOPROCESSORRENDERTARGETS = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, count: u32, pformats: *mut super::super::Graphics::Direct3D9::D3DFORMAT) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Graphics_Direct3D9\"`, `\"Win32_Media_MediaFoundation\"`*"]
 #[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
-pub type PDXVA2SW_GETVIDEOPROCESSORSUBSTREAMFORMATCOUNT = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, pcount: *mut u32) -> ::windows_sys::core::HRESULT>;
+pub type PDXVA2SW_GETVIDEOPROCESSORSUBSTREAMFORMATCOUNT = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, pcount: *mut u32) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Graphics_Direct3D9\"`, `\"Win32_Media_MediaFoundation\"`*"]
 #[cfg(all(feature = "Win32_Graphics_Direct3D9", feature = "Win32_Media_MediaFoundation"))]
-pub type PDXVA2SW_GETVIDEOPROCESSORSUBSTREAMFORMATS = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, count: u32, pformats: *mut super::super::Graphics::Direct3D9::D3DFORMAT) -> ::windows_sys::core::HRESULT>;
+pub type PDXVA2SW_GETVIDEOPROCESSORSUBSTREAMFORMATS = ::core::option::Option<unsafe extern "system" fn(pvideodesc: *const super::MediaFoundation::DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, count: u32, pformats: *mut super::super::Graphics::Direct3D9::D3DFORMAT) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PDXVA2SW_VIDEOPROCESSBEGINFRAME = ::core::option::Option<unsafe extern "system" fn(hdevice: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT>;
+pub type PDXVA2SW_VIDEOPROCESSBEGINFRAME = ::core::option::Option<unsafe extern "system" fn(hdevice: super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`, `\"Win32_Media_MediaFoundation\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Media_MediaFoundation"))]
-pub type PDXVA2SW_VIDEOPROCESSBLT = ::core::option::Option<unsafe extern "system" fn(hdevice: super::super::Foundation::HANDLE, pblt: *const DXVA2_VIDEOPROCESSBLT) -> ::windows_sys::core::HRESULT>;
+pub type PDXVA2SW_VIDEOPROCESSBLT = ::core::option::Option<unsafe extern "system" fn(hdevice: super::super::Foundation::HANDLE, pblt: *const DXVA2_VIDEOPROCESSBLT) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PDXVA2SW_VIDEOPROCESSENDFRAME = ::core::option::Option<unsafe extern "system" fn(hdevice: super::super::Foundation::HANDLE, phandlecomplete: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT>;
+pub type PDXVA2SW_VIDEOPROCESSENDFRAME = ::core::option::Option<unsafe extern "system" fn(hdevice: super::super::Foundation::HANDLE, phandlecomplete: *mut super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Direct3D9\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
-pub type PDXVA2SW_VIDEOPROCESSSETRENDERTARGET = ::core::option::Option<unsafe extern "system" fn(hdevice: super::super::Foundation::HANDLE, prendertarget: super::super::Graphics::Direct3D9::IDirect3DSurface9) -> ::windows_sys::core::HRESULT>;
+pub type PDXVA2SW_VIDEOPROCESSSETRENDERTARGET = ::core::option::Option<unsafe extern "system" fn(hdevice: super::super::Foundation::HANDLE, prendertarget: super::super::Graphics::Direct3D9::IDirect3DSurface9) -> ::windows_sys_core::HRESULT>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct PIC_SEQ_SAMPLE {
@@ -9386,14 +9386,14 @@ impl ::core::clone::Clone for PID_MAP {
         *self
     }
 }
-pub const PINNAME_BDA_ANALOG_AUDIO: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3532281866, data2: 39711, data3: 19212, data4: [156, 51, 155, 240, 168, 234, 99, 107] };
-pub const PINNAME_BDA_ANALOG_VIDEO: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1544323713, data2: 22119, data3: 18540, data4: [132, 130, 99, 227, 31, 1, 166, 233] };
-pub const PINNAME_BDA_FM_RADIO: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3531956205, data2: 45779, data3: 20203, data4: [155, 208, 25, 52, 54, 162, 248, 144] };
-pub const PINNAME_BDA_IF_PIN: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 446515778, data2: 62413, data3: 18593, data4: [154, 234, 113, 222, 19, 60, 190, 20] };
-pub const PINNAME_BDA_OPENCABLE_PSIP_PIN: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 695972100, data2: 58825, data3: 19150, data4: [177, 35, 149, 195, 203, 178, 77, 79] };
-pub const PINNAME_BDA_TRANSPORT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2015455873, data2: 53160, data3: 18750, data4: [151, 17, 54, 166, 28, 8, 189, 157] };
-pub const PINNAME_IPSINK_INPUT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1071643248, data2: 44186, data3: 4562, data4: [143, 23, 0, 192, 79, 121, 113, 226] };
-pub const PINNAME_MPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3249565043, data2: 7611, data3: 4563, data4: [143, 70, 0, 192, 79, 121, 113, 226] };
+pub const PINNAME_BDA_ANALOG_AUDIO: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3532281866, data2: 39711, data3: 19212, data4: [156, 51, 155, 240, 168, 234, 99, 107] };
+pub const PINNAME_BDA_ANALOG_VIDEO: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1544323713, data2: 22119, data3: 18540, data4: [132, 130, 99, 227, 31, 1, 166, 233] };
+pub const PINNAME_BDA_FM_RADIO: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3531956205, data2: 45779, data3: 20203, data4: [155, 208, 25, 52, 54, 162, 248, 144] };
+pub const PINNAME_BDA_IF_PIN: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 446515778, data2: 62413, data3: 18593, data4: [154, 234, 113, 222, 19, 60, 190, 20] };
+pub const PINNAME_BDA_OPENCABLE_PSIP_PIN: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 695972100, data2: 58825, data3: 19150, data4: [177, 35, 149, 195, 203, 178, 77, 79] };
+pub const PINNAME_BDA_TRANSPORT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2015455873, data2: 53160, data3: 18750, data4: [151, 17, 54, 166, 28, 8, 189, 157] };
+pub const PINNAME_IPSINK_INPUT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1071643248, data2: 44186, data3: 4562, data4: [143, 23, 0, 192, 79, 121, 113, 226] };
+pub const PINNAME_MPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3249565043, data2: 7611, data3: 4563, data4: [143, 70, 0, 192, 79, 121, 113, 226] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type PIN_DIRECTION = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -9416,7 +9416,7 @@ impl ::core::clone::Clone for PIN_INFO {
         *self
     }
 }
-pub const PersistTuneXmlUtility: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3882886832, data2: 47487, data3: 19643, data4: [183, 251, 244, 240, 58, 214, 159, 17] };
+pub const PersistTuneXmlUtility: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3882886832, data2: 47487, data3: 19643, data4: [183, 251, 244, 240, 58, 214, 159, 17] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type PhysicalConnectorType = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -9584,7 +9584,7 @@ impl ::core::clone::Clone for RATING_INFO {
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct RATING_SYSTEM {
-    pub rating_system_id: ::windows_sys::core::GUID,
+    pub rating_system_id: ::windows_sys_core::GUID,
     pub _bitfield: u8,
     pub country_code: [u8; 3],
     pub rating_attribute_count: u32,
@@ -9605,8 +9605,8 @@ pub const RECORDING_TYPE_REFERENCE: RECORDING_TYPE = 1i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct REGFILTER {
-    pub Clsid: ::windows_sys::core::GUID,
-    pub Name: ::windows_sys::core::PWSTR,
+    pub Clsid: ::windows_sys_core::GUID,
+    pub Name: ::windows_sys_core::PWSTR,
 }
 impl ::core::marker::Copy for REGFILTER {}
 impl ::core::clone::Clone for REGFILTER {
@@ -9679,13 +9679,13 @@ impl ::core::clone::Clone for REGFILTER2_0_1 {
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct REGFILTERPINS {
-    pub strName: ::windows_sys::core::PWSTR,
+    pub strName: ::windows_sys_core::PWSTR,
     pub bRendered: super::super::Foundation::BOOL,
     pub bOutput: super::super::Foundation::BOOL,
     pub bZero: super::super::Foundation::BOOL,
     pub bMany: super::super::Foundation::BOOL,
-    pub clsConnectsToFilter: *const ::windows_sys::core::GUID,
-    pub strConnectsToPin: ::windows_sys::core::PCWSTR,
+    pub clsConnectsToFilter: *const ::windows_sys_core::GUID,
+    pub strConnectsToPin: ::windows_sys_core::PCWSTR,
     pub nMediaTypes: u32,
     pub lpMediaType: *const REGPINTYPES,
 }
@@ -9706,7 +9706,7 @@ pub struct REGFILTERPINS2 {
     pub lpMediaType: *const REGPINTYPES,
     pub nMediums: u32,
     pub lpMedium: *const REGPINMEDIUM,
-    pub clsPinCategory: *const ::windows_sys::core::GUID,
+    pub clsPinCategory: *const ::windows_sys_core::GUID,
 }
 impl ::core::marker::Copy for REGFILTERPINS2 {}
 impl ::core::clone::Clone for REGFILTERPINS2 {
@@ -9717,7 +9717,7 @@ impl ::core::clone::Clone for REGFILTERPINS2 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct REGPINMEDIUM {
-    pub clsMedium: ::windows_sys::core::GUID,
+    pub clsMedium: ::windows_sys_core::GUID,
     pub dw1: u32,
     pub dw2: u32,
 }
@@ -9730,8 +9730,8 @@ impl ::core::clone::Clone for REGPINMEDIUM {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct REGPINTYPES {
-    pub clsMajorType: *const ::windows_sys::core::GUID,
-    pub clsMinorType: *const ::windows_sys::core::GUID,
+    pub clsMajorType: *const ::windows_sys_core::GUID,
+    pub clsMinorType: *const ::windows_sys_core::GUID,
 }
 impl ::core::marker::Copy for REGPINTYPES {}
 impl ::core::clone::Clone for REGPINTYPES {
@@ -9871,11 +9871,11 @@ impl ::core::clone::Clone for SBE2_STREAM_DESC {
         *self
     }
 }
-pub const SBE2_STREAM_DESC_EVENT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 588489965, data2: 48941, data3: 17743, data4: [173, 138, 217, 91, 167, 249, 31, 238] };
+pub const SBE2_STREAM_DESC_EVENT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 588489965, data2: 48941, data3: 17743, data4: [173, 138, 217, 91, 167, 249, 31, 238] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const SBE2_STREAM_DESC_VERSION: u32 = 1u32;
-pub const SBE2_V1_STREAMS_CREATION_EVENT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1036041, data2: 38901, data3: 18092, data4: [151, 105, 122, 131, 179, 83, 132, 251] };
-pub const SBE2_V2_STREAMS_CREATION_EVENT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2804232355, data2: 836, data3: 19627, data4: [162, 208, 254, 147, 125, 189, 202, 179] };
+pub const SBE2_V1_STREAMS_CREATION_EVENT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1036041, data2: 38901, data3: 18092, data4: [151, 105, 122, 131, 179, 83, 132, 251] };
+pub const SBE2_V2_STREAMS_CREATION_EVENT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2804232355, data2: 836, data3: 19627, data4: [162, 208, 254, 147, 125, 189, 202, 179] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct SBE_PIN_DATA {
@@ -9922,8 +9922,8 @@ impl ::core::clone::Clone for SECTION_0 {
         *self
     }
 }
-pub const SID_DRMSecureServiceChannel: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229764, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const SID_MSVidCtl_CurrentAudioEndpoint: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3483011316, data2: 43983, data3: 20184, data4: [155, 116, 125, 179, 52, 69, 69, 158] };
+pub const SID_DRMSecureServiceChannel: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229764, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const SID_MSVidCtl_CurrentAudioEndpoint: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3483011316, data2: 43983, data3: 20184, data4: [155, 116, 125, 179, 52, 69, 69, 158] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type SNDDEV_ERR = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -9954,7 +9954,7 @@ pub const SNDDEV_ERROR_Start: SNDDEV_ERR = 12i32;
 pub const SNDDEV_ERROR_AddBuffer: SNDDEV_ERR = 13i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const SNDDEV_ERROR_Query: SNDDEV_ERR = 14i32;
-pub const SPECIFYPAGES_STATISTICS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1279490962, data2: 28318, data3: 4561, data4: [167, 4, 0, 96, 151, 196, 228, 118] };
+pub const SPECIFYPAGES_STATISTICS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1279490962, data2: 28318, data3: 4561, data4: [167, 4, 0, 96, 151, 196, 228, 118] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type SSUPDATE_TYPE = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -9966,7 +9966,7 @@ pub const STDINDEXSIZE: u32 = 16384u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct STREAMBUFFER_ATTRIBUTE {
-    pub pszName: ::windows_sys::core::PWSTR,
+    pub pszName: ::windows_sys_core::PWSTR,
     pub StreamBufferAttributeType: STREAMBUFFER_ATTR_DATATYPE,
     pub pbAttribute: *mut u8,
     pub cbLength: u16,
@@ -10123,7 +10123,7 @@ pub const ScanModulationTypesMask_DVBC: ScanModulationTypes = 75i32;
 pub const BDA_SCAN_MOD_16APSK: ScanModulationTypes = 268435456i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const BDA_SCAN_MOD_32APSK: ScanModulationTypes = 536870912i32;
-pub const SectionList: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1943690500, data2: 17223, data3: 17875, data4: [169, 220, 250, 233, 221, 190, 85, 141] };
+pub const SectionList: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1943690500, data2: 17223, data3: 17875, data4: [169, 220, 250, 233, 221, 190, 85, 141] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type SegDispidList = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -10804,7 +10804,7 @@ pub const BDA_SPECTRAL_INVERSION_NORMAL: SpectralInversion = 2i32;
 pub const BDA_SPECTRAL_INVERSION_INVERTED: SpectralInversion = 3i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const BDA_SPECTRAL_INVERSION_MAX: SpectralInversion = 4i32;
-pub const SystemTuningSpaces: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3492457552, data2: 638, data3: 4563, data4: [157, 142, 0, 192, 79, 114, 217, 128] };
+pub const SystemTuningSpaces: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3492457552, data2: 638, data3: 4563, data4: [157, 142, 0, 192, 79, 114, 217, 128] };
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct TID_EXTENSION {
@@ -10817,7 +10817,7 @@ impl ::core::clone::Clone for TID_EXTENSION {
         *self
     }
 }
-pub const TIFLoad: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 350979912, data2: 5971, data3: 17299, data4: [149, 174, 79, 126, 122, 135, 170, 214] };
+pub const TIFLoad: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 350979912, data2: 5971, data3: 17299, data4: [149, 174, 79, 126, 122, 135, 170, 214] };
 #[repr(C, packed(2))]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct TIMECODEDATA {
@@ -10932,15 +10932,15 @@ pub const BDA_XMIT_MODE_16K: TransmissionMode = 7i32;
 pub const BDA_XMIT_MODE_32K: TransmissionMode = 8i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const BDA_XMIT_MODE_MAX: TransmissionMode = 9i32;
-pub const TuneRequest: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3027111224, data2: 43829, data3: 18950, data4: [161, 55, 112, 87, 107, 1, 179, 159] };
+pub const TuneRequest: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3027111224, data2: 43829, data3: 18950, data4: [161, 55, 112, 87, 107, 1, 179, 159] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type TunerInputType = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const TunerInputCable: TunerInputType = 0i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const TunerInputAntenna: TunerInputType = 1i32;
-pub const TunerMarshaler: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1681413899, data2: 3080, data3: 18981, data4: [149, 4, 128, 18, 187, 77, 80, 207] };
-pub const TuningSpace: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1610466790, data2: 47162, data3: 19285, data4: [182, 232, 198, 158, 118, 95, 233, 219] };
+pub const TunerMarshaler: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1681413899, data2: 3080, data3: 18981, data4: [149, 4, 128, 18, 187, 77, 80, 207] };
+pub const TuningSpace: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1610466790, data2: 47162, data3: 19285, data4: [182, 232, 198, 158, 118, 95, 233, 219] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -11113,274 +11113,274 @@ pub const VA_VIDEO_MAC: VA_VIDEO_FORMAT = 4i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const VA_VIDEO_UNSPECIFIED: VA_VIDEO_FORMAT = 5i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_ADVISE_ALREADY_SET: ::windows_sys::core::HRESULT = -2147220938i32;
+pub const VFW_E_ADVISE_ALREADY_SET: ::windows_sys_core::HRESULT = -2147220938i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_ALREADY_CANCELLED: ::windows_sys::core::HRESULT = -2147220940i32;
+pub const VFW_E_ALREADY_CANCELLED: ::windows_sys_core::HRESULT = -2147220940i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_ALREADY_COMMITTED: ::windows_sys::core::HRESULT = -2147220977i32;
+pub const VFW_E_ALREADY_COMMITTED: ::windows_sys_core::HRESULT = -2147220977i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_ALREADY_CONNECTED: ::windows_sys::core::HRESULT = -2147220988i32;
+pub const VFW_E_ALREADY_CONNECTED: ::windows_sys_core::HRESULT = -2147220988i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_BADALIGN: ::windows_sys::core::HRESULT = -2147220978i32;
+pub const VFW_E_BADALIGN: ::windows_sys_core::HRESULT = -2147220978i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_BAD_KEY: ::windows_sys::core::HRESULT = -2147220494i32;
+pub const VFW_E_BAD_KEY: ::windows_sys_core::HRESULT = -2147220494i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_BAD_VIDEOCD: ::windows_sys::core::HRESULT = -2147220887i32;
+pub const VFW_E_BAD_VIDEOCD: ::windows_sys_core::HRESULT = -2147220887i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_BUFFERS_OUTSTANDING: ::windows_sys::core::HRESULT = -2147220976i32;
+pub const VFW_E_BUFFERS_OUTSTANDING: ::windows_sys_core::HRESULT = -2147220976i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_BUFFER_NOTSET: ::windows_sys::core::HRESULT = -2147220980i32;
+pub const VFW_E_BUFFER_NOTSET: ::windows_sys_core::HRESULT = -2147220980i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_BUFFER_OVERFLOW: ::windows_sys::core::HRESULT = -2147220979i32;
+pub const VFW_E_BUFFER_OVERFLOW: ::windows_sys_core::HRESULT = -2147220979i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_BUFFER_UNDERFLOW: ::windows_sys::core::HRESULT = -2147220892i32;
+pub const VFW_E_BUFFER_UNDERFLOW: ::windows_sys_core::HRESULT = -2147220892i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_CANNOT_CONNECT: ::windows_sys::core::HRESULT = -2147220969i32;
+pub const VFW_E_CANNOT_CONNECT: ::windows_sys_core::HRESULT = -2147220969i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_CANNOT_LOAD_SOURCE_FILTER: ::windows_sys::core::HRESULT = -2147220927i32;
+pub const VFW_E_CANNOT_LOAD_SOURCE_FILTER: ::windows_sys_core::HRESULT = -2147220927i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_CANNOT_RENDER: ::windows_sys::core::HRESULT = -2147220968i32;
+pub const VFW_E_CANNOT_RENDER: ::windows_sys_core::HRESULT = -2147220968i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_CERTIFICATION_FAILURE: ::windows_sys::core::HRESULT = -2147220843i32;
+pub const VFW_E_CERTIFICATION_FAILURE: ::windows_sys_core::HRESULT = -2147220843i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_CHANGING_FORMAT: ::windows_sys::core::HRESULT = -2147220967i32;
+pub const VFW_E_CHANGING_FORMAT: ::windows_sys_core::HRESULT = -2147220967i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_CIRCULAR_GRAPH: ::windows_sys::core::HRESULT = -2147220943i32;
+pub const VFW_E_CIRCULAR_GRAPH: ::windows_sys_core::HRESULT = -2147220943i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_CODECAPI_ENUMERATED: ::windows_sys::core::HRESULT = -2147220719i32;
+pub const VFW_E_CODECAPI_ENUMERATED: ::windows_sys_core::HRESULT = -2147220719i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_CODECAPI_LINEAR_RANGE: ::windows_sys::core::HRESULT = -2147220720i32;
+pub const VFW_E_CODECAPI_LINEAR_RANGE: ::windows_sys_core::HRESULT = -2147220720i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_CODECAPI_NO_CURRENT_VALUE: ::windows_sys::core::HRESULT = -2147220716i32;
+pub const VFW_E_CODECAPI_NO_CURRENT_VALUE: ::windows_sys_core::HRESULT = -2147220716i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_CODECAPI_NO_DEFAULT: ::windows_sys::core::HRESULT = -2147220717i32;
+pub const VFW_E_CODECAPI_NO_DEFAULT: ::windows_sys_core::HRESULT = -2147220717i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_COLOR_KEY_SET: ::windows_sys::core::HRESULT = -2147220962i32;
+pub const VFW_E_COLOR_KEY_SET: ::windows_sys_core::HRESULT = -2147220962i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_COPYPROT_FAILED: ::windows_sys::core::HRESULT = -2147220867i32;
+pub const VFW_E_COPYPROT_FAILED: ::windows_sys_core::HRESULT = -2147220867i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_CORRUPT_GRAPH_FILE: ::windows_sys::core::HRESULT = -2147220939i32;
+pub const VFW_E_CORRUPT_GRAPH_FILE: ::windows_sys_core::HRESULT = -2147220939i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DDRAW_CAPS_NOT_SUITABLE: ::windows_sys::core::HRESULT = -2147220877i32;
+pub const VFW_E_DDRAW_CAPS_NOT_SUITABLE: ::windows_sys_core::HRESULT = -2147220877i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DDRAW_VERSION_NOT_SUITABLE: ::windows_sys::core::HRESULT = -2147220868i32;
+pub const VFW_E_DDRAW_VERSION_NOT_SUITABLE: ::windows_sys_core::HRESULT = -2147220868i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DUPLICATE_NAME: ::windows_sys::core::HRESULT = -2147220947i32;
+pub const VFW_E_DUPLICATE_NAME: ::windows_sys_core::HRESULT = -2147220947i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_CHAPTER_DOES_NOT_EXIST: ::windows_sys::core::HRESULT = -2147220715i32;
+pub const VFW_E_DVD_CHAPTER_DOES_NOT_EXIST: ::windows_sys_core::HRESULT = -2147220715i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_CMD_CANCELLED: ::windows_sys::core::HRESULT = -2147220861i32;
+pub const VFW_E_DVD_CMD_CANCELLED: ::windows_sys_core::HRESULT = -2147220861i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_DECNOTENOUGH: ::windows_sys::core::HRESULT = -2147220869i32;
+pub const VFW_E_DVD_DECNOTENOUGH: ::windows_sys_core::HRESULT = -2147220869i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_GRAPHNOTREADY: ::windows_sys::core::HRESULT = -2147220871i32;
+pub const VFW_E_DVD_GRAPHNOTREADY: ::windows_sys_core::HRESULT = -2147220871i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_INCOMPATIBLE_REGION: ::windows_sys::core::HRESULT = -2147220857i32;
+pub const VFW_E_DVD_INCOMPATIBLE_REGION: ::windows_sys_core::HRESULT = -2147220857i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_INVALIDDOMAIN: ::windows_sys::core::HRESULT = -2147220873i32;
+pub const VFW_E_DVD_INVALIDDOMAIN: ::windows_sys_core::HRESULT = -2147220873i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_INVALID_DISC: ::windows_sys::core::HRESULT = -2147220847i32;
+pub const VFW_E_DVD_INVALID_DISC: ::windows_sys_core::HRESULT = -2147220847i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_LOW_PARENTAL_LEVEL: ::windows_sys::core::HRESULT = -2147220854i32;
+pub const VFW_E_DVD_LOW_PARENTAL_LEVEL: ::windows_sys_core::HRESULT = -2147220854i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_MENU_DOES_NOT_EXIST: ::windows_sys::core::HRESULT = -2147220862i32;
+pub const VFW_E_DVD_MENU_DOES_NOT_EXIST: ::windows_sys_core::HRESULT = -2147220862i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_NONBLOCKING: ::windows_sys::core::HRESULT = -2147220836i32;
+pub const VFW_E_DVD_NONBLOCKING: ::windows_sys_core::HRESULT = -2147220836i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_NON_EVR_RENDERER_IN_FILTER_GRAPH: ::windows_sys::core::HRESULT = -2147220834i32;
+pub const VFW_E_DVD_NON_EVR_RENDERER_IN_FILTER_GRAPH: ::windows_sys_core::HRESULT = -2147220834i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_NOT_IN_KARAOKE_MODE: ::windows_sys::core::HRESULT = -2147220853i32;
+pub const VFW_E_DVD_NOT_IN_KARAOKE_MODE: ::windows_sys_core::HRESULT = -2147220853i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_NO_ATTRIBUTES: ::windows_sys::core::HRESULT = -2147220856i32;
+pub const VFW_E_DVD_NO_ATTRIBUTES: ::windows_sys_core::HRESULT = -2147220856i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_NO_BUTTON: ::windows_sys::core::HRESULT = -2147220872i32;
+pub const VFW_E_DVD_NO_BUTTON: ::windows_sys_core::HRESULT = -2147220872i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_NO_GOUP_PGC: ::windows_sys::core::HRESULT = -2147220855i32;
+pub const VFW_E_DVD_NO_GOUP_PGC: ::windows_sys_core::HRESULT = -2147220855i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_NO_RESUME_INFORMATION: ::windows_sys::core::HRESULT = -2147220846i32;
+pub const VFW_E_DVD_NO_RESUME_INFORMATION: ::windows_sys_core::HRESULT = -2147220846i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_OPERATION_INHIBITED: ::windows_sys::core::HRESULT = -2147220874i32;
+pub const VFW_E_DVD_OPERATION_INHIBITED: ::windows_sys_core::HRESULT = -2147220874i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_RENDERFAIL: ::windows_sys::core::HRESULT = -2147220870i32;
+pub const VFW_E_DVD_RENDERFAIL: ::windows_sys_core::HRESULT = -2147220870i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_RESOLUTION_ERROR: ::windows_sys::core::HRESULT = -2147220833i32;
+pub const VFW_E_DVD_RESOLUTION_ERROR: ::windows_sys_core::HRESULT = -2147220833i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_STATE_CORRUPT: ::windows_sys::core::HRESULT = -2147220859i32;
+pub const VFW_E_DVD_STATE_CORRUPT: ::windows_sys_core::HRESULT = -2147220859i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_STATE_WRONG_DISC: ::windows_sys::core::HRESULT = -2147220858i32;
+pub const VFW_E_DVD_STATE_WRONG_DISC: ::windows_sys_core::HRESULT = -2147220858i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_STATE_WRONG_VERSION: ::windows_sys::core::HRESULT = -2147220860i32;
+pub const VFW_E_DVD_STATE_WRONG_VERSION: ::windows_sys_core::HRESULT = -2147220860i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_STREAM_DISABLED: ::windows_sys::core::HRESULT = -2147220849i32;
+pub const VFW_E_DVD_STREAM_DISABLED: ::windows_sys_core::HRESULT = -2147220849i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_TITLE_UNKNOWN: ::windows_sys::core::HRESULT = -2147220848i32;
+pub const VFW_E_DVD_TITLE_UNKNOWN: ::windows_sys_core::HRESULT = -2147220848i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_TOO_MANY_RENDERERS_IN_FILTER_GRAPH: ::windows_sys::core::HRESULT = -2147220835i32;
+pub const VFW_E_DVD_TOO_MANY_RENDERERS_IN_FILTER_GRAPH: ::windows_sys_core::HRESULT = -2147220835i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_VMR9_INCOMPATIBLEDEC: ::windows_sys::core::HRESULT = -2147220838i32;
+pub const VFW_E_DVD_VMR9_INCOMPATIBLEDEC: ::windows_sys_core::HRESULT = -2147220838i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_DVD_WRONG_SPEED: ::windows_sys::core::HRESULT = -2147220863i32;
+pub const VFW_E_DVD_WRONG_SPEED: ::windows_sys_core::HRESULT = -2147220863i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_ENUM_OUT_OF_RANGE: ::windows_sys::core::HRESULT = -2147220944i32;
+pub const VFW_E_ENUM_OUT_OF_RANGE: ::windows_sys_core::HRESULT = -2147220944i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_ENUM_OUT_OF_SYNC: ::windows_sys::core::HRESULT = -2147220989i32;
+pub const VFW_E_ENUM_OUT_OF_SYNC: ::windows_sys_core::HRESULT = -2147220989i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_FILE_TOO_SHORT: ::windows_sys::core::HRESULT = -2147220925i32;
+pub const VFW_E_FILE_TOO_SHORT: ::windows_sys_core::HRESULT = -2147220925i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_FILTER_ACTIVE: ::windows_sys::core::HRESULT = -2147220987i32;
+pub const VFW_E_FILTER_ACTIVE: ::windows_sys_core::HRESULT = -2147220987i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_FRAME_STEP_UNSUPPORTED: ::windows_sys::core::HRESULT = -2147220850i32;
+pub const VFW_E_FRAME_STEP_UNSUPPORTED: ::windows_sys_core::HRESULT = -2147220850i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_INVALIDMEDIATYPE: ::windows_sys::core::HRESULT = -2147220992i32;
+pub const VFW_E_INVALIDMEDIATYPE: ::windows_sys_core::HRESULT = -2147220992i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_INVALIDSUBTYPE: ::windows_sys::core::HRESULT = -2147220991i32;
+pub const VFW_E_INVALIDSUBTYPE: ::windows_sys_core::HRESULT = -2147220991i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_INVALID_CLSID: ::windows_sys::core::HRESULT = -2147220921i32;
+pub const VFW_E_INVALID_CLSID: ::windows_sys_core::HRESULT = -2147220921i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_INVALID_DIRECTION: ::windows_sys::core::HRESULT = -2147220984i32;
+pub const VFW_E_INVALID_DIRECTION: ::windows_sys_core::HRESULT = -2147220984i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_INVALID_FILE_FORMAT: ::windows_sys::core::HRESULT = -2147220945i32;
+pub const VFW_E_INVALID_FILE_FORMAT: ::windows_sys_core::HRESULT = -2147220945i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_INVALID_FILE_VERSION: ::windows_sys::core::HRESULT = -2147220924i32;
+pub const VFW_E_INVALID_FILE_VERSION: ::windows_sys_core::HRESULT = -2147220924i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_INVALID_MEDIA_TYPE: ::windows_sys::core::HRESULT = -2147220920i32;
+pub const VFW_E_INVALID_MEDIA_TYPE: ::windows_sys_core::HRESULT = -2147220920i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_INVALID_RECT: ::windows_sys::core::HRESULT = -2147220951i32;
+pub const VFW_E_INVALID_RECT: ::windows_sys_core::HRESULT = -2147220951i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_IN_FULLSCREEN_MODE: ::windows_sys::core::HRESULT = -2147220933i32;
+pub const VFW_E_IN_FULLSCREEN_MODE: ::windows_sys_core::HRESULT = -2147220933i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_MEDIA_TIME_NOT_SET: ::windows_sys::core::HRESULT = -2147220911i32;
+pub const VFW_E_MEDIA_TIME_NOT_SET: ::windows_sys_core::HRESULT = -2147220911i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_MONO_AUDIO_HW: ::windows_sys::core::HRESULT = -2147220909i32;
+pub const VFW_E_MONO_AUDIO_HW: ::windows_sys_core::HRESULT = -2147220909i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_MPEG_NOT_CONSTRAINED: ::windows_sys::core::HRESULT = -2147220898i32;
+pub const VFW_E_MPEG_NOT_CONSTRAINED: ::windows_sys_core::HRESULT = -2147220898i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NEED_OWNER: ::windows_sys::core::HRESULT = -2147220990i32;
+pub const VFW_E_NEED_OWNER: ::windows_sys_core::HRESULT = -2147220990i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NOT_ALLOWED_TO_SAVE: ::windows_sys::core::HRESULT = -2147220942i32;
+pub const VFW_E_NOT_ALLOWED_TO_SAVE: ::windows_sys_core::HRESULT = -2147220942i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NOT_COMMITTED: ::windows_sys::core::HRESULT = -2147220975i32;
+pub const VFW_E_NOT_COMMITTED: ::windows_sys_core::HRESULT = -2147220975i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NOT_CONNECTED: ::windows_sys::core::HRESULT = -2147220983i32;
+pub const VFW_E_NOT_CONNECTED: ::windows_sys_core::HRESULT = -2147220983i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NOT_FOUND: ::windows_sys::core::HRESULT = -2147220970i32;
+pub const VFW_E_NOT_FOUND: ::windows_sys_core::HRESULT = -2147220970i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NOT_IN_GRAPH: ::windows_sys::core::HRESULT = -2147220897i32;
+pub const VFW_E_NOT_IN_GRAPH: ::windows_sys_core::HRESULT = -2147220897i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NOT_OVERLAY_CONNECTION: ::windows_sys::core::HRESULT = -2147220965i32;
+pub const VFW_E_NOT_OVERLAY_CONNECTION: ::windows_sys_core::HRESULT = -2147220965i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NOT_PAUSED: ::windows_sys::core::HRESULT = -2147220955i32;
+pub const VFW_E_NOT_PAUSED: ::windows_sys_core::HRESULT = -2147220955i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NOT_RUNNING: ::windows_sys::core::HRESULT = -2147220954i32;
+pub const VFW_E_NOT_RUNNING: ::windows_sys_core::HRESULT = -2147220954i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NOT_SAMPLE_CONNECTION: ::windows_sys::core::HRESULT = -2147220964i32;
+pub const VFW_E_NOT_SAMPLE_CONNECTION: ::windows_sys_core::HRESULT = -2147220964i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NOT_STOPPED: ::windows_sys::core::HRESULT = -2147220956i32;
+pub const VFW_E_NOT_STOPPED: ::windows_sys_core::HRESULT = -2147220956i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_ACCEPTABLE_TYPES: ::windows_sys::core::HRESULT = -2147220985i32;
+pub const VFW_E_NO_ACCEPTABLE_TYPES: ::windows_sys_core::HRESULT = -2147220985i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_ADVISE_SET: ::windows_sys::core::HRESULT = -2147220935i32;
+pub const VFW_E_NO_ADVISE_SET: ::windows_sys_core::HRESULT = -2147220935i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_ALLOCATOR: ::windows_sys::core::HRESULT = -2147220982i32;
+pub const VFW_E_NO_ALLOCATOR: ::windows_sys_core::HRESULT = -2147220982i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_AUDIO_HARDWARE: ::windows_sys::core::HRESULT = -2147220906i32;
+pub const VFW_E_NO_AUDIO_HARDWARE: ::windows_sys_core::HRESULT = -2147220906i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_CAPTURE_HARDWARE: ::windows_sys::core::HRESULT = -2147220875i32;
+pub const VFW_E_NO_CAPTURE_HARDWARE: ::windows_sys_core::HRESULT = -2147220875i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_CLOCK: ::windows_sys::core::HRESULT = -2147220973i32;
+pub const VFW_E_NO_CLOCK: ::windows_sys_core::HRESULT = -2147220973i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_COLOR_KEY_FOUND: ::windows_sys::core::HRESULT = -2147220961i32;
+pub const VFW_E_NO_COLOR_KEY_FOUND: ::windows_sys_core::HRESULT = -2147220961i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_COLOR_KEY_SET: ::windows_sys::core::HRESULT = -2147220966i32;
+pub const VFW_E_NO_COLOR_KEY_SET: ::windows_sys_core::HRESULT = -2147220966i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_COPP_HW: ::windows_sys::core::HRESULT = -2147220837i32;
+pub const VFW_E_NO_COPP_HW: ::windows_sys_core::HRESULT = -2147220837i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_DECOMPRESSOR: ::windows_sys::core::HRESULT = -2147220907i32;
+pub const VFW_E_NO_DECOMPRESSOR: ::windows_sys_core::HRESULT = -2147220907i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_DISPLAY_PALETTE: ::windows_sys::core::HRESULT = -2147220959i32;
+pub const VFW_E_NO_DISPLAY_PALETTE: ::windows_sys_core::HRESULT = -2147220959i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_FULLSCREEN: ::windows_sys::core::HRESULT = -2147220934i32;
+pub const VFW_E_NO_FULLSCREEN: ::windows_sys_core::HRESULT = -2147220934i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_INTERFACE: ::windows_sys::core::HRESULT = -2147220971i32;
+pub const VFW_E_NO_INTERFACE: ::windows_sys_core::HRESULT = -2147220971i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_MODEX_AVAILABLE: ::windows_sys::core::HRESULT = -2147220936i32;
+pub const VFW_E_NO_MODEX_AVAILABLE: ::windows_sys_core::HRESULT = -2147220936i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_PALETTE_AVAILABLE: ::windows_sys::core::HRESULT = -2147220960i32;
+pub const VFW_E_NO_PALETTE_AVAILABLE: ::windows_sys_core::HRESULT = -2147220960i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_SINK: ::windows_sys::core::HRESULT = -2147220972i32;
+pub const VFW_E_NO_SINK: ::windows_sys_core::HRESULT = -2147220972i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_TIME_FORMAT: ::windows_sys::core::HRESULT = -2147220895i32;
+pub const VFW_E_NO_TIME_FORMAT: ::windows_sys_core::HRESULT = -2147220895i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_TIME_FORMAT_SET: ::windows_sys::core::HRESULT = -2147220910i32;
+pub const VFW_E_NO_TIME_FORMAT_SET: ::windows_sys_core::HRESULT = -2147220910i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_TRANSPORT: ::windows_sys::core::HRESULT = -2147220890i32;
+pub const VFW_E_NO_TRANSPORT: ::windows_sys_core::HRESULT = -2147220890i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_TYPES: ::windows_sys::core::HRESULT = -2147220986i32;
+pub const VFW_E_NO_TYPES: ::windows_sys_core::HRESULT = -2147220986i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_NO_VP_HARDWARE: ::windows_sys::core::HRESULT = -2147220876i32;
+pub const VFW_E_NO_VP_HARDWARE: ::windows_sys_core::HRESULT = -2147220876i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_OUT_OF_VIDEO_MEMORY: ::windows_sys::core::HRESULT = -2147220879i32;
+pub const VFW_E_OUT_OF_VIDEO_MEMORY: ::windows_sys_core::HRESULT = -2147220879i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_PALETTE_SET: ::windows_sys::core::HRESULT = -2147220963i32;
+pub const VFW_E_PALETTE_SET: ::windows_sys_core::HRESULT = -2147220963i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_PIN_ALREADY_BLOCKED: ::windows_sys::core::HRESULT = -2147220844i32;
+pub const VFW_E_PIN_ALREADY_BLOCKED: ::windows_sys_core::HRESULT = -2147220844i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_PIN_ALREADY_BLOCKED_ON_THIS_THREAD: ::windows_sys::core::HRESULT = -2147220845i32;
+pub const VFW_E_PIN_ALREADY_BLOCKED_ON_THIS_THREAD: ::windows_sys_core::HRESULT = -2147220845i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_PROCESSOR_NOT_SUITABLE: ::windows_sys::core::HRESULT = -2147220901i32;
+pub const VFW_E_PROCESSOR_NOT_SUITABLE: ::windows_sys_core::HRESULT = -2147220901i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_READ_ONLY: ::windows_sys::core::HRESULT = -2147220894i32;
+pub const VFW_E_READ_ONLY: ::windows_sys_core::HRESULT = -2147220894i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_RPZA: ::windows_sys::core::HRESULT = -2147220903i32;
+pub const VFW_E_RPZA: ::windows_sys_core::HRESULT = -2147220903i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_RUNTIME_ERROR: ::windows_sys::core::HRESULT = -2147220981i32;
+pub const VFW_E_RUNTIME_ERROR: ::windows_sys_core::HRESULT = -2147220981i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_SAMPLE_REJECTED: ::windows_sys::core::HRESULT = -2147220949i32;
+pub const VFW_E_SAMPLE_REJECTED: ::windows_sys_core::HRESULT = -2147220949i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_SAMPLE_REJECTED_EOS: ::windows_sys::core::HRESULT = -2147220948i32;
+pub const VFW_E_SAMPLE_REJECTED_EOS: ::windows_sys_core::HRESULT = -2147220948i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_SAMPLE_TIME_NOT_SET: ::windows_sys::core::HRESULT = -2147220919i32;
+pub const VFW_E_SAMPLE_TIME_NOT_SET: ::windows_sys_core::HRESULT = -2147220919i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_SIZENOTSET: ::windows_sys::core::HRESULT = -2147220974i32;
+pub const VFW_E_SIZENOTSET: ::windows_sys_core::HRESULT = -2147220974i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_START_TIME_AFTER_END: ::windows_sys::core::HRESULT = -2147220952i32;
+pub const VFW_E_START_TIME_AFTER_END: ::windows_sys_core::HRESULT = -2147220952i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_STATE_CHANGED: ::windows_sys::core::HRESULT = -2147220957i32;
+pub const VFW_E_STATE_CHANGED: ::windows_sys_core::HRESULT = -2147220957i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_TIMEOUT: ::windows_sys::core::HRESULT = -2147220946i32;
+pub const VFW_E_TIMEOUT: ::windows_sys_core::HRESULT = -2147220946i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_TIME_ALREADY_PASSED: ::windows_sys::core::HRESULT = -2147220941i32;
+pub const VFW_E_TIME_ALREADY_PASSED: ::windows_sys_core::HRESULT = -2147220941i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_TIME_EXPIRED: ::windows_sys::core::HRESULT = -2147220865i32;
+pub const VFW_E_TIME_EXPIRED: ::windows_sys_core::HRESULT = -2147220865i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_TOO_MANY_COLORS: ::windows_sys::core::HRESULT = -2147220958i32;
+pub const VFW_E_TOO_MANY_COLORS: ::windows_sys_core::HRESULT = -2147220958i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_TYPE_NOT_ACCEPTED: ::windows_sys::core::HRESULT = -2147220950i32;
+pub const VFW_E_TYPE_NOT_ACCEPTED: ::windows_sys_core::HRESULT = -2147220950i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_UNKNOWN_FILE_TYPE: ::windows_sys::core::HRESULT = -2147220928i32;
+pub const VFW_E_UNKNOWN_FILE_TYPE: ::windows_sys_core::HRESULT = -2147220928i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_UNSUPPORTED_AUDIO: ::windows_sys::core::HRESULT = -2147220900i32;
+pub const VFW_E_UNSUPPORTED_AUDIO: ::windows_sys_core::HRESULT = -2147220900i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_UNSUPPORTED_STREAM: ::windows_sys::core::HRESULT = -2147220891i32;
+pub const VFW_E_UNSUPPORTED_STREAM: ::windows_sys_core::HRESULT = -2147220891i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_UNSUPPORTED_VIDEO: ::windows_sys::core::HRESULT = -2147220899i32;
+pub const VFW_E_UNSUPPORTED_VIDEO: ::windows_sys_core::HRESULT = -2147220899i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_VMR_NOT_IN_MIXER_MODE: ::windows_sys::core::HRESULT = -2147220842i32;
+pub const VFW_E_VMR_NOT_IN_MIXER_MODE: ::windows_sys_core::HRESULT = -2147220842i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_VMR_NO_AP_SUPPLIED: ::windows_sys::core::HRESULT = -2147220841i32;
+pub const VFW_E_VMR_NO_AP_SUPPLIED: ::windows_sys_core::HRESULT = -2147220841i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_VMR_NO_DEINTERLACE_HW: ::windows_sys::core::HRESULT = -2147220840i32;
+pub const VFW_E_VMR_NO_DEINTERLACE_HW: ::windows_sys_core::HRESULT = -2147220840i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_VMR_NO_PROCAMP_HW: ::windows_sys::core::HRESULT = -2147220839i32;
+pub const VFW_E_VMR_NO_PROCAMP_HW: ::windows_sys_core::HRESULT = -2147220839i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_VP_NEGOTIATION_FAILED: ::windows_sys::core::HRESULT = -2147220878i32;
+pub const VFW_E_VP_NEGOTIATION_FAILED: ::windows_sys_core::HRESULT = -2147220878i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_E_WRONG_STATE: ::windows_sys::core::HRESULT = -2147220953i32;
+pub const VFW_E_WRONG_STATE: ::windows_sys_core::HRESULT = -2147220953i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct VFW_FILTERLIST {
     pub cFilters: u32,
-    pub aClsId: [::windows_sys::core::GUID; 1],
+    pub aClsId: [::windows_sys_core::GUID; 1],
 }
 impl ::core::marker::Copy for VFW_FILTERLIST {}
 impl ::core::clone::Clone for VFW_FILTERLIST {
@@ -11391,47 +11391,47 @@ impl ::core::clone::Clone for VFW_FILTERLIST {
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub const VFW_FIRST_CODE: u32 = 512u32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_AUDIO_NOT_RENDERED: ::windows_sys::core::HRESULT = 262744i32;
+pub const VFW_S_AUDIO_NOT_RENDERED: ::windows_sys_core::HRESULT = 262744i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_CANT_CUE: ::windows_sys::core::HRESULT = 262760i32;
+pub const VFW_S_CANT_CUE: ::windows_sys_core::HRESULT = 262760i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_CONNECTIONS_DEFERRED: ::windows_sys::core::HRESULT = 262726i32;
+pub const VFW_S_CONNECTIONS_DEFERRED: ::windows_sys_core::HRESULT = 262726i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_DUPLICATE_NAME: ::windows_sys::core::HRESULT = 262701i32;
+pub const VFW_S_DUPLICATE_NAME: ::windows_sys_core::HRESULT = 262701i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_DVD_CHANNEL_CONTENTS_NOT_AVAILABLE: ::windows_sys::core::HRESULT = 262796i32;
+pub const VFW_S_DVD_CHANNEL_CONTENTS_NOT_AVAILABLE: ::windows_sys_core::HRESULT = 262796i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_DVD_NON_ONE_SEQUENTIAL: ::windows_sys::core::HRESULT = 262784i32;
+pub const VFW_S_DVD_NON_ONE_SEQUENTIAL: ::windows_sys_core::HRESULT = 262784i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_DVD_NOT_ACCURATE: ::windows_sys::core::HRESULT = 262797i32;
+pub const VFW_S_DVD_NOT_ACCURATE: ::windows_sys_core::HRESULT = 262797i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_DVD_RENDER_STATUS: ::windows_sys::core::HRESULT = 262944i32;
+pub const VFW_S_DVD_RENDER_STATUS: ::windows_sys_core::HRESULT = 262944i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_ESTIMATED: ::windows_sys::core::HRESULT = 262752i32;
+pub const VFW_S_ESTIMATED: ::windows_sys_core::HRESULT = 262752i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_MEDIA_TYPE_IGNORED: ::windows_sys::core::HRESULT = 262740i32;
+pub const VFW_S_MEDIA_TYPE_IGNORED: ::windows_sys_core::HRESULT = 262740i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_NOPREVIEWPIN: ::windows_sys::core::HRESULT = 262782i32;
+pub const VFW_S_NOPREVIEWPIN: ::windows_sys_core::HRESULT = 262782i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_NO_MORE_ITEMS: ::windows_sys::core::HRESULT = 262403i32;
+pub const VFW_S_NO_MORE_ITEMS: ::windows_sys_core::HRESULT = 262403i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_NO_STOP_TIME: ::windows_sys::core::HRESULT = 262768i32;
+pub const VFW_S_NO_STOP_TIME: ::windows_sys_core::HRESULT = 262768i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_PARTIAL_RENDER: ::windows_sys::core::HRESULT = 262722i32;
+pub const VFW_S_PARTIAL_RENDER: ::windows_sys_core::HRESULT = 262722i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_RESERVED: ::windows_sys::core::HRESULT = 262755i32;
+pub const VFW_S_RESERVED: ::windows_sys_core::HRESULT = 262755i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_RESOURCE_NOT_NEEDED: ::windows_sys::core::HRESULT = 262736i32;
+pub const VFW_S_RESOURCE_NOT_NEEDED: ::windows_sys_core::HRESULT = 262736i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_RPZA: ::windows_sys::core::HRESULT = 262746i32;
+pub const VFW_S_RPZA: ::windows_sys_core::HRESULT = 262746i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_SOME_DATA_IGNORED: ::windows_sys::core::HRESULT = 262725i32;
+pub const VFW_S_SOME_DATA_IGNORED: ::windows_sys_core::HRESULT = 262725i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_STATE_INTERMEDIATE: ::windows_sys::core::HRESULT = 262711i32;
+pub const VFW_S_STATE_INTERMEDIATE: ::windows_sys_core::HRESULT = 262711i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_STREAM_OFF: ::windows_sys::core::HRESULT = 262759i32;
+pub const VFW_S_STREAM_OFF: ::windows_sys_core::HRESULT = 262759i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
-pub const VFW_S_VIDEO_NOT_RENDERED: ::windows_sys::core::HRESULT = 262743i32;
+pub const VFW_S_VIDEO_NOT_RENDERED: ::windows_sys_core::HRESULT = 262743i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type VIDEOENCODER_BITRATE_MODE = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
@@ -11480,7 +11480,7 @@ impl ::core::clone::Clone for VIDEOINFO_0 {
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct VIDEO_STREAM_CONFIG_CAPS {
-    pub guid: ::windows_sys::core::GUID,
+    pub guid: ::windows_sys_core::GUID,
     pub VideoStandard: u32,
     pub InputSize: super::super::Foundation::SIZE,
     pub MinCroppingSize: super::super::Foundation::SIZE,
@@ -11979,8 +11979,8 @@ impl ::core::clone::Clone for VMRFrequency {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub struct VMRGUID {
-    pub pGUID: *mut ::windows_sys::core::GUID,
-    pub GUID: ::windows_sys::core::GUID,
+    pub pGUID: *mut ::windows_sys_core::GUID,
+    pub GUID: ::windows_sys_core::GUID,
 }
 impl ::core::marker::Copy for VMRGUID {}
 impl ::core::clone::Clone for VMRGUID {
@@ -12262,8 +12262,8 @@ impl ::core::clone::Clone for WMDRMProtectionInfo {
         *self
     }
 }
-pub const XDSCodec: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301229811, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
-pub const XDSToRat: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3318072816, data2: 15036, data3: 4566, data4: [178, 91, 0, 192, 79, 160, 192, 38] };
+pub const XDSCodec: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301229811, data2: 73, data3: 20011, data4: [152, 251, 149, 55, 246, 206, 81, 109] };
+pub const XDSToRat: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3318072816, data2: 15036, data3: 4566, data4: [178, 91, 0, 192, 79, 160, 192, 38] };
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]
 pub type _AMRESCTL_RESERVEFLAGS = i32;
 #[doc = "*Required features: `\"Win32_Media_DirectShow\"`*"]

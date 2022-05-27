@@ -1,7 +1,7 @@
 #[doc = "*Required features: `\"Win32_System_JobObjects\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AssignProcessToJobObject<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, hprocess: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn AssignProcessToJobObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, hprocess: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16,15 +16,15 @@ pub unsafe fn AssignProcessToJobObject<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_System_JobObjects\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn CreateJobObjectA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: Param1) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn CreateJobObjectA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: Param1) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateJobObjectA(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: ::windows::core::PCSTR) -> super::super::Foundation::HANDLE;
+            fn CreateJobObjectA(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: ::windows_core::PCSTR) -> super::super::Foundation::HANDLE;
         }
         let result__ = CreateJobObjectA(::core::mem::transmute(lpjobattributes), lpname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -32,15 +32,15 @@ pub unsafe fn CreateJobObjectA<'a, Param1: ::windows::core::IntoParam<'a, ::wind
 #[doc = "*Required features: `\"Win32_System_JobObjects\"`, `\"Win32_Foundation\"`, `\"Win32_Security\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn CreateJobObjectW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: Param1) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn CreateJobObjectW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: Param1) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateJobObjectW(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: ::windows::core::PCWSTR) -> super::super::Foundation::HANDLE;
+            fn CreateJobObjectW(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: ::windows_core::PCWSTR) -> super::super::Foundation::HANDLE;
         }
         let result__ = CreateJobObjectW(::core::mem::transmute(lpjobattributes), lpname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -55,7 +55,7 @@ pub unsafe fn CreateJobSet(userjobset: &[JOB_SET_ARRAY], flags: u32) -> super::s
         extern "system" {
             fn CreateJobSet(numjob: u32, userjobset: *const JOB_SET_ARRAY, flags: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CreateJobSet(userjobset.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(userjobset)), ::core::mem::transmute(flags)))
+        ::core::mem::transmute(CreateJobSet(userjobset.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(userjobset)), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -77,7 +77,7 @@ pub unsafe fn FreeMemoryJobObject(buffer: *const ::core::ffi::c_void) {
 #[doc = "*Required features: `\"Win32_System_JobObjects\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsProcessInJob<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(processhandle: Param0, jobhandle: Param1, result: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn IsProcessInJob<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(processhandle: Param0, jobhandle: Param1, result: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -200,7 +200,7 @@ impl ::core::default::Default for JOBOBJECTINFOCLASS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECTINFOCLASS {
+unsafe impl ::windows_core::Abi for JOBOBJECTINFOCLASS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JOBOBJECTINFOCLASS {
@@ -230,13 +230,13 @@ impl ::core::fmt::Debug for JOBOBJECT_ASSOCIATE_COMPLETION_PORT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for JOBOBJECT_ASSOCIATE_COMPLETION_PORT {
+unsafe impl ::windows_core::Abi for JOBOBJECT_ASSOCIATE_COMPLETION_PORT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for JOBOBJECT_ASSOCIATE_COMPLETION_PORT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_ASSOCIATE_COMPLETION_PORT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_ASSOCIATE_COMPLETION_PORT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -279,12 +279,12 @@ impl ::core::fmt::Debug for JOBOBJECT_BASIC_ACCOUNTING_INFORMATION {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_BASIC_ACCOUNTING_INFORMATION {
+unsafe impl ::windows_core::Abi for JOBOBJECT_BASIC_ACCOUNTING_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_BASIC_ACCOUNTING_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_BASIC_ACCOUNTING_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_BASIC_ACCOUNTING_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_BASIC_ACCOUNTING_INFORMATION {}
@@ -315,13 +315,13 @@ impl ::core::fmt::Debug for JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {
     }
 }
 #[cfg(feature = "Win32_System_Threading")]
-unsafe impl ::windows::core::Abi for JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {
+unsafe impl ::windows_core::Abi for JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Threading")]
 impl ::core::cmp::PartialEq for JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Threading")]
@@ -366,12 +366,12 @@ impl ::core::fmt::Debug for JOBOBJECT_BASIC_LIMIT_INFORMATION {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_BASIC_LIMIT_INFORMATION {
+unsafe impl ::windows_core::Abi for JOBOBJECT_BASIC_LIMIT_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_BASIC_LIMIT_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_BASIC_LIMIT_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_BASIC_LIMIT_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_BASIC_LIMIT_INFORMATION {}
@@ -398,12 +398,12 @@ impl ::core::fmt::Debug for JOBOBJECT_BASIC_PROCESS_ID_LIST {
         f.debug_struct("JOBOBJECT_BASIC_PROCESS_ID_LIST").field("NumberOfAssignedProcesses", &self.NumberOfAssignedProcesses).field("NumberOfProcessIdsInList", &self.NumberOfProcessIdsInList).field("ProcessIdList", &self.ProcessIdList).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_BASIC_PROCESS_ID_LIST {
+unsafe impl ::windows_core::Abi for JOBOBJECT_BASIC_PROCESS_ID_LIST {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_BASIC_PROCESS_ID_LIST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_BASIC_PROCESS_ID_LIST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_BASIC_PROCESS_ID_LIST>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_BASIC_PROCESS_ID_LIST {}
@@ -428,12 +428,12 @@ impl ::core::fmt::Debug for JOBOBJECT_BASIC_UI_RESTRICTIONS {
         f.debug_struct("JOBOBJECT_BASIC_UI_RESTRICTIONS").field("UIRestrictionsClass", &self.UIRestrictionsClass).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_BASIC_UI_RESTRICTIONS {
+unsafe impl ::windows_core::Abi for JOBOBJECT_BASIC_UI_RESTRICTIONS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_BASIC_UI_RESTRICTIONS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_BASIC_UI_RESTRICTIONS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_BASIC_UI_RESTRICTIONS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_BASIC_UI_RESTRICTIONS {}
@@ -454,12 +454,12 @@ impl ::core::clone::Clone for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION {
+unsafe impl ::windows_core::Abi for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_CPU_RATE_CONTROL_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_CPU_RATE_CONTROL_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION {}
@@ -481,12 +481,12 @@ impl ::core::clone::Clone for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0 {
+unsafe impl ::windows_core::Abi for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0 {}
@@ -512,12 +512,12 @@ impl ::core::fmt::Debug for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0_0 {
         f.debug_struct("JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0_0").field("MinRate", &self.MinRate).field("MaxRate", &self.MaxRate).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0_0 {
+unsafe impl ::windows_core::Abi for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_CPU_RATE_CONTROL_INFORMATION_0_0 {}
@@ -542,12 +542,12 @@ impl ::core::fmt::Debug for JOBOBJECT_END_OF_JOB_TIME_INFORMATION {
         f.debug_struct("JOBOBJECT_END_OF_JOB_TIME_INFORMATION").field("EndOfJobTimeAction", &self.EndOfJobTimeAction).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_END_OF_JOB_TIME_INFORMATION {
+unsafe impl ::windows_core::Abi for JOBOBJECT_END_OF_JOB_TIME_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_END_OF_JOB_TIME_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_END_OF_JOB_TIME_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_END_OF_JOB_TIME_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_END_OF_JOB_TIME_INFORMATION {}
@@ -582,13 +582,13 @@ impl ::core::fmt::Debug for JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
     }
 }
 #[cfg(feature = "Win32_System_Threading")]
-unsafe impl ::windows::core::Abi for JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
+unsafe impl ::windows_core::Abi for JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_System_Threading")]
 impl ::core::cmp::PartialEq for JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_EXTENDED_LIMIT_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_EXTENDED_LIMIT_INFORMATION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_System_Threading")]
@@ -620,7 +620,7 @@ impl ::core::default::Default for JOBOBJECT_IO_ATTRIBUTION_CONTROL_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_IO_ATTRIBUTION_CONTROL_FLAGS {
+unsafe impl ::windows_core::Abi for JOBOBJECT_IO_ATTRIBUTION_CONTROL_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JOBOBJECT_IO_ATTRIBUTION_CONTROL_FLAGS {
@@ -646,12 +646,12 @@ impl ::core::fmt::Debug for JOBOBJECT_IO_ATTRIBUTION_INFORMATION {
         f.debug_struct("JOBOBJECT_IO_ATTRIBUTION_INFORMATION").field("ControlFlags", &self.ControlFlags).field("ReadStats", &self.ReadStats).field("WriteStats", &self.WriteStats).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_IO_ATTRIBUTION_INFORMATION {
+unsafe impl ::windows_core::Abi for JOBOBJECT_IO_ATTRIBUTION_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_IO_ATTRIBUTION_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_IO_ATTRIBUTION_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_IO_ATTRIBUTION_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_IO_ATTRIBUTION_INFORMATION {}
@@ -679,12 +679,12 @@ impl ::core::fmt::Debug for JOBOBJECT_IO_ATTRIBUTION_STATS {
         f.debug_struct("JOBOBJECT_IO_ATTRIBUTION_STATS").field("IoCount", &self.IoCount).field("TotalNonOverlappedQueueTime", &self.TotalNonOverlappedQueueTime).field("TotalNonOverlappedServiceTime", &self.TotalNonOverlappedServiceTime).field("TotalSize", &self.TotalSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_IO_ATTRIBUTION_STATS {
+unsafe impl ::windows_core::Abi for JOBOBJECT_IO_ATTRIBUTION_STATS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_IO_ATTRIBUTION_STATS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_IO_ATTRIBUTION_STATS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_IO_ATTRIBUTION_STATS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_IO_ATTRIBUTION_STATS {}
@@ -699,7 +699,7 @@ pub struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION {
     pub MaxIops: i64,
     pub MaxBandwidth: i64,
     pub ReservationIops: i64,
-    pub VolumeName: ::windows::core::PCWSTR,
+    pub VolumeName: ::windows_core::PCWSTR,
     pub BaseIoSize: u32,
     pub ControlFlags: JOB_OBJECT_IO_RATE_CONTROL_FLAGS,
 }
@@ -714,12 +714,12 @@ impl ::core::fmt::Debug for JOBOBJECT_IO_RATE_CONTROL_INFORMATION {
         f.debug_struct("JOBOBJECT_IO_RATE_CONTROL_INFORMATION").field("MaxIops", &self.MaxIops).field("MaxBandwidth", &self.MaxBandwidth).field("ReservationIops", &self.ReservationIops).field("VolumeName", &self.VolumeName).field("BaseIoSize", &self.BaseIoSize).field("ControlFlags", &self.ControlFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_IO_RATE_CONTROL_INFORMATION {
+unsafe impl ::windows_core::Abi for JOBOBJECT_IO_RATE_CONTROL_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_IO_RATE_CONTROL_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_IO_RATE_CONTROL_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_IO_RATE_CONTROL_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_IO_RATE_CONTROL_INFORMATION {}
@@ -734,7 +734,7 @@ pub struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE {
     pub MaxIops: i64,
     pub MaxBandwidth: i64,
     pub ReservationIops: i64,
-    pub VolumeName: ::windows::core::PWSTR,
+    pub VolumeName: ::windows_core::PWSTR,
     pub BaseIoSize: u32,
     pub ControlFlags: JOB_OBJECT_IO_RATE_CONTROL_FLAGS,
     pub VolumeNameLength: u16,
@@ -750,12 +750,12 @@ impl ::core::fmt::Debug for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE {
         f.debug_struct("JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE").field("MaxIops", &self.MaxIops).field("MaxBandwidth", &self.MaxBandwidth).field("ReservationIops", &self.ReservationIops).field("VolumeName", &self.VolumeName).field("BaseIoSize", &self.BaseIoSize).field("ControlFlags", &self.ControlFlags).field("VolumeNameLength", &self.VolumeNameLength).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE {
+unsafe impl ::windows_core::Abi for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE {}
@@ -770,7 +770,7 @@ pub struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2 {
     pub MaxIops: i64,
     pub MaxBandwidth: i64,
     pub ReservationIops: i64,
-    pub VolumeName: ::windows::core::PWSTR,
+    pub VolumeName: ::windows_core::PWSTR,
     pub BaseIoSize: u32,
     pub ControlFlags: JOB_OBJECT_IO_RATE_CONTROL_FLAGS,
     pub VolumeNameLength: u16,
@@ -806,12 +806,12 @@ impl ::core::fmt::Debug for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2 {
+unsafe impl ::windows_core::Abi for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2 {}
@@ -826,7 +826,7 @@ pub struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V3 {
     pub MaxIops: i64,
     pub MaxBandwidth: i64,
     pub ReservationIops: i64,
-    pub VolumeName: ::windows::core::PWSTR,
+    pub VolumeName: ::windows_core::PWSTR,
     pub BaseIoSize: u32,
     pub ControlFlags: JOB_OBJECT_IO_RATE_CONTROL_FLAGS,
     pub VolumeNameLength: u16,
@@ -874,12 +874,12 @@ impl ::core::fmt::Debug for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V3 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V3 {
+unsafe impl ::windows_core::Abi for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V3 {}
@@ -904,12 +904,12 @@ impl ::core::fmt::Debug for JOBOBJECT_JOBSET_INFORMATION {
         f.debug_struct("JOBOBJECT_JOBSET_INFORMATION").field("MemberLevel", &self.MemberLevel).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_JOBSET_INFORMATION {
+unsafe impl ::windows_core::Abi for JOBOBJECT_JOBSET_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_JOBSET_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_JOBSET_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_JOBSET_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_JOBSET_INFORMATION {}
@@ -958,12 +958,12 @@ impl ::core::fmt::Debug for JOBOBJECT_LIMIT_VIOLATION_INFORMATION {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_LIMIT_VIOLATION_INFORMATION {
+unsafe impl ::windows_core::Abi for JOBOBJECT_LIMIT_VIOLATION_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_LIMIT_VIOLATION_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_LIMIT_VIOLATION_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_LIMIT_VIOLATION_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_LIMIT_VIOLATION_INFORMATION {}
@@ -999,12 +999,12 @@ impl ::core::clone::Clone for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2 {
+unsafe impl ::windows_core::Abi for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2 {}
@@ -1025,12 +1025,12 @@ impl ::core::clone::Clone for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_0 {
+unsafe impl ::windows_core::Abi for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_0 {}
@@ -1051,12 +1051,12 @@ impl ::core::clone::Clone for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_1 {
+unsafe impl ::windows_core::Abi for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_1 {}
@@ -1077,12 +1077,12 @@ impl ::core::clone::Clone for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_2 {
+unsafe impl ::windows_core::Abi for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2_2 {}
@@ -1109,12 +1109,12 @@ impl ::core::fmt::Debug for JOBOBJECT_NET_RATE_CONTROL_INFORMATION {
         f.debug_struct("JOBOBJECT_NET_RATE_CONTROL_INFORMATION").field("MaxBandwidth", &self.MaxBandwidth).field("ControlFlags", &self.ControlFlags).field("DscpTag", &self.DscpTag).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_NET_RATE_CONTROL_INFORMATION {
+unsafe impl ::windows_core::Abi for JOBOBJECT_NET_RATE_CONTROL_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_NET_RATE_CONTROL_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_NET_RATE_CONTROL_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_NET_RATE_CONTROL_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_NET_RATE_CONTROL_INFORMATION {}
@@ -1145,12 +1145,12 @@ impl ::core::fmt::Debug for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION {
         f.debug_struct("JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION").field("IoReadBytesLimit", &self.IoReadBytesLimit).field("IoWriteBytesLimit", &self.IoWriteBytesLimit).field("PerJobUserTimeLimit", &self.PerJobUserTimeLimit).field("JobMemoryLimit", &self.JobMemoryLimit).field("RateControlTolerance", &self.RateControlTolerance).field("RateControlToleranceInterval", &self.RateControlToleranceInterval).field("LimitFlags", &self.LimitFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION {
+unsafe impl ::windows_core::Abi for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION {}
@@ -1181,12 +1181,12 @@ impl ::core::clone::Clone for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2 {
+unsafe impl ::windows_core::Abi for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2 {}
@@ -1207,12 +1207,12 @@ impl ::core::clone::Clone for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_0 {
+unsafe impl ::windows_core::Abi for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_0 {}
@@ -1233,12 +1233,12 @@ impl ::core::clone::Clone for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_1 {
+unsafe impl ::windows_core::Abi for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_1 {}
@@ -1259,12 +1259,12 @@ impl ::core::clone::Clone for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_2 {
+unsafe impl ::windows_core::Abi for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2_2 {}
@@ -1294,7 +1294,7 @@ impl ::core::default::Default for JOBOBJECT_RATE_CONTROL_TOLERANCE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_RATE_CONTROL_TOLERANCE {
+unsafe impl ::windows_core::Abi for JOBOBJECT_RATE_CONTROL_TOLERANCE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JOBOBJECT_RATE_CONTROL_TOLERANCE {
@@ -1323,7 +1323,7 @@ impl ::core::default::Default for JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL {
+unsafe impl ::windows_core::Abi for JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL {
@@ -1356,13 +1356,13 @@ impl ::core::fmt::Debug for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-unsafe impl ::windows::core::Abi for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
+unsafe impl ::windows_core::Abi for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 impl ::core::cmp::PartialEq for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_SECURITY_LIMIT_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_SECURITY_LIMIT_INFORMATION>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
@@ -1400,7 +1400,7 @@ impl ::core::default::Default for JOB_OBJECT_CPU_RATE_CONTROL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JOB_OBJECT_CPU_RATE_CONTROL {
+unsafe impl ::windows_core::Abi for JOB_OBJECT_CPU_RATE_CONTROL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JOB_OBJECT_CPU_RATE_CONTROL {
@@ -1461,7 +1461,7 @@ impl ::core::default::Default for JOB_OBJECT_IO_RATE_CONTROL_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JOB_OBJECT_IO_RATE_CONTROL_FLAGS {
+unsafe impl ::windows_core::Abi for JOB_OBJECT_IO_RATE_CONTROL_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JOB_OBJECT_IO_RATE_CONTROL_FLAGS {
@@ -1538,7 +1538,7 @@ impl ::core::default::Default for JOB_OBJECT_LIMIT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JOB_OBJECT_LIMIT {
+unsafe impl ::windows_core::Abi for JOB_OBJECT_LIMIT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JOB_OBJECT_LIMIT {
@@ -1597,7 +1597,7 @@ impl ::core::default::Default for JOB_OBJECT_NET_RATE_CONTROL_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JOB_OBJECT_NET_RATE_CONTROL_FLAGS {
+unsafe impl ::windows_core::Abi for JOB_OBJECT_NET_RATE_CONTROL_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JOB_OBJECT_NET_RATE_CONTROL_FLAGS {
@@ -1658,7 +1658,7 @@ impl ::core::default::Default for JOB_OBJECT_SECURITY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JOB_OBJECT_SECURITY {
+unsafe impl ::windows_core::Abi for JOB_OBJECT_SECURITY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JOB_OBJECT_SECURITY {
@@ -1713,7 +1713,7 @@ impl ::core::default::Default for JOB_OBJECT_TERMINATE_AT_END_ACTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JOB_OBJECT_TERMINATE_AT_END_ACTION {
+unsafe impl ::windows_core::Abi for JOB_OBJECT_TERMINATE_AT_END_ACTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JOB_OBJECT_TERMINATE_AT_END_ACTION {
@@ -1754,7 +1754,7 @@ impl ::core::default::Default for JOB_OBJECT_UILIMIT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JOB_OBJECT_UILIMIT {
+unsafe impl ::windows_core::Abi for JOB_OBJECT_UILIMIT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JOB_OBJECT_UILIMIT {
@@ -1813,13 +1813,13 @@ impl ::core::fmt::Debug for JOB_SET_ARRAY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for JOB_SET_ARRAY {
+unsafe impl ::windows_core::Abi for JOB_SET_ARRAY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for JOB_SET_ARRAY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOB_SET_ARRAY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOB_SET_ARRAY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1833,15 +1833,15 @@ impl ::core::default::Default for JOB_SET_ARRAY {
 #[doc = "*Required features: `\"Win32_System_JobObjects\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenJobObjectA<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwdesiredaccess: u32, binherithandle: Param1, lpname: Param2) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn OpenJobObjectA<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwdesiredaccess: u32, binherithandle: Param1, lpname: Param2) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenJobObjectA(dwdesiredaccess: u32, binherithandle: super::super::Foundation::BOOL, lpname: ::windows::core::PCSTR) -> super::super::Foundation::HANDLE;
+            fn OpenJobObjectA(dwdesiredaccess: u32, binherithandle: super::super::Foundation::BOOL, lpname: ::windows_core::PCSTR) -> super::super::Foundation::HANDLE;
         }
         let result__ = OpenJobObjectA(::core::mem::transmute(dwdesiredaccess), binherithandle.into_param().abi(), lpname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1849,15 +1849,15 @@ pub unsafe fn OpenJobObjectA<'a, Param1: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_System_JobObjects\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenJobObjectW<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwdesiredaccess: u32, binherithandle: Param1, lpname: Param2) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn OpenJobObjectW<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwdesiredaccess: u32, binherithandle: Param1, lpname: Param2) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenJobObjectW(dwdesiredaccess: u32, binherithandle: super::super::Foundation::BOOL, lpname: ::windows::core::PCWSTR) -> super::super::Foundation::HANDLE;
+            fn OpenJobObjectW(dwdesiredaccess: u32, binherithandle: super::super::Foundation::BOOL, lpname: ::windows_core::PCWSTR) -> super::super::Foundation::HANDLE;
         }
         let result__ = OpenJobObjectW(::core::mem::transmute(dwdesiredaccess), binherithandle.into_param().abi(), lpname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1865,7 +1865,7 @@ pub unsafe fn OpenJobObjectW<'a, Param1: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_System_JobObjects\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QueryInformationJobObject<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *mut ::core::ffi::c_void, cbjobobjectinformationlength: u32, lpreturnlength: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryInformationJobObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *mut ::core::ffi::c_void, cbjobobjectinformationlength: u32, lpreturnlength: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1880,12 +1880,12 @@ pub unsafe fn QueryInformationJobObject<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_System_JobObjects\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QueryIoRateControlInformationJobObject<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hjob: Param0, volumename: Param1, infoblocks: *mut *mut JOBOBJECT_IO_RATE_CONTROL_INFORMATION, infoblockcount: *mut u32) -> u32 {
+pub unsafe fn QueryIoRateControlInformationJobObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hjob: Param0, volumename: Param1, infoblocks: *mut *mut JOBOBJECT_IO_RATE_CONTROL_INFORMATION, infoblockcount: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QueryIoRateControlInformationJobObject(hjob: super::super::Foundation::HANDLE, volumename: ::windows::core::PCWSTR, infoblocks: *mut *mut JOBOBJECT_IO_RATE_CONTROL_INFORMATION, infoblockcount: *mut u32) -> u32;
+            fn QueryIoRateControlInformationJobObject(hjob: super::super::Foundation::HANDLE, volumename: ::windows_core::PCWSTR, infoblocks: *mut *mut JOBOBJECT_IO_RATE_CONTROL_INFORMATION, infoblockcount: *mut u32) -> u32;
         }
         ::core::mem::transmute(QueryIoRateControlInformationJobObject(hjob.into_param().abi(), volumename.into_param().abi(), ::core::mem::transmute(infoblocks), ::core::mem::transmute(infoblockcount)))
     }
@@ -1895,7 +1895,7 @@ pub unsafe fn QueryIoRateControlInformationJobObject<'a, Param0: ::windows::core
 #[doc = "*Required features: `\"Win32_System_JobObjects\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetInformationJobObject<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *const ::core::ffi::c_void, cbjobobjectinformationlength: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetInformationJobObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *const ::core::ffi::c_void, cbjobobjectinformationlength: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1910,7 +1910,7 @@ pub unsafe fn SetInformationJobObject<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_System_JobObjects\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetIoRateControlInformationJobObject<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, ioratecontrolinfo: *const JOBOBJECT_IO_RATE_CONTROL_INFORMATION) -> u32 {
+pub unsafe fn SetIoRateControlInformationJobObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, ioratecontrolinfo: *const JOBOBJECT_IO_RATE_CONTROL_INFORMATION) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1925,7 +1925,7 @@ pub unsafe fn SetIoRateControlInformationJobObject<'a, Param0: ::windows::core::
 #[doc = "*Required features: `\"Win32_System_JobObjects\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TerminateJobObject<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, uexitcode: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn TerminateJobObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, uexitcode: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1940,7 +1940,7 @@ pub unsafe fn TerminateJobObject<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_System_JobObjects\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UserHandleGrantAccess<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(huserhandle: Param0, hjob: Param1, bgrant: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn UserHandleGrantAccess<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(huserhandle: Param0, hjob: Param1, bgrant: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]

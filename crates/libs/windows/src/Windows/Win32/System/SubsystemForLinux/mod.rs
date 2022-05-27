@@ -21,7 +21,7 @@ impl ::core::default::Default for WSL_DISTRIBUTION_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WSL_DISTRIBUTION_FLAGS {
+unsafe impl ::windows_core::Abi for WSL_DISTRIBUTION_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WSL_DISTRIBUTION_FLAGS {
@@ -59,12 +59,12 @@ impl ::core::ops::Not for WSL_DISTRIBUTION_FLAGS {
 }
 #[doc = "*Required features: `\"Win32_System_SubsystemForLinux\"`*"]
 #[inline]
-pub unsafe fn WslConfigureDistribution<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(distributionname: Param0, defaultuid: u32, wsldistributionflags: WSL_DISTRIBUTION_FLAGS) -> ::windows::core::Result<()> {
+pub unsafe fn WslConfigureDistribution<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(distributionname: Param0, defaultuid: u32, wsldistributionflags: WSL_DISTRIBUTION_FLAGS) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WslConfigureDistribution(distributionname: ::windows::core::PCWSTR, defaultuid: u32, wsldistributionflags: WSL_DISTRIBUTION_FLAGS) -> ::windows::core::HRESULT;
+            fn WslConfigureDistribution(distributionname: ::windows_core::PCWSTR, defaultuid: u32, wsldistributionflags: WSL_DISTRIBUTION_FLAGS) -> ::windows_core::HRESULT;
         }
         WslConfigureDistribution(distributionname.into_param().abi(), ::core::mem::transmute(defaultuid), ::core::mem::transmute(wsldistributionflags)).ok()
     }
@@ -73,12 +73,12 @@ pub unsafe fn WslConfigureDistribution<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_System_SubsystemForLinux\"`*"]
 #[inline]
-pub unsafe fn WslGetDistributionConfiguration<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(distributionname: Param0, distributionversion: *mut u32, defaultuid: *mut u32, wsldistributionflags: *mut WSL_DISTRIBUTION_FLAGS, defaultenvironmentvariables: *mut *mut ::windows::core::PSTR, defaultenvironmentvariablecount: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn WslGetDistributionConfiguration<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(distributionname: Param0, distributionversion: *mut u32, defaultuid: *mut u32, wsldistributionflags: *mut WSL_DISTRIBUTION_FLAGS, defaultenvironmentvariables: *mut *mut ::windows_core::PSTR, defaultenvironmentvariablecount: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WslGetDistributionConfiguration(distributionname: ::windows::core::PCWSTR, distributionversion: *mut u32, defaultuid: *mut u32, wsldistributionflags: *mut WSL_DISTRIBUTION_FLAGS, defaultenvironmentvariables: *mut *mut ::windows::core::PSTR, defaultenvironmentvariablecount: *mut u32) -> ::windows::core::HRESULT;
+            fn WslGetDistributionConfiguration(distributionname: ::windows_core::PCWSTR, distributionversion: *mut u32, defaultuid: *mut u32, wsldistributionflags: *mut WSL_DISTRIBUTION_FLAGS, defaultenvironmentvariables: *mut *mut ::windows_core::PSTR, defaultenvironmentvariablecount: *mut u32) -> ::windows_core::HRESULT;
         }
         WslGetDistributionConfiguration(distributionname.into_param().abi(), ::core::mem::transmute(distributionversion), ::core::mem::transmute(defaultuid), ::core::mem::transmute(wsldistributionflags), ::core::mem::transmute(defaultenvironmentvariables), ::core::mem::transmute(defaultenvironmentvariablecount)).ok()
     }
@@ -88,12 +88,12 @@ pub unsafe fn WslGetDistributionConfiguration<'a, Param0: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_System_SubsystemForLinux\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WslIsDistributionRegistered<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(distributionname: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn WslIsDistributionRegistered<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(distributionname: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WslIsDistributionRegistered(distributionname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn WslIsDistributionRegistered(distributionname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(WslIsDistributionRegistered(distributionname.into_param().abi()))
     }
@@ -103,12 +103,12 @@ pub unsafe fn WslIsDistributionRegistered<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_System_SubsystemForLinux\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WslLaunch<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param5: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(distributionname: Param0, command: Param1, usecurrentworkingdirectory: Param2, stdin: Param3, stdout: Param4, stderr: Param5) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn WslLaunch<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(distributionname: Param0, command: Param1, usecurrentworkingdirectory: Param2, stdin: Param3, stdout: Param4, stderr: Param5) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WslLaunch(distributionname: ::windows::core::PCWSTR, command: ::windows::core::PCWSTR, usecurrentworkingdirectory: super::super::Foundation::BOOL, stdin: super::super::Foundation::HANDLE, stdout: super::super::Foundation::HANDLE, stderr: super::super::Foundation::HANDLE, process: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
+            fn WslLaunch(distributionname: ::windows_core::PCWSTR, command: ::windows_core::PCWSTR, usecurrentworkingdirectory: super::super::Foundation::BOOL, stdin: super::super::Foundation::HANDLE, stdout: super::super::Foundation::HANDLE, stderr: super::super::Foundation::HANDLE, process: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
         WslLaunch(distributionname.into_param().abi(), command.into_param().abi(), usecurrentworkingdirectory.into_param().abi(), stdin.into_param().abi(), stdout.into_param().abi(), stderr.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
@@ -119,12 +119,12 @@ pub unsafe fn WslLaunch<'a, Param0: ::windows::core::IntoParam<'a, ::windows::co
 #[doc = "*Required features: `\"Win32_System_SubsystemForLinux\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WslLaunchInteractive<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(distributionname: Param0, command: Param1, usecurrentworkingdirectory: Param2) -> ::windows::core::Result<u32> {
+pub unsafe fn WslLaunchInteractive<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(distributionname: Param0, command: Param1, usecurrentworkingdirectory: Param2) -> ::windows_core::Result<u32> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WslLaunchInteractive(distributionname: ::windows::core::PCWSTR, command: ::windows::core::PCWSTR, usecurrentworkingdirectory: super::super::Foundation::BOOL, exitcode: *mut u32) -> ::windows::core::HRESULT;
+            fn WslLaunchInteractive(distributionname: ::windows_core::PCWSTR, command: ::windows_core::PCWSTR, usecurrentworkingdirectory: super::super::Foundation::BOOL, exitcode: *mut u32) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         WslLaunchInteractive(distributionname.into_param().abi(), command.into_param().abi(), usecurrentworkingdirectory.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
@@ -134,12 +134,12 @@ pub unsafe fn WslLaunchInteractive<'a, Param0: ::windows::core::IntoParam<'a, ::
 }
 #[doc = "*Required features: `\"Win32_System_SubsystemForLinux\"`*"]
 #[inline]
-pub unsafe fn WslRegisterDistribution<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(distributionname: Param0, targzfilename: Param1) -> ::windows::core::Result<()> {
+pub unsafe fn WslRegisterDistribution<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(distributionname: Param0, targzfilename: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WslRegisterDistribution(distributionname: ::windows::core::PCWSTR, targzfilename: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn WslRegisterDistribution(distributionname: ::windows_core::PCWSTR, targzfilename: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         WslRegisterDistribution(distributionname.into_param().abi(), targzfilename.into_param().abi()).ok()
     }
@@ -148,12 +148,12 @@ pub unsafe fn WslRegisterDistribution<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_System_SubsystemForLinux\"`*"]
 #[inline]
-pub unsafe fn WslUnregisterDistribution<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(distributionname: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn WslUnregisterDistribution<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(distributionname: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WslUnregisterDistribution(distributionname: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn WslUnregisterDistribution(distributionname: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         WslUnregisterDistribution(distributionname.into_param().abi()).ok()
     }

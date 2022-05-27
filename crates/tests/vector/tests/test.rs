@@ -2,7 +2,7 @@
 
 use std::convert::TryInto;
 use std::sync::RwLock;
-use windows::core::*;
+use windows_core::*;
 use windows::Foundation::Collections::*;
 use windows::Foundation::*;
 use windows::Win32::Foundation::*;
@@ -21,9 +21,9 @@ pub(crate) fn err_memory() -> Error {
 )]
 struct Vector<T>(std::sync::RwLock<Vec<T::DefaultType>>)
 where
-    T: ::windows::core::RuntimeType;
+    T: ::windows_core::RuntimeType;
 
-impl<T: ::windows::core::RuntimeType + 'static> Vector<T> {
+impl<T: ::windows_core::RuntimeType + 'static> Vector<T> {
     fn new(vec: Vec<T::DefaultType>) -> Self {
         Self(RwLock::new(vec))
     }
@@ -53,7 +53,7 @@ impl<T: ::windows::core::RuntimeType + 'static> Vector<T> {
     }
 }
 
-impl<T: ::windows::core::RuntimeType + 'static> IVector_Impl<T> for Vector<T> {
+impl<T: ::windows_core::RuntimeType + 'static> IVector_Impl<T> for Vector<T> {
     fn GetAt(&self, index: u32) -> Result<T> {
         self.GetAt(index)
     }
@@ -127,7 +127,7 @@ impl<T: ::windows::core::RuntimeType + 'static> IVector_Impl<T> for Vector<T> {
     }
 }
 
-impl<T: ::windows::core::RuntimeType + 'static> IVectorView_Impl<T> for Vector<T> {
+impl<T: ::windows_core::RuntimeType + 'static> IVectorView_Impl<T> for Vector<T> {
     fn GetAt(&self, index: u32) -> Result<T> {
         self.GetAt(index)
     }
@@ -142,7 +142,7 @@ impl<T: ::windows::core::RuntimeType + 'static> IVectorView_Impl<T> for Vector<T
     }
 }
 
-impl<T: ::windows::core::RuntimeType + 'static> IIterable_Impl<T> for Vector<T> {
+impl<T: ::windows_core::RuntimeType + 'static> IIterable_Impl<T> for Vector<T> {
     fn First(&self) -> Result<IIterator<T>> {
         todo!()
     }

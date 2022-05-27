@@ -1,47 +1,47 @@
-pub const CLSID_VdsLoader: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9c38ed61_d565_4728_aeee_c80952f0ecde);
-pub const CLSID_VdsService: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7d1933cb_86f6_4a98_8628_01be94c9a575);
+pub const CLSID_VdsLoader: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9c38ed61_d565_4728_aeee_c80952f0ecde);
+pub const CLSID_VdsService: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7d1933cb_86f6_4a98_8628_01be94c9a575);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub const GPT_PARTITION_NAME_LENGTH: u32 = 36u32;
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IEnumVdsObject(::windows::core::IUnknown);
+pub struct IEnumVdsObject(::windows_core::IUnknown);
 impl IEnumVdsObject {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Next(&self, celt: u32, ppobjectarray: *mut ::core::option::Option<::windows::core::IUnknown>, pcfetched: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Next)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(celt), ::core::mem::transmute(ppobjectarray), ::core::mem::transmute(pcfetched)).ok()
+    pub unsafe fn Next(&self, celt: u32, ppobjectarray: *mut ::core::option::Option<::windows_core::IUnknown>, pcfetched: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Next)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(celt), ::core::mem::transmute(ppobjectarray), ::core::mem::transmute(pcfetched)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Skip(&self, celt: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Skip)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(celt)).ok()
+    pub unsafe fn Skip(&self, celt: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Skip)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(celt)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Reset(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Reset)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Reset(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Reset)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Clone(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).Clone)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn Clone(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).Clone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
 }
-impl ::core::convert::From<IEnumVdsObject> for ::windows::core::IUnknown {
+impl ::core::convert::From<IEnumVdsObject> for ::windows_core::IUnknown {
     fn from(value: IEnumVdsObject) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IEnumVdsObject> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IEnumVdsObject> for ::windows_core::IUnknown {
     fn from(value: &IEnumVdsObject) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IEnumVdsObject {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IEnumVdsObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IEnumVdsObject {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IEnumVdsObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IEnumVdsObject {
@@ -60,50 +60,50 @@ impl ::core::fmt::Debug for IEnumVdsObject {
         f.debug_tuple("IEnumVdsObject").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IEnumVdsObject {
+unsafe impl ::windows_core::Interface for IEnumVdsObject {
     type Vtable = IEnumVdsObject_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x118610b7_8d94_4030_b5b8_500889788e4e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x118610b7_8d94_4030_b5b8_500889788e4e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IEnumVdsObject_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Next: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32, ppobjectarray: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows::core::HRESULT,
-    pub Skip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32) -> ::windows::core::HRESULT,
-    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Next: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32, ppobjectarray: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32) -> ::windows_core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsAdmin(::windows::core::IUnknown);
+pub struct IVdsAdmin(::windows_core::IUnknown);
 impl IVdsAdmin {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn RegisterProvider<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::GUID>, Param1: ::windows::core::IntoParam<'a, ::windows::core::GUID>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param6: ::windows::core::IntoParam<'a, ::windows::core::GUID>>(&self, providerid: Param0, providerclsid: Param1, pwszname: Param2, r#type: VDS_PROVIDER_TYPE, pwszmachinename: Param4, pwszversion: Param5, guidversionid: Param6) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).RegisterProvider)(::windows::core::Interface::as_raw(self), providerid.into_param().abi(), providerclsid.into_param().abi(), pwszname.into_param().abi(), ::core::mem::transmute(r#type), pwszmachinename.into_param().abi(), pwszversion.into_param().abi(), guidversionid.into_param().abi()).ok()
+    pub unsafe fn RegisterProvider<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param1: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, providerid: Param0, providerclsid: Param1, pwszname: Param2, r#type: VDS_PROVIDER_TYPE, pwszmachinename: Param4, pwszversion: Param5, guidversionid: Param6) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).RegisterProvider)(::windows_core::Interface::as_raw(self), providerid.into_param().abi(), providerclsid.into_param().abi(), pwszname.into_param().abi(), ::core::mem::transmute(r#type), pwszmachinename.into_param().abi(), pwszversion.into_param().abi(), guidversionid.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn UnregisterProvider<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::GUID>>(&self, providerid: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).UnregisterProvider)(::windows::core::Interface::as_raw(self), providerid.into_param().abi()).ok()
+    pub unsafe fn UnregisterProvider<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, providerid: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).UnregisterProvider)(::windows_core::Interface::as_raw(self), providerid.into_param().abi()).ok()
     }
 }
-impl ::core::convert::From<IVdsAdmin> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsAdmin> for ::windows_core::IUnknown {
     fn from(value: IVdsAdmin) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsAdmin> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsAdmin> for ::windows_core::IUnknown {
     fn from(value: &IVdsAdmin) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsAdmin {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsAdmin {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsAdmin {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsAdmin {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsAdmin {
@@ -122,44 +122,44 @@ impl ::core::fmt::Debug for IVdsAdmin {
         f.debug_tuple("IVdsAdmin").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsAdmin {
+unsafe impl ::windows_core::Interface for IVdsAdmin {
     type Vtable = IVdsAdmin_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd188e97d_85aa_4d33_abc6_26299a10ffc1);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd188e97d_85aa_4d33_abc6_26299a10ffc1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsAdmin_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub RegisterProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, providerid: ::windows::core::GUID, providerclsid: ::windows::core::GUID, pwszname: ::windows::core::PCWSTR, r#type: VDS_PROVIDER_TYPE, pwszmachinename: ::windows::core::PCWSTR, pwszversion: ::windows::core::PCWSTR, guidversionid: ::windows::core::GUID) -> ::windows::core::HRESULT,
-    pub UnregisterProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, providerid: ::windows::core::GUID) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub RegisterProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, providerid: ::windows_core::GUID, providerclsid: ::windows_core::GUID, pwszname: ::windows_core::PCWSTR, r#type: VDS_PROVIDER_TYPE, pwszmachinename: ::windows_core::PCWSTR, pwszversion: ::windows_core::PCWSTR, guidversionid: ::windows_core::GUID) -> ::windows_core::HRESULT,
+    pub UnregisterProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, providerid: ::windows_core::GUID) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsAdviseSink(::windows::core::IUnknown);
+pub struct IVdsAdviseSink(::windows_core::IUnknown);
 impl IVdsAdviseSink {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn OnNotify(&self, pnotificationarray: &[VDS_NOTIFICATION]) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).OnNotify)(::windows::core::Interface::as_raw(self), pnotificationarray.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pnotificationarray))).ok()
+    pub unsafe fn OnNotify(&self, pnotificationarray: &[VDS_NOTIFICATION]) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).OnNotify)(::windows_core::Interface::as_raw(self), pnotificationarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pnotificationarray))).ok()
     }
 }
-impl ::core::convert::From<IVdsAdviseSink> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsAdviseSink> for ::windows_core::IUnknown {
     fn from(value: IVdsAdviseSink) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsAdviseSink> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsAdviseSink> for ::windows_core::IUnknown {
     fn from(value: &IVdsAdviseSink) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsAdviseSink {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsAdviseSink {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsAdviseSink {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsAdviseSink {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsAdviseSink {
@@ -178,51 +178,51 @@ impl ::core::fmt::Debug for IVdsAdviseSink {
         f.debug_tuple("IVdsAdviseSink").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsAdviseSink {
+unsafe impl ::windows_core::Interface for IVdsAdviseSink {
     type Vtable = IVdsAdviseSink_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8326cd1d_cf59_4936_b786_5efc08798e25);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8326cd1d_cf59_4936_b786_5efc08798e25);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsAdviseSink_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub OnNotify: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lnumberofnotifications: i32, pnotificationarray: *const VDS_NOTIFICATION) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub OnNotify: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lnumberofnotifications: i32, pnotificationarray: *const VDS_NOTIFICATION) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsAsync(::windows::core::IUnknown);
+pub struct IVdsAsync(::windows_core::IUnknown);
 impl IVdsAsync {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Cancel(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Cancel)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Cancel(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Cancel)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Wait(&self, phrresult: *mut ::windows::core::HRESULT, pasyncout: *mut VDS_ASYNC_OUTPUT) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Wait)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(phrresult), ::core::mem::transmute(pasyncout)).ok()
+    pub unsafe fn Wait(&self, phrresult: *mut ::windows_core::HRESULT, pasyncout: *mut VDS_ASYNC_OUTPUT) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Wait)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(phrresult), ::core::mem::transmute(pasyncout)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryStatus(&self, phrresult: *mut ::windows::core::HRESULT, pulpercentcompleted: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).QueryStatus)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(phrresult), ::core::mem::transmute(pulpercentcompleted)).ok()
+    pub unsafe fn QueryStatus(&self, phrresult: *mut ::windows_core::HRESULT, pulpercentcompleted: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).QueryStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(phrresult), ::core::mem::transmute(pulpercentcompleted)).ok()
     }
 }
-impl ::core::convert::From<IVdsAsync> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsAsync> for ::windows_core::IUnknown {
     fn from(value: IVdsAsync) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsAsync> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsAsync> for ::windows_core::IUnknown {
     fn from(value: &IVdsAsync) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsAsync {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsAsync {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsAsync {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsAsync {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsAsync {
@@ -241,77 +241,77 @@ impl ::core::fmt::Debug for IVdsAsync {
         f.debug_tuple("IVdsAsync").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsAsync {
+unsafe impl ::windows_core::Interface for IVdsAsync {
     type Vtable = IVdsAsync_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd5d23b6d_5a55_4492_9889_397a3c2d2dbc);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd5d23b6d_5a55_4492_9889_397a3c2d2dbc);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsAsync_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub Wait: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phrresult: *mut ::windows::core::HRESULT, pasyncout: *mut VDS_ASYNC_OUTPUT) -> ::windows::core::HRESULT,
-    pub QueryStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phrresult: *mut ::windows::core::HRESULT, pulpercentcompleted: *mut u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Wait: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phrresult: *mut ::windows_core::HRESULT, pasyncout: *mut VDS_ASYNC_OUTPUT) -> ::windows_core::HRESULT,
+    pub QueryStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phrresult: *mut ::windows_core::HRESULT, pulpercentcompleted: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsController(::windows::core::IUnknown);
+pub struct IVdsController(::windows_core::IUnknown);
 impl IVdsController {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProperties(&self) -> ::windows::core::Result<VDS_CONTROLLER_PROP> {
+    pub unsafe fn GetProperties(&self) -> ::windows_core::Result<VDS_CONTROLLER_PROP> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_CONTROLLER_PROP>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_CONTROLLER_PROP>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_CONTROLLER_PROP>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetSubSystem(&self) -> ::windows::core::Result<IVdsSubSystem> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetSubSystem)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsSubSystem>(result__)
+    pub unsafe fn GetSubSystem(&self) -> ::windows_core::Result<IVdsSubSystem> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetSubSystem)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsSubSystem>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetPortProperties(&self, sportnumber: i16) -> ::windows::core::Result<VDS_PORT_PROP> {
+    pub unsafe fn GetPortProperties(&self, sportnumber: i16) -> ::windows_core::Result<VDS_PORT_PROP> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_PORT_PROP>::zeroed();
-        (::windows::core::Interface::vtable(self).GetPortProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(sportnumber), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_PORT_PROP>(result__)
+        (::windows_core::Interface::vtable(self).GetPortProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(sportnumber), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_PORT_PROP>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn FlushCache(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).FlushCache)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn FlushCache(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).FlushCache)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn InvalidateCache(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).InvalidateCache)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn InvalidateCache(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).InvalidateCache)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Reset(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Reset)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Reset(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Reset)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryAssociatedLuns(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryAssociatedLuns)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryAssociatedLuns(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryAssociatedLuns)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetStatus(&self, status: VDS_CONTROLLER_STATUS) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetStatus)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(status)).ok()
+    pub unsafe fn SetStatus(&self, status: VDS_CONTROLLER_STATUS) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(status)).ok()
     }
 }
-impl ::core::convert::From<IVdsController> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsController> for ::windows_core::IUnknown {
     fn from(value: IVdsController) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsController> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsController> for ::windows_core::IUnknown {
     fn from(value: &IVdsController) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsController {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsController {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsController {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsController {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsController {
@@ -330,51 +330,51 @@ impl ::core::fmt::Debug for IVdsController {
         f.debug_tuple("IVdsController").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsController {
+unsafe impl ::windows_core::Interface for IVdsController {
     type Vtable = IVdsController_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcb53d96e_dffb_474a_a078_790d1e2bc082);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcb53d96e_dffb_474a_a078_790d1e2bc082);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsController_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcontrollerprop: *mut VDS_CONTROLLER_PROP) -> ::windows::core::HRESULT,
-    pub GetSubSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsubsystem: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetPortProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sportnumber: i16, pportprop: *mut VDS_PORT_PROP) -> ::windows::core::HRESULT,
-    pub FlushCache: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub InvalidateCache: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub QueryAssociatedLuns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: VDS_CONTROLLER_STATUS) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcontrollerprop: *mut VDS_CONTROLLER_PROP) -> ::windows_core::HRESULT,
+    pub GetSubSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsubsystem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetPortProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sportnumber: i16, pportprop: *mut VDS_PORT_PROP) -> ::windows_core::HRESULT,
+    pub FlushCache: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub InvalidateCache: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub QueryAssociatedLuns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: VDS_CONTROLLER_STATUS) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsControllerControllerPort(::windows::core::IUnknown);
+pub struct IVdsControllerControllerPort(::windows_core::IUnknown);
 impl IVdsControllerControllerPort {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryControllerPorts(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryControllerPorts)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryControllerPorts(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryControllerPorts)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
 }
-impl ::core::convert::From<IVdsControllerControllerPort> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsControllerControllerPort> for ::windows_core::IUnknown {
     fn from(value: IVdsControllerControllerPort) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsControllerControllerPort> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsControllerControllerPort> for ::windows_core::IUnknown {
     fn from(value: &IVdsControllerControllerPort) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsControllerControllerPort {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsControllerControllerPort {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsControllerControllerPort {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsControllerControllerPort {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsControllerControllerPort {
@@ -393,62 +393,62 @@ impl ::core::fmt::Debug for IVdsControllerControllerPort {
         f.debug_tuple("IVdsControllerControllerPort").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsControllerControllerPort {
+unsafe impl ::windows_core::Interface for IVdsControllerControllerPort {
     type Vtable = IVdsControllerControllerPort_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xca5d735f_6bae_42c0_b30e_f2666045ce71);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xca5d735f_6bae_42c0_b30e_f2666045ce71);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsControllerControllerPort_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub QueryControllerPorts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub QueryControllerPorts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsControllerPort(::windows::core::IUnknown);
+pub struct IVdsControllerPort(::windows_core::IUnknown);
 impl IVdsControllerPort {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProperties(&self) -> ::windows::core::Result<VDS_PORT_PROP> {
+    pub unsafe fn GetProperties(&self) -> ::windows_core::Result<VDS_PORT_PROP> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_PORT_PROP>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_PORT_PROP>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_PORT_PROP>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetController(&self) -> ::windows::core::Result<IVdsController> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetController)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsController>(result__)
+    pub unsafe fn GetController(&self) -> ::windows_core::Result<IVdsController> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetController)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsController>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryAssociatedLuns(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryAssociatedLuns)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryAssociatedLuns(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryAssociatedLuns)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Reset(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Reset)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Reset(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Reset)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetStatus(&self, status: VDS_PORT_STATUS) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetStatus)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(status)).ok()
+    pub unsafe fn SetStatus(&self, status: VDS_PORT_STATUS) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(status)).ok()
     }
 }
-impl ::core::convert::From<IVdsControllerPort> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsControllerPort> for ::windows_core::IUnknown {
     fn from(value: IVdsControllerPort) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsControllerPort> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsControllerPort> for ::windows_core::IUnknown {
     fn from(value: &IVdsControllerPort) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsControllerPort {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsControllerPort {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsControllerPort {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsControllerPort {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsControllerPort {
@@ -467,70 +467,70 @@ impl ::core::fmt::Debug for IVdsControllerPort {
         f.debug_tuple("IVdsControllerPort").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsControllerPort {
+unsafe impl ::windows_core::Interface for IVdsControllerPort {
     type Vtable = IVdsControllerPort_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x18691d0d_4e7f_43e8_92e4_cf44beeed11c);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x18691d0d_4e7f_43e8_92e4_cf44beeed11c);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsControllerPort_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pportprop: *mut VDS_PORT_PROP) -> ::windows::core::HRESULT,
-    pub GetController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppcontroller: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub QueryAssociatedLuns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: VDS_PORT_STATUS) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pportprop: *mut VDS_PORT_PROP) -> ::windows_core::HRESULT,
+    pub GetController: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppcontroller: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub QueryAssociatedLuns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: VDS_PORT_STATUS) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsDrive(::windows::core::IUnknown);
+pub struct IVdsDrive(::windows_core::IUnknown);
 impl IVdsDrive {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProperties(&self) -> ::windows::core::Result<VDS_DRIVE_PROP> {
+    pub unsafe fn GetProperties(&self) -> ::windows_core::Result<VDS_DRIVE_PROP> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_DRIVE_PROP>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_DRIVE_PROP>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_DRIVE_PROP>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetSubSystem(&self) -> ::windows::core::Result<IVdsSubSystem> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetSubSystem)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsSubSystem>(result__)
+    pub unsafe fn GetSubSystem(&self) -> ::windows_core::Result<IVdsSubSystem> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetSubSystem)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsSubSystem>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryExtents(&self, ppextentarray: *mut *mut VDS_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).QueryExtents)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ppextentarray), ::core::mem::transmute(plnumberofextents)).ok()
+    pub unsafe fn QueryExtents(&self, ppextentarray: *mut *mut VDS_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).QueryExtents)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppextentarray), ::core::mem::transmute(plnumberofextents)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetFlags(&self, ulflags: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetFlags)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ulflags)).ok()
+    pub unsafe fn SetFlags(&self, ulflags: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetFlags)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ulflags)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn ClearFlags(&self, ulflags: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ClearFlags)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ulflags)).ok()
+    pub unsafe fn ClearFlags(&self, ulflags: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ClearFlags)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ulflags)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetStatus(&self, status: VDS_DRIVE_STATUS) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetStatus)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(status)).ok()
+    pub unsafe fn SetStatus(&self, status: VDS_DRIVE_STATUS) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(status)).ok()
     }
 }
-impl ::core::convert::From<IVdsDrive> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsDrive> for ::windows_core::IUnknown {
     fn from(value: IVdsDrive) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsDrive> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsDrive> for ::windows_core::IUnknown {
     fn from(value: &IVdsDrive) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsDrive {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsDrive {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsDrive {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsDrive {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsDrive {
@@ -549,52 +549,52 @@ impl ::core::fmt::Debug for IVdsDrive {
         f.debug_tuple("IVdsDrive").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsDrive {
+unsafe impl ::windows_core::Interface for IVdsDrive {
     type Vtable = IVdsDrive_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xff24efa4_aade_4b6b_898b_eaa6a20887c7);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xff24efa4_aade_4b6b_898b_eaa6a20887c7);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsDrive_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdriveprop: *mut VDS_DRIVE_PROP) -> ::windows::core::HRESULT,
-    pub GetSubSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsubsystem: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdriveprop: *mut VDS_DRIVE_PROP) -> ::windows_core::HRESULT,
+    pub GetSubSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsubsystem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub QueryExtents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppextentarray: *mut *mut VDS_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows::core::HRESULT,
+    pub QueryExtents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppextentarray: *mut *mut VDS_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryExtents: usize,
-    pub SetFlags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows::core::HRESULT,
-    pub ClearFlags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows::core::HRESULT,
-    pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: VDS_DRIVE_STATUS) -> ::windows::core::HRESULT,
+    pub SetFlags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows_core::HRESULT,
+    pub ClearFlags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows_core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: VDS_DRIVE_STATUS) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsDrive2(::windows::core::IUnknown);
+pub struct IVdsDrive2(::windows_core::IUnknown);
 impl IVdsDrive2 {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProperties2(&self) -> ::windows::core::Result<VDS_DRIVE_PROP2> {
+    pub unsafe fn GetProperties2(&self) -> ::windows_core::Result<VDS_DRIVE_PROP2> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_DRIVE_PROP2>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperties2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_DRIVE_PROP2>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_DRIVE_PROP2>(result__)
     }
 }
-impl ::core::convert::From<IVdsDrive2> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsDrive2> for ::windows_core::IUnknown {
     fn from(value: IVdsDrive2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsDrive2> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsDrive2> for ::windows_core::IUnknown {
     fn from(value: &IVdsDrive2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsDrive2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsDrive2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsDrive2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsDrive2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsDrive2 {
@@ -613,52 +613,52 @@ impl ::core::fmt::Debug for IVdsDrive2 {
         f.debug_tuple("IVdsDrive2").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsDrive2 {
+unsafe impl ::windows_core::Interface for IVdsDrive2 {
     type Vtable = IVdsDrive2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x60b5a730_addf_4436_8ca7_5769e2d1ffa4);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x60b5a730_addf_4436_8ca7_5769e2d1ffa4);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsDrive2_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProperties2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdriveprop2: *mut VDS_DRIVE_PROP2) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProperties2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdriveprop2: *mut VDS_DRIVE_PROP2) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsHwProvider(::windows::core::IUnknown);
+pub struct IVdsHwProvider(::windows_core::IUnknown);
 impl IVdsHwProvider {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QuerySubSystems(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QuerySubSystems)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QuerySubSystems(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QuerySubSystems)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Reenumerate(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Reenumerate)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Reenumerate(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Reenumerate)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Refresh(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Refresh)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Refresh(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Refresh)(::windows_core::Interface::as_raw(self)).ok()
     }
 }
-impl ::core::convert::From<IVdsHwProvider> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsHwProvider> for ::windows_core::IUnknown {
     fn from(value: IVdsHwProvider) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsHwProvider> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsHwProvider> for ::windows_core::IUnknown {
     fn from(value: &IVdsHwProvider) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsHwProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsHwProvider {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsHwProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsHwProvider {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsHwProvider {
@@ -677,47 +677,47 @@ impl ::core::fmt::Debug for IVdsHwProvider {
         f.debug_tuple("IVdsHwProvider").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsHwProvider {
+unsafe impl ::windows_core::Interface for IVdsHwProvider {
     type Vtable = IVdsHwProvider_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd99bdaae_b13a_4178_9fdb_e27f16b4603e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd99bdaae_b13a_4178_9fdb_e27f16b4603e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsHwProvider_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub QuerySubSystems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub Reenumerate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub QuerySubSystems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub Reenumerate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsHwProviderPrivate(::windows::core::IUnknown);
+pub struct IVdsHwProviderPrivate(::windows_core::IUnknown);
 impl IVdsHwProviderPrivate {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryIfCreatedLun<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pwszdevicepath: Param0, pvdsluninformation: *const VDS_LUN_INFORMATION) -> ::windows::core::Result<::windows::core::GUID> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::GUID>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryIfCreatedLun)(::windows::core::Interface::as_raw(self), pwszdevicepath.into_param().abi(), ::core::mem::transmute(pvdsluninformation), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::GUID>(result__)
+    pub unsafe fn QueryIfCreatedLun<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszdevicepath: Param0, pvdsluninformation: *const VDS_LUN_INFORMATION) -> ::windows_core::Result<::windows_core::GUID> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::GUID>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryIfCreatedLun)(::windows_core::Interface::as_raw(self), pwszdevicepath.into_param().abi(), ::core::mem::transmute(pvdsluninformation), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::GUID>(result__)
     }
 }
-impl ::core::convert::From<IVdsHwProviderPrivate> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsHwProviderPrivate> for ::windows_core::IUnknown {
     fn from(value: IVdsHwProviderPrivate) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsHwProviderPrivate> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsHwProviderPrivate> for ::windows_core::IUnknown {
     fn from(value: &IVdsHwProviderPrivate) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsHwProviderPrivate {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsHwProviderPrivate {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsHwProviderPrivate {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsHwProviderPrivate {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsHwProviderPrivate {
@@ -736,46 +736,46 @@ impl ::core::fmt::Debug for IVdsHwProviderPrivate {
         f.debug_tuple("IVdsHwProviderPrivate").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsHwProviderPrivate {
+unsafe impl ::windows_core::Interface for IVdsHwProviderPrivate {
     type Vtable = IVdsHwProviderPrivate_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x98f17bf3_9f33_4f12_8714_8b4075092c2e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x98f17bf3_9f33_4f12_8714_8b4075092c2e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsHwProviderPrivate_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub QueryIfCreatedLun: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszdevicepath: ::windows::core::PCWSTR, pvdsluninformation: *const VDS_LUN_INFORMATION, plunid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT,
+    pub QueryIfCreatedLun: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszdevicepath: ::windows_core::PCWSTR, pvdsluninformation: *const VDS_LUN_INFORMATION, plunid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryIfCreatedLun: usize,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsHwProviderPrivateMpio(::windows::core::IUnknown);
+pub struct IVdsHwProviderPrivateMpio(::windows_core::IUnknown);
 impl IVdsHwProviderPrivateMpio {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetAllPathStatusesFromHbaPort<'a, Param0: ::windows::core::IntoParam<'a, VDS_HBAPORT_PROP>>(&self, hbaportprop: Param0, status: VDS_PATH_STATUS) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetAllPathStatusesFromHbaPort)(::windows::core::Interface::as_raw(self), hbaportprop.into_param().abi(), ::core::mem::transmute(status)).ok()
+    pub unsafe fn SetAllPathStatusesFromHbaPort<'a, Param0: ::windows_core::IntoParam<'a, VDS_HBAPORT_PROP>>(&self, hbaportprop: Param0, status: VDS_PATH_STATUS) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetAllPathStatusesFromHbaPort)(::windows_core::Interface::as_raw(self), hbaportprop.into_param().abi(), ::core::mem::transmute(status)).ok()
     }
 }
-impl ::core::convert::From<IVdsHwProviderPrivateMpio> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsHwProviderPrivateMpio> for ::windows_core::IUnknown {
     fn from(value: IVdsHwProviderPrivateMpio) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsHwProviderPrivateMpio> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsHwProviderPrivateMpio> for ::windows_core::IUnknown {
     fn from(value: &IVdsHwProviderPrivateMpio) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsHwProviderPrivateMpio {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsHwProviderPrivateMpio {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsHwProviderPrivateMpio {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsHwProviderPrivateMpio {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsHwProviderPrivateMpio {
@@ -794,57 +794,57 @@ impl ::core::fmt::Debug for IVdsHwProviderPrivateMpio {
         f.debug_tuple("IVdsHwProviderPrivateMpio").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsHwProviderPrivateMpio {
+unsafe impl ::windows_core::Interface for IVdsHwProviderPrivateMpio {
     type Vtable = IVdsHwProviderPrivateMpio_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x310a7715_ac2b_4c6f_9827_3d742f351676);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x310a7715_ac2b_4c6f_9827_3d742f351676);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsHwProviderPrivateMpio_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub SetAllPathStatusesFromHbaPort: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hbaportprop: VDS_HBAPORT_PROP, status: VDS_PATH_STATUS) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub SetAllPathStatusesFromHbaPort: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hbaportprop: VDS_HBAPORT_PROP, status: VDS_PATH_STATUS) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsHwProviderStoragePools(::windows::core::IUnknown);
+pub struct IVdsHwProviderStoragePools(::windows_core::IUnknown);
 impl IVdsHwProviderStoragePools {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryStoragePools(&self, ulflags: u32, ullremainingfreespace: u64, ppoolattributes: *const VDS_POOL_ATTRIBUTES) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryStoragePools)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ulflags), ::core::mem::transmute(ullremainingfreespace), ::core::mem::transmute(ppoolattributes), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryStoragePools(&self, ulflags: u32, ullremainingfreespace: u64, ppoolattributes: *const VDS_POOL_ATTRIBUTES) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryStoragePools)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ulflags), ::core::mem::transmute(ullremainingfreespace), ::core::mem::transmute(ppoolattributes), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateLunInStoragePool<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::GUID>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, storagepoolid: Param2, pwszunmaskinglist: Param3, phints2: *const VDS_HINTS2) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).CreateLunInStoragePool)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(ullsizeinbytes), storagepoolid.into_param().abi(), pwszunmaskinglist.into_param().abi(), ::core::mem::transmute(phints2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn CreateLunInStoragePool<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, storagepoolid: Param2, pwszunmaskinglist: Param3, phints2: *const VDS_HINTS2) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).CreateLunInStoragePool)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(ullsizeinbytes), storagepoolid.into_param().abi(), pwszunmaskinglist.into_param().abi(), ::core::mem::transmute(phints2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryMaxLunCreateSizeInStoragePool<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::GUID>>(&self, r#type: VDS_LUN_TYPE, storagepoolid: Param1, phints2: *const VDS_HINTS2) -> ::windows::core::Result<u64> {
+    pub unsafe fn QueryMaxLunCreateSizeInStoragePool<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, r#type: VDS_LUN_TYPE, storagepoolid: Param1, phints2: *const VDS_HINTS2) -> ::windows_core::Result<u64> {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryMaxLunCreateSizeInStoragePool)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), storagepoolid.into_param().abi(), ::core::mem::transmute(phints2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
+        (::windows_core::Interface::vtable(self).QueryMaxLunCreateSizeInStoragePool)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(r#type), storagepoolid.into_param().abi(), ::core::mem::transmute(phints2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
 }
-impl ::core::convert::From<IVdsHwProviderStoragePools> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsHwProviderStoragePools> for ::windows_core::IUnknown {
     fn from(value: IVdsHwProviderStoragePools) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsHwProviderStoragePools> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsHwProviderStoragePools> for ::windows_core::IUnknown {
     fn from(value: &IVdsHwProviderStoragePools) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsHwProviderStoragePools {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsHwProviderStoragePools {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsHwProviderStoragePools {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsHwProviderStoragePools {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsHwProviderStoragePools {
@@ -863,55 +863,55 @@ impl ::core::fmt::Debug for IVdsHwProviderStoragePools {
         f.debug_tuple("IVdsHwProviderStoragePools").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsHwProviderStoragePools {
+unsafe impl ::windows_core::Interface for IVdsHwProviderStoragePools {
     type Vtable = IVdsHwProviderStoragePools_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd5b5937a_f188_4c79_b86c_11c920ad11b8);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd5b5937a_f188_4c79_b86c_11c920ad11b8);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsHwProviderStoragePools_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub QueryStoragePools: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulflags: u32, ullremainingfreespace: u64, ppoolattributes: *const VDS_POOL_ATTRIBUTES, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub QueryStoragePools: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulflags: u32, ullremainingfreespace: u64, ppoolattributes: *const VDS_POOL_ATTRIBUTES, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryStoragePools: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub CreateLunInStoragePool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, storagepoolid: ::windows::core::GUID, pwszunmaskinglist: ::windows::core::PCWSTR, phints2: *const VDS_HINTS2, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CreateLunInStoragePool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, storagepoolid: ::windows_core::GUID, pwszunmaskinglist: ::windows_core::PCWSTR, phints2: *const VDS_HINTS2, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateLunInStoragePool: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub QueryMaxLunCreateSizeInStoragePool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: VDS_LUN_TYPE, storagepoolid: ::windows::core::GUID, phints2: *const VDS_HINTS2, pullmaxlunsize: *mut u64) -> ::windows::core::HRESULT,
+    pub QueryMaxLunCreateSizeInStoragePool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: VDS_LUN_TYPE, storagepoolid: ::windows_core::GUID, phints2: *const VDS_HINTS2, pullmaxlunsize: *mut u64) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryMaxLunCreateSizeInStoragePool: usize,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsHwProviderType(::windows::core::IUnknown);
+pub struct IVdsHwProviderType(::windows_core::IUnknown);
 impl IVdsHwProviderType {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProviderType(&self) -> ::windows::core::Result<VDS_HWPROVIDER_TYPE> {
+    pub unsafe fn GetProviderType(&self) -> ::windows_core::Result<VDS_HWPROVIDER_TYPE> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_HWPROVIDER_TYPE>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProviderType)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_HWPROVIDER_TYPE>(result__)
+        (::windows_core::Interface::vtable(self).GetProviderType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_HWPROVIDER_TYPE>(result__)
     }
 }
-impl ::core::convert::From<IVdsHwProviderType> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsHwProviderType> for ::windows_core::IUnknown {
     fn from(value: IVdsHwProviderType) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsHwProviderType> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsHwProviderType> for ::windows_core::IUnknown {
     fn from(value: &IVdsHwProviderType) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsHwProviderType {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsHwProviderType {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsHwProviderType {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsHwProviderType {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsHwProviderType {
@@ -930,44 +930,44 @@ impl ::core::fmt::Debug for IVdsHwProviderType {
         f.debug_tuple("IVdsHwProviderType").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsHwProviderType {
+unsafe impl ::windows_core::Interface for IVdsHwProviderType {
     type Vtable = IVdsHwProviderType_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3e0f5166_542d_4fc6_947a_012174240b7e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3e0f5166_542d_4fc6_947a_012174240b7e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsHwProviderType_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProviderType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptype: *mut VDS_HWPROVIDER_TYPE) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProviderType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptype: *mut VDS_HWPROVIDER_TYPE) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsHwProviderType2(::windows::core::IUnknown);
+pub struct IVdsHwProviderType2(::windows_core::IUnknown);
 impl IVdsHwProviderType2 {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProviderType2(&self) -> ::windows::core::Result<VDS_HWPROVIDER_TYPE> {
+    pub unsafe fn GetProviderType2(&self) -> ::windows_core::Result<VDS_HWPROVIDER_TYPE> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_HWPROVIDER_TYPE>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProviderType2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_HWPROVIDER_TYPE>(result__)
+        (::windows_core::Interface::vtable(self).GetProviderType2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_HWPROVIDER_TYPE>(result__)
     }
 }
-impl ::core::convert::From<IVdsHwProviderType2> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsHwProviderType2> for ::windows_core::IUnknown {
     fn from(value: IVdsHwProviderType2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsHwProviderType2> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsHwProviderType2> for ::windows_core::IUnknown {
     fn from(value: &IVdsHwProviderType2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsHwProviderType2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsHwProviderType2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsHwProviderType2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsHwProviderType2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsHwProviderType2 {
@@ -986,71 +986,71 @@ impl ::core::fmt::Debug for IVdsHwProviderType2 {
         f.debug_tuple("IVdsHwProviderType2").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsHwProviderType2 {
+unsafe impl ::windows_core::Interface for IVdsHwProviderType2 {
     type Vtable = IVdsHwProviderType2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8190236f_c4d0_4e81_8011_d69512fcc984);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8190236f_c4d0_4e81_8011_d69512fcc984);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsHwProviderType2_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProviderType2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptype: *mut VDS_HWPROVIDER_TYPE) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProviderType2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptype: *mut VDS_HWPROVIDER_TYPE) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsIscsiPortal(::windows::core::IUnknown);
+pub struct IVdsIscsiPortal(::windows_core::IUnknown);
 impl IVdsIscsiPortal {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProperties(&self) -> ::windows::core::Result<VDS_ISCSI_PORTAL_PROP> {
+    pub unsafe fn GetProperties(&self) -> ::windows_core::Result<VDS_ISCSI_PORTAL_PROP> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_ISCSI_PORTAL_PROP>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_ISCSI_PORTAL_PROP>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_ISCSI_PORTAL_PROP>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetSubSystem(&self) -> ::windows::core::Result<IVdsSubSystem> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetSubSystem)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsSubSystem>(result__)
+    pub unsafe fn GetSubSystem(&self) -> ::windows_core::Result<IVdsSubSystem> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetSubSystem)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsSubSystem>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryAssociatedPortalGroups(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryAssociatedPortalGroups)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryAssociatedPortalGroups(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryAssociatedPortalGroups)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetStatus(&self, status: VDS_ISCSI_PORTAL_STATUS) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetStatus)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(status)).ok()
+    pub unsafe fn SetStatus(&self, status: VDS_ISCSI_PORTAL_STATUS) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(status)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetIpsecTunnelAddress(&self, ptunneladdress: *const VDS_IPADDRESS, pdestinationaddress: *const VDS_IPADDRESS) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetIpsecTunnelAddress)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ptunneladdress), ::core::mem::transmute(pdestinationaddress)).ok()
+    pub unsafe fn SetIpsecTunnelAddress(&self, ptunneladdress: *const VDS_IPADDRESS, pdestinationaddress: *const VDS_IPADDRESS) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetIpsecTunnelAddress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ptunneladdress), ::core::mem::transmute(pdestinationaddress)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetIpsecSecurity(&self, pinitiatorportaladdress: *const VDS_IPADDRESS) -> ::windows::core::Result<u64> {
+    pub unsafe fn GetIpsecSecurity(&self, pinitiatorportaladdress: *const VDS_IPADDRESS) -> ::windows_core::Result<u64> {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
-        (::windows::core::Interface::vtable(self).GetIpsecSecurity)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pinitiatorportaladdress), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
+        (::windows_core::Interface::vtable(self).GetIpsecSecurity)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pinitiatorportaladdress), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetIpsecSecurity(&self, pinitiatorportaladdress: *const VDS_IPADDRESS, ullsecurityflags: u64, pipseckey: *const VDS_ISCSI_IPSEC_KEY) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetIpsecSecurity)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pinitiatorportaladdress), ::core::mem::transmute(ullsecurityflags), ::core::mem::transmute(pipseckey)).ok()
+    pub unsafe fn SetIpsecSecurity(&self, pinitiatorportaladdress: *const VDS_IPADDRESS, ullsecurityflags: u64, pipseckey: *const VDS_ISCSI_IPSEC_KEY) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetIpsecSecurity)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pinitiatorportaladdress), ::core::mem::transmute(ullsecurityflags), ::core::mem::transmute(pipseckey)).ok()
     }
 }
-impl ::core::convert::From<IVdsIscsiPortal> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsIscsiPortal> for ::windows_core::IUnknown {
     fn from(value: IVdsIscsiPortal) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsIscsiPortal> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsIscsiPortal> for ::windows_core::IUnknown {
     fn from(value: &IVdsIscsiPortal) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsIscsiPortal {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsIscsiPortal {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsIscsiPortal {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsIscsiPortal {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsIscsiPortal {
@@ -1069,75 +1069,75 @@ impl ::core::fmt::Debug for IVdsIscsiPortal {
         f.debug_tuple("IVdsIscsiPortal").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsIscsiPortal {
+unsafe impl ::windows_core::Interface for IVdsIscsiPortal {
     type Vtable = IVdsIscsiPortal_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7fa1499d_ec85_4a8a_a47b_ff69201fcd34);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7fa1499d_ec85_4a8a_a47b_ff69201fcd34);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsIscsiPortal_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pportalprop: *mut VDS_ISCSI_PORTAL_PROP) -> ::windows::core::HRESULT,
-    pub GetSubSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsubsystem: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub QueryAssociatedPortalGroups: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: VDS_ISCSI_PORTAL_STATUS) -> ::windows::core::HRESULT,
-    pub SetIpsecTunnelAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptunneladdress: *const VDS_IPADDRESS, pdestinationaddress: *const VDS_IPADDRESS) -> ::windows::core::HRESULT,
-    pub GetIpsecSecurity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pinitiatorportaladdress: *const VDS_IPADDRESS, pullsecurityflags: *mut u64) -> ::windows::core::HRESULT,
-    pub SetIpsecSecurity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pinitiatorportaladdress: *const VDS_IPADDRESS, ullsecurityflags: u64, pipseckey: *const VDS_ISCSI_IPSEC_KEY) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pportalprop: *mut VDS_ISCSI_PORTAL_PROP) -> ::windows_core::HRESULT,
+    pub GetSubSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsubsystem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub QueryAssociatedPortalGroups: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: VDS_ISCSI_PORTAL_STATUS) -> ::windows_core::HRESULT,
+    pub SetIpsecTunnelAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptunneladdress: *const VDS_IPADDRESS, pdestinationaddress: *const VDS_IPADDRESS) -> ::windows_core::HRESULT,
+    pub GetIpsecSecurity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pinitiatorportaladdress: *const VDS_IPADDRESS, pullsecurityflags: *mut u64) -> ::windows_core::HRESULT,
+    pub SetIpsecSecurity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pinitiatorportaladdress: *const VDS_IPADDRESS, ullsecurityflags: u64, pipseckey: *const VDS_ISCSI_IPSEC_KEY) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsIscsiPortalGroup(::windows::core::IUnknown);
+pub struct IVdsIscsiPortalGroup(::windows_core::IUnknown);
 impl IVdsIscsiPortalGroup {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProperties(&self) -> ::windows::core::Result<VDS_ISCSI_PORTALGROUP_PROP> {
+    pub unsafe fn GetProperties(&self) -> ::windows_core::Result<VDS_ISCSI_PORTALGROUP_PROP> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_ISCSI_PORTALGROUP_PROP>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_ISCSI_PORTALGROUP_PROP>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_ISCSI_PORTALGROUP_PROP>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetTarget(&self) -> ::windows::core::Result<IVdsIscsiTarget> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetTarget)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsIscsiTarget>(result__)
+    pub unsafe fn GetTarget(&self) -> ::windows_core::Result<IVdsIscsiTarget> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsIscsiTarget>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryAssociatedPortals(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryAssociatedPortals)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryAssociatedPortals(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryAssociatedPortals)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn AddPortal<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::GUID>>(&self, portalid: Param0) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).AddPortal)(::windows::core::Interface::as_raw(self), portalid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn AddPortal<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, portalid: Param0) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).AddPortal)(::windows_core::Interface::as_raw(self), portalid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn RemovePortal<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::GUID>>(&self, portalid: Param0) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).RemovePortal)(::windows::core::Interface::as_raw(self), portalid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn RemovePortal<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, portalid: Param0) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).RemovePortal)(::windows_core::Interface::as_raw(self), portalid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Delete(&self) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).Delete)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn Delete(&self) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).Delete)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
 }
-impl ::core::convert::From<IVdsIscsiPortalGroup> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsIscsiPortalGroup> for ::windows_core::IUnknown {
     fn from(value: IVdsIscsiPortalGroup) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsIscsiPortalGroup> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsIscsiPortalGroup> for ::windows_core::IUnknown {
     fn from(value: &IVdsIscsiPortalGroup) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsIscsiPortalGroup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsIscsiPortalGroup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsIscsiPortalGroup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsIscsiPortalGroup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsIscsiPortalGroup {
@@ -1156,91 +1156,91 @@ impl ::core::fmt::Debug for IVdsIscsiPortalGroup {
         f.debug_tuple("IVdsIscsiPortalGroup").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsIscsiPortalGroup {
+unsafe impl ::windows_core::Interface for IVdsIscsiPortalGroup {
     type Vtable = IVdsIscsiPortalGroup_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfef5f89d_a3dd_4b36_bf28_e7dde045c593);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfef5f89d_a3dd_4b36_bf28_e7dde045c593);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsIscsiPortalGroup_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pportalgroupprop: *mut VDS_ISCSI_PORTALGROUP_PROP) -> ::windows::core::HRESULT,
-    pub GetTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pptarget: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub QueryAssociatedPortals: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub AddPortal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, portalid: ::windows::core::GUID, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub RemovePortal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, portalid: ::windows::core::GUID, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub Delete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pportalgroupprop: *mut VDS_ISCSI_PORTALGROUP_PROP) -> ::windows_core::HRESULT,
+    pub GetTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pptarget: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub QueryAssociatedPortals: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub AddPortal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, portalid: ::windows_core::GUID, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub RemovePortal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, portalid: ::windows_core::GUID, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsIscsiTarget(::windows::core::IUnknown);
+pub struct IVdsIscsiTarget(::windows_core::IUnknown);
 impl IVdsIscsiTarget {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetProperties(&self) -> ::windows::core::Result<VDS_ISCSI_TARGET_PROP> {
+    pub unsafe fn GetProperties(&self) -> ::windows_core::Result<VDS_ISCSI_TARGET_PROP> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_ISCSI_TARGET_PROP>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_ISCSI_TARGET_PROP>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_ISCSI_TARGET_PROP>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetSubSystem(&self) -> ::windows::core::Result<IVdsSubSystem> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetSubSystem)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsSubSystem>(result__)
+    pub unsafe fn GetSubSystem(&self) -> ::windows_core::Result<IVdsSubSystem> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetSubSystem)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsSubSystem>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryPortalGroups(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryPortalGroups)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryPortalGroups(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryPortalGroups)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryAssociatedLuns(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryAssociatedLuns)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryAssociatedLuns(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryAssociatedLuns)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn CreatePortalGroup(&self) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).CreatePortalGroup)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn CreatePortalGroup(&self) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).CreatePortalGroup)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Delete(&self) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).Delete)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn Delete(&self) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).Delete)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetFriendlyName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pwszfriendlyname: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetFriendlyName)(::windows::core::Interface::as_raw(self), pwszfriendlyname.into_param().abi()).ok()
+    pub unsafe fn SetFriendlyName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszfriendlyname: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetFriendlyName)(::windows_core::Interface::as_raw(self), pwszfriendlyname.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetSharedSecret<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, ptargetsharedsecret: *const VDS_ISCSI_SHARED_SECRET, pwszinitiatorname: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetSharedSecret)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ptargetsharedsecret), pwszinitiatorname.into_param().abi()).ok()
+    pub unsafe fn SetSharedSecret<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, ptargetsharedsecret: *const VDS_ISCSI_SHARED_SECRET, pwszinitiatorname: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetSharedSecret)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ptargetsharedsecret), pwszinitiatorname.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn RememberInitiatorSharedSecret<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pwszinitiatorname: Param0, pinitiatorsharedsecret: *const VDS_ISCSI_SHARED_SECRET) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).RememberInitiatorSharedSecret)(::windows::core::Interface::as_raw(self), pwszinitiatorname.into_param().abi(), ::core::mem::transmute(pinitiatorsharedsecret)).ok()
+    pub unsafe fn RememberInitiatorSharedSecret<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszinitiatorname: Param0, pinitiatorsharedsecret: *const VDS_ISCSI_SHARED_SECRET) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).RememberInitiatorSharedSecret)(::windows_core::Interface::as_raw(self), pwszinitiatorname.into_param().abi(), ::core::mem::transmute(pinitiatorsharedsecret)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetConnectedInitiators(&self, pppwszinitiatorlist: *mut *mut ::windows::core::PWSTR, plnumberofinitiators: *mut i32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).GetConnectedInitiators)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pppwszinitiatorlist), ::core::mem::transmute(plnumberofinitiators)).ok()
+    pub unsafe fn GetConnectedInitiators(&self, pppwszinitiatorlist: *mut *mut ::windows_core::PWSTR, plnumberofinitiators: *mut i32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).GetConnectedInitiators)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pppwszinitiatorlist), ::core::mem::transmute(plnumberofinitiators)).ok()
     }
 }
-impl ::core::convert::From<IVdsIscsiTarget> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsIscsiTarget> for ::windows_core::IUnknown {
     fn from(value: IVdsIscsiTarget) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsIscsiTarget> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsIscsiTarget> for ::windows_core::IUnknown {
     fn from(value: &IVdsIscsiTarget) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsIscsiTarget {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsIscsiTarget {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsIscsiTarget {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsIscsiTarget {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsIscsiTarget {
@@ -1259,134 +1259,134 @@ impl ::core::fmt::Debug for IVdsIscsiTarget {
         f.debug_tuple("IVdsIscsiTarget").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsIscsiTarget {
+unsafe impl ::windows_core::Interface for IVdsIscsiTarget {
     type Vtable = IVdsIscsiTarget_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xaa8f5055_83e5_4bcc_aa73_19851a36a849);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xaa8f5055_83e5_4bcc_aa73_19851a36a849);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsIscsiTarget_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptargetprop: *mut VDS_ISCSI_TARGET_PROP) -> ::windows::core::HRESULT,
+    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptargetprop: *mut VDS_ISCSI_TARGET_PROP) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetProperties: usize,
-    pub GetSubSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsubsystem: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub QueryPortalGroups: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub QueryAssociatedLuns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub CreatePortalGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub Delete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SetFriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszfriendlyname: ::windows::core::PCWSTR) -> ::windows::core::HRESULT,
-    pub SetSharedSecret: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptargetsharedsecret: *const VDS_ISCSI_SHARED_SECRET, pwszinitiatorname: ::windows::core::PCWSTR) -> ::windows::core::HRESULT,
-    pub RememberInitiatorSharedSecret: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszinitiatorname: ::windows::core::PCWSTR, pinitiatorsharedsecret: *const VDS_ISCSI_SHARED_SECRET) -> ::windows::core::HRESULT,
-    pub GetConnectedInitiators: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppwszinitiatorlist: *mut *mut ::windows::core::PWSTR, plnumberofinitiators: *mut i32) -> ::windows::core::HRESULT,
+    pub GetSubSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsubsystem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub QueryPortalGroups: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub QueryAssociatedLuns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreatePortalGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetFriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszfriendlyname: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
+    pub SetSharedSecret: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptargetsharedsecret: *const VDS_ISCSI_SHARED_SECRET, pwszinitiatorname: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
+    pub RememberInitiatorSharedSecret: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszinitiatorname: ::windows_core::PCWSTR, pinitiatorsharedsecret: *const VDS_ISCSI_SHARED_SECRET) -> ::windows_core::HRESULT,
+    pub GetConnectedInitiators: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppwszinitiatorlist: *mut *mut ::windows_core::PWSTR, plnumberofinitiators: *mut i32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsLun(::windows::core::IUnknown);
+pub struct IVdsLun(::windows_core::IUnknown);
 impl IVdsLun {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProperties(&self) -> ::windows::core::Result<VDS_LUN_PROP> {
+    pub unsafe fn GetProperties(&self) -> ::windows_core::Result<VDS_LUN_PROP> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_LUN_PROP>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_LUN_PROP>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_LUN_PROP>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetSubSystem(&self) -> ::windows::core::Result<IVdsSubSystem> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetSubSystem)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsSubSystem>(result__)
+    pub unsafe fn GetSubSystem(&self) -> ::windows_core::Result<IVdsSubSystem> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetSubSystem)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsSubSystem>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIdentificationData(&self) -> ::windows::core::Result<VDS_LUN_INFORMATION> {
+    pub unsafe fn GetIdentificationData(&self) -> ::windows_core::Result<VDS_LUN_INFORMATION> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_LUN_INFORMATION>::zeroed();
-        (::windows::core::Interface::vtable(self).GetIdentificationData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_LUN_INFORMATION>(result__)
+        (::windows_core::Interface::vtable(self).GetIdentificationData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_LUN_INFORMATION>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryActiveControllers(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryActiveControllers)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryActiveControllers(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryActiveControllers)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Extend(&self, ullnumberofbytestoadd: u64, pdriveidarray: &[::windows::core::GUID]) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).Extend)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ullnumberofbytestoadd), ::core::mem::transmute(::windows::core::as_ptr_or_null(pdriveidarray)), pdriveidarray.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn Extend(&self, ullnumberofbytestoadd: u64, pdriveidarray: &[::windows_core::GUID]) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).Extend)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ullnumberofbytestoadd), ::core::mem::transmute(::windows_core::as_ptr_or_null(pdriveidarray)), pdriveidarray.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Shrink(&self, ullnumberofbytestoremove: u64) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).Shrink)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ullnumberofbytestoremove), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn Shrink(&self, ullnumberofbytestoremove: u64) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).Shrink)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ullnumberofbytestoremove), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryPlexes(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryPlexes)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryPlexes(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryPlexes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn AddPlex<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::GUID>>(&self, lunid: Param0) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).AddPlex)(::windows::core::Interface::as_raw(self), lunid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn AddPlex<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, lunid: Param0) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).AddPlex)(::windows_core::Interface::as_raw(self), lunid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn RemovePlex<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::GUID>>(&self, plexid: Param0) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).RemovePlex)(::windows::core::Interface::as_raw(self), plexid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn RemovePlex<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, plexid: Param0) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).RemovePlex)(::windows_core::Interface::as_raw(self), plexid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Recover(&self) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).Recover)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn Recover(&self) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).Recover)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetMask<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pwszunmaskinglist: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetMask)(::windows::core::Interface::as_raw(self), pwszunmaskinglist.into_param().abi()).ok()
+    pub unsafe fn SetMask<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszunmaskinglist: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetMask)(::windows_core::Interface::as_raw(self), pwszunmaskinglist.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Delete(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Delete)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Delete(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Delete)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn AssociateControllers(&self, pactivecontrolleridarray: &[::windows::core::GUID], pinactivecontrolleridarray: &[::windows::core::GUID]) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).AssociateControllers)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(::windows::core::as_ptr_or_null(pactivecontrolleridarray)), pactivecontrolleridarray.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pinactivecontrolleridarray)), pinactivecontrolleridarray.len() as _).ok()
+    pub unsafe fn AssociateControllers(&self, pactivecontrolleridarray: &[::windows_core::GUID], pinactivecontrolleridarray: &[::windows_core::GUID]) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).AssociateControllers)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pactivecontrolleridarray)), pactivecontrolleridarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pinactivecontrolleridarray)), pinactivecontrolleridarray.len() as _).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryHints(&self) -> ::windows::core::Result<VDS_HINTS> {
+    pub unsafe fn QueryHints(&self) -> ::windows_core::Result<VDS_HINTS> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_HINTS>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryHints)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_HINTS>(result__)
+        (::windows_core::Interface::vtable(self).QueryHints)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_HINTS>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ApplyHints(&self, phints: *const VDS_HINTS) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ApplyHints)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(phints)).ok()
+    pub unsafe fn ApplyHints(&self, phints: *const VDS_HINTS) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ApplyHints)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(phints)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetStatus(&self, status: VDS_LUN_STATUS) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetStatus)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(status)).ok()
+    pub unsafe fn SetStatus(&self, status: VDS_LUN_STATUS) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(status)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryMaxLunExtendSize(&self, pdriveidarray: &[::windows::core::GUID]) -> ::windows::core::Result<u64> {
+    pub unsafe fn QueryMaxLunExtendSize(&self, pdriveidarray: &[::windows_core::GUID]) -> ::windows_core::Result<u64> {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryMaxLunExtendSize)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(::windows::core::as_ptr_or_null(pdriveidarray)), pdriveidarray.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
+        (::windows_core::Interface::vtable(self).QueryMaxLunExtendSize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pdriveidarray)), pdriveidarray.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
 }
-impl ::core::convert::From<IVdsLun> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsLun> for ::windows_core::IUnknown {
     fn from(value: IVdsLun) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsLun> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsLun> for ::windows_core::IUnknown {
     fn from(value: &IVdsLun) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsLun {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsLun {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsLun {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsLun {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsLun {
@@ -1405,75 +1405,75 @@ impl ::core::fmt::Debug for IVdsLun {
         f.debug_tuple("IVdsLun").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsLun {
+unsafe impl ::windows_core::Interface for IVdsLun {
     type Vtable = IVdsLun_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3540a9c7_e60f_4111_a840_8bba6c2c83d8);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3540a9c7_e60f_4111_a840_8bba6c2c83d8);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsLun_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plunprop: *mut VDS_LUN_PROP) -> ::windows::core::HRESULT,
-    pub GetSubSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsubsystem: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plunprop: *mut VDS_LUN_PROP) -> ::windows_core::HRESULT,
+    pub GetSubSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsubsystem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub GetIdentificationData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pluninfo: *mut VDS_LUN_INFORMATION) -> ::windows::core::HRESULT,
+    pub GetIdentificationData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pluninfo: *mut VDS_LUN_INFORMATION) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetIdentificationData: usize,
-    pub QueryActiveControllers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub Extend: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ullnumberofbytestoadd: u64, pdriveidarray: *const ::windows::core::GUID, lnumberofdrives: i32, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub Shrink: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ullnumberofbytestoremove: u64, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub QueryPlexes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub AddPlex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lunid: ::windows::core::GUID, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub RemovePlex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plexid: ::windows::core::GUID, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub Recover: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SetMask: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszunmaskinglist: ::windows::core::PCWSTR) -> ::windows::core::HRESULT,
-    pub Delete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub AssociateControllers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pactivecontrolleridarray: *const ::windows::core::GUID, lnumberofactivecontrollers: i32, pinactivecontrolleridarray: *const ::windows::core::GUID, lnumberofinactivecontrollers: i32) -> ::windows::core::HRESULT,
+    pub QueryActiveControllers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub Extend: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ullnumberofbytestoadd: u64, pdriveidarray: *const ::windows_core::GUID, lnumberofdrives: i32, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub Shrink: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ullnumberofbytestoremove: u64, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub QueryPlexes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub AddPlex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lunid: ::windows_core::GUID, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub RemovePlex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plexid: ::windows_core::GUID, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub Recover: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetMask: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszunmaskinglist: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub AssociateControllers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pactivecontrolleridarray: *const ::windows_core::GUID, lnumberofactivecontrollers: i32, pinactivecontrolleridarray: *const ::windows_core::GUID, lnumberofinactivecontrollers: i32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub QueryHints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phints: *mut VDS_HINTS) -> ::windows::core::HRESULT,
+    pub QueryHints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phints: *mut VDS_HINTS) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryHints: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub ApplyHints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phints: *const VDS_HINTS) -> ::windows::core::HRESULT,
+    pub ApplyHints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phints: *const VDS_HINTS) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ApplyHints: usize,
-    pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: VDS_LUN_STATUS) -> ::windows::core::HRESULT,
-    pub QueryMaxLunExtendSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdriveidarray: *const ::windows::core::GUID, lnumberofdrives: i32, pullmaxbytestobeadded: *mut u64) -> ::windows::core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: VDS_LUN_STATUS) -> ::windows_core::HRESULT,
+    pub QueryMaxLunExtendSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdriveidarray: *const ::windows_core::GUID, lnumberofdrives: i32, pullmaxbytestobeadded: *mut u64) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsLun2(::windows::core::IUnknown);
+pub struct IVdsLun2(::windows_core::IUnknown);
 impl IVdsLun2 {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryHints2(&self) -> ::windows::core::Result<VDS_HINTS2> {
+    pub unsafe fn QueryHints2(&self) -> ::windows_core::Result<VDS_HINTS2> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_HINTS2>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryHints2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_HINTS2>(result__)
+        (::windows_core::Interface::vtable(self).QueryHints2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_HINTS2>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ApplyHints2(&self, phints2: *const VDS_HINTS2) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ApplyHints2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(phints2)).ok()
+    pub unsafe fn ApplyHints2(&self, phints2: *const VDS_HINTS2) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ApplyHints2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(phints2)).ok()
     }
 }
-impl ::core::convert::From<IVdsLun2> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsLun2> for ::windows_core::IUnknown {
     fn from(value: IVdsLun2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsLun2> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsLun2> for ::windows_core::IUnknown {
     fn from(value: &IVdsLun2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsLun2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsLun2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsLun2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsLun2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsLun2 {
@@ -1492,55 +1492,55 @@ impl ::core::fmt::Debug for IVdsLun2 {
         f.debug_tuple("IVdsLun2").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsLun2 {
+unsafe impl ::windows_core::Interface for IVdsLun2 {
     type Vtable = IVdsLun2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe5b3a735_9efb_499a_8071_4394d9ee6fcb);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe5b3a735_9efb_499a_8071_4394d9ee6fcb);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsLun2_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub QueryHints2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phints2: *mut VDS_HINTS2) -> ::windows::core::HRESULT,
+    pub QueryHints2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phints2: *mut VDS_HINTS2) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryHints2: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub ApplyHints2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phints2: *const VDS_HINTS2) -> ::windows::core::HRESULT,
+    pub ApplyHints2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phints2: *const VDS_HINTS2) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ApplyHints2: usize,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsLunControllerPorts(::windows::core::IUnknown);
+pub struct IVdsLunControllerPorts(::windows_core::IUnknown);
 impl IVdsLunControllerPorts {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn AssociateControllerPorts(&self, pactivecontrollerportidarray: &[::windows::core::GUID], pinactivecontrollerportidarray: &[::windows::core::GUID]) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).AssociateControllerPorts)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(::windows::core::as_ptr_or_null(pactivecontrollerportidarray)), pactivecontrollerportidarray.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pinactivecontrollerportidarray)), pinactivecontrollerportidarray.len() as _).ok()
+    pub unsafe fn AssociateControllerPorts(&self, pactivecontrollerportidarray: &[::windows_core::GUID], pinactivecontrollerportidarray: &[::windows_core::GUID]) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).AssociateControllerPorts)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pactivecontrollerportidarray)), pactivecontrollerportidarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pinactivecontrollerportidarray)), pinactivecontrollerportidarray.len() as _).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryActiveControllerPorts(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryActiveControllerPorts)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryActiveControllerPorts(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryActiveControllerPorts)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
 }
-impl ::core::convert::From<IVdsLunControllerPorts> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsLunControllerPorts> for ::windows_core::IUnknown {
     fn from(value: IVdsLunControllerPorts) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsLunControllerPorts> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsLunControllerPorts> for ::windows_core::IUnknown {
     fn from(value: &IVdsLunControllerPorts) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsLunControllerPorts {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsLunControllerPorts {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsLunControllerPorts {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsLunControllerPorts {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsLunControllerPorts {
@@ -1559,49 +1559,49 @@ impl ::core::fmt::Debug for IVdsLunControllerPorts {
         f.debug_tuple("IVdsLunControllerPorts").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsLunControllerPorts {
+unsafe impl ::windows_core::Interface for IVdsLunControllerPorts {
     type Vtable = IVdsLunControllerPorts_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x451fe266_da6d_406a_bb60_82e534f85aeb);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x451fe266_da6d_406a_bb60_82e534f85aeb);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsLunControllerPorts_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub AssociateControllerPorts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pactivecontrollerportidarray: *const ::windows::core::GUID, lnumberofactivecontrollerports: i32, pinactivecontrollerportidarray: *const ::windows::core::GUID, lnumberofinactivecontrollerports: i32) -> ::windows::core::HRESULT,
-    pub QueryActiveControllerPorts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub AssociateControllerPorts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pactivecontrollerportidarray: *const ::windows_core::GUID, lnumberofactivecontrollerports: i32, pinactivecontrollerportidarray: *const ::windows_core::GUID, lnumberofinactivecontrollerports: i32) -> ::windows_core::HRESULT,
+    pub QueryActiveControllerPorts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsLunIscsi(::windows::core::IUnknown);
+pub struct IVdsLunIscsi(::windows_core::IUnknown);
 impl IVdsLunIscsi {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn AssociateTargets(&self, ptargetidarray: &[::windows::core::GUID]) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).AssociateTargets)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(::windows::core::as_ptr_or_null(ptargetidarray)), ptargetidarray.len() as _).ok()
+    pub unsafe fn AssociateTargets(&self, ptargetidarray: &[::windows_core::GUID]) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).AssociateTargets)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(ptargetidarray)), ptargetidarray.len() as _).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryAssociatedTargets(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryAssociatedTargets)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryAssociatedTargets(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryAssociatedTargets)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
 }
-impl ::core::convert::From<IVdsLunIscsi> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsLunIscsi> for ::windows_core::IUnknown {
     fn from(value: IVdsLunIscsi) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsLunIscsi> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsLunIscsi> for ::windows_core::IUnknown {
     fn from(value: &IVdsLunIscsi) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsLunIscsi {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsLunIscsi {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsLunIscsi {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsLunIscsi {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsLunIscsi {
@@ -1620,59 +1620,59 @@ impl ::core::fmt::Debug for IVdsLunIscsi {
         f.debug_tuple("IVdsLunIscsi").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsLunIscsi {
+unsafe impl ::windows_core::Interface for IVdsLunIscsi {
     type Vtable = IVdsLunIscsi_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0d7c1e64_b59b_45ae_b86a_2c2cc6a42067);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0d7c1e64_b59b_45ae_b86a_2c2cc6a42067);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsLunIscsi_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub AssociateTargets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptargetidarray: *const ::windows::core::GUID, lnumberoftargets: i32) -> ::windows::core::HRESULT,
-    pub QueryAssociatedTargets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub AssociateTargets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptargetidarray: *const ::windows_core::GUID, lnumberoftargets: i32) -> ::windows_core::HRESULT,
+    pub QueryAssociatedTargets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsLunMpio(::windows::core::IUnknown);
+pub struct IVdsLunMpio(::windows_core::IUnknown);
 impl IVdsLunMpio {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetPathInfo(&self, pppaths: *mut *mut VDS_PATH_INFO, plnumberofpaths: *mut i32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).GetPathInfo)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pppaths), ::core::mem::transmute(plnumberofpaths)).ok()
+    pub unsafe fn GetPathInfo(&self, pppaths: *mut *mut VDS_PATH_INFO, plnumberofpaths: *mut i32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).GetPathInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pppaths), ::core::mem::transmute(plnumberofpaths)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLoadBalancePolicy(&self, ppolicy: *mut VDS_LOADBALANCE_POLICY_ENUM, pppaths: *mut *mut VDS_PATH_POLICY, plnumberofpaths: *mut i32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).GetLoadBalancePolicy)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ppolicy), ::core::mem::transmute(pppaths), ::core::mem::transmute(plnumberofpaths)).ok()
+    pub unsafe fn GetLoadBalancePolicy(&self, ppolicy: *mut VDS_LOADBALANCE_POLICY_ENUM, pppaths: *mut *mut VDS_PATH_POLICY, plnumberofpaths: *mut i32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).GetLoadBalancePolicy)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppolicy), ::core::mem::transmute(pppaths), ::core::mem::transmute(plnumberofpaths)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLoadBalancePolicy(&self, policy: VDS_LOADBALANCE_POLICY_ENUM, ppaths: &[VDS_PATH_POLICY]) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetLoadBalancePolicy)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(policy), ::core::mem::transmute(::windows::core::as_ptr_or_null(ppaths)), ppaths.len() as _).ok()
+    pub unsafe fn SetLoadBalancePolicy(&self, policy: VDS_LOADBALANCE_POLICY_ENUM, ppaths: &[VDS_PATH_POLICY]) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetLoadBalancePolicy)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(policy), ::core::mem::transmute(::windows_core::as_ptr_or_null(ppaths)), ppaths.len() as _).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetSupportedLbPolicies(&self) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetSupportedLbPolicies(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).GetSupportedLbPolicies)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).GetSupportedLbPolicies)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
 }
-impl ::core::convert::From<IVdsLunMpio> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsLunMpio> for ::windows_core::IUnknown {
     fn from(value: IVdsLunMpio) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsLunMpio> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsLunMpio> for ::windows_core::IUnknown {
     fn from(value: &IVdsLunMpio) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsLunMpio {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsLunMpio {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsLunMpio {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsLunMpio {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsLunMpio {
@@ -1691,52 +1691,52 @@ impl ::core::fmt::Debug for IVdsLunMpio {
         f.debug_tuple("IVdsLunMpio").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsLunMpio {
+unsafe impl ::windows_core::Interface for IVdsLunMpio {
     type Vtable = IVdsLunMpio_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7c5fbae3_333a_48a1_a982_33c15788cde3);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7c5fbae3_333a_48a1_a982_33c15788cde3);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsLunMpio_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetPathInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppaths: *mut *mut VDS_PATH_INFO, plnumberofpaths: *mut i32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetPathInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppaths: *mut *mut VDS_PATH_INFO, plnumberofpaths: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub GetLoadBalancePolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppolicy: *mut VDS_LOADBALANCE_POLICY_ENUM, pppaths: *mut *mut VDS_PATH_POLICY, plnumberofpaths: *mut i32) -> ::windows::core::HRESULT,
+    pub GetLoadBalancePolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppolicy: *mut VDS_LOADBALANCE_POLICY_ENUM, pppaths: *mut *mut VDS_PATH_POLICY, plnumberofpaths: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetLoadBalancePolicy: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub SetLoadBalancePolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, policy: VDS_LOADBALANCE_POLICY_ENUM, ppaths: *const VDS_PATH_POLICY, lnumberofpaths: i32) -> ::windows::core::HRESULT,
+    pub SetLoadBalancePolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, policy: VDS_LOADBALANCE_POLICY_ENUM, ppaths: *const VDS_PATH_POLICY, lnumberofpaths: i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetLoadBalancePolicy: usize,
-    pub GetSupportedLbPolicies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pullbflags: *mut u32) -> ::windows::core::HRESULT,
+    pub GetSupportedLbPolicies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pullbflags: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsLunNaming(::windows::core::IUnknown);
+pub struct IVdsLunNaming(::windows_core::IUnknown);
 impl IVdsLunNaming {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetFriendlyName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pwszfriendlyname: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetFriendlyName)(::windows::core::Interface::as_raw(self), pwszfriendlyname.into_param().abi()).ok()
+    pub unsafe fn SetFriendlyName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszfriendlyname: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetFriendlyName)(::windows_core::Interface::as_raw(self), pwszfriendlyname.into_param().abi()).ok()
     }
 }
-impl ::core::convert::From<IVdsLunNaming> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsLunNaming> for ::windows_core::IUnknown {
     fn from(value: IVdsLunNaming) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsLunNaming> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsLunNaming> for ::windows_core::IUnknown {
     fn from(value: &IVdsLunNaming) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsLunNaming {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsLunNaming {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsLunNaming {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsLunNaming {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsLunNaming {
@@ -1755,44 +1755,44 @@ impl ::core::fmt::Debug for IVdsLunNaming {
         f.debug_tuple("IVdsLunNaming").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsLunNaming {
+unsafe impl ::windows_core::Interface for IVdsLunNaming {
     type Vtable = IVdsLunNaming_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x907504cb_6b4e_4d88_a34d_17ba661fbb06);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x907504cb_6b4e_4d88_a34d_17ba661fbb06);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsLunNaming_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub SetFriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszfriendlyname: ::windows::core::PCWSTR) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub SetFriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszfriendlyname: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsLunNumber(::windows::core::IUnknown);
+pub struct IVdsLunNumber(::windows_core::IUnknown);
 impl IVdsLunNumber {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetLunNumber(&self) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetLunNumber(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).GetLunNumber)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).GetLunNumber)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
 }
-impl ::core::convert::From<IVdsLunNumber> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsLunNumber> for ::windows_core::IUnknown {
     fn from(value: IVdsLunNumber) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsLunNumber> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsLunNumber> for ::windows_core::IUnknown {
     fn from(value: &IVdsLunNumber) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsLunNumber {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsLunNumber {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsLunNumber {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsLunNumber {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsLunNumber {
@@ -1811,65 +1811,65 @@ impl ::core::fmt::Debug for IVdsLunNumber {
         f.debug_tuple("IVdsLunNumber").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsLunNumber {
+unsafe impl ::windows_core::Interface for IVdsLunNumber {
     type Vtable = IVdsLunNumber_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd3f95e46_54b3_41f9_b678_0f1871443a08);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd3f95e46_54b3_41f9_b678_0f1871443a08);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsLunNumber_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetLunNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pullunnumber: *mut u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetLunNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pullunnumber: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsLunPlex(::windows::core::IUnknown);
+pub struct IVdsLunPlex(::windows_core::IUnknown);
 impl IVdsLunPlex {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProperties(&self) -> ::windows::core::Result<VDS_LUN_PLEX_PROP> {
+    pub unsafe fn GetProperties(&self) -> ::windows_core::Result<VDS_LUN_PLEX_PROP> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_LUN_PLEX_PROP>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_LUN_PLEX_PROP>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_LUN_PLEX_PROP>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetLun(&self) -> ::windows::core::Result<IVdsLun> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetLun)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsLun>(result__)
+    pub unsafe fn GetLun(&self) -> ::windows_core::Result<IVdsLun> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetLun)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsLun>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryExtents(&self, ppextentarray: *mut *mut VDS_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).QueryExtents)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ppextentarray), ::core::mem::transmute(plnumberofextents)).ok()
+    pub unsafe fn QueryExtents(&self, ppextentarray: *mut *mut VDS_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).QueryExtents)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppextentarray), ::core::mem::transmute(plnumberofextents)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryHints(&self) -> ::windows::core::Result<VDS_HINTS> {
+    pub unsafe fn QueryHints(&self) -> ::windows_core::Result<VDS_HINTS> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_HINTS>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryHints)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_HINTS>(result__)
+        (::windows_core::Interface::vtable(self).QueryHints)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_HINTS>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ApplyHints(&self, phints: *const VDS_HINTS) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ApplyHints)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(phints)).ok()
+    pub unsafe fn ApplyHints(&self, phints: *const VDS_HINTS) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ApplyHints)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(phints)).ok()
     }
 }
-impl ::core::convert::From<IVdsLunPlex> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsLunPlex> for ::windows_core::IUnknown {
     fn from(value: IVdsLunPlex) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsLunPlex> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsLunPlex> for ::windows_core::IUnknown {
     fn from(value: &IVdsLunPlex) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsLunPlex {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsLunPlex {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsLunPlex {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsLunPlex {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsLunPlex {
@@ -1888,64 +1888,64 @@ impl ::core::fmt::Debug for IVdsLunPlex {
         f.debug_tuple("IVdsLunPlex").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsLunPlex {
+unsafe impl ::windows_core::Interface for IVdsLunPlex {
     type Vtable = IVdsLunPlex_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0ee1a790_5d2e_4abb_8c99_c481e8be2138);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0ee1a790_5d2e_4abb_8c99_c481e8be2138);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsLunPlex_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pplexprop: *mut VDS_LUN_PLEX_PROP) -> ::windows::core::HRESULT,
-    pub GetLun: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pplun: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pplexprop: *mut VDS_LUN_PLEX_PROP) -> ::windows_core::HRESULT,
+    pub GetLun: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pplun: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub QueryExtents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppextentarray: *mut *mut VDS_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows::core::HRESULT,
+    pub QueryExtents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppextentarray: *mut *mut VDS_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryExtents: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub QueryHints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phints: *mut VDS_HINTS) -> ::windows::core::HRESULT,
+    pub QueryHints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phints: *mut VDS_HINTS) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryHints: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub ApplyHints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phints: *const VDS_HINTS) -> ::windows::core::HRESULT,
+    pub ApplyHints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phints: *const VDS_HINTS) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ApplyHints: usize,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsMaintenance(::windows::core::IUnknown);
+pub struct IVdsMaintenance(::windows_core::IUnknown);
 impl IVdsMaintenance {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn StartMaintenance(&self, operation: VDS_MAINTENANCE_OPERATION) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).StartMaintenance)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(operation)).ok()
+    pub unsafe fn StartMaintenance(&self, operation: VDS_MAINTENANCE_OPERATION) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).StartMaintenance)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(operation)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn StopMaintenance(&self, operation: VDS_MAINTENANCE_OPERATION) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).StopMaintenance)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(operation)).ok()
+    pub unsafe fn StopMaintenance(&self, operation: VDS_MAINTENANCE_OPERATION) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).StopMaintenance)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(operation)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn PulseMaintenance(&self, operation: VDS_MAINTENANCE_OPERATION, ulcount: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).PulseMaintenance)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(operation), ::core::mem::transmute(ulcount)).ok()
+    pub unsafe fn PulseMaintenance(&self, operation: VDS_MAINTENANCE_OPERATION, ulcount: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).PulseMaintenance)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(operation), ::core::mem::transmute(ulcount)).ok()
     }
 }
-impl ::core::convert::From<IVdsMaintenance> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsMaintenance> for ::windows_core::IUnknown {
     fn from(value: IVdsMaintenance) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsMaintenance> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsMaintenance> for ::windows_core::IUnknown {
     fn from(value: &IVdsMaintenance) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsMaintenance {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsMaintenance {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsMaintenance {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsMaintenance {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsMaintenance {
@@ -1964,46 +1964,46 @@ impl ::core::fmt::Debug for IVdsMaintenance {
         f.debug_tuple("IVdsMaintenance").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsMaintenance {
+unsafe impl ::windows_core::Interface for IVdsMaintenance {
     type Vtable = IVdsMaintenance_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xdaebeef3_8523_47ed_a2b9_05cecce2a1ae);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdaebeef3_8523_47ed_a2b9_05cecce2a1ae);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsMaintenance_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub StartMaintenance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, operation: VDS_MAINTENANCE_OPERATION) -> ::windows::core::HRESULT,
-    pub StopMaintenance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, operation: VDS_MAINTENANCE_OPERATION) -> ::windows::core::HRESULT,
-    pub PulseMaintenance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, operation: VDS_MAINTENANCE_OPERATION, ulcount: u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub StartMaintenance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, operation: VDS_MAINTENANCE_OPERATION) -> ::windows_core::HRESULT,
+    pub StopMaintenance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, operation: VDS_MAINTENANCE_OPERATION) -> ::windows_core::HRESULT,
+    pub PulseMaintenance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, operation: VDS_MAINTENANCE_OPERATION, ulcount: u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsProvider(::windows::core::IUnknown);
+pub struct IVdsProvider(::windows_core::IUnknown);
 impl IVdsProvider {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProperties(&self) -> ::windows::core::Result<VDS_PROVIDER_PROP> {
+    pub unsafe fn GetProperties(&self) -> ::windows_core::Result<VDS_PROVIDER_PROP> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_PROVIDER_PROP>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_PROVIDER_PROP>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_PROVIDER_PROP>(result__)
     }
 }
-impl ::core::convert::From<IVdsProvider> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsProvider> for ::windows_core::IUnknown {
     fn from(value: IVdsProvider) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsProvider> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsProvider> for ::windows_core::IUnknown {
     fn from(value: &IVdsProvider) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsProvider {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsProvider {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsProvider {
@@ -2022,53 +2022,53 @@ impl ::core::fmt::Debug for IVdsProvider {
         f.debug_tuple("IVdsProvider").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsProvider {
+unsafe impl ::windows_core::Interface for IVdsProvider {
     type Vtable = IVdsProvider_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x10c5e575_7984_4e81_a56b_431f5f92ae42);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x10c5e575_7984_4e81_a56b_431f5f92ae42);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsProvider_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pproviderprop: *mut VDS_PROVIDER_PROP) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pproviderprop: *mut VDS_PROVIDER_PROP) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsProviderPrivate(::windows::core::IUnknown);
+pub struct IVdsProviderPrivate(::windows_core::IUnknown);
 impl IVdsProviderPrivate {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetObject<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::GUID>>(&self, objectid: Param0, r#type: VDS_OBJECT_TYPE) -> ::windows::core::Result<::windows::core::IUnknown> {
+    pub unsafe fn GetObject<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, objectid: Param0, r#type: VDS_OBJECT_TYPE) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-        (::windows::core::Interface::vtable(self).GetObject)(::windows::core::Interface::as_raw(self), objectid.into_param().abi(), ::core::mem::transmute(r#type), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::IUnknown>(result__)
+        (::windows_core::Interface::vtable(self).GetObject)(::windows_core::Interface::as_raw(self), objectid.into_param().abi(), ::core::mem::transmute(r#type), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn OnLoad<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, pwszmachinename: Param0, pcallbackobject: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).OnLoad)(::windows::core::Interface::as_raw(self), pwszmachinename.into_param().abi(), pcallbackobject.into_param().abi()).ok()
+    pub unsafe fn OnLoad<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, pwszmachinename: Param0, pcallbackobject: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).OnLoad)(::windows_core::Interface::as_raw(self), pwszmachinename.into_param().abi(), pcallbackobject.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OnUnload<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, bforceunload: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).OnUnload)(::windows::core::Interface::as_raw(self), bforceunload.into_param().abi()).ok()
+    pub unsafe fn OnUnload<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, bforceunload: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).OnUnload)(::windows_core::Interface::as_raw(self), bforceunload.into_param().abi()).ok()
     }
 }
-impl ::core::convert::From<IVdsProviderPrivate> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsProviderPrivate> for ::windows_core::IUnknown {
     fn from(value: IVdsProviderPrivate) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsProviderPrivate> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsProviderPrivate> for ::windows_core::IUnknown {
     fn from(value: &IVdsProviderPrivate) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsProviderPrivate {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsProviderPrivate {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsProviderPrivate {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsProviderPrivate {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsProviderPrivate {
@@ -2087,49 +2087,49 @@ impl ::core::fmt::Debug for IVdsProviderPrivate {
         f.debug_tuple("IVdsProviderPrivate").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsProviderPrivate {
+unsafe impl ::windows_core::Interface for IVdsProviderPrivate {
     type Vtable = IVdsProviderPrivate_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x11f3cd41_b7e8_48ff_9472_9dff018aa292);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x11f3cd41_b7e8_48ff_9472_9dff018aa292);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsProviderPrivate_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetObject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, objectid: ::windows::core::GUID, r#type: VDS_OBJECT_TYPE, ppobjectunk: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub OnLoad: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszmachinename: ::windows::core::PCWSTR, pcallbackobject: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetObject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, objectid: ::windows_core::GUID, r#type: VDS_OBJECT_TYPE, ppobjectunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub OnLoad: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszmachinename: ::windows_core::PCWSTR, pcallbackobject: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub OnUnload: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bforceunload: super::super::Foundation::BOOL) -> ::windows::core::HRESULT,
+    pub OnUnload: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bforceunload: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     OnUnload: usize,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsProviderSupport(::windows::core::IUnknown);
+pub struct IVdsProviderSupport(::windows_core::IUnknown);
 impl IVdsProviderSupport {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetVersionSupport(&self) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetVersionSupport(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).GetVersionSupport)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).GetVersionSupport)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
 }
-impl ::core::convert::From<IVdsProviderSupport> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsProviderSupport> for ::windows_core::IUnknown {
     fn from(value: IVdsProviderSupport) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsProviderSupport> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsProviderSupport> for ::windows_core::IUnknown {
     fn from(value: &IVdsProviderSupport) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsProviderSupport {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsProviderSupport {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsProviderSupport {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsProviderSupport {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsProviderSupport {
@@ -2148,70 +2148,70 @@ impl ::core::fmt::Debug for IVdsProviderSupport {
         f.debug_tuple("IVdsProviderSupport").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsProviderSupport {
+unsafe impl ::windows_core::Interface for IVdsProviderSupport {
     type Vtable = IVdsProviderSupport_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1732be13_e8f9_4a03_bfbc_5f616aa66ce1);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1732be13_e8f9_4a03_bfbc_5f616aa66ce1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsProviderSupport_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetVersionSupport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulversionsupport: *mut u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetVersionSupport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulversionsupport: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsStoragePool(::windows::core::IUnknown);
+pub struct IVdsStoragePool(::windows_core::IUnknown);
 impl IVdsStoragePool {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProvider(&self) -> ::windows::core::Result<IVdsProvider> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProvider)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsProvider>(result__)
+    pub unsafe fn GetProvider(&self) -> ::windows_core::Result<IVdsProvider> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetProvider)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsProvider>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProperties(&self) -> ::windows::core::Result<VDS_STORAGE_POOL_PROP> {
+    pub unsafe fn GetProperties(&self) -> ::windows_core::Result<VDS_STORAGE_POOL_PROP> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_STORAGE_POOL_PROP>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_STORAGE_POOL_PROP>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_STORAGE_POOL_PROP>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetAttributes(&self) -> ::windows::core::Result<VDS_POOL_ATTRIBUTES> {
+    pub unsafe fn GetAttributes(&self) -> ::windows_core::Result<VDS_POOL_ATTRIBUTES> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_POOL_ATTRIBUTES>::zeroed();
-        (::windows::core::Interface::vtable(self).GetAttributes)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_POOL_ATTRIBUTES>(result__)
+        (::windows_core::Interface::vtable(self).GetAttributes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_POOL_ATTRIBUTES>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryDriveExtents(&self, ppextentarray: *mut *mut VDS_STORAGE_POOL_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).QueryDriveExtents)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ppextentarray), ::core::mem::transmute(plnumberofextents)).ok()
+    pub unsafe fn QueryDriveExtents(&self, ppextentarray: *mut *mut VDS_STORAGE_POOL_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).QueryDriveExtents)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppextentarray), ::core::mem::transmute(plnumberofextents)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryAllocatedLuns(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryAllocatedLuns)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryAllocatedLuns(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryAllocatedLuns)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryAllocatedStoragePools(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryAllocatedStoragePools)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryAllocatedStoragePools(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryAllocatedStoragePools)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
 }
-impl ::core::convert::From<IVdsStoragePool> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsStoragePool> for ::windows_core::IUnknown {
     fn from(value: IVdsStoragePool) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsStoragePool> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsStoragePool> for ::windows_core::IUnknown {
     fn from(value: &IVdsStoragePool) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsStoragePool {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsStoragePool {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsStoragePool {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsStoragePool {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsStoragePool {
@@ -2230,108 +2230,108 @@ impl ::core::fmt::Debug for IVdsStoragePool {
         f.debug_tuple("IVdsStoragePool").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsStoragePool {
+unsafe impl ::windows_core::Interface for IVdsStoragePool {
     type Vtable = IVdsStoragePool_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x932ca8cf_0eb3_4ba8_9620_22665d7f8450);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x932ca8cf_0eb3_4ba8_9620_22665d7f8450);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsStoragePool_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppprovider: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstoragepoolprop: *mut VDS_STORAGE_POOL_PROP) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppprovider: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstoragepoolprop: *mut VDS_STORAGE_POOL_PROP) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub GetAttributes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstoragepoolattributes: *mut VDS_POOL_ATTRIBUTES) -> ::windows::core::HRESULT,
+    pub GetAttributes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstoragepoolattributes: *mut VDS_POOL_ATTRIBUTES) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetAttributes: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub QueryDriveExtents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppextentarray: *mut *mut VDS_STORAGE_POOL_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows::core::HRESULT,
+    pub QueryDriveExtents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppextentarray: *mut *mut VDS_STORAGE_POOL_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryDriveExtents: usize,
-    pub QueryAllocatedLuns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub QueryAllocatedStoragePools: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub QueryAllocatedLuns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub QueryAllocatedStoragePools: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsSubSystem(::windows::core::IUnknown);
+pub struct IVdsSubSystem(::windows_core::IUnknown);
 impl IVdsSubSystem {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProperties(&self) -> ::windows::core::Result<VDS_SUB_SYSTEM_PROP> {
+    pub unsafe fn GetProperties(&self) -> ::windows_core::Result<VDS_SUB_SYSTEM_PROP> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_SUB_SYSTEM_PROP>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_SUB_SYSTEM_PROP>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_SUB_SYSTEM_PROP>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProvider(&self) -> ::windows::core::Result<IVdsProvider> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProvider)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsProvider>(result__)
+    pub unsafe fn GetProvider(&self) -> ::windows_core::Result<IVdsProvider> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetProvider)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsProvider>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryControllers(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryControllers)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryControllers(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryControllers)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryLuns(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryLuns)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryLuns(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryLuns)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryDrives(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryDrives)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryDrives(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryDrives)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetDrive(&self, sbusnumber: i16, sslotnumber: i16) -> ::windows::core::Result<IVdsDrive> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetDrive)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(sbusnumber), ::core::mem::transmute(sslotnumber), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsDrive>(result__)
+    pub unsafe fn GetDrive(&self, sbusnumber: i16, sslotnumber: i16) -> ::windows_core::Result<IVdsDrive> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetDrive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(sbusnumber), ::core::mem::transmute(sslotnumber), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsDrive>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn Reenumerate(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Reenumerate)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Reenumerate(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Reenumerate)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetControllerStatus(&self, ponlinecontrolleridarray: &[::windows::core::GUID], pofflinecontrolleridarray: &[::windows::core::GUID]) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetControllerStatus)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(::windows::core::as_ptr_or_null(ponlinecontrolleridarray)), ponlinecontrolleridarray.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pofflinecontrolleridarray)), pofflinecontrolleridarray.len() as _).ok()
+    pub unsafe fn SetControllerStatus(&self, ponlinecontrolleridarray: &[::windows_core::GUID], pofflinecontrolleridarray: &[::windows_core::GUID]) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetControllerStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(ponlinecontrolleridarray)), ponlinecontrolleridarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pofflinecontrolleridarray)), pofflinecontrolleridarray.len() as _).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateLun<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, pdriveidarray: &[::windows::core::GUID], pwszunmaskinglist: Param4, phints: *const VDS_HINTS) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).CreateLun)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(ullsizeinbytes), ::core::mem::transmute(::windows::core::as_ptr_or_null(pdriveidarray)), pdriveidarray.len() as _, pwszunmaskinglist.into_param().abi(), ::core::mem::transmute(phints), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn CreateLun<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, pdriveidarray: &[::windows_core::GUID], pwszunmaskinglist: Param4, phints: *const VDS_HINTS) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).CreateLun)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(ullsizeinbytes), ::core::mem::transmute(::windows_core::as_ptr_or_null(pdriveidarray)), pdriveidarray.len() as _, pwszunmaskinglist.into_param().abi(), ::core::mem::transmute(phints), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn ReplaceDrive<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::GUID>, Param1: ::windows::core::IntoParam<'a, ::windows::core::GUID>>(&self, drivetobereplaced: Param0, replacementdrive: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ReplaceDrive)(::windows::core::Interface::as_raw(self), drivetobereplaced.into_param().abi(), replacementdrive.into_param().abi()).ok()
+    pub unsafe fn ReplaceDrive<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param1: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, drivetobereplaced: Param0, replacementdrive: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ReplaceDrive)(::windows_core::Interface::as_raw(self), drivetobereplaced.into_param().abi(), replacementdrive.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetStatus(&self, status: VDS_SUB_SYSTEM_STATUS) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetStatus)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(status)).ok()
+    pub unsafe fn SetStatus(&self, status: VDS_SUB_SYSTEM_STATUS) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(status)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryMaxLunCreateSize(&self, r#type: VDS_LUN_TYPE, pdriveidarray: &[::windows::core::GUID], phints: *const VDS_HINTS) -> ::windows::core::Result<u64> {
+    pub unsafe fn QueryMaxLunCreateSize(&self, r#type: VDS_LUN_TYPE, pdriveidarray: &[::windows_core::GUID], phints: *const VDS_HINTS) -> ::windows_core::Result<u64> {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryMaxLunCreateSize)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(::windows::core::as_ptr_or_null(pdriveidarray)), pdriveidarray.len() as _, ::core::mem::transmute(phints), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
+        (::windows_core::Interface::vtable(self).QueryMaxLunCreateSize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(::windows_core::as_ptr_or_null(pdriveidarray)), pdriveidarray.len() as _, ::core::mem::transmute(phints), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
 }
-impl ::core::convert::From<IVdsSubSystem> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsSubSystem> for ::windows_core::IUnknown {
     fn from(value: IVdsSubSystem) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsSubSystem> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsSubSystem> for ::windows_core::IUnknown {
     fn from(value: &IVdsSubSystem) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsSubSystem {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsSubSystem {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsSubSystem {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsSubSystem {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsSubSystem {
@@ -2350,78 +2350,78 @@ impl ::core::fmt::Debug for IVdsSubSystem {
         f.debug_tuple("IVdsSubSystem").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsSubSystem {
+unsafe impl ::windows_core::Interface for IVdsSubSystem {
     type Vtable = IVdsSubSystem_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6fcee2d3_6d90_4f91_80e2_a5c7caaca9d8);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6fcee2d3_6d90_4f91_80e2_a5c7caaca9d8);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsSubSystem_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psubsystemprop: *mut VDS_SUB_SYSTEM_PROP) -> ::windows::core::HRESULT,
-    pub GetProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppprovider: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub QueryControllers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub QueryLuns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub QueryDrives: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetDrive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sbusnumber: i16, sslotnumber: i16, ppdrive: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub Reenumerate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub SetControllerStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ponlinecontrolleridarray: *const ::windows::core::GUID, lnumberofonlinecontrollers: i32, pofflinecontrolleridarray: *const ::windows::core::GUID, lnumberofofflinecontrollers: i32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psubsystemprop: *mut VDS_SUB_SYSTEM_PROP) -> ::windows_core::HRESULT,
+    pub GetProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppprovider: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub QueryControllers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub QueryLuns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub QueryDrives: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetDrive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sbusnumber: i16, sslotnumber: i16, ppdrive: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub Reenumerate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub SetControllerStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ponlinecontrolleridarray: *const ::windows_core::GUID, lnumberofonlinecontrollers: i32, pofflinecontrolleridarray: *const ::windows_core::GUID, lnumberofofflinecontrollers: i32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub CreateLun: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, pdriveidarray: *const ::windows::core::GUID, lnumberofdrives: i32, pwszunmaskinglist: ::windows::core::PCWSTR, phints: *const VDS_HINTS, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CreateLun: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, pdriveidarray: *const ::windows_core::GUID, lnumberofdrives: i32, pwszunmaskinglist: ::windows_core::PCWSTR, phints: *const VDS_HINTS, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateLun: usize,
-    pub ReplaceDrive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, drivetobereplaced: ::windows::core::GUID, replacementdrive: ::windows::core::GUID) -> ::windows::core::HRESULT,
-    pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: VDS_SUB_SYSTEM_STATUS) -> ::windows::core::HRESULT,
+    pub ReplaceDrive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, drivetobereplaced: ::windows_core::GUID, replacementdrive: ::windows_core::GUID) -> ::windows_core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: VDS_SUB_SYSTEM_STATUS) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub QueryMaxLunCreateSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: VDS_LUN_TYPE, pdriveidarray: *const ::windows::core::GUID, lnumberofdrives: i32, phints: *const VDS_HINTS, pullmaxlunsize: *mut u64) -> ::windows::core::HRESULT,
+    pub QueryMaxLunCreateSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: VDS_LUN_TYPE, pdriveidarray: *const ::windows_core::GUID, lnumberofdrives: i32, phints: *const VDS_HINTS, pullmaxlunsize: *mut u64) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryMaxLunCreateSize: usize,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsSubSystem2(::windows::core::IUnknown);
+pub struct IVdsSubSystem2(::windows_core::IUnknown);
 impl IVdsSubSystem2 {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetProperties2(&self) -> ::windows::core::Result<VDS_SUB_SYSTEM_PROP2> {
+    pub unsafe fn GetProperties2(&self) -> ::windows_core::Result<VDS_SUB_SYSTEM_PROP2> {
         let mut result__ = ::core::mem::MaybeUninit::<VDS_SUB_SYSTEM_PROP2>::zeroed();
-        (::windows::core::Interface::vtable(self).GetProperties2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_SUB_SYSTEM_PROP2>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VDS_SUB_SYSTEM_PROP2>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetDrive2(&self, sbusnumber: i16, sslotnumber: i16, ulenclosurenumber: u32) -> ::windows::core::Result<IVdsDrive> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetDrive2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(sbusnumber), ::core::mem::transmute(sslotnumber), ::core::mem::transmute(ulenclosurenumber), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsDrive>(result__)
+    pub unsafe fn GetDrive2(&self, sbusnumber: i16, sslotnumber: i16, ulenclosurenumber: u32) -> ::windows_core::Result<IVdsDrive> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetDrive2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(sbusnumber), ::core::mem::transmute(sslotnumber), ::core::mem::transmute(ulenclosurenumber), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsDrive>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateLun2<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, pdriveidarray: &[::windows::core::GUID], pwszunmaskinglist: Param4, phints2: *const VDS_HINTS2) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).CreateLun2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(ullsizeinbytes), ::core::mem::transmute(::windows::core::as_ptr_or_null(pdriveidarray)), pdriveidarray.len() as _, pwszunmaskinglist.into_param().abi(), ::core::mem::transmute(phints2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn CreateLun2<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, pdriveidarray: &[::windows_core::GUID], pwszunmaskinglist: Param4, phints2: *const VDS_HINTS2) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).CreateLun2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(ullsizeinbytes), ::core::mem::transmute(::windows_core::as_ptr_or_null(pdriveidarray)), pdriveidarray.len() as _, pwszunmaskinglist.into_param().abi(), ::core::mem::transmute(phints2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryMaxLunCreateSize2(&self, r#type: VDS_LUN_TYPE, pdriveidarray: &[::windows::core::GUID], phints2: *const VDS_HINTS2) -> ::windows::core::Result<u64> {
+    pub unsafe fn QueryMaxLunCreateSize2(&self, r#type: VDS_LUN_TYPE, pdriveidarray: &[::windows_core::GUID], phints2: *const VDS_HINTS2) -> ::windows_core::Result<u64> {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryMaxLunCreateSize2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(::windows::core::as_ptr_or_null(pdriveidarray)), pdriveidarray.len() as _, ::core::mem::transmute(phints2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
+        (::windows_core::Interface::vtable(self).QueryMaxLunCreateSize2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(::windows_core::as_ptr_or_null(pdriveidarray)), pdriveidarray.len() as _, ::core::mem::transmute(phints2), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
 }
-impl ::core::convert::From<IVdsSubSystem2> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsSubSystem2> for ::windows_core::IUnknown {
     fn from(value: IVdsSubSystem2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsSubSystem2> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsSubSystem2> for ::windows_core::IUnknown {
     fn from(value: &IVdsSubSystem2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsSubSystem2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsSubSystem2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsSubSystem2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsSubSystem2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsSubSystem2 {
@@ -2440,53 +2440,53 @@ impl ::core::fmt::Debug for IVdsSubSystem2 {
         f.debug_tuple("IVdsSubSystem2").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsSubSystem2 {
+unsafe impl ::windows_core::Interface for IVdsSubSystem2 {
     type Vtable = IVdsSubSystem2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xbe666735_7800_4a77_9d9c_40f85b87e292);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xbe666735_7800_4a77_9d9c_40f85b87e292);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsSubSystem2_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetProperties2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psubsystemprop2: *mut VDS_SUB_SYSTEM_PROP2) -> ::windows::core::HRESULT,
-    pub GetDrive2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sbusnumber: i16, sslotnumber: i16, ulenclosurenumber: u32, ppdrive: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetProperties2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psubsystemprop2: *mut VDS_SUB_SYSTEM_PROP2) -> ::windows_core::HRESULT,
+    pub GetDrive2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sbusnumber: i16, sslotnumber: i16, ulenclosurenumber: u32, ppdrive: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub CreateLun2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, pdriveidarray: *const ::windows::core::GUID, lnumberofdrives: i32, pwszunmaskinglist: ::windows::core::PCWSTR, phints2: *const VDS_HINTS2, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub CreateLun2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, pdriveidarray: *const ::windows_core::GUID, lnumberofdrives: i32, pwszunmaskinglist: ::windows_core::PCWSTR, phints2: *const VDS_HINTS2, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateLun2: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub QueryMaxLunCreateSize2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: VDS_LUN_TYPE, pdriveidarray: *const ::windows::core::GUID, lnumberofdrives: i32, phints2: *const VDS_HINTS2, pullmaxlunsize: *mut u64) -> ::windows::core::HRESULT,
+    pub QueryMaxLunCreateSize2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: VDS_LUN_TYPE, pdriveidarray: *const ::windows_core::GUID, lnumberofdrives: i32, phints2: *const VDS_HINTS2, pullmaxlunsize: *mut u64) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryMaxLunCreateSize2: usize,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsSubSystemInterconnect(::windows::core::IUnknown);
+pub struct IVdsSubSystemInterconnect(::windows_core::IUnknown);
 impl IVdsSubSystemInterconnect {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn GetSupportedInterconnects(&self) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetSupportedInterconnects(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).GetSupportedInterconnects)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).GetSupportedInterconnects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
 }
-impl ::core::convert::From<IVdsSubSystemInterconnect> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsSubSystemInterconnect> for ::windows_core::IUnknown {
     fn from(value: IVdsSubSystemInterconnect) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsSubSystemInterconnect> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsSubSystemInterconnect> for ::windows_core::IUnknown {
     fn from(value: &IVdsSubSystemInterconnect) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsSubSystemInterconnect {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsSubSystemInterconnect {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsSubSystemInterconnect {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsSubSystemInterconnect {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsSubSystemInterconnect {
@@ -2505,58 +2505,58 @@ impl ::core::fmt::Debug for IVdsSubSystemInterconnect {
         f.debug_tuple("IVdsSubSystemInterconnect").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsSubSystemInterconnect {
+unsafe impl ::windows_core::Interface for IVdsSubSystemInterconnect {
     type Vtable = IVdsSubSystemInterconnect_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9e6fa560_c141_477b_83ba_0b6c38f7febf);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9e6fa560_c141_477b_83ba_0b6c38f7febf);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsSubSystemInterconnect_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetSupportedInterconnects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pulsupportedinterconnectsflag: *mut u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetSupportedInterconnects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pulsupportedinterconnectsflag: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsSubSystemIscsi(::windows::core::IUnknown);
+pub struct IVdsSubSystemIscsi(::windows_core::IUnknown);
 impl IVdsSubSystemIscsi {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryTargets(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryTargets)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryTargets(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryTargets)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn QueryPortals(&self) -> ::windows::core::Result<IEnumVdsObject> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).QueryPortals)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
+    pub unsafe fn QueryPortals(&self) -> ::windows_core::Result<IEnumVdsObject> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).QueryPortals)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumVdsObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn CreateTarget<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pwsziscsiname: Param0, pwszfriendlyname: Param1) -> ::windows::core::Result<IVdsAsync> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).CreateTarget)(::windows::core::Interface::as_raw(self), pwsziscsiname.into_param().abi(), pwszfriendlyname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
+    pub unsafe fn CreateTarget<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwsziscsiname: Param0, pwszfriendlyname: Param1) -> ::windows_core::Result<IVdsAsync> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).CreateTarget)(::windows_core::Interface::as_raw(self), pwsziscsiname.into_param().abi(), pwszfriendlyname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVdsAsync>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetIpsecGroupPresharedKey(&self, pipseckey: *const VDS_ISCSI_IPSEC_KEY) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetIpsecGroupPresharedKey)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pipseckey)).ok()
+    pub unsafe fn SetIpsecGroupPresharedKey(&self, pipseckey: *const VDS_ISCSI_IPSEC_KEY) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetIpsecGroupPresharedKey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pipseckey)).ok()
     }
 }
-impl ::core::convert::From<IVdsSubSystemIscsi> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsSubSystemIscsi> for ::windows_core::IUnknown {
     fn from(value: IVdsSubSystemIscsi) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsSubSystemIscsi> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsSubSystemIscsi> for ::windows_core::IUnknown {
     fn from(value: &IVdsSubSystemIscsi) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsSubSystemIscsi {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsSubSystemIscsi {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsSubSystemIscsi {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsSubSystemIscsi {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsSubSystemIscsi {
@@ -2575,46 +2575,46 @@ impl ::core::fmt::Debug for IVdsSubSystemIscsi {
         f.debug_tuple("IVdsSubSystemIscsi").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsSubSystemIscsi {
+unsafe impl ::windows_core::Interface for IVdsSubSystemIscsi {
     type Vtable = IVdsSubSystemIscsi_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0027346f_40d0_4b45_8cec_5906dc0380c8);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0027346f_40d0_4b45_8cec_5906dc0380c8);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsSubSystemIscsi_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub QueryTargets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub QueryPortals: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub CreateTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwsziscsiname: ::windows::core::PCWSTR, pwszfriendlyname: ::windows::core::PCWSTR, ppasync: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SetIpsecGroupPresharedKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pipseckey: *const VDS_ISCSI_IPSEC_KEY) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub QueryTargets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub QueryPortals: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwsziscsiname: ::windows_core::PCWSTR, pwszfriendlyname: ::windows_core::PCWSTR, ppasync: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetIpsecGroupPresharedKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pipseckey: *const VDS_ISCSI_IPSEC_KEY) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 #[repr(transparent)]
-pub struct IVdsSubSystemNaming(::windows::core::IUnknown);
+pub struct IVdsSubSystemNaming(::windows_core::IUnknown);
 impl IVdsSubSystemNaming {
     #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-    pub unsafe fn SetFriendlyName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pwszfriendlyname: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetFriendlyName)(::windows::core::Interface::as_raw(self), pwszfriendlyname.into_param().abi()).ok()
+    pub unsafe fn SetFriendlyName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszfriendlyname: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetFriendlyName)(::windows_core::Interface::as_raw(self), pwszfriendlyname.into_param().abi()).ok()
     }
 }
-impl ::core::convert::From<IVdsSubSystemNaming> for ::windows::core::IUnknown {
+impl ::core::convert::From<IVdsSubSystemNaming> for ::windows_core::IUnknown {
     fn from(value: IVdsSubSystemNaming) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IVdsSubSystemNaming> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IVdsSubSystemNaming> for ::windows_core::IUnknown {
     fn from(value: &IVdsSubSystemNaming) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVdsSubSystemNaming {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IVdsSubSystemNaming {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IVdsSubSystemNaming {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IVdsSubSystemNaming {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IVdsSubSystemNaming {
@@ -2633,15 +2633,15 @@ impl ::core::fmt::Debug for IVdsSubSystemNaming {
         f.debug_tuple("IVdsSubSystemNaming").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IVdsSubSystemNaming {
+unsafe impl ::windows_core::Interface for IVdsSubSystemNaming {
     type Vtable = IVdsSubSystemNaming_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0d70faa3_9cd4_4900_aa20_6981b6aafc75);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0d70faa3_9cd4_4900_aa20_6981b6aafc75);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVdsSubSystemNaming_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub SetFriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszfriendlyname: ::windows::core::PCWSTR) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub SetFriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszfriendlyname: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub const MAX_FS_ALLOWED_CLUSTER_SIZES_SIZE: u32 = 32u32;
@@ -2660,7 +2660,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT {
         Self { r#type: self.r#type, Anonymous: self.Anonymous.clone() }
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ASYNC_OUTPUT {
+unsafe impl ::windows_core::Abi for VDS_ASYNC_OUTPUT {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 impl ::core::cmp::PartialEq for VDS_ASYNC_OUTPUT {
@@ -2691,12 +2691,12 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0 {
         unsafe { ::core::mem::transmute_copy(self) }
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ASYNC_OUTPUT_0 {
+unsafe impl ::windows_core::Abi for VDS_ASYNC_OUTPUT_0 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 impl ::core::cmp::PartialEq for VDS_ASYNC_OUTPUT_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ASYNC_OUTPUT_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ASYNC_OUTPUT_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_ASYNC_OUTPUT_0 {}
@@ -2708,7 +2708,7 @@ impl ::core::default::Default for VDS_ASYNC_OUTPUT_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ASYNC_OUTPUT_0_0 {
-    pub pVolumeUnk: ::core::option::Option<::windows::core::IUnknown>,
+    pub pVolumeUnk: ::core::option::Option<::windows_core::IUnknown>,
 }
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_0 {
     fn clone(&self) -> Self {
@@ -2720,7 +2720,7 @@ impl ::core::fmt::Debug for VDS_ASYNC_OUTPUT_0_0 {
         f.debug_struct("VDS_ASYNC_OUTPUT_0_0").field("pVolumeUnk", &self.pVolumeUnk).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ASYNC_OUTPUT_0_0 {
+unsafe impl ::windows_core::Abi for VDS_ASYNC_OUTPUT_0_0 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 impl ::core::cmp::PartialEq for VDS_ASYNC_OUTPUT_0_0 {
@@ -2737,7 +2737,7 @@ impl ::core::default::Default for VDS_ASYNC_OUTPUT_0_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ASYNC_OUTPUT_0_1 {
-    pub pLunUnk: ::core::option::Option<::windows::core::IUnknown>,
+    pub pLunUnk: ::core::option::Option<::windows_core::IUnknown>,
 }
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_1 {
     fn clone(&self) -> Self {
@@ -2749,7 +2749,7 @@ impl ::core::fmt::Debug for VDS_ASYNC_OUTPUT_0_1 {
         f.debug_struct("VDS_ASYNC_OUTPUT_0_1").field("pLunUnk", &self.pLunUnk).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ASYNC_OUTPUT_0_1 {
+unsafe impl ::windows_core::Abi for VDS_ASYNC_OUTPUT_0_1 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 impl ::core::cmp::PartialEq for VDS_ASYNC_OUTPUT_0_1 {
@@ -2767,7 +2767,7 @@ impl ::core::default::Default for VDS_ASYNC_OUTPUT_0_1 {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ASYNC_OUTPUT_0_2 {
     pub ullOffset: u64,
-    pub volumeId: ::windows::core::GUID,
+    pub volumeId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_2 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_2 {
@@ -2780,12 +2780,12 @@ impl ::core::fmt::Debug for VDS_ASYNC_OUTPUT_0_2 {
         f.debug_struct("VDS_ASYNC_OUTPUT_0_2").field("ullOffset", &self.ullOffset).field("volumeId", &self.volumeId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ASYNC_OUTPUT_0_2 {
+unsafe impl ::windows_core::Abi for VDS_ASYNC_OUTPUT_0_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_ASYNC_OUTPUT_0_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ASYNC_OUTPUT_0_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ASYNC_OUTPUT_0_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_ASYNC_OUTPUT_0_2 {}
@@ -2797,7 +2797,7 @@ impl ::core::default::Default for VDS_ASYNC_OUTPUT_0_2 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ASYNC_OUTPUT_0_3 {
-    pub pPortalGroupUnk: ::core::option::Option<::windows::core::IUnknown>,
+    pub pPortalGroupUnk: ::core::option::Option<::windows_core::IUnknown>,
 }
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_3 {
     fn clone(&self) -> Self {
@@ -2809,7 +2809,7 @@ impl ::core::fmt::Debug for VDS_ASYNC_OUTPUT_0_3 {
         f.debug_struct("VDS_ASYNC_OUTPUT_0_3").field("pPortalGroupUnk", &self.pPortalGroupUnk).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ASYNC_OUTPUT_0_3 {
+unsafe impl ::windows_core::Abi for VDS_ASYNC_OUTPUT_0_3 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 impl ::core::cmp::PartialEq for VDS_ASYNC_OUTPUT_0_3 {
@@ -2826,7 +2826,7 @@ impl ::core::default::Default for VDS_ASYNC_OUTPUT_0_3 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ASYNC_OUTPUT_0_4 {
-    pub pTargetUnk: ::core::option::Option<::windows::core::IUnknown>,
+    pub pTargetUnk: ::core::option::Option<::windows_core::IUnknown>,
 }
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_4 {
     fn clone(&self) -> Self {
@@ -2838,7 +2838,7 @@ impl ::core::fmt::Debug for VDS_ASYNC_OUTPUT_0_4 {
         f.debug_struct("VDS_ASYNC_OUTPUT_0_4").field("pTargetUnk", &self.pTargetUnk).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ASYNC_OUTPUT_0_4 {
+unsafe impl ::windows_core::Abi for VDS_ASYNC_OUTPUT_0_4 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 impl ::core::cmp::PartialEq for VDS_ASYNC_OUTPUT_0_4 {
@@ -2855,7 +2855,7 @@ impl ::core::default::Default for VDS_ASYNC_OUTPUT_0_4 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ASYNC_OUTPUT_0_5 {
-    pub pVolumeUnk: ::core::option::Option<::windows::core::IUnknown>,
+    pub pVolumeUnk: ::core::option::Option<::windows_core::IUnknown>,
 }
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_5 {
     fn clone(&self) -> Self {
@@ -2867,7 +2867,7 @@ impl ::core::fmt::Debug for VDS_ASYNC_OUTPUT_0_5 {
         f.debug_struct("VDS_ASYNC_OUTPUT_0_5").field("pVolumeUnk", &self.pVolumeUnk).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ASYNC_OUTPUT_0_5 {
+unsafe impl ::windows_core::Abi for VDS_ASYNC_OUTPUT_0_5 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 impl ::core::cmp::PartialEq for VDS_ASYNC_OUTPUT_0_5 {
@@ -2884,7 +2884,7 @@ impl ::core::default::Default for VDS_ASYNC_OUTPUT_0_5 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ASYNC_OUTPUT_0_6 {
-    pub pVDiskUnk: ::core::option::Option<::windows::core::IUnknown>,
+    pub pVDiskUnk: ::core::option::Option<::windows_core::IUnknown>,
 }
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_6 {
     fn clone(&self) -> Self {
@@ -2896,7 +2896,7 @@ impl ::core::fmt::Debug for VDS_ASYNC_OUTPUT_0_6 {
         f.debug_struct("VDS_ASYNC_OUTPUT_0_6").field("pVDiskUnk", &self.pVDiskUnk).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ASYNC_OUTPUT_0_6 {
+unsafe impl ::windows_core::Abi for VDS_ASYNC_OUTPUT_0_6 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 impl ::core::cmp::PartialEq for VDS_ASYNC_OUTPUT_0_6 {
@@ -2926,12 +2926,12 @@ impl ::core::fmt::Debug for VDS_ASYNC_OUTPUT_0_7 {
         f.debug_struct("VDS_ASYNC_OUTPUT_0_7").field("ullReclaimedBytes", &self.ullReclaimedBytes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ASYNC_OUTPUT_0_7 {
+unsafe impl ::windows_core::Abi for VDS_ASYNC_OUTPUT_0_7 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_ASYNC_OUTPUT_0_7 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ASYNC_OUTPUT_0_7>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ASYNC_OUTPUT_0_7>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_ASYNC_OUTPUT_0_7 {}
@@ -3019,7 +3019,7 @@ impl ::core::default::Default for VDS_ASYNC_OUTPUT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ASYNC_OUTPUT_TYPE {
+unsafe impl ::windows_core::Abi for VDS_ASYNC_OUTPUT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_ASYNC_OUTPUT_TYPE {
@@ -3033,7 +3033,7 @@ pub const VDS_ATTACH_VIRTUAL_DISK_FLAG_USE_FILE_ACL: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_CONTROLLER_NOTIFICATION {
     pub ulEvent: VDS_NF_CONTROLLER,
-    pub controllerId: ::windows::core::GUID,
+    pub controllerId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_CONTROLLER_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_CONTROLLER_NOTIFICATION {
@@ -3046,12 +3046,12 @@ impl ::core::fmt::Debug for VDS_CONTROLLER_NOTIFICATION {
         f.debug_struct("VDS_CONTROLLER_NOTIFICATION").field("ulEvent", &self.ulEvent).field("controllerId", &self.controllerId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_CONTROLLER_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_CONTROLLER_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_CONTROLLER_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_CONTROLLER_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_CONTROLLER_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_CONTROLLER_NOTIFICATION {}
@@ -3063,9 +3063,9 @@ impl ::core::default::Default for VDS_CONTROLLER_NOTIFICATION {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_CONTROLLER_PROP {
-    pub id: ::windows::core::GUID,
-    pub pwszFriendlyName: ::windows::core::PWSTR,
-    pub pwszIdentification: ::windows::core::PWSTR,
+    pub id: ::windows_core::GUID,
+    pub pwszFriendlyName: ::windows_core::PWSTR,
+    pub pwszIdentification: ::windows_core::PWSTR,
     pub status: VDS_CONTROLLER_STATUS,
     pub health: VDS_HEALTH,
     pub sNumberOfPorts: i16,
@@ -3081,12 +3081,12 @@ impl ::core::fmt::Debug for VDS_CONTROLLER_PROP {
         f.debug_struct("VDS_CONTROLLER_PROP").field("id", &self.id).field("pwszFriendlyName", &self.pwszFriendlyName).field("pwszIdentification", &self.pwszIdentification).field("status", &self.status).field("health", &self.health).field("sNumberOfPorts", &self.sNumberOfPorts).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_CONTROLLER_PROP {
+unsafe impl ::windows_core::Abi for VDS_CONTROLLER_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_CONTROLLER_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_CONTROLLER_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_CONTROLLER_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_CONTROLLER_PROP {}
@@ -3122,7 +3122,7 @@ impl ::core::default::Default for VDS_CONTROLLER_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_CONTROLLER_STATUS {
+unsafe impl ::windows_core::Abi for VDS_CONTROLLER_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_CONTROLLER_STATUS {
@@ -3134,7 +3134,7 @@ impl ::core::fmt::Debug for VDS_CONTROLLER_STATUS {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_DISK_NOTIFICATION {
     pub ulEvent: VDS_NF_DISK,
-    pub diskId: ::windows::core::GUID,
+    pub diskId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_DISK_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_DISK_NOTIFICATION {
@@ -3147,12 +3147,12 @@ impl ::core::fmt::Debug for VDS_DISK_NOTIFICATION {
         f.debug_struct("VDS_DISK_NOTIFICATION").field("ulEvent", &self.ulEvent).field("diskId", &self.diskId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_DISK_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_DISK_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_DISK_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_DISK_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_DISK_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_DISK_NOTIFICATION {}
@@ -3165,8 +3165,8 @@ impl ::core::default::Default for VDS_DISK_NOTIFICATION {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct VDS_DRIVE_EXTENT {
-    pub id: ::windows::core::GUID,
-    pub LunId: ::windows::core::GUID,
+    pub id: ::windows_core::GUID,
+    pub LunId: ::windows_core::GUID,
     pub ullSize: u64,
     pub bUsed: super::super::Foundation::BOOL,
 }
@@ -3185,13 +3185,13 @@ impl ::core::fmt::Debug for VDS_DRIVE_EXTENT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for VDS_DRIVE_EXTENT {
+unsafe impl ::windows_core::Abi for VDS_DRIVE_EXTENT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for VDS_DRIVE_EXTENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_DRIVE_EXTENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_DRIVE_EXTENT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3227,7 +3227,7 @@ impl ::core::default::Default for VDS_DRIVE_FLAG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_DRIVE_FLAG {
+unsafe impl ::windows_core::Abi for VDS_DRIVE_FLAG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_DRIVE_FLAG {
@@ -3240,7 +3240,7 @@ impl ::core::fmt::Debug for VDS_DRIVE_FLAG {
 pub struct VDS_DRIVE_LETTER_NOTIFICATION {
     pub ulEvent: u32,
     pub wcLetter: u16,
-    pub volumeId: ::windows::core::GUID,
+    pub volumeId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_DRIVE_LETTER_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_DRIVE_LETTER_NOTIFICATION {
@@ -3253,12 +3253,12 @@ impl ::core::fmt::Debug for VDS_DRIVE_LETTER_NOTIFICATION {
         f.debug_struct("VDS_DRIVE_LETTER_NOTIFICATION").field("ulEvent", &self.ulEvent).field("wcLetter", &self.wcLetter).field("volumeId", &self.volumeId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_DRIVE_LETTER_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_DRIVE_LETTER_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_DRIVE_LETTER_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_DRIVE_LETTER_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_DRIVE_LETTER_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_DRIVE_LETTER_NOTIFICATION {}
@@ -3271,7 +3271,7 @@ impl ::core::default::Default for VDS_DRIVE_LETTER_NOTIFICATION {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_DRIVE_NOTIFICATION {
     pub ulEvent: VDS_NF_DRIVE,
-    pub driveId: ::windows::core::GUID,
+    pub driveId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_DRIVE_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_DRIVE_NOTIFICATION {
@@ -3284,12 +3284,12 @@ impl ::core::fmt::Debug for VDS_DRIVE_NOTIFICATION {
         f.debug_struct("VDS_DRIVE_NOTIFICATION").field("ulEvent", &self.ulEvent).field("driveId", &self.driveId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_DRIVE_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_DRIVE_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_DRIVE_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_DRIVE_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_DRIVE_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_DRIVE_NOTIFICATION {}
@@ -3301,10 +3301,10 @@ impl ::core::default::Default for VDS_DRIVE_NOTIFICATION {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_DRIVE_PROP {
-    pub id: ::windows::core::GUID,
+    pub id: ::windows_core::GUID,
     pub ullSize: u64,
-    pub pwszFriendlyName: ::windows::core::PWSTR,
-    pub pwszIdentification: ::windows::core::PWSTR,
+    pub pwszFriendlyName: ::windows_core::PWSTR,
+    pub pwszIdentification: ::windows_core::PWSTR,
     pub ulFlags: u32,
     pub status: VDS_DRIVE_STATUS,
     pub health: VDS_HEALTH,
@@ -3322,12 +3322,12 @@ impl ::core::fmt::Debug for VDS_DRIVE_PROP {
         f.debug_struct("VDS_DRIVE_PROP").field("id", &self.id).field("ullSize", &self.ullSize).field("pwszFriendlyName", &self.pwszFriendlyName).field("pwszIdentification", &self.pwszIdentification).field("ulFlags", &self.ulFlags).field("status", &self.status).field("health", &self.health).field("sInternalBusNumber", &self.sInternalBusNumber).field("sSlotNumber", &self.sSlotNumber).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_DRIVE_PROP {
+unsafe impl ::windows_core::Abi for VDS_DRIVE_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_DRIVE_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_DRIVE_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_DRIVE_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_DRIVE_PROP {}
@@ -3339,10 +3339,10 @@ impl ::core::default::Default for VDS_DRIVE_PROP {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_DRIVE_PROP2 {
-    pub id: ::windows::core::GUID,
+    pub id: ::windows_core::GUID,
     pub ullSize: u64,
-    pub pwszFriendlyName: ::windows::core::PWSTR,
-    pub pwszIdentification: ::windows::core::PWSTR,
+    pub pwszFriendlyName: ::windows_core::PWSTR,
+    pub pwszIdentification: ::windows_core::PWSTR,
     pub ulFlags: u32,
     pub status: VDS_DRIVE_STATUS,
     pub health: VDS_HEALTH,
@@ -3376,12 +3376,12 @@ impl ::core::fmt::Debug for VDS_DRIVE_PROP2 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_DRIVE_PROP2 {
+unsafe impl ::windows_core::Abi for VDS_DRIVE_PROP2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_DRIVE_PROP2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_DRIVE_PROP2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_DRIVE_PROP2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_DRIVE_PROP2 {}
@@ -3417,7 +3417,7 @@ impl ::core::default::Default for VDS_DRIVE_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_DRIVE_STATUS {
+unsafe impl ::windows_core::Abi for VDS_DRIVE_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_DRIVE_STATUS {
@@ -3426,708 +3426,708 @@ impl ::core::fmt::Debug for VDS_DRIVE_STATUS {
     }
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ACCESS_DENIED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212249i32);
+pub const VDS_E_ACCESS_DENIED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212249i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ACTIVE_PARTITION: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212232i32);
+pub const VDS_E_ACTIVE_PARTITION: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212232i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ADDRESSES_INCOMPLETELY_SET: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211517i32);
+pub const VDS_E_ADDRESSES_INCOMPLETELY_SET: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211517i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ALIGN_BEYOND_FIRST_CYLINDER: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211949i32);
+pub const VDS_E_ALIGN_BEYOND_FIRST_CYLINDER: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211949i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ALIGN_IS_ZERO: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211888i32);
+pub const VDS_E_ALIGN_IS_ZERO: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211888i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ALIGN_NOT_A_POWER_OF_TWO: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211889i32);
+pub const VDS_E_ALIGN_NOT_A_POWER_OF_TWO: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211889i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ALIGN_NOT_SECTOR_SIZE_MULTIPLE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211948i32);
+pub const VDS_E_ALIGN_NOT_SECTOR_SIZE_MULTIPLE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211948i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ALIGN_NOT_ZERO: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211947i32);
+pub const VDS_E_ALIGN_NOT_ZERO: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211947i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ALREADY_REGISTERED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212285i32);
+pub const VDS_E_ALREADY_REGISTERED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212285i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ANOTHER_CALL_IN_PROGRESS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212284i32);
+pub const VDS_E_ANOTHER_CALL_IN_PROGRESS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212284i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ASSOCIATED_LUNS_EXIST: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211509i32);
+pub const VDS_E_ASSOCIATED_LUNS_EXIST: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211509i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ASSOCIATED_PORTALS_EXIST: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211508i32);
+pub const VDS_E_ASSOCIATED_PORTALS_EXIST: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211508i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ASYNC_OBJECT_FAILURE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212210i32);
+pub const VDS_E_ASYNC_OBJECT_FAILURE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212210i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_BAD_BOOT_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211898i32);
+pub const VDS_E_BAD_BOOT_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211898i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_BAD_COOKIE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212271i32);
+pub const VDS_E_BAD_COOKIE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212271i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_BAD_LABEL: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212247i32);
+pub const VDS_E_BAD_LABEL: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212247i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_BAD_PNP_MESSAGE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212017i32);
+pub const VDS_E_BAD_PNP_MESSAGE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212017i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_BAD_PROVIDER_DATA: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212223i32);
+pub const VDS_E_BAD_PROVIDER_DATA: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212223i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_BAD_REVISION_NUMBER: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211880i32);
+pub const VDS_E_BAD_REVISION_NUMBER: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211880i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_BLOCK_CLUSTERED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210749i32);
+pub const VDS_E_BLOCK_CLUSTERED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210749i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_BOOT_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211257i32);
+pub const VDS_E_BOOT_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211257i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_BOOT_PAGEFILE_DRIVE_LETTER: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210994i32);
+pub const VDS_E_BOOT_PAGEFILE_DRIVE_LETTER: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210994i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_BOOT_PARTITION_NUMBER_CHANGE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212234i32);
+pub const VDS_E_BOOT_PARTITION_NUMBER_CHANGE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212234i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CACHE_CORRUPT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211946i32);
+pub const VDS_E_CACHE_CORRUPT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211946i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CANCEL_TOO_LATE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212276i32);
+pub const VDS_E_CANCEL_TOO_LATE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212276i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CANNOT_CLEAR_VOLUME_FLAG: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211945i32);
+pub const VDS_E_CANNOT_CLEAR_VOLUME_FLAG: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211945i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CANNOT_EXTEND: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212274i32);
+pub const VDS_E_CANNOT_EXTEND: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212274i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CANNOT_SHRINK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212002i32);
+pub const VDS_E_CANNOT_SHRINK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212002i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CANT_INVALIDATE_FVE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211886i32);
+pub const VDS_E_CANT_INVALIDATE_FVE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211886i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CANT_QUICK_FORMAT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212246i32);
+pub const VDS_E_CANT_QUICK_FORMAT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212246i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CLEAN_WITH_BOOTBACKING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210743i32);
+pub const VDS_E_CLEAN_WITH_BOOTBACKING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210743i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CLEAN_WITH_CRITICAL: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210990i32);
+pub const VDS_E_CLEAN_WITH_CRITICAL: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210990i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CLEAN_WITH_DATA: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210992i32);
+pub const VDS_E_CLEAN_WITH_DATA: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210992i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CLEAN_WITH_OEM: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210991i32);
+pub const VDS_E_CLEAN_WITH_OEM: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210991i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CLUSTER_COUNT_BEYOND_32BITS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212240i32);
+pub const VDS_E_CLUSTER_COUNT_BEYOND_32BITS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212240i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CLUSTER_SIZE_TOO_BIG: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212241i32);
+pub const VDS_E_CLUSTER_SIZE_TOO_BIG: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212241i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CLUSTER_SIZE_TOO_SMALL: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212242i32);
+pub const VDS_E_CLUSTER_SIZE_TOO_SMALL: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212242i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_COMPRESSION_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210984i32);
+pub const VDS_E_COMPRESSION_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210984i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CONFIG_LIMIT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211976i32);
+pub const VDS_E_CONFIG_LIMIT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211976i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CORRUPT_EXTENT_INFO: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212021i32);
+pub const VDS_E_CORRUPT_EXTENT_INFO: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212021i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CORRUPT_NOTIFICATION_INFO: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211990i32);
+pub const VDS_E_CORRUPT_NOTIFICATION_INFO: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211990i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CORRUPT_PARTITION_INFO: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212023i32);
+pub const VDS_E_CORRUPT_PARTITION_INFO: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212023i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CORRUPT_VOLUME_INFO: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212029i32);
+pub const VDS_E_CORRUPT_VOLUME_INFO: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212029i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CRASHDUMP_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211250i32);
+pub const VDS_E_CRASHDUMP_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211250i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_CRITICAL_PLEX: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211906i32);
+pub const VDS_E_CRITICAL_PLEX: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211906i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DELETE_WITH_BOOTBACKING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210745i32);
+pub const VDS_E_DELETE_WITH_BOOTBACKING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210745i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DELETE_WITH_CRITICAL: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210993i32);
+pub const VDS_E_DELETE_WITH_CRITICAL: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210993i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DEVICE_IN_USE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212269i32);
+pub const VDS_E_DEVICE_IN_USE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212269i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_BEING_CLEANED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211944i32);
+pub const VDS_E_DISK_BEING_CLEANED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211944i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_CONFIGURATION_CORRUPTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211975i32);
+pub const VDS_E_DISK_CONFIGURATION_CORRUPTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211975i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_CONFIGURATION_NOT_IN_SYNC: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211974i32);
+pub const VDS_E_DISK_CONFIGURATION_NOT_IN_SYNC: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211974i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_CONFIGURATION_UPDATE_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211973i32);
+pub const VDS_E_DISK_CONFIGURATION_UPDATE_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211973i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_DYNAMIC: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211972i32);
+pub const VDS_E_DISK_DYNAMIC: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211972i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_HAS_BANDS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210748i32);
+pub const VDS_E_DISK_HAS_BANDS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210748i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_IN_USE_BY_VOLUME: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212212i32);
+pub const VDS_E_DISK_IN_USE_BY_VOLUME: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212212i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_IO_FAILING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211968i32);
+pub const VDS_E_DISK_IO_FAILING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211968i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_IS_OFFLINE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211254i32);
+pub const VDS_E_DISK_IS_OFFLINE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211254i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_IS_READ_ONLY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211253i32);
+pub const VDS_E_DISK_IS_READ_ONLY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211253i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_LAYOUT_PARTITIONS_TOO_SMALL: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211969i32);
+pub const VDS_E_DISK_LAYOUT_PARTITIONS_TOO_SMALL: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211969i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_NOT_CONVERTIBLE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211943i32);
+pub const VDS_E_DISK_NOT_CONVERTIBLE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211943i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_NOT_CONVERTIBLE_SIZE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210971i32);
+pub const VDS_E_DISK_NOT_CONVERTIBLE_SIZE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210971i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_NOT_EMPTY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212268i32);
+pub const VDS_E_DISK_NOT_EMPTY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212268i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_NOT_FOUND_IN_PACK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211987i32);
+pub const VDS_E_DISK_NOT_FOUND_IN_PACK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211987i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_NOT_IMPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212206i32);
+pub const VDS_E_DISK_NOT_IMPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212206i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_NOT_INITIALIZED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212265i32);
+pub const VDS_E_DISK_NOT_INITIALIZED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212265i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_NOT_LOADED_TO_CACHE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212217i32);
+pub const VDS_E_DISK_NOT_LOADED_TO_CACHE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212217i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_NOT_MISSING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212031i32);
+pub const VDS_E_DISK_NOT_MISSING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212031i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_NOT_OFFLINE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211883i32);
+pub const VDS_E_DISK_NOT_OFFLINE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211883i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_NOT_ONLINE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212213i32);
+pub const VDS_E_DISK_NOT_ONLINE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212213i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_PNP_REG_CORRUPT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212203i32);
+pub const VDS_E_DISK_PNP_REG_CORRUPT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212203i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_REMOVEABLE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211942i32);
+pub const VDS_E_DISK_REMOVEABLE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211942i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISK_REMOVEABLE_NOT_EMPTY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211941i32);
+pub const VDS_E_DISK_REMOVEABLE_NOT_EMPTY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211941i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DISTINCT_VOLUME: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211909i32);
+pub const VDS_E_DISTINCT_VOLUME: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211909i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DMADMIN_CORRUPT_NOTIFICATION: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212252i32);
+pub const VDS_E_DMADMIN_CORRUPT_NOTIFICATION: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212252i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DMADMIN_METHOD_CALL_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212256i32);
+pub const VDS_E_DMADMIN_METHOD_CALL_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212256i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DMADMIN_SERVICE_CONNECTION_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212261i32);
+pub const VDS_E_DMADMIN_SERVICE_CONNECTION_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212261i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DRIVER_INTERNAL_ERROR: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212027i32);
+pub const VDS_E_DRIVER_INTERNAL_ERROR: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212027i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DRIVER_INVALID_PARAM: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212004i32);
+pub const VDS_E_DRIVER_INVALID_PARAM: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212004i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DRIVER_NO_PACK_NAME: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212019i32);
+pub const VDS_E_DRIVER_NO_PACK_NAME: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212019i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DRIVER_OBJECT_NOT_FOUND: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211971i32);
+pub const VDS_E_DRIVER_OBJECT_NOT_FOUND: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211971i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DRIVE_LETTER_NOT_FREE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211940i32);
+pub const VDS_E_DRIVE_LETTER_NOT_FREE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211940i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DUPLICATE_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211986i32);
+pub const VDS_E_DUPLICATE_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211986i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DUP_EMPTY_PACK_GUID: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212020i32);
+pub const VDS_E_DUP_EMPTY_PACK_GUID: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212020i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_DYNAMIC_DISKS_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211967i32);
+pub const VDS_E_DYNAMIC_DISKS_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211967i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_EXTEND_FILE_SYSTEM_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212186i32);
+pub const VDS_E_EXTEND_FILE_SYSTEM_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212186i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_EXTEND_MULTIPLE_DISKS_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211939i32);
+pub const VDS_E_EXTEND_MULTIPLE_DISKS_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211939i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_EXTEND_TOO_MANY_CLUSTERS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210968i32);
+pub const VDS_E_EXTEND_TOO_MANY_CLUSTERS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210968i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_EXTEND_UNKNOWN_FILESYSTEM: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210967i32);
+pub const VDS_E_EXTEND_UNKNOWN_FILESYSTEM: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210967i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_EXTENT_EXCEEDS_DISK_FREE_SPACE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212011i32);
+pub const VDS_E_EXTENT_EXCEEDS_DISK_FREE_SPACE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212011i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_EXTENT_SIZE_LESS_THAN_MIN: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212237i32);
+pub const VDS_E_EXTENT_SIZE_LESS_THAN_MIN: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212237i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_FAILED_TO_OFFLINE_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211881i32);
+pub const VDS_E_FAILED_TO_OFFLINE_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211881i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_FAILED_TO_ONLINE_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211882i32);
+pub const VDS_E_FAILED_TO_ONLINE_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211882i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_FAT32_FORMAT_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210987i32);
+pub const VDS_E_FAT32_FORMAT_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210987i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_FAT_FORMAT_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210986i32);
+pub const VDS_E_FAT_FORMAT_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210986i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_FAULT_TOLERANT_DISKS_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211966i32);
+pub const VDS_E_FAULT_TOLERANT_DISKS_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211966i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_FLAG_ALREADY_SET: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211911i32);
+pub const VDS_E_FLAG_ALREADY_SET: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211911i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_FORMAT_CRITICAL: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210989i32);
+pub const VDS_E_FORMAT_CRITICAL: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210989i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_FORMAT_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210985i32);
+pub const VDS_E_FORMAT_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210985i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_FORMAT_WITH_BOOTBACKING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210744i32);
+pub const VDS_E_FORMAT_WITH_BOOTBACKING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210744i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_FS_NOT_DETERMINED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211885i32);
+pub const VDS_E_FS_NOT_DETERMINED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211885i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_GET_SAN_POLICY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211259i32);
+pub const VDS_E_GET_SAN_POLICY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211259i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_GPT_ATTRIBUTES_INVALID: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211965i32);
+pub const VDS_E_GPT_ATTRIBUTES_INVALID: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211965i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_HIBERNATION_FILE_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211251i32);
+pub const VDS_E_HIBERNATION_FILE_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211251i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_IA64_BOOT_MIRRORED_TO_MBR: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212198i32);
+pub const VDS_E_IA64_BOOT_MIRRORED_TO_MBR: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212198i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_IMPORT_SET_INCOMPLETE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212207i32);
+pub const VDS_E_IMPORT_SET_INCOMPLETE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212207i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INCOMPATIBLE_FILE_SYSTEM: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212251i32);
+pub const VDS_E_INCOMPATIBLE_FILE_SYSTEM: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212251i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INCOMPATIBLE_MEDIA: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212250i32);
+pub const VDS_E_INCOMPATIBLE_MEDIA: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212250i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INCORRECT_BOOT_VOLUME_EXTENT_INFO: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211260i32);
+pub const VDS_E_INCORRECT_BOOT_VOLUME_EXTENT_INFO: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211260i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INCORRECT_SYSTEM_VOLUME_EXTENT_INFO: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211248i32);
+pub const VDS_E_INCORRECT_SYSTEM_VOLUME_EXTENT_INFO: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211248i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INITIALIZED_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212287i32);
+pub const VDS_E_INITIALIZED_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212287i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INITIALIZE_NOT_CALLED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212286i32);
+pub const VDS_E_INITIALIZE_NOT_CALLED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212286i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INITIATOR_ADAPTER_NOT_FOUND: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211008i32);
+pub const VDS_E_INITIATOR_ADAPTER_NOT_FOUND: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211008i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INITIATOR_SPECIFIC_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211513i32);
+pub const VDS_E_INITIATOR_SPECIFIC_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211513i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INTERNAL_ERROR: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212216i32);
+pub const VDS_E_INTERNAL_ERROR: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212216i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_BLOCK_SIZE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211982i32);
+pub const VDS_E_INVALID_BLOCK_SIZE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211982i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212007i32);
+pub const VDS_E_INVALID_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212007i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_DISK_COUNT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211994i32);
+pub const VDS_E_INVALID_DISK_COUNT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211994i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_DRIVE_LETTER: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211938i32);
+pub const VDS_E_INVALID_DRIVE_LETTER: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211938i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_DRIVE_LETTER_COUNT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211937i32);
+pub const VDS_E_INVALID_DRIVE_LETTER_COUNT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211937i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_ENUMERATOR: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212028i32);
+pub const VDS_E_INVALID_ENUMERATOR: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212028i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_EXTENT_COUNT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211993i32);
+pub const VDS_E_INVALID_EXTENT_COUNT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211993i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_FS_FLAG: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211936i32);
+pub const VDS_E_INVALID_FS_FLAG: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211936i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_FS_TYPE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211935i32);
+pub const VDS_E_INVALID_FS_TYPE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211935i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_IP_ADDRESS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210997i32);
+pub const VDS_E_INVALID_IP_ADDRESS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210997i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_ISCSI_PATH: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210980i32);
+pub const VDS_E_INVALID_ISCSI_PATH: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210980i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_ISCSI_TARGET_NAME: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211005i32);
+pub const VDS_E_INVALID_ISCSI_TARGET_NAME: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211005i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_MEMBER_COUNT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211998i32);
+pub const VDS_E_INVALID_MEMBER_COUNT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211998i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_MEMBER_ORDER: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211996i32);
+pub const VDS_E_INVALID_MEMBER_ORDER: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211996i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_OBJECT_TYPE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211934i32);
+pub const VDS_E_INVALID_OBJECT_TYPE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211934i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_OPERATION: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212267i32);
+pub const VDS_E_INVALID_OPERATION: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212267i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PACK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212006i32);
+pub const VDS_E_INVALID_PACK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212006i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PARTITION_LAYOUT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211933i32);
+pub const VDS_E_INVALID_PARTITION_LAYOUT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211933i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PARTITION_STYLE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211932i32);
+pub const VDS_E_INVALID_PARTITION_STYLE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211932i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PARTITION_TYPE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211931i32);
+pub const VDS_E_INVALID_PARTITION_TYPE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211931i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PATH: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210981i32);
+pub const VDS_E_INVALID_PATH: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210981i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PLEX_BLOCK_SIZE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211978i32);
+pub const VDS_E_INVALID_PLEX_BLOCK_SIZE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211978i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PLEX_COUNT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211999i32);
+pub const VDS_E_INVALID_PLEX_COUNT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211999i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PLEX_GUID: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211988i32);
+pub const VDS_E_INVALID_PLEX_GUID: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211988i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PLEX_ORDER: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211997i32);
+pub const VDS_E_INVALID_PLEX_ORDER: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211997i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PLEX_TYPE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211979i32);
+pub const VDS_E_INVALID_PLEX_TYPE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211979i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PORT_PATH: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211006i32);
+pub const VDS_E_INVALID_PORT_PATH: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211006i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PROVIDER_CLSID: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211930i32);
+pub const VDS_E_INVALID_PROVIDER_CLSID: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211930i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PROVIDER_ID: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211929i32);
+pub const VDS_E_INVALID_PROVIDER_ID: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211929i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PROVIDER_NAME: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211928i32);
+pub const VDS_E_INVALID_PROVIDER_NAME: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211928i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PROVIDER_TYPE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211927i32);
+pub const VDS_E_INVALID_PROVIDER_TYPE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211927i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PROVIDER_VERSION_GUID: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211926i32);
+pub const VDS_E_INVALID_PROVIDER_VERSION_GUID: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211926i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_PROVIDER_VERSION_STRING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211925i32);
+pub const VDS_E_INVALID_PROVIDER_VERSION_STRING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211925i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_QUERY_PROVIDER_FLAG: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211924i32);
+pub const VDS_E_INVALID_QUERY_PROVIDER_FLAG: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211924i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_SECTOR_SIZE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211984i32);
+pub const VDS_E_INVALID_SECTOR_SIZE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211984i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_SERVICE_FLAG: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211923i32);
+pub const VDS_E_INVALID_SERVICE_FLAG: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211923i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_SHRINK_SIZE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211241i32);
+pub const VDS_E_INVALID_SHRINK_SIZE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211241i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_SPACE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212282i32);
+pub const VDS_E_INVALID_SPACE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212282i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_STATE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210747i32);
+pub const VDS_E_INVALID_STATE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210747i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_STRIPE_SIZE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211995i32);
+pub const VDS_E_INVALID_STRIPE_SIZE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211995i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_VOLUME_FLAG: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211922i32);
+pub const VDS_E_INVALID_VOLUME_FLAG: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211922i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_VOLUME_LENGTH: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211954i32);
+pub const VDS_E_INVALID_VOLUME_LENGTH: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211954i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_INVALID_VOLUME_TYPE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211899i32);
+pub const VDS_E_INVALID_VOLUME_TYPE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211899i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_IO_ERROR: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212245i32);
+pub const VDS_E_IO_ERROR: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212245i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ISCSI_CHAP_SECRET: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210998i32);
+pub const VDS_E_ISCSI_CHAP_SECRET: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210998i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ISCSI_GET_IKE_INFO: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211003i32);
+pub const VDS_E_ISCSI_GET_IKE_INFO: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211003i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ISCSI_GROUP_PRESHARE_KEY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210999i32);
+pub const VDS_E_ISCSI_GROUP_PRESHARE_KEY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210999i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ISCSI_INITIATOR_NODE_NAME: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211000i32);
+pub const VDS_E_ISCSI_INITIATOR_NODE_NAME: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211000i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ISCSI_LOGIN_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211512i32);
+pub const VDS_E_ISCSI_LOGIN_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211512i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ISCSI_LOGOUT_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211511i32);
+pub const VDS_E_ISCSI_LOGOUT_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211511i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ISCSI_LOGOUT_INCOMPLETE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211504i32);
+pub const VDS_E_ISCSI_LOGOUT_INCOMPLETE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211504i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ISCSI_SESSION_NOT_FOUND: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211510i32);
+pub const VDS_E_ISCSI_SESSION_NOT_FOUND: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211510i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ISCSI_SET_IKE_INFO: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211002i32);
+pub const VDS_E_ISCSI_SET_IKE_INFO: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211002i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LAST_VALID_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211985i32);
+pub const VDS_E_LAST_VALID_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211985i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LBN_REMAP_ENABLED_FLAG: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212202i32);
+pub const VDS_E_LBN_REMAP_ENABLED_FLAG: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212202i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LDM_TIMEOUT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212191i32);
+pub const VDS_E_LDM_TIMEOUT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212191i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LEGACY_VOLUME_FORMAT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212230i32);
+pub const VDS_E_LEGACY_VOLUME_FORMAT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212230i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LOG_UPDATE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211897i32);
+pub const VDS_E_LOG_UPDATE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211897i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LUN_DISK_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211239i32);
+pub const VDS_E_LUN_DISK_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211239i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LUN_DISK_MISSING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211240i32);
+pub const VDS_E_LUN_DISK_MISSING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211240i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LUN_DISK_NOT_READY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211238i32);
+pub const VDS_E_LUN_DISK_NOT_READY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211238i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LUN_DISK_NO_MEDIA: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211237i32);
+pub const VDS_E_LUN_DISK_NO_MEDIA: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211237i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LUN_DISK_READ_ONLY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210978i32);
+pub const VDS_E_LUN_DISK_READ_ONLY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210978i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LUN_DYNAMIC: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210976i32);
+pub const VDS_E_LUN_DYNAMIC: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210976i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LUN_DYNAMIC_OFFLINE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210975i32);
+pub const VDS_E_LUN_DYNAMIC_OFFLINE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210975i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LUN_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211234i32);
+pub const VDS_E_LUN_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211234i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LUN_NOT_READY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211236i32);
+pub const VDS_E_LUN_NOT_READY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211236i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LUN_OFFLINE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211235i32);
+pub const VDS_E_LUN_OFFLINE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211235i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LUN_SHRINK_GPT_HEADER: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210974i32);
+pub const VDS_E_LUN_SHRINK_GPT_HEADER: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210974i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_LUN_UPDATE_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210977i32);
+pub const VDS_E_LUN_UPDATE_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210977i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_MAX_USABLE_MBR: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212184i32);
+pub const VDS_E_MAX_USABLE_MBR: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212184i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_MEDIA_WRITE_PROTECTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212248i32);
+pub const VDS_E_MEDIA_WRITE_PROTECTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212248i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_MEMBER_IS_HEALTHY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211964i32);
+pub const VDS_E_MEMBER_IS_HEALTHY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211964i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_MEMBER_MISSING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211958i32);
+pub const VDS_E_MEMBER_MISSING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211958i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_MEMBER_REGENERATING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211963i32);
+pub const VDS_E_MEMBER_REGENERATING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211963i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_MEMBER_SIZE_INVALID: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212010i32);
+pub const VDS_E_MEMBER_SIZE_INVALID: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212010i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_MIGRATE_OPEN_VOLUME: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212228i32);
+pub const VDS_E_MIGRATE_OPEN_VOLUME: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212228i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_MIRROR_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210973i32);
+pub const VDS_E_MIRROR_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210973i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_MISSING_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212204i32);
+pub const VDS_E_MISSING_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212204i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_MULTIPLE_DISCOVERY_DOMAINS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211506i32);
+pub const VDS_E_MULTIPLE_DISCOVERY_DOMAINS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211506i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_MULTIPLE_PACKS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212001i32);
+pub const VDS_E_MULTIPLE_PACKS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212001i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NAME_NOT_UNIQUE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211519i32);
+pub const VDS_E_NAME_NOT_UNIQUE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211519i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NON_CONTIGUOUS_DATA_PARTITIONS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212229i32);
+pub const VDS_E_NON_CONTIGUOUS_DATA_PARTITIONS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212229i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NOT_AN_UNALLOCATED_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212264i32);
+pub const VDS_E_NOT_AN_UNALLOCATED_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212264i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NOT_ENOUGH_DRIVE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212272i32);
+pub const VDS_E_NOT_ENOUGH_DRIVE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212272i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NOT_ENOUGH_SPACE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212273i32);
+pub const VDS_E_NOT_ENOUGH_SPACE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212273i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212288i32);
+pub const VDS_E_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212288i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_DISCOVERY_DOMAIN: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211507i32);
+pub const VDS_E_NO_DISCOVERY_DOMAIN: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211507i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_DISKS_FOUND: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212258i32);
+pub const VDS_E_NO_DISKS_FOUND: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212258i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_DISK_PATHNAME: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211505i32);
+pub const VDS_E_NO_DISK_PATHNAME: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211505i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_DRIVELETTER_FLAG: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212201i32);
+pub const VDS_E_NO_DRIVELETTER_FLAG: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212201i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_EXTENTS_FOR_PLEX: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211980i32);
+pub const VDS_E_NO_EXTENTS_FOR_PLEX: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211980i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_EXTENTS_FOR_VOLUME: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212218i32);
+pub const VDS_E_NO_EXTENTS_FOR_VOLUME: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212218i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_FREE_SPACE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212233i32);
+pub const VDS_E_NO_FREE_SPACE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212233i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_HEALTHY_DISKS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211977i32);
+pub const VDS_E_NO_HEALTHY_DISKS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211977i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_IMPORT_TARGET: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211501i32);
+pub const VDS_E_NO_IMPORT_TARGET: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211501i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_MAINTENANCE_MODE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210750i32);
+pub const VDS_E_NO_MAINTENANCE_MODE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210750i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_MEDIA: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212270i32);
+pub const VDS_E_NO_MEDIA: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212270i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_PNP_DISK_ARRIVE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212016i32);
+pub const VDS_E_NO_PNP_DISK_ARRIVE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212016i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_PNP_DISK_REMOVE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212014i32);
+pub const VDS_E_NO_PNP_DISK_REMOVE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212014i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_PNP_VOLUME_ARRIVE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212015i32);
+pub const VDS_E_NO_PNP_VOLUME_ARRIVE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212015i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_PNP_VOLUME_REMOVE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212013i32);
+pub const VDS_E_NO_PNP_VOLUME_REMOVE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212013i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_POOL: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210752i32);
+pub const VDS_E_NO_POOL: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210752i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_POOL_CREATED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210751i32);
+pub const VDS_E_NO_POOL_CREATED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210751i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_SOFTWARE_PROVIDERS_LOADED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212032i32);
+pub const VDS_E_NO_SOFTWARE_PROVIDERS_LOADED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212032i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_VALID_LOG_COPIES: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211894i32);
+pub const VDS_E_NO_VALID_LOG_COPIES: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211894i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_VOLUME_LAYOUT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212030i32);
+pub const VDS_E_NO_VOLUME_LAYOUT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212030i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NO_VOLUME_PATHNAME: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211503i32);
+pub const VDS_E_NO_VOLUME_PATHNAME: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211503i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_NTFS_FORMAT_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210988i32);
+pub const VDS_E_NTFS_FORMAT_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210988i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_OBJECT_DELETED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212277i32);
+pub const VDS_E_OBJECT_DELETED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212277i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_OBJECT_EXISTS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212259i32);
+pub const VDS_E_OBJECT_EXISTS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212259i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_OBJECT_NOT_FOUND: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212283i32);
+pub const VDS_E_OBJECT_NOT_FOUND: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212283i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_OBJECT_OUT_OF_SYNC: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212205i32);
+pub const VDS_E_OBJECT_OUT_OF_SYNC: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212205i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_OBJECT_STATUS_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212239i32);
+pub const VDS_E_OBJECT_STATUS_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212239i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_OFFLINE_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210970i32);
+pub const VDS_E_OFFLINE_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210970i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ONE_EXTENT_PER_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211983i32);
+pub const VDS_E_ONE_EXTENT_PER_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211983i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_ONLINE_PACK_EXISTS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212188i32);
+pub const VDS_E_ONLINE_PACK_EXISTS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212188i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_OPERATION_CANCELED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212275i32);
+pub const VDS_E_OPERATION_CANCELED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212275i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_OPERATION_DENIED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212278i32);
+pub const VDS_E_OPERATION_DENIED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212278i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_OPERATION_PENDING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212279i32);
+pub const VDS_E_OPERATION_PENDING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212279i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PACK_NAME_INVALID: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211962i32);
+pub const VDS_E_PACK_NAME_INVALID: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211962i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PACK_NOT_FOUND: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212208i32);
+pub const VDS_E_PACK_NOT_FOUND: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212208i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PACK_OFFLINE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212220i32);
+pub const VDS_E_PACK_OFFLINE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212220i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PACK_ONLINE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212000i32);
+pub const VDS_E_PACK_ONLINE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212000i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PAGEFILE_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211252i32);
+pub const VDS_E_PAGEFILE_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211252i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PARTITION_LDM: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211891i32);
+pub const VDS_E_PARTITION_LDM: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211891i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PARTITION_LIMIT_REACHED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212281i32);
+pub const VDS_E_PARTITION_LIMIT_REACHED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212281i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PARTITION_MSR: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211892i32);
+pub const VDS_E_PARTITION_MSR: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211892i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PARTITION_NON_DATA: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211907i32);
+pub const VDS_E_PARTITION_NON_DATA: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211907i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PARTITION_NOT_CYLINDER_ALIGNED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211970i32);
+pub const VDS_E_PARTITION_NOT_CYLINDER_ALIGNED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211970i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PARTITION_NOT_EMPTY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212280i32);
+pub const VDS_E_PARTITION_NOT_EMPTY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212280i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PARTITION_NOT_OEM: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211921i32);
+pub const VDS_E_PARTITION_NOT_OEM: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211921i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PARTITION_OF_UNKNOWN_TYPE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212231i32);
+pub const VDS_E_PARTITION_OF_UNKNOWN_TYPE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212231i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PARTITION_PROTECTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211920i32);
+pub const VDS_E_PARTITION_PROTECTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211920i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PARTITION_STYLE_MISMATCH: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211919i32);
+pub const VDS_E_PARTITION_STYLE_MISMATCH: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211919i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PATH_NOT_FOUND: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212266i32);
+pub const VDS_E_PATH_NOT_FOUND: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212266i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PLEX_IS_HEALTHY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211961i32);
+pub const VDS_E_PLEX_IS_HEALTHY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211961i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PLEX_LAST_ACTIVE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211960i32);
+pub const VDS_E_PLEX_LAST_ACTIVE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211960i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PLEX_MISSING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211959i32);
+pub const VDS_E_PLEX_MISSING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211959i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PLEX_NOT_LOADED_TO_CACHE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211893i32);
+pub const VDS_E_PLEX_NOT_LOADED_TO_CACHE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211893i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PLEX_REGENERATING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211957i32);
+pub const VDS_E_PLEX_REGENERATING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211957i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PLEX_SIZE_INVALID: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211981i32);
+pub const VDS_E_PLEX_SIZE_INVALID: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211981i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PROVIDER_CACHE_CORRUPT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212257i32);
+pub const VDS_E_PROVIDER_CACHE_CORRUPT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212257i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PROVIDER_CACHE_OUTOFSYNC: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211502i32);
+pub const VDS_E_PROVIDER_CACHE_OUTOFSYNC: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211502i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PROVIDER_EXITING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212012i32);
+pub const VDS_E_PROVIDER_EXITING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212012i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PROVIDER_FAILURE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212222i32);
+pub const VDS_E_PROVIDER_FAILURE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212222i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PROVIDER_INITIALIZATION_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212260i32);
+pub const VDS_E_PROVIDER_INITIALIZATION_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212260i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PROVIDER_INTERNAL_ERROR: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211918i32);
+pub const VDS_E_PROVIDER_INTERNAL_ERROR: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211918i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PROVIDER_TYPE_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212214i32);
+pub const VDS_E_PROVIDER_TYPE_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212214i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PROVIDER_VOL_DEVICE_NAME_NOT_FOUND: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212254i32);
+pub const VDS_E_PROVIDER_VOL_DEVICE_NAME_NOT_FOUND: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212254i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_PROVIDER_VOL_OPEN: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212253i32);
+pub const VDS_E_PROVIDER_VOL_OPEN: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212253i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_RAID5_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210972i32);
+pub const VDS_E_RAID5_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210972i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_READONLY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211900i32);
+pub const VDS_E_READONLY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211900i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_REBOOT_REQUIRED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210996i32);
+pub const VDS_E_REBOOT_REQUIRED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210996i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_REFS_FORMAT_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210746i32);
+pub const VDS_E_REFS_FORMAT_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210746i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_REPAIR_VOLUMESTATE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212192i32);
+pub const VDS_E_REPAIR_VOLUMESTATE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212192i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_REQUIRES_CONTIGUOUS_DISK_SPACE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212224i32);
+pub const VDS_E_REQUIRES_CONTIGUOUS_DISK_SPACE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212224i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_RETRY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212189i32);
+pub const VDS_E_RETRY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212189i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_REVERT_ON_CLOSE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212200i32);
+pub const VDS_E_REVERT_ON_CLOSE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212200i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_REVERT_ON_CLOSE_MISMATCH: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212190i32);
+pub const VDS_E_REVERT_ON_CLOSE_MISMATCH: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212190i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_REVERT_ON_CLOSE_SET: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212199i32);
+pub const VDS_E_REVERT_ON_CLOSE_SET: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212199i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SECTOR_SIZE_ERROR: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211229i32);
+pub const VDS_E_SECTOR_SIZE_ERROR: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211229i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SECURITY_INCOMPLETELY_SET: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211515i32);
+pub const VDS_E_SECURITY_INCOMPLETELY_SET: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211515i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SET_SAN_POLICY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211258i32);
+pub const VDS_E_SET_SAN_POLICY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211258i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SET_TUNNEL_MODE_OUTER_ADDRESS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211004i32);
+pub const VDS_E_SET_TUNNEL_MODE_OUTER_ADDRESS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211004i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SHRINK_DIRTY_VOLUME: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211878i32);
+pub const VDS_E_SHRINK_DIRTY_VOLUME: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211878i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SHRINK_EXTEND_UNALIGNED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210496i32);
+pub const VDS_E_SHRINK_EXTEND_UNALIGNED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210496i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SHRINK_IN_PROGRESS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211887i32);
+pub const VDS_E_SHRINK_IN_PROGRESS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211887i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SHRINK_LUN_NOT_UNMASKED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210979i32);
+pub const VDS_E_SHRINK_LUN_NOT_UNMASKED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210979i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SHRINK_OVER_DATA: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211242i32);
+pub const VDS_E_SHRINK_OVER_DATA: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211242i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SHRINK_SIZE_LESS_THAN_MIN: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211917i32);
+pub const VDS_E_SHRINK_SIZE_LESS_THAN_MIN: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211917i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SHRINK_SIZE_TOO_BIG: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211916i32);
+pub const VDS_E_SHRINK_SIZE_TOO_BIG: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211916i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SHRINK_UNKNOWN_FILESYSTEM: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210966i32);
+pub const VDS_E_SHRINK_UNKNOWN_FILESYSTEM: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210966i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SHRINK_USER_CANCELLED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211879i32);
+pub const VDS_E_SHRINK_USER_CANCELLED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211879i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SOURCE_IS_TARGET_PACK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211992i32);
+pub const VDS_E_SOURCE_IS_TARGET_PACK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211992i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SUBSYSTEM_ID_IS_NULL: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211001i32);
+pub const VDS_E_SUBSYSTEM_ID_IS_NULL: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211001i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_SYSTEM_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211247i32);
+pub const VDS_E_SYSTEM_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211247i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_TARGET_PACK_NOT_EMPTY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212003i32);
+pub const VDS_E_TARGET_PACK_NOT_EMPTY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212003i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_TARGET_PORTAL_NOT_FOUND: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211007i32);
+pub const VDS_E_TARGET_PORTAL_NOT_FOUND: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211007i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_TARGET_SPECIFIC_NOT_SUPPORTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211514i32);
+pub const VDS_E_TARGET_SPECIFIC_NOT_SUPPORTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211514i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_TIMEOUT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212193i32);
+pub const VDS_E_TIMEOUT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212193i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_UNABLE_TO_FIND_BOOT_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211261i32);
+pub const VDS_E_UNABLE_TO_FIND_BOOT_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211261i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_UNABLE_TO_FIND_SYSTEM_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211249i32);
+pub const VDS_E_UNABLE_TO_FIND_SYSTEM_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211249i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_UNEXPECTED_DISK_LAYOUT_CHANGE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211955i32);
+pub const VDS_E_UNEXPECTED_DISK_LAYOUT_CHANGE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211955i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_UNRECOVERABLE_ERROR: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212263i32);
+pub const VDS_E_UNRECOVERABLE_ERROR: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212263i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_UNRECOVERABLE_PROVIDER_ERROR: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211915i32);
+pub const VDS_E_UNRECOVERABLE_PROVIDER_ERROR: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211915i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VDISK_INVALID_OP_STATE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210982i32);
+pub const VDS_E_VDISK_INVALID_OP_STATE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210982i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VDISK_NOT_OPEN: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210983i32);
+pub const VDS_E_VDISK_NOT_OPEN: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210983i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VDISK_PATHNAME_INVALID: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210969i32);
+pub const VDS_E_VDISK_PATHNAME_INVALID: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210969i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_ALREADY_ATTACHED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210956i32);
+pub const VDS_E_VD_ALREADY_ATTACHED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210956i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_ALREADY_COMPACTING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210958i32);
+pub const VDS_E_VD_ALREADY_COMPACTING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210958i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_ALREADY_DETACHED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210955i32);
+pub const VDS_E_VD_ALREADY_DETACHED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210955i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_ALREADY_MERGING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210957i32);
+pub const VDS_E_VD_ALREADY_MERGING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210957i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_DISK_ALREADY_EXPANDING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210959i32);
+pub const VDS_E_VD_DISK_ALREADY_EXPANDING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210959i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_DISK_ALREADY_OPEN: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210960i32);
+pub const VDS_E_VD_DISK_ALREADY_OPEN: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210960i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_DISK_IS_COMPACTING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210963i32);
+pub const VDS_E_VD_DISK_IS_COMPACTING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210963i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_DISK_IS_EXPANDING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210964i32);
+pub const VDS_E_VD_DISK_IS_EXPANDING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210964i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_DISK_IS_MERGING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210962i32);
+pub const VDS_E_VD_DISK_IS_MERGING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210962i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_DISK_NOT_OPEN: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210965i32);
+pub const VDS_E_VD_DISK_NOT_OPEN: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210965i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_IS_ATTACHED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210961i32);
+pub const VDS_E_VD_IS_ATTACHED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210961i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_IS_BEING_ATTACHED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210953i32);
+pub const VDS_E_VD_IS_BEING_ATTACHED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210953i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_IS_BEING_DETACHED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210952i32);
+pub const VDS_E_VD_IS_BEING_DETACHED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210952i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VD_NOT_ATTACHED_READONLY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210954i32);
+pub const VDS_E_VD_NOT_ATTACHED_READONLY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210954i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_DISK_COUNT_MAX_EXCEEDED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211991i32);
+pub const VDS_E_VOLUME_DISK_COUNT_MAX_EXCEEDED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211991i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_EXTEND_FVE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211230i32);
+pub const VDS_E_VOLUME_EXTEND_FVE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211230i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_EXTEND_FVE_CORRUPT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211232i32);
+pub const VDS_E_VOLUME_EXTEND_FVE_CORRUPT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211232i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_EXTEND_FVE_LOCKED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211233i32);
+pub const VDS_E_VOLUME_EXTEND_FVE_LOCKED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211233i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_EXTEND_FVE_RECOVERY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211231i32);
+pub const VDS_E_VOLUME_EXTEND_FVE_RECOVERY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211231i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_GUID_PATHNAME_NOT_ALLOWED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147210995i32);
+pub const VDS_E_VOLUME_GUID_PATHNAME_NOT_ALLOWED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147210995i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_HAS_PATH: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212194i32);
+pub const VDS_E_VOLUME_HAS_PATH: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212194i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_HIDDEN: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211914i32);
+pub const VDS_E_VOLUME_HIDDEN: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211914i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_INCOMPLETE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212238i32);
+pub const VDS_E_VOLUME_INCOMPLETE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212238i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_INVALID_NAME: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212025i32);
+pub const VDS_E_VOLUME_INVALID_NAME: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212025i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_LENGTH_NOT_SECTOR_SIZE_MULTIPLE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211953i32);
+pub const VDS_E_VOLUME_LENGTH_NOT_SECTOR_SIZE_MULTIPLE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211953i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_MIRRORED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211896i32);
+pub const VDS_E_VOLUME_MIRRORED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211896i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_NOT_A_MIRROR: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212219i32);
+pub const VDS_E_VOLUME_NOT_A_MIRROR: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212219i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_NOT_FOUND_IN_PACK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211908i32);
+pub const VDS_E_VOLUME_NOT_FOUND_IN_PACK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211908i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_NOT_HEALTHY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212226i32);
+pub const VDS_E_VOLUME_NOT_HEALTHY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212226i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_NOT_MOUNTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212209i32);
+pub const VDS_E_VOLUME_NOT_MOUNTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212209i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_NOT_ONLINE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212227i32);
+pub const VDS_E_VOLUME_NOT_ONLINE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212227i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_NOT_RETAINED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211952i32);
+pub const VDS_E_VOLUME_NOT_RETAINED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211952i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_ON_DISK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212005i32);
+pub const VDS_E_VOLUME_ON_DISK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212005i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_PERMANENTLY_DISMOUNTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212195i32);
+pub const VDS_E_VOLUME_PERMANENTLY_DISMOUNTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212195i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_REGENERATING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211904i32);
+pub const VDS_E_VOLUME_REGENERATING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211904i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_RETAINED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211951i32);
+pub const VDS_E_VOLUME_RETAINED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211951i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_SHRINK_FVE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211243i32);
+pub const VDS_E_VOLUME_SHRINK_FVE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211243i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_SHRINK_FVE_CORRUPT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211245i32);
+pub const VDS_E_VOLUME_SHRINK_FVE_CORRUPT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211245i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_SHRINK_FVE_LOCKED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211246i32);
+pub const VDS_E_VOLUME_SHRINK_FVE_LOCKED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211246i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_SHRINK_FVE_RECOVERY: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211244i32);
+pub const VDS_E_VOLUME_SHRINK_FVE_RECOVERY: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211244i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_SIMPLE_SPANNED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211895i32);
+pub const VDS_E_VOLUME_SIMPLE_SPANNED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211895i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_SPANS_DISKS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212225i32);
+pub const VDS_E_VOLUME_SPANS_DISKS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212225i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_SYNCHRONIZING: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147211905i32);
+pub const VDS_E_VOLUME_SYNCHRONIZING: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147211905i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_TEMPORARILY_DISMOUNTED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212196i32);
+pub const VDS_E_VOLUME_TEMPORARILY_DISMOUNTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212196i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_TOO_BIG: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212243i32);
+pub const VDS_E_VOLUME_TOO_BIG: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212243i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_E_VOLUME_TOO_SMALL: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212244i32);
+pub const VDS_E_VOLUME_TOO_SMALL: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212244i32);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_FILE_SYSTEM_NOTIFICATION {
     pub ulEvent: VDS_NF_FILE_SYSTEM,
-    pub volumeId: ::windows::core::GUID,
+    pub volumeId: ::windows_core::GUID,
     pub dwPercentCompleted: u32,
 }
 impl ::core::marker::Copy for VDS_FILE_SYSTEM_NOTIFICATION {}
@@ -4141,12 +4141,12 @@ impl ::core::fmt::Debug for VDS_FILE_SYSTEM_NOTIFICATION {
         f.debug_struct("VDS_FILE_SYSTEM_NOTIFICATION").field("ulEvent", &self.ulEvent).field("volumeId", &self.volumeId).field("dwPercentCompleted", &self.dwPercentCompleted).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_FILE_SYSTEM_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_FILE_SYSTEM_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_FILE_SYSTEM_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_FILE_SYSTEM_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_FILE_SYSTEM_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_FILE_SYSTEM_NOTIFICATION {}
@@ -4190,7 +4190,7 @@ impl ::core::default::Default for VDS_FILE_SYSTEM_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_FILE_SYSTEM_TYPE {
+unsafe impl ::windows_core::Abi for VDS_FILE_SYSTEM_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_FILE_SYSTEM_TYPE {
@@ -4201,7 +4201,7 @@ impl ::core::fmt::Debug for VDS_FILE_SYSTEM_TYPE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_HBAPORT_PROP {
-    pub id: ::windows::core::GUID,
+    pub id: ::windows_core::GUID,
     pub wwnNode: VDS_WWN,
     pub wwnPort: VDS_WWN,
     pub r#type: VDS_HBAPORT_TYPE,
@@ -4220,12 +4220,12 @@ impl ::core::fmt::Debug for VDS_HBAPORT_PROP {
         f.debug_struct("VDS_HBAPORT_PROP").field("id", &self.id).field("wwnNode", &self.wwnNode).field("wwnPort", &self.wwnPort).field("type", &self.r#type).field("status", &self.status).field("ulPortSpeed", &self.ulPortSpeed).field("ulSupportedPortSpeed", &self.ulSupportedPortSpeed).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_HBAPORT_PROP {
+unsafe impl ::windows_core::Abi for VDS_HBAPORT_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_HBAPORT_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_HBAPORT_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_HBAPORT_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_HBAPORT_PROP {}
@@ -4261,7 +4261,7 @@ impl ::core::default::Default for VDS_HBAPORT_SPEED_FLAG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_HBAPORT_SPEED_FLAG {
+unsafe impl ::windows_core::Abi for VDS_HBAPORT_SPEED_FLAG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_HBAPORT_SPEED_FLAG {
@@ -4300,7 +4300,7 @@ impl ::core::default::Default for VDS_HBAPORT_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_HBAPORT_STATUS {
+unsafe impl ::windows_core::Abi for VDS_HBAPORT_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_HBAPORT_STATUS {
@@ -4345,7 +4345,7 @@ impl ::core::default::Default for VDS_HBAPORT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_HBAPORT_TYPE {
+unsafe impl ::windows_core::Abi for VDS_HBAPORT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_HBAPORT_TYPE {
@@ -4392,7 +4392,7 @@ impl ::core::default::Default for VDS_HEALTH {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_HEALTH {
+unsafe impl ::windows_core::Abi for VDS_HEALTH {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_HEALTH {
@@ -4457,13 +4457,13 @@ impl ::core::fmt::Debug for VDS_HINTS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for VDS_HINTS {
+unsafe impl ::windows_core::Abi for VDS_HINTS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for VDS_HINTS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_HINTS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_HINTS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4557,13 +4557,13 @@ impl ::core::fmt::Debug for VDS_HINTS2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for VDS_HINTS2 {
+unsafe impl ::windows_core::Abi for VDS_HINTS2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for VDS_HINTS2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_HINTS2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_HINTS2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4633,7 +4633,7 @@ impl ::core::default::Default for VDS_HWPROVIDER_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_HWPROVIDER_TYPE {
+unsafe impl ::windows_core::Abi for VDS_HWPROVIDER_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_HWPROVIDER_TYPE {
@@ -4661,12 +4661,12 @@ impl ::core::fmt::Debug for VDS_INTERCONNECT {
         f.debug_struct("VDS_INTERCONNECT").field("m_addressType", &self.m_addressType).field("m_cbPort", &self.m_cbPort).field("m_pbPort", &self.m_pbPort).field("m_cbAddress", &self.m_cbAddress).field("m_pbAddress", &self.m_pbAddress).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_INTERCONNECT {
+unsafe impl ::windows_core::Abi for VDS_INTERCONNECT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_INTERCONNECT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_INTERCONNECT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_INTERCONNECT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_INTERCONNECT {}
@@ -4702,7 +4702,7 @@ impl ::core::default::Default for VDS_INTERCONNECT_ADDRESS_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_INTERCONNECT_ADDRESS_TYPE {
+unsafe impl ::windows_core::Abi for VDS_INTERCONNECT_ADDRESS_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_INTERCONNECT_ADDRESS_TYPE {
@@ -4733,7 +4733,7 @@ impl ::core::default::Default for VDS_INTERCONNECT_FLAG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_INTERCONNECT_FLAG {
+unsafe impl ::windows_core::Abi for VDS_INTERCONNECT_FLAG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_INTERCONNECT_FLAG {
@@ -4763,12 +4763,12 @@ impl ::core::fmt::Debug for VDS_IPADDRESS {
         f.debug_struct("VDS_IPADDRESS").field("type", &self.r#type).field("ipv4Address", &self.ipv4Address).field("ipv6Address", &self.ipv6Address).field("ulIpv6FlowInfo", &self.ulIpv6FlowInfo).field("ulIpv6ScopeId", &self.ulIpv6ScopeId).field("wszTextAddress", &self.wszTextAddress).field("ulPort", &self.ulPort).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_IPADDRESS {
+unsafe impl ::windows_core::Abi for VDS_IPADDRESS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_IPADDRESS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_IPADDRESS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_IPADDRESS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_IPADDRESS {}
@@ -4800,7 +4800,7 @@ impl ::core::default::Default for VDS_IPADDRESS_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_IPADDRESS_TYPE {
+unsafe impl ::windows_core::Abi for VDS_IPADDRESS_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_IPADDRESS_TYPE {
@@ -4829,7 +4829,7 @@ impl ::core::default::Default for VDS_ISCSI_AUTH_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ISCSI_AUTH_TYPE {
+unsafe impl ::windows_core::Abi for VDS_ISCSI_AUTH_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_ISCSI_AUTH_TYPE {
@@ -4840,8 +4840,8 @@ impl ::core::fmt::Debug for VDS_ISCSI_AUTH_TYPE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ISCSI_INITIATOR_ADAPTER_PROP {
-    pub id: ::windows::core::GUID,
-    pub pwszName: ::windows::core::PWSTR,
+    pub id: ::windows_core::GUID,
+    pub pwszName: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for VDS_ISCSI_INITIATOR_ADAPTER_PROP {}
 impl ::core::clone::Clone for VDS_ISCSI_INITIATOR_ADAPTER_PROP {
@@ -4854,12 +4854,12 @@ impl ::core::fmt::Debug for VDS_ISCSI_INITIATOR_ADAPTER_PROP {
         f.debug_struct("VDS_ISCSI_INITIATOR_ADAPTER_PROP").field("id", &self.id).field("pwszName", &self.pwszName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ISCSI_INITIATOR_ADAPTER_PROP {
+unsafe impl ::windows_core::Abi for VDS_ISCSI_INITIATOR_ADAPTER_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_ISCSI_INITIATOR_ADAPTER_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_INITIATOR_ADAPTER_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_INITIATOR_ADAPTER_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_ISCSI_INITIATOR_ADAPTER_PROP {}
@@ -4871,7 +4871,7 @@ impl ::core::default::Default for VDS_ISCSI_INITIATOR_ADAPTER_PROP {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ISCSI_INITIATOR_PORTAL_PROP {
-    pub id: ::windows::core::GUID,
+    pub id: ::windows_core::GUID,
     pub address: VDS_IPADDRESS,
     pub ulPortIndex: u32,
 }
@@ -4886,12 +4886,12 @@ impl ::core::fmt::Debug for VDS_ISCSI_INITIATOR_PORTAL_PROP {
         f.debug_struct("VDS_ISCSI_INITIATOR_PORTAL_PROP").field("id", &self.id).field("address", &self.address).field("ulPortIndex", &self.ulPortIndex).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ISCSI_INITIATOR_PORTAL_PROP {
+unsafe impl ::windows_core::Abi for VDS_ISCSI_INITIATOR_PORTAL_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_ISCSI_INITIATOR_PORTAL_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_INITIATOR_PORTAL_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_INITIATOR_PORTAL_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_ISCSI_INITIATOR_PORTAL_PROP {}
@@ -4929,7 +4929,7 @@ impl ::core::default::Default for VDS_ISCSI_IPSEC_FLAG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ISCSI_IPSEC_FLAG {
+unsafe impl ::windows_core::Abi for VDS_ISCSI_IPSEC_FLAG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_ISCSI_IPSEC_FLAG {
@@ -4954,12 +4954,12 @@ impl ::core::fmt::Debug for VDS_ISCSI_IPSEC_KEY {
         f.debug_struct("VDS_ISCSI_IPSEC_KEY").field("pKey", &self.pKey).field("ulKeySize", &self.ulKeySize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ISCSI_IPSEC_KEY {
+unsafe impl ::windows_core::Abi for VDS_ISCSI_IPSEC_KEY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_ISCSI_IPSEC_KEY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_IPSEC_KEY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_IPSEC_KEY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_ISCSI_IPSEC_KEY {}
@@ -4987,7 +4987,7 @@ impl ::core::default::Default for VDS_ISCSI_LOGIN_FLAG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ISCSI_LOGIN_FLAG {
+unsafe impl ::windows_core::Abi for VDS_ISCSI_LOGIN_FLAG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_ISCSI_LOGIN_FLAG {
@@ -5016,7 +5016,7 @@ impl ::core::default::Default for VDS_ISCSI_LOGIN_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ISCSI_LOGIN_TYPE {
+unsafe impl ::windows_core::Abi for VDS_ISCSI_LOGIN_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_ISCSI_LOGIN_TYPE {
@@ -5027,7 +5027,7 @@ impl ::core::fmt::Debug for VDS_ISCSI_LOGIN_TYPE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ISCSI_PORTALGROUP_PROP {
-    pub id: ::windows::core::GUID,
+    pub id: ::windows_core::GUID,
     pub tag: u16,
 }
 impl ::core::marker::Copy for VDS_ISCSI_PORTALGROUP_PROP {}
@@ -5041,12 +5041,12 @@ impl ::core::fmt::Debug for VDS_ISCSI_PORTALGROUP_PROP {
         f.debug_struct("VDS_ISCSI_PORTALGROUP_PROP").field("id", &self.id).field("tag", &self.tag).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ISCSI_PORTALGROUP_PROP {
+unsafe impl ::windows_core::Abi for VDS_ISCSI_PORTALGROUP_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_ISCSI_PORTALGROUP_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_PORTALGROUP_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_PORTALGROUP_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_ISCSI_PORTALGROUP_PROP {}
@@ -5058,7 +5058,7 @@ impl ::core::default::Default for VDS_ISCSI_PORTALGROUP_PROP {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ISCSI_PORTAL_PROP {
-    pub id: ::windows::core::GUID,
+    pub id: ::windows_core::GUID,
     pub address: VDS_IPADDRESS,
     pub status: VDS_ISCSI_PORTAL_STATUS,
 }
@@ -5073,12 +5073,12 @@ impl ::core::fmt::Debug for VDS_ISCSI_PORTAL_PROP {
         f.debug_struct("VDS_ISCSI_PORTAL_PROP").field("id", &self.id).field("address", &self.address).field("status", &self.status).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ISCSI_PORTAL_PROP {
+unsafe impl ::windows_core::Abi for VDS_ISCSI_PORTAL_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_ISCSI_PORTAL_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_PORTAL_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_PORTAL_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_ISCSI_PORTAL_PROP {}
@@ -5112,7 +5112,7 @@ impl ::core::default::Default for VDS_ISCSI_PORTAL_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ISCSI_PORTAL_STATUS {
+unsafe impl ::windows_core::Abi for VDS_ISCSI_PORTAL_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_ISCSI_PORTAL_STATUS {
@@ -5137,12 +5137,12 @@ impl ::core::fmt::Debug for VDS_ISCSI_SHARED_SECRET {
         f.debug_struct("VDS_ISCSI_SHARED_SECRET").field("pSharedSecret", &self.pSharedSecret).field("ulSharedSecretSize", &self.ulSharedSecretSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_ISCSI_SHARED_SECRET {
+unsafe impl ::windows_core::Abi for VDS_ISCSI_SHARED_SECRET {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_ISCSI_SHARED_SECRET {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_SHARED_SECRET>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_SHARED_SECRET>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_ISCSI_SHARED_SECRET {}
@@ -5155,9 +5155,9 @@ impl ::core::default::Default for VDS_ISCSI_SHARED_SECRET {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct VDS_ISCSI_TARGET_PROP {
-    pub id: ::windows::core::GUID,
-    pub pwszIscsiName: ::windows::core::PWSTR,
-    pub pwszFriendlyName: ::windows::core::PWSTR,
+    pub id: ::windows_core::GUID,
+    pub pwszIscsiName: ::windows_core::PWSTR,
+    pub pwszFriendlyName: ::windows_core::PWSTR,
     pub bChapEnabled: super::super::Foundation::BOOL,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5175,13 +5175,13 @@ impl ::core::fmt::Debug for VDS_ISCSI_TARGET_PROP {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for VDS_ISCSI_TARGET_PROP {
+unsafe impl ::windows_core::Abi for VDS_ISCSI_TARGET_PROP {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for VDS_ISCSI_TARGET_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_TARGET_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_ISCSI_TARGET_PROP>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5223,7 +5223,7 @@ impl ::core::default::Default for VDS_LOADBALANCE_POLICY_ENUM {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_LOADBALANCE_POLICY_ENUM {
+unsafe impl ::windows_core::Abi for VDS_LOADBALANCE_POLICY_ENUM {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_LOADBALANCE_POLICY_ENUM {
@@ -5264,7 +5264,7 @@ impl ::core::default::Default for VDS_LUN_FLAG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_LUN_FLAG {
+unsafe impl ::windows_core::Abi for VDS_LUN_FLAG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_LUN_FLAG {
@@ -5285,7 +5285,7 @@ pub struct VDS_LUN_INFORMATION {
     pub m_szProductId: *mut u8,
     pub m_szProductRevision: *mut u8,
     pub m_szSerialNumber: *mut u8,
-    pub m_diskSignature: ::windows::core::GUID,
+    pub m_diskSignature: ::windows_core::GUID,
     pub m_deviceIdDescriptor: VDS_STORAGE_DEVICE_ID_DESCRIPTOR,
     pub m_cInterconnects: u32,
     pub m_rgInterconnects: *mut VDS_INTERCONNECT,
@@ -5319,13 +5319,13 @@ impl ::core::fmt::Debug for VDS_LUN_INFORMATION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for VDS_LUN_INFORMATION {
+unsafe impl ::windows_core::Abi for VDS_LUN_INFORMATION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for VDS_LUN_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_LUN_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_LUN_INFORMATION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5340,7 +5340,7 @@ impl ::core::default::Default for VDS_LUN_INFORMATION {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_LUN_NOTIFICATION {
     pub ulEvent: VDS_NF_LUN,
-    pub LunId: ::windows::core::GUID,
+    pub LunId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_LUN_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_LUN_NOTIFICATION {
@@ -5353,12 +5353,12 @@ impl ::core::fmt::Debug for VDS_LUN_NOTIFICATION {
         f.debug_struct("VDS_LUN_NOTIFICATION").field("ulEvent", &self.ulEvent).field("LunId", &self.LunId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_LUN_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_LUN_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_LUN_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_LUN_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_LUN_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_LUN_NOTIFICATION {}
@@ -5384,7 +5384,7 @@ impl ::core::default::Default for VDS_LUN_PLEX_FLAG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_LUN_PLEX_FLAG {
+unsafe impl ::windows_core::Abi for VDS_LUN_PLEX_FLAG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_LUN_PLEX_FLAG {
@@ -5395,7 +5395,7 @@ impl ::core::fmt::Debug for VDS_LUN_PLEX_FLAG {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_LUN_PLEX_PROP {
-    pub id: ::windows::core::GUID,
+    pub id: ::windows_core::GUID,
     pub ullSize: u64,
     pub r#type: VDS_LUN_PLEX_TYPE,
     pub status: VDS_LUN_PLEX_STATUS,
@@ -5416,12 +5416,12 @@ impl ::core::fmt::Debug for VDS_LUN_PLEX_PROP {
         f.debug_struct("VDS_LUN_PLEX_PROP").field("id", &self.id).field("ullSize", &self.ullSize).field("type", &self.r#type).field("status", &self.status).field("health", &self.health).field("TransitionState", &self.TransitionState).field("ulFlags", &self.ulFlags).field("ulStripeSize", &self.ulStripeSize).field("sRebuildPriority", &self.sRebuildPriority).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_LUN_PLEX_PROP {
+unsafe impl ::windows_core::Abi for VDS_LUN_PLEX_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_LUN_PLEX_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_LUN_PLEX_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_LUN_PLEX_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_LUN_PLEX_PROP {}
@@ -5455,7 +5455,7 @@ impl ::core::default::Default for VDS_LUN_PLEX_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_LUN_PLEX_STATUS {
+unsafe impl ::windows_core::Abi for VDS_LUN_PLEX_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_LUN_PLEX_STATUS {
@@ -5514,7 +5514,7 @@ impl ::core::default::Default for VDS_LUN_PLEX_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_LUN_PLEX_TYPE {
+unsafe impl ::windows_core::Abi for VDS_LUN_PLEX_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_LUN_PLEX_TYPE {
@@ -5525,11 +5525,11 @@ impl ::core::fmt::Debug for VDS_LUN_PLEX_TYPE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_LUN_PROP {
-    pub id: ::windows::core::GUID,
+    pub id: ::windows_core::GUID,
     pub ullSize: u64,
-    pub pwszFriendlyName: ::windows::core::PWSTR,
-    pub pwszIdentification: ::windows::core::PWSTR,
-    pub pwszUnmaskingList: ::windows::core::PWSTR,
+    pub pwszFriendlyName: ::windows_core::PWSTR,
+    pub pwszIdentification: ::windows_core::PWSTR,
+    pub pwszUnmaskingList: ::windows_core::PWSTR,
     pub ulFlags: u32,
     pub r#type: VDS_LUN_TYPE,
     pub status: VDS_LUN_STATUS,
@@ -5548,12 +5548,12 @@ impl ::core::fmt::Debug for VDS_LUN_PROP {
         f.debug_struct("VDS_LUN_PROP").field("id", &self.id).field("ullSize", &self.ullSize).field("pwszFriendlyName", &self.pwszFriendlyName).field("pwszIdentification", &self.pwszIdentification).field("pwszUnmaskingList", &self.pwszUnmaskingList).field("ulFlags", &self.ulFlags).field("type", &self.r#type).field("status", &self.status).field("health", &self.health).field("TransitionState", &self.TransitionState).field("sRebuildPriority", &self.sRebuildPriority).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_LUN_PROP {
+unsafe impl ::windows_core::Abi for VDS_LUN_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_LUN_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_LUN_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_LUN_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_LUN_PROP {}
@@ -5587,7 +5587,7 @@ impl ::core::default::Default for VDS_LUN_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_LUN_STATUS {
+unsafe impl ::windows_core::Abi for VDS_LUN_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_LUN_STATUS {
@@ -5660,7 +5660,7 @@ impl ::core::default::Default for VDS_LUN_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_LUN_TYPE {
+unsafe impl ::windows_core::Abi for VDS_LUN_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_LUN_TYPE {
@@ -5693,7 +5693,7 @@ impl ::core::default::Default for VDS_MAINTENANCE_OPERATION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_MAINTENANCE_OPERATION {
+unsafe impl ::windows_core::Abi for VDS_MAINTENANCE_OPERATION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_MAINTENANCE_OPERATION {
@@ -5705,7 +5705,7 @@ impl ::core::fmt::Debug for VDS_MAINTENANCE_OPERATION {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_MOUNT_POINT_NOTIFICATION {
     pub ulEvent: u32,
-    pub volumeId: ::windows::core::GUID,
+    pub volumeId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_MOUNT_POINT_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_MOUNT_POINT_NOTIFICATION {
@@ -5718,12 +5718,12 @@ impl ::core::fmt::Debug for VDS_MOUNT_POINT_NOTIFICATION {
         f.debug_struct("VDS_MOUNT_POINT_NOTIFICATION").field("ulEvent", &self.ulEvent).field("volumeId", &self.volumeId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_MOUNT_POINT_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_MOUNT_POINT_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_MOUNT_POINT_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_MOUNT_POINT_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_MOUNT_POINT_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_MOUNT_POINT_NOTIFICATION {}
@@ -5755,7 +5755,7 @@ impl ::core::default::Default for VDS_NF_CONTROLLER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_NF_CONTROLLER {
+unsafe impl ::windows_core::Abi for VDS_NF_CONTROLLER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_NF_CONTROLLER {
@@ -5784,7 +5784,7 @@ impl ::core::default::Default for VDS_NF_DISK {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_NF_DISK {
+unsafe impl ::windows_core::Abi for VDS_NF_DISK {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_NF_DISK {
@@ -5815,7 +5815,7 @@ impl ::core::default::Default for VDS_NF_DRIVE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_NF_DRIVE {
+unsafe impl ::windows_core::Abi for VDS_NF_DRIVE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_NF_DRIVE {
@@ -5846,7 +5846,7 @@ impl ::core::default::Default for VDS_NF_FILE_SYSTEM {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_NF_FILE_SYSTEM {
+unsafe impl ::windows_core::Abi for VDS_NF_FILE_SYSTEM {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_NF_FILE_SYSTEM {
@@ -5877,7 +5877,7 @@ impl ::core::default::Default for VDS_NF_LUN {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_NF_LUN {
+unsafe impl ::windows_core::Abi for VDS_NF_LUN {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_NF_LUN {
@@ -5908,7 +5908,7 @@ impl ::core::default::Default for VDS_NF_PACK {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_NF_PACK {
+unsafe impl ::windows_core::Abi for VDS_NF_PACK {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_NF_PACK {
@@ -5945,7 +5945,7 @@ impl ::core::default::Default for VDS_NF_PORT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_NF_PORT {
+unsafe impl ::windows_core::Abi for VDS_NF_PORT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_NF_PORT {
@@ -5999,12 +5999,12 @@ impl ::core::clone::Clone for VDS_NOTIFICATION {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VDS_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_NOTIFICATION {}
@@ -6039,12 +6039,12 @@ impl ::core::clone::Clone for VDS_NOTIFICATION_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VDS_NOTIFICATION_0 {
+unsafe impl ::windows_core::Abi for VDS_NOTIFICATION_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_NOTIFICATION_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_NOTIFICATION_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_NOTIFICATION_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_NOTIFICATION_0 {}
@@ -6102,7 +6102,7 @@ impl ::core::default::Default for VDS_NOTIFICATION_TARGET_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_NOTIFICATION_TARGET_TYPE {
+unsafe impl ::windows_core::Abi for VDS_NOTIFICATION_TARGET_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_NOTIFICATION_TARGET_TYPE {
@@ -6171,7 +6171,7 @@ impl ::core::default::Default for VDS_OBJECT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_OBJECT_TYPE {
+unsafe impl ::windows_core::Abi for VDS_OBJECT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_OBJECT_TYPE {
@@ -6183,7 +6183,7 @@ impl ::core::fmt::Debug for VDS_OBJECT_TYPE {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_PACK_NOTIFICATION {
     pub ulEvent: VDS_NF_PACK,
-    pub packId: ::windows::core::GUID,
+    pub packId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_PACK_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_PACK_NOTIFICATION {
@@ -6196,12 +6196,12 @@ impl ::core::fmt::Debug for VDS_PACK_NOTIFICATION {
         f.debug_struct("VDS_PACK_NOTIFICATION").field("ulEvent", &self.ulEvent).field("packId", &self.packId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PACK_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_PACK_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_PACK_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PACK_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PACK_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_PACK_NOTIFICATION {}
@@ -6214,7 +6214,7 @@ impl ::core::default::Default for VDS_PACK_NOTIFICATION {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_PARTITION_NOTIFICATION {
     pub ulEvent: u32,
-    pub diskId: ::windows::core::GUID,
+    pub diskId: ::windows_core::GUID,
     pub ullOffset: u64,
 }
 impl ::core::marker::Copy for VDS_PARTITION_NOTIFICATION {}
@@ -6228,12 +6228,12 @@ impl ::core::fmt::Debug for VDS_PARTITION_NOTIFICATION {
         f.debug_struct("VDS_PARTITION_NOTIFICATION").field("ulEvent", &self.ulEvent).field("diskId", &self.diskId).field("ullOffset", &self.ullOffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PARTITION_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_PARTITION_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_PARTITION_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PARTITION_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PARTITION_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_PARTITION_NOTIFICATION {}
@@ -6259,12 +6259,12 @@ impl ::core::fmt::Debug for VDS_PATH_ID {
         f.debug_struct("VDS_PATH_ID").field("ullSourceId", &self.ullSourceId).field("ullPathId", &self.ullPathId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PATH_ID {
+unsafe impl ::windows_core::Abi for VDS_PATH_ID {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_PATH_ID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PATH_ID>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PATH_ID>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_PATH_ID {}
@@ -6289,12 +6289,12 @@ impl ::core::clone::Clone for VDS_PATH_INFO {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PATH_INFO {
+unsafe impl ::windows_core::Abi for VDS_PATH_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_PATH_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PATH_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PATH_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_PATH_INFO {}
@@ -6306,8 +6306,8 @@ impl ::core::default::Default for VDS_PATH_INFO {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub union VDS_PATH_INFO_0 {
-    pub controllerPortId: ::windows::core::GUID,
-    pub targetPortalId: ::windows::core::GUID,
+    pub controllerPortId: ::windows_core::GUID,
+    pub targetPortalId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_PATH_INFO_0 {}
 impl ::core::clone::Clone for VDS_PATH_INFO_0 {
@@ -6315,12 +6315,12 @@ impl ::core::clone::Clone for VDS_PATH_INFO_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PATH_INFO_0 {
+unsafe impl ::windows_core::Abi for VDS_PATH_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_PATH_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PATH_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PATH_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_PATH_INFO_0 {}
@@ -6332,8 +6332,8 @@ impl ::core::default::Default for VDS_PATH_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub union VDS_PATH_INFO_1 {
-    pub hbaPortId: ::windows::core::GUID,
-    pub initiatorAdapterId: ::windows::core::GUID,
+    pub hbaPortId: ::windows_core::GUID,
+    pub initiatorAdapterId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_PATH_INFO_1 {}
 impl ::core::clone::Clone for VDS_PATH_INFO_1 {
@@ -6341,12 +6341,12 @@ impl ::core::clone::Clone for VDS_PATH_INFO_1 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PATH_INFO_1 {
+unsafe impl ::windows_core::Abi for VDS_PATH_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_PATH_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PATH_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PATH_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_PATH_INFO_1 {}
@@ -6367,12 +6367,12 @@ impl ::core::clone::Clone for VDS_PATH_INFO_2 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PATH_INFO_2 {
+unsafe impl ::windows_core::Abi for VDS_PATH_INFO_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_PATH_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PATH_INFO_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PATH_INFO_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_PATH_INFO_2 {}
@@ -6404,13 +6404,13 @@ impl ::core::fmt::Debug for VDS_PATH_POLICY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for VDS_PATH_POLICY {
+unsafe impl ::windows_core::Abi for VDS_PATH_POLICY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for VDS_PATH_POLICY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PATH_POLICY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PATH_POLICY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6444,7 +6444,7 @@ impl ::core::default::Default for VDS_PATH_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PATH_STATUS {
+unsafe impl ::windows_core::Abi for VDS_PATH_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_PATH_STATUS {
@@ -6459,7 +6459,7 @@ pub struct VDS_POOL_ATTRIBUTES {
     pub ullAttributeMask: u64,
     pub raidType: VDS_RAID_TYPE,
     pub busType: VDS_STORAGE_BUS_TYPE,
-    pub pwszIntendedUsage: ::windows::core::PWSTR,
+    pub pwszIntendedUsage: ::windows_core::PWSTR,
     pub bSpinDown: super::super::Foundation::BOOL,
     pub bIsThinProvisioned: super::super::Foundation::BOOL,
     pub ullProvisionedSpace: u64,
@@ -6549,13 +6549,13 @@ impl ::core::fmt::Debug for VDS_POOL_ATTRIBUTES {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for VDS_POOL_ATTRIBUTES {
+unsafe impl ::windows_core::Abi for VDS_POOL_ATTRIBUTES {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for VDS_POOL_ATTRIBUTES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_POOL_ATTRIBUTES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_POOL_ATTRIBUTES>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6625,8 +6625,8 @@ pub const VDS_POOL_ATTRIB_THIN_PROVISION: i32 = 8i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_POOL_CUSTOM_ATTRIBUTES {
-    pub pwszName: ::windows::core::PWSTR,
-    pub pwszValue: ::windows::core::PWSTR,
+    pub pwszName: ::windows_core::PWSTR,
+    pub pwszValue: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for VDS_POOL_CUSTOM_ATTRIBUTES {}
 impl ::core::clone::Clone for VDS_POOL_CUSTOM_ATTRIBUTES {
@@ -6639,12 +6639,12 @@ impl ::core::fmt::Debug for VDS_POOL_CUSTOM_ATTRIBUTES {
         f.debug_struct("VDS_POOL_CUSTOM_ATTRIBUTES").field("pwszName", &self.pwszName).field("pwszValue", &self.pwszValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_POOL_CUSTOM_ATTRIBUTES {
+unsafe impl ::windows_core::Abi for VDS_POOL_CUSTOM_ATTRIBUTES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_POOL_CUSTOM_ATTRIBUTES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_POOL_CUSTOM_ATTRIBUTES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_POOL_CUSTOM_ATTRIBUTES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_POOL_CUSTOM_ATTRIBUTES {}
@@ -6657,7 +6657,7 @@ impl ::core::default::Default for VDS_POOL_CUSTOM_ATTRIBUTES {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_PORTAL_GROUP_NOTIFICATION {
     pub ulEvent: u32,
-    pub portalGroupId: ::windows::core::GUID,
+    pub portalGroupId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_PORTAL_GROUP_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_PORTAL_GROUP_NOTIFICATION {
@@ -6670,12 +6670,12 @@ impl ::core::fmt::Debug for VDS_PORTAL_GROUP_NOTIFICATION {
         f.debug_struct("VDS_PORTAL_GROUP_NOTIFICATION").field("ulEvent", &self.ulEvent).field("portalGroupId", &self.portalGroupId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PORTAL_GROUP_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_PORTAL_GROUP_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_PORTAL_GROUP_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PORTAL_GROUP_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PORTAL_GROUP_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_PORTAL_GROUP_NOTIFICATION {}
@@ -6688,7 +6688,7 @@ impl ::core::default::Default for VDS_PORTAL_GROUP_NOTIFICATION {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_PORTAL_NOTIFICATION {
     pub ulEvent: u32,
-    pub portalId: ::windows::core::GUID,
+    pub portalId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_PORTAL_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_PORTAL_NOTIFICATION {
@@ -6701,12 +6701,12 @@ impl ::core::fmt::Debug for VDS_PORTAL_NOTIFICATION {
         f.debug_struct("VDS_PORTAL_NOTIFICATION").field("ulEvent", &self.ulEvent).field("portalId", &self.portalId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PORTAL_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_PORTAL_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_PORTAL_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PORTAL_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PORTAL_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_PORTAL_NOTIFICATION {}
@@ -6719,7 +6719,7 @@ impl ::core::default::Default for VDS_PORTAL_NOTIFICATION {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_PORT_NOTIFICATION {
     pub ulEvent: VDS_NF_PORT,
-    pub portId: ::windows::core::GUID,
+    pub portId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_PORT_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_PORT_NOTIFICATION {
@@ -6732,12 +6732,12 @@ impl ::core::fmt::Debug for VDS_PORT_NOTIFICATION {
         f.debug_struct("VDS_PORT_NOTIFICATION").field("ulEvent", &self.ulEvent).field("portId", &self.portId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PORT_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_PORT_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_PORT_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PORT_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PORT_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_PORT_NOTIFICATION {}
@@ -6749,9 +6749,9 @@ impl ::core::default::Default for VDS_PORT_NOTIFICATION {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_PORT_PROP {
-    pub id: ::windows::core::GUID,
-    pub pwszFriendlyName: ::windows::core::PWSTR,
-    pub pwszIdentification: ::windows::core::PWSTR,
+    pub id: ::windows_core::GUID,
+    pub pwszFriendlyName: ::windows_core::PWSTR,
+    pub pwszIdentification: ::windows_core::PWSTR,
     pub status: VDS_PORT_STATUS,
 }
 impl ::core::marker::Copy for VDS_PORT_PROP {}
@@ -6765,12 +6765,12 @@ impl ::core::fmt::Debug for VDS_PORT_PROP {
         f.debug_struct("VDS_PORT_PROP").field("id", &self.id).field("pwszFriendlyName", &self.pwszFriendlyName).field("pwszIdentification", &self.pwszIdentification).field("status", &self.status).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PORT_PROP {
+unsafe impl ::windows_core::Abi for VDS_PORT_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_PORT_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PORT_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PORT_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_PORT_PROP {}
@@ -6806,7 +6806,7 @@ impl ::core::default::Default for VDS_PORT_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PORT_STATUS {
+unsafe impl ::windows_core::Abi for VDS_PORT_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_PORT_STATUS {
@@ -6849,7 +6849,7 @@ impl ::core::default::Default for VDS_PROVIDER_FLAG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PROVIDER_FLAG {
+unsafe impl ::windows_core::Abi for VDS_PROVIDER_FLAG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_PROVIDER_FLAG {
@@ -6886,7 +6886,7 @@ impl ::core::default::Default for VDS_PROVIDER_LBSUPPORT_FLAG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PROVIDER_LBSUPPORT_FLAG {
+unsafe impl ::windows_core::Abi for VDS_PROVIDER_LBSUPPORT_FLAG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_PROVIDER_LBSUPPORT_FLAG {
@@ -6897,10 +6897,10 @@ impl ::core::fmt::Debug for VDS_PROVIDER_LBSUPPORT_FLAG {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_PROVIDER_PROP {
-    pub id: ::windows::core::GUID,
-    pub pwszName: ::windows::core::PWSTR,
-    pub guidVersionId: ::windows::core::GUID,
-    pub pwszVersion: ::windows::core::PWSTR,
+    pub id: ::windows_core::GUID,
+    pub pwszName: ::windows_core::PWSTR,
+    pub guidVersionId: ::windows_core::GUID,
+    pub pwszVersion: ::windows_core::PWSTR,
     pub r#type: VDS_PROVIDER_TYPE,
     pub ulFlags: u32,
     pub ulStripeSizeFlags: u32,
@@ -6917,12 +6917,12 @@ impl ::core::fmt::Debug for VDS_PROVIDER_PROP {
         f.debug_struct("VDS_PROVIDER_PROP").field("id", &self.id).field("pwszName", &self.pwszName).field("guidVersionId", &self.guidVersionId).field("pwszVersion", &self.pwszVersion).field("type", &self.r#type).field("ulFlags", &self.ulFlags).field("ulStripeSizeFlags", &self.ulStripeSizeFlags).field("sRebuildPriority", &self.sRebuildPriority).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PROVIDER_PROP {
+unsafe impl ::windows_core::Abi for VDS_PROVIDER_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_PROVIDER_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PROVIDER_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_PROVIDER_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_PROVIDER_PROP {}
@@ -6956,7 +6956,7 @@ impl ::core::default::Default for VDS_PROVIDER_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_PROVIDER_TYPE {
+unsafe impl ::windows_core::Abi for VDS_PROVIDER_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_PROVIDER_TYPE {
@@ -7017,7 +7017,7 @@ impl ::core::default::Default for VDS_RAID_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_RAID_TYPE {
+unsafe impl ::windows_core::Abi for VDS_RAID_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_RAID_TYPE {
@@ -7050,7 +7050,7 @@ impl ::core::default::Default for VDS_RECOVER_ACTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_RECOVER_ACTION {
+unsafe impl ::windows_core::Abi for VDS_RECOVER_ACTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_RECOVER_ACTION {
@@ -7075,12 +7075,12 @@ impl ::core::fmt::Debug for VDS_SERVICE_NOTIFICATION {
         f.debug_struct("VDS_SERVICE_NOTIFICATION").field("ulEvent", &self.ulEvent).field("action", &self.action).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_SERVICE_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_SERVICE_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_SERVICE_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_SERVICE_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_SERVICE_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_SERVICE_NOTIFICATION {}
@@ -7148,7 +7148,7 @@ impl ::core::default::Default for VDS_STORAGE_BUS_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_STORAGE_BUS_TYPE {
+unsafe impl ::windows_core::Abi for VDS_STORAGE_BUS_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_STORAGE_BUS_TYPE {
@@ -7174,12 +7174,12 @@ impl ::core::fmt::Debug for VDS_STORAGE_DEVICE_ID_DESCRIPTOR {
         f.debug_struct("VDS_STORAGE_DEVICE_ID_DESCRIPTOR").field("m_version", &self.m_version).field("m_cIdentifiers", &self.m_cIdentifiers).field("m_rgIdentifiers", &self.m_rgIdentifiers).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_STORAGE_DEVICE_ID_DESCRIPTOR {
+unsafe impl ::windows_core::Abi for VDS_STORAGE_DEVICE_ID_DESCRIPTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_STORAGE_DEVICE_ID_DESCRIPTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_STORAGE_DEVICE_ID_DESCRIPTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_STORAGE_DEVICE_ID_DESCRIPTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_STORAGE_DEVICE_ID_DESCRIPTOR {}
@@ -7207,12 +7207,12 @@ impl ::core::fmt::Debug for VDS_STORAGE_IDENTIFIER {
         f.debug_struct("VDS_STORAGE_IDENTIFIER").field("m_CodeSet", &self.m_CodeSet).field("m_Type", &self.m_Type).field("m_cbIdentifier", &self.m_cbIdentifier).field("m_rgbIdentifier", &self.m_rgbIdentifier).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_STORAGE_IDENTIFIER {
+unsafe impl ::windows_core::Abi for VDS_STORAGE_IDENTIFIER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_STORAGE_IDENTIFIER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_STORAGE_IDENTIFIER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_STORAGE_IDENTIFIER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_STORAGE_IDENTIFIER {}
@@ -7244,7 +7244,7 @@ impl ::core::default::Default for VDS_STORAGE_IDENTIFIER_CODE_SET {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_STORAGE_IDENTIFIER_CODE_SET {
+unsafe impl ::windows_core::Abi for VDS_STORAGE_IDENTIFIER_CODE_SET {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_STORAGE_IDENTIFIER_CODE_SET {
@@ -7285,7 +7285,7 @@ impl ::core::default::Default for VDS_STORAGE_IDENTIFIER_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_STORAGE_IDENTIFIER_TYPE {
+unsafe impl ::windows_core::Abi for VDS_STORAGE_IDENTIFIER_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_STORAGE_IDENTIFIER_TYPE {
@@ -7297,7 +7297,7 @@ impl ::core::fmt::Debug for VDS_STORAGE_IDENTIFIER_TYPE {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct VDS_STORAGE_POOL_DRIVE_EXTENT {
-    pub id: ::windows::core::GUID,
+    pub id: ::windows_core::GUID,
     pub ullSize: u64,
     pub bUsed: super::super::Foundation::BOOL,
 }
@@ -7316,13 +7316,13 @@ impl ::core::fmt::Debug for VDS_STORAGE_POOL_DRIVE_EXTENT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for VDS_STORAGE_POOL_DRIVE_EXTENT {
+unsafe impl ::windows_core::Abi for VDS_STORAGE_POOL_DRIVE_EXTENT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for VDS_STORAGE_POOL_DRIVE_EXTENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_STORAGE_POOL_DRIVE_EXTENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_STORAGE_POOL_DRIVE_EXTENT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7336,12 +7336,12 @@ impl ::core::default::Default for VDS_STORAGE_POOL_DRIVE_EXTENT {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_STORAGE_POOL_PROP {
-    pub id: ::windows::core::GUID,
+    pub id: ::windows_core::GUID,
     pub status: VDS_STORAGE_POOL_STATUS,
     pub health: VDS_HEALTH,
     pub r#type: VDS_STORAGE_POOL_TYPE,
-    pub pwszName: ::windows::core::PWSTR,
-    pub pwszDescription: ::windows::core::PWSTR,
+    pub pwszName: ::windows_core::PWSTR,
+    pub pwszDescription: ::windows_core::PWSTR,
     pub ullTotalConsumedSpace: u64,
     pub ullTotalManagedSpace: u64,
     pub ullRemainingFreeSpace: u64,
@@ -7357,12 +7357,12 @@ impl ::core::fmt::Debug for VDS_STORAGE_POOL_PROP {
         f.debug_struct("VDS_STORAGE_POOL_PROP").field("id", &self.id).field("status", &self.status).field("health", &self.health).field("type", &self.r#type).field("pwszName", &self.pwszName).field("pwszDescription", &self.pwszDescription).field("ullTotalConsumedSpace", &self.ullTotalConsumedSpace).field("ullTotalManagedSpace", &self.ullTotalManagedSpace).field("ullRemainingFreeSpace", &self.ullRemainingFreeSpace).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_STORAGE_POOL_PROP {
+unsafe impl ::windows_core::Abi for VDS_STORAGE_POOL_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_STORAGE_POOL_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_STORAGE_POOL_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_STORAGE_POOL_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_STORAGE_POOL_PROP {}
@@ -7394,7 +7394,7 @@ impl ::core::default::Default for VDS_STORAGE_POOL_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_STORAGE_POOL_STATUS {
+unsafe impl ::windows_core::Abi for VDS_STORAGE_POOL_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_STORAGE_POOL_STATUS {
@@ -7423,7 +7423,7 @@ impl ::core::default::Default for VDS_STORAGE_POOL_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_STORAGE_POOL_TYPE {
+unsafe impl ::windows_core::Abi for VDS_STORAGE_POOL_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_STORAGE_POOL_TYPE {
@@ -7494,7 +7494,7 @@ impl ::core::default::Default for VDS_SUB_SYSTEM_FLAG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_SUB_SYSTEM_FLAG {
+unsafe impl ::windows_core::Abi for VDS_SUB_SYSTEM_FLAG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_SUB_SYSTEM_FLAG {
@@ -7506,7 +7506,7 @@ impl ::core::fmt::Debug for VDS_SUB_SYSTEM_FLAG {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_SUB_SYSTEM_NOTIFICATION {
     pub ulEvent: u32,
-    pub subSystemId: ::windows::core::GUID,
+    pub subSystemId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_SUB_SYSTEM_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_SUB_SYSTEM_NOTIFICATION {
@@ -7519,12 +7519,12 @@ impl ::core::fmt::Debug for VDS_SUB_SYSTEM_NOTIFICATION {
         f.debug_struct("VDS_SUB_SYSTEM_NOTIFICATION").field("ulEvent", &self.ulEvent).field("subSystemId", &self.subSystemId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_SUB_SYSTEM_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_SUB_SYSTEM_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_SUB_SYSTEM_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_SUB_SYSTEM_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_SUB_SYSTEM_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_SUB_SYSTEM_NOTIFICATION {}
@@ -7536,9 +7536,9 @@ impl ::core::default::Default for VDS_SUB_SYSTEM_NOTIFICATION {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_SUB_SYSTEM_PROP {
-    pub id: ::windows::core::GUID,
-    pub pwszFriendlyName: ::windows::core::PWSTR,
-    pub pwszIdentification: ::windows::core::PWSTR,
+    pub id: ::windows_core::GUID,
+    pub pwszFriendlyName: ::windows_core::PWSTR,
+    pub pwszIdentification: ::windows_core::PWSTR,
     pub ulFlags: u32,
     pub ulStripeSizeFlags: u32,
     pub status: VDS_SUB_SYSTEM_STATUS,
@@ -7571,12 +7571,12 @@ impl ::core::fmt::Debug for VDS_SUB_SYSTEM_PROP {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_SUB_SYSTEM_PROP {
+unsafe impl ::windows_core::Abi for VDS_SUB_SYSTEM_PROP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_SUB_SYSTEM_PROP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_SUB_SYSTEM_PROP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_SUB_SYSTEM_PROP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_SUB_SYSTEM_PROP {}
@@ -7588,9 +7588,9 @@ impl ::core::default::Default for VDS_SUB_SYSTEM_PROP {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_SUB_SYSTEM_PROP2 {
-    pub id: ::windows::core::GUID,
-    pub pwszFriendlyName: ::windows::core::PWSTR,
-    pub pwszIdentification: ::windows::core::PWSTR,
+    pub id: ::windows_core::GUID,
+    pub pwszFriendlyName: ::windows_core::PWSTR,
+    pub pwszIdentification: ::windows_core::PWSTR,
     pub ulFlags: u32,
     pub ulStripeSizeFlags: u32,
     pub ulSupportedRaidTypeFlags: u32,
@@ -7627,12 +7627,12 @@ impl ::core::fmt::Debug for VDS_SUB_SYSTEM_PROP2 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_SUB_SYSTEM_PROP2 {
+unsafe impl ::windows_core::Abi for VDS_SUB_SYSTEM_PROP2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_SUB_SYSTEM_PROP2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_SUB_SYSTEM_PROP2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_SUB_SYSTEM_PROP2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_SUB_SYSTEM_PROP2 {}
@@ -7668,7 +7668,7 @@ impl ::core::default::Default for VDS_SUB_SYSTEM_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_SUB_SYSTEM_STATUS {
+unsafe impl ::windows_core::Abi for VDS_SUB_SYSTEM_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_SUB_SYSTEM_STATUS {
@@ -7723,7 +7723,7 @@ impl ::core::default::Default for VDS_SUB_SYSTEM_SUPPORTED_RAID_TYPE_FLAG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_SUB_SYSTEM_SUPPORTED_RAID_TYPE_FLAG {
+unsafe impl ::windows_core::Abi for VDS_SUB_SYSTEM_SUPPORTED_RAID_TYPE_FLAG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_SUB_SYSTEM_SUPPORTED_RAID_TYPE_FLAG {
@@ -7732,78 +7732,78 @@ impl ::core::fmt::Debug for VDS_SUB_SYSTEM_SUPPORTED_RAID_TYPE_FLAG {
     }
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_ACCESS_PATH_NOT_DELETED: ::windows::core::HRESULT = ::windows::core::HRESULT(279108i32);
+pub const VDS_S_ACCESS_PATH_NOT_DELETED: ::windows_core::HRESULT = ::windows_core::HRESULT(279108i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_ALREADY_EXISTS: ::windows::core::HRESULT = ::windows::core::HRESULT(272148i32);
+pub const VDS_S_ALREADY_EXISTS: ::windows_core::HRESULT = ::windows_core::HRESULT(272148i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_BOOT_PARTITION_NUMBER_CHANGE: ::windows::core::HRESULT = ::windows::core::HRESULT(271414i32);
+pub const VDS_S_BOOT_PARTITION_NUMBER_CHANGE: ::windows_core::HRESULT = ::windows_core::HRESULT(271414i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_DEFAULT_PLEX_MEMBER_IDS: ::windows::core::HRESULT = ::windows::core::HRESULT(271640i32);
+pub const VDS_S_DEFAULT_PLEX_MEMBER_IDS: ::windows_core::HRESULT = ::windows_core::HRESULT(271640i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_DISK_DISMOUNT_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(272393i32);
+pub const VDS_S_DISK_DISMOUNT_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(272393i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_DISK_IS_MISSING: ::windows::core::HRESULT = ::windows::core::HRESULT(271624i32);
+pub const VDS_S_DISK_IS_MISSING: ::windows_core::HRESULT = ::windows_core::HRESULT(271624i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_DISK_MOUNT_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(272392i32);
+pub const VDS_S_DISK_MOUNT_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(272392i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_DISK_PARTIALLY_CLEANED: ::windows::core::HRESULT = ::windows::core::HRESULT(271386i32);
+pub const VDS_S_DISK_PARTIALLY_CLEANED: ::windows_core::HRESULT = ::windows_core::HRESULT(271386i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_DISMOUNT_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(271735i32);
+pub const VDS_S_DISMOUNT_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(271735i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_EXTEND_FILE_SYSTEM_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(271461i32);
+pub const VDS_S_EXTEND_FILE_SYSTEM_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(271461i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_FS_LOCK: ::windows::core::HRESULT = ::windows::core::HRESULT(271747i32);
+pub const VDS_S_FS_LOCK: ::windows_core::HRESULT = ::windows_core::HRESULT(271747i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_GPT_BOOT_MIRRORED_TO_MBR: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147212183i32);
+pub const VDS_S_GPT_BOOT_MIRRORED_TO_MBR: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147212183i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_IA64_BOOT_MIRRORED_TO_MBR: ::windows::core::HRESULT = ::windows::core::HRESULT(271450i32);
+pub const VDS_S_IA64_BOOT_MIRRORED_TO_MBR: ::windows_core::HRESULT = ::windows_core::HRESULT(271450i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_IN_PROGRESS: ::windows::core::HRESULT = ::windows::core::HRESULT(271437i32);
+pub const VDS_S_IN_PROGRESS: ::windows_core::HRESULT = ::windows_core::HRESULT(271437i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_ISCSI_LOGIN_ALREAD_EXISTS: ::windows::core::HRESULT = ::windows::core::HRESULT(272386i32);
+pub const VDS_S_ISCSI_LOGIN_ALREAD_EXISTS: ::windows_core::HRESULT = ::windows_core::HRESULT(272386i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_ISCSI_PERSISTENT_LOGIN_MAY_NOT_BE_REMOVED: ::windows::core::HRESULT = ::windows::core::HRESULT(272385i32);
+pub const VDS_S_ISCSI_PERSISTENT_LOGIN_MAY_NOT_BE_REMOVED: ::windows_core::HRESULT = ::windows_core::HRESULT(272385i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_ISCSI_SESSION_NOT_FOUND_PERSISTENT_LOGIN_REMOVED: ::windows::core::HRESULT = ::windows::core::HRESULT(272384i32);
+pub const VDS_S_ISCSI_SESSION_NOT_FOUND_PERSISTENT_LOGIN_REMOVED: ::windows_core::HRESULT = ::windows_core::HRESULT(272384i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_MBR_BOOT_MIRRORED_TO_GPT: ::windows::core::HRESULT = ::windows::core::HRESULT(271463i32);
+pub const VDS_S_MBR_BOOT_MIRRORED_TO_GPT: ::windows_core::HRESULT = ::windows_core::HRESULT(271463i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_NAME_TRUNCATED: ::windows::core::HRESULT = ::windows::core::HRESULT(272128i32);
+pub const VDS_S_NAME_TRUNCATED: ::windows_core::HRESULT = ::windows_core::HRESULT(272128i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_NONCONFORMANT_PARTITION_INFO: ::windows::core::HRESULT = ::windows::core::HRESULT(271626i32);
+pub const VDS_S_NONCONFORMANT_PARTITION_INFO: ::windows_core::HRESULT = ::windows_core::HRESULT(271626i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_NO_NOTIFICATION: ::windows::core::HRESULT = ::windows::core::HRESULT(271639i32);
+pub const VDS_S_NO_NOTIFICATION: ::windows_core::HRESULT = ::windows_core::HRESULT(271639i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_PLEX_NOT_LOADED_TO_CACHE: ::windows::core::HRESULT = ::windows::core::HRESULT(271755i32);
+pub const VDS_S_PLEX_NOT_LOADED_TO_CACHE: ::windows_core::HRESULT = ::windows_core::HRESULT(271755i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_PROPERTIES_INCOMPLETE: ::windows::core::HRESULT = ::windows::core::HRESULT(272149i32);
+pub const VDS_S_PROPERTIES_INCOMPLETE: ::windows_core::HRESULT = ::windows_core::HRESULT(272149i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_PROVIDER_ERROR_LOADING_CACHE: ::windows::core::HRESULT = ::windows::core::HRESULT(271393i32);
+pub const VDS_S_PROVIDER_ERROR_LOADING_CACHE: ::windows_core::HRESULT = ::windows_core::HRESULT(271393i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_REMOUNT_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(271736i32);
+pub const VDS_S_REMOUNT_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(271736i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_RESYNC_NOTIFICATION_TASK_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(271738i32);
+pub const VDS_S_RESYNC_NOTIFICATION_TASK_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(271738i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_STATUSES_INCOMPLETELY_SET: ::windows::core::HRESULT = ::windows::core::HRESULT(272130i32);
+pub const VDS_S_STATUSES_INCOMPLETELY_SET: ::windows_core::HRESULT = ::windows_core::HRESULT(272130i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_SYSTEM_PARTITION: ::windows::core::HRESULT = ::windows::core::HRESULT(271630i32);
+pub const VDS_S_SYSTEM_PARTITION: ::windows_core::HRESULT = ::windows_core::HRESULT(271630i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_UNABLE_TO_GET_GPT_ATTRIBUTES: ::windows::core::HRESULT = ::windows::core::HRESULT(271451i32);
+pub const VDS_S_UNABLE_TO_GET_GPT_ATTRIBUTES: ::windows_core::HRESULT = ::windows_core::HRESULT(271451i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_UPDATE_BOOTFILE_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(271412i32);
+pub const VDS_S_UPDATE_BOOTFILE_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(271412i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_VOLUME_COMPRESS_FAILED: ::windows::core::HRESULT = ::windows::core::HRESULT(271427i32);
+pub const VDS_S_VOLUME_COMPRESS_FAILED: ::windows_core::HRESULT = ::windows_core::HRESULT(271427i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_VSS_FLUSH_AND_HOLD_WRITES: ::windows::core::HRESULT = ::windows::core::HRESULT(271745i32);
+pub const VDS_S_VSS_FLUSH_AND_HOLD_WRITES: ::windows_core::HRESULT = ::windows_core::HRESULT(271745i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_VSS_RELEASE_WRITES: ::windows::core::HRESULT = ::windows::core::HRESULT(271746i32);
+pub const VDS_S_VSS_RELEASE_WRITES: ::windows_core::HRESULT = ::windows_core::HRESULT(271746i32);
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
-pub const VDS_S_WINPE_BOOTENTRY: ::windows::core::HRESULT = ::windows::core::HRESULT(271758i32);
+pub const VDS_S_WINPE_BOOTENTRY: ::windows_core::HRESULT = ::windows_core::HRESULT(271758i32);
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_TARGET_NOTIFICATION {
     pub ulEvent: u32,
-    pub targetId: ::windows::core::GUID,
+    pub targetId: ::windows_core::GUID,
 }
 impl ::core::marker::Copy for VDS_TARGET_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_TARGET_NOTIFICATION {
@@ -7816,12 +7816,12 @@ impl ::core::fmt::Debug for VDS_TARGET_NOTIFICATION {
         f.debug_struct("VDS_TARGET_NOTIFICATION").field("ulEvent", &self.ulEvent).field("targetId", &self.targetId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_TARGET_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_TARGET_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_TARGET_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_TARGET_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_TARGET_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_TARGET_NOTIFICATION {}
@@ -7857,7 +7857,7 @@ impl ::core::default::Default for VDS_TRANSITION_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_TRANSITION_STATE {
+unsafe impl ::windows_core::Abi for VDS_TRANSITION_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_TRANSITION_STATE {
@@ -7890,7 +7890,7 @@ impl ::core::default::Default for VDS_VERSION_SUPPORT_FLAG {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for VDS_VERSION_SUPPORT_FLAG {
+unsafe impl ::windows_core::Abi for VDS_VERSION_SUPPORT_FLAG {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for VDS_VERSION_SUPPORT_FLAG {
@@ -7902,8 +7902,8 @@ impl ::core::fmt::Debug for VDS_VERSION_SUPPORT_FLAG {
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_VOLUME_NOTIFICATION {
     pub ulEvent: u32,
-    pub volumeId: ::windows::core::GUID,
-    pub plexId: ::windows::core::GUID,
+    pub volumeId: ::windows_core::GUID,
+    pub plexId: ::windows_core::GUID,
     pub ulPercentCompleted: u32,
 }
 impl ::core::marker::Copy for VDS_VOLUME_NOTIFICATION {}
@@ -7917,12 +7917,12 @@ impl ::core::fmt::Debug for VDS_VOLUME_NOTIFICATION {
         f.debug_struct("VDS_VOLUME_NOTIFICATION").field("ulEvent", &self.ulEvent).field("volumeId", &self.volumeId).field("plexId", &self.plexId).field("ulPercentCompleted", &self.ulPercentCompleted).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_VOLUME_NOTIFICATION {
+unsafe impl ::windows_core::Abi for VDS_VOLUME_NOTIFICATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_VOLUME_NOTIFICATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_VOLUME_NOTIFICATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_VOLUME_NOTIFICATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_VOLUME_NOTIFICATION {}
@@ -7947,12 +7947,12 @@ impl ::core::fmt::Debug for VDS_WWN {
         f.debug_struct("VDS_WWN").field("rguchWwn", &self.rguchWwn).finish()
     }
 }
-unsafe impl ::windows::core::Abi for VDS_WWN {
+unsafe impl ::windows_core::Abi for VDS_WWN {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for VDS_WWN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_WWN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<VDS_WWN>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for VDS_WWN {}

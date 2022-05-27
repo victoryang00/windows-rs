@@ -1,5 +1,5 @@
 #[test]
-fn async_get() -> windows::core::Result<()> {
+fn async_get() -> windows_core::Result<()> {
     use windows::Storage::Streams::*;
 
     let stream = &InMemoryRandomAccessStream::new()?;
@@ -24,7 +24,7 @@ fn async_get() -> windows::core::Result<()> {
     Ok(())
 }
 
-async fn async_await() -> windows::core::Result<()> {
+async fn async_await() -> windows_core::Result<()> {
     use windows::Storage::Streams::*;
 
     let stream = &InMemoryRandomAccessStream::new()?;
@@ -50,6 +50,6 @@ async fn async_await() -> windows::core::Result<()> {
 }
 
 #[test]
-fn test_async_await() -> windows::core::Result<()> {
+fn test_async_await() -> windows_core::Result<()> {
     futures::executor::block_on(async_await())
 }

@@ -15,12 +15,12 @@ impl ::core::fmt::Debug for NV_MEMORY_RANGE {
         f.debug_struct("NV_MEMORY_RANGE").field("BaseAddress", &self.BaseAddress).field("Length", &self.Length).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NV_MEMORY_RANGE {
+unsafe impl ::windows_core::Abi for NV_MEMORY_RANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NV_MEMORY_RANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NV_MEMORY_RANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NV_MEMORY_RANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NV_MEMORY_RANGE {}
@@ -84,7 +84,7 @@ pub unsafe fn RtlFlushNonVolatileMemoryRanges(nvtoken: *const ::core::ffi::c_voi
         extern "system" {
             fn RtlFlushNonVolatileMemoryRanges(nvtoken: *const ::core::ffi::c_void, nvranges: *const NV_MEMORY_RANGE, numranges: usize, flags: u32) -> u32;
         }
-        ::core::mem::transmute(RtlFlushNonVolatileMemoryRanges(::core::mem::transmute(nvtoken), ::core::mem::transmute(::windows::core::as_ptr_or_null(nvranges)), nvranges.len() as _, ::core::mem::transmute(flags)))
+        ::core::mem::transmute(RtlFlushNonVolatileMemoryRanges(::core::mem::transmute(nvtoken), ::core::mem::transmute(::windows_core::as_ptr_or_null(nvranges)), nvranges.len() as _, ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");

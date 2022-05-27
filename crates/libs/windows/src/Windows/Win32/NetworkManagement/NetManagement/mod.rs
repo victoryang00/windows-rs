@@ -59,7 +59,7 @@ pub const ACCESS_GROUP: u32 = 32768u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct ACCESS_INFO_0 {
-    pub acc0_resource_name: ::windows::core::PWSTR,
+    pub acc0_resource_name: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for ACCESS_INFO_0 {}
 impl ::core::clone::Clone for ACCESS_INFO_0 {
@@ -72,12 +72,12 @@ impl ::core::fmt::Debug for ACCESS_INFO_0 {
         f.debug_struct("ACCESS_INFO_0").field("acc0_resource_name", &self.acc0_resource_name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ACCESS_INFO_0 {
+unsafe impl ::windows_core::Abi for ACCESS_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ACCESS_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACCESS_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACCESS_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ACCESS_INFO_0 {}
@@ -89,7 +89,7 @@ impl ::core::default::Default for ACCESS_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct ACCESS_INFO_1 {
-    pub acc1_resource_name: ::windows::core::PWSTR,
+    pub acc1_resource_name: ::windows_core::PWSTR,
     pub acc1_attr: u32,
     pub acc1_count: u32,
 }
@@ -104,12 +104,12 @@ impl ::core::fmt::Debug for ACCESS_INFO_1 {
         f.debug_struct("ACCESS_INFO_1").field("acc1_resource_name", &self.acc1_resource_name).field("acc1_attr", &self.acc1_attr).field("acc1_count", &self.acc1_count).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ACCESS_INFO_1 {
+unsafe impl ::windows_core::Abi for ACCESS_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ACCESS_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACCESS_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACCESS_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ACCESS_INFO_1 {}
@@ -134,12 +134,12 @@ impl ::core::fmt::Debug for ACCESS_INFO_1002 {
         f.debug_struct("ACCESS_INFO_1002").field("acc1002_attr", &self.acc1002_attr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ACCESS_INFO_1002 {
+unsafe impl ::windows_core::Abi for ACCESS_INFO_1002 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ACCESS_INFO_1002 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACCESS_INFO_1002>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACCESS_INFO_1002>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ACCESS_INFO_1002 {}
@@ -153,7 +153,7 @@ pub const ACCESS_LETTERS: &str = "RWCXDAP         ";
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct ACCESS_LIST {
-    pub acl_ugname: ::windows::core::PWSTR,
+    pub acl_ugname: ::windows_core::PWSTR,
     pub acl_access: u32,
 }
 impl ::core::marker::Copy for ACCESS_LIST {}
@@ -167,12 +167,12 @@ impl ::core::fmt::Debug for ACCESS_LIST {
         f.debug_struct("ACCESS_LIST").field("acl_ugname", &self.acl_ugname).field("acl_access", &self.acl_access).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ACCESS_LIST {
+unsafe impl ::windows_core::Abi for ACCESS_LIST {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ACCESS_LIST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACCESS_LIST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACCESS_LIST>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ACCESS_LIST {}
@@ -216,12 +216,12 @@ impl ::core::fmt::Debug for ADMIN_OTHER_INFO {
         f.debug_struct("ADMIN_OTHER_INFO").field("alrtad_errcode", &self.alrtad_errcode).field("alrtad_numstrings", &self.alrtad_numstrings).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ADMIN_OTHER_INFO {
+unsafe impl ::windows_core::Abi for ADMIN_OTHER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ADMIN_OTHER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ADMIN_OTHER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ADMIN_OTHER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ADMIN_OTHER_INFO {}
@@ -249,12 +249,12 @@ impl ::core::fmt::Debug for AE_ACCLIM {
         f.debug_struct("AE_ACCLIM").field("ae_al_compname", &self.ae_al_compname).field("ae_al_username", &self.ae_al_username).field("ae_al_resname", &self.ae_al_resname).field("ae_al_limit", &self.ae_al_limit).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_ACCLIM {
+unsafe impl ::windows_core::Abi for AE_ACCLIM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_ACCLIM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_ACCLIM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_ACCLIM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_ACCLIM {}
@@ -287,12 +287,12 @@ impl ::core::fmt::Debug for AE_ACLMOD {
         f.debug_struct("AE_ACLMOD").field("ae_am_compname", &self.ae_am_compname).field("ae_am_username", &self.ae_am_username).field("ae_am_resname", &self.ae_am_resname).field("ae_am_action", &self.ae_am_action).field("ae_am_datalen", &self.ae_am_datalen).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_ACLMOD {
+unsafe impl ::windows_core::Abi for AE_ACLMOD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_ACLMOD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_ACLMOD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_ACLMOD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_ACLMOD {}
@@ -340,12 +340,12 @@ impl ::core::fmt::Debug for AE_CLOSEFILE {
         f.debug_struct("AE_CLOSEFILE").field("ae_cf_compname", &self.ae_cf_compname).field("ae_cf_username", &self.ae_cf_username).field("ae_cf_resname", &self.ae_cf_resname).field("ae_cf_fileid", &self.ae_cf_fileid).field("ae_cf_duration", &self.ae_cf_duration).field("ae_cf_reason", &self.ae_cf_reason).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_CLOSEFILE {
+unsafe impl ::windows_core::Abi for AE_CLOSEFILE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_CLOSEFILE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_CLOSEFILE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_CLOSEFILE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_CLOSEFILE {}
@@ -375,12 +375,12 @@ impl ::core::fmt::Debug for AE_CONNREJ {
         f.debug_struct("AE_CONNREJ").field("ae_cr_compname", &self.ae_cr_compname).field("ae_cr_username", &self.ae_cr_username).field("ae_cr_netname", &self.ae_cr_netname).field("ae_cr_reason", &self.ae_cr_reason).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_CONNREJ {
+unsafe impl ::windows_core::Abi for AE_CONNREJ {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_CONNREJ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_CONNREJ>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_CONNREJ>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_CONNREJ {}
@@ -410,12 +410,12 @@ impl ::core::fmt::Debug for AE_CONNSTART {
         f.debug_struct("AE_CONNSTART").field("ae_ct_compname", &self.ae_ct_compname).field("ae_ct_username", &self.ae_ct_username).field("ae_ct_netname", &self.ae_ct_netname).field("ae_ct_connid", &self.ae_ct_connid).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_CONNSTART {
+unsafe impl ::windows_core::Abi for AE_CONNSTART {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_CONNSTART {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_CONNSTART>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_CONNSTART>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_CONNSTART {}
@@ -446,12 +446,12 @@ impl ::core::fmt::Debug for AE_CONNSTOP {
         f.debug_struct("AE_CONNSTOP").field("ae_cp_compname", &self.ae_cp_compname).field("ae_cp_username", &self.ae_cp_username).field("ae_cp_netname", &self.ae_cp_netname).field("ae_cp_connid", &self.ae_cp_connid).field("ae_cp_reason", &self.ae_cp_reason).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_CONNSTOP {
+unsafe impl ::windows_core::Abi for AE_CONNSTOP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_CONNSTOP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_CONNSTOP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_CONNSTOP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_CONNSTOP {}
@@ -508,12 +508,12 @@ impl ::core::fmt::Debug for AE_GENERIC {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_GENERIC {
+unsafe impl ::windows_core::Abi for AE_GENERIC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_GENERIC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_GENERIC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_GENERIC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_GENERIC {}
@@ -557,12 +557,12 @@ impl ::core::fmt::Debug for AE_LOCKOUT {
         f.debug_struct("AE_LOCKOUT").field("ae_lk_compname", &self.ae_lk_compname).field("ae_lk_username", &self.ae_lk_username).field("ae_lk_action", &self.ae_lk_action).field("ae_lk_bad_pw_count", &self.ae_lk_bad_pw_count).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_LOCKOUT {
+unsafe impl ::windows_core::Abi for AE_LOCKOUT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_LOCKOUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_LOCKOUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_LOCKOUT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_LOCKOUT {}
@@ -596,12 +596,12 @@ impl ::core::fmt::Debug for AE_NETLOGOFF {
         f.debug_struct("AE_NETLOGOFF").field("ae_nf_compname", &self.ae_nf_compname).field("ae_nf_username", &self.ae_nf_username).field("ae_nf_reserved1", &self.ae_nf_reserved1).field("ae_nf_reserved2", &self.ae_nf_reserved2).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_NETLOGOFF {
+unsafe impl ::windows_core::Abi for AE_NETLOGOFF {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_NETLOGOFF {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_NETLOGOFF>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_NETLOGOFF>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_NETLOGOFF {}
@@ -631,12 +631,12 @@ impl ::core::fmt::Debug for AE_NETLOGON {
         f.debug_struct("AE_NETLOGON").field("ae_no_compname", &self.ae_no_compname).field("ae_no_username", &self.ae_no_username).field("ae_no_privilege", &self.ae_no_privilege).field("ae_no_authflags", &self.ae_no_authflags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_NETLOGON {
+unsafe impl ::windows_core::Abi for AE_NETLOGON {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_NETLOGON {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_NETLOGON>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_NETLOGON>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_NETLOGON {}
@@ -675,12 +675,12 @@ impl ::core::fmt::Debug for AE_RESACCESS {
         f.debug_struct("AE_RESACCESS").field("ae_ra_compname", &self.ae_ra_compname).field("ae_ra_username", &self.ae_ra_username).field("ae_ra_resname", &self.ae_ra_resname).field("ae_ra_operation", &self.ae_ra_operation).field("ae_ra_returncode", &self.ae_ra_returncode).field("ae_ra_restype", &self.ae_ra_restype).field("ae_ra_fileid", &self.ae_ra_fileid).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_RESACCESS {
+unsafe impl ::windows_core::Abi for AE_RESACCESS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_RESACCESS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_RESACCESS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_RESACCESS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_RESACCESS {}
@@ -712,12 +712,12 @@ impl ::core::fmt::Debug for AE_RESACCESSREJ {
         f.debug_struct("AE_RESACCESSREJ").field("ae_rr_compname", &self.ae_rr_compname).field("ae_rr_username", &self.ae_rr_username).field("ae_rr_resname", &self.ae_rr_resname).field("ae_rr_operation", &self.ae_rr_operation).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_RESACCESSREJ {
+unsafe impl ::windows_core::Abi for AE_RESACCESSREJ {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_RESACCESSREJ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_RESACCESSREJ>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_RESACCESSREJ>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_RESACCESSREJ {}
@@ -750,12 +750,12 @@ impl ::core::fmt::Debug for AE_SERVICESTAT {
         f.debug_struct("AE_SERVICESTAT").field("ae_ss_compname", &self.ae_ss_compname).field("ae_ss_username", &self.ae_ss_username).field("ae_ss_svcname", &self.ae_ss_svcname).field("ae_ss_status", &self.ae_ss_status).field("ae_ss_code", &self.ae_ss_code).field("ae_ss_text", &self.ae_ss_text).field("ae_ss_returnval", &self.ae_ss_returnval).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_SERVICESTAT {
+unsafe impl ::windows_core::Abi for AE_SERVICESTAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_SERVICESTAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_SERVICESTAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_SERVICESTAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_SERVICESTAT {}
@@ -786,12 +786,12 @@ impl ::core::fmt::Debug for AE_SESSLOGOFF {
         f.debug_struct("AE_SESSLOGOFF").field("ae_sf_compname", &self.ae_sf_compname).field("ae_sf_username", &self.ae_sf_username).field("ae_sf_reason", &self.ae_sf_reason).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_SESSLOGOFF {
+unsafe impl ::windows_core::Abi for AE_SESSLOGOFF {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_SESSLOGOFF {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_SESSLOGOFF>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_SESSLOGOFF>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_SESSLOGOFF {}
@@ -820,12 +820,12 @@ impl ::core::fmt::Debug for AE_SESSLOGON {
         f.debug_struct("AE_SESSLOGON").field("ae_so_compname", &self.ae_so_compname).field("ae_so_username", &self.ae_so_username).field("ae_so_privilege", &self.ae_so_privilege).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_SESSLOGON {
+unsafe impl ::windows_core::Abi for AE_SESSLOGON {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_SESSLOGON {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_SESSLOGON>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_SESSLOGON>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_SESSLOGON {}
@@ -853,12 +853,12 @@ impl ::core::fmt::Debug for AE_SESSPWERR {
         f.debug_struct("AE_SESSPWERR").field("ae_sp_compname", &self.ae_sp_compname).field("ae_sp_username", &self.ae_sp_username).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_SESSPWERR {
+unsafe impl ::windows_core::Abi for AE_SESSPWERR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_SESSPWERR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_SESSPWERR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_SESSPWERR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_SESSPWERR {}
@@ -893,12 +893,12 @@ impl ::core::fmt::Debug for AE_SRVSTATUS {
         f.debug_struct("AE_SRVSTATUS").field("ae_sv_status", &self.ae_sv_status).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_SRVSTATUS {
+unsafe impl ::windows_core::Abi for AE_SRVSTATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_SRVSTATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_SRVSTATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_SRVSTATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_SRVSTATUS {}
@@ -932,12 +932,12 @@ impl ::core::fmt::Debug for AE_UASMOD {
         f.debug_struct("AE_UASMOD").field("ae_um_compname", &self.ae_um_compname).field("ae_um_username", &self.ae_um_username).field("ae_um_resname", &self.ae_um_resname).field("ae_um_rectype", &self.ae_um_rectype).field("ae_um_action", &self.ae_um_action).field("ae_um_datalen", &self.ae_um_datalen).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AE_UASMOD {
+unsafe impl ::windows_core::Abi for AE_UASMOD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AE_UASMOD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_UASMOD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AE_UASMOD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AE_UASMOD {}
@@ -983,7 +983,7 @@ impl ::core::default::Default for AF_OP {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for AF_OP {
+unsafe impl ::windows_core::Abi for AF_OP {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for AF_OP {
@@ -1045,7 +1045,7 @@ pub struct AT_ENUM {
     pub DaysOfMonth: u32,
     pub DaysOfWeek: u8,
     pub Flags: u8,
-    pub Command: ::windows::core::PWSTR,
+    pub Command: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for AT_ENUM {}
 impl ::core::clone::Clone for AT_ENUM {
@@ -1058,12 +1058,12 @@ impl ::core::fmt::Debug for AT_ENUM {
         f.debug_struct("AT_ENUM").field("JobId", &self.JobId).field("JobTime", &self.JobTime).field("DaysOfMonth", &self.DaysOfMonth).field("DaysOfWeek", &self.DaysOfWeek).field("Flags", &self.Flags).field("Command", &self.Command).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AT_ENUM {
+unsafe impl ::windows_core::Abi for AT_ENUM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AT_ENUM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AT_ENUM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AT_ENUM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AT_ENUM {}
@@ -1079,7 +1079,7 @@ pub struct AT_INFO {
     pub DaysOfMonth: u32,
     pub DaysOfWeek: u8,
     pub Flags: u8,
-    pub Command: ::windows::core::PWSTR,
+    pub Command: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for AT_INFO {}
 impl ::core::clone::Clone for AT_INFO {
@@ -1092,12 +1092,12 @@ impl ::core::fmt::Debug for AT_INFO {
         f.debug_struct("AT_INFO").field("JobTime", &self.JobTime).field("DaysOfMonth", &self.DaysOfMonth).field("DaysOfWeek", &self.DaysOfWeek).field("Flags", &self.Flags).field("Command", &self.Command).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AT_INFO {
+unsafe impl ::windows_core::Abi for AT_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AT_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AT_INFO {}
@@ -1127,12 +1127,12 @@ impl ::core::fmt::Debug for AUDIT_ENTRY {
         f.debug_struct("AUDIT_ENTRY").field("ae_len", &self.ae_len).field("ae_reserved", &self.ae_reserved).field("ae_time", &self.ae_time).field("ae_type", &self.ae_type).field("ae_data_offset", &self.ae_data_offset).field("ae_data_size", &self.ae_data_size).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AUDIT_ENTRY {
+unsafe impl ::windows_core::Abi for AUDIT_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AUDIT_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUDIT_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUDIT_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AUDIT_ENTRY {}
@@ -1180,7 +1180,7 @@ impl ::core::default::Default for BIND_FLAGS1 {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for BIND_FLAGS1 {
+unsafe impl ::windows_core::Abi for BIND_FLAGS1 {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for BIND_FLAGS1 {
@@ -1237,7 +1237,7 @@ impl ::core::default::Default for COMPONENT_CHARACTERISTICS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for COMPONENT_CHARACTERISTICS {
+unsafe impl ::windows_core::Abi for COMPONENT_CHARACTERISTICS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for COMPONENT_CHARACTERISTICS {
@@ -1248,8 +1248,8 @@ impl ::core::fmt::Debug for COMPONENT_CHARACTERISTICS {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct CONFIG_INFO_0 {
-    pub cfgi0_key: ::windows::core::PWSTR,
-    pub cfgi0_data: ::windows::core::PWSTR,
+    pub cfgi0_key: ::windows_core::PWSTR,
+    pub cfgi0_data: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for CONFIG_INFO_0 {}
 impl ::core::clone::Clone for CONFIG_INFO_0 {
@@ -1262,12 +1262,12 @@ impl ::core::fmt::Debug for CONFIG_INFO_0 {
         f.debug_struct("CONFIG_INFO_0").field("cfgi0_key", &self.cfgi0_key).field("cfgi0_data", &self.cfgi0_data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CONFIG_INFO_0 {
+unsafe impl ::windows_core::Abi for CONFIG_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CONFIG_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONFIG_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONFIG_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CONFIG_INFO_0 {}
@@ -1315,7 +1315,7 @@ impl ::core::default::Default for DEFAULT_PAGES {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DEFAULT_PAGES {
+unsafe impl ::windows_core::Abi for DEFAULT_PAGES {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DEFAULT_PAGES {
@@ -1449,15 +1449,15 @@ pub const DNLEN: u32 = 15u32;
 pub struct DSREG_JOIN_INFO {
     pub joinType: DSREG_JOIN_TYPE,
     pub pJoinCertificate: *const super::super::Security::Cryptography::CERT_CONTEXT,
-    pub pszDeviceId: ::windows::core::PWSTR,
-    pub pszIdpDomain: ::windows::core::PWSTR,
-    pub pszTenantId: ::windows::core::PWSTR,
-    pub pszJoinUserEmail: ::windows::core::PWSTR,
-    pub pszTenantDisplayName: ::windows::core::PWSTR,
-    pub pszMdmEnrollmentUrl: ::windows::core::PWSTR,
-    pub pszMdmTermsOfUseUrl: ::windows::core::PWSTR,
-    pub pszMdmComplianceUrl: ::windows::core::PWSTR,
-    pub pszUserSettingSyncUrl: ::windows::core::PWSTR,
+    pub pszDeviceId: ::windows_core::PWSTR,
+    pub pszIdpDomain: ::windows_core::PWSTR,
+    pub pszTenantId: ::windows_core::PWSTR,
+    pub pszJoinUserEmail: ::windows_core::PWSTR,
+    pub pszTenantDisplayName: ::windows_core::PWSTR,
+    pub pszMdmEnrollmentUrl: ::windows_core::PWSTR,
+    pub pszMdmTermsOfUseUrl: ::windows_core::PWSTR,
+    pub pszMdmComplianceUrl: ::windows_core::PWSTR,
+    pub pszUserSettingSyncUrl: ::windows_core::PWSTR,
     pub pUserInfo: *mut DSREG_USER_INFO,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
@@ -1488,13 +1488,13 @@ impl ::core::fmt::Debug for DSREG_JOIN_INFO {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-unsafe impl ::windows::core::Abi for DSREG_JOIN_INFO {
+unsafe impl ::windows_core::Abi for DSREG_JOIN_INFO {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
 impl ::core::cmp::PartialEq for DSREG_JOIN_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DSREG_JOIN_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DSREG_JOIN_INFO>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
@@ -1526,7 +1526,7 @@ impl ::core::default::Default for DSREG_JOIN_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DSREG_JOIN_TYPE {
+unsafe impl ::windows_core::Abi for DSREG_JOIN_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DSREG_JOIN_TYPE {
@@ -1537,9 +1537,9 @@ impl ::core::fmt::Debug for DSREG_JOIN_TYPE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct DSREG_USER_INFO {
-    pub pszUserEmail: ::windows::core::PWSTR,
-    pub pszUserKeyId: ::windows::core::PWSTR,
-    pub pszUserKeyName: ::windows::core::PWSTR,
+    pub pszUserEmail: ::windows_core::PWSTR,
+    pub pszUserKeyId: ::windows_core::PWSTR,
+    pub pszUserKeyName: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for DSREG_USER_INFO {}
 impl ::core::clone::Clone for DSREG_USER_INFO {
@@ -1552,12 +1552,12 @@ impl ::core::fmt::Debug for DSREG_USER_INFO {
         f.debug_struct("DSREG_USER_INFO").field("pszUserEmail", &self.pszUserEmail).field("pszUserKeyId", &self.pszUserKeyId).field("pszUserKeyName", &self.pszUserKeyName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DSREG_USER_INFO {
+unsafe impl ::windows_core::Abi for DSREG_USER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DSREG_USER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DSREG_USER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DSREG_USER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DSREG_USER_INFO {}
@@ -1587,7 +1587,7 @@ impl ::core::default::Default for ENUM_BINDING_PATHS_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ENUM_BINDING_PATHS_FLAGS {
+unsafe impl ::windows_core::Abi for ENUM_BINDING_PATHS_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ENUM_BINDING_PATHS_FLAGS {
@@ -1616,12 +1616,12 @@ impl ::core::fmt::Debug for ERRLOG_OTHER_INFO {
         f.debug_struct("ERRLOG_OTHER_INFO").field("alrter_errcode", &self.alrter_errcode).field("alrter_offset", &self.alrter_offset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ERRLOG_OTHER_INFO {
+unsafe impl ::windows_core::Abi for ERRLOG_OTHER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ERRLOG_OTHER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ERRLOG_OTHER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ERRLOG_OTHER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ERRLOG_OTHER_INFO {}
@@ -1637,8 +1637,8 @@ pub struct ERROR_LOG {
     pub el_reserved: u32,
     pub el_time: u32,
     pub el_error: u32,
-    pub el_name: ::windows::core::PWSTR,
-    pub el_text: ::windows::core::PWSTR,
+    pub el_name: ::windows_core::PWSTR,
+    pub el_text: ::windows_core::PWSTR,
     pub el_data: *mut u8,
     pub el_data_size: u32,
     pub el_nstrings: u32,
@@ -1654,12 +1654,12 @@ impl ::core::fmt::Debug for ERROR_LOG {
         f.debug_struct("ERROR_LOG").field("el_len", &self.el_len).field("el_reserved", &self.el_reserved).field("el_time", &self.el_time).field("el_error", &self.el_error).field("el_name", &self.el_name).field("el_text", &self.el_text).field("el_data", &self.el_data).field("el_data_size", &self.el_data_size).field("el_nstrings", &self.el_nstrings).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ERROR_LOG {
+unsafe impl ::windows_core::Abi for ERROR_LOG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ERROR_LOG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ERROR_LOG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ERROR_LOG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ERROR_LOG {}
@@ -2677,13 +2677,13 @@ impl ::core::fmt::Debug for FLAT_STRING {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FLAT_STRING {
+unsafe impl ::windows_core::Abi for FLAT_STRING {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FLAT_STRING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FLAT_STRING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FLAT_STRING>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2715,7 +2715,7 @@ impl ::core::default::Default for FORCE_LEVEL_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FORCE_LEVEL_FLAGS {
+unsafe impl ::windows_core::Abi for FORCE_LEVEL_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FORCE_LEVEL_FLAGS {
@@ -2736,7 +2736,7 @@ pub const GROUP_COMMENT_PARMNUM: u32 = 2u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct GROUP_INFO_0 {
-    pub grpi0_name: ::windows::core::PWSTR,
+    pub grpi0_name: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for GROUP_INFO_0 {}
 impl ::core::clone::Clone for GROUP_INFO_0 {
@@ -2749,12 +2749,12 @@ impl ::core::fmt::Debug for GROUP_INFO_0 {
         f.debug_struct("GROUP_INFO_0").field("grpi0_name", &self.grpi0_name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GROUP_INFO_0 {
+unsafe impl ::windows_core::Abi for GROUP_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GROUP_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GROUP_INFO_0 {}
@@ -2766,8 +2766,8 @@ impl ::core::default::Default for GROUP_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct GROUP_INFO_1 {
-    pub grpi1_name: ::windows::core::PWSTR,
-    pub grpi1_comment: ::windows::core::PWSTR,
+    pub grpi1_name: ::windows_core::PWSTR,
+    pub grpi1_comment: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for GROUP_INFO_1 {}
 impl ::core::clone::Clone for GROUP_INFO_1 {
@@ -2780,12 +2780,12 @@ impl ::core::fmt::Debug for GROUP_INFO_1 {
         f.debug_struct("GROUP_INFO_1").field("grpi1_name", &self.grpi1_name).field("grpi1_comment", &self.grpi1_comment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GROUP_INFO_1 {
+unsafe impl ::windows_core::Abi for GROUP_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GROUP_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GROUP_INFO_1 {}
@@ -2797,7 +2797,7 @@ impl ::core::default::Default for GROUP_INFO_1 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct GROUP_INFO_1002 {
-    pub grpi1002_comment: ::windows::core::PWSTR,
+    pub grpi1002_comment: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for GROUP_INFO_1002 {}
 impl ::core::clone::Clone for GROUP_INFO_1002 {
@@ -2810,12 +2810,12 @@ impl ::core::fmt::Debug for GROUP_INFO_1002 {
         f.debug_struct("GROUP_INFO_1002").field("grpi1002_comment", &self.grpi1002_comment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GROUP_INFO_1002 {
+unsafe impl ::windows_core::Abi for GROUP_INFO_1002 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GROUP_INFO_1002 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_INFO_1002>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_INFO_1002>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GROUP_INFO_1002 {}
@@ -2840,12 +2840,12 @@ impl ::core::fmt::Debug for GROUP_INFO_1005 {
         f.debug_struct("GROUP_INFO_1005").field("grpi1005_attributes", &self.grpi1005_attributes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GROUP_INFO_1005 {
+unsafe impl ::windows_core::Abi for GROUP_INFO_1005 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GROUP_INFO_1005 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_INFO_1005>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_INFO_1005>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GROUP_INFO_1005 {}
@@ -2857,8 +2857,8 @@ impl ::core::default::Default for GROUP_INFO_1005 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct GROUP_INFO_2 {
-    pub grpi2_name: ::windows::core::PWSTR,
-    pub grpi2_comment: ::windows::core::PWSTR,
+    pub grpi2_name: ::windows_core::PWSTR,
+    pub grpi2_comment: ::windows_core::PWSTR,
     pub grpi2_group_id: u32,
     pub grpi2_attributes: u32,
 }
@@ -2873,12 +2873,12 @@ impl ::core::fmt::Debug for GROUP_INFO_2 {
         f.debug_struct("GROUP_INFO_2").field("grpi2_name", &self.grpi2_name).field("grpi2_comment", &self.grpi2_comment).field("grpi2_group_id", &self.grpi2_group_id).field("grpi2_attributes", &self.grpi2_attributes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GROUP_INFO_2 {
+unsafe impl ::windows_core::Abi for GROUP_INFO_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GROUP_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_INFO_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_INFO_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GROUP_INFO_2 {}
@@ -2891,8 +2891,8 @@ impl ::core::default::Default for GROUP_INFO_2 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct GROUP_INFO_3 {
-    pub grpi3_name: ::windows::core::PWSTR,
-    pub grpi3_comment: ::windows::core::PWSTR,
+    pub grpi3_name: ::windows_core::PWSTR,
+    pub grpi3_comment: ::windows_core::PWSTR,
     pub grpi3_group_sid: super::super::Foundation::PSID,
     pub grpi3_attributes: u32,
 }
@@ -2911,13 +2911,13 @@ impl ::core::fmt::Debug for GROUP_INFO_3 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for GROUP_INFO_3 {
+unsafe impl ::windows_core::Abi for GROUP_INFO_3 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GROUP_INFO_3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_INFO_3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_INFO_3>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2941,7 +2941,7 @@ pub const GROUP_SPECIALGRP_USERS: &str = "USERS";
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct GROUP_USERS_INFO_0 {
-    pub grui0_name: ::windows::core::PWSTR,
+    pub grui0_name: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for GROUP_USERS_INFO_0 {}
 impl ::core::clone::Clone for GROUP_USERS_INFO_0 {
@@ -2954,12 +2954,12 @@ impl ::core::fmt::Debug for GROUP_USERS_INFO_0 {
         f.debug_struct("GROUP_USERS_INFO_0").field("grui0_name", &self.grui0_name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GROUP_USERS_INFO_0 {
+unsafe impl ::windows_core::Abi for GROUP_USERS_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GROUP_USERS_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_USERS_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_USERS_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GROUP_USERS_INFO_0 {}
@@ -2971,7 +2971,7 @@ impl ::core::default::Default for GROUP_USERS_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct GROUP_USERS_INFO_1 {
-    pub grui1_name: ::windows::core::PWSTR,
+    pub grui1_name: ::windows_core::PWSTR,
     pub grui1_attributes: u32,
 }
 impl ::core::marker::Copy for GROUP_USERS_INFO_1 {}
@@ -2985,12 +2985,12 @@ impl ::core::fmt::Debug for GROUP_USERS_INFO_1 {
         f.debug_struct("GROUP_USERS_INFO_1").field("grui1_name", &self.grui1_name).field("grui1_attributes", &self.grui1_attributes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GROUP_USERS_INFO_1 {
+unsafe impl ::windows_core::Abi for GROUP_USERS_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GROUP_USERS_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_USERS_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_USERS_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GROUP_USERS_INFO_1 {}
@@ -3001,14 +3001,14 @@ impl ::core::default::Default for GROUP_USERS_INFO_1 {
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn GetNetScheduleAccountInformation<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszservername: Param0, wszaccount: &mut [u16]) -> ::windows::core::Result<()> {
+pub unsafe fn GetNetScheduleAccountInformation<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszservername: Param0, wszaccount: &mut [u16]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNetScheduleAccountInformation(pwszservername: ::windows::core::PCWSTR, ccaccount: u32, wszaccount: ::windows::core::PWSTR) -> ::windows::core::HRESULT;
+            fn GetNetScheduleAccountInformation(pwszservername: ::windows_core::PCWSTR, ccaccount: u32, wszaccount: ::windows_core::PWSTR) -> ::windows_core::HRESULT;
         }
-        GetNetScheduleAccountInformation(pwszservername.into_param().abi(), wszaccount.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(wszaccount))).ok()
+        GetNetScheduleAccountInformation(pwszservername.into_param().abi(), wszaccount.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(wszaccount))).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -3029,12 +3029,12 @@ impl ::core::fmt::Debug for HARDWARE_ADDRESS {
         f.debug_struct("HARDWARE_ADDRESS").field("Address", &self.Address).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HARDWARE_ADDRESS {
+unsafe impl ::windows_core::Abi for HARDWARE_ADDRESS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HARDWARE_ADDRESS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HARDWARE_ADDRESS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HARDWARE_ADDRESS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HARDWARE_ADDRESS {}
@@ -3066,12 +3066,12 @@ impl ::core::fmt::Debug for HLOG {
         f.debug_struct("HLOG").field("time", &self.time).field("last_flags", &self.last_flags).field("offset", &self.offset).field("rec_offset", &self.rec_offset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HLOG {
+unsafe impl ::windows_core::Abi for HLOG {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HLOG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HLOG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HLOG>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HLOG {}
@@ -3082,44 +3082,44 @@ impl ::core::default::Default for HLOG {
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct IEnumNetCfgBindingInterface(::windows::core::IUnknown);
+pub struct IEnumNetCfgBindingInterface(::windows_core::IUnknown);
 impl IEnumNetCfgBindingInterface {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Next(&self, rgelt: &mut [::core::option::Option<INetCfgBindingInterface>], pceltfetched: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Next)(::windows::core::Interface::as_raw(self), rgelt.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(rgelt)), ::core::mem::transmute(pceltfetched)).ok()
+    pub unsafe fn Next(&self, rgelt: &mut [::core::option::Option<INetCfgBindingInterface>], pceltfetched: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Next)(::windows_core::Interface::as_raw(self), rgelt.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(rgelt)), ::core::mem::transmute(pceltfetched)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Skip(&self, celt: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Skip)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(celt)).ok()
+    pub unsafe fn Skip(&self, celt: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Skip)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(celt)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Reset(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Reset)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Reset(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Reset)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Clone(&self) -> ::windows::core::Result<IEnumNetCfgBindingInterface> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).Clone)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgBindingInterface>(result__)
+    pub unsafe fn Clone(&self) -> ::windows_core::Result<IEnumNetCfgBindingInterface> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).Clone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgBindingInterface>(result__)
     }
 }
-impl ::core::convert::From<IEnumNetCfgBindingInterface> for ::windows::core::IUnknown {
+impl ::core::convert::From<IEnumNetCfgBindingInterface> for ::windows_core::IUnknown {
     fn from(value: IEnumNetCfgBindingInterface) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IEnumNetCfgBindingInterface> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IEnumNetCfgBindingInterface> for ::windows_core::IUnknown {
     fn from(value: &IEnumNetCfgBindingInterface) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IEnumNetCfgBindingInterface {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IEnumNetCfgBindingInterface {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IEnumNetCfgBindingInterface {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IEnumNetCfgBindingInterface {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IEnumNetCfgBindingInterface {
@@ -3138,59 +3138,59 @@ impl ::core::fmt::Debug for IEnumNetCfgBindingInterface {
         f.debug_tuple("IEnumNetCfgBindingInterface").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IEnumNetCfgBindingInterface {
+unsafe impl ::windows_core::Interface for IEnumNetCfgBindingInterface {
     type Vtable = IEnumNetCfgBindingInterface_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8ae90_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8ae90_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IEnumNetCfgBindingInterface_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Next: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32, rgelt: *mut ::windows::core::RawPtr, pceltfetched: *mut u32) -> ::windows::core::HRESULT,
-    pub Skip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32) -> ::windows::core::HRESULT,
-    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Next: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32, rgelt: *mut ::windows_core::RawPtr, pceltfetched: *mut u32) -> ::windows_core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32) -> ::windows_core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct IEnumNetCfgBindingPath(::windows::core::IUnknown);
+pub struct IEnumNetCfgBindingPath(::windows_core::IUnknown);
 impl IEnumNetCfgBindingPath {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Next(&self, rgelt: &mut [::core::option::Option<INetCfgBindingPath>], pceltfetched: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Next)(::windows::core::Interface::as_raw(self), rgelt.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(rgelt)), ::core::mem::transmute(pceltfetched)).ok()
+    pub unsafe fn Next(&self, rgelt: &mut [::core::option::Option<INetCfgBindingPath>], pceltfetched: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Next)(::windows_core::Interface::as_raw(self), rgelt.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(rgelt)), ::core::mem::transmute(pceltfetched)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Skip(&self, celt: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Skip)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(celt)).ok()
+    pub unsafe fn Skip(&self, celt: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Skip)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(celt)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Reset(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Reset)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Reset(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Reset)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Clone(&self) -> ::windows::core::Result<IEnumNetCfgBindingPath> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).Clone)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgBindingPath>(result__)
+    pub unsafe fn Clone(&self) -> ::windows_core::Result<IEnumNetCfgBindingPath> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).Clone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgBindingPath>(result__)
     }
 }
-impl ::core::convert::From<IEnumNetCfgBindingPath> for ::windows::core::IUnknown {
+impl ::core::convert::From<IEnumNetCfgBindingPath> for ::windows_core::IUnknown {
     fn from(value: IEnumNetCfgBindingPath) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IEnumNetCfgBindingPath> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IEnumNetCfgBindingPath> for ::windows_core::IUnknown {
     fn from(value: &IEnumNetCfgBindingPath) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IEnumNetCfgBindingPath {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IEnumNetCfgBindingPath {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IEnumNetCfgBindingPath {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IEnumNetCfgBindingPath {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IEnumNetCfgBindingPath {
@@ -3209,59 +3209,59 @@ impl ::core::fmt::Debug for IEnumNetCfgBindingPath {
         f.debug_tuple("IEnumNetCfgBindingPath").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IEnumNetCfgBindingPath {
+unsafe impl ::windows_core::Interface for IEnumNetCfgBindingPath {
     type Vtable = IEnumNetCfgBindingPath_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8ae91_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8ae91_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IEnumNetCfgBindingPath_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Next: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32, rgelt: *mut ::windows::core::RawPtr, pceltfetched: *mut u32) -> ::windows::core::HRESULT,
-    pub Skip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32) -> ::windows::core::HRESULT,
-    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Next: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32, rgelt: *mut ::windows_core::RawPtr, pceltfetched: *mut u32) -> ::windows_core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32) -> ::windows_core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct IEnumNetCfgComponent(::windows::core::IUnknown);
+pub struct IEnumNetCfgComponent(::windows_core::IUnknown);
 impl IEnumNetCfgComponent {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Next(&self, rgelt: &mut [::core::option::Option<INetCfgComponent>], pceltfetched: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Next)(::windows::core::Interface::as_raw(self), rgelt.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(rgelt)), ::core::mem::transmute(pceltfetched)).ok()
+    pub unsafe fn Next(&self, rgelt: &mut [::core::option::Option<INetCfgComponent>], pceltfetched: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Next)(::windows_core::Interface::as_raw(self), rgelt.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(rgelt)), ::core::mem::transmute(pceltfetched)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Skip(&self, celt: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Skip)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(celt)).ok()
+    pub unsafe fn Skip(&self, celt: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Skip)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(celt)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Reset(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Reset)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Reset(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Reset)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Clone(&self) -> ::windows::core::Result<IEnumNetCfgComponent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).Clone)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgComponent>(result__)
+    pub unsafe fn Clone(&self) -> ::windows_core::Result<IEnumNetCfgComponent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).Clone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgComponent>(result__)
     }
 }
-impl ::core::convert::From<IEnumNetCfgComponent> for ::windows::core::IUnknown {
+impl ::core::convert::From<IEnumNetCfgComponent> for ::windows_core::IUnknown {
     fn from(value: IEnumNetCfgComponent) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IEnumNetCfgComponent> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IEnumNetCfgComponent> for ::windows_core::IUnknown {
     fn from(value: &IEnumNetCfgComponent) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IEnumNetCfgComponent {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IEnumNetCfgComponent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IEnumNetCfgComponent {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IEnumNetCfgComponent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IEnumNetCfgComponent {
@@ -3280,18 +3280,18 @@ impl ::core::fmt::Debug for IEnumNetCfgComponent {
         f.debug_tuple("IEnumNetCfgComponent").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IEnumNetCfgComponent {
+unsafe impl ::windows_core::Interface for IEnumNetCfgComponent {
     type Vtable = IEnumNetCfgComponent_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8ae92_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8ae92_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IEnumNetCfgComponent_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Next: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32, rgelt: *mut ::windows::core::RawPtr, pceltfetched: *mut u32) -> ::windows::core::HRESULT,
-    pub Skip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32) -> ::windows::core::HRESULT,
-    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Next: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32, rgelt: *mut ::windows_core::RawPtr, pceltfetched: *mut u32) -> ::windows_core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32) -> ::windows_core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub const INTERFACE_INFO_REVISION_1: u32 = 1u32;
@@ -3299,57 +3299,57 @@ pub const INTERFACE_INFO_REVISION_1: u32 = 1u32;
 pub const INVALID_TRACEID: u32 = 4294967295u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfg(::windows::core::IUnknown);
+pub struct INetCfg(::windows_core::IUnknown);
 impl INetCfg {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Initialize(&self, pvreserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Initialize)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pvreserved)).ok()
+    pub unsafe fn Initialize(&self, pvreserved: *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pvreserved)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Uninitialize(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Uninitialize)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Uninitialize(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Uninitialize)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Apply(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Apply)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Apply(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Apply)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Cancel(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Cancel)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Cancel(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Cancel)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn EnumComponents(&self, pguidclass: *const ::windows::core::GUID) -> ::windows::core::Result<IEnumNetCfgComponent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).EnumComponents)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pguidclass), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgComponent>(result__)
+    pub unsafe fn EnumComponents(&self, pguidclass: *const ::windows_core::GUID) -> ::windows_core::Result<IEnumNetCfgComponent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).EnumComponents)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidclass), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgComponent>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn FindComponent<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszwinfid: Param0) -> ::windows::core::Result<INetCfgComponent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).FindComponent)(::windows::core::Interface::as_raw(self), pszwinfid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
+    pub unsafe fn FindComponent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwinfid: Param0) -> ::windows_core::Result<INetCfgComponent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).FindComponent)(::windows_core::Interface::as_raw(self), pszwinfid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn QueryNetCfgClass(&self, pguidclass: *const ::windows::core::GUID, riid: *const ::windows::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).QueryNetCfgClass)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pguidclass), ::core::mem::transmute(riid), ::core::mem::transmute(ppvobject)).ok()
+    pub unsafe fn QueryNetCfgClass(&self, pguidclass: *const ::windows_core::GUID, riid: *const ::windows_core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).QueryNetCfgClass)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidclass), ::core::mem::transmute(riid), ::core::mem::transmute(ppvobject)).ok()
     }
 }
-impl ::core::convert::From<INetCfg> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfg> for ::windows_core::IUnknown {
     fn from(value: INetCfg) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfg> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfg> for ::windows_core::IUnknown {
     fn from(value: &INetCfg) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfg {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfg {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfg {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfg {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfg {
@@ -3368,60 +3368,60 @@ impl ::core::fmt::Debug for INetCfg {
         f.debug_tuple("INetCfg").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfg {
+unsafe impl ::windows_core::Interface for INetCfg {
     type Vtable = INetCfg_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8ae93_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8ae93_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfg_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvreserved: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub Uninitialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub Apply: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub EnumComponents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidclass: *const ::windows::core::GUID, ppenumcomponent: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub FindComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwinfid: ::windows::core::PCWSTR, pcomponent: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub QueryNetCfgClass: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidclass: *const ::windows::core::GUID, riid: *const ::windows::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvreserved: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Uninitialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Apply: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub EnumComponents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidclass: *const ::windows_core::GUID, ppenumcomponent: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub FindComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwinfid: ::windows_core::PCWSTR, pcomponent: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub QueryNetCfgClass: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidclass: *const ::windows_core::GUID, riid: *const ::windows_core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgBindingInterface(::windows::core::IUnknown);
+pub struct INetCfgBindingInterface(::windows_core::IUnknown);
 impl INetCfgBindingInterface {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetName(&self) -> ::windows::core::Result<::windows::core::PWSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::PWSTR>::zeroed();
-        (::windows::core::Interface::vtable(self).GetName)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::PWSTR>(result__)
+    pub unsafe fn GetName(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
+        (::windows_core::Interface::vtable(self).GetName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetUpperComponent(&self) -> ::windows::core::Result<INetCfgComponent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetUpperComponent)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
+    pub unsafe fn GetUpperComponent(&self) -> ::windows_core::Result<INetCfgComponent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetUpperComponent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetLowerComponent(&self) -> ::windows::core::Result<INetCfgComponent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetLowerComponent)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
+    pub unsafe fn GetLowerComponent(&self) -> ::windows_core::Result<INetCfgComponent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetLowerComponent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
     }
 }
-impl ::core::convert::From<INetCfgBindingInterface> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgBindingInterface> for ::windows_core::IUnknown {
     fn from(value: INetCfgBindingInterface) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgBindingInterface> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgBindingInterface> for ::windows_core::IUnknown {
     fn from(value: &INetCfgBindingInterface) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgBindingInterface {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgBindingInterface {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgBindingInterface {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgBindingInterface {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgBindingInterface {
@@ -3440,78 +3440,78 @@ impl ::core::fmt::Debug for INetCfgBindingInterface {
         f.debug_tuple("INetCfgBindingInterface").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgBindingInterface {
+unsafe impl ::windows_core::Interface for INetCfgBindingInterface {
     type Vtable = INetCfgBindingInterface_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8ae94_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8ae94_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgBindingInterface_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwinterfacename: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT,
-    pub GetUpperComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppnccitem: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetLowerComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppnccitem: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwinterfacename: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
+    pub GetUpperComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppnccitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetLowerComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppnccitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgBindingPath(::windows::core::IUnknown);
+pub struct INetCfgBindingPath(::windows_core::IUnknown);
 impl INetCfgBindingPath {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn IsSamePathAs<'a, Param0: ::windows::core::IntoParam<'a, INetCfgBindingPath>>(&self, ppath: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).IsSamePathAs)(::windows::core::Interface::as_raw(self), ppath.into_param().abi()).ok()
+    pub unsafe fn IsSamePathAs<'a, Param0: ::windows_core::IntoParam<'a, INetCfgBindingPath>>(&self, ppath: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).IsSamePathAs)(::windows_core::Interface::as_raw(self), ppath.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn IsSubPathOf<'a, Param0: ::windows::core::IntoParam<'a, INetCfgBindingPath>>(&self, ppath: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).IsSubPathOf)(::windows::core::Interface::as_raw(self), ppath.into_param().abi()).ok()
+    pub unsafe fn IsSubPathOf<'a, Param0: ::windows_core::IntoParam<'a, INetCfgBindingPath>>(&self, ppath: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).IsSubPathOf)(::windows_core::Interface::as_raw(self), ppath.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn IsEnabled(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).IsEnabled)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn IsEnabled(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).IsEnabled)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Enable<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, fenable: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Enable)(::windows::core::Interface::as_raw(self), fenable.into_param().abi()).ok()
+    pub unsafe fn Enable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, fenable: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Enable)(::windows_core::Interface::as_raw(self), fenable.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetPathToken(&self) -> ::windows::core::Result<::windows::core::PWSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::PWSTR>::zeroed();
-        (::windows::core::Interface::vtable(self).GetPathToken)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::PWSTR>(result__)
+    pub unsafe fn GetPathToken(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
+        (::windows_core::Interface::vtable(self).GetPathToken)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetOwner(&self) -> ::windows::core::Result<INetCfgComponent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).GetOwner)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
+    pub unsafe fn GetOwner(&self) -> ::windows_core::Result<INetCfgComponent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).GetOwner)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetDepth(&self) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetDepth(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).GetDepth)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).GetDepth)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn EnumBindingInterfaces(&self) -> ::windows::core::Result<IEnumNetCfgBindingInterface> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).EnumBindingInterfaces)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgBindingInterface>(result__)
+    pub unsafe fn EnumBindingInterfaces(&self) -> ::windows_core::Result<IEnumNetCfgBindingInterface> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).EnumBindingInterfaces)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgBindingInterface>(result__)
     }
 }
-impl ::core::convert::From<INetCfgBindingPath> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgBindingPath> for ::windows_core::IUnknown {
     fn from(value: INetCfgBindingPath) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgBindingPath> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgBindingPath> for ::windows_core::IUnknown {
     fn from(value: &INetCfgBindingPath) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgBindingPath {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgBindingPath {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgBindingPath {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgBindingPath {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgBindingPath {
@@ -3530,59 +3530,59 @@ impl ::core::fmt::Debug for INetCfgBindingPath {
         f.debug_tuple("INetCfgBindingPath").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgBindingPath {
+unsafe impl ::windows_core::Interface for INetCfgBindingPath {
     type Vtable = INetCfgBindingPath_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8ae96_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8ae96_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgBindingPath_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub IsSamePathAs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppath: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub IsSubPathOf: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppath: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub IsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub IsSamePathAs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppath: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub IsSubPathOf: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppath: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub IsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub Enable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fenable: super::super::Foundation::BOOL) -> ::windows::core::HRESULT,
+    pub Enable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fenable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Enable: usize,
-    pub GetPathToken: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwpathtoken: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT,
-    pub GetOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppcomponent: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub GetDepth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcinterfaces: *mut u32) -> ::windows::core::HRESULT,
-    pub EnumBindingInterfaces: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenuminterface: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub GetPathToken: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwpathtoken: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
+    pub GetOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppcomponent: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetDepth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcinterfaces: *mut u32) -> ::windows_core::HRESULT,
+    pub EnumBindingInterfaces: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenuminterface: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgClass(::windows::core::IUnknown);
+pub struct INetCfgClass(::windows_core::IUnknown);
 impl INetCfgClass {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn FindComponent<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszwinfid: Param0) -> ::windows::core::Result<INetCfgComponent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).FindComponent)(::windows::core::Interface::as_raw(self), pszwinfid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
+    pub unsafe fn FindComponent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwinfid: Param0) -> ::windows_core::Result<INetCfgComponent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).FindComponent)(::windows_core::Interface::as_raw(self), pszwinfid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn EnumComponents(&self) -> ::windows::core::Result<IEnumNetCfgComponent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).EnumComponents)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgComponent>(result__)
+    pub unsafe fn EnumComponents(&self) -> ::windows_core::Result<IEnumNetCfgComponent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).EnumComponents)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgComponent>(result__)
     }
 }
-impl ::core::convert::From<INetCfgClass> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgClass> for ::windows_core::IUnknown {
     fn from(value: INetCfgClass) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgClass> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgClass> for ::windows_core::IUnknown {
     fn from(value: &INetCfgClass) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgClass {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgClass {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgClass {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgClass {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgClass {
@@ -3601,57 +3601,57 @@ impl ::core::fmt::Debug for INetCfgClass {
         f.debug_tuple("INetCfgClass").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgClass {
+unsafe impl ::windows_core::Interface for INetCfgClass {
     type Vtable = INetCfgClass_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8ae97_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8ae97_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgClass_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub FindComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwinfid: ::windows::core::PCWSTR, ppnccitem: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub EnumComponents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenumcomponent: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub FindComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwinfid: ::windows_core::PCWSTR, ppnccitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub EnumComponents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenumcomponent: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgClassSetup(::windows::core::IUnknown);
+pub struct INetCfgClassSetup(::windows_core::IUnknown);
 impl INetCfgClassSetup {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SelectAndInstall<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, hwndparent: Param0, pobotoken: *const OBO_TOKEN) -> ::windows::core::Result<INetCfgComponent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).SelectAndInstall)(::windows::core::Interface::as_raw(self), hwndparent.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
+    pub unsafe fn SelectAndInstall<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, hwndparent: Param0, pobotoken: *const OBO_TOKEN) -> ::windows_core::Result<INetCfgComponent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).SelectAndInstall)(::windows_core::Interface::as_raw(self), hwndparent.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Install<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszwinfid: Param0, pobotoken: *const OBO_TOKEN, dwsetupflags: u32, dwupgradefrombuildno: u32, pszwanswerfile: Param4, pszwanswersections: Param5) -> ::windows::core::Result<INetCfgComponent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).Install)(::windows::core::Interface::as_raw(self), pszwinfid.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(dwsetupflags), ::core::mem::transmute(dwupgradefrombuildno), pszwanswerfile.into_param().abi(), pszwanswersections.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
+    pub unsafe fn Install<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwinfid: Param0, pobotoken: *const OBO_TOKEN, dwsetupflags: u32, dwupgradefrombuildno: u32, pszwanswerfile: Param4, pszwanswersections: Param5) -> ::windows_core::Result<INetCfgComponent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).Install)(::windows_core::Interface::as_raw(self), pszwinfid.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(dwsetupflags), ::core::mem::transmute(dwupgradefrombuildno), pszwanswerfile.into_param().abi(), pszwanswersections.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DeInstall<'a, Param0: ::windows::core::IntoParam<'a, INetCfgComponent>>(&self, pcomponent: Param0, pobotoken: *const OBO_TOKEN, pmszwrefs: *mut ::windows::core::PWSTR) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).DeInstall)(::windows::core::Interface::as_raw(self), pcomponent.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(pmszwrefs)).ok()
+    pub unsafe fn DeInstall<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>>(&self, pcomponent: Param0, pobotoken: *const OBO_TOKEN, pmszwrefs: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).DeInstall)(::windows_core::Interface::as_raw(self), pcomponent.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(pmszwrefs)).ok()
     }
 }
-impl ::core::convert::From<INetCfgClassSetup> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgClassSetup> for ::windows_core::IUnknown {
     fn from(value: INetCfgClassSetup) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgClassSetup> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgClassSetup> for ::windows_core::IUnknown {
     fn from(value: &INetCfgClassSetup) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgClassSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgClassSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgClassSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgClassSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgClassSetup {
@@ -3670,71 +3670,71 @@ impl ::core::fmt::Debug for INetCfgClassSetup {
         f.debug_tuple("INetCfgClassSetup").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgClassSetup {
+unsafe impl ::windows_core::Interface for INetCfgClassSetup {
     type Vtable = INetCfgClassSetup_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8ae9d_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8ae9d_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgClassSetup_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub SelectAndInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: super::super::Foundation::HWND, pobotoken: *const OBO_TOKEN, ppnccitem: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub SelectAndInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: super::super::Foundation::HWND, pobotoken: *const OBO_TOKEN, ppnccitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SelectAndInstall: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub Install: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwinfid: ::windows::core::PCWSTR, pobotoken: *const OBO_TOKEN, dwsetupflags: u32, dwupgradefrombuildno: u32, pszwanswerfile: ::windows::core::PCWSTR, pszwanswersections: ::windows::core::PCWSTR, ppnccitem: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Install: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwinfid: ::windows_core::PCWSTR, pobotoken: *const OBO_TOKEN, dwsetupflags: u32, dwupgradefrombuildno: u32, pszwanswerfile: ::windows_core::PCWSTR, pszwanswersections: ::windows_core::PCWSTR, ppnccitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Install: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub DeInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcomponent: ::windows::core::RawPtr, pobotoken: *const OBO_TOKEN, pmszwrefs: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT,
+    pub DeInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcomponent: ::windows_core::RawPtr, pobotoken: *const OBO_TOKEN, pmszwrefs: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     DeInstall: usize,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgClassSetup2(::windows::core::IUnknown);
+pub struct INetCfgClassSetup2(::windows_core::IUnknown);
 impl INetCfgClassSetup2 {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SelectAndInstall<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, hwndparent: Param0, pobotoken: *const OBO_TOKEN) -> ::windows::core::Result<INetCfgComponent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).base__.SelectAndInstall)(::windows::core::Interface::as_raw(self), hwndparent.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
+    pub unsafe fn SelectAndInstall<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, hwndparent: Param0, pobotoken: *const OBO_TOKEN) -> ::windows_core::Result<INetCfgComponent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.SelectAndInstall)(::windows_core::Interface::as_raw(self), hwndparent.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Install<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszwinfid: Param0, pobotoken: *const OBO_TOKEN, dwsetupflags: u32, dwupgradefrombuildno: u32, pszwanswerfile: Param4, pszwanswersections: Param5) -> ::windows::core::Result<INetCfgComponent> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).base__.Install)(::windows::core::Interface::as_raw(self), pszwinfid.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(dwsetupflags), ::core::mem::transmute(dwupgradefrombuildno), pszwanswerfile.into_param().abi(), pszwanswersections.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
+    pub unsafe fn Install<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwinfid: Param0, pobotoken: *const OBO_TOKEN, dwsetupflags: u32, dwupgradefrombuildno: u32, pszwanswerfile: Param4, pszwanswersections: Param5) -> ::windows_core::Result<INetCfgComponent> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Install)(::windows_core::Interface::as_raw(self), pszwinfid.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(dwsetupflags), ::core::mem::transmute(dwupgradefrombuildno), pszwanswerfile.into_param().abi(), pszwanswersections.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DeInstall<'a, Param0: ::windows::core::IntoParam<'a, INetCfgComponent>>(&self, pcomponent: Param0, pobotoken: *const OBO_TOKEN, pmszwrefs: *mut ::windows::core::PWSTR) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.DeInstall)(::windows::core::Interface::as_raw(self), pcomponent.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(pmszwrefs)).ok()
+    pub unsafe fn DeInstall<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>>(&self, pcomponent: Param0, pobotoken: *const OBO_TOKEN, pmszwrefs: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.DeInstall)(::windows_core::Interface::as_raw(self), pcomponent.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(pmszwrefs)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn UpdateNonEnumeratedComponent<'a, Param0: ::windows::core::IntoParam<'a, INetCfgComponent>>(&self, picomp: Param0, dwsetupflags: u32, dwupgradefrombuildno: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).UpdateNonEnumeratedComponent)(::windows::core::Interface::as_raw(self), picomp.into_param().abi(), ::core::mem::transmute(dwsetupflags), ::core::mem::transmute(dwupgradefrombuildno)).ok()
+    pub unsafe fn UpdateNonEnumeratedComponent<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>>(&self, picomp: Param0, dwsetupflags: u32, dwupgradefrombuildno: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).UpdateNonEnumeratedComponent)(::windows_core::Interface::as_raw(self), picomp.into_param().abi(), ::core::mem::transmute(dwsetupflags), ::core::mem::transmute(dwupgradefrombuildno)).ok()
     }
 }
-impl ::core::convert::From<INetCfgClassSetup2> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgClassSetup2> for ::windows_core::IUnknown {
     fn from(value: INetCfgClassSetup2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgClassSetup2> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgClassSetup2> for ::windows_core::IUnknown {
     fn from(value: &INetCfgClassSetup2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgClassSetup2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgClassSetup2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgClassSetup2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgClassSetup2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<INetCfgClassSetup2> for INetCfgClassSetup {
@@ -3747,14 +3747,14 @@ impl ::core::convert::From<&INetCfgClassSetup2> for INetCfgClassSetup {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, INetCfgClassSetup> for INetCfgClassSetup2 {
-    fn into_param(self) -> ::windows::core::Param<'a, INetCfgClassSetup> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, INetCfgClassSetup> for INetCfgClassSetup2 {
+    fn into_param(self) -> ::windows_core::Param<'a, INetCfgClassSetup> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, INetCfgClassSetup> for &'a INetCfgClassSetup2 {
-    fn into_param(self) -> ::windows::core::Param<'a, INetCfgClassSetup> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, INetCfgClassSetup> for &'a INetCfgClassSetup2 {
+    fn into_param(self) -> ::windows_core::Param<'a, INetCfgClassSetup> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgClassSetup2 {
@@ -3773,99 +3773,99 @@ impl ::core::fmt::Debug for INetCfgClassSetup2 {
         f.debug_tuple("INetCfgClassSetup2").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgClassSetup2 {
+unsafe impl ::windows_core::Interface for INetCfgClassSetup2 {
     type Vtable = INetCfgClassSetup2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8aea0_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8aea0_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgClassSetup2_Vtbl {
     pub base__: INetCfgClassSetup_Vtbl,
-    pub UpdateNonEnumeratedComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, picomp: ::windows::core::RawPtr, dwsetupflags: u32, dwupgradefrombuildno: u32) -> ::windows::core::HRESULT,
+    pub UpdateNonEnumeratedComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, picomp: ::windows_core::RawPtr, dwsetupflags: u32, dwupgradefrombuildno: u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgComponent(::windows::core::IUnknown);
+pub struct INetCfgComponent(::windows_core::IUnknown);
 impl INetCfgComponent {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetDisplayName(&self) -> ::windows::core::Result<::windows::core::PWSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::PWSTR>::zeroed();
-        (::windows::core::Interface::vtable(self).GetDisplayName)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::PWSTR>(result__)
+    pub unsafe fn GetDisplayName(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
+        (::windows_core::Interface::vtable(self).GetDisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn SetDisplayName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszwdisplayname: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetDisplayName)(::windows::core::Interface::as_raw(self), pszwdisplayname.into_param().abi()).ok()
+    pub unsafe fn SetDisplayName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwdisplayname: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetDisplayName)(::windows_core::Interface::as_raw(self), pszwdisplayname.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetHelpText(&self) -> ::windows::core::Result<::windows::core::PWSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::PWSTR>::zeroed();
-        (::windows::core::Interface::vtable(self).GetHelpText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::PWSTR>(result__)
+    pub unsafe fn GetHelpText(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
+        (::windows_core::Interface::vtable(self).GetHelpText)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetId(&self) -> ::windows::core::Result<::windows::core::PWSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::PWSTR>::zeroed();
-        (::windows::core::Interface::vtable(self).GetId)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::PWSTR>(result__)
+    pub unsafe fn GetId(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
+        (::windows_core::Interface::vtable(self).GetId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetCharacteristics(&self) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetCharacteristics(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).GetCharacteristics)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).GetCharacteristics)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetInstanceGuid(&self) -> ::windows::core::Result<::windows::core::GUID> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::GUID>::zeroed();
-        (::windows::core::Interface::vtable(self).GetInstanceGuid)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::GUID>(result__)
+    pub unsafe fn GetInstanceGuid(&self) -> ::windows_core::Result<::windows_core::GUID> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::GUID>::zeroed();
+        (::windows_core::Interface::vtable(self).GetInstanceGuid)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::GUID>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetPnpDevNodeId(&self) -> ::windows::core::Result<::windows::core::PWSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::PWSTR>::zeroed();
-        (::windows::core::Interface::vtable(self).GetPnpDevNodeId)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::PWSTR>(result__)
+    pub unsafe fn GetPnpDevNodeId(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
+        (::windows_core::Interface::vtable(self).GetPnpDevNodeId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetClassGuid(&self) -> ::windows::core::Result<::windows::core::GUID> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::GUID>::zeroed();
-        (::windows::core::Interface::vtable(self).GetClassGuid)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::GUID>(result__)
+    pub unsafe fn GetClassGuid(&self) -> ::windows_core::Result<::windows_core::GUID> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::GUID>::zeroed();
+        (::windows_core::Interface::vtable(self).GetClassGuid)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::GUID>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetBindName(&self) -> ::windows::core::Result<::windows::core::PWSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::PWSTR>::zeroed();
-        (::windows::core::Interface::vtable(self).GetBindName)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::PWSTR>(result__)
+    pub unsafe fn GetBindName(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
+        (::windows_core::Interface::vtable(self).GetBindName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetDeviceStatus(&self) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetDeviceStatus(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).GetDeviceStatus)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).GetDeviceStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_System_Registry\"`*"]
     #[cfg(feature = "Win32_System_Registry")]
-    pub unsafe fn OpenParamKey(&self) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+    pub unsafe fn OpenParamKey(&self) -> ::windows_core::Result<super::super::System::Registry::HKEY> {
         let mut result__ = ::core::mem::MaybeUninit::<super::super::System::Registry::HKEY>::zeroed();
-        (::windows::core::Interface::vtable(self).OpenParamKey)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Registry::HKEY>(result__)
+        (::windows_core::Interface::vtable(self).OpenParamKey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Registry::HKEY>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RaisePropertyUi<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, hwndparent: Param0, dwflags: u32, punkcontext: Param2) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).RaisePropertyUi)(::windows::core::Interface::as_raw(self), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), punkcontext.into_param().abi()).ok()
+    pub unsafe fn RaisePropertyUi<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, hwndparent: Param0, dwflags: u32, punkcontext: Param2) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).RaisePropertyUi)(::windows_core::Interface::as_raw(self), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), punkcontext.into_param().abi()).ok()
     }
 }
-impl ::core::convert::From<INetCfgComponent> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgComponent> for ::windows_core::IUnknown {
     fn from(value: INetCfgComponent) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgComponent> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgComponent> for ::windows_core::IUnknown {
     fn from(value: &INetCfgComponent) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgComponent {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgComponent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgComponent {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgComponent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgComponent {
@@ -3884,89 +3884,89 @@ impl ::core::fmt::Debug for INetCfgComponent {
         f.debug_tuple("INetCfgComponent").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgComponent {
+unsafe impl ::windows_core::Interface for INetCfgComponent {
     type Vtable = INetCfgComponent_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8ae99_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8ae99_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgComponent_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetDisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwdisplayname: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT,
-    pub SetDisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwdisplayname: ::windows::core::PCWSTR) -> ::windows::core::HRESULT,
-    pub GetHelpText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwhelptext: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT,
-    pub GetId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwid: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT,
-    pub GetCharacteristics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwcharacteristics: *mut u32) -> ::windows::core::HRESULT,
-    pub GetInstanceGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT,
-    pub GetPnpDevNodeId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwdevnodeid: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT,
-    pub GetClassGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT,
-    pub GetBindName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwbindname: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT,
-    pub GetDeviceStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pulstatus: *mut u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetDisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwdisplayname: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwdisplayname: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
+    pub GetHelpText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwhelptext: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
+    pub GetId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
+    pub GetCharacteristics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwcharacteristics: *mut u32) -> ::windows_core::HRESULT,
+    pub GetInstanceGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
+    pub GetPnpDevNodeId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwdevnodeid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
+    pub GetClassGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
+    pub GetBindName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwbindname: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
+    pub GetDeviceStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pulstatus: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Registry")]
-    pub OpenParamKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phkey: *mut super::super::System::Registry::HKEY) -> ::windows::core::HRESULT,
+    pub OpenParamKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phkey: *mut super::super::System::Registry::HKEY) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Registry"))]
     OpenParamKey: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub RaisePropertyUi: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: super::super::Foundation::HWND, dwflags: u32, punkcontext: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub RaisePropertyUi: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: super::super::Foundation::HWND, dwflags: u32, punkcontext: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     RaisePropertyUi: usize,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgComponentBindings(::windows::core::IUnknown);
+pub struct INetCfgComponentBindings(::windows_core::IUnknown);
 impl INetCfgComponentBindings {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn BindTo<'a, Param0: ::windows::core::IntoParam<'a, INetCfgComponent>>(&self, pnccitem: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).BindTo)(::windows::core::Interface::as_raw(self), pnccitem.into_param().abi()).ok()
+    pub unsafe fn BindTo<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>>(&self, pnccitem: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).BindTo)(::windows_core::Interface::as_raw(self), pnccitem.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn UnbindFrom<'a, Param0: ::windows::core::IntoParam<'a, INetCfgComponent>>(&self, pnccitem: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).UnbindFrom)(::windows::core::Interface::as_raw(self), pnccitem.into_param().abi()).ok()
+    pub unsafe fn UnbindFrom<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>>(&self, pnccitem: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).UnbindFrom)(::windows_core::Interface::as_raw(self), pnccitem.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn SupportsBindingInterface<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, dwflags: u32, pszwinterfacename: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SupportsBindingInterface)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwflags), pszwinterfacename.into_param().abi()).ok()
+    pub unsafe fn SupportsBindingInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, dwflags: u32, pszwinterfacename: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SupportsBindingInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwflags), pszwinterfacename.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn IsBoundTo<'a, Param0: ::windows::core::IntoParam<'a, INetCfgComponent>>(&self, pnccitem: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).IsBoundTo)(::windows::core::Interface::as_raw(self), pnccitem.into_param().abi()).ok()
+    pub unsafe fn IsBoundTo<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>>(&self, pnccitem: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).IsBoundTo)(::windows_core::Interface::as_raw(self), pnccitem.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn IsBindableTo<'a, Param0: ::windows::core::IntoParam<'a, INetCfgComponent>>(&self, pnccitem: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).IsBindableTo)(::windows::core::Interface::as_raw(self), pnccitem.into_param().abi()).ok()
+    pub unsafe fn IsBindableTo<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>>(&self, pnccitem: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).IsBindableTo)(::windows_core::Interface::as_raw(self), pnccitem.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn EnumBindingPaths(&self, dwflags: u32) -> ::windows::core::Result<IEnumNetCfgBindingPath> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).EnumBindingPaths)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgBindingPath>(result__)
+    pub unsafe fn EnumBindingPaths(&self, dwflags: u32) -> ::windows_core::Result<IEnumNetCfgBindingPath> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).EnumBindingPaths)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumNetCfgBindingPath>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn MoveBefore<'a, Param0: ::windows::core::IntoParam<'a, INetCfgBindingPath>, Param1: ::windows::core::IntoParam<'a, INetCfgBindingPath>>(&self, pncbitemsrc: Param0, pncbitemdest: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).MoveBefore)(::windows::core::Interface::as_raw(self), pncbitemsrc.into_param().abi(), pncbitemdest.into_param().abi()).ok()
+    pub unsafe fn MoveBefore<'a, Param0: ::windows_core::IntoParam<'a, INetCfgBindingPath>, Param1: ::windows_core::IntoParam<'a, INetCfgBindingPath>>(&self, pncbitemsrc: Param0, pncbitemdest: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).MoveBefore)(::windows_core::Interface::as_raw(self), pncbitemsrc.into_param().abi(), pncbitemdest.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn MoveAfter<'a, Param0: ::windows::core::IntoParam<'a, INetCfgBindingPath>, Param1: ::windows::core::IntoParam<'a, INetCfgBindingPath>>(&self, pncbitemsrc: Param0, pncbitemdest: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).MoveAfter)(::windows::core::Interface::as_raw(self), pncbitemsrc.into_param().abi(), pncbitemdest.into_param().abi()).ok()
+    pub unsafe fn MoveAfter<'a, Param0: ::windows_core::IntoParam<'a, INetCfgBindingPath>, Param1: ::windows_core::IntoParam<'a, INetCfgBindingPath>>(&self, pncbitemsrc: Param0, pncbitemdest: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).MoveAfter)(::windows_core::Interface::as_raw(self), pncbitemsrc.into_param().abi(), pncbitemdest.into_param().abi()).ok()
     }
 }
-impl ::core::convert::From<INetCfgComponentBindings> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgComponentBindings> for ::windows_core::IUnknown {
     fn from(value: INetCfgComponentBindings) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgComponentBindings> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgComponentBindings> for ::windows_core::IUnknown {
     fn from(value: &INetCfgComponentBindings) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgComponentBindings {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgComponentBindings {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgComponentBindings {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgComponentBindings {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgComponentBindings {
@@ -3985,63 +3985,63 @@ impl ::core::fmt::Debug for INetCfgComponentBindings {
         f.debug_tuple("INetCfgComponentBindings").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgComponentBindings {
+unsafe impl ::windows_core::Interface for INetCfgComponentBindings {
     type Vtable = INetCfgComponentBindings_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8ae9e_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8ae9e_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgComponentBindings_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub BindTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnccitem: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub UnbindFrom: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnccitem: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SupportsBindingInterface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwflags: u32, pszwinterfacename: ::windows::core::PCWSTR) -> ::windows::core::HRESULT,
-    pub IsBoundTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnccitem: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub IsBindableTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnccitem: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub EnumBindingPaths: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwflags: u32, ppienum: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub MoveBefore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pncbitemsrc: ::windows::core::RawPtr, pncbitemdest: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub MoveAfter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pncbitemsrc: ::windows::core::RawPtr, pncbitemdest: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub BindTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnccitem: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub UnbindFrom: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnccitem: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SupportsBindingInterface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwflags: u32, pszwinterfacename: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
+    pub IsBoundTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnccitem: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub IsBindableTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnccitem: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub EnumBindingPaths: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwflags: u32, ppienum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub MoveBefore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pncbitemsrc: ::windows_core::RawPtr, pncbitemdest: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub MoveAfter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pncbitemsrc: ::windows_core::RawPtr, pncbitemdest: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgComponentControl(::windows::core::IUnknown);
+pub struct INetCfgComponentControl(::windows_core::IUnknown);
 impl INetCfgComponentControl {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Initialize<'a, Param0: ::windows::core::IntoParam<'a, INetCfgComponent>, Param1: ::windows::core::IntoParam<'a, INetCfg>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, picomp: Param0, pinetcfg: Param1, finstalling: Param2) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Initialize)(::windows::core::Interface::as_raw(self), picomp.into_param().abi(), pinetcfg.into_param().abi(), finstalling.into_param().abi()).ok()
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>, Param1: ::windows_core::IntoParam<'a, INetCfg>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, picomp: Param0, pinetcfg: Param1, finstalling: Param2) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), picomp.into_param().abi(), pinetcfg.into_param().abi(), finstalling.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn ApplyRegistryChanges(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ApplyRegistryChanges)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn ApplyRegistryChanges(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ApplyRegistryChanges)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn ApplyPnpChanges<'a, Param0: ::windows::core::IntoParam<'a, INetCfgPnpReconfigCallback>>(&self, picallback: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ApplyPnpChanges)(::windows::core::Interface::as_raw(self), picallback.into_param().abi()).ok()
+    pub unsafe fn ApplyPnpChanges<'a, Param0: ::windows_core::IntoParam<'a, INetCfgPnpReconfigCallback>>(&self, picallback: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ApplyPnpChanges)(::windows_core::Interface::as_raw(self), picallback.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn CancelChanges(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).CancelChanges)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn CancelChanges(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).CancelChanges)(::windows_core::Interface::as_raw(self)).ok()
     }
 }
-impl ::core::convert::From<INetCfgComponentControl> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgComponentControl> for ::windows_core::IUnknown {
     fn from(value: INetCfgComponentControl) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgComponentControl> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgComponentControl> for ::windows_core::IUnknown {
     fn from(value: &INetCfgComponentControl) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgComponentControl {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgComponentControl {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgComponentControl {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgComponentControl {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgComponentControl {
@@ -4060,53 +4060,53 @@ impl ::core::fmt::Debug for INetCfgComponentControl {
         f.debug_tuple("INetCfgComponentControl").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgComponentControl {
+unsafe impl ::windows_core::Interface for INetCfgComponentControl {
     type Vtable = INetCfgComponentControl_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x932238df_bea1_11d0_9298_00c04fc99dcf);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x932238df_bea1_11d0_9298_00c04fc99dcf);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgComponentControl_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, picomp: ::windows::core::RawPtr, pinetcfg: ::windows::core::RawPtr, finstalling: super::super::Foundation::BOOL) -> ::windows::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, picomp: ::windows_core::RawPtr, pinetcfg: ::windows_core::RawPtr, finstalling: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Initialize: usize,
-    pub ApplyRegistryChanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub ApplyPnpChanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, picallback: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub CancelChanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub ApplyRegistryChanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub ApplyPnpChanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, picallback: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CancelChanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgComponentNotifyBinding(::windows::core::IUnknown);
+pub struct INetCfgComponentNotifyBinding(::windows_core::IUnknown);
 impl INetCfgComponentNotifyBinding {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn QueryBindingPath<'a, Param1: ::windows::core::IntoParam<'a, INetCfgBindingPath>>(&self, dwchangeflag: u32, pipath: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).QueryBindingPath)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwchangeflag), pipath.into_param().abi()).ok()
+    pub unsafe fn QueryBindingPath<'a, Param1: ::windows_core::IntoParam<'a, INetCfgBindingPath>>(&self, dwchangeflag: u32, pipath: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).QueryBindingPath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwchangeflag), pipath.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn NotifyBindingPath<'a, Param1: ::windows::core::IntoParam<'a, INetCfgBindingPath>>(&self, dwchangeflag: u32, pipath: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).NotifyBindingPath)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwchangeflag), pipath.into_param().abi()).ok()
+    pub unsafe fn NotifyBindingPath<'a, Param1: ::windows_core::IntoParam<'a, INetCfgBindingPath>>(&self, dwchangeflag: u32, pipath: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).NotifyBindingPath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwchangeflag), pipath.into_param().abi()).ok()
     }
 }
-impl ::core::convert::From<INetCfgComponentNotifyBinding> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgComponentNotifyBinding> for ::windows_core::IUnknown {
     fn from(value: INetCfgComponentNotifyBinding) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgComponentNotifyBinding> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgComponentNotifyBinding> for ::windows_core::IUnknown {
     fn from(value: &INetCfgComponentNotifyBinding) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgComponentNotifyBinding {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgComponentNotifyBinding {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgComponentNotifyBinding {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgComponentNotifyBinding {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgComponentNotifyBinding {
@@ -4125,57 +4125,57 @@ impl ::core::fmt::Debug for INetCfgComponentNotifyBinding {
         f.debug_tuple("INetCfgComponentNotifyBinding").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgComponentNotifyBinding {
+unsafe impl ::windows_core::Interface for INetCfgComponentNotifyBinding {
     type Vtable = INetCfgComponentNotifyBinding_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x932238e1_bea1_11d0_9298_00c04fc99dcf);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x932238e1_bea1_11d0_9298_00c04fc99dcf);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgComponentNotifyBinding_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub QueryBindingPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwchangeflag: u32, pipath: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub NotifyBindingPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwchangeflag: u32, pipath: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub QueryBindingPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwchangeflag: u32, pipath: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub NotifyBindingPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwchangeflag: u32, pipath: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgComponentNotifyGlobal(::windows::core::IUnknown);
+pub struct INetCfgComponentNotifyGlobal(::windows_core::IUnknown);
 impl INetCfgComponentNotifyGlobal {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetSupportedNotifications(&self) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetSupportedNotifications(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).GetSupportedNotifications)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).GetSupportedNotifications)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn SysQueryBindingPath<'a, Param1: ::windows::core::IntoParam<'a, INetCfgBindingPath>>(&self, dwchangeflag: u32, pipath: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SysQueryBindingPath)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwchangeflag), pipath.into_param().abi()).ok()
+    pub unsafe fn SysQueryBindingPath<'a, Param1: ::windows_core::IntoParam<'a, INetCfgBindingPath>>(&self, dwchangeflag: u32, pipath: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SysQueryBindingPath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwchangeflag), pipath.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn SysNotifyBindingPath<'a, Param1: ::windows::core::IntoParam<'a, INetCfgBindingPath>>(&self, dwchangeflag: u32, pipath: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SysNotifyBindingPath)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwchangeflag), pipath.into_param().abi()).ok()
+    pub unsafe fn SysNotifyBindingPath<'a, Param1: ::windows_core::IntoParam<'a, INetCfgBindingPath>>(&self, dwchangeflag: u32, pipath: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SysNotifyBindingPath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwchangeflag), pipath.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn SysNotifyComponent<'a, Param1: ::windows::core::IntoParam<'a, INetCfgComponent>>(&self, dwchangeflag: u32, picomp: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SysNotifyComponent)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwchangeflag), picomp.into_param().abi()).ok()
+    pub unsafe fn SysNotifyComponent<'a, Param1: ::windows_core::IntoParam<'a, INetCfgComponent>>(&self, dwchangeflag: u32, picomp: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SysNotifyComponent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwchangeflag), picomp.into_param().abi()).ok()
     }
 }
-impl ::core::convert::From<INetCfgComponentNotifyGlobal> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgComponentNotifyGlobal> for ::windows_core::IUnknown {
     fn from(value: INetCfgComponentNotifyGlobal) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgComponentNotifyGlobal> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgComponentNotifyGlobal> for ::windows_core::IUnknown {
     fn from(value: &INetCfgComponentNotifyGlobal) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgComponentNotifyGlobal {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgComponentNotifyGlobal {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgComponentNotifyGlobal {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgComponentNotifyGlobal {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgComponentNotifyGlobal {
@@ -4194,68 +4194,68 @@ impl ::core::fmt::Debug for INetCfgComponentNotifyGlobal {
         f.debug_tuple("INetCfgComponentNotifyGlobal").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgComponentNotifyGlobal {
+unsafe impl ::windows_core::Interface for INetCfgComponentNotifyGlobal {
     type Vtable = INetCfgComponentNotifyGlobal_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x932238e2_bea1_11d0_9298_00c04fc99dcf);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x932238e2_bea1_11d0_9298_00c04fc99dcf);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgComponentNotifyGlobal_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetSupportedNotifications: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwnotifications: *mut u32) -> ::windows::core::HRESULT,
-    pub SysQueryBindingPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwchangeflag: u32, pipath: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SysNotifyBindingPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwchangeflag: u32, pipath: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
-    pub SysNotifyComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwchangeflag: u32, picomp: ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetSupportedNotifications: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwnotifications: *mut u32) -> ::windows_core::HRESULT,
+    pub SysQueryBindingPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwchangeflag: u32, pipath: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SysNotifyBindingPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwchangeflag: u32, pipath: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SysNotifyComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwchangeflag: u32, picomp: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgComponentPropertyUi(::windows::core::IUnknown);
+pub struct INetCfgComponentPropertyUi(::windows_core::IUnknown);
 impl INetCfgComponentPropertyUi {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn QueryPropertyUi<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, punkreserved: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).QueryPropertyUi)(::windows::core::Interface::as_raw(self), punkreserved.into_param().abi()).ok()
+    pub unsafe fn QueryPropertyUi<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, punkreserved: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).QueryPropertyUi)(::windows_core::Interface::as_raw(self), punkreserved.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn SetContext<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, punkreserved: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SetContext)(::windows::core::Interface::as_raw(self), punkreserved.into_param().abi()).ok()
+    pub unsafe fn SetContext<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, punkreserved: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SetContext)(::windows_core::Interface::as_raw(self), punkreserved.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MergePropPages<'a, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, pdwdefpages: *mut u32, pahpspprivate: *mut *mut u8, pcpages: *mut u32, hwndparent: Param3, pszstartpage: *const ::windows::core::PWSTR) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).MergePropPages)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pdwdefpages), ::core::mem::transmute(pahpspprivate), ::core::mem::transmute(pcpages), hwndparent.into_param().abi(), ::core::mem::transmute(pszstartpage)).ok()
+    pub unsafe fn MergePropPages<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, pdwdefpages: *mut u32, pahpspprivate: *mut *mut u8, pcpages: *mut u32, hwndparent: Param3, pszstartpage: *const ::windows_core::PWSTR) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).MergePropPages)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwdefpages), ::core::mem::transmute(pahpspprivate), ::core::mem::transmute(pcpages), hwndparent.into_param().abi(), ::core::mem::transmute(pszstartpage)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ValidateProperties<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, hwndsheet: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ValidateProperties)(::windows::core::Interface::as_raw(self), hwndsheet.into_param().abi()).ok()
+    pub unsafe fn ValidateProperties<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, hwndsheet: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ValidateProperties)(::windows_core::Interface::as_raw(self), hwndsheet.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn ApplyProperties(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ApplyProperties)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn ApplyProperties(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ApplyProperties)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn CancelProperties(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).CancelProperties)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn CancelProperties(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).CancelProperties)(::windows_core::Interface::as_raw(self)).ok()
     }
 }
-impl ::core::convert::From<INetCfgComponentPropertyUi> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgComponentPropertyUi> for ::windows_core::IUnknown {
     fn from(value: INetCfgComponentPropertyUi) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgComponentPropertyUi> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgComponentPropertyUi> for ::windows_core::IUnknown {
     fn from(value: &INetCfgComponentPropertyUi) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgComponentPropertyUi {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgComponentPropertyUi {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgComponentPropertyUi {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgComponentPropertyUi {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgComponentPropertyUi {
@@ -4274,66 +4274,66 @@ impl ::core::fmt::Debug for INetCfgComponentPropertyUi {
         f.debug_tuple("INetCfgComponentPropertyUi").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgComponentPropertyUi {
+unsafe impl ::windows_core::Interface for INetCfgComponentPropertyUi {
     type Vtable = INetCfgComponentPropertyUi_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x932238e0_bea1_11d0_9298_00c04fc99dcf);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x932238e0_bea1_11d0_9298_00c04fc99dcf);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgComponentPropertyUi_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub QueryPropertyUi: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, punkreserved: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub SetContext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, punkreserved: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub QueryPropertyUi: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, punkreserved: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub SetContext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, punkreserved: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub MergePropPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwdefpages: *mut u32, pahpspprivate: *mut *mut u8, pcpages: *mut u32, hwndparent: super::super::Foundation::HWND, pszstartpage: *const ::windows::core::PWSTR) -> ::windows::core::HRESULT,
+    pub MergePropPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwdefpages: *mut u32, pahpspprivate: *mut *mut u8, pcpages: *mut u32, hwndparent: super::super::Foundation::HWND, pszstartpage: *const ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     MergePropPages: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub ValidateProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndsheet: super::super::Foundation::HWND) -> ::windows::core::HRESULT,
+    pub ValidateProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndsheet: super::super::Foundation::HWND) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ValidateProperties: usize,
-    pub ApplyProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub CancelProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub ApplyProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub CancelProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgComponentSetup(::windows::core::IUnknown);
+pub struct INetCfgComponentSetup(::windows_core::IUnknown);
 impl INetCfgComponentSetup {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Install(&self, dwsetupflags: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Install)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwsetupflags)).ok()
+    pub unsafe fn Install(&self, dwsetupflags: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Install)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwsetupflags)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Upgrade(&self, dwsetupflags: u32, dwupgradefombuildno: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Upgrade)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwsetupflags), ::core::mem::transmute(dwupgradefombuildno)).ok()
+    pub unsafe fn Upgrade(&self, dwsetupflags: u32, dwupgradefombuildno: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Upgrade)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwsetupflags), ::core::mem::transmute(dwupgradefombuildno)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn ReadAnswerFile<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszwanswerfile: Param0, pszwanswersections: Param1) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ReadAnswerFile)(::windows::core::Interface::as_raw(self), pszwanswerfile.into_param().abi(), pszwanswersections.into_param().abi()).ok()
+    pub unsafe fn ReadAnswerFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwanswerfile: Param0, pszwanswersections: Param1) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ReadAnswerFile)(::windows_core::Interface::as_raw(self), pszwanswerfile.into_param().abi(), pszwanswersections.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Removing(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Removing)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn Removing(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Removing)(::windows_core::Interface::as_raw(self)).ok()
     }
 }
-impl ::core::convert::From<INetCfgComponentSetup> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgComponentSetup> for ::windows_core::IUnknown {
     fn from(value: INetCfgComponentSetup) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgComponentSetup> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgComponentSetup> for ::windows_core::IUnknown {
     fn from(value: &INetCfgComponentSetup) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgComponentSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgComponentSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgComponentSetup {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgComponentSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgComponentSetup {
@@ -4352,50 +4352,50 @@ impl ::core::fmt::Debug for INetCfgComponentSetup {
         f.debug_tuple("INetCfgComponentSetup").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgComponentSetup {
+unsafe impl ::windows_core::Interface for INetCfgComponentSetup {
     type Vtable = INetCfgComponentSetup_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x932238e3_bea1_11d0_9298_00c04fc99dcf);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x932238e3_bea1_11d0_9298_00c04fc99dcf);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgComponentSetup_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Install: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwsetupflags: u32) -> ::windows::core::HRESULT,
-    pub Upgrade: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwsetupflags: u32, dwupgradefombuildno: u32) -> ::windows::core::HRESULT,
-    pub ReadAnswerFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwanswerfile: ::windows::core::PCWSTR, pszwanswersections: ::windows::core::PCWSTR) -> ::windows::core::HRESULT,
-    pub Removing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Install: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwsetupflags: u32) -> ::windows_core::HRESULT,
+    pub Upgrade: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwsetupflags: u32, dwupgradefombuildno: u32) -> ::windows_core::HRESULT,
+    pub ReadAnswerFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwanswerfile: ::windows_core::PCWSTR, pszwanswersections: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
+    pub Removing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgComponentSysPrep(::windows::core::IUnknown);
+pub struct INetCfgComponentSysPrep(::windows_core::IUnknown);
 impl INetCfgComponentSysPrep {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn SaveAdapterParameters<'a, Param0: ::windows::core::IntoParam<'a, INetCfgSysPrep>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pncsp: Param0, pszwanswersections: Param1, padapterinstanceguid: *const ::windows::core::GUID) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SaveAdapterParameters)(::windows::core::Interface::as_raw(self), pncsp.into_param().abi(), pszwanswersections.into_param().abi(), ::core::mem::transmute(padapterinstanceguid)).ok()
+    pub unsafe fn SaveAdapterParameters<'a, Param0: ::windows_core::IntoParam<'a, INetCfgSysPrep>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pncsp: Param0, pszwanswersections: Param1, padapterinstanceguid: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SaveAdapterParameters)(::windows_core::Interface::as_raw(self), pncsp.into_param().abi(), pszwanswersections.into_param().abi(), ::core::mem::transmute(padapterinstanceguid)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn RestoreAdapterParameters<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszwanswerfile: Param0, pszwanswersection: Param1, padapterinstanceguid: *const ::windows::core::GUID) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).RestoreAdapterParameters)(::windows::core::Interface::as_raw(self), pszwanswerfile.into_param().abi(), pszwanswersection.into_param().abi(), ::core::mem::transmute(padapterinstanceguid)).ok()
+    pub unsafe fn RestoreAdapterParameters<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwanswerfile: Param0, pszwanswersection: Param1, padapterinstanceguid: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).RestoreAdapterParameters)(::windows_core::Interface::as_raw(self), pszwanswerfile.into_param().abi(), pszwanswersection.into_param().abi(), ::core::mem::transmute(padapterinstanceguid)).ok()
     }
 }
-impl ::core::convert::From<INetCfgComponentSysPrep> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgComponentSysPrep> for ::windows_core::IUnknown {
     fn from(value: INetCfgComponentSysPrep) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgComponentSysPrep> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgComponentSysPrep> for ::windows_core::IUnknown {
     fn from(value: &INetCfgComponentSysPrep) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgComponentSysPrep {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgComponentSysPrep {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgComponentSysPrep {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgComponentSysPrep {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgComponentSysPrep {
@@ -4414,52 +4414,52 @@ impl ::core::fmt::Debug for INetCfgComponentSysPrep {
         f.debug_tuple("INetCfgComponentSysPrep").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgComponentSysPrep {
+unsafe impl ::windows_core::Interface for INetCfgComponentSysPrep {
     type Vtable = INetCfgComponentSysPrep_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8ae9a_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8ae9a_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgComponentSysPrep_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub SaveAdapterParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pncsp: ::windows::core::RawPtr, pszwanswersections: ::windows::core::PCWSTR, padapterinstanceguid: *const ::windows::core::GUID) -> ::windows::core::HRESULT,
-    pub RestoreAdapterParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwanswerfile: ::windows::core::PCWSTR, pszwanswersection: ::windows::core::PCWSTR, padapterinstanceguid: *const ::windows::core::GUID) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub SaveAdapterParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pncsp: ::windows_core::RawPtr, pszwanswersections: ::windows_core::PCWSTR, padapterinstanceguid: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
+    pub RestoreAdapterParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwanswerfile: ::windows_core::PCWSTR, pszwanswersection: ::windows_core::PCWSTR, padapterinstanceguid: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgComponentUpperEdge(::windows::core::IUnknown);
+pub struct INetCfgComponentUpperEdge(::windows_core::IUnknown);
 impl INetCfgComponentUpperEdge {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetInterfaceIdsForAdapter<'a, Param0: ::windows::core::IntoParam<'a, INetCfgComponent>>(&self, padapter: Param0, pdwnuminterfaces: *mut u32, ppguidinterfaceids: *mut *mut ::windows::core::GUID) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).GetInterfaceIdsForAdapter)(::windows::core::Interface::as_raw(self), padapter.into_param().abi(), ::core::mem::transmute(pdwnuminterfaces), ::core::mem::transmute(ppguidinterfaceids)).ok()
+    pub unsafe fn GetInterfaceIdsForAdapter<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>>(&self, padapter: Param0, pdwnuminterfaces: *mut u32, ppguidinterfaceids: *mut *mut ::windows_core::GUID) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).GetInterfaceIdsForAdapter)(::windows_core::Interface::as_raw(self), padapter.into_param().abi(), ::core::mem::transmute(pdwnuminterfaces), ::core::mem::transmute(ppguidinterfaceids)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn AddInterfacesToAdapter<'a, Param0: ::windows::core::IntoParam<'a, INetCfgComponent>>(&self, padapter: Param0, dwnuminterfaces: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).AddInterfacesToAdapter)(::windows::core::Interface::as_raw(self), padapter.into_param().abi(), ::core::mem::transmute(dwnuminterfaces)).ok()
+    pub unsafe fn AddInterfacesToAdapter<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>>(&self, padapter: Param0, dwnuminterfaces: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).AddInterfacesToAdapter)(::windows_core::Interface::as_raw(self), padapter.into_param().abi(), ::core::mem::transmute(dwnuminterfaces)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn RemoveInterfacesFromAdapter<'a, Param0: ::windows::core::IntoParam<'a, INetCfgComponent>>(&self, padapter: Param0, pguidinterfaceids: &[::windows::core::GUID]) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).RemoveInterfacesFromAdapter)(::windows::core::Interface::as_raw(self), padapter.into_param().abi(), pguidinterfaceids.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pguidinterfaceids))).ok()
+    pub unsafe fn RemoveInterfacesFromAdapter<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>>(&self, padapter: Param0, pguidinterfaceids: &[::windows_core::GUID]) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).RemoveInterfacesFromAdapter)(::windows_core::Interface::as_raw(self), padapter.into_param().abi(), pguidinterfaceids.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pguidinterfaceids))).ok()
     }
 }
-impl ::core::convert::From<INetCfgComponentUpperEdge> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgComponentUpperEdge> for ::windows_core::IUnknown {
     fn from(value: INetCfgComponentUpperEdge) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgComponentUpperEdge> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgComponentUpperEdge> for ::windows_core::IUnknown {
     fn from(value: &INetCfgComponentUpperEdge) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgComponentUpperEdge {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgComponentUpperEdge {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgComponentUpperEdge {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgComponentUpperEdge {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgComponentUpperEdge {
@@ -4478,55 +4478,55 @@ impl ::core::fmt::Debug for INetCfgComponentUpperEdge {
         f.debug_tuple("INetCfgComponentUpperEdge").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgComponentUpperEdge {
+unsafe impl ::windows_core::Interface for INetCfgComponentUpperEdge {
     type Vtable = INetCfgComponentUpperEdge_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x932238e4_bea1_11d0_9298_00c04fc99dcf);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x932238e4_bea1_11d0_9298_00c04fc99dcf);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgComponentUpperEdge_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetInterfaceIdsForAdapter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, padapter: ::windows::core::RawPtr, pdwnuminterfaces: *mut u32, ppguidinterfaceids: *mut *mut ::windows::core::GUID) -> ::windows::core::HRESULT,
-    pub AddInterfacesToAdapter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, padapter: ::windows::core::RawPtr, dwnuminterfaces: u32) -> ::windows::core::HRESULT,
-    pub RemoveInterfacesFromAdapter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, padapter: ::windows::core::RawPtr, dwnuminterfaces: u32, pguidinterfaceids: *const ::windows::core::GUID) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetInterfaceIdsForAdapter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, padapter: ::windows_core::RawPtr, pdwnuminterfaces: *mut u32, ppguidinterfaceids: *mut *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
+    pub AddInterfacesToAdapter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, padapter: ::windows_core::RawPtr, dwnuminterfaces: u32) -> ::windows_core::HRESULT,
+    pub RemoveInterfacesFromAdapter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, padapter: ::windows_core::RawPtr, dwnuminterfaces: u32, pguidinterfaceids: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgLock(::windows::core::IUnknown);
+pub struct INetCfgLock(::windows_core::IUnknown);
 impl INetCfgLock {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn AcquireWriteLock<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, cmstimeout: u32, pszwclientdescription: Param1) -> ::windows::core::Result<::windows::core::PWSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::PWSTR>::zeroed();
-        (::windows::core::Interface::vtable(self).AcquireWriteLock)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(cmstimeout), pszwclientdescription.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::PWSTR>(result__)
+    pub unsafe fn AcquireWriteLock<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, cmstimeout: u32, pszwclientdescription: Param1) -> ::windows_core::Result<::windows_core::PWSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
+        (::windows_core::Interface::vtable(self).AcquireWriteLock)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cmstimeout), pszwclientdescription.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn ReleaseWriteLock(&self) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ReleaseWriteLock)(::windows::core::Interface::as_raw(self)).ok()
+    pub unsafe fn ReleaseWriteLock(&self) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ReleaseWriteLock)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn IsWriteLocked(&self) -> ::windows::core::Result<::windows::core::PWSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::PWSTR>::zeroed();
-        (::windows::core::Interface::vtable(self).IsWriteLocked)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::PWSTR>(result__)
+    pub unsafe fn IsWriteLocked(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
+        (::windows_core::Interface::vtable(self).IsWriteLocked)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
 }
-impl ::core::convert::From<INetCfgLock> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgLock> for ::windows_core::IUnknown {
     fn from(value: INetCfgLock) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgLock> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgLock> for ::windows_core::IUnknown {
     fn from(value: &INetCfgLock) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgLock {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgLock {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgLock {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgLock {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgLock {
@@ -4545,45 +4545,45 @@ impl ::core::fmt::Debug for INetCfgLock {
         f.debug_tuple("INetCfgLock").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgLock {
+unsafe impl ::windows_core::Interface for INetCfgLock {
     type Vtable = INetCfgLock_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8ae9f_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8ae9f_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgLock_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub AcquireWriteLock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cmstimeout: u32, pszwclientdescription: ::windows::core::PCWSTR, ppszwclientdescription: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT,
-    pub ReleaseWriteLock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
-    pub IsWriteLocked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwclientdescription: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub AcquireWriteLock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cmstimeout: u32, pszwclientdescription: ::windows_core::PCWSTR, ppszwclientdescription: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
+    pub ReleaseWriteLock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub IsWriteLocked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwclientdescription: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgPnpReconfigCallback(::windows::core::IUnknown);
+pub struct INetCfgPnpReconfigCallback(::windows_core::IUnknown);
 impl INetCfgPnpReconfigCallback {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn SendPnpReconfig<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, layer: NCPNP_RECONFIG_LAYER, pszwupper: Param1, pszwlower: Param2, pvdata: *const ::core::ffi::c_void, dwsizeofdata: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).SendPnpReconfig)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(layer), pszwupper.into_param().abi(), pszwlower.into_param().abi(), ::core::mem::transmute(pvdata), ::core::mem::transmute(dwsizeofdata)).ok()
+    pub unsafe fn SendPnpReconfig<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, layer: NCPNP_RECONFIG_LAYER, pszwupper: Param1, pszwlower: Param2, pvdata: *const ::core::ffi::c_void, dwsizeofdata: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).SendPnpReconfig)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(layer), pszwupper.into_param().abi(), pszwlower.into_param().abi(), ::core::mem::transmute(pvdata), ::core::mem::transmute(dwsizeofdata)).ok()
     }
 }
-impl ::core::convert::From<INetCfgPnpReconfigCallback> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgPnpReconfigCallback> for ::windows_core::IUnknown {
     fn from(value: INetCfgPnpReconfigCallback) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgPnpReconfigCallback> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgPnpReconfigCallback> for ::windows_core::IUnknown {
     fn from(value: &INetCfgPnpReconfigCallback) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgPnpReconfigCallback {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgPnpReconfigCallback {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgPnpReconfigCallback {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgPnpReconfigCallback {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgPnpReconfigCallback {
@@ -4602,56 +4602,56 @@ impl ::core::fmt::Debug for INetCfgPnpReconfigCallback {
         f.debug_tuple("INetCfgPnpReconfigCallback").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgPnpReconfigCallback {
+unsafe impl ::windows_core::Interface for INetCfgPnpReconfigCallback {
     type Vtable = INetCfgPnpReconfigCallback_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8d84bd35_e227_11d2_b700_00a0c98a6a85);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8d84bd35_e227_11d2_b700_00a0c98a6a85);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgPnpReconfigCallback_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub SendPnpReconfig: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, layer: NCPNP_RECONFIG_LAYER, pszwupper: ::windows::core::PCWSTR, pszwlower: ::windows::core::PCWSTR, pvdata: *const ::core::ffi::c_void, dwsizeofdata: u32) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub SendPnpReconfig: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, layer: NCPNP_RECONFIG_LAYER, pszwupper: ::windows_core::PCWSTR, pszwlower: ::windows_core::PCWSTR, pvdata: *const ::core::ffi::c_void, dwsizeofdata: u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetCfgSysPrep(::windows::core::IUnknown);
+pub struct INetCfgSysPrep(::windows_core::IUnknown);
 impl INetCfgSysPrep {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn HrSetupSetFirstDword<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pwszsection: Param0, pwszkey: Param1, dwvalue: u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).HrSetupSetFirstDword)(::windows::core::Interface::as_raw(self), pwszsection.into_param().abi(), pwszkey.into_param().abi(), ::core::mem::transmute(dwvalue)).ok()
+    pub unsafe fn HrSetupSetFirstDword<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszsection: Param0, pwszkey: Param1, dwvalue: u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).HrSetupSetFirstDword)(::windows_core::Interface::as_raw(self), pwszsection.into_param().abi(), pwszkey.into_param().abi(), ::core::mem::transmute(dwvalue)).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn HrSetupSetFirstString<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pwszsection: Param0, pwszkey: Param1, pwszvalue: Param2) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).HrSetupSetFirstString)(::windows::core::Interface::as_raw(self), pwszsection.into_param().abi(), pwszkey.into_param().abi(), pwszvalue.into_param().abi()).ok()
+    pub unsafe fn HrSetupSetFirstString<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszsection: Param0, pwszkey: Param1, pwszvalue: Param2) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).HrSetupSetFirstString)(::windows_core::Interface::as_raw(self), pwszsection.into_param().abi(), pwszkey.into_param().abi(), pwszvalue.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn HrSetupSetFirstStringAsBool<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pwszsection: Param0, pwszkey: Param1, fvalue: Param2) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).HrSetupSetFirstStringAsBool)(::windows::core::Interface::as_raw(self), pwszsection.into_param().abi(), pwszkey.into_param().abi(), fvalue.into_param().abi()).ok()
+    pub unsafe fn HrSetupSetFirstStringAsBool<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pwszsection: Param0, pwszkey: Param1, fvalue: Param2) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).HrSetupSetFirstStringAsBool)(::windows_core::Interface::as_raw(self), pwszsection.into_param().abi(), pwszkey.into_param().abi(), fvalue.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn HrSetupSetFirstMultiSzField<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pwszsection: Param0, pwszkey: Param1, pmszvalue: Param2) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).HrSetupSetFirstMultiSzField)(::windows::core::Interface::as_raw(self), pwszsection.into_param().abi(), pwszkey.into_param().abi(), pmszvalue.into_param().abi()).ok()
+    pub unsafe fn HrSetupSetFirstMultiSzField<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszsection: Param0, pwszkey: Param1, pmszvalue: Param2) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).HrSetupSetFirstMultiSzField)(::windows_core::Interface::as_raw(self), pwszsection.into_param().abi(), pwszkey.into_param().abi(), pmszvalue.into_param().abi()).ok()
     }
 }
-impl ::core::convert::From<INetCfgSysPrep> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetCfgSysPrep> for ::windows_core::IUnknown {
     fn from(value: INetCfgSysPrep) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetCfgSysPrep> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetCfgSysPrep> for ::windows_core::IUnknown {
     fn from(value: &INetCfgSysPrep) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetCfgSysPrep {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetCfgSysPrep {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetCfgSysPrep {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetCfgSysPrep {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetCfgSysPrep {
@@ -4670,50 +4670,50 @@ impl ::core::fmt::Debug for INetCfgSysPrep {
         f.debug_tuple("INetCfgSysPrep").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetCfgSysPrep {
+unsafe impl ::windows_core::Interface for INetCfgSysPrep {
     type Vtable = INetCfgSysPrep_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc0e8ae98_306e_11d1_aacf_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc0e8ae98_306e_11d1_aacf_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetCfgSysPrep_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub HrSetupSetFirstDword: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszsection: ::windows::core::PCWSTR, pwszkey: ::windows::core::PCWSTR, dwvalue: u32) -> ::windows::core::HRESULT,
-    pub HrSetupSetFirstString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszsection: ::windows::core::PCWSTR, pwszkey: ::windows::core::PCWSTR, pwszvalue: ::windows::core::PCWSTR) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub HrSetupSetFirstDword: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszsection: ::windows_core::PCWSTR, pwszkey: ::windows_core::PCWSTR, dwvalue: u32) -> ::windows_core::HRESULT,
+    pub HrSetupSetFirstString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszsection: ::windows_core::PCWSTR, pwszkey: ::windows_core::PCWSTR, pwszvalue: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub HrSetupSetFirstStringAsBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszsection: ::windows::core::PCWSTR, pwszkey: ::windows::core::PCWSTR, fvalue: super::super::Foundation::BOOL) -> ::windows::core::HRESULT,
+    pub HrSetupSetFirstStringAsBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszsection: ::windows_core::PCWSTR, pwszkey: ::windows_core::PCWSTR, fvalue: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     HrSetupSetFirstStringAsBool: usize,
-    pub HrSetupSetFirstMultiSzField: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszsection: ::windows::core::PCWSTR, pwszkey: ::windows::core::PCWSTR, pmszvalue: ::windows::core::PCWSTR) -> ::windows::core::HRESULT,
+    pub HrSetupSetFirstMultiSzField: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszsection: ::windows_core::PCWSTR, pwszkey: ::windows_core::PCWSTR, pmszvalue: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetLanConnectionUiInfo(::windows::core::IUnknown);
+pub struct INetLanConnectionUiInfo(::windows_core::IUnknown);
 impl INetLanConnectionUiInfo {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn GetDeviceGuid(&self) -> ::windows::core::Result<::windows::core::GUID> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::GUID>::zeroed();
-        (::windows::core::Interface::vtable(self).GetDeviceGuid)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::GUID>(result__)
+    pub unsafe fn GetDeviceGuid(&self) -> ::windows_core::Result<::windows_core::GUID> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::GUID>::zeroed();
+        (::windows_core::Interface::vtable(self).GetDeviceGuid)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::GUID>(result__)
     }
 }
-impl ::core::convert::From<INetLanConnectionUiInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetLanConnectionUiInfo> for ::windows_core::IUnknown {
     fn from(value: INetLanConnectionUiInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetLanConnectionUiInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetLanConnectionUiInfo> for ::windows_core::IUnknown {
     fn from(value: &INetLanConnectionUiInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetLanConnectionUiInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetLanConnectionUiInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetLanConnectionUiInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetLanConnectionUiInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetLanConnectionUiInfo {
@@ -4732,45 +4732,45 @@ impl ::core::fmt::Debug for INetLanConnectionUiInfo {
         f.debug_tuple("INetLanConnectionUiInfo").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetLanConnectionUiInfo {
+unsafe impl ::windows_core::Interface for INetLanConnectionUiInfo {
     type Vtable = INetLanConnectionUiInfo_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc08956a6_1cd3_11d1_b1c5_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc08956a6_1cd3_11d1_b1c5_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetLanConnectionUiInfo_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub GetDeviceGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub GetDeviceGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct INetRasConnectionIpUiInfo(::windows::core::IUnknown);
+pub struct INetRasConnectionIpUiInfo(::windows_core::IUnknown);
 impl INetRasConnectionIpUiInfo {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUiInfo(&self) -> ::windows::core::Result<RASCON_IPUI> {
+    pub unsafe fn GetUiInfo(&self) -> ::windows_core::Result<RASCON_IPUI> {
         let mut result__ = ::core::mem::MaybeUninit::<RASCON_IPUI>::zeroed();
-        (::windows::core::Interface::vtable(self).GetUiInfo)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<RASCON_IPUI>(result__)
+        (::windows_core::Interface::vtable(self).GetUiInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<RASCON_IPUI>(result__)
     }
 }
-impl ::core::convert::From<INetRasConnectionIpUiInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<INetRasConnectionIpUiInfo> for ::windows_core::IUnknown {
     fn from(value: INetRasConnectionIpUiInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&INetRasConnectionIpUiInfo> for ::windows::core::IUnknown {
+impl ::core::convert::From<&INetRasConnectionIpUiInfo> for ::windows_core::IUnknown {
     fn from(value: &INetRasConnectionIpUiInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for INetRasConnectionIpUiInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for INetRasConnectionIpUiInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a INetRasConnectionIpUiInfo {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetRasConnectionIpUiInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for INetRasConnectionIpUiInfo {
@@ -4789,16 +4789,16 @@ impl ::core::fmt::Debug for INetRasConnectionIpUiInfo {
         f.debug_tuple("INetRasConnectionIpUiInfo").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for INetRasConnectionIpUiInfo {
+unsafe impl ::windows_core::Interface for INetRasConnectionIpUiInfo {
     type Vtable = INetRasConnectionIpUiInfo_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfaedcf58_31fe_11d1_aad2_00805fc1270e);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfaedcf58_31fe_11d1_aad2_00805fc1270e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetRasConnectionIpUiInfo_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub GetUiInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pinfo: *mut RASCON_IPUI) -> ::windows::core::HRESULT,
+    pub GetUiInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pinfo: *mut RASCON_IPUI) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetUiInfo: usize,
 }
@@ -4808,37 +4808,37 @@ pub const IPX_PROTOCOL_BASE: u32 = 131071u32;
 pub const IPX_PROTOCOL_RIP: u32 = 131072u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct IProvisioningDomain(::windows::core::IUnknown);
+pub struct IProvisioningDomain(::windows_core::IUnknown);
 impl IProvisioningDomain {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-    pub unsafe fn Add<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszwpathtofolder: Param0) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Add)(::windows::core::Interface::as_raw(self), pszwpathtofolder.into_param().abi()).ok()
+    pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwpathtofolder: Param0) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), pszwpathtofolder.into_param().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Data_Xml_MsXml\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub unsafe fn Query<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszwdomain: Param0, pszwlanguage: Param1, pszwxpathquery: Param2) -> ::windows::core::Result<super::super::Data::Xml::MsXml::IXMLDOMNodeList> {
-        let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-        (::windows::core::Interface::vtable(self).Query)(::windows::core::Interface::as_raw(self), pszwdomain.into_param().abi(), pszwlanguage.into_param().abi(), pszwxpathquery.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Data::Xml::MsXml::IXMLDOMNodeList>(result__)
+    pub unsafe fn Query<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwdomain: Param0, pszwlanguage: Param1, pszwxpathquery: Param2) -> ::windows_core::Result<super::super::Data::Xml::MsXml::IXMLDOMNodeList> {
+        let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+        (::windows_core::Interface::vtable(self).Query)(::windows_core::Interface::as_raw(self), pszwdomain.into_param().abi(), pszwlanguage.into_param().abi(), pszwxpathquery.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Data::Xml::MsXml::IXMLDOMNodeList>(result__)
     }
 }
-impl ::core::convert::From<IProvisioningDomain> for ::windows::core::IUnknown {
+impl ::core::convert::From<IProvisioningDomain> for ::windows_core::IUnknown {
     fn from(value: IProvisioningDomain) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IProvisioningDomain> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IProvisioningDomain> for ::windows_core::IUnknown {
     fn from(value: &IProvisioningDomain) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IProvisioningDomain {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IProvisioningDomain {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IProvisioningDomain {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IProvisioningDomain {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IProvisioningDomain {
@@ -4857,49 +4857,49 @@ impl ::core::fmt::Debug for IProvisioningDomain {
         f.debug_tuple("IProvisioningDomain").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IProvisioningDomain {
+unsafe impl ::windows_core::Interface for IProvisioningDomain {
     type Vtable = IProvisioningDomain_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc96fbd50_24dd_11d8_89fb_00904b2ea9c6);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc96fbd50_24dd_11d8_89fb_00904b2ea9c6);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IProvisioningDomain_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwpathtofolder: ::windows::core::PCWSTR) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwpathtofolder: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub Query: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwdomain: ::windows::core::PCWSTR, pszwlanguage: ::windows::core::PCWSTR, pszwxpathquery: ::windows::core::PCWSTR, nodes: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub Query: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwdomain: ::windows_core::PCWSTR, pszwlanguage: ::windows_core::PCWSTR, pszwxpathquery: ::windows_core::PCWSTR, nodes: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com")))]
     Query: usize,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[repr(transparent)]
-pub struct IProvisioningProfileWireless(::windows::core::IUnknown);
+pub struct IProvisioningProfileWireless(::windows_core::IUnknown);
 impl IProvisioningProfileWireless {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateProfile<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrxmlwirelessconfigprofile: Param0, bstrxmlconnectionconfigprofile: Param1, padapterinstanceguid: *const ::windows::core::GUID) -> ::windows::core::Result<u32> {
+    pub unsafe fn CreateProfile<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrxmlwirelessconfigprofile: Param0, bstrxmlconnectionconfigprofile: Param1, padapterinstanceguid: *const ::windows_core::GUID) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
-        (::windows::core::Interface::vtable(self).CreateProfile)(::windows::core::Interface::as_raw(self), bstrxmlwirelessconfigprofile.into_param().abi(), bstrxmlconnectionconfigprofile.into_param().abi(), ::core::mem::transmute(padapterinstanceguid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
+        (::windows_core::Interface::vtable(self).CreateProfile)(::windows_core::Interface::as_raw(self), bstrxmlwirelessconfigprofile.into_param().abi(), bstrxmlconnectionconfigprofile.into_param().abi(), ::core::mem::transmute(padapterinstanceguid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
 }
-impl ::core::convert::From<IProvisioningProfileWireless> for ::windows::core::IUnknown {
+impl ::core::convert::From<IProvisioningProfileWireless> for ::windows_core::IUnknown {
     fn from(value: IProvisioningProfileWireless) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IProvisioningProfileWireless> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IProvisioningProfileWireless> for ::windows_core::IUnknown {
     fn from(value: &IProvisioningProfileWireless) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IProvisioningProfileWireless {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IProvisioningProfileWireless {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IProvisioningProfileWireless {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IProvisioningProfileWireless {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IProvisioningProfileWireless {
@@ -4918,16 +4918,16 @@ impl ::core::fmt::Debug for IProvisioningProfileWireless {
         f.debug_tuple("IProvisioningProfileWireless").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IProvisioningProfileWireless {
+unsafe impl ::windows_core::Interface for IProvisioningProfileWireless {
     type Vtable = IProvisioningProfileWireless_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc96fbd51_24dd_11d8_89fb_00904b2ea9c6);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc96fbd51_24dd_11d8_89fb_00904b2ea9c6);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IProvisioningProfileWireless_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub CreateProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrxmlwirelessconfigprofile: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrxmlconnectionconfigprofile: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, padapterinstanceguid: *const ::windows::core::GUID, pulstatus: *mut u32) -> ::windows::core::HRESULT,
+    pub CreateProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrxmlwirelessconfigprofile: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrxmlconnectionconfigprofile: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, padapterinstanceguid: *const ::windows_core::GUID, pulstatus: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateProfile: usize,
 }
@@ -4937,12 +4937,12 @@ pub const IR_PROMISCUOUS: u32 = 0u32;
 pub const IR_PROMISCUOUS_MULTICAST: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn I_NetLogonControl2<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, functioncode: u32, querylevel: u32, data: *const u8, buffer: *mut *mut u8) -> u32 {
+pub unsafe fn I_NetLogonControl2<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, functioncode: u32, querylevel: u32, data: *const u8, buffer: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn I_NetLogonControl2(servername: ::windows::core::PCWSTR, functioncode: u32, querylevel: u32, data: *const u8, buffer: *mut *mut u8) -> u32;
+            fn I_NetLogonControl2(servername: ::windows_core::PCWSTR, functioncode: u32, querylevel: u32, data: *const u8, buffer: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(I_NetLogonControl2(servername.into_param().abi(), ::core::mem::transmute(functioncode), ::core::mem::transmute(querylevel), ::core::mem::transmute(data), ::core::mem::transmute(buffer)))
     }
@@ -5004,7 +5004,7 @@ pub const LOCALGROUP_COMMENT_PARMNUM: u32 = 2u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct LOCALGROUP_INFO_0 {
-    pub lgrpi0_name: ::windows::core::PWSTR,
+    pub lgrpi0_name: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for LOCALGROUP_INFO_0 {}
 impl ::core::clone::Clone for LOCALGROUP_INFO_0 {
@@ -5017,12 +5017,12 @@ impl ::core::fmt::Debug for LOCALGROUP_INFO_0 {
         f.debug_struct("LOCALGROUP_INFO_0").field("lgrpi0_name", &self.lgrpi0_name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LOCALGROUP_INFO_0 {
+unsafe impl ::windows_core::Abi for LOCALGROUP_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LOCALGROUP_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LOCALGROUP_INFO_0 {}
@@ -5034,8 +5034,8 @@ impl ::core::default::Default for LOCALGROUP_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct LOCALGROUP_INFO_1 {
-    pub lgrpi1_name: ::windows::core::PWSTR,
-    pub lgrpi1_comment: ::windows::core::PWSTR,
+    pub lgrpi1_name: ::windows_core::PWSTR,
+    pub lgrpi1_comment: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for LOCALGROUP_INFO_1 {}
 impl ::core::clone::Clone for LOCALGROUP_INFO_1 {
@@ -5048,12 +5048,12 @@ impl ::core::fmt::Debug for LOCALGROUP_INFO_1 {
         f.debug_struct("LOCALGROUP_INFO_1").field("lgrpi1_name", &self.lgrpi1_name).field("lgrpi1_comment", &self.lgrpi1_comment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LOCALGROUP_INFO_1 {
+unsafe impl ::windows_core::Abi for LOCALGROUP_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LOCALGROUP_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LOCALGROUP_INFO_1 {}
@@ -5065,7 +5065,7 @@ impl ::core::default::Default for LOCALGROUP_INFO_1 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct LOCALGROUP_INFO_1002 {
-    pub lgrpi1002_comment: ::windows::core::PWSTR,
+    pub lgrpi1002_comment: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for LOCALGROUP_INFO_1002 {}
 impl ::core::clone::Clone for LOCALGROUP_INFO_1002 {
@@ -5078,12 +5078,12 @@ impl ::core::fmt::Debug for LOCALGROUP_INFO_1002 {
         f.debug_struct("LOCALGROUP_INFO_1002").field("lgrpi1002_comment", &self.lgrpi1002_comment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LOCALGROUP_INFO_1002 {
+unsafe impl ::windows_core::Abi for LOCALGROUP_INFO_1002 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LOCALGROUP_INFO_1002 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_INFO_1002>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_INFO_1002>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LOCALGROUP_INFO_1002 {}
@@ -5113,13 +5113,13 @@ impl ::core::fmt::Debug for LOCALGROUP_MEMBERS_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for LOCALGROUP_MEMBERS_INFO_0 {
+unsafe impl ::windows_core::Abi for LOCALGROUP_MEMBERS_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for LOCALGROUP_MEMBERS_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_MEMBERS_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_MEMBERS_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5136,7 +5136,7 @@ impl ::core::default::Default for LOCALGROUP_MEMBERS_INFO_0 {
 pub struct LOCALGROUP_MEMBERS_INFO_1 {
     pub lgrmi1_sid: super::super::Foundation::PSID,
     pub lgrmi1_sidusage: super::super::Security::SID_NAME_USE,
-    pub lgrmi1_name: ::windows::core::PWSTR,
+    pub lgrmi1_name: ::windows_core::PWSTR,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_1 {}
@@ -5153,13 +5153,13 @@ impl ::core::fmt::Debug for LOCALGROUP_MEMBERS_INFO_1 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-unsafe impl ::windows::core::Abi for LOCALGROUP_MEMBERS_INFO_1 {
+unsafe impl ::windows_core::Abi for LOCALGROUP_MEMBERS_INFO_1 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 impl ::core::cmp::PartialEq for LOCALGROUP_MEMBERS_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_MEMBERS_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_MEMBERS_INFO_1>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
@@ -5176,7 +5176,7 @@ impl ::core::default::Default for LOCALGROUP_MEMBERS_INFO_1 {
 pub struct LOCALGROUP_MEMBERS_INFO_2 {
     pub lgrmi2_sid: super::super::Foundation::PSID,
     pub lgrmi2_sidusage: super::super::Security::SID_NAME_USE,
-    pub lgrmi2_domainandname: ::windows::core::PWSTR,
+    pub lgrmi2_domainandname: ::windows_core::PWSTR,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_2 {}
@@ -5193,13 +5193,13 @@ impl ::core::fmt::Debug for LOCALGROUP_MEMBERS_INFO_2 {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-unsafe impl ::windows::core::Abi for LOCALGROUP_MEMBERS_INFO_2 {
+unsafe impl ::windows_core::Abi for LOCALGROUP_MEMBERS_INFO_2 {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 impl ::core::cmp::PartialEq for LOCALGROUP_MEMBERS_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_MEMBERS_INFO_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_MEMBERS_INFO_2>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
@@ -5213,7 +5213,7 @@ impl ::core::default::Default for LOCALGROUP_MEMBERS_INFO_2 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct LOCALGROUP_MEMBERS_INFO_3 {
-    pub lgrmi3_domainandname: ::windows::core::PWSTR,
+    pub lgrmi3_domainandname: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_3 {}
 impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_3 {
@@ -5226,12 +5226,12 @@ impl ::core::fmt::Debug for LOCALGROUP_MEMBERS_INFO_3 {
         f.debug_struct("LOCALGROUP_MEMBERS_INFO_3").field("lgrmi3_domainandname", &self.lgrmi3_domainandname).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LOCALGROUP_MEMBERS_INFO_3 {
+unsafe impl ::windows_core::Abi for LOCALGROUP_MEMBERS_INFO_3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LOCALGROUP_MEMBERS_INFO_3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_MEMBERS_INFO_3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_MEMBERS_INFO_3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LOCALGROUP_MEMBERS_INFO_3 {}
@@ -5245,7 +5245,7 @@ pub const LOCALGROUP_NAME_PARMNUM: u32 = 1u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct LOCALGROUP_USERS_INFO_0 {
-    pub lgrui0_name: ::windows::core::PWSTR,
+    pub lgrui0_name: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for LOCALGROUP_USERS_INFO_0 {}
 impl ::core::clone::Clone for LOCALGROUP_USERS_INFO_0 {
@@ -5258,12 +5258,12 @@ impl ::core::fmt::Debug for LOCALGROUP_USERS_INFO_0 {
         f.debug_struct("LOCALGROUP_USERS_INFO_0").field("lgrui0_name", &self.lgrui0_name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LOCALGROUP_USERS_INFO_0 {
+unsafe impl ::windows_core::Abi for LOCALGROUP_USERS_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LOCALGROUP_USERS_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_USERS_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_USERS_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LOCALGROUP_USERS_INFO_0 {}
@@ -5284,56 +5284,56 @@ pub const LOWER_GET_HINT_MASK: u32 = 65280u32;
 pub const LOWER_HINT_MASK: u32 = 255u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn LogErrorA(dwmessageid: u32, plpwssubstrings: &[::windows::core::PSTR], dwerrorcode: u32) {
+pub unsafe fn LogErrorA(dwmessageid: u32, plpwssubstrings: &[::windows_core::PSTR], dwerrorcode: u32) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LogErrorA(dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows::core::PSTR, dwerrorcode: u32);
+            fn LogErrorA(dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows_core::PSTR, dwerrorcode: u32);
         }
-        LogErrorA(::core::mem::transmute(dwmessageid), plpwssubstrings.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(plpwssubstrings)), ::core::mem::transmute(dwerrorcode))
+        LogErrorA(::core::mem::transmute(dwmessageid), plpwssubstrings.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpwssubstrings)), ::core::mem::transmute(dwerrorcode))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn LogErrorW(dwmessageid: u32, plpwssubstrings: &[::windows::core::PWSTR], dwerrorcode: u32) {
+pub unsafe fn LogErrorW(dwmessageid: u32, plpwssubstrings: &[::windows_core::PWSTR], dwerrorcode: u32) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LogErrorW(dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows::core::PWSTR, dwerrorcode: u32);
+            fn LogErrorW(dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows_core::PWSTR, dwerrorcode: u32);
         }
-        LogErrorW(::core::mem::transmute(dwmessageid), plpwssubstrings.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(plpwssubstrings)), ::core::mem::transmute(dwerrorcode))
+        LogErrorW(::core::mem::transmute(dwmessageid), plpwssubstrings.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpwssubstrings)), ::core::mem::transmute(dwerrorcode))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn LogEventA(weventtype: u32, dwmessageid: u32, plpwssubstrings: &[::windows::core::PSTR]) {
+pub unsafe fn LogEventA(weventtype: u32, dwmessageid: u32, plpwssubstrings: &[::windows_core::PSTR]) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LogEventA(weventtype: u32, dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows::core::PSTR);
+            fn LogEventA(weventtype: u32, dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows_core::PSTR);
         }
-        LogEventA(::core::mem::transmute(weventtype), ::core::mem::transmute(dwmessageid), plpwssubstrings.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(plpwssubstrings)))
+        LogEventA(::core::mem::transmute(weventtype), ::core::mem::transmute(dwmessageid), plpwssubstrings.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpwssubstrings)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn LogEventW(weventtype: u32, dwmessageid: u32, plpwssubstrings: &[::windows::core::PWSTR]) {
+pub unsafe fn LogEventW(weventtype: u32, dwmessageid: u32, plpwssubstrings: &[::windows_core::PWSTR]) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LogEventW(weventtype: u32, dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows::core::PWSTR);
+            fn LogEventW(weventtype: u32, dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows_core::PWSTR);
         }
-        LogEventW(::core::mem::transmute(weventtype), ::core::mem::transmute(dwmessageid), plpwssubstrings.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(plpwssubstrings)))
+        LogEventW(::core::mem::transmute(weventtype), ::core::mem::transmute(dwmessageid), plpwssubstrings.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpwssubstrings)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -5444,12 +5444,12 @@ impl ::core::fmt::Debug for MPR_PROTOCOL_0 {
         f.debug_struct("MPR_PROTOCOL_0").field("dwProtocolId", &self.dwProtocolId).field("wszProtocol", &self.wszProtocol).field("wszDLLName", &self.wszDLLName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MPR_PROTOCOL_0 {
+unsafe impl ::windows_core::Abi for MPR_PROTOCOL_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MPR_PROTOCOL_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_PROTOCOL_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_PROTOCOL_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MPR_PROTOCOL_0 {}
@@ -5486,12 +5486,12 @@ impl ::core::fmt::Debug for MSA_INFO_0 {
         f.debug_struct("MSA_INFO_0").field("State", &self.State).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MSA_INFO_0 {
+unsafe impl ::windows_core::Abi for MSA_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MSA_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSA_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSA_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MSA_INFO_0 {}
@@ -5519,7 +5519,7 @@ impl ::core::default::Default for MSA_INFO_LEVEL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MSA_INFO_LEVEL {
+unsafe impl ::windows_core::Abi for MSA_INFO_LEVEL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MSA_INFO_LEVEL {
@@ -5552,7 +5552,7 @@ impl ::core::default::Default for MSA_INFO_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MSA_INFO_STATE {
+unsafe impl ::windows_core::Abi for MSA_INFO_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MSA_INFO_STATE {
@@ -5569,7 +5569,7 @@ pub const MSGNAME_NOT_FORWARDED: u32 = 0u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct MSG_INFO_0 {
-    pub msgi0_name: ::windows::core::PWSTR,
+    pub msgi0_name: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for MSG_INFO_0 {}
 impl ::core::clone::Clone for MSG_INFO_0 {
@@ -5582,12 +5582,12 @@ impl ::core::fmt::Debug for MSG_INFO_0 {
         f.debug_struct("MSG_INFO_0").field("msgi0_name", &self.msgi0_name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MSG_INFO_0 {
+unsafe impl ::windows_core::Abi for MSG_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MSG_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSG_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSG_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MSG_INFO_0 {}
@@ -5599,9 +5599,9 @@ impl ::core::default::Default for MSG_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct MSG_INFO_1 {
-    pub msgi1_name: ::windows::core::PWSTR,
+    pub msgi1_name: ::windows_core::PWSTR,
     pub msgi1_forward_flag: u32,
-    pub msgi1_forward: ::windows::core::PWSTR,
+    pub msgi1_forward: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for MSG_INFO_1 {}
 impl ::core::clone::Clone for MSG_INFO_1 {
@@ -5614,12 +5614,12 @@ impl ::core::fmt::Debug for MSG_INFO_1 {
         f.debug_struct("MSG_INFO_1").field("msgi1_name", &self.msgi1_name).field("msgi1_forward_flag", &self.msgi1_forward_flag).field("msgi1_forward", &self.msgi1_forward).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MSG_INFO_1 {
+unsafe impl ::windows_core::Abi for MSG_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MSG_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSG_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSG_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MSG_INFO_1 {}
@@ -5677,7 +5677,7 @@ impl ::core::default::Default for NCPNP_RECONFIG_LAYER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NCPNP_RECONFIG_LAYER {
+unsafe impl ::windows_core::Abi for NCPNP_RECONFIG_LAYER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NCPNP_RECONFIG_LAYER {
@@ -5704,7 +5704,7 @@ impl ::core::default::Default for NCRP_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NCRP_FLAGS {
+unsafe impl ::windows_core::Abi for NCRP_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NCRP_FLAGS {
@@ -6855,27 +6855,27 @@ pub const NETBIOS_NAME_LEN: u32 = 16u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub const NETCFG_CLIENT_CID_MS_MSClient: &str = "ms_msclient";
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_E_ACTIVE_RAS_CONNECTIONS: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147180506i32);
+pub const NETCFG_E_ACTIVE_RAS_CONNECTIONS: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147180506i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_E_ADAPTER_NOT_FOUND: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147180505i32);
+pub const NETCFG_E_ADAPTER_NOT_FOUND: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147180505i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_E_ALREADY_INITIALIZED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147180512i32);
+pub const NETCFG_E_ALREADY_INITIALIZED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147180512i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_E_COMPONENT_REMOVED_PENDING_REBOOT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147180504i32);
+pub const NETCFG_E_COMPONENT_REMOVED_PENDING_REBOOT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147180504i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_E_DUPLICATE_INSTANCEID: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147180501i32);
+pub const NETCFG_E_DUPLICATE_INSTANCEID: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147180501i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_E_IN_USE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147180510i32);
+pub const NETCFG_E_IN_USE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147180510i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_E_MAX_FILTER_LIMIT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147180503i32);
+pub const NETCFG_E_MAX_FILTER_LIMIT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147180503i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_E_NEED_REBOOT: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147180507i32);
+pub const NETCFG_E_NEED_REBOOT: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147180507i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_E_NOT_INITIALIZED: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147180511i32);
+pub const NETCFG_E_NOT_INITIALIZED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147180511i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_E_NO_WRITE_LOCK: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147180508i32);
+pub const NETCFG_E_NO_WRITE_LOCK: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147180508i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_E_VMSWITCH_ACTIVE_OVER_ADAPTER: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147180502i32);
+pub const NETCFG_E_VMSWITCH_ACTIVE_OVER_ADAPTER: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147180502i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub const NETCFG_SERVICE_CID_MS_NETBIOS: &str = "ms_netbios";
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
@@ -6885,15 +6885,15 @@ pub const NETCFG_SERVICE_CID_MS_SERVER: &str = "ms_server";
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub const NETCFG_SERVICE_CID_MS_WLBS: &str = "ms_wlbs";
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_S_CAUSED_SETUP_CHANGE: ::windows::core::HRESULT = ::windows::core::HRESULT(303140i32);
+pub const NETCFG_S_CAUSED_SETUP_CHANGE: ::windows_core::HRESULT = ::windows_core::HRESULT(303140i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_S_COMMIT_NOW: ::windows::core::HRESULT = ::windows::core::HRESULT(303141i32);
+pub const NETCFG_S_COMMIT_NOW: ::windows_core::HRESULT = ::windows_core::HRESULT(303141i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_S_DISABLE_QUERY: ::windows::core::HRESULT = ::windows::core::HRESULT(303138i32);
+pub const NETCFG_S_DISABLE_QUERY: ::windows_core::HRESULT = ::windows_core::HRESULT(303138i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_S_REBOOT: ::windows::core::HRESULT = ::windows::core::HRESULT(303136i32);
+pub const NETCFG_S_REBOOT: ::windows_core::HRESULT = ::windows_core::HRESULT(303136i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
-pub const NETCFG_S_STILL_REFERENCED: ::windows::core::HRESULT = ::windows::core::HRESULT(303139i32);
+pub const NETCFG_S_STILL_REFERENCED: ::windows_core::HRESULT = ::windows_core::HRESULT(303139i32);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub const NETCFG_TRANS_CID_MS_APPLETALK: &str = "ms_appletalk";
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
@@ -6967,12 +6967,12 @@ impl ::core::fmt::Debug for NETLOGON_INFO_1 {
         f.debug_struct("NETLOGON_INFO_1").field("netlog1_flags", &self.netlog1_flags).field("netlog1_pdc_connection_status", &self.netlog1_pdc_connection_status).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NETLOGON_INFO_1 {
+unsafe impl ::windows_core::Abi for NETLOGON_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NETLOGON_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETLOGON_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETLOGON_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NETLOGON_INFO_1 {}
@@ -6986,7 +6986,7 @@ impl ::core::default::Default for NETLOGON_INFO_1 {
 pub struct NETLOGON_INFO_2 {
     pub netlog2_flags: u32,
     pub netlog2_pdc_connection_status: u32,
-    pub netlog2_trusted_dc_name: ::windows::core::PWSTR,
+    pub netlog2_trusted_dc_name: ::windows_core::PWSTR,
     pub netlog2_tc_connection_status: u32,
 }
 impl ::core::marker::Copy for NETLOGON_INFO_2 {}
@@ -7000,12 +7000,12 @@ impl ::core::fmt::Debug for NETLOGON_INFO_2 {
         f.debug_struct("NETLOGON_INFO_2").field("netlog2_flags", &self.netlog2_flags).field("netlog2_pdc_connection_status", &self.netlog2_pdc_connection_status).field("netlog2_trusted_dc_name", &self.netlog2_trusted_dc_name).field("netlog2_tc_connection_status", &self.netlog2_tc_connection_status).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NETLOGON_INFO_2 {
+unsafe impl ::windows_core::Abi for NETLOGON_INFO_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NETLOGON_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETLOGON_INFO_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETLOGON_INFO_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NETLOGON_INFO_2 {}
@@ -7036,12 +7036,12 @@ impl ::core::fmt::Debug for NETLOGON_INFO_3 {
         f.debug_struct("NETLOGON_INFO_3").field("netlog3_flags", &self.netlog3_flags).field("netlog3_logon_attempts", &self.netlog3_logon_attempts).field("netlog3_reserved1", &self.netlog3_reserved1).field("netlog3_reserved2", &self.netlog3_reserved2).field("netlog3_reserved3", &self.netlog3_reserved3).field("netlog3_reserved4", &self.netlog3_reserved4).field("netlog3_reserved5", &self.netlog3_reserved5).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NETLOGON_INFO_3 {
+unsafe impl ::windows_core::Abi for NETLOGON_INFO_3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NETLOGON_INFO_3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETLOGON_INFO_3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETLOGON_INFO_3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NETLOGON_INFO_3 {}
@@ -7053,8 +7053,8 @@ impl ::core::default::Default for NETLOGON_INFO_3 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct NETLOGON_INFO_4 {
-    pub netlog4_trusted_dc_name: ::windows::core::PWSTR,
-    pub netlog4_trusted_domain_name: ::windows::core::PWSTR,
+    pub netlog4_trusted_dc_name: ::windows_core::PWSTR,
+    pub netlog4_trusted_domain_name: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for NETLOGON_INFO_4 {}
 impl ::core::clone::Clone for NETLOGON_INFO_4 {
@@ -7067,12 +7067,12 @@ impl ::core::fmt::Debug for NETLOGON_INFO_4 {
         f.debug_struct("NETLOGON_INFO_4").field("netlog4_trusted_dc_name", &self.netlog4_trusted_dc_name).field("netlog4_trusted_domain_name", &self.netlog4_trusted_domain_name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NETLOGON_INFO_4 {
+unsafe impl ::windows_core::Abi for NETLOGON_INFO_4 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NETLOGON_INFO_4 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETLOGON_INFO_4>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETLOGON_INFO_4>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NETLOGON_INFO_4 {}
@@ -7138,7 +7138,7 @@ impl ::core::default::Default for NETSETUP_JOIN_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NETSETUP_JOIN_STATUS {
+unsafe impl ::windows_core::Abi for NETSETUP_JOIN_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NETSETUP_JOIN_STATUS {
@@ -7173,7 +7173,7 @@ impl ::core::default::Default for NETSETUP_NAME_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NETSETUP_NAME_TYPE {
+unsafe impl ::windows_core::Abi for NETSETUP_NAME_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NETSETUP_NAME_TYPE {
@@ -7206,7 +7206,7 @@ impl ::core::default::Default for NETSETUP_PROVISION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NETSETUP_PROVISION {
+unsafe impl ::windows_core::Abi for NETSETUP_PROVISION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NETSETUP_PROVISION {
@@ -7246,20 +7246,20 @@ impl ::core::ops::Not for NETSETUP_PROVISION {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct NETSETUP_PROVISIONING_PARAMS {
     pub dwVersion: u32,
-    pub lpDomain: ::windows::core::PCWSTR,
-    pub lpHostName: ::windows::core::PCWSTR,
-    pub lpMachineAccountOU: ::windows::core::PCWSTR,
-    pub lpDcName: ::windows::core::PCWSTR,
+    pub lpDomain: ::windows_core::PCWSTR,
+    pub lpHostName: ::windows_core::PCWSTR,
+    pub lpMachineAccountOU: ::windows_core::PCWSTR,
+    pub lpDcName: ::windows_core::PCWSTR,
     pub dwProvisionOptions: NETSETUP_PROVISION,
-    pub aCertTemplateNames: *mut ::windows::core::PWSTR,
+    pub aCertTemplateNames: *mut ::windows_core::PWSTR,
     pub cCertTemplateNames: u32,
-    pub aMachinePolicyNames: *mut ::windows::core::PWSTR,
+    pub aMachinePolicyNames: *mut ::windows_core::PWSTR,
     pub cMachinePolicyNames: u32,
-    pub aMachinePolicyPaths: *mut ::windows::core::PWSTR,
+    pub aMachinePolicyPaths: *mut ::windows_core::PWSTR,
     pub cMachinePolicyPaths: u32,
-    pub lpNetbiosName: ::windows::core::PWSTR,
-    pub lpSiteName: ::windows::core::PWSTR,
-    pub lpPrimaryDNSDomain: ::windows::core::PWSTR,
+    pub lpNetbiosName: ::windows_core::PWSTR,
+    pub lpSiteName: ::windows_core::PWSTR,
+    pub lpPrimaryDNSDomain: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for NETSETUP_PROVISIONING_PARAMS {}
 impl ::core::clone::Clone for NETSETUP_PROVISIONING_PARAMS {
@@ -7288,12 +7288,12 @@ impl ::core::fmt::Debug for NETSETUP_PROVISIONING_PARAMS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for NETSETUP_PROVISIONING_PARAMS {
+unsafe impl ::windows_core::Abi for NETSETUP_PROVISIONING_PARAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NETSETUP_PROVISIONING_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETSETUP_PROVISIONING_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETSETUP_PROVISIONING_PARAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NETSETUP_PROVISIONING_PARAMS {}
@@ -7329,7 +7329,7 @@ impl ::core::default::Default for NETWORK_INSTALL_TIME {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NETWORK_INSTALL_TIME {
+unsafe impl ::windows_core::Abi for NETWORK_INSTALL_TIME {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NETWORK_INSTALL_TIME {
@@ -7358,13 +7358,13 @@ impl ::core::fmt::Debug for NETWORK_NAME {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for NETWORK_NAME {
+unsafe impl ::windows_core::Abi for NETWORK_NAME {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NETWORK_NAME {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETWORK_NAME>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETWORK_NAME>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7402,7 +7402,7 @@ impl ::core::default::Default for NETWORK_UPGRADE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NETWORK_UPGRADE_TYPE {
+unsafe impl ::windows_core::Abi for NETWORK_UPGRADE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NETWORK_UPGRADE_TYPE {
@@ -7433,7 +7433,7 @@ impl ::core::default::Default for NET_COMPUTER_NAME_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NET_COMPUTER_NAME_TYPE {
+unsafe impl ::windows_core::Abi for NET_COMPUTER_NAME_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NET_COMPUTER_NAME_TYPE {
@@ -7448,8 +7448,8 @@ pub const NET_DFS_ENUMEX: i32 = 1073756325i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct NET_DISPLAY_GROUP {
-    pub grpi3_name: ::windows::core::PWSTR,
-    pub grpi3_comment: ::windows::core::PWSTR,
+    pub grpi3_name: ::windows_core::PWSTR,
+    pub grpi3_comment: ::windows_core::PWSTR,
     pub grpi3_group_id: u32,
     pub grpi3_attributes: u32,
     pub grpi3_next_index: u32,
@@ -7465,12 +7465,12 @@ impl ::core::fmt::Debug for NET_DISPLAY_GROUP {
         f.debug_struct("NET_DISPLAY_GROUP").field("grpi3_name", &self.grpi3_name).field("grpi3_comment", &self.grpi3_comment).field("grpi3_group_id", &self.grpi3_group_id).field("grpi3_attributes", &self.grpi3_attributes).field("grpi3_next_index", &self.grpi3_next_index).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NET_DISPLAY_GROUP {
+unsafe impl ::windows_core::Abi for NET_DISPLAY_GROUP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NET_DISPLAY_GROUP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_DISPLAY_GROUP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_DISPLAY_GROUP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NET_DISPLAY_GROUP {}
@@ -7482,8 +7482,8 @@ impl ::core::default::Default for NET_DISPLAY_GROUP {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct NET_DISPLAY_MACHINE {
-    pub usri2_name: ::windows::core::PWSTR,
-    pub usri2_comment: ::windows::core::PWSTR,
+    pub usri2_name: ::windows_core::PWSTR,
+    pub usri2_comment: ::windows_core::PWSTR,
     pub usri2_flags: USER_ACCOUNT_FLAGS,
     pub usri2_user_id: u32,
     pub usri2_next_index: u32,
@@ -7499,12 +7499,12 @@ impl ::core::fmt::Debug for NET_DISPLAY_MACHINE {
         f.debug_struct("NET_DISPLAY_MACHINE").field("usri2_name", &self.usri2_name).field("usri2_comment", &self.usri2_comment).field("usri2_flags", &self.usri2_flags).field("usri2_user_id", &self.usri2_user_id).field("usri2_next_index", &self.usri2_next_index).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NET_DISPLAY_MACHINE {
+unsafe impl ::windows_core::Abi for NET_DISPLAY_MACHINE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NET_DISPLAY_MACHINE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_DISPLAY_MACHINE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_DISPLAY_MACHINE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NET_DISPLAY_MACHINE {}
@@ -7516,10 +7516,10 @@ impl ::core::default::Default for NET_DISPLAY_MACHINE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct NET_DISPLAY_USER {
-    pub usri1_name: ::windows::core::PWSTR,
-    pub usri1_comment: ::windows::core::PWSTR,
+    pub usri1_name: ::windows_core::PWSTR,
+    pub usri1_comment: ::windows_core::PWSTR,
     pub usri1_flags: USER_ACCOUNT_FLAGS,
-    pub usri1_full_name: ::windows::core::PWSTR,
+    pub usri1_full_name: ::windows_core::PWSTR,
     pub usri1_user_id: u32,
     pub usri1_next_index: u32,
 }
@@ -7534,12 +7534,12 @@ impl ::core::fmt::Debug for NET_DISPLAY_USER {
         f.debug_struct("NET_DISPLAY_USER").field("usri1_name", &self.usri1_name).field("usri1_comment", &self.usri1_comment).field("usri1_flags", &self.usri1_flags).field("usri1_full_name", &self.usri1_full_name).field("usri1_user_id", &self.usri1_user_id).field("usri1_next_index", &self.usri1_next_index).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NET_DISPLAY_USER {
+unsafe impl ::windows_core::Abi for NET_DISPLAY_USER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NET_DISPLAY_USER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_DISPLAY_USER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_DISPLAY_USER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NET_DISPLAY_USER {}
@@ -7599,7 +7599,7 @@ impl ::core::default::Default for NET_JOIN_DOMAIN_JOIN_OPTIONS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NET_JOIN_DOMAIN_JOIN_OPTIONS {
+unsafe impl ::windows_core::Abi for NET_JOIN_DOMAIN_JOIN_OPTIONS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NET_JOIN_DOMAIN_JOIN_OPTIONS {
@@ -7660,7 +7660,7 @@ impl ::core::default::Default for NET_REMOTE_COMPUTER_SUPPORTS_OPTIONS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NET_REMOTE_COMPUTER_SUPPORTS_OPTIONS {
+unsafe impl ::windows_core::Abi for NET_REMOTE_COMPUTER_SUPPORTS_OPTIONS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NET_REMOTE_COMPUTER_SUPPORTS_OPTIONS {
@@ -7685,7 +7685,7 @@ impl ::core::default::Default for NET_REQUEST_PROVISION_OPTIONS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NET_REQUEST_PROVISION_OPTIONS {
+unsafe impl ::windows_core::Abi for NET_REQUEST_PROVISION_OPTIONS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NET_REQUEST_PROVISION_OPTIONS {
@@ -7802,7 +7802,7 @@ impl ::core::default::Default for NET_SERVER_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NET_SERVER_TYPE {
+unsafe impl ::windows_core::Abi for NET_SERVER_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NET_SERVER_TYPE {
@@ -7863,7 +7863,7 @@ impl ::core::default::Default for NET_USER_ENUM_FILTER_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NET_USER_ENUM_FILTER_FLAGS {
+unsafe impl ::windows_core::Abi for NET_USER_ENUM_FILTER_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NET_USER_ENUM_FILTER_FLAGS {
@@ -7921,13 +7921,13 @@ impl ::core::fmt::Debug for NET_VALIDATE_AUTHENTICATION_INPUT_ARG {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for NET_VALIDATE_AUTHENTICATION_INPUT_ARG {
+unsafe impl ::windows_core::Abi for NET_VALIDATE_AUTHENTICATION_INPUT_ARG {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NET_VALIDATE_AUTHENTICATION_INPUT_ARG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_AUTHENTICATION_INPUT_ARG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_AUTHENTICATION_INPUT_ARG>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7966,13 +7966,13 @@ impl ::core::fmt::Debug for NET_VALIDATE_OUTPUT_ARG {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for NET_VALIDATE_OUTPUT_ARG {
+unsafe impl ::windows_core::Abi for NET_VALIDATE_OUTPUT_ARG {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NET_VALIDATE_OUTPUT_ARG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_OUTPUT_ARG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_OUTPUT_ARG>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7988,8 +7988,8 @@ impl ::core::default::Default for NET_VALIDATE_OUTPUT_ARG {
 #[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
     pub InputPersistedFields: NET_VALIDATE_PERSISTED_FIELDS,
-    pub ClearPassword: ::windows::core::PWSTR,
-    pub UserAccountName: ::windows::core::PWSTR,
+    pub ClearPassword: ::windows_core::PWSTR,
+    pub UserAccountName: ::windows_core::PWSTR,
     pub HashedPassword: NET_VALIDATE_PASSWORD_HASH,
     pub PasswordMatch: super::super::Foundation::BOOLEAN,
 }
@@ -8008,13 +8008,13 @@ impl ::core::fmt::Debug for NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
+unsafe impl ::windows_core::Abi for NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8042,12 +8042,12 @@ impl ::core::fmt::Debug for NET_VALIDATE_PASSWORD_HASH {
         f.debug_struct("NET_VALIDATE_PASSWORD_HASH").field("Length", &self.Length).field("Hash", &self.Hash).finish()
     }
 }
-unsafe impl ::windows::core::Abi for NET_VALIDATE_PASSWORD_HASH {
+unsafe impl ::windows_core::Abi for NET_VALIDATE_PASSWORD_HASH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NET_VALIDATE_PASSWORD_HASH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_PASSWORD_HASH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_PASSWORD_HASH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NET_VALIDATE_PASSWORD_HASH {}
@@ -8067,8 +8067,8 @@ pub const NET_VALIDATE_PASSWORD_LAST_SET: u32 = 1u32;
 #[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
     pub InputPersistedFields: NET_VALIDATE_PERSISTED_FIELDS,
-    pub ClearPassword: ::windows::core::PWSTR,
-    pub UserAccountName: ::windows::core::PWSTR,
+    pub ClearPassword: ::windows_core::PWSTR,
+    pub UserAccountName: ::windows_core::PWSTR,
     pub HashedPassword: NET_VALIDATE_PASSWORD_HASH,
     pub PasswordMustChangeAtNextLogon: super::super::Foundation::BOOLEAN,
     pub ClearLockout: super::super::Foundation::BOOLEAN,
@@ -8088,13 +8088,13 @@ impl ::core::fmt::Debug for NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
+unsafe impl ::windows_core::Abi for NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_PASSWORD_RESET_INPUT_ARG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_PASSWORD_RESET_INPUT_ARG>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8126,7 +8126,7 @@ impl ::core::default::Default for NET_VALIDATE_PASSWORD_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for NET_VALIDATE_PASSWORD_TYPE {
+unsafe impl ::windows_core::Abi for NET_VALIDATE_PASSWORD_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for NET_VALIDATE_PASSWORD_TYPE {
@@ -8161,13 +8161,13 @@ impl ::core::fmt::Debug for NET_VALIDATE_PERSISTED_FIELDS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for NET_VALIDATE_PERSISTED_FIELDS {
+unsafe impl ::windows_core::Abi for NET_VALIDATE_PERSISTED_FIELDS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NET_VALIDATE_PERSISTED_FIELDS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_PERSISTED_FIELDS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_PERSISTED_FIELDS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8282,12 +8282,12 @@ pub const NWSAP_EVENT_WANSOCKET_FAILED: i32 = -1073733297i32;
 pub const NWSAP_EVENT_WSASTARTUP_FAILED: i32 = -1073733323i32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetAccessAdd<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetAccessAdd<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAccessAdd(servername: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetAccessAdd(servername: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetAccessAdd(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -8296,12 +8296,12 @@ pub unsafe fn NetAccessAdd<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetAccessDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, resource: Param1) -> u32 {
+pub unsafe fn NetAccessDel<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, resource: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAccessDel(servername: ::windows::core::PCWSTR, resource: ::windows::core::PCWSTR) -> u32;
+            fn NetAccessDel(servername: ::windows_core::PCWSTR, resource: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetAccessDel(servername.into_param().abi(), resource.into_param().abi()))
     }
@@ -8310,12 +8310,12 @@ pub unsafe fn NetAccessDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetAccessEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, basepath: Param1, recursive: u32, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32 {
+pub unsafe fn NetAccessEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, basepath: Param1, recursive: u32, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAccessEnum(servername: ::windows::core::PCWSTR, basepath: ::windows::core::PCWSTR, recursive: u32, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
+            fn NetAccessEnum(servername: ::windows_core::PCWSTR, basepath: ::windows_core::PCWSTR, recursive: u32, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetAccessEnum(servername.into_param().abi(), basepath.into_param().abi(), ::core::mem::transmute(recursive), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resume_handle)))
     }
@@ -8324,12 +8324,12 @@ pub unsafe fn NetAccessEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetAccessGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, resource: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetAccessGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, resource: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAccessGetInfo(servername: ::windows::core::PCWSTR, resource: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetAccessGetInfo(servername: ::windows_core::PCWSTR, resource: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetAccessGetInfo(servername.into_param().abi(), resource.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -8338,12 +8338,12 @@ pub unsafe fn NetAccessGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetAccessGetUserPerms<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, ugname: Param1, resource: Param2, perms: *mut u32) -> u32 {
+pub unsafe fn NetAccessGetUserPerms<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, ugname: Param1, resource: Param2, perms: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAccessGetUserPerms(servername: ::windows::core::PCWSTR, ugname: ::windows::core::PCWSTR, resource: ::windows::core::PCWSTR, perms: *mut u32) -> u32;
+            fn NetAccessGetUserPerms(servername: ::windows_core::PCWSTR, ugname: ::windows_core::PCWSTR, resource: ::windows_core::PCWSTR, perms: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetAccessGetUserPerms(servername.into_param().abi(), ugname.into_param().abi(), resource.into_param().abi(), ::core::mem::transmute(perms)))
     }
@@ -8352,12 +8352,12 @@ pub unsafe fn NetAccessGetUserPerms<'a, Param0: ::windows::core::IntoParam<'a, :
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetAccessSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, resource: Param1, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetAccessSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, resource: Param1, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAccessSetInfo(servername: ::windows::core::PCWSTR, resource: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetAccessSetInfo(servername: ::windows_core::PCWSTR, resource: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetAccessSetInfo(servername.into_param().abi(), resource.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -8366,12 +8366,12 @@ pub unsafe fn NetAccessSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetAddAlternateComputerName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(server: Param0, alternatename: Param1, domainaccount: Param2, domainaccountpassword: Param3, reserved: u32) -> u32 {
+pub unsafe fn NetAddAlternateComputerName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(server: Param0, alternatename: Param1, domainaccount: Param2, domainaccountpassword: Param3, reserved: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAddAlternateComputerName(server: ::windows::core::PCWSTR, alternatename: ::windows::core::PCWSTR, domainaccount: ::windows::core::PCWSTR, domainaccountpassword: ::windows::core::PCWSTR, reserved: u32) -> u32;
+            fn NetAddAlternateComputerName(server: ::windows_core::PCWSTR, alternatename: ::windows_core::PCWSTR, domainaccount: ::windows_core::PCWSTR, domainaccountpassword: ::windows_core::PCWSTR, reserved: u32) -> u32;
         }
         ::core::mem::transmute(NetAddAlternateComputerName(server.into_param().abi(), alternatename.into_param().abi(), domainaccount.into_param().abi(), domainaccountpassword.into_param().abi(), ::core::mem::transmute(reserved)))
     }
@@ -8381,12 +8381,12 @@ pub unsafe fn NetAddAlternateComputerName<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NetAddServiceAccount<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, accountname: Param1, password: Param2, flags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NetAddServiceAccount<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, accountname: Param1, password: Param2, flags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAddServiceAccount(servername: ::windows::core::PCWSTR, accountname: ::windows::core::PCWSTR, password: ::windows::core::PCWSTR, flags: u32) -> super::super::Foundation::NTSTATUS;
+            fn NetAddServiceAccount(servername: ::windows_core::PCWSTR, accountname: ::windows_core::PCWSTR, password: ::windows_core::PCWSTR, flags: u32) -> super::super::Foundation::NTSTATUS;
         }
         NetAddServiceAccount(servername.into_param().abi(), accountname.into_param().abi(), password.into_param().abi(), ::core::mem::transmute(flags)).ok()
     }
@@ -8395,12 +8395,12 @@ pub unsafe fn NetAddServiceAccount<'a, Param0: ::windows::core::IntoParam<'a, ::
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetAlertRaise<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(alerttype: Param0, buffer: *const ::core::ffi::c_void, buffersize: u32) -> u32 {
+pub unsafe fn NetAlertRaise<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(alerttype: Param0, buffer: *const ::core::ffi::c_void, buffersize: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAlertRaise(alerttype: ::windows::core::PCWSTR, buffer: *const ::core::ffi::c_void, buffersize: u32) -> u32;
+            fn NetAlertRaise(alerttype: ::windows_core::PCWSTR, buffer: *const ::core::ffi::c_void, buffersize: u32) -> u32;
         }
         ::core::mem::transmute(NetAlertRaise(alerttype.into_param().abi(), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize)))
     }
@@ -8409,12 +8409,12 @@ pub unsafe fn NetAlertRaise<'a, Param0: ::windows::core::IntoParam<'a, ::windows
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetAlertRaiseEx<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(alerttype: Param0, variableinfo: *const ::core::ffi::c_void, variableinfosize: u32, servicename: Param3) -> u32 {
+pub unsafe fn NetAlertRaiseEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(alerttype: Param0, variableinfo: *const ::core::ffi::c_void, variableinfosize: u32, servicename: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAlertRaiseEx(alerttype: ::windows::core::PCWSTR, variableinfo: *const ::core::ffi::c_void, variableinfosize: u32, servicename: ::windows::core::PCWSTR) -> u32;
+            fn NetAlertRaiseEx(alerttype: ::windows_core::PCWSTR, variableinfo: *const ::core::ffi::c_void, variableinfosize: u32, servicename: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetAlertRaiseEx(alerttype.into_param().abi(), ::core::mem::transmute(variableinfo), ::core::mem::transmute(variableinfosize), servicename.into_param().abi()))
     }
@@ -8479,12 +8479,12 @@ pub unsafe fn NetApiBufferSize(buffer: *const ::core::ffi::c_void, bytecount: *m
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetAuditClear<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(server: Param0, backupfile: Param1, service: Param2) -> u32 {
+pub unsafe fn NetAuditClear<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(server: Param0, backupfile: Param1, service: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAuditClear(server: ::windows::core::PCWSTR, backupfile: ::windows::core::PCWSTR, service: ::windows::core::PCWSTR) -> u32;
+            fn NetAuditClear(server: ::windows_core::PCWSTR, backupfile: ::windows_core::PCWSTR, service: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetAuditClear(server.into_param().abi(), backupfile.into_param().abi(), service.into_param().abi()))
     }
@@ -8493,12 +8493,12 @@ pub unsafe fn NetAuditClear<'a, Param0: ::windows::core::IntoParam<'a, ::windows
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetAuditRead<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(server: Param0, service: Param1, auditloghandle: *mut HLOG, offset: u32, reserved1: *mut u32, reserved2: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxlen: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32 {
+pub unsafe fn NetAuditRead<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(server: Param0, service: Param1, auditloghandle: *mut HLOG, offset: u32, reserved1: *mut u32, reserved2: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxlen: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAuditRead(server: ::windows::core::PCWSTR, service: ::windows::core::PCWSTR, auditloghandle: *mut HLOG, offset: u32, reserved1: *mut u32, reserved2: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxlen: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32;
+            fn NetAuditRead(server: ::windows_core::PCWSTR, service: ::windows_core::PCWSTR, auditloghandle: *mut HLOG, offset: u32, reserved1: *mut u32, reserved2: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxlen: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetAuditRead(server.into_param().abi(), service.into_param().abi(), ::core::mem::transmute(auditloghandle), ::core::mem::transmute(offset), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2), ::core::mem::transmute(offsetflag), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(bytesread), ::core::mem::transmute(totalavailable)))
     }
@@ -8507,12 +8507,12 @@ pub unsafe fn NetAuditRead<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetAuditWrite<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(r#type: u32, buf: *mut u8, numbytes: u32, service: Param3, reserved: *mut u8) -> u32 {
+pub unsafe fn NetAuditWrite<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(r#type: u32, buf: *mut u8, numbytes: u32, service: Param3, reserved: *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAuditWrite(r#type: u32, buf: *mut u8, numbytes: u32, service: ::windows::core::PCWSTR, reserved: *mut u8) -> u32;
+            fn NetAuditWrite(r#type: u32, buf: *mut u8, numbytes: u32, service: ::windows_core::PCWSTR, reserved: *mut u8) -> u32;
         }
         ::core::mem::transmute(NetAuditWrite(::core::mem::transmute(r#type), ::core::mem::transmute(buf), ::core::mem::transmute(numbytes), service.into_param().abi(), ::core::mem::transmute(reserved)))
     }
@@ -8521,12 +8521,12 @@ pub unsafe fn NetAuditWrite<'a, Param3: ::windows::core::IntoParam<'a, ::windows
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetConfigGet<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(server: Param0, component: Param1, parameter: Param2, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetConfigGet<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(server: Param0, component: Param1, parameter: Param2, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetConfigGet(server: ::windows::core::PCWSTR, component: ::windows::core::PCWSTR, parameter: ::windows::core::PCWSTR, bufptr: *mut *mut u8) -> u32;
+            fn NetConfigGet(server: ::windows_core::PCWSTR, component: ::windows_core::PCWSTR, parameter: ::windows_core::PCWSTR, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetConfigGet(server.into_param().abi(), component.into_param().abi(), parameter.into_param().abi(), ::core::mem::transmute(bufptr)))
     }
@@ -8535,12 +8535,12 @@ pub unsafe fn NetConfigGet<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetConfigGetAll<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(server: Param0, component: Param1, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetConfigGetAll<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(server: Param0, component: Param1, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetConfigGetAll(server: ::windows::core::PCWSTR, component: ::windows::core::PCWSTR, bufptr: *mut *mut u8) -> u32;
+            fn NetConfigGetAll(server: ::windows_core::PCWSTR, component: ::windows_core::PCWSTR, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetConfigGetAll(server.into_param().abi(), component.into_param().abi(), ::core::mem::transmute(bufptr)))
     }
@@ -8549,12 +8549,12 @@ pub unsafe fn NetConfigGetAll<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetConfigSet<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(server: Param0, reserved1: Param1, component: Param2, level: u32, reserved2: u32, buf: *mut u8, reserved3: u32) -> u32 {
+pub unsafe fn NetConfigSet<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(server: Param0, reserved1: Param1, component: Param2, level: u32, reserved2: u32, buf: *mut u8, reserved3: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetConfigSet(server: ::windows::core::PCWSTR, reserved1: ::windows::core::PCWSTR, component: ::windows::core::PCWSTR, level: u32, reserved2: u32, buf: *mut u8, reserved3: u32) -> u32;
+            fn NetConfigSet(server: ::windows_core::PCWSTR, reserved1: ::windows_core::PCWSTR, component: ::windows_core::PCWSTR, level: u32, reserved2: u32, buf: *mut u8, reserved3: u32) -> u32;
         }
         ::core::mem::transmute(NetConfigSet(server.into_param().abi(), reserved1.into_param().abi(), component.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(reserved2), ::core::mem::transmute(buf), ::core::mem::transmute(reserved3)))
     }
@@ -8563,12 +8563,12 @@ pub unsafe fn NetConfigSet<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetCreateProvisioningPackage(pprovisioningparams: *const NETSETUP_PROVISIONING_PARAMS, pppackagebindata: *mut *mut u8, pdwpackagebindatasize: *mut u32, pppackagetextdata: *mut ::windows::core::PWSTR) -> u32 {
+pub unsafe fn NetCreateProvisioningPackage(pprovisioningparams: *const NETSETUP_PROVISIONING_PARAMS, pppackagebindata: *mut *mut u8, pdwpackagebindatasize: *mut u32, pppackagetextdata: *mut ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetCreateProvisioningPackage(pprovisioningparams: *const NETSETUP_PROVISIONING_PARAMS, pppackagebindata: *mut *mut u8, pdwpackagebindatasize: *mut u32, pppackagetextdata: *mut ::windows::core::PWSTR) -> u32;
+            fn NetCreateProvisioningPackage(pprovisioningparams: *const NETSETUP_PROVISIONING_PARAMS, pppackagebindata: *mut *mut u8, pdwpackagebindatasize: *mut u32, pppackagetextdata: *mut ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(NetCreateProvisioningPackage(::core::mem::transmute(pprovisioningparams), ::core::mem::transmute(pppackagebindata), ::core::mem::transmute(pdwpackagebindatasize), ::core::mem::transmute(pppackagetextdata)))
     }
@@ -8577,12 +8577,12 @@ pub unsafe fn NetCreateProvisioningPackage(pprovisioningparams: *const NETSETUP_
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetEnumerateComputerNames<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(server: Param0, nametype: NET_COMPUTER_NAME_TYPE, reserved: u32, entrycount: *mut u32, computernames: *mut *mut ::windows::core::PWSTR) -> u32 {
+pub unsafe fn NetEnumerateComputerNames<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(server: Param0, nametype: NET_COMPUTER_NAME_TYPE, reserved: u32, entrycount: *mut u32, computernames: *mut *mut ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetEnumerateComputerNames(server: ::windows::core::PCWSTR, nametype: NET_COMPUTER_NAME_TYPE, reserved: u32, entrycount: *mut u32, computernames: *mut *mut ::windows::core::PWSTR) -> u32;
+            fn NetEnumerateComputerNames(server: ::windows_core::PCWSTR, nametype: NET_COMPUTER_NAME_TYPE, reserved: u32, entrycount: *mut u32, computernames: *mut *mut ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(NetEnumerateComputerNames(server.into_param().abi(), ::core::mem::transmute(nametype), ::core::mem::transmute(reserved), ::core::mem::transmute(entrycount), ::core::mem::transmute(computernames)))
     }
@@ -8592,12 +8592,12 @@ pub unsafe fn NetEnumerateComputerNames<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NetEnumerateServiceAccounts<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, flags: u32, accountscount: *mut u32, accounts: *mut *mut *mut u16) -> ::windows::core::Result<()> {
+pub unsafe fn NetEnumerateServiceAccounts<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, flags: u32, accountscount: *mut u32, accounts: *mut *mut *mut u16) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetEnumerateServiceAccounts(servername: ::windows::core::PCWSTR, flags: u32, accountscount: *mut u32, accounts: *mut *mut *mut u16) -> super::super::Foundation::NTSTATUS;
+            fn NetEnumerateServiceAccounts(servername: ::windows_core::PCWSTR, flags: u32, accountscount: *mut u32, accounts: *mut *mut *mut u16) -> super::super::Foundation::NTSTATUS;
         }
         NetEnumerateServiceAccounts(servername.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(accountscount), ::core::mem::transmute(accounts)).ok()
     }
@@ -8606,12 +8606,12 @@ pub unsafe fn NetEnumerateServiceAccounts<'a, Param0: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetErrorLogClear<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(uncservername: Param0, backupfile: Param1, reserved: *const u8) -> u32 {
+pub unsafe fn NetErrorLogClear<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(uncservername: Param0, backupfile: Param1, reserved: *const u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetErrorLogClear(uncservername: ::windows::core::PCWSTR, backupfile: ::windows::core::PCWSTR, reserved: *const u8) -> u32;
+            fn NetErrorLogClear(uncservername: ::windows_core::PCWSTR, backupfile: ::windows_core::PCWSTR, reserved: *const u8) -> u32;
         }
         ::core::mem::transmute(NetErrorLogClear(uncservername.into_param().abi(), backupfile.into_param().abi(), ::core::mem::transmute(reserved)))
     }
@@ -8620,12 +8620,12 @@ pub unsafe fn NetErrorLogClear<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetErrorLogRead<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(uncservername: Param0, reserved1: Param1, errorloghandle: *const HLOG, offset: u32, reserved2: *const u32, reserved3: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxsize: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32 {
+pub unsafe fn NetErrorLogRead<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(uncservername: Param0, reserved1: Param1, errorloghandle: *const HLOG, offset: u32, reserved2: *const u32, reserved3: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxsize: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetErrorLogRead(uncservername: ::windows::core::PCWSTR, reserved1: ::windows::core::PCWSTR, errorloghandle: *const HLOG, offset: u32, reserved2: *const u32, reserved3: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxsize: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32;
+            fn NetErrorLogRead(uncservername: ::windows_core::PCWSTR, reserved1: ::windows_core::PCWSTR, errorloghandle: *const HLOG, offset: u32, reserved2: *const u32, reserved3: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxsize: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetErrorLogRead(uncservername.into_param().abi(), reserved1.into_param().abi(), ::core::mem::transmute(errorloghandle), ::core::mem::transmute(offset), ::core::mem::transmute(reserved2), ::core::mem::transmute(reserved3), ::core::mem::transmute(offsetflag), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxsize), ::core::mem::transmute(bytesread), ::core::mem::transmute(totalavailable)))
     }
@@ -8634,12 +8634,12 @@ pub unsafe fn NetErrorLogRead<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetErrorLogWrite<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(reserved1: *const u8, code: u32, component: Param2, buffer: *const u8, numbytes: u32, msgbuf: *const u8, strcount: u32, reserved2: *const u8) -> u32 {
+pub unsafe fn NetErrorLogWrite<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(reserved1: *const u8, code: u32, component: Param2, buffer: *const u8, numbytes: u32, msgbuf: *const u8, strcount: u32, reserved2: *const u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetErrorLogWrite(reserved1: *const u8, code: u32, component: ::windows::core::PCWSTR, buffer: *const u8, numbytes: u32, msgbuf: *const u8, strcount: u32, reserved2: *const u8) -> u32;
+            fn NetErrorLogWrite(reserved1: *const u8, code: u32, component: ::windows_core::PCWSTR, buffer: *const u8, numbytes: u32, msgbuf: *const u8, strcount: u32, reserved2: *const u8) -> u32;
         }
         ::core::mem::transmute(NetErrorLogWrite(::core::mem::transmute(reserved1), ::core::mem::transmute(code), component.into_param().abi(), ::core::mem::transmute(buffer), ::core::mem::transmute(numbytes), ::core::mem::transmute(msgbuf), ::core::mem::transmute(strcount), ::core::mem::transmute(reserved2)))
     }
@@ -8664,12 +8664,12 @@ pub unsafe fn NetFreeAadJoinInformation(pjoininfo: *const DSREG_JOIN_INFO) {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`, `\"Win32_Security_Cryptography\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
 #[inline]
-pub unsafe fn NetGetAadJoinInformation<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pcsztenantid: Param0) -> ::windows::core::Result<*mut DSREG_JOIN_INFO> {
+pub unsafe fn NetGetAadJoinInformation<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pcsztenantid: Param0) -> ::windows_core::Result<*mut DSREG_JOIN_INFO> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGetAadJoinInformation(pcsztenantid: ::windows::core::PCWSTR, ppjoininfo: *mut *mut DSREG_JOIN_INFO) -> ::windows::core::HRESULT;
+            fn NetGetAadJoinInformation(pcsztenantid: ::windows_core::PCWSTR, ppjoininfo: *mut *mut DSREG_JOIN_INFO) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<*mut DSREG_JOIN_INFO>::zeroed();
         NetGetAadJoinInformation(pcsztenantid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut DSREG_JOIN_INFO>(result__)
@@ -8679,12 +8679,12 @@ pub unsafe fn NetGetAadJoinInformation<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGetAnyDCName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, domainname: Param1, buffer: *mut *mut u8) -> u32 {
+pub unsafe fn NetGetAnyDCName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, domainname: Param1, buffer: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGetAnyDCName(servername: ::windows::core::PCWSTR, domainname: ::windows::core::PCWSTR, buffer: *mut *mut u8) -> u32;
+            fn NetGetAnyDCName(servername: ::windows_core::PCWSTR, domainname: ::windows_core::PCWSTR, buffer: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetGetAnyDCName(servername.into_param().abi(), domainname.into_param().abi(), ::core::mem::transmute(buffer)))
     }
@@ -8693,12 +8693,12 @@ pub unsafe fn NetGetAnyDCName<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGetDCName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, domainname: Param1, buffer: *mut *mut u8) -> u32 {
+pub unsafe fn NetGetDCName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, domainname: Param1, buffer: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGetDCName(servername: ::windows::core::PCWSTR, domainname: ::windows::core::PCWSTR, buffer: *mut *mut u8) -> u32;
+            fn NetGetDCName(servername: ::windows_core::PCWSTR, domainname: ::windows_core::PCWSTR, buffer: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetGetDCName(servername.into_param().abi(), domainname.into_param().abi(), ::core::mem::transmute(buffer)))
     }
@@ -8707,12 +8707,12 @@ pub unsafe fn NetGetDCName<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGetDisplayInformationIndex<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, prefix: Param2, index: *mut u32) -> u32 {
+pub unsafe fn NetGetDisplayInformationIndex<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, prefix: Param2, index: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGetDisplayInformationIndex(servername: ::windows::core::PCWSTR, level: u32, prefix: ::windows::core::PCWSTR, index: *mut u32) -> u32;
+            fn NetGetDisplayInformationIndex(servername: ::windows_core::PCWSTR, level: u32, prefix: ::windows_core::PCWSTR, index: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetGetDisplayInformationIndex(servername.into_param().abi(), ::core::mem::transmute(level), prefix.into_param().abi(), ::core::mem::transmute(index)))
     }
@@ -8721,12 +8721,12 @@ pub unsafe fn NetGetDisplayInformationIndex<'a, Param0: ::windows::core::IntoPar
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGetJoinInformation<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpserver: Param0, lpnamebuffer: *mut ::windows::core::PWSTR, buffertype: *mut NETSETUP_JOIN_STATUS) -> u32 {
+pub unsafe fn NetGetJoinInformation<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpserver: Param0, lpnamebuffer: *mut ::windows_core::PWSTR, buffertype: *mut NETSETUP_JOIN_STATUS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGetJoinInformation(lpserver: ::windows::core::PCWSTR, lpnamebuffer: *mut ::windows::core::PWSTR, buffertype: *mut NETSETUP_JOIN_STATUS) -> u32;
+            fn NetGetJoinInformation(lpserver: ::windows_core::PCWSTR, lpnamebuffer: *mut ::windows_core::PWSTR, buffertype: *mut NETSETUP_JOIN_STATUS) -> u32;
         }
         ::core::mem::transmute(NetGetJoinInformation(lpserver.into_param().abi(), ::core::mem::transmute(lpnamebuffer), ::core::mem::transmute(buffertype)))
     }
@@ -8735,12 +8735,12 @@ pub unsafe fn NetGetJoinInformation<'a, Param0: ::windows::core::IntoParam<'a, :
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGetJoinableOUs<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpserver: Param0, lpdomain: Param1, lpaccount: Param2, lppassword: Param3, oucount: *mut u32, ous: *mut *mut ::windows::core::PWSTR) -> u32 {
+pub unsafe fn NetGetJoinableOUs<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpserver: Param0, lpdomain: Param1, lpaccount: Param2, lppassword: Param3, oucount: *mut u32, ous: *mut *mut ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGetJoinableOUs(lpserver: ::windows::core::PCWSTR, lpdomain: ::windows::core::PCWSTR, lpaccount: ::windows::core::PCWSTR, lppassword: ::windows::core::PCWSTR, oucount: *mut u32, ous: *mut *mut ::windows::core::PWSTR) -> u32;
+            fn NetGetJoinableOUs(lpserver: ::windows_core::PCWSTR, lpdomain: ::windows_core::PCWSTR, lpaccount: ::windows_core::PCWSTR, lppassword: ::windows_core::PCWSTR, oucount: *mut u32, ous: *mut *mut ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(NetGetJoinableOUs(lpserver.into_param().abi(), lpdomain.into_param().abi(), lpaccount.into_param().abi(), lppassword.into_param().abi(), ::core::mem::transmute(oucount), ::core::mem::transmute(ous)))
     }
@@ -8749,12 +8749,12 @@ pub unsafe fn NetGetJoinableOUs<'a, Param0: ::windows::core::IntoParam<'a, ::win
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGroupAdd<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetGroupAdd<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGroupAdd(servername: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetGroupAdd(servername: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetGroupAdd(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -8763,12 +8763,12 @@ pub unsafe fn NetGroupAdd<'a, Param0: ::windows::core::IntoParam<'a, ::windows::
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGroupAddUser<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, groupname: Param1, username: Param2) -> u32 {
+pub unsafe fn NetGroupAddUser<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, groupname: Param1, username: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGroupAddUser(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR) -> u32;
+            fn NetGroupAddUser(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, username: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetGroupAddUser(servername.into_param().abi(), groupname.into_param().abi(), username.into_param().abi()))
     }
@@ -8777,12 +8777,12 @@ pub unsafe fn NetGroupAddUser<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGroupDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, groupname: Param1) -> u32 {
+pub unsafe fn NetGroupDel<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, groupname: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGroupDel(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR) -> u32;
+            fn NetGroupDel(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetGroupDel(servername.into_param().abi(), groupname.into_param().abi()))
     }
@@ -8791,12 +8791,12 @@ pub unsafe fn NetGroupDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGroupDelUser<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, groupname: Param1, username: Param2) -> u32 {
+pub unsafe fn NetGroupDelUser<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, groupname: Param1, username: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGroupDelUser(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR) -> u32;
+            fn NetGroupDelUser(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, username: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetGroupDelUser(servername.into_param().abi(), groupname.into_param().abi(), username.into_param().abi()))
     }
@@ -8805,12 +8805,12 @@ pub unsafe fn NetGroupDelUser<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGroupEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut usize) -> u32 {
+pub unsafe fn NetGroupEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut usize) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGroupEnum(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut usize) -> u32;
+            fn NetGroupEnum(servername: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut usize) -> u32;
         }
         ::core::mem::transmute(NetGroupEnum(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resume_handle)))
     }
@@ -8819,12 +8819,12 @@ pub unsafe fn NetGroupEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGroupGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetGroupGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGroupGetInfo(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetGroupGetInfo(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetGroupGetInfo(servername.into_param().abi(), groupname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -8833,12 +8833,12 @@ pub unsafe fn NetGroupGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGroupGetUsers<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32 {
+pub unsafe fn NetGroupGetUsers<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGroupGetUsers(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
+            fn NetGroupGetUsers(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
         }
         ::core::mem::transmute(NetGroupGetUsers(servername.into_param().abi(), groupname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resumehandle)))
     }
@@ -8847,12 +8847,12 @@ pub unsafe fn NetGroupGetUsers<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGroupSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetGroupSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGroupSetInfo(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetGroupSetInfo(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetGroupSetInfo(servername.into_param().abi(), groupname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -8861,12 +8861,12 @@ pub unsafe fn NetGroupSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetGroupSetUsers<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, buf: *const u8, totalentries: u32) -> u32 {
+pub unsafe fn NetGroupSetUsers<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, buf: *const u8, totalentries: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetGroupSetUsers(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
+            fn NetGroupSetUsers(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
         }
         ::core::mem::transmute(NetGroupSetUsers(servername.into_param().abi(), groupname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(totalentries)))
     }
@@ -8876,12 +8876,12 @@ pub unsafe fn NetGroupSetUsers<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NetIsServiceAccount<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, accountname: Param1, isservice: *mut super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
+pub unsafe fn NetIsServiceAccount<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, accountname: Param1, isservice: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetIsServiceAccount(servername: ::windows::core::PCWSTR, accountname: ::windows::core::PCWSTR, isservice: *mut super::super::Foundation::BOOL) -> super::super::Foundation::NTSTATUS;
+            fn NetIsServiceAccount(servername: ::windows_core::PCWSTR, accountname: ::windows_core::PCWSTR, isservice: *mut super::super::Foundation::BOOL) -> super::super::Foundation::NTSTATUS;
         }
         NetIsServiceAccount(servername.into_param().abi(), accountname.into_param().abi(), ::core::mem::transmute(isservice)).ok()
     }
@@ -8890,12 +8890,12 @@ pub unsafe fn NetIsServiceAccount<'a, Param0: ::windows::core::IntoParam<'a, ::w
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetJoinDomain<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpserver: Param0, lpdomain: Param1, lpmachineaccountou: Param2, lpaccount: Param3, lppassword: Param4, fjoinoptions: NET_JOIN_DOMAIN_JOIN_OPTIONS) -> u32 {
+pub unsafe fn NetJoinDomain<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpserver: Param0, lpdomain: Param1, lpmachineaccountou: Param2, lpaccount: Param3, lppassword: Param4, fjoinoptions: NET_JOIN_DOMAIN_JOIN_OPTIONS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetJoinDomain(lpserver: ::windows::core::PCWSTR, lpdomain: ::windows::core::PCWSTR, lpmachineaccountou: ::windows::core::PCWSTR, lpaccount: ::windows::core::PCWSTR, lppassword: ::windows::core::PCWSTR, fjoinoptions: NET_JOIN_DOMAIN_JOIN_OPTIONS) -> u32;
+            fn NetJoinDomain(lpserver: ::windows_core::PCWSTR, lpdomain: ::windows_core::PCWSTR, lpmachineaccountou: ::windows_core::PCWSTR, lpaccount: ::windows_core::PCWSTR, lppassword: ::windows_core::PCWSTR, fjoinoptions: NET_JOIN_DOMAIN_JOIN_OPTIONS) -> u32;
         }
         ::core::mem::transmute(NetJoinDomain(lpserver.into_param().abi(), lpdomain.into_param().abi(), lpmachineaccountou.into_param().abi(), lpaccount.into_param().abi(), lppassword.into_param().abi(), ::core::mem::transmute(fjoinoptions)))
     }
@@ -8904,12 +8904,12 @@ pub unsafe fn NetJoinDomain<'a, Param0: ::windows::core::IntoParam<'a, ::windows
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetLocalGroupAdd<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetLocalGroupAdd<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetLocalGroupAdd(servername: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetLocalGroupAdd(servername: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetLocalGroupAdd(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -8919,12 +8919,12 @@ pub unsafe fn NetLocalGroupAdd<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NetLocalGroupAddMember<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::PSID>>(servername: Param0, groupname: Param1, membersid: Param2) -> u32 {
+pub unsafe fn NetLocalGroupAddMember<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::PSID>>(servername: Param0, groupname: Param1, membersid: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetLocalGroupAddMember(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR, membersid: super::super::Foundation::PSID) -> u32;
+            fn NetLocalGroupAddMember(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, membersid: super::super::Foundation::PSID) -> u32;
         }
         ::core::mem::transmute(NetLocalGroupAddMember(servername.into_param().abi(), groupname.into_param().abi(), membersid.into_param().abi()))
     }
@@ -8933,12 +8933,12 @@ pub unsafe fn NetLocalGroupAddMember<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetLocalGroupAddMembers<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, buf: *const u8, totalentries: u32) -> u32 {
+pub unsafe fn NetLocalGroupAddMembers<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, buf: *const u8, totalentries: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetLocalGroupAddMembers(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
+            fn NetLocalGroupAddMembers(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
         }
         ::core::mem::transmute(NetLocalGroupAddMembers(servername.into_param().abi(), groupname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(totalentries)))
     }
@@ -8947,12 +8947,12 @@ pub unsafe fn NetLocalGroupAddMembers<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetLocalGroupDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, groupname: Param1) -> u32 {
+pub unsafe fn NetLocalGroupDel<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, groupname: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetLocalGroupDel(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR) -> u32;
+            fn NetLocalGroupDel(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetLocalGroupDel(servername.into_param().abi(), groupname.into_param().abi()))
     }
@@ -8962,12 +8962,12 @@ pub unsafe fn NetLocalGroupDel<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NetLocalGroupDelMember<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::PSID>>(servername: Param0, groupname: Param1, membersid: Param2) -> u32 {
+pub unsafe fn NetLocalGroupDelMember<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::PSID>>(servername: Param0, groupname: Param1, membersid: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetLocalGroupDelMember(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR, membersid: super::super::Foundation::PSID) -> u32;
+            fn NetLocalGroupDelMember(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, membersid: super::super::Foundation::PSID) -> u32;
         }
         ::core::mem::transmute(NetLocalGroupDelMember(servername.into_param().abi(), groupname.into_param().abi(), membersid.into_param().abi()))
     }
@@ -8976,12 +8976,12 @@ pub unsafe fn NetLocalGroupDelMember<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetLocalGroupDelMembers<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, buf: *const u8, totalentries: u32) -> u32 {
+pub unsafe fn NetLocalGroupDelMembers<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, buf: *const u8, totalentries: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetLocalGroupDelMembers(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
+            fn NetLocalGroupDelMembers(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
         }
         ::core::mem::transmute(NetLocalGroupDelMembers(servername.into_param().abi(), groupname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(totalentries)))
     }
@@ -8990,12 +8990,12 @@ pub unsafe fn NetLocalGroupDelMembers<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetLocalGroupEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32 {
+pub unsafe fn NetLocalGroupEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetLocalGroupEnum(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
+            fn NetLocalGroupEnum(servername: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
         }
         ::core::mem::transmute(NetLocalGroupEnum(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resumehandle)))
     }
@@ -9004,12 +9004,12 @@ pub unsafe fn NetLocalGroupEnum<'a, Param0: ::windows::core::IntoParam<'a, ::win
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetLocalGroupGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetLocalGroupGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetLocalGroupGetInfo(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetLocalGroupGetInfo(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetLocalGroupGetInfo(servername.into_param().abi(), groupname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -9018,12 +9018,12 @@ pub unsafe fn NetLocalGroupGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetLocalGroupGetMembers<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, localgroupname: Param1, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32 {
+pub unsafe fn NetLocalGroupGetMembers<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, localgroupname: Param1, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetLocalGroupGetMembers(servername: ::windows::core::PCWSTR, localgroupname: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
+            fn NetLocalGroupGetMembers(servername: ::windows_core::PCWSTR, localgroupname: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
         }
         ::core::mem::transmute(NetLocalGroupGetMembers(servername.into_param().abi(), localgroupname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resumehandle)))
     }
@@ -9032,12 +9032,12 @@ pub unsafe fn NetLocalGroupGetMembers<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetLocalGroupSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetLocalGroupSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetLocalGroupSetInfo(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetLocalGroupSetInfo(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetLocalGroupSetInfo(servername.into_param().abi(), groupname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -9046,12 +9046,12 @@ pub unsafe fn NetLocalGroupSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetLocalGroupSetMembers<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, buf: *const u8, totalentries: u32) -> u32 {
+pub unsafe fn NetLocalGroupSetMembers<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, groupname: Param1, level: u32, buf: *const u8, totalentries: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetLocalGroupSetMembers(servername: ::windows::core::PCWSTR, groupname: ::windows::core::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
+            fn NetLocalGroupSetMembers(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
         }
         ::core::mem::transmute(NetLocalGroupSetMembers(servername.into_param().abi(), groupname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(totalentries)))
     }
@@ -9060,12 +9060,12 @@ pub unsafe fn NetLocalGroupSetMembers<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetMessageBufferSend<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, msgname: Param1, fromname: Param2, buf: *const u8, buflen: u32) -> u32 {
+pub unsafe fn NetMessageBufferSend<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, msgname: Param1, fromname: Param2, buf: *const u8, buflen: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetMessageBufferSend(servername: ::windows::core::PCWSTR, msgname: ::windows::core::PCWSTR, fromname: ::windows::core::PCWSTR, buf: *const u8, buflen: u32) -> u32;
+            fn NetMessageBufferSend(servername: ::windows_core::PCWSTR, msgname: ::windows_core::PCWSTR, fromname: ::windows_core::PCWSTR, buf: *const u8, buflen: u32) -> u32;
         }
         ::core::mem::transmute(NetMessageBufferSend(servername.into_param().abi(), msgname.into_param().abi(), fromname.into_param().abi(), ::core::mem::transmute(buf), ::core::mem::transmute(buflen)))
     }
@@ -9074,12 +9074,12 @@ pub unsafe fn NetMessageBufferSend<'a, Param0: ::windows::core::IntoParam<'a, ::
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetMessageNameAdd<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, msgname: Param1) -> u32 {
+pub unsafe fn NetMessageNameAdd<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, msgname: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetMessageNameAdd(servername: ::windows::core::PCWSTR, msgname: ::windows::core::PCWSTR) -> u32;
+            fn NetMessageNameAdd(servername: ::windows_core::PCWSTR, msgname: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetMessageNameAdd(servername.into_param().abi(), msgname.into_param().abi()))
     }
@@ -9088,12 +9088,12 @@ pub unsafe fn NetMessageNameAdd<'a, Param0: ::windows::core::IntoParam<'a, ::win
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetMessageNameDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, msgname: Param1) -> u32 {
+pub unsafe fn NetMessageNameDel<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, msgname: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetMessageNameDel(servername: ::windows::core::PCWSTR, msgname: ::windows::core::PCWSTR) -> u32;
+            fn NetMessageNameDel(servername: ::windows_core::PCWSTR, msgname: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetMessageNameDel(servername.into_param().abi(), msgname.into_param().abi()))
     }
@@ -9102,12 +9102,12 @@ pub unsafe fn NetMessageNameDel<'a, Param0: ::windows::core::IntoParam<'a, ::win
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetMessageNameEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *const *const u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32 {
+pub unsafe fn NetMessageNameEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *const *const u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetMessageNameEnum(servername: ::windows::core::PCWSTR, level: u32, bufptr: *const *const u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
+            fn NetMessageNameEnum(servername: ::windows_core::PCWSTR, level: u32, bufptr: *const *const u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetMessageNameEnum(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resume_handle)))
     }
@@ -9116,12 +9116,12 @@ pub unsafe fn NetMessageNameEnum<'a, Param0: ::windows::core::IntoParam<'a, ::wi
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetMessageNameGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, msgname: Param1, level: u32, bufptr: *const *const u8) -> u32 {
+pub unsafe fn NetMessageNameGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, msgname: Param1, level: u32, bufptr: *const *const u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetMessageNameGetInfo(servername: ::windows::core::PCWSTR, msgname: ::windows::core::PCWSTR, level: u32, bufptr: *const *const u8) -> u32;
+            fn NetMessageNameGetInfo(servername: ::windows_core::PCWSTR, msgname: ::windows_core::PCWSTR, level: u32, bufptr: *const *const u8) -> u32;
         }
         ::core::mem::transmute(NetMessageNameGetInfo(servername.into_param().abi(), msgname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -9130,27 +9130,27 @@ pub unsafe fn NetMessageNameGetInfo<'a, Param0: ::windows::core::IntoParam<'a, :
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetProvisionComputerAccount<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpdomain: Param0, lpmachinename: Param1, lpmachineaccountou: Param2, lpdcname: Param3, dwoptions: NETSETUP_PROVISION, pprovisionbindata: *mut *mut u8, pdwprovisionbindatasize: *mut u32, pprovisiontextdata: *mut ::windows::core::PWSTR) -> u32 {
+pub unsafe fn NetProvisionComputerAccount<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpdomain: Param0, lpmachinename: Param1, lpmachineaccountou: Param2, lpdcname: Param3, dwoptions: NETSETUP_PROVISION, pprovisionbindata: *mut *mut u8, pdwprovisionbindatasize: *mut u32, pprovisiontextdata: *mut ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetProvisionComputerAccount(lpdomain: ::windows::core::PCWSTR, lpmachinename: ::windows::core::PCWSTR, lpmachineaccountou: ::windows::core::PCWSTR, lpdcname: ::windows::core::PCWSTR, dwoptions: NETSETUP_PROVISION, pprovisionbindata: *mut *mut u8, pdwprovisionbindatasize: *mut u32, pprovisiontextdata: *mut ::windows::core::PWSTR) -> u32;
+            fn NetProvisionComputerAccount(lpdomain: ::windows_core::PCWSTR, lpmachinename: ::windows_core::PCWSTR, lpmachineaccountou: ::windows_core::PCWSTR, lpdcname: ::windows_core::PCWSTR, dwoptions: NETSETUP_PROVISION, pprovisionbindata: *mut *mut u8, pdwprovisionbindatasize: *mut u32, pprovisiontextdata: *mut ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(NetProvisionComputerAccount(lpdomain.into_param().abi(), lpmachinename.into_param().abi(), lpmachineaccountou.into_param().abi(), lpdcname.into_param().abi(), ::core::mem::transmute(dwoptions), ::core::mem::transmute(pprovisionbindata), ::core::mem::transmute(pdwprovisionbindatasize), ::core::mem::transmute(pprovisiontextdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-pub const NetProvisioning: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2aa2b5fe_b846_4d07_810c_b21ee45320e3);
+pub const NetProvisioning: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2aa2b5fe_b846_4d07_810c_b21ee45320e3);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetQueryDisplayInformation<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, index: u32, entriesrequested: u32, preferredmaximumlength: u32, returnedentrycount: *mut u32, sortedbuffer: *mut *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn NetQueryDisplayInformation<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, index: u32, entriesrequested: u32, preferredmaximumlength: u32, returnedentrycount: *mut u32, sortedbuffer: *mut *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetQueryDisplayInformation(servername: ::windows::core::PCWSTR, level: u32, index: u32, entriesrequested: u32, preferredmaximumlength: u32, returnedentrycount: *mut u32, sortedbuffer: *mut *mut ::core::ffi::c_void) -> u32;
+            fn NetQueryDisplayInformation(servername: ::windows_core::PCWSTR, level: u32, index: u32, entriesrequested: u32, preferredmaximumlength: u32, returnedentrycount: *mut u32, sortedbuffer: *mut *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(NetQueryDisplayInformation(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(index), ::core::mem::transmute(entriesrequested), ::core::mem::transmute(preferredmaximumlength), ::core::mem::transmute(returnedentrycount), ::core::mem::transmute(sortedbuffer)))
     }
@@ -9160,12 +9160,12 @@ pub unsafe fn NetQueryDisplayInformation<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NetQueryServiceAccount<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, accountname: Param1, infolevel: u32, buffer: *mut *mut u8) -> ::windows::core::Result<()> {
+pub unsafe fn NetQueryServiceAccount<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, accountname: Param1, infolevel: u32, buffer: *mut *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetQueryServiceAccount(servername: ::windows::core::PCWSTR, accountname: ::windows::core::PCWSTR, infolevel: u32, buffer: *mut *mut u8) -> super::super::Foundation::NTSTATUS;
+            fn NetQueryServiceAccount(servername: ::windows_core::PCWSTR, accountname: ::windows_core::PCWSTR, infolevel: u32, buffer: *mut *mut u8) -> super::super::Foundation::NTSTATUS;
         }
         NetQueryServiceAccount(servername.into_param().abi(), accountname.into_param().abi(), ::core::mem::transmute(infolevel), ::core::mem::transmute(buffer)).ok()
     }
@@ -9174,12 +9174,12 @@ pub unsafe fn NetQueryServiceAccount<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetRemoteComputerSupports<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(uncservername: Param0, optionswanted: NET_REMOTE_COMPUTER_SUPPORTS_OPTIONS, optionssupported: *mut u32) -> u32 {
+pub unsafe fn NetRemoteComputerSupports<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(uncservername: Param0, optionswanted: NET_REMOTE_COMPUTER_SUPPORTS_OPTIONS, optionssupported: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetRemoteComputerSupports(uncservername: ::windows::core::PCWSTR, optionswanted: NET_REMOTE_COMPUTER_SUPPORTS_OPTIONS, optionssupported: *mut u32) -> u32;
+            fn NetRemoteComputerSupports(uncservername: ::windows_core::PCWSTR, optionswanted: NET_REMOTE_COMPUTER_SUPPORTS_OPTIONS, optionssupported: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetRemoteComputerSupports(uncservername.into_param().abi(), ::core::mem::transmute(optionswanted), ::core::mem::transmute(optionssupported)))
     }
@@ -9188,12 +9188,12 @@ pub unsafe fn NetRemoteComputerSupports<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetRemoteTOD<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(uncservername: Param0, bufferptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetRemoteTOD<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(uncservername: Param0, bufferptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetRemoteTOD(uncservername: ::windows::core::PCWSTR, bufferptr: *mut *mut u8) -> u32;
+            fn NetRemoteTOD(uncservername: ::windows_core::PCWSTR, bufferptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetRemoteTOD(uncservername.into_param().abi(), ::core::mem::transmute(bufferptr)))
     }
@@ -9202,12 +9202,12 @@ pub unsafe fn NetRemoteTOD<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetRemoveAlternateComputerName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(server: Param0, alternatename: Param1, domainaccount: Param2, domainaccountpassword: Param3, reserved: u32) -> u32 {
+pub unsafe fn NetRemoveAlternateComputerName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(server: Param0, alternatename: Param1, domainaccount: Param2, domainaccountpassword: Param3, reserved: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetRemoveAlternateComputerName(server: ::windows::core::PCWSTR, alternatename: ::windows::core::PCWSTR, domainaccount: ::windows::core::PCWSTR, domainaccountpassword: ::windows::core::PCWSTR, reserved: u32) -> u32;
+            fn NetRemoveAlternateComputerName(server: ::windows_core::PCWSTR, alternatename: ::windows_core::PCWSTR, domainaccount: ::windows_core::PCWSTR, domainaccountpassword: ::windows_core::PCWSTR, reserved: u32) -> u32;
         }
         ::core::mem::transmute(NetRemoveAlternateComputerName(server.into_param().abi(), alternatename.into_param().abi(), domainaccount.into_param().abi(), domainaccountpassword.into_param().abi(), ::core::mem::transmute(reserved)))
     }
@@ -9217,12 +9217,12 @@ pub unsafe fn NetRemoveAlternateComputerName<'a, Param0: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NetRemoveServiceAccount<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, accountname: Param1, flags: u32) -> ::windows::core::Result<()> {
+pub unsafe fn NetRemoveServiceAccount<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, accountname: Param1, flags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetRemoveServiceAccount(servername: ::windows::core::PCWSTR, accountname: ::windows::core::PCWSTR, flags: u32) -> super::super::Foundation::NTSTATUS;
+            fn NetRemoveServiceAccount(servername: ::windows_core::PCWSTR, accountname: ::windows_core::PCWSTR, flags: u32) -> super::super::Foundation::NTSTATUS;
         }
         NetRemoveServiceAccount(servername.into_param().abi(), accountname.into_param().abi(), ::core::mem::transmute(flags)).ok()
     }
@@ -9231,12 +9231,12 @@ pub unsafe fn NetRemoveServiceAccount<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetRenameMachineInDomain<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpserver: Param0, lpnewmachinename: Param1, lpaccount: Param2, lppassword: Param3, frenameoptions: u32) -> u32 {
+pub unsafe fn NetRenameMachineInDomain<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpserver: Param0, lpnewmachinename: Param1, lpaccount: Param2, lppassword: Param3, frenameoptions: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetRenameMachineInDomain(lpserver: ::windows::core::PCWSTR, lpnewmachinename: ::windows::core::PCWSTR, lpaccount: ::windows::core::PCWSTR, lppassword: ::windows::core::PCWSTR, frenameoptions: u32) -> u32;
+            fn NetRenameMachineInDomain(lpserver: ::windows_core::PCWSTR, lpnewmachinename: ::windows_core::PCWSTR, lpaccount: ::windows_core::PCWSTR, lppassword: ::windows_core::PCWSTR, frenameoptions: u32) -> u32;
         }
         ::core::mem::transmute(NetRenameMachineInDomain(lpserver.into_param().abi(), lpnewmachinename.into_param().abi(), lpaccount.into_param().abi(), lppassword.into_param().abi(), ::core::mem::transmute(frenameoptions)))
     }
@@ -9245,12 +9245,12 @@ pub unsafe fn NetRenameMachineInDomain<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplExportDirAdd<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetReplExportDirAdd<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplExportDirAdd(servername: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetReplExportDirAdd(servername: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetReplExportDirAdd(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -9259,12 +9259,12 @@ pub unsafe fn NetReplExportDirAdd<'a, Param0: ::windows::core::IntoParam<'a, ::w
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplExportDirDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, dirname: Param1) -> u32 {
+pub unsafe fn NetReplExportDirDel<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, dirname: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplExportDirDel(servername: ::windows::core::PCWSTR, dirname: ::windows::core::PCWSTR) -> u32;
+            fn NetReplExportDirDel(servername: ::windows_core::PCWSTR, dirname: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetReplExportDirDel(servername.into_param().abi(), dirname.into_param().abi()))
     }
@@ -9273,12 +9273,12 @@ pub unsafe fn NetReplExportDirDel<'a, Param0: ::windows::core::IntoParam<'a, ::w
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplExportDirEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32 {
+pub unsafe fn NetReplExportDirEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplExportDirEnum(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
+            fn NetReplExportDirEnum(servername: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetReplExportDirEnum(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resumehandle)))
     }
@@ -9287,12 +9287,12 @@ pub unsafe fn NetReplExportDirEnum<'a, Param0: ::windows::core::IntoParam<'a, ::
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplExportDirGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, dirname: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetReplExportDirGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, dirname: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplExportDirGetInfo(servername: ::windows::core::PCWSTR, dirname: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetReplExportDirGetInfo(servername: ::windows_core::PCWSTR, dirname: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetReplExportDirGetInfo(servername.into_param().abi(), dirname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -9301,12 +9301,12 @@ pub unsafe fn NetReplExportDirGetInfo<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplExportDirLock<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, dirname: Param1) -> u32 {
+pub unsafe fn NetReplExportDirLock<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, dirname: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplExportDirLock(servername: ::windows::core::PCWSTR, dirname: ::windows::core::PCWSTR) -> u32;
+            fn NetReplExportDirLock(servername: ::windows_core::PCWSTR, dirname: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetReplExportDirLock(servername.into_param().abi(), dirname.into_param().abi()))
     }
@@ -9315,12 +9315,12 @@ pub unsafe fn NetReplExportDirLock<'a, Param0: ::windows::core::IntoParam<'a, ::
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplExportDirSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, dirname: Param1, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetReplExportDirSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, dirname: Param1, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplExportDirSetInfo(servername: ::windows::core::PCWSTR, dirname: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetReplExportDirSetInfo(servername: ::windows_core::PCWSTR, dirname: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetReplExportDirSetInfo(servername.into_param().abi(), dirname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -9329,12 +9329,12 @@ pub unsafe fn NetReplExportDirSetInfo<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplExportDirUnlock<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, dirname: Param1, unlockforce: u32) -> u32 {
+pub unsafe fn NetReplExportDirUnlock<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, dirname: Param1, unlockforce: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplExportDirUnlock(servername: ::windows::core::PCWSTR, dirname: ::windows::core::PCWSTR, unlockforce: u32) -> u32;
+            fn NetReplExportDirUnlock(servername: ::windows_core::PCWSTR, dirname: ::windows_core::PCWSTR, unlockforce: u32) -> u32;
         }
         ::core::mem::transmute(NetReplExportDirUnlock(servername.into_param().abi(), dirname.into_param().abi(), ::core::mem::transmute(unlockforce)))
     }
@@ -9343,12 +9343,12 @@ pub unsafe fn NetReplExportDirUnlock<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetReplGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplGetInfo(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetReplGetInfo(servername: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetReplGetInfo(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -9357,12 +9357,12 @@ pub unsafe fn NetReplGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::window
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplImportDirAdd<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetReplImportDirAdd<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplImportDirAdd(servername: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetReplImportDirAdd(servername: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetReplImportDirAdd(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -9371,12 +9371,12 @@ pub unsafe fn NetReplImportDirAdd<'a, Param0: ::windows::core::IntoParam<'a, ::w
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplImportDirDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, dirname: Param1) -> u32 {
+pub unsafe fn NetReplImportDirDel<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, dirname: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplImportDirDel(servername: ::windows::core::PCWSTR, dirname: ::windows::core::PCWSTR) -> u32;
+            fn NetReplImportDirDel(servername: ::windows_core::PCWSTR, dirname: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetReplImportDirDel(servername.into_param().abi(), dirname.into_param().abi()))
     }
@@ -9385,12 +9385,12 @@ pub unsafe fn NetReplImportDirDel<'a, Param0: ::windows::core::IntoParam<'a, ::w
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplImportDirEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32 {
+pub unsafe fn NetReplImportDirEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplImportDirEnum(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
+            fn NetReplImportDirEnum(servername: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetReplImportDirEnum(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resumehandle)))
     }
@@ -9399,12 +9399,12 @@ pub unsafe fn NetReplImportDirEnum<'a, Param0: ::windows::core::IntoParam<'a, ::
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplImportDirGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, dirname: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetReplImportDirGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, dirname: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplImportDirGetInfo(servername: ::windows::core::PCWSTR, dirname: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetReplImportDirGetInfo(servername: ::windows_core::PCWSTR, dirname: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetReplImportDirGetInfo(servername.into_param().abi(), dirname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -9413,12 +9413,12 @@ pub unsafe fn NetReplImportDirGetInfo<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplImportDirLock<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, dirname: Param1) -> u32 {
+pub unsafe fn NetReplImportDirLock<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, dirname: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplImportDirLock(servername: ::windows::core::PCWSTR, dirname: ::windows::core::PCWSTR) -> u32;
+            fn NetReplImportDirLock(servername: ::windows_core::PCWSTR, dirname: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetReplImportDirLock(servername.into_param().abi(), dirname.into_param().abi()))
     }
@@ -9427,12 +9427,12 @@ pub unsafe fn NetReplImportDirLock<'a, Param0: ::windows::core::IntoParam<'a, ::
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplImportDirUnlock<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, dirname: Param1, unlockforce: u32) -> u32 {
+pub unsafe fn NetReplImportDirUnlock<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, dirname: Param1, unlockforce: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplImportDirUnlock(servername: ::windows::core::PCWSTR, dirname: ::windows::core::PCWSTR, unlockforce: u32) -> u32;
+            fn NetReplImportDirUnlock(servername: ::windows_core::PCWSTR, dirname: ::windows_core::PCWSTR, unlockforce: u32) -> u32;
         }
         ::core::mem::transmute(NetReplImportDirUnlock(servername.into_param().abi(), dirname.into_param().abi(), ::core::mem::transmute(unlockforce)))
     }
@@ -9441,12 +9441,12 @@ pub unsafe fn NetReplImportDirUnlock<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetReplSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetReplSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetReplSetInfo(servername: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetReplSetInfo(servername: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetReplSetInfo(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -9455,12 +9455,12 @@ pub unsafe fn NetReplSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::window
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetRequestOfflineDomainJoin<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pprovisionbindata: *const u8, cbprovisionbindatasize: u32, dwoptions: NET_REQUEST_PROVISION_OPTIONS, lpwindowspath: Param3) -> u32 {
+pub unsafe fn NetRequestOfflineDomainJoin<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pprovisionbindata: *const u8, cbprovisionbindatasize: u32, dwoptions: NET_REQUEST_PROVISION_OPTIONS, lpwindowspath: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetRequestOfflineDomainJoin(pprovisionbindata: *const u8, cbprovisionbindatasize: u32, dwoptions: NET_REQUEST_PROVISION_OPTIONS, lpwindowspath: ::windows::core::PCWSTR) -> u32;
+            fn NetRequestOfflineDomainJoin(pprovisionbindata: *const u8, cbprovisionbindatasize: u32, dwoptions: NET_REQUEST_PROVISION_OPTIONS, lpwindowspath: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetRequestOfflineDomainJoin(::core::mem::transmute(pprovisionbindata), ::core::mem::transmute(cbprovisionbindatasize), ::core::mem::transmute(dwoptions), lpwindowspath.into_param().abi()))
     }
@@ -9469,12 +9469,12 @@ pub unsafe fn NetRequestOfflineDomainJoin<'a, Param3: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetRequestProvisioningPackageInstall<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(ppackagebindata: *const u8, dwpackagebindatasize: u32, dwprovisionoptions: NET_REQUEST_PROVISION_OPTIONS, lpwindowspath: Param3, pvreserved: *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn NetRequestProvisioningPackageInstall<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ppackagebindata: *const u8, dwpackagebindatasize: u32, dwprovisionoptions: NET_REQUEST_PROVISION_OPTIONS, lpwindowspath: Param3, pvreserved: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetRequestProvisioningPackageInstall(ppackagebindata: *const u8, dwpackagebindatasize: u32, dwprovisionoptions: NET_REQUEST_PROVISION_OPTIONS, lpwindowspath: ::windows::core::PCWSTR, pvreserved: *mut ::core::ffi::c_void) -> u32;
+            fn NetRequestProvisioningPackageInstall(ppackagebindata: *const u8, dwpackagebindatasize: u32, dwprovisionoptions: NET_REQUEST_PROVISION_OPTIONS, lpwindowspath: ::windows_core::PCWSTR, pvreserved: *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(NetRequestProvisioningPackageInstall(::core::mem::transmute(ppackagebindata), ::core::mem::transmute(dwpackagebindatasize), ::core::mem::transmute(dwprovisionoptions), lpwindowspath.into_param().abi(), ::core::mem::transmute(pvreserved)))
     }
@@ -9483,12 +9483,12 @@ pub unsafe fn NetRequestProvisioningPackageInstall<'a, Param3: ::windows::core::
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetScheduleJobAdd<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, buffer: *mut u8, jobid: *mut u32) -> u32 {
+pub unsafe fn NetScheduleJobAdd<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, buffer: *mut u8, jobid: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetScheduleJobAdd(servername: ::windows::core::PCWSTR, buffer: *mut u8, jobid: *mut u32) -> u32;
+            fn NetScheduleJobAdd(servername: ::windows_core::PCWSTR, buffer: *mut u8, jobid: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetScheduleJobAdd(servername.into_param().abi(), ::core::mem::transmute(buffer), ::core::mem::transmute(jobid)))
     }
@@ -9497,12 +9497,12 @@ pub unsafe fn NetScheduleJobAdd<'a, Param0: ::windows::core::IntoParam<'a, ::win
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetScheduleJobDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, minjobid: u32, maxjobid: u32) -> u32 {
+pub unsafe fn NetScheduleJobDel<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, minjobid: u32, maxjobid: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetScheduleJobDel(servername: ::windows::core::PCWSTR, minjobid: u32, maxjobid: u32) -> u32;
+            fn NetScheduleJobDel(servername: ::windows_core::PCWSTR, minjobid: u32, maxjobid: u32) -> u32;
         }
         ::core::mem::transmute(NetScheduleJobDel(servername.into_param().abi(), ::core::mem::transmute(minjobid), ::core::mem::transmute(maxjobid)))
     }
@@ -9511,12 +9511,12 @@ pub unsafe fn NetScheduleJobDel<'a, Param0: ::windows::core::IntoParam<'a, ::win
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetScheduleJobEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, pointertobuffer: *mut *mut u8, prefferedmaximumlength: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32 {
+pub unsafe fn NetScheduleJobEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, pointertobuffer: *mut *mut u8, prefferedmaximumlength: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetScheduleJobEnum(servername: ::windows::core::PCWSTR, pointertobuffer: *mut *mut u8, prefferedmaximumlength: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
+            fn NetScheduleJobEnum(servername: ::windows_core::PCWSTR, pointertobuffer: *mut *mut u8, prefferedmaximumlength: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetScheduleJobEnum(servername.into_param().abi(), ::core::mem::transmute(pointertobuffer), ::core::mem::transmute(prefferedmaximumlength), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resumehandle)))
     }
@@ -9525,12 +9525,12 @@ pub unsafe fn NetScheduleJobEnum<'a, Param0: ::windows::core::IntoParam<'a, ::wi
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetScheduleJobGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, jobid: u32, pointertobuffer: *mut *mut u8) -> u32 {
+pub unsafe fn NetScheduleJobGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, jobid: u32, pointertobuffer: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetScheduleJobGetInfo(servername: ::windows::core::PCWSTR, jobid: u32, pointertobuffer: *mut *mut u8) -> u32;
+            fn NetScheduleJobGetInfo(servername: ::windows_core::PCWSTR, jobid: u32, pointertobuffer: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetScheduleJobGetInfo(servername.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(pointertobuffer)))
     }
@@ -9539,12 +9539,12 @@ pub unsafe fn NetScheduleJobGetInfo<'a, Param0: ::windows::core::IntoParam<'a, :
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServerComputerNameAdd<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, emulateddomainname: Param1, emulatedservername: Param2) -> u32 {
+pub unsafe fn NetServerComputerNameAdd<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, emulateddomainname: Param1, emulatedservername: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServerComputerNameAdd(servername: ::windows::core::PCWSTR, emulateddomainname: ::windows::core::PCWSTR, emulatedservername: ::windows::core::PCWSTR) -> u32;
+            fn NetServerComputerNameAdd(servername: ::windows_core::PCWSTR, emulateddomainname: ::windows_core::PCWSTR, emulatedservername: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetServerComputerNameAdd(servername.into_param().abi(), emulateddomainname.into_param().abi(), emulatedservername.into_param().abi()))
     }
@@ -9553,12 +9553,12 @@ pub unsafe fn NetServerComputerNameAdd<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServerComputerNameDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, emulatedservername: Param1) -> u32 {
+pub unsafe fn NetServerComputerNameDel<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, emulatedservername: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServerComputerNameDel(servername: ::windows::core::PCWSTR, emulatedservername: ::windows::core::PCWSTR) -> u32;
+            fn NetServerComputerNameDel(servername: ::windows_core::PCWSTR, emulatedservername: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetServerComputerNameDel(servername.into_param().abi(), emulatedservername.into_param().abi()))
     }
@@ -9567,12 +9567,12 @@ pub unsafe fn NetServerComputerNameDel<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServerDiskEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32 {
+pub unsafe fn NetServerDiskEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServerDiskEnum(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
+            fn NetServerDiskEnum(servername: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetServerDiskEnum(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resume_handle)))
     }
@@ -9581,12 +9581,12 @@ pub unsafe fn NetServerDiskEnum<'a, Param0: ::windows::core::IntoParam<'a, ::win
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServerEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param7: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, servertype: NET_SERVER_TYPE, domain: Param7, resume_handle: *mut u32) -> u32 {
+pub unsafe fn NetServerEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, servertype: NET_SERVER_TYPE, domain: Param7, resume_handle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServerEnum(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, servertype: NET_SERVER_TYPE, domain: ::windows::core::PCWSTR, resume_handle: *mut u32) -> u32;
+            fn NetServerEnum(servername: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, servertype: NET_SERVER_TYPE, domain: ::windows_core::PCWSTR, resume_handle: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetServerEnum(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(servertype), domain.into_param().abi(), ::core::mem::transmute(resume_handle)))
     }
@@ -9595,12 +9595,12 @@ pub unsafe fn NetServerEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServerGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetServerGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServerGetInfo(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetServerGetInfo(servername: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetServerGetInfo(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -9609,12 +9609,12 @@ pub unsafe fn NetServerGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServerSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parmerror: *mut u32) -> u32 {
+pub unsafe fn NetServerSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parmerror: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServerSetInfo(servername: ::windows::core::PCWSTR, level: u32, buf: *const u8, parmerror: *mut u32) -> u32;
+            fn NetServerSetInfo(servername: ::windows_core::PCWSTR, level: u32, buf: *const u8, parmerror: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetServerSetInfo(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parmerror)))
     }
@@ -9623,12 +9623,12 @@ pub unsafe fn NetServerSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServerTransportAdd<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *const u8) -> u32 {
+pub unsafe fn NetServerTransportAdd<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *const u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServerTransportAdd(servername: ::windows::core::PCWSTR, level: u32, bufptr: *const u8) -> u32;
+            fn NetServerTransportAdd(servername: ::windows_core::PCWSTR, level: u32, bufptr: *const u8) -> u32;
         }
         ::core::mem::transmute(NetServerTransportAdd(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -9637,12 +9637,12 @@ pub unsafe fn NetServerTransportAdd<'a, Param0: ::windows::core::IntoParam<'a, :
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServerTransportAddEx<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *const u8) -> u32 {
+pub unsafe fn NetServerTransportAddEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *const u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServerTransportAddEx(servername: ::windows::core::PCWSTR, level: u32, bufptr: *const u8) -> u32;
+            fn NetServerTransportAddEx(servername: ::windows_core::PCWSTR, level: u32, bufptr: *const u8) -> u32;
         }
         ::core::mem::transmute(NetServerTransportAddEx(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -9651,12 +9651,12 @@ pub unsafe fn NetServerTransportAddEx<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServerTransportDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *const u8) -> u32 {
+pub unsafe fn NetServerTransportDel<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *const u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServerTransportDel(servername: ::windows::core::PCWSTR, level: u32, bufptr: *const u8) -> u32;
+            fn NetServerTransportDel(servername: ::windows_core::PCWSTR, level: u32, bufptr: *const u8) -> u32;
         }
         ::core::mem::transmute(NetServerTransportDel(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -9665,12 +9665,12 @@ pub unsafe fn NetServerTransportDel<'a, Param0: ::windows::core::IntoParam<'a, :
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServerTransportEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32 {
+pub unsafe fn NetServerTransportEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServerTransportEnum(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
+            fn NetServerTransportEnum(servername: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetServerTransportEnum(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resume_handle)))
     }
@@ -9679,12 +9679,12 @@ pub unsafe fn NetServerTransportEnum<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServiceControl<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, service: Param1, opcode: u32, arg: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetServiceControl<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, service: Param1, opcode: u32, arg: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServiceControl(servername: ::windows::core::PCWSTR, service: ::windows::core::PCWSTR, opcode: u32, arg: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetServiceControl(servername: ::windows_core::PCWSTR, service: ::windows_core::PCWSTR, opcode: u32, arg: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetServiceControl(servername.into_param().abi(), service.into_param().abi(), ::core::mem::transmute(opcode), ::core::mem::transmute(arg), ::core::mem::transmute(bufptr)))
     }
@@ -9693,12 +9693,12 @@ pub unsafe fn NetServiceControl<'a, Param0: ::windows::core::IntoParam<'a, ::win
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServiceEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32 {
+pub unsafe fn NetServiceEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServiceEnum(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
+            fn NetServiceEnum(servername: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetServiceEnum(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resume_handle)))
     }
@@ -9707,12 +9707,12 @@ pub unsafe fn NetServiceEnum<'a, Param0: ::windows::core::IntoParam<'a, ::window
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServiceGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, service: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetServiceGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, service: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServiceGetInfo(servername: ::windows::core::PCWSTR, service: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetServiceGetInfo(servername: ::windows_core::PCWSTR, service: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetServiceGetInfo(servername.into_param().abi(), service.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -9721,26 +9721,26 @@ pub unsafe fn NetServiceGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::win
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetServiceInstall<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, service: Param1, argv: &[::windows::core::PWSTR], bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetServiceInstall<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, service: Param1, argv: &[::windows_core::PWSTR], bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetServiceInstall(servername: ::windows::core::PCWSTR, service: ::windows::core::PCWSTR, argc: u32, argv: *const ::windows::core::PWSTR, bufptr: *mut *mut u8) -> u32;
+            fn NetServiceInstall(servername: ::windows_core::PCWSTR, service: ::windows_core::PCWSTR, argc: u32, argv: *const ::windows_core::PWSTR, bufptr: *mut *mut u8) -> u32;
         }
-        ::core::mem::transmute(NetServiceInstall(servername.into_param().abi(), service.into_param().abi(), argv.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(argv)), ::core::mem::transmute(bufptr)))
+        ::core::mem::transmute(NetServiceInstall(servername.into_param().abi(), service.into_param().abi(), argv.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(argv)), ::core::mem::transmute(bufptr)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetSetPrimaryComputerName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(server: Param0, primaryname: Param1, domainaccount: Param2, domainaccountpassword: Param3, reserved: u32) -> u32 {
+pub unsafe fn NetSetPrimaryComputerName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(server: Param0, primaryname: Param1, domainaccount: Param2, domainaccountpassword: Param3, reserved: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetSetPrimaryComputerName(server: ::windows::core::PCWSTR, primaryname: ::windows::core::PCWSTR, domainaccount: ::windows::core::PCWSTR, domainaccountpassword: ::windows::core::PCWSTR, reserved: u32) -> u32;
+            fn NetSetPrimaryComputerName(server: ::windows_core::PCWSTR, primaryname: ::windows_core::PCWSTR, domainaccount: ::windows_core::PCWSTR, domainaccountpassword: ::windows_core::PCWSTR, reserved: u32) -> u32;
         }
         ::core::mem::transmute(NetSetPrimaryComputerName(server.into_param().abi(), primaryname.into_param().abi(), domainaccount.into_param().abi(), domainaccountpassword.into_param().abi(), ::core::mem::transmute(reserved)))
     }
@@ -9749,12 +9749,12 @@ pub unsafe fn NetSetPrimaryComputerName<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUnjoinDomain<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpserver: Param0, lpaccount: Param1, lppassword: Param2, funjoinoptions: u32) -> u32 {
+pub unsafe fn NetUnjoinDomain<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpserver: Param0, lpaccount: Param1, lppassword: Param2, funjoinoptions: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUnjoinDomain(lpserver: ::windows::core::PCWSTR, lpaccount: ::windows::core::PCWSTR, lppassword: ::windows::core::PCWSTR, funjoinoptions: u32) -> u32;
+            fn NetUnjoinDomain(lpserver: ::windows_core::PCWSTR, lpaccount: ::windows_core::PCWSTR, lppassword: ::windows_core::PCWSTR, funjoinoptions: u32) -> u32;
         }
         ::core::mem::transmute(NetUnjoinDomain(lpserver.into_param().abi(), lpaccount.into_param().abi(), lppassword.into_param().abi(), ::core::mem::transmute(funjoinoptions)))
     }
@@ -9777,12 +9777,12 @@ pub unsafe fn NetUseAdd(servername: *const i8, levelflags: u32, buf: *const u8, 
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUseDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(uncservername: Param0, usename: Param1, forcelevelflags: FORCE_LEVEL_FLAGS) -> u32 {
+pub unsafe fn NetUseDel<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(uncservername: Param0, usename: Param1, forcelevelflags: FORCE_LEVEL_FLAGS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUseDel(uncservername: ::windows::core::PCWSTR, usename: ::windows::core::PCWSTR, forcelevelflags: FORCE_LEVEL_FLAGS) -> u32;
+            fn NetUseDel(uncservername: ::windows_core::PCWSTR, usename: ::windows_core::PCWSTR, forcelevelflags: FORCE_LEVEL_FLAGS) -> u32;
         }
         ::core::mem::transmute(NetUseDel(uncservername.into_param().abi(), usename.into_param().abi(), ::core::mem::transmute(forcelevelflags)))
     }
@@ -9791,12 +9791,12 @@ pub unsafe fn NetUseDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::co
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUseEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(uncservername: Param0, levelflags: u32, bufptr: *mut *mut u8, preferedmaximumsize: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32 {
+pub unsafe fn NetUseEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(uncservername: Param0, levelflags: u32, bufptr: *mut *mut u8, preferedmaximumsize: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUseEnum(uncservername: ::windows::core::PCWSTR, levelflags: u32, bufptr: *mut *mut u8, preferedmaximumsize: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
+            fn NetUseEnum(uncservername: ::windows_core::PCWSTR, levelflags: u32, bufptr: *mut *mut u8, preferedmaximumsize: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetUseEnum(uncservername.into_param().abi(), ::core::mem::transmute(levelflags), ::core::mem::transmute(bufptr), ::core::mem::transmute(preferedmaximumsize), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resumehandle)))
     }
@@ -9805,12 +9805,12 @@ pub unsafe fn NetUseEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::c
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUseGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(uncservername: Param0, usename: Param1, levelflags: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetUseGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(uncservername: Param0, usename: Param1, levelflags: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUseGetInfo(uncservername: ::windows::core::PCWSTR, usename: ::windows::core::PCWSTR, levelflags: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetUseGetInfo(uncservername: ::windows_core::PCWSTR, usename: ::windows_core::PCWSTR, levelflags: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetUseGetInfo(uncservername.into_param().abi(), usename.into_param().abi(), ::core::mem::transmute(levelflags), ::core::mem::transmute(bufptr)))
     }
@@ -9819,12 +9819,12 @@ pub unsafe fn NetUseGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUserAdd<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetUserAdd<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUserAdd(servername: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetUserAdd(servername: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetUserAdd(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -9833,12 +9833,12 @@ pub unsafe fn NetUserAdd<'a, Param0: ::windows::core::IntoParam<'a, ::windows::c
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUserChangePassword<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(domainname: Param0, username: Param1, oldpassword: Param2, newpassword: Param3) -> u32 {
+pub unsafe fn NetUserChangePassword<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(domainname: Param0, username: Param1, oldpassword: Param2, newpassword: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUserChangePassword(domainname: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR, oldpassword: ::windows::core::PCWSTR, newpassword: ::windows::core::PCWSTR) -> u32;
+            fn NetUserChangePassword(domainname: ::windows_core::PCWSTR, username: ::windows_core::PCWSTR, oldpassword: ::windows_core::PCWSTR, newpassword: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetUserChangePassword(domainname.into_param().abi(), username.into_param().abi(), oldpassword.into_param().abi(), newpassword.into_param().abi()))
     }
@@ -9847,12 +9847,12 @@ pub unsafe fn NetUserChangePassword<'a, Param0: ::windows::core::IntoParam<'a, :
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUserDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, username: Param1) -> u32 {
+pub unsafe fn NetUserDel<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, username: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUserDel(servername: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR) -> u32;
+            fn NetUserDel(servername: ::windows_core::PCWSTR, username: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(NetUserDel(servername.into_param().abi(), username.into_param().abi()))
     }
@@ -9861,12 +9861,12 @@ pub unsafe fn NetUserDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::c
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUserEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, filter: NET_USER_ENUM_FILTER_FLAGS, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32 {
+pub unsafe fn NetUserEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, filter: NET_USER_ENUM_FILTER_FLAGS, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUserEnum(servername: ::windows::core::PCWSTR, level: u32, filter: NET_USER_ENUM_FILTER_FLAGS, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
+            fn NetUserEnum(servername: ::windows_core::PCWSTR, level: u32, filter: NET_USER_ENUM_FILTER_FLAGS, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetUserEnum(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(filter), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resume_handle)))
     }
@@ -9875,12 +9875,12 @@ pub unsafe fn NetUserEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUserGetGroups<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, username: Param1, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32) -> u32 {
+pub unsafe fn NetUserGetGroups<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, username: Param1, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUserGetGroups(servername: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32) -> u32;
+            fn NetUserGetGroups(servername: ::windows_core::PCWSTR, username: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetUserGetGroups(servername.into_param().abi(), username.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries)))
     }
@@ -9889,12 +9889,12 @@ pub unsafe fn NetUserGetGroups<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUserGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, username: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetUserGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, username: Param1, level: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUserGetInfo(servername: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetUserGetInfo(servername: ::windows_core::PCWSTR, username: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetUserGetInfo(servername.into_param().abi(), username.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -9903,12 +9903,12 @@ pub unsafe fn NetUserGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::window
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUserGetLocalGroups<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, username: Param1, level: u32, flags: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32) -> u32 {
+pub unsafe fn NetUserGetLocalGroups<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, username: Param1, level: u32, flags: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUserGetLocalGroups(servername: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR, level: u32, flags: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32) -> u32;
+            fn NetUserGetLocalGroups(servername: ::windows_core::PCWSTR, username: ::windows_core::PCWSTR, level: u32, flags: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetUserGetLocalGroups(servername.into_param().abi(), username.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(flags), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries)))
     }
@@ -9917,12 +9917,12 @@ pub unsafe fn NetUserGetLocalGroups<'a, Param0: ::windows::core::IntoParam<'a, :
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUserModalsGet<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetUserModalsGet<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUserModalsGet(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetUserModalsGet(servername: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetUserModalsGet(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -9931,12 +9931,12 @@ pub unsafe fn NetUserModalsGet<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUserModalsSet<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetUserModalsSet<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUserModalsSet(servername: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetUserModalsSet(servername: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetUserModalsSet(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -9945,12 +9945,12 @@ pub unsafe fn NetUserModalsSet<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUserSetGroups<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, username: Param1, level: u32, buf: *const u8, num_entries: u32) -> u32 {
+pub unsafe fn NetUserSetGroups<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, username: Param1, level: u32, buf: *const u8, num_entries: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUserSetGroups(servername: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR, level: u32, buf: *const u8, num_entries: u32) -> u32;
+            fn NetUserSetGroups(servername: ::windows_core::PCWSTR, username: ::windows_core::PCWSTR, level: u32, buf: *const u8, num_entries: u32) -> u32;
         }
         ::core::mem::transmute(NetUserSetGroups(servername.into_param().abi(), username.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(num_entries)))
     }
@@ -9959,12 +9959,12 @@ pub unsafe fn NetUserSetGroups<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetUserSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, username: Param1, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetUserSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, username: Param1, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetUserSetInfo(servername: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetUserSetInfo(servername: ::windows_core::PCWSTR, username: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetUserSetInfo(servername.into_param().abi(), username.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -9973,12 +9973,12 @@ pub unsafe fn NetUserSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::window
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetValidateName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpserver: Param0, lpname: Param1, lpaccount: Param2, lppassword: Param3, nametype: NETSETUP_NAME_TYPE) -> u32 {
+pub unsafe fn NetValidateName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpserver: Param0, lpname: Param1, lpaccount: Param2, lppassword: Param3, nametype: NETSETUP_NAME_TYPE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetValidateName(lpserver: ::windows::core::PCWSTR, lpname: ::windows::core::PCWSTR, lpaccount: ::windows::core::PCWSTR, lppassword: ::windows::core::PCWSTR, nametype: NETSETUP_NAME_TYPE) -> u32;
+            fn NetValidateName(lpserver: ::windows_core::PCWSTR, lpname: ::windows_core::PCWSTR, lpaccount: ::windows_core::PCWSTR, lppassword: ::windows_core::PCWSTR, nametype: NETSETUP_NAME_TYPE) -> u32;
         }
         ::core::mem::transmute(NetValidateName(lpserver.into_param().abi(), lpname.into_param().abi(), lpaccount.into_param().abi(), lppassword.into_param().abi(), ::core::mem::transmute(nametype)))
     }
@@ -9987,12 +9987,12 @@ pub unsafe fn NetValidateName<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetValidatePasswordPolicy<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, qualifier: *mut ::core::ffi::c_void, validationtype: NET_VALIDATE_PASSWORD_TYPE, inputarg: *mut ::core::ffi::c_void, outputarg: *mut *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn NetValidatePasswordPolicy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, qualifier: *mut ::core::ffi::c_void, validationtype: NET_VALIDATE_PASSWORD_TYPE, inputarg: *mut ::core::ffi::c_void, outputarg: *mut *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetValidatePasswordPolicy(servername: ::windows::core::PCWSTR, qualifier: *mut ::core::ffi::c_void, validationtype: NET_VALIDATE_PASSWORD_TYPE, inputarg: *mut ::core::ffi::c_void, outputarg: *mut *mut ::core::ffi::c_void) -> u32;
+            fn NetValidatePasswordPolicy(servername: ::windows_core::PCWSTR, qualifier: *mut ::core::ffi::c_void, validationtype: NET_VALIDATE_PASSWORD_TYPE, inputarg: *mut ::core::ffi::c_void, outputarg: *mut *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(NetValidatePasswordPolicy(servername.into_param().abi(), ::core::mem::transmute(qualifier), ::core::mem::transmute(validationtype), ::core::mem::transmute(inputarg), ::core::mem::transmute(outputarg)))
     }
@@ -10015,12 +10015,12 @@ pub unsafe fn NetValidatePasswordPolicyFree(outputarg: *mut *mut ::core::ffi::c_
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetWkstaGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetWkstaGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetWkstaGetInfo(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetWkstaGetInfo(servername: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetWkstaGetInfo(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -10029,12 +10029,12 @@ pub unsafe fn NetWkstaGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetWkstaSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, buffer: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetWkstaSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, buffer: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetWkstaSetInfo(servername: ::windows::core::PCWSTR, level: u32, buffer: *const u8, parm_err: *mut u32) -> u32;
+            fn NetWkstaSetInfo(servername: ::windows_core::PCWSTR, level: u32, buffer: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetWkstaSetInfo(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buffer), ::core::mem::transmute(parm_err)))
     }
@@ -10057,12 +10057,12 @@ pub unsafe fn NetWkstaTransportAdd(servername: *const i8, level: u32, buf: *cons
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetWkstaTransportDel<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, transportname: Param1, ucond: FORCE_LEVEL_FLAGS) -> u32 {
+pub unsafe fn NetWkstaTransportDel<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, transportname: Param1, ucond: FORCE_LEVEL_FLAGS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetWkstaTransportDel(servername: ::windows::core::PCWSTR, transportname: ::windows::core::PCWSTR, ucond: FORCE_LEVEL_FLAGS) -> u32;
+            fn NetWkstaTransportDel(servername: ::windows_core::PCWSTR, transportname: ::windows_core::PCWSTR, ucond: FORCE_LEVEL_FLAGS) -> u32;
         }
         ::core::mem::transmute(NetWkstaTransportDel(servername.into_param().abi(), transportname.into_param().abi(), ::core::mem::transmute(ucond)))
     }
@@ -10085,12 +10085,12 @@ pub unsafe fn NetWkstaTransportEnum(servername: *const i8, level: u32, bufptr: *
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetWkstaUserEnum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32 {
+pub unsafe fn NetWkstaUserEnum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetWkstaUserEnum(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
+            fn NetWkstaUserEnum(servername: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetWkstaUserEnum(servername.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr), ::core::mem::transmute(prefmaxlen), ::core::mem::transmute(entriesread), ::core::mem::transmute(totalentries), ::core::mem::transmute(resumehandle)))
     }
@@ -10099,12 +10099,12 @@ pub unsafe fn NetWkstaUserEnum<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetWkstaUserGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(reserved: Param0, level: u32, bufptr: *mut *mut u8) -> u32 {
+pub unsafe fn NetWkstaUserGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(reserved: Param0, level: u32, bufptr: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetWkstaUserGetInfo(reserved: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+            fn NetWkstaUserGetInfo(reserved: ::windows_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(NetWkstaUserGetInfo(reserved.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(bufptr)))
     }
@@ -10113,12 +10113,12 @@ pub unsafe fn NetWkstaUserGetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::w
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn NetWkstaUserSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(reserved: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
+pub unsafe fn NetWkstaUserSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(reserved: Param0, level: u32, buf: *const u8, parm_err: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetWkstaUserSetInfo(reserved: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+            fn NetWkstaUserSetInfo(reserved: ::windows_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetWkstaUserSetInfo(reserved.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(buf), ::core::mem::transmute(parm_err)))
     }
@@ -10131,9 +10131,9 @@ pub unsafe fn NetWkstaUserSetInfo<'a, Param0: ::windows::core::IntoParam<'a, ::w
 pub struct OBO_TOKEN {
     pub Type: OBO_TOKEN_TYPE,
     pub pncc: ::core::option::Option<INetCfgComponent>,
-    pub pszwManufacturer: ::windows::core::PCWSTR,
-    pub pszwProduct: ::windows::core::PCWSTR,
-    pub pszwDisplayName: ::windows::core::PCWSTR,
+    pub pszwManufacturer: ::windows_core::PCWSTR,
+    pub pszwProduct: ::windows_core::PCWSTR,
+    pub pszwDisplayName: ::windows_core::PCWSTR,
     pub fRegistered: super::super::Foundation::BOOL,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10156,7 +10156,7 @@ impl ::core::fmt::Debug for OBO_TOKEN {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OBO_TOKEN {
+unsafe impl ::windows_core::Abi for OBO_TOKEN {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10194,7 +10194,7 @@ impl ::core::default::Default for OBO_TOKEN_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for OBO_TOKEN_TYPE {
+unsafe impl ::windows_core::Abi for OBO_TOKEN_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for OBO_TOKEN_TYPE {
@@ -10251,12 +10251,12 @@ impl ::core::fmt::Debug for PRINT_OTHER_INFO {
         f.debug_struct("PRINT_OTHER_INFO").field("alrtpr_jobid", &self.alrtpr_jobid).field("alrtpr_status", &self.alrtpr_status).field("alrtpr_submitted", &self.alrtpr_submitted).field("alrtpr_size", &self.alrtpr_size).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PRINT_OTHER_INFO {
+unsafe impl ::windows_core::Abi for PRINT_OTHER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PRINT_OTHER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINT_OTHER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINT_OTHER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PRINT_OTHER_INFO {}
@@ -10345,7 +10345,7 @@ pub const QNLEN: u32 = 80u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct RASCON_IPUI {
-    pub guidConnection: ::windows::core::GUID,
+    pub guidConnection: ::windows_core::GUID,
     pub fIPv6Cfg: super::super::Foundation::BOOL,
     pub dwFlags: u32,
     pub pszwIpAddr: [u16; 16],
@@ -10392,13 +10392,13 @@ impl ::core::fmt::Debug for RASCON_IPUI {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RASCON_IPUI {
+unsafe impl ::windows_core::Abi for RASCON_IPUI {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASCON_IPUI {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASCON_IPUI>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASCON_IPUI>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10414,7 +10414,7 @@ pub const REGISTER_PROTOCOL_ENTRY_POINT_STRING: &str = "RegisterProtocol";
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct REPL_EDIR_INFO_0 {
-    pub rped0_dirname: ::windows::core::PWSTR,
+    pub rped0_dirname: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for REPL_EDIR_INFO_0 {}
 impl ::core::clone::Clone for REPL_EDIR_INFO_0 {
@@ -10427,12 +10427,12 @@ impl ::core::fmt::Debug for REPL_EDIR_INFO_0 {
         f.debug_struct("REPL_EDIR_INFO_0").field("rped0_dirname", &self.rped0_dirname).finish()
     }
 }
-unsafe impl ::windows::core::Abi for REPL_EDIR_INFO_0 {
+unsafe impl ::windows_core::Abi for REPL_EDIR_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for REPL_EDIR_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_EDIR_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_EDIR_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for REPL_EDIR_INFO_0 {}
@@ -10444,7 +10444,7 @@ impl ::core::default::Default for REPL_EDIR_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct REPL_EDIR_INFO_1 {
-    pub rped1_dirname: ::windows::core::PWSTR,
+    pub rped1_dirname: ::windows_core::PWSTR,
     pub rped1_integrity: u32,
     pub rped1_extent: u32,
 }
@@ -10459,12 +10459,12 @@ impl ::core::fmt::Debug for REPL_EDIR_INFO_1 {
         f.debug_struct("REPL_EDIR_INFO_1").field("rped1_dirname", &self.rped1_dirname).field("rped1_integrity", &self.rped1_integrity).field("rped1_extent", &self.rped1_extent).finish()
     }
 }
-unsafe impl ::windows::core::Abi for REPL_EDIR_INFO_1 {
+unsafe impl ::windows_core::Abi for REPL_EDIR_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for REPL_EDIR_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_EDIR_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_EDIR_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for REPL_EDIR_INFO_1 {}
@@ -10489,12 +10489,12 @@ impl ::core::fmt::Debug for REPL_EDIR_INFO_1000 {
         f.debug_struct("REPL_EDIR_INFO_1000").field("rped1000_integrity", &self.rped1000_integrity).finish()
     }
 }
-unsafe impl ::windows::core::Abi for REPL_EDIR_INFO_1000 {
+unsafe impl ::windows_core::Abi for REPL_EDIR_INFO_1000 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for REPL_EDIR_INFO_1000 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_EDIR_INFO_1000>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_EDIR_INFO_1000>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for REPL_EDIR_INFO_1000 {}
@@ -10519,12 +10519,12 @@ impl ::core::fmt::Debug for REPL_EDIR_INFO_1001 {
         f.debug_struct("REPL_EDIR_INFO_1001").field("rped1001_extent", &self.rped1001_extent).finish()
     }
 }
-unsafe impl ::windows::core::Abi for REPL_EDIR_INFO_1001 {
+unsafe impl ::windows_core::Abi for REPL_EDIR_INFO_1001 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for REPL_EDIR_INFO_1001 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_EDIR_INFO_1001>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_EDIR_INFO_1001>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for REPL_EDIR_INFO_1001 {}
@@ -10536,7 +10536,7 @@ impl ::core::default::Default for REPL_EDIR_INFO_1001 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct REPL_EDIR_INFO_2 {
-    pub rped2_dirname: ::windows::core::PWSTR,
+    pub rped2_dirname: ::windows_core::PWSTR,
     pub rped2_integrity: u32,
     pub rped2_extent: u32,
     pub rped2_lockcount: u32,
@@ -10553,12 +10553,12 @@ impl ::core::fmt::Debug for REPL_EDIR_INFO_2 {
         f.debug_struct("REPL_EDIR_INFO_2").field("rped2_dirname", &self.rped2_dirname).field("rped2_integrity", &self.rped2_integrity).field("rped2_extent", &self.rped2_extent).field("rped2_lockcount", &self.rped2_lockcount).field("rped2_locktime", &self.rped2_locktime).finish()
     }
 }
-unsafe impl ::windows::core::Abi for REPL_EDIR_INFO_2 {
+unsafe impl ::windows_core::Abi for REPL_EDIR_INFO_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for REPL_EDIR_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_EDIR_INFO_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_EDIR_INFO_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for REPL_EDIR_INFO_2 {}
@@ -10580,7 +10580,7 @@ pub const REPL_GUARDTIME_INFOLEVEL: u32 = 1002u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct REPL_IDIR_INFO_0 {
-    pub rpid0_dirname: ::windows::core::PWSTR,
+    pub rpid0_dirname: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for REPL_IDIR_INFO_0 {}
 impl ::core::clone::Clone for REPL_IDIR_INFO_0 {
@@ -10593,12 +10593,12 @@ impl ::core::fmt::Debug for REPL_IDIR_INFO_0 {
         f.debug_struct("REPL_IDIR_INFO_0").field("rpid0_dirname", &self.rpid0_dirname).finish()
     }
 }
-unsafe impl ::windows::core::Abi for REPL_IDIR_INFO_0 {
+unsafe impl ::windows_core::Abi for REPL_IDIR_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for REPL_IDIR_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_IDIR_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_IDIR_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for REPL_IDIR_INFO_0 {}
@@ -10610,9 +10610,9 @@ impl ::core::default::Default for REPL_IDIR_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct REPL_IDIR_INFO_1 {
-    pub rpid1_dirname: ::windows::core::PWSTR,
+    pub rpid1_dirname: ::windows_core::PWSTR,
     pub rpid1_state: u32,
-    pub rpid1_mastername: ::windows::core::PWSTR,
+    pub rpid1_mastername: ::windows_core::PWSTR,
     pub rpid1_last_update_time: u32,
     pub rpid1_lockcount: u32,
     pub rpid1_locktime: u32,
@@ -10628,12 +10628,12 @@ impl ::core::fmt::Debug for REPL_IDIR_INFO_1 {
         f.debug_struct("REPL_IDIR_INFO_1").field("rpid1_dirname", &self.rpid1_dirname).field("rpid1_state", &self.rpid1_state).field("rpid1_mastername", &self.rpid1_mastername).field("rpid1_last_update_time", &self.rpid1_last_update_time).field("rpid1_lockcount", &self.rpid1_lockcount).field("rpid1_locktime", &self.rpid1_locktime).finish()
     }
 }
-unsafe impl ::windows::core::Abi for REPL_IDIR_INFO_1 {
+unsafe impl ::windows_core::Abi for REPL_IDIR_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for REPL_IDIR_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_IDIR_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_IDIR_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for REPL_IDIR_INFO_1 {}
@@ -10646,11 +10646,11 @@ impl ::core::default::Default for REPL_IDIR_INFO_1 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct REPL_INFO_0 {
     pub rp0_role: u32,
-    pub rp0_exportpath: ::windows::core::PWSTR,
-    pub rp0_exportlist: ::windows::core::PWSTR,
-    pub rp0_importpath: ::windows::core::PWSTR,
-    pub rp0_importlist: ::windows::core::PWSTR,
-    pub rp0_logonusername: ::windows::core::PWSTR,
+    pub rp0_exportpath: ::windows_core::PWSTR,
+    pub rp0_exportlist: ::windows_core::PWSTR,
+    pub rp0_importpath: ::windows_core::PWSTR,
+    pub rp0_importlist: ::windows_core::PWSTR,
+    pub rp0_logonusername: ::windows_core::PWSTR,
     pub rp0_interval: u32,
     pub rp0_pulse: u32,
     pub rp0_guardtime: u32,
@@ -10667,12 +10667,12 @@ impl ::core::fmt::Debug for REPL_INFO_0 {
         f.debug_struct("REPL_INFO_0").field("rp0_role", &self.rp0_role).field("rp0_exportpath", &self.rp0_exportpath).field("rp0_exportlist", &self.rp0_exportlist).field("rp0_importpath", &self.rp0_importpath).field("rp0_importlist", &self.rp0_importlist).field("rp0_logonusername", &self.rp0_logonusername).field("rp0_interval", &self.rp0_interval).field("rp0_pulse", &self.rp0_pulse).field("rp0_guardtime", &self.rp0_guardtime).field("rp0_random", &self.rp0_random).finish()
     }
 }
-unsafe impl ::windows::core::Abi for REPL_INFO_0 {
+unsafe impl ::windows_core::Abi for REPL_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for REPL_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for REPL_INFO_0 {}
@@ -10697,12 +10697,12 @@ impl ::core::fmt::Debug for REPL_INFO_1000 {
         f.debug_struct("REPL_INFO_1000").field("rp1000_interval", &self.rp1000_interval).finish()
     }
 }
-unsafe impl ::windows::core::Abi for REPL_INFO_1000 {
+unsafe impl ::windows_core::Abi for REPL_INFO_1000 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for REPL_INFO_1000 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_INFO_1000>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_INFO_1000>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for REPL_INFO_1000 {}
@@ -10727,12 +10727,12 @@ impl ::core::fmt::Debug for REPL_INFO_1001 {
         f.debug_struct("REPL_INFO_1001").field("rp1001_pulse", &self.rp1001_pulse).finish()
     }
 }
-unsafe impl ::windows::core::Abi for REPL_INFO_1001 {
+unsafe impl ::windows_core::Abi for REPL_INFO_1001 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for REPL_INFO_1001 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_INFO_1001>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_INFO_1001>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for REPL_INFO_1001 {}
@@ -10757,12 +10757,12 @@ impl ::core::fmt::Debug for REPL_INFO_1002 {
         f.debug_struct("REPL_INFO_1002").field("rp1002_guardtime", &self.rp1002_guardtime).finish()
     }
 }
-unsafe impl ::windows::core::Abi for REPL_INFO_1002 {
+unsafe impl ::windows_core::Abi for REPL_INFO_1002 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for REPL_INFO_1002 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_INFO_1002>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_INFO_1002>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for REPL_INFO_1002 {}
@@ -10787,12 +10787,12 @@ impl ::core::fmt::Debug for REPL_INFO_1003 {
         f.debug_struct("REPL_INFO_1003").field("rp1003_random", &self.rp1003_random).finish()
     }
 }
-unsafe impl ::windows::core::Abi for REPL_INFO_1003 {
+unsafe impl ::windows_core::Abi for REPL_INFO_1003 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for REPL_INFO_1003 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_INFO_1003>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REPL_INFO_1003>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for REPL_INFO_1003 {}
@@ -10872,12 +10872,12 @@ impl ::core::fmt::Debug for RTR_INFO_BLOCK_HEADER {
         f.debug_struct("RTR_INFO_BLOCK_HEADER").field("Version", &self.Version).field("Size", &self.Size).field("TocEntriesCount", &self.TocEntriesCount).field("TocEntry", &self.TocEntry).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RTR_INFO_BLOCK_HEADER {
+unsafe impl ::windows_core::Abi for RTR_INFO_BLOCK_HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RTR_INFO_BLOCK_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTR_INFO_BLOCK_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTR_INFO_BLOCK_HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RTR_INFO_BLOCK_HEADER {}
@@ -10907,12 +10907,12 @@ impl ::core::fmt::Debug for RTR_TOC_ENTRY {
         f.debug_struct("RTR_TOC_ENTRY").field("InfoType", &self.InfoType).field("InfoSize", &self.InfoSize).field("Count", &self.Count).field("Offset", &self.Offset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RTR_TOC_ENTRY {
+unsafe impl ::windows_core::Abi for RTR_TOC_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RTR_TOC_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTR_TOC_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTR_TOC_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RTR_TOC_ENTRY {}
@@ -10927,12 +10927,12 @@ pub const RTUTILS_MAX_PROTOCOL_DLL_LEN: u32 = 48u32;
 pub const RTUTILS_MAX_PROTOCOL_NAME_LEN: u32 = 40u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn RouterAssert<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszfailedassertion: Param0, pszfilename: Param1, dwlinenumber: u32, pszmessage: Param3) {
+pub unsafe fn RouterAssert<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszfailedassertion: Param0, pszfilename: Param1, dwlinenumber: u32, pszmessage: Param3) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterAssert(pszfailedassertion: ::windows::core::PCSTR, pszfilename: ::windows::core::PCSTR, dwlinenumber: u32, pszmessage: ::windows::core::PCSTR);
+            fn RouterAssert(pszfailedassertion: ::windows_core::PCSTR, pszfilename: ::windows_core::PCSTR, dwlinenumber: u32, pszmessage: ::windows_core::PCSTR);
         }
         RouterAssert(pszfailedassertion.into_param().abi(), pszfilename.into_param().abi(), ::core::mem::transmute(dwlinenumber), pszmessage.into_param().abi())
     }
@@ -10941,12 +10941,12 @@ pub unsafe fn RouterAssert<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn RouterGetErrorStringA(dwerrorcode: u32, lplpszerrorstring: *mut ::windows::core::PSTR) -> u32 {
+pub unsafe fn RouterGetErrorStringA(dwerrorcode: u32, lplpszerrorstring: *mut ::windows_core::PSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterGetErrorStringA(dwerrorcode: u32, lplpszerrorstring: *mut ::windows::core::PSTR) -> u32;
+            fn RouterGetErrorStringA(dwerrorcode: u32, lplpszerrorstring: *mut ::windows_core::PSTR) -> u32;
         }
         ::core::mem::transmute(RouterGetErrorStringA(::core::mem::transmute(dwerrorcode), ::core::mem::transmute(lplpszerrorstring)))
     }
@@ -10955,12 +10955,12 @@ pub unsafe fn RouterGetErrorStringA(dwerrorcode: u32, lplpszerrorstring: *mut ::
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn RouterGetErrorStringW(dwerrorcode: u32, lplpwszerrorstring: *mut ::windows::core::PWSTR) -> u32 {
+pub unsafe fn RouterGetErrorStringW(dwerrorcode: u32, lplpwszerrorstring: *mut ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterGetErrorStringW(dwerrorcode: u32, lplpwszerrorstring: *mut ::windows::core::PWSTR) -> u32;
+            fn RouterGetErrorStringW(dwerrorcode: u32, lplpwszerrorstring: *mut ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(RouterGetErrorStringW(::core::mem::transmute(dwerrorcode), ::core::mem::transmute(lplpwszerrorstring)))
     }
@@ -10970,7 +10970,7 @@ pub unsafe fn RouterGetErrorStringW(dwerrorcode: u32, lplpwszerrorstring: *mut :
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogDeregisterA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0) {
+pub unsafe fn RouterLogDeregisterA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10985,7 +10985,7 @@ pub unsafe fn RouterLogDeregisterA<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogDeregisterW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0) {
+pub unsafe fn RouterLogDeregisterW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11000,14 +11000,14 @@ pub unsafe fn RouterLogDeregisterW<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows::core::PSTR], dwerrorcode: u32) {
+pub unsafe fn RouterLogEventA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PSTR], dwerrorcode: u32) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows::core::PSTR, dwerrorcode: u32);
+            fn RouterLogEventA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PSTR, dwerrorcode: u32);
         }
-        RouterLogEventA(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwerrorcode))
+        RouterLogEventA(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwerrorcode))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11015,14 +11015,14 @@ pub unsafe fn RouterLogEventA<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventDataA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows::core::PSTR], dwdatabytes: u32, lpdatabytes: *mut u8) {
+pub unsafe fn RouterLogEventDataA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PSTR], dwdatabytes: u32, lpdatabytes: *mut u8) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventDataA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows::core::PSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
+            fn RouterLogEventDataA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
         }
-        RouterLogEventDataA(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwdatabytes), ::core::mem::transmute(lpdatabytes))
+        RouterLogEventDataA(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwdatabytes), ::core::mem::transmute(lpdatabytes))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11030,14 +11030,14 @@ pub unsafe fn RouterLogEventDataA<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventDataW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows::core::PWSTR], dwdatabytes: u32, lpdatabytes: *mut u8) {
+pub unsafe fn RouterLogEventDataW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PWSTR], dwdatabytes: u32, lpdatabytes: *mut u8) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventDataW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows::core::PWSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
+            fn RouterLogEventDataW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PWSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
         }
-        RouterLogEventDataW(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwdatabytes), ::core::mem::transmute(lpdatabytes))
+        RouterLogEventDataW(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwdatabytes), ::core::mem::transmute(lpdatabytes))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11045,12 +11045,12 @@ pub unsafe fn RouterLogEventDataW<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventExA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4) {
+pub unsafe fn RouterLogEventExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventExA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows::core::PCSTR);
+            fn RouterLogEventExA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core::PCSTR);
         }
         RouterLogEventExA(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwmessageid), ptszformat.into_param().abi())
     }
@@ -11060,12 +11060,12 @@ pub unsafe fn RouterLogEventExA<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventExW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4) {
+pub unsafe fn RouterLogEventExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventExW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows::core::PCWSTR);
+            fn RouterLogEventExW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core::PCWSTR);
         }
         RouterLogEventExW(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwmessageid), ptszformat.into_param().abi())
     }
@@ -11075,14 +11075,14 @@ pub unsafe fn RouterLogEventExW<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventStringA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows::core::PSTR], dwerrorcode: u32, dwerrorindex: u32) {
+pub unsafe fn RouterLogEventStringA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PSTR], dwerrorcode: u32, dwerrorindex: u32) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventStringA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows::core::PSTR, dwerrorcode: u32, dwerrorindex: u32);
+            fn RouterLogEventStringA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PSTR, dwerrorcode: u32, dwerrorindex: u32);
         }
-        RouterLogEventStringA(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwerrorindex))
+        RouterLogEventStringA(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwerrorindex))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11090,14 +11090,14 @@ pub unsafe fn RouterLogEventStringA<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventStringW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows::core::PWSTR], dwerrorcode: u32, dwerrorindex: u32) {
+pub unsafe fn RouterLogEventStringW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PWSTR], dwerrorcode: u32, dwerrorindex: u32) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventStringW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows::core::PWSTR, dwerrorcode: u32, dwerrorindex: u32);
+            fn RouterLogEventStringW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PWSTR, dwerrorcode: u32, dwerrorindex: u32);
         }
-        RouterLogEventStringW(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwerrorindex))
+        RouterLogEventStringW(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwerrorindex))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11105,12 +11105,12 @@ pub unsafe fn RouterLogEventStringW<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventValistExA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4, arglist: *mut i8) {
+pub unsafe fn RouterLogEventValistExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4, arglist: *mut i8) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventValistExA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows::core::PCSTR, arglist: *mut i8);
+            fn RouterLogEventValistExA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core::PCSTR, arglist: *mut i8);
         }
         RouterLogEventValistExA(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwmessageid), ptszformat.into_param().abi(), ::core::mem::transmute(arglist))
     }
@@ -11120,12 +11120,12 @@ pub unsafe fn RouterLogEventValistExA<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventValistExW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4, arglist: *mut i8) {
+pub unsafe fn RouterLogEventValistExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4, arglist: *mut i8) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventValistExW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows::core::PCWSTR, arglist: *mut i8);
+            fn RouterLogEventValistExW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core::PCWSTR, arglist: *mut i8);
         }
         RouterLogEventValistExW(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwmessageid), ptszformat.into_param().abi(), ::core::mem::transmute(arglist))
     }
@@ -11135,14 +11135,14 @@ pub unsafe fn RouterLogEventValistExW<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows::core::PWSTR], dwerrorcode: u32) {
+pub unsafe fn RouterLogEventW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PWSTR], dwerrorcode: u32) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows::core::PWSTR, dwerrorcode: u32);
+            fn RouterLogEventW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PWSTR, dwerrorcode: u32);
         }
-        RouterLogEventW(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwerrorcode))
+        RouterLogEventW(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwerrorcode))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11150,12 +11150,12 @@ pub unsafe fn RouterLogEventW<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogRegisterA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpszsource: Param0) -> super::super::Foundation::HANDLE {
+pub unsafe fn RouterLogRegisterA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszsource: Param0) -> super::super::Foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogRegisterA(lpszsource: ::windows::core::PCSTR) -> super::super::Foundation::HANDLE;
+            fn RouterLogRegisterA(lpszsource: ::windows_core::PCSTR) -> super::super::Foundation::HANDLE;
         }
         ::core::mem::transmute(RouterLogRegisterA(lpszsource.into_param().abi()))
     }
@@ -11165,12 +11165,12 @@ pub unsafe fn RouterLogRegisterA<'a, Param0: ::windows::core::IntoParam<'a, ::wi
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogRegisterW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpszsource: Param0) -> super::super::Foundation::HANDLE {
+pub unsafe fn RouterLogRegisterW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszsource: Param0) -> super::super::Foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogRegisterW(lpszsource: ::windows::core::PCWSTR) -> super::super::Foundation::HANDLE;
+            fn RouterLogRegisterW(lpszsource: ::windows_core::PCWSTR) -> super::super::Foundation::HANDLE;
         }
         ::core::mem::transmute(RouterLogRegisterW(lpszsource.into_param().abi()))
     }
@@ -11185,7 +11185,7 @@ pub const SERVER_DISPLAY_NAME: &str = "Server";
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct SERVER_INFO_100 {
     pub sv100_platform_id: u32,
-    pub sv100_name: ::windows::core::PWSTR,
+    pub sv100_name: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_INFO_100 {}
 impl ::core::clone::Clone for SERVER_INFO_100 {
@@ -11198,12 +11198,12 @@ impl ::core::fmt::Debug for SERVER_INFO_100 {
         f.debug_struct("SERVER_INFO_100").field("sv100_platform_id", &self.sv100_platform_id).field("sv100_name", &self.sv100_name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_100 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_100 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_100 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_100>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_100>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_100 {}
@@ -11215,7 +11215,7 @@ impl ::core::default::Default for SERVER_INFO_100 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct SERVER_INFO_1005 {
-    pub sv1005_comment: ::windows::core::PWSTR,
+    pub sv1005_comment: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_INFO_1005 {}
 impl ::core::clone::Clone for SERVER_INFO_1005 {
@@ -11228,12 +11228,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1005 {
         f.debug_struct("SERVER_INFO_1005").field("sv1005_comment", &self.sv1005_comment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1005 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1005 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1005 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1005>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1005>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1005 {}
@@ -11246,11 +11246,11 @@ impl ::core::default::Default for SERVER_INFO_1005 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct SERVER_INFO_101 {
     pub sv101_platform_id: u32,
-    pub sv101_name: ::windows::core::PWSTR,
+    pub sv101_name: ::windows_core::PWSTR,
     pub sv101_version_major: u32,
     pub sv101_version_minor: u32,
     pub sv101_type: NET_SERVER_TYPE,
-    pub sv101_comment: ::windows::core::PWSTR,
+    pub sv101_comment: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_INFO_101 {}
 impl ::core::clone::Clone for SERVER_INFO_101 {
@@ -11263,12 +11263,12 @@ impl ::core::fmt::Debug for SERVER_INFO_101 {
         f.debug_struct("SERVER_INFO_101").field("sv101_platform_id", &self.sv101_platform_id).field("sv101_name", &self.sv101_name).field("sv101_version_major", &self.sv101_version_major).field("sv101_version_minor", &self.sv101_version_minor).field("sv101_type", &self.sv101_type).field("sv101_comment", &self.sv101_comment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_101 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_101 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_101 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_101>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_101>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_101 {}
@@ -11293,12 +11293,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1010 {
         f.debug_struct("SERVER_INFO_1010").field("sv1010_disc", &self.sv1010_disc).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1010 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1010 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1010 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1010>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1010>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1010 {}
@@ -11323,12 +11323,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1016 {
         f.debug_struct("SERVER_INFO_1016").field("sv1016_hidden", &self.sv1016_hidden).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1016 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1016 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1016 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1016>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1016>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1016 {}
@@ -11353,12 +11353,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1017 {
         f.debug_struct("SERVER_INFO_1017").field("sv1017_announce", &self.sv1017_announce).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1017 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1017 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1017 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1017>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1017>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1017 {}
@@ -11383,12 +11383,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1018 {
         f.debug_struct("SERVER_INFO_1018").field("sv1018_anndelta", &self.sv1018_anndelta).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1018 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1018 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1018 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1018>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1018>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1018 {}
@@ -11401,18 +11401,18 @@ impl ::core::default::Default for SERVER_INFO_1018 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct SERVER_INFO_102 {
     pub sv102_platform_id: u32,
-    pub sv102_name: ::windows::core::PWSTR,
+    pub sv102_name: ::windows_core::PWSTR,
     pub sv102_version_major: u32,
     pub sv102_version_minor: u32,
     pub sv102_type: NET_SERVER_TYPE,
-    pub sv102_comment: ::windows::core::PWSTR,
+    pub sv102_comment: ::windows_core::PWSTR,
     pub sv102_users: u32,
     pub sv102_disc: i32,
     pub sv102_hidden: SERVER_INFO_HIDDEN,
     pub sv102_announce: u32,
     pub sv102_anndelta: u32,
     pub sv102_licenses: u32,
-    pub sv102_userpath: ::windows::core::PWSTR,
+    pub sv102_userpath: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_INFO_102 {}
 impl ::core::clone::Clone for SERVER_INFO_102 {
@@ -11439,12 +11439,12 @@ impl ::core::fmt::Debug for SERVER_INFO_102 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_102 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_102 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_102 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_102>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_102>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_102 {}
@@ -11458,18 +11458,18 @@ impl ::core::default::Default for SERVER_INFO_102 {
 #[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_103 {
     pub sv103_platform_id: u32,
-    pub sv103_name: ::windows::core::PWSTR,
+    pub sv103_name: ::windows_core::PWSTR,
     pub sv103_version_major: u32,
     pub sv103_version_minor: u32,
     pub sv103_type: u32,
-    pub sv103_comment: ::windows::core::PWSTR,
+    pub sv103_comment: ::windows_core::PWSTR,
     pub sv103_users: u32,
     pub sv103_disc: i32,
     pub sv103_hidden: super::super::Foundation::BOOL,
     pub sv103_announce: u32,
     pub sv103_anndelta: u32,
     pub sv103_licenses: u32,
-    pub sv103_userpath: ::windows::core::PWSTR,
+    pub sv103_userpath: ::windows_core::PWSTR,
     pub sv103_capabilities: u32,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11502,13 +11502,13 @@ impl ::core::fmt::Debug for SERVER_INFO_103 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_103 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_103 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_103 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_103>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_103>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11535,12 +11535,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1107 {
         f.debug_struct("SERVER_INFO_1107").field("sv1107_users", &self.sv1107_users).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1107 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1107 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1107 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1107>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1107>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1107 {}
@@ -11565,12 +11565,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1501 {
         f.debug_struct("SERVER_INFO_1501").field("sv1501_sessopens", &self.sv1501_sessopens).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1501 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1501 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1501 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1501>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1501>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1501 {}
@@ -11595,12 +11595,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1502 {
         f.debug_struct("SERVER_INFO_1502").field("sv1502_sessvcs", &self.sv1502_sessvcs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1502 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1502 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1502 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1502>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1502>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1502 {}
@@ -11625,12 +11625,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1503 {
         f.debug_struct("SERVER_INFO_1503").field("sv1503_opensearch", &self.sv1503_opensearch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1503 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1503 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1503 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1503>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1503>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1503 {}
@@ -11655,12 +11655,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1506 {
         f.debug_struct("SERVER_INFO_1506").field("sv1506_maxworkitems", &self.sv1506_maxworkitems).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1506 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1506 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1506 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1506>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1506>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1506 {}
@@ -11685,12 +11685,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1509 {
         f.debug_struct("SERVER_INFO_1509").field("sv1509_maxrawbuflen", &self.sv1509_maxrawbuflen).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1509 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1509 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1509 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1509>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1509>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1509 {}
@@ -11715,12 +11715,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1510 {
         f.debug_struct("SERVER_INFO_1510").field("sv1510_sessusers", &self.sv1510_sessusers).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1510 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1510 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1510 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1510>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1510>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1510 {}
@@ -11745,12 +11745,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1511 {
         f.debug_struct("SERVER_INFO_1511").field("sv1511_sessconns", &self.sv1511_sessconns).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1511 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1511 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1511 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1511>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1511>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1511 {}
@@ -11775,12 +11775,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1512 {
         f.debug_struct("SERVER_INFO_1512").field("sv1512_maxnonpagedmemoryusage", &self.sv1512_maxnonpagedmemoryusage).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1512 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1512 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1512 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1512>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1512>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1512 {}
@@ -11805,12 +11805,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1513 {
         f.debug_struct("SERVER_INFO_1513").field("sv1513_maxpagedmemoryusage", &self.sv1513_maxpagedmemoryusage).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1513 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1513 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1513 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1513>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1513>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1513 {}
@@ -11840,13 +11840,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1514 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1514 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1514 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1514 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1514>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1514>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11878,13 +11878,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1515 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1515 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1515 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1515 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1515>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1515>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11916,13 +11916,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1516 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1516 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1516 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1516 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1516>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1516>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11954,13 +11954,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1518 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1518 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1518 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1518 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1518>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1518>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11987,12 +11987,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1520 {
         f.debug_struct("SERVER_INFO_1520").field("sv1520_maxcopyreadlen", &self.sv1520_maxcopyreadlen).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1520 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1520 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1520 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1520>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1520>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1520 {}
@@ -12017,12 +12017,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1521 {
         f.debug_struct("SERVER_INFO_1521").field("sv1521_maxcopywritelen", &self.sv1521_maxcopywritelen).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1521 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1521 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1521 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1521>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1521>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1521 {}
@@ -12047,12 +12047,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1522 {
         f.debug_struct("SERVER_INFO_1522").field("sv1522_minkeepsearch", &self.sv1522_minkeepsearch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1522 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1522 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1522 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1522>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1522>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1522 {}
@@ -12077,12 +12077,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1523 {
         f.debug_struct("SERVER_INFO_1523").field("sv1523_maxkeepsearch", &self.sv1523_maxkeepsearch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1523 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1523 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1523 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1523>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1523>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1523 {}
@@ -12107,12 +12107,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1524 {
         f.debug_struct("SERVER_INFO_1524").field("sv1524_minkeepcomplsearch", &self.sv1524_minkeepcomplsearch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1524 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1524 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1524 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1524>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1524>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1524 {}
@@ -12137,12 +12137,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1525 {
         f.debug_struct("SERVER_INFO_1525").field("sv1525_maxkeepcomplsearch", &self.sv1525_maxkeepcomplsearch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1525 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1525 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1525 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1525>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1525>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1525 {}
@@ -12167,12 +12167,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1528 {
         f.debug_struct("SERVER_INFO_1528").field("sv1528_scavtimeout", &self.sv1528_scavtimeout).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1528 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1528 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1528 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1528>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1528>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1528 {}
@@ -12197,12 +12197,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1529 {
         f.debug_struct("SERVER_INFO_1529").field("sv1529_minrcvqueue", &self.sv1529_minrcvqueue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1529 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1529 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1529 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1529>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1529>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1529 {}
@@ -12227,12 +12227,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1530 {
         f.debug_struct("SERVER_INFO_1530").field("sv1530_minfreeworkitems", &self.sv1530_minfreeworkitems).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1530 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1530 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1530 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1530>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1530>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1530 {}
@@ -12257,12 +12257,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1533 {
         f.debug_struct("SERVER_INFO_1533").field("sv1533_maxmpxct", &self.sv1533_maxmpxct).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1533 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1533 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1533 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1533>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1533>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1533 {}
@@ -12287,12 +12287,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1534 {
         f.debug_struct("SERVER_INFO_1534").field("sv1534_oplockbreakwait", &self.sv1534_oplockbreakwait).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1534 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1534 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1534 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1534>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1534>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1534 {}
@@ -12317,12 +12317,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1535 {
         f.debug_struct("SERVER_INFO_1535").field("sv1535_oplockbreakresponsewait", &self.sv1535_oplockbreakresponsewait).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1535 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1535 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1535 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1535>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1535>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1535 {}
@@ -12352,13 +12352,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1536 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1536 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1536 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1536 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1536>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1536>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12390,13 +12390,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1537 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1537 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1537 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1537 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1537>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1537>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12428,13 +12428,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1538 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1538 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1538 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1538 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1538>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1538>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12466,13 +12466,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1539 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1539 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1539 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1539 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1539>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1539>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12504,13 +12504,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1540 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1540 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1540 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1540 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1540>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1540>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12542,13 +12542,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1541 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1541 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1541 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1541 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1541>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1541>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12580,13 +12580,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1542 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1542 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1542 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1542 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1542>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1542>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12613,12 +12613,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1543 {
         f.debug_struct("SERVER_INFO_1543").field("sv1543_initsesstable", &self.sv1543_initsesstable).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1543 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1543 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1543 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1543>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1543>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1543 {}
@@ -12643,12 +12643,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1544 {
         f.debug_struct("SERVER_INFO_1544").field("sv1544_initconntable", &self.sv1544_initconntable).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1544 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1544 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1544 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1544>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1544>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1544 {}
@@ -12673,12 +12673,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1545 {
         f.debug_struct("SERVER_INFO_1545").field("sv1545_initfiletable", &self.sv1545_initfiletable).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1545 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1545 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1545 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1545>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1545>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1545 {}
@@ -12703,12 +12703,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1546 {
         f.debug_struct("SERVER_INFO_1546").field("sv1546_initsearchtable", &self.sv1546_initsearchtable).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1546 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1546 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1546 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1546>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1546>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1546 {}
@@ -12733,12 +12733,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1547 {
         f.debug_struct("SERVER_INFO_1547").field("sv1547_alertschedule", &self.sv1547_alertschedule).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1547 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1547 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1547 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1547>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1547>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1547 {}
@@ -12763,12 +12763,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1548 {
         f.debug_struct("SERVER_INFO_1548").field("sv1548_errorthreshold", &self.sv1548_errorthreshold).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1548 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1548 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1548 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1548>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1548>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1548 {}
@@ -12793,12 +12793,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1549 {
         f.debug_struct("SERVER_INFO_1549").field("sv1549_networkerrorthreshold", &self.sv1549_networkerrorthreshold).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1549 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1549 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1549 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1549>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1549>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1549 {}
@@ -12823,12 +12823,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1550 {
         f.debug_struct("SERVER_INFO_1550").field("sv1550_diskspacethreshold", &self.sv1550_diskspacethreshold).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1550 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1550 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1550 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1550>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1550>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1550 {}
@@ -12853,12 +12853,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1552 {
         f.debug_struct("SERVER_INFO_1552").field("sv1552_maxlinkdelay", &self.sv1552_maxlinkdelay).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1552 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1552 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1552 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1552>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1552>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1552 {}
@@ -12883,12 +12883,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1553 {
         f.debug_struct("SERVER_INFO_1553").field("sv1553_minlinkthroughput", &self.sv1553_minlinkthroughput).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1553 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1553 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1553 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1553>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1553>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1553 {}
@@ -12913,12 +12913,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1554 {
         f.debug_struct("SERVER_INFO_1554").field("sv1554_linkinfovalidtime", &self.sv1554_linkinfovalidtime).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1554 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1554 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1554 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1554>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1554>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1554 {}
@@ -12943,12 +12943,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1555 {
         f.debug_struct("SERVER_INFO_1555").field("sv1555_scavqosinfoupdatetime", &self.sv1555_scavqosinfoupdatetime).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1555 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1555 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1555 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1555>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1555>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1555 {}
@@ -12973,12 +12973,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1556 {
         f.debug_struct("SERVER_INFO_1556").field("sv1556_maxworkitemidletime", &self.sv1556_maxworkitemidletime).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1556 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1556 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1556 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1556>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1556>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1556 {}
@@ -13003,12 +13003,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1557 {
         f.debug_struct("SERVER_INFO_1557").field("sv1557_maxrawworkitems", &self.sv1557_maxrawworkitems).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1557 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1557 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1557 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1557>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1557>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1557 {}
@@ -13033,12 +13033,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1560 {
         f.debug_struct("SERVER_INFO_1560").field("sv1560_producttype", &self.sv1560_producttype).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1560 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1560 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1560 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1560>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1560>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1560 {}
@@ -13063,12 +13063,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1561 {
         f.debug_struct("SERVER_INFO_1561").field("sv1561_serversize", &self.sv1561_serversize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1561 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1561 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1561 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1561>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1561>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1561 {}
@@ -13093,12 +13093,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1562 {
         f.debug_struct("SERVER_INFO_1562").field("sv1562_connectionlessautodisc", &self.sv1562_connectionlessautodisc).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1562 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1562 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1562 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1562>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1562>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1562 {}
@@ -13123,12 +13123,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1563 {
         f.debug_struct("SERVER_INFO_1563").field("sv1563_sharingviolationretries", &self.sv1563_sharingviolationretries).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1563 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1563 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1563 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1563>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1563>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1563 {}
@@ -13153,12 +13153,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1564 {
         f.debug_struct("SERVER_INFO_1564").field("sv1564_sharingviolationdelay", &self.sv1564_sharingviolationdelay).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1564 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1564 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1564 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1564>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1564>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1564 {}
@@ -13183,12 +13183,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1565 {
         f.debug_struct("SERVER_INFO_1565").field("sv1565_maxglobalopensearch", &self.sv1565_maxglobalopensearch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1565 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1565 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1565 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1565>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1565>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1565 {}
@@ -13218,13 +13218,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1566 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1566 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1566 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1566 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1566>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1566>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -13251,12 +13251,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1567 {
         f.debug_struct("SERVER_INFO_1567").field("sv1567_lockviolationretries", &self.sv1567_lockviolationretries).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1567 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1567 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1567 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1567>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1567>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1567 {}
@@ -13281,12 +13281,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1568 {
         f.debug_struct("SERVER_INFO_1568").field("sv1568_lockviolationoffset", &self.sv1568_lockviolationoffset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1568 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1568 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1568 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1568>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1568>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1568 {}
@@ -13311,12 +13311,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1569 {
         f.debug_struct("SERVER_INFO_1569").field("sv1569_lockviolationdelay", &self.sv1569_lockviolationdelay).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1569 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1569 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1569 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1569>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1569>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1569 {}
@@ -13341,12 +13341,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1570 {
         f.debug_struct("SERVER_INFO_1570").field("sv1570_mdlreadswitchover", &self.sv1570_mdlreadswitchover).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1570 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1570 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1570 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1570>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1570>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1570 {}
@@ -13371,12 +13371,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1571 {
         f.debug_struct("SERVER_INFO_1571").field("sv1571_cachedopenlimit", &self.sv1571_cachedopenlimit).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1571 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1571 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1571 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1571>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1571>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1571 {}
@@ -13401,12 +13401,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1572 {
         f.debug_struct("SERVER_INFO_1572").field("sv1572_criticalthreads", &self.sv1572_criticalthreads).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1572 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1572 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1572 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1572>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1572>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1572 {}
@@ -13431,12 +13431,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1573 {
         f.debug_struct("SERVER_INFO_1573").field("sv1573_restrictnullsessaccess", &self.sv1573_restrictnullsessaccess).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1573 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1573 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1573 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1573>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1573>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1573 {}
@@ -13461,12 +13461,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1574 {
         f.debug_struct("SERVER_INFO_1574").field("sv1574_enablewfw311directipx", &self.sv1574_enablewfw311directipx).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1574 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1574 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1574 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1574>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1574>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1574 {}
@@ -13491,12 +13491,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1575 {
         f.debug_struct("SERVER_INFO_1575").field("sv1575_otherqueueaffinity", &self.sv1575_otherqueueaffinity).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1575 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1575 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1575 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1575>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1575>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1575 {}
@@ -13521,12 +13521,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1576 {
         f.debug_struct("SERVER_INFO_1576").field("sv1576_queuesamplesecs", &self.sv1576_queuesamplesecs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1576 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1576 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1576 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1576>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1576>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1576 {}
@@ -13551,12 +13551,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1577 {
         f.debug_struct("SERVER_INFO_1577").field("sv1577_balancecount", &self.sv1577_balancecount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1577 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1577 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1577 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1577>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1577>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1577 {}
@@ -13581,12 +13581,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1578 {
         f.debug_struct("SERVER_INFO_1578").field("sv1578_preferredaffinity", &self.sv1578_preferredaffinity).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1578 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1578 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1578 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1578>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1578>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1578 {}
@@ -13611,12 +13611,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1579 {
         f.debug_struct("SERVER_INFO_1579").field("sv1579_maxfreerfcbs", &self.sv1579_maxfreerfcbs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1579 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1579 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1579 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1579>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1579>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1579 {}
@@ -13641,12 +13641,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1580 {
         f.debug_struct("SERVER_INFO_1580").field("sv1580_maxfreemfcbs", &self.sv1580_maxfreemfcbs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1580 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1580 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1580 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1580>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1580>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1580 {}
@@ -13671,12 +13671,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1581 {
         f.debug_struct("SERVER_INFO_1581").field("sv1581_maxfreemlcbs", &self.sv1581_maxfreemlcbs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1581 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1581 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1581 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1581>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1581>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1581 {}
@@ -13701,12 +13701,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1582 {
         f.debug_struct("SERVER_INFO_1582").field("sv1582_maxfreepagedpoolchunks", &self.sv1582_maxfreepagedpoolchunks).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1582 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1582 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1582 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1582>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1582>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1582 {}
@@ -13731,12 +13731,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1583 {
         f.debug_struct("SERVER_INFO_1583").field("sv1583_minpagedpoolchunksize", &self.sv1583_minpagedpoolchunksize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1583 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1583 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1583 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1583>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1583>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1583 {}
@@ -13761,12 +13761,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1584 {
         f.debug_struct("SERVER_INFO_1584").field("sv1584_maxpagedpoolchunksize", &self.sv1584_maxpagedpoolchunksize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1584 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1584 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1584 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1584>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1584>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1584 {}
@@ -13796,13 +13796,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1585 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1585 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1585 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1585 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1585>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1585>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -13829,12 +13829,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1586 {
         f.debug_struct("SERVER_INFO_1586").field("sv1586_maxthreadsperqueue", &self.sv1586_maxthreadsperqueue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1586 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1586 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1586 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1586>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1586>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1586 {}
@@ -13859,12 +13859,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1587 {
         f.debug_struct("SERVER_INFO_1587").field("sv1587_cacheddirectorylimit", &self.sv1587_cacheddirectorylimit).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1587 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1587 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1587 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1587>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1587>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1587 {}
@@ -13889,12 +13889,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1588 {
         f.debug_struct("SERVER_INFO_1588").field("sv1588_maxcopylength", &self.sv1588_maxcopylength).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1588 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1588 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1588 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1588>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1588>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1588 {}
@@ -13919,12 +13919,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1590 {
         f.debug_struct("SERVER_INFO_1590").field("sv1590_enablecompression", &self.sv1590_enablecompression).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1590 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1590 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1590 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1590>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1590>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1590 {}
@@ -13949,12 +13949,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1591 {
         f.debug_struct("SERVER_INFO_1591").field("sv1591_autosharewks", &self.sv1591_autosharewks).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1591 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1591 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1591 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1591>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1591>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1591 {}
@@ -13979,12 +13979,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1592 {
         f.debug_struct("SERVER_INFO_1592").field("sv1592_autosharewks", &self.sv1592_autosharewks).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1592 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1592 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1592 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1592>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1592>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1592 {}
@@ -14009,12 +14009,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1593 {
         f.debug_struct("SERVER_INFO_1593").field("sv1593_enablesecuritysignature", &self.sv1593_enablesecuritysignature).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1593 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1593 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1593 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1593>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1593>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1593 {}
@@ -14039,12 +14039,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1594 {
         f.debug_struct("SERVER_INFO_1594").field("sv1594_requiresecuritysignature", &self.sv1594_requiresecuritysignature).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1594 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1594 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1594 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1594>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1594>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1594 {}
@@ -14069,12 +14069,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1595 {
         f.debug_struct("SERVER_INFO_1595").field("sv1595_minclientbuffersize", &self.sv1595_minclientbuffersize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1595 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1595 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1595 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1595>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1595>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1595 {}
@@ -14099,12 +14099,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1596 {
         f.debug_struct("SERVER_INFO_1596").field("sv1596_ConnectionNoSessionsTimeout", &self.sv1596_ConnectionNoSessionsTimeout).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1596 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1596 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1596 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1596>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1596>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1596 {}
@@ -14129,12 +14129,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1597 {
         f.debug_struct("SERVER_INFO_1597").field("sv1597_IdleThreadTimeOut", &self.sv1597_IdleThreadTimeOut).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1597 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1597 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1597 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1597>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1597>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1597 {}
@@ -14159,12 +14159,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1598 {
         f.debug_struct("SERVER_INFO_1598").field("sv1598_enableW9xsecuritysignature", &self.sv1598_enableW9xsecuritysignature).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1598 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1598 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1598 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1598>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1598>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1598 {}
@@ -14194,13 +14194,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1599 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1599 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1599 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1599 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1599>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1599>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14232,13 +14232,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1600 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1600 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1600 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1600 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1600>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1600>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14265,12 +14265,12 @@ impl ::core::fmt::Debug for SERVER_INFO_1601 {
         f.debug_struct("SERVER_INFO_1601").field("sv1598_lowdiskspaceminimum", &self.sv1598_lowdiskspaceminimum).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_1601 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1601 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_1601 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1601>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1601>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_1601 {}
@@ -14300,13 +14300,13 @@ impl ::core::fmt::Debug for SERVER_INFO_1602 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_1602 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_1602 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1602 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1602>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1602>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14323,11 +14323,11 @@ pub struct SERVER_INFO_402 {
     pub sv402_ulist_mtime: u32,
     pub sv402_glist_mtime: u32,
     pub sv402_alist_mtime: u32,
-    pub sv402_alerts: ::windows::core::PWSTR,
+    pub sv402_alerts: ::windows_core::PWSTR,
     pub sv402_security: SERVER_INFO_SECURITY,
     pub sv402_numadmin: u32,
     pub sv402_lanmask: u32,
-    pub sv402_guestacct: ::windows::core::PWSTR,
+    pub sv402_guestacct: ::windows_core::PWSTR,
     pub sv402_chdevs: u32,
     pub sv402_chdevq: u32,
     pub sv402_chdevjobs: u32,
@@ -14350,7 +14350,7 @@ pub struct SERVER_INFO_402 {
     pub sv402_diskalert: u32,
     pub sv402_netioalert: u32,
     pub sv402_maxauditsz: u32,
-    pub sv402_srvheuristics: ::windows::core::PWSTR,
+    pub sv402_srvheuristics: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_INFO_402 {}
 impl ::core::clone::Clone for SERVER_INFO_402 {
@@ -14395,12 +14395,12 @@ impl ::core::fmt::Debug for SERVER_INFO_402 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_402 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_402 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_402 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_402>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_402>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_402 {}
@@ -14415,11 +14415,11 @@ pub struct SERVER_INFO_403 {
     pub sv403_ulist_mtime: u32,
     pub sv403_glist_mtime: u32,
     pub sv403_alist_mtime: u32,
-    pub sv403_alerts: ::windows::core::PWSTR,
+    pub sv403_alerts: ::windows_core::PWSTR,
     pub sv403_security: SERVER_INFO_SECURITY,
     pub sv403_numadmin: u32,
     pub sv403_lanmask: u32,
-    pub sv403_guestacct: ::windows::core::PWSTR,
+    pub sv403_guestacct: ::windows_core::PWSTR,
     pub sv403_chdevs: u32,
     pub sv403_chdevq: u32,
     pub sv403_chdevjobs: u32,
@@ -14442,10 +14442,10 @@ pub struct SERVER_INFO_403 {
     pub sv403_diskalert: u32,
     pub sv403_netioalert: u32,
     pub sv403_maxauditsz: u32,
-    pub sv403_srvheuristics: ::windows::core::PWSTR,
+    pub sv403_srvheuristics: ::windows_core::PWSTR,
     pub sv403_auditedevents: u32,
     pub sv403_autoprofile: u32,
-    pub sv403_autopath: ::windows::core::PWSTR,
+    pub sv403_autopath: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_INFO_403 {}
 impl ::core::clone::Clone for SERVER_INFO_403 {
@@ -14493,12 +14493,12 @@ impl ::core::fmt::Debug for SERVER_INFO_403 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_403 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_403 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_INFO_403 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_403>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_403>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_INFO_403 {}
@@ -14564,13 +14564,13 @@ impl ::core::fmt::Debug for SERVER_INFO_502 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_502 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_502 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_502 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_502>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_502>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14603,7 +14603,7 @@ pub struct SERVER_INFO_503 {
     pub sv503_timesource: super::super::Foundation::BOOL,
     pub sv503_acceptdownlevelapis: super::super::Foundation::BOOL,
     pub sv503_lmannounce: super::super::Foundation::BOOL,
-    pub sv503_domain: ::windows::core::PWSTR,
+    pub sv503_domain: ::windows_core::PWSTR,
     pub sv503_maxcopyreadlen: u32,
     pub sv503_maxcopywritelen: u32,
     pub sv503_minkeepsearch: u32,
@@ -14686,13 +14686,13 @@ impl ::core::fmt::Debug for SERVER_INFO_503 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_503 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_503 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_503 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_503>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_503>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14741,7 +14741,7 @@ pub struct SERVER_INFO_598 {
     pub sv598_enablesecuritysignature: super::super::Foundation::BOOL,
     pub sv598_requiresecuritysignature: super::super::Foundation::BOOL,
     pub sv598_minclientbuffersize: u32,
-    pub sv598_serverguid: ::windows::core::GUID,
+    pub sv598_serverguid: ::windows_core::GUID,
     pub sv598_ConnectionNoSessionsTimeout: u32,
     pub sv598_IdleThreadTimeOut: u32,
     pub sv598_enableW9xsecuritysignature: super::super::Foundation::BOOL,
@@ -14810,13 +14810,13 @@ impl ::core::fmt::Debug for SERVER_INFO_598 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_598 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_598 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_598 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_598>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_598>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14849,7 +14849,7 @@ pub struct SERVER_INFO_599 {
     pub sv599_timesource: super::super::Foundation::BOOL,
     pub sv599_acceptdownlevelapis: super::super::Foundation::BOOL,
     pub sv599_lmannounce: super::super::Foundation::BOOL,
-    pub sv599_domain: ::windows::core::PWSTR,
+    pub sv599_domain: ::windows_core::PWSTR,
     pub sv599_maxcopyreadlen: u32,
     pub sv599_maxcopywritelen: u32,
     pub sv599_minkeepsearch: u32,
@@ -14960,13 +14960,13 @@ impl ::core::fmt::Debug for SERVER_INFO_599 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SERVER_INFO_599 {
+unsafe impl ::windows_core::Abi for SERVER_INFO_599 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_599 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_599>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_599>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14996,7 +14996,7 @@ impl ::core::default::Default for SERVER_INFO_HIDDEN {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_HIDDEN {
+unsafe impl ::windows_core::Abi for SERVER_INFO_HIDDEN {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVER_INFO_HIDDEN {
@@ -15023,7 +15023,7 @@ impl ::core::default::Default for SERVER_INFO_SECURITY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_INFO_SECURITY {
+unsafe impl ::windows_core::Abi for SERVER_INFO_SECURITY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SERVER_INFO_SECURITY {
@@ -15035,10 +15035,10 @@ impl ::core::fmt::Debug for SERVER_INFO_SECURITY {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct SERVER_TRANSPORT_INFO_0 {
     pub svti0_numberofvcs: u32,
-    pub svti0_transportname: ::windows::core::PWSTR,
+    pub svti0_transportname: ::windows_core::PWSTR,
     pub svti0_transportaddress: *mut u8,
     pub svti0_transportaddresslength: u32,
-    pub svti0_networkaddress: ::windows::core::PWSTR,
+    pub svti0_networkaddress: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_TRANSPORT_INFO_0 {}
 impl ::core::clone::Clone for SERVER_TRANSPORT_INFO_0 {
@@ -15051,12 +15051,12 @@ impl ::core::fmt::Debug for SERVER_TRANSPORT_INFO_0 {
         f.debug_struct("SERVER_TRANSPORT_INFO_0").field("svti0_numberofvcs", &self.svti0_numberofvcs).field("svti0_transportname", &self.svti0_transportname).field("svti0_transportaddress", &self.svti0_transportaddress).field("svti0_transportaddresslength", &self.svti0_transportaddresslength).field("svti0_networkaddress", &self.svti0_networkaddress).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_TRANSPORT_INFO_0 {
+unsafe impl ::windows_core::Abi for SERVER_TRANSPORT_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_TRANSPORT_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_TRANSPORT_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_TRANSPORT_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_TRANSPORT_INFO_0 {}
@@ -15069,11 +15069,11 @@ impl ::core::default::Default for SERVER_TRANSPORT_INFO_0 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct SERVER_TRANSPORT_INFO_1 {
     pub svti1_numberofvcs: u32,
-    pub svti1_transportname: ::windows::core::PWSTR,
+    pub svti1_transportname: ::windows_core::PWSTR,
     pub svti1_transportaddress: *mut u8,
     pub svti1_transportaddresslength: u32,
-    pub svti1_networkaddress: ::windows::core::PWSTR,
-    pub svti1_domain: ::windows::core::PWSTR,
+    pub svti1_networkaddress: ::windows_core::PWSTR,
+    pub svti1_domain: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_TRANSPORT_INFO_1 {}
 impl ::core::clone::Clone for SERVER_TRANSPORT_INFO_1 {
@@ -15086,12 +15086,12 @@ impl ::core::fmt::Debug for SERVER_TRANSPORT_INFO_1 {
         f.debug_struct("SERVER_TRANSPORT_INFO_1").field("svti1_numberofvcs", &self.svti1_numberofvcs).field("svti1_transportname", &self.svti1_transportname).field("svti1_transportaddress", &self.svti1_transportaddress).field("svti1_transportaddresslength", &self.svti1_transportaddresslength).field("svti1_networkaddress", &self.svti1_networkaddress).field("svti1_domain", &self.svti1_domain).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_TRANSPORT_INFO_1 {
+unsafe impl ::windows_core::Abi for SERVER_TRANSPORT_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_TRANSPORT_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_TRANSPORT_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_TRANSPORT_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_TRANSPORT_INFO_1 {}
@@ -15104,11 +15104,11 @@ impl ::core::default::Default for SERVER_TRANSPORT_INFO_1 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct SERVER_TRANSPORT_INFO_2 {
     pub svti2_numberofvcs: u32,
-    pub svti2_transportname: ::windows::core::PWSTR,
+    pub svti2_transportname: ::windows_core::PWSTR,
     pub svti2_transportaddress: *mut u8,
     pub svti2_transportaddresslength: u32,
-    pub svti2_networkaddress: ::windows::core::PWSTR,
-    pub svti2_domain: ::windows::core::PWSTR,
+    pub svti2_networkaddress: ::windows_core::PWSTR,
+    pub svti2_domain: ::windows_core::PWSTR,
     pub svti2_flags: u32,
 }
 impl ::core::marker::Copy for SERVER_TRANSPORT_INFO_2 {}
@@ -15122,12 +15122,12 @@ impl ::core::fmt::Debug for SERVER_TRANSPORT_INFO_2 {
         f.debug_struct("SERVER_TRANSPORT_INFO_2").field("svti2_numberofvcs", &self.svti2_numberofvcs).field("svti2_transportname", &self.svti2_transportname).field("svti2_transportaddress", &self.svti2_transportaddress).field("svti2_transportaddresslength", &self.svti2_transportaddresslength).field("svti2_networkaddress", &self.svti2_networkaddress).field("svti2_domain", &self.svti2_domain).field("svti2_flags", &self.svti2_flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_TRANSPORT_INFO_2 {
+unsafe impl ::windows_core::Abi for SERVER_TRANSPORT_INFO_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_TRANSPORT_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_TRANSPORT_INFO_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_TRANSPORT_INFO_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_TRANSPORT_INFO_2 {}
@@ -15140,11 +15140,11 @@ impl ::core::default::Default for SERVER_TRANSPORT_INFO_2 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct SERVER_TRANSPORT_INFO_3 {
     pub svti3_numberofvcs: u32,
-    pub svti3_transportname: ::windows::core::PWSTR,
+    pub svti3_transportname: ::windows_core::PWSTR,
     pub svti3_transportaddress: *mut u8,
     pub svti3_transportaddresslength: u32,
-    pub svti3_networkaddress: ::windows::core::PWSTR,
-    pub svti3_domain: ::windows::core::PWSTR,
+    pub svti3_networkaddress: ::windows_core::PWSTR,
+    pub svti3_domain: ::windows_core::PWSTR,
     pub svti3_flags: u32,
     pub svti3_passwordlength: u32,
     pub svti3_password: [u8; 256],
@@ -15170,12 +15170,12 @@ impl ::core::fmt::Debug for SERVER_TRANSPORT_INFO_3 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVER_TRANSPORT_INFO_3 {
+unsafe impl ::windows_core::Abi for SERVER_TRANSPORT_INFO_3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVER_TRANSPORT_INFO_3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_TRANSPORT_INFO_3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_TRANSPORT_INFO_3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVER_TRANSPORT_INFO_3 {}
@@ -15241,7 +15241,7 @@ pub const SERVICE_DSROLE: &str = "DsRoleSvc";
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct SERVICE_INFO_0 {
-    pub svci0_name: ::windows::core::PWSTR,
+    pub svci0_name: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for SERVICE_INFO_0 {}
 impl ::core::clone::Clone for SERVICE_INFO_0 {
@@ -15254,12 +15254,12 @@ impl ::core::fmt::Debug for SERVICE_INFO_0 {
         f.debug_struct("SERVICE_INFO_0").field("svci0_name", &self.svci0_name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_INFO_0 {
+unsafe impl ::windows_core::Abi for SERVICE_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_INFO_0 {}
@@ -15271,7 +15271,7 @@ impl ::core::default::Default for SERVICE_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct SERVICE_INFO_1 {
-    pub svci1_name: ::windows::core::PWSTR,
+    pub svci1_name: ::windows_core::PWSTR,
     pub svci1_status: u32,
     pub svci1_code: u32,
     pub svci1_pid: u32,
@@ -15287,12 +15287,12 @@ impl ::core::fmt::Debug for SERVICE_INFO_1 {
         f.debug_struct("SERVICE_INFO_1").field("svci1_name", &self.svci1_name).field("svci1_status", &self.svci1_status).field("svci1_code", &self.svci1_code).field("svci1_pid", &self.svci1_pid).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_INFO_1 {
+unsafe impl ::windows_core::Abi for SERVICE_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_INFO_1 {}
@@ -15304,13 +15304,13 @@ impl ::core::default::Default for SERVICE_INFO_1 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct SERVICE_INFO_2 {
-    pub svci2_name: ::windows::core::PWSTR,
+    pub svci2_name: ::windows_core::PWSTR,
     pub svci2_status: u32,
     pub svci2_code: u32,
     pub svci2_pid: u32,
-    pub svci2_text: ::windows::core::PWSTR,
+    pub svci2_text: ::windows_core::PWSTR,
     pub svci2_specific_error: u32,
-    pub svci2_display_name: ::windows::core::PWSTR,
+    pub svci2_display_name: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for SERVICE_INFO_2 {}
 impl ::core::clone::Clone for SERVICE_INFO_2 {
@@ -15323,12 +15323,12 @@ impl ::core::fmt::Debug for SERVICE_INFO_2 {
         f.debug_struct("SERVICE_INFO_2").field("svci2_name", &self.svci2_name).field("svci2_status", &self.svci2_status).field("svci2_code", &self.svci2_code).field("svci2_pid", &self.svci2_pid).field("svci2_text", &self.svci2_text).field("svci2_specific_error", &self.svci2_specific_error).field("svci2_display_name", &self.svci2_display_name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SERVICE_INFO_2 {
+unsafe impl ::windows_core::Abi for SERVICE_INFO_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SERVICE_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_INFO_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVICE_INFO_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SERVICE_INFO_2 {}
@@ -15629,13 +15629,13 @@ impl ::core::fmt::Debug for SMB_COMPRESSION_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SMB_COMPRESSION_INFO {
+unsafe impl ::windows_core::Abi for SMB_COMPRESSION_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SMB_COMPRESSION_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SMB_COMPRESSION_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SMB_COMPRESSION_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -15665,12 +15665,12 @@ impl ::core::fmt::Debug for SMB_TREE_CONNECT_PARAMETERS {
         f.debug_struct("SMB_TREE_CONNECT_PARAMETERS").field("EABufferOffset", &self.EABufferOffset).field("EABufferLen", &self.EABufferLen).field("CreateOptions", &self.CreateOptions).field("TreeConnectAttributes", &self.TreeConnectAttributes).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SMB_TREE_CONNECT_PARAMETERS {
+unsafe impl ::windows_core::Abi for SMB_TREE_CONNECT_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SMB_TREE_CONNECT_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SMB_TREE_CONNECT_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SMB_TREE_CONNECT_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SMB_TREE_CONNECT_PARAMETERS {}
@@ -15697,12 +15697,12 @@ impl ::core::fmt::Debug for SMB_USE_OPTION_COMPRESSION_PARAMETERS {
         f.debug_struct("SMB_USE_OPTION_COMPRESSION_PARAMETERS").field("Tag", &self.Tag).field("Length", &self.Length).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SMB_USE_OPTION_COMPRESSION_PARAMETERS {
+unsafe impl ::windows_core::Abi for SMB_USE_OPTION_COMPRESSION_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SMB_USE_OPTION_COMPRESSION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SMB_USE_OPTION_COMPRESSION_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SMB_USE_OPTION_COMPRESSION_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SMB_USE_OPTION_COMPRESSION_PARAMETERS {}
@@ -15735,12 +15735,12 @@ impl ::core::fmt::Debug for STD_ALERT {
         f.debug_struct("STD_ALERT").field("alrt_timestamp", &self.alrt_timestamp).field("alrt_eventname", &self.alrt_eventname).field("alrt_servicename", &self.alrt_servicename).finish()
     }
 }
-unsafe impl ::windows::core::Abi for STD_ALERT {
+unsafe impl ::windows_core::Abi for STD_ALERT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STD_ALERT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STD_ALERT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STD_ALERT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STD_ALERT {}
@@ -15772,7 +15772,7 @@ impl ::core::default::Default for SUPPORTS_BINDING_INTERFACE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SUPPORTS_BINDING_INTERFACE_FLAGS {
+unsafe impl ::windows_core::Abi for SUPPORTS_BINDING_INTERFACE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SUPPORTS_BINDING_INTERFACE_FLAGS {
@@ -16114,15 +16114,15 @@ pub const SV_XACTMEMSIZE_PARMNUM: u32 = 531u32;
 pub const SW_AUTOPROF_LOAD_MASK: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub const SW_AUTOPROF_SAVE_MASK: u32 = 2u32;
-pub const ServiceAccountPasswordGUID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x262e99c9_6160_4871_acec_4e61736b6f21);
+pub const ServiceAccountPasswordGUID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x262e99c9_6160_4871_acec_4e61736b6f21);
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn SetNetScheduleAccountInformation<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszservername: Param0, pwszaccount: Param1, pwszpassword: Param2) -> ::windows::core::Result<()> {
+pub unsafe fn SetNetScheduleAccountInformation<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszservername: Param0, pwszaccount: Param1, pwszpassword: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetNetScheduleAccountInformation(pwszservername: ::windows::core::PCWSTR, pwszaccount: ::windows::core::PCWSTR, pwszpassword: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn SetNetScheduleAccountInformation(pwszservername: ::windows_core::PCWSTR, pwszaccount: ::windows_core::PCWSTR, pwszpassword: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         SetNetScheduleAccountInformation(pwszservername.into_param().abi(), pwszaccount.into_param().abi(), pwszpassword.into_param().abi()).ok()
     }
@@ -16169,12 +16169,12 @@ impl ::core::fmt::Debug for TIME_OF_DAY_INFO {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for TIME_OF_DAY_INFO {
+unsafe impl ::windows_core::Abi for TIME_OF_DAY_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TIME_OF_DAY_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TIME_OF_DAY_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TIME_OF_DAY_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TIME_OF_DAY_INFO {}
@@ -16221,13 +16221,13 @@ impl ::core::fmt::Debug for TRANSPORT_INFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TRANSPORT_INFO {
+unsafe impl ::windows_core::Abi for TRANSPORT_INFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TRANSPORT_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSPORT_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSPORT_INFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -16263,7 +16263,7 @@ impl ::core::default::Default for TRANSPORT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TRANSPORT_TYPE {
+unsafe impl ::windows_core::Abi for TRANSPORT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TRANSPORT_TYPE {
@@ -16330,12 +16330,12 @@ pub unsafe fn TraceDeregisterW(dwtraceid: u32) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TraceDumpExA<'a, Param5: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>, Param6: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: Param5, lpszprefix: Param6) -> u32 {
+pub unsafe fn TraceDumpExA<'a, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: Param5, lpszprefix: Param6) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TraceDumpExA(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: super::super::Foundation::BOOL, lpszprefix: ::windows::core::PCSTR) -> u32;
+            fn TraceDumpExA(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: super::super::Foundation::BOOL, lpszprefix: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(TraceDumpExA(::core::mem::transmute(dwtraceid), ::core::mem::transmute(dwflags), ::core::mem::transmute(lpbbytes), ::core::mem::transmute(dwbytecount), ::core::mem::transmute(dwgroupsize), baddressprefix.into_param().abi(), lpszprefix.into_param().abi()))
     }
@@ -16345,12 +16345,12 @@ pub unsafe fn TraceDumpExA<'a, Param5: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TraceDumpExW<'a, Param5: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>, Param6: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: Param5, lpszprefix: Param6) -> u32 {
+pub unsafe fn TraceDumpExW<'a, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: Param5, lpszprefix: Param6) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TraceDumpExW(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: super::super::Foundation::BOOL, lpszprefix: ::windows::core::PCWSTR) -> u32;
+            fn TraceDumpExW(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: super::super::Foundation::BOOL, lpszprefix: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(TraceDumpExW(::core::mem::transmute(dwtraceid), ::core::mem::transmute(dwflags), ::core::mem::transmute(lpbbytes), ::core::mem::transmute(dwbytecount), ::core::mem::transmute(dwgroupsize), baddressprefix.into_param().abi(), lpszprefix.into_param().abi()))
     }
@@ -16389,12 +16389,12 @@ pub unsafe fn TraceGetConsoleW(dwtraceid: u32, lphconsole: *mut super::super::Fo
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn TracePrintfA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwtraceid: u32, lpszformat: Param1) -> u32 {
+pub unsafe fn TracePrintfA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwtraceid: u32, lpszformat: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TracePrintfA(dwtraceid: u32, lpszformat: ::windows::core::PCSTR) -> u32;
+            fn TracePrintfA(dwtraceid: u32, lpszformat: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(TracePrintfA(::core::mem::transmute(dwtraceid), lpszformat.into_param().abi()))
     }
@@ -16403,12 +16403,12 @@ pub unsafe fn TracePrintfA<'a, Param1: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn TracePrintfExA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwtraceid: u32, dwflags: u32, lpszformat: Param2) -> u32 {
+pub unsafe fn TracePrintfExA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwtraceid: u32, dwflags: u32, lpszformat: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TracePrintfExA(dwtraceid: u32, dwflags: u32, lpszformat: ::windows::core::PCSTR) -> u32;
+            fn TracePrintfExA(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(TracePrintfExA(::core::mem::transmute(dwtraceid), ::core::mem::transmute(dwflags), lpszformat.into_param().abi()))
     }
@@ -16417,12 +16417,12 @@ pub unsafe fn TracePrintfExA<'a, Param2: ::windows::core::IntoParam<'a, ::window
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn TracePrintfExW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtraceid: u32, dwflags: u32, lpszformat: Param2) -> u32 {
+pub unsafe fn TracePrintfExW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtraceid: u32, dwflags: u32, lpszformat: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TracePrintfExW(dwtraceid: u32, dwflags: u32, lpszformat: ::windows::core::PCWSTR) -> u32;
+            fn TracePrintfExW(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(TracePrintfExW(::core::mem::transmute(dwtraceid), ::core::mem::transmute(dwflags), lpszformat.into_param().abi()))
     }
@@ -16431,12 +16431,12 @@ pub unsafe fn TracePrintfExW<'a, Param2: ::windows::core::IntoParam<'a, ::window
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn TracePrintfW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtraceid: u32, lpszformat: Param1) -> u32 {
+pub unsafe fn TracePrintfW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtraceid: u32, lpszformat: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TracePrintfW(dwtraceid: u32, lpszformat: ::windows::core::PCWSTR) -> u32;
+            fn TracePrintfW(dwtraceid: u32, lpszformat: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(TracePrintfW(::core::mem::transmute(dwtraceid), lpszformat.into_param().abi()))
     }
@@ -16445,12 +16445,12 @@ pub unsafe fn TracePrintfW<'a, Param1: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn TracePutsExA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwtraceid: u32, dwflags: u32, lpszstring: Param2) -> u32 {
+pub unsafe fn TracePutsExA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwtraceid: u32, dwflags: u32, lpszstring: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TracePutsExA(dwtraceid: u32, dwflags: u32, lpszstring: ::windows::core::PCSTR) -> u32;
+            fn TracePutsExA(dwtraceid: u32, dwflags: u32, lpszstring: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(TracePutsExA(::core::mem::transmute(dwtraceid), ::core::mem::transmute(dwflags), lpszstring.into_param().abi()))
     }
@@ -16459,12 +16459,12 @@ pub unsafe fn TracePutsExA<'a, Param2: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn TracePutsExW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtraceid: u32, dwflags: u32, lpszstring: Param2) -> u32 {
+pub unsafe fn TracePutsExW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtraceid: u32, dwflags: u32, lpszstring: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TracePutsExW(dwtraceid: u32, dwflags: u32, lpszstring: ::windows::core::PCWSTR) -> u32;
+            fn TracePutsExW(dwtraceid: u32, dwflags: u32, lpszstring: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(TracePutsExW(::core::mem::transmute(dwtraceid), ::core::mem::transmute(dwflags), lpszstring.into_param().abi()))
     }
@@ -16473,12 +16473,12 @@ pub unsafe fn TracePutsExW<'a, Param2: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn TraceRegisterExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpszcallername: Param0, dwflags: u32) -> u32 {
+pub unsafe fn TraceRegisterExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszcallername: Param0, dwflags: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TraceRegisterExA(lpszcallername: ::windows::core::PCSTR, dwflags: u32) -> u32;
+            fn TraceRegisterExA(lpszcallername: ::windows_core::PCSTR, dwflags: u32) -> u32;
         }
         ::core::mem::transmute(TraceRegisterExA(lpszcallername.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
@@ -16487,12 +16487,12 @@ pub unsafe fn TraceRegisterExA<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn TraceRegisterExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpszcallername: Param0, dwflags: u32) -> u32 {
+pub unsafe fn TraceRegisterExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszcallername: Param0, dwflags: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TraceRegisterExW(lpszcallername: ::windows::core::PCWSTR, dwflags: u32) -> u32;
+            fn TraceRegisterExW(lpszcallername: ::windows_core::PCWSTR, dwflags: u32) -> u32;
         }
         ::core::mem::transmute(TraceRegisterExW(lpszcallername.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
@@ -16501,12 +16501,12 @@ pub unsafe fn TraceRegisterExW<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn TraceVprintfExA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dwtraceid: u32, dwflags: u32, lpszformat: Param2, arglist: *mut i8) -> u32 {
+pub unsafe fn TraceVprintfExA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwtraceid: u32, dwflags: u32, lpszformat: Param2, arglist: *mut i8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TraceVprintfExA(dwtraceid: u32, dwflags: u32, lpszformat: ::windows::core::PCSTR, arglist: *mut i8) -> u32;
+            fn TraceVprintfExA(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_core::PCSTR, arglist: *mut i8) -> u32;
         }
         ::core::mem::transmute(TraceVprintfExA(::core::mem::transmute(dwtraceid), ::core::mem::transmute(dwflags), lpszformat.into_param().abi(), ::core::mem::transmute(arglist)))
     }
@@ -16515,12 +16515,12 @@ pub unsafe fn TraceVprintfExA<'a, Param2: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 #[inline]
-pub unsafe fn TraceVprintfExW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwtraceid: u32, dwflags: u32, lpszformat: Param2, arglist: *mut i8) -> u32 {
+pub unsafe fn TraceVprintfExW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtraceid: u32, dwflags: u32, lpszformat: Param2, arglist: *mut i8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TraceVprintfExW(dwtraceid: u32, dwflags: u32, lpszformat: ::windows::core::PCWSTR, arglist: *mut i8) -> u32;
+            fn TraceVprintfExW(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_core::PCWSTR, arglist: *mut i8) -> u32;
         }
         ::core::mem::transmute(TraceVprintfExW(::core::mem::transmute(dwtraceid), ::core::mem::transmute(dwflags), lpszformat.into_param().abi(), ::core::mem::transmute(arglist)))
     }
@@ -16600,7 +16600,7 @@ impl ::core::default::Default for USER_ACCOUNT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for USER_ACCOUNT_FLAGS {
+unsafe impl ::windows_core::Abi for USER_ACCOUNT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for USER_ACCOUNT_FLAGS {
@@ -16657,7 +16657,7 @@ pub const USER_HOME_DIR_PARMNUM: u32 = 6u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_0 {
-    pub usri0_name: ::windows::core::PWSTR,
+    pub usri0_name: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_0 {}
 impl ::core::clone::Clone for USER_INFO_0 {
@@ -16670,12 +16670,12 @@ impl ::core::fmt::Debug for USER_INFO_0 {
         f.debug_struct("USER_INFO_0").field("usri0_name", &self.usri0_name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_0 {
+unsafe impl ::windows_core::Abi for USER_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_0 {}
@@ -16687,14 +16687,14 @@ impl ::core::default::Default for USER_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_1 {
-    pub usri1_name: ::windows::core::PWSTR,
-    pub usri1_password: ::windows::core::PWSTR,
+    pub usri1_name: ::windows_core::PWSTR,
+    pub usri1_password: ::windows_core::PWSTR,
     pub usri1_password_age: u32,
     pub usri1_priv: USER_PRIV,
-    pub usri1_home_dir: ::windows::core::PWSTR,
-    pub usri1_comment: ::windows::core::PWSTR,
+    pub usri1_home_dir: ::windows_core::PWSTR,
+    pub usri1_comment: ::windows_core::PWSTR,
     pub usri1_flags: USER_ACCOUNT_FLAGS,
-    pub usri1_script_path: ::windows::core::PWSTR,
+    pub usri1_script_path: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1 {}
 impl ::core::clone::Clone for USER_INFO_1 {
@@ -16707,12 +16707,12 @@ impl ::core::fmt::Debug for USER_INFO_1 {
         f.debug_struct("USER_INFO_1").field("usri1_name", &self.usri1_name).field("usri1_password", &self.usri1_password).field("usri1_password_age", &self.usri1_password_age).field("usri1_priv", &self.usri1_priv).field("usri1_home_dir", &self.usri1_home_dir).field("usri1_comment", &self.usri1_comment).field("usri1_flags", &self.usri1_flags).field("usri1_script_path", &self.usri1_script_path).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1 {
+unsafe impl ::windows_core::Abi for USER_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1 {}
@@ -16724,10 +16724,10 @@ impl ::core::default::Default for USER_INFO_1 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_10 {
-    pub usri10_name: ::windows::core::PWSTR,
-    pub usri10_comment: ::windows::core::PWSTR,
-    pub usri10_usr_comment: ::windows::core::PWSTR,
-    pub usri10_full_name: ::windows::core::PWSTR,
+    pub usri10_name: ::windows_core::PWSTR,
+    pub usri10_comment: ::windows_core::PWSTR,
+    pub usri10_usr_comment: ::windows_core::PWSTR,
+    pub usri10_full_name: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_10 {}
 impl ::core::clone::Clone for USER_INFO_10 {
@@ -16740,12 +16740,12 @@ impl ::core::fmt::Debug for USER_INFO_10 {
         f.debug_struct("USER_INFO_10").field("usri10_name", &self.usri10_name).field("usri10_comment", &self.usri10_comment).field("usri10_usr_comment", &self.usri10_usr_comment).field("usri10_full_name", &self.usri10_full_name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_10 {
+unsafe impl ::windows_core::Abi for USER_INFO_10 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_10 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_10>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_10>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_10 {}
@@ -16757,7 +16757,7 @@ impl ::core::default::Default for USER_INFO_10 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_1003 {
-    pub usri1003_password: ::windows::core::PWSTR,
+    pub usri1003_password: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1003 {}
 impl ::core::clone::Clone for USER_INFO_1003 {
@@ -16770,12 +16770,12 @@ impl ::core::fmt::Debug for USER_INFO_1003 {
         f.debug_struct("USER_INFO_1003").field("usri1003_password", &self.usri1003_password).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1003 {
+unsafe impl ::windows_core::Abi for USER_INFO_1003 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1003 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1003>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1003>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1003 {}
@@ -16800,12 +16800,12 @@ impl ::core::fmt::Debug for USER_INFO_1005 {
         f.debug_struct("USER_INFO_1005").field("usri1005_priv", &self.usri1005_priv).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1005 {
+unsafe impl ::windows_core::Abi for USER_INFO_1005 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1005 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1005>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1005>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1005 {}
@@ -16817,7 +16817,7 @@ impl ::core::default::Default for USER_INFO_1005 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_1006 {
-    pub usri1006_home_dir: ::windows::core::PWSTR,
+    pub usri1006_home_dir: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1006 {}
 impl ::core::clone::Clone for USER_INFO_1006 {
@@ -16830,12 +16830,12 @@ impl ::core::fmt::Debug for USER_INFO_1006 {
         f.debug_struct("USER_INFO_1006").field("usri1006_home_dir", &self.usri1006_home_dir).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1006 {
+unsafe impl ::windows_core::Abi for USER_INFO_1006 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1006 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1006>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1006>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1006 {}
@@ -16847,7 +16847,7 @@ impl ::core::default::Default for USER_INFO_1006 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_1007 {
-    pub usri1007_comment: ::windows::core::PWSTR,
+    pub usri1007_comment: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1007 {}
 impl ::core::clone::Clone for USER_INFO_1007 {
@@ -16860,12 +16860,12 @@ impl ::core::fmt::Debug for USER_INFO_1007 {
         f.debug_struct("USER_INFO_1007").field("usri1007_comment", &self.usri1007_comment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1007 {
+unsafe impl ::windows_core::Abi for USER_INFO_1007 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1007 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1007>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1007>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1007 {}
@@ -16890,12 +16890,12 @@ impl ::core::fmt::Debug for USER_INFO_1008 {
         f.debug_struct("USER_INFO_1008").field("usri1008_flags", &self.usri1008_flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1008 {
+unsafe impl ::windows_core::Abi for USER_INFO_1008 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1008 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1008>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1008>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1008 {}
@@ -16907,7 +16907,7 @@ impl ::core::default::Default for USER_INFO_1008 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_1009 {
-    pub usri1009_script_path: ::windows::core::PWSTR,
+    pub usri1009_script_path: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1009 {}
 impl ::core::clone::Clone for USER_INFO_1009 {
@@ -16920,12 +16920,12 @@ impl ::core::fmt::Debug for USER_INFO_1009 {
         f.debug_struct("USER_INFO_1009").field("usri1009_script_path", &self.usri1009_script_path).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1009 {
+unsafe impl ::windows_core::Abi for USER_INFO_1009 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1009 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1009>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1009>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1009 {}
@@ -16950,12 +16950,12 @@ impl ::core::fmt::Debug for USER_INFO_1010 {
         f.debug_struct("USER_INFO_1010").field("usri1010_auth_flags", &self.usri1010_auth_flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1010 {
+unsafe impl ::windows_core::Abi for USER_INFO_1010 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1010 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1010>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1010>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1010 {}
@@ -16967,7 +16967,7 @@ impl ::core::default::Default for USER_INFO_1010 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_1011 {
-    pub usri1011_full_name: ::windows::core::PWSTR,
+    pub usri1011_full_name: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1011 {}
 impl ::core::clone::Clone for USER_INFO_1011 {
@@ -16980,12 +16980,12 @@ impl ::core::fmt::Debug for USER_INFO_1011 {
         f.debug_struct("USER_INFO_1011").field("usri1011_full_name", &self.usri1011_full_name).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1011 {
+unsafe impl ::windows_core::Abi for USER_INFO_1011 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1011 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1011>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1011>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1011 {}
@@ -16997,7 +16997,7 @@ impl ::core::default::Default for USER_INFO_1011 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_1012 {
-    pub usri1012_usr_comment: ::windows::core::PWSTR,
+    pub usri1012_usr_comment: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1012 {}
 impl ::core::clone::Clone for USER_INFO_1012 {
@@ -17010,12 +17010,12 @@ impl ::core::fmt::Debug for USER_INFO_1012 {
         f.debug_struct("USER_INFO_1012").field("usri1012_usr_comment", &self.usri1012_usr_comment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1012 {
+unsafe impl ::windows_core::Abi for USER_INFO_1012 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1012 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1012>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1012>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1012 {}
@@ -17027,7 +17027,7 @@ impl ::core::default::Default for USER_INFO_1012 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_1013 {
-    pub usri1013_parms: ::windows::core::PWSTR,
+    pub usri1013_parms: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1013 {}
 impl ::core::clone::Clone for USER_INFO_1013 {
@@ -17040,12 +17040,12 @@ impl ::core::fmt::Debug for USER_INFO_1013 {
         f.debug_struct("USER_INFO_1013").field("usri1013_parms", &self.usri1013_parms).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1013 {
+unsafe impl ::windows_core::Abi for USER_INFO_1013 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1013 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1013>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1013>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1013 {}
@@ -17057,7 +17057,7 @@ impl ::core::default::Default for USER_INFO_1013 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_1014 {
-    pub usri1014_workstations: ::windows::core::PWSTR,
+    pub usri1014_workstations: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1014 {}
 impl ::core::clone::Clone for USER_INFO_1014 {
@@ -17070,12 +17070,12 @@ impl ::core::fmt::Debug for USER_INFO_1014 {
         f.debug_struct("USER_INFO_1014").field("usri1014_workstations", &self.usri1014_workstations).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1014 {
+unsafe impl ::windows_core::Abi for USER_INFO_1014 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1014 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1014>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1014>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1014 {}
@@ -17100,12 +17100,12 @@ impl ::core::fmt::Debug for USER_INFO_1017 {
         f.debug_struct("USER_INFO_1017").field("usri1017_acct_expires", &self.usri1017_acct_expires).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1017 {
+unsafe impl ::windows_core::Abi for USER_INFO_1017 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1017 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1017>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1017>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1017 {}
@@ -17130,12 +17130,12 @@ impl ::core::fmt::Debug for USER_INFO_1018 {
         f.debug_struct("USER_INFO_1018").field("usri1018_max_storage", &self.usri1018_max_storage).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1018 {
+unsafe impl ::windows_core::Abi for USER_INFO_1018 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1018 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1018>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1018>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1018 {}
@@ -17161,12 +17161,12 @@ impl ::core::fmt::Debug for USER_INFO_1020 {
         f.debug_struct("USER_INFO_1020").field("usri1020_units_per_week", &self.usri1020_units_per_week).field("usri1020_logon_hours", &self.usri1020_logon_hours).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1020 {
+unsafe impl ::windows_core::Abi for USER_INFO_1020 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1020 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1020>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1020>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1020 {}
@@ -17178,7 +17178,7 @@ impl ::core::default::Default for USER_INFO_1020 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_1023 {
-    pub usri1023_logon_server: ::windows::core::PWSTR,
+    pub usri1023_logon_server: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1023 {}
 impl ::core::clone::Clone for USER_INFO_1023 {
@@ -17191,12 +17191,12 @@ impl ::core::fmt::Debug for USER_INFO_1023 {
         f.debug_struct("USER_INFO_1023").field("usri1023_logon_server", &self.usri1023_logon_server).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1023 {
+unsafe impl ::windows_core::Abi for USER_INFO_1023 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1023 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1023>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1023>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1023 {}
@@ -17221,12 +17221,12 @@ impl ::core::fmt::Debug for USER_INFO_1024 {
         f.debug_struct("USER_INFO_1024").field("usri1024_country_code", &self.usri1024_country_code).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1024 {
+unsafe impl ::windows_core::Abi for USER_INFO_1024 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1024 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1024>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1024>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1024 {}
@@ -17251,12 +17251,12 @@ impl ::core::fmt::Debug for USER_INFO_1025 {
         f.debug_struct("USER_INFO_1025").field("usri1025_code_page", &self.usri1025_code_page).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1025 {
+unsafe impl ::windows_core::Abi for USER_INFO_1025 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1025 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1025>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1025>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1025 {}
@@ -17281,12 +17281,12 @@ impl ::core::fmt::Debug for USER_INFO_1051 {
         f.debug_struct("USER_INFO_1051").field("usri1051_primary_group_id", &self.usri1051_primary_group_id).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1051 {
+unsafe impl ::windows_core::Abi for USER_INFO_1051 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1051 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1051>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1051>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1051 {}
@@ -17298,7 +17298,7 @@ impl ::core::default::Default for USER_INFO_1051 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_1052 {
-    pub usri1052_profile: ::windows::core::PWSTR,
+    pub usri1052_profile: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1052 {}
 impl ::core::clone::Clone for USER_INFO_1052 {
@@ -17311,12 +17311,12 @@ impl ::core::fmt::Debug for USER_INFO_1052 {
         f.debug_struct("USER_INFO_1052").field("usri1052_profile", &self.usri1052_profile).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1052 {
+unsafe impl ::windows_core::Abi for USER_INFO_1052 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1052 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1052>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1052>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1052 {}
@@ -17328,7 +17328,7 @@ impl ::core::default::Default for USER_INFO_1052 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_1053 {
-    pub usri1053_home_dir_drive: ::windows::core::PWSTR,
+    pub usri1053_home_dir_drive: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1053 {}
 impl ::core::clone::Clone for USER_INFO_1053 {
@@ -17341,12 +17341,12 @@ impl ::core::fmt::Debug for USER_INFO_1053 {
         f.debug_struct("USER_INFO_1053").field("usri1053_home_dir_drive", &self.usri1053_home_dir_drive).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_1053 {
+unsafe impl ::windows_core::Abi for USER_INFO_1053 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_1053 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1053>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_1053>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_1053 {}
@@ -17358,22 +17358,22 @@ impl ::core::default::Default for USER_INFO_1053 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_11 {
-    pub usri11_name: ::windows::core::PWSTR,
-    pub usri11_comment: ::windows::core::PWSTR,
-    pub usri11_usr_comment: ::windows::core::PWSTR,
-    pub usri11_full_name: ::windows::core::PWSTR,
+    pub usri11_name: ::windows_core::PWSTR,
+    pub usri11_comment: ::windows_core::PWSTR,
+    pub usri11_usr_comment: ::windows_core::PWSTR,
+    pub usri11_full_name: ::windows_core::PWSTR,
     pub usri11_priv: USER_PRIV,
     pub usri11_auth_flags: AF_OP,
     pub usri11_password_age: u32,
-    pub usri11_home_dir: ::windows::core::PWSTR,
-    pub usri11_parms: ::windows::core::PWSTR,
+    pub usri11_home_dir: ::windows_core::PWSTR,
+    pub usri11_parms: ::windows_core::PWSTR,
     pub usri11_last_logon: u32,
     pub usri11_last_logoff: u32,
     pub usri11_bad_pw_count: u32,
     pub usri11_num_logons: u32,
-    pub usri11_logon_server: ::windows::core::PWSTR,
+    pub usri11_logon_server: ::windows_core::PWSTR,
     pub usri11_country_code: u32,
-    pub usri11_workstations: ::windows::core::PWSTR,
+    pub usri11_workstations: ::windows_core::PWSTR,
     pub usri11_max_storage: u32,
     pub usri11_units_per_week: u32,
     pub usri11_logon_hours: *mut u8,
@@ -17411,12 +17411,12 @@ impl ::core::fmt::Debug for USER_INFO_11 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_11 {
+unsafe impl ::windows_core::Abi for USER_INFO_11 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_11 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_11>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_11>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_11 {}
@@ -17428,19 +17428,19 @@ impl ::core::default::Default for USER_INFO_11 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_2 {
-    pub usri2_name: ::windows::core::PWSTR,
-    pub usri2_password: ::windows::core::PWSTR,
+    pub usri2_name: ::windows_core::PWSTR,
+    pub usri2_password: ::windows_core::PWSTR,
     pub usri2_password_age: u32,
     pub usri2_priv: USER_PRIV,
-    pub usri2_home_dir: ::windows::core::PWSTR,
-    pub usri2_comment: ::windows::core::PWSTR,
+    pub usri2_home_dir: ::windows_core::PWSTR,
+    pub usri2_comment: ::windows_core::PWSTR,
     pub usri2_flags: USER_ACCOUNT_FLAGS,
-    pub usri2_script_path: ::windows::core::PWSTR,
+    pub usri2_script_path: ::windows_core::PWSTR,
     pub usri2_auth_flags: AF_OP,
-    pub usri2_full_name: ::windows::core::PWSTR,
-    pub usri2_usr_comment: ::windows::core::PWSTR,
-    pub usri2_parms: ::windows::core::PWSTR,
-    pub usri2_workstations: ::windows::core::PWSTR,
+    pub usri2_full_name: ::windows_core::PWSTR,
+    pub usri2_usr_comment: ::windows_core::PWSTR,
+    pub usri2_parms: ::windows_core::PWSTR,
+    pub usri2_workstations: ::windows_core::PWSTR,
     pub usri2_last_logon: u32,
     pub usri2_last_logoff: u32,
     pub usri2_acct_expires: u32,
@@ -17449,7 +17449,7 @@ pub struct USER_INFO_2 {
     pub usri2_logon_hours: *mut u8,
     pub usri2_bad_pw_count: u32,
     pub usri2_num_logons: u32,
-    pub usri2_logon_server: ::windows::core::PWSTR,
+    pub usri2_logon_server: ::windows_core::PWSTR,
     pub usri2_country_code: u32,
     pub usri2_code_page: u32,
 }
@@ -17489,12 +17489,12 @@ impl ::core::fmt::Debug for USER_INFO_2 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_2 {
+unsafe impl ::windows_core::Abi for USER_INFO_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_2 {}
@@ -17506,9 +17506,9 @@ impl ::core::default::Default for USER_INFO_2 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_20 {
-    pub usri20_name: ::windows::core::PWSTR,
-    pub usri20_full_name: ::windows::core::PWSTR,
-    pub usri20_comment: ::windows::core::PWSTR,
+    pub usri20_name: ::windows_core::PWSTR,
+    pub usri20_full_name: ::windows_core::PWSTR,
+    pub usri20_comment: ::windows_core::PWSTR,
     pub usri20_flags: USER_ACCOUNT_FLAGS,
     pub usri20_user_id: u32,
 }
@@ -17523,12 +17523,12 @@ impl ::core::fmt::Debug for USER_INFO_20 {
         f.debug_struct("USER_INFO_20").field("usri20_name", &self.usri20_name).field("usri20_full_name", &self.usri20_full_name).field("usri20_comment", &self.usri20_comment).field("usri20_flags", &self.usri20_flags).field("usri20_user_id", &self.usri20_user_id).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_20 {
+unsafe impl ::windows_core::Abi for USER_INFO_20 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_20 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_20>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_20>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_20 {}
@@ -17553,12 +17553,12 @@ impl ::core::fmt::Debug for USER_INFO_21 {
         f.debug_struct("USER_INFO_21").field("usri21_password", &self.usri21_password).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_21 {
+unsafe impl ::windows_core::Abi for USER_INFO_21 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_21 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_21>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_21>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_21 {}
@@ -17570,19 +17570,19 @@ impl ::core::default::Default for USER_INFO_21 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_22 {
-    pub usri22_name: ::windows::core::PWSTR,
+    pub usri22_name: ::windows_core::PWSTR,
     pub usri22_password: [u8; 16],
     pub usri22_password_age: u32,
     pub usri22_priv: USER_PRIV,
-    pub usri22_home_dir: ::windows::core::PWSTR,
-    pub usri22_comment: ::windows::core::PWSTR,
+    pub usri22_home_dir: ::windows_core::PWSTR,
+    pub usri22_comment: ::windows_core::PWSTR,
     pub usri22_flags: USER_ACCOUNT_FLAGS,
-    pub usri22_script_path: ::windows::core::PWSTR,
+    pub usri22_script_path: ::windows_core::PWSTR,
     pub usri22_auth_flags: AF_OP,
-    pub usri22_full_name: ::windows::core::PWSTR,
-    pub usri22_usr_comment: ::windows::core::PWSTR,
-    pub usri22_parms: ::windows::core::PWSTR,
-    pub usri22_workstations: ::windows::core::PWSTR,
+    pub usri22_full_name: ::windows_core::PWSTR,
+    pub usri22_usr_comment: ::windows_core::PWSTR,
+    pub usri22_parms: ::windows_core::PWSTR,
+    pub usri22_workstations: ::windows_core::PWSTR,
     pub usri22_last_logon: u32,
     pub usri22_last_logoff: u32,
     pub usri22_acct_expires: u32,
@@ -17591,7 +17591,7 @@ pub struct USER_INFO_22 {
     pub usri22_logon_hours: *mut u8,
     pub usri22_bad_pw_count: u32,
     pub usri22_num_logons: u32,
-    pub usri22_logon_server: ::windows::core::PWSTR,
+    pub usri22_logon_server: ::windows_core::PWSTR,
     pub usri22_country_code: u32,
     pub usri22_code_page: u32,
 }
@@ -17631,12 +17631,12 @@ impl ::core::fmt::Debug for USER_INFO_22 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_22 {
+unsafe impl ::windows_core::Abi for USER_INFO_22 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_22 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_22>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_22>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_22 {}
@@ -17649,9 +17649,9 @@ impl ::core::default::Default for USER_INFO_22 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct USER_INFO_23 {
-    pub usri23_name: ::windows::core::PWSTR,
-    pub usri23_full_name: ::windows::core::PWSTR,
-    pub usri23_comment: ::windows::core::PWSTR,
+    pub usri23_name: ::windows_core::PWSTR,
+    pub usri23_full_name: ::windows_core::PWSTR,
+    pub usri23_comment: ::windows_core::PWSTR,
     pub usri23_flags: USER_ACCOUNT_FLAGS,
     pub usri23_user_sid: super::super::Foundation::PSID,
 }
@@ -17670,13 +17670,13 @@ impl ::core::fmt::Debug for USER_INFO_23 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for USER_INFO_23 {
+unsafe impl ::windows_core::Abi for USER_INFO_23 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USER_INFO_23 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_23>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_23>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17693,8 +17693,8 @@ impl ::core::default::Default for USER_INFO_23 {
 pub struct USER_INFO_24 {
     pub usri24_internet_identity: super::super::Foundation::BOOL,
     pub usri24_flags: u32,
-    pub usri24_internet_provider_name: ::windows::core::PWSTR,
-    pub usri24_internet_principal_name: ::windows::core::PWSTR,
+    pub usri24_internet_provider_name: ::windows_core::PWSTR,
+    pub usri24_internet_principal_name: ::windows_core::PWSTR,
     pub usri24_user_sid: super::super::Foundation::PSID,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17712,13 +17712,13 @@ impl ::core::fmt::Debug for USER_INFO_24 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for USER_INFO_24 {
+unsafe impl ::windows_core::Abi for USER_INFO_24 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USER_INFO_24 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_24>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_24>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17732,19 +17732,19 @@ impl ::core::default::Default for USER_INFO_24 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_INFO_3 {
-    pub usri3_name: ::windows::core::PWSTR,
-    pub usri3_password: ::windows::core::PWSTR,
+    pub usri3_name: ::windows_core::PWSTR,
+    pub usri3_password: ::windows_core::PWSTR,
     pub usri3_password_age: u32,
     pub usri3_priv: USER_PRIV,
-    pub usri3_home_dir: ::windows::core::PWSTR,
-    pub usri3_comment: ::windows::core::PWSTR,
+    pub usri3_home_dir: ::windows_core::PWSTR,
+    pub usri3_comment: ::windows_core::PWSTR,
     pub usri3_flags: USER_ACCOUNT_FLAGS,
-    pub usri3_script_path: ::windows::core::PWSTR,
+    pub usri3_script_path: ::windows_core::PWSTR,
     pub usri3_auth_flags: AF_OP,
-    pub usri3_full_name: ::windows::core::PWSTR,
-    pub usri3_usr_comment: ::windows::core::PWSTR,
-    pub usri3_parms: ::windows::core::PWSTR,
-    pub usri3_workstations: ::windows::core::PWSTR,
+    pub usri3_full_name: ::windows_core::PWSTR,
+    pub usri3_usr_comment: ::windows_core::PWSTR,
+    pub usri3_parms: ::windows_core::PWSTR,
+    pub usri3_workstations: ::windows_core::PWSTR,
     pub usri3_last_logon: u32,
     pub usri3_last_logoff: u32,
     pub usri3_acct_expires: u32,
@@ -17753,13 +17753,13 @@ pub struct USER_INFO_3 {
     pub usri3_logon_hours: *mut u8,
     pub usri3_bad_pw_count: u32,
     pub usri3_num_logons: u32,
-    pub usri3_logon_server: ::windows::core::PWSTR,
+    pub usri3_logon_server: ::windows_core::PWSTR,
     pub usri3_country_code: u32,
     pub usri3_code_page: u32,
     pub usri3_user_id: u32,
     pub usri3_primary_group_id: u32,
-    pub usri3_profile: ::windows::core::PWSTR,
-    pub usri3_home_dir_drive: ::windows::core::PWSTR,
+    pub usri3_profile: ::windows_core::PWSTR,
+    pub usri3_home_dir_drive: ::windows_core::PWSTR,
     pub usri3_password_expired: u32,
 }
 impl ::core::marker::Copy for USER_INFO_3 {}
@@ -17803,12 +17803,12 @@ impl ::core::fmt::Debug for USER_INFO_3 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_INFO_3 {
+unsafe impl ::windows_core::Abi for USER_INFO_3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_INFO_3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_INFO_3 {}
@@ -17821,19 +17821,19 @@ impl ::core::default::Default for USER_INFO_3 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct USER_INFO_4 {
-    pub usri4_name: ::windows::core::PWSTR,
-    pub usri4_password: ::windows::core::PWSTR,
+    pub usri4_name: ::windows_core::PWSTR,
+    pub usri4_password: ::windows_core::PWSTR,
     pub usri4_password_age: u32,
     pub usri4_priv: USER_PRIV,
-    pub usri4_home_dir: ::windows::core::PWSTR,
-    pub usri4_comment: ::windows::core::PWSTR,
+    pub usri4_home_dir: ::windows_core::PWSTR,
+    pub usri4_comment: ::windows_core::PWSTR,
     pub usri4_flags: USER_ACCOUNT_FLAGS,
-    pub usri4_script_path: ::windows::core::PWSTR,
+    pub usri4_script_path: ::windows_core::PWSTR,
     pub usri4_auth_flags: AF_OP,
-    pub usri4_full_name: ::windows::core::PWSTR,
-    pub usri4_usr_comment: ::windows::core::PWSTR,
-    pub usri4_parms: ::windows::core::PWSTR,
-    pub usri4_workstations: ::windows::core::PWSTR,
+    pub usri4_full_name: ::windows_core::PWSTR,
+    pub usri4_usr_comment: ::windows_core::PWSTR,
+    pub usri4_parms: ::windows_core::PWSTR,
+    pub usri4_workstations: ::windows_core::PWSTR,
     pub usri4_last_logon: u32,
     pub usri4_last_logoff: u32,
     pub usri4_acct_expires: u32,
@@ -17842,13 +17842,13 @@ pub struct USER_INFO_4 {
     pub usri4_logon_hours: *mut u8,
     pub usri4_bad_pw_count: u32,
     pub usri4_num_logons: u32,
-    pub usri4_logon_server: ::windows::core::PWSTR,
+    pub usri4_logon_server: ::windows_core::PWSTR,
     pub usri4_country_code: u32,
     pub usri4_code_page: u32,
     pub usri4_user_sid: super::super::Foundation::PSID,
     pub usri4_primary_group_id: u32,
-    pub usri4_profile: ::windows::core::PWSTR,
-    pub usri4_home_dir_drive: ::windows::core::PWSTR,
+    pub usri4_profile: ::windows_core::PWSTR,
+    pub usri4_home_dir_drive: ::windows_core::PWSTR,
     pub usri4_password_expired: u32,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17896,13 +17896,13 @@ impl ::core::fmt::Debug for USER_INFO_4 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for USER_INFO_4 {
+unsafe impl ::windows_core::Abi for USER_INFO_4 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USER_INFO_4 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_4>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_4>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17943,12 +17943,12 @@ impl ::core::fmt::Debug for USER_MODALS_INFO_0 {
         f.debug_struct("USER_MODALS_INFO_0").field("usrmod0_min_passwd_len", &self.usrmod0_min_passwd_len).field("usrmod0_max_passwd_age", &self.usrmod0_max_passwd_age).field("usrmod0_min_passwd_age", &self.usrmod0_min_passwd_age).field("usrmod0_force_logoff", &self.usrmod0_force_logoff).field("usrmod0_password_hist_len", &self.usrmod0_password_hist_len).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_MODALS_INFO_0 {
+unsafe impl ::windows_core::Abi for USER_MODALS_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_MODALS_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_MODALS_INFO_0 {}
@@ -17961,7 +17961,7 @@ impl ::core::default::Default for USER_MODALS_INFO_0 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_MODALS_INFO_1 {
     pub usrmod1_role: u32,
-    pub usrmod1_primary: ::windows::core::PWSTR,
+    pub usrmod1_primary: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_MODALS_INFO_1 {}
 impl ::core::clone::Clone for USER_MODALS_INFO_1 {
@@ -17974,12 +17974,12 @@ impl ::core::fmt::Debug for USER_MODALS_INFO_1 {
         f.debug_struct("USER_MODALS_INFO_1").field("usrmod1_role", &self.usrmod1_role).field("usrmod1_primary", &self.usrmod1_primary).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_MODALS_INFO_1 {
+unsafe impl ::windows_core::Abi for USER_MODALS_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_MODALS_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_MODALS_INFO_1 {}
@@ -18004,12 +18004,12 @@ impl ::core::fmt::Debug for USER_MODALS_INFO_1001 {
         f.debug_struct("USER_MODALS_INFO_1001").field("usrmod1001_min_passwd_len", &self.usrmod1001_min_passwd_len).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_MODALS_INFO_1001 {
+unsafe impl ::windows_core::Abi for USER_MODALS_INFO_1001 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_MODALS_INFO_1001 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1001>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1001>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_MODALS_INFO_1001 {}
@@ -18034,12 +18034,12 @@ impl ::core::fmt::Debug for USER_MODALS_INFO_1002 {
         f.debug_struct("USER_MODALS_INFO_1002").field("usrmod1002_max_passwd_age", &self.usrmod1002_max_passwd_age).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_MODALS_INFO_1002 {
+unsafe impl ::windows_core::Abi for USER_MODALS_INFO_1002 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_MODALS_INFO_1002 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1002>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1002>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_MODALS_INFO_1002 {}
@@ -18064,12 +18064,12 @@ impl ::core::fmt::Debug for USER_MODALS_INFO_1003 {
         f.debug_struct("USER_MODALS_INFO_1003").field("usrmod1003_min_passwd_age", &self.usrmod1003_min_passwd_age).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_MODALS_INFO_1003 {
+unsafe impl ::windows_core::Abi for USER_MODALS_INFO_1003 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_MODALS_INFO_1003 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1003>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1003>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_MODALS_INFO_1003 {}
@@ -18094,12 +18094,12 @@ impl ::core::fmt::Debug for USER_MODALS_INFO_1004 {
         f.debug_struct("USER_MODALS_INFO_1004").field("usrmod1004_force_logoff", &self.usrmod1004_force_logoff).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_MODALS_INFO_1004 {
+unsafe impl ::windows_core::Abi for USER_MODALS_INFO_1004 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_MODALS_INFO_1004 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1004>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1004>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_MODALS_INFO_1004 {}
@@ -18124,12 +18124,12 @@ impl ::core::fmt::Debug for USER_MODALS_INFO_1005 {
         f.debug_struct("USER_MODALS_INFO_1005").field("usrmod1005_password_hist_len", &self.usrmod1005_password_hist_len).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_MODALS_INFO_1005 {
+unsafe impl ::windows_core::Abi for USER_MODALS_INFO_1005 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_MODALS_INFO_1005 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1005>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1005>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_MODALS_INFO_1005 {}
@@ -18154,12 +18154,12 @@ impl ::core::fmt::Debug for USER_MODALS_INFO_1006 {
         f.debug_struct("USER_MODALS_INFO_1006").field("usrmod1006_role", &self.usrmod1006_role).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_MODALS_INFO_1006 {
+unsafe impl ::windows_core::Abi for USER_MODALS_INFO_1006 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_MODALS_INFO_1006 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1006>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1006>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_MODALS_INFO_1006 {}
@@ -18171,7 +18171,7 @@ impl ::core::default::Default for USER_MODALS_INFO_1006 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USER_MODALS_INFO_1007 {
-    pub usrmod1007_primary: ::windows::core::PWSTR,
+    pub usrmod1007_primary: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USER_MODALS_INFO_1007 {}
 impl ::core::clone::Clone for USER_MODALS_INFO_1007 {
@@ -18184,12 +18184,12 @@ impl ::core::fmt::Debug for USER_MODALS_INFO_1007 {
         f.debug_struct("USER_MODALS_INFO_1007").field("usrmod1007_primary", &self.usrmod1007_primary).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_MODALS_INFO_1007 {
+unsafe impl ::windows_core::Abi for USER_MODALS_INFO_1007 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_MODALS_INFO_1007 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1007>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_1007>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_MODALS_INFO_1007 {}
@@ -18202,7 +18202,7 @@ impl ::core::default::Default for USER_MODALS_INFO_1007 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct USER_MODALS_INFO_2 {
-    pub usrmod2_domain_name: ::windows::core::PWSTR,
+    pub usrmod2_domain_name: ::windows_core::PWSTR,
     pub usrmod2_domain_id: super::super::Foundation::PSID,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18220,13 +18220,13 @@ impl ::core::fmt::Debug for USER_MODALS_INFO_2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for USER_MODALS_INFO_2 {
+unsafe impl ::windows_core::Abi for USER_MODALS_INFO_2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USER_MODALS_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -18255,12 +18255,12 @@ impl ::core::fmt::Debug for USER_MODALS_INFO_3 {
         f.debug_struct("USER_MODALS_INFO_3").field("usrmod3_lockout_duration", &self.usrmod3_lockout_duration).field("usrmod3_lockout_observation_window", &self.usrmod3_lockout_observation_window).field("usrmod3_lockout_threshold", &self.usrmod3_lockout_threshold).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_MODALS_INFO_3 {
+unsafe impl ::windows_core::Abi for USER_MODALS_INFO_3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_MODALS_INFO_3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_MODALS_INFO_3 {}
@@ -18292,7 +18292,7 @@ impl ::core::default::Default for USER_MODALS_ROLES {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for USER_MODALS_ROLES {
+unsafe impl ::windows_core::Abi for USER_MODALS_ROLES {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for USER_MODALS_ROLES {
@@ -18321,12 +18321,12 @@ impl ::core::fmt::Debug for USER_OTHER_INFO {
         f.debug_struct("USER_OTHER_INFO").field("alrtus_errcode", &self.alrtus_errcode).field("alrtus_numstrings", &self.alrtus_numstrings).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USER_OTHER_INFO {
+unsafe impl ::windows_core::Abi for USER_OTHER_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USER_OTHER_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_OTHER_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_OTHER_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USER_OTHER_INFO {}
@@ -18366,7 +18366,7 @@ impl ::core::default::Default for USER_PRIV {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for USER_PRIV {
+unsafe impl ::windows_core::Abi for USER_PRIV {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for USER_PRIV {
@@ -18411,8 +18411,8 @@ pub const USE_FLAG_GLOBAL_MAPPING: u32 = 65536u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USE_INFO_0 {
-    pub ui0_local: ::windows::core::PWSTR,
-    pub ui0_remote: ::windows::core::PWSTR,
+    pub ui0_local: ::windows_core::PWSTR,
+    pub ui0_remote: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USE_INFO_0 {}
 impl ::core::clone::Clone for USE_INFO_0 {
@@ -18425,12 +18425,12 @@ impl ::core::fmt::Debug for USE_INFO_0 {
         f.debug_struct("USE_INFO_0").field("ui0_local", &self.ui0_local).field("ui0_remote", &self.ui0_remote).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USE_INFO_0 {
+unsafe impl ::windows_core::Abi for USE_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USE_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USE_INFO_0 {}
@@ -18442,9 +18442,9 @@ impl ::core::default::Default for USE_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USE_INFO_1 {
-    pub ui1_local: ::windows::core::PWSTR,
-    pub ui1_remote: ::windows::core::PWSTR,
-    pub ui1_password: ::windows::core::PWSTR,
+    pub ui1_local: ::windows_core::PWSTR,
+    pub ui1_remote: ::windows_core::PWSTR,
+    pub ui1_password: ::windows_core::PWSTR,
     pub ui1_status: u32,
     pub ui1_asg_type: USE_INFO_ASG_TYPE,
     pub ui1_refcount: u32,
@@ -18461,12 +18461,12 @@ impl ::core::fmt::Debug for USE_INFO_1 {
         f.debug_struct("USE_INFO_1").field("ui1_local", &self.ui1_local).field("ui1_remote", &self.ui1_remote).field("ui1_password", &self.ui1_password).field("ui1_status", &self.ui1_status).field("ui1_asg_type", &self.ui1_asg_type).field("ui1_refcount", &self.ui1_refcount).field("ui1_usecount", &self.ui1_usecount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USE_INFO_1 {
+unsafe impl ::windows_core::Abi for USE_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USE_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USE_INFO_1 {}
@@ -18478,15 +18478,15 @@ impl ::core::default::Default for USE_INFO_1 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct USE_INFO_2 {
-    pub ui2_local: ::windows::core::PWSTR,
-    pub ui2_remote: ::windows::core::PWSTR,
-    pub ui2_password: ::windows::core::PWSTR,
+    pub ui2_local: ::windows_core::PWSTR,
+    pub ui2_remote: ::windows_core::PWSTR,
+    pub ui2_password: ::windows_core::PWSTR,
     pub ui2_status: u32,
     pub ui2_asg_type: USE_INFO_ASG_TYPE,
     pub ui2_refcount: u32,
     pub ui2_usecount: u32,
-    pub ui2_username: ::windows::core::PWSTR,
-    pub ui2_domainname: ::windows::core::PWSTR,
+    pub ui2_username: ::windows_core::PWSTR,
+    pub ui2_domainname: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for USE_INFO_2 {}
 impl ::core::clone::Clone for USE_INFO_2 {
@@ -18499,12 +18499,12 @@ impl ::core::fmt::Debug for USE_INFO_2 {
         f.debug_struct("USE_INFO_2").field("ui2_local", &self.ui2_local).field("ui2_remote", &self.ui2_remote).field("ui2_password", &self.ui2_password).field("ui2_status", &self.ui2_status).field("ui2_asg_type", &self.ui2_asg_type).field("ui2_refcount", &self.ui2_refcount).field("ui2_usecount", &self.ui2_usecount).field("ui2_username", &self.ui2_username).field("ui2_domainname", &self.ui2_domainname).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USE_INFO_2 {
+unsafe impl ::windows_core::Abi for USE_INFO_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USE_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_INFO_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_INFO_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USE_INFO_2 {}
@@ -18530,12 +18530,12 @@ impl ::core::fmt::Debug for USE_INFO_3 {
         f.debug_struct("USE_INFO_3").field("ui3_ui2", &self.ui3_ui2).field("ui3_flags", &self.ui3_flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USE_INFO_3 {
+unsafe impl ::windows_core::Abi for USE_INFO_3 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USE_INFO_3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_INFO_3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_INFO_3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USE_INFO_3 {}
@@ -18562,12 +18562,12 @@ impl ::core::fmt::Debug for USE_INFO_4 {
         f.debug_struct("USE_INFO_4").field("ui4_ui3", &self.ui4_ui3).field("ui4_auth_identity_length", &self.ui4_auth_identity_length).field("ui4_auth_identity", &self.ui4_auth_identity).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USE_INFO_4 {
+unsafe impl ::windows_core::Abi for USE_INFO_4 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USE_INFO_4 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_INFO_4>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_INFO_4>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USE_INFO_4 {}
@@ -18598,12 +18598,12 @@ impl ::core::fmt::Debug for USE_INFO_5 {
         f.debug_struct("USE_INFO_5").field("ui4_ui3", &self.ui4_ui3).field("ui4_auth_identity_length", &self.ui4_auth_identity_length).field("ui4_auth_identity", &self.ui4_auth_identity).field("ui5_security_descriptor_length", &self.ui5_security_descriptor_length).field("ui5_security_descriptor", &self.ui5_security_descriptor).field("ui5_use_options_length", &self.ui5_use_options_length).field("ui5_use_options", &self.ui5_use_options).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USE_INFO_5 {
+unsafe impl ::windows_core::Abi for USE_INFO_5 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USE_INFO_5 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_INFO_5>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_INFO_5>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USE_INFO_5 {}
@@ -18635,7 +18635,7 @@ impl ::core::default::Default for USE_INFO_ASG_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for USE_INFO_ASG_TYPE {
+unsafe impl ::windows_core::Abi for USE_INFO_ASG_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for USE_INFO_ASG_TYPE {
@@ -18669,12 +18669,12 @@ impl ::core::fmt::Debug for USE_OPTION_DEFERRED_CONNECTION_PARAMETERS {
         f.debug_struct("USE_OPTION_DEFERRED_CONNECTION_PARAMETERS").field("Tag", &self.Tag).field("Length", &self.Length).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USE_OPTION_DEFERRED_CONNECTION_PARAMETERS {
+unsafe impl ::windows_core::Abi for USE_OPTION_DEFERRED_CONNECTION_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USE_OPTION_DEFERRED_CONNECTION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_OPTION_DEFERRED_CONNECTION_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_OPTION_DEFERRED_CONNECTION_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USE_OPTION_DEFERRED_CONNECTION_PARAMETERS {}
@@ -18701,12 +18701,12 @@ impl ::core::fmt::Debug for USE_OPTION_GENERIC {
         f.debug_struct("USE_OPTION_GENERIC").field("Tag", &self.Tag).field("Length", &self.Length).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USE_OPTION_GENERIC {
+unsafe impl ::windows_core::Abi for USE_OPTION_GENERIC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USE_OPTION_GENERIC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_OPTION_GENERIC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_OPTION_GENERIC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USE_OPTION_GENERIC {}
@@ -18733,12 +18733,12 @@ impl ::core::fmt::Debug for USE_OPTION_PROPERTIES {
         f.debug_struct("USE_OPTION_PROPERTIES").field("Tag", &self.Tag).field("pInfo", &self.pInfo).field("Length", &self.Length).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USE_OPTION_PROPERTIES {
+unsafe impl ::windows_core::Abi for USE_OPTION_PROPERTIES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USE_OPTION_PROPERTIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_OPTION_PROPERTIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_OPTION_PROPERTIES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USE_OPTION_PROPERTIES {}
@@ -18765,12 +18765,12 @@ impl ::core::fmt::Debug for USE_OPTION_TRANSPORT_PARAMETERS {
         f.debug_struct("USE_OPTION_TRANSPORT_PARAMETERS").field("Tag", &self.Tag).field("Length", &self.Length).field("Reserved", &self.Reserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for USE_OPTION_TRANSPORT_PARAMETERS {
+unsafe impl ::windows_core::Abi for USE_OPTION_TRANSPORT_PARAMETERS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for USE_OPTION_TRANSPORT_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_OPTION_TRANSPORT_PARAMETERS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USE_OPTION_TRANSPORT_PARAMETERS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for USE_OPTION_TRANSPORT_PARAMETERS {}
@@ -18825,8 +18825,8 @@ pub const WKSTA_FORCECORECREATEMODE_PARMNUM: u32 = 60u32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct WKSTA_INFO_100 {
     pub wki100_platform_id: u32,
-    pub wki100_computername: ::windows::core::PWSTR,
-    pub wki100_langroup: ::windows::core::PWSTR,
+    pub wki100_computername: ::windows_core::PWSTR,
+    pub wki100_langroup: ::windows_core::PWSTR,
     pub wki100_ver_major: u32,
     pub wki100_ver_minor: u32,
 }
@@ -18841,12 +18841,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_100 {
         f.debug_struct("WKSTA_INFO_100").field("wki100_platform_id", &self.wki100_platform_id).field("wki100_computername", &self.wki100_computername).field("wki100_langroup", &self.wki100_langroup).field("wki100_ver_major", &self.wki100_ver_major).field("wki100_ver_minor", &self.wki100_ver_minor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_100 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_100 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_100 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_100>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_100>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_100 {}
@@ -18859,11 +18859,11 @@ impl ::core::default::Default for WKSTA_INFO_100 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct WKSTA_INFO_101 {
     pub wki101_platform_id: u32,
-    pub wki101_computername: ::windows::core::PWSTR,
-    pub wki101_langroup: ::windows::core::PWSTR,
+    pub wki101_computername: ::windows_core::PWSTR,
+    pub wki101_langroup: ::windows_core::PWSTR,
     pub wki101_ver_major: u32,
     pub wki101_ver_minor: u32,
-    pub wki101_lanroot: ::windows::core::PWSTR,
+    pub wki101_lanroot: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for WKSTA_INFO_101 {}
 impl ::core::clone::Clone for WKSTA_INFO_101 {
@@ -18876,12 +18876,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_101 {
         f.debug_struct("WKSTA_INFO_101").field("wki101_platform_id", &self.wki101_platform_id).field("wki101_computername", &self.wki101_computername).field("wki101_langroup", &self.wki101_langroup).field("wki101_ver_major", &self.wki101_ver_major).field("wki101_ver_minor", &self.wki101_ver_minor).field("wki101_lanroot", &self.wki101_lanroot).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_101 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_101 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_101 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_101>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_101>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_101 {}
@@ -18906,12 +18906,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1010 {
         f.debug_struct("WKSTA_INFO_1010").field("wki1010_char_wait", &self.wki1010_char_wait).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1010 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1010 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1010 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1010>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1010>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1010 {}
@@ -18936,12 +18936,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1011 {
         f.debug_struct("WKSTA_INFO_1011").field("wki1011_collection_time", &self.wki1011_collection_time).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1011 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1011 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1011 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1011>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1011>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1011 {}
@@ -18966,12 +18966,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1012 {
         f.debug_struct("WKSTA_INFO_1012").field("wki1012_maximum_collection_count", &self.wki1012_maximum_collection_count).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1012 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1012 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1012 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1012>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1012>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1012 {}
@@ -18996,12 +18996,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1013 {
         f.debug_struct("WKSTA_INFO_1013").field("wki1013_keep_conn", &self.wki1013_keep_conn).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1013 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1013 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1013 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1013>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1013>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1013 {}
@@ -19026,12 +19026,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1018 {
         f.debug_struct("WKSTA_INFO_1018").field("wki1018_sess_timeout", &self.wki1018_sess_timeout).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1018 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1018 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1018 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1018>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1018>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1018 {}
@@ -19044,11 +19044,11 @@ impl ::core::default::Default for WKSTA_INFO_1018 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct WKSTA_INFO_102 {
     pub wki102_platform_id: u32,
-    pub wki102_computername: ::windows::core::PWSTR,
-    pub wki102_langroup: ::windows::core::PWSTR,
+    pub wki102_computername: ::windows_core::PWSTR,
+    pub wki102_langroup: ::windows_core::PWSTR,
     pub wki102_ver_major: u32,
     pub wki102_ver_minor: u32,
-    pub wki102_lanroot: ::windows::core::PWSTR,
+    pub wki102_lanroot: ::windows_core::PWSTR,
     pub wki102_logged_on_users: u32,
 }
 impl ::core::marker::Copy for WKSTA_INFO_102 {}
@@ -19062,12 +19062,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_102 {
         f.debug_struct("WKSTA_INFO_102").field("wki102_platform_id", &self.wki102_platform_id).field("wki102_computername", &self.wki102_computername).field("wki102_langroup", &self.wki102_langroup).field("wki102_ver_major", &self.wki102_ver_major).field("wki102_ver_minor", &self.wki102_ver_minor).field("wki102_lanroot", &self.wki102_lanroot).field("wki102_logged_on_users", &self.wki102_logged_on_users).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_102 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_102 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_102 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_102>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_102>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_102 {}
@@ -19092,12 +19092,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1023 {
         f.debug_struct("WKSTA_INFO_1023").field("wki1023_siz_char_buf", &self.wki1023_siz_char_buf).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1023 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1023 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1023 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1023>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1023>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1023 {}
@@ -19122,12 +19122,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1027 {
         f.debug_struct("WKSTA_INFO_1027").field("wki1027_errlog_sz", &self.wki1027_errlog_sz).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1027 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1027 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1027 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1027>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1027>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1027 {}
@@ -19152,12 +19152,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1028 {
         f.debug_struct("WKSTA_INFO_1028").field("wki1028_print_buf_time", &self.wki1028_print_buf_time).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1028 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1028 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1028 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1028>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1028>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1028 {}
@@ -19182,12 +19182,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1032 {
         f.debug_struct("WKSTA_INFO_1032").field("wki1032_wrk_heuristics", &self.wki1032_wrk_heuristics).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1032 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1032 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1032 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1032>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1032>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1032 {}
@@ -19212,12 +19212,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1033 {
         f.debug_struct("WKSTA_INFO_1033").field("wki1033_max_threads", &self.wki1033_max_threads).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1033 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1033 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1033 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1033>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1033>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1033 {}
@@ -19242,12 +19242,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1041 {
         f.debug_struct("WKSTA_INFO_1041").field("wki1041_lock_quota", &self.wki1041_lock_quota).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1041 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1041 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1041 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1041>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1041>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1041 {}
@@ -19272,12 +19272,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1042 {
         f.debug_struct("WKSTA_INFO_1042").field("wki1042_lock_increment", &self.wki1042_lock_increment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1042 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1042 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1042 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1042>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1042>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1042 {}
@@ -19302,12 +19302,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1043 {
         f.debug_struct("WKSTA_INFO_1043").field("wki1043_lock_maximum", &self.wki1043_lock_maximum).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1043 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1043 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1043 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1043>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1043>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1043 {}
@@ -19332,12 +19332,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1044 {
         f.debug_struct("WKSTA_INFO_1044").field("wki1044_pipe_increment", &self.wki1044_pipe_increment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1044 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1044 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1044 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1044>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1044>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1044 {}
@@ -19362,12 +19362,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1045 {
         f.debug_struct("WKSTA_INFO_1045").field("wki1045_pipe_maximum", &self.wki1045_pipe_maximum).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1045 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1045 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1045 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1045>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1045>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1045 {}
@@ -19392,12 +19392,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1046 {
         f.debug_struct("WKSTA_INFO_1046").field("wki1046_dormant_file_limit", &self.wki1046_dormant_file_limit).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1046 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1046 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1046 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1046>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1046>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1046 {}
@@ -19422,12 +19422,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1047 {
         f.debug_struct("WKSTA_INFO_1047").field("wki1047_cache_file_timeout", &self.wki1047_cache_file_timeout).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1047 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1047 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1047 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1047>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1047>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1047 {}
@@ -19457,13 +19457,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1048 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1048 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1048 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1048 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1048>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1048>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19495,13 +19495,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1049 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1049 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1049 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1049 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1049>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1049>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19533,13 +19533,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1050 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1050 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1050 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1050 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1050>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1050>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19571,13 +19571,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1051 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1051 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1051 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1051 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1051>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1051>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19609,13 +19609,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1052 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1052 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1052 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1052 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1052>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1052>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19647,13 +19647,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1053 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1053 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1053 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1053 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1053>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1053>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19685,13 +19685,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1054 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1054 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1054 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1054 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1054>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1054>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19723,13 +19723,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1055 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1055 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1055 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1055 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1055>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1055>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19761,13 +19761,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1056 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1056 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1056 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1056 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1056>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1056>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19799,13 +19799,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1057 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1057 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1057 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1057 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1057>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1057>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19837,13 +19837,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1058 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1058 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1058 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1058 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1058>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1058>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19875,13 +19875,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1059 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1059 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1059 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1059 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1059>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1059>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19913,13 +19913,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1060 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1060 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1060 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1060 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1060>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1060>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19951,13 +19951,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_1061 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1061 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1061 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1061 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1061>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1061>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -19984,12 +19984,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_1062 {
         f.debug_struct("WKSTA_INFO_1062").field("wki1062_read_ahead_throughput", &self.wki1062_read_ahead_throughput).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_1062 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_1062 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_1062 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1062>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1062>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_1062 {}
@@ -20018,7 +20018,7 @@ pub struct WKSTA_INFO_302 {
     pub wki302_print_buf_time: u32,
     pub wki302_num_char_buf: u32,
     pub wki302_siz_char_buf: u32,
-    pub wki302_wrk_heuristics: ::windows::core::PWSTR,
+    pub wki302_wrk_heuristics: ::windows_core::PWSTR,
     pub wki302_mailslots: u32,
     pub wki302_num_dgram_buf: u32,
 }
@@ -20054,12 +20054,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_302 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_302 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_302 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_302 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_302>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_302>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_302 {}
@@ -20088,7 +20088,7 @@ pub struct WKSTA_INFO_402 {
     pub wki402_print_buf_time: u32,
     pub wki402_num_char_buf: u32,
     pub wki402_siz_char_buf: u32,
-    pub wki402_wrk_heuristics: ::windows::core::PWSTR,
+    pub wki402_wrk_heuristics: ::windows_core::PWSTR,
     pub wki402_mailslots: u32,
     pub wki402_num_dgram_buf: u32,
     pub wki402_max_threads: u32,
@@ -20126,12 +20126,12 @@ impl ::core::fmt::Debug for WKSTA_INFO_402 {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_INFO_402 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_402 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_INFO_402 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_402>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_402>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_INFO_402 {}
@@ -20231,13 +20231,13 @@ impl ::core::fmt::Debug for WKSTA_INFO_502 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_INFO_502 {
+unsafe impl ::windows_core::Abi for WKSTA_INFO_502 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_502 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_502>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_502>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -20312,8 +20312,8 @@ pub const WKSTA_SIZWORKBUF_PARMNUM: u32 = 29u32;
 pub struct WKSTA_TRANSPORT_INFO_0 {
     pub wkti0_quality_of_service: u32,
     pub wkti0_number_of_vcs: u32,
-    pub wkti0_transport_name: ::windows::core::PWSTR,
-    pub wkti0_transport_address: ::windows::core::PWSTR,
+    pub wkti0_transport_name: ::windows_core::PWSTR,
+    pub wkti0_transport_address: ::windows_core::PWSTR,
     pub wkti0_wan_ish: super::super::Foundation::BOOL,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -20331,13 +20331,13 @@ impl ::core::fmt::Debug for WKSTA_TRANSPORT_INFO_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WKSTA_TRANSPORT_INFO_0 {
+unsafe impl ::windows_core::Abi for WKSTA_TRANSPORT_INFO_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_TRANSPORT_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_TRANSPORT_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_TRANSPORT_INFO_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -20365,7 +20365,7 @@ pub const WKSTA_USERAWWRITE_PARMNUM: u32 = 55u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct WKSTA_USER_INFO_0 {
-    pub wkui0_username: ::windows::core::PWSTR,
+    pub wkui0_username: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for WKSTA_USER_INFO_0 {}
 impl ::core::clone::Clone for WKSTA_USER_INFO_0 {
@@ -20378,12 +20378,12 @@ impl ::core::fmt::Debug for WKSTA_USER_INFO_0 {
         f.debug_struct("WKSTA_USER_INFO_0").field("wkui0_username", &self.wkui0_username).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_USER_INFO_0 {
+unsafe impl ::windows_core::Abi for WKSTA_USER_INFO_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_USER_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_USER_INFO_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_USER_INFO_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_USER_INFO_0 {}
@@ -20395,10 +20395,10 @@ impl ::core::default::Default for WKSTA_USER_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct WKSTA_USER_INFO_1 {
-    pub wkui1_username: ::windows::core::PWSTR,
-    pub wkui1_logon_domain: ::windows::core::PWSTR,
-    pub wkui1_oth_domains: ::windows::core::PWSTR,
-    pub wkui1_logon_server: ::windows::core::PWSTR,
+    pub wkui1_username: ::windows_core::PWSTR,
+    pub wkui1_logon_domain: ::windows_core::PWSTR,
+    pub wkui1_oth_domains: ::windows_core::PWSTR,
+    pub wkui1_logon_server: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for WKSTA_USER_INFO_1 {}
 impl ::core::clone::Clone for WKSTA_USER_INFO_1 {
@@ -20411,12 +20411,12 @@ impl ::core::fmt::Debug for WKSTA_USER_INFO_1 {
         f.debug_struct("WKSTA_USER_INFO_1").field("wkui1_username", &self.wkui1_username).field("wkui1_logon_domain", &self.wkui1_logon_domain).field("wkui1_oth_domains", &self.wkui1_oth_domains).field("wkui1_logon_server", &self.wkui1_logon_server).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_USER_INFO_1 {
+unsafe impl ::windows_core::Abi for WKSTA_USER_INFO_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_USER_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_USER_INFO_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_USER_INFO_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_USER_INFO_1 {}
@@ -20428,7 +20428,7 @@ impl ::core::default::Default for WKSTA_USER_INFO_1 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub struct WKSTA_USER_INFO_1101 {
-    pub wkui1101_oth_domains: ::windows::core::PWSTR,
+    pub wkui1101_oth_domains: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for WKSTA_USER_INFO_1101 {}
 impl ::core::clone::Clone for WKSTA_USER_INFO_1101 {
@@ -20441,12 +20441,12 @@ impl ::core::fmt::Debug for WKSTA_USER_INFO_1101 {
         f.debug_struct("WKSTA_USER_INFO_1101").field("wkui1101_oth_domains", &self.wkui1101_oth_domains).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WKSTA_USER_INFO_1101 {
+unsafe impl ::windows_core::Abi for WKSTA_USER_INFO_1101 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WKSTA_USER_INFO_1101 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_USER_INFO_1101>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_USER_INFO_1101>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WKSTA_USER_INFO_1101 {}
@@ -20592,7 +20592,7 @@ impl ::core::default::Default for tagRASCON_IPUI_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for tagRASCON_IPUI_FLAGS {
+unsafe impl ::windows_core::Abi for tagRASCON_IPUI_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for tagRASCON_IPUI_FLAGS {

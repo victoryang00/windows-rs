@@ -26,12 +26,12 @@ impl ::core::fmt::Debug for EAPHOST_AUTH_INFO {
         f.debug_struct("EAPHOST_AUTH_INFO").field("status", &self.status).field("dwErrorCode", &self.dwErrorCode).field("dwReasonCode", &self.dwReasonCode).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAPHOST_AUTH_INFO {
+unsafe impl ::windows_core::Abi for EAPHOST_AUTH_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAPHOST_AUTH_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAPHOST_AUTH_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAPHOST_AUTH_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAPHOST_AUTH_INFO {}
@@ -69,7 +69,7 @@ impl ::core::default::Default for EAPHOST_AUTH_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EAPHOST_AUTH_STATUS {
+unsafe impl ::windows_core::Abi for EAPHOST_AUTH_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EAPHOST_AUTH_STATUS {
@@ -88,7 +88,7 @@ pub struct EAPHOST_IDENTITY_UI_PARAMS {
     pub pUserData: *mut u8,
     pub dwSizeofUserDataOut: u32,
     pub pUserDataOut: *mut u8,
-    pub pwszIdentity: ::windows::core::PWSTR,
+    pub pwszIdentity: ::windows_core::PWSTR,
     pub dwError: u32,
     pub pEapError: *mut EAP_ERROR,
 }
@@ -115,12 +115,12 @@ impl ::core::fmt::Debug for EAPHOST_IDENTITY_UI_PARAMS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAPHOST_IDENTITY_UI_PARAMS {
+unsafe impl ::windows_core::Abi for EAPHOST_IDENTITY_UI_PARAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAPHOST_IDENTITY_UI_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAPHOST_IDENTITY_UI_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAPHOST_IDENTITY_UI_PARAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAPHOST_IDENTITY_UI_PARAMS {}
@@ -150,12 +150,12 @@ impl ::core::fmt::Debug for EAPHOST_INTERACTIVE_UI_PARAMS {
         f.debug_struct("EAPHOST_INTERACTIVE_UI_PARAMS").field("dwSizeofContextData", &self.dwSizeofContextData).field("pContextData", &self.pContextData).field("dwSizeofInteractiveUIData", &self.dwSizeofInteractiveUIData).field("pInteractiveUIData", &self.pInteractiveUIData).field("dwError", &self.dwError).field("pEapError", &self.pEapError).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAPHOST_INTERACTIVE_UI_PARAMS {
+unsafe impl ::windows_core::Abi for EAPHOST_INTERACTIVE_UI_PARAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAPHOST_INTERACTIVE_UI_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAPHOST_INTERACTIVE_UI_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAPHOST_INTERACTIVE_UI_PARAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAPHOST_INTERACTIVE_UI_PARAMS {}
@@ -186,12 +186,12 @@ impl ::core::fmt::Debug for EAP_ATTRIBUTE {
         f.debug_struct("EAP_ATTRIBUTE").field("eaType", &self.eaType).field("dwLength", &self.dwLength).field("pValue", &self.pValue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_ATTRIBUTE {
+unsafe impl ::windows_core::Abi for EAP_ATTRIBUTE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_ATTRIBUTE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_ATTRIBUTE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_ATTRIBUTE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_ATTRIBUTE {}
@@ -217,12 +217,12 @@ impl ::core::fmt::Debug for EAP_ATTRIBUTES {
         f.debug_struct("EAP_ATTRIBUTES").field("dwNumberOfAttributes", &self.dwNumberOfAttributes).field("pAttribs", &self.pAttribs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_ATTRIBUTES {
+unsafe impl ::windows_core::Abi for EAP_ATTRIBUTES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_ATTRIBUTES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_ATTRIBUTES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_ATTRIBUTES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_ATTRIBUTES {}
@@ -442,7 +442,7 @@ impl ::core::default::Default for EAP_ATTRIBUTE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EAP_ATTRIBUTE_TYPE {
+unsafe impl ::windows_core::Abi for EAP_ATTRIBUTE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EAP_ATTRIBUTE_TYPE {
@@ -490,12 +490,12 @@ impl ::core::fmt::Debug for EAP_AUTHENTICATOR_METHOD_ROUTINES {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_AUTHENTICATOR_METHOD_ROUTINES {
+unsafe impl ::windows_core::Abi for EAP_AUTHENTICATOR_METHOD_ROUTINES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_AUTHENTICATOR_METHOD_ROUTINES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_AUTHENTICATOR_METHOD_ROUTINES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_AUTHENTICATOR_METHOD_ROUTINES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_AUTHENTICATOR_METHOD_ROUTINES {}
@@ -525,7 +525,7 @@ impl ::core::default::Default for EAP_AUTHENTICATOR_SEND_TIMEOUT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EAP_AUTHENTICATOR_SEND_TIMEOUT {
+unsafe impl ::windows_core::Abi for EAP_AUTHENTICATOR_SEND_TIMEOUT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EAP_AUTHENTICATOR_SEND_TIMEOUT {
@@ -559,12 +559,12 @@ impl ::core::fmt::Debug for EAP_CONFIG_INPUT_FIELD_ARRAY {
         f.debug_struct("EAP_CONFIG_INPUT_FIELD_ARRAY").field("dwVersion", &self.dwVersion).field("dwNumberOfFields", &self.dwNumberOfFields).field("pFields", &self.pFields).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_CONFIG_INPUT_FIELD_ARRAY {
+unsafe impl ::windows_core::Abi for EAP_CONFIG_INPUT_FIELD_ARRAY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_CONFIG_INPUT_FIELD_ARRAY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_CONFIG_INPUT_FIELD_ARRAY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_CONFIG_INPUT_FIELD_ARRAY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_CONFIG_INPUT_FIELD_ARRAY {}
@@ -579,8 +579,8 @@ pub struct EAP_CONFIG_INPUT_FIELD_DATA {
     pub dwSize: u32,
     pub Type: EAP_CONFIG_INPUT_FIELD_TYPE,
     pub dwFlagProps: u32,
-    pub pwszLabel: ::windows::core::PWSTR,
-    pub pwszData: ::windows::core::PWSTR,
+    pub pwszLabel: ::windows_core::PWSTR,
+    pub pwszData: ::windows_core::PWSTR,
     pub dwMinDataLength: u32,
     pub dwMaxDataLength: u32,
 }
@@ -595,12 +595,12 @@ impl ::core::fmt::Debug for EAP_CONFIG_INPUT_FIELD_DATA {
         f.debug_struct("EAP_CONFIG_INPUT_FIELD_DATA").field("dwSize", &self.dwSize).field("Type", &self.Type).field("dwFlagProps", &self.dwFlagProps).field("pwszLabel", &self.pwszLabel).field("pwszData", &self.pwszData).field("dwMinDataLength", &self.dwMinDataLength).field("dwMaxDataLength", &self.dwMaxDataLength).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_CONFIG_INPUT_FIELD_DATA {
+unsafe impl ::windows_core::Abi for EAP_CONFIG_INPUT_FIELD_DATA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_CONFIG_INPUT_FIELD_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_CONFIG_INPUT_FIELD_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_CONFIG_INPUT_FIELD_DATA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_CONFIG_INPUT_FIELD_DATA {}
@@ -648,7 +648,7 @@ impl ::core::default::Default for EAP_CONFIG_INPUT_FIELD_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EAP_CONFIG_INPUT_FIELD_TYPE {
+unsafe impl ::windows_core::Abi for EAP_CONFIG_INPUT_FIELD_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EAP_CONFIG_INPUT_FIELD_TYPE {
@@ -675,12 +675,12 @@ impl ::core::fmt::Debug for EAP_CRED_EXPIRY_REQ {
         f.debug_struct("EAP_CRED_EXPIRY_REQ").field("curCreds", &self.curCreds).field("newCreds", &self.newCreds).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_CRED_EXPIRY_REQ {
+unsafe impl ::windows_core::Abi for EAP_CRED_EXPIRY_REQ {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_CRED_EXPIRY_REQ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_CRED_EXPIRY_REQ>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_CRED_EXPIRY_REQ>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_CRED_EXPIRY_REQ {}
@@ -695,11 +695,11 @@ pub struct EAP_ERROR {
     pub dwWinError: u32,
     pub r#type: EAP_METHOD_TYPE,
     pub dwReasonCode: u32,
-    pub rootCauseGuid: ::windows::core::GUID,
-    pub repairGuid: ::windows::core::GUID,
-    pub helpLinkGuid: ::windows::core::GUID,
-    pub pRootCauseString: ::windows::core::PWSTR,
-    pub pRepairString: ::windows::core::PWSTR,
+    pub rootCauseGuid: ::windows_core::GUID,
+    pub repairGuid: ::windows_core::GUID,
+    pub helpLinkGuid: ::windows_core::GUID,
+    pub pRootCauseString: ::windows_core::PWSTR,
+    pub pRepairString: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for EAP_ERROR {}
 impl ::core::clone::Clone for EAP_ERROR {
@@ -712,12 +712,12 @@ impl ::core::fmt::Debug for EAP_ERROR {
         f.debug_struct("EAP_ERROR").field("dwWinError", &self.dwWinError).field("type", &self.r#type).field("dwReasonCode", &self.dwReasonCode).field("rootCauseGuid", &self.rootCauseGuid).field("repairGuid", &self.repairGuid).field("helpLinkGuid", &self.helpLinkGuid).field("pRootCauseString", &self.pRootCauseString).field("pRepairString", &self.pRepairString).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_ERROR {
+unsafe impl ::windows_core::Abi for EAP_ERROR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_ERROR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_ERROR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_ERROR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_ERROR {}
@@ -875,12 +875,12 @@ impl ::core::clone::Clone for EAP_INTERACTIVE_UI_DATA {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EAP_INTERACTIVE_UI_DATA {
+unsafe impl ::windows_core::Abi for EAP_INTERACTIVE_UI_DATA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_INTERACTIVE_UI_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_INTERACTIVE_UI_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_INTERACTIVE_UI_DATA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_INTERACTIVE_UI_DATA {}
@@ -916,7 +916,7 @@ impl ::core::default::Default for EAP_INTERACTIVE_UI_DATA_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EAP_INTERACTIVE_UI_DATA_TYPE {
+unsafe impl ::windows_core::Abi for EAP_INTERACTIVE_UI_DATA_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EAP_INTERACTIVE_UI_DATA_TYPE {
@@ -969,7 +969,7 @@ impl ::core::default::Default for EAP_METHOD_AUTHENTICATOR_RESPONSE_ACTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EAP_METHOD_AUTHENTICATOR_RESPONSE_ACTION {
+unsafe impl ::windows_core::Abi for EAP_METHOD_AUTHENTICATOR_RESPONSE_ACTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EAP_METHOD_AUTHENTICATOR_RESPONSE_ACTION {
@@ -1000,13 +1000,13 @@ impl ::core::fmt::Debug for EAP_METHOD_AUTHENTICATOR_RESULT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EAP_METHOD_AUTHENTICATOR_RESULT {
+unsafe impl ::windows_core::Abi for EAP_METHOD_AUTHENTICATOR_RESULT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EAP_METHOD_AUTHENTICATOR_RESULT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_AUTHENTICATOR_RESULT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_AUTHENTICATOR_RESULT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1021,8 +1021,8 @@ impl ::core::default::Default for EAP_METHOD_AUTHENTICATOR_RESULT {
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 pub struct EAP_METHOD_INFO {
     pub eaptype: EAP_METHOD_TYPE,
-    pub pwszAuthorName: ::windows::core::PWSTR,
-    pub pwszFriendlyName: ::windows::core::PWSTR,
+    pub pwszAuthorName: ::windows_core::PWSTR,
+    pub pwszFriendlyName: ::windows_core::PWSTR,
     pub eapProperties: u32,
     pub pInnerMethodInfo: *mut EAP_METHOD_INFO,
 }
@@ -1037,12 +1037,12 @@ impl ::core::fmt::Debug for EAP_METHOD_INFO {
         f.debug_struct("EAP_METHOD_INFO").field("eaptype", &self.eaptype).field("pwszAuthorName", &self.pwszAuthorName).field("pwszFriendlyName", &self.pwszFriendlyName).field("eapProperties", &self.eapProperties).field("pInnerMethodInfo", &self.pInnerMethodInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_METHOD_INFO {
+unsafe impl ::windows_core::Abi for EAP_METHOD_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_METHOD_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_METHOD_INFO {}
@@ -1068,12 +1068,12 @@ impl ::core::fmt::Debug for EAP_METHOD_INFO_ARRAY {
         f.debug_struct("EAP_METHOD_INFO_ARRAY").field("dwNumberOfMethods", &self.dwNumberOfMethods).field("pEapMethods", &self.pEapMethods).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_METHOD_INFO_ARRAY {
+unsafe impl ::windows_core::Abi for EAP_METHOD_INFO_ARRAY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_METHOD_INFO_ARRAY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_INFO_ARRAY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_INFO_ARRAY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_METHOD_INFO_ARRAY {}
@@ -1099,12 +1099,12 @@ impl ::core::fmt::Debug for EAP_METHOD_INFO_ARRAY_EX {
         f.debug_struct("EAP_METHOD_INFO_ARRAY_EX").field("dwNumberOfMethods", &self.dwNumberOfMethods).field("pEapMethods", &self.pEapMethods).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_METHOD_INFO_ARRAY_EX {
+unsafe impl ::windows_core::Abi for EAP_METHOD_INFO_ARRAY_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_METHOD_INFO_ARRAY_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_INFO_ARRAY_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_INFO_ARRAY_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_METHOD_INFO_ARRAY_EX {}
@@ -1117,8 +1117,8 @@ impl ::core::default::Default for EAP_METHOD_INFO_ARRAY_EX {
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 pub struct EAP_METHOD_INFO_EX {
     pub eaptype: EAP_METHOD_TYPE,
-    pub pwszAuthorName: ::windows::core::PWSTR,
-    pub pwszFriendlyName: ::windows::core::PWSTR,
+    pub pwszAuthorName: ::windows_core::PWSTR,
+    pub pwszFriendlyName: ::windows_core::PWSTR,
     pub eapProperties: u32,
     pub pInnerMethodInfoArray: *mut EAP_METHOD_INFO_ARRAY_EX,
 }
@@ -1133,12 +1133,12 @@ impl ::core::fmt::Debug for EAP_METHOD_INFO_EX {
         f.debug_struct("EAP_METHOD_INFO_EX").field("eaptype", &self.eaptype).field("pwszAuthorName", &self.pwszAuthorName).field("pwszFriendlyName", &self.pwszFriendlyName).field("eapProperties", &self.eapProperties).field("pInnerMethodInfoArray", &self.pInnerMethodInfoArray).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_METHOD_INFO_EX {
+unsafe impl ::windows_core::Abi for EAP_METHOD_INFO_EX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_METHOD_INFO_EX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_INFO_EX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_INFO_EX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_METHOD_INFO_EX {}
@@ -1166,13 +1166,13 @@ impl ::core::clone::Clone for EAP_METHOD_PROPERTY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EAP_METHOD_PROPERTY {
+unsafe impl ::windows_core::Abi for EAP_METHOD_PROPERTY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EAP_METHOD_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_PROPERTY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_PROPERTY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1205,13 +1205,13 @@ impl ::core::fmt::Debug for EAP_METHOD_PROPERTY_ARRAY {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EAP_METHOD_PROPERTY_ARRAY {
+unsafe impl ::windows_core::Abi for EAP_METHOD_PROPERTY_ARRAY {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EAP_METHOD_PROPERTY_ARRAY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_PROPERTY_ARRAY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_PROPERTY_ARRAY>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1299,7 +1299,7 @@ impl ::core::default::Default for EAP_METHOD_PROPERTY_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EAP_METHOD_PROPERTY_TYPE {
+unsafe impl ::windows_core::Abi for EAP_METHOD_PROPERTY_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EAP_METHOD_PROPERTY_TYPE {
@@ -1324,13 +1324,13 @@ impl ::core::clone::Clone for EAP_METHOD_PROPERTY_VALUE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EAP_METHOD_PROPERTY_VALUE {
+unsafe impl ::windows_core::Abi for EAP_METHOD_PROPERTY_VALUE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EAP_METHOD_PROPERTY_VALUE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_PROPERTY_VALUE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_PROPERTY_VALUE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1363,13 +1363,13 @@ impl ::core::fmt::Debug for EAP_METHOD_PROPERTY_VALUE_BOOL {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EAP_METHOD_PROPERTY_VALUE_BOOL {
+unsafe impl ::windows_core::Abi for EAP_METHOD_PROPERTY_VALUE_BOOL {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EAP_METHOD_PROPERTY_VALUE_BOOL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_PROPERTY_VALUE_BOOL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_PROPERTY_VALUE_BOOL>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1397,12 +1397,12 @@ impl ::core::fmt::Debug for EAP_METHOD_PROPERTY_VALUE_DWORD {
         f.debug_struct("EAP_METHOD_PROPERTY_VALUE_DWORD").field("length", &self.length).field("value", &self.value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_METHOD_PROPERTY_VALUE_DWORD {
+unsafe impl ::windows_core::Abi for EAP_METHOD_PROPERTY_VALUE_DWORD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_METHOD_PROPERTY_VALUE_DWORD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_PROPERTY_VALUE_DWORD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_PROPERTY_VALUE_DWORD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_METHOD_PROPERTY_VALUE_DWORD {}
@@ -1428,12 +1428,12 @@ impl ::core::fmt::Debug for EAP_METHOD_PROPERTY_VALUE_STRING {
         f.debug_struct("EAP_METHOD_PROPERTY_VALUE_STRING").field("length", &self.length).field("value", &self.value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_METHOD_PROPERTY_VALUE_STRING {
+unsafe impl ::windows_core::Abi for EAP_METHOD_PROPERTY_VALUE_STRING {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_METHOD_PROPERTY_VALUE_STRING {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_PROPERTY_VALUE_STRING>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_PROPERTY_VALUE_STRING>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_METHOD_PROPERTY_VALUE_STRING {}
@@ -1463,7 +1463,7 @@ impl ::core::default::Default for EAP_METHOD_PROPERTY_VALUE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EAP_METHOD_PROPERTY_VALUE_TYPE {
+unsafe impl ::windows_core::Abi for EAP_METHOD_PROPERTY_VALUE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EAP_METHOD_PROPERTY_VALUE_TYPE {
@@ -1488,12 +1488,12 @@ impl ::core::fmt::Debug for EAP_METHOD_TYPE {
         f.debug_struct("EAP_METHOD_TYPE").field("eapType", &self.eapType).field("dwAuthorId", &self.dwAuthorId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_METHOD_TYPE {
+unsafe impl ::windows_core::Abi for EAP_METHOD_TYPE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_METHOD_TYPE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_TYPE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_METHOD_TYPE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_METHOD_TYPE {}
@@ -1552,12 +1552,12 @@ impl ::core::fmt::Debug for EAP_PEER_METHOD_ROUTINES {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_PEER_METHOD_ROUTINES {
+unsafe impl ::windows_core::Abi for EAP_PEER_METHOD_ROUTINES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_PEER_METHOD_ROUTINES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_PEER_METHOD_ROUTINES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_PEER_METHOD_ROUTINES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_PEER_METHOD_ROUTINES {}
@@ -1604,12 +1604,12 @@ impl ::core::fmt::Debug for EAP_TYPE {
         f.debug_struct("EAP_TYPE").field("type", &self.r#type).field("dwVendorId", &self.dwVendorId).field("dwVendorType", &self.dwVendorType).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EAP_TYPE {
+unsafe impl ::windows_core::Abi for EAP_TYPE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_TYPE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_TYPE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_TYPE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_TYPE {}
@@ -1631,12 +1631,12 @@ impl ::core::clone::Clone for EAP_UI_DATA_FORMAT {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EAP_UI_DATA_FORMAT {
+unsafe impl ::windows_core::Abi for EAP_UI_DATA_FORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EAP_UI_DATA_FORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_UI_DATA_FORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EAP_UI_DATA_FORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EAP_UI_DATA_FORMAT {}
@@ -1659,7 +1659,7 @@ pub const EAP_VALUENAME_PROPERTIES: &str = "Properties";
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 pub struct EapCertificateCredential {
     pub certHash: [u8; 20],
-    pub password: ::windows::core::PWSTR,
+    pub password: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for EapCertificateCredential {}
 impl ::core::clone::Clone for EapCertificateCredential {
@@ -1672,12 +1672,12 @@ impl ::core::fmt::Debug for EapCertificateCredential {
         f.debug_struct("EapCertificateCredential").field("certHash", &self.certHash).field("password", &self.password).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EapCertificateCredential {
+unsafe impl ::windows_core::Abi for EapCertificateCredential {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EapCertificateCredential {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapCertificateCredential>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapCertificateCredential>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EapCertificateCredential {}
@@ -1713,7 +1713,7 @@ impl ::core::default::Default for EapCode {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EapCode {
+unsafe impl ::windows_core::Abi for EapCode {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EapCode {
@@ -1733,12 +1733,12 @@ impl ::core::clone::Clone for EapCredential {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EapCredential {
+unsafe impl ::windows_core::Abi for EapCredential {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EapCredential {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapCredential>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapCredential>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EapCredential {}
@@ -1772,7 +1772,7 @@ impl ::core::default::Default for EapCredentialType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EapCredentialType {
+unsafe impl ::windows_core::Abi for EapCredentialType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EapCredentialType {
@@ -1793,12 +1793,12 @@ impl ::core::clone::Clone for EapCredentialTypeData {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for EapCredentialTypeData {
+unsafe impl ::windows_core::Abi for EapCredentialTypeData {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EapCredentialTypeData {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapCredentialTypeData>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapCredentialTypeData>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EapCredentialTypeData {}
@@ -1830,7 +1830,7 @@ impl ::core::default::Default for EapHostPeerAuthParams {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EapHostPeerAuthParams {
+unsafe impl ::windows_core::Abi for EapHostPeerAuthParams {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EapHostPeerAuthParams {
@@ -1841,12 +1841,12 @@ impl ::core::fmt::Debug for EapHostPeerAuthParams {
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EapHostPeerBeginSession<'a, Param1: ::windows::core::IntoParam<'a, EAP_METHOD_TYPE>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(dwflags: u32, eaptype: Param1, pattributearray: *const EAP_ATTRIBUTES, htokenimpersonateuser: Param3, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, dwmaxsendpacketsize: u32, pconnectionid: *const ::windows::core::GUID, func: NotificationHandler, pcontextdata: *mut ::core::ffi::c_void, psessionid: *mut u32, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
+pub unsafe fn EapHostPeerBeginSession<'a, Param1: ::windows_core::IntoParam<'a, EAP_METHOD_TYPE>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(dwflags: u32, eaptype: Param1, pattributearray: *const EAP_ATTRIBUTES, htokenimpersonateuser: Param3, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, dwmaxsendpacketsize: u32, pconnectionid: *const ::windows_core::GUID, func: NotificationHandler, pcontextdata: *mut ::core::ffi::c_void, psessionid: *mut u32, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EapHostPeerBeginSession(dwflags: u32, eaptype: EAP_METHOD_TYPE, pattributearray: *const EAP_ATTRIBUTES, htokenimpersonateuser: super::super::Foundation::HANDLE, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, dwmaxsendpacketsize: u32, pconnectionid: *const ::windows::core::GUID, func: ::windows::core::RawPtr, pcontextdata: *mut ::core::ffi::c_void, psessionid: *mut u32, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+            fn EapHostPeerBeginSession(dwflags: u32, eaptype: EAP_METHOD_TYPE, pattributearray: *const EAP_ATTRIBUTES, htokenimpersonateuser: super::super::Foundation::HANDLE, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, dwmaxsendpacketsize: u32, pconnectionid: *const ::windows_core::GUID, func: ::windows_core::RawPtr, pcontextdata: *mut ::core::ffi::c_void, psessionid: *mut u32, ppeaperror: *mut *mut EAP_ERROR) -> u32;
         }
         ::core::mem::transmute(EapHostPeerBeginSession(
             ::core::mem::transmute(dwflags),
@@ -1870,12 +1870,12 @@ pub unsafe fn EapHostPeerBeginSession<'a, Param1: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 #[inline]
-pub unsafe fn EapHostPeerClearConnection(pconnectionid: *mut ::windows::core::GUID, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
+pub unsafe fn EapHostPeerClearConnection(pconnectionid: *mut ::windows_core::GUID, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EapHostPeerClearConnection(pconnectionid: *mut ::windows::core::GUID, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+            fn EapHostPeerClearConnection(pconnectionid: *mut ::windows_core::GUID, ppeaperror: *mut *mut EAP_ERROR) -> u32;
         }
         ::core::mem::transmute(EapHostPeerClearConnection(::core::mem::transmute(pconnectionid), ::core::mem::transmute(ppeaperror)))
     }
@@ -1885,14 +1885,14 @@ pub unsafe fn EapHostPeerClearConnection(pconnectionid: *mut ::windows::core::GU
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Data_Xml_MsXml\"`, `\"Win32_System_Com\"`*"]
 #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
 #[inline]
-pub unsafe fn EapHostPeerConfigBlob2Xml<'a, Param1: ::windows::core::IntoParam<'a, EAP_METHOD_TYPE>>(dwflags: u32, eapmethodtype: Param1, pconfigin: &[u8], ppconfigdoc: *mut ::core::option::Option<super::super::Data::Xml::MsXml::IXMLDOMDocument2>, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
+pub unsafe fn EapHostPeerConfigBlob2Xml<'a, Param1: ::windows_core::IntoParam<'a, EAP_METHOD_TYPE>>(dwflags: u32, eapmethodtype: Param1, pconfigin: &[u8], ppconfigdoc: *mut ::core::option::Option<super::super::Data::Xml::MsXml::IXMLDOMDocument2>, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EapHostPeerConfigBlob2Xml(dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, dwsizeofconfigin: u32, pconfigin: *const u8, ppconfigdoc: *mut ::windows::core::RawPtr, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+            fn EapHostPeerConfigBlob2Xml(dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, dwsizeofconfigin: u32, pconfigin: *const u8, ppconfigdoc: *mut ::windows_core::RawPtr, ppeaperror: *mut *mut EAP_ERROR) -> u32;
         }
-        ::core::mem::transmute(EapHostPeerConfigBlob2Xml(::core::mem::transmute(dwflags), eapmethodtype.into_param().abi(), pconfigin.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pconfigin)), ::core::mem::transmute(ppconfigdoc), ::core::mem::transmute(ppeaperror)))
+        ::core::mem::transmute(EapHostPeerConfigBlob2Xml(::core::mem::transmute(dwflags), eapmethodtype.into_param().abi(), pconfigin.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pconfigin)), ::core::mem::transmute(ppconfigdoc), ::core::mem::transmute(ppeaperror)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1900,12 +1900,12 @@ pub unsafe fn EapHostPeerConfigBlob2Xml<'a, Param1: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Data_Xml_MsXml\"`, `\"Win32_System_Com\"`*"]
 #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
 #[inline]
-pub unsafe fn EapHostPeerConfigXml2Blob<'a, Param1: ::windows::core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMNode>>(dwflags: u32, pconfigdoc: Param1, pdwsizeofconfigout: *mut u32, ppconfigout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
+pub unsafe fn EapHostPeerConfigXml2Blob<'a, Param1: ::windows_core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMNode>>(dwflags: u32, pconfigdoc: Param1, pdwsizeofconfigout: *mut u32, ppconfigout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EapHostPeerConfigXml2Blob(dwflags: u32, pconfigdoc: ::windows::core::RawPtr, pdwsizeofconfigout: *mut u32, ppconfigout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+            fn EapHostPeerConfigXml2Blob(dwflags: u32, pconfigdoc: ::windows_core::RawPtr, pdwsizeofconfigout: *mut u32, ppconfigout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32;
         }
         ::core::mem::transmute(EapHostPeerConfigXml2Blob(::core::mem::transmute(dwflags), pconfigdoc.into_param().abi(), ::core::mem::transmute(pdwsizeofconfigout), ::core::mem::transmute(ppconfigout), ::core::mem::transmute(peapmethodtype), ::core::mem::transmute(ppeaperror)))
     }
@@ -1915,14 +1915,14 @@ pub unsafe fn EapHostPeerConfigXml2Blob<'a, Param1: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Data_Xml_MsXml\"`, `\"Win32_System_Com\"`*"]
 #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
 #[inline]
-pub unsafe fn EapHostPeerCredentialsXml2Blob<'a, Param1: ::windows::core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMNode>>(dwflags: u32, pcredentialsdoc: Param1, pconfigin: &[u8], pdwsizeofcredentialsout: *mut u32, ppcredentialsout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
+pub unsafe fn EapHostPeerCredentialsXml2Blob<'a, Param1: ::windows_core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMNode>>(dwflags: u32, pcredentialsdoc: Param1, pconfigin: &[u8], pdwsizeofcredentialsout: *mut u32, ppcredentialsout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EapHostPeerCredentialsXml2Blob(dwflags: u32, pcredentialsdoc: ::windows::core::RawPtr, dwsizeofconfigin: u32, pconfigin: *const u8, pdwsizeofcredentialsout: *mut u32, ppcredentialsout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+            fn EapHostPeerCredentialsXml2Blob(dwflags: u32, pcredentialsdoc: ::windows_core::RawPtr, dwsizeofconfigin: u32, pconfigin: *const u8, pdwsizeofcredentialsout: *mut u32, ppcredentialsout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32;
         }
-        ::core::mem::transmute(EapHostPeerCredentialsXml2Blob(::core::mem::transmute(dwflags), pcredentialsdoc.into_param().abi(), pconfigin.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pconfigin)), ::core::mem::transmute(pdwsizeofcredentialsout), ::core::mem::transmute(ppcredentialsout), ::core::mem::transmute(peapmethodtype), ::core::mem::transmute(ppeaperror)))
+        ::core::mem::transmute(EapHostPeerCredentialsXml2Blob(::core::mem::transmute(dwflags), pcredentialsdoc.into_param().abi(), pconfigin.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pconfigin)), ::core::mem::transmute(pdwsizeofcredentialsout), ::core::mem::transmute(ppcredentialsout), ::core::mem::transmute(peapmethodtype), ::core::mem::transmute(ppeaperror)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2014,12 +2014,12 @@ pub unsafe fn EapHostPeerGetAuthStatus(sessionhandle: u32, authparam: EapHostPee
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EapHostPeerGetDataToUnplumbCredentials(pconnectionidthatlastsavedcreds: *mut ::windows::core::GUID, phcredentialimpersonationtoken: *mut isize, sessionhandle: u32, ppeaperror: *mut *mut EAP_ERROR, fsavetocredman: *mut super::super::Foundation::BOOL) -> u32 {
+pub unsafe fn EapHostPeerGetDataToUnplumbCredentials(pconnectionidthatlastsavedcreds: *mut ::windows_core::GUID, phcredentialimpersonationtoken: *mut isize, sessionhandle: u32, ppeaperror: *mut *mut EAP_ERROR, fsavetocredman: *mut super::super::Foundation::BOOL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EapHostPeerGetDataToUnplumbCredentials(pconnectionidthatlastsavedcreds: *mut ::windows::core::GUID, phcredentialimpersonationtoken: *mut isize, sessionhandle: u32, ppeaperror: *mut *mut EAP_ERROR, fsavetocredman: *mut super::super::Foundation::BOOL) -> u32;
+            fn EapHostPeerGetDataToUnplumbCredentials(pconnectionidthatlastsavedcreds: *mut ::windows_core::GUID, phcredentialimpersonationtoken: *mut isize, sessionhandle: u32, ppeaperror: *mut *mut EAP_ERROR, fsavetocredman: *mut super::super::Foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(EapHostPeerGetDataToUnplumbCredentials(::core::mem::transmute(pconnectionidthatlastsavedcreds), ::core::mem::transmute(phcredentialimpersonationtoken), ::core::mem::transmute(sessionhandle), ::core::mem::transmute(ppeaperror), ::core::mem::transmute(fsavetocredman)))
     }
@@ -2028,12 +2028,12 @@ pub unsafe fn EapHostPeerGetDataToUnplumbCredentials(pconnectionidthatlastsavedc
 }
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 #[inline]
-pub unsafe fn EapHostPeerGetEncryptedPassword<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dwsizeofpassword: u32, szpassword: Param1, ppszencpassword: *mut ::windows::core::PWSTR) -> u32 {
+pub unsafe fn EapHostPeerGetEncryptedPassword<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwsizeofpassword: u32, szpassword: Param1, ppszencpassword: *mut ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EapHostPeerGetEncryptedPassword(dwsizeofpassword: u32, szpassword: ::windows::core::PCWSTR, ppszencpassword: *mut ::windows::core::PWSTR) -> u32;
+            fn EapHostPeerGetEncryptedPassword(dwsizeofpassword: u32, szpassword: ::windows_core::PCWSTR, ppszencpassword: *mut ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(EapHostPeerGetEncryptedPassword(::core::mem::transmute(dwsizeofpassword), szpassword.into_param().abi(), ::core::mem::transmute(ppszencpassword)))
     }
@@ -2043,21 +2043,21 @@ pub unsafe fn EapHostPeerGetEncryptedPassword<'a, Param1: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EapHostPeerGetIdentity<'a, Param2: ::windows::core::IntoParam<'a, EAP_METHOD_TYPE>, Param7: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(dwversion: u32, dwflags: u32, eapmethodtype: Param2, pconnectiondata: &[u8], puserdata: &[u8], htokenimpersonateuser: Param7, pfinvokeui: *mut super::super::Foundation::BOOL, pdwsizeofuserdataout: *mut u32, ppuserdataout: *mut *mut u8, ppwszidentity: *mut ::windows::core::PWSTR, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut u8) -> u32 {
+pub unsafe fn EapHostPeerGetIdentity<'a, Param2: ::windows_core::IntoParam<'a, EAP_METHOD_TYPE>, Param7: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(dwversion: u32, dwflags: u32, eapmethodtype: Param2, pconnectiondata: &[u8], puserdata: &[u8], htokenimpersonateuser: Param7, pfinvokeui: *mut super::super::Foundation::BOOL, pdwsizeofuserdataout: *mut u32, ppuserdataout: *mut *mut u8, ppwszidentity: *mut ::windows_core::PWSTR, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EapHostPeerGetIdentity(dwversion: u32, dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, htokenimpersonateuser: super::super::Foundation::HANDLE, pfinvokeui: *mut super::super::Foundation::BOOL, pdwsizeofuserdataout: *mut u32, ppuserdataout: *mut *mut u8, ppwszidentity: *mut ::windows::core::PWSTR, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut u8) -> u32;
+            fn EapHostPeerGetIdentity(dwversion: u32, dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, htokenimpersonateuser: super::super::Foundation::HANDLE, pfinvokeui: *mut super::super::Foundation::BOOL, pdwsizeofuserdataout: *mut u32, ppuserdataout: *mut *mut u8, ppwszidentity: *mut ::windows_core::PWSTR, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(EapHostPeerGetIdentity(
             ::core::mem::transmute(dwversion),
             ::core::mem::transmute(dwflags),
             eapmethodtype.into_param().abi(),
             pconnectiondata.len() as _,
-            ::core::mem::transmute(::windows::core::as_ptr_or_null(pconnectiondata)),
+            ::core::mem::transmute(::windows_core::as_ptr_or_null(pconnectiondata)),
             puserdata.len() as _,
-            ::core::mem::transmute(::windows::core::as_ptr_or_null(puserdata)),
+            ::core::mem::transmute(::windows_core::as_ptr_or_null(puserdata)),
             htokenimpersonateuser.into_param().abi(),
             ::core::mem::transmute(pfinvokeui),
             ::core::mem::transmute(pdwsizeofuserdataout),
@@ -2073,14 +2073,14 @@ pub unsafe fn EapHostPeerGetIdentity<'a, Param2: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EapHostPeerGetMethodProperties<'a, Param2: ::windows::core::IntoParam<'a, EAP_METHOD_TYPE>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(dwversion: u32, dwflags: u32, eapmethodtype: Param2, huserimpersonationtoken: Param3, pbeapconndata: &[u8], pbuserdata: &[u8], pmethodpropertyarray: *mut EAP_METHOD_PROPERTY_ARRAY, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
+pub unsafe fn EapHostPeerGetMethodProperties<'a, Param2: ::windows_core::IntoParam<'a, EAP_METHOD_TYPE>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(dwversion: u32, dwflags: u32, eapmethodtype: Param2, huserimpersonationtoken: Param3, pbeapconndata: &[u8], pbuserdata: &[u8], pmethodpropertyarray: *mut EAP_METHOD_PROPERTY_ARRAY, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn EapHostPeerGetMethodProperties(dwversion: u32, dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, huserimpersonationtoken: super::super::Foundation::HANDLE, dweapconndatasize: u32, pbeapconndata: *const u8, dwuserdatasize: u32, pbuserdata: *const u8, pmethodpropertyarray: *mut EAP_METHOD_PROPERTY_ARRAY, ppeaperror: *mut *mut EAP_ERROR) -> u32;
         }
-        ::core::mem::transmute(EapHostPeerGetMethodProperties(::core::mem::transmute(dwversion), ::core::mem::transmute(dwflags), eapmethodtype.into_param().abi(), huserimpersonationtoken.into_param().abi(), pbeapconndata.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pbeapconndata)), pbuserdata.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pbuserdata)), ::core::mem::transmute(pmethodpropertyarray), ::core::mem::transmute(ppeaperror)))
+        ::core::mem::transmute(EapHostPeerGetMethodProperties(::core::mem::transmute(dwversion), ::core::mem::transmute(dwflags), eapmethodtype.into_param().abi(), huserimpersonationtoken.into_param().abi(), pbeapconndata.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pbeapconndata)), pbuserdata.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pbuserdata)), ::core::mem::transmute(pmethodpropertyarray), ::core::mem::transmute(ppeaperror)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2173,14 +2173,14 @@ pub unsafe fn EapHostPeerInitialize() -> u32 {
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EapHostPeerInvokeConfigUI<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, EAP_METHOD_TYPE>>(hwndparent: Param0, dwflags: u32, eapmethodtype: Param2, pconfigin: &[u8], pdwsizeofconfigout: *mut u32, ppconfigout: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
+pub unsafe fn EapHostPeerInvokeConfigUI<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, EAP_METHOD_TYPE>>(hwndparent: Param0, dwflags: u32, eapmethodtype: Param2, pconfigin: &[u8], pdwsizeofconfigout: *mut u32, ppconfigout: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn EapHostPeerInvokeConfigUI(hwndparent: super::super::Foundation::HWND, dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, dwsizeofconfigin: u32, pconfigin: *const u8, pdwsizeofconfigout: *mut u32, ppconfigout: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32;
         }
-        ::core::mem::transmute(EapHostPeerInvokeConfigUI(hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), eapmethodtype.into_param().abi(), pconfigin.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pconfigin)), ::core::mem::transmute(pdwsizeofconfigout), ::core::mem::transmute(ppconfigout), ::core::mem::transmute(ppeaperror)))
+        ::core::mem::transmute(EapHostPeerInvokeConfigUI(hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), eapmethodtype.into_param().abi(), pconfigin.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pconfigin)), ::core::mem::transmute(pdwsizeofconfigout), ::core::mem::transmute(ppconfigout), ::core::mem::transmute(ppeaperror)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2188,12 +2188,12 @@ pub unsafe fn EapHostPeerInvokeConfigUI<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EapHostPeerInvokeIdentityUI<'a, Param1: ::windows::core::IntoParam<'a, EAP_METHOD_TYPE>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(dwversion: u32, eapmethodtype: Param1, dwflags: u32, hwndparent: Param3, pconnectiondata: &[u8], puserdata: &[u8], pdwsizeofuserdataout: *mut u32, ppuserdataout: *mut *mut u8, ppwszidentity: *mut ::windows::core::PWSTR, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn EapHostPeerInvokeIdentityUI<'a, Param1: ::windows_core::IntoParam<'a, EAP_METHOD_TYPE>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(dwversion: u32, eapmethodtype: Param1, dwflags: u32, hwndparent: Param3, pconnectiondata: &[u8], puserdata: &[u8], pdwsizeofuserdataout: *mut u32, ppuserdataout: *mut *mut u8, ppwszidentity: *mut ::windows_core::PWSTR, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EapHostPeerInvokeIdentityUI(dwversion: u32, eapmethodtype: EAP_METHOD_TYPE, dwflags: u32, hwndparent: super::super::Foundation::HWND, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, pdwsizeofuserdataout: *mut u32, ppuserdataout: *mut *mut u8, ppwszidentity: *mut ::windows::core::PWSTR, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut ::core::ffi::c_void) -> u32;
+            fn EapHostPeerInvokeIdentityUI(dwversion: u32, eapmethodtype: EAP_METHOD_TYPE, dwflags: u32, hwndparent: super::super::Foundation::HWND, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, pdwsizeofuserdataout: *mut u32, ppuserdataout: *mut *mut u8, ppwszidentity: *mut ::windows_core::PWSTR, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(EapHostPeerInvokeIdentityUI(
             ::core::mem::transmute(dwversion),
@@ -2201,9 +2201,9 @@ pub unsafe fn EapHostPeerInvokeIdentityUI<'a, Param1: ::windows::core::IntoParam
             ::core::mem::transmute(dwflags),
             hwndparent.into_param().abi(),
             pconnectiondata.len() as _,
-            ::core::mem::transmute(::windows::core::as_ptr_or_null(pconnectiondata)),
+            ::core::mem::transmute(::windows_core::as_ptr_or_null(pconnectiondata)),
             puserdata.len() as _,
-            ::core::mem::transmute(::windows::core::as_ptr_or_null(puserdata)),
+            ::core::mem::transmute(::windows_core::as_ptr_or_null(puserdata)),
             ::core::mem::transmute(pdwsizeofuserdataout),
             ::core::mem::transmute(ppuserdataout),
             ::core::mem::transmute(ppwszidentity),
@@ -2217,14 +2217,14 @@ pub unsafe fn EapHostPeerInvokeIdentityUI<'a, Param1: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EapHostPeerInvokeInteractiveUI<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwndparent: Param0, puicontextdata: &[u8], pdwsizeofdatafrominteractiveui: *mut u32, ppdatafrominteractiveui: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
+pub unsafe fn EapHostPeerInvokeInteractiveUI<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndparent: Param0, puicontextdata: &[u8], pdwsizeofdatafrominteractiveui: *mut u32, ppdatafrominteractiveui: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn EapHostPeerInvokeInteractiveUI(hwndparent: super::super::Foundation::HWND, dwsizeofuicontextdata: u32, puicontextdata: *const u8, pdwsizeofdatafrominteractiveui: *mut u32, ppdatafrominteractiveui: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32;
         }
-        ::core::mem::transmute(EapHostPeerInvokeInteractiveUI(hwndparent.into_param().abi(), puicontextdata.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(puicontextdata)), ::core::mem::transmute(pdwsizeofdatafrominteractiveui), ::core::mem::transmute(ppdatafrominteractiveui), ::core::mem::transmute(ppeaperror)))
+        ::core::mem::transmute(EapHostPeerInvokeInteractiveUI(hwndparent.into_param().abi(), puicontextdata.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(puicontextdata)), ::core::mem::transmute(pdwsizeofdatafrominteractiveui), ::core::mem::transmute(ppdatafrominteractiveui), ::core::mem::transmute(ppeaperror)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2274,13 +2274,13 @@ impl ::core::fmt::Debug for EapHostPeerMethodResult {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EapHostPeerMethodResult {
+unsafe impl ::windows_core::Abi for EapHostPeerMethodResult {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EapHostPeerMethodResult {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapHostPeerMethodResult>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapHostPeerMethodResult>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2312,7 +2312,7 @@ impl ::core::default::Default for EapHostPeerMethodResultReason {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EapHostPeerMethodResultReason {
+unsafe impl ::windows_core::Abi for EapHostPeerMethodResultReason {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EapHostPeerMethodResultReason {
@@ -2337,14 +2337,14 @@ pub unsafe fn EapHostPeerProcessReceivedPacket(sessionhandle: u32, cbreceivepack
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EapHostPeerQueryCredentialInputFields<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, EAP_METHOD_TYPE>>(huserimpersonationtoken: Param0, eapmethodtype: Param1, dwflags: u32, pbeapconndata: &[u8], peapconfiginputfieldarray: *mut EAP_CONFIG_INPUT_FIELD_ARRAY, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
+pub unsafe fn EapHostPeerQueryCredentialInputFields<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, EAP_METHOD_TYPE>>(huserimpersonationtoken: Param0, eapmethodtype: Param1, dwflags: u32, pbeapconndata: &[u8], peapconfiginputfieldarray: *mut EAP_CONFIG_INPUT_FIELD_ARRAY, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn EapHostPeerQueryCredentialInputFields(huserimpersonationtoken: super::super::Foundation::HANDLE, eapmethodtype: EAP_METHOD_TYPE, dwflags: u32, dweapconndatasize: u32, pbeapconndata: *const u8, peapconfiginputfieldarray: *mut EAP_CONFIG_INPUT_FIELD_ARRAY, ppeaperror: *mut *mut EAP_ERROR) -> u32;
         }
-        ::core::mem::transmute(EapHostPeerQueryCredentialInputFields(huserimpersonationtoken.into_param().abi(), eapmethodtype.into_param().abi(), ::core::mem::transmute(dwflags), pbeapconndata.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pbeapconndata)), ::core::mem::transmute(peapconfiginputfieldarray), ::core::mem::transmute(ppeaperror)))
+        ::core::mem::transmute(EapHostPeerQueryCredentialInputFields(huserimpersonationtoken.into_param().abi(), eapmethodtype.into_param().abi(), ::core::mem::transmute(dwflags), pbeapconndata.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pbeapconndata)), ::core::mem::transmute(peapconfiginputfieldarray), ::core::mem::transmute(ppeaperror)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2358,7 +2358,7 @@ pub unsafe fn EapHostPeerQueryInteractiveUIInputFields(dwversion: u32, dwflags: 
         extern "system" {
             fn EapHostPeerQueryInteractiveUIInputFields(dwversion: u32, dwflags: u32, dwsizeofuicontextdata: u32, puicontextdata: *const u8, peapinteractiveuidata: *mut EAP_INTERACTIVE_UI_DATA, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut ::core::ffi::c_void) -> u32;
         }
-        ::core::mem::transmute(EapHostPeerQueryInteractiveUIInputFields(::core::mem::transmute(dwversion), ::core::mem::transmute(dwflags), puicontextdata.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(puicontextdata)), ::core::mem::transmute(peapinteractiveuidata), ::core::mem::transmute(ppeaperror), ::core::mem::transmute(ppvreserved)))
+        ::core::mem::transmute(EapHostPeerQueryInteractiveUIInputFields(::core::mem::transmute(dwversion), ::core::mem::transmute(dwflags), puicontextdata.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(puicontextdata)), ::core::mem::transmute(peapinteractiveuidata), ::core::mem::transmute(ppeaperror), ::core::mem::transmute(ppvreserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2372,7 +2372,7 @@ pub unsafe fn EapHostPeerQueryUIBlobFromInteractiveUIInputFields(dwversion: u32,
         extern "system" {
             fn EapHostPeerQueryUIBlobFromInteractiveUIInputFields(dwversion: u32, dwflags: u32, dwsizeofuicontextdata: u32, puicontextdata: *const u8, peapinteractiveuidata: *const EAP_INTERACTIVE_UI_DATA, pdwsizeofdatafrominteractiveui: *mut u32, ppdatafrominteractiveui: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut ::core::ffi::c_void) -> u32;
         }
-        ::core::mem::transmute(EapHostPeerQueryUIBlobFromInteractiveUIInputFields(::core::mem::transmute(dwversion), ::core::mem::transmute(dwflags), puicontextdata.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(puicontextdata)), ::core::mem::transmute(peapinteractiveuidata), ::core::mem::transmute(pdwsizeofdatafrominteractiveui), ::core::mem::transmute(ppdatafrominteractiveui), ::core::mem::transmute(ppeaperror), ::core::mem::transmute(ppvreserved)))
+        ::core::mem::transmute(EapHostPeerQueryUIBlobFromInteractiveUIInputFields(::core::mem::transmute(dwversion), ::core::mem::transmute(dwflags), puicontextdata.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(puicontextdata)), ::core::mem::transmute(peapinteractiveuidata), ::core::mem::transmute(pdwsizeofdatafrominteractiveui), ::core::mem::transmute(ppdatafrominteractiveui), ::core::mem::transmute(ppeaperror), ::core::mem::transmute(ppvreserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2380,14 +2380,14 @@ pub unsafe fn EapHostPeerQueryUIBlobFromInteractiveUIInputFields(dwversion: u32,
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EapHostPeerQueryUserBlobFromCredentialInputFields<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows::core::IntoParam<'a, EAP_METHOD_TYPE>>(huserimpersonationtoken: Param0, eapmethodtype: Param1, dwflags: u32, pbeapconndata: &[u8], peapconfiginputfieldarray: *const EAP_CONFIG_INPUT_FIELD_ARRAY, pdwuserblobsize: *mut u32, ppbuserblob: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
+pub unsafe fn EapHostPeerQueryUserBlobFromCredentialInputFields<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, EAP_METHOD_TYPE>>(huserimpersonationtoken: Param0, eapmethodtype: Param1, dwflags: u32, pbeapconndata: &[u8], peapconfiginputfieldarray: *const EAP_CONFIG_INPUT_FIELD_ARRAY, pdwuserblobsize: *mut u32, ppbuserblob: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn EapHostPeerQueryUserBlobFromCredentialInputFields(huserimpersonationtoken: super::super::Foundation::HANDLE, eapmethodtype: EAP_METHOD_TYPE, dwflags: u32, dweapconndatasize: u32, pbeapconndata: *const u8, peapconfiginputfieldarray: *const EAP_CONFIG_INPUT_FIELD_ARRAY, pdwuserblobsize: *mut u32, ppbuserblob: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32;
         }
-        ::core::mem::transmute(EapHostPeerQueryUserBlobFromCredentialInputFields(huserimpersonationtoken.into_param().abi(), eapmethodtype.into_param().abi(), ::core::mem::transmute(dwflags), pbeapconndata.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pbeapconndata)), ::core::mem::transmute(peapconfiginputfieldarray), ::core::mem::transmute(pdwuserblobsize), ::core::mem::transmute(ppbuserblob), ::core::mem::transmute(ppeaperror)))
+        ::core::mem::transmute(EapHostPeerQueryUserBlobFromCredentialInputFields(huserimpersonationtoken.into_param().abi(), eapmethodtype.into_param().abi(), ::core::mem::transmute(dwflags), pbeapconndata.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pbeapconndata)), ::core::mem::transmute(peapconfiginputfieldarray), ::core::mem::transmute(pdwuserblobsize), ::core::mem::transmute(ppbuserblob), ::core::mem::transmute(ppeaperror)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2421,7 +2421,7 @@ impl ::core::default::Default for EapHostPeerResponseAction {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EapHostPeerResponseAction {
+unsafe impl ::windows_core::Abi for EapHostPeerResponseAction {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EapHostPeerResponseAction {
@@ -2490,12 +2490,12 @@ impl ::core::fmt::Debug for EapPacket {
         f.debug_struct("EapPacket").field("Code", &self.Code).field("Id", &self.Id).field("Length", &self.Length).field("Data", &self.Data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EapPacket {
+unsafe impl ::windows_core::Abi for EapPacket {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EapPacket {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapPacket>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapPacket>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EapPacket {}
@@ -2526,13 +2526,13 @@ impl ::core::fmt::Debug for EapPeerMethodOutput {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EapPeerMethodOutput {
+unsafe impl ::windows_core::Abi for EapPeerMethodOutput {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EapPeerMethodOutput {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapPeerMethodOutput>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapPeerMethodOutput>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2570,7 +2570,7 @@ impl ::core::default::Default for EapPeerMethodResponseAction {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EapPeerMethodResponseAction {
+unsafe impl ::windows_core::Abi for EapPeerMethodResponseAction {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EapPeerMethodResponseAction {
@@ -2623,13 +2623,13 @@ impl ::core::fmt::Debug for EapPeerMethodResult {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-unsafe impl ::windows::core::Abi for EapPeerMethodResult {
+unsafe impl ::windows_core::Abi for EapPeerMethodResult {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
 impl ::core::cmp::PartialEq for EapPeerMethodResult {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapPeerMethodResult>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapPeerMethodResult>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
@@ -2661,7 +2661,7 @@ impl ::core::default::Default for EapPeerMethodResultReason {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EapPeerMethodResultReason {
+unsafe impl ::windows_core::Abi for EapPeerMethodResultReason {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EapPeerMethodResultReason {
@@ -2672,7 +2672,7 @@ impl ::core::fmt::Debug for EapPeerMethodResultReason {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 pub struct EapSimCredential {
-    pub iccID: ::windows::core::PWSTR,
+    pub iccID: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for EapSimCredential {}
 impl ::core::clone::Clone for EapSimCredential {
@@ -2685,12 +2685,12 @@ impl ::core::fmt::Debug for EapSimCredential {
         f.debug_struct("EapSimCredential").field("iccID", &self.iccID).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EapSimCredential {
+unsafe impl ::windows_core::Abi for EapSimCredential {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EapSimCredential {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapSimCredential>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapSimCredential>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EapSimCredential {}
@@ -2702,8 +2702,8 @@ impl ::core::default::Default for EapSimCredential {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 pub struct EapUsernamePasswordCredential {
-    pub username: ::windows::core::PWSTR,
-    pub password: ::windows::core::PWSTR,
+    pub username: ::windows_core::PWSTR,
+    pub password: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for EapUsernamePasswordCredential {}
 impl ::core::clone::Clone for EapUsernamePasswordCredential {
@@ -2716,12 +2716,12 @@ impl ::core::fmt::Debug for EapUsernamePasswordCredential {
         f.debug_struct("EapUsernamePasswordCredential").field("username", &self.username).field("password", &self.password).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EapUsernamePasswordCredential {
+unsafe impl ::windows_core::Abi for EapUsernamePasswordCredential {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EapUsernamePasswordCredential {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapUsernamePasswordCredential>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EapUsernamePasswordCredential>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EapUsernamePasswordCredential {}
@@ -2732,105 +2732,105 @@ impl ::core::default::Default for EapUsernamePasswordCredential {
 }
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 pub const FACILITY_EAP_MESSAGE: u32 = 2114u32;
-pub const GUID_EapHost_Cause_CertStoreInaccessible: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000004);
-pub const GUID_EapHost_Cause_EapNegotiationFailed: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000001c);
-pub const GUID_EapHost_Cause_EapQecInaccessible: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000312);
-pub const GUID_EapHost_Cause_Generic_AuthFailure: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000104);
-pub const GUID_EapHost_Cause_IdentityUnknown: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000204);
-pub const GUID_EapHost_Cause_MethodDLLNotFound: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000001);
-pub const GUID_EapHost_Cause_MethodDoesNotSupportOperation: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000001e);
-pub const GUID_EapHost_Cause_Method_Config_Does_Not_Support_Sso: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xda18bd32_004f_41fa_ae08_0bc85e5845ac);
-pub const GUID_EapHost_Cause_No_SmartCardReader_Found: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000002b);
-pub const GUID_EapHost_Cause_Server_CertExpired: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000005);
-pub const GUID_EapHost_Cause_Server_CertInvalid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000006);
-pub const GUID_EapHost_Cause_Server_CertNotFound: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000007);
-pub const GUID_EapHost_Cause_Server_CertOtherError: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000108);
-pub const GUID_EapHost_Cause_Server_CertRevoked: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000008);
-pub const GUID_EapHost_Cause_Server_Root_CertNameRequired: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000012);
-pub const GUID_EapHost_Cause_Server_Root_CertNotFound: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000112);
-pub const GUID_EapHost_Cause_SimNotValid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000304);
-pub const GUID_EapHost_Cause_ThirdPartyMethod_Host_Reset: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000212);
-pub const GUID_EapHost_Cause_User_Account_OtherProblem: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000010e);
-pub const GUID_EapHost_Cause_User_CertExpired: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000009);
-pub const GUID_EapHost_Cause_User_CertInvalid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000000a);
-pub const GUID_EapHost_Cause_User_CertNotFound: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000000b);
-pub const GUID_EapHost_Cause_User_CertOtherError: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000000c);
-pub const GUID_EapHost_Cause_User_CertRejected: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000000d);
-pub const GUID_EapHost_Cause_User_CertRevoked: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000000e);
-pub const GUID_EapHost_Cause_User_CredsRejected: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000020e);
-pub const GUID_EapHost_Cause_User_Root_CertExpired: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000000f);
-pub const GUID_EapHost_Cause_User_Root_CertInvalid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000010);
-pub const GUID_EapHost_Cause_User_Root_CertNotFound: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000011);
-pub const GUID_EapHost_Cause_XmlMalformed: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000001d);
-pub const GUID_EapHost_Default: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x00000000_0000_0000_0000_000000000000);
-pub const GUID_EapHost_Help_ObtainingCerts: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf535eea3_1bdd_46ca_a2fc_a6655939b7e8);
-pub const GUID_EapHost_Help_Troubleshooting: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x33307acf_0698_41ba_b014_ea0a2eb8d0a8);
-pub const GUID_EapHost_Repair_ContactAdmin_AuthFailure: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000001f);
-pub const GUID_EapHost_Repair_ContactAdmin_CertNameAbsent: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000029);
-pub const GUID_EapHost_Repair_ContactAdmin_CertStoreInaccessible: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000024);
-pub const GUID_EapHost_Repair_ContactAdmin_IdentityUnknown: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000020);
-pub const GUID_EapHost_Repair_ContactAdmin_InvalidUserAccount: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000025);
-pub const GUID_EapHost_Repair_ContactAdmin_InvalidUserCert: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000002c);
-pub const GUID_EapHost_Repair_ContactAdmin_MethodNotFound: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000022);
-pub const GUID_EapHost_Repair_ContactAdmin_NegotiationFailed: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000021);
-pub const GUID_EapHost_Repair_ContactAdmin_NoSmartCardReader: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000002a);
-pub const GUID_EapHost_Repair_ContactAdmin_RootCertInvalid: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000026);
-pub const GUID_EapHost_Repair_ContactAdmin_RootCertNotFound: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000027);
-pub const GUID_EapHost_Repair_ContactAdmin_RootExpired: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000028);
-pub const GUID_EapHost_Repair_ContactSysadmin: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000002);
-pub const GUID_EapHost_Repair_Method_Not_Support_Sso: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000002d);
-pub const GUID_EapHost_Repair_No_ValidSim_Found: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000002e);
-pub const GUID_EapHost_Repair_RestartNap: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000023);
-pub const GUID_EapHost_Repair_Retry_Authentication: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000011b);
-pub const GUID_EapHost_Repair_Server_ClientSelectServerCert: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000018);
-pub const GUID_EapHost_Repair_User_AuthFailure: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000019);
-pub const GUID_EapHost_Repair_User_GetNewCert: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000001a);
-pub const GUID_EapHost_Repair_User_SelectValidCert: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000001b);
+pub const GUID_EapHost_Cause_CertStoreInaccessible: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000004);
+pub const GUID_EapHost_Cause_EapNegotiationFailed: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000001c);
+pub const GUID_EapHost_Cause_EapQecInaccessible: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000312);
+pub const GUID_EapHost_Cause_Generic_AuthFailure: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000104);
+pub const GUID_EapHost_Cause_IdentityUnknown: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000204);
+pub const GUID_EapHost_Cause_MethodDLLNotFound: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000001);
+pub const GUID_EapHost_Cause_MethodDoesNotSupportOperation: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000001e);
+pub const GUID_EapHost_Cause_Method_Config_Does_Not_Support_Sso: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xda18bd32_004f_41fa_ae08_0bc85e5845ac);
+pub const GUID_EapHost_Cause_No_SmartCardReader_Found: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000002b);
+pub const GUID_EapHost_Cause_Server_CertExpired: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000005);
+pub const GUID_EapHost_Cause_Server_CertInvalid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000006);
+pub const GUID_EapHost_Cause_Server_CertNotFound: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000007);
+pub const GUID_EapHost_Cause_Server_CertOtherError: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000108);
+pub const GUID_EapHost_Cause_Server_CertRevoked: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000008);
+pub const GUID_EapHost_Cause_Server_Root_CertNameRequired: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000012);
+pub const GUID_EapHost_Cause_Server_Root_CertNotFound: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000112);
+pub const GUID_EapHost_Cause_SimNotValid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000304);
+pub const GUID_EapHost_Cause_ThirdPartyMethod_Host_Reset: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000212);
+pub const GUID_EapHost_Cause_User_Account_OtherProblem: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000010e);
+pub const GUID_EapHost_Cause_User_CertExpired: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000009);
+pub const GUID_EapHost_Cause_User_CertInvalid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000000a);
+pub const GUID_EapHost_Cause_User_CertNotFound: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000000b);
+pub const GUID_EapHost_Cause_User_CertOtherError: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000000c);
+pub const GUID_EapHost_Cause_User_CertRejected: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000000d);
+pub const GUID_EapHost_Cause_User_CertRevoked: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000000e);
+pub const GUID_EapHost_Cause_User_CredsRejected: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000020e);
+pub const GUID_EapHost_Cause_User_Root_CertExpired: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000000f);
+pub const GUID_EapHost_Cause_User_Root_CertInvalid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000010);
+pub const GUID_EapHost_Cause_User_Root_CertNotFound: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000011);
+pub const GUID_EapHost_Cause_XmlMalformed: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000001d);
+pub const GUID_EapHost_Default: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x00000000_0000_0000_0000_000000000000);
+pub const GUID_EapHost_Help_ObtainingCerts: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf535eea3_1bdd_46ca_a2fc_a6655939b7e8);
+pub const GUID_EapHost_Help_Troubleshooting: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x33307acf_0698_41ba_b014_ea0a2eb8d0a8);
+pub const GUID_EapHost_Repair_ContactAdmin_AuthFailure: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000001f);
+pub const GUID_EapHost_Repair_ContactAdmin_CertNameAbsent: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000029);
+pub const GUID_EapHost_Repair_ContactAdmin_CertStoreInaccessible: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000024);
+pub const GUID_EapHost_Repair_ContactAdmin_IdentityUnknown: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000020);
+pub const GUID_EapHost_Repair_ContactAdmin_InvalidUserAccount: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000025);
+pub const GUID_EapHost_Repair_ContactAdmin_InvalidUserCert: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000002c);
+pub const GUID_EapHost_Repair_ContactAdmin_MethodNotFound: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000022);
+pub const GUID_EapHost_Repair_ContactAdmin_NegotiationFailed: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000021);
+pub const GUID_EapHost_Repair_ContactAdmin_NoSmartCardReader: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000002a);
+pub const GUID_EapHost_Repair_ContactAdmin_RootCertInvalid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000026);
+pub const GUID_EapHost_Repair_ContactAdmin_RootCertNotFound: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000027);
+pub const GUID_EapHost_Repair_ContactAdmin_RootExpired: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000028);
+pub const GUID_EapHost_Repair_ContactSysadmin: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000002);
+pub const GUID_EapHost_Repair_Method_Not_Support_Sso: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000002d);
+pub const GUID_EapHost_Repair_No_ValidSim_Found: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000002e);
+pub const GUID_EapHost_Repair_RestartNap: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000023);
+pub const GUID_EapHost_Repair_Retry_Authentication: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000011b);
+pub const GUID_EapHost_Repair_Server_ClientSelectServerCert: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000018);
+pub const GUID_EapHost_Repair_User_AuthFailure: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d800000019);
+pub const GUID_EapHost_Repair_User_GetNewCert: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000001a);
+pub const GUID_EapHost_Repair_User_SelectValidCert: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9612fc67_6150_4209_a85e_a8d80000001b);
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 #[repr(transparent)]
-pub struct IAccountingProviderConfig(::windows::core::IUnknown);
+pub struct IAccountingProviderConfig(::windows_core::IUnknown);
 impl IAccountingProviderConfig {
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Initialize<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszmachinename: Param0) -> ::windows::core::Result<usize> {
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszmachinename: Param0) -> ::windows_core::Result<usize> {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
-        (::windows::core::Interface::vtable(self).Initialize)(::windows::core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
+        (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Uninitialize(&self, uconnectionparam: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Uninitialize)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam)).ok()
+    pub unsafe fn Uninitialize(&self, uconnectionparam: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Uninitialize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Configure<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, uconnectionparam: usize, hwnd: Param1, dwflags: u32, ureserved1: usize, ureserved2: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Configure)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
+    pub unsafe fn Configure<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, uconnectionparam: usize, hwnd: Param1, dwflags: u32, ureserved1: usize, ureserved2: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Configure)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Activate(&self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Activate)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
+    pub unsafe fn Activate(&self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Activate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Deactivate(&self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Deactivate)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
+    pub unsafe fn Deactivate(&self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Deactivate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
     }
 }
-impl ::core::convert::From<IAccountingProviderConfig> for ::windows::core::IUnknown {
+impl ::core::convert::From<IAccountingProviderConfig> for ::windows_core::IUnknown {
     fn from(value: IAccountingProviderConfig) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IAccountingProviderConfig> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IAccountingProviderConfig> for ::windows_core::IUnknown {
     fn from(value: &IAccountingProviderConfig) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IAccountingProviderConfig {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IAccountingProviderConfig {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IAccountingProviderConfig {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IAccountingProviderConfig {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IAccountingProviderConfig {
@@ -2849,68 +2849,68 @@ impl ::core::fmt::Debug for IAccountingProviderConfig {
         f.debug_tuple("IAccountingProviderConfig").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IAccountingProviderConfig {
+unsafe impl ::windows_core::Interface for IAccountingProviderConfig {
     type Vtable = IAccountingProviderConfig_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x66a2db18_d706_11d0_a37b_00c04fc9da04);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x66a2db18_d706_11d0_a37b_00c04fc9da04);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAccountingProviderConfig_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmachinename: ::windows::core::PCWSTR, puconnectionparam: *mut usize) -> ::windows::core::HRESULT,
-    pub Uninitialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmachinename: ::windows_core::PCWSTR, puconnectionparam: *mut usize) -> ::windows_core::HRESULT,
+    pub Uninitialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub Configure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, dwflags: u32, ureserved1: usize, ureserved2: usize) -> ::windows::core::HRESULT,
+    pub Configure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, dwflags: u32, ureserved1: usize, ureserved2: usize) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Configure: usize,
-    pub Activate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows::core::HRESULT,
-    pub Deactivate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows::core::HRESULT,
+    pub Activate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_core::HRESULT,
+    pub Deactivate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 #[repr(transparent)]
-pub struct IAuthenticationProviderConfig(::windows::core::IUnknown);
+pub struct IAuthenticationProviderConfig(::windows_core::IUnknown);
 impl IAuthenticationProviderConfig {
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Initialize<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszmachinename: Param0) -> ::windows::core::Result<usize> {
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszmachinename: Param0) -> ::windows_core::Result<usize> {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
-        (::windows::core::Interface::vtable(self).Initialize)(::windows::core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
+        (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Uninitialize(&self, uconnectionparam: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Uninitialize)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam)).ok()
+    pub unsafe fn Uninitialize(&self, uconnectionparam: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Uninitialize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Configure<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, uconnectionparam: usize, hwnd: Param1, dwflags: u32, ureserved1: usize, ureserved2: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Configure)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
+    pub unsafe fn Configure<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, uconnectionparam: usize, hwnd: Param1, dwflags: u32, ureserved1: usize, ureserved2: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Configure)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Activate(&self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Activate)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
+    pub unsafe fn Activate(&self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Activate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Deactivate(&self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Deactivate)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
+    pub unsafe fn Deactivate(&self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Deactivate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uconnectionparam), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
     }
 }
-impl ::core::convert::From<IAuthenticationProviderConfig> for ::windows::core::IUnknown {
+impl ::core::convert::From<IAuthenticationProviderConfig> for ::windows_core::IUnknown {
     fn from(value: IAuthenticationProviderConfig) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IAuthenticationProviderConfig> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IAuthenticationProviderConfig> for ::windows_core::IUnknown {
     fn from(value: &IAuthenticationProviderConfig) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IAuthenticationProviderConfig {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IAuthenticationProviderConfig {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IAuthenticationProviderConfig {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IAuthenticationProviderConfig {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IAuthenticationProviderConfig {
@@ -2929,70 +2929,70 @@ impl ::core::fmt::Debug for IAuthenticationProviderConfig {
         f.debug_tuple("IAuthenticationProviderConfig").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IAuthenticationProviderConfig {
+unsafe impl ::windows_core::Interface for IAuthenticationProviderConfig {
     type Vtable = IAuthenticationProviderConfig_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x66a2db17_d706_11d0_a37b_00c04fc9da04);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x66a2db17_d706_11d0_a37b_00c04fc9da04);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAuthenticationProviderConfig_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmachinename: ::windows::core::PCWSTR, puconnectionparam: *mut usize) -> ::windows::core::HRESULT,
-    pub Uninitialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmachinename: ::windows_core::PCWSTR, puconnectionparam: *mut usize) -> ::windows_core::HRESULT,
+    pub Uninitialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub Configure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, dwflags: u32, ureserved1: usize, ureserved2: usize) -> ::windows::core::HRESULT,
+    pub Configure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, dwflags: u32, ureserved1: usize, ureserved2: usize) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Configure: usize,
-    pub Activate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows::core::HRESULT,
-    pub Deactivate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows::core::HRESULT,
+    pub Activate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_core::HRESULT,
+    pub Deactivate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 #[repr(transparent)]
-pub struct IEAPProviderConfig(::windows::core::IUnknown);
+pub struct IEAPProviderConfig(::windows_core::IUnknown);
 impl IEAPProviderConfig {
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Initialize<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszmachinename: Param0, dweaptypeid: u32) -> ::windows::core::Result<usize> {
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszmachinename: Param0, dweaptypeid: u32) -> ::windows_core::Result<usize> {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
-        (::windows::core::Interface::vtable(self).Initialize)(::windows::core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
+        (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Uninitialize(&self, dweaptypeid: u32, uconnectionparam: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).Uninitialize)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam)).ok()
+    pub unsafe fn Uninitialize(&self, dweaptypeid: u32, uconnectionparam: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).Uninitialize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ServerInvokeConfigUI<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwnd: Param2, ureserved1: usize, ureserved2: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ServerInvokeConfigUI)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
+    pub unsafe fn ServerInvokeConfigUI<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwnd: Param2, ureserved1: usize, ureserved2: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ServerInvokeConfigUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RouterInvokeConfigUI<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: Param2, dwflags: u32, pconnectiondatain: &[u8], ppconnectiondataout: *mut *mut u8, pdwsizeofconnectiondataout: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).RouterInvokeConfigUI)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows::core::as_ptr_or_null(pconnectiondatain)), pconnectiondatain.len() as _, ::core::mem::transmute(ppconnectiondataout), ::core::mem::transmute(pdwsizeofconnectiondataout)).ok()
+    pub unsafe fn RouterInvokeConfigUI<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: Param2, dwflags: u32, pconnectiondatain: &[u8], ppconnectiondataout: *mut *mut u8, pdwsizeofconnectiondataout: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).RouterInvokeConfigUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows_core::as_ptr_or_null(pconnectiondatain)), pconnectiondatain.len() as _, ::core::mem::transmute(ppconnectiondataout), ::core::mem::transmute(pdwsizeofconnectiondataout)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RouterInvokeCredentialsUI<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: Param2, dwflags: u32, pconnectiondatain: &[u8], puserdatain: &[u8], ppuserdataout: *mut *mut u8, pdwsizeofuserdataout: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).RouterInvokeCredentialsUI)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows::core::as_ptr_or_null(pconnectiondatain)), pconnectiondatain.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(puserdatain)), puserdatain.len() as _, ::core::mem::transmute(ppuserdataout), ::core::mem::transmute(pdwsizeofuserdataout)).ok()
+    pub unsafe fn RouterInvokeCredentialsUI<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: Param2, dwflags: u32, pconnectiondatain: &[u8], puserdatain: &[u8], ppuserdataout: *mut *mut u8, pdwsizeofuserdataout: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).RouterInvokeCredentialsUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows_core::as_ptr_or_null(pconnectiondatain)), pconnectiondatain.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(puserdatain)), puserdatain.len() as _, ::core::mem::transmute(ppuserdataout), ::core::mem::transmute(pdwsizeofuserdataout)).ok()
     }
 }
-impl ::core::convert::From<IEAPProviderConfig> for ::windows::core::IUnknown {
+impl ::core::convert::From<IEAPProviderConfig> for ::windows_core::IUnknown {
     fn from(value: IEAPProviderConfig) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IEAPProviderConfig> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IEAPProviderConfig> for ::windows_core::IUnknown {
     fn from(value: &IEAPProviderConfig) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IEAPProviderConfig {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IEAPProviderConfig {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IEAPProviderConfig {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IEAPProviderConfig {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IEAPProviderConfig {
@@ -3011,85 +3011,85 @@ impl ::core::fmt::Debug for IEAPProviderConfig {
         f.debug_tuple("IEAPProviderConfig").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IEAPProviderConfig {
+unsafe impl ::windows_core::Interface for IEAPProviderConfig {
     type Vtable = IEAPProviderConfig_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x66a2db19_d706_11d0_a37b_00c04fc9da04);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x66a2db19_d706_11d0_a37b_00c04fc9da04);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IEAPProviderConfig_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
-    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmachinename: ::windows::core::PCWSTR, dweaptypeid: u32, puconnectionparam: *mut usize) -> ::windows::core::HRESULT,
-    pub Uninitialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, uconnectionparam: usize) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IUnknownVtbl,
+    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmachinename: ::windows_core::PCWSTR, dweaptypeid: u32, puconnectionparam: *mut usize) -> ::windows_core::HRESULT,
+    pub Uninitialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, uconnectionparam: usize) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Foundation")]
-    pub ServerInvokeConfigUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, ureserved1: usize, ureserved2: usize) -> ::windows::core::HRESULT,
+    pub ServerInvokeConfigUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, ureserved1: usize, ureserved2: usize) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ServerInvokeConfigUI: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub RouterInvokeConfigUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, uconnectionparam: usize, hwndparent: super::super::Foundation::HWND, dwflags: u32, pconnectiondatain: *const u8, dwsizeofconnectiondatain: u32, ppconnectiondataout: *mut *mut u8, pdwsizeofconnectiondataout: *mut u32) -> ::windows::core::HRESULT,
+    pub RouterInvokeConfigUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, uconnectionparam: usize, hwndparent: super::super::Foundation::HWND, dwflags: u32, pconnectiondatain: *const u8, dwsizeofconnectiondatain: u32, ppconnectiondataout: *mut *mut u8, pdwsizeofconnectiondataout: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     RouterInvokeConfigUI: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub RouterInvokeCredentialsUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, uconnectionparam: usize, hwndparent: super::super::Foundation::HWND, dwflags: u32, pconnectiondatain: *const u8, dwsizeofconnectiondatain: u32, puserdatain: *const u8, dwsizeofuserdatain: u32, ppuserdataout: *mut *mut u8, pdwsizeofuserdataout: *mut u32) -> ::windows::core::HRESULT,
+    pub RouterInvokeCredentialsUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, uconnectionparam: usize, hwndparent: super::super::Foundation::HWND, dwflags: u32, pconnectiondatain: *const u8, dwsizeofconnectiondatain: u32, puserdatain: *const u8, dwsizeofuserdatain: u32, ppuserdataout: *mut *mut u8, pdwsizeofuserdataout: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     RouterInvokeCredentialsUI: usize,
 }
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 #[repr(transparent)]
-pub struct IEAPProviderConfig2(::windows::core::IUnknown);
+pub struct IEAPProviderConfig2(::windows_core::IUnknown);
 impl IEAPProviderConfig2 {
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Initialize<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszmachinename: Param0, dweaptypeid: u32) -> ::windows::core::Result<usize> {
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszmachinename: Param0, dweaptypeid: u32) -> ::windows_core::Result<usize> {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
-        (::windows::core::Interface::vtable(self).base__.Initialize)(::windows::core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
+        (::windows_core::Interface::vtable(self).base__.Initialize)(::windows_core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Uninitialize(&self, dweaptypeid: u32, uconnectionparam: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.Uninitialize)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam)).ok()
+    pub unsafe fn Uninitialize(&self, dweaptypeid: u32, uconnectionparam: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.Uninitialize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ServerInvokeConfigUI<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwnd: Param2, ureserved1: usize, ureserved2: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.ServerInvokeConfigUI)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
+    pub unsafe fn ServerInvokeConfigUI<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwnd: Param2, ureserved1: usize, ureserved2: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.ServerInvokeConfigUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RouterInvokeConfigUI<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: Param2, dwflags: u32, pconnectiondatain: &[u8], ppconnectiondataout: *mut *mut u8, pdwsizeofconnectiondataout: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.RouterInvokeConfigUI)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows::core::as_ptr_or_null(pconnectiondatain)), pconnectiondatain.len() as _, ::core::mem::transmute(ppconnectiondataout), ::core::mem::transmute(pdwsizeofconnectiondataout)).ok()
+    pub unsafe fn RouterInvokeConfigUI<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: Param2, dwflags: u32, pconnectiondatain: &[u8], ppconnectiondataout: *mut *mut u8, pdwsizeofconnectiondataout: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.RouterInvokeConfigUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows_core::as_ptr_or_null(pconnectiondatain)), pconnectiondatain.len() as _, ::core::mem::transmute(ppconnectiondataout), ::core::mem::transmute(pdwsizeofconnectiondataout)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RouterInvokeCredentialsUI<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: Param2, dwflags: u32, pconnectiondatain: &[u8], puserdatain: &[u8], ppuserdataout: *mut *mut u8, pdwsizeofuserdataout: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.RouterInvokeCredentialsUI)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows::core::as_ptr_or_null(pconnectiondatain)), pconnectiondatain.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(puserdatain)), puserdatain.len() as _, ::core::mem::transmute(ppuserdataout), ::core::mem::transmute(pdwsizeofuserdataout)).ok()
+    pub unsafe fn RouterInvokeCredentialsUI<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: Param2, dwflags: u32, pconnectiondatain: &[u8], puserdatain: &[u8], ppuserdataout: *mut *mut u8, pdwsizeofuserdataout: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.RouterInvokeCredentialsUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows_core::as_ptr_or_null(pconnectiondatain)), pconnectiondatain.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(puserdatain)), puserdatain.len() as _, ::core::mem::transmute(ppuserdataout), ::core::mem::transmute(pdwsizeofuserdataout)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ServerInvokeConfigUI2<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwnd: Param2, pconfigdatain: *const u8, dwsizeofconfigdatain: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ServerInvokeConfigUI2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(pconfigdatain), ::core::mem::transmute(dwsizeofconfigdatain), ::core::mem::transmute(ppconfigdataout), ::core::mem::transmute(pdwsizeofconfigdataout)).ok()
+    pub unsafe fn ServerInvokeConfigUI2<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwnd: Param2, pconfigdatain: *const u8, dwsizeofconfigdatain: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ServerInvokeConfigUI2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(pconfigdatain), ::core::mem::transmute(dwsizeofconfigdatain), ::core::mem::transmute(ppconfigdataout), ::core::mem::transmute(pdwsizeofconfigdataout)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn GetGlobalConfig(&self, dweaptypeid: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).GetGlobalConfig)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(ppconfigdataout), ::core::mem::transmute(pdwsizeofconfigdataout)).ok()
+    pub unsafe fn GetGlobalConfig(&self, dweaptypeid: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).GetGlobalConfig)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(ppconfigdataout), ::core::mem::transmute(pdwsizeofconfigdataout)).ok()
     }
 }
-impl ::core::convert::From<IEAPProviderConfig2> for ::windows::core::IUnknown {
+impl ::core::convert::From<IEAPProviderConfig2> for ::windows_core::IUnknown {
     fn from(value: IEAPProviderConfig2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IEAPProviderConfig2> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IEAPProviderConfig2> for ::windows_core::IUnknown {
     fn from(value: &IEAPProviderConfig2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IEAPProviderConfig2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IEAPProviderConfig2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IEAPProviderConfig2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IEAPProviderConfig2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IEAPProviderConfig2> for IEAPProviderConfig {
@@ -3102,14 +3102,14 @@ impl ::core::convert::From<&IEAPProviderConfig2> for IEAPProviderConfig {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IEAPProviderConfig> for IEAPProviderConfig2 {
-    fn into_param(self) -> ::windows::core::Param<'a, IEAPProviderConfig> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IEAPProviderConfig> for IEAPProviderConfig2 {
+    fn into_param(self) -> ::windows_core::Param<'a, IEAPProviderConfig> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IEAPProviderConfig> for &'a IEAPProviderConfig2 {
-    fn into_param(self) -> ::windows::core::Param<'a, IEAPProviderConfig> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IEAPProviderConfig> for &'a IEAPProviderConfig2 {
+    fn into_param(self) -> ::windows_core::Param<'a, IEAPProviderConfig> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IEAPProviderConfig2 {
@@ -3128,81 +3128,81 @@ impl ::core::fmt::Debug for IEAPProviderConfig2 {
         f.debug_tuple("IEAPProviderConfig2").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IEAPProviderConfig2 {
+unsafe impl ::windows_core::Interface for IEAPProviderConfig2 {
     type Vtable = IEAPProviderConfig2_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd565917a_85c4_4466_856e_671c3742ea9a);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd565917a_85c4_4466_856e_671c3742ea9a);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IEAPProviderConfig2_Vtbl {
     pub base__: IEAPProviderConfig_Vtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub ServerInvokeConfigUI2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, pconfigdatain: *const u8, dwsizeofconfigdatain: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows::core::HRESULT,
+    pub ServerInvokeConfigUI2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, pconfigdatain: *const u8, dwsizeofconfigdatain: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ServerInvokeConfigUI2: usize,
-    pub GetGlobalConfig: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows::core::HRESULT,
+    pub GetGlobalConfig: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 #[repr(transparent)]
-pub struct IEAPProviderConfig3(::windows::core::IUnknown);
+pub struct IEAPProviderConfig3(::windows_core::IUnknown);
 impl IEAPProviderConfig3 {
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Initialize<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(&self, pszmachinename: Param0, dweaptypeid: u32) -> ::windows::core::Result<usize> {
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszmachinename: Param0, dweaptypeid: u32) -> ::windows_core::Result<usize> {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
-        (::windows::core::Interface::vtable(self).base__.base__.Initialize)(::windows::core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
+        (::windows_core::Interface::vtable(self).base__.base__.Initialize)(::windows_core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn Uninitialize(&self, dweaptypeid: u32, uconnectionparam: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.Uninitialize)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam)).ok()
+    pub unsafe fn Uninitialize(&self, dweaptypeid: u32, uconnectionparam: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.Uninitialize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ServerInvokeConfigUI<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwnd: Param2, ureserved1: usize, ureserved2: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.ServerInvokeConfigUI)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
+    pub unsafe fn ServerInvokeConfigUI<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwnd: Param2, ureserved1: usize, ureserved2: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.ServerInvokeConfigUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(ureserved1), ::core::mem::transmute(ureserved2)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RouterInvokeConfigUI<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: Param2, dwflags: u32, pconnectiondatain: &[u8], ppconnectiondataout: *mut *mut u8, pdwsizeofconnectiondataout: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.RouterInvokeConfigUI)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows::core::as_ptr_or_null(pconnectiondatain)), pconnectiondatain.len() as _, ::core::mem::transmute(ppconnectiondataout), ::core::mem::transmute(pdwsizeofconnectiondataout)).ok()
+    pub unsafe fn RouterInvokeConfigUI<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: Param2, dwflags: u32, pconnectiondatain: &[u8], ppconnectiondataout: *mut *mut u8, pdwsizeofconnectiondataout: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.RouterInvokeConfigUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows_core::as_ptr_or_null(pconnectiondatain)), pconnectiondatain.len() as _, ::core::mem::transmute(ppconnectiondataout), ::core::mem::transmute(pdwsizeofconnectiondataout)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RouterInvokeCredentialsUI<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: Param2, dwflags: u32, pconnectiondatain: &[u8], puserdatain: &[u8], ppuserdataout: *mut *mut u8, pdwsizeofuserdataout: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.base__.RouterInvokeCredentialsUI)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows::core::as_ptr_or_null(pconnectiondatain)), pconnectiondatain.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(puserdatain)), puserdatain.len() as _, ::core::mem::transmute(ppuserdataout), ::core::mem::transmute(pdwsizeofuserdataout)).ok()
+    pub unsafe fn RouterInvokeCredentialsUI<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: Param2, dwflags: u32, pconnectiondatain: &[u8], puserdatain: &[u8], ppuserdataout: *mut *mut u8, pdwsizeofuserdataout: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.base__.RouterInvokeCredentialsUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows_core::as_ptr_or_null(pconnectiondatain)), pconnectiondatain.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(puserdatain)), puserdatain.len() as _, ::core::mem::transmute(ppuserdataout), ::core::mem::transmute(pdwsizeofuserdataout)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ServerInvokeConfigUI2<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwnd: Param2, pconfigdatain: *const u8, dwsizeofconfigdatain: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.ServerInvokeConfigUI2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(pconfigdatain), ::core::mem::transmute(dwsizeofconfigdatain), ::core::mem::transmute(ppconfigdataout), ::core::mem::transmute(pdwsizeofconfigdataout)).ok()
+    pub unsafe fn ServerInvokeConfigUI2<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwnd: Param2, pconfigdatain: *const u8, dwsizeofconfigdatain: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.ServerInvokeConfigUI2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(pconfigdatain), ::core::mem::transmute(dwsizeofconfigdatain), ::core::mem::transmute(ppconfigdataout), ::core::mem::transmute(pdwsizeofconfigdataout)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-    pub unsafe fn GetGlobalConfig(&self, dweaptypeid: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).base__.GetGlobalConfig)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(ppconfigdataout), ::core::mem::transmute(pdwsizeofconfigdataout)).ok()
+    pub unsafe fn GetGlobalConfig(&self, dweaptypeid: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).base__.GetGlobalConfig)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(ppconfigdataout), ::core::mem::transmute(pdwsizeofconfigdataout)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ServerInvokeCertificateConfigUI<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwnd: Param2, pconfigdatain: *const u8, dwsizeofconfigdatain: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32, ureserved: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).ServerInvokeCertificateConfigUI)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(pconfigdatain), ::core::mem::transmute(dwsizeofconfigdatain), ::core::mem::transmute(ppconfigdataout), ::core::mem::transmute(pdwsizeofconfigdataout), ::core::mem::transmute(ureserved)).ok()
+    pub unsafe fn ServerInvokeCertificateConfigUI<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, dweaptypeid: u32, uconnectionparam: usize, hwnd: Param2, pconfigdatain: *const u8, dwsizeofconfigdatain: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32, ureserved: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).ServerInvokeCertificateConfigUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dweaptypeid), ::core::mem::transmute(uconnectionparam), hwnd.into_param().abi(), ::core::mem::transmute(pconfigdatain), ::core::mem::transmute(dwsizeofconfigdatain), ::core::mem::transmute(ppconfigdataout), ::core::mem::transmute(pdwsizeofconfigdataout), ::core::mem::transmute(ureserved)).ok()
     }
 }
-impl ::core::convert::From<IEAPProviderConfig3> for ::windows::core::IUnknown {
+impl ::core::convert::From<IEAPProviderConfig3> for ::windows_core::IUnknown {
     fn from(value: IEAPProviderConfig3) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IEAPProviderConfig3> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IEAPProviderConfig3> for ::windows_core::IUnknown {
     fn from(value: &IEAPProviderConfig3) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IEAPProviderConfig3 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IEAPProviderConfig3 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IEAPProviderConfig3 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IEAPProviderConfig3 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IEAPProviderConfig3> for IEAPProviderConfig {
@@ -3215,14 +3215,14 @@ impl ::core::convert::From<&IEAPProviderConfig3> for IEAPProviderConfig {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IEAPProviderConfig> for IEAPProviderConfig3 {
-    fn into_param(self) -> ::windows::core::Param<'a, IEAPProviderConfig> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IEAPProviderConfig> for IEAPProviderConfig3 {
+    fn into_param(self) -> ::windows_core::Param<'a, IEAPProviderConfig> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IEAPProviderConfig> for &'a IEAPProviderConfig3 {
-    fn into_param(self) -> ::windows::core::Param<'a, IEAPProviderConfig> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IEAPProviderConfig> for &'a IEAPProviderConfig3 {
+    fn into_param(self) -> ::windows_core::Param<'a, IEAPProviderConfig> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::convert::From<IEAPProviderConfig3> for IEAPProviderConfig2 {
@@ -3235,14 +3235,14 @@ impl ::core::convert::From<&IEAPProviderConfig3> for IEAPProviderConfig2 {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IEAPProviderConfig2> for IEAPProviderConfig3 {
-    fn into_param(self) -> ::windows::core::Param<'a, IEAPProviderConfig2> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IEAPProviderConfig2> for IEAPProviderConfig3 {
+    fn into_param(self) -> ::windows_core::Param<'a, IEAPProviderConfig2> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, IEAPProviderConfig2> for &'a IEAPProviderConfig3 {
-    fn into_param(self) -> ::windows::core::Param<'a, IEAPProviderConfig2> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, IEAPProviderConfig2> for &'a IEAPProviderConfig3 {
+    fn into_param(self) -> ::windows_core::Param<'a, IEAPProviderConfig2> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IEAPProviderConfig3 {
@@ -3261,52 +3261,52 @@ impl ::core::fmt::Debug for IEAPProviderConfig3 {
         f.debug_tuple("IEAPProviderConfig3").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IEAPProviderConfig3 {
+unsafe impl ::windows_core::Interface for IEAPProviderConfig3 {
     type Vtable = IEAPProviderConfig3_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb78ecd12_68bb_4f86_9bf0_8438dd3be982);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb78ecd12_68bb_4f86_9bf0_8438dd3be982);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IEAPProviderConfig3_Vtbl {
     pub base__: IEAPProviderConfig2_Vtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub ServerInvokeCertificateConfigUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, pconfigdatain: *const u8, dwsizeofconfigdatain: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32, ureserved: usize) -> ::windows::core::HRESULT,
+    pub ServerInvokeCertificateConfigUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dweaptypeid: u32, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, pconfigdatain: *const u8, dwsizeofconfigdatain: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32, ureserved: usize) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ServerInvokeCertificateConfigUI: usize,
 }
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 #[repr(transparent)]
-pub struct IRouterProtocolConfig(::windows::core::IUnknown);
+pub struct IRouterProtocolConfig(::windows_core::IUnknown);
 impl IRouterProtocolConfig {
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddProtocol<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param5: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, pszmachinename: Param0, dwtransportid: u32, dwprotocolid: u32, hwnd: Param3, dwflags: u32, prouter: Param5, ureserved1: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).AddProtocol)(::windows::core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(dwtransportid), ::core::mem::transmute(dwprotocolid), hwnd.into_param().abi(), ::core::mem::transmute(dwflags), prouter.into_param().abi(), ::core::mem::transmute(ureserved1)).ok()
+    pub unsafe fn AddProtocol<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param5: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, pszmachinename: Param0, dwtransportid: u32, dwprotocolid: u32, hwnd: Param3, dwflags: u32, prouter: Param5, ureserved1: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).AddProtocol)(::windows_core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(dwtransportid), ::core::mem::transmute(dwprotocolid), hwnd.into_param().abi(), ::core::mem::transmute(dwflags), prouter.into_param().abi(), ::core::mem::transmute(ureserved1)).ok()
     }
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RemoveProtocol<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param5: ::windows::core::IntoParam<'a, ::windows::core::IUnknown>>(&self, pszmachinename: Param0, dwtransportid: u32, dwprotocolid: u32, hwnd: Param3, dwflags: u32, prouter: Param5, ureserved1: usize) -> ::windows::core::Result<()> {
-        (::windows::core::Interface::vtable(self).RemoveProtocol)(::windows::core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(dwtransportid), ::core::mem::transmute(dwprotocolid), hwnd.into_param().abi(), ::core::mem::transmute(dwflags), prouter.into_param().abi(), ::core::mem::transmute(ureserved1)).ok()
+    pub unsafe fn RemoveProtocol<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param5: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, pszmachinename: Param0, dwtransportid: u32, dwprotocolid: u32, hwnd: Param3, dwflags: u32, prouter: Param5, ureserved1: usize) -> ::windows_core::Result<()> {
+        (::windows_core::Interface::vtable(self).RemoveProtocol)(::windows_core::Interface::as_raw(self), pszmachinename.into_param().abi(), ::core::mem::transmute(dwtransportid), ::core::mem::transmute(dwprotocolid), hwnd.into_param().abi(), ::core::mem::transmute(dwflags), prouter.into_param().abi(), ::core::mem::transmute(ureserved1)).ok()
     }
 }
-impl ::core::convert::From<IRouterProtocolConfig> for ::windows::core::IUnknown {
+impl ::core::convert::From<IRouterProtocolConfig> for ::windows_core::IUnknown {
     fn from(value: IRouterProtocolConfig) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&IRouterProtocolConfig> for ::windows::core::IUnknown {
+impl ::core::convert::From<&IRouterProtocolConfig> for ::windows_core::IUnknown {
     fn from(value: &IRouterProtocolConfig) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IRouterProtocolConfig {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for IRouterProtocolConfig {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IRouterProtocolConfig {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IRouterProtocolConfig {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 impl ::core::clone::Clone for IRouterProtocolConfig {
@@ -3325,20 +3325,20 @@ impl ::core::fmt::Debug for IRouterProtocolConfig {
         f.debug_tuple("IRouterProtocolConfig").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Interface for IRouterProtocolConfig {
+unsafe impl ::windows_core::Interface for IRouterProtocolConfig {
     type Vtable = IRouterProtocolConfig_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x66a2db16_d706_11d0_a37b_00c04fc9da04);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x66a2db16_d706_11d0_a37b_00c04fc9da04);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IRouterProtocolConfig_Vtbl {
-    pub base__: ::windows::core::IUnknownVtbl,
+    pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Foundation")]
-    pub AddProtocol: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmachinename: ::windows::core::PCWSTR, dwtransportid: u32, dwprotocolid: u32, hwnd: super::super::Foundation::HWND, dwflags: u32, prouter: *mut ::core::ffi::c_void, ureserved1: usize) -> ::windows::core::HRESULT,
+    pub AddProtocol: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmachinename: ::windows_core::PCWSTR, dwtransportid: u32, dwprotocolid: u32, hwnd: super::super::Foundation::HWND, dwflags: u32, prouter: *mut ::core::ffi::c_void, ureserved1: usize) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     AddProtocol: usize,
     #[cfg(feature = "Win32_Foundation")]
-    pub RemoveProtocol: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmachinename: ::windows::core::PCWSTR, dwtransportid: u32, dwprotocolid: u32, hwnd: super::super::Foundation::HWND, dwflags: u32, prouter: *mut ::core::ffi::c_void, ureserved1: usize) -> ::windows::core::HRESULT,
+    pub RemoveProtocol: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmachinename: ::windows_core::PCWSTR, dwtransportid: u32, dwprotocolid: u32, hwnd: super::super::Foundation::HWND, dwflags: u32, prouter: *mut ::core::ffi::c_void, ureserved1: usize) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     RemoveProtocol: usize,
 }
@@ -3365,7 +3365,7 @@ impl ::core::default::Default for ISOLATION_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ISOLATION_STATE {
+unsafe impl ::windows_core::Abi for ISOLATION_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ISOLATION_STATE {
@@ -3384,7 +3384,7 @@ pub struct LEGACY_IDENTITY_UI_PARAMS {
     pub pUserData: *mut u8,
     pub dwSizeofUserDataOut: u32,
     pub pUserDataOut: *mut u8,
-    pub pwszIdentity: ::windows::core::PWSTR,
+    pub pwszIdentity: ::windows_core::PWSTR,
     pub dwError: u32,
 }
 impl ::core::marker::Copy for LEGACY_IDENTITY_UI_PARAMS {}
@@ -3409,12 +3409,12 @@ impl ::core::fmt::Debug for LEGACY_IDENTITY_UI_PARAMS {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for LEGACY_IDENTITY_UI_PARAMS {
+unsafe impl ::windows_core::Abi for LEGACY_IDENTITY_UI_PARAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LEGACY_IDENTITY_UI_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LEGACY_IDENTITY_UI_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LEGACY_IDENTITY_UI_PARAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LEGACY_IDENTITY_UI_PARAMS {}
@@ -3444,12 +3444,12 @@ impl ::core::fmt::Debug for LEGACY_INTERACTIVE_UI_PARAMS {
         f.debug_struct("LEGACY_INTERACTIVE_UI_PARAMS").field("eapType", &self.eapType).field("dwSizeofContextData", &self.dwSizeofContextData).field("pContextData", &self.pContextData).field("dwSizeofInteractiveUIData", &self.dwSizeofInteractiveUIData).field("pInteractiveUIData", &self.pInteractiveUIData).field("dwError", &self.dwError).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LEGACY_INTERACTIVE_UI_PARAMS {
+unsafe impl ::windows_core::Abi for LEGACY_INTERACTIVE_UI_PARAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LEGACY_INTERACTIVE_UI_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LEGACY_INTERACTIVE_UI_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LEGACY_INTERACTIVE_UI_PARAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LEGACY_INTERACTIVE_UI_PARAMS {}
@@ -3489,13 +3489,13 @@ impl ::core::fmt::Debug for NgcTicketContext {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-unsafe impl ::windows::core::Abi for NgcTicketContext {
+unsafe impl ::windows_core::Abi for NgcTicketContext {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
 impl ::core::cmp::PartialEq for NgcTicketContext {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NgcTicketContext>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NgcTicketContext>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
@@ -3507,7 +3507,7 @@ impl ::core::default::Default for NgcTicketContext {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
-pub type NotificationHandler = ::core::option::Option<unsafe extern "system" fn(connectionid: ::windows::core::GUID, pcontextdata: *mut ::core::ffi::c_void)>;
+pub type NotificationHandler = ::core::option::Option<unsafe extern "system" fn(connectionid: ::windows_core::GUID, pcontextdata: *mut ::core::ffi::c_void)>;
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -3541,7 +3541,7 @@ impl ::core::default::Default for PPP_EAP_ACTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PPP_EAP_ACTION {
+unsafe impl ::windows_core::Abi for PPP_EAP_ACTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PPP_EAP_ACTION {
@@ -3570,12 +3570,12 @@ impl ::core::fmt::Debug for PPP_EAP_INFO {
         f.debug_struct("PPP_EAP_INFO").field("dwSizeInBytes", &self.dwSizeInBytes).field("dwEapTypeId", &self.dwEapTypeId).field("RasEapInitialize", &self.RasEapInitialize).field("RasEapBegin", &self.RasEapBegin).field("RasEapEnd", &self.RasEapEnd).field("RasEapMakeMessage", &self.RasEapMakeMessage).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PPP_EAP_INFO {
+unsafe impl ::windows_core::Abi for PPP_EAP_INFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PPP_EAP_INFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PPP_EAP_INFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PPP_EAP_INFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PPP_EAP_INFO {}
@@ -3591,8 +3591,8 @@ pub struct PPP_EAP_INPUT {
     pub dwSizeInBytes: u32,
     pub fFlags: u32,
     pub fAuthenticator: super::super::Foundation::BOOL,
-    pub pwszIdentity: ::windows::core::PWSTR,
-    pub pwszPassword: ::windows::core::PWSTR,
+    pub pwszIdentity: ::windows_core::PWSTR,
+    pub pwszPassword: ::windows_core::PWSTR,
     pub bInitialId: u8,
     pub pUserAttributes: *mut RAS_AUTH_ATTRIBUTE,
     pub fAuthenticationComplete: super::super::Foundation::BOOL,
@@ -3607,7 +3607,7 @@ pub struct PPP_EAP_INPUT {
     pub pUserData: *mut u8,
     pub dwSizeOfUserData: u32,
     pub hReserved: super::super::Foundation::HANDLE,
-    pub guidConnectionId: ::windows::core::GUID,
+    pub guidConnectionId: ::windows_core::GUID,
     pub isVpn: super::super::Foundation::BOOL,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3647,13 +3647,13 @@ impl ::core::fmt::Debug for PPP_EAP_INPUT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PPP_EAP_INPUT {
+unsafe impl ::windows_core::Abi for PPP_EAP_INPUT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PPP_EAP_INPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PPP_EAP_INPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PPP_EAP_INPUT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3715,13 +3715,13 @@ impl ::core::fmt::Debug for PPP_EAP_OUTPUT {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-unsafe impl ::windows::core::Abi for PPP_EAP_OUTPUT {
+unsafe impl ::windows_core::Abi for PPP_EAP_OUTPUT {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
 impl ::core::cmp::PartialEq for PPP_EAP_OUTPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PPP_EAP_OUTPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PPP_EAP_OUTPUT>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
@@ -3751,12 +3751,12 @@ impl ::core::fmt::Debug for PPP_EAP_PACKET {
         f.debug_struct("PPP_EAP_PACKET").field("Code", &self.Code).field("Id", &self.Id).field("Length", &self.Length).field("Data", &self.Data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PPP_EAP_PACKET {
+unsafe impl ::windows_core::Abi for PPP_EAP_PACKET {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PPP_EAP_PACKET {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PPP_EAP_PACKET>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PPP_EAP_PACKET>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PPP_EAP_PACKET {}
@@ -3783,12 +3783,12 @@ impl ::core::fmt::Debug for RAS_AUTH_ATTRIBUTE {
         f.debug_struct("RAS_AUTH_ATTRIBUTE").field("raaType", &self.raaType).field("dwLength", &self.dwLength).field("Value", &self.Value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RAS_AUTH_ATTRIBUTE {
+unsafe impl ::windows_core::Abi for RAS_AUTH_ATTRIBUTE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RAS_AUTH_ATTRIBUTE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_AUTH_ATTRIBUTE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_AUTH_ATTRIBUTE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RAS_AUTH_ATTRIBUTE {}
@@ -4004,7 +4004,7 @@ impl ::core::default::Default for RAS_AUTH_ATTRIBUTE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RAS_AUTH_ATTRIBUTE_TYPE {
+unsafe impl ::windows_core::Abi for RAS_AUTH_ATTRIBUTE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RAS_AUTH_ATTRIBUTE_TYPE {

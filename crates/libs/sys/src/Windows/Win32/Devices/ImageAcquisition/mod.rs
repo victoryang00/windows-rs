@@ -42,7 +42,7 @@ pub const CENTERED: u32 = 1u32;
 pub const CFSTR_WIAITEMNAMES: &str = "WIAItemNames";
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const CFSTR_WIAITEMPTR: &str = "WIAItemPointer";
-pub const CLSID_WiaDefaultSegFilter: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3572814603, data2: 2857, data3: 17672, data4: [137, 34, 12, 87, 151, 212, 39, 101] };
+pub const CLSID_WiaDefaultSegFilter: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3572814603, data2: 2857, data3: 17672, data4: [137, 34, 12, 87, 151, 212, 39, 101] };
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const CMD_GETADFAVAILABLE: u32 = 117u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
@@ -193,7 +193,7 @@ pub const DUPLEX: u32 = 4u32;
 pub const DUP_READY: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type DeviceDialogFunction = ::core::option::Option<unsafe extern "system" fn(param0: *mut DEVICEDIALOGDATA) -> ::windows_sys::core::HRESULT>;
+pub type DeviceDialogFunction = ::core::option::Option<unsafe extern "system" fn(param0: *mut DEVICEDIALOGDATA) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const EFFECTMODE_BW: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
@@ -274,7 +274,7 @@ pub const FOCUSMODE_MANUAL: u32 = 1u32;
 pub const FRONT_FIRST: u32 = 8u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const FRONT_ONLY: u32 = 32u32;
-pub const GUID_DEVINTERFACE_IMAGE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1809653702, data2: 33039, data3: 4560, data4: [190, 199, 8, 0, 43, 226, 9, 47] };
+pub const GUID_DEVINTERFACE_IMAGE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1809653702, data2: 33039, data3: 4560, data4: [190, 199, 8, 0, 43, 226, 9, 47] };
 pub type IEnumWIA_DEV_CAPS = *mut ::core::ffi::c_void;
 pub type IEnumWIA_DEV_INFO = *mut ::core::ffi::c_void;
 pub type IEnumWIA_FORMAT_INFO = *mut ::core::ffi::c_void;
@@ -389,7 +389,7 @@ pub struct MINIDRV_TRANSFER_CONTEXT {
     pub lXRes: i32,
     pub lYRes: i32,
     pub lCompression: i32,
-    pub guidFormatID: ::windows_sys::core::GUID,
+    pub guidFormatID: ::windows_sys_core::GUID,
     pub tymed: i32,
     pub hFile: isize,
     pub cbOffset: i32,
@@ -582,7 +582,7 @@ pub const TYMED_MULTIPAGE_FILE: u32 = 256u32;
 pub struct VAL {
     pub lVal: i32,
     pub dblVal: f64,
-    pub pGuid: *mut ::windows_sys::core::GUID,
+    pub pGuid: *mut ::windows_sys_core::GUID,
     pub pScanInfo: *mut SCANINFO,
     pub handle: isize,
     pub ppButtonNames: *mut *mut u16,
@@ -636,7 +636,7 @@ pub union WIAS_CHANGED_VALUE_INFO_0 {
     pub lVal: i32,
     pub fltVal: f32,
     pub bstrVal: super::super::Foundation::BSTR,
-    pub guidVal: ::windows_sys::core::GUID,
+    pub guidVal: ::windows_sys_core::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIAS_CHANGED_VALUE_INFO_0 {}
@@ -653,7 +653,7 @@ pub union WIAS_CHANGED_VALUE_INFO_1 {
     pub lVal: i32,
     pub fltVal: f32,
     pub bstrVal: super::super::Foundation::BSTR,
-    pub guidVal: ::windows_sys::core::GUID,
+    pub guidVal: ::windows_sys_core::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIAS_CHANGED_VALUE_INFO_1 {}
@@ -701,8 +701,8 @@ impl ::core::clone::Clone for WIAS_ENDORSER_INFO {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub struct WIAS_ENDORSER_VALUE {
-    pub wszTokenName: ::windows_sys::core::PWSTR,
-    pub wszValue: ::windows_sys::core::PWSTR,
+    pub wszTokenName: ::windows_sys_core::PWSTR,
+    pub wszValue: ::windows_sys_core::PWSTR,
 }
 impl ::core::marker::Copy for WIAS_ENDORSER_VALUE {}
 impl ::core::clone::Clone for WIAS_ENDORSER_VALUE {
@@ -916,32 +916,32 @@ pub const WIA_BLANK_PAGE_DETECTION_DISABLED: u32 = 0u32;
 pub const WIA_BLANK_PAGE_DISCARD: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const WIA_BLANK_PAGE_JOB_SEPARATOR: u32 = 2u32;
-pub const WIA_CATEGORY_AUTO: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3741212632, data2: 27799, data3: 19934, data4: [177, 30, 203, 80, 155, 39, 14, 17] };
-pub const WIA_CATEGORY_BARCODE_READER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 920746144, data2: 18239, data3: 18763, data4: [175, 143, 108, 63, 109, 116, 134, 252] };
-pub const WIA_CATEGORY_ENDORSER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1192242371, data2: 4735, data3: 18289, data4: [173, 252, 153, 26, 184, 238, 30, 151] };
-pub const WIA_CATEGORY_FEEDER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4262664500, data2: 63564, data3: 17069, data4: [141, 164, 97, 41, 205, 221, 114, 136] };
-pub const WIA_CATEGORY_FEEDER_BACK: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1640658132, data2: 14811, data3: 17066, data4: [137, 177, 140, 25, 201, 205, 76, 35] };
-pub const WIA_CATEGORY_FEEDER_FRONT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1210259292, data2: 15144, data3: 18555, data4: [167, 230, 238, 188, 23, 97, 79, 209] };
-pub const WIA_CATEGORY_FILM: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4244003815, data2: 15587, data3: 17523, data4: [175, 133, 245, 211, 125, 33, 182, 138] };
-pub const WIA_CATEGORY_FINISHED_FILE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4281038794, data2: 53124, data3: 17195, data4: [167, 53, 58, 19, 13, 222, 42, 136] };
-pub const WIA_CATEGORY_FLATBED: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4217404191, data2: 17395, data3: 18571, data4: [133, 91, 251, 112, 62, 195, 66, 166] };
-pub const WIA_CATEGORY_FOLDER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3331499078, data2: 28506, data3: 18461, data4: [133, 187, 146, 226, 232, 111, 211, 10] };
-pub const WIA_CATEGORY_IMPRINTER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4234477933, data2: 37378, data3: 17373, data4: [145, 167, 100, 194, 149, 76, 251, 139] };
-pub const WIA_CATEGORY_MICR_READER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 998687212, data2: 29116, data3: 17989, data4: [180, 213, 27, 25, 218, 43, 233, 120] };
-pub const WIA_CATEGORY_PATCH_CODE_READER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2410289773, data2: 40074, data3: 17101, data4: [152, 179, 238, 151, 0, 203, 199, 79] };
-pub const WIA_CATEGORY_ROOT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4052963951, data2: 22968, data3: 18982, data4: [152, 136, 225, 110, 79, 151, 206, 16] };
-pub const WIA_CMD_BUILD_DEVICE_TREE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2629459168, data2: 56298, data3: 4562, data4: [132, 22, 0, 192, 79, 163, 97, 69] };
-pub const WIA_CMD_CHANGE_DOCUMENT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 82257328, data2: 44206, data3: 4562, data4: [160, 147, 0, 192, 79, 114, 220, 60] };
-pub const WIA_CMD_DELETE_ALL_ITEMS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3792224624, data2: 44205, data3: 4562, data4: [160, 147, 0, 192, 79, 114, 220, 60] };
-pub const WIA_CMD_DELETE_DEVICE_TREE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1937856834, data2: 56298, data3: 4562, data4: [132, 22, 0, 192, 79, 163, 97, 69] };
-pub const WIA_CMD_DIAGNOSTIC: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 285168373, data2: 56836, data3: 19696, data4: [165, 173, 105, 31, 141, 206, 1, 65] };
-pub const WIA_CMD_FORMAT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3282473898, data2: 63368, data3: 19764, data4: [165, 176, 190, 113, 144, 117, 154, 36] };
-pub const WIA_CMD_PAUSE_FEEDER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1352162893, data2: 42418, data3: 19313, data4: [156, 149, 109, 125, 124, 70, 154, 67] };
-pub const WIA_CMD_START_FEEDER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1520301769, data2: 24365, data3: 19001, data4: [157, 108, 0, 69, 109, 4, 127, 0] };
-pub const WIA_CMD_STOP_FEEDER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3628576877, data2: 14597, data3: 17820, data4: [149, 9, 155, 41, 205, 182, 145, 231] };
-pub const WIA_CMD_SYNCHRONIZE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2603005874, data2: 44205, data3: 4562, data4: [160, 147, 0, 192, 79, 114, 220, 60] };
-pub const WIA_CMD_TAKE_PICTURE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2945662124, data2: 44205, data3: 4562, data4: [160, 147, 0, 192, 79, 114, 220, 60] };
-pub const WIA_CMD_UNLOAD_DOCUMENT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 523976078, data2: 44206, data3: 4562, data4: [160, 147, 0, 192, 79, 114, 220, 60] };
+pub const WIA_CATEGORY_AUTO: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3741212632, data2: 27799, data3: 19934, data4: [177, 30, 203, 80, 155, 39, 14, 17] };
+pub const WIA_CATEGORY_BARCODE_READER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 920746144, data2: 18239, data3: 18763, data4: [175, 143, 108, 63, 109, 116, 134, 252] };
+pub const WIA_CATEGORY_ENDORSER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1192242371, data2: 4735, data3: 18289, data4: [173, 252, 153, 26, 184, 238, 30, 151] };
+pub const WIA_CATEGORY_FEEDER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4262664500, data2: 63564, data3: 17069, data4: [141, 164, 97, 41, 205, 221, 114, 136] };
+pub const WIA_CATEGORY_FEEDER_BACK: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1640658132, data2: 14811, data3: 17066, data4: [137, 177, 140, 25, 201, 205, 76, 35] };
+pub const WIA_CATEGORY_FEEDER_FRONT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1210259292, data2: 15144, data3: 18555, data4: [167, 230, 238, 188, 23, 97, 79, 209] };
+pub const WIA_CATEGORY_FILM: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4244003815, data2: 15587, data3: 17523, data4: [175, 133, 245, 211, 125, 33, 182, 138] };
+pub const WIA_CATEGORY_FINISHED_FILE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4281038794, data2: 53124, data3: 17195, data4: [167, 53, 58, 19, 13, 222, 42, 136] };
+pub const WIA_CATEGORY_FLATBED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4217404191, data2: 17395, data3: 18571, data4: [133, 91, 251, 112, 62, 195, 66, 166] };
+pub const WIA_CATEGORY_FOLDER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3331499078, data2: 28506, data3: 18461, data4: [133, 187, 146, 226, 232, 111, 211, 10] };
+pub const WIA_CATEGORY_IMPRINTER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4234477933, data2: 37378, data3: 17373, data4: [145, 167, 100, 194, 149, 76, 251, 139] };
+pub const WIA_CATEGORY_MICR_READER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 998687212, data2: 29116, data3: 17989, data4: [180, 213, 27, 25, 218, 43, 233, 120] };
+pub const WIA_CATEGORY_PATCH_CODE_READER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2410289773, data2: 40074, data3: 17101, data4: [152, 179, 238, 151, 0, 203, 199, 79] };
+pub const WIA_CATEGORY_ROOT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4052963951, data2: 22968, data3: 18982, data4: [152, 136, 225, 110, 79, 151, 206, 16] };
+pub const WIA_CMD_BUILD_DEVICE_TREE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2629459168, data2: 56298, data3: 4562, data4: [132, 22, 0, 192, 79, 163, 97, 69] };
+pub const WIA_CMD_CHANGE_DOCUMENT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 82257328, data2: 44206, data3: 4562, data4: [160, 147, 0, 192, 79, 114, 220, 60] };
+pub const WIA_CMD_DELETE_ALL_ITEMS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3792224624, data2: 44205, data3: 4562, data4: [160, 147, 0, 192, 79, 114, 220, 60] };
+pub const WIA_CMD_DELETE_DEVICE_TREE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1937856834, data2: 56298, data3: 4562, data4: [132, 22, 0, 192, 79, 163, 97, 69] };
+pub const WIA_CMD_DIAGNOSTIC: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 285168373, data2: 56836, data3: 19696, data4: [165, 173, 105, 31, 141, 206, 1, 65] };
+pub const WIA_CMD_FORMAT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3282473898, data2: 63368, data3: 19764, data4: [165, 176, 190, 113, 144, 117, 154, 36] };
+pub const WIA_CMD_PAUSE_FEEDER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1352162893, data2: 42418, data3: 19313, data4: [156, 149, 109, 125, 124, 70, 154, 67] };
+pub const WIA_CMD_START_FEEDER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1520301769, data2: 24365, data3: 19001, data4: [157, 108, 0, 69, 109, 4, 127, 0] };
+pub const WIA_CMD_STOP_FEEDER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3628576877, data2: 14597, data3: 17820, data4: [149, 9, 155, 41, 205, 182, 145, 231] };
+pub const WIA_CMD_SYNCHRONIZE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2603005874, data2: 44205, data3: 4562, data4: [160, 147, 0, 192, 79, 114, 220, 60] };
+pub const WIA_CMD_TAKE_PICTURE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2945662124, data2: 44205, data3: 4562, data4: [160, 147, 0, 192, 79, 114, 220, 60] };
+pub const WIA_CMD_UNLOAD_DOCUMENT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 523976078, data2: 44206, data3: 4562, data4: [160, 147, 0, 192, 79, 114, 220, 60] };
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const WIA_COLOR_DROP_BLUE: u32 = 3u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
@@ -978,7 +978,7 @@ pub const WIA_DATA_AUTO: u32 = 100u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub struct WIA_DATA_CALLBACK_HEADER {
     pub lSize: i32,
-    pub guidFormatID: ::windows_sys::core::GUID,
+    pub guidFormatID: ::windows_sys_core::GUID,
     pub lBufferSize: i32,
     pub lPageCount: i32,
 }
@@ -1054,7 +1054,7 @@ pub const WIA_DEVINFO_ENUM_LOCAL: u32 = 16u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct WIA_DEV_CAP {
-    pub guid: ::windows_sys::core::GUID,
+    pub guid: ::windows_sys_core::GUID,
     pub ulFlags: u32,
     pub bstrName: super::super::Foundation::BSTR,
     pub bstrDescription: super::super::Foundation::BSTR,
@@ -1072,11 +1072,11 @@ impl ::core::clone::Clone for WIA_DEV_CAP {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub struct WIA_DEV_CAP_DRV {
-    pub guid: *mut ::windows_sys::core::GUID,
+    pub guid: *mut ::windows_sys_core::GUID,
     pub ulFlags: u32,
-    pub wszName: ::windows_sys::core::PWSTR,
-    pub wszDescription: ::windows_sys::core::PWSTR,
-    pub wszIcon: ::windows_sys::core::PWSTR,
+    pub wszName: ::windows_sys_core::PWSTR,
+    pub wszDescription: ::windows_sys_core::PWSTR,
+    pub wszIcon: ::windows_sys_core::PWSTR,
 }
 impl ::core::marker::Copy for WIA_DEV_CAP_DRV {}
 impl ::core::clone::Clone for WIA_DEV_CAP_DRV {
@@ -1546,82 +1546,82 @@ pub const WIA_ENDORSER_TOK_TIME: &str = "$TIME$";
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const WIA_ENDORSER_TOK_YEAR: &str = "$YEAR$";
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_BUSY: ::windows_sys::core::HRESULT = -2145320954i32;
+pub const WIA_ERROR_BUSY: ::windows_sys_core::HRESULT = -2145320954i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_COVER_OPEN: ::windows_sys::core::HRESULT = -2145320944i32;
+pub const WIA_ERROR_COVER_OPEN: ::windows_sys_core::HRESULT = -2145320944i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_DESTINATION: ::windows_sys::core::HRESULT = -2145320942i32;
+pub const WIA_ERROR_DESTINATION: ::windows_sys_core::HRESULT = -2145320942i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_DEVICE_COMMUNICATION: ::windows_sys::core::HRESULT = -2145320950i32;
+pub const WIA_ERROR_DEVICE_COMMUNICATION: ::windows_sys_core::HRESULT = -2145320950i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_DEVICE_LOCKED: ::windows_sys::core::HRESULT = -2145320947i32;
+pub const WIA_ERROR_DEVICE_LOCKED: ::windows_sys_core::HRESULT = -2145320947i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_EXCEPTION_IN_DRIVER: ::windows_sys::core::HRESULT = -2145320946i32;
+pub const WIA_ERROR_EXCEPTION_IN_DRIVER: ::windows_sys_core::HRESULT = -2145320946i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_GENERAL_ERROR: ::windows_sys::core::HRESULT = -2145320959i32;
+pub const WIA_ERROR_GENERAL_ERROR: ::windows_sys_core::HRESULT = -2145320959i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_INCORRECT_HARDWARE_SETTING: ::windows_sys::core::HRESULT = -2145320948i32;
+pub const WIA_ERROR_INCORRECT_HARDWARE_SETTING: ::windows_sys_core::HRESULT = -2145320948i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_INVALID_COMMAND: ::windows_sys::core::HRESULT = -2145320949i32;
+pub const WIA_ERROR_INVALID_COMMAND: ::windows_sys_core::HRESULT = -2145320949i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_INVALID_DRIVER_RESPONSE: ::windows_sys::core::HRESULT = -2145320945i32;
+pub const WIA_ERROR_INVALID_DRIVER_RESPONSE: ::windows_sys_core::HRESULT = -2145320945i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_ITEM_DELETED: ::windows_sys::core::HRESULT = -2145320951i32;
+pub const WIA_ERROR_ITEM_DELETED: ::windows_sys_core::HRESULT = -2145320951i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_LAMP_OFF: ::windows_sys::core::HRESULT = -2145320943i32;
+pub const WIA_ERROR_LAMP_OFF: ::windows_sys_core::HRESULT = -2145320943i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_MAXIMUM_PRINTER_ENDORSER_COUNTER: ::windows_sys::core::HRESULT = -2145320939i32;
+pub const WIA_ERROR_MAXIMUM_PRINTER_ENDORSER_COUNTER: ::windows_sys_core::HRESULT = -2145320939i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_MULTI_FEED: ::windows_sys::core::HRESULT = -2145320940i32;
+pub const WIA_ERROR_MULTI_FEED: ::windows_sys_core::HRESULT = -2145320940i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_NETWORK_RESERVATION_FAILED: ::windows_sys::core::HRESULT = -2145320941i32;
+pub const WIA_ERROR_NETWORK_RESERVATION_FAILED: ::windows_sys_core::HRESULT = -2145320941i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_OFFLINE: ::windows_sys::core::HRESULT = -2145320955i32;
+pub const WIA_ERROR_OFFLINE: ::windows_sys_core::HRESULT = -2145320955i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_PAPER_EMPTY: ::windows_sys::core::HRESULT = -2145320957i32;
+pub const WIA_ERROR_PAPER_EMPTY: ::windows_sys_core::HRESULT = -2145320957i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_PAPER_JAM: ::windows_sys::core::HRESULT = -2145320958i32;
+pub const WIA_ERROR_PAPER_JAM: ::windows_sys_core::HRESULT = -2145320958i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_PAPER_PROBLEM: ::windows_sys::core::HRESULT = -2145320956i32;
+pub const WIA_ERROR_PAPER_PROBLEM: ::windows_sys_core::HRESULT = -2145320956i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_USER_INTERVENTION: ::windows_sys::core::HRESULT = -2145320952i32;
+pub const WIA_ERROR_USER_INTERVENTION: ::windows_sys_core::HRESULT = -2145320952i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_ERROR_WARMING_UP: ::windows_sys::core::HRESULT = -2145320953i32;
-pub const WIA_EVENT_CANCEL_IO: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3361798072, data2: 40141, data3: 16874, data4: [187, 191, 77, 208, 156, 91, 23, 149] };
-pub const WIA_EVENT_COVER_CLOSED: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1729405414, data2: 57989, data3: 18060, data4: [155, 140, 218, 125, 196, 203, 170, 5] };
-pub const WIA_EVENT_COVER_OPEN: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 429990198, data2: 64028, data3: 20326, data4: [144, 15, 143, 145, 78, 199, 78, 201] };
-pub const WIA_EVENT_DEVICE_CONNECTED: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2727066334, data2: 25782, data3: 4562, data4: [162, 49, 0, 192, 79, 163, 24, 9] };
+pub const WIA_ERROR_WARMING_UP: ::windows_sys_core::HRESULT = -2145320953i32;
+pub const WIA_EVENT_CANCEL_IO: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3361798072, data2: 40141, data3: 16874, data4: [187, 191, 77, 208, 156, 91, 23, 149] };
+pub const WIA_EVENT_COVER_CLOSED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1729405414, data2: 57989, data3: 18060, data4: [155, 140, 218, 125, 196, 203, 170, 5] };
+pub const WIA_EVENT_COVER_OPEN: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 429990198, data2: 64028, data3: 20326, data4: [144, 15, 143, 145, 78, 199, 78, 201] };
+pub const WIA_EVENT_DEVICE_CONNECTED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2727066334, data2: 25782, data3: 4562, data4: [162, 49, 0, 192, 79, 163, 24, 9] };
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const WIA_EVENT_DEVICE_CONNECTED_STR: &str = "Device Connected";
-pub const WIA_EVENT_DEVICE_DISCONNECTED: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 339627651, data2: 25751, data3: 4562, data4: [162, 49, 0, 192, 79, 163, 24, 9] };
+pub const WIA_EVENT_DEVICE_DISCONNECTED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 339627651, data2: 25751, data3: 4562, data4: [162, 49, 0, 192, 79, 163, 24, 9] };
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const WIA_EVENT_DEVICE_DISCONNECTED_STR: &str = "Device Disconnected";
-pub const WIA_EVENT_DEVICE_NOT_READY: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3633720702, data2: 58588, data3: 19277, data4: [186, 41, 102, 138, 135, 244, 46, 111] };
-pub const WIA_EVENT_DEVICE_READY: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1965288556, data2: 39051, data3: 16798, data4: [154, 10, 66, 90, 195, 27, 55, 220] };
-pub const WIA_EVENT_FEEDER_EMPTIED: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3876277122, data2: 28122, data3: 18107, data4: [143, 249, 83, 206, 177, 160, 62, 53] };
-pub const WIA_EVENT_FEEDER_LOADED: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3431821342, data2: 39610, data3: 18461, data4: [191, 116, 120, 247, 99, 220, 52, 42] };
-pub const WIA_EVENT_FLATBED_LID_CLOSED: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4168724239, data2: 39721, data3: 17027, data4: [173, 149, 212, 18, 22, 77, 57, 169] };
-pub const WIA_EVENT_FLATBED_LID_OPEN: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3121219107, data2: 17277, data3: 20227, data4: [169, 125, 119, 147, 177, 35, 17, 60] };
-pub const WIA_EVENT_HANDLER_NO_ACTION: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3761711997, data2: 57621, data3: 17701, data4: [188, 85, 182, 41, 230, 140, 116, 90] };
-pub const WIA_EVENT_HANDLER_PROMPT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1598794448, data2: 19801, data3: 20429, data4: [178, 19, 120, 60, 231, 169, 47, 34] };
-pub const WIA_EVENT_ITEM_CREATED: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1284460277, data2: 57679, data3: 4562, data4: [179, 38, 0, 192, 79, 104, 206, 97] };
-pub const WIA_EVENT_ITEM_DELETED: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 488809817, data2: 57679, data3: 4562, data4: [179, 38, 0, 192, 79, 104, 206, 97] };
-pub const WIA_EVENT_POWER_RESUME: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1636767038, data2: 63110, data3: 17232, data4: [150, 52, 65, 21, 163, 4, 131, 12] };
-pub const WIA_EVENT_POWER_SUSPEND: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2693935097, data2: 50100, data3: 16668, data4: [158, 41, 3, 166, 105, 147, 210, 190] };
-pub const WIA_EVENT_SCAN_EMAIL_IMAGE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3330727150, data2: 21746, data3: 16798, data4: [154, 39, 47, 199, 242, 233, 143, 158] };
-pub const WIA_EVENT_SCAN_FAX_IMAGE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3222189971, data2: 35950, data3: 4562, data4: [151, 122, 0, 0, 248, 122, 146, 111] };
-pub const WIA_EVENT_SCAN_FILM_IMAGE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2603312684, data2: 24965, data3: 17292, data4: [182, 139, 227, 158, 226, 94, 113, 203] };
-pub const WIA_EVENT_SCAN_IMAGE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2797971221, data2: 35950, data3: 4562, data4: [151, 122, 0, 0, 248, 122, 146, 111] };
-pub const WIA_EVENT_SCAN_IMAGE2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4232538049, data2: 51379, data3: 18594, data4: [156, 250, 46, 144, 203, 61, 53, 144] };
-pub const WIA_EVENT_SCAN_IMAGE3: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 357443518, data2: 46615, data3: 18003, data4: [172, 197, 15, 215, 189, 76, 101, 206] };
-pub const WIA_EVENT_SCAN_IMAGE4: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2791010378, data2: 32572, data3: 17479, data4: [167, 93, 138, 38, 223, 202, 31, 223] };
-pub const WIA_EVENT_SCAN_OCR_IMAGE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2634636169, data2: 14294, data3: 18551, data4: [175, 237, 98, 162, 151, 220, 109, 190] };
-pub const WIA_EVENT_SCAN_PRINT_IMAGE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3024221221, data2: 35950, data3: 4562, data4: [151, 122, 0, 0, 248, 122, 146, 111] };
-pub const WIA_EVENT_STI_PROXY: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3608279071, data2: 7949, data3: 16941, data4: [134, 65, 146, 125, 27, 147, 229, 229] };
-pub const WIA_EVENT_STORAGE_CREATED: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 892537010, data2: 65139, data3: 18120, data4: [137, 94, 250, 69, 81, 204, 200, 90] };
-pub const WIA_EVENT_STORAGE_DELETED: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1581377374, data2: 37776, data3: 17605, data4: [154, 81, 228, 112, 25, 227, 144, 207] };
-pub const WIA_EVENT_TREE_UPDATED: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3380976529, data2: 19122, data3: 19670, data4: [161, 252, 88, 46, 236, 85, 229, 133] };
-pub const WIA_EVENT_VOLUME_INSERT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520300541, data2: 53693, data3: 4562, data4: [179, 31, 0, 192, 79, 104, 206, 97] };
+pub const WIA_EVENT_DEVICE_NOT_READY: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3633720702, data2: 58588, data3: 19277, data4: [186, 41, 102, 138, 135, 244, 46, 111] };
+pub const WIA_EVENT_DEVICE_READY: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1965288556, data2: 39051, data3: 16798, data4: [154, 10, 66, 90, 195, 27, 55, 220] };
+pub const WIA_EVENT_FEEDER_EMPTIED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3876277122, data2: 28122, data3: 18107, data4: [143, 249, 83, 206, 177, 160, 62, 53] };
+pub const WIA_EVENT_FEEDER_LOADED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3431821342, data2: 39610, data3: 18461, data4: [191, 116, 120, 247, 99, 220, 52, 42] };
+pub const WIA_EVENT_FLATBED_LID_CLOSED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4168724239, data2: 39721, data3: 17027, data4: [173, 149, 212, 18, 22, 77, 57, 169] };
+pub const WIA_EVENT_FLATBED_LID_OPEN: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3121219107, data2: 17277, data3: 20227, data4: [169, 125, 119, 147, 177, 35, 17, 60] };
+pub const WIA_EVENT_HANDLER_NO_ACTION: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3761711997, data2: 57621, data3: 17701, data4: [188, 85, 182, 41, 230, 140, 116, 90] };
+pub const WIA_EVENT_HANDLER_PROMPT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1598794448, data2: 19801, data3: 20429, data4: [178, 19, 120, 60, 231, 169, 47, 34] };
+pub const WIA_EVENT_ITEM_CREATED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1284460277, data2: 57679, data3: 4562, data4: [179, 38, 0, 192, 79, 104, 206, 97] };
+pub const WIA_EVENT_ITEM_DELETED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 488809817, data2: 57679, data3: 4562, data4: [179, 38, 0, 192, 79, 104, 206, 97] };
+pub const WIA_EVENT_POWER_RESUME: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1636767038, data2: 63110, data3: 17232, data4: [150, 52, 65, 21, 163, 4, 131, 12] };
+pub const WIA_EVENT_POWER_SUSPEND: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2693935097, data2: 50100, data3: 16668, data4: [158, 41, 3, 166, 105, 147, 210, 190] };
+pub const WIA_EVENT_SCAN_EMAIL_IMAGE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3330727150, data2: 21746, data3: 16798, data4: [154, 39, 47, 199, 242, 233, 143, 158] };
+pub const WIA_EVENT_SCAN_FAX_IMAGE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3222189971, data2: 35950, data3: 4562, data4: [151, 122, 0, 0, 248, 122, 146, 111] };
+pub const WIA_EVENT_SCAN_FILM_IMAGE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2603312684, data2: 24965, data3: 17292, data4: [182, 139, 227, 158, 226, 94, 113, 203] };
+pub const WIA_EVENT_SCAN_IMAGE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2797971221, data2: 35950, data3: 4562, data4: [151, 122, 0, 0, 248, 122, 146, 111] };
+pub const WIA_EVENT_SCAN_IMAGE2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4232538049, data2: 51379, data3: 18594, data4: [156, 250, 46, 144, 203, 61, 53, 144] };
+pub const WIA_EVENT_SCAN_IMAGE3: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 357443518, data2: 46615, data3: 18003, data4: [172, 197, 15, 215, 189, 76, 101, 206] };
+pub const WIA_EVENT_SCAN_IMAGE4: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2791010378, data2: 32572, data3: 17479, data4: [167, 93, 138, 38, 223, 202, 31, 223] };
+pub const WIA_EVENT_SCAN_OCR_IMAGE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2634636169, data2: 14294, data3: 18551, data4: [175, 237, 98, 162, 151, 220, 109, 190] };
+pub const WIA_EVENT_SCAN_PRINT_IMAGE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3024221221, data2: 35950, data3: 4562, data4: [151, 122, 0, 0, 248, 122, 146, 111] };
+pub const WIA_EVENT_STI_PROXY: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3608279071, data2: 7949, data3: 16941, data4: [134, 65, 146, 125, 27, 147, 229, 229] };
+pub const WIA_EVENT_STORAGE_CREATED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 892537010, data2: 65139, data3: 18120, data4: [137, 94, 250, 69, 81, 204, 200, 90] };
+pub const WIA_EVENT_STORAGE_DELETED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1581377374, data2: 37776, data3: 17605, data4: [154, 81, 228, 112, 25, 227, 144, 207] };
+pub const WIA_EVENT_TREE_UPDATED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3380976529, data2: 19122, data3: 19670, data4: [161, 252, 88, 46, 236, 85, 229, 133] };
+pub const WIA_EVENT_VOLUME_INSERT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2520300541, data2: 53693, data3: 4562, data4: [179, 31, 0, 192, 79, 104, 206, 97] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub struct WIA_EXTENDED_TRANSFER_INFO {
@@ -1658,7 +1658,7 @@ pub const WIA_FLAG_VALUES: u32 = 1u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub struct WIA_FORMAT_INFO {
-    pub guidFormatID: ::windows_sys::core::GUID,
+    pub guidFormatID: ::windows_sys_core::GUID,
     pub lTymed: i32,
 }
 impl ::core::marker::Copy for WIA_FORMAT_INFO {}
@@ -2803,8 +2803,8 @@ impl ::core::clone::Clone for WIA_PROPERTY_INFO_0_2 {
 #[cfg(feature = "Win32_Foundation")]
 pub struct WIA_PROPERTY_INFO_0_3 {
     pub cNumList: i32,
-    pub Nom: ::windows_sys::core::GUID,
-    pub pList: *mut ::windows_sys::core::GUID,
+    pub Nom: ::windows_sys_core::GUID,
+    pub pList: *mut ::windows_sys_core::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_PROPERTY_INFO_0_3 {}
@@ -2882,7 +2882,7 @@ impl ::core::clone::Clone for WIA_PROPERTY_INFO_0_7 {
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub struct WIA_PROPID_TO_NAME {
     pub propid: u32,
-    pub pszName: ::windows_sys::core::PWSTR,
+    pub pszName: ::windows_sys_core::PWSTR,
 }
 impl ::core::marker::Copy for WIA_PROPID_TO_NAME {}
 impl ::core::clone::Clone for WIA_PROPID_TO_NAME {
@@ -2980,25 +2980,25 @@ pub const WIA_SET_DEFAULT_HANDLER: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const WIA_SHOW_PREVIEW_CONTROL: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_STATUS_CALIBRATING: ::windows_sys::core::HRESULT = 2162691i32;
+pub const WIA_STATUS_CALIBRATING: ::windows_sys_core::HRESULT = 2162691i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_STATUS_CLEAR: ::windows_sys::core::HRESULT = 2162696i32;
+pub const WIA_STATUS_CLEAR: ::windows_sys_core::HRESULT = 2162696i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_STATUS_END_OF_MEDIA: ::windows_sys::core::HRESULT = 2162689i32;
+pub const WIA_STATUS_END_OF_MEDIA: ::windows_sys_core::HRESULT = 2162689i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_STATUS_NETWORK_DEVICE_RESERVED: ::windows_sys::core::HRESULT = 2162695i32;
+pub const WIA_STATUS_NETWORK_DEVICE_RESERVED: ::windows_sys_core::HRESULT = 2162695i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_STATUS_NOT_HANDLED: ::windows_sys::core::HRESULT = 2162698i32;
+pub const WIA_STATUS_NOT_HANDLED: ::windows_sys_core::HRESULT = 2162698i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_STATUS_RESERVING_NETWORK_DEVICE: ::windows_sys::core::HRESULT = 2162694i32;
+pub const WIA_STATUS_RESERVING_NETWORK_DEVICE: ::windows_sys_core::HRESULT = 2162694i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_STATUS_SKIP_ITEM: ::windows_sys::core::HRESULT = 2162697i32;
+pub const WIA_STATUS_SKIP_ITEM: ::windows_sys_core::HRESULT = 2162697i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_STATUS_WARMING_UP: ::windows_sys::core::HRESULT = 2162690i32;
+pub const WIA_STATUS_WARMING_UP: ::windows_sys_core::HRESULT = 2162690i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_S_CHANGE_DEVICE: ::windows_sys::core::HRESULT = 2162699i32;
+pub const WIA_S_CHANGE_DEVICE: ::windows_sys_core::HRESULT = 2162699i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
-pub const WIA_S_NO_DEVICE_AVAILABLE: ::windows_sys::core::HRESULT = -2145320939i32;
+pub const WIA_S_NO_DEVICE_AVAILABLE: ::windows_sys_core::HRESULT = -2145320939i32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const WIA_TRANSFER_ACQUIRE_CHILDREN: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
@@ -3053,54 +3053,54 @@ pub const WIA_WSD_SCAN_AVAILABLE_ITEM_STR: &str = "Scan Available Item";
 pub const WIA_WSD_SERIAL_NUMBER: u32 = 38921u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const WIA_WSD_SERIAL_NUMBER_STR: &str = "Serial number";
-pub const WiaAudFmt_AIFF: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1726136143, data2: 46844, data3: 17471, data4: [148, 200, 47, 51, 200, 166, 90, 175] };
-pub const WiaAudFmt_MP3: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 264008187, data2: 17343, data3: 18930, data4: [145, 144, 230, 254, 207, 243, 126, 84] };
-pub const WiaAudFmt_WAV: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4162380102, data2: 1967, data3: 16639, data4: [174, 85, 190, 143, 44, 6, 93, 190] };
-pub const WiaAudFmt_WMA: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3592250387, data2: 35778, data3: 17295, data4: [147, 173, 33, 189, 72, 77, 182, 161] };
-pub const WiaDevMgr: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2717181734, data2: 36081, data3: 4561, data4: [191, 146, 0, 96, 8, 30, 216, 17] };
-pub const WiaDevMgr2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3066204860, data2: 31880, data3: 16878, data4: [139, 84, 142, 201, 38, 23, 229, 153] };
-pub const WiaImgFmt_ASF: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2375323369, data2: 53418, data3: 18962, data4: [157, 154, 156, 197, 222, 54, 25, 155] };
-pub const WiaImgFmt_AVI: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 855165460, data2: 2172, data3: 18696, data4: [183, 196, 103, 87, 254, 126, 144, 171] };
-pub const WiaImgFmt_BMP: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3110812843, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
-pub const WiaImgFmt_CIFF: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2552342699, data2: 14974, data3: 16917, data4: [148, 224, 210, 122, 70, 12, 3, 178] };
-pub const WiaImgFmt_CSV: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 895212068, data2: 23199, data3: 17556, data4: [128, 220, 190, 117, 44, 236, 188, 140] };
-pub const WiaImgFmt_DPOF: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 916385451, data2: 41192, data3: 17866, data4: [134, 166, 168, 60, 229, 105, 126, 40] };
-pub const WiaImgFmt_EMF: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3110812844, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
-pub const WiaImgFmt_EXEC: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1214095511, data2: 5150, data3: 19109, data4: [187, 59, 165, 97, 141, 149, 208, 43] };
-pub const WiaImgFmt_EXIF: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3110812850, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
-pub const WiaImgFmt_FLASHPIX: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3110812852, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
-pub const WiaImgFmt_GIF: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3110812848, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
-pub const WiaImgFmt_HTML: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3382333026, data2: 39390, data3: 19092, data4: [172, 202, 113, 149, 106, 194, 151, 125] };
-pub const WiaImgFmt_ICO: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3110812853, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
-pub const WiaImgFmt_JBIG: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1105780114, data2: 12042, data3: 17364, data4: [134, 54, 241, 97, 75, 161, 30, 70] };
-pub const WiaImgFmt_JBIG2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3146677863, data2: 10300, data3: 16949, data4: [158, 89, 11, 155, 249, 76, 166, 135] };
-pub const WiaImgFmt_JPEG: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3110812846, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
-pub const WiaImgFmt_JPEG2K: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 877585074, data2: 14811, data3: 19934, data4: [129, 115, 196, 183, 95, 143, 30, 73] };
-pub const WiaImgFmt_JPEG2KX: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1138837012, data2: 51210, data3: 18512, data4: [186, 243, 75, 21, 45, 200, 218, 39] };
-pub const WiaImgFmt_MEMORYBMP: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3110812842, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
-pub const WiaImgFmt_MPG: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3973535716, data2: 53996, data3: 20311, data4: [149, 93, 188, 248, 169, 124, 78, 82] };
-pub const WiaImgFmt_OXPS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 746263104, data2: 49485, data3: 16649, data4: [151, 85, 4, 184, 144, 37, 21, 58] };
-pub const WiaImgFmt_PDFA: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2575351131, data2: 13411, data3: 17351, data4: [189, 202, 60, 170, 20, 111, 34, 159] };
-pub const WiaImgFmt_PHOTOCD: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3110812851, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
-pub const WiaImgFmt_PICT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2797372888, data2: 27454, data3: 16622, data4: [169, 92, 37, 212, 130, 228, 26, 220] };
-pub const WiaImgFmt_PNG: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3110812847, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
-pub const WiaImgFmt_RAW: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1863452441, data2: 61864, data3: 19975, data4: [154, 222, 155, 100, 198, 58, 61, 204] };
-pub const WiaImgFmt_RAWBAR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3663984691, data2: 53870, data3: 17694, data4: [144, 210, 234, 85, 161, 54, 93, 98] };
-pub const WiaImgFmt_RAWMIC: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 583331928, data2: 3464, data3: 16540, data4: [172, 28, 238, 193, 43, 14, 166, 128] };
-pub const WiaImgFmt_RAWPAT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2002800764, data2: 20580, data3: 16396, data4: [154, 23, 87, 86, 36, 216, 130, 75] };
-pub const WiaImgFmt_RAWRGB: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3164900181, data2: 62066, data3: 17265, data4: [176, 241, 74, 21, 13, 5, 123, 180] };
-pub const WiaImgFmt_RTF: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1463670435, data2: 18484, data3: 17197, data4: [169, 181, 225, 152, 221, 158, 137, 13] };
-pub const WiaImgFmt_SCRIPT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4269632595, data2: 11692, data3: 17514, data4: [176, 189, 215, 62, 33, 233, 36, 201] };
-pub const WiaImgFmt_TIFF: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3110812849, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
-pub const WiaImgFmt_TXT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4210904450, data2: 29247, data3: 16927, data4: [147, 24, 48, 80, 26, 196, 75, 89] };
-pub const WiaImgFmt_UNDEFINED: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3110812841, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
-pub const WiaImgFmt_UNICODE16: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 460732854, data2: 25431, data3: 18385, data4: [154, 7, 18, 69, 45, 192, 115, 233] };
-pub const WiaImgFmt_WMF: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3110812845, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
-pub const WiaImgFmt_XML: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3105297495, data2: 56008, data3: 18564, data4: [179, 147, 21, 180, 113, 213, 240, 126] };
-pub const WiaImgFmt_XMLBAR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1647669276, data2: 15000, data3: 18508, data4: [178, 168, 253, 255, 216, 126, 107, 22] };
-pub const WiaImgFmt_XMLMIC: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 756436065, data2: 47534, data3: 19235, data4: [137, 115, 199, 6, 126, 31, 189, 49] };
-pub const WiaImgFmt_XMLPAT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4170739541, data2: 61522, data3: 17933, data4: [149, 35, 58, 125, 254, 219, 179, 60] };
-pub const WiaImgFmt_XPS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1879788047, data2: 8209, data3: 16668, data4: [180, 48, 209, 224, 178, 225, 11, 40] };
+pub const WiaAudFmt_AIFF: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1726136143, data2: 46844, data3: 17471, data4: [148, 200, 47, 51, 200, 166, 90, 175] };
+pub const WiaAudFmt_MP3: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 264008187, data2: 17343, data3: 18930, data4: [145, 144, 230, 254, 207, 243, 126, 84] };
+pub const WiaAudFmt_WAV: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4162380102, data2: 1967, data3: 16639, data4: [174, 85, 190, 143, 44, 6, 93, 190] };
+pub const WiaAudFmt_WMA: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3592250387, data2: 35778, data3: 17295, data4: [147, 173, 33, 189, 72, 77, 182, 161] };
+pub const WiaDevMgr: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2717181734, data2: 36081, data3: 4561, data4: [191, 146, 0, 96, 8, 30, 216, 17] };
+pub const WiaDevMgr2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3066204860, data2: 31880, data3: 16878, data4: [139, 84, 142, 201, 38, 23, 229, 153] };
+pub const WiaImgFmt_ASF: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2375323369, data2: 53418, data3: 18962, data4: [157, 154, 156, 197, 222, 54, 25, 155] };
+pub const WiaImgFmt_AVI: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 855165460, data2: 2172, data3: 18696, data4: [183, 196, 103, 87, 254, 126, 144, 171] };
+pub const WiaImgFmt_BMP: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3110812843, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
+pub const WiaImgFmt_CIFF: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2552342699, data2: 14974, data3: 16917, data4: [148, 224, 210, 122, 70, 12, 3, 178] };
+pub const WiaImgFmt_CSV: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 895212068, data2: 23199, data3: 17556, data4: [128, 220, 190, 117, 44, 236, 188, 140] };
+pub const WiaImgFmt_DPOF: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 916385451, data2: 41192, data3: 17866, data4: [134, 166, 168, 60, 229, 105, 126, 40] };
+pub const WiaImgFmt_EMF: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3110812844, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
+pub const WiaImgFmt_EXEC: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1214095511, data2: 5150, data3: 19109, data4: [187, 59, 165, 97, 141, 149, 208, 43] };
+pub const WiaImgFmt_EXIF: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3110812850, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
+pub const WiaImgFmt_FLASHPIX: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3110812852, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
+pub const WiaImgFmt_GIF: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3110812848, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
+pub const WiaImgFmt_HTML: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3382333026, data2: 39390, data3: 19092, data4: [172, 202, 113, 149, 106, 194, 151, 125] };
+pub const WiaImgFmt_ICO: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3110812853, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
+pub const WiaImgFmt_JBIG: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1105780114, data2: 12042, data3: 17364, data4: [134, 54, 241, 97, 75, 161, 30, 70] };
+pub const WiaImgFmt_JBIG2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3146677863, data2: 10300, data3: 16949, data4: [158, 89, 11, 155, 249, 76, 166, 135] };
+pub const WiaImgFmt_JPEG: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3110812846, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
+pub const WiaImgFmt_JPEG2K: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 877585074, data2: 14811, data3: 19934, data4: [129, 115, 196, 183, 95, 143, 30, 73] };
+pub const WiaImgFmt_JPEG2KX: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1138837012, data2: 51210, data3: 18512, data4: [186, 243, 75, 21, 45, 200, 218, 39] };
+pub const WiaImgFmt_MEMORYBMP: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3110812842, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
+pub const WiaImgFmt_MPG: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3973535716, data2: 53996, data3: 20311, data4: [149, 93, 188, 248, 169, 124, 78, 82] };
+pub const WiaImgFmt_OXPS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 746263104, data2: 49485, data3: 16649, data4: [151, 85, 4, 184, 144, 37, 21, 58] };
+pub const WiaImgFmt_PDFA: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2575351131, data2: 13411, data3: 17351, data4: [189, 202, 60, 170, 20, 111, 34, 159] };
+pub const WiaImgFmt_PHOTOCD: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3110812851, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
+pub const WiaImgFmt_PICT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2797372888, data2: 27454, data3: 16622, data4: [169, 92, 37, 212, 130, 228, 26, 220] };
+pub const WiaImgFmt_PNG: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3110812847, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
+pub const WiaImgFmt_RAW: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1863452441, data2: 61864, data3: 19975, data4: [154, 222, 155, 100, 198, 58, 61, 204] };
+pub const WiaImgFmt_RAWBAR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3663984691, data2: 53870, data3: 17694, data4: [144, 210, 234, 85, 161, 54, 93, 98] };
+pub const WiaImgFmt_RAWMIC: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 583331928, data2: 3464, data3: 16540, data4: [172, 28, 238, 193, 43, 14, 166, 128] };
+pub const WiaImgFmt_RAWPAT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2002800764, data2: 20580, data3: 16396, data4: [154, 23, 87, 86, 36, 216, 130, 75] };
+pub const WiaImgFmt_RAWRGB: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3164900181, data2: 62066, data3: 17265, data4: [176, 241, 74, 21, 13, 5, 123, 180] };
+pub const WiaImgFmt_RTF: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1463670435, data2: 18484, data3: 17197, data4: [169, 181, 225, 152, 221, 158, 137, 13] };
+pub const WiaImgFmt_SCRIPT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4269632595, data2: 11692, data3: 17514, data4: [176, 189, 215, 62, 33, 233, 36, 201] };
+pub const WiaImgFmt_TIFF: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3110812849, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
+pub const WiaImgFmt_TXT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4210904450, data2: 29247, data3: 16927, data4: [147, 24, 48, 80, 26, 196, 75, 89] };
+pub const WiaImgFmt_UNDEFINED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3110812841, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
+pub const WiaImgFmt_UNICODE16: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 460732854, data2: 25431, data3: 18385, data4: [154, 7, 18, 69, 45, 192, 115, 233] };
+pub const WiaImgFmt_WMF: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3110812845, data2: 1832, data3: 4563, data4: [157, 123, 0, 0, 248, 30, 243, 46] };
+pub const WiaImgFmt_XML: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3105297495, data2: 56008, data3: 18564, data4: [179, 147, 21, 180, 113, 213, 240, 126] };
+pub const WiaImgFmt_XMLBAR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1647669276, data2: 15000, data3: 18508, data4: [178, 168, 253, 255, 216, 126, 107, 22] };
+pub const WiaImgFmt_XMLMIC: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 756436065, data2: 47534, data3: 19235, data4: [137, 115, 199, 6, 126, 31, 189, 49] };
+pub const WiaImgFmt_XMLPAT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4170739541, data2: 61522, data3: 17933, data4: [149, 35, 58, 125, 254, 219, 179, 60] };
+pub const WiaImgFmt_XPS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1879788047, data2: 8209, data3: 16668, data4: [180, 48, 209, 224, 178, 225, 11, 40] };
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const WiaItemTypeAnalyze: u32 = 16u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
@@ -3147,14 +3147,14 @@ pub const WiaItemTypeTwainCapabilityPassThrough: u32 = 131072u32;
 pub const WiaItemTypeVPanorama: u32 = 1024u32;
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const WiaItemTypeVideo: u32 = 65536u32;
-pub const WiaLog: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2716291927, data2: 34842, data3: 16798, data4: [131, 226, 187, 22, 219, 25, 124, 104] };
+pub const WiaLog: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2716291927, data2: 34842, data3: 16798, data4: [131, 226, 187, 22, 219, 25, 124, 104] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub struct WiaTransferParams {
     pub lMessage: i32,
     pub lPercentComplete: i32,
     pub ulTransferredBytes: u64,
-    pub hrErrorStatus: ::windows_sys::core::HRESULT,
+    pub hrErrorStatus: ::windows_sys_core::HRESULT,
 }
 impl ::core::marker::Copy for WiaTransferParams {}
 impl ::core::clone::Clone for WiaTransferParams {
@@ -3162,6 +3162,6 @@ impl ::core::clone::Clone for WiaTransferParams {
         *self
     }
 }
-pub const WiaVideo: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 956875725, data2: 17528, data3: 17718, data4: [175, 47, 16, 194, 93, 78, 248, 154] };
+pub const WiaVideo: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 956875725, data2: 17528, data3: 17718, data4: [175, 47, 16, 194, 93, 78, 248, 154] };
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const g_dwDebugFlags: u32 = 0u32;

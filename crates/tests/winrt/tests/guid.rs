@@ -1,8 +1,8 @@
-use windows::core::GUID;
+use windows_core::GUID;
 use windows::Foundation::GuidHelper;
 
 #[test]
-fn guid_helper() -> windows::core::Result<()> {
+fn guid_helper() -> windows_core::Result<()> {
     let a = GuidHelper::CreateNewGuid()?;
     let b = GuidHelper::CreateNewGuid()?;
 

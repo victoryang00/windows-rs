@@ -1,4 +1,4 @@
-use windows::core::*;
+use windows_core::*;
 use windows::ApplicationModel::Activation::*;
 use windows::UI::Xaml::*;
 

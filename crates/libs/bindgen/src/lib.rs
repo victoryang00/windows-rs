@@ -55,7 +55,11 @@ pub fn define(gen: &Gen, name: &str) -> String {
 pub fn namespace(gen: &Gen, tree: &Tree) -> String {
     let namespaces = tree.nested.iter().map(move |(name, tree)| {
         let name = to_ident(name);
-        let namespace = tree.namespace[tree.namespace.find('.').unwrap() + 1..].replace('.', "_");
+        let namespace = if gen.monolithic {
+            tree.namespace[tree.namespace.find('.').unwrap() + 1..].replace('.', "_")
+        } else {
+            tree.namespace[gen.namespace.len() + 1..].replace('.', "_")
+        };        
         if gen.cfg {
             quote! {
                 #[cfg(feature = #namespace)] pub mod #name;

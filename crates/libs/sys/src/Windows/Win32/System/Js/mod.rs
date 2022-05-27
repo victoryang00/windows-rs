@@ -92,7 +92,7 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
     pub fn JsGetProperty(object: *const ::core::ffi::c_void, propertyid: *const ::core::ffi::c_void, value: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
-    pub fn JsGetPropertyIdFromName(name: ::windows_sys::core::PCWSTR, propertyid: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsGetPropertyIdFromName(name: ::windows_sys_core::PCWSTR, propertyid: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
     pub fn JsGetPropertyNameFromId(propertyid: *const ::core::ffi::c_void, name: *mut *mut u16) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
@@ -130,21 +130,21 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
     pub fn JsNumberToDouble(value: *const ::core::ffi::c_void, doublevalue: *mut f64) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
-    pub fn JsParseScript(script: ::windows_sys::core::PCWSTR, sourcecontext: usize, sourceurl: ::windows_sys::core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsParseScript(script: ::windows_sys_core::PCWSTR, sourcecontext: usize, sourceurl: ::windows_sys_core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
-    pub fn JsParseSerializedScript(script: ::windows_sys::core::PCWSTR, buffer: *const u8, sourcecontext: usize, sourceurl: ::windows_sys::core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsParseSerializedScript(script: ::windows_sys_core::PCWSTR, buffer: *const u8, sourcecontext: usize, sourceurl: ::windows_sys_core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
-    pub fn JsPointerToString(stringvalue: ::windows_sys::core::PCWSTR, stringlength: usize, value: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsPointerToString(stringvalue: ::windows_sys_core::PCWSTR, stringlength: usize, value: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
     pub fn JsPreventExtension(object: *const ::core::ffi::c_void) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
     pub fn JsRelease(r#ref: *const ::core::ffi::c_void, count: *mut u32) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
-    pub fn JsRunScript(script: ::windows_sys::core::PCWSTR, sourcecontext: usize, sourceurl: ::windows_sys::core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsRunScript(script: ::windows_sys_core::PCWSTR, sourcecontext: usize, sourceurl: ::windows_sys_core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
-    pub fn JsRunSerializedScript(script: ::windows_sys::core::PCWSTR, buffer: *const u8, sourcecontext: usize, sourceurl: ::windows_sys::core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsRunSerializedScript(script: ::windows_sys_core::PCWSTR, buffer: *const u8, sourcecontext: usize, sourceurl: ::windows_sys_core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
-    pub fn JsSerializeScript(script: ::windows_sys::core::PCWSTR, buffer: *mut u8, buffersize: *mut u32) -> JsErrorCode;
+    pub fn JsSerializeScript(script: ::windows_sys_core::PCWSTR, buffer: *mut u8, buffersize: *mut u32) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
     pub fn JsSetCurrentContext(context: *const ::core::ffi::c_void) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
@@ -175,7 +175,7 @@ extern "system" {
     #[cfg(feature = "Win32_System_Diagnostics_Debug")]
     pub fn JsStartProfiling(callback: super::Diagnostics::Debug::IActiveScriptProfilerCallback, eventmask: super::Diagnostics::Debug::PROFILER_EVENT_MASK, context: u32) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
-    pub fn JsStopProfiling(reason: ::windows_sys::core::HRESULT) -> JsErrorCode;
+    pub fn JsStopProfiling(reason: ::windows_sys_core::HRESULT) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
     pub fn JsStrictEquals(object1: *const ::core::ffi::c_void, object2: *const ::core::ffi::c_void, result: *mut bool) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]

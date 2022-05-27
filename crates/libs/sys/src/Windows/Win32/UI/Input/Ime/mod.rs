@@ -44,10 +44,10 @@ extern "system" {
     pub fn ImmEnumInputContext(idthread: u32, lpfn: IMCENUMPROC, lparam: super::super::super::Foundation::LPARAM) -> super::super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(feature = "Win32_UI_TextServices")]
-    pub fn ImmEnumRegisterWordA(param0: super::super::TextServices::HKL, param1: REGISTERWORDENUMPROCA, lpszreading: ::windows_sys::core::PCSTR, param3: u32, lpszregister: ::windows_sys::core::PCSTR, param5: *mut ::core::ffi::c_void) -> u32;
+    pub fn ImmEnumRegisterWordA(param0: super::super::TextServices::HKL, param1: REGISTERWORDENUMPROCA, lpszreading: ::windows_sys_core::PCSTR, param3: u32, lpszregister: ::windows_sys_core::PCSTR, param5: *mut ::core::ffi::c_void) -> u32;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(feature = "Win32_UI_TextServices")]
-    pub fn ImmEnumRegisterWordW(param0: super::super::TextServices::HKL, param1: REGISTERWORDENUMPROCW, lpszreading: ::windows_sys::core::PCWSTR, param3: u32, lpszregister: ::windows_sys::core::PCWSTR, param5: *mut ::core::ffi::c_void) -> u32;
+    pub fn ImmEnumRegisterWordW(param0: super::super::TextServices::HKL, param1: REGISTERWORDENUMPROCW, lpszreading: ::windows_sys_core::PCWSTR, param3: u32, lpszregister: ::windows_sys_core::PCWSTR, param5: *mut ::core::ffi::c_void) -> u32;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Foundation\"`, `\"Win32_Globalization\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Globalization", feature = "Win32_UI_TextServices"))]
     pub fn ImmEscapeA(param0: super::super::TextServices::HKL, param1: super::super::super::Globalization::HIMC, param2: u32, param3: *mut ::core::ffi::c_void) -> super::super::super::Foundation::LRESULT;
@@ -92,10 +92,10 @@ extern "system" {
     pub fn ImmGetContext(param0: super::super::super::Foundation::HWND) -> super::super::super::Globalization::HIMC;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Globalization\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(all(feature = "Win32_Globalization", feature = "Win32_UI_TextServices"))]
-    pub fn ImmGetConversionListA(param0: super::super::TextServices::HKL, param1: super::super::super::Globalization::HIMC, lpsrc: ::windows_sys::core::PCSTR, lpdst: *mut CANDIDATELIST, dwbuflen: u32, uflag: GET_CONVERSION_LIST_FLAG) -> u32;
+    pub fn ImmGetConversionListA(param0: super::super::TextServices::HKL, param1: super::super::super::Globalization::HIMC, lpsrc: ::windows_sys_core::PCSTR, lpdst: *mut CANDIDATELIST, dwbuflen: u32, uflag: GET_CONVERSION_LIST_FLAG) -> u32;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Globalization\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(all(feature = "Win32_Globalization", feature = "Win32_UI_TextServices"))]
-    pub fn ImmGetConversionListW(param0: super::super::TextServices::HKL, param1: super::super::super::Globalization::HIMC, lpsrc: ::windows_sys::core::PCWSTR, lpdst: *mut CANDIDATELIST, dwbuflen: u32, uflag: GET_CONVERSION_LIST_FLAG) -> u32;
+    pub fn ImmGetConversionListW(param0: super::super::TextServices::HKL, param1: super::super::super::Globalization::HIMC, lpsrc: ::windows_sys_core::PCWSTR, lpdst: *mut CANDIDATELIST, dwbuflen: u32, uflag: GET_CONVERSION_LIST_FLAG) -> u32;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Foundation\"`, `\"Win32_Globalization\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Globalization"))]
     pub fn ImmGetConversionStatus(param0: super::super::super::Globalization::HIMC, lpfdwconversion: *mut u32, lpfdwsentence: *mut u32) -> super::super::super::Foundation::BOOL;
@@ -104,16 +104,16 @@ extern "system" {
     pub fn ImmGetDefaultIMEWnd(param0: super::super::super::Foundation::HWND) -> super::super::super::Foundation::HWND;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(feature = "Win32_UI_TextServices")]
-    pub fn ImmGetDescriptionA(param0: super::super::TextServices::HKL, lpszdescription: ::windows_sys::core::PSTR, ubuflen: u32) -> u32;
+    pub fn ImmGetDescriptionA(param0: super::super::TextServices::HKL, lpszdescription: ::windows_sys_core::PSTR, ubuflen: u32) -> u32;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(feature = "Win32_UI_TextServices")]
-    pub fn ImmGetDescriptionW(param0: super::super::TextServices::HKL, lpszdescription: ::windows_sys::core::PWSTR, ubuflen: u32) -> u32;
+    pub fn ImmGetDescriptionW(param0: super::super::TextServices::HKL, lpszdescription: ::windows_sys_core::PWSTR, ubuflen: u32) -> u32;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Globalization\"`*"]
     #[cfg(feature = "Win32_Globalization")]
-    pub fn ImmGetGuideLineA(param0: super::super::super::Globalization::HIMC, dwindex: GET_GUIDE_LINE_TYPE, lpbuf: ::windows_sys::core::PSTR, dwbuflen: u32) -> u32;
+    pub fn ImmGetGuideLineA(param0: super::super::super::Globalization::HIMC, dwindex: GET_GUIDE_LINE_TYPE, lpbuf: ::windows_sys_core::PSTR, dwbuflen: u32) -> u32;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Globalization\"`*"]
     #[cfg(feature = "Win32_Globalization")]
-    pub fn ImmGetGuideLineW(param0: super::super::super::Globalization::HIMC, dwindex: GET_GUIDE_LINE_TYPE, lpbuf: ::windows_sys::core::PWSTR, dwbuflen: u32) -> u32;
+    pub fn ImmGetGuideLineW(param0: super::super::super::Globalization::HIMC, dwindex: GET_GUIDE_LINE_TYPE, lpbuf: ::windows_sys_core::PWSTR, dwbuflen: u32) -> u32;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn ImmGetHotKey(param0: u32, lpumodifiers: *mut u32, lpuvkey: *mut u32, phkl: *mut isize) -> super::super::super::Foundation::BOOL;
@@ -128,10 +128,10 @@ extern "system" {
     pub fn ImmGetIMCLockCount(param0: super::super::super::Globalization::HIMC) -> u32;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(feature = "Win32_UI_TextServices")]
-    pub fn ImmGetIMEFileNameA(param0: super::super::TextServices::HKL, lpszfilename: ::windows_sys::core::PSTR, ubuflen: u32) -> u32;
+    pub fn ImmGetIMEFileNameA(param0: super::super::TextServices::HKL, lpszfilename: ::windows_sys_core::PSTR, ubuflen: u32) -> u32;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(feature = "Win32_UI_TextServices")]
-    pub fn ImmGetIMEFileNameW(param0: super::super::TextServices::HKL, lpszfilename: ::windows_sys::core::PWSTR, ubuflen: u32) -> u32;
+    pub fn ImmGetIMEFileNameW(param0: super::super::TextServices::HKL, lpszfilename: ::windows_sys_core::PWSTR, ubuflen: u32) -> u32;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Foundation\"`, `\"Win32_Globalization\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi"))]
     pub fn ImmGetImeMenuItemsA(param0: super::super::super::Globalization::HIMC, param1: u32, param2: u32, lpimeparentmenu: *mut IMEMENUITEMINFOA, lpimemenu: *mut IMEMENUITEMINFOA, dwsize: u32) -> u32;
@@ -158,10 +158,10 @@ extern "system" {
     pub fn ImmGetVirtualKey(param0: super::super::super::Foundation::HWND) -> u32;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(feature = "Win32_UI_TextServices")]
-    pub fn ImmInstallIMEA(lpszimefilename: ::windows_sys::core::PCSTR, lpszlayouttext: ::windows_sys::core::PCSTR) -> super::super::TextServices::HKL;
+    pub fn ImmInstallIMEA(lpszimefilename: ::windows_sys_core::PCSTR, lpszlayouttext: ::windows_sys_core::PCSTR) -> super::super::TextServices::HKL;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(feature = "Win32_UI_TextServices")]
-    pub fn ImmInstallIMEW(lpszimefilename: ::windows_sys::core::PCWSTR, lpszlayouttext: ::windows_sys::core::PCWSTR) -> super::super::TextServices::HKL;
+    pub fn ImmInstallIMEW(lpszimefilename: ::windows_sys_core::PCWSTR, lpszlayouttext: ::windows_sys_core::PCWSTR) -> super::super::TextServices::HKL;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Foundation\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_TextServices"))]
     pub fn ImmIsIME(param0: super::super::TextServices::HKL) -> super::super::super::Foundation::BOOL;
@@ -185,10 +185,10 @@ extern "system" {
     pub fn ImmReSizeIMCC(param0: super::super::super::Globalization::HIMCC, param1: u32) -> super::super::super::Globalization::HIMCC;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Foundation\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_TextServices"))]
-    pub fn ImmRegisterWordA(param0: super::super::TextServices::HKL, lpszreading: ::windows_sys::core::PCSTR, param2: u32, lpszregister: ::windows_sys::core::PCSTR) -> super::super::super::Foundation::BOOL;
+    pub fn ImmRegisterWordA(param0: super::super::TextServices::HKL, lpszreading: ::windows_sys_core::PCSTR, param2: u32, lpszregister: ::windows_sys_core::PCSTR) -> super::super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Foundation\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_TextServices"))]
-    pub fn ImmRegisterWordW(param0: super::super::TextServices::HKL, lpszreading: ::windows_sys::core::PCWSTR, param2: u32, lpszregister: ::windows_sys::core::PCWSTR) -> super::super::super::Foundation::BOOL;
+    pub fn ImmRegisterWordW(param0: super::super::TextServices::HKL, lpszreading: ::windows_sys_core::PCWSTR, param2: u32, lpszregister: ::windows_sys_core::PCWSTR) -> super::super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Foundation\"`, `\"Win32_Globalization\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Globalization"))]
     pub fn ImmReleaseContext(param0: super::super::super::Foundation::HWND, param1: super::super::super::Globalization::HIMC) -> super::super::super::Foundation::BOOL;
@@ -242,16 +242,16 @@ extern "system" {
     pub fn ImmUnlockIMCC(param0: super::super::super::Globalization::HIMCC) -> super::super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Foundation\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_TextServices"))]
-    pub fn ImmUnregisterWordA(param0: super::super::TextServices::HKL, lpszreading: ::windows_sys::core::PCSTR, param2: u32, lpszunregister: ::windows_sys::core::PCSTR) -> super::super::super::Foundation::BOOL;
+    pub fn ImmUnregisterWordA(param0: super::super::TextServices::HKL, lpszreading: ::windows_sys_core::PCSTR, param2: u32, lpszunregister: ::windows_sys_core::PCSTR) -> super::super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Foundation\"`, `\"Win32_UI_TextServices\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_TextServices"))]
-    pub fn ImmUnregisterWordW(param0: super::super::TextServices::HKL, lpszreading: ::windows_sys::core::PCWSTR, param2: u32, lpszunregister: ::windows_sys::core::PCWSTR) -> super::super::super::Foundation::BOOL;
+    pub fn ImmUnregisterWordW(param0: super::super::TextServices::HKL, lpszreading: ::windows_sys_core::PCWSTR, param2: u32, lpszunregister: ::windows_sys_core::PCWSTR) -> super::super::super::Foundation::BOOL;
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub struct APPLETIDLIST {
     pub count: i32,
-    pub pIIDList: *mut ::windows_sys::core::GUID,
+    pub pIIDList: *mut ::windows_sys_core::GUID,
 }
 impl ::core::marker::Copy for APPLETIDLIST {}
 impl ::core::clone::Clone for APPLETIDLIST {
@@ -263,8 +263,8 @@ impl ::core::clone::Clone for APPLETIDLIST {
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub struct APPLYCANDEXPARAM {
     pub dwSize: u32,
-    pub lpwstrDisplay: ::windows_sys::core::PWSTR,
-    pub lpwstrReading: ::windows_sys::core::PWSTR,
+    pub lpwstrDisplay: ::windows_sys_core::PWSTR,
+    pub lpwstrReading: ::windows_sys_core::PWSTR,
     pub dwReserved: u32,
 }
 impl ::core::marker::Copy for APPLYCANDEXPARAM {}
@@ -334,14 +334,14 @@ impl ::core::clone::Clone for CANDIDATELIST {
         *self
     }
 }
-pub const CATID_MSIME_IImePadApplet: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1969670865, data2: 20169, data3: 17528, data4: [159, 233, 142, 215, 102, 97, 158, 223] };
-pub const CATID_MSIME_IImePadApplet1000: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3766608342, data2: 9097, data3: 17355, data4: [182, 111, 96, 159, 130, 61, 159, 156] };
-pub const CATID_MSIME_IImePadApplet1200: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2759833084, data2: 32021, data3: 16931, data4: [167, 137, 183, 129, 191, 154, 230, 103] };
-pub const CATID_MSIME_IImePadApplet900: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4205728191, data2: 24155, data3: 18973, data4: [141, 225, 23, 193, 217, 225, 114, 141] };
-pub const CATID_MSIME_IImePadApplet_VER7: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1242533425, data2: 50158, data3: 4561, data4: [175, 239, 0, 128, 95, 12, 139, 109] };
-pub const CATID_MSIME_IImePadApplet_VER80: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1459070866, data2: 65265, data3: 4563, data4: [132, 99, 0, 192, 79, 122, 6, 229] };
-pub const CATID_MSIME_IImePadApplet_VER81: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1701126320, data2: 48008, data3: 4564, data4: [132, 192, 0, 192, 79, 122, 6, 229] };
-pub const CActiveIMM: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1230363955, data2: 45401, data3: 4560, data4: [143, 207, 0, 170, 0, 107, 204, 89] };
+pub const CATID_MSIME_IImePadApplet: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1969670865, data2: 20169, data3: 17528, data4: [159, 233, 142, 215, 102, 97, 158, 223] };
+pub const CATID_MSIME_IImePadApplet1000: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3766608342, data2: 9097, data3: 17355, data4: [182, 111, 96, 159, 130, 61, 159, 156] };
+pub const CATID_MSIME_IImePadApplet1200: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2759833084, data2: 32021, data3: 16931, data4: [167, 137, 183, 129, 191, 154, 230, 103] };
+pub const CATID_MSIME_IImePadApplet900: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4205728191, data2: 24155, data3: 18973, data4: [141, 225, 23, 193, 217, 225, 114, 141] };
+pub const CATID_MSIME_IImePadApplet_VER7: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1242533425, data2: 50158, data3: 4561, data4: [175, 239, 0, 128, 95, 12, 139, 109] };
+pub const CATID_MSIME_IImePadApplet_VER80: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1459070866, data2: 65265, data3: 4563, data4: [132, 99, 0, 192, 79, 122, 6, 229] };
+pub const CATID_MSIME_IImePadApplet_VER81: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1701126320, data2: 48008, data3: 4564, data4: [132, 192, 0, 192, 79, 122, 6, 229] };
+pub const CActiveIMM: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1230363955, data2: 45401, data3: 4560, data4: [143, 207, 0, 170, 0, 107, 204, 89] };
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub const CFS_CANDIDATEPOS: u32 = 64u32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
@@ -360,9 +360,9 @@ pub const CHARINFO_APPLETID_MASK: u32 = 4278190080u32;
 pub const CHARINFO_CHARID_MASK: u32 = 65535u32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub const CHARINFO_FEID_MASK: u32 = 15728640u32;
-pub const CLSID_ImePlugInDictDictionaryList_CHS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2079330971, data2: 23535, data3: 19940, data4: [155, 11, 94, 219, 102, 172, 47, 166] };
-pub const CLSID_ImePlugInDictDictionaryList_JPN: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1340241771, data2: 45305, data3: 17302, data4: [181, 252, 233, 212, 207, 30, 193, 149] };
-pub const CLSID_VERSION_DEPENDENT_MSIME_JAPANESE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1787888286, data2: 43593, data3: 18203, data4: [174, 231, 125, 51, 39, 133, 102, 13] };
+pub const CLSID_ImePlugInDictDictionaryList_CHS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2079330971, data2: 23535, data3: 19940, data4: [155, 11, 94, 219, 102, 172, 47, 166] };
+pub const CLSID_ImePlugInDictDictionaryList_JPN: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1340241771, data2: 45305, data3: 17302, data4: [181, 252, 233, 212, 207, 30, 193, 149] };
+pub const CLSID_VERSION_DEPENDENT_MSIME_JAPANESE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1787888286, data2: 43593, data3: 18203, data4: [174, 231, 125, 51, 39, 133, 102, 13] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -655,33 +655,33 @@ pub type IEnumInputContext = *mut ::core::ffi::c_void;
 pub type IEnumRegisterWordA = *mut ::core::ffi::c_void;
 pub type IEnumRegisterWordW = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFEC_S_ALREADY_DEFAULT: ::windows_sys::core::HRESULT = 291840i32;
+pub const IFEC_S_ALREADY_DEFAULT: ::windows_sys_core::HRESULT = 291840i32;
 pub type IFEClassFactory = *mut ::core::ffi::c_void;
 pub type IFECommon = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_E_INVALID_FORMAT: ::windows_sys::core::HRESULT = -2147192063i32;
+pub const IFED_E_INVALID_FORMAT: ::windows_sys_core::HRESULT = -2147192063i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_E_NOT_FOUND: ::windows_sys::core::HRESULT = -2147192064i32;
+pub const IFED_E_NOT_FOUND: ::windows_sys_core::HRESULT = -2147192064i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_E_NOT_SUPPORTED: ::windows_sys::core::HRESULT = -2147192057i32;
+pub const IFED_E_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147192057i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_E_NOT_USER_DIC: ::windows_sys::core::HRESULT = -2147192058i32;
+pub const IFED_E_NOT_USER_DIC: ::windows_sys_core::HRESULT = -2147192058i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_E_NO_ENTRY: ::windows_sys::core::HRESULT = -2147192060i32;
+pub const IFED_E_NO_ENTRY: ::windows_sys_core::HRESULT = -2147192060i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_E_OPEN_FAILED: ::windows_sys::core::HRESULT = -2147192062i32;
+pub const IFED_E_OPEN_FAILED: ::windows_sys_core::HRESULT = -2147192062i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_E_REGISTER_DISCONNECTED: ::windows_sys::core::HRESULT = -2147192053i32;
+pub const IFED_E_REGISTER_DISCONNECTED: ::windows_sys_core::HRESULT = -2147192053i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_E_REGISTER_FAILED: ::windows_sys::core::HRESULT = -2147192059i32;
+pub const IFED_E_REGISTER_FAILED: ::windows_sys_core::HRESULT = -2147192059i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_E_REGISTER_ILLEGAL_POS: ::windows_sys::core::HRESULT = -2147192055i32;
+pub const IFED_E_REGISTER_ILLEGAL_POS: ::windows_sys_core::HRESULT = -2147192055i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_E_REGISTER_IMPROPER_WORD: ::windows_sys::core::HRESULT = -2147192054i32;
+pub const IFED_E_REGISTER_IMPROPER_WORD: ::windows_sys_core::HRESULT = -2147192054i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_E_USER_COMMENT: ::windows_sys::core::HRESULT = -2147192056i32;
+pub const IFED_E_USER_COMMENT: ::windows_sys_core::HRESULT = -2147192056i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_E_WRITE_FAILED: ::windows_sys::core::HRESULT = -2147192061i32;
+pub const IFED_E_WRITE_FAILED: ::windows_sys_core::HRESULT = -2147192061i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub const IFED_POS_ADJECTIVE: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
@@ -749,13 +749,13 @@ pub const IFED_SELECT_POS: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub const IFED_SELECT_READING: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_S_COMMENT_CHANGED: ::windows_sys::core::HRESULT = 291331i32;
+pub const IFED_S_COMMENT_CHANGED: ::windows_sys_core::HRESULT = 291331i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_S_EMPTY_DICTIONARY: ::windows_sys::core::HRESULT = 291329i32;
+pub const IFED_S_EMPTY_DICTIONARY: ::windows_sys_core::HRESULT = 291329i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_S_MORE_ENTRIES: ::windows_sys::core::HRESULT = 291328i32;
+pub const IFED_S_MORE_ENTRIES: ::windows_sys_core::HRESULT = 291328i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub const IFED_S_WORD_EXISTS: ::windows_sys::core::HRESULT = 291330i32;
+pub const IFED_S_WORD_EXISTS: ::windows_sys_core::HRESULT = 291330i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub const IFED_TYPE_ALL: u32 = 31u32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
@@ -932,7 +932,7 @@ impl ::core::clone::Clone for IMECOMPOSITIONSTRINGINFO {
 pub struct IMEDLG {
     pub cbIMEDLG: i32,
     pub hwnd: super::super::super::Foundation::HWND,
-    pub lpwstrWord: ::windows_sys::core::PWSTR,
+    pub lpwstrWord: ::windows_sys_core::PWSTR,
     pub nTabId: i32,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1465,7 +1465,7 @@ impl ::core::clone::Clone for IMESHF {
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub struct IMESTRINGCANDIDATE {
     pub uCount: u32,
-    pub lpwstr: [::windows_sys::core::PWSTR; 1],
+    pub lpwstr: [::windows_sys_core::PWSTR; 1],
 }
 impl ::core::marker::Copy for IMESTRINGCANDIDATE {}
 impl ::core::clone::Clone for IMESTRINGCANDIDATE {
@@ -1481,7 +1481,7 @@ pub struct IMESTRINGCANDIDATEINFO {
     pub fInfoMask: u32,
     pub iSelIndex: i32,
     pub uCount: u32,
-    pub lpwstr: [::windows_sys::core::PWSTR; 1],
+    pub lpwstr: [::windows_sys_core::PWSTR; 1],
 }
 impl ::core::marker::Copy for IMESTRINGCANDIDATEINFO {}
 impl ::core::clone::Clone for IMESTRINGCANDIDATEINFO {
@@ -1508,8 +1508,8 @@ pub const IMEVER_0400: u32 = 262144u32;
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub struct IMEWRD {
-    pub pwchReading: ::windows_sys::core::PWSTR,
-    pub pwchDisplay: ::windows_sys::core::PWSTR,
+    pub pwchReading: ::windows_sys_core::PWSTR,
+    pub pwchDisplay: ::windows_sys_core::PWSTR,
     pub Anonymous: IMEWRD_0,
     pub rgulAttrs: [u32; 2],
     pub cbComment: i32,
@@ -2279,7 +2279,7 @@ pub const MOD_RIGHT: u32 = 16384u32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub struct MORRSLT {
     pub dwSize: u32,
-    pub pwchOutput: ::windows_sys::core::PWSTR,
+    pub pwchOutput: ::windows_sys_core::PWSTR,
     pub cchOutput: u16,
     pub Anonymous1: MORRSLT_0,
     pub Anonymous2: MORRSLT_1,
@@ -2301,8 +2301,8 @@ impl ::core::clone::Clone for MORRSLT {
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub union MORRSLT_0 {
-    pub pwchRead: ::windows_sys::core::PWSTR,
-    pub pwchComp: ::windows_sys::core::PWSTR,
+    pub pwchRead: ::windows_sys_core::PWSTR,
+    pub pwchComp: ::windows_sys_core::PWSTR,
 }
 impl ::core::marker::Copy for MORRSLT_0 {}
 impl ::core::clone::Clone for MORRSLT_0 {
@@ -2368,7 +2368,7 @@ pub const CPS_CONVERT: NOTIFY_IME_INDEX = 2u32;
 pub const CPS_REVERT: NOTIFY_IME_INDEX = 3u32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PFNLOG = ::core::option::Option<unsafe extern "system" fn(param0: *mut IMEDP, param1: ::windows_sys::core::HRESULT) -> super::super::super::Foundation::BOOL>;
+pub type PFNLOG = ::core::option::Option<unsafe extern "system" fn(param0: *mut IMEDP, param1: ::windows_sys_core::HRESULT) -> super::super::super::Foundation::BOOL>;
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub struct POSTBL {
@@ -2408,8 +2408,8 @@ pub const RECONVOPT_USECANCELNOTIFY: u32 = 1u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub struct REGISTERWORDA {
-    pub lpReading: ::windows_sys::core::PSTR,
-    pub lpWord: ::windows_sys::core::PSTR,
+    pub lpReading: ::windows_sys_core::PSTR,
+    pub lpWord: ::windows_sys_core::PSTR,
 }
 impl ::core::marker::Copy for REGISTERWORDA {}
 impl ::core::clone::Clone for REGISTERWORDA {
@@ -2418,14 +2418,14 @@ impl ::core::clone::Clone for REGISTERWORDA {
     }
 }
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub type REGISTERWORDENUMPROCA = ::core::option::Option<unsafe extern "system" fn(lpszreading: ::windows_sys::core::PCSTR, param1: u32, lpszstring: ::windows_sys::core::PCSTR, param3: *mut ::core::ffi::c_void) -> i32>;
+pub type REGISTERWORDENUMPROCA = ::core::option::Option<unsafe extern "system" fn(lpszreading: ::windows_sys_core::PCSTR, param1: u32, lpszstring: ::windows_sys_core::PCSTR, param3: *mut ::core::ffi::c_void) -> i32>;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub type REGISTERWORDENUMPROCW = ::core::option::Option<unsafe extern "system" fn(lpszreading: ::windows_sys::core::PCWSTR, param1: u32, lpszstring: ::windows_sys::core::PCWSTR, param3: *mut ::core::ffi::c_void) -> i32>;
+pub type REGISTERWORDENUMPROCW = ::core::option::Option<unsafe extern "system" fn(lpszreading: ::windows_sys_core::PCWSTR, param1: u32, lpszstring: ::windows_sys_core::PCWSTR, param3: *mut ::core::ffi::c_void) -> i32>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub struct REGISTERWORDW {
-    pub lpReading: ::windows_sys::core::PWSTR,
-    pub lpWord: ::windows_sys::core::PWSTR,
+    pub lpReading: ::windows_sys_core::PWSTR,
+    pub lpWord: ::windows_sys_core::PWSTR,
 }
 impl ::core::marker::Copy for REGISTERWORDW {}
 impl ::core::clone::Clone for REGISTERWORDW {
@@ -2634,11 +2634,11 @@ impl ::core::clone::Clone for WDD_1 {
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub const cbCommentMax: u32 = 256u32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub type fpCreateIFECommonInstanceType = ::core::option::Option<unsafe extern "system" fn(ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type fpCreateIFECommonInstanceType = ::core::option::Option<unsafe extern "system" fn(ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub type fpCreateIFEDictionaryInstanceType = ::core::option::Option<unsafe extern "system" fn(ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type fpCreateIFEDictionaryInstanceType = ::core::option::Option<unsafe extern "system" fn(ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
-pub type fpCreateIFELanguageInstanceType = ::core::option::Option<unsafe extern "system" fn(clsid: *const ::windows_sys::core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type fpCreateIFELanguageInstanceType = ::core::option::Option<unsafe extern "system" fn(clsid: *const ::windows_sys_core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT>;
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub const szImeChina: &str = "MSIME.China";
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
@@ -2664,7 +2664,7 @@ impl ::core::clone::Clone for tabIMEFAREASTINFO {
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub struct tabIMESTRINGINFO {
     pub dwFarEastId: u32,
-    pub lpwstr: ::windows_sys::core::PWSTR,
+    pub lpwstr: ::windows_sys_core::PWSTR,
 }
 impl ::core::marker::Copy for tabIMESTRINGINFO {}
 impl ::core::clone::Clone for tabIMESTRINGINFO {

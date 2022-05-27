@@ -10,9 +10,9 @@ pub type IUIImage = *mut ::core::ffi::c_void;
 pub type IUIImageFromBitmap = *mut ::core::ffi::c_void;
 pub type IUIRibbon = *mut ::core::ffi::c_void;
 pub type IUISimplePropertySet = *mut ::core::ffi::c_void;
-pub const LIBID_UIRibbon: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2486121922, data2: 59451, data3: 17903, data4: [176, 133, 172, 41, 93, 214, 61, 91] };
-pub const UIRibbonFramework: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2456242682, data2: 9749, data3: 18823, data4: [136, 69, 195, 62, 101, 242, 185, 87] };
-pub const UIRibbonImageFromBitmapFactory: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 259273910, data2: 22966, data3: 16976, data4: [153, 158, 209, 104, 214, 174, 66, 147] };
+pub const LIBID_UIRibbon: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2486121922, data2: 59451, data3: 17903, data4: [176, 133, 172, 41, 93, 214, 61, 91] };
+pub const UIRibbonFramework: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2456242682, data2: 9749, data3: 18823, data4: [136, 69, 195, 62, 101, 242, 185, 87] };
+pub const UIRibbonImageFromBitmapFactory: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 259273910, data2: 22966, data3: 16976, data4: [153, 158, 209, 104, 214, 174, 66, 147] };
 #[doc = "*Required features: `\"Win32_UI_Ribbon\"`*"]
 pub const UI_ALL_COMMANDS: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_UI_Ribbon\"`*"]
@@ -107,9 +107,9 @@ impl ::core::clone::Clone for UI_EVENTPARAMS_0 {
 #[doc = "*Required features: `\"Win32_UI_Ribbon\"`*"]
 pub struct UI_EVENTPARAMS_COMMAND {
     pub CommandID: u32,
-    pub CommandName: ::windows_sys::core::PCWSTR,
+    pub CommandName: ::windows_sys_core::PCWSTR,
     pub ParentCommandID: u32,
-    pub ParentCommandName: ::windows_sys::core::PCWSTR,
+    pub ParentCommandName: ::windows_sys_core::PCWSTR,
     pub SelectionIndex: u32,
     pub Location: UI_EVENTLOCATION,
 }

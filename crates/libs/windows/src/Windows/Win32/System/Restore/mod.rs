@@ -52,13 +52,13 @@ impl ::core::clone::Clone for RESTOREPOINTINFOA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RESTOREPOINTINFOA {
+unsafe impl ::windows_core::Abi for RESTOREPOINTINFOA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RESTOREPOINTINFOA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RESTOREPOINTINFOA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RESTOREPOINTINFOA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -83,12 +83,12 @@ impl ::core::clone::Clone for RESTOREPOINTINFOW {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for RESTOREPOINTINFOW {
+unsafe impl ::windows_core::Abi for RESTOREPOINTINFOW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RESTOREPOINTINFOW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RESTOREPOINTINFOW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RESTOREPOINTINFOW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RESTOREPOINTINFOW {}
@@ -120,7 +120,7 @@ impl ::core::default::Default for RESTOREPOINTINFO_EVENT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RESTOREPOINTINFO_EVENT_TYPE {
+unsafe impl ::windows_core::Abi for RESTOREPOINTINFO_EVENT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RESTOREPOINTINFO_EVENT_TYPE {
@@ -153,7 +153,7 @@ impl ::core::default::Default for RESTOREPOINTINFO_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RESTOREPOINTINFO_TYPE {
+unsafe impl ::windows_core::Abi for RESTOREPOINTINFO_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RESTOREPOINTINFO_TYPE {
@@ -203,12 +203,12 @@ impl ::core::clone::Clone for STATEMGRSTATUS {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for STATEMGRSTATUS {
+unsafe impl ::windows_core::Abi for STATEMGRSTATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STATEMGRSTATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STATEMGRSTATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STATEMGRSTATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STATEMGRSTATUS {}
@@ -242,13 +242,13 @@ impl ::core::clone::Clone for _RESTOREPTINFOEX {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for _RESTOREPTINFOEX {
+unsafe impl ::windows_core::Abi for _RESTOREPTINFOEX {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for _RESTOREPTINFOEX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_RESTOREPTINFOEX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_RESTOREPTINFOEX>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]

@@ -2,30 +2,30 @@
 pub mod Core;
 #[doc = "*Required features: `\"UI_UIAutomation\"`*"]
 #[repr(transparent)]
-pub struct AutomationConnection(::windows::core::IUnknown);
+pub struct AutomationConnection(::windows_core::IUnknown);
 impl AutomationConnection {
     #[doc = "*Required features: `\"UI_UIAutomation\"`*"]
-    pub fn IsRemoteSystem(&self) -> ::windows::core::Result<bool> {
+    pub fn IsRemoteSystem(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsRemoteSystem)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsRemoteSystem)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_UIAutomation\"`*"]
-    pub fn AppUserModelId(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn AppUserModelId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).AppUserModelId)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).AppUserModelId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_UIAutomation\"`*"]
-    pub fn ExecutableFileName(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn ExecutableFileName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).ExecutableFileName)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).ExecutableFileName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
 }
@@ -45,72 +45,72 @@ impl ::core::fmt::Debug for AutomationConnection {
         f.debug_tuple("AutomationConnection").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for AutomationConnection {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.UIAutomation.AutomationConnection;{aad262ed-0ef4-5d43-97be-a834e27b65b9})");
+unsafe impl ::windows_core::RuntimeType for AutomationConnection {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.UIAutomation.AutomationConnection;{aad262ed-0ef4-5d43-97be-a834e27b65b9})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for AutomationConnection {
+unsafe impl ::windows_core::Interface for AutomationConnection {
     type Vtable = IAutomationConnection_Vtbl;
-    const IID: ::windows::core::GUID = <IAutomationConnection as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IAutomationConnection as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for AutomationConnection {
+impl ::windows_core::RuntimeName for AutomationConnection {
     const NAME: &'static str = "Windows.UI.UIAutomation.AutomationConnection";
 }
-impl ::core::convert::From<AutomationConnection> for ::windows::core::IUnknown {
+impl ::core::convert::From<AutomationConnection> for ::windows_core::IUnknown {
     fn from(value: AutomationConnection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&AutomationConnection> for ::windows::core::IUnknown {
+impl ::core::convert::From<&AutomationConnection> for ::windows_core::IUnknown {
     fn from(value: &AutomationConnection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for AutomationConnection {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for AutomationConnection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a AutomationConnection {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a AutomationConnection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<AutomationConnection> for ::windows::core::IInspectable {
+impl ::core::convert::From<AutomationConnection> for ::windows_core::IInspectable {
     fn from(value: AutomationConnection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&AutomationConnection> for ::windows::core::IInspectable {
+impl ::core::convert::From<&AutomationConnection> for ::windows_core::IInspectable {
     fn from(value: &AutomationConnection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for AutomationConnection {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for AutomationConnection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a AutomationConnection {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a AutomationConnection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for AutomationConnection {}
 unsafe impl ::core::marker::Sync for AutomationConnection {}
 #[doc = "*Required features: `\"UI_UIAutomation\"`*"]
 #[repr(transparent)]
-pub struct AutomationConnectionBoundObject(::windows::core::IUnknown);
+pub struct AutomationConnectionBoundObject(::windows_core::IUnknown);
 impl AutomationConnectionBoundObject {
     #[doc = "*Required features: `\"UI_UIAutomation\"`*"]
-    pub fn Connection(&self) -> ::windows::core::Result<AutomationConnection> {
+    pub fn Connection(&self) -> ::windows_core::Result<AutomationConnection> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::RawPtr>::zeroed();
-            (::windows::core::Interface::vtable(this).Connection)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AutomationConnection>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).Connection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AutomationConnection>(result__)
         }
     }
 }
@@ -130,88 +130,88 @@ impl ::core::fmt::Debug for AutomationConnectionBoundObject {
         f.debug_tuple("AutomationConnectionBoundObject").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for AutomationConnectionBoundObject {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.UIAutomation.AutomationConnectionBoundObject;{5e8558fb-ca52-5b65-9830-dd2905816093})");
+unsafe impl ::windows_core::RuntimeType for AutomationConnectionBoundObject {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.UIAutomation.AutomationConnectionBoundObject;{5e8558fb-ca52-5b65-9830-dd2905816093})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for AutomationConnectionBoundObject {
+unsafe impl ::windows_core::Interface for AutomationConnectionBoundObject {
     type Vtable = IAutomationConnectionBoundObject_Vtbl;
-    const IID: ::windows::core::GUID = <IAutomationConnectionBoundObject as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IAutomationConnectionBoundObject as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for AutomationConnectionBoundObject {
+impl ::windows_core::RuntimeName for AutomationConnectionBoundObject {
     const NAME: &'static str = "Windows.UI.UIAutomation.AutomationConnectionBoundObject";
 }
-impl ::core::convert::From<AutomationConnectionBoundObject> for ::windows::core::IUnknown {
+impl ::core::convert::From<AutomationConnectionBoundObject> for ::windows_core::IUnknown {
     fn from(value: AutomationConnectionBoundObject) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&AutomationConnectionBoundObject> for ::windows::core::IUnknown {
+impl ::core::convert::From<&AutomationConnectionBoundObject> for ::windows_core::IUnknown {
     fn from(value: &AutomationConnectionBoundObject) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for AutomationConnectionBoundObject {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for AutomationConnectionBoundObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a AutomationConnectionBoundObject {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a AutomationConnectionBoundObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<AutomationConnectionBoundObject> for ::windows::core::IInspectable {
+impl ::core::convert::From<AutomationConnectionBoundObject> for ::windows_core::IInspectable {
     fn from(value: AutomationConnectionBoundObject) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&AutomationConnectionBoundObject> for ::windows::core::IInspectable {
+impl ::core::convert::From<&AutomationConnectionBoundObject> for ::windows_core::IInspectable {
     fn from(value: &AutomationConnectionBoundObject) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for AutomationConnectionBoundObject {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for AutomationConnectionBoundObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a AutomationConnectionBoundObject {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a AutomationConnectionBoundObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for AutomationConnectionBoundObject {}
 unsafe impl ::core::marker::Sync for AutomationConnectionBoundObject {}
 #[doc = "*Required features: `\"UI_UIAutomation\"`*"]
 #[repr(transparent)]
-pub struct AutomationElement(::windows::core::IUnknown);
+pub struct AutomationElement(::windows_core::IUnknown);
 impl AutomationElement {
     #[doc = "*Required features: `\"UI_UIAutomation\"`*"]
-    pub fn IsRemoteSystem(&self) -> ::windows::core::Result<bool> {
+    pub fn IsRemoteSystem(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsRemoteSystem)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
+            (::windows_core::Interface::vtable(this).IsRemoteSystem)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_UIAutomation\"`*"]
-    pub fn AppUserModelId(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn AppUserModelId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).AppUserModelId)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).AppUserModelId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
     #[doc = "*Required features: `\"UI_UIAutomation\"`*"]
-    pub fn ExecutableFileName(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn ExecutableFileName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows::core::HSTRING>>::zeroed();
-            (::windows::core::Interface::vtable(this).ExecutableFileName)(::windows::core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows::core::HSTRING>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
+            (::windows_core::Interface::vtable(this).ExecutableFileName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
 }
@@ -231,65 +231,65 @@ impl ::core::fmt::Debug for AutomationElement {
         f.debug_tuple("AutomationElement").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for AutomationElement {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.UIAutomation.AutomationElement;{a1898370-2c07-56fd-993f-61a72a08058c})");
+unsafe impl ::windows_core::RuntimeType for AutomationElement {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.UIAutomation.AutomationElement;{a1898370-2c07-56fd-993f-61a72a08058c})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for AutomationElement {
+unsafe impl ::windows_core::Interface for AutomationElement {
     type Vtable = IAutomationElement_Vtbl;
-    const IID: ::windows::core::GUID = <IAutomationElement as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IAutomationElement as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for AutomationElement {
+impl ::windows_core::RuntimeName for AutomationElement {
     const NAME: &'static str = "Windows.UI.UIAutomation.AutomationElement";
 }
-impl ::core::convert::From<AutomationElement> for ::windows::core::IUnknown {
+impl ::core::convert::From<AutomationElement> for ::windows_core::IUnknown {
     fn from(value: AutomationElement) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&AutomationElement> for ::windows::core::IUnknown {
+impl ::core::convert::From<&AutomationElement> for ::windows_core::IUnknown {
     fn from(value: &AutomationElement) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for AutomationElement {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for AutomationElement {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a AutomationElement {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a AutomationElement {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<AutomationElement> for ::windows::core::IInspectable {
+impl ::core::convert::From<AutomationElement> for ::windows_core::IInspectable {
     fn from(value: AutomationElement) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&AutomationElement> for ::windows::core::IInspectable {
+impl ::core::convert::From<&AutomationElement> for ::windows_core::IInspectable {
     fn from(value: &AutomationElement) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for AutomationElement {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for AutomationElement {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a AutomationElement {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a AutomationElement {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for AutomationElement {}
 unsafe impl ::core::marker::Sync for AutomationElement {}
 #[doc = "*Required features: `\"UI_UIAutomation\"`*"]
 #[repr(transparent)]
-pub struct AutomationTextRange(::windows::core::IUnknown);
+pub struct AutomationTextRange(::windows_core::IUnknown);
 impl AutomationTextRange {}
 impl ::core::clone::Clone for AutomationTextRange {
     fn clone(&self) -> Self {
@@ -307,116 +307,116 @@ impl ::core::fmt::Debug for AutomationTextRange {
         f.debug_tuple("AutomationTextRange").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for AutomationTextRange {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"rc(Windows.UI.UIAutomation.AutomationTextRange;{7e101b65-40d3-5994-85a9-0a0cb9a4ec98})");
+unsafe impl ::windows_core::RuntimeType for AutomationTextRange {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.UI.UIAutomation.AutomationTextRange;{7e101b65-40d3-5994-85a9-0a0cb9a4ec98})");
     type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for AutomationTextRange {
+unsafe impl ::windows_core::Interface for AutomationTextRange {
     type Vtable = IAutomationTextRange_Vtbl;
-    const IID: ::windows::core::GUID = <IAutomationTextRange as ::windows::core::Interface>::IID;
+    const IID: ::windows_core::GUID = <IAutomationTextRange as ::windows_core::Interface>::IID;
 }
-impl ::windows::core::RuntimeName for AutomationTextRange {
+impl ::windows_core::RuntimeName for AutomationTextRange {
     const NAME: &'static str = "Windows.UI.UIAutomation.AutomationTextRange";
 }
-impl ::core::convert::From<AutomationTextRange> for ::windows::core::IUnknown {
+impl ::core::convert::From<AutomationTextRange> for ::windows_core::IUnknown {
     fn from(value: AutomationTextRange) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&AutomationTextRange> for ::windows::core::IUnknown {
+impl ::core::convert::From<&AutomationTextRange> for ::windows_core::IUnknown {
     fn from(value: &AutomationTextRange) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for AutomationTextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for AutomationTextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a AutomationTextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a AutomationTextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl ::core::convert::From<AutomationTextRange> for ::windows::core::IInspectable {
+impl ::core::convert::From<AutomationTextRange> for ::windows_core::IInspectable {
     fn from(value: AutomationTextRange) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-impl ::core::convert::From<&AutomationTextRange> for ::windows::core::IInspectable {
+impl ::core::convert::From<&AutomationTextRange> for ::windows_core::IInspectable {
     fn from(value: &AutomationTextRange) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for AutomationTextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for AutomationTextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a AutomationTextRange {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
+impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a AutomationTextRange {
+    fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
+        ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 unsafe impl ::core::marker::Send for AutomationTextRange {}
 unsafe impl ::core::marker::Sync for AutomationTextRange {}
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAutomationConnection(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IAutomationConnection {
+pub struct IAutomationConnection(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAutomationConnection {
     type Vtable = IAutomationConnection_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xaad262ed_0ef4_5d43_97be_a834e27b65b9);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xaad262ed_0ef4_5d43_97be_a834e27b65b9);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAutomationConnection_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub IsRemoteSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub AppUserModelId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub ExecutableFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub IsRemoteSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub AppUserModelId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub ExecutableFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAutomationConnectionBoundObject(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IAutomationConnectionBoundObject {
+pub struct IAutomationConnectionBoundObject(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAutomationConnectionBoundObject {
     type Vtable = IAutomationConnectionBoundObject_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5e8558fb_ca52_5b65_9830_dd2905816093);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5e8558fb_ca52_5b65_9830_dd2905816093);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAutomationConnectionBoundObject_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub Connection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub Connection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAutomationElement(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IAutomationElement {
+pub struct IAutomationElement(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAutomationElement {
     type Vtable = IAutomationElement_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa1898370_2c07_56fd_993f_61a72a08058c);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa1898370_2c07_56fd_993f_61a72a08058c);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAutomationElement_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
-    pub IsRemoteSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows::core::HRESULT,
-    pub AppUserModelId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
-    pub ExecutableFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT,
+    pub base__: ::windows_core::IInspectableVtbl,
+    pub IsRemoteSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub AppUserModelId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
+    pub ExecutableFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAutomationTextRange(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IAutomationTextRange {
+pub struct IAutomationTextRange(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAutomationTextRange {
     type Vtable = IAutomationTextRange_Vtbl;
-    const IID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7e101b65_40d3_5994_85a9_0a0cb9a4ec98);
+    const IID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7e101b65_40d3_5994_85a9_0a0cb9a4ec98);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAutomationTextRange_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows_core::IInspectableVtbl,
 }
 #[cfg(feature = "implement")]
 ::core::include!("impl.rs");

@@ -118,7 +118,7 @@ fn gen_windows_traits(gen: &Gen, def: TypeDef, name: &TokenStream, cfg: &Cfg) ->
 
         let mut tokens = quote! {
             #features
-            unsafe impl ::windows::core::Abi for #name {
+            unsafe impl ::windows_core::Abi for #name {
                 type Abi = #abi;
             }
         };
@@ -134,10 +134,10 @@ fn gen_windows_traits(gen: &Gen, def: TypeDef, name: &TokenStream, cfg: &Cfg) ->
 
             tokens.combine(&quote! {
                 #features
-                unsafe impl ::windows::core::RuntimeType for #name {
-                    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(#signature);
+                unsafe impl ::windows_core::RuntimeType for #name {
+                    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(#signature);
                     type DefaultType = Self;
-                    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+                    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
                         Ok(#clone)
                     }
                 }
@@ -159,7 +159,7 @@ fn gen_compare_traits(gen: &Gen, def: TypeDef, name: &TokenStream, cfg: &Cfg) ->
             impl ::core::cmp::PartialEq for #name {
                 fn eq(&self, other: &Self) -> bool {
                     unsafe {
-                        ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<#name>()) == 0
+                        ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<#name>()) == 0
                     }
                 }
             }

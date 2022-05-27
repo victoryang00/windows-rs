@@ -1,4 +1,4 @@
-use windows::core::*;
+use windows_core::*;
 use windows::Win32::System::Com::*;
 use windows::Win32::Web::MsHtml::*;
 

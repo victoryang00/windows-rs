@@ -1,11 +1,11 @@
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn AddPointerInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, pointerid: u32) -> ::windows::core::Result<()> {
+pub unsafe fn AddPointerInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, pointerid: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPointerInteractionContext(interactioncontext: HINTERACTIONCONTEXT, pointerid: u32) -> ::windows::core::HRESULT;
+            fn AddPointerInteractionContext(interactioncontext: HINTERACTIONCONTEXT, pointerid: u32) -> ::windows_core::HRESULT;
         }
         AddPointerInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(pointerid)).ok()
     }
@@ -15,14 +15,14 @@ pub unsafe fn AddPointerInteractionContext<'a, Param0: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`, `\"Win32_Foundation\"`, `\"Win32_UI_Input_Pointer\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
-pub unsafe fn BufferPointerPacketsInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, pointerinfo: &[super::Input::Pointer::POINTER_INFO]) -> ::windows::core::Result<()> {
+pub unsafe fn BufferPointerPacketsInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, pointerinfo: &[super::Input::Pointer::POINTER_INFO]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BufferPointerPacketsInteractionContext(interactioncontext: HINTERACTIONCONTEXT, entriescount: u32, pointerinfo: *const super::Input::Pointer::POINTER_INFO) -> ::windows::core::HRESULT;
+            fn BufferPointerPacketsInteractionContext(interactioncontext: HINTERACTIONCONTEXT, entriescount: u32, pointerinfo: *const super::Input::Pointer::POINTER_INFO) -> ::windows_core::HRESULT;
         }
-        BufferPointerPacketsInteractionContext(interactioncontext.into_param().abi(), pointerinfo.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pointerinfo))).ok()
+        BufferPointerPacketsInteractionContext(interactioncontext.into_param().abi(), pointerinfo.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pointerinfo))).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -52,7 +52,7 @@ impl ::core::default::Default for CROSS_SLIDE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CROSS_SLIDE_FLAGS {
+unsafe impl ::windows_core::Abi for CROSS_SLIDE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CROSS_SLIDE_FLAGS {
@@ -105,12 +105,12 @@ impl ::core::fmt::Debug for CROSS_SLIDE_PARAMETER {
         f.debug_struct("CROSS_SLIDE_PARAMETER").field("threshold", &self.threshold).field("distance", &self.distance).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CROSS_SLIDE_PARAMETER {
+unsafe impl ::windows_core::Abi for CROSS_SLIDE_PARAMETER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CROSS_SLIDE_PARAMETER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CROSS_SLIDE_PARAMETER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CROSS_SLIDE_PARAMETER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CROSS_SLIDE_PARAMETER {}
@@ -146,7 +146,7 @@ impl ::core::default::Default for CROSS_SLIDE_THRESHOLD {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CROSS_SLIDE_THRESHOLD {
+unsafe impl ::windows_core::Abi for CROSS_SLIDE_THRESHOLD {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CROSS_SLIDE_THRESHOLD {
@@ -156,12 +156,12 @@ impl ::core::fmt::Debug for CROSS_SLIDE_THRESHOLD {
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn CreateInteractionContext() -> ::windows::core::Result<HINTERACTIONCONTEXT> {
+pub unsafe fn CreateInteractionContext() -> ::windows_core::Result<HINTERACTIONCONTEXT> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateInteractionContext(interactioncontext: *mut HINTERACTIONCONTEXT) -> ::windows::core::HRESULT;
+            fn CreateInteractionContext(interactioncontext: *mut HINTERACTIONCONTEXT) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<HINTERACTIONCONTEXT>::zeroed();
         CreateInteractionContext(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<HINTERACTIONCONTEXT>(result__)
@@ -171,12 +171,12 @@ pub unsafe fn CreateInteractionContext() -> ::windows::core::Result<HINTERACTION
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn DestroyInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn DestroyInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DestroyInteractionContext(interactioncontext: HINTERACTIONCONTEXT) -> ::windows::core::HRESULT;
+            fn DestroyInteractionContext(interactioncontext: HINTERACTIONCONTEXT) -> ::windows_core::HRESULT;
         }
         DestroyInteractionContext(interactioncontext.into_param().abi()).ok()
     }
@@ -185,12 +185,12 @@ pub unsafe fn DestroyInteractionContext<'a, Param0: ::windows::core::IntoParam<'
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn GetCrossSlideParameterInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, threshold: CROSS_SLIDE_THRESHOLD) -> ::windows::core::Result<f32> {
+pub unsafe fn GetCrossSlideParameterInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, threshold: CROSS_SLIDE_THRESHOLD) -> ::windows_core::Result<f32> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCrossSlideParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, threshold: CROSS_SLIDE_THRESHOLD, distance: *mut f32) -> ::windows::core::HRESULT;
+            fn GetCrossSlideParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, threshold: CROSS_SLIDE_THRESHOLD, distance: *mut f32) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
         GetCrossSlideParameterInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(threshold), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f32>(result__)
@@ -200,12 +200,12 @@ pub unsafe fn GetCrossSlideParameterInteractionContext<'a, Param0: ::windows::co
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn GetHoldParameterInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: HOLD_PARAMETER) -> ::windows::core::Result<f32> {
+pub unsafe fn GetHoldParameterInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: HOLD_PARAMETER) -> ::windows_core::Result<f32> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetHoldParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: HOLD_PARAMETER, value: *mut f32) -> ::windows::core::HRESULT;
+            fn GetHoldParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: HOLD_PARAMETER, value: *mut f32) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
         GetHoldParameterInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(parameter), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f32>(result__)
@@ -215,12 +215,12 @@ pub unsafe fn GetHoldParameterInteractionContext<'a, Param0: ::windows::core::In
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn GetInertiaParameterInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, inertiaparameter: INERTIA_PARAMETER) -> ::windows::core::Result<f32> {
+pub unsafe fn GetInertiaParameterInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, inertiaparameter: INERTIA_PARAMETER) -> ::windows_core::Result<f32> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetInertiaParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, inertiaparameter: INERTIA_PARAMETER, value: *mut f32) -> ::windows::core::HRESULT;
+            fn GetInertiaParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, inertiaparameter: INERTIA_PARAMETER, value: *mut f32) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
         GetInertiaParameterInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(inertiaparameter), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f32>(result__)
@@ -230,26 +230,26 @@ pub unsafe fn GetInertiaParameterInteractionContext<'a, Param0: ::windows::core:
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn GetInteractionConfigurationInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, configuration: &mut [INTERACTION_CONTEXT_CONFIGURATION]) -> ::windows::core::Result<()> {
+pub unsafe fn GetInteractionConfigurationInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, configuration: &mut [INTERACTION_CONTEXT_CONFIGURATION]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetInteractionConfigurationInteractionContext(interactioncontext: HINTERACTIONCONTEXT, configurationcount: u32, configuration: *mut INTERACTION_CONTEXT_CONFIGURATION) -> ::windows::core::HRESULT;
+            fn GetInteractionConfigurationInteractionContext(interactioncontext: HINTERACTIONCONTEXT, configurationcount: u32, configuration: *mut INTERACTION_CONTEXT_CONFIGURATION) -> ::windows_core::HRESULT;
         }
-        GetInteractionConfigurationInteractionContext(interactioncontext.into_param().abi(), configuration.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(configuration))).ok()
+        GetInteractionConfigurationInteractionContext(interactioncontext.into_param().abi(), configuration.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(configuration))).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn GetMouseWheelParameterInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: MOUSE_WHEEL_PARAMETER) -> ::windows::core::Result<f32> {
+pub unsafe fn GetMouseWheelParameterInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: MOUSE_WHEEL_PARAMETER) -> ::windows_core::Result<f32> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetMouseWheelParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: MOUSE_WHEEL_PARAMETER, value: *mut f32) -> ::windows::core::HRESULT;
+            fn GetMouseWheelParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: MOUSE_WHEEL_PARAMETER, value: *mut f32) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
         GetMouseWheelParameterInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(parameter), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f32>(result__)
@@ -259,12 +259,12 @@ pub unsafe fn GetMouseWheelParameterInteractionContext<'a, Param0: ::windows::co
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn GetPropertyInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, contextproperty: INTERACTION_CONTEXT_PROPERTY) -> ::windows::core::Result<u32> {
+pub unsafe fn GetPropertyInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, contextproperty: INTERACTION_CONTEXT_PROPERTY) -> ::windows_core::Result<u32> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPropertyInteractionContext(interactioncontext: HINTERACTIONCONTEXT, contextproperty: INTERACTION_CONTEXT_PROPERTY, value: *mut u32) -> ::windows::core::HRESULT;
+            fn GetPropertyInteractionContext(interactioncontext: HINTERACTIONCONTEXT, contextproperty: INTERACTION_CONTEXT_PROPERTY, value: *mut u32) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         GetPropertyInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(contextproperty), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
@@ -275,12 +275,12 @@ pub unsafe fn GetPropertyInteractionContext<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`, `\"Win32_Foundation\"`, `\"Win32_UI_Input_Pointer\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
-pub unsafe fn GetStateInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, pointerinfo: *const super::Input::Pointer::POINTER_INFO) -> ::windows::core::Result<INTERACTION_STATE> {
+pub unsafe fn GetStateInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, pointerinfo: *const super::Input::Pointer::POINTER_INFO) -> ::windows_core::Result<INTERACTION_STATE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetStateInteractionContext(interactioncontext: HINTERACTIONCONTEXT, pointerinfo: *const super::Input::Pointer::POINTER_INFO, state: *mut INTERACTION_STATE) -> ::windows::core::HRESULT;
+            fn GetStateInteractionContext(interactioncontext: HINTERACTIONCONTEXT, pointerinfo: *const super::Input::Pointer::POINTER_INFO, state: *mut INTERACTION_STATE) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<INTERACTION_STATE>::zeroed();
         GetStateInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(pointerinfo), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INTERACTION_STATE>(result__)
@@ -290,12 +290,12 @@ pub unsafe fn GetStateInteractionContext<'a, Param0: ::windows::core::IntoParam<
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn GetTapParameterInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: TAP_PARAMETER) -> ::windows::core::Result<f32> {
+pub unsafe fn GetTapParameterInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: TAP_PARAMETER) -> ::windows_core::Result<f32> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetTapParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: TAP_PARAMETER, value: *mut f32) -> ::windows::core::HRESULT;
+            fn GetTapParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: TAP_PARAMETER, value: *mut f32) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
         GetTapParameterInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(parameter), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f32>(result__)
@@ -305,12 +305,12 @@ pub unsafe fn GetTapParameterInteractionContext<'a, Param0: ::windows::core::Int
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn GetTranslationParameterInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: TRANSLATION_PARAMETER) -> ::windows::core::Result<f32> {
+pub unsafe fn GetTranslationParameterInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: TRANSLATION_PARAMETER) -> ::windows_core::Result<f32> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetTranslationParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: TRANSLATION_PARAMETER, value: *mut f32) -> ::windows::core::HRESULT;
+            fn GetTranslationParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: TRANSLATION_PARAMETER, value: *mut f32) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
         GetTranslationParameterInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(parameter), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f32>(result__)
@@ -342,7 +342,7 @@ impl ::core::fmt::Debug for HINTERACTIONCONTEXT {
         f.debug_tuple("HINTERACTIONCONTEXT").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HINTERACTIONCONTEXT {
+unsafe impl ::windows_core::Abi for HINTERACTIONCONTEXT {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
@@ -370,7 +370,7 @@ impl ::core::default::Default for HOLD_PARAMETER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HOLD_PARAMETER {
+unsafe impl ::windows_core::Abi for HOLD_PARAMETER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HOLD_PARAMETER {
@@ -407,7 +407,7 @@ impl ::core::default::Default for INERTIA_PARAMETER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for INERTIA_PARAMETER {
+unsafe impl ::windows_core::Abi for INERTIA_PARAMETER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for INERTIA_PARAMETER {
@@ -431,12 +431,12 @@ impl ::core::fmt::Debug for INTERACTION_ARGUMENTS_CROSS_SLIDE {
         f.debug_struct("INTERACTION_ARGUMENTS_CROSS_SLIDE").field("flags", &self.flags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INTERACTION_ARGUMENTS_CROSS_SLIDE {
+unsafe impl ::windows_core::Abi for INTERACTION_ARGUMENTS_CROSS_SLIDE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INTERACTION_ARGUMENTS_CROSS_SLIDE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_ARGUMENTS_CROSS_SLIDE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_ARGUMENTS_CROSS_SLIDE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INTERACTION_ARGUMENTS_CROSS_SLIDE {}
@@ -464,12 +464,12 @@ impl ::core::fmt::Debug for INTERACTION_ARGUMENTS_MANIPULATION {
         f.debug_struct("INTERACTION_ARGUMENTS_MANIPULATION").field("delta", &self.delta).field("cumulative", &self.cumulative).field("velocity", &self.velocity).field("railsState", &self.railsState).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INTERACTION_ARGUMENTS_MANIPULATION {
+unsafe impl ::windows_core::Abi for INTERACTION_ARGUMENTS_MANIPULATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INTERACTION_ARGUMENTS_MANIPULATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_ARGUMENTS_MANIPULATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_ARGUMENTS_MANIPULATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INTERACTION_ARGUMENTS_MANIPULATION {}
@@ -494,12 +494,12 @@ impl ::core::fmt::Debug for INTERACTION_ARGUMENTS_TAP {
         f.debug_struct("INTERACTION_ARGUMENTS_TAP").field("count", &self.count).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INTERACTION_ARGUMENTS_TAP {
+unsafe impl ::windows_core::Abi for INTERACTION_ARGUMENTS_TAP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INTERACTION_ARGUMENTS_TAP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_ARGUMENTS_TAP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_ARGUMENTS_TAP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INTERACTION_ARGUMENTS_TAP {}
@@ -579,7 +579,7 @@ impl ::core::default::Default for INTERACTION_CONFIGURATION_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for INTERACTION_CONFIGURATION_FLAGS {
+unsafe impl ::windows_core::Abi for INTERACTION_CONFIGURATION_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for INTERACTION_CONFIGURATION_FLAGS {
@@ -632,12 +632,12 @@ impl ::core::fmt::Debug for INTERACTION_CONTEXT_CONFIGURATION {
         f.debug_struct("INTERACTION_CONTEXT_CONFIGURATION").field("interactionId", &self.interactionId).field("enable", &self.enable).finish()
     }
 }
-unsafe impl ::windows::core::Abi for INTERACTION_CONTEXT_CONFIGURATION {
+unsafe impl ::windows_core::Abi for INTERACTION_CONTEXT_CONFIGURATION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for INTERACTION_CONTEXT_CONFIGURATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_CONTEXT_CONFIGURATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_CONTEXT_CONFIGURATION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for INTERACTION_CONTEXT_CONFIGURATION {}
@@ -666,13 +666,13 @@ impl ::core::clone::Clone for INTERACTION_CONTEXT_OUTPUT {
     }
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
-unsafe impl ::windows::core::Abi for INTERACTION_CONTEXT_OUTPUT {
+unsafe impl ::windows_core::Abi for INTERACTION_CONTEXT_OUTPUT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for INTERACTION_CONTEXT_OUTPUT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_CONTEXT_OUTPUT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_CONTEXT_OUTPUT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
@@ -700,13 +700,13 @@ impl ::core::clone::Clone for INTERACTION_CONTEXT_OUTPUT_0 {
     }
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
-unsafe impl ::windows::core::Abi for INTERACTION_CONTEXT_OUTPUT_0 {
+unsafe impl ::windows_core::Abi for INTERACTION_CONTEXT_OUTPUT_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for INTERACTION_CONTEXT_OUTPUT_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_CONTEXT_OUTPUT_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_CONTEXT_OUTPUT_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
@@ -739,13 +739,13 @@ impl ::core::clone::Clone for INTERACTION_CONTEXT_OUTPUT2 {
     }
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
-unsafe impl ::windows::core::Abi for INTERACTION_CONTEXT_OUTPUT2 {
+unsafe impl ::windows_core::Abi for INTERACTION_CONTEXT_OUTPUT2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for INTERACTION_CONTEXT_OUTPUT2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_CONTEXT_OUTPUT2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_CONTEXT_OUTPUT2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
@@ -773,13 +773,13 @@ impl ::core::clone::Clone for INTERACTION_CONTEXT_OUTPUT2_0 {
     }
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
-unsafe impl ::windows::core::Abi for INTERACTION_CONTEXT_OUTPUT2_0 {
+unsafe impl ::windows_core::Abi for INTERACTION_CONTEXT_OUTPUT2_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for INTERACTION_CONTEXT_OUTPUT2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_CONTEXT_OUTPUT2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INTERACTION_CONTEXT_OUTPUT2_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
@@ -819,7 +819,7 @@ impl ::core::default::Default for INTERACTION_CONTEXT_PROPERTY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for INTERACTION_CONTEXT_PROPERTY {
+unsafe impl ::windows_core::Abi for INTERACTION_CONTEXT_PROPERTY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for INTERACTION_CONTEXT_PROPERTY {
@@ -854,7 +854,7 @@ impl ::core::default::Default for INTERACTION_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for INTERACTION_FLAGS {
+unsafe impl ::windows_core::Abi for INTERACTION_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for INTERACTION_FLAGS {
@@ -921,7 +921,7 @@ impl ::core::default::Default for INTERACTION_ID {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for INTERACTION_ID {
+unsafe impl ::windows_core::Abi for INTERACTION_ID {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for INTERACTION_ID {
@@ -952,7 +952,7 @@ impl ::core::default::Default for INTERACTION_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for INTERACTION_STATE {
+unsafe impl ::windows_core::Abi for INTERACTION_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for INTERACTION_STATE {
@@ -983,7 +983,7 @@ impl ::core::default::Default for MANIPULATION_RAILS_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MANIPULATION_RAILS_STATE {
+unsafe impl ::windows_core::Abi for MANIPULATION_RAILS_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MANIPULATION_RAILS_STATE {
@@ -1011,12 +1011,12 @@ impl ::core::fmt::Debug for MANIPULATION_TRANSFORM {
         f.debug_struct("MANIPULATION_TRANSFORM").field("translationX", &self.translationX).field("translationY", &self.translationY).field("scale", &self.scale).field("expansion", &self.expansion).field("rotation", &self.rotation).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MANIPULATION_TRANSFORM {
+unsafe impl ::windows_core::Abi for MANIPULATION_TRANSFORM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MANIPULATION_TRANSFORM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MANIPULATION_TRANSFORM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MANIPULATION_TRANSFORM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MANIPULATION_TRANSFORM {}
@@ -1044,12 +1044,12 @@ impl ::core::fmt::Debug for MANIPULATION_VELOCITY {
         f.debug_struct("MANIPULATION_VELOCITY").field("velocityX", &self.velocityX).field("velocityY", &self.velocityY).field("velocityExpansion", &self.velocityExpansion).field("velocityAngular", &self.velocityAngular).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MANIPULATION_VELOCITY {
+unsafe impl ::windows_core::Abi for MANIPULATION_VELOCITY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MANIPULATION_VELOCITY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MANIPULATION_VELOCITY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MANIPULATION_VELOCITY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MANIPULATION_VELOCITY {}
@@ -1087,7 +1087,7 @@ impl ::core::default::Default for MOUSE_WHEEL_PARAMETER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MOUSE_WHEEL_PARAMETER {
+unsafe impl ::windows_core::Abi for MOUSE_WHEEL_PARAMETER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MOUSE_WHEEL_PARAMETER {
@@ -1097,12 +1097,12 @@ impl ::core::fmt::Debug for MOUSE_WHEEL_PARAMETER {
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn ProcessBufferedPacketsInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn ProcessBufferedPacketsInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ProcessBufferedPacketsInteractionContext(interactioncontext: HINTERACTIONCONTEXT) -> ::windows::core::HRESULT;
+            fn ProcessBufferedPacketsInteractionContext(interactioncontext: HINTERACTIONCONTEXT) -> ::windows_core::HRESULT;
         }
         ProcessBufferedPacketsInteractionContext(interactioncontext.into_param().abi()).ok()
     }
@@ -1111,12 +1111,12 @@ pub unsafe fn ProcessBufferedPacketsInteractionContext<'a, Param0: ::windows::co
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn ProcessInertiaInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn ProcessInertiaInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ProcessInertiaInteractionContext(interactioncontext: HINTERACTIONCONTEXT) -> ::windows::core::HRESULT;
+            fn ProcessInertiaInteractionContext(interactioncontext: HINTERACTIONCONTEXT) -> ::windows_core::HRESULT;
         }
         ProcessInertiaInteractionContext(interactioncontext.into_param().abi()).ok()
     }
@@ -1126,12 +1126,12 @@ pub unsafe fn ProcessInertiaInteractionContext<'a, Param0: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`, `\"Win32_Foundation\"`, `\"Win32_UI_Input_Pointer\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
-pub unsafe fn ProcessPointerFramesInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, entriescount: u32, pointercount: u32, pointerinfo: *const super::Input::Pointer::POINTER_INFO) -> ::windows::core::Result<()> {
+pub unsafe fn ProcessPointerFramesInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, entriescount: u32, pointercount: u32, pointerinfo: *const super::Input::Pointer::POINTER_INFO) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ProcessPointerFramesInteractionContext(interactioncontext: HINTERACTIONCONTEXT, entriescount: u32, pointercount: u32, pointerinfo: *const super::Input::Pointer::POINTER_INFO) -> ::windows::core::HRESULT;
+            fn ProcessPointerFramesInteractionContext(interactioncontext: HINTERACTIONCONTEXT, entriescount: u32, pointercount: u32, pointerinfo: *const super::Input::Pointer::POINTER_INFO) -> ::windows_core::HRESULT;
         }
         ProcessPointerFramesInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(entriescount), ::core::mem::transmute(pointercount), ::core::mem::transmute(pointerinfo)).ok()
     }
@@ -1141,12 +1141,12 @@ pub unsafe fn ProcessPointerFramesInteractionContext<'a, Param0: ::windows::core
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn RegisterOutputCallbackInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, outputcallback: INTERACTION_CONTEXT_OUTPUT_CALLBACK, clientdata: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn RegisterOutputCallbackInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, outputcallback: INTERACTION_CONTEXT_OUTPUT_CALLBACK, clientdata: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterOutputCallbackInteractionContext(interactioncontext: HINTERACTIONCONTEXT, outputcallback: ::windows::core::RawPtr, clientdata: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn RegisterOutputCallbackInteractionContext(interactioncontext: HINTERACTIONCONTEXT, outputcallback: ::windows_core::RawPtr, clientdata: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         RegisterOutputCallbackInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(outputcallback), ::core::mem::transmute(clientdata)).ok()
     }
@@ -1156,12 +1156,12 @@ pub unsafe fn RegisterOutputCallbackInteractionContext<'a, Param0: ::windows::co
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn RegisterOutputCallbackInteractionContext2<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, outputcallback: INTERACTION_CONTEXT_OUTPUT_CALLBACK2, clientdata: *const ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn RegisterOutputCallbackInteractionContext2<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, outputcallback: INTERACTION_CONTEXT_OUTPUT_CALLBACK2, clientdata: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterOutputCallbackInteractionContext2(interactioncontext: HINTERACTIONCONTEXT, outputcallback: ::windows::core::RawPtr, clientdata: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn RegisterOutputCallbackInteractionContext2(interactioncontext: HINTERACTIONCONTEXT, outputcallback: ::windows_core::RawPtr, clientdata: *const ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         RegisterOutputCallbackInteractionContext2(interactioncontext.into_param().abi(), ::core::mem::transmute(outputcallback), ::core::mem::transmute(clientdata)).ok()
     }
@@ -1170,12 +1170,12 @@ pub unsafe fn RegisterOutputCallbackInteractionContext2<'a, Param0: ::windows::c
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn RemovePointerInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, pointerid: u32) -> ::windows::core::Result<()> {
+pub unsafe fn RemovePointerInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, pointerid: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemovePointerInteractionContext(interactioncontext: HINTERACTIONCONTEXT, pointerid: u32) -> ::windows::core::HRESULT;
+            fn RemovePointerInteractionContext(interactioncontext: HINTERACTIONCONTEXT, pointerid: u32) -> ::windows_core::HRESULT;
         }
         RemovePointerInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(pointerid)).ok()
     }
@@ -1184,12 +1184,12 @@ pub unsafe fn RemovePointerInteractionContext<'a, Param0: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn ResetInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn ResetInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ResetInteractionContext(interactioncontext: HINTERACTIONCONTEXT) -> ::windows::core::HRESULT;
+            fn ResetInteractionContext(interactioncontext: HINTERACTIONCONTEXT) -> ::windows_core::HRESULT;
         }
         ResetInteractionContext(interactioncontext.into_param().abi()).ok()
     }
@@ -1198,26 +1198,26 @@ pub unsafe fn ResetInteractionContext<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn SetCrossSlideParametersInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, crossslideparameters: &[CROSS_SLIDE_PARAMETER]) -> ::windows::core::Result<()> {
+pub unsafe fn SetCrossSlideParametersInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, crossslideparameters: &[CROSS_SLIDE_PARAMETER]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetCrossSlideParametersInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parametercount: u32, crossslideparameters: *const CROSS_SLIDE_PARAMETER) -> ::windows::core::HRESULT;
+            fn SetCrossSlideParametersInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parametercount: u32, crossslideparameters: *const CROSS_SLIDE_PARAMETER) -> ::windows_core::HRESULT;
         }
-        SetCrossSlideParametersInteractionContext(interactioncontext.into_param().abi(), crossslideparameters.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(crossslideparameters))).ok()
+        SetCrossSlideParametersInteractionContext(interactioncontext.into_param().abi(), crossslideparameters.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(crossslideparameters))).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn SetHoldParameterInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: HOLD_PARAMETER, value: f32) -> ::windows::core::Result<()> {
+pub unsafe fn SetHoldParameterInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: HOLD_PARAMETER, value: f32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetHoldParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: HOLD_PARAMETER, value: f32) -> ::windows::core::HRESULT;
+            fn SetHoldParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: HOLD_PARAMETER, value: f32) -> ::windows_core::HRESULT;
         }
         SetHoldParameterInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(parameter), ::core::mem::transmute(value)).ok()
     }
@@ -1226,12 +1226,12 @@ pub unsafe fn SetHoldParameterInteractionContext<'a, Param0: ::windows::core::In
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn SetInertiaParameterInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, inertiaparameter: INERTIA_PARAMETER, value: f32) -> ::windows::core::Result<()> {
+pub unsafe fn SetInertiaParameterInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, inertiaparameter: INERTIA_PARAMETER, value: f32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetInertiaParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, inertiaparameter: INERTIA_PARAMETER, value: f32) -> ::windows::core::HRESULT;
+            fn SetInertiaParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, inertiaparameter: INERTIA_PARAMETER, value: f32) -> ::windows_core::HRESULT;
         }
         SetInertiaParameterInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(inertiaparameter), ::core::mem::transmute(value)).ok()
     }
@@ -1240,26 +1240,26 @@ pub unsafe fn SetInertiaParameterInteractionContext<'a, Param0: ::windows::core:
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn SetInteractionConfigurationInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, configuration: &[INTERACTION_CONTEXT_CONFIGURATION]) -> ::windows::core::Result<()> {
+pub unsafe fn SetInteractionConfigurationInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, configuration: &[INTERACTION_CONTEXT_CONFIGURATION]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetInteractionConfigurationInteractionContext(interactioncontext: HINTERACTIONCONTEXT, configurationcount: u32, configuration: *const INTERACTION_CONTEXT_CONFIGURATION) -> ::windows::core::HRESULT;
+            fn SetInteractionConfigurationInteractionContext(interactioncontext: HINTERACTIONCONTEXT, configurationcount: u32, configuration: *const INTERACTION_CONTEXT_CONFIGURATION) -> ::windows_core::HRESULT;
         }
-        SetInteractionConfigurationInteractionContext(interactioncontext.into_param().abi(), configuration.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(configuration))).ok()
+        SetInteractionConfigurationInteractionContext(interactioncontext.into_param().abi(), configuration.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(configuration))).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn SetMouseWheelParameterInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: MOUSE_WHEEL_PARAMETER, value: f32) -> ::windows::core::Result<()> {
+pub unsafe fn SetMouseWheelParameterInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: MOUSE_WHEEL_PARAMETER, value: f32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetMouseWheelParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: MOUSE_WHEEL_PARAMETER, value: f32) -> ::windows::core::HRESULT;
+            fn SetMouseWheelParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: MOUSE_WHEEL_PARAMETER, value: f32) -> ::windows_core::HRESULT;
         }
         SetMouseWheelParameterInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(parameter), ::core::mem::transmute(value)).ok()
     }
@@ -1268,12 +1268,12 @@ pub unsafe fn SetMouseWheelParameterInteractionContext<'a, Param0: ::windows::co
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn SetPivotInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, x: f32, y: f32, radius: f32) -> ::windows::core::Result<()> {
+pub unsafe fn SetPivotInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, x: f32, y: f32, radius: f32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetPivotInteractionContext(interactioncontext: HINTERACTIONCONTEXT, x: f32, y: f32, radius: f32) -> ::windows::core::HRESULT;
+            fn SetPivotInteractionContext(interactioncontext: HINTERACTIONCONTEXT, x: f32, y: f32, radius: f32) -> ::windows_core::HRESULT;
         }
         SetPivotInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(radius)).ok()
     }
@@ -1282,12 +1282,12 @@ pub unsafe fn SetPivotInteractionContext<'a, Param0: ::windows::core::IntoParam<
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn SetPropertyInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, contextproperty: INTERACTION_CONTEXT_PROPERTY, value: u32) -> ::windows::core::Result<()> {
+pub unsafe fn SetPropertyInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, contextproperty: INTERACTION_CONTEXT_PROPERTY, value: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetPropertyInteractionContext(interactioncontext: HINTERACTIONCONTEXT, contextproperty: INTERACTION_CONTEXT_PROPERTY, value: u32) -> ::windows::core::HRESULT;
+            fn SetPropertyInteractionContext(interactioncontext: HINTERACTIONCONTEXT, contextproperty: INTERACTION_CONTEXT_PROPERTY, value: u32) -> ::windows_core::HRESULT;
         }
         SetPropertyInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(contextproperty), ::core::mem::transmute(value)).ok()
     }
@@ -1296,12 +1296,12 @@ pub unsafe fn SetPropertyInteractionContext<'a, Param0: ::windows::core::IntoPar
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn SetTapParameterInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: TAP_PARAMETER, value: f32) -> ::windows::core::Result<()> {
+pub unsafe fn SetTapParameterInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: TAP_PARAMETER, value: f32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetTapParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: TAP_PARAMETER, value: f32) -> ::windows::core::HRESULT;
+            fn SetTapParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: TAP_PARAMETER, value: f32) -> ::windows_core::HRESULT;
         }
         SetTapParameterInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(parameter), ::core::mem::transmute(value)).ok()
     }
@@ -1310,12 +1310,12 @@ pub unsafe fn SetTapParameterInteractionContext<'a, Param0: ::windows::core::Int
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn SetTranslationParameterInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: TRANSLATION_PARAMETER, value: f32) -> ::windows::core::Result<()> {
+pub unsafe fn SetTranslationParameterInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, parameter: TRANSLATION_PARAMETER, value: f32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetTranslationParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: TRANSLATION_PARAMETER, value: f32) -> ::windows::core::HRESULT;
+            fn SetTranslationParameterInteractionContext(interactioncontext: HINTERACTIONCONTEXT, parameter: TRANSLATION_PARAMETER, value: f32) -> ::windows_core::HRESULT;
         }
         SetTranslationParameterInteractionContext(interactioncontext.into_param().abi(), ::core::mem::transmute(parameter), ::core::mem::transmute(value)).ok()
     }
@@ -1324,12 +1324,12 @@ pub unsafe fn SetTranslationParameterInteractionContext<'a, Param0: ::windows::c
 }
 #[doc = "*Required features: `\"Win32_UI_InteractionContext\"`*"]
 #[inline]
-pub unsafe fn StopInteractionContext<'a, Param0: ::windows::core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn StopInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StopInteractionContext(interactioncontext: HINTERACTIONCONTEXT) -> ::windows::core::HRESULT;
+            fn StopInteractionContext(interactioncontext: HINTERACTIONCONTEXT) -> ::windows_core::HRESULT;
         }
         StopInteractionContext(interactioncontext.into_param().abi()).ok()
     }
@@ -1357,7 +1357,7 @@ impl ::core::default::Default for TAP_PARAMETER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TAP_PARAMETER {
+unsafe impl ::windows_core::Abi for TAP_PARAMETER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TAP_PARAMETER {
@@ -1386,7 +1386,7 @@ impl ::core::default::Default for TRANSLATION_PARAMETER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TRANSLATION_PARAMETER {
+unsafe impl ::windows_core::Abi for TRANSLATION_PARAMETER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TRANSLATION_PARAMETER {

@@ -7,7 +7,7 @@ use windows::{
 };
 
 #[test]
-fn uri() -> windows::core::Result<()> {
+fn uri() -> windows_core::Result<()> {
     let uri = Uri::CreateUri("http://kennykerr.ca?A=1&B=2&C=3")?;
     let query = uri.QueryParsed()?;
 
@@ -63,15 +63,15 @@ fn uri() -> windows::core::Result<()> {
 }
 
 #[test]
-fn property_set() -> windows::core::Result<()> {
+fn property_set() -> windows_core::Result<()> {
     // The PropertySet class implements IIterable<IKeyValuePair<HSTRING, IInspectable>> so the following
     // for loop will excercise the IIterator<T> iterator implicitly.
 
     let set = PropertySet::new()?;
 
-    set.Insert("A", windows::core::IInspectable::try_from(1)?)?;
-    set.Insert("B", windows::core::IInspectable::try_from(2)?)?;
-    set.Insert("C", windows::core::IInspectable::try_from(3)?)?;
+    set.Insert("A", windows_core::IInspectable::try_from(1)?)?;
+    set.Insert("B", windows_core::IInspectable::try_from(2)?)?;
+    set.Insert("C", windows_core::IInspectable::try_from(3)?)?;
 
     assert!(set.Size()? == 3);
 

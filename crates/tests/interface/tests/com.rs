@@ -18,7 +18,7 @@ unsafe trait ICustomUri: IUnknown {
 
 /// A custom declaration of implementation of `IPersist`
 #[interface("0000010c-0000-0000-C000-000000000046")]
-unsafe trait ICustomPersist: windows::core::IUnknown {
+unsafe trait ICustomPersist: windows_core::IUnknown {
     unsafe fn GetClassID(&self, clsid: *mut GUID) -> HRESULT;
 }
 
@@ -105,7 +105,7 @@ impl ICustomPersistMemory_Impl for Persist {
 }
 
 #[test]
-fn test_custom_interface() -> windows::core::Result<()> {
+fn test_custom_interface() -> windows_core::Result<()> {
     unsafe {
         // Use the OS implementation of Uri through the custom `ICustomUri` interface
         let a: IUri = CreateUri("http://kennykerr.ca", Default::default(), 0)?;
@@ -158,6 +158,6 @@ fn test_custom_interface() -> windows::core::Result<()> {
 
 pub fn CheckConversionWorks<'a, P>(_p: P)
 where
-    P: windows::core::IntoParam<'a, windows::core::IUnknown>,
+    P: windows_core::IntoParam<'a, windows_core::IUnknown>,
 {
 }

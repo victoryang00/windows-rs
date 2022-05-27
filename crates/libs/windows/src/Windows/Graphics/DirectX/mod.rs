@@ -21,7 +21,7 @@ impl ::core::default::Default for DirectXAlphaMode {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DirectXAlphaMode {
+unsafe impl ::windows_core::Abi for DirectXAlphaMode {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DirectXAlphaMode {
@@ -29,10 +29,10 @@ impl ::core::fmt::Debug for DirectXAlphaMode {
         f.debug_tuple("DirectXAlphaMode").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for DirectXAlphaMode {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.DirectX.DirectXAlphaMode;i4)");
+unsafe impl ::windows_core::RuntimeType for DirectXAlphaMode {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.DirectX.DirectXAlphaMode;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -78,7 +78,7 @@ impl ::core::default::Default for DirectXColorSpace {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DirectXColorSpace {
+unsafe impl ::windows_core::Abi for DirectXColorSpace {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DirectXColorSpace {
@@ -86,10 +86,10 @@ impl ::core::fmt::Debug for DirectXColorSpace {
         f.debug_tuple("DirectXColorSpace").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for DirectXColorSpace {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.DirectX.DirectXColorSpace;i4)");
+unsafe impl ::windows_core::RuntimeType for DirectXColorSpace {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.DirectX.DirectXColorSpace;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -231,7 +231,7 @@ impl ::core::default::Default for DirectXPixelFormat {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DirectXPixelFormat {
+unsafe impl ::windows_core::Abi for DirectXPixelFormat {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DirectXPixelFormat {
@@ -239,10 +239,10 @@ impl ::core::fmt::Debug for DirectXPixelFormat {
         f.debug_tuple("DirectXPixelFormat").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for DirectXPixelFormat {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.DirectX.DirectXPixelFormat;i4)");
+unsafe impl ::windows_core::RuntimeType for DirectXPixelFormat {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.DirectX.DirectXPixelFormat;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
@@ -269,7 +269,7 @@ impl ::core::default::Default for DirectXPrimitiveTopology {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DirectXPrimitiveTopology {
+unsafe impl ::windows_core::Abi for DirectXPrimitiveTopology {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DirectXPrimitiveTopology {
@@ -277,10 +277,10 @@ impl ::core::fmt::Debug for DirectXPrimitiveTopology {
         f.debug_tuple("DirectXPrimitiveTopology").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for DirectXPrimitiveTopology {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.Graphics.DirectX.DirectXPrimitiveTopology;i4)");
+unsafe impl ::windows_core::RuntimeType for DirectXPrimitiveTopology {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"enum(Windows.Graphics.DirectX.DirectXPrimitiveTopology;i4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }

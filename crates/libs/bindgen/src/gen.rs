@@ -12,6 +12,7 @@ pub struct Gen<'a> {
     pub min_xaml: bool,
     pub windows_extern: bool,
     pub component: bool,
+    pub monolithic: bool,
 }
 
 impl<'a> Gen<'a> {
@@ -28,6 +29,7 @@ impl<'a> Gen<'a> {
             min_xaml: false,
             windows_extern: false,
             component: false,
+            monolithic: false,
         }
     }
 
@@ -98,7 +100,7 @@ impl<'a> Gen<'a> {
             let kind = self.type_name(ty);
 
             if self.reader.type_is_generic(ty) {
-                quote! { <#kind as ::windows::core::RuntimeType>::DefaultType }
+                quote! { <#kind as ::windows_core::RuntimeType>::DefaultType }
             } else if self.reader.type_is_nullable(ty) && !self.sys {
                 quote! { ::core::option::Option<#kind> }
             } else {
@@ -126,39 +128,39 @@ impl<'a> Gen<'a> {
             Type::USize => quote! { usize },
             Type::String => {
                 let crate_name = self.crate_name();
-                quote! { ::#crate_name::core::HSTRING }
+                quote! { ::#crate_name::HSTRING }
             }
             Type::IInspectable => {
                 let crate_name = self.crate_name();
-                quote! { ::#crate_name::core::IInspectable }
+                quote! { ::#crate_name::IInspectable }
             }
             Type::GUID => {
                 let crate_name = self.crate_name();
-                quote! { ::#crate_name::core::GUID }
+                quote! { ::#crate_name::GUID }
             }
             Type::IUnknown => {
                 let crate_name = self.crate_name();
-                quote! { ::#crate_name::core::IUnknown }
+                quote! { ::#crate_name::IUnknown }
             }
             Type::HRESULT => {
                 let crate_name = self.crate_name();
-                quote! { ::#crate_name::core::HRESULT }
+                quote! { ::#crate_name::HRESULT }
             }
             Type::PSTR => {
                 let crate_name = self.crate_name();
-                quote! { ::#crate_name::core::PSTR }
+                quote! { ::#crate_name::PSTR }
             }
             Type::PWSTR => {
                 let crate_name = self.crate_name();
-                quote! { ::#crate_name::core::PWSTR }
+                quote! { ::#crate_name::PWSTR }
             }
             Type::PCSTR => {
                 let crate_name = self.crate_name();
-                quote! { ::#crate_name::core::PCSTR }
+                quote! { ::#crate_name::PCSTR }
             }
             Type::PCWSTR => {
                 let crate_name = self.crate_name();
-                quote! { ::#crate_name::core::PCWSTR }
+                quote! { ::#crate_name::PCWSTR }
             }
             Type::Win32Array((ty, len)) => {
                 let name = self.type_default_name(ty);
@@ -198,7 +200,7 @@ impl<'a> Gen<'a> {
     fn type_abi_name_imp(&self, ty: &Type, ptr: bool) -> TokenStream {
         match ty {
             Type::String => {
-                quote! { ::core::mem::ManuallyDrop<::windows::core::HSTRING> }
+                quote! { ::core::mem::ManuallyDrop<::windows_core::HSTRING> }
             }
             Type::IUnknown | Type::IInspectable => {
                 quote! { *mut ::core::ffi::c_void }
@@ -210,7 +212,7 @@ impl<'a> Gen<'a> {
             }
             Type::GenericParam(generic) => {
                 let name = to_ident(self.reader.generic_param_name(*generic));
-                quote! { <#name as ::windows::core::Abi>::Abi }
+                quote! { <#name as ::windows_core::Abi>::Abi }
             }
             Type::TypeDef((def, _)) => match self.reader.type_def_kind(*def) {
                 TypeKind::Enum => self.type_def_name(*def, &[]),
@@ -222,7 +224,7 @@ impl<'a> Gen<'a> {
                         quote! { ::core::mem::ManuallyDrop<#tokens> }
                     }
                 }
-                _ => quote! { ::windows::core::RawPtr },
+                _ => quote! { ::windows_core::RawPtr },
             },
             Type::MutPtr((kind, pointers)) => {
                 let pointers = gen_mut_ptrs(*pointers);
@@ -265,7 +267,7 @@ impl<'a> Gen<'a> {
         let mut tokens = TokenStream::new();
         for generic in generics {
             let generic = self.type_name(generic);
-            tokens.combine(&quote! { #generic: ::windows::core::RuntimeType + 'static, });
+            tokens.combine(&quote! { #generic: ::windows_core::RuntimeType + 'static, });
         }
         tokens
     }
@@ -283,7 +285,7 @@ impl<'a> Gen<'a> {
             if self.reader.signature_param_is_convertible(param) {
                 let name: TokenStream = format!("Param{}", position).into();
                 let into = self.type_name(&param.ty);
-                tokens.combine(&quote! { #name: ::windows::core::IntoParam<'a, #into>, });
+                tokens.combine(&quote! { #name: ::windows_core::IntoParam<'a, #into>, });
             }
         }
         if !tokens.is_empty() {
@@ -414,9 +416,9 @@ impl<'a> Gen<'a> {
     }
     fn crate_name(&self) -> TokenStream {
         if self.sys {
-            "windows_sys".into()
+            "windows_sys_core".into()
         } else {
-            "windows".into()
+            "windows_core".into()
         }
     }
     fn scoped_name(&self, def: TypeDef) -> String {
@@ -573,9 +575,9 @@ impl<'a> Gen<'a> {
             quote! {
                 #features
                 impl<#constraints> #ident {
-                    pub fn get(&self) -> ::windows::core::Result<#return_type> {
+                    pub fn get(&self) -> ::windows_core::Result<#return_type> {
                         if self.Status()? == #namespace AsyncStatus::Started {
-                            let (_waiter, signaler) = ::windows::core::Waiter::new()?;
+                            let (_waiter, signaler) = ::windows_core::Waiter::new()?;
                             self.SetCompleted(#namespace  #handler::new(move |_sender, _args| {
                                 // Safe because the waiter will only be dropped after being signaled.
                                 unsafe { signaler.signal(); }
@@ -587,7 +589,7 @@ impl<'a> Gen<'a> {
                 }
                 #features
                 impl<#constraints> ::std::future::Future for #ident {
-                    type Output = ::windows::core::Result<#return_type>;
+                    type Output = ::windows_core::Result<#return_type>;
 
                     fn poll(self: ::std::pin::Pin<&mut Self>, context: &mut ::std::task::Context) -> ::std::task::Poll<Self::Output> {
                         if self.Status()? == #namespace AsyncStatus::Started {
@@ -611,12 +613,12 @@ impl<'a> Gen<'a> {
         if self.reader.type_def_flags(def).winrt() {
             let type_signature = if self.reader.type_def_kind(def) == TypeKind::Class {
                 let type_signature = Literal::byte_string(self.reader.type_def_signature(def, generics).as_bytes());
-                quote! { ::windows::core::ConstBuffer::from_slice(#type_signature) }
+                quote! { ::windows_core::ConstBuffer::from_slice(#type_signature) }
             } else {
                 let signature = Literal::byte_string(format!("{{{:#?}}}", self.reader.type_def_guid(def).unwrap()).as_bytes());
 
                 if generics.is_empty() {
-                    quote! { ::windows::core::ConstBuffer::from_slice(#signature) }
+                    quote! { ::windows_core::ConstBuffer::from_slice(#signature) }
                 } else {
                     let generics = generics.iter().enumerate().map(|(index, g)| {
                         let g = self.type_name(g);
@@ -629,14 +631,14 @@ impl<'a> Gen<'a> {
                         };
 
                         quote! {
-                            .push_other(<#g as ::windows::core::RuntimeType>::SIGNATURE)
+                            .push_other(<#g as ::windows_core::RuntimeType>::SIGNATURE)
                             #semi
                         }
                     });
 
                     quote! {
                         {
-                            ::windows::core::ConstBuffer::new()
+                            ::windows_core::ConstBuffer::new()
                             .push_slice(b"pinterface(")
                             .push_slice(#signature)
                             .push_slice(b";")
@@ -649,11 +651,11 @@ impl<'a> Gen<'a> {
 
             quote! {
                 #features
-                unsafe impl<#constraints> ::windows::core::RuntimeType for #ident {
-                    const SIGNATURE: ::windows::core::ConstBuffer = #type_signature;
+                unsafe impl<#constraints> ::windows_core::RuntimeType for #ident {
+                    const SIGNATURE: ::windows_core::ConstBuffer = #type_signature;
                     type DefaultType = ::core::option::Option<Self>;
-                    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-                        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+                    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
+                        from.as_ref().cloned().ok_or(::windows_core::Error::OK)
                     }
                 }
             }
@@ -668,14 +670,14 @@ impl<'a> Gen<'a> {
 
             quote! {
                 #features
-                impl<#constraints> ::windows::core::RuntimeName for #name {
+                impl<#constraints> ::windows_core::RuntimeName for #name {
                     const NAME: &'static str = #runtime_name;
                 }
             }
         } else {
             quote! {
                 #features
-                impl ::windows::core::RuntimeName for #name {}
+                impl ::windows_core::RuntimeName for #name {}
             }
         }
     }
@@ -686,9 +688,9 @@ impl<'a> Gen<'a> {
             let vtbl = self.type_vtbl_name(&default);
             quote! {
                 #features
-                unsafe impl ::windows::core::Interface for #ident {
+                unsafe impl ::windows_core::Interface for #ident {
                     type Vtable = #vtbl;
-                    const IID: ::windows::core::GUID = <#default_name as ::windows::core::Interface>::IID;
+                    const IID: ::windows_core::GUID = <#default_name as ::windows_core::Interface>::IID;
                 }
             }
         } else {
@@ -698,20 +700,20 @@ impl<'a> Gen<'a> {
                     Some(guid) => self.guid(&guid),
                     None => {
                         quote! {
-                            ::windows::core::GUID::zeroed()
+                            ::windows_core::GUID::zeroed()
                         }
                     }
                 }
             } else {
                 quote! {
-                    ::windows::core::GUID::from_signature(<Self as ::windows::core::RuntimeType>::SIGNATURE)
+                    ::windows_core::GUID::from_signature(<Self as ::windows_core::RuntimeType>::SIGNATURE)
                 }
             };
             quote! {
                 #features
-                unsafe impl<#constraints> ::windows::core::Interface for #ident {
+                unsafe impl<#constraints> ::windows_core::Interface for #ident {
                     type Vtable = #vtbl;
-                    const IID: ::windows::core::GUID = #guid;
+                    const IID: ::windows_core::GUID = #guid;
                 }
             }
         }
@@ -724,8 +726,8 @@ impl<'a> Gen<'a> {
         let phantoms = self.generic_named_phantoms(generics);
 
         match self.reader.type_def_vtables(def).last() {
-            Some(Type::IUnknown) => methods.combine(&quote! { pub base__: ::windows::core::IUnknownVtbl, }),
-            Some(Type::IInspectable) => methods.combine(&quote! { pub base__: ::windows::core::IInspectableVtbl, }),
+            Some(Type::IUnknown) => methods.combine(&quote! { pub base__: ::windows_core::IUnknownVtbl, }),
+            Some(Type::IInspectable) => methods.combine(&quote! { pub base__: ::windows_core::IInspectableVtbl, }),
             Some(Type::TypeDef((def, _))) => {
                 let vtbl = self.type_def_vtbl_name(*def, &[]);
                 methods.combine(&quote! { pub base__: #vtbl, });
@@ -845,9 +847,9 @@ impl<'a> Gen<'a> {
             if let ArrayInfo::Fixed(fixed) = param.array_info {
                 if fixed > 0 && self.reader.param_free_with(param.def).is_none() {
                     let signature = if self.reader.param_flags(param.def).output() {
-                        quote! { ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(#name)), }
+                        quote! { ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(#name)), }
                     } else {
-                        quote! { ::core::mem::transmute(::windows::core::as_ptr_or_null(#name)), }
+                        quote! { ::core::mem::transmute(::windows_core::as_ptr_or_null(#name)), }
                     };
 
                     tokens.combine(&signature);
@@ -857,9 +859,9 @@ impl<'a> Gen<'a> {
 
             if let ArrayInfo::RelativeLen(_) = param.array_info {
                 let signature = if self.reader.param_flags(param.def).output() {
-                    quote! { ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(#name)), }
+                    quote! { ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(#name)), }
                 } else {
-                    quote! { ::core::mem::transmute(::windows::core::as_ptr_or_null(#name)), }
+                    quote! { ::core::mem::transmute(::windows_core::as_ptr_or_null(#name)), }
                 };
 
                 tokens.combine(&signature);
@@ -944,7 +946,7 @@ impl<'a> Gen<'a> {
                 let tokens = self.type_name(return_type);
 
                 if self.reader.type_is_winrt_array(return_type) {
-                    quote! { ::windows::core::Array<#tokens> }
+                    quote! { ::windows_core::Array<#tokens> }
                 } else {
                     tokens
                 }
@@ -958,7 +960,7 @@ impl<'a> Gen<'a> {
                 quote! { &self, }
             };
 
-            quote! { (#this #(#params),*) -> ::windows::core::Result<#return_type> }
+            quote! { (#this #(#params),*) -> ::windows_core::Result<#return_type> }
         } else {
             let signature_kind = self.reader.signature_kind(signature);
             let mut params = quote! {};
@@ -975,12 +977,12 @@ impl<'a> Gen<'a> {
 
             let return_type = match signature_kind {
                 SignatureKind::ReturnVoid => quote! {},
-                SignatureKind::Query | SignatureKind::QueryOptional | SignatureKind::ResultVoid => quote! { -> ::windows::core::Result<()> },
+                SignatureKind::Query | SignatureKind::QueryOptional | SignatureKind::ResultVoid => quote! { -> ::windows_core::Result<()> },
                 SignatureKind::ResultValue => {
                     let return_type = type_deref(&signature.params[signature.params.len() - 1].ty);
                     let return_type = self.type_name(&return_type);
 
-                    quote! { -> ::windows::core::Result<#return_type> }
+                    quote! { -> ::windows_core::Result<#return_type> }
                 }
                 _ => self.return_sig(signature),
             };
@@ -1003,7 +1005,7 @@ impl<'a> Gen<'a> {
             quote! { &mut [#default_type] }
         } else if self.reader.type_is_winrt_array_ref(&param.ty) {
             let kind = self.type_name(&param.ty);
-            quote! { &mut ::windows::core::Array<#kind> }
+            quote! { &mut ::windows_core::Array<#kind> }
         } else {
             quote! { &mut #default_type }
         };

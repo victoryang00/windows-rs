@@ -4,7 +4,7 @@ extern "system" {
     pub fn CloseIMsgSession(lpmsgsess: *mut _MSGSESS);
     #[doc = "*Required features: `\"Win32_Storage_Imapi\"`, `\"Win32_System_AddressBook\"`*"]
     #[cfg(feature = "Win32_System_AddressBook")]
-    pub fn GetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptagarray: *mut super::super::System::AddressBook::SPropTagArray, lpppropattrarray: *mut *mut SPropAttrArray) -> ::windows_sys::core::HRESULT;
+    pub fn GetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptagarray: *mut super::super::System::AddressBook::SPropTagArray, lpppropattrarray: *mut *mut SPropAttrArray) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
     pub fn MapStorageSCode(stgscode: i32) -> i32;
     #[doc = "*Required features: `\"Win32_Storage_Imapi\"`, `\"Win32_System_AddressBook\"`, `\"Win32_System_Com_StructuredStorage\"`*"]
@@ -15,31 +15,31 @@ extern "system" {
     pub fn OpenIMsgSession(lpmalloc: super::super::System::Com::IMalloc, ulflags: u32, lppmsgsess: *mut *mut _MSGSESS) -> i32;
     #[doc = "*Required features: `\"Win32_Storage_Imapi\"`, `\"Win32_System_AddressBook\"`*"]
     #[cfg(feature = "Win32_System_AddressBook")]
-    pub fn SetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptags: *mut super::super::System::AddressBook::SPropTagArray, lppropattrs: *mut SPropAttrArray, lpppropproblems: *mut *mut super::super::System::AddressBook::SPropProblemArray) -> ::windows_sys::core::HRESULT;
+    pub fn SetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptags: *mut super::super::System::AddressBook::SPropTagArray, lppropattrs: *mut SPropAttrArray, lpppropproblems: *mut *mut super::super::System::AddressBook::SPropProblemArray) -> ::windows_sys_core::HRESULT;
 }
-pub const BlockRange: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3037186599, data2: 8708, data3: 4573, data4: [150, 106, 0, 26, 160, 27, 188, 88] };
-pub const BlockRangeList: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3037186600, data2: 8708, data3: 4573, data4: [150, 106, 0, 26, 160, 27, 188, 88] };
-pub const BootOptions: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904974, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
-pub const CATID_SMTP_DNSRESOLVERRECORDSINK: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3171631974, data2: 36355, data3: 4562, data4: [148, 246, 0, 192, 79, 121, 241, 214] };
-pub const CATID_SMTP_DSN: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 582309681, data2: 62968, data3: 19747, data4: [189, 143, 135, 181, 35, 113, 167, 58] };
-pub const CATID_SMTP_GET_AUX_DOMAIN_INFO_FLAGS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2231318154, data2: 64179, data3: 17367, data4: [188, 223, 105, 44, 91, 70, 230, 177] };
-pub const CATID_SMTP_LOG: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2479924536, data2: 11294, data3: 19304, data4: [167, 201, 215, 58, 138, 166, 238, 151] };
-pub const CATID_SMTP_MAXMSGSIZE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3958462942, data2: 42622, data3: 4562, data4: [148, 247, 0, 192, 79, 121, 241, 214] };
-pub const CATID_SMTP_MSGTRACKLOG: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3336524458, data2: 32176, data3: 4562, data4: [148, 244, 0, 192, 79, 121, 241, 214] };
-pub const CATID_SMTP_ON_BEFORE_DATA: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4133653650, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
-pub const CATID_SMTP_ON_INBOUND_COMMAND: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4133653645, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
-pub const CATID_SMTP_ON_MESSAGE_START: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4133653648, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
-pub const CATID_SMTP_ON_PER_RECIPIENT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4133653649, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
-pub const CATID_SMTP_ON_SERVER_RESPONSE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4133653646, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
-pub const CATID_SMTP_ON_SESSION_END: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4133653651, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
-pub const CATID_SMTP_ON_SESSION_START: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4133653647, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
-pub const CATID_SMTP_STORE_DRIVER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1494702160, data2: 58675, data3: 4561, data4: [170, 103, 0, 192, 79, 163, 69, 246] };
-pub const CATID_SMTP_TRANSPORT_CATEGORIZE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2516734627, data2: 2618, data3: 4562, data4: [158, 0, 0, 192, 79, 163, 34, 186] };
-pub const CATID_SMTP_TRANSPORT_POSTCATEGORIZE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1987155540, data2: 1446, data3: 4562, data4: [157, 253, 0, 192, 79, 163, 34, 186] };
-pub const CATID_SMTP_TRANSPORT_PRECATEGORIZE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2746022669, data2: 33791, data3: 4562, data4: [158, 20, 0, 192, 79, 163, 34, 186] };
-pub const CATID_SMTP_TRANSPORT_ROUTER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 674509001, data2: 6224, data3: 4562, data4: [158, 3, 0, 192, 79, 163, 34, 186] };
-pub const CATID_SMTP_TRANSPORT_SUBMISSION: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4282165795, data2: 185, data3: 4562, data4: [157, 251, 0, 192, 79, 163, 34, 186] };
-pub const CLSID_SmtpCat: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2990290359, data2: 37401, data3: 4562, data4: [158, 23, 0, 192, 79, 163, 34, 186] };
+pub const BlockRange: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3037186599, data2: 8708, data3: 4573, data4: [150, 106, 0, 26, 160, 27, 188, 88] };
+pub const BlockRangeList: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3037186600, data2: 8708, data3: 4573, data4: [150, 106, 0, 26, 160, 27, 188, 88] };
+pub const BootOptions: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 747904974, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+pub const CATID_SMTP_DNSRESOLVERRECORDSINK: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3171631974, data2: 36355, data3: 4562, data4: [148, 246, 0, 192, 79, 121, 241, 214] };
+pub const CATID_SMTP_DSN: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 582309681, data2: 62968, data3: 19747, data4: [189, 143, 135, 181, 35, 113, 167, 58] };
+pub const CATID_SMTP_GET_AUX_DOMAIN_INFO_FLAGS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2231318154, data2: 64179, data3: 17367, data4: [188, 223, 105, 44, 91, 70, 230, 177] };
+pub const CATID_SMTP_LOG: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2479924536, data2: 11294, data3: 19304, data4: [167, 201, 215, 58, 138, 166, 238, 151] };
+pub const CATID_SMTP_MAXMSGSIZE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3958462942, data2: 42622, data3: 4562, data4: [148, 247, 0, 192, 79, 121, 241, 214] };
+pub const CATID_SMTP_MSGTRACKLOG: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3336524458, data2: 32176, data3: 4562, data4: [148, 244, 0, 192, 79, 121, 241, 214] };
+pub const CATID_SMTP_ON_BEFORE_DATA: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4133653650, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
+pub const CATID_SMTP_ON_INBOUND_COMMAND: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4133653645, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
+pub const CATID_SMTP_ON_MESSAGE_START: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4133653648, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
+pub const CATID_SMTP_ON_PER_RECIPIENT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4133653649, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
+pub const CATID_SMTP_ON_SERVER_RESPONSE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4133653646, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
+pub const CATID_SMTP_ON_SESSION_END: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4133653651, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
+pub const CATID_SMTP_ON_SESSION_START: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4133653647, data2: 3422, data3: 4562, data4: [170, 104, 0, 192, 79, 163, 91, 130] };
+pub const CATID_SMTP_STORE_DRIVER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1494702160, data2: 58675, data3: 4561, data4: [170, 103, 0, 192, 79, 163, 69, 246] };
+pub const CATID_SMTP_TRANSPORT_CATEGORIZE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2516734627, data2: 2618, data3: 4562, data4: [158, 0, 0, 192, 79, 163, 34, 186] };
+pub const CATID_SMTP_TRANSPORT_POSTCATEGORIZE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1987155540, data2: 1446, data3: 4562, data4: [157, 253, 0, 192, 79, 163, 34, 186] };
+pub const CATID_SMTP_TRANSPORT_PRECATEGORIZE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2746022669, data2: 33791, data3: 4562, data4: [158, 20, 0, 192, 79, 163, 34, 186] };
+pub const CATID_SMTP_TRANSPORT_ROUTER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 674509001, data2: 6224, data3: 4562, data4: [158, 3, 0, 192, 79, 163, 34, 186] };
+pub const CATID_SMTP_TRANSPORT_SUBMISSION: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4282165795, data2: 185, data3: 4562, data4: [157, 251, 0, 192, 79, 163, 34, 186] };
+pub const CLSID_SmtpCat: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2990290359, data2: 37401, data3: 4562, data4: [158, 23, 0, 192, 79, 163, 34, 186] };
 pub type DDiscFormat2DataEvents = *mut ::core::ffi::c_void;
 pub type DDiscFormat2EraseEvents = *mut ::core::ffi::c_void;
 pub type DDiscFormat2RawCDEvents = *mut ::core::ffi::c_void;
@@ -412,11 +412,11 @@ pub const Emulation144MFloppy: EmulationType = 2i32;
 pub const Emulation288MFloppy: EmulationType = 3i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub const EmulationHardDisk: EmulationType = 4i32;
-pub const EnumFsiItems: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904966, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
-pub const EnumProgressItems: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904970, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
-pub const FileSystemImageResult: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904972, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
-pub const FsiDirectoryItem: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904968, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
-pub const FsiFileItem: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904967, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+pub const EnumFsiItems: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 747904966, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+pub const EnumProgressItems: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 747904970, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+pub const FileSystemImageResult: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 747904972, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+pub const FsiDirectoryItem: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 747904968, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+pub const FsiFileItem: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 747904967, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub type FsiFileSystems = i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
@@ -437,10 +437,10 @@ pub const FsiItemNotFound: FsiItemType = 0i32;
 pub const FsiItemDirectory: FsiItemType = 1i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub const FsiItemFile: FsiItemType = 2i32;
-pub const FsiNamedStreams: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3333880045, data2: 27929, data3: 17588, data4: [181, 57, 177, 89, 183, 147, 163, 45] };
-pub const FsiStream: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904973, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
-pub const GUID_SMTPSVC_SOURCE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 456918630, data2: 58480, data3: 4561, data4: [170, 103, 0, 192, 79, 163, 69, 246] };
-pub const GUID_SMTP_SOURCE_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4217750748, data2: 58472, data3: 4561, data4: [170, 103, 0, 192, 79, 163, 69, 246] };
+pub const FsiNamedStreams: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3333880045, data2: 27929, data3: 17588, data4: [181, 57, 177, 89, 183, 147, 163, 45] };
+pub const FsiStream: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 747904973, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+pub const GUID_SMTPSVC_SOURCE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 456918630, data2: 58480, data3: 4561, data4: [170, 103, 0, 192, 79, 163, 69, 246] };
+pub const GUID_SMTP_SOURCE_TYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4217750748, data2: 58472, data3: 4561, data4: [170, 103, 0, 192, 79, 163, 69, 246] };
 pub type IBlockRange = *mut ::core::ffi::c_void;
 pub type IBlockRangeList = *mut ::core::ffi::c_void;
 pub type IBootOptions = *mut ::core::ffi::c_void;
@@ -531,77 +531,77 @@ pub const IMAPI_CD_TRACK_DIGITAL_COPY_PROHIBITED: IMAPI_CD_TRACK_DIGITAL_COPY_SE
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub const IMAPI_CD_TRACK_DIGITAL_COPY_SCMS: IMAPI_CD_TRACK_DIGITAL_COPY_SETTING = 2i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_ALREADYOPEN: ::windows_sys::core::HRESULT = -2147220958i32;
+pub const IMAPI_E_ALREADYOPEN: ::windows_sys_core::HRESULT = -2147220958i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_BADJOLIETNAME: ::windows_sys::core::HRESULT = -2147220963i32;
+pub const IMAPI_E_BADJOLIETNAME: ::windows_sys_core::HRESULT = -2147220963i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_BOOTIMAGE_AND_NONBLANK_DISC: ::windows_sys::core::HRESULT = -2147220946i32;
+pub const IMAPI_E_BOOTIMAGE_AND_NONBLANK_DISC: ::windows_sys_core::HRESULT = -2147220946i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_CANNOT_WRITE_TO_MEDIA: ::windows_sys::core::HRESULT = -2147220948i32;
+pub const IMAPI_E_CANNOT_WRITE_TO_MEDIA: ::windows_sys_core::HRESULT = -2147220948i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_COMPRESSEDSTASH: ::windows_sys::core::HRESULT = -2147220952i32;
+pub const IMAPI_E_COMPRESSEDSTASH: ::windows_sys_core::HRESULT = -2147220952i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_DEVICE_INVALIDTYPE: ::windows_sys::core::HRESULT = -2147220972i32;
+pub const IMAPI_E_DEVICE_INVALIDTYPE: ::windows_sys_core::HRESULT = -2147220972i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_DEVICE_NOPROPERTIES: ::windows_sys::core::HRESULT = -2147220975i32;
+pub const IMAPI_E_DEVICE_NOPROPERTIES: ::windows_sys_core::HRESULT = -2147220975i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_DEVICE_NOTACCESSIBLE: ::windows_sys::core::HRESULT = -2147220974i32;
+pub const IMAPI_E_DEVICE_NOTACCESSIBLE: ::windows_sys_core::HRESULT = -2147220974i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_DEVICE_NOTPRESENT: ::windows_sys::core::HRESULT = -2147220973i32;
+pub const IMAPI_E_DEVICE_NOTPRESENT: ::windows_sys_core::HRESULT = -2147220973i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_DEVICE_STILL_IN_USE: ::windows_sys::core::HRESULT = -2147220954i32;
+pub const IMAPI_E_DEVICE_STILL_IN_USE: ::windows_sys_core::HRESULT = -2147220954i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_DISCFULL: ::windows_sys::core::HRESULT = -2147220964i32;
+pub const IMAPI_E_DISCFULL: ::windows_sys_core::HRESULT = -2147220964i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_DISCINFO: ::windows_sys::core::HRESULT = -2147220967i32;
+pub const IMAPI_E_DISCINFO: ::windows_sys_core::HRESULT = -2147220967i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_ENCRYPTEDSTASH: ::windows_sys::core::HRESULT = -2147220951i32;
+pub const IMAPI_E_ENCRYPTEDSTASH: ::windows_sys_core::HRESULT = -2147220951i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_FILEACCESS: ::windows_sys::core::HRESULT = -2147220968i32;
+pub const IMAPI_E_FILEACCESS: ::windows_sys_core::HRESULT = -2147220968i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_FILEEXISTS: ::windows_sys::core::HRESULT = -2147220956i32;
+pub const IMAPI_E_FILEEXISTS: ::windows_sys_core::HRESULT = -2147220956i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_FILESYSTEM: ::windows_sys::core::HRESULT = -2147220969i32;
+pub const IMAPI_E_FILESYSTEM: ::windows_sys_core::HRESULT = -2147220969i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_GENERIC: ::windows_sys::core::HRESULT = -2147220978i32;
+pub const IMAPI_E_GENERIC: ::windows_sys_core::HRESULT = -2147220978i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_INITIALIZE_ENDWRITE: ::windows_sys::core::HRESULT = -2147220970i32;
+pub const IMAPI_E_INITIALIZE_ENDWRITE: ::windows_sys_core::HRESULT = -2147220970i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_INITIALIZE_WRITE: ::windows_sys::core::HRESULT = -2147220971i32;
+pub const IMAPI_E_INITIALIZE_WRITE: ::windows_sys_core::HRESULT = -2147220971i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_INVALIDIMAGE: ::windows_sys::core::HRESULT = -2147220962i32;
+pub const IMAPI_E_INVALIDIMAGE: ::windows_sys_core::HRESULT = -2147220962i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_LOSS_OF_STREAMING: ::windows_sys::core::HRESULT = -2147220953i32;
+pub const IMAPI_E_LOSS_OF_STREAMING: ::windows_sys_core::HRESULT = -2147220953i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_MEDIUM_INVALIDTYPE: ::windows_sys::core::HRESULT = -2147220976i32;
+pub const IMAPI_E_MEDIUM_INVALIDTYPE: ::windows_sys_core::HRESULT = -2147220976i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_MEDIUM_NOTPRESENT: ::windows_sys::core::HRESULT = -2147220977i32;
+pub const IMAPI_E_MEDIUM_NOTPRESENT: ::windows_sys_core::HRESULT = -2147220977i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_NOACTIVEFORMAT: ::windows_sys::core::HRESULT = -2147220961i32;
+pub const IMAPI_E_NOACTIVEFORMAT: ::windows_sys_core::HRESULT = -2147220961i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_NOACTIVERECORDER: ::windows_sys::core::HRESULT = -2147220960i32;
+pub const IMAPI_E_NOACTIVERECORDER: ::windows_sys_core::HRESULT = -2147220960i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_NOTENOUGHDISKFORSTASH: ::windows_sys::core::HRESULT = -2147220950i32;
+pub const IMAPI_E_NOTENOUGHDISKFORSTASH: ::windows_sys_core::HRESULT = -2147220950i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_NOTINITIALIZED: ::windows_sys::core::HRESULT = -2147220980i32;
+pub const IMAPI_E_NOTINITIALIZED: ::windows_sys_core::HRESULT = -2147220980i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_NOTOPENED: ::windows_sys::core::HRESULT = -2147220981i32;
+pub const IMAPI_E_NOTOPENED: ::windows_sys_core::HRESULT = -2147220981i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_REMOVABLESTASH: ::windows_sys::core::HRESULT = -2147220949i32;
+pub const IMAPI_E_REMOVABLESTASH: ::windows_sys_core::HRESULT = -2147220949i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_STASHINUSE: ::windows_sys::core::HRESULT = -2147220955i32;
+pub const IMAPI_E_STASHINUSE: ::windows_sys_core::HRESULT = -2147220955i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_TRACKNOTOPEN: ::windows_sys::core::HRESULT = -2147220966i32;
+pub const IMAPI_E_TRACKNOTOPEN: ::windows_sys_core::HRESULT = -2147220966i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_TRACKOPEN: ::windows_sys::core::HRESULT = -2147220965i32;
+pub const IMAPI_E_TRACKOPEN: ::windows_sys_core::HRESULT = -2147220965i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_TRACK_NOT_BIG_ENOUGH: ::windows_sys::core::HRESULT = -2147220947i32;
+pub const IMAPI_E_TRACK_NOT_BIG_ENOUGH: ::windows_sys_core::HRESULT = -2147220947i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_USERABORT: ::windows_sys::core::HRESULT = -2147220979i32;
+pub const IMAPI_E_USERABORT: ::windows_sys_core::HRESULT = -2147220979i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_WRONGDISC: ::windows_sys::core::HRESULT = -2147220957i32;
+pub const IMAPI_E_WRONGDISC: ::windows_sys_core::HRESULT = -2147220957i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_E_WRONGFORMAT: ::windows_sys::core::HRESULT = -2147220959i32;
+pub const IMAPI_E_WRONGFORMAT: ::windows_sys_core::HRESULT = -2147220959i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub type IMAPI_FEATURE_PAGE_TYPE = i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
@@ -953,9 +953,9 @@ pub const IMAPI_SECTORS_PER_SECOND_AT_1X_HD_DVD: u32 = 4568u32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub const IMAPI_SECTOR_SIZE: u32 = 2048u32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_S_BUFFER_TO_SMALL: ::windows_sys::core::HRESULT = 262657i32;
+pub const IMAPI_S_BUFFER_TO_SMALL: ::windows_sys_core::HRESULT = 262657i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
-pub const IMAPI_S_PROPERTIESIGNORED: ::windows_sys::core::HRESULT = 262656i32;
+pub const IMAPI_S_PROPERTIESIGNORED: ::windows_sys_core::HRESULT = 262656i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub type IMMPID_CPV_ENUM = i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
@@ -1187,7 +1187,7 @@ pub const IMMPID_RP_AFTER__: IMMPID_RP_ENUM = 8213i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub struct IMMP_MPV_STORE_DRIVER_HANDLE {
-    pub guidSignature: ::windows_sys::core::GUID,
+    pub guidSignature: ::windows_sys_core::GUID,
 }
 impl ::core::marker::Copy for IMMP_MPV_STORE_DRIVER_HANDLE {}
 impl ::core::clone::Clone for IMMP_MPV_STORE_DRIVER_HANDLE {
@@ -1260,29 +1260,29 @@ pub const MP_STATUS_RETRY: u32 = 1u32;
 pub const MP_STATUS_SUBMITTED: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub const MP_STATUS_SUCCESS: u32 = 0u32;
-pub const MSDiscMasterObj: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1376569955, data2: 20901, data3: 4563, data4: [145, 68, 0, 16, 75, 161, 28, 94] };
-pub const MSDiscRecorderObj: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1376569953, data2: 20901, data3: 4563, data4: [145, 68, 0, 16, 75, 161, 28, 94] };
-pub const MSEnumDiscRecordersObj: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2315474554, data2: 25547, data3: 19368, data4: [186, 246, 82, 17, 152, 22, 209, 239] };
+pub const MSDiscMasterObj: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1376569955, data2: 20901, data3: 4563, data4: [145, 68, 0, 16, 75, 161, 28, 94] };
+pub const MSDiscRecorderObj: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1376569953, data2: 20901, data3: 4563, data4: [145, 68, 0, 16, 75, 161, 28, 94] };
+pub const MSEnumDiscRecordersObj: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2315474554, data2: 25547, data3: 19368, data4: [186, 246, 82, 17, 152, 22, 209, 239] };
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`, `\"Win32_System_AddressBook\"`*"]
 #[cfg(feature = "Win32_System_AddressBook")]
 pub type MSGCALLRELEASE = ::core::option::Option<unsafe extern "system" fn(ulcallerdata: u32, lpmessage: super::super::System::AddressBook::IMessage)>;
-pub const MsftDiscFormat2Data: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801514, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
-pub const MsftDiscFormat2Erase: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801515, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
-pub const MsftDiscFormat2RawCD: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801512, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
-pub const MsftDiscFormat2TrackAtOnce: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801513, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
-pub const MsftDiscMaster2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801518, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
-pub const MsftDiscRecorder2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801517, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
-pub const MsftFileSystemImage: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904965, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
-pub const MsftIsoImageManager: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3471719266, data2: 36694, data3: 16470, data4: [134, 155, 239, 22, 145, 126, 62, 252] };
-pub const MsftMultisessionRandomWrite: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3037186596, data2: 8708, data3: 4573, data4: [150, 106, 0, 26, 160, 27, 188, 88] };
-pub const MsftMultisessionSequential: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801506, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
-pub const MsftRawCDImageCreator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 630732129, data2: 40293, data3: 18894, data4: [179, 53, 64, 99, 13, 144, 18, 39] };
-pub const MsftStreamConcatenate: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801509, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
-pub const MsftStreamInterleave: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801508, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
-pub const MsftStreamPrng001: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801510, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
-pub const MsftStreamZero: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801511, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
-pub const MsftWriteEngine2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801516, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
-pub const MsftWriteSpeedDescriptor: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801507, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+pub const MsftDiscFormat2Data: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 657801514, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+pub const MsftDiscFormat2Erase: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 657801515, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+pub const MsftDiscFormat2RawCD: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 657801512, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+pub const MsftDiscFormat2TrackAtOnce: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 657801513, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+pub const MsftDiscMaster2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 657801518, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+pub const MsftDiscRecorder2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 657801517, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+pub const MsftFileSystemImage: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 747904965, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+pub const MsftIsoImageManager: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3471719266, data2: 36694, data3: 16470, data4: [134, 155, 239, 22, 145, 126, 62, 252] };
+pub const MsftMultisessionRandomWrite: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3037186596, data2: 8708, data3: 4573, data4: [150, 106, 0, 26, 160, 27, 188, 88] };
+pub const MsftMultisessionSequential: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 657801506, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+pub const MsftRawCDImageCreator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 630732129, data2: 40293, data3: 18894, data4: [179, 53, 64, 99, 13, 144, 18, 39] };
+pub const MsftStreamConcatenate: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 657801509, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+pub const MsftStreamInterleave: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 657801508, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+pub const MsftStreamPrng001: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 657801510, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+pub const MsftStreamZero: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 657801511, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+pub const MsftWriteEngine2: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 657801516, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+pub const MsftWriteSpeedDescriptor: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 657801507, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub const NMP_PROCESS_CONTROL: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
@@ -1299,8 +1299,8 @@ pub const PlatformPowerPC: PlatformId = 1i32;
 pub const PlatformMac: PlatformId = 2i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub const PlatformEFI: PlatformId = 239i32;
-pub const ProgressItem: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904971, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
-pub const ProgressItems: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904969, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+pub const ProgressItem: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 747904971, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+pub const ProgressItems: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 747904969, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub type RECORDER_TYPES = i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
@@ -1373,11 +1373,11 @@ impl ::core::clone::Clone for SPropAttrArray {
 pub const SZ_PROGID_SMTPCAT: &str = "Smtp.Cat";
 #[repr(C)]
 pub struct _MSGSESS(pub u8);
-pub const tagIMMPID_CPV_STRUCT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2728880938, data2: 58669, data3: 4561, data4: [170, 100, 0, 192, 79, 163, 91, 130] };
+pub const tagIMMPID_CPV_STRUCT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2728880938, data2: 58669, data3: 4561, data4: [170, 100, 0, 192, 79, 163, 91, 130] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub struct tagIMMPID_GUIDLIST_ITEM {
-    pub pguid: *const ::windows_sys::core::GUID,
+    pub pguid: *const ::windows_sys_core::GUID,
     pub dwStart: u32,
     pub dwLast: u32,
 }
@@ -1387,8 +1387,8 @@ impl ::core::clone::Clone for tagIMMPID_GUIDLIST_ITEM {
         *self
     }
 }
-pub const tagIMMPID_MPV_STRUCT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3420886790, data2: 51645, data3: 4561, data4: [159, 242, 0, 192, 79, 163, 115, 72] };
-pub const tagIMMPID_MP_STRUCT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 322456816, data2: 46020, data3: 4561, data4: [170, 146, 0, 170, 0, 107, 200, 11] };
-pub const tagIMMPID_NMP_STRUCT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1949542826, data2: 8418, data3: 4562, data4: [148, 214, 0, 192, 79, 163, 121, 241] };
-pub const tagIMMPID_RPV_STRUCT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2045255753, data2: 54048, data3: 4561, data4: [159, 244, 0, 192, 79, 163, 115, 72] };
-pub const tagIMMPID_RP_STRUCT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2045255752, data2: 54048, data3: 4561, data4: [159, 244, 0, 192, 79, 163, 115, 72] };
+pub const tagIMMPID_MPV_STRUCT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3420886790, data2: 51645, data3: 4561, data4: [159, 242, 0, 192, 79, 163, 115, 72] };
+pub const tagIMMPID_MP_STRUCT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 322456816, data2: 46020, data3: 4561, data4: [170, 146, 0, 170, 0, 107, 200, 11] };
+pub const tagIMMPID_NMP_STRUCT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1949542826, data2: 8418, data3: 4562, data4: [148, 214, 0, 192, 79, 163, 121, 241] };
+pub const tagIMMPID_RPV_STRUCT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2045255753, data2: 54048, data3: 4561, data4: [159, 244, 0, 192, 79, 163, 115, 72] };
+pub const tagIMMPID_RP_STRUCT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2045255752, data2: 54048, data3: 4561, data4: [159, 244, 0, 192, 79, 163, 115, 72] };

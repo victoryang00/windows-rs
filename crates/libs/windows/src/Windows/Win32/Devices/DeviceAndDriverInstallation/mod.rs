@@ -19,12 +19,12 @@ impl ::core::clone::Clone for BUSNUMBER_DES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for BUSNUMBER_DES {
+unsafe impl ::windows_core::Abi for BUSNUMBER_DES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BUSNUMBER_DES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BUSNUMBER_DES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BUSNUMBER_DES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BUSNUMBER_DES {}
@@ -47,12 +47,12 @@ impl ::core::clone::Clone for BUSNUMBER_RANGE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for BUSNUMBER_RANGE {
+unsafe impl ::windows_core::Abi for BUSNUMBER_RANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BUSNUMBER_RANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BUSNUMBER_RANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BUSNUMBER_RANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BUSNUMBER_RANGE {}
@@ -73,12 +73,12 @@ impl ::core::clone::Clone for BUSNUMBER_RESOURCE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for BUSNUMBER_RESOURCE {
+unsafe impl ::windows_core::Abi for BUSNUMBER_RESOURCE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BUSNUMBER_RESOURCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BUSNUMBER_RESOURCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BUSNUMBER_RESOURCE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BUSNUMBER_RESOURCE {}
@@ -91,9 +91,9 @@ impl ::core::default::Default for BUSNUMBER_RESOURCE {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct CABINET_INFO_A {
-    pub CabinetPath: ::windows::core::PCSTR,
-    pub CabinetFile: ::windows::core::PCSTR,
-    pub DiskName: ::windows::core::PCSTR,
+    pub CabinetPath: ::windows_core::PCSTR,
+    pub CabinetFile: ::windows_core::PCSTR,
+    pub DiskName: ::windows_core::PCSTR,
     pub SetId: u16,
     pub CabinetNumber: u16,
 }
@@ -106,13 +106,13 @@ impl ::core::clone::Clone for CABINET_INFO_A {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for CABINET_INFO_A {
+unsafe impl ::windows_core::Abi for CABINET_INFO_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for CABINET_INFO_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CABINET_INFO_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CABINET_INFO_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -127,9 +127,9 @@ impl ::core::default::Default for CABINET_INFO_A {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(target_arch = "x86")]
 pub struct CABINET_INFO_A {
-    pub CabinetPath: ::windows::core::PCSTR,
-    pub CabinetFile: ::windows::core::PCSTR,
-    pub DiskName: ::windows::core::PCSTR,
+    pub CabinetPath: ::windows_core::PCSTR,
+    pub CabinetFile: ::windows_core::PCSTR,
+    pub DiskName: ::windows_core::PCSTR,
     pub SetId: u16,
     pub CabinetNumber: u16,
 }
@@ -142,13 +142,13 @@ impl ::core::clone::Clone for CABINET_INFO_A {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for CABINET_INFO_A {
+unsafe impl ::windows_core::Abi for CABINET_INFO_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for CABINET_INFO_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CABINET_INFO_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CABINET_INFO_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -163,9 +163,9 @@ impl ::core::default::Default for CABINET_INFO_A {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct CABINET_INFO_W {
-    pub CabinetPath: ::windows::core::PCWSTR,
-    pub CabinetFile: ::windows::core::PCWSTR,
-    pub DiskName: ::windows::core::PCWSTR,
+    pub CabinetPath: ::windows_core::PCWSTR,
+    pub CabinetFile: ::windows_core::PCWSTR,
+    pub DiskName: ::windows_core::PCWSTR,
     pub SetId: u16,
     pub CabinetNumber: u16,
 }
@@ -178,13 +178,13 @@ impl ::core::clone::Clone for CABINET_INFO_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for CABINET_INFO_W {
+unsafe impl ::windows_core::Abi for CABINET_INFO_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for CABINET_INFO_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CABINET_INFO_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CABINET_INFO_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -199,9 +199,9 @@ impl ::core::default::Default for CABINET_INFO_W {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(target_arch = "x86")]
 pub struct CABINET_INFO_W {
-    pub CabinetPath: ::windows::core::PCWSTR,
-    pub CabinetFile: ::windows::core::PCWSTR,
-    pub DiskName: ::windows::core::PCWSTR,
+    pub CabinetPath: ::windows_core::PCWSTR,
+    pub CabinetFile: ::windows_core::PCWSTR,
+    pub DiskName: ::windows_core::PCWSTR,
     pub SetId: u16,
     pub CabinetNumber: u16,
 }
@@ -214,13 +214,13 @@ impl ::core::clone::Clone for CABINET_INFO_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for CABINET_INFO_W {
+unsafe impl ::windows_core::Abi for CABINET_INFO_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for CABINET_INFO_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CABINET_INFO_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CABINET_INFO_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -289,12 +289,12 @@ pub unsafe fn CM_Add_Empty_Log_Conf_Ex(plclogconf: *mut usize, dndevinst: u32, p
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Add_IDA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dndevinst: u32, pszid: Param1, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Add_IDA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dndevinst: u32, pszid: Param1, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Add_IDA(dndevinst: u32, pszid: ::windows::core::PCSTR, ulflags: u32) -> CONFIGRET;
+            fn CM_Add_IDA(dndevinst: u32, pszid: ::windows_core::PCSTR, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Add_IDA(::core::mem::transmute(dndevinst), pszid.into_param().abi(), ::core::mem::transmute(ulflags)))
     }
@@ -303,12 +303,12 @@ pub unsafe fn CM_Add_IDA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::c
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Add_IDW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dndevinst: u32, pszid: Param1, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Add_IDW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dndevinst: u32, pszid: Param1, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Add_IDW(dndevinst: u32, pszid: ::windows::core::PCWSTR, ulflags: u32) -> CONFIGRET;
+            fn CM_Add_IDW(dndevinst: u32, pszid: ::windows_core::PCWSTR, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Add_IDW(::core::mem::transmute(dndevinst), pszid.into_param().abi(), ::core::mem::transmute(ulflags)))
     }
@@ -317,12 +317,12 @@ pub unsafe fn CM_Add_IDW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::c
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Add_ID_ExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dndevinst: u32, pszid: Param1, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Add_ID_ExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dndevinst: u32, pszid: Param1, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Add_ID_ExA(dndevinst: u32, pszid: ::windows::core::PCSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Add_ID_ExA(dndevinst: u32, pszid: ::windows_core::PCSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Add_ID_ExA(::core::mem::transmute(dndevinst), pszid.into_param().abi(), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -331,12 +331,12 @@ pub unsafe fn CM_Add_ID_ExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Add_ID_ExW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dndevinst: u32, pszid: Param1, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Add_ID_ExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dndevinst: u32, pszid: Param1, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Add_ID_ExW(dndevinst: u32, pszid: ::windows::core::PCWSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Add_ID_ExW(dndevinst: u32, pszid: ::windows_core::PCWSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Add_ID_ExW(::core::mem::transmute(dndevinst), pszid.into_param().abi(), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -455,12 +455,12 @@ pub const CM_CUSTOMDEVPROP_BITS: u32 = 1u32;
 pub const CM_CUSTOMDEVPROP_MERGE_MULTISZ: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Connect_MachineA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(uncservername: Param0, phmachine: *mut isize) -> CONFIGRET {
+pub unsafe fn CM_Connect_MachineA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(uncservername: Param0, phmachine: *mut isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Connect_MachineA(uncservername: ::windows::core::PCSTR, phmachine: *mut isize) -> CONFIGRET;
+            fn CM_Connect_MachineA(uncservername: ::windows_core::PCSTR, phmachine: *mut isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Connect_MachineA(uncservername.into_param().abi(), ::core::mem::transmute(phmachine)))
     }
@@ -469,12 +469,12 @@ pub unsafe fn CM_Connect_MachineA<'a, Param0: ::windows::core::IntoParam<'a, ::w
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Connect_MachineW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(uncservername: Param0, phmachine: *mut isize) -> CONFIGRET {
+pub unsafe fn CM_Connect_MachineW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(uncservername: Param0, phmachine: *mut isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Connect_MachineW(uncservername: ::windows::core::PCWSTR, phmachine: *mut isize) -> CONFIGRET;
+            fn CM_Connect_MachineW(uncservername: ::windows_core::PCWSTR, phmachine: *mut isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Connect_MachineW(uncservername.into_param().abi(), ::core::mem::transmute(phmachine)))
     }
@@ -727,12 +727,12 @@ pub const CM_DRP_UNUSED2: u32 = 7u32;
 pub const CM_DRP_UPPERFILTERS: u32 = 18u32;
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Delete_Class_Key(classguid: *const ::windows::core::GUID, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Delete_Class_Key(classguid: *const ::windows_core::GUID, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Delete_Class_Key(classguid: *const ::windows::core::GUID, ulflags: u32) -> CONFIGRET;
+            fn CM_Delete_Class_Key(classguid: *const ::windows_core::GUID, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Delete_Class_Key(::core::mem::transmute(classguid), ::core::mem::transmute(ulflags)))
     }
@@ -741,12 +741,12 @@ pub unsafe fn CM_Delete_Class_Key(classguid: *const ::windows::core::GUID, ulfla
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Delete_Class_Key_Ex(classguid: *const ::windows::core::GUID, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Delete_Class_Key_Ex(classguid: *const ::windows_core::GUID, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Delete_Class_Key_Ex(classguid: *const ::windows::core::GUID, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Delete_Class_Key_Ex(classguid: *const ::windows_core::GUID, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Delete_Class_Key_Ex(::core::mem::transmute(classguid), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -783,12 +783,12 @@ pub unsafe fn CM_Delete_DevNode_Key_Ex(dndevnode: u32, ulhardwareprofile: u32, u
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Delete_Device_Interface_KeyA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszdeviceinterface: Param0, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Delete_Device_Interface_KeyA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszdeviceinterface: Param0, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Delete_Device_Interface_KeyA(pszdeviceinterface: ::windows::core::PCSTR, ulflags: u32) -> CONFIGRET;
+            fn CM_Delete_Device_Interface_KeyA(pszdeviceinterface: ::windows_core::PCSTR, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Delete_Device_Interface_KeyA(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(ulflags)))
     }
@@ -797,12 +797,12 @@ pub unsafe fn CM_Delete_Device_Interface_KeyA<'a, Param0: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Delete_Device_Interface_KeyW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Delete_Device_Interface_KeyW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Delete_Device_Interface_KeyW(pszdeviceinterface: ::windows::core::PCWSTR, ulflags: u32) -> CONFIGRET;
+            fn CM_Delete_Device_Interface_KeyW(pszdeviceinterface: ::windows_core::PCWSTR, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Delete_Device_Interface_KeyW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(ulflags)))
     }
@@ -811,12 +811,12 @@ pub unsafe fn CM_Delete_Device_Interface_KeyW<'a, Param0: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Delete_Device_Interface_Key_ExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszdeviceinterface: Param0, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Delete_Device_Interface_Key_ExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszdeviceinterface: Param0, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Delete_Device_Interface_Key_ExA(pszdeviceinterface: ::windows::core::PCSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Delete_Device_Interface_Key_ExA(pszdeviceinterface: ::windows_core::PCSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Delete_Device_Interface_Key_ExA(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -825,12 +825,12 @@ pub unsafe fn CM_Delete_Device_Interface_Key_ExA<'a, Param0: ::windows::core::In
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Delete_Device_Interface_Key_ExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Delete_Device_Interface_Key_ExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Delete_Device_Interface_Key_ExW(pszdeviceinterface: ::windows::core::PCWSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Delete_Device_Interface_Key_ExW(pszdeviceinterface: ::windows_core::PCWSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Delete_Device_Interface_Key_ExW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -973,12 +973,12 @@ pub unsafe fn CM_Enable_DevNode_Ex(dndevinst: u32, ulflags: u32, hmachine: isize
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Enumerate_Classes(ulclassindex: u32, classguid: *mut ::windows::core::GUID, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Enumerate_Classes(ulclassindex: u32, classguid: *mut ::windows_core::GUID, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Enumerate_Classes(ulclassindex: u32, classguid: *mut ::windows::core::GUID, ulflags: u32) -> CONFIGRET;
+            fn CM_Enumerate_Classes(ulclassindex: u32, classguid: *mut ::windows_core::GUID, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Enumerate_Classes(::core::mem::transmute(ulclassindex), ::core::mem::transmute(classguid), ::core::mem::transmute(ulflags)))
     }
@@ -987,12 +987,12 @@ pub unsafe fn CM_Enumerate_Classes(ulclassindex: u32, classguid: *mut ::windows:
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Enumerate_Classes_Ex(ulclassindex: u32, classguid: *mut ::windows::core::GUID, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Enumerate_Classes_Ex(ulclassindex: u32, classguid: *mut ::windows_core::GUID, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Enumerate_Classes_Ex(ulclassindex: u32, classguid: *mut ::windows::core::GUID, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Enumerate_Classes_Ex(ulclassindex: u32, classguid: *mut ::windows_core::GUID, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Enumerate_Classes_Ex(::core::mem::transmute(ulclassindex), ::core::mem::transmute(classguid), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1001,12 +1001,12 @@ pub unsafe fn CM_Enumerate_Classes_Ex(ulclassindex: u32, classguid: *mut ::windo
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Enumerate_EnumeratorsA(ulenumindex: u32, buffer: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Enumerate_EnumeratorsA(ulenumindex: u32, buffer: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Enumerate_EnumeratorsA(ulenumindex: u32, buffer: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Enumerate_EnumeratorsA(ulenumindex: u32, buffer: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Enumerate_EnumeratorsA(::core::mem::transmute(ulenumindex), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags)))
     }
@@ -1015,12 +1015,12 @@ pub unsafe fn CM_Enumerate_EnumeratorsA(ulenumindex: u32, buffer: ::windows::cor
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Enumerate_EnumeratorsW(ulenumindex: u32, buffer: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Enumerate_EnumeratorsW(ulenumindex: u32, buffer: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Enumerate_EnumeratorsW(ulenumindex: u32, buffer: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Enumerate_EnumeratorsW(ulenumindex: u32, buffer: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Enumerate_EnumeratorsW(::core::mem::transmute(ulenumindex), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags)))
     }
@@ -1029,12 +1029,12 @@ pub unsafe fn CM_Enumerate_EnumeratorsW(ulenumindex: u32, buffer: ::windows::cor
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Enumerate_Enumerators_ExA(ulenumindex: u32, buffer: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Enumerate_Enumerators_ExA(ulenumindex: u32, buffer: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Enumerate_Enumerators_ExA(ulenumindex: u32, buffer: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Enumerate_Enumerators_ExA(ulenumindex: u32, buffer: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Enumerate_Enumerators_ExA(::core::mem::transmute(ulenumindex), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1043,12 +1043,12 @@ pub unsafe fn CM_Enumerate_Enumerators_ExA(ulenumindex: u32, buffer: ::windows::
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Enumerate_Enumerators_ExW(ulenumindex: u32, buffer: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Enumerate_Enumerators_ExW(ulenumindex: u32, buffer: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Enumerate_Enumerators_ExW(ulenumindex: u32, buffer: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Enumerate_Enumerators_ExW(ulenumindex: u32, buffer: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Enumerate_Enumerators_ExW(::core::mem::transmute(ulenumindex), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1267,12 +1267,12 @@ pub unsafe fn CM_Get_Child_Ex(pdndevinst: *mut u32, dndevinst: u32, ulflags: u32
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Class_Key_NameA(classguid: *const ::windows::core::GUID, pszkeyname: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_Key_NameA(classguid: *const ::windows_core::GUID, pszkeyname: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_Key_NameA(classguid: *const ::windows::core::GUID, pszkeyname: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Class_Key_NameA(classguid: *const ::windows_core::GUID, pszkeyname: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_Key_NameA(::core::mem::transmute(classguid), ::core::mem::transmute(pszkeyname), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags)))
     }
@@ -1281,12 +1281,12 @@ pub unsafe fn CM_Get_Class_Key_NameA(classguid: *const ::windows::core::GUID, ps
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Class_Key_NameW(classguid: *const ::windows::core::GUID, pszkeyname: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_Key_NameW(classguid: *const ::windows_core::GUID, pszkeyname: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_Key_NameW(classguid: *const ::windows::core::GUID, pszkeyname: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Class_Key_NameW(classguid: *const ::windows_core::GUID, pszkeyname: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_Key_NameW(::core::mem::transmute(classguid), ::core::mem::transmute(pszkeyname), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags)))
     }
@@ -1295,12 +1295,12 @@ pub unsafe fn CM_Get_Class_Key_NameW(classguid: *const ::windows::core::GUID, ps
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Class_Key_Name_ExA(classguid: *const ::windows::core::GUID, pszkeyname: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_Key_Name_ExA(classguid: *const ::windows_core::GUID, pszkeyname: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_Key_Name_ExA(classguid: *const ::windows::core::GUID, pszkeyname: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Class_Key_Name_ExA(classguid: *const ::windows_core::GUID, pszkeyname: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_Key_Name_ExA(::core::mem::transmute(classguid), ::core::mem::transmute(pszkeyname), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1309,12 +1309,12 @@ pub unsafe fn CM_Get_Class_Key_Name_ExA(classguid: *const ::windows::core::GUID,
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Class_Key_Name_ExW(classguid: *const ::windows::core::GUID, pszkeyname: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_Key_Name_ExW(classguid: *const ::windows_core::GUID, pszkeyname: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_Key_Name_ExW(classguid: *const ::windows::core::GUID, pszkeyname: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Class_Key_Name_ExW(classguid: *const ::windows_core::GUID, pszkeyname: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_Key_Name_ExW(::core::mem::transmute(classguid), ::core::mem::transmute(pszkeyname), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1323,12 +1323,12 @@ pub unsafe fn CM_Get_Class_Key_Name_ExW(classguid: *const ::windows::core::GUID,
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Class_NameA(classguid: *const ::windows::core::GUID, buffer: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_NameA(classguid: *const ::windows_core::GUID, buffer: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_NameA(classguid: *const ::windows::core::GUID, buffer: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Class_NameA(classguid: *const ::windows_core::GUID, buffer: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_NameA(::core::mem::transmute(classguid), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags)))
     }
@@ -1337,12 +1337,12 @@ pub unsafe fn CM_Get_Class_NameA(classguid: *const ::windows::core::GUID, buffer
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Class_NameW(classguid: *const ::windows::core::GUID, buffer: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_NameW(classguid: *const ::windows_core::GUID, buffer: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_NameW(classguid: *const ::windows::core::GUID, buffer: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Class_NameW(classguid: *const ::windows_core::GUID, buffer: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_NameW(::core::mem::transmute(classguid), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags)))
     }
@@ -1351,12 +1351,12 @@ pub unsafe fn CM_Get_Class_NameW(classguid: *const ::windows::core::GUID, buffer
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Class_Name_ExA(classguid: *const ::windows::core::GUID, buffer: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_Name_ExA(classguid: *const ::windows_core::GUID, buffer: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_Name_ExA(classguid: *const ::windows::core::GUID, buffer: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Class_Name_ExA(classguid: *const ::windows_core::GUID, buffer: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_Name_ExA(::core::mem::transmute(classguid), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1365,12 +1365,12 @@ pub unsafe fn CM_Get_Class_Name_ExA(classguid: *const ::windows::core::GUID, buf
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Class_Name_ExW(classguid: *const ::windows::core::GUID, buffer: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_Name_ExW(classguid: *const ::windows_core::GUID, buffer: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_Name_ExW(classguid: *const ::windows::core::GUID, buffer: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Class_Name_ExW(classguid: *const ::windows_core::GUID, buffer: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_Name_ExW(::core::mem::transmute(classguid), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1380,12 +1380,12 @@ pub unsafe fn CM_Get_Class_Name_ExW(classguid: *const ::windows::core::GUID, buf
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
 #[inline]
-pub unsafe fn CM_Get_Class_PropertyW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_PropertyW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_PropertyW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Class_PropertyW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_PropertyW(::core::mem::transmute(classguid), ::core::mem::transmute(propertykey), ::core::mem::transmute(propertytype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(ulflags)))
     }
@@ -1395,12 +1395,12 @@ pub unsafe fn CM_Get_Class_PropertyW(classguid: *const ::windows::core::GUID, pr
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
 #[inline]
-pub unsafe fn CM_Get_Class_Property_ExW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_Property_ExW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_Property_ExW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Class_Property_ExW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_Property_ExW(::core::mem::transmute(classguid), ::core::mem::transmute(propertykey), ::core::mem::transmute(propertytype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1410,12 +1410,12 @@ pub unsafe fn CM_Get_Class_Property_ExW(classguid: *const ::windows::core::GUID,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
 #[inline]
-pub unsafe fn CM_Get_Class_Property_Keys(classguid: *const ::windows::core::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_Property_Keys(classguid: *const ::windows_core::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_Property_Keys(classguid: *const ::windows::core::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Class_Property_Keys(classguid: *const ::windows_core::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_Property_Keys(::core::mem::transmute(classguid), ::core::mem::transmute(propertykeyarray), ::core::mem::transmute(propertykeycount), ::core::mem::transmute(ulflags)))
     }
@@ -1425,12 +1425,12 @@ pub unsafe fn CM_Get_Class_Property_Keys(classguid: *const ::windows::core::GUID
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
 #[inline]
-pub unsafe fn CM_Get_Class_Property_Keys_Ex(classguid: *const ::windows::core::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_Property_Keys_Ex(classguid: *const ::windows_core::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_Property_Keys_Ex(classguid: *const ::windows::core::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Class_Property_Keys_Ex(classguid: *const ::windows_core::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_Property_Keys_Ex(::core::mem::transmute(classguid), ::core::mem::transmute(propertykeyarray), ::core::mem::transmute(propertykeycount), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1439,12 +1439,12 @@ pub unsafe fn CM_Get_Class_Property_Keys_Ex(classguid: *const ::windows::core::G
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Class_Registry_PropertyA(classguid: *const ::windows::core::GUID, ulproperty: u32, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_Registry_PropertyA(classguid: *const ::windows_core::GUID, ulproperty: u32, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_Registry_PropertyA(classguid: *const ::windows::core::GUID, ulproperty: u32, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Class_Registry_PropertyA(classguid: *const ::windows_core::GUID, ulproperty: u32, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_Registry_PropertyA(::core::mem::transmute(classguid), ::core::mem::transmute(ulproperty), ::core::mem::transmute(pulregdatatype), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1453,12 +1453,12 @@ pub unsafe fn CM_Get_Class_Registry_PropertyA(classguid: *const ::windows::core:
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Class_Registry_PropertyW(classguid: *const ::windows::core::GUID, ulproperty: u32, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Class_Registry_PropertyW(classguid: *const ::windows_core::GUID, ulproperty: u32, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Class_Registry_PropertyW(classguid: *const ::windows::core::GUID, ulproperty: u32, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Class_Registry_PropertyW(classguid: *const ::windows_core::GUID, ulproperty: u32, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Class_Registry_PropertyW(::core::mem::transmute(classguid), ::core::mem::transmute(ulproperty), ::core::mem::transmute(pulregdatatype), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1495,12 +1495,12 @@ pub unsafe fn CM_Get_Depth_Ex(puldepth: *mut u32, dndevinst: u32, ulflags: u32, 
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_DevNode_Custom_PropertyA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dndevinst: u32, pszcustompropertyname: Param1, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_DevNode_Custom_PropertyA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dndevinst: u32, pszcustompropertyname: Param1, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_DevNode_Custom_PropertyA(dndevinst: u32, pszcustompropertyname: ::windows::core::PCSTR, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_DevNode_Custom_PropertyA(dndevinst: u32, pszcustompropertyname: ::windows_core::PCSTR, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_DevNode_Custom_PropertyA(::core::mem::transmute(dndevinst), pszcustompropertyname.into_param().abi(), ::core::mem::transmute(pulregdatatype), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags)))
     }
@@ -1509,12 +1509,12 @@ pub unsafe fn CM_Get_DevNode_Custom_PropertyA<'a, Param1: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_DevNode_Custom_PropertyW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dndevinst: u32, pszcustompropertyname: Param1, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_DevNode_Custom_PropertyW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dndevinst: u32, pszcustompropertyname: Param1, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_DevNode_Custom_PropertyW(dndevinst: u32, pszcustompropertyname: ::windows::core::PCWSTR, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_DevNode_Custom_PropertyW(dndevinst: u32, pszcustompropertyname: ::windows_core::PCWSTR, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_DevNode_Custom_PropertyW(::core::mem::transmute(dndevinst), pszcustompropertyname.into_param().abi(), ::core::mem::transmute(pulregdatatype), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags)))
     }
@@ -1523,12 +1523,12 @@ pub unsafe fn CM_Get_DevNode_Custom_PropertyW<'a, Param1: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_DevNode_Custom_Property_ExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dndevinst: u32, pszcustompropertyname: Param1, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_DevNode_Custom_Property_ExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dndevinst: u32, pszcustompropertyname: Param1, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_DevNode_Custom_Property_ExA(dndevinst: u32, pszcustompropertyname: ::windows::core::PCSTR, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_DevNode_Custom_Property_ExA(dndevinst: u32, pszcustompropertyname: ::windows_core::PCSTR, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_DevNode_Custom_Property_ExA(::core::mem::transmute(dndevinst), pszcustompropertyname.into_param().abi(), ::core::mem::transmute(pulregdatatype), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1537,12 +1537,12 @@ pub unsafe fn CM_Get_DevNode_Custom_Property_ExA<'a, Param1: ::windows::core::In
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_DevNode_Custom_Property_ExW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dndevinst: u32, pszcustompropertyname: Param1, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_DevNode_Custom_Property_ExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dndevinst: u32, pszcustompropertyname: Param1, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_DevNode_Custom_Property_ExW(dndevinst: u32, pszcustompropertyname: ::windows::core::PCWSTR, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_DevNode_Custom_Property_ExW(dndevinst: u32, pszcustompropertyname: ::windows_core::PCWSTR, pulregdatatype: *mut u32, buffer: *mut ::core::ffi::c_void, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_DevNode_Custom_Property_ExW(::core::mem::transmute(dndevinst), pszcustompropertyname.into_param().abi(), ::core::mem::transmute(pulregdatatype), ::core::mem::transmute(buffer), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1700,9 +1700,9 @@ pub unsafe fn CM_Get_Device_IDA(dndevinst: u32, buffer: &mut [u8], ulflags: u32)
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_IDA(dndevinst: u32, buffer: ::windows::core::PSTR, bufferlen: u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_IDA(dndevinst: u32, buffer: ::windows_core::PSTR, bufferlen: u32, ulflags: u32) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Get_Device_IDA(::core::mem::transmute(dndevinst), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags)))
+        ::core::mem::transmute(CM_Get_Device_IDA(::core::mem::transmute(dndevinst), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1714,9 +1714,9 @@ pub unsafe fn CM_Get_Device_IDW(dndevinst: u32, buffer: &mut [u16], ulflags: u32
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_IDW(dndevinst: u32, buffer: ::windows::core::PWSTR, bufferlen: u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_IDW(dndevinst: u32, buffer: ::windows_core::PWSTR, bufferlen: u32, ulflags: u32) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Get_Device_IDW(::core::mem::transmute(dndevinst), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags)))
+        ::core::mem::transmute(CM_Get_Device_IDW(::core::mem::transmute(dndevinst), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1728,9 +1728,9 @@ pub unsafe fn CM_Get_Device_ID_ExA(dndevinst: u32, buffer: &mut [u8], ulflags: u
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_ID_ExA(dndevinst: u32, buffer: ::windows::core::PSTR, bufferlen: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_ID_ExA(dndevinst: u32, buffer: ::windows_core::PSTR, bufferlen: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Get_Device_ID_ExA(::core::mem::transmute(dndevinst), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
+        ::core::mem::transmute(CM_Get_Device_ID_ExA(::core::mem::transmute(dndevinst), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1742,77 +1742,77 @@ pub unsafe fn CM_Get_Device_ID_ExW(dndevinst: u32, buffer: &mut [u16], ulflags: 
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_ID_ExW(dndevinst: u32, buffer: ::windows::core::PWSTR, bufferlen: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_ID_ExW(dndevinst: u32, buffer: ::windows_core::PWSTR, bufferlen: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Get_Device_ID_ExW(::core::mem::transmute(dndevinst), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
+        ::core::mem::transmute(CM_Get_Device_ID_ExW(::core::mem::transmute(dndevinst), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_ID_ListA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszfilter: Param0, buffer: &mut [u8], ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_ID_ListA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszfilter: Param0, buffer: &mut [u8], ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_ID_ListA(pszfilter: ::windows::core::PCSTR, buffer: ::windows::core::PSTR, bufferlen: u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_ID_ListA(pszfilter: ::windows_core::PCSTR, buffer: ::windows_core::PSTR, bufferlen: u32, ulflags: u32) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Get_Device_ID_ListA(pszfilter.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags)))
+        ::core::mem::transmute(CM_Get_Device_ID_ListA(pszfilter.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_ID_ListW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszfilter: Param0, buffer: &mut [u16], ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_ID_ListW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszfilter: Param0, buffer: &mut [u16], ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_ID_ListW(pszfilter: ::windows::core::PCWSTR, buffer: ::windows::core::PWSTR, bufferlen: u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_ID_ListW(pszfilter: ::windows_core::PCWSTR, buffer: ::windows_core::PWSTR, bufferlen: u32, ulflags: u32) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Get_Device_ID_ListW(pszfilter.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags)))
+        ::core::mem::transmute(CM_Get_Device_ID_ListW(pszfilter.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_ID_List_ExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszfilter: Param0, buffer: &mut [u8], ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_ID_List_ExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszfilter: Param0, buffer: &mut [u8], ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_ID_List_ExA(pszfilter: ::windows::core::PCSTR, buffer: ::windows::core::PSTR, bufferlen: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_ID_List_ExA(pszfilter: ::windows_core::PCSTR, buffer: ::windows_core::PSTR, bufferlen: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Get_Device_ID_List_ExA(pszfilter.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
+        ::core::mem::transmute(CM_Get_Device_ID_List_ExA(pszfilter.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_ID_List_ExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszfilter: Param0, buffer: &mut [u16], ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_ID_List_ExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszfilter: Param0, buffer: &mut [u16], ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_ID_List_ExW(pszfilter: ::windows::core::PCWSTR, buffer: ::windows::core::PWSTR, bufferlen: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_ID_List_ExW(pszfilter: ::windows_core::PCWSTR, buffer: ::windows_core::PWSTR, bufferlen: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Get_Device_ID_List_ExW(pszfilter.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
+        ::core::mem::transmute(CM_Get_Device_ID_List_ExW(pszfilter.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_ID_List_SizeA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pullen: *mut u32, pszfilter: Param1, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_ID_List_SizeA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pullen: *mut u32, pszfilter: Param1, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_ID_List_SizeA(pullen: *mut u32, pszfilter: ::windows::core::PCSTR, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_ID_List_SizeA(pullen: *mut u32, pszfilter: ::windows_core::PCSTR, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_ID_List_SizeA(::core::mem::transmute(pullen), pszfilter.into_param().abi(), ::core::mem::transmute(ulflags)))
     }
@@ -1821,12 +1821,12 @@ pub unsafe fn CM_Get_Device_ID_List_SizeA<'a, Param1: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_ID_List_SizeW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pullen: *mut u32, pszfilter: Param1, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_ID_List_SizeW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pullen: *mut u32, pszfilter: Param1, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_ID_List_SizeW(pullen: *mut u32, pszfilter: ::windows::core::PCWSTR, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_ID_List_SizeW(pullen: *mut u32, pszfilter: ::windows_core::PCWSTR, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_ID_List_SizeW(::core::mem::transmute(pullen), pszfilter.into_param().abi(), ::core::mem::transmute(ulflags)))
     }
@@ -1835,12 +1835,12 @@ pub unsafe fn CM_Get_Device_ID_List_SizeW<'a, Param1: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_ID_List_Size_ExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pullen: *mut u32, pszfilter: Param1, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_ID_List_Size_ExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pullen: *mut u32, pszfilter: Param1, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_ID_List_Size_ExA(pullen: *mut u32, pszfilter: ::windows::core::PCSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_ID_List_Size_ExA(pullen: *mut u32, pszfilter: ::windows_core::PCSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_ID_List_Size_ExA(::core::mem::transmute(pullen), pszfilter.into_param().abi(), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1849,12 +1849,12 @@ pub unsafe fn CM_Get_Device_ID_List_Size_ExA<'a, Param1: ::windows::core::IntoPa
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_ID_List_Size_ExW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pullen: *mut u32, pszfilter: Param1, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_ID_List_Size_ExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pullen: *mut u32, pszfilter: Param1, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_ID_List_Size_ExW(pullen: *mut u32, pszfilter: ::windows::core::PCWSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_ID_List_Size_ExW(pullen: *mut u32, pszfilter: ::windows_core::PCWSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_ID_List_Size_ExW(::core::mem::transmute(pullen), pszfilter.into_param().abi(), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1891,12 +1891,12 @@ pub unsafe fn CM_Get_Device_ID_Size_Ex(pullen: *mut u32, dndevinst: u32, ulflags
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_AliasA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszdeviceinterface: Param0, aliasinterfaceguid: *const ::windows::core::GUID, pszaliasdeviceinterface: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_AliasA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszdeviceinterface: Param0, aliasinterfaceguid: *const ::windows_core::GUID, pszaliasdeviceinterface: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_AliasA(pszdeviceinterface: ::windows::core::PCSTR, aliasinterfaceguid: *const ::windows::core::GUID, pszaliasdeviceinterface: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_Interface_AliasA(pszdeviceinterface: ::windows_core::PCSTR, aliasinterfaceguid: *const ::windows_core::GUID, pszaliasdeviceinterface: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_Interface_AliasA(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(aliasinterfaceguid), ::core::mem::transmute(pszaliasdeviceinterface), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags)))
     }
@@ -1905,12 +1905,12 @@ pub unsafe fn CM_Get_Device_Interface_AliasA<'a, Param0: ::windows::core::IntoPa
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_AliasW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, aliasinterfaceguid: *const ::windows::core::GUID, pszaliasdeviceinterface: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_AliasW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, aliasinterfaceguid: *const ::windows_core::GUID, pszaliasdeviceinterface: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_AliasW(pszdeviceinterface: ::windows::core::PCWSTR, aliasinterfaceguid: *const ::windows::core::GUID, pszaliasdeviceinterface: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_Interface_AliasW(pszdeviceinterface: ::windows_core::PCWSTR, aliasinterfaceguid: *const ::windows_core::GUID, pszaliasdeviceinterface: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_Interface_AliasW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(aliasinterfaceguid), ::core::mem::transmute(pszaliasdeviceinterface), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags)))
     }
@@ -1919,12 +1919,12 @@ pub unsafe fn CM_Get_Device_Interface_AliasW<'a, Param0: ::windows::core::IntoPa
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_Alias_ExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszdeviceinterface: Param0, aliasinterfaceguid: *const ::windows::core::GUID, pszaliasdeviceinterface: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_Alias_ExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszdeviceinterface: Param0, aliasinterfaceguid: *const ::windows_core::GUID, pszaliasdeviceinterface: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_Alias_ExA(pszdeviceinterface: ::windows::core::PCSTR, aliasinterfaceguid: *const ::windows::core::GUID, pszaliasdeviceinterface: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_Interface_Alias_ExA(pszdeviceinterface: ::windows_core::PCSTR, aliasinterfaceguid: *const ::windows_core::GUID, pszaliasdeviceinterface: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_Interface_Alias_ExA(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(aliasinterfaceguid), ::core::mem::transmute(pszaliasdeviceinterface), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1933,12 +1933,12 @@ pub unsafe fn CM_Get_Device_Interface_Alias_ExA<'a, Param0: ::windows::core::Int
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_Alias_ExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, aliasinterfaceguid: *const ::windows::core::GUID, pszaliasdeviceinterface: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_Alias_ExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, aliasinterfaceguid: *const ::windows_core::GUID, pszaliasdeviceinterface: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_Alias_ExW(pszdeviceinterface: ::windows::core::PCWSTR, aliasinterfaceguid: *const ::windows::core::GUID, pszaliasdeviceinterface: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_Interface_Alias_ExW(pszdeviceinterface: ::windows_core::PCWSTR, aliasinterfaceguid: *const ::windows_core::GUID, pszaliasdeviceinterface: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_Interface_Alias_ExW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(aliasinterfaceguid), ::core::mem::transmute(pszaliasdeviceinterface), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -1947,68 +1947,68 @@ pub unsafe fn CM_Get_Device_Interface_Alias_ExW<'a, Param0: ::windows::core::Int
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_ListA(interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const i8, buffer: &mut [u8], ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_ListA(interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const i8, buffer: &mut [u8], ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_ListA(interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const i8, buffer: ::windows::core::PSTR, bufferlen: u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_Interface_ListA(interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const i8, buffer: ::windows_core::PSTR, bufferlen: u32, ulflags: u32) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Get_Device_Interface_ListA(::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(pdeviceid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags)))
+        ::core::mem::transmute(CM_Get_Device_Interface_ListA(::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(pdeviceid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_ListW(interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const u16, buffer: &mut [u16], ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_ListW(interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const u16, buffer: &mut [u16], ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_ListW(interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const u16, buffer: ::windows::core::PWSTR, bufferlen: u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_Interface_ListW(interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const u16, buffer: ::windows_core::PWSTR, bufferlen: u32, ulflags: u32) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Get_Device_Interface_ListW(::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(pdeviceid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags)))
+        ::core::mem::transmute(CM_Get_Device_Interface_ListW(::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(pdeviceid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_List_ExA(interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const i8, buffer: &mut [u8], ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_List_ExA(interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const i8, buffer: &mut [u8], ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_List_ExA(interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const i8, buffer: ::windows::core::PSTR, bufferlen: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_Interface_List_ExA(interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const i8, buffer: ::windows_core::PSTR, bufferlen: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Get_Device_Interface_List_ExA(::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(pdeviceid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
+        ::core::mem::transmute(CM_Get_Device_Interface_List_ExA(::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(pdeviceid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_List_ExW(interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const u16, buffer: &mut [u16], ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_List_ExW(interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const u16, buffer: &mut [u16], ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_List_ExW(interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const u16, buffer: ::windows::core::PWSTR, bufferlen: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_Interface_List_ExW(interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const u16, buffer: ::windows_core::PWSTR, bufferlen: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Get_Device_Interface_List_ExW(::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(pdeviceid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
+        ::core::mem::transmute(CM_Get_Device_Interface_List_ExW(::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(pdeviceid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_List_SizeA(pullen: *mut u32, interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const i8, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_List_SizeA(pullen: *mut u32, interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const i8, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_List_SizeA(pullen: *mut u32, interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const i8, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_Interface_List_SizeA(pullen: *mut u32, interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const i8, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_Interface_List_SizeA(::core::mem::transmute(pullen), ::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(pdeviceid), ::core::mem::transmute(ulflags)))
     }
@@ -2017,12 +2017,12 @@ pub unsafe fn CM_Get_Device_Interface_List_SizeA(pullen: *mut u32, interfaceclas
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_List_SizeW(pullen: *mut u32, interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const u16, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_List_SizeW(pullen: *mut u32, interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const u16, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_List_SizeW(pullen: *mut u32, interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const u16, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_Interface_List_SizeW(pullen: *mut u32, interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const u16, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_Interface_List_SizeW(::core::mem::transmute(pullen), ::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(pdeviceid), ::core::mem::transmute(ulflags)))
     }
@@ -2031,12 +2031,12 @@ pub unsafe fn CM_Get_Device_Interface_List_SizeW(pullen: *mut u32, interfaceclas
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_List_Size_ExA(pullen: *mut u32, interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const i8, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_List_Size_ExA(pullen: *mut u32, interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const i8, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_List_Size_ExA(pullen: *mut u32, interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const i8, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_Interface_List_Size_ExA(pullen: *mut u32, interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const i8, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_Interface_List_Size_ExA(::core::mem::transmute(pullen), ::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(pdeviceid), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -2045,12 +2045,12 @@ pub unsafe fn CM_Get_Device_Interface_List_Size_ExA(pullen: *mut u32, interfacec
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_List_Size_ExW(pullen: *mut u32, interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const u16, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_List_Size_ExW(pullen: *mut u32, interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const u16, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_List_Size_ExW(pullen: *mut u32, interfaceclassguid: *const ::windows::core::GUID, pdeviceid: *const u16, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_Interface_List_Size_ExW(pullen: *mut u32, interfaceclassguid: *const ::windows_core::GUID, pdeviceid: *const u16, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_Interface_List_Size_ExW(::core::mem::transmute(pullen), ::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(pdeviceid), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -2060,12 +2060,12 @@ pub unsafe fn CM_Get_Device_Interface_List_Size_ExW(pullen: *mut u32, interfacec
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_PropertyW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_PropertyW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_PropertyW(pszdeviceinterface: ::windows::core::PCWSTR, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_Interface_PropertyW(pszdeviceinterface: ::windows_core::PCWSTR, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_Interface_PropertyW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(propertykey), ::core::mem::transmute(propertytype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(ulflags)))
     }
@@ -2075,12 +2075,12 @@ pub unsafe fn CM_Get_Device_Interface_PropertyW<'a, Param0: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_Property_ExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_Property_ExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_Property_ExW(pszdeviceinterface: ::windows::core::PCWSTR, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_Interface_Property_ExW(pszdeviceinterface: ::windows_core::PCWSTR, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_Interface_Property_ExW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(propertykey), ::core::mem::transmute(propertytype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -2090,12 +2090,12 @@ pub unsafe fn CM_Get_Device_Interface_Property_ExW<'a, Param0: ::windows::core::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_Property_KeysW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_Property_KeysW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_Property_KeysW(pszdeviceinterface: ::windows::core::PCWSTR, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Get_Device_Interface_Property_KeysW(pszdeviceinterface: ::windows_core::PCWSTR, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_Interface_Property_KeysW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(propertykeyarray), ::core::mem::transmute(propertykeycount), ::core::mem::transmute(ulflags)))
     }
@@ -2105,12 +2105,12 @@ pub unsafe fn CM_Get_Device_Interface_Property_KeysW<'a, Param0: ::windows::core
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
 #[inline]
-pub unsafe fn CM_Get_Device_Interface_Property_Keys_ExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Get_Device_Interface_Property_Keys_ExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Get_Device_Interface_Property_Keys_ExW(pszdeviceinterface: ::windows::core::PCWSTR, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Get_Device_Interface_Property_Keys_ExW(pszdeviceinterface: ::windows_core::PCWSTR, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Get_Device_Interface_Property_Keys_ExW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(propertykeyarray), ::core::mem::transmute(propertykeycount), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -2857,7 +2857,7 @@ impl ::core::default::Default for CM_NOTIFY_ACTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CM_NOTIFY_ACTION {
+unsafe impl ::windows_core::Abi for CM_NOTIFY_ACTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CM_NOTIFY_ACTION {
@@ -2878,12 +2878,12 @@ impl ::core::clone::Clone for CM_NOTIFY_EVENT_DATA {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CM_NOTIFY_EVENT_DATA {
+unsafe impl ::windows_core::Abi for CM_NOTIFY_EVENT_DATA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CM_NOTIFY_EVENT_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_EVENT_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_EVENT_DATA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CM_NOTIFY_EVENT_DATA {}
@@ -2905,12 +2905,12 @@ impl ::core::clone::Clone for CM_NOTIFY_EVENT_DATA_0 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CM_NOTIFY_EVENT_DATA_0 {
+unsafe impl ::windows_core::Abi for CM_NOTIFY_EVENT_DATA_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CM_NOTIFY_EVENT_DATA_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_EVENT_DATA_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_EVENT_DATA_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CM_NOTIFY_EVENT_DATA_0 {}
@@ -2922,7 +2922,7 @@ impl ::core::default::Default for CM_NOTIFY_EVENT_DATA_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 pub struct CM_NOTIFY_EVENT_DATA_0_0 {
-    pub EventGuid: ::windows::core::GUID,
+    pub EventGuid: ::windows_core::GUID,
     pub NameOffset: i32,
     pub DataSize: u32,
     pub Data: [u8; 1],
@@ -2938,12 +2938,12 @@ impl ::core::fmt::Debug for CM_NOTIFY_EVENT_DATA_0_0 {
         f.debug_struct("CM_NOTIFY_EVENT_DATA_0_0").field("EventGuid", &self.EventGuid).field("NameOffset", &self.NameOffset).field("DataSize", &self.DataSize).field("Data", &self.Data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CM_NOTIFY_EVENT_DATA_0_0 {
+unsafe impl ::windows_core::Abi for CM_NOTIFY_EVENT_DATA_0_0 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CM_NOTIFY_EVENT_DATA_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_EVENT_DATA_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_EVENT_DATA_0_0>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CM_NOTIFY_EVENT_DATA_0_0 {}
@@ -2968,12 +2968,12 @@ impl ::core::fmt::Debug for CM_NOTIFY_EVENT_DATA_0_1 {
         f.debug_struct("CM_NOTIFY_EVENT_DATA_0_1").field("InstanceId", &self.InstanceId).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CM_NOTIFY_EVENT_DATA_0_1 {
+unsafe impl ::windows_core::Abi for CM_NOTIFY_EVENT_DATA_0_1 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CM_NOTIFY_EVENT_DATA_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_EVENT_DATA_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_EVENT_DATA_0_1>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CM_NOTIFY_EVENT_DATA_0_1 {}
@@ -2985,7 +2985,7 @@ impl ::core::default::Default for CM_NOTIFY_EVENT_DATA_0_1 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 pub struct CM_NOTIFY_EVENT_DATA_0_2 {
-    pub ClassGuid: ::windows::core::GUID,
+    pub ClassGuid: ::windows_core::GUID,
     pub SymbolicLink: [u16; 1],
 }
 impl ::core::marker::Copy for CM_NOTIFY_EVENT_DATA_0_2 {}
@@ -2999,12 +2999,12 @@ impl ::core::fmt::Debug for CM_NOTIFY_EVENT_DATA_0_2 {
         f.debug_struct("CM_NOTIFY_EVENT_DATA_0_2").field("ClassGuid", &self.ClassGuid).field("SymbolicLink", &self.SymbolicLink).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CM_NOTIFY_EVENT_DATA_0_2 {
+unsafe impl ::windows_core::Abi for CM_NOTIFY_EVENT_DATA_0_2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CM_NOTIFY_EVENT_DATA_0_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_EVENT_DATA_0_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_EVENT_DATA_0_2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CM_NOTIFY_EVENT_DATA_0_2 {}
@@ -3032,13 +3032,13 @@ impl ::core::clone::Clone for CM_NOTIFY_FILTER {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CM_NOTIFY_FILTER {
+unsafe impl ::windows_core::Abi for CM_NOTIFY_FILTER {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CM_NOTIFY_FILTER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_FILTER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_FILTER>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3066,13 +3066,13 @@ impl ::core::clone::Clone for CM_NOTIFY_FILTER_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CM_NOTIFY_FILTER_0 {
+unsafe impl ::windows_core::Abi for CM_NOTIFY_FILTER_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CM_NOTIFY_FILTER_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_FILTER_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_FILTER_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3104,13 +3104,13 @@ impl ::core::fmt::Debug for CM_NOTIFY_FILTER_0_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CM_NOTIFY_FILTER_0_0 {
+unsafe impl ::windows_core::Abi for CM_NOTIFY_FILTER_0_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CM_NOTIFY_FILTER_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_FILTER_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_FILTER_0_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3142,13 +3142,13 @@ impl ::core::fmt::Debug for CM_NOTIFY_FILTER_0_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CM_NOTIFY_FILTER_0_1 {
+unsafe impl ::windows_core::Abi for CM_NOTIFY_FILTER_0_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CM_NOTIFY_FILTER_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_FILTER_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_FILTER_0_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3163,7 +3163,7 @@ impl ::core::default::Default for CM_NOTIFY_FILTER_0_1 {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct CM_NOTIFY_FILTER_0_2 {
-    pub ClassGuid: ::windows::core::GUID,
+    pub ClassGuid: ::windows_core::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CM_NOTIFY_FILTER_0_2 {}
@@ -3180,13 +3180,13 @@ impl ::core::fmt::Debug for CM_NOTIFY_FILTER_0_2 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CM_NOTIFY_FILTER_0_2 {
+unsafe impl ::windows_core::Abi for CM_NOTIFY_FILTER_0_2 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CM_NOTIFY_FILTER_0_2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_FILTER_0_2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CM_NOTIFY_FILTER_0_2>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3224,7 +3224,7 @@ impl ::core::default::Default for CM_NOTIFY_FILTER_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CM_NOTIFY_FILTER_TYPE {
+unsafe impl ::windows_core::Abi for CM_NOTIFY_FILTER_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CM_NOTIFY_FILTER_TYPE {
@@ -3255,12 +3255,12 @@ pub const CM_OPEN_CLASS_KEY_INTERFACE: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn CM_Open_Class_KeyA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(classguid: *const ::windows::core::GUID, pszclassname: Param1, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Open_Class_KeyA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(classguid: *const ::windows_core::GUID, pszclassname: Param1, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Open_Class_KeyA(classguid: *const ::windows::core::GUID, pszclassname: ::windows::core::PCSTR, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET;
+            fn CM_Open_Class_KeyA(classguid: *const ::windows_core::GUID, pszclassname: ::windows_core::PCSTR, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Open_Class_KeyA(::core::mem::transmute(classguid), pszclassname.into_param().abi(), ::core::mem::transmute(samdesired), ::core::mem::transmute(disposition), ::core::mem::transmute(phkclass), ::core::mem::transmute(ulflags)))
     }
@@ -3270,12 +3270,12 @@ pub unsafe fn CM_Open_Class_KeyA<'a, Param1: ::windows::core::IntoParam<'a, ::wi
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn CM_Open_Class_KeyW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classguid: *const ::windows::core::GUID, pszclassname: Param1, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Open_Class_KeyW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classguid: *const ::windows_core::GUID, pszclassname: Param1, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Open_Class_KeyW(classguid: *const ::windows::core::GUID, pszclassname: ::windows::core::PCWSTR, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET;
+            fn CM_Open_Class_KeyW(classguid: *const ::windows_core::GUID, pszclassname: ::windows_core::PCWSTR, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Open_Class_KeyW(::core::mem::transmute(classguid), pszclassname.into_param().abi(), ::core::mem::transmute(samdesired), ::core::mem::transmute(disposition), ::core::mem::transmute(phkclass), ::core::mem::transmute(ulflags)))
     }
@@ -3285,12 +3285,12 @@ pub unsafe fn CM_Open_Class_KeyW<'a, Param1: ::windows::core::IntoParam<'a, ::wi
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn CM_Open_Class_Key_ExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(classguid: *const ::windows::core::GUID, pszclassname: Param1, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Open_Class_Key_ExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(classguid: *const ::windows_core::GUID, pszclassname: Param1, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Open_Class_Key_ExA(classguid: *const ::windows::core::GUID, pszclassname: ::windows::core::PCSTR, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Open_Class_Key_ExA(classguid: *const ::windows_core::GUID, pszclassname: ::windows_core::PCSTR, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Open_Class_Key_ExA(::core::mem::transmute(classguid), pszclassname.into_param().abi(), ::core::mem::transmute(samdesired), ::core::mem::transmute(disposition), ::core::mem::transmute(phkclass), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -3300,12 +3300,12 @@ pub unsafe fn CM_Open_Class_Key_ExA<'a, Param1: ::windows::core::IntoParam<'a, :
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn CM_Open_Class_Key_ExW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classguid: *const ::windows::core::GUID, pszclassname: Param1, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Open_Class_Key_ExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classguid: *const ::windows_core::GUID, pszclassname: Param1, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Open_Class_Key_ExW(classguid: *const ::windows::core::GUID, pszclassname: ::windows::core::PCWSTR, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Open_Class_Key_ExW(classguid: *const ::windows_core::GUID, pszclassname: ::windows_core::PCWSTR, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Open_Class_Key_ExW(::core::mem::transmute(classguid), pszclassname.into_param().abi(), ::core::mem::transmute(samdesired), ::core::mem::transmute(disposition), ::core::mem::transmute(phkclass), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -3345,12 +3345,12 @@ pub unsafe fn CM_Open_DevNode_Key_Ex(dndevnode: u32, samdesired: u32, ulhardware
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn CM_Open_Device_Interface_KeyA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszdeviceinterface: Param0, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Open_Device_Interface_KeyA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszdeviceinterface: Param0, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Open_Device_Interface_KeyA(pszdeviceinterface: ::windows::core::PCSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET;
+            fn CM_Open_Device_Interface_KeyA(pszdeviceinterface: ::windows_core::PCSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Open_Device_Interface_KeyA(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(samdesired), ::core::mem::transmute(disposition), ::core::mem::transmute(phkdeviceinterface), ::core::mem::transmute(ulflags)))
     }
@@ -3360,12 +3360,12 @@ pub unsafe fn CM_Open_Device_Interface_KeyA<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn CM_Open_Device_Interface_KeyW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Open_Device_Interface_KeyW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Open_Device_Interface_KeyW(pszdeviceinterface: ::windows::core::PCWSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET;
+            fn CM_Open_Device_Interface_KeyW(pszdeviceinterface: ::windows_core::PCWSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Open_Device_Interface_KeyW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(samdesired), ::core::mem::transmute(disposition), ::core::mem::transmute(phkdeviceinterface), ::core::mem::transmute(ulflags)))
     }
@@ -3375,12 +3375,12 @@ pub unsafe fn CM_Open_Device_Interface_KeyW<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn CM_Open_Device_Interface_Key_ExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszdeviceinterface: Param0, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Open_Device_Interface_Key_ExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszdeviceinterface: Param0, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Open_Device_Interface_Key_ExA(pszdeviceinterface: ::windows::core::PCSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Open_Device_Interface_Key_ExA(pszdeviceinterface: ::windows_core::PCSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Open_Device_Interface_Key_ExA(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(samdesired), ::core::mem::transmute(disposition), ::core::mem::transmute(phkdeviceinterface), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -3390,12 +3390,12 @@ pub unsafe fn CM_Open_Device_Interface_Key_ExA<'a, Param0: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn CM_Open_Device_Interface_Key_ExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Open_Device_Interface_Key_ExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Open_Device_Interface_Key_ExW(pszdeviceinterface: ::windows::core::PCWSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Open_Device_Interface_Key_ExW(pszdeviceinterface: ::windows_core::PCWSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Open_Device_Interface_Key_ExW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(samdesired), ::core::mem::transmute(disposition), ::core::mem::transmute(phkdeviceinterface), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -3533,9 +3533,9 @@ pub unsafe fn CM_Query_And_Remove_SubTreeA(dnancestor: u32, pvetotype: *mut PNP_
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Query_And_Remove_SubTreeA(dnancestor: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows::core::PSTR, ulnamelength: u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Query_And_Remove_SubTreeA(dnancestor: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows_core::PSTR, ulnamelength: u32, ulflags: u32) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Query_And_Remove_SubTreeA(::core::mem::transmute(dnancestor), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags)))
+        ::core::mem::transmute(CM_Query_And_Remove_SubTreeA(::core::mem::transmute(dnancestor), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -3547,9 +3547,9 @@ pub unsafe fn CM_Query_And_Remove_SubTreeW(dnancestor: u32, pvetotype: *mut PNP_
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Query_And_Remove_SubTreeW(dnancestor: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows::core::PWSTR, ulnamelength: u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Query_And_Remove_SubTreeW(dnancestor: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows_core::PWSTR, ulnamelength: u32, ulflags: u32) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Query_And_Remove_SubTreeW(::core::mem::transmute(dnancestor), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags)))
+        ::core::mem::transmute(CM_Query_And_Remove_SubTreeW(::core::mem::transmute(dnancestor), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -3561,9 +3561,9 @@ pub unsafe fn CM_Query_And_Remove_SubTree_ExA(dnancestor: u32, pvetotype: *mut P
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Query_And_Remove_SubTree_ExA(dnancestor: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows::core::PSTR, ulnamelength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Query_And_Remove_SubTree_ExA(dnancestor: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows_core::PSTR, ulnamelength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Query_And_Remove_SubTree_ExA(::core::mem::transmute(dnancestor), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
+        ::core::mem::transmute(CM_Query_And_Remove_SubTree_ExA(::core::mem::transmute(dnancestor), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -3575,9 +3575,9 @@ pub unsafe fn CM_Query_And_Remove_SubTree_ExW(dnancestor: u32, pvetotype: *mut P
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Query_And_Remove_SubTree_ExW(dnancestor: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows::core::PWSTR, ulnamelength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Query_And_Remove_SubTree_ExW(dnancestor: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows_core::PWSTR, ulnamelength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Query_And_Remove_SubTree_ExW(::core::mem::transmute(dnancestor), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
+        ::core::mem::transmute(CM_Query_And_Remove_SubTree_ExW(::core::mem::transmute(dnancestor), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -3790,12 +3790,12 @@ pub unsafe fn CM_Register_Device_Driver_Ex(dndevinst: u32, ulflags: u32, hmachin
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Register_Device_InterfaceA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dndevinst: u32, interfaceclassguid: *const ::windows::core::GUID, pszreference: Param2, pszdeviceinterface: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Register_Device_InterfaceA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dndevinst: u32, interfaceclassguid: *const ::windows_core::GUID, pszreference: Param2, pszdeviceinterface: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Register_Device_InterfaceA(dndevinst: u32, interfaceclassguid: *const ::windows::core::GUID, pszreference: ::windows::core::PCSTR, pszdeviceinterface: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Register_Device_InterfaceA(dndevinst: u32, interfaceclassguid: *const ::windows_core::GUID, pszreference: ::windows_core::PCSTR, pszdeviceinterface: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Register_Device_InterfaceA(::core::mem::transmute(dndevinst), ::core::mem::transmute(interfaceclassguid), pszreference.into_param().abi(), ::core::mem::transmute(pszdeviceinterface), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags)))
     }
@@ -3804,12 +3804,12 @@ pub unsafe fn CM_Register_Device_InterfaceA<'a, Param2: ::windows::core::IntoPar
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Register_Device_InterfaceW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dndevinst: u32, interfaceclassguid: *const ::windows::core::GUID, pszreference: Param2, pszdeviceinterface: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Register_Device_InterfaceW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dndevinst: u32, interfaceclassguid: *const ::windows_core::GUID, pszreference: Param2, pszdeviceinterface: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Register_Device_InterfaceW(dndevinst: u32, interfaceclassguid: *const ::windows::core::GUID, pszreference: ::windows::core::PCWSTR, pszdeviceinterface: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Register_Device_InterfaceW(dndevinst: u32, interfaceclassguid: *const ::windows_core::GUID, pszreference: ::windows_core::PCWSTR, pszdeviceinterface: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Register_Device_InterfaceW(::core::mem::transmute(dndevinst), ::core::mem::transmute(interfaceclassguid), pszreference.into_param().abi(), ::core::mem::transmute(pszdeviceinterface), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags)))
     }
@@ -3818,12 +3818,12 @@ pub unsafe fn CM_Register_Device_InterfaceW<'a, Param2: ::windows::core::IntoPar
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Register_Device_Interface_ExA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(dndevinst: u32, interfaceclassguid: *const ::windows::core::GUID, pszreference: Param2, pszdeviceinterface: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Register_Device_Interface_ExA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dndevinst: u32, interfaceclassguid: *const ::windows_core::GUID, pszreference: Param2, pszdeviceinterface: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Register_Device_Interface_ExA(dndevinst: u32, interfaceclassguid: *const ::windows::core::GUID, pszreference: ::windows::core::PCSTR, pszdeviceinterface: ::windows::core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Register_Device_Interface_ExA(dndevinst: u32, interfaceclassguid: *const ::windows_core::GUID, pszreference: ::windows_core::PCSTR, pszdeviceinterface: ::windows_core::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Register_Device_Interface_ExA(::core::mem::transmute(dndevinst), ::core::mem::transmute(interfaceclassguid), pszreference.into_param().abi(), ::core::mem::transmute(pszdeviceinterface), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -3832,12 +3832,12 @@ pub unsafe fn CM_Register_Device_Interface_ExA<'a, Param2: ::windows::core::Into
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Register_Device_Interface_ExW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(dndevinst: u32, interfaceclassguid: *const ::windows::core::GUID, pszreference: Param2, pszdeviceinterface: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Register_Device_Interface_ExW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dndevinst: u32, interfaceclassguid: *const ::windows_core::GUID, pszreference: Param2, pszdeviceinterface: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Register_Device_Interface_ExW(dndevinst: u32, interfaceclassguid: *const ::windows::core::GUID, pszreference: ::windows::core::PCWSTR, pszdeviceinterface: ::windows::core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Register_Device_Interface_ExW(dndevinst: u32, interfaceclassguid: *const ::windows_core::GUID, pszreference: ::windows_core::PCWSTR, pszdeviceinterface: ::windows_core::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Register_Device_Interface_ExW(::core::mem::transmute(dndevinst), ::core::mem::transmute(interfaceclassguid), pszreference.into_param().abi(), ::core::mem::transmute(pszdeviceinterface), ::core::mem::transmute(pullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -3852,7 +3852,7 @@ pub unsafe fn CM_Register_Notification(pfilter: *const CM_NOTIFY_FILTER, pcontex
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Register_Notification(pfilter: *const CM_NOTIFY_FILTER, pcontext: *const ::core::ffi::c_void, pcallback: ::windows::core::RawPtr, pnotifycontext: *mut isize) -> CONFIGRET;
+            fn CM_Register_Notification(pfilter: *const CM_NOTIFY_FILTER, pcontext: *const ::core::ffi::c_void, pcallback: ::windows_core::RawPtr, pnotifycontext: *mut isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Register_Notification(::core::mem::transmute(pfilter), ::core::mem::transmute(pcontext), ::core::mem::transmute(pcallback), ::core::mem::transmute(pnotifycontext)))
     }
@@ -3894,9 +3894,9 @@ pub unsafe fn CM_Request_Device_EjectA(dndevinst: u32, pvetotype: *mut PNP_VETO_
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Request_Device_EjectA(dndevinst: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows::core::PSTR, ulnamelength: u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Request_Device_EjectA(dndevinst: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows_core::PSTR, ulnamelength: u32, ulflags: u32) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Request_Device_EjectA(::core::mem::transmute(dndevinst), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags)))
+        ::core::mem::transmute(CM_Request_Device_EjectA(::core::mem::transmute(dndevinst), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -3908,9 +3908,9 @@ pub unsafe fn CM_Request_Device_EjectW(dndevinst: u32, pvetotype: *mut PNP_VETO_
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Request_Device_EjectW(dndevinst: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows::core::PWSTR, ulnamelength: u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Request_Device_EjectW(dndevinst: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows_core::PWSTR, ulnamelength: u32, ulflags: u32) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Request_Device_EjectW(::core::mem::transmute(dndevinst), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags)))
+        ::core::mem::transmute(CM_Request_Device_EjectW(::core::mem::transmute(dndevinst), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -3922,9 +3922,9 @@ pub unsafe fn CM_Request_Device_Eject_ExA(dndevinst: u32, pvetotype: *mut PNP_VE
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Request_Device_Eject_ExA(dndevinst: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows::core::PSTR, ulnamelength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Request_Device_Eject_ExA(dndevinst: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows_core::PSTR, ulnamelength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Request_Device_Eject_ExA(::core::mem::transmute(dndevinst), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
+        ::core::mem::transmute(CM_Request_Device_Eject_ExA(::core::mem::transmute(dndevinst), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -3936,9 +3936,9 @@ pub unsafe fn CM_Request_Device_Eject_ExW(dndevinst: u32, pvetotype: *mut PNP_VE
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Request_Device_Eject_ExW(dndevinst: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows::core::PWSTR, ulnamelength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Request_Device_Eject_ExW(dndevinst: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows_core::PWSTR, ulnamelength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
-        ::core::mem::transmute(CM_Request_Device_Eject_ExW(::core::mem::transmute(dndevinst), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
+        ::core::mem::transmute(CM_Request_Device_Eject_ExW(::core::mem::transmute(dndevinst), ::core::mem::transmute(pvetotype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszvetoname)), pszvetoname.len() as _, ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4050,12 +4050,12 @@ pub const CM_SET_HW_PROF_FLAGS_UI_NOT_OK: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
 #[inline]
-pub unsafe fn CM_Set_Class_PropertyW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Set_Class_PropertyW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Set_Class_PropertyW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Set_Class_PropertyW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Set_Class_PropertyW(::core::mem::transmute(classguid), ::core::mem::transmute(propertykey), ::core::mem::transmute(propertytype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(ulflags)))
     }
@@ -4065,12 +4065,12 @@ pub unsafe fn CM_Set_Class_PropertyW(classguid: *const ::windows::core::GUID, pr
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
 #[inline]
-pub unsafe fn CM_Set_Class_Property_ExW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Set_Class_Property_ExW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Set_Class_Property_ExW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Set_Class_Property_ExW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Set_Class_Property_ExW(::core::mem::transmute(classguid), ::core::mem::transmute(propertykey), ::core::mem::transmute(propertytype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -4079,12 +4079,12 @@ pub unsafe fn CM_Set_Class_Property_ExW(classguid: *const ::windows::core::GUID,
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Set_Class_Registry_PropertyA(classguid: *const ::windows::core::GUID, ulproperty: u32, buffer: *const ::core::ffi::c_void, ullength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Set_Class_Registry_PropertyA(classguid: *const ::windows_core::GUID, ulproperty: u32, buffer: *const ::core::ffi::c_void, ullength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Set_Class_Registry_PropertyA(classguid: *const ::windows::core::GUID, ulproperty: u32, buffer: *const ::core::ffi::c_void, ullength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Set_Class_Registry_PropertyA(classguid: *const ::windows_core::GUID, ulproperty: u32, buffer: *const ::core::ffi::c_void, ullength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Set_Class_Registry_PropertyA(::core::mem::transmute(classguid), ::core::mem::transmute(ulproperty), ::core::mem::transmute(buffer), ::core::mem::transmute(ullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -4093,12 +4093,12 @@ pub unsafe fn CM_Set_Class_Registry_PropertyA(classguid: *const ::windows::core:
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Set_Class_Registry_PropertyW(classguid: *const ::windows::core::GUID, ulproperty: u32, buffer: *const ::core::ffi::c_void, ullength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Set_Class_Registry_PropertyW(classguid: *const ::windows_core::GUID, ulproperty: u32, buffer: *const ::core::ffi::c_void, ullength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Set_Class_Registry_PropertyW(classguid: *const ::windows::core::GUID, ulproperty: u32, buffer: *const ::core::ffi::c_void, ullength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Set_Class_Registry_PropertyW(classguid: *const ::windows_core::GUID, ulproperty: u32, buffer: *const ::core::ffi::c_void, ullength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Set_Class_Registry_PropertyW(::core::mem::transmute(classguid), ::core::mem::transmute(ulproperty), ::core::mem::transmute(buffer), ::core::mem::transmute(ullength), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -4222,12 +4222,12 @@ pub unsafe fn CM_Set_DevNode_Registry_Property_ExW(dndevinst: u32, ulproperty: u
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
 #[inline]
-pub unsafe fn CM_Set_Device_Interface_PropertyW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Set_Device_Interface_PropertyW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Set_Device_Interface_PropertyW(pszdeviceinterface: ::windows::core::PCWSTR, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32) -> CONFIGRET;
+            fn CM_Set_Device_Interface_PropertyW(pszdeviceinterface: ::windows_core::PCWSTR, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Set_Device_Interface_PropertyW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(propertykey), ::core::mem::transmute(propertytype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(ulflags)))
     }
@@ -4237,12 +4237,12 @@ pub unsafe fn CM_Set_Device_Interface_PropertyW<'a, Param0: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
 #[inline]
-pub unsafe fn CM_Set_Device_Interface_Property_ExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Set_Device_Interface_Property_ExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Set_Device_Interface_Property_ExW(pszdeviceinterface: ::windows::core::PCWSTR, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Set_Device_Interface_Property_ExW(pszdeviceinterface: ::windows_core::PCWSTR, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Set_Device_Interface_Property_ExW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(propertykey), ::core::mem::transmute(propertytype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -4405,12 +4405,12 @@ pub unsafe fn CM_Uninstall_DevNode_Ex(dndevinst: u32, ulflags: u32, hmachine: is
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Unregister_Device_InterfaceA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszdeviceinterface: Param0, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Unregister_Device_InterfaceA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszdeviceinterface: Param0, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Unregister_Device_InterfaceA(pszdeviceinterface: ::windows::core::PCSTR, ulflags: u32) -> CONFIGRET;
+            fn CM_Unregister_Device_InterfaceA(pszdeviceinterface: ::windows_core::PCSTR, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Unregister_Device_InterfaceA(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(ulflags)))
     }
@@ -4419,12 +4419,12 @@ pub unsafe fn CM_Unregister_Device_InterfaceA<'a, Param0: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Unregister_Device_InterfaceW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Unregister_Device_InterfaceW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, ulflags: u32) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Unregister_Device_InterfaceW(pszdeviceinterface: ::windows::core::PCWSTR, ulflags: u32) -> CONFIGRET;
+            fn CM_Unregister_Device_InterfaceW(pszdeviceinterface: ::windows_core::PCWSTR, ulflags: u32) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Unregister_Device_InterfaceW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(ulflags)))
     }
@@ -4433,12 +4433,12 @@ pub unsafe fn CM_Unregister_Device_InterfaceW<'a, Param0: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Unregister_Device_Interface_ExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszdeviceinterface: Param0, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Unregister_Device_Interface_ExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszdeviceinterface: Param0, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Unregister_Device_Interface_ExA(pszdeviceinterface: ::windows::core::PCSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Unregister_Device_Interface_ExA(pszdeviceinterface: ::windows_core::PCSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Unregister_Device_Interface_ExA(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -4447,12 +4447,12 @@ pub unsafe fn CM_Unregister_Device_Interface_ExA<'a, Param0: ::windows::core::In
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Unregister_Device_Interface_ExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdeviceinterface: Param0, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Unregister_Device_Interface_ExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdeviceinterface: Param0, ulflags: u32, hmachine: isize) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CM_Unregister_Device_Interface_ExW(pszdeviceinterface: ::windows::core::PCWSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
+            fn CM_Unregister_Device_Interface_ExW(pszdeviceinterface: ::windows_core::PCWSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
         }
         ::core::mem::transmute(CM_Unregister_Device_Interface_ExW(pszdeviceinterface.into_param().abi(), ::core::mem::transmute(ulflags), ::core::mem::transmute(hmachine)))
     }
@@ -4461,7 +4461,7 @@ pub unsafe fn CM_Unregister_Device_Interface_ExW<'a, Param0: ::windows::core::In
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Unregister_Notification<'a, Param0: ::windows::core::IntoParam<'a, HCMNOTIFICATION>>(notifycontext: Param0) -> CONFIGRET {
+pub unsafe fn CM_Unregister_Notification<'a, Param0: ::windows_core::IntoParam<'a, HCMNOTIFICATION>>(notifycontext: Param0) -> CONFIGRET {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4494,14 +4494,14 @@ impl ::core::clone::Clone for COINSTALLER_CONTEXT_DATA {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for COINSTALLER_CONTEXT_DATA {
+unsafe impl ::windows_core::Abi for COINSTALLER_CONTEXT_DATA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for COINSTALLER_CONTEXT_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COINSTALLER_CONTEXT_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COINSTALLER_CONTEXT_DATA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -4535,14 +4535,14 @@ impl ::core::clone::Clone for COINSTALLER_CONTEXT_DATA {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for COINSTALLER_CONTEXT_DATA {
+unsafe impl ::windows_core::Abi for COINSTALLER_CONTEXT_DATA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for COINSTALLER_CONTEXT_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COINSTALLER_CONTEXT_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COINSTALLER_CONTEXT_DATA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -4702,7 +4702,7 @@ impl ::core::default::Default for CONFIGRET {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CONFIGRET {
+unsafe impl ::windows_core::Abi for CONFIGRET {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CONFIGRET {
@@ -4736,13 +4736,13 @@ impl ::core::fmt::Debug for CONFLICT_DETAILS_A {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CONFLICT_DETAILS_A {
+unsafe impl ::windows_core::Abi for CONFLICT_DETAILS_A {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CONFLICT_DETAILS_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONFLICT_DETAILS_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONFLICT_DETAILS_A>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4774,12 +4774,12 @@ impl ::core::fmt::Debug for CONFLICT_DETAILS_W {
         f.debug_struct("CONFLICT_DETAILS_W").field("CD_ulSize", &self.CD_ulSize).field("CD_ulMask", &self.CD_ulMask).field("CD_dnDevInst", &self.CD_dnDevInst).field("CD_rdResDes", &self.CD_rdResDes).field("CD_ulFlags", &self.CD_ulFlags).field("CD_szDescription", &self.CD_szDescription).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CONFLICT_DETAILS_W {
+unsafe impl ::windows_core::Abi for CONFLICT_DETAILS_W {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CONFLICT_DETAILS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONFLICT_DETAILS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONFLICT_DETAILS_W>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CONFLICT_DETAILS_W {}
@@ -4821,7 +4821,7 @@ pub struct CS_DES {
     pub CSD_LegacyDataOffset: u32,
     pub CSD_LegacyDataSize: u32,
     pub CSD_Flags: u32,
-    pub CSD_ClassGuid: ::windows::core::GUID,
+    pub CSD_ClassGuid: ::windows_core::GUID,
     pub CSD_Signature: [u8; 1],
 }
 impl ::core::marker::Copy for CS_DES {}
@@ -4830,12 +4830,12 @@ impl ::core::clone::Clone for CS_DES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CS_DES {
+unsafe impl ::windows_core::Abi for CS_DES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CS_DES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CS_DES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CS_DES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CS_DES {}
@@ -4855,12 +4855,12 @@ impl ::core::clone::Clone for CS_RESOURCE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for CS_RESOURCE {
+unsafe impl ::windows_core::Abi for CS_RESOURCE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CS_RESOURCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CS_RESOURCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CS_RESOURCE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CS_RESOURCE {}
@@ -4886,12 +4886,12 @@ impl ::core::clone::Clone for Connection_Des_s {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for Connection_Des_s {
+unsafe impl ::windows_core::Abi for Connection_Des_s {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for Connection_Des_s {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Connection_Des_s>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Connection_Des_s>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Connection_Des_s {}
@@ -4911,12 +4911,12 @@ impl ::core::clone::Clone for Connection_Resource_s {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for Connection_Resource_s {
+unsafe impl ::windows_core::Abi for Connection_Resource_s {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for Connection_Resource_s {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Connection_Resource_s>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Connection_Resource_s>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Connection_Resource_s {}
@@ -5333,12 +5333,12 @@ impl ::core::clone::Clone for DMA_DES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DMA_DES {
+unsafe impl ::windows_core::Abi for DMA_DES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DMA_DES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DMA_DES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DMA_DES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DMA_DES {}
@@ -5360,12 +5360,12 @@ impl ::core::clone::Clone for DMA_RANGE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DMA_RANGE {
+unsafe impl ::windows_core::Abi for DMA_RANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DMA_RANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DMA_RANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DMA_RANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DMA_RANGE {}
@@ -5386,12 +5386,12 @@ impl ::core::clone::Clone for DMA_RESOURCE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DMA_RESOURCE {
+unsafe impl ::windows_core::Abi for DMA_RESOURCE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DMA_RESOURCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DMA_RESOURCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DMA_RESOURCE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DMA_RESOURCE {}
@@ -5602,12 +5602,12 @@ impl ::core::clone::Clone for DevPrivate_Des_s {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DevPrivate_Des_s {
+unsafe impl ::windows_core::Abi for DevPrivate_Des_s {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DevPrivate_Des_s {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DevPrivate_Des_s>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DevPrivate_Des_s>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DevPrivate_Des_s {}
@@ -5629,12 +5629,12 @@ impl ::core::clone::Clone for DevPrivate_Range_s {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DevPrivate_Range_s {
+unsafe impl ::windows_core::Abi for DevPrivate_Range_s {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DevPrivate_Range_s {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DevPrivate_Range_s>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DevPrivate_Range_s>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DevPrivate_Range_s {}
@@ -5655,12 +5655,12 @@ impl ::core::clone::Clone for DevPrivate_Resource_s {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DevPrivate_Resource_s {
+unsafe impl ::windows_core::Abi for DevPrivate_Resource_s {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DevPrivate_Resource_s {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DevPrivate_Resource_s>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DevPrivate_Resource_s>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DevPrivate_Resource_s {}
@@ -5672,7 +5672,7 @@ impl ::core::default::Default for DevPrivate_Resource_s {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiInstallDevice<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HDEVINFO>>(hwndparent: Param0, deviceinfoset: Param1, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiInstallDevice<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HDEVINFO>>(hwndparent: Param0, deviceinfoset: Param1, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5687,12 +5687,12 @@ pub unsafe fn DiInstallDevice<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiInstallDriverA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwndparent: Param0, infpath: Param1, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiInstallDriverA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndparent: Param0, infpath: Param1, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DiInstallDriverA(hwndparent: super::super::Foundation::HWND, infpath: ::windows::core::PCSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn DiInstallDriverA(hwndparent: super::super::Foundation::HWND, infpath: ::windows_core::PCSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(DiInstallDriverA(hwndparent.into_param().abi(), infpath.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(needreboot)))
     }
@@ -5702,12 +5702,12 @@ pub unsafe fn DiInstallDriverA<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiInstallDriverW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwndparent: Param0, infpath: Param1, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiInstallDriverW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndparent: Param0, infpath: Param1, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DiInstallDriverW(hwndparent: super::super::Foundation::HWND, infpath: ::windows::core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn DiInstallDriverW(hwndparent: super::super::Foundation::HWND, infpath: ::windows_core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(DiInstallDriverW(hwndparent.into_param().abi(), infpath.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(needreboot)))
     }
@@ -5717,7 +5717,7 @@ pub unsafe fn DiInstallDriverW<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiRollbackDriver<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, hwndparent: Param2, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiRollbackDriver<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, hwndparent: Param2, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5732,7 +5732,7 @@ pub unsafe fn DiRollbackDriver<'a, Param0: ::windows::core::IntoParam<'a, HDEVIN
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiShowUpdateDevice<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HDEVINFO>>(hwndparent: Param0, deviceinfoset: Param1, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiShowUpdateDevice<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HDEVINFO>>(hwndparent: Param0, deviceinfoset: Param1, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5747,12 +5747,12 @@ pub unsafe fn DiShowUpdateDevice<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiShowUpdateDriver<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwndparent: Param0, filepath: Param1, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiShowUpdateDriver<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndparent: Param0, filepath: Param1, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DiShowUpdateDriver(hwndparent: super::super::Foundation::HWND, filepath: ::windows::core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn DiShowUpdateDriver(hwndparent: super::super::Foundation::HWND, filepath: ::windows_core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(DiShowUpdateDriver(hwndparent.into_param().abi(), filepath.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(needreboot)))
     }
@@ -5762,7 +5762,7 @@ pub unsafe fn DiShowUpdateDriver<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiUninstallDevice<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HDEVINFO>>(hwndparent: Param0, deviceinfoset: Param1, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiUninstallDevice<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HDEVINFO>>(hwndparent: Param0, deviceinfoset: Param1, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5777,12 +5777,12 @@ pub unsafe fn DiUninstallDevice<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiUninstallDriverA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwndparent: Param0, infpath: Param1, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiUninstallDriverA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndparent: Param0, infpath: Param1, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DiUninstallDriverA(hwndparent: super::super::Foundation::HWND, infpath: ::windows::core::PCSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn DiUninstallDriverA(hwndparent: super::super::Foundation::HWND, infpath: ::windows_core::PCSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(DiUninstallDriverA(hwndparent.into_param().abi(), infpath.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(needreboot)))
     }
@@ -5792,12 +5792,12 @@ pub unsafe fn DiUninstallDriverA<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiUninstallDriverW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwndparent: Param0, infpath: Param1, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiUninstallDriverW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndparent: Param0, infpath: Param1, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DiUninstallDriverW(hwndparent: super::super::Foundation::HWND, infpath: ::windows::core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn DiUninstallDriverW(hwndparent: super::super::Foundation::HWND, infpath: ::windows_core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(DiUninstallDriverW(hwndparent.into_param().abi(), infpath.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(needreboot)))
     }
@@ -5828,8 +5828,8 @@ pub const FILEOP_SKIP: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct FILEPATHS_A {
-    pub Target: ::windows::core::PCSTR,
-    pub Source: ::windows::core::PCSTR,
+    pub Target: ::windows_core::PCSTR,
+    pub Source: ::windows_core::PCSTR,
     pub Win32Error: u32,
     pub Flags: u32,
 }
@@ -5842,13 +5842,13 @@ impl ::core::clone::Clone for FILEPATHS_A {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for FILEPATHS_A {
+unsafe impl ::windows_core::Abi for FILEPATHS_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for FILEPATHS_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -5863,8 +5863,8 @@ impl ::core::default::Default for FILEPATHS_A {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(target_arch = "x86")]
 pub struct FILEPATHS_A {
-    pub Target: ::windows::core::PCSTR,
-    pub Source: ::windows::core::PCSTR,
+    pub Target: ::windows_core::PCSTR,
+    pub Source: ::windows_core::PCSTR,
     pub Win32Error: u32,
     pub Flags: u32,
 }
@@ -5877,13 +5877,13 @@ impl ::core::clone::Clone for FILEPATHS_A {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for FILEPATHS_A {
+unsafe impl ::windows_core::Abi for FILEPATHS_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for FILEPATHS_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -5898,13 +5898,13 @@ impl ::core::default::Default for FILEPATHS_A {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct FILEPATHS_SIGNERINFO_A {
-    pub Target: ::windows::core::PCSTR,
-    pub Source: ::windows::core::PCSTR,
+    pub Target: ::windows_core::PCSTR,
+    pub Source: ::windows_core::PCSTR,
     pub Win32Error: u32,
     pub Flags: u32,
-    pub DigitalSigner: ::windows::core::PCSTR,
-    pub Version: ::windows::core::PCSTR,
-    pub CatalogFile: ::windows::core::PCSTR,
+    pub DigitalSigner: ::windows_core::PCSTR,
+    pub Version: ::windows_core::PCSTR,
+    pub CatalogFile: ::windows_core::PCSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::marker::Copy for FILEPATHS_SIGNERINFO_A {}
@@ -5915,13 +5915,13 @@ impl ::core::clone::Clone for FILEPATHS_SIGNERINFO_A {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for FILEPATHS_SIGNERINFO_A {
+unsafe impl ::windows_core::Abi for FILEPATHS_SIGNERINFO_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for FILEPATHS_SIGNERINFO_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_SIGNERINFO_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_SIGNERINFO_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -5936,13 +5936,13 @@ impl ::core::default::Default for FILEPATHS_SIGNERINFO_A {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(target_arch = "x86")]
 pub struct FILEPATHS_SIGNERINFO_A {
-    pub Target: ::windows::core::PCSTR,
-    pub Source: ::windows::core::PCSTR,
+    pub Target: ::windows_core::PCSTR,
+    pub Source: ::windows_core::PCSTR,
     pub Win32Error: u32,
     pub Flags: u32,
-    pub DigitalSigner: ::windows::core::PCSTR,
-    pub Version: ::windows::core::PCSTR,
-    pub CatalogFile: ::windows::core::PCSTR,
+    pub DigitalSigner: ::windows_core::PCSTR,
+    pub Version: ::windows_core::PCSTR,
+    pub CatalogFile: ::windows_core::PCSTR,
 }
 #[cfg(target_arch = "x86")]
 impl ::core::marker::Copy for FILEPATHS_SIGNERINFO_A {}
@@ -5953,13 +5953,13 @@ impl ::core::clone::Clone for FILEPATHS_SIGNERINFO_A {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for FILEPATHS_SIGNERINFO_A {
+unsafe impl ::windows_core::Abi for FILEPATHS_SIGNERINFO_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for FILEPATHS_SIGNERINFO_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_SIGNERINFO_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_SIGNERINFO_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -5974,13 +5974,13 @@ impl ::core::default::Default for FILEPATHS_SIGNERINFO_A {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct FILEPATHS_SIGNERINFO_W {
-    pub Target: ::windows::core::PCWSTR,
-    pub Source: ::windows::core::PCWSTR,
+    pub Target: ::windows_core::PCWSTR,
+    pub Source: ::windows_core::PCWSTR,
     pub Win32Error: u32,
     pub Flags: u32,
-    pub DigitalSigner: ::windows::core::PCWSTR,
-    pub Version: ::windows::core::PCWSTR,
-    pub CatalogFile: ::windows::core::PCWSTR,
+    pub DigitalSigner: ::windows_core::PCWSTR,
+    pub Version: ::windows_core::PCWSTR,
+    pub CatalogFile: ::windows_core::PCWSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::marker::Copy for FILEPATHS_SIGNERINFO_W {}
@@ -5991,13 +5991,13 @@ impl ::core::clone::Clone for FILEPATHS_SIGNERINFO_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for FILEPATHS_SIGNERINFO_W {
+unsafe impl ::windows_core::Abi for FILEPATHS_SIGNERINFO_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for FILEPATHS_SIGNERINFO_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_SIGNERINFO_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_SIGNERINFO_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -6012,13 +6012,13 @@ impl ::core::default::Default for FILEPATHS_SIGNERINFO_W {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(target_arch = "x86")]
 pub struct FILEPATHS_SIGNERINFO_W {
-    pub Target: ::windows::core::PCWSTR,
-    pub Source: ::windows::core::PCWSTR,
+    pub Target: ::windows_core::PCWSTR,
+    pub Source: ::windows_core::PCWSTR,
     pub Win32Error: u32,
     pub Flags: u32,
-    pub DigitalSigner: ::windows::core::PCWSTR,
-    pub Version: ::windows::core::PCWSTR,
-    pub CatalogFile: ::windows::core::PCWSTR,
+    pub DigitalSigner: ::windows_core::PCWSTR,
+    pub Version: ::windows_core::PCWSTR,
+    pub CatalogFile: ::windows_core::PCWSTR,
 }
 #[cfg(target_arch = "x86")]
 impl ::core::marker::Copy for FILEPATHS_SIGNERINFO_W {}
@@ -6029,13 +6029,13 @@ impl ::core::clone::Clone for FILEPATHS_SIGNERINFO_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for FILEPATHS_SIGNERINFO_W {
+unsafe impl ::windows_core::Abi for FILEPATHS_SIGNERINFO_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for FILEPATHS_SIGNERINFO_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_SIGNERINFO_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_SIGNERINFO_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -6050,8 +6050,8 @@ impl ::core::default::Default for FILEPATHS_SIGNERINFO_W {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct FILEPATHS_W {
-    pub Target: ::windows::core::PCWSTR,
-    pub Source: ::windows::core::PCWSTR,
+    pub Target: ::windows_core::PCWSTR,
+    pub Source: ::windows_core::PCWSTR,
     pub Win32Error: u32,
     pub Flags: u32,
 }
@@ -6064,13 +6064,13 @@ impl ::core::clone::Clone for FILEPATHS_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for FILEPATHS_W {
+unsafe impl ::windows_core::Abi for FILEPATHS_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for FILEPATHS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -6085,8 +6085,8 @@ impl ::core::default::Default for FILEPATHS_W {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(target_arch = "x86")]
 pub struct FILEPATHS_W {
-    pub Target: ::windows::core::PCWSTR,
-    pub Source: ::windows::core::PCWSTR,
+    pub Target: ::windows_core::PCWSTR,
+    pub Source: ::windows_core::PCWSTR,
     pub Win32Error: u32,
     pub Flags: u32,
 }
@@ -6099,13 +6099,13 @@ impl ::core::clone::Clone for FILEPATHS_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for FILEPATHS_W {
+unsafe impl ::windows_core::Abi for FILEPATHS_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for FILEPATHS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILEPATHS_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -6129,7 +6129,7 @@ pub const FILE_COMPRESSION_WINLZA: u32 = 1u32;
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct FILE_IN_CABINET_INFO_A {
-    pub NameInCabinet: ::windows::core::PCSTR,
+    pub NameInCabinet: ::windows_core::PCSTR,
     pub FileSize: u32,
     pub Win32Error: u32,
     pub DosDate: u16,
@@ -6149,14 +6149,14 @@ impl ::core::clone::Clone for FILE_IN_CABINET_INFO_A {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FILE_IN_CABINET_INFO_A {
+unsafe impl ::windows_core::Abi for FILE_IN_CABINET_INFO_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FILE_IN_CABINET_INFO_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILE_IN_CABINET_INFO_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILE_IN_CABINET_INFO_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -6174,7 +6174,7 @@ impl ::core::default::Default for FILE_IN_CABINET_INFO_A {
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 pub struct FILE_IN_CABINET_INFO_A {
-    pub NameInCabinet: ::windows::core::PCSTR,
+    pub NameInCabinet: ::windows_core::PCSTR,
     pub FileSize: u32,
     pub Win32Error: u32,
     pub DosDate: u16,
@@ -6194,14 +6194,14 @@ impl ::core::clone::Clone for FILE_IN_CABINET_INFO_A {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FILE_IN_CABINET_INFO_A {
+unsafe impl ::windows_core::Abi for FILE_IN_CABINET_INFO_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FILE_IN_CABINET_INFO_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILE_IN_CABINET_INFO_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILE_IN_CABINET_INFO_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -6218,7 +6218,7 @@ impl ::core::default::Default for FILE_IN_CABINET_INFO_A {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct FILE_IN_CABINET_INFO_W {
-    pub NameInCabinet: ::windows::core::PCWSTR,
+    pub NameInCabinet: ::windows_core::PCWSTR,
     pub FileSize: u32,
     pub Win32Error: u32,
     pub DosDate: u16,
@@ -6235,13 +6235,13 @@ impl ::core::clone::Clone for FILE_IN_CABINET_INFO_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for FILE_IN_CABINET_INFO_W {
+unsafe impl ::windows_core::Abi for FILE_IN_CABINET_INFO_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for FILE_IN_CABINET_INFO_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILE_IN_CABINET_INFO_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILE_IN_CABINET_INFO_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -6256,7 +6256,7 @@ impl ::core::default::Default for FILE_IN_CABINET_INFO_W {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(target_arch = "x86")]
 pub struct FILE_IN_CABINET_INFO_W {
-    pub NameInCabinet: ::windows::core::PCWSTR,
+    pub NameInCabinet: ::windows_core::PCWSTR,
     pub FileSize: u32,
     pub Win32Error: u32,
     pub DosDate: u16,
@@ -6273,13 +6273,13 @@ impl ::core::clone::Clone for FILE_IN_CABINET_INFO_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for FILE_IN_CABINET_INFO_W {
+unsafe impl ::windows_core::Abi for FILE_IN_CABINET_INFO_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for FILE_IN_CABINET_INFO_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILE_IN_CABINET_INFO_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILE_IN_CABINET_INFO_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -6372,190 +6372,190 @@ pub const FLG_REGSVR_DLLINSTALL: u32 = 2u32;
 pub const FLG_REGSVR_DLLREGISTER: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 pub const FORCED_LOG_CONF: u32 = 4u32;
-pub const GUID_ACPI_CMOS_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3a8d0384_6505_40ca_bc39_56c15f8c5fed);
-pub const GUID_ACPI_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb091a08a_ba97_11d0_bd14_00aa00b7b32a);
-pub const GUID_ACPI_INTERFACE_STANDARD2: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe8695f63_1831_4870_a8cf_9c2f03f9dcb5);
-pub const GUID_ACPI_PORT_RANGES_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf14f609b_cbbd_4957_a674_bc00213f1c97);
-pub const GUID_ACPI_REGS_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x06141966_7245_6369_462e_4e656c736f6e);
-pub const GUID_AGP_TARGET_BUS_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb15cfce8_06d1_4d37_9d4c_bedde0c2a6ff);
-pub const GUID_ARBITER_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe644f185_8c0e_11d0_becf_08002be2092f);
-pub const GUID_BUS_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x496b8280_6f25_11d0_beaf_08002be2092f);
-pub const GUID_BUS_RESOURCE_UPDATE_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x27d0102d_bfb2_4164_81dd_dbb82f968b48);
-pub const GUID_BUS_TYPE_1394: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf74e73eb_9ac5_45eb_be4d_772cc71ddfb3);
-pub const GUID_BUS_TYPE_ACPI: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd7b46895_001a_4942_891f_a7d46610a843);
-pub const GUID_BUS_TYPE_AVC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc06ff265_ae09_48f0_812c_16753d7cba83);
-pub const GUID_BUS_TYPE_DOT4PRT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x441ee001_4342_11d5_a184_00c04f60524d);
-pub const GUID_BUS_TYPE_EISA: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xddc35509_f3fc_11d0_a537_0000f8753ed1);
-pub const GUID_BUS_TYPE_HID: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xeeaf37d0_1963_47c4_aa48_72476db7cf49);
-pub const GUID_BUS_TYPE_INTERNAL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1530ea73_086b_11d1_a09f_00c04fc340b1);
-pub const GUID_BUS_TYPE_IRDA: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7ae17dc1_c944_44d6_881f_4c2e61053bc1);
-pub const GUID_BUS_TYPE_ISAPNP: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe676f854_d87d_11d0_92b2_00a0c9055fc5);
-pub const GUID_BUS_TYPE_LPTENUM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc4ca1000_2ddc_11d5_a17a_00c04f60524d);
-pub const GUID_BUS_TYPE_MCA: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1c75997a_dc33_11d0_92b2_00a0c9055fc5);
-pub const GUID_BUS_TYPE_PCI: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc8ebdfb0_b510_11d0_80e5_00a0c92542e3);
-pub const GUID_BUS_TYPE_PCMCIA: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x09343630_af9f_11d0_92e9_0000f81e1b30);
-pub const GUID_BUS_TYPE_SCM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x375a5912_804c_45aa_bdc2_fdd25a1d9512);
-pub const GUID_BUS_TYPE_SD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe700cc04_4036_4e89_9579_89ebf45f00cd);
-pub const GUID_BUS_TYPE_SERENUM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x77114a87_8944_11d1_bd90_00a0c906be2d);
-pub const GUID_BUS_TYPE_SW_DEVICE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x06d10322_7de0_4cef_8e25_197d0e7442e2);
-pub const GUID_BUS_TYPE_USB: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9d7debbc_c85d_11d1_9eb4_006008c3a19a);
-pub const GUID_BUS_TYPE_USBPRINT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x441ee000_4342_11d5_a184_00c04f60524d);
-pub const GUID_D3COLD_AUX_POWER_AND_TIMING_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0044d8aa_f664_4588_9ffc_2afeaf5950b9);
-pub const GUID_D3COLD_SUPPORT_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb38290e5_3cd0_4f9d_9937_f5fe2b44d47a);
-pub const GUID_DEVCLASS_1394: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6bdd1fc1_810f_11d0_bec7_08002be2092f);
-pub const GUID_DEVCLASS_1394DEBUG: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x66f250d6_7801_4a64_b139_eea80a450b24);
-pub const GUID_DEVCLASS_61883: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7ebefbc0_3200_11d2_b4c2_00a0c9697d07);
-pub const GUID_DEVCLASS_ADAPTER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e964_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_APMSUPPORT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd45b1c18_c8fa_11d1_9f77_0000f805f530);
-pub const GUID_DEVCLASS_AVC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc06ff265_ae09_48f0_812c_16753d7cba83);
-pub const GUID_DEVCLASS_BATTERY: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x72631e54_78a4_11d0_bcf7_00aa00b7b32a);
-pub const GUID_DEVCLASS_BIOMETRIC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x53d29ef7_377c_4d14_864b_eb3a85769359);
-pub const GUID_DEVCLASS_BLUETOOTH: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe0cbf06c_cd8b_4647_bb8a_263b43f0f974);
-pub const GUID_DEVCLASS_CAMERA: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xca3e7ab9_b4c3_4ae6_8251_579ef933890f);
-pub const GUID_DEVCLASS_CDROM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e965_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_COMPUTEACCELERATOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf01a9d53_3ff6_48d2_9f97_c8a7004be10c);
-pub const GUID_DEVCLASS_COMPUTER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e966_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_DECODER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6bdd1fc2_810f_11d0_bec7_08002be2092f);
-pub const GUID_DEVCLASS_DISKDRIVE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e967_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_DISPLAY: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e968_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_DOT4: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x48721b56_6795_11d2_b1a8_0080c72e74a2);
-pub const GUID_DEVCLASS_DOT4PRINT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x49ce6ac8_6f86_11d2_b1e5_0080c72e74a2);
-pub const GUID_DEVCLASS_EHSTORAGESILO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9da2b80f_f89f_4a49_a5c2_511b085b9e8a);
-pub const GUID_DEVCLASS_ENUM1394: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc459df55_db08_11d1_b009_00a0c9081ff6);
-pub const GUID_DEVCLASS_EXTENSION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe2f84ce7_8efa_411c_aa69_97454ca4cb57);
-pub const GUID_DEVCLASS_FDC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e969_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_FIRMWARE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf2e7dd72_6468_4e36_b6f1_6488f42c1b52);
-pub const GUID_DEVCLASS_FLOPPYDISK: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e980_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_FSFILTER_ACTIVITYMONITOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb86dff51_a31e_4bac_b3cf_e8cfe75c9fc2);
-pub const GUID_DEVCLASS_FSFILTER_ANTIVIRUS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb1d1a169_c54f_4379_81db_bee7d88d7454);
-pub const GUID_DEVCLASS_FSFILTER_BOTTOM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x37765ea0_5958_4fc9_b04b_2fdfef97e59e);
-pub const GUID_DEVCLASS_FSFILTER_CFSMETADATASERVER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcdcf0939_b75b_4630_bf76_80f7ba655884);
-pub const GUID_DEVCLASS_FSFILTER_COMPRESSION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf3586baf_b5aa_49b5_8d6c_0569284c639f);
-pub const GUID_DEVCLASS_FSFILTER_CONTENTSCREENER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3e3f0674_c83c_4558_bb26_9820e1eba5c5);
-pub const GUID_DEVCLASS_FSFILTER_CONTINUOUSBACKUP: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x71aa14f8_6fad_4622_ad77_92bb9d7e6947);
-pub const GUID_DEVCLASS_FSFILTER_COPYPROTECTION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x89786ff1_9c12_402f_9c9e_17753c7f4375);
-pub const GUID_DEVCLASS_FSFILTER_ENCRYPTION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa0a701c0_a511_42ff_aa6c_06dc0395576f);
-pub const GUID_DEVCLASS_FSFILTER_HSM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd546500a_2aeb_45f6_9482_f4b1799c3177);
-pub const GUID_DEVCLASS_FSFILTER_INFRASTRUCTURE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe55fa6f9_128c_4d04_abab_630c74b1453a);
-pub const GUID_DEVCLASS_FSFILTER_OPENFILEBACKUP: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf8ecafa6_66d1_41a5_899b_66585d7216b7);
-pub const GUID_DEVCLASS_FSFILTER_PHYSICALQUOTAMANAGEMENT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6a0a8e78_bba6_4fc4_a709_1e33cd09d67e);
-pub const GUID_DEVCLASS_FSFILTER_QUOTAMANAGEMENT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8503c911_a6c7_4919_8f79_5028f5866b0c);
-pub const GUID_DEVCLASS_FSFILTER_REPLICATION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x48d3ebc4_4cf8_48ff_b869_9c68ad42eb9f);
-pub const GUID_DEVCLASS_FSFILTER_SECURITYENHANCER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd02bc3da_0c8e_4945_9bd5_f1883c226c8c);
-pub const GUID_DEVCLASS_FSFILTER_SYSTEM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5d1b9aaa_01e2_46af_849f_272b3f324c46);
-pub const GUID_DEVCLASS_FSFILTER_SYSTEMRECOVERY: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2db15374_706e_4131_a0c7_d7c78eb0289a);
-pub const GUID_DEVCLASS_FSFILTER_TOP: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb369baf4_5568_4e82_a87e_a93eb16bca87);
-pub const GUID_DEVCLASS_FSFILTER_UNDELETE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfe8f1572_c67a_48c0_bbac_0b5c6d66cafb);
-pub const GUID_DEVCLASS_FSFILTER_VIRTUALIZATION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xf75a86c0_10d8_4c3a_b233_ed60e4cdfaac);
-pub const GUID_DEVCLASS_GPS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6bdd1fc3_810f_11d0_bec7_08002be2092f);
-pub const GUID_DEVCLASS_HDC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e96a_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_HIDCLASS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x745a17a0_74d3_11d0_b6fe_00a0c90f57da);
-pub const GUID_DEVCLASS_HOLOGRAPHIC: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd612553d_06b1_49ca_8938_e39ef80eb16f);
-pub const GUID_DEVCLASS_IMAGE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6bdd1fc6_810f_11d0_bec7_08002be2092f);
-pub const GUID_DEVCLASS_INFINIBAND: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x30ef7132_d858_4a0c_ac24_b9028a5cca3f);
-pub const GUID_DEVCLASS_INFRARED: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6bdd1fc5_810f_11d0_bec7_08002be2092f);
-pub const GUID_DEVCLASS_KEYBOARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e96b_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_LEGACYDRIVER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8ecc055d_047f_11d1_a537_0000f8753ed1);
-pub const GUID_DEVCLASS_MEDIA: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e96c_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_MEDIUM_CHANGER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xce5939ae_ebde_11d0_b181_0000f8753ec4);
-pub const GUID_DEVCLASS_MEMORY: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5099944a_f6b9_4057_a056_8c550228544c);
-pub const GUID_DEVCLASS_MODEM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e96d_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_MONITOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e96e_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_MOUSE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e96f_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_MTD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e970_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_MULTIFUNCTION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e971_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_MULTIPORTSERIAL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x50906cb8_ba12_11d1_bf5d_0000f805f530);
-pub const GUID_DEVCLASS_NET: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e972_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_NETCLIENT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e973_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_NETDRIVER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x87ef9ad1_8f70_49ee_b215_ab1fcadcbe3c);
-pub const GUID_DEVCLASS_NETSERVICE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e974_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_NETTRANS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e975_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_NETUIO: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x78912bc1_cb8e_4b28_a329_f322ebadbe0f);
-pub const GUID_DEVCLASS_NODRIVER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e976_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_PCMCIA: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e977_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_PNPPRINTERS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4658ee7e_f050_11d1_b6bd_00c04fa372a7);
-pub const GUID_DEVCLASS_PORTS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e978_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_PRINTER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e979_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_PRINTERUPGRADE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e97a_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_PRINTQUEUE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1ed2bbf9_11f0_4084_b21f_ad83a8e6dcdc);
-pub const GUID_DEVCLASS_PROCESSOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x50127dc3_0f36_415e_a6cc_4cb3be910b65);
-pub const GUID_DEVCLASS_SBP2: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd48179be_ec20_11d1_b6b8_00c04fa372a7);
-pub const GUID_DEVCLASS_SCMDISK: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x53966cb1_4d46_4166_bf23_c522403cd495);
-pub const GUID_DEVCLASS_SCMVOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x53ccb149_e543_4c84_b6e0_bce4f6b7e806);
-pub const GUID_DEVCLASS_SCSIADAPTER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e97b_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_SECURITYACCELERATOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x268c95a1_edfe_11d3_95c3_0010dc4050a5);
-pub const GUID_DEVCLASS_SENSOR: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5175d334_c371_4806_b3ba_71fd53c9258d);
-pub const GUID_DEVCLASS_SIDESHOW: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x997b5d8d_c442_4f2e_baf3_9c8e671e9e21);
-pub const GUID_DEVCLASS_SMARTCARDREADER: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x50dd5230_ba8a_11d1_bf5d_0000f805f530);
-pub const GUID_DEVCLASS_SMRDISK: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x53487c23_680f_4585_acc3_1f10d6777e82);
-pub const GUID_DEVCLASS_SMRVOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x53b3cf03_8f5a_4788_91b6_d19ed9fcccbf);
-pub const GUID_DEVCLASS_SOFTWARECOMPONENT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x5c4c3332_344d_483c_8739_259e934c9cc8);
-pub const GUID_DEVCLASS_SOUND: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e97c_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_SYSTEM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e97d_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_TAPEDRIVE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6d807884_7d21_11cf_801c_08002be10318);
-pub const GUID_DEVCLASS_UCM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xe6f1aa1c_7f3b_4473_b2e8_c97d8ac71d53);
-pub const GUID_DEVCLASS_UNKNOWN: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d36e97e_e325_11ce_bfc1_08002be10318);
-pub const GUID_DEVCLASS_USB: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x36fc9e60_c465_11cf_8056_444553540000);
-pub const GUID_DEVCLASS_VOLUME: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x71a27cdd_812a_11d0_bec7_08002be2092f);
-pub const GUID_DEVCLASS_VOLUMESNAPSHOT: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x533c5b84_ec70_11d2_9505_00c04f79deaf);
-pub const GUID_DEVCLASS_WCEUSBS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x25dbce51_6c8f_4a72_8a6d_b54c2b4fc835);
-pub const GUID_DEVCLASS_WPD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xeec5ad98_8080_425f_922a_dabf3de3f69a);
-pub const GUID_DEVICE_INTERFACE_ARRIVAL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcb3a4004_46f0_11d0_b08f_00609713053f);
-pub const GUID_DEVICE_INTERFACE_REMOVAL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcb3a4005_46f0_11d0_b08f_00609713053f);
-pub const GUID_DEVICE_RESET_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x649fdf26_3bc0_4813_ad24_7e0c1eda3fa3);
-pub const GUID_DMA_CACHE_COHERENCY_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb520f7fa_8a5a_4e40_a3f6_6be1e162d935);
-pub const GUID_HWPROFILE_CHANGE_CANCELLED: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcb3a4002_46f0_11d0_b08f_00609713053f);
-pub const GUID_HWPROFILE_CHANGE_COMPLETE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcb3a4003_46f0_11d0_b08f_00609713053f);
-pub const GUID_HWPROFILE_QUERY_CHANGE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcb3a4001_46f0_11d0_b08f_00609713053f);
-pub const GUID_INT_ROUTE_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x70941bf4_0073_11d1_a09e_00c04fc340b1);
-pub const GUID_IOMMU_BUS_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1efee0b2_d278_4ae4_bddc_1b34dd648043);
-pub const GUID_KERNEL_SOFT_RESTART_CANCEL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x31d737e7_8c0b_468a_956e_9f433ec358fb);
-pub const GUID_KERNEL_SOFT_RESTART_FINALIZE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x20e91abd_350a_4d4f_8577_99c81507473a);
-pub const GUID_KERNEL_SOFT_RESTART_PREPARE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xde373def_a85c_4f76_8cbf_f96bea8bd10f);
-pub const GUID_LEGACY_DEVICE_DETECTION_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x50feb0de_596a_11d2_a5b8_0000f81a4619);
-pub const GUID_MF_ENUMERATION_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xaeb895f0_5586_11d1_8d84_00a0c906b244);
-pub const GUID_MSIX_TABLE_CONFIG_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x1a6a460b_194f_455d_b34b_b84c5b05712b);
-pub const GUID_NPEM_CONTROL_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4d95573d_b774_488a_b120_4f284a9eff51);
-pub const GUID_PARTITION_UNIT_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x52363f5b_d891_429b_8195_aec5fef6853c);
-pub const GUID_PCC_INTERFACE_INTERNAL: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x7cce62ce_c189_4814_a6a7_12112089e938);
-pub const GUID_PCC_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x3ee8ba63_0f59_4a24_8a45_35808bdd1249);
-pub const GUID_PCI_ATS_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x010a7fe8_96f5_4943_bedf_95e651b93412);
-pub const GUID_PCI_BUS_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x496b8281_6f25_11d0_beaf_08002be2092f);
-pub const GUID_PCI_BUS_INTERFACE_STANDARD2: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xde94e966_fdff_4c9c_9998_6747b150e74c);
-pub const GUID_PCI_DEVICE_PRESENT_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xd1b82c26_bf49_45ef_b216_71cbd7889b57);
-pub const GUID_PCI_EXPRESS_LINK_QUIESCENT_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x146cd41c_dae3_4437_8aff_2af3f038099b);
-pub const GUID_PCI_EXPRESS_ROOT_PORT_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x83a7734a_84c7_4161_9a98_6000ed0c4a33);
-pub const GUID_PCI_FPGA_CONTROL_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2df3f7a8_b9b3_4063_9215_b5d14a0b266e);
-pub const GUID_PCI_PTM_CONTROL_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x348a5ebb_ba24_44b7_9916_285687735117);
-pub const GUID_PCI_SECURITY_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6e7f1451_199e_4acc_ba2d_762b4edf4674);
-pub const GUID_PCI_VIRTUALIZATION_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x64897b47_3a4a_4d75_bc74_89dd6c078293);
-pub const GUID_PCMCIA_BUS_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x76173af0_c504_11d1_947f_00c04fb960ee);
-pub const GUID_PNP_CUSTOM_NOTIFICATION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xaca73f8e_8d23_11d1_ac7d_0000f87571d0);
-pub const GUID_PNP_EXTENDED_ADDRESS_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xb8e992ec_a797_4dc4_8846_84d041707446);
-pub const GUID_PNP_LOCATION_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x70211b0e_0afb_47db_afc1_410bf842497a);
-pub const GUID_PNP_POWER_NOTIFICATION: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc2cf0660_eb7a_11d1_bd7f_0000f87571d0);
-pub const GUID_PNP_POWER_SETTING_CHANGE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x29c69b3e_c79a_43bf_bbde_a932fa1bea7e);
-pub const GUID_POWER_DEVICE_ENABLE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x827c0a6f_feb0_11d0_bd26_00aa00b7b32a);
-pub const GUID_POWER_DEVICE_TIMEOUTS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa45da735_feb0_11d0_bd26_00aa00b7b32a);
-pub const GUID_POWER_DEVICE_WAKE_ENABLE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xa9546a82_feb0_11d0_bd26_00aa00b7b32a);
-pub const GUID_PROCESSOR_PCC_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x37b17e9a_c21c_4296_972d_11c4b32b28f0);
-pub const GUID_QUERY_CRASHDUMP_FUNCTIONS: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9cc6b8ff_32e2_4834_b1de_b32ef8880a4b);
-pub const GUID_RECOVERY_NVMED_PREPARE_SHUTDOWN: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x4b9770ea_bde7_400b_a9b9_4f684f54cc2a);
-pub const GUID_RECOVERY_PCI_PREPARE_SHUTDOWN: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x90d889de_8704_44cf_8115_ed8528d2b2da);
-pub const GUID_REENUMERATE_SELF_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x2aeb0243_6a6e_486b_82fc_d815f6b97006);
-pub const GUID_SCM_BUS_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x25944783_ce79_4232_815e_4a30014e8eb4);
-pub const GUID_SCM_BUS_LD_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x9b89307d_d76b_4f48_b186_54041ae92e8d);
-pub const GUID_SCM_BUS_NVD_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x8de064ff_b630_42e4_88ea_6f24c8641175);
-pub const GUID_SCM_PHYSICAL_NVDIMM_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x0079c21b_917e_405e_a9ce_0732b5bbcebd);
-pub const GUID_SDEV_IDENTIFIER_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x49d67af8_916c_4ee8_9df1_889f17d21e91);
-pub const GUID_SECURE_DRIVER_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x370f67e1_4ff5_4a94_9a35_06c5d9cc30e2);
-pub const GUID_TARGET_DEVICE_QUERY_REMOVE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcb3a4006_46f0_11d0_b08f_00609713053f);
-pub const GUID_TARGET_DEVICE_REMOVE_CANCELLED: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcb3a4007_46f0_11d0_b08f_00609713053f);
-pub const GUID_TARGET_DEVICE_REMOVE_COMPLETE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xcb3a4008_46f0_11d0_b08f_00609713053f);
-pub const GUID_TARGET_DEVICE_TRANSPORT_RELATIONS_CHANGED: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xfcf528f6_a82f_47b1_ad3a_8050594cad28);
-pub const GUID_THERMAL_COOLING_INTERFACE: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xecbe47a8_c498_4bb9_bd70_e867e0940d22);
-pub const GUID_TRANSLATOR_INTERFACE_STANDARD: ::windows::core::GUID = ::windows::core::GUID::from_u128(0x6c154a92_aacf_11d0_8d2a_00a0c906b244);
-pub const GUID_WUDF_DEVICE_HOST_PROBLEM: ::windows::core::GUID = ::windows::core::GUID::from_u128(0xc43d25bd_9346_40ee_a2d2_d70c15f8b75b);
+pub const GUID_ACPI_CMOS_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3a8d0384_6505_40ca_bc39_56c15f8c5fed);
+pub const GUID_ACPI_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb091a08a_ba97_11d0_bd14_00aa00b7b32a);
+pub const GUID_ACPI_INTERFACE_STANDARD2: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe8695f63_1831_4870_a8cf_9c2f03f9dcb5);
+pub const GUID_ACPI_PORT_RANGES_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf14f609b_cbbd_4957_a674_bc00213f1c97);
+pub const GUID_ACPI_REGS_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x06141966_7245_6369_462e_4e656c736f6e);
+pub const GUID_AGP_TARGET_BUS_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb15cfce8_06d1_4d37_9d4c_bedde0c2a6ff);
+pub const GUID_ARBITER_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe644f185_8c0e_11d0_becf_08002be2092f);
+pub const GUID_BUS_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x496b8280_6f25_11d0_beaf_08002be2092f);
+pub const GUID_BUS_RESOURCE_UPDATE_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x27d0102d_bfb2_4164_81dd_dbb82f968b48);
+pub const GUID_BUS_TYPE_1394: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf74e73eb_9ac5_45eb_be4d_772cc71ddfb3);
+pub const GUID_BUS_TYPE_ACPI: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd7b46895_001a_4942_891f_a7d46610a843);
+pub const GUID_BUS_TYPE_AVC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc06ff265_ae09_48f0_812c_16753d7cba83);
+pub const GUID_BUS_TYPE_DOT4PRT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x441ee001_4342_11d5_a184_00c04f60524d);
+pub const GUID_BUS_TYPE_EISA: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xddc35509_f3fc_11d0_a537_0000f8753ed1);
+pub const GUID_BUS_TYPE_HID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xeeaf37d0_1963_47c4_aa48_72476db7cf49);
+pub const GUID_BUS_TYPE_INTERNAL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1530ea73_086b_11d1_a09f_00c04fc340b1);
+pub const GUID_BUS_TYPE_IRDA: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7ae17dc1_c944_44d6_881f_4c2e61053bc1);
+pub const GUID_BUS_TYPE_ISAPNP: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe676f854_d87d_11d0_92b2_00a0c9055fc5);
+pub const GUID_BUS_TYPE_LPTENUM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc4ca1000_2ddc_11d5_a17a_00c04f60524d);
+pub const GUID_BUS_TYPE_MCA: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1c75997a_dc33_11d0_92b2_00a0c9055fc5);
+pub const GUID_BUS_TYPE_PCI: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc8ebdfb0_b510_11d0_80e5_00a0c92542e3);
+pub const GUID_BUS_TYPE_PCMCIA: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x09343630_af9f_11d0_92e9_0000f81e1b30);
+pub const GUID_BUS_TYPE_SCM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x375a5912_804c_45aa_bdc2_fdd25a1d9512);
+pub const GUID_BUS_TYPE_SD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe700cc04_4036_4e89_9579_89ebf45f00cd);
+pub const GUID_BUS_TYPE_SERENUM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x77114a87_8944_11d1_bd90_00a0c906be2d);
+pub const GUID_BUS_TYPE_SW_DEVICE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x06d10322_7de0_4cef_8e25_197d0e7442e2);
+pub const GUID_BUS_TYPE_USB: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9d7debbc_c85d_11d1_9eb4_006008c3a19a);
+pub const GUID_BUS_TYPE_USBPRINT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x441ee000_4342_11d5_a184_00c04f60524d);
+pub const GUID_D3COLD_AUX_POWER_AND_TIMING_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0044d8aa_f664_4588_9ffc_2afeaf5950b9);
+pub const GUID_D3COLD_SUPPORT_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb38290e5_3cd0_4f9d_9937_f5fe2b44d47a);
+pub const GUID_DEVCLASS_1394: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6bdd1fc1_810f_11d0_bec7_08002be2092f);
+pub const GUID_DEVCLASS_1394DEBUG: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x66f250d6_7801_4a64_b139_eea80a450b24);
+pub const GUID_DEVCLASS_61883: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7ebefbc0_3200_11d2_b4c2_00a0c9697d07);
+pub const GUID_DEVCLASS_ADAPTER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e964_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_APMSUPPORT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd45b1c18_c8fa_11d1_9f77_0000f805f530);
+pub const GUID_DEVCLASS_AVC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc06ff265_ae09_48f0_812c_16753d7cba83);
+pub const GUID_DEVCLASS_BATTERY: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x72631e54_78a4_11d0_bcf7_00aa00b7b32a);
+pub const GUID_DEVCLASS_BIOMETRIC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x53d29ef7_377c_4d14_864b_eb3a85769359);
+pub const GUID_DEVCLASS_BLUETOOTH: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe0cbf06c_cd8b_4647_bb8a_263b43f0f974);
+pub const GUID_DEVCLASS_CAMERA: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xca3e7ab9_b4c3_4ae6_8251_579ef933890f);
+pub const GUID_DEVCLASS_CDROM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e965_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_COMPUTEACCELERATOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf01a9d53_3ff6_48d2_9f97_c8a7004be10c);
+pub const GUID_DEVCLASS_COMPUTER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e966_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_DECODER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6bdd1fc2_810f_11d0_bec7_08002be2092f);
+pub const GUID_DEVCLASS_DISKDRIVE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e967_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_DISPLAY: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e968_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_DOT4: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x48721b56_6795_11d2_b1a8_0080c72e74a2);
+pub const GUID_DEVCLASS_DOT4PRINT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x49ce6ac8_6f86_11d2_b1e5_0080c72e74a2);
+pub const GUID_DEVCLASS_EHSTORAGESILO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9da2b80f_f89f_4a49_a5c2_511b085b9e8a);
+pub const GUID_DEVCLASS_ENUM1394: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc459df55_db08_11d1_b009_00a0c9081ff6);
+pub const GUID_DEVCLASS_EXTENSION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe2f84ce7_8efa_411c_aa69_97454ca4cb57);
+pub const GUID_DEVCLASS_FDC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e969_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_FIRMWARE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf2e7dd72_6468_4e36_b6f1_6488f42c1b52);
+pub const GUID_DEVCLASS_FLOPPYDISK: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e980_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_FSFILTER_ACTIVITYMONITOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb86dff51_a31e_4bac_b3cf_e8cfe75c9fc2);
+pub const GUID_DEVCLASS_FSFILTER_ANTIVIRUS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb1d1a169_c54f_4379_81db_bee7d88d7454);
+pub const GUID_DEVCLASS_FSFILTER_BOTTOM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x37765ea0_5958_4fc9_b04b_2fdfef97e59e);
+pub const GUID_DEVCLASS_FSFILTER_CFSMETADATASERVER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcdcf0939_b75b_4630_bf76_80f7ba655884);
+pub const GUID_DEVCLASS_FSFILTER_COMPRESSION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf3586baf_b5aa_49b5_8d6c_0569284c639f);
+pub const GUID_DEVCLASS_FSFILTER_CONTENTSCREENER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3e3f0674_c83c_4558_bb26_9820e1eba5c5);
+pub const GUID_DEVCLASS_FSFILTER_CONTINUOUSBACKUP: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x71aa14f8_6fad_4622_ad77_92bb9d7e6947);
+pub const GUID_DEVCLASS_FSFILTER_COPYPROTECTION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x89786ff1_9c12_402f_9c9e_17753c7f4375);
+pub const GUID_DEVCLASS_FSFILTER_ENCRYPTION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa0a701c0_a511_42ff_aa6c_06dc0395576f);
+pub const GUID_DEVCLASS_FSFILTER_HSM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd546500a_2aeb_45f6_9482_f4b1799c3177);
+pub const GUID_DEVCLASS_FSFILTER_INFRASTRUCTURE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe55fa6f9_128c_4d04_abab_630c74b1453a);
+pub const GUID_DEVCLASS_FSFILTER_OPENFILEBACKUP: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf8ecafa6_66d1_41a5_899b_66585d7216b7);
+pub const GUID_DEVCLASS_FSFILTER_PHYSICALQUOTAMANAGEMENT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6a0a8e78_bba6_4fc4_a709_1e33cd09d67e);
+pub const GUID_DEVCLASS_FSFILTER_QUOTAMANAGEMENT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8503c911_a6c7_4919_8f79_5028f5866b0c);
+pub const GUID_DEVCLASS_FSFILTER_REPLICATION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x48d3ebc4_4cf8_48ff_b869_9c68ad42eb9f);
+pub const GUID_DEVCLASS_FSFILTER_SECURITYENHANCER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd02bc3da_0c8e_4945_9bd5_f1883c226c8c);
+pub const GUID_DEVCLASS_FSFILTER_SYSTEM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5d1b9aaa_01e2_46af_849f_272b3f324c46);
+pub const GUID_DEVCLASS_FSFILTER_SYSTEMRECOVERY: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2db15374_706e_4131_a0c7_d7c78eb0289a);
+pub const GUID_DEVCLASS_FSFILTER_TOP: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb369baf4_5568_4e82_a87e_a93eb16bca87);
+pub const GUID_DEVCLASS_FSFILTER_UNDELETE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfe8f1572_c67a_48c0_bbac_0b5c6d66cafb);
+pub const GUID_DEVCLASS_FSFILTER_VIRTUALIZATION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf75a86c0_10d8_4c3a_b233_ed60e4cdfaac);
+pub const GUID_DEVCLASS_GPS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6bdd1fc3_810f_11d0_bec7_08002be2092f);
+pub const GUID_DEVCLASS_HDC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e96a_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_HIDCLASS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x745a17a0_74d3_11d0_b6fe_00a0c90f57da);
+pub const GUID_DEVCLASS_HOLOGRAPHIC: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd612553d_06b1_49ca_8938_e39ef80eb16f);
+pub const GUID_DEVCLASS_IMAGE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6bdd1fc6_810f_11d0_bec7_08002be2092f);
+pub const GUID_DEVCLASS_INFINIBAND: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x30ef7132_d858_4a0c_ac24_b9028a5cca3f);
+pub const GUID_DEVCLASS_INFRARED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6bdd1fc5_810f_11d0_bec7_08002be2092f);
+pub const GUID_DEVCLASS_KEYBOARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e96b_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_LEGACYDRIVER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8ecc055d_047f_11d1_a537_0000f8753ed1);
+pub const GUID_DEVCLASS_MEDIA: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e96c_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_MEDIUM_CHANGER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xce5939ae_ebde_11d0_b181_0000f8753ec4);
+pub const GUID_DEVCLASS_MEMORY: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5099944a_f6b9_4057_a056_8c550228544c);
+pub const GUID_DEVCLASS_MODEM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e96d_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_MONITOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e96e_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_MOUSE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e96f_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_MTD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e970_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_MULTIFUNCTION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e971_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_MULTIPORTSERIAL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x50906cb8_ba12_11d1_bf5d_0000f805f530);
+pub const GUID_DEVCLASS_NET: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e972_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_NETCLIENT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e973_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_NETDRIVER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x87ef9ad1_8f70_49ee_b215_ab1fcadcbe3c);
+pub const GUID_DEVCLASS_NETSERVICE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e974_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_NETTRANS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e975_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_NETUIO: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x78912bc1_cb8e_4b28_a329_f322ebadbe0f);
+pub const GUID_DEVCLASS_NODRIVER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e976_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_PCMCIA: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e977_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_PNPPRINTERS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4658ee7e_f050_11d1_b6bd_00c04fa372a7);
+pub const GUID_DEVCLASS_PORTS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e978_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_PRINTER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e979_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_PRINTERUPGRADE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e97a_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_PRINTQUEUE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1ed2bbf9_11f0_4084_b21f_ad83a8e6dcdc);
+pub const GUID_DEVCLASS_PROCESSOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x50127dc3_0f36_415e_a6cc_4cb3be910b65);
+pub const GUID_DEVCLASS_SBP2: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd48179be_ec20_11d1_b6b8_00c04fa372a7);
+pub const GUID_DEVCLASS_SCMDISK: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x53966cb1_4d46_4166_bf23_c522403cd495);
+pub const GUID_DEVCLASS_SCMVOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x53ccb149_e543_4c84_b6e0_bce4f6b7e806);
+pub const GUID_DEVCLASS_SCSIADAPTER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e97b_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_SECURITYACCELERATOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x268c95a1_edfe_11d3_95c3_0010dc4050a5);
+pub const GUID_DEVCLASS_SENSOR: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5175d334_c371_4806_b3ba_71fd53c9258d);
+pub const GUID_DEVCLASS_SIDESHOW: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x997b5d8d_c442_4f2e_baf3_9c8e671e9e21);
+pub const GUID_DEVCLASS_SMARTCARDREADER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x50dd5230_ba8a_11d1_bf5d_0000f805f530);
+pub const GUID_DEVCLASS_SMRDISK: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x53487c23_680f_4585_acc3_1f10d6777e82);
+pub const GUID_DEVCLASS_SMRVOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x53b3cf03_8f5a_4788_91b6_d19ed9fcccbf);
+pub const GUID_DEVCLASS_SOFTWARECOMPONENT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5c4c3332_344d_483c_8739_259e934c9cc8);
+pub const GUID_DEVCLASS_SOUND: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e97c_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_SYSTEM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e97d_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_TAPEDRIVE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6d807884_7d21_11cf_801c_08002be10318);
+pub const GUID_DEVCLASS_UCM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xe6f1aa1c_7f3b_4473_b2e8_c97d8ac71d53);
+pub const GUID_DEVCLASS_UNKNOWN: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d36e97e_e325_11ce_bfc1_08002be10318);
+pub const GUID_DEVCLASS_USB: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x36fc9e60_c465_11cf_8056_444553540000);
+pub const GUID_DEVCLASS_VOLUME: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x71a27cdd_812a_11d0_bec7_08002be2092f);
+pub const GUID_DEVCLASS_VOLUMESNAPSHOT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x533c5b84_ec70_11d2_9505_00c04f79deaf);
+pub const GUID_DEVCLASS_WCEUSBS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x25dbce51_6c8f_4a72_8a6d_b54c2b4fc835);
+pub const GUID_DEVCLASS_WPD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xeec5ad98_8080_425f_922a_dabf3de3f69a);
+pub const GUID_DEVICE_INTERFACE_ARRIVAL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcb3a4004_46f0_11d0_b08f_00609713053f);
+pub const GUID_DEVICE_INTERFACE_REMOVAL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcb3a4005_46f0_11d0_b08f_00609713053f);
+pub const GUID_DEVICE_RESET_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x649fdf26_3bc0_4813_ad24_7e0c1eda3fa3);
+pub const GUID_DMA_CACHE_COHERENCY_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb520f7fa_8a5a_4e40_a3f6_6be1e162d935);
+pub const GUID_HWPROFILE_CHANGE_CANCELLED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcb3a4002_46f0_11d0_b08f_00609713053f);
+pub const GUID_HWPROFILE_CHANGE_COMPLETE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcb3a4003_46f0_11d0_b08f_00609713053f);
+pub const GUID_HWPROFILE_QUERY_CHANGE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcb3a4001_46f0_11d0_b08f_00609713053f);
+pub const GUID_INT_ROUTE_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x70941bf4_0073_11d1_a09e_00c04fc340b1);
+pub const GUID_IOMMU_BUS_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1efee0b2_d278_4ae4_bddc_1b34dd648043);
+pub const GUID_KERNEL_SOFT_RESTART_CANCEL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x31d737e7_8c0b_468a_956e_9f433ec358fb);
+pub const GUID_KERNEL_SOFT_RESTART_FINALIZE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x20e91abd_350a_4d4f_8577_99c81507473a);
+pub const GUID_KERNEL_SOFT_RESTART_PREPARE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xde373def_a85c_4f76_8cbf_f96bea8bd10f);
+pub const GUID_LEGACY_DEVICE_DETECTION_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x50feb0de_596a_11d2_a5b8_0000f81a4619);
+pub const GUID_MF_ENUMERATION_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xaeb895f0_5586_11d1_8d84_00a0c906b244);
+pub const GUID_MSIX_TABLE_CONFIG_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1a6a460b_194f_455d_b34b_b84c5b05712b);
+pub const GUID_NPEM_CONTROL_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d95573d_b774_488a_b120_4f284a9eff51);
+pub const GUID_PARTITION_UNIT_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x52363f5b_d891_429b_8195_aec5fef6853c);
+pub const GUID_PCC_INTERFACE_INTERNAL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7cce62ce_c189_4814_a6a7_12112089e938);
+pub const GUID_PCC_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3ee8ba63_0f59_4a24_8a45_35808bdd1249);
+pub const GUID_PCI_ATS_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x010a7fe8_96f5_4943_bedf_95e651b93412);
+pub const GUID_PCI_BUS_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x496b8281_6f25_11d0_beaf_08002be2092f);
+pub const GUID_PCI_BUS_INTERFACE_STANDARD2: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xde94e966_fdff_4c9c_9998_6747b150e74c);
+pub const GUID_PCI_DEVICE_PRESENT_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd1b82c26_bf49_45ef_b216_71cbd7889b57);
+pub const GUID_PCI_EXPRESS_LINK_QUIESCENT_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x146cd41c_dae3_4437_8aff_2af3f038099b);
+pub const GUID_PCI_EXPRESS_ROOT_PORT_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x83a7734a_84c7_4161_9a98_6000ed0c4a33);
+pub const GUID_PCI_FPGA_CONTROL_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2df3f7a8_b9b3_4063_9215_b5d14a0b266e);
+pub const GUID_PCI_PTM_CONTROL_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x348a5ebb_ba24_44b7_9916_285687735117);
+pub const GUID_PCI_SECURITY_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6e7f1451_199e_4acc_ba2d_762b4edf4674);
+pub const GUID_PCI_VIRTUALIZATION_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x64897b47_3a4a_4d75_bc74_89dd6c078293);
+pub const GUID_PCMCIA_BUS_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x76173af0_c504_11d1_947f_00c04fb960ee);
+pub const GUID_PNP_CUSTOM_NOTIFICATION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xaca73f8e_8d23_11d1_ac7d_0000f87571d0);
+pub const GUID_PNP_EXTENDED_ADDRESS_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb8e992ec_a797_4dc4_8846_84d041707446);
+pub const GUID_PNP_LOCATION_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x70211b0e_0afb_47db_afc1_410bf842497a);
+pub const GUID_PNP_POWER_NOTIFICATION: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc2cf0660_eb7a_11d1_bd7f_0000f87571d0);
+pub const GUID_PNP_POWER_SETTING_CHANGE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x29c69b3e_c79a_43bf_bbde_a932fa1bea7e);
+pub const GUID_POWER_DEVICE_ENABLE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x827c0a6f_feb0_11d0_bd26_00aa00b7b32a);
+pub const GUID_POWER_DEVICE_TIMEOUTS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa45da735_feb0_11d0_bd26_00aa00b7b32a);
+pub const GUID_POWER_DEVICE_WAKE_ENABLE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xa9546a82_feb0_11d0_bd26_00aa00b7b32a);
+pub const GUID_PROCESSOR_PCC_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x37b17e9a_c21c_4296_972d_11c4b32b28f0);
+pub const GUID_QUERY_CRASHDUMP_FUNCTIONS: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9cc6b8ff_32e2_4834_b1de_b32ef8880a4b);
+pub const GUID_RECOVERY_NVMED_PREPARE_SHUTDOWN: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4b9770ea_bde7_400b_a9b9_4f684f54cc2a);
+pub const GUID_RECOVERY_PCI_PREPARE_SHUTDOWN: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x90d889de_8704_44cf_8115_ed8528d2b2da);
+pub const GUID_REENUMERATE_SELF_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x2aeb0243_6a6e_486b_82fc_d815f6b97006);
+pub const GUID_SCM_BUS_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x25944783_ce79_4232_815e_4a30014e8eb4);
+pub const GUID_SCM_BUS_LD_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9b89307d_d76b_4f48_b186_54041ae92e8d);
+pub const GUID_SCM_BUS_NVD_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8de064ff_b630_42e4_88ea_6f24c8641175);
+pub const GUID_SCM_PHYSICAL_NVDIMM_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0079c21b_917e_405e_a9ce_0732b5bbcebd);
+pub const GUID_SDEV_IDENTIFIER_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x49d67af8_916c_4ee8_9df1_889f17d21e91);
+pub const GUID_SECURE_DRIVER_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x370f67e1_4ff5_4a94_9a35_06c5d9cc30e2);
+pub const GUID_TARGET_DEVICE_QUERY_REMOVE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcb3a4006_46f0_11d0_b08f_00609713053f);
+pub const GUID_TARGET_DEVICE_REMOVE_CANCELLED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcb3a4007_46f0_11d0_b08f_00609713053f);
+pub const GUID_TARGET_DEVICE_REMOVE_COMPLETE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcb3a4008_46f0_11d0_b08f_00609713053f);
+pub const GUID_TARGET_DEVICE_TRANSPORT_RELATIONS_CHANGED: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xfcf528f6_a82f_47b1_ad3a_8050594cad28);
+pub const GUID_THERMAL_COOLING_INTERFACE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xecbe47a8_c498_4bb9_bd70_e867e0940d22);
+pub const GUID_TRANSLATOR_INTERFACE_STANDARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6c154a92_aacf_11d0_8d2a_00a0c906b244);
+pub const GUID_WUDF_DEVICE_HOST_PROBLEM: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc43d25bd_9346_40ee_a2d2_d70c15f8b75b);
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
 pub struct HCMNOTIFICATION(pub isize);
@@ -6580,7 +6580,7 @@ impl ::core::fmt::Debug for HCMNOTIFICATION {
         f.debug_tuple("HCMNOTIFICATION").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HCMNOTIFICATION {
+unsafe impl ::windows_core::Abi for HCMNOTIFICATION {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -6607,7 +6607,7 @@ impl ::core::fmt::Debug for HDEVINFO {
         f.debug_tuple("HDEVINFO").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HDEVINFO {
+unsafe impl ::windows_core::Abi for HDEVINFO {
     type Abi = Self;
 }
 #[repr(C, packed(1))]
@@ -6627,13 +6627,13 @@ impl ::core::clone::Clone for HWProfileInfo_sA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for HWProfileInfo_sA {
+unsafe impl ::windows_core::Abi for HWProfileInfo_sA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HWProfileInfo_sA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HWProfileInfo_sA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HWProfileInfo_sA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6657,12 +6657,12 @@ impl ::core::clone::Clone for HWProfileInfo_sW {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for HWProfileInfo_sW {
+unsafe impl ::windows_core::Abi for HWProfileInfo_sW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HWProfileInfo_sW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HWProfileInfo_sW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HWProfileInfo_sW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HWProfileInfo_sW {}
@@ -6757,13 +6757,13 @@ impl ::core::clone::Clone for INFCONTEXT {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for INFCONTEXT {
+unsafe impl ::windows_core::Abi for INFCONTEXT {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for INFCONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFCONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFCONTEXT>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -6792,13 +6792,13 @@ impl ::core::clone::Clone for INFCONTEXT {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for INFCONTEXT {
+unsafe impl ::windows_core::Abi for INFCONTEXT {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for INFCONTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFCONTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INFCONTEXT>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -7222,12 +7222,12 @@ impl ::core::clone::Clone for IO_DES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for IO_DES {
+unsafe impl ::windows_core::Abi for IO_DES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IO_DES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IO_DES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IO_DES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IO_DES {}
@@ -7252,12 +7252,12 @@ impl ::core::clone::Clone for IO_RANGE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for IO_RANGE {
+unsafe impl ::windows_core::Abi for IO_RANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IO_RANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IO_RANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IO_RANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IO_RANGE {}
@@ -7278,12 +7278,12 @@ impl ::core::clone::Clone for IO_RESOURCE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for IO_RESOURCE {
+unsafe impl ::windows_core::Abi for IO_RESOURCE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IO_RESOURCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IO_RESOURCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IO_RESOURCE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IO_RESOURCE {}
@@ -7307,12 +7307,12 @@ impl ::core::clone::Clone for IRQ_DES_32 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for IRQ_DES_32 {
+unsafe impl ::windows_core::Abi for IRQ_DES_32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IRQ_DES_32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IRQ_DES_32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IRQ_DES_32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IRQ_DES_32 {}
@@ -7336,12 +7336,12 @@ impl ::core::clone::Clone for IRQ_DES_64 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for IRQ_DES_64 {
+unsafe impl ::windows_core::Abi for IRQ_DES_64 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IRQ_DES_64 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IRQ_DES_64>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IRQ_DES_64>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IRQ_DES_64 {}
@@ -7363,12 +7363,12 @@ impl ::core::clone::Clone for IRQ_RANGE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for IRQ_RANGE {
+unsafe impl ::windows_core::Abi for IRQ_RANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IRQ_RANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IRQ_RANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IRQ_RANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IRQ_RANGE {}
@@ -7389,12 +7389,12 @@ impl ::core::clone::Clone for IRQ_RESOURCE_32 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for IRQ_RESOURCE_32 {
+unsafe impl ::windows_core::Abi for IRQ_RESOURCE_32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IRQ_RESOURCE_32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IRQ_RESOURCE_32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IRQ_RESOURCE_32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IRQ_RESOURCE_32 {}
@@ -7415,12 +7415,12 @@ impl ::core::clone::Clone for IRQ_RESOURCE_64 {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for IRQ_RESOURCE_64 {
+unsafe impl ::windows_core::Abi for IRQ_RESOURCE_64 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IRQ_RESOURCE_64 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IRQ_RESOURCE_64>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IRQ_RESOURCE_64>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IRQ_RESOURCE_64 {}
@@ -7432,12 +7432,12 @@ impl ::core::default::Default for IRQ_RESOURCE_64 {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InstallHinfSectionA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(window: Param0, modulehandle: Param1, commandline: Param2, showcommand: i32) {
+pub unsafe fn InstallHinfSectionA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(window: Param0, modulehandle: Param1, commandline: Param2, showcommand: i32) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn InstallHinfSectionA(window: super::super::Foundation::HWND, modulehandle: super::super::Foundation::HINSTANCE, commandline: ::windows::core::PCSTR, showcommand: i32);
+            fn InstallHinfSectionA(window: super::super::Foundation::HWND, modulehandle: super::super::Foundation::HINSTANCE, commandline: ::windows_core::PCSTR, showcommand: i32);
         }
         InstallHinfSectionA(window.into_param().abi(), modulehandle.into_param().abi(), commandline.into_param().abi(), ::core::mem::transmute(showcommand))
     }
@@ -7447,12 +7447,12 @@ pub unsafe fn InstallHinfSectionA<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InstallHinfSectionW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(window: Param0, modulehandle: Param1, commandline: Param2, showcommand: i32) {
+pub unsafe fn InstallHinfSectionW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(window: Param0, modulehandle: Param1, commandline: Param2, showcommand: i32) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn InstallHinfSectionW(window: super::super::Foundation::HWND, modulehandle: super::super::Foundation::HINSTANCE, commandline: ::windows::core::PCWSTR, showcommand: i32);
+            fn InstallHinfSectionW(window: super::super::Foundation::HWND, modulehandle: super::super::Foundation::HINSTANCE, commandline: ::windows_core::PCWSTR, showcommand: i32);
         }
         InstallHinfSectionW(window.into_param().abi(), modulehandle.into_param().abi(), commandline.into_param().abi(), ::core::mem::transmute(showcommand))
     }
@@ -7567,12 +7567,12 @@ impl ::core::clone::Clone for MEM_DES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MEM_DES {
+unsafe impl ::windows_core::Abi for MEM_DES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MEM_DES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MEM_DES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MEM_DES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MEM_DES {}
@@ -7597,12 +7597,12 @@ impl ::core::clone::Clone for MEM_RANGE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MEM_RANGE {
+unsafe impl ::windows_core::Abi for MEM_RANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MEM_RANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MEM_RANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MEM_RANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MEM_RANGE {}
@@ -7623,12 +7623,12 @@ impl ::core::clone::Clone for MEM_RESOURCE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MEM_RESOURCE {
+unsafe impl ::windows_core::Abi for MEM_RESOURCE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MEM_RESOURCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MEM_RESOURCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MEM_RESOURCE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MEM_RESOURCE {}
@@ -7654,12 +7654,12 @@ impl ::core::clone::Clone for MFCARD_DES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MFCARD_DES {
+unsafe impl ::windows_core::Abi for MFCARD_DES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MFCARD_DES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MFCARD_DES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MFCARD_DES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MFCARD_DES {}
@@ -7679,12 +7679,12 @@ impl ::core::clone::Clone for MFCARD_RESOURCE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for MFCARD_RESOURCE {
+unsafe impl ::windows_core::Abi for MFCARD_RESOURCE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MFCARD_RESOURCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MFCARD_RESOURCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MFCARD_RESOURCE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MFCARD_RESOURCE {}
@@ -7711,12 +7711,12 @@ impl ::core::clone::Clone for Mem_Large_Des_s {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for Mem_Large_Des_s {
+unsafe impl ::windows_core::Abi for Mem_Large_Des_s {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for Mem_Large_Des_s {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Mem_Large_Des_s>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Mem_Large_Des_s>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Mem_Large_Des_s {}
@@ -7741,12 +7741,12 @@ impl ::core::clone::Clone for Mem_Large_Range_s {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for Mem_Large_Range_s {
+unsafe impl ::windows_core::Abi for Mem_Large_Range_s {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for Mem_Large_Range_s {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Mem_Large_Range_s>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Mem_Large_Range_s>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Mem_Large_Range_s {}
@@ -7767,12 +7767,12 @@ impl ::core::clone::Clone for Mem_Large_Resource_s {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for Mem_Large_Resource_s {
+unsafe impl ::windows_core::Abi for Mem_Large_Resource_s {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for Mem_Large_Resource_s {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Mem_Large_Resource_s>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Mem_Large_Resource_s>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Mem_Large_Resource_s {}
@@ -7854,7 +7854,7 @@ impl ::core::default::Default for OEM_SOURCE_MEDIA_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for OEM_SOURCE_MEDIA_TYPE {
+unsafe impl ::windows_core::Abi for OEM_SOURCE_MEDIA_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for OEM_SOURCE_MEDIA_TYPE {
@@ -7884,12 +7884,12 @@ impl ::core::clone::Clone for PCCARD_DES {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for PCCARD_DES {
+unsafe impl ::windows_core::Abi for PCCARD_DES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PCCARD_DES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PCCARD_DES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PCCARD_DES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PCCARD_DES {}
@@ -7909,12 +7909,12 @@ impl ::core::clone::Clone for PCCARD_RESOURCE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for PCCARD_RESOURCE {
+unsafe impl ::windows_core::Abi for PCCARD_RESOURCE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PCCARD_RESOURCE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PCCARD_RESOURCE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PCCARD_RESOURCE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PCCARD_RESOURCE {}
@@ -7975,7 +7975,7 @@ impl ::core::default::Default for PNP_VETO_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PNP_VETO_TYPE {
+unsafe impl ::windows_core::Abi for PNP_VETO_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PNP_VETO_TYPE {
@@ -8062,7 +8062,7 @@ impl ::core::default::Default for SETUP_DI_BUILD_DRIVER_DRIVER_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SETUP_DI_BUILD_DRIVER_DRIVER_TYPE {
+unsafe impl ::windows_core::Abi for SETUP_DI_BUILD_DRIVER_DRIVER_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SETUP_DI_BUILD_DRIVER_DRIVER_TYPE {
@@ -8089,7 +8089,7 @@ impl ::core::default::Default for SETUP_FILE_OPERATION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SETUP_FILE_OPERATION {
+unsafe impl ::windows_core::Abi for SETUP_FILE_OPERATION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SETUP_FILE_OPERATION {
@@ -8123,11 +8123,11 @@ pub const SIGNERSCORE_WHQL: u32 = 218103813u32;
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct SOURCE_MEDIA_A {
-    pub Reserved: ::windows::core::PCSTR,
-    pub Tagfile: ::windows::core::PCSTR,
-    pub Description: ::windows::core::PCSTR,
-    pub SourcePath: ::windows::core::PCSTR,
-    pub SourceFile: ::windows::core::PCSTR,
+    pub Reserved: ::windows_core::PCSTR,
+    pub Tagfile: ::windows_core::PCSTR,
+    pub Description: ::windows_core::PCSTR,
+    pub SourcePath: ::windows_core::PCSTR,
+    pub SourceFile: ::windows_core::PCSTR,
     pub Flags: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -8139,13 +8139,13 @@ impl ::core::clone::Clone for SOURCE_MEDIA_A {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SOURCE_MEDIA_A {
+unsafe impl ::windows_core::Abi for SOURCE_MEDIA_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SOURCE_MEDIA_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SOURCE_MEDIA_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SOURCE_MEDIA_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -8160,11 +8160,11 @@ impl ::core::default::Default for SOURCE_MEDIA_A {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(target_arch = "x86")]
 pub struct SOURCE_MEDIA_A {
-    pub Reserved: ::windows::core::PCSTR,
-    pub Tagfile: ::windows::core::PCSTR,
-    pub Description: ::windows::core::PCSTR,
-    pub SourcePath: ::windows::core::PCSTR,
-    pub SourceFile: ::windows::core::PCSTR,
+    pub Reserved: ::windows_core::PCSTR,
+    pub Tagfile: ::windows_core::PCSTR,
+    pub Description: ::windows_core::PCSTR,
+    pub SourcePath: ::windows_core::PCSTR,
+    pub SourceFile: ::windows_core::PCSTR,
     pub Flags: u32,
 }
 #[cfg(target_arch = "x86")]
@@ -8176,13 +8176,13 @@ impl ::core::clone::Clone for SOURCE_MEDIA_A {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SOURCE_MEDIA_A {
+unsafe impl ::windows_core::Abi for SOURCE_MEDIA_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SOURCE_MEDIA_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SOURCE_MEDIA_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SOURCE_MEDIA_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -8197,11 +8197,11 @@ impl ::core::default::Default for SOURCE_MEDIA_A {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct SOURCE_MEDIA_W {
-    pub Reserved: ::windows::core::PCWSTR,
-    pub Tagfile: ::windows::core::PCWSTR,
-    pub Description: ::windows::core::PCWSTR,
-    pub SourcePath: ::windows::core::PCWSTR,
-    pub SourceFile: ::windows::core::PCWSTR,
+    pub Reserved: ::windows_core::PCWSTR,
+    pub Tagfile: ::windows_core::PCWSTR,
+    pub Description: ::windows_core::PCWSTR,
+    pub SourcePath: ::windows_core::PCWSTR,
+    pub SourceFile: ::windows_core::PCWSTR,
     pub Flags: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -8213,13 +8213,13 @@ impl ::core::clone::Clone for SOURCE_MEDIA_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SOURCE_MEDIA_W {
+unsafe impl ::windows_core::Abi for SOURCE_MEDIA_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SOURCE_MEDIA_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SOURCE_MEDIA_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SOURCE_MEDIA_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -8234,11 +8234,11 @@ impl ::core::default::Default for SOURCE_MEDIA_W {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[cfg(target_arch = "x86")]
 pub struct SOURCE_MEDIA_W {
-    pub Reserved: ::windows::core::PCWSTR,
-    pub Tagfile: ::windows::core::PCWSTR,
-    pub Description: ::windows::core::PCWSTR,
-    pub SourcePath: ::windows::core::PCWSTR,
-    pub SourceFile: ::windows::core::PCWSTR,
+    pub Reserved: ::windows_core::PCWSTR,
+    pub Tagfile: ::windows_core::PCWSTR,
+    pub Description: ::windows_core::PCWSTR,
+    pub SourcePath: ::windows_core::PCWSTR,
+    pub SourceFile: ::windows_core::PCWSTR,
     pub Flags: u32,
 }
 #[cfg(target_arch = "x86")]
@@ -8250,13 +8250,13 @@ impl ::core::clone::Clone for SOURCE_MEDIA_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SOURCE_MEDIA_W {
+unsafe impl ::windows_core::Abi for SOURCE_MEDIA_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SOURCE_MEDIA_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SOURCE_MEDIA_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SOURCE_MEDIA_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -8609,14 +8609,14 @@ impl ::core::clone::Clone for SP_ALTPLATFORM_INFO_V1 {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
-unsafe impl ::windows::core::Abi for SP_ALTPLATFORM_INFO_V1 {
+unsafe impl ::windows_core::Abi for SP_ALTPLATFORM_INFO_V1 {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 impl ::core::cmp::PartialEq for SP_ALTPLATFORM_INFO_V1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V1>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -8653,14 +8653,14 @@ impl ::core::clone::Clone for SP_ALTPLATFORM_INFO_V1 {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
-unsafe impl ::windows::core::Abi for SP_ALTPLATFORM_INFO_V1 {
+unsafe impl ::windows_core::Abi for SP_ALTPLATFORM_INFO_V1 {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 impl ::core::cmp::PartialEq for SP_ALTPLATFORM_INFO_V1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V1>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -8699,14 +8699,14 @@ impl ::core::clone::Clone for SP_ALTPLATFORM_INFO_V2 {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
-unsafe impl ::windows::core::Abi for SP_ALTPLATFORM_INFO_V2 {
+unsafe impl ::windows_core::Abi for SP_ALTPLATFORM_INFO_V2 {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 impl ::core::cmp::PartialEq for SP_ALTPLATFORM_INFO_V2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V2>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -8739,14 +8739,14 @@ impl ::core::clone::Clone for SP_ALTPLATFORM_INFO_V2_0 {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
-unsafe impl ::windows::core::Abi for SP_ALTPLATFORM_INFO_V2_0 {
+unsafe impl ::windows_core::Abi for SP_ALTPLATFORM_INFO_V2_0 {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 impl ::core::cmp::PartialEq for SP_ALTPLATFORM_INFO_V2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V2_0>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -8785,14 +8785,14 @@ impl ::core::clone::Clone for SP_ALTPLATFORM_INFO_V2 {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
-unsafe impl ::windows::core::Abi for SP_ALTPLATFORM_INFO_V2 {
+unsafe impl ::windows_core::Abi for SP_ALTPLATFORM_INFO_V2 {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 impl ::core::cmp::PartialEq for SP_ALTPLATFORM_INFO_V2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V2>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -8825,14 +8825,14 @@ impl ::core::clone::Clone for SP_ALTPLATFORM_INFO_V2_0 {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
-unsafe impl ::windows::core::Abi for SP_ALTPLATFORM_INFO_V2_0 {
+unsafe impl ::windows_core::Abi for SP_ALTPLATFORM_INFO_V2_0 {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 impl ::core::cmp::PartialEq for SP_ALTPLATFORM_INFO_V2_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V2_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V2_0>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -8870,13 +8870,13 @@ impl ::core::clone::Clone for SP_ALTPLATFORM_INFO_V3 {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_ALTPLATFORM_INFO_V3 {
+unsafe impl ::windows_core::Abi for SP_ALTPLATFORM_INFO_V3 {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_ALTPLATFORM_INFO_V3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V3>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -8903,13 +8903,13 @@ impl ::core::clone::Clone for SP_ALTPLATFORM_INFO_V3_0 {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_ALTPLATFORM_INFO_V3_0 {
+unsafe impl ::windows_core::Abi for SP_ALTPLATFORM_INFO_V3_0 {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_ALTPLATFORM_INFO_V3_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V3_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V3_0>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -8945,13 +8945,13 @@ impl ::core::clone::Clone for SP_ALTPLATFORM_INFO_V3 {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_ALTPLATFORM_INFO_V3 {
+unsafe impl ::windows_core::Abi for SP_ALTPLATFORM_INFO_V3 {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_ALTPLATFORM_INFO_V3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V3>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -8978,13 +8978,13 @@ impl ::core::clone::Clone for SP_ALTPLATFORM_INFO_V3_0 {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_ALTPLATFORM_INFO_V3_0 {
+unsafe impl ::windows_core::Abi for SP_ALTPLATFORM_INFO_V3_0 {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_ALTPLATFORM_INFO_V3_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V3_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ALTPLATFORM_INFO_V3_0>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -9022,14 +9022,14 @@ impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V1_A {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_BACKUP_QUEUE_PARAMS_V1_A {
+unsafe impl ::windows_core::Abi for SP_BACKUP_QUEUE_PARAMS_V1_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_BACKUP_QUEUE_PARAMS_V1_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V1_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V1_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -9063,14 +9063,14 @@ impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V1_A {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_BACKUP_QUEUE_PARAMS_V1_A {
+unsafe impl ::windows_core::Abi for SP_BACKUP_QUEUE_PARAMS_V1_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_BACKUP_QUEUE_PARAMS_V1_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V1_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V1_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -9100,13 +9100,13 @@ impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V1_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_BACKUP_QUEUE_PARAMS_V1_W {
+unsafe impl ::windows_core::Abi for SP_BACKUP_QUEUE_PARAMS_V1_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_BACKUP_QUEUE_PARAMS_V1_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V1_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V1_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -9134,13 +9134,13 @@ impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V1_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_BACKUP_QUEUE_PARAMS_V1_W {
+unsafe impl ::windows_core::Abi for SP_BACKUP_QUEUE_PARAMS_V1_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_BACKUP_QUEUE_PARAMS_V1_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V1_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V1_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -9173,14 +9173,14 @@ impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V2_A {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_BACKUP_QUEUE_PARAMS_V2_A {
+unsafe impl ::windows_core::Abi for SP_BACKUP_QUEUE_PARAMS_V2_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_BACKUP_QUEUE_PARAMS_V2_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V2_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V2_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -9215,14 +9215,14 @@ impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V2_A {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_BACKUP_QUEUE_PARAMS_V2_A {
+unsafe impl ::windows_core::Abi for SP_BACKUP_QUEUE_PARAMS_V2_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_BACKUP_QUEUE_PARAMS_V2_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V2_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V2_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -9253,13 +9253,13 @@ impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V2_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_BACKUP_QUEUE_PARAMS_V2_W {
+unsafe impl ::windows_core::Abi for SP_BACKUP_QUEUE_PARAMS_V2_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_BACKUP_QUEUE_PARAMS_V2_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V2_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V2_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -9288,13 +9288,13 @@ impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V2_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_BACKUP_QUEUE_PARAMS_V2_W {
+unsafe impl ::windows_core::Abi for SP_BACKUP_QUEUE_PARAMS_V2_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_BACKUP_QUEUE_PARAMS_V2_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V2_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_BACKUP_QUEUE_PARAMS_V2_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -9328,14 +9328,14 @@ impl ::core::clone::Clone for SP_CLASSIMAGELIST_DATA {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_UI_Controls")]
-unsafe impl ::windows::core::Abi for SP_CLASSIMAGELIST_DATA {
+unsafe impl ::windows_core::Abi for SP_CLASSIMAGELIST_DATA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_UI_Controls")]
 impl ::core::cmp::PartialEq for SP_CLASSIMAGELIST_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_CLASSIMAGELIST_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_CLASSIMAGELIST_DATA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -9369,14 +9369,14 @@ impl ::core::clone::Clone for SP_CLASSIMAGELIST_DATA {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_UI_Controls")]
-unsafe impl ::windows::core::Abi for SP_CLASSIMAGELIST_DATA {
+unsafe impl ::windows_core::Abi for SP_CLASSIMAGELIST_DATA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_UI_Controls")]
 impl ::core::cmp::PartialEq for SP_CLASSIMAGELIST_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_CLASSIMAGELIST_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_CLASSIMAGELIST_DATA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -9405,13 +9405,13 @@ impl ::core::clone::Clone for SP_CLASSINSTALL_HEADER {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_CLASSINSTALL_HEADER {
+unsafe impl ::windows_core::Abi for SP_CLASSINSTALL_HEADER {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_CLASSINSTALL_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_CLASSINSTALL_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_CLASSINSTALL_HEADER>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -9438,13 +9438,13 @@ impl ::core::clone::Clone for SP_CLASSINSTALL_HEADER {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_CLASSINSTALL_HEADER {
+unsafe impl ::windows_core::Abi for SP_CLASSINSTALL_HEADER {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_CLASSINSTALL_HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_CLASSINSTALL_HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_CLASSINSTALL_HEADER>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -9526,7 +9526,7 @@ impl ::core::default::Default for SP_COPY_STYLE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SP_COPY_STYLE {
+unsafe impl ::windows_core::Abi for SP_COPY_STYLE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SP_COPY_STYLE {
@@ -9583,14 +9583,14 @@ impl ::core::clone::Clone for SP_DETECTDEVICE_PARAMS {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DETECTDEVICE_PARAMS {
+unsafe impl ::windows_core::Abi for SP_DETECTDEVICE_PARAMS {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DETECTDEVICE_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DETECTDEVICE_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DETECTDEVICE_PARAMS>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -9624,14 +9624,14 @@ impl ::core::clone::Clone for SP_DETECTDEVICE_PARAMS {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DETECTDEVICE_PARAMS {
+unsafe impl ::windows_core::Abi for SP_DETECTDEVICE_PARAMS {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DETECTDEVICE_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DETECTDEVICE_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DETECTDEVICE_PARAMS>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -9649,7 +9649,7 @@ impl ::core::default::Default for SP_DETECTDEVICE_PARAMS {
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct SP_DEVICE_INTERFACE_DATA {
     pub cbSize: u32,
-    pub InterfaceClassGuid: ::windows::core::GUID,
+    pub InterfaceClassGuid: ::windows_core::GUID,
     pub Flags: u32,
     pub Reserved: usize,
 }
@@ -9662,13 +9662,13 @@ impl ::core::clone::Clone for SP_DEVICE_INTERFACE_DATA {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_DEVICE_INTERFACE_DATA {
+unsafe impl ::windows_core::Abi for SP_DEVICE_INTERFACE_DATA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_DEVICE_INTERFACE_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVICE_INTERFACE_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVICE_INTERFACE_DATA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -9684,7 +9684,7 @@ impl ::core::default::Default for SP_DEVICE_INTERFACE_DATA {
 #[cfg(target_arch = "x86")]
 pub struct SP_DEVICE_INTERFACE_DATA {
     pub cbSize: u32,
-    pub InterfaceClassGuid: ::windows::core::GUID,
+    pub InterfaceClassGuid: ::windows_core::GUID,
     pub Flags: u32,
     pub Reserved: usize,
 }
@@ -9697,13 +9697,13 @@ impl ::core::clone::Clone for SP_DEVICE_INTERFACE_DATA {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_DEVICE_INTERFACE_DATA {
+unsafe impl ::windows_core::Abi for SP_DEVICE_INTERFACE_DATA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_DEVICE_INTERFACE_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVICE_INTERFACE_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVICE_INTERFACE_DATA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -9734,14 +9734,14 @@ impl ::core::clone::Clone for SP_DEVICE_INTERFACE_DETAIL_DATA_A {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DEVICE_INTERFACE_DETAIL_DATA_A {
+unsafe impl ::windows_core::Abi for SP_DEVICE_INTERFACE_DETAIL_DATA_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DEVICE_INTERFACE_DETAIL_DATA_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVICE_INTERFACE_DETAIL_DATA_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVICE_INTERFACE_DETAIL_DATA_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -9774,14 +9774,14 @@ impl ::core::clone::Clone for SP_DEVICE_INTERFACE_DETAIL_DATA_A {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DEVICE_INTERFACE_DETAIL_DATA_A {
+unsafe impl ::windows_core::Abi for SP_DEVICE_INTERFACE_DETAIL_DATA_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DEVICE_INTERFACE_DETAIL_DATA_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVICE_INTERFACE_DETAIL_DATA_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVICE_INTERFACE_DETAIL_DATA_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -9810,13 +9810,13 @@ impl ::core::clone::Clone for SP_DEVICE_INTERFACE_DETAIL_DATA_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_DEVICE_INTERFACE_DETAIL_DATA_W {
+unsafe impl ::windows_core::Abi for SP_DEVICE_INTERFACE_DETAIL_DATA_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_DEVICE_INTERFACE_DETAIL_DATA_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVICE_INTERFACE_DETAIL_DATA_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVICE_INTERFACE_DETAIL_DATA_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -9843,13 +9843,13 @@ impl ::core::clone::Clone for SP_DEVICE_INTERFACE_DETAIL_DATA_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_DEVICE_INTERFACE_DETAIL_DATA_W {
+unsafe impl ::windows_core::Abi for SP_DEVICE_INTERFACE_DETAIL_DATA_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_DEVICE_INTERFACE_DETAIL_DATA_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVICE_INTERFACE_DETAIL_DATA_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVICE_INTERFACE_DETAIL_DATA_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -9865,7 +9865,7 @@ impl ::core::default::Default for SP_DEVICE_INTERFACE_DETAIL_DATA_W {
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct SP_DEVINFO_DATA {
     pub cbSize: u32,
-    pub ClassGuid: ::windows::core::GUID,
+    pub ClassGuid: ::windows_core::GUID,
     pub DevInst: u32,
     pub Reserved: usize,
 }
@@ -9878,13 +9878,13 @@ impl ::core::clone::Clone for SP_DEVINFO_DATA {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_DEVINFO_DATA {
+unsafe impl ::windows_core::Abi for SP_DEVINFO_DATA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_DEVINFO_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINFO_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINFO_DATA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -9900,7 +9900,7 @@ impl ::core::default::Default for SP_DEVINFO_DATA {
 #[cfg(target_arch = "x86")]
 pub struct SP_DEVINFO_DATA {
     pub cbSize: u32,
-    pub ClassGuid: ::windows::core::GUID,
+    pub ClassGuid: ::windows_core::GUID,
     pub DevInst: u32,
     pub Reserved: usize,
 }
@@ -9913,13 +9913,13 @@ impl ::core::clone::Clone for SP_DEVINFO_DATA {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_DEVINFO_DATA {
+unsafe impl ::windows_core::Abi for SP_DEVINFO_DATA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_DEVINFO_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINFO_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINFO_DATA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -9936,7 +9936,7 @@ impl ::core::default::Default for SP_DEVINFO_DATA {
 #[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVINFO_LIST_DETAIL_DATA_A {
     pub cbSize: u32,
-    pub ClassGuid: ::windows::core::GUID,
+    pub ClassGuid: ::windows_core::GUID,
     pub RemoteMachineHandle: super::super::Foundation::HANDLE,
     pub RemoteMachineName: [super::super::Foundation::CHAR; 263],
 }
@@ -9952,14 +9952,14 @@ impl ::core::clone::Clone for SP_DEVINFO_LIST_DETAIL_DATA_A {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DEVINFO_LIST_DETAIL_DATA_A {
+unsafe impl ::windows_core::Abi for SP_DEVINFO_LIST_DETAIL_DATA_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DEVINFO_LIST_DETAIL_DATA_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINFO_LIST_DETAIL_DATA_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINFO_LIST_DETAIL_DATA_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -9978,7 +9978,7 @@ impl ::core::default::Default for SP_DEVINFO_LIST_DETAIL_DATA_A {
 #[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVINFO_LIST_DETAIL_DATA_A {
     pub cbSize: u32,
-    pub ClassGuid: ::windows::core::GUID,
+    pub ClassGuid: ::windows_core::GUID,
     pub RemoteMachineHandle: super::super::Foundation::HANDLE,
     pub RemoteMachineName: [super::super::Foundation::CHAR; 263],
 }
@@ -9994,14 +9994,14 @@ impl ::core::clone::Clone for SP_DEVINFO_LIST_DETAIL_DATA_A {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DEVINFO_LIST_DETAIL_DATA_A {
+unsafe impl ::windows_core::Abi for SP_DEVINFO_LIST_DETAIL_DATA_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DEVINFO_LIST_DETAIL_DATA_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINFO_LIST_DETAIL_DATA_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINFO_LIST_DETAIL_DATA_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -10020,7 +10020,7 @@ impl ::core::default::Default for SP_DEVINFO_LIST_DETAIL_DATA_A {
 #[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVINFO_LIST_DETAIL_DATA_W {
     pub cbSize: u32,
-    pub ClassGuid: ::windows::core::GUID,
+    pub ClassGuid: ::windows_core::GUID,
     pub RemoteMachineHandle: super::super::Foundation::HANDLE,
     pub RemoteMachineName: [u16; 263],
 }
@@ -10036,14 +10036,14 @@ impl ::core::clone::Clone for SP_DEVINFO_LIST_DETAIL_DATA_W {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DEVINFO_LIST_DETAIL_DATA_W {
+unsafe impl ::windows_core::Abi for SP_DEVINFO_LIST_DETAIL_DATA_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DEVINFO_LIST_DETAIL_DATA_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINFO_LIST_DETAIL_DATA_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINFO_LIST_DETAIL_DATA_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -10062,7 +10062,7 @@ impl ::core::default::Default for SP_DEVINFO_LIST_DETAIL_DATA_W {
 #[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVINFO_LIST_DETAIL_DATA_W {
     pub cbSize: u32,
-    pub ClassGuid: ::windows::core::GUID,
+    pub ClassGuid: ::windows_core::GUID,
     pub RemoteMachineHandle: super::super::Foundation::HANDLE,
     pub RemoteMachineName: [u16; 263],
 }
@@ -10078,14 +10078,14 @@ impl ::core::clone::Clone for SP_DEVINFO_LIST_DETAIL_DATA_W {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DEVINFO_LIST_DETAIL_DATA_W {
+unsafe impl ::windows_core::Abi for SP_DEVINFO_LIST_DETAIL_DATA_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DEVINFO_LIST_DETAIL_DATA_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINFO_LIST_DETAIL_DATA_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINFO_LIST_DETAIL_DATA_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -10126,14 +10126,14 @@ impl ::core::clone::Clone for SP_DEVINSTALL_PARAMS_A {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DEVINSTALL_PARAMS_A {
+unsafe impl ::windows_core::Abi for SP_DEVINSTALL_PARAMS_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DEVINSTALL_PARAMS_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINSTALL_PARAMS_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINSTALL_PARAMS_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -10174,14 +10174,14 @@ impl ::core::clone::Clone for SP_DEVINSTALL_PARAMS_A {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DEVINSTALL_PARAMS_A {
+unsafe impl ::windows_core::Abi for SP_DEVINSTALL_PARAMS_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DEVINSTALL_PARAMS_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINSTALL_PARAMS_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINSTALL_PARAMS_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -10222,14 +10222,14 @@ impl ::core::clone::Clone for SP_DEVINSTALL_PARAMS_W {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DEVINSTALL_PARAMS_W {
+unsafe impl ::windows_core::Abi for SP_DEVINSTALL_PARAMS_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DEVINSTALL_PARAMS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINSTALL_PARAMS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINSTALL_PARAMS_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -10270,14 +10270,14 @@ impl ::core::clone::Clone for SP_DEVINSTALL_PARAMS_W {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DEVINSTALL_PARAMS_W {
+unsafe impl ::windows_core::Abi for SP_DEVINSTALL_PARAMS_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DEVINSTALL_PARAMS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINSTALL_PARAMS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DEVINSTALL_PARAMS_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -10314,14 +10314,14 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V1_A {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DRVINFO_DATA_V1_A {
+unsafe impl ::windows_core::Abi for SP_DRVINFO_DATA_V1_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DRVINFO_DATA_V1_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V1_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V1_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -10358,14 +10358,14 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V1_A {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DRVINFO_DATA_V1_A {
+unsafe impl ::windows_core::Abi for SP_DRVINFO_DATA_V1_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DRVINFO_DATA_V1_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V1_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V1_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -10398,13 +10398,13 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V1_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_DRVINFO_DATA_V1_W {
+unsafe impl ::windows_core::Abi for SP_DRVINFO_DATA_V1_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_DRVINFO_DATA_V1_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V1_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V1_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -10435,13 +10435,13 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V1_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_DRVINFO_DATA_V1_W {
+unsafe impl ::windows_core::Abi for SP_DRVINFO_DATA_V1_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_DRVINFO_DATA_V1_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V1_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V1_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -10478,14 +10478,14 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V2_A {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DRVINFO_DATA_V2_A {
+unsafe impl ::windows_core::Abi for SP_DRVINFO_DATA_V2_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DRVINFO_DATA_V2_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V2_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V2_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -10524,14 +10524,14 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V2_A {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DRVINFO_DATA_V2_A {
+unsafe impl ::windows_core::Abi for SP_DRVINFO_DATA_V2_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DRVINFO_DATA_V2_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V2_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V2_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -10570,14 +10570,14 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V2_W {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DRVINFO_DATA_V2_W {
+unsafe impl ::windows_core::Abi for SP_DRVINFO_DATA_V2_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DRVINFO_DATA_V2_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V2_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V2_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -10616,14 +10616,14 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V2_W {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DRVINFO_DATA_V2_W {
+unsafe impl ::windows_core::Abi for SP_DRVINFO_DATA_V2_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DRVINFO_DATA_V2_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V2_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DATA_V2_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -10663,14 +10663,14 @@ impl ::core::clone::Clone for SP_DRVINFO_DETAIL_DATA_A {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DRVINFO_DETAIL_DATA_A {
+unsafe impl ::windows_core::Abi for SP_DRVINFO_DETAIL_DATA_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DRVINFO_DETAIL_DATA_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DETAIL_DATA_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DETAIL_DATA_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -10710,14 +10710,14 @@ impl ::core::clone::Clone for SP_DRVINFO_DETAIL_DATA_A {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DRVINFO_DETAIL_DATA_A {
+unsafe impl ::windows_core::Abi for SP_DRVINFO_DETAIL_DATA_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DRVINFO_DETAIL_DATA_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DETAIL_DATA_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DETAIL_DATA_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -10757,14 +10757,14 @@ impl ::core::clone::Clone for SP_DRVINFO_DETAIL_DATA_W {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DRVINFO_DETAIL_DATA_W {
+unsafe impl ::windows_core::Abi for SP_DRVINFO_DETAIL_DATA_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DRVINFO_DETAIL_DATA_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DETAIL_DATA_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DETAIL_DATA_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -10804,14 +10804,14 @@ impl ::core::clone::Clone for SP_DRVINFO_DETAIL_DATA_W {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_DRVINFO_DETAIL_DATA_W {
+unsafe impl ::windows_core::Abi for SP_DRVINFO_DETAIL_DATA_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_DRVINFO_DETAIL_DATA_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DETAIL_DATA_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINFO_DETAIL_DATA_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -10843,13 +10843,13 @@ impl ::core::clone::Clone for SP_DRVINSTALL_PARAMS {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_DRVINSTALL_PARAMS {
+unsafe impl ::windows_core::Abi for SP_DRVINSTALL_PARAMS {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_DRVINSTALL_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINSTALL_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINSTALL_PARAMS>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -10879,13 +10879,13 @@ impl ::core::clone::Clone for SP_DRVINSTALL_PARAMS {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_DRVINSTALL_PARAMS {
+unsafe impl ::windows_core::Abi for SP_DRVINSTALL_PARAMS {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_DRVINSTALL_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINSTALL_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_DRVINSTALL_PARAMS>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -10901,7 +10901,7 @@ impl ::core::default::Default for SP_DRVINSTALL_PARAMS {
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct SP_ENABLECLASS_PARAMS {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
-    pub ClassGuid: ::windows::core::GUID,
+    pub ClassGuid: ::windows_core::GUID,
     pub EnableMessage: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -10913,13 +10913,13 @@ impl ::core::clone::Clone for SP_ENABLECLASS_PARAMS {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_ENABLECLASS_PARAMS {
+unsafe impl ::windows_core::Abi for SP_ENABLECLASS_PARAMS {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_ENABLECLASS_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ENABLECLASS_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ENABLECLASS_PARAMS>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -10935,7 +10935,7 @@ impl ::core::default::Default for SP_ENABLECLASS_PARAMS {
 #[cfg(target_arch = "x86")]
 pub struct SP_ENABLECLASS_PARAMS {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
-    pub ClassGuid: ::windows::core::GUID,
+    pub ClassGuid: ::windows_core::GUID,
     pub EnableMessage: u32,
 }
 #[cfg(target_arch = "x86")]
@@ -10947,13 +10947,13 @@ impl ::core::clone::Clone for SP_ENABLECLASS_PARAMS {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_ENABLECLASS_PARAMS {
+unsafe impl ::windows_core::Abi for SP_ENABLECLASS_PARAMS {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_ENABLECLASS_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ENABLECLASS_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ENABLECLASS_PARAMS>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -10970,16 +10970,16 @@ impl ::core::default::Default for SP_ENABLECLASS_PARAMS {
 pub struct SP_FILE_COPY_PARAMS_A {
     pub cbSize: u32,
     pub QueueHandle: *mut ::core::ffi::c_void,
-    pub SourceRootPath: ::windows::core::PCSTR,
-    pub SourcePath: ::windows::core::PCSTR,
-    pub SourceFilename: ::windows::core::PCSTR,
-    pub SourceDescription: ::windows::core::PCSTR,
-    pub SourceTagfile: ::windows::core::PCSTR,
-    pub TargetDirectory: ::windows::core::PCSTR,
-    pub TargetFilename: ::windows::core::PCSTR,
+    pub SourceRootPath: ::windows_core::PCSTR,
+    pub SourcePath: ::windows_core::PCSTR,
+    pub SourceFilename: ::windows_core::PCSTR,
+    pub SourceDescription: ::windows_core::PCSTR,
+    pub SourceTagfile: ::windows_core::PCSTR,
+    pub TargetDirectory: ::windows_core::PCSTR,
+    pub TargetFilename: ::windows_core::PCSTR,
     pub CopyStyle: u32,
     pub LayoutInf: *mut ::core::ffi::c_void,
-    pub SecurityDescriptor: ::windows::core::PCSTR,
+    pub SecurityDescriptor: ::windows_core::PCSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::marker::Copy for SP_FILE_COPY_PARAMS_A {}
@@ -10990,13 +10990,13 @@ impl ::core::clone::Clone for SP_FILE_COPY_PARAMS_A {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_FILE_COPY_PARAMS_A {
+unsafe impl ::windows_core::Abi for SP_FILE_COPY_PARAMS_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_FILE_COPY_PARAMS_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_FILE_COPY_PARAMS_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_FILE_COPY_PARAMS_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -11013,16 +11013,16 @@ impl ::core::default::Default for SP_FILE_COPY_PARAMS_A {
 pub struct SP_FILE_COPY_PARAMS_A {
     pub cbSize: u32,
     pub QueueHandle: *mut ::core::ffi::c_void,
-    pub SourceRootPath: ::windows::core::PCSTR,
-    pub SourcePath: ::windows::core::PCSTR,
-    pub SourceFilename: ::windows::core::PCSTR,
-    pub SourceDescription: ::windows::core::PCSTR,
-    pub SourceTagfile: ::windows::core::PCSTR,
-    pub TargetDirectory: ::windows::core::PCSTR,
-    pub TargetFilename: ::windows::core::PCSTR,
+    pub SourceRootPath: ::windows_core::PCSTR,
+    pub SourcePath: ::windows_core::PCSTR,
+    pub SourceFilename: ::windows_core::PCSTR,
+    pub SourceDescription: ::windows_core::PCSTR,
+    pub SourceTagfile: ::windows_core::PCSTR,
+    pub TargetDirectory: ::windows_core::PCSTR,
+    pub TargetFilename: ::windows_core::PCSTR,
     pub CopyStyle: u32,
     pub LayoutInf: *mut ::core::ffi::c_void,
-    pub SecurityDescriptor: ::windows::core::PCSTR,
+    pub SecurityDescriptor: ::windows_core::PCSTR,
 }
 #[cfg(target_arch = "x86")]
 impl ::core::marker::Copy for SP_FILE_COPY_PARAMS_A {}
@@ -11033,13 +11033,13 @@ impl ::core::clone::Clone for SP_FILE_COPY_PARAMS_A {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_FILE_COPY_PARAMS_A {
+unsafe impl ::windows_core::Abi for SP_FILE_COPY_PARAMS_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_FILE_COPY_PARAMS_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_FILE_COPY_PARAMS_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_FILE_COPY_PARAMS_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -11056,16 +11056,16 @@ impl ::core::default::Default for SP_FILE_COPY_PARAMS_A {
 pub struct SP_FILE_COPY_PARAMS_W {
     pub cbSize: u32,
     pub QueueHandle: *mut ::core::ffi::c_void,
-    pub SourceRootPath: ::windows::core::PCWSTR,
-    pub SourcePath: ::windows::core::PCWSTR,
-    pub SourceFilename: ::windows::core::PCWSTR,
-    pub SourceDescription: ::windows::core::PCWSTR,
-    pub SourceTagfile: ::windows::core::PCWSTR,
-    pub TargetDirectory: ::windows::core::PCWSTR,
-    pub TargetFilename: ::windows::core::PCWSTR,
+    pub SourceRootPath: ::windows_core::PCWSTR,
+    pub SourcePath: ::windows_core::PCWSTR,
+    pub SourceFilename: ::windows_core::PCWSTR,
+    pub SourceDescription: ::windows_core::PCWSTR,
+    pub SourceTagfile: ::windows_core::PCWSTR,
+    pub TargetDirectory: ::windows_core::PCWSTR,
+    pub TargetFilename: ::windows_core::PCWSTR,
     pub CopyStyle: u32,
     pub LayoutInf: *mut ::core::ffi::c_void,
-    pub SecurityDescriptor: ::windows::core::PCWSTR,
+    pub SecurityDescriptor: ::windows_core::PCWSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::marker::Copy for SP_FILE_COPY_PARAMS_W {}
@@ -11076,13 +11076,13 @@ impl ::core::clone::Clone for SP_FILE_COPY_PARAMS_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_FILE_COPY_PARAMS_W {
+unsafe impl ::windows_core::Abi for SP_FILE_COPY_PARAMS_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_FILE_COPY_PARAMS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_FILE_COPY_PARAMS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_FILE_COPY_PARAMS_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -11099,16 +11099,16 @@ impl ::core::default::Default for SP_FILE_COPY_PARAMS_W {
 pub struct SP_FILE_COPY_PARAMS_W {
     pub cbSize: u32,
     pub QueueHandle: *mut ::core::ffi::c_void,
-    pub SourceRootPath: ::windows::core::PCWSTR,
-    pub SourcePath: ::windows::core::PCWSTR,
-    pub SourceFilename: ::windows::core::PCWSTR,
-    pub SourceDescription: ::windows::core::PCWSTR,
-    pub SourceTagfile: ::windows::core::PCWSTR,
-    pub TargetDirectory: ::windows::core::PCWSTR,
-    pub TargetFilename: ::windows::core::PCWSTR,
+    pub SourceRootPath: ::windows_core::PCWSTR,
+    pub SourcePath: ::windows_core::PCWSTR,
+    pub SourceFilename: ::windows_core::PCWSTR,
+    pub SourceDescription: ::windows_core::PCWSTR,
+    pub SourceTagfile: ::windows_core::PCWSTR,
+    pub TargetDirectory: ::windows_core::PCWSTR,
+    pub TargetFilename: ::windows_core::PCWSTR,
     pub CopyStyle: u32,
     pub LayoutInf: *mut ::core::ffi::c_void,
-    pub SecurityDescriptor: ::windows::core::PCWSTR,
+    pub SecurityDescriptor: ::windows_core::PCWSTR,
 }
 #[cfg(target_arch = "x86")]
 impl ::core::marker::Copy for SP_FILE_COPY_PARAMS_W {}
@@ -11119,13 +11119,13 @@ impl ::core::clone::Clone for SP_FILE_COPY_PARAMS_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_FILE_COPY_PARAMS_W {
+unsafe impl ::windows_core::Abi for SP_FILE_COPY_PARAMS_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_FILE_COPY_PARAMS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_FILE_COPY_PARAMS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_FILE_COPY_PARAMS_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -11155,13 +11155,13 @@ impl ::core::clone::Clone for SP_INF_INFORMATION {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_INF_INFORMATION {
+unsafe impl ::windows_core::Abi for SP_INF_INFORMATION {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_INF_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_INFORMATION>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -11189,13 +11189,13 @@ impl ::core::clone::Clone for SP_INF_INFORMATION {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_INF_INFORMATION {
+unsafe impl ::windows_core::Abi for SP_INF_INFORMATION {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_INF_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_INFORMATION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_INFORMATION>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -11228,14 +11228,14 @@ impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V1_A {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_INF_SIGNER_INFO_V1_A {
+unsafe impl ::windows_core::Abi for SP_INF_SIGNER_INFO_V1_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_INF_SIGNER_INFO_V1_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V1_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V1_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -11270,14 +11270,14 @@ impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V1_A {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_INF_SIGNER_INFO_V1_A {
+unsafe impl ::windows_core::Abi for SP_INF_SIGNER_INFO_V1_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_INF_SIGNER_INFO_V1_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V1_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V1_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -11308,13 +11308,13 @@ impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V1_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_INF_SIGNER_INFO_V1_W {
+unsafe impl ::windows_core::Abi for SP_INF_SIGNER_INFO_V1_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_INF_SIGNER_INFO_V1_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V1_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V1_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -11343,13 +11343,13 @@ impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V1_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_INF_SIGNER_INFO_V1_W {
+unsafe impl ::windows_core::Abi for SP_INF_SIGNER_INFO_V1_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_INF_SIGNER_INFO_V1_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V1_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V1_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -11383,14 +11383,14 @@ impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V2_A {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_INF_SIGNER_INFO_V2_A {
+unsafe impl ::windows_core::Abi for SP_INF_SIGNER_INFO_V2_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_INF_SIGNER_INFO_V2_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V2_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V2_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -11426,14 +11426,14 @@ impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V2_A {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_INF_SIGNER_INFO_V2_A {
+unsafe impl ::windows_core::Abi for SP_INF_SIGNER_INFO_V2_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_INF_SIGNER_INFO_V2_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V2_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V2_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -11465,13 +11465,13 @@ impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V2_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_INF_SIGNER_INFO_V2_W {
+unsafe impl ::windows_core::Abi for SP_INF_SIGNER_INFO_V2_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_INF_SIGNER_INFO_V2_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V2_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V2_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -11501,13 +11501,13 @@ impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V2_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_INF_SIGNER_INFO_V2_W {
+unsafe impl ::windows_core::Abi for SP_INF_SIGNER_INFO_V2_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_INF_SIGNER_INFO_V2_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V2_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INF_SIGNER_INFO_V2_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -11539,7 +11539,7 @@ impl ::core::default::Default for SP_INF_STYLE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SP_INF_STYLE {
+unsafe impl ::windows_core::Abi for SP_INF_STYLE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SP_INF_STYLE {
@@ -11573,14 +11573,14 @@ impl ::core::clone::Clone for SP_INSTALLWIZARD_DATA {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-unsafe impl ::windows::core::Abi for SP_INSTALLWIZARD_DATA {
+unsafe impl ::windows_core::Abi for SP_INSTALLWIZARD_DATA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 impl ::core::cmp::PartialEq for SP_INSTALLWIZARD_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INSTALLWIZARD_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INSTALLWIZARD_DATA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -11619,14 +11619,14 @@ impl ::core::clone::Clone for SP_INSTALLWIZARD_DATA {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-unsafe impl ::windows::core::Abi for SP_INSTALLWIZARD_DATA {
+unsafe impl ::windows_core::Abi for SP_INSTALLWIZARD_DATA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 impl ::core::cmp::PartialEq for SP_INSTALLWIZARD_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INSTALLWIZARD_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_INSTALLWIZARD_DATA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -11664,14 +11664,14 @@ impl ::core::clone::Clone for SP_NEWDEVICEWIZARD_DATA {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-unsafe impl ::windows::core::Abi for SP_NEWDEVICEWIZARD_DATA {
+unsafe impl ::windows_core::Abi for SP_NEWDEVICEWIZARD_DATA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 impl ::core::cmp::PartialEq for SP_NEWDEVICEWIZARD_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_NEWDEVICEWIZARD_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_NEWDEVICEWIZARD_DATA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -11707,14 +11707,14 @@ impl ::core::clone::Clone for SP_NEWDEVICEWIZARD_DATA {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-unsafe impl ::windows::core::Abi for SP_NEWDEVICEWIZARD_DATA {
+unsafe impl ::windows_core::Abi for SP_NEWDEVICEWIZARD_DATA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 impl ::core::cmp::PartialEq for SP_NEWDEVICEWIZARD_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_NEWDEVICEWIZARD_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_NEWDEVICEWIZARD_DATA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -11748,14 +11748,14 @@ impl ::core::clone::Clone for SP_ORIGINAL_FILE_INFO_A {
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_ORIGINAL_FILE_INFO_A {
+unsafe impl ::windows_core::Abi for SP_ORIGINAL_FILE_INFO_A {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_ORIGINAL_FILE_INFO_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ORIGINAL_FILE_INFO_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ORIGINAL_FILE_INFO_A>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -11789,14 +11789,14 @@ impl ::core::clone::Clone for SP_ORIGINAL_FILE_INFO_A {
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_ORIGINAL_FILE_INFO_A {
+unsafe impl ::windows_core::Abi for SP_ORIGINAL_FILE_INFO_A {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_ORIGINAL_FILE_INFO_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ORIGINAL_FILE_INFO_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ORIGINAL_FILE_INFO_A>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -11826,13 +11826,13 @@ impl ::core::clone::Clone for SP_ORIGINAL_FILE_INFO_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_ORIGINAL_FILE_INFO_W {
+unsafe impl ::windows_core::Abi for SP_ORIGINAL_FILE_INFO_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_ORIGINAL_FILE_INFO_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ORIGINAL_FILE_INFO_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ORIGINAL_FILE_INFO_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -11860,13 +11860,13 @@ impl ::core::clone::Clone for SP_ORIGINAL_FILE_INFO_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_ORIGINAL_FILE_INFO_W {
+unsafe impl ::windows_core::Abi for SP_ORIGINAL_FILE_INFO_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_ORIGINAL_FILE_INFO_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ORIGINAL_FILE_INFO_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_ORIGINAL_FILE_INFO_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -11893,13 +11893,13 @@ impl ::core::clone::Clone for SP_POWERMESSAGEWAKE_PARAMS_A {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_POWERMESSAGEWAKE_PARAMS_A {
+unsafe impl ::windows_core::Abi for SP_POWERMESSAGEWAKE_PARAMS_A {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_POWERMESSAGEWAKE_PARAMS_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_POWERMESSAGEWAKE_PARAMS_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_POWERMESSAGEWAKE_PARAMS_A>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11926,13 +11926,13 @@ impl ::core::clone::Clone for SP_POWERMESSAGEWAKE_PARAMS_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_POWERMESSAGEWAKE_PARAMS_W {
+unsafe impl ::windows_core::Abi for SP_POWERMESSAGEWAKE_PARAMS_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_POWERMESSAGEWAKE_PARAMS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_POWERMESSAGEWAKE_PARAMS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_POWERMESSAGEWAKE_PARAMS_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -11959,13 +11959,13 @@ impl ::core::clone::Clone for SP_POWERMESSAGEWAKE_PARAMS_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_POWERMESSAGEWAKE_PARAMS_W {
+unsafe impl ::windows_core::Abi for SP_POWERMESSAGEWAKE_PARAMS_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_POWERMESSAGEWAKE_PARAMS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_POWERMESSAGEWAKE_PARAMS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_POWERMESSAGEWAKE_PARAMS_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -11994,13 +11994,13 @@ impl ::core::clone::Clone for SP_PROPCHANGE_PARAMS {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_PROPCHANGE_PARAMS {
+unsafe impl ::windows_core::Abi for SP_PROPCHANGE_PARAMS {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_PROPCHANGE_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_PROPCHANGE_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_PROPCHANGE_PARAMS>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -12029,13 +12029,13 @@ impl ::core::clone::Clone for SP_PROPCHANGE_PARAMS {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_PROPCHANGE_PARAMS {
+unsafe impl ::windows_core::Abi for SP_PROPCHANGE_PARAMS {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_PROPCHANGE_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_PROPCHANGE_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_PROPCHANGE_PARAMS>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -12064,13 +12064,13 @@ impl ::core::clone::Clone for SP_PROPSHEETPAGE_REQUEST {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_PROPSHEETPAGE_REQUEST {
+unsafe impl ::windows_core::Abi for SP_PROPSHEETPAGE_REQUEST {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_PROPSHEETPAGE_REQUEST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_PROPSHEETPAGE_REQUEST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_PROPSHEETPAGE_REQUEST>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -12099,13 +12099,13 @@ impl ::core::clone::Clone for SP_PROPSHEETPAGE_REQUEST {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_PROPSHEETPAGE_REQUEST {
+unsafe impl ::windows_core::Abi for SP_PROPSHEETPAGE_REQUEST {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_PROPSHEETPAGE_REQUEST {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_PROPSHEETPAGE_REQUEST>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_PROPSHEETPAGE_REQUEST>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -12121,7 +12121,7 @@ impl ::core::default::Default for SP_PROPSHEETPAGE_REQUEST {
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct SP_REGISTER_CONTROL_STATUSA {
     pub cbSize: u32,
-    pub FileName: ::windows::core::PCSTR,
+    pub FileName: ::windows_core::PCSTR,
     pub Win32Error: u32,
     pub FailureCode: u32,
 }
@@ -12134,13 +12134,13 @@ impl ::core::clone::Clone for SP_REGISTER_CONTROL_STATUSA {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_REGISTER_CONTROL_STATUSA {
+unsafe impl ::windows_core::Abi for SP_REGISTER_CONTROL_STATUSA {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_REGISTER_CONTROL_STATUSA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_REGISTER_CONTROL_STATUSA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_REGISTER_CONTROL_STATUSA>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -12156,7 +12156,7 @@ impl ::core::default::Default for SP_REGISTER_CONTROL_STATUSA {
 #[cfg(target_arch = "x86")]
 pub struct SP_REGISTER_CONTROL_STATUSA {
     pub cbSize: u32,
-    pub FileName: ::windows::core::PCSTR,
+    pub FileName: ::windows_core::PCSTR,
     pub Win32Error: u32,
     pub FailureCode: u32,
 }
@@ -12169,13 +12169,13 @@ impl ::core::clone::Clone for SP_REGISTER_CONTROL_STATUSA {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_REGISTER_CONTROL_STATUSA {
+unsafe impl ::windows_core::Abi for SP_REGISTER_CONTROL_STATUSA {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_REGISTER_CONTROL_STATUSA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_REGISTER_CONTROL_STATUSA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_REGISTER_CONTROL_STATUSA>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -12191,7 +12191,7 @@ impl ::core::default::Default for SP_REGISTER_CONTROL_STATUSA {
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct SP_REGISTER_CONTROL_STATUSW {
     pub cbSize: u32,
-    pub FileName: ::windows::core::PCWSTR,
+    pub FileName: ::windows_core::PCWSTR,
     pub Win32Error: u32,
     pub FailureCode: u32,
 }
@@ -12204,13 +12204,13 @@ impl ::core::clone::Clone for SP_REGISTER_CONTROL_STATUSW {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_REGISTER_CONTROL_STATUSW {
+unsafe impl ::windows_core::Abi for SP_REGISTER_CONTROL_STATUSW {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_REGISTER_CONTROL_STATUSW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_REGISTER_CONTROL_STATUSW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_REGISTER_CONTROL_STATUSW>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -12226,7 +12226,7 @@ impl ::core::default::Default for SP_REGISTER_CONTROL_STATUSW {
 #[cfg(target_arch = "x86")]
 pub struct SP_REGISTER_CONTROL_STATUSW {
     pub cbSize: u32,
-    pub FileName: ::windows::core::PCWSTR,
+    pub FileName: ::windows_core::PCWSTR,
     pub Win32Error: u32,
     pub FailureCode: u32,
 }
@@ -12239,13 +12239,13 @@ impl ::core::clone::Clone for SP_REGISTER_CONTROL_STATUSW {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_REGISTER_CONTROL_STATUSW {
+unsafe impl ::windows_core::Abi for SP_REGISTER_CONTROL_STATUSW {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_REGISTER_CONTROL_STATUSW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_REGISTER_CONTROL_STATUSW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_REGISTER_CONTROL_STATUSW>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -12273,13 +12273,13 @@ impl ::core::clone::Clone for SP_REMOVEDEVICE_PARAMS {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_REMOVEDEVICE_PARAMS {
+unsafe impl ::windows_core::Abi for SP_REMOVEDEVICE_PARAMS {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_REMOVEDEVICE_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_REMOVEDEVICE_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_REMOVEDEVICE_PARAMS>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -12307,13 +12307,13 @@ impl ::core::clone::Clone for SP_REMOVEDEVICE_PARAMS {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_REMOVEDEVICE_PARAMS {
+unsafe impl ::windows_core::Abi for SP_REMOVEDEVICE_PARAMS {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_REMOVEDEVICE_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_REMOVEDEVICE_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_REMOVEDEVICE_PARAMS>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -12344,13 +12344,13 @@ impl ::core::clone::Clone for SP_SELECTDEVICE_PARAMS_A {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_SELECTDEVICE_PARAMS_A {
+unsafe impl ::windows_core::Abi for SP_SELECTDEVICE_PARAMS_A {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_SELECTDEVICE_PARAMS_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_SELECTDEVICE_PARAMS_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_SELECTDEVICE_PARAMS_A>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12380,13 +12380,13 @@ impl ::core::clone::Clone for SP_SELECTDEVICE_PARAMS_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_SELECTDEVICE_PARAMS_W {
+unsafe impl ::windows_core::Abi for SP_SELECTDEVICE_PARAMS_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_SELECTDEVICE_PARAMS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_SELECTDEVICE_PARAMS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_SELECTDEVICE_PARAMS_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -12416,13 +12416,13 @@ impl ::core::clone::Clone for SP_SELECTDEVICE_PARAMS_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_SELECTDEVICE_PARAMS_W {
+unsafe impl ::windows_core::Abi for SP_SELECTDEVICE_PARAMS_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_SELECTDEVICE_PARAMS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_SELECTDEVICE_PARAMS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_SELECTDEVICE_PARAMS_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -12450,13 +12450,13 @@ impl ::core::clone::Clone for SP_TROUBLESHOOTER_PARAMS_A {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SP_TROUBLESHOOTER_PARAMS_A {
+unsafe impl ::windows_core::Abi for SP_TROUBLESHOOTER_PARAMS_A {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SP_TROUBLESHOOTER_PARAMS_A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_TROUBLESHOOTER_PARAMS_A>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_TROUBLESHOOTER_PARAMS_A>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12484,13 +12484,13 @@ impl ::core::clone::Clone for SP_TROUBLESHOOTER_PARAMS_W {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_TROUBLESHOOTER_PARAMS_W {
+unsafe impl ::windows_core::Abi for SP_TROUBLESHOOTER_PARAMS_W {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_TROUBLESHOOTER_PARAMS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_TROUBLESHOOTER_PARAMS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_TROUBLESHOOTER_PARAMS_W>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -12518,13 +12518,13 @@ impl ::core::clone::Clone for SP_TROUBLESHOOTER_PARAMS_W {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_TROUBLESHOOTER_PARAMS_W {
+unsafe impl ::windows_core::Abi for SP_TROUBLESHOOTER_PARAMS_W {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_TROUBLESHOOTER_PARAMS_W {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_TROUBLESHOOTER_PARAMS_W>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_TROUBLESHOOTER_PARAMS_W>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -12552,13 +12552,13 @@ impl ::core::clone::Clone for SP_UNREMOVEDEVICE_PARAMS {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-unsafe impl ::windows::core::Abi for SP_UNREMOVEDEVICE_PARAMS {
+unsafe impl ::windows_core::Abi for SP_UNREMOVEDEVICE_PARAMS {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::cmp::PartialEq for SP_UNREMOVEDEVICE_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_UNREMOVEDEVICE_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_UNREMOVEDEVICE_PARAMS>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -12586,13 +12586,13 @@ impl ::core::clone::Clone for SP_UNREMOVEDEVICE_PARAMS {
     }
 }
 #[cfg(target_arch = "x86")]
-unsafe impl ::windows::core::Abi for SP_UNREMOVEDEVICE_PARAMS {
+unsafe impl ::windows_core::Abi for SP_UNREMOVEDEVICE_PARAMS {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
 impl ::core::cmp::PartialEq for SP_UNREMOVEDEVICE_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_UNREMOVEDEVICE_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SP_UNREMOVEDEVICE_PARAMS>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
@@ -12742,12 +12742,12 @@ pub const SZ_KEY_UPGRADEONLY: &str = "UpgradeOnly";
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAddInstallSectionToDiskSpaceListA<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: Param3, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAddInstallSectionToDiskSpaceListA<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: Param3, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupAddInstallSectionToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupAddInstallSectionToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupAddInstallSectionToDiskSpaceListA(::core::mem::transmute(diskspace), ::core::mem::transmute(infhandle), ::core::mem::transmute(layoutinfhandle), sectionname.into_param().abi(), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -12757,12 +12757,12 @@ pub unsafe fn SetupAddInstallSectionToDiskSpaceListA<'a, Param3: ::windows::core
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAddInstallSectionToDiskSpaceListW<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: Param3, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAddInstallSectionToDiskSpaceListW<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: Param3, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupAddInstallSectionToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupAddInstallSectionToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCWSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupAddInstallSectionToDiskSpaceListW(::core::mem::transmute(diskspace), ::core::mem::transmute(infhandle), ::core::mem::transmute(layoutinfhandle), sectionname.into_param().abi(), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -12772,12 +12772,12 @@ pub unsafe fn SetupAddInstallSectionToDiskSpaceListW<'a, Param3: ::windows::core
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAddSectionToDiskSpaceListA<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: Param3, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAddSectionToDiskSpaceListA<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: Param3, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupAddSectionToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupAddSectionToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupAddSectionToDiskSpaceListA(::core::mem::transmute(diskspace), ::core::mem::transmute(infhandle), ::core::mem::transmute(listinfhandle), sectionname.into_param().abi(), ::core::mem::transmute(operation), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -12787,12 +12787,12 @@ pub unsafe fn SetupAddSectionToDiskSpaceListA<'a, Param3: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAddSectionToDiskSpaceListW<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: Param3, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAddSectionToDiskSpaceListW<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: Param3, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupAddSectionToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupAddSectionToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupAddSectionToDiskSpaceListW(::core::mem::transmute(diskspace), ::core::mem::transmute(infhandle), ::core::mem::transmute(listinfhandle), sectionname.into_param().abi(), ::core::mem::transmute(operation), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -12802,12 +12802,12 @@ pub unsafe fn SetupAddSectionToDiskSpaceListW<'a, Param3: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAddToDiskSpaceListA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(diskspace: *const ::core::ffi::c_void, targetfilespec: Param1, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAddToDiskSpaceListA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(diskspace: *const ::core::ffi::c_void, targetfilespec: Param1, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupAddToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCSTR, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupAddToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows_core::PCSTR, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupAddToDiskSpaceListA(::core::mem::transmute(diskspace), targetfilespec.into_param().abi(), ::core::mem::transmute(filesize), ::core::mem::transmute(operation), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -12817,12 +12817,12 @@ pub unsafe fn SetupAddToDiskSpaceListA<'a, Param1: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAddToDiskSpaceListW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, targetfilespec: Param1, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAddToDiskSpaceListW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, targetfilespec: Param1, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupAddToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCWSTR, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupAddToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows_core::PCWSTR, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupAddToDiskSpaceListW(::core::mem::transmute(diskspace), targetfilespec.into_param().abi(), ::core::mem::transmute(filesize), ::core::mem::transmute(operation), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -12832,12 +12832,12 @@ pub unsafe fn SetupAddToDiskSpaceListW<'a, Param1: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAddToSourceListA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(flags: u32, source: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAddToSourceListA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(flags: u32, source: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupAddToSourceListA(flags: u32, source: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetupAddToSourceListA(flags: u32, source: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupAddToSourceListA(::core::mem::transmute(flags), source.into_param().abi()))
     }
@@ -12847,12 +12847,12 @@ pub unsafe fn SetupAddToSourceListA<'a, Param1: ::windows::core::IntoParam<'a, :
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAddToSourceListW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(flags: u32, source: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAddToSourceListW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(flags: u32, source: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupAddToSourceListW(flags: u32, source: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetupAddToSourceListW(flags: u32, source: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupAddToSourceListW(::core::mem::transmute(flags), source.into_param().abi()))
     }
@@ -12862,12 +12862,12 @@ pub unsafe fn SetupAddToSourceListW<'a, Param1: ::windows::core::IntoParam<'a, :
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAdjustDiskSpaceListA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(diskspace: *const ::core::ffi::c_void, driveroot: Param1, amount: i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAdjustDiskSpaceListA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(diskspace: *const ::core::ffi::c_void, driveroot: Param1, amount: i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupAdjustDiskSpaceListA(diskspace: *const ::core::ffi::c_void, driveroot: ::windows::core::PCSTR, amount: i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupAdjustDiskSpaceListA(diskspace: *const ::core::ffi::c_void, driveroot: ::windows_core::PCSTR, amount: i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupAdjustDiskSpaceListA(::core::mem::transmute(diskspace), driveroot.into_param().abi(), ::core::mem::transmute(amount), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -12877,12 +12877,12 @@ pub unsafe fn SetupAdjustDiskSpaceListA<'a, Param1: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAdjustDiskSpaceListW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, driveroot: Param1, amount: i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAdjustDiskSpaceListW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, driveroot: Param1, amount: i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupAdjustDiskSpaceListW(diskspace: *const ::core::ffi::c_void, driveroot: ::windows::core::PCWSTR, amount: i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupAdjustDiskSpaceListW(diskspace: *const ::core::ffi::c_void, driveroot: ::windows_core::PCWSTR, amount: i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupAdjustDiskSpaceListW(::core::mem::transmute(diskspace), driveroot.into_param().abi(), ::core::mem::transmute(amount), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -12892,12 +12892,12 @@ pub unsafe fn SetupAdjustDiskSpaceListW<'a, Param1: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupBackupErrorA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwndparent: Param0, dialogtitle: Param1, sourcefile: Param2, targetfile: Param3, win32errorcode: u32, style: u32) -> u32 {
+pub unsafe fn SetupBackupErrorA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndparent: Param0, dialogtitle: Param1, sourcefile: Param2, targetfile: Param3, win32errorcode: u32, style: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupBackupErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCSTR, sourcefile: ::windows::core::PCSTR, targetfile: ::windows::core::PCSTR, win32errorcode: u32, style: u32) -> u32;
+            fn SetupBackupErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core::PCSTR, sourcefile: ::windows_core::PCSTR, targetfile: ::windows_core::PCSTR, win32errorcode: u32, style: u32) -> u32;
         }
         ::core::mem::transmute(SetupBackupErrorA(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), sourcefile.into_param().abi(), targetfile.into_param().abi(), ::core::mem::transmute(win32errorcode), ::core::mem::transmute(style)))
     }
@@ -12907,12 +12907,12 @@ pub unsafe fn SetupBackupErrorA<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupBackupErrorW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwndparent: Param0, dialogtitle: Param1, sourcefile: Param2, targetfile: Param3, win32errorcode: u32, style: u32) -> u32 {
+pub unsafe fn SetupBackupErrorW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndparent: Param0, dialogtitle: Param1, sourcefile: Param2, targetfile: Param3, win32errorcode: u32, style: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupBackupErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCWSTR, sourcefile: ::windows::core::PCWSTR, targetfile: ::windows::core::PCWSTR, win32errorcode: u32, style: u32) -> u32;
+            fn SetupBackupErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core::PCWSTR, sourcefile: ::windows_core::PCWSTR, targetfile: ::windows_core::PCWSTR, win32errorcode: u32, style: u32) -> u32;
         }
         ::core::mem::transmute(SetupBackupErrorW(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), sourcefile.into_param().abi(), targetfile.into_param().abi(), ::core::mem::transmute(win32errorcode), ::core::mem::transmute(style)))
     }
@@ -12980,12 +12980,12 @@ pub unsafe fn SetupCloseLog() {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupCommitFileQueueA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(owner: Param0, queuehandle: *const ::core::ffi::c_void, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupCommitFileQueueA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(owner: Param0, queuehandle: *const ::core::ffi::c_void, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupCommitFileQueueA(owner: super::super::Foundation::HWND, queuehandle: *const ::core::ffi::c_void, msghandler: ::windows::core::RawPtr, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupCommitFileQueueA(owner: super::super::Foundation::HWND, queuehandle: *const ::core::ffi::c_void, msghandler: ::windows_core::RawPtr, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupCommitFileQueueA(owner.into_param().abi(), ::core::mem::transmute(queuehandle), ::core::mem::transmute(msghandler), ::core::mem::transmute(context)))
     }
@@ -12995,12 +12995,12 @@ pub unsafe fn SetupCommitFileQueueA<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupCommitFileQueueW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(owner: Param0, queuehandle: *const ::core::ffi::c_void, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupCommitFileQueueW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(owner: Param0, queuehandle: *const ::core::ffi::c_void, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupCommitFileQueueW(owner: super::super::Foundation::HWND, queuehandle: *const ::core::ffi::c_void, msghandler: ::windows::core::RawPtr, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupCommitFileQueueW(owner: super::super::Foundation::HWND, queuehandle: *const ::core::ffi::c_void, msghandler: ::windows_core::RawPtr, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupCommitFileQueueW(owner.into_param().abi(), ::core::mem::transmute(queuehandle), ::core::mem::transmute(msghandler), ::core::mem::transmute(context)))
     }
@@ -13010,12 +13010,12 @@ pub unsafe fn SetupCommitFileQueueW<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupConfigureWmiFromInfSectionA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, sectionname: Param1, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupConfigureWmiFromInfSectionA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, sectionname: Param1, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupConfigureWmiFromInfSectionA(infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, flags: u32) -> super::super::Foundation::BOOL;
+            fn SetupConfigureWmiFromInfSectionA(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCSTR, flags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupConfigureWmiFromInfSectionA(::core::mem::transmute(infhandle), sectionname.into_param().abi(), ::core::mem::transmute(flags)))
     }
@@ -13025,12 +13025,12 @@ pub unsafe fn SetupConfigureWmiFromInfSectionA<'a, Param1: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupConfigureWmiFromInfSectionW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, sectionname: Param1, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupConfigureWmiFromInfSectionW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, sectionname: Param1, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupConfigureWmiFromInfSectionW(infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
+            fn SetupConfigureWmiFromInfSectionW(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupConfigureWmiFromInfSectionW(::core::mem::transmute(infhandle), sectionname.into_param().abi(), ::core::mem::transmute(flags)))
     }
@@ -13040,14 +13040,14 @@ pub unsafe fn SetupConfigureWmiFromInfSectionW<'a, Param1: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupCopyErrorA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwndparent: Param0, dialogtitle: Param1, diskname: Param2, pathtosource: Param3, sourcefile: Param4, targetpathfile: Param5, win32errorcode: u32, style: u32, pathbuffer: &mut [u8], pathrequiredsize: *mut u32) -> u32 {
+pub unsafe fn SetupCopyErrorA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndparent: Param0, dialogtitle: Param1, diskname: Param2, pathtosource: Param3, sourcefile: Param4, targetpathfile: Param5, win32errorcode: u32, style: u32, pathbuffer: &mut [u8], pathrequiredsize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupCopyErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCSTR, diskname: ::windows::core::PCSTR, pathtosource: ::windows::core::PCSTR, sourcefile: ::windows::core::PCSTR, targetpathfile: ::windows::core::PCSTR, win32errorcode: u32, style: u32, pathbuffer: ::windows::core::PSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
+            fn SetupCopyErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core::PCSTR, diskname: ::windows_core::PCSTR, pathtosource: ::windows_core::PCSTR, sourcefile: ::windows_core::PCSTR, targetpathfile: ::windows_core::PCSTR, win32errorcode: u32, style: u32, pathbuffer: ::windows_core::PSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
         }
-        ::core::mem::transmute(SetupCopyErrorA(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), diskname.into_param().abi(), pathtosource.into_param().abi(), sourcefile.into_param().abi(), targetpathfile.into_param().abi(), ::core::mem::transmute(win32errorcode), ::core::mem::transmute(style), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pathbuffer)), pathbuffer.len() as _, ::core::mem::transmute(pathrequiredsize)))
+        ::core::mem::transmute(SetupCopyErrorA(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), diskname.into_param().abi(), pathtosource.into_param().abi(), sourcefile.into_param().abi(), targetpathfile.into_param().abi(), ::core::mem::transmute(win32errorcode), ::core::mem::transmute(style), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pathbuffer)), pathbuffer.len() as _, ::core::mem::transmute(pathrequiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13055,14 +13055,14 @@ pub unsafe fn SetupCopyErrorA<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupCopyErrorW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwndparent: Param0, dialogtitle: Param1, diskname: Param2, pathtosource: Param3, sourcefile: Param4, targetpathfile: Param5, win32errorcode: u32, style: u32, pathbuffer: &mut [u16], pathrequiredsize: *mut u32) -> u32 {
+pub unsafe fn SetupCopyErrorW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndparent: Param0, dialogtitle: Param1, diskname: Param2, pathtosource: Param3, sourcefile: Param4, targetpathfile: Param5, win32errorcode: u32, style: u32, pathbuffer: &mut [u16], pathrequiredsize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupCopyErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCWSTR, diskname: ::windows::core::PCWSTR, pathtosource: ::windows::core::PCWSTR, sourcefile: ::windows::core::PCWSTR, targetpathfile: ::windows::core::PCWSTR, win32errorcode: u32, style: u32, pathbuffer: ::windows::core::PWSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
+            fn SetupCopyErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core::PCWSTR, diskname: ::windows_core::PCWSTR, pathtosource: ::windows_core::PCWSTR, sourcefile: ::windows_core::PCWSTR, targetpathfile: ::windows_core::PCWSTR, win32errorcode: u32, style: u32, pathbuffer: ::windows_core::PWSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
         }
-        ::core::mem::transmute(SetupCopyErrorW(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), diskname.into_param().abi(), pathtosource.into_param().abi(), sourcefile.into_param().abi(), targetpathfile.into_param().abi(), ::core::mem::transmute(win32errorcode), ::core::mem::transmute(style), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pathbuffer)), pathbuffer.len() as _, ::core::mem::transmute(pathrequiredsize)))
+        ::core::mem::transmute(SetupCopyErrorW(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), diskname.into_param().abi(), pathtosource.into_param().abi(), sourcefile.into_param().abi(), targetpathfile.into_param().abi(), ::core::mem::transmute(win32errorcode), ::core::mem::transmute(style), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pathbuffer)), pathbuffer.len() as _, ::core::mem::transmute(pathrequiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13070,14 +13070,14 @@ pub unsafe fn SetupCopyErrorW<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupCopyOEMInfA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(sourceinffilename: Param0, oemsourcemedialocation: Param1, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: &mut [u8], requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows::core::PSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupCopyOEMInfA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(sourceinffilename: Param0, oemsourcemedialocation: Param1, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: &mut [u8], requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows_core::PSTR) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupCopyOEMInfA(sourceinffilename: ::windows::core::PCSTR, oemsourcemedialocation: ::windows::core::PCSTR, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: ::windows::core::PSTR, destinationinffilenamesize: u32, requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows::core::PSTR) -> super::super::Foundation::BOOL;
+            fn SetupCopyOEMInfA(sourceinffilename: ::windows_core::PCSTR, oemsourcemedialocation: ::windows_core::PCSTR, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: ::windows_core::PSTR, destinationinffilenamesize: u32, requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows_core::PSTR) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupCopyOEMInfA(sourceinffilename.into_param().abi(), oemsourcemedialocation.into_param().abi(), ::core::mem::transmute(oemsourcemediatype), ::core::mem::transmute(copystyle), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(destinationinffilename)), destinationinffilename.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(destinationinffilenamecomponent)))
+        ::core::mem::transmute(SetupCopyOEMInfA(sourceinffilename.into_param().abi(), oemsourcemedialocation.into_param().abi(), ::core::mem::transmute(oemsourcemediatype), ::core::mem::transmute(copystyle), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(destinationinffilename)), destinationinffilename.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(destinationinffilenamecomponent)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13085,14 +13085,14 @@ pub unsafe fn SetupCopyOEMInfA<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupCopyOEMInfW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(sourceinffilename: Param0, oemsourcemedialocation: Param1, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: &mut [u16], requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupCopyOEMInfW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(sourceinffilename: Param0, oemsourcemedialocation: Param1, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: &mut [u16], requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows_core::PWSTR) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupCopyOEMInfW(sourceinffilename: ::windows::core::PCWSTR, oemsourcemedialocation: ::windows::core::PCWSTR, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: ::windows::core::PWSTR, destinationinffilenamesize: u32, requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
+            fn SetupCopyOEMInfW(sourceinffilename: ::windows_core::PCWSTR, oemsourcemedialocation: ::windows_core::PCWSTR, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: ::windows_core::PWSTR, destinationinffilenamesize: u32, requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows_core::PWSTR) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupCopyOEMInfW(sourceinffilename.into_param().abi(), oemsourcemedialocation.into_param().abi(), ::core::mem::transmute(oemsourcemediatype), ::core::mem::transmute(copystyle), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(destinationinffilename)), destinationinffilename.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(destinationinffilenamecomponent)))
+        ::core::mem::transmute(SetupCopyOEMInfW(sourceinffilename.into_param().abi(), oemsourcemedialocation.into_param().abi(), ::core::mem::transmute(oemsourcemediatype), ::core::mem::transmute(copystyle), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(destinationinffilename)), destinationinffilename.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(destinationinffilenamecomponent)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13127,12 +13127,12 @@ pub unsafe fn SetupCreateDiskSpaceListW(reserved1: *mut ::core::ffi::c_void, res
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn SetupDecompressOrCopyFileA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(sourcefilename: Param0, targetfilename: Param1, compressiontype: *const u32) -> u32 {
+pub unsafe fn SetupDecompressOrCopyFileA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(sourcefilename: Param0, targetfilename: Param1, compressiontype: *const u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDecompressOrCopyFileA(sourcefilename: ::windows::core::PCSTR, targetfilename: ::windows::core::PCSTR, compressiontype: *const u32) -> u32;
+            fn SetupDecompressOrCopyFileA(sourcefilename: ::windows_core::PCSTR, targetfilename: ::windows_core::PCSTR, compressiontype: *const u32) -> u32;
         }
         ::core::mem::transmute(SetupDecompressOrCopyFileA(sourcefilename.into_param().abi(), targetfilename.into_param().abi(), ::core::mem::transmute(compressiontype)))
     }
@@ -13141,12 +13141,12 @@ pub unsafe fn SetupDecompressOrCopyFileA<'a, Param0: ::windows::core::IntoParam<
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn SetupDecompressOrCopyFileW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(sourcefilename: Param0, targetfilename: Param1, compressiontype: *const u32) -> u32 {
+pub unsafe fn SetupDecompressOrCopyFileW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(sourcefilename: Param0, targetfilename: Param1, compressiontype: *const u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDecompressOrCopyFileW(sourcefilename: ::windows::core::PCWSTR, targetfilename: ::windows::core::PCWSTR, compressiontype: *const u32) -> u32;
+            fn SetupDecompressOrCopyFileW(sourcefilename: ::windows_core::PCWSTR, targetfilename: ::windows_core::PCWSTR, compressiontype: *const u32) -> u32;
         }
         ::core::mem::transmute(SetupDecompressOrCopyFileW(sourcefilename.into_param().abi(), targetfilename.into_param().abi(), ::core::mem::transmute(compressiontype)))
     }
@@ -13184,12 +13184,12 @@ pub unsafe fn SetupDefaultQueueCallbackW(context: *const ::core::ffi::c_void, no
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDeleteErrorA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwndparent: Param0, dialogtitle: Param1, file: Param2, win32errorcode: u32, style: u32) -> u32 {
+pub unsafe fn SetupDeleteErrorA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndparent: Param0, dialogtitle: Param1, file: Param2, win32errorcode: u32, style: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDeleteErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCSTR, file: ::windows::core::PCSTR, win32errorcode: u32, style: u32) -> u32;
+            fn SetupDeleteErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core::PCSTR, file: ::windows_core::PCSTR, win32errorcode: u32, style: u32) -> u32;
         }
         ::core::mem::transmute(SetupDeleteErrorA(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), file.into_param().abi(), ::core::mem::transmute(win32errorcode), ::core::mem::transmute(style)))
     }
@@ -13199,12 +13199,12 @@ pub unsafe fn SetupDeleteErrorA<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDeleteErrorW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwndparent: Param0, dialogtitle: Param1, file: Param2, win32errorcode: u32, style: u32) -> u32 {
+pub unsafe fn SetupDeleteErrorW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndparent: Param0, dialogtitle: Param1, file: Param2, win32errorcode: u32, style: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDeleteErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, win32errorcode: u32, style: u32) -> u32;
+            fn SetupDeleteErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core::PCWSTR, file: ::windows_core::PCWSTR, win32errorcode: u32, style: u32) -> u32;
         }
         ::core::mem::transmute(SetupDeleteErrorW(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), file.into_param().abi(), ::core::mem::transmute(win32errorcode), ::core::mem::transmute(style)))
     }
@@ -13229,7 +13229,7 @@ pub unsafe fn SetupDestroyDiskSpaceList(diskspace: *mut ::core::ffi::c_void) -> 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiAskForOEMDisk<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiAskForOEMDisk<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13244,14 +13244,14 @@ pub unsafe fn SetupDiAskForOEMDisk<'a, Param0: ::windows::core::IntoParam<'a, HD
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiBuildClassInfoList(flags: u32, classguidlist: &mut [::windows::core::GUID], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiBuildClassInfoList(flags: u32, classguidlist: &mut [::windows_core::GUID], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiBuildClassInfoList(flags: u32, classguidlist: *mut ::windows::core::GUID, classguidlistsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiBuildClassInfoList(flags: u32, classguidlist: *mut ::windows_core::GUID, classguidlistsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiBuildClassInfoList(::core::mem::transmute(flags), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupDiBuildClassInfoList(::core::mem::transmute(flags), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13259,14 +13259,14 @@ pub unsafe fn SetupDiBuildClassInfoList(flags: u32, classguidlist: &mut [::windo
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiBuildClassInfoListExA<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(flags: u32, classguidlist: &mut [::windows::core::GUID], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiBuildClassInfoListExA<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(flags: u32, classguidlist: &mut [::windows_core::GUID], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiBuildClassInfoListExA(flags: u32, classguidlist: *mut ::windows::core::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiBuildClassInfoListExA(flags: u32, classguidlist: *mut ::windows_core::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows_core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiBuildClassInfoListExA(::core::mem::transmute(flags), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiBuildClassInfoListExA(::core::mem::transmute(flags), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13274,14 +13274,14 @@ pub unsafe fn SetupDiBuildClassInfoListExA<'a, Param4: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiBuildClassInfoListExW<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(flags: u32, classguidlist: &mut [::windows::core::GUID], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiBuildClassInfoListExW<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(flags: u32, classguidlist: &mut [::windows_core::GUID], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiBuildClassInfoListExW(flags: u32, classguidlist: *mut ::windows::core::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiBuildClassInfoListExW(flags: u32, classguidlist: *mut ::windows_core::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiBuildClassInfoListExW(::core::mem::transmute(flags), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiBuildClassInfoListExW(::core::mem::transmute(flags), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13289,7 +13289,7 @@ pub unsafe fn SetupDiBuildClassInfoListExW<'a, Param4: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiBuildDriverInfoList<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, drivertype: SETUP_DI_BUILD_DRIVER_DRIVER_TYPE) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiBuildDriverInfoList<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, drivertype: SETUP_DI_BUILD_DRIVER_DRIVER_TYPE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13304,7 +13304,7 @@ pub unsafe fn SetupDiBuildDriverInfoList<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCallClassInstaller<'a, Param1: ::windows::core::IntoParam<'a, HDEVINFO>>(installfunction: u32, deviceinfoset: Param1, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiCallClassInstaller<'a, Param1: ::windows_core::IntoParam<'a, HDEVINFO>>(installfunction: u32, deviceinfoset: Param1, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13319,7 +13319,7 @@ pub unsafe fn SetupDiCallClassInstaller<'a, Param1: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCancelDriverInfoSearch<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiCancelDriverInfoSearch<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13334,7 +13334,7 @@ pub unsafe fn SetupDiCancelDriverInfoSearch<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiChangeState<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiChangeState<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13349,14 +13349,14 @@ pub unsafe fn SetupDiChangeState<'a, Param0: ::windows::core::IntoParam<'a, HDEV
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiClassGuidsFromNameA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(classname: Param0, classguidlist: &mut [::windows::core::GUID], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiClassGuidsFromNameA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(classname: Param0, classguidlist: &mut [::windows_core::GUID], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiClassGuidsFromNameA(classname: ::windows::core::PCSTR, classguidlist: *mut ::windows::core::GUID, classguidlistsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiClassGuidsFromNameA(classname: ::windows_core::PCSTR, classguidlist: *mut ::windows_core::GUID, classguidlistsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiClassGuidsFromNameA(classname.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupDiClassGuidsFromNameA(classname.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13364,14 +13364,14 @@ pub unsafe fn SetupDiClassGuidsFromNameA<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiClassGuidsFromNameExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(classname: Param0, classguidlist: &mut [::windows::core::GUID], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiClassGuidsFromNameExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(classname: Param0, classguidlist: &mut [::windows_core::GUID], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiClassGuidsFromNameExA(classname: ::windows::core::PCSTR, classguidlist: *mut ::windows::core::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiClassGuidsFromNameExA(classname: ::windows_core::PCSTR, classguidlist: *mut ::windows_core::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows_core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiClassGuidsFromNameExA(classname.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiClassGuidsFromNameExA(classname.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13379,14 +13379,14 @@ pub unsafe fn SetupDiClassGuidsFromNameExA<'a, Param0: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiClassGuidsFromNameExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classname: Param0, classguidlist: &mut [::windows::core::GUID], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiClassGuidsFromNameExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classname: Param0, classguidlist: &mut [::windows_core::GUID], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiClassGuidsFromNameExW(classname: ::windows::core::PCWSTR, classguidlist: *mut ::windows::core::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiClassGuidsFromNameExW(classname: ::windows_core::PCWSTR, classguidlist: *mut ::windows_core::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiClassGuidsFromNameExW(classname.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiClassGuidsFromNameExW(classname.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13394,14 +13394,14 @@ pub unsafe fn SetupDiClassGuidsFromNameExW<'a, Param0: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiClassGuidsFromNameW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classname: Param0, classguidlist: &mut [::windows::core::GUID], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiClassGuidsFromNameW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classname: Param0, classguidlist: &mut [::windows_core::GUID], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiClassGuidsFromNameW(classname: ::windows::core::PCWSTR, classguidlist: *mut ::windows::core::GUID, classguidlistsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiClassGuidsFromNameW(classname: ::windows_core::PCWSTR, classguidlist: *mut ::windows_core::GUID, classguidlistsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiClassGuidsFromNameW(classname.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupDiClassGuidsFromNameW(classname.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classguidlist)), classguidlist.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13409,14 +13409,14 @@ pub unsafe fn SetupDiClassGuidsFromNameW<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiClassNameFromGuidA(classguid: *const ::windows::core::GUID, classname: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiClassNameFromGuidA(classguid: *const ::windows_core::GUID, classname: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiClassNameFromGuidA(classguid: *const ::windows::core::GUID, classname: ::windows::core::PSTR, classnamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiClassNameFromGuidA(classguid: *const ::windows_core::GUID, classname: ::windows_core::PSTR, classnamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiClassNameFromGuidA(::core::mem::transmute(classguid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classname)), classname.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupDiClassNameFromGuidA(::core::mem::transmute(classguid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classname)), classname.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13424,14 +13424,14 @@ pub unsafe fn SetupDiClassNameFromGuidA(classguid: *const ::windows::core::GUID,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiClassNameFromGuidExA<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(classguid: *const ::windows::core::GUID, classname: &mut [u8], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiClassNameFromGuidExA<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(classguid: *const ::windows_core::GUID, classname: &mut [u8], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiClassNameFromGuidExA(classguid: *const ::windows::core::GUID, classname: ::windows::core::PSTR, classnamesize: u32, requiredsize: *mut u32, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiClassNameFromGuidExA(classguid: *const ::windows_core::GUID, classname: ::windows_core::PSTR, classnamesize: u32, requiredsize: *mut u32, machinename: ::windows_core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiClassNameFromGuidExA(::core::mem::transmute(classguid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classname)), classname.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiClassNameFromGuidExA(::core::mem::transmute(classguid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classname)), classname.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13439,14 +13439,14 @@ pub unsafe fn SetupDiClassNameFromGuidExA<'a, Param4: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiClassNameFromGuidExW<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classguid: *const ::windows::core::GUID, classname: &mut [u16], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiClassNameFromGuidExW<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classguid: *const ::windows_core::GUID, classname: &mut [u16], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiClassNameFromGuidExW(classguid: *const ::windows::core::GUID, classname: ::windows::core::PWSTR, classnamesize: u32, requiredsize: *mut u32, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiClassNameFromGuidExW(classguid: *const ::windows_core::GUID, classname: ::windows_core::PWSTR, classnamesize: u32, requiredsize: *mut u32, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiClassNameFromGuidExW(::core::mem::transmute(classguid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classname)), classname.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiClassNameFromGuidExW(::core::mem::transmute(classguid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classname)), classname.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13454,14 +13454,14 @@ pub unsafe fn SetupDiClassNameFromGuidExW<'a, Param4: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiClassNameFromGuidW(classguid: *const ::windows::core::GUID, classname: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiClassNameFromGuidW(classguid: *const ::windows_core::GUID, classname: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiClassNameFromGuidW(classguid: *const ::windows::core::GUID, classname: ::windows::core::PWSTR, classnamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiClassNameFromGuidW(classguid: *const ::windows_core::GUID, classname: ::windows_core::PWSTR, classnamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiClassNameFromGuidW(::core::mem::transmute(classguid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classname)), classname.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupDiClassNameFromGuidW(::core::mem::transmute(classguid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classname)), classname.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13469,15 +13469,15 @@ pub unsafe fn SetupDiClassNameFromGuidW(classguid: *const ::windows::core::GUID,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiCreateDevRegKeyA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param6: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: Param6) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiCreateDevRegKeyA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: Param6) -> ::windows_core::Result<super::super::System::Registry::HKEY> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiCreateDevRegKeyA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCSTR) -> super::super::System::Registry::HKEY;
+            fn SetupDiCreateDevRegKeyA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core::PCSTR) -> super::super::System::Registry::HKEY;
         }
         let result__ = SetupDiCreateDevRegKeyA(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(scope), ::core::mem::transmute(hwprofile), ::core::mem::transmute(keytype), ::core::mem::transmute(infhandle), infsectionname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13485,15 +13485,15 @@ pub unsafe fn SetupDiCreateDevRegKeyA<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiCreateDevRegKeyW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param6: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: Param6) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiCreateDevRegKeyW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: Param6) -> ::windows_core::Result<super::super::System::Registry::HKEY> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiCreateDevRegKeyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCWSTR) -> super::super::System::Registry::HKEY;
+            fn SetupDiCreateDevRegKeyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core::PCWSTR) -> super::super::System::Registry::HKEY;
         }
         let result__ = SetupDiCreateDevRegKeyW(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(scope), ::core::mem::transmute(hwprofile), ::core::mem::transmute(keytype), ::core::mem::transmute(infhandle), infsectionname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13501,12 +13501,12 @@ pub unsafe fn SetupDiCreateDevRegKeyW<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInfoA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(deviceinfoset: Param0, devicename: Param1, classguid: *const ::windows::core::GUID, devicedescription: Param3, hwndparent: Param4, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiCreateDeviceInfoA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(deviceinfoset: Param0, devicename: Param1, classguid: *const ::windows_core::GUID, devicedescription: Param3, hwndparent: Param4, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiCreateDeviceInfoA(deviceinfoset: HDEVINFO, devicename: ::windows::core::PCSTR, classguid: *const ::windows::core::GUID, devicedescription: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
+            fn SetupDiCreateDeviceInfoA(deviceinfoset: HDEVINFO, devicename: ::windows_core::PCSTR, classguid: *const ::windows_core::GUID, devicedescription: ::windows_core::PCSTR, hwndparent: super::super::Foundation::HWND, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiCreateDeviceInfoA(deviceinfoset.into_param().abi(), devicename.into_param().abi(), ::core::mem::transmute(classguid), devicedescription.into_param().abi(), hwndparent.into_param().abi(), ::core::mem::transmute(creationflags), ::core::mem::transmute(deviceinfodata)))
     }
@@ -13516,15 +13516,15 @@ pub unsafe fn SetupDiCreateDeviceInfoA<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInfoList<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(classguid: *const ::windows::core::GUID, hwndparent: Param1) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiCreateDeviceInfoList<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(classguid: *const ::windows_core::GUID, hwndparent: Param1) -> ::windows_core::Result<HDEVINFO> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiCreateDeviceInfoList(classguid: *const ::windows::core::GUID, hwndparent: super::super::Foundation::HWND) -> HDEVINFO;
+            fn SetupDiCreateDeviceInfoList(classguid: *const ::windows_core::GUID, hwndparent: super::super::Foundation::HWND) -> HDEVINFO;
         }
         let result__ = SetupDiCreateDeviceInfoList(::core::mem::transmute(classguid), hwndparent.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13532,15 +13532,15 @@ pub unsafe fn SetupDiCreateDeviceInfoList<'a, Param1: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInfoListExA<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(classguid: *const ::windows::core::GUID, hwndparent: Param1, machinename: Param2, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiCreateDeviceInfoListExA<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(classguid: *const ::windows_core::GUID, hwndparent: Param1, machinename: Param2, reserved: *mut ::core::ffi::c_void) -> ::windows_core::Result<HDEVINFO> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiCreateDeviceInfoListExA(classguid: *const ::windows::core::GUID, hwndparent: super::super::Foundation::HWND, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
+            fn SetupDiCreateDeviceInfoListExA(classguid: *const ::windows_core::GUID, hwndparent: super::super::Foundation::HWND, machinename: ::windows_core::PCSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
         }
         let result__ = SetupDiCreateDeviceInfoListExA(::core::mem::transmute(classguid), hwndparent.into_param().abi(), machinename.into_param().abi(), ::core::mem::transmute(reserved));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13548,15 +13548,15 @@ pub unsafe fn SetupDiCreateDeviceInfoListExA<'a, Param1: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInfoListExW<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classguid: *const ::windows::core::GUID, hwndparent: Param1, machinename: Param2, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiCreateDeviceInfoListExW<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classguid: *const ::windows_core::GUID, hwndparent: Param1, machinename: Param2, reserved: *mut ::core::ffi::c_void) -> ::windows_core::Result<HDEVINFO> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiCreateDeviceInfoListExW(classguid: *const ::windows::core::GUID, hwndparent: super::super::Foundation::HWND, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
+            fn SetupDiCreateDeviceInfoListExW(classguid: *const ::windows_core::GUID, hwndparent: super::super::Foundation::HWND, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
         }
         let result__ = SetupDiCreateDeviceInfoListExW(::core::mem::transmute(classguid), hwndparent.into_param().abi(), machinename.into_param().abi(), ::core::mem::transmute(reserved));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13564,12 +13564,12 @@ pub unsafe fn SetupDiCreateDeviceInfoListExW<'a, Param1: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInfoW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(deviceinfoset: Param0, devicename: Param1, classguid: *const ::windows::core::GUID, devicedescription: Param3, hwndparent: Param4, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiCreateDeviceInfoW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(deviceinfoset: Param0, devicename: Param1, classguid: *const ::windows_core::GUID, devicedescription: Param3, hwndparent: Param4, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiCreateDeviceInfoW(deviceinfoset: HDEVINFO, devicename: ::windows::core::PCWSTR, classguid: *const ::windows::core::GUID, devicedescription: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
+            fn SetupDiCreateDeviceInfoW(deviceinfoset: HDEVINFO, devicename: ::windows_core::PCWSTR, classguid: *const ::windows_core::GUID, devicedescription: ::windows_core::PCWSTR, hwndparent: super::super::Foundation::HWND, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiCreateDeviceInfoW(deviceinfoset.into_param().abi(), devicename.into_param().abi(), ::core::mem::transmute(classguid), devicedescription.into_param().abi(), hwndparent.into_param().abi(), ::core::mem::transmute(creationflags), ::core::mem::transmute(deviceinfodata)))
     }
@@ -13579,12 +13579,12 @@ pub unsafe fn SetupDiCreateDeviceInfoW<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInterfaceA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, referencestring: Param3, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiCreateDeviceInterfaceA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows_core::GUID, referencestring: Param3, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiCreateDeviceInterfaceA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, referencestring: ::windows::core::PCSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
+            fn SetupDiCreateDeviceInterfaceA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows_core::GUID, referencestring: ::windows_core::PCSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiCreateDeviceInterfaceA(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(interfaceclassguid), referencestring.into_param().abi(), ::core::mem::transmute(creationflags), ::core::mem::transmute(deviceinterfacedata)))
     }
@@ -13594,15 +13594,15 @@ pub unsafe fn SetupDiCreateDeviceInterfaceA<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInterfaceRegKeyA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: Param5) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiCreateDeviceInterfaceRegKeyA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: Param5) -> ::windows_core::Result<super::super::System::Registry::HKEY> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiCreateDeviceInterfaceRegKeyA(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCSTR) -> super::super::System::Registry::HKEY;
+            fn SetupDiCreateDeviceInterfaceRegKeyA(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core::PCSTR) -> super::super::System::Registry::HKEY;
         }
         let result__ = SetupDiCreateDeviceInterfaceRegKeyA(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinterfacedata), ::core::mem::transmute(reserved), ::core::mem::transmute(samdesired), ::core::mem::transmute(infhandle), infsectionname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13610,15 +13610,15 @@ pub unsafe fn SetupDiCreateDeviceInterfaceRegKeyA<'a, Param0: ::windows::core::I
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInterfaceRegKeyW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: Param5) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiCreateDeviceInterfaceRegKeyW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: Param5) -> ::windows_core::Result<super::super::System::Registry::HKEY> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiCreateDeviceInterfaceRegKeyW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCWSTR) -> super::super::System::Registry::HKEY;
+            fn SetupDiCreateDeviceInterfaceRegKeyW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core::PCWSTR) -> super::super::System::Registry::HKEY;
         }
         let result__ = SetupDiCreateDeviceInterfaceRegKeyW(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinterfacedata), ::core::mem::transmute(reserved), ::core::mem::transmute(samdesired), ::core::mem::transmute(infhandle), infsectionname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13626,12 +13626,12 @@ pub unsafe fn SetupDiCreateDeviceInterfaceRegKeyW<'a, Param0: ::windows::core::I
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInterfaceW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, referencestring: Param3, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiCreateDeviceInterfaceW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows_core::GUID, referencestring: Param3, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiCreateDeviceInterfaceW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, referencestring: ::windows::core::PCWSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
+            fn SetupDiCreateDeviceInterfaceW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows_core::GUID, referencestring: ::windows_core::PCWSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiCreateDeviceInterfaceW(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(interfaceclassguid), referencestring.into_param().abi(), ::core::mem::transmute(creationflags), ::core::mem::transmute(deviceinterfacedata)))
     }
@@ -13641,7 +13641,7 @@ pub unsafe fn SetupDiCreateDeviceInterfaceW<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiDeleteDevRegKey<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiDeleteDevRegKey<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13656,7 +13656,7 @@ pub unsafe fn SetupDiDeleteDevRegKey<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiDeleteDeviceInfo<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiDeleteDeviceInfo<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13671,7 +13671,7 @@ pub unsafe fn SetupDiDeleteDeviceInfo<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiDeleteDeviceInterfaceData<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiDeleteDeviceInterfaceData<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13686,7 +13686,7 @@ pub unsafe fn SetupDiDeleteDeviceInterfaceData<'a, Param0: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiDeleteDeviceInterfaceRegKey<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiDeleteDeviceInterfaceRegKey<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13716,7 +13716,7 @@ pub unsafe fn SetupDiDestroyClassImageList(classimagelistdata: *const SP_CLASSIM
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiDestroyDeviceInfoList<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiDestroyDeviceInfoList<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13731,7 +13731,7 @@ pub unsafe fn SetupDiDestroyDeviceInfoList<'a, Param0: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiDestroyDriverInfoList<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiDestroyDriverInfoList<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13746,7 +13746,7 @@ pub unsafe fn SetupDiDestroyDriverInfoList<'a, Param0: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn SetupDiDrawMiniIcon<'a, Param0: ::windows::core::IntoParam<'a, super::super::Graphics::Gdi::HDC>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::RECT>>(hdc: Param0, rc: Param1, miniiconindex: i32, flags: u32) -> i32 {
+pub unsafe fn SetupDiDrawMiniIcon<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::RECT>>(hdc: Param0, rc: Param1, miniiconindex: i32, flags: u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13761,7 +13761,7 @@ pub unsafe fn SetupDiDrawMiniIcon<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiEnumDeviceInfo<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, memberindex: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiEnumDeviceInfo<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, memberindex: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13776,12 +13776,12 @@ pub unsafe fn SetupDiEnumDeviceInfo<'a, Param0: ::windows::core::IntoParam<'a, H
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiEnumDeviceInterfaces<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, memberindex: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiEnumDeviceInterfaces<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows_core::GUID, memberindex: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiEnumDeviceInterfaces(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, memberindex: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
+            fn SetupDiEnumDeviceInterfaces(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows_core::GUID, memberindex: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiEnumDeviceInterfaces(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(memberindex), ::core::mem::transmute(deviceinterfacedata)))
     }
@@ -13791,7 +13791,7 @@ pub unsafe fn SetupDiEnumDeviceInterfaces<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiEnumDriverInfoA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiEnumDriverInfoA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13806,7 +13806,7 @@ pub unsafe fn SetupDiEnumDriverInfoA<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiEnumDriverInfoW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiEnumDriverInfoW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13826,9 +13826,9 @@ pub unsafe fn SetupDiGetActualModelsSectionA(context: *const INFCONTEXT, alterna
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetActualModelsSectionA(context: *const INFCONTEXT, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows::core::PSTR, infsectionwithextsize: u32, requiredsize: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetActualModelsSectionA(context: *const INFCONTEXT, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows_core::PSTR, infsectionwithextsize: u32, requiredsize: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetActualModelsSectionA(::core::mem::transmute(context), ::core::mem::transmute(alternateplatforminfo), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(infsectionwithext)), infsectionwithext.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiGetActualModelsSectionA(::core::mem::transmute(context), ::core::mem::transmute(alternateplatforminfo), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(infsectionwithext)), infsectionwithext.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13841,9 +13841,9 @@ pub unsafe fn SetupDiGetActualModelsSectionW(context: *const INFCONTEXT, alterna
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetActualModelsSectionW(context: *const INFCONTEXT, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows::core::PWSTR, infsectionwithextsize: u32, requiredsize: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetActualModelsSectionW(context: *const INFCONTEXT, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows_core::PWSTR, infsectionwithextsize: u32, requiredsize: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetActualModelsSectionW(::core::mem::transmute(context), ::core::mem::transmute(alternateplatforminfo), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(infsectionwithext)), infsectionwithext.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiGetActualModelsSectionW(::core::mem::transmute(context), ::core::mem::transmute(alternateplatforminfo), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(infsectionwithext)), infsectionwithext.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13851,14 +13851,14 @@ pub unsafe fn SetupDiGetActualModelsSectionW(context: *const INFCONTEXT, alterna
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetActualSectionToInstallA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infsectionname: Param1, infsectionwithext: &mut [u8], requiredsize: *mut u32, extension: *mut ::windows::core::PSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetActualSectionToInstallA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infsectionname: Param1, infsectionwithext: &mut [u8], requiredsize: *mut u32, extension: *mut ::windows_core::PSTR) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetActualSectionToInstallA(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCSTR, infsectionwithext: ::windows::core::PSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows::core::PSTR) -> super::super::Foundation::BOOL;
+            fn SetupDiGetActualSectionToInstallA(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core::PCSTR, infsectionwithext: ::windows_core::PSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows_core::PSTR) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetActualSectionToInstallA(::core::mem::transmute(infhandle), infsectionname.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(infsectionwithext)), infsectionwithext.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(extension)))
+        ::core::mem::transmute(SetupDiGetActualSectionToInstallA(::core::mem::transmute(infhandle), infsectionname.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(infsectionwithext)), infsectionwithext.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(extension)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13866,14 +13866,14 @@ pub unsafe fn SetupDiGetActualSectionToInstallA<'a, Param1: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
 #[inline]
-pub unsafe fn SetupDiGetActualSectionToInstallExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infsectionname: Param1, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: &mut [u8], requiredsize: *mut u32, extension: *mut ::windows::core::PSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetActualSectionToInstallExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infsectionname: Param1, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: &mut [u8], requiredsize: *mut u32, extension: *mut ::windows_core::PSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetActualSectionToInstallExA(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows::core::PSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows::core::PSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetActualSectionToInstallExA(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core::PCSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows_core::PSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows_core::PSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetActualSectionToInstallExA(::core::mem::transmute(infhandle), infsectionname.into_param().abi(), ::core::mem::transmute(alternateplatforminfo), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(infsectionwithext)), infsectionwithext.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(extension), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiGetActualSectionToInstallExA(::core::mem::transmute(infhandle), infsectionname.into_param().abi(), ::core::mem::transmute(alternateplatforminfo), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(infsectionwithext)), infsectionwithext.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(extension), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13881,14 +13881,14 @@ pub unsafe fn SetupDiGetActualSectionToInstallExA<'a, Param1: ::windows::core::I
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
 #[inline]
-pub unsafe fn SetupDiGetActualSectionToInstallExW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infsectionname: Param1, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: &mut [u16], requiredsize: *mut u32, extension: *mut ::windows::core::PWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetActualSectionToInstallExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infsectionname: Param1, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: &mut [u16], requiredsize: *mut u32, extension: *mut ::windows_core::PWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetActualSectionToInstallExW(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCWSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows::core::PWSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows::core::PWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetActualSectionToInstallExW(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core::PCWSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows_core::PWSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows_core::PWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetActualSectionToInstallExW(::core::mem::transmute(infhandle), infsectionname.into_param().abi(), ::core::mem::transmute(alternateplatforminfo), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(infsectionwithext)), infsectionwithext.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(extension), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiGetActualSectionToInstallExW(::core::mem::transmute(infhandle), infsectionname.into_param().abi(), ::core::mem::transmute(alternateplatforminfo), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(infsectionwithext)), infsectionwithext.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(extension), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13896,14 +13896,14 @@ pub unsafe fn SetupDiGetActualSectionToInstallExW<'a, Param1: ::windows::core::I
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetActualSectionToInstallW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infsectionname: Param1, infsectionwithext: &mut [u16], requiredsize: *mut u32, extension: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetActualSectionToInstallW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infsectionname: Param1, infsectionwithext: &mut [u16], requiredsize: *mut u32, extension: *mut ::windows_core::PWSTR) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetActualSectionToInstallW(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCWSTR, infsectionwithext: ::windows::core::PWSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
+            fn SetupDiGetActualSectionToInstallW(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core::PCWSTR, infsectionwithext: ::windows_core::PWSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows_core::PWSTR) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetActualSectionToInstallW(::core::mem::transmute(infhandle), infsectionname.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(infsectionwithext)), infsectionwithext.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(extension)))
+        ::core::mem::transmute(SetupDiGetActualSectionToInstallW(::core::mem::transmute(infhandle), infsectionname.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(infsectionwithext)), infsectionwithext.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(extension)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13911,12 +13911,12 @@ pub unsafe fn SetupDiGetActualSectionToInstallW<'a, Param1: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassBitmapIndex(classguid: *const ::windows::core::GUID, miniiconindex: *mut i32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassBitmapIndex(classguid: *const ::windows_core::GUID, miniiconindex: *mut i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassBitmapIndex(classguid: *const ::windows::core::GUID, miniiconindex: *mut i32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassBitmapIndex(classguid: *const ::windows_core::GUID, miniiconindex: *mut i32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiGetClassBitmapIndex(::core::mem::transmute(classguid), ::core::mem::transmute(miniiconindex)))
     }
@@ -13926,14 +13926,14 @@ pub unsafe fn SetupDiGetClassBitmapIndex(classguid: *const ::windows::core::GUID
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassDescriptionA(classguid: *const ::windows::core::GUID, classdescription: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassDescriptionA(classguid: *const ::windows_core::GUID, classdescription: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassDescriptionA(classguid: *const ::windows::core::GUID, classdescription: ::windows::core::PSTR, classdescriptionsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassDescriptionA(classguid: *const ::windows_core::GUID, classdescription: ::windows_core::PSTR, classdescriptionsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetClassDescriptionA(::core::mem::transmute(classguid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classdescription)), classdescription.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupDiGetClassDescriptionA(::core::mem::transmute(classguid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classdescription)), classdescription.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13941,14 +13941,14 @@ pub unsafe fn SetupDiGetClassDescriptionA(classguid: *const ::windows::core::GUI
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassDescriptionExA<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(classguid: *const ::windows::core::GUID, classdescription: &mut [u8], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassDescriptionExA<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(classguid: *const ::windows_core::GUID, classdescription: &mut [u8], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassDescriptionExA(classguid: *const ::windows::core::GUID, classdescription: ::windows::core::PSTR, classdescriptionsize: u32, requiredsize: *mut u32, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassDescriptionExA(classguid: *const ::windows_core::GUID, classdescription: ::windows_core::PSTR, classdescriptionsize: u32, requiredsize: *mut u32, machinename: ::windows_core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetClassDescriptionExA(::core::mem::transmute(classguid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classdescription)), classdescription.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiGetClassDescriptionExA(::core::mem::transmute(classguid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classdescription)), classdescription.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13956,14 +13956,14 @@ pub unsafe fn SetupDiGetClassDescriptionExA<'a, Param4: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassDescriptionExW<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classguid: *const ::windows::core::GUID, classdescription: &mut [u16], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassDescriptionExW<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classguid: *const ::windows_core::GUID, classdescription: &mut [u16], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassDescriptionExW(classguid: *const ::windows::core::GUID, classdescription: ::windows::core::PWSTR, classdescriptionsize: u32, requiredsize: *mut u32, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassDescriptionExW(classguid: *const ::windows_core::GUID, classdescription: ::windows_core::PWSTR, classdescriptionsize: u32, requiredsize: *mut u32, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetClassDescriptionExW(::core::mem::transmute(classguid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classdescription)), classdescription.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiGetClassDescriptionExW(::core::mem::transmute(classguid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classdescription)), classdescription.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13971,14 +13971,14 @@ pub unsafe fn SetupDiGetClassDescriptionExW<'a, Param4: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassDescriptionW(classguid: *const ::windows::core::GUID, classdescription: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassDescriptionW(classguid: *const ::windows_core::GUID, classdescription: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassDescriptionW(classguid: *const ::windows::core::GUID, classdescription: ::windows::core::PWSTR, classdescriptionsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassDescriptionW(classguid: *const ::windows_core::GUID, classdescription: ::windows_core::PWSTR, classdescriptionsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetClassDescriptionW(::core::mem::transmute(classguid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classdescription)), classdescription.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupDiGetClassDescriptionW(::core::mem::transmute(classguid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classdescription)), classdescription.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13986,7 +13986,7 @@ pub unsafe fn SetupDiGetClassDescriptionW(classguid: *const ::windows::core::GUI
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`, `\"Win32_UI_Controls\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
-pub unsafe fn SetupDiGetClassDevPropertySheetsA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const super::super::UI::Controls::PROPSHEETHEADERA_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassDevPropertySheetsA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const super::super::UI::Controls::PROPSHEETHEADERA_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14001,7 +14001,7 @@ pub unsafe fn SetupDiGetClassDevPropertySheetsA<'a, Param0: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`, `\"Win32_UI_Controls\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
-pub unsafe fn SetupDiGetClassDevPropertySheetsW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const super::super::UI::Controls::PROPSHEETHEADERW_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassDevPropertySheetsW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const super::super::UI::Controls::PROPSHEETHEADERW_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14016,15 +14016,15 @@ pub unsafe fn SetupDiGetClassDevPropertySheetsW<'a, Param0: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassDevsA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(classguid: *const ::windows::core::GUID, enumerator: Param1, hwndparent: Param2, flags: u32) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiGetClassDevsA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(classguid: *const ::windows_core::GUID, enumerator: Param1, hwndparent: Param2, flags: u32) -> ::windows_core::Result<HDEVINFO> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassDevsA(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, flags: u32) -> HDEVINFO;
+            fn SetupDiGetClassDevsA(classguid: *const ::windows_core::GUID, enumerator: ::windows_core::PCSTR, hwndparent: super::super::Foundation::HWND, flags: u32) -> HDEVINFO;
         }
         let result__ = SetupDiGetClassDevsA(::core::mem::transmute(classguid), enumerator.into_param().abi(), hwndparent.into_param().abi(), ::core::mem::transmute(flags));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14032,15 +14032,15 @@ pub unsafe fn SetupDiGetClassDevsA<'a, Param1: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassDevsExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows::core::IntoParam<'a, HDEVINFO>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(classguid: *const ::windows::core::GUID, enumerator: Param1, hwndparent: Param2, flags: u32, deviceinfoset: Param4, machinename: Param5, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiGetClassDevsExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows_core::IntoParam<'a, HDEVINFO>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(classguid: *const ::windows_core::GUID, enumerator: Param1, hwndparent: Param2, flags: u32, deviceinfoset: Param4, machinename: Param5, reserved: *mut ::core::ffi::c_void) -> ::windows_core::Result<HDEVINFO> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassDevsExA(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, flags: u32, deviceinfoset: HDEVINFO, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
+            fn SetupDiGetClassDevsExA(classguid: *const ::windows_core::GUID, enumerator: ::windows_core::PCSTR, hwndparent: super::super::Foundation::HWND, flags: u32, deviceinfoset: HDEVINFO, machinename: ::windows_core::PCSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
         }
         let result__ = SetupDiGetClassDevsExA(::core::mem::transmute(classguid), enumerator.into_param().abi(), hwndparent.into_param().abi(), ::core::mem::transmute(flags), deviceinfoset.into_param().abi(), machinename.into_param().abi(), ::core::mem::transmute(reserved));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14048,15 +14048,15 @@ pub unsafe fn SetupDiGetClassDevsExA<'a, Param1: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassDevsExW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows::core::IntoParam<'a, HDEVINFO>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classguid: *const ::windows::core::GUID, enumerator: Param1, hwndparent: Param2, flags: u32, deviceinfoset: Param4, machinename: Param5, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiGetClassDevsExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows_core::IntoParam<'a, HDEVINFO>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classguid: *const ::windows_core::GUID, enumerator: Param1, hwndparent: Param2, flags: u32, deviceinfoset: Param4, machinename: Param5, reserved: *mut ::core::ffi::c_void) -> ::windows_core::Result<HDEVINFO> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassDevsExW(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, flags: u32, deviceinfoset: HDEVINFO, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
+            fn SetupDiGetClassDevsExW(classguid: *const ::windows_core::GUID, enumerator: ::windows_core::PCWSTR, hwndparent: super::super::Foundation::HWND, flags: u32, deviceinfoset: HDEVINFO, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
         }
         let result__ = SetupDiGetClassDevsExW(::core::mem::transmute(classguid), enumerator.into_param().abi(), hwndparent.into_param().abi(), ::core::mem::transmute(flags), deviceinfoset.into_param().abi(), machinename.into_param().abi(), ::core::mem::transmute(reserved));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14064,15 +14064,15 @@ pub unsafe fn SetupDiGetClassDevsExW<'a, Param1: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassDevsW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(classguid: *const ::windows::core::GUID, enumerator: Param1, hwndparent: Param2, flags: u32) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiGetClassDevsW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(classguid: *const ::windows_core::GUID, enumerator: Param1, hwndparent: Param2, flags: u32) -> ::windows_core::Result<HDEVINFO> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassDevsW(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, flags: u32) -> HDEVINFO;
+            fn SetupDiGetClassDevsW(classguid: *const ::windows_core::GUID, enumerator: ::windows_core::PCWSTR, hwndparent: super::super::Foundation::HWND, flags: u32) -> HDEVINFO;
         }
         let result__ = SetupDiGetClassDevsW(::core::mem::transmute(classguid), enumerator.into_param().abi(), hwndparent.into_param().abi(), ::core::mem::transmute(flags));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14080,12 +14080,12 @@ pub unsafe fn SetupDiGetClassDevsW<'a, Param1: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_UI_Controls\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 #[inline]
-pub unsafe fn SetupDiGetClassImageIndex(classimagelistdata: *const SP_CLASSIMAGELIST_DATA, classguid: *const ::windows::core::GUID, imageindex: *mut i32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassImageIndex(classimagelistdata: *const SP_CLASSIMAGELIST_DATA, classguid: *const ::windows_core::GUID, imageindex: *mut i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassImageIndex(classimagelistdata: *const SP_CLASSIMAGELIST_DATA, classguid: *const ::windows::core::GUID, imageindex: *mut i32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassImageIndex(classimagelistdata: *const SP_CLASSIMAGELIST_DATA, classguid: *const ::windows_core::GUID, imageindex: *mut i32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiGetClassImageIndex(::core::mem::transmute(classimagelistdata), ::core::mem::transmute(classguid), ::core::mem::transmute(imageindex)))
     }
@@ -14110,12 +14110,12 @@ pub unsafe fn SetupDiGetClassImageList(classimagelistdata: *mut SP_CLASSIMAGELIS
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_UI_Controls\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 #[inline]
-pub unsafe fn SetupDiGetClassImageListExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA, machinename: Param1, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassImageListExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA, machinename: Param1, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassImageListExA(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassImageListExA(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA, machinename: ::windows_core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiGetClassImageListExA(::core::mem::transmute(classimagelistdata), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
@@ -14125,12 +14125,12 @@ pub unsafe fn SetupDiGetClassImageListExA<'a, Param1: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_UI_Controls\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 #[inline]
-pub unsafe fn SetupDiGetClassImageListExW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA, machinename: Param1, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassImageListExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA, machinename: Param1, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassImageListExW(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassImageListExW(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiGetClassImageListExW(::core::mem::transmute(classimagelistdata), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
@@ -14140,7 +14140,7 @@ pub unsafe fn SetupDiGetClassImageListExW<'a, Param1: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassInstallParamsA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassInstallParamsA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14155,7 +14155,7 @@ pub unsafe fn SetupDiGetClassInstallParamsA<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassInstallParamsW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassInstallParamsW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14170,12 +14170,12 @@ pub unsafe fn SetupDiGetClassInstallParamsW<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiGetClassPropertyExW<'a, Param7: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32, machinename: Param7, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassPropertyExW<'a, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32, machinename: Param7, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassPropertyExW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassPropertyExW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiGetClassPropertyExW(::core::mem::transmute(classguid), ::core::mem::transmute(propertykey), ::core::mem::transmute(propertytype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(requiredsize), ::core::mem::transmute(flags), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
@@ -14185,14 +14185,14 @@ pub unsafe fn SetupDiGetClassPropertyExW<'a, Param7: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiGetClassPropertyKeys(classguid: *const ::windows::core::GUID, propertykeyarray: &mut [super::Properties::DEVPROPKEY], requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassPropertyKeys(classguid: *const ::windows_core::GUID, propertykeyarray: &mut [super::Properties::DEVPROPKEY], requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassPropertyKeys(classguid: *const ::windows::core::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassPropertyKeys(classguid: *const ::windows_core::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetClassPropertyKeys(::core::mem::transmute(classguid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(propertykeyarray)), propertykeyarray.len() as _, ::core::mem::transmute(requiredpropertykeycount), ::core::mem::transmute(flags)))
+        ::core::mem::transmute(SetupDiGetClassPropertyKeys(::core::mem::transmute(classguid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(propertykeyarray)), propertykeyarray.len() as _, ::core::mem::transmute(requiredpropertykeycount), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14200,14 +14200,14 @@ pub unsafe fn SetupDiGetClassPropertyKeys(classguid: *const ::windows::core::GUI
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiGetClassPropertyKeysExW<'a, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classguid: *const ::windows::core::GUID, propertykeyarray: &mut [super::Properties::DEVPROPKEY], requiredpropertykeycount: *mut u32, flags: u32, machinename: Param5, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassPropertyKeysExW<'a, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classguid: *const ::windows_core::GUID, propertykeyarray: &mut [super::Properties::DEVPROPKEY], requiredpropertykeycount: *mut u32, flags: u32, machinename: Param5, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassPropertyKeysExW(classguid: *const ::windows::core::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassPropertyKeysExW(classguid: *const ::windows_core::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetClassPropertyKeysExW(::core::mem::transmute(classguid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(propertykeyarray)), propertykeyarray.len() as _, ::core::mem::transmute(requiredpropertykeycount), ::core::mem::transmute(flags), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiGetClassPropertyKeysExW(::core::mem::transmute(classguid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(propertykeyarray)), propertykeyarray.len() as _, ::core::mem::transmute(requiredpropertykeycount), ::core::mem::transmute(flags), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14215,12 +14215,12 @@ pub unsafe fn SetupDiGetClassPropertyKeysExW<'a, Param5: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiGetClassPropertyW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassPropertyW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassPropertyW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassPropertyW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiGetClassPropertyW(::core::mem::transmute(classguid), ::core::mem::transmute(propertykey), ::core::mem::transmute(propertytype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(requiredsize), ::core::mem::transmute(flags)))
     }
@@ -14230,12 +14230,12 @@ pub unsafe fn SetupDiGetClassPropertyW(classguid: *const ::windows::core::GUID, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassRegistryPropertyA<'a, Param6: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(classguid: *const ::windows::core::GUID, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, machinename: Param6, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassRegistryPropertyA<'a, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(classguid: *const ::windows_core::GUID, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, machinename: Param6, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassRegistryPropertyA(classguid: *const ::windows::core::GUID, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassRegistryPropertyA(classguid: *const ::windows_core::GUID, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, machinename: ::windows_core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiGetClassRegistryPropertyA(::core::mem::transmute(classguid), ::core::mem::transmute(property), ::core::mem::transmute(propertyregdatatype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
@@ -14245,12 +14245,12 @@ pub unsafe fn SetupDiGetClassRegistryPropertyA<'a, Param6: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassRegistryPropertyW<'a, Param6: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classguid: *const ::windows::core::GUID, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, machinename: Param6, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassRegistryPropertyW<'a, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classguid: *const ::windows_core::GUID, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, machinename: Param6, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetClassRegistryPropertyW(classguid: *const ::windows::core::GUID, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetClassRegistryPropertyW(classguid: *const ::windows_core::GUID, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiGetClassRegistryPropertyW(::core::mem::transmute(classguid), ::core::mem::transmute(property), ::core::mem::transmute(propertyregdatatype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
@@ -14260,12 +14260,12 @@ pub unsafe fn SetupDiGetClassRegistryPropertyW<'a, Param6: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetCustomDevicePropertyA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: Param2, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetCustomDevicePropertyA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: Param2, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetCustomDevicePropertyA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows::core::PCSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetCustomDevicePropertyA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows_core::PCSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiGetCustomDevicePropertyA(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), custompropertyname.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(propertyregdatatype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(requiredsize)))
     }
@@ -14275,12 +14275,12 @@ pub unsafe fn SetupDiGetCustomDevicePropertyA<'a, Param0: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetCustomDevicePropertyW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: Param2, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetCustomDevicePropertyW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: Param2, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetCustomDevicePropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows::core::PCWSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetCustomDevicePropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows_core::PCWSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiGetCustomDevicePropertyW(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), custompropertyname.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(propertyregdatatype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(requiredsize)))
     }
@@ -14290,12 +14290,12 @@ pub unsafe fn SetupDiGetCustomDevicePropertyW<'a, Param0: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInfoListClass<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, classguid: *mut ::windows::core::GUID) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInfoListClass<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, classguid: *mut ::windows_core::GUID) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetDeviceInfoListClass(deviceinfoset: HDEVINFO, classguid: *mut ::windows::core::GUID) -> super::super::Foundation::BOOL;
+            fn SetupDiGetDeviceInfoListClass(deviceinfoset: HDEVINFO, classguid: *mut ::windows_core::GUID) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiGetDeviceInfoListClass(deviceinfoset.into_param().abi(), ::core::mem::transmute(classguid)))
     }
@@ -14305,7 +14305,7 @@ pub unsafe fn SetupDiGetDeviceInfoListClass<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInfoListDetailA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_A) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInfoListDetailA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_A) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14320,7 +14320,7 @@ pub unsafe fn SetupDiGetDeviceInfoListDetailA<'a, Param0: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInfoListDetailW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_W) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInfoListDetailW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_W) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14335,7 +14335,7 @@ pub unsafe fn SetupDiGetDeviceInfoListDetailW<'a, Param0: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInstallParamsA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_A) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInstallParamsA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_A) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14350,7 +14350,7 @@ pub unsafe fn SetupDiGetDeviceInstallParamsA<'a, Param0: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInstallParamsW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_W) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInstallParamsW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_W) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14365,14 +14365,14 @@ pub unsafe fn SetupDiGetDeviceInstallParamsW<'a, Param0: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInstanceIdA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInstanceIdA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetDeviceInstanceIdA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: ::windows::core::PSTR, deviceinstanceidsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetDeviceInstanceIdA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: ::windows_core::PSTR, deviceinstanceidsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetDeviceInstanceIdA(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(deviceinstanceid)), deviceinstanceid.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupDiGetDeviceInstanceIdA(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(deviceinstanceid)), deviceinstanceid.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14380,14 +14380,14 @@ pub unsafe fn SetupDiGetDeviceInstanceIdA<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInstanceIdW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInstanceIdW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetDeviceInstanceIdW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: ::windows::core::PWSTR, deviceinstanceidsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetDeviceInstanceIdW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: ::windows_core::PWSTR, deviceinstanceidsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetDeviceInstanceIdW(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(deviceinstanceid)), deviceinstanceid.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupDiGetDeviceInstanceIdW(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(deviceinstanceid)), deviceinstanceid.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14395,12 +14395,12 @@ pub unsafe fn SetupDiGetDeviceInstanceIdW<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInterfaceAlias<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, aliasinterfaceclassguid: *const ::windows::core::GUID, aliasdeviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInterfaceAlias<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, aliasinterfaceclassguid: *const ::windows_core::GUID, aliasdeviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetDeviceInterfaceAlias(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, aliasinterfaceclassguid: *const ::windows::core::GUID, aliasdeviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
+            fn SetupDiGetDeviceInterfaceAlias(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, aliasinterfaceclassguid: *const ::windows_core::GUID, aliasdeviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiGetDeviceInterfaceAlias(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinterfacedata), ::core::mem::transmute(aliasinterfaceclassguid), ::core::mem::transmute(aliasdeviceinterfacedata)))
     }
@@ -14410,7 +14410,7 @@ pub unsafe fn SetupDiGetDeviceInterfaceAlias<'a, Param0: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInterfaceDetailA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_A, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInterfaceDetailA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_A, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14425,7 +14425,7 @@ pub unsafe fn SetupDiGetDeviceInterfaceDetailA<'a, Param0: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInterfaceDetailW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_W, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInterfaceDetailW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_W, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14440,14 +14440,14 @@ pub unsafe fn SetupDiGetDeviceInterfaceDetailW<'a, Param0: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInterfacePropertyKeys<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykeyarray: &mut [super::Properties::DEVPROPKEY], requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInterfacePropertyKeys<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykeyarray: &mut [super::Properties::DEVPROPKEY], requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn SetupDiGetDeviceInterfacePropertyKeys(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetDeviceInterfacePropertyKeys(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinterfacedata), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(propertykeyarray)), propertykeyarray.len() as _, ::core::mem::transmute(requiredpropertykeycount), ::core::mem::transmute(flags)))
+        ::core::mem::transmute(SetupDiGetDeviceInterfacePropertyKeys(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinterfacedata), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(propertykeyarray)), propertykeyarray.len() as _, ::core::mem::transmute(requiredpropertykeycount), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14455,7 +14455,7 @@ pub unsafe fn SetupDiGetDeviceInterfacePropertyKeys<'a, Param0: ::windows::core:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInterfacePropertyW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInterfacePropertyW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14470,14 +14470,14 @@ pub unsafe fn SetupDiGetDeviceInterfacePropertyW<'a, Param0: ::windows::core::In
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiGetDevicePropertyKeys<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertykeyarray: &mut [super::Properties::DEVPROPKEY], requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDevicePropertyKeys<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertykeyarray: &mut [super::Properties::DEVPROPKEY], requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn SetupDiGetDevicePropertyKeys(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetDevicePropertyKeys(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(propertykeyarray)), propertykeyarray.len() as _, ::core::mem::transmute(requiredpropertykeycount), ::core::mem::transmute(flags)))
+        ::core::mem::transmute(SetupDiGetDevicePropertyKeys(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(propertykeyarray)), propertykeyarray.len() as _, ::core::mem::transmute(requiredpropertykeycount), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14485,7 +14485,7 @@ pub unsafe fn SetupDiGetDevicePropertyKeys<'a, Param0: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiGetDevicePropertyW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDevicePropertyW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14500,7 +14500,7 @@ pub unsafe fn SetupDiGetDevicePropertyW<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceRegistryPropertyA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceRegistryPropertyA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14515,7 +14515,7 @@ pub unsafe fn SetupDiGetDeviceRegistryPropertyA<'a, Param0: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceRegistryPropertyW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceRegistryPropertyW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14530,7 +14530,7 @@ pub unsafe fn SetupDiGetDeviceRegistryPropertyW<'a, Param0: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDriverInfoDetailA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_A, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDriverInfoDetailA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_A, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14545,7 +14545,7 @@ pub unsafe fn SetupDiGetDriverInfoDetailA<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDriverInfoDetailW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_W, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDriverInfoDetailW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_W, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14560,7 +14560,7 @@ pub unsafe fn SetupDiGetDriverInfoDetailW<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDriverInstallParamsA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDriverInstallParamsA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14575,7 +14575,7 @@ pub unsafe fn SetupDiGetDriverInstallParamsA<'a, Param0: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDriverInstallParamsW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDriverInstallParamsW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14595,9 +14595,9 @@ pub unsafe fn SetupDiGetHwProfileFriendlyNameA(hwprofile: u32, friendlyname: &mu
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetHwProfileFriendlyNameA(hwprofile: u32, friendlyname: ::windows::core::PSTR, friendlynamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetHwProfileFriendlyNameA(hwprofile: u32, friendlyname: ::windows_core::PSTR, friendlynamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetHwProfileFriendlyNameA(::core::mem::transmute(hwprofile), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(friendlyname)), friendlyname.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupDiGetHwProfileFriendlyNameA(::core::mem::transmute(hwprofile), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(friendlyname)), friendlyname.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14605,14 +14605,14 @@ pub unsafe fn SetupDiGetHwProfileFriendlyNameA(hwprofile: u32, friendlyname: &mu
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetHwProfileFriendlyNameExA<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwprofile: u32, friendlyname: &mut [u8], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetHwProfileFriendlyNameExA<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwprofile: u32, friendlyname: &mut [u8], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetHwProfileFriendlyNameExA(hwprofile: u32, friendlyname: ::windows::core::PSTR, friendlynamesize: u32, requiredsize: *mut u32, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetHwProfileFriendlyNameExA(hwprofile: u32, friendlyname: ::windows_core::PSTR, friendlynamesize: u32, requiredsize: *mut u32, machinename: ::windows_core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetHwProfileFriendlyNameExA(::core::mem::transmute(hwprofile), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(friendlyname)), friendlyname.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiGetHwProfileFriendlyNameExA(::core::mem::transmute(hwprofile), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(friendlyname)), friendlyname.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14620,14 +14620,14 @@ pub unsafe fn SetupDiGetHwProfileFriendlyNameExA<'a, Param4: ::windows::core::In
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetHwProfileFriendlyNameExW<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwprofile: u32, friendlyname: &mut [u16], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetHwProfileFriendlyNameExW<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwprofile: u32, friendlyname: &mut [u16], requiredsize: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetHwProfileFriendlyNameExW(hwprofile: u32, friendlyname: ::windows::core::PWSTR, friendlynamesize: u32, requiredsize: *mut u32, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetHwProfileFriendlyNameExW(hwprofile: u32, friendlyname: ::windows_core::PWSTR, friendlynamesize: u32, requiredsize: *mut u32, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetHwProfileFriendlyNameExW(::core::mem::transmute(hwprofile), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(friendlyname)), friendlyname.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiGetHwProfileFriendlyNameExW(::core::mem::transmute(hwprofile), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(friendlyname)), friendlyname.len() as _, ::core::mem::transmute(requiredsize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14640,9 +14640,9 @@ pub unsafe fn SetupDiGetHwProfileFriendlyNameW(hwprofile: u32, friendlyname: &mu
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetHwProfileFriendlyNameW(hwprofile: u32, friendlyname: ::windows::core::PWSTR, friendlynamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetHwProfileFriendlyNameW(hwprofile: u32, friendlyname: ::windows_core::PWSTR, friendlynamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetHwProfileFriendlyNameW(::core::mem::transmute(hwprofile), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(friendlyname)), friendlyname.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupDiGetHwProfileFriendlyNameW(::core::mem::transmute(hwprofile), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(friendlyname)), friendlyname.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14657,7 +14657,7 @@ pub unsafe fn SetupDiGetHwProfileList(hwprofilelist: &mut [u32], requiredsize: *
         extern "system" {
             fn SetupDiGetHwProfileList(hwprofilelist: *mut u32, hwprofilelistsize: u32, requiredsize: *mut u32, currentlyactiveindex: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetHwProfileList(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(hwprofilelist)), hwprofilelist.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(currentlyactiveindex)))
+        ::core::mem::transmute(SetupDiGetHwProfileList(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(hwprofilelist)), hwprofilelist.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(currentlyactiveindex)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14665,14 +14665,14 @@ pub unsafe fn SetupDiGetHwProfileList(hwprofilelist: &mut [u32], requiredsize: *
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetHwProfileListExA<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwprofilelist: &mut [u32], requiredsize: *mut u32, currentlyactiveindex: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetHwProfileListExA<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwprofilelist: &mut [u32], requiredsize: *mut u32, currentlyactiveindex: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetHwProfileListExA(hwprofilelist: *mut u32, hwprofilelistsize: u32, requiredsize: *mut u32, currentlyactiveindex: *mut u32, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetHwProfileListExA(hwprofilelist: *mut u32, hwprofilelistsize: u32, requiredsize: *mut u32, currentlyactiveindex: *mut u32, machinename: ::windows_core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetHwProfileListExA(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(hwprofilelist)), hwprofilelist.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(currentlyactiveindex), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiGetHwProfileListExA(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(hwprofilelist)), hwprofilelist.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(currentlyactiveindex), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14680,14 +14680,14 @@ pub unsafe fn SetupDiGetHwProfileListExA<'a, Param4: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetHwProfileListExW<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwprofilelist: &mut [u32], requiredsize: *mut u32, currentlyactiveindex: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetHwProfileListExW<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwprofilelist: &mut [u32], requiredsize: *mut u32, currentlyactiveindex: *mut u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetHwProfileListExW(hwprofilelist: *mut u32, hwprofilelistsize: u32, requiredsize: *mut u32, currentlyactiveindex: *mut u32, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiGetHwProfileListExW(hwprofilelist: *mut u32, hwprofilelistsize: u32, requiredsize: *mut u32, currentlyactiveindex: *mut u32, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetHwProfileListExW(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(hwprofilelist)), hwprofilelist.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(currentlyactiveindex), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
+        ::core::mem::transmute(SetupDiGetHwProfileListExW(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(hwprofilelist)), hwprofilelist.len() as _, ::core::mem::transmute(requiredsize), ::core::mem::transmute(currentlyactiveindex), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14695,14 +14695,14 @@ pub unsafe fn SetupDiGetHwProfileListExW<'a, Param4: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetINFClassA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infname: Param0, classguid: *mut ::windows::core::GUID, classname: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetINFClassA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infname: Param0, classguid: *mut ::windows_core::GUID, classname: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetINFClassA(infname: ::windows::core::PCSTR, classguid: *mut ::windows::core::GUID, classname: ::windows::core::PSTR, classnamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetINFClassA(infname: ::windows_core::PCSTR, classguid: *mut ::windows_core::GUID, classname: ::windows_core::PSTR, classnamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetINFClassA(infname.into_param().abi(), ::core::mem::transmute(classguid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classname)), classname.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupDiGetINFClassA(infname.into_param().abi(), ::core::mem::transmute(classguid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classname)), classname.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14710,14 +14710,14 @@ pub unsafe fn SetupDiGetINFClassA<'a, Param0: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetINFClassW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infname: Param0, classguid: *mut ::windows::core::GUID, classname: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetINFClassW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infname: Param0, classguid: *mut ::windows_core::GUID, classname: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiGetINFClassW(infname: ::windows::core::PCWSTR, classguid: *mut ::windows::core::GUID, classname: ::windows::core::PWSTR, classnamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupDiGetINFClassW(infname: ::windows_core::PCWSTR, classguid: *mut ::windows_core::GUID, classname: ::windows_core::PWSTR, classnamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupDiGetINFClassW(infname.into_param().abi(), ::core::mem::transmute(classguid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(classname)), classname.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupDiGetINFClassW(infname.into_param().abi(), ::core::mem::transmute(classguid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(classname)), classname.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14725,7 +14725,7 @@ pub unsafe fn SetupDiGetINFClassW<'a, Param0: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetSelectedDevice<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetSelectedDevice<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14740,7 +14740,7 @@ pub unsafe fn SetupDiGetSelectedDevice<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetSelectedDriverA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetSelectedDriverA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14755,7 +14755,7 @@ pub unsafe fn SetupDiGetSelectedDriverA<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetSelectedDriverW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetSelectedDriverW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14770,7 +14770,7 @@ pub unsafe fn SetupDiGetSelectedDriverW<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_UI_Controls\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 #[inline]
-pub unsafe fn SetupDiGetWizardPage<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, installwizarddata: *const SP_INSTALLWIZARD_DATA, pagetype: u32, flags: u32) -> super::super::UI::Controls::HPROPSHEETPAGE {
+pub unsafe fn SetupDiGetWizardPage<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, installwizarddata: *const SP_INSTALLWIZARD_DATA, pagetype: u32, flags: u32) -> super::super::UI::Controls::HPROPSHEETPAGE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14785,12 +14785,12 @@ pub unsafe fn SetupDiGetWizardPage<'a, Param0: ::windows::core::IntoParam<'a, HD
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallClassA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwndparent: Param0, inffilename: Param1, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallClassA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndparent: Param0, inffilename: Param1, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiInstallClassA(hwndparent: super::super::Foundation::HWND, inffilename: ::windows::core::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiInstallClassA(hwndparent: super::super::Foundation::HWND, inffilename: ::windows_core::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiInstallClassA(hwndparent.into_param().abi(), inffilename.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(filequeue)))
     }
@@ -14800,12 +14800,12 @@ pub unsafe fn SetupDiInstallClassA<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallClassExA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwndparent: Param0, inffilename: Param1, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows::core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallClassExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndparent: Param0, inffilename: Param1, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows_core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiInstallClassExA(hwndparent: super::super::Foundation::HWND, inffilename: ::windows::core::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows::core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiInstallClassExA(hwndparent: super::super::Foundation::HWND, inffilename: ::windows_core::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows_core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiInstallClassExA(hwndparent.into_param().abi(), inffilename.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(filequeue), ::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -14815,12 +14815,12 @@ pub unsafe fn SetupDiInstallClassExA<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallClassExW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwndparent: Param0, inffilename: Param1, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows::core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallClassExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndparent: Param0, inffilename: Param1, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows_core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiInstallClassExW(hwndparent: super::super::Foundation::HWND, inffilename: ::windows::core::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows::core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiInstallClassExW(hwndparent: super::super::Foundation::HWND, inffilename: ::windows_core::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows_core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiInstallClassExW(hwndparent.into_param().abi(), inffilename.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(filequeue), ::core::mem::transmute(interfaceclassguid), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -14830,12 +14830,12 @@ pub unsafe fn SetupDiInstallClassExW<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallClassW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwndparent: Param0, inffilename: Param1, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallClassW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndparent: Param0, inffilename: Param1, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiInstallClassW(hwndparent: super::super::Foundation::HWND, inffilename: ::windows::core::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiInstallClassW(hwndparent: super::super::Foundation::HWND, inffilename: ::windows_core::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiInstallClassW(hwndparent.into_param().abi(), inffilename.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(filequeue)))
     }
@@ -14845,7 +14845,7 @@ pub unsafe fn SetupDiInstallClassW<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallDevice<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallDevice<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14860,7 +14860,7 @@ pub unsafe fn SetupDiInstallDevice<'a, Param0: ::windows::core::IntoParam<'a, HD
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallDeviceInterfaces<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallDeviceInterfaces<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14875,7 +14875,7 @@ pub unsafe fn SetupDiInstallDeviceInterfaces<'a, Param0: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallDriverFiles<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallDriverFiles<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14890,12 +14890,12 @@ pub unsafe fn SetupDiInstallDriverFiles<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
-pub unsafe fn SetupDiLoadClassIcon(classguid: *const ::windows::core::GUID, largeicon: *mut super::super::UI::WindowsAndMessaging::HICON, miniiconindex: *mut i32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiLoadClassIcon(classguid: *const ::windows_core::GUID, largeicon: *mut super::super::UI::WindowsAndMessaging::HICON, miniiconindex: *mut i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiLoadClassIcon(classguid: *const ::windows::core::GUID, largeicon: *mut super::super::UI::WindowsAndMessaging::HICON, miniiconindex: *mut i32) -> super::super::Foundation::BOOL;
+            fn SetupDiLoadClassIcon(classguid: *const ::windows_core::GUID, largeicon: *mut super::super::UI::WindowsAndMessaging::HICON, miniiconindex: *mut i32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiLoadClassIcon(::core::mem::transmute(classguid), ::core::mem::transmute(largeicon), ::core::mem::transmute(miniiconindex)))
     }
@@ -14905,7 +14905,7 @@ pub unsafe fn SetupDiLoadClassIcon(classguid: *const ::windows::core::GUID, larg
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
-pub unsafe fn SetupDiLoadDeviceIcon<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, cxicon: u32, cyicon: u32, flags: u32, hicon: *mut super::super::UI::WindowsAndMessaging::HICON) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiLoadDeviceIcon<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, cxicon: u32, cyicon: u32, flags: u32, hicon: *mut super::super::UI::WindowsAndMessaging::HICON) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14920,15 +14920,15 @@ pub unsafe fn SetupDiLoadDeviceIcon<'a, Param0: ::windows::core::IntoParam<'a, H
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiOpenClassRegKey(classguid: *const ::windows::core::GUID, samdesired: u32) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiOpenClassRegKey(classguid: *const ::windows_core::GUID, samdesired: u32) -> ::windows_core::Result<super::super::System::Registry::HKEY> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiOpenClassRegKey(classguid: *const ::windows::core::GUID, samdesired: u32) -> super::super::System::Registry::HKEY;
+            fn SetupDiOpenClassRegKey(classguid: *const ::windows_core::GUID, samdesired: u32) -> super::super::System::Registry::HKEY;
         }
         let result__ = SetupDiOpenClassRegKey(::core::mem::transmute(classguid), ::core::mem::transmute(samdesired));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14936,15 +14936,15 @@ pub unsafe fn SetupDiOpenClassRegKey(classguid: *const ::windows::core::GUID, sa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiOpenClassRegKeyExA<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(classguid: *const ::windows::core::GUID, samdesired: u32, flags: u32, machinename: Param3, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiOpenClassRegKeyExA<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(classguid: *const ::windows_core::GUID, samdesired: u32, flags: u32, machinename: Param3, reserved: *mut ::core::ffi::c_void) -> ::windows_core::Result<super::super::System::Registry::HKEY> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiOpenClassRegKeyExA(classguid: *const ::windows::core::GUID, samdesired: u32, flags: u32, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::System::Registry::HKEY;
+            fn SetupDiOpenClassRegKeyExA(classguid: *const ::windows_core::GUID, samdesired: u32, flags: u32, machinename: ::windows_core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::System::Registry::HKEY;
         }
         let result__ = SetupDiOpenClassRegKeyExA(::core::mem::transmute(classguid), ::core::mem::transmute(samdesired), ::core::mem::transmute(flags), machinename.into_param().abi(), ::core::mem::transmute(reserved));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14952,15 +14952,15 @@ pub unsafe fn SetupDiOpenClassRegKeyExA<'a, Param3: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiOpenClassRegKeyExW<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classguid: *const ::windows::core::GUID, samdesired: u32, flags: u32, machinename: Param3, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiOpenClassRegKeyExW<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classguid: *const ::windows_core::GUID, samdesired: u32, flags: u32, machinename: Param3, reserved: *mut ::core::ffi::c_void) -> ::windows_core::Result<super::super::System::Registry::HKEY> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiOpenClassRegKeyExW(classguid: *const ::windows::core::GUID, samdesired: u32, flags: u32, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::System::Registry::HKEY;
+            fn SetupDiOpenClassRegKeyExW(classguid: *const ::windows_core::GUID, samdesired: u32, flags: u32, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::System::Registry::HKEY;
         }
         let result__ = SetupDiOpenClassRegKeyExW(::core::mem::transmute(classguid), ::core::mem::transmute(samdesired), ::core::mem::transmute(flags), machinename.into_param().abi(), ::core::mem::transmute(reserved));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14968,7 +14968,7 @@ pub unsafe fn SetupDiOpenClassRegKeyExW<'a, Param3: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiOpenDevRegKey<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, samdesired: u32) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiOpenDevRegKey<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, samdesired: u32) -> ::windows_core::Result<super::super::System::Registry::HKEY> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14976,7 +14976,7 @@ pub unsafe fn SetupDiOpenDevRegKey<'a, Param0: ::windows::core::IntoParam<'a, HD
             fn SetupDiOpenDevRegKey(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, samdesired: u32) -> super::super::System::Registry::HKEY;
         }
         let result__ = SetupDiOpenDevRegKey(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(scope), ::core::mem::transmute(hwprofile), ::core::mem::transmute(keytype), ::core::mem::transmute(samdesired));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14984,12 +14984,12 @@ pub unsafe fn SetupDiOpenDevRegKey<'a, Param0: ::windows::core::IntoParam<'a, HD
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiOpenDeviceInfoA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(deviceinfoset: Param0, deviceinstanceid: Param1, hwndparent: Param2, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiOpenDeviceInfoA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(deviceinfoset: Param0, deviceinstanceid: Param1, hwndparent: Param2, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiOpenDeviceInfoA(deviceinfoset: HDEVINFO, deviceinstanceid: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
+            fn SetupDiOpenDeviceInfoA(deviceinfoset: HDEVINFO, deviceinstanceid: ::windows_core::PCSTR, hwndparent: super::super::Foundation::HWND, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiOpenDeviceInfoA(deviceinfoset.into_param().abi(), deviceinstanceid.into_param().abi(), hwndparent.into_param().abi(), ::core::mem::transmute(openflags), ::core::mem::transmute(deviceinfodata)))
     }
@@ -14999,12 +14999,12 @@ pub unsafe fn SetupDiOpenDeviceInfoA<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiOpenDeviceInfoW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(deviceinfoset: Param0, deviceinstanceid: Param1, hwndparent: Param2, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiOpenDeviceInfoW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(deviceinfoset: Param0, deviceinstanceid: Param1, hwndparent: Param2, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiOpenDeviceInfoW(deviceinfoset: HDEVINFO, deviceinstanceid: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
+            fn SetupDiOpenDeviceInfoW(deviceinfoset: HDEVINFO, deviceinstanceid: ::windows_core::PCWSTR, hwndparent: super::super::Foundation::HWND, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiOpenDeviceInfoW(deviceinfoset.into_param().abi(), deviceinstanceid.into_param().abi(), hwndparent.into_param().abi(), ::core::mem::transmute(openflags), ::core::mem::transmute(deviceinfodata)))
     }
@@ -15014,12 +15014,12 @@ pub unsafe fn SetupDiOpenDeviceInfoW<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiOpenDeviceInterfaceA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(deviceinfoset: Param0, devicepath: Param1, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiOpenDeviceInterfaceA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(deviceinfoset: Param0, devicepath: Param1, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiOpenDeviceInterfaceA(deviceinfoset: HDEVINFO, devicepath: ::windows::core::PCSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
+            fn SetupDiOpenDeviceInterfaceA(deviceinfoset: HDEVINFO, devicepath: ::windows_core::PCSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiOpenDeviceInterfaceA(deviceinfoset.into_param().abi(), devicepath.into_param().abi(), ::core::mem::transmute(openflags), ::core::mem::transmute(deviceinterfacedata)))
     }
@@ -15029,7 +15029,7 @@ pub unsafe fn SetupDiOpenDeviceInterfaceA<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiOpenDeviceInterfaceRegKey<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiOpenDeviceInterfaceRegKey<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32) -> ::windows_core::Result<super::super::System::Registry::HKEY> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15037,7 +15037,7 @@ pub unsafe fn SetupDiOpenDeviceInterfaceRegKey<'a, Param0: ::windows::core::Into
             fn SetupDiOpenDeviceInterfaceRegKey(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32) -> super::super::System::Registry::HKEY;
         }
         let result__ = SetupDiOpenDeviceInterfaceRegKey(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinterfacedata), ::core::mem::transmute(reserved), ::core::mem::transmute(samdesired));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -15045,12 +15045,12 @@ pub unsafe fn SetupDiOpenDeviceInterfaceRegKey<'a, Param0: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiOpenDeviceInterfaceW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(deviceinfoset: Param0, devicepath: Param1, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiOpenDeviceInterfaceW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(deviceinfoset: Param0, devicepath: Param1, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiOpenDeviceInterfaceW(deviceinfoset: HDEVINFO, devicepath: ::windows::core::PCWSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
+            fn SetupDiOpenDeviceInterfaceW(deviceinfoset: HDEVINFO, devicepath: ::windows_core::PCWSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiOpenDeviceInterfaceW(deviceinfoset.into_param().abi(), devicepath.into_param().abi(), ::core::mem::transmute(openflags), ::core::mem::transmute(deviceinterfacedata)))
     }
@@ -15060,7 +15060,7 @@ pub unsafe fn SetupDiOpenDeviceInterfaceW<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiRegisterCoDeviceInstallers<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiRegisterCoDeviceInstallers<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15075,12 +15075,12 @@ pub unsafe fn SetupDiRegisterCoDeviceInstallers<'a, Param0: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiRegisterDeviceInfo<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, flags: u32, compareproc: PSP_DETSIG_CMPPROC, comparecontext: *const ::core::ffi::c_void, dupdeviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiRegisterDeviceInfo<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, flags: u32, compareproc: PSP_DETSIG_CMPPROC, comparecontext: *const ::core::ffi::c_void, dupdeviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiRegisterDeviceInfo(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, flags: u32, compareproc: ::windows::core::RawPtr, comparecontext: *const ::core::ffi::c_void, dupdeviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
+            fn SetupDiRegisterDeviceInfo(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, flags: u32, compareproc: ::windows_core::RawPtr, comparecontext: *const ::core::ffi::c_void, dupdeviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiRegisterDeviceInfo(deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(flags), ::core::mem::transmute(compareproc), ::core::mem::transmute(comparecontext), ::core::mem::transmute(dupdeviceinfodata)))
     }
@@ -15090,7 +15090,7 @@ pub unsafe fn SetupDiRegisterDeviceInfo<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiRemoveDevice<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiRemoveDevice<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15105,7 +15105,7 @@ pub unsafe fn SetupDiRemoveDevice<'a, Param0: ::windows::core::IntoParam<'a, HDE
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiRemoveDeviceInterface<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiRemoveDeviceInterface<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15120,7 +15120,7 @@ pub unsafe fn SetupDiRemoveDeviceInterface<'a, Param0: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiRestartDevices<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiRestartDevices<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15135,7 +15135,7 @@ pub unsafe fn SetupDiRestartDevices<'a, Param0: ::windows::core::IntoParam<'a, H
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSelectBestCompatDrv<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSelectBestCompatDrv<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15150,7 +15150,7 @@ pub unsafe fn SetupDiSelectBestCompatDrv<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSelectDevice<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSelectDevice<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15165,7 +15165,7 @@ pub unsafe fn SetupDiSelectDevice<'a, Param0: ::windows::core::IntoParam<'a, HDE
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSelectOEMDrv<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HDEVINFO>>(hwndparent: Param0, deviceinfoset: Param1, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSelectOEMDrv<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HDEVINFO>>(hwndparent: Param0, deviceinfoset: Param1, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15180,7 +15180,7 @@ pub unsafe fn SetupDiSelectOEMDrv<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetClassInstallParamsA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetClassInstallParamsA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15195,7 +15195,7 @@ pub unsafe fn SetupDiSetClassInstallParamsA<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetClassInstallParamsW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetClassInstallParamsW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15210,12 +15210,12 @@ pub unsafe fn SetupDiSetClassInstallParamsW<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiSetClassPropertyExW<'a, Param6: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32, machinename: Param6, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetClassPropertyExW<'a, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32, machinename: Param6, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiSetClassPropertyExW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiSetClassPropertyExW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiSetClassPropertyExW(::core::mem::transmute(classguid), ::core::mem::transmute(propertykey), ::core::mem::transmute(propertytype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(flags), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
@@ -15225,12 +15225,12 @@ pub unsafe fn SetupDiSetClassPropertyExW<'a, Param6: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiSetClassPropertyW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetClassPropertyW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiSetClassPropertyW(classguid: *const ::windows::core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL;
+            fn SetupDiSetClassPropertyW(classguid: *const ::windows_core::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiSetClassPropertyW(::core::mem::transmute(classguid), ::core::mem::transmute(propertykey), ::core::mem::transmute(propertytype), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), ::core::mem::transmute(flags)))
     }
@@ -15240,12 +15240,12 @@ pub unsafe fn SetupDiSetClassPropertyW(classguid: *const ::windows::core::GUID, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetClassRegistryPropertyA<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(classguid: *const ::windows::core::GUID, property: u32, propertybuffer: *const u8, propertybuffersize: u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetClassRegistryPropertyA<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(classguid: *const ::windows_core::GUID, property: u32, propertybuffer: *const u8, propertybuffersize: u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiSetClassRegistryPropertyA(classguid: *const ::windows::core::GUID, property: u32, propertybuffer: *const u8, propertybuffersize: u32, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiSetClassRegistryPropertyA(classguid: *const ::windows_core::GUID, property: u32, propertybuffer: *const u8, propertybuffersize: u32, machinename: ::windows_core::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiSetClassRegistryPropertyA(::core::mem::transmute(classguid), ::core::mem::transmute(property), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
@@ -15255,12 +15255,12 @@ pub unsafe fn SetupDiSetClassRegistryPropertyA<'a, Param4: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetClassRegistryPropertyW<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(classguid: *const ::windows::core::GUID, property: u32, propertybuffer: *const u8, propertybuffersize: u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetClassRegistryPropertyW<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(classguid: *const ::windows_core::GUID, property: u32, propertybuffer: *const u8, propertybuffersize: u32, machinename: Param4, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupDiSetClassRegistryPropertyW(classguid: *const ::windows::core::GUID, property: u32, propertybuffer: *const u8, propertybuffersize: u32, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupDiSetClassRegistryPropertyW(classguid: *const ::windows_core::GUID, property: u32, propertybuffer: *const u8, propertybuffersize: u32, machinename: ::windows_core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupDiSetClassRegistryPropertyW(::core::mem::transmute(classguid), ::core::mem::transmute(property), ::core::mem::transmute(propertybuffer), ::core::mem::transmute(propertybuffersize), machinename.into_param().abi(), ::core::mem::transmute(reserved)))
     }
@@ -15270,7 +15270,7 @@ pub unsafe fn SetupDiSetClassRegistryPropertyW<'a, Param4: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDeviceInstallParamsA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_A) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDeviceInstallParamsA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_A) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15285,7 +15285,7 @@ pub unsafe fn SetupDiSetDeviceInstallParamsA<'a, Param0: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDeviceInstallParamsW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_W) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDeviceInstallParamsW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_W) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15300,7 +15300,7 @@ pub unsafe fn SetupDiSetDeviceInstallParamsW<'a, Param0: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDeviceInterfaceDefault<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDeviceInterfaceDefault<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15315,7 +15315,7 @@ pub unsafe fn SetupDiSetDeviceInterfaceDefault<'a, Param0: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiSetDeviceInterfacePropertyW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDeviceInterfacePropertyW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15330,7 +15330,7 @@ pub unsafe fn SetupDiSetDeviceInterfacePropertyW<'a, Param0: ::windows::core::In
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiSetDevicePropertyW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDevicePropertyW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15345,7 +15345,7 @@ pub unsafe fn SetupDiSetDevicePropertyW<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDeviceRegistryPropertyA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDeviceRegistryPropertyA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15360,7 +15360,7 @@ pub unsafe fn SetupDiSetDeviceRegistryPropertyA<'a, Param0: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDeviceRegistryPropertyW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDeviceRegistryPropertyW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15375,7 +15375,7 @@ pub unsafe fn SetupDiSetDeviceRegistryPropertyW<'a, Param0: ::windows::core::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDriverInstallParamsA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDriverInstallParamsA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15390,7 +15390,7 @@ pub unsafe fn SetupDiSetDriverInstallParamsA<'a, Param0: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDriverInstallParamsW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDriverInstallParamsW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15405,7 +15405,7 @@ pub unsafe fn SetupDiSetDriverInstallParamsW<'a, Param0: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetSelectedDevice<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetSelectedDevice<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15420,7 +15420,7 @@ pub unsafe fn SetupDiSetSelectedDevice<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetSelectedDriverA<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetSelectedDriverA<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15435,7 +15435,7 @@ pub unsafe fn SetupDiSetSelectedDriverA<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetSelectedDriverW<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetSelectedDriverW<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15450,7 +15450,7 @@ pub unsafe fn SetupDiSetSelectedDriverW<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiUnremoveDevice<'a, Param0: ::windows::core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiUnremoveDevice<'a, Param0: ::windows_core::IntoParam<'a, HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15498,9 +15498,9 @@ pub unsafe fn SetupEnumInfSectionsA(infhandle: *const ::core::ffi::c_void, index
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupEnumInfSectionsA(infhandle: *const ::core::ffi::c_void, index: u32, buffer: ::windows::core::PSTR, size: u32, sizeneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupEnumInfSectionsA(infhandle: *const ::core::ffi::c_void, index: u32, buffer: ::windows_core::PSTR, size: u32, sizeneeded: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupEnumInfSectionsA(::core::mem::transmute(infhandle), ::core::mem::transmute(index), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(sizeneeded)))
+        ::core::mem::transmute(SetupEnumInfSectionsA(::core::mem::transmute(infhandle), ::core::mem::transmute(index), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(sizeneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -15513,9 +15513,9 @@ pub unsafe fn SetupEnumInfSectionsW(infhandle: *const ::core::ffi::c_void, index
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupEnumInfSectionsW(infhandle: *const ::core::ffi::c_void, index: u32, buffer: ::windows::core::PWSTR, size: u32, sizeneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupEnumInfSectionsW(infhandle: *const ::core::ffi::c_void, index: u32, buffer: ::windows_core::PWSTR, size: u32, sizeneeded: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupEnumInfSectionsW(::core::mem::transmute(infhandle), ::core::mem::transmute(index), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(sizeneeded)))
+        ::core::mem::transmute(SetupEnumInfSectionsW(::core::mem::transmute(infhandle), ::core::mem::transmute(index), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), buffer.len() as _, ::core::mem::transmute(sizeneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -15547,7 +15547,7 @@ impl ::core::default::Default for SetupFileLogInfo {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SetupFileLogInfo {
+unsafe impl ::windows_core::Abi for SetupFileLogInfo {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SetupFileLogInfo {
@@ -15558,12 +15558,12 @@ impl ::core::fmt::Debug for SetupFileLogInfo {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupFindFirstLineA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, section: Param1, key: Param2, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupFindFirstLineA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, section: Param1, key: Param2, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupFindFirstLineA(infhandle: *const ::core::ffi::c_void, section: ::windows::core::PCSTR, key: ::windows::core::PCSTR, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
+            fn SetupFindFirstLineA(infhandle: *const ::core::ffi::c_void, section: ::windows_core::PCSTR, key: ::windows_core::PCSTR, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupFindFirstLineA(::core::mem::transmute(infhandle), section.into_param().abi(), key.into_param().abi(), ::core::mem::transmute(context)))
     }
@@ -15573,12 +15573,12 @@ pub unsafe fn SetupFindFirstLineA<'a, Param1: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupFindFirstLineW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, section: Param1, key: Param2, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupFindFirstLineW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, section: Param1, key: Param2, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupFindFirstLineW(infhandle: *const ::core::ffi::c_void, section: ::windows::core::PCWSTR, key: ::windows::core::PCWSTR, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
+            fn SetupFindFirstLineW(infhandle: *const ::core::ffi::c_void, section: ::windows_core::PCWSTR, key: ::windows_core::PCWSTR, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupFindFirstLineW(::core::mem::transmute(infhandle), section.into_param().abi(), key.into_param().abi(), ::core::mem::transmute(context)))
     }
@@ -15603,12 +15603,12 @@ pub unsafe fn SetupFindNextLine(contextin: *const INFCONTEXT, contextout: *mut I
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupFindNextMatchLineA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(contextin: *const INFCONTEXT, key: Param1, contextout: *mut INFCONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupFindNextMatchLineA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(contextin: *const INFCONTEXT, key: Param1, contextout: *mut INFCONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupFindNextMatchLineA(contextin: *const INFCONTEXT, key: ::windows::core::PCSTR, contextout: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
+            fn SetupFindNextMatchLineA(contextin: *const INFCONTEXT, key: ::windows_core::PCSTR, contextout: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupFindNextMatchLineA(::core::mem::transmute(contextin), key.into_param().abi(), ::core::mem::transmute(contextout)))
     }
@@ -15618,12 +15618,12 @@ pub unsafe fn SetupFindNextMatchLineA<'a, Param1: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupFindNextMatchLineW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(contextin: *const INFCONTEXT, key: Param1, contextout: *mut INFCONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupFindNextMatchLineW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(contextin: *const INFCONTEXT, key: Param1, contextout: *mut INFCONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupFindNextMatchLineW(contextin: *const INFCONTEXT, key: ::windows::core::PCWSTR, contextout: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
+            fn SetupFindNextMatchLineW(contextin: *const INFCONTEXT, key: ::windows_core::PCWSTR, contextout: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupFindNextMatchLineW(::core::mem::transmute(contextin), key.into_param().abi(), ::core::mem::transmute(contextout)))
     }
@@ -15633,14 +15633,14 @@ pub unsafe fn SetupFindNextMatchLineW<'a, Param1: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupFreeSourceListA(list: &mut [*mut ::windows::core::PSTR]) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupFreeSourceListA(list: &mut [*mut ::windows_core::PSTR]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupFreeSourceListA(list: *mut *mut ::windows::core::PSTR, count: u32) -> super::super::Foundation::BOOL;
+            fn SetupFreeSourceListA(list: *mut *mut ::windows_core::PSTR, count: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupFreeSourceListA(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(list)), list.len() as _))
+        ::core::mem::transmute(SetupFreeSourceListA(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(list)), list.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -15648,14 +15648,14 @@ pub unsafe fn SetupFreeSourceListA(list: &mut [*mut ::windows::core::PSTR]) -> s
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupFreeSourceListW(list: &mut [*mut ::windows::core::PWSTR]) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupFreeSourceListW(list: &mut [*mut ::windows_core::PWSTR]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupFreeSourceListW(list: *mut *mut ::windows::core::PWSTR, count: u32) -> super::super::Foundation::BOOL;
+            fn SetupFreeSourceListW(list: *mut *mut ::windows_core::PWSTR, count: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupFreeSourceListW(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(list)), list.len() as _))
+        ::core::mem::transmute(SetupFreeSourceListW(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(list)), list.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -15721,12 +15721,12 @@ pub unsafe fn SetupGetFieldCount(context: *const INFCONTEXT) -> u32 {
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn SetupGetFileCompressionInfoA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(sourcefilename: Param0, actualsourcefilename: *mut ::windows::core::PSTR, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> u32 {
+pub unsafe fn SetupGetFileCompressionInfoA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(sourcefilename: Param0, actualsourcefilename: *mut ::windows_core::PSTR, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetFileCompressionInfoA(sourcefilename: ::windows::core::PCSTR, actualsourcefilename: *mut ::windows::core::PSTR, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> u32;
+            fn SetupGetFileCompressionInfoA(sourcefilename: ::windows_core::PCSTR, actualsourcefilename: *mut ::windows_core::PSTR, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> u32;
         }
         ::core::mem::transmute(SetupGetFileCompressionInfoA(sourcefilename.into_param().abi(), ::core::mem::transmute(actualsourcefilename), ::core::mem::transmute(sourcefilesize), ::core::mem::transmute(targetfilesize), ::core::mem::transmute(compressiontype)))
     }
@@ -15736,14 +15736,14 @@ pub unsafe fn SetupGetFileCompressionInfoA<'a, Param0: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetFileCompressionInfoExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(sourcefilename: Param0, actualsourcefilenamebuffer: &[u8], requiredbufferlen: *mut u32, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetFileCompressionInfoExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(sourcefilename: Param0, actualsourcefilenamebuffer: &[u8], requiredbufferlen: *mut u32, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetFileCompressionInfoExA(sourcefilename: ::windows::core::PCSTR, actualsourcefilenamebuffer: ::windows::core::PCSTR, actualsourcefilenamebufferlen: u32, requiredbufferlen: *mut u32, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetFileCompressionInfoExA(sourcefilename: ::windows_core::PCSTR, actualsourcefilenamebuffer: ::windows_core::PCSTR, actualsourcefilenamebufferlen: u32, requiredbufferlen: *mut u32, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetFileCompressionInfoExA(sourcefilename.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(actualsourcefilenamebuffer)), actualsourcefilenamebuffer.len() as _, ::core::mem::transmute(requiredbufferlen), ::core::mem::transmute(sourcefilesize), ::core::mem::transmute(targetfilesize), ::core::mem::transmute(compressiontype)))
+        ::core::mem::transmute(SetupGetFileCompressionInfoExA(sourcefilename.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(actualsourcefilenamebuffer)), actualsourcefilenamebuffer.len() as _, ::core::mem::transmute(requiredbufferlen), ::core::mem::transmute(sourcefilesize), ::core::mem::transmute(targetfilesize), ::core::mem::transmute(compressiontype)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -15751,26 +15751,26 @@ pub unsafe fn SetupGetFileCompressionInfoExA<'a, Param0: ::windows::core::IntoPa
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetFileCompressionInfoExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(sourcefilename: Param0, actualsourcefilenamebuffer: &[u16], requiredbufferlen: *mut u32, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetFileCompressionInfoExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(sourcefilename: Param0, actualsourcefilenamebuffer: &[u16], requiredbufferlen: *mut u32, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetFileCompressionInfoExW(sourcefilename: ::windows::core::PCWSTR, actualsourcefilenamebuffer: ::windows::core::PCWSTR, actualsourcefilenamebufferlen: u32, requiredbufferlen: *mut u32, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetFileCompressionInfoExW(sourcefilename: ::windows_core::PCWSTR, actualsourcefilenamebuffer: ::windows_core::PCWSTR, actualsourcefilenamebufferlen: u32, requiredbufferlen: *mut u32, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetFileCompressionInfoExW(sourcefilename.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(actualsourcefilenamebuffer)), actualsourcefilenamebuffer.len() as _, ::core::mem::transmute(requiredbufferlen), ::core::mem::transmute(sourcefilesize), ::core::mem::transmute(targetfilesize), ::core::mem::transmute(compressiontype)))
+        ::core::mem::transmute(SetupGetFileCompressionInfoExW(sourcefilename.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(actualsourcefilenamebuffer)), actualsourcefilenamebuffer.len() as _, ::core::mem::transmute(requiredbufferlen), ::core::mem::transmute(sourcefilesize), ::core::mem::transmute(targetfilesize), ::core::mem::transmute(compressiontype)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn SetupGetFileCompressionInfoW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(sourcefilename: Param0, actualsourcefilename: *mut ::windows::core::PWSTR, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> u32 {
+pub unsafe fn SetupGetFileCompressionInfoW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(sourcefilename: Param0, actualsourcefilename: *mut ::windows_core::PWSTR, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetFileCompressionInfoW(sourcefilename: ::windows::core::PCWSTR, actualsourcefilename: *mut ::windows::core::PWSTR, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> u32;
+            fn SetupGetFileCompressionInfoW(sourcefilename: ::windows_core::PCWSTR, actualsourcefilename: *mut ::windows_core::PWSTR, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> u32;
         }
         ::core::mem::transmute(SetupGetFileCompressionInfoW(sourcefilename.into_param().abi(), ::core::mem::transmute(actualsourcefilename), ::core::mem::transmute(sourcefilesize), ::core::mem::transmute(targetfilesize), ::core::mem::transmute(compressiontype)))
     }
@@ -15810,14 +15810,14 @@ pub unsafe fn SetupGetFileQueueFlags(filequeue: *const ::core::ffi::c_void, flag
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
 #[inline]
-pub unsafe fn SetupGetInfDriverStoreLocationA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(filename: Param0, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, localename: Param2, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetInfDriverStoreLocationA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(filename: Param0, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, localename: Param2, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetInfDriverStoreLocationA(filename: ::windows::core::PCSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, localename: ::windows::core::PCSTR, returnbuffer: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetInfDriverStoreLocationA(filename: ::windows_core::PCSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, localename: ::windows_core::PCSTR, returnbuffer: ::windows_core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetInfDriverStoreLocationA(filename.into_param().abi(), ::core::mem::transmute(alternateplatforminfo), localename.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetInfDriverStoreLocationA(filename.into_param().abi(), ::core::mem::transmute(alternateplatforminfo), localename.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -15825,14 +15825,14 @@ pub unsafe fn SetupGetInfDriverStoreLocationA<'a, Param0: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
 #[inline]
-pub unsafe fn SetupGetInfDriverStoreLocationW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(filename: Param0, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, localename: Param2, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetInfDriverStoreLocationW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(filename: Param0, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, localename: Param2, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetInfDriverStoreLocationW(filename: ::windows::core::PCWSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, localename: ::windows::core::PCWSTR, returnbuffer: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetInfDriverStoreLocationW(filename: ::windows_core::PCWSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, localename: ::windows_core::PCWSTR, returnbuffer: ::windows_core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetInfDriverStoreLocationW(filename.into_param().abi(), ::core::mem::transmute(alternateplatforminfo), localename.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetInfDriverStoreLocationW(filename.into_param().abi(), ::core::mem::transmute(alternateplatforminfo), localename.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -15840,14 +15840,14 @@ pub unsafe fn SetupGetInfDriverStoreLocationW<'a, Param0: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetInfFileListA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(directorypath: Param0, infstyle: u32, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetInfFileListA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(directorypath: Param0, infstyle: u32, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetInfFileListA(directorypath: ::windows::core::PCSTR, infstyle: u32, returnbuffer: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetInfFileListA(directorypath: ::windows_core::PCSTR, infstyle: u32, returnbuffer: ::windows_core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetInfFileListA(directorypath.into_param().abi(), ::core::mem::transmute(infstyle), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetInfFileListA(directorypath.into_param().abi(), ::core::mem::transmute(infstyle), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -15855,14 +15855,14 @@ pub unsafe fn SetupGetInfFileListA<'a, Param0: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetInfFileListW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(directorypath: Param0, infstyle: u32, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetInfFileListW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(directorypath: Param0, infstyle: u32, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetInfFileListW(directorypath: ::windows::core::PCWSTR, infstyle: u32, returnbuffer: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetInfFileListW(directorypath: ::windows_core::PCWSTR, infstyle: u32, returnbuffer: ::windows_core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetInfFileListW(directorypath.into_param().abi(), ::core::mem::transmute(infstyle), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetInfFileListW(directorypath.into_param().abi(), ::core::mem::transmute(infstyle), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -15900,14 +15900,14 @@ pub unsafe fn SetupGetInfInformationW(infspec: *const ::core::ffi::c_void, searc
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetInfPublishedNameA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(driverstorelocation: Param0, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetInfPublishedNameA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(driverstorelocation: Param0, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetInfPublishedNameA(driverstorelocation: ::windows::core::PCSTR, returnbuffer: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetInfPublishedNameA(driverstorelocation: ::windows_core::PCSTR, returnbuffer: ::windows_core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetInfPublishedNameA(driverstorelocation.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetInfPublishedNameA(driverstorelocation.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -15915,14 +15915,14 @@ pub unsafe fn SetupGetInfPublishedNameA<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetInfPublishedNameW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(driverstorelocation: Param0, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetInfPublishedNameW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(driverstorelocation: Param0, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetInfPublishedNameW(driverstorelocation: ::windows::core::PCWSTR, returnbuffer: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetInfPublishedNameW(driverstorelocation: ::windows_core::PCWSTR, returnbuffer: ::windows_core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetInfPublishedNameW(driverstorelocation.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetInfPublishedNameW(driverstorelocation.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -15945,12 +15945,12 @@ pub unsafe fn SetupGetIntField(context: *const INFCONTEXT, fieldindex: u32, inte
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetLineByIndexA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, section: Param1, index: u32, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetLineByIndexA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, section: Param1, index: u32, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetLineByIndexA(infhandle: *const ::core::ffi::c_void, section: ::windows::core::PCSTR, index: u32, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
+            fn SetupGetLineByIndexA(infhandle: *const ::core::ffi::c_void, section: ::windows_core::PCSTR, index: u32, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupGetLineByIndexA(::core::mem::transmute(infhandle), section.into_param().abi(), ::core::mem::transmute(index), ::core::mem::transmute(context)))
     }
@@ -15960,12 +15960,12 @@ pub unsafe fn SetupGetLineByIndexA<'a, Param1: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetLineByIndexW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, section: Param1, index: u32, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetLineByIndexW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, section: Param1, index: u32, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetLineByIndexW(infhandle: *const ::core::ffi::c_void, section: ::windows::core::PCWSTR, index: u32, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
+            fn SetupGetLineByIndexW(infhandle: *const ::core::ffi::c_void, section: ::windows_core::PCWSTR, index: u32, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupGetLineByIndexW(::core::mem::transmute(infhandle), section.into_param().abi(), ::core::mem::transmute(index), ::core::mem::transmute(context)))
     }
@@ -15974,12 +15974,12 @@ pub unsafe fn SetupGetLineByIndexW<'a, Param1: ::windows::core::IntoParam<'a, ::
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn SetupGetLineCountA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, section: Param1) -> i32 {
+pub unsafe fn SetupGetLineCountA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, section: Param1) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetLineCountA(infhandle: *const ::core::ffi::c_void, section: ::windows::core::PCSTR) -> i32;
+            fn SetupGetLineCountA(infhandle: *const ::core::ffi::c_void, section: ::windows_core::PCSTR) -> i32;
         }
         ::core::mem::transmute(SetupGetLineCountA(::core::mem::transmute(infhandle), section.into_param().abi()))
     }
@@ -15988,12 +15988,12 @@ pub unsafe fn SetupGetLineCountA<'a, Param1: ::windows::core::IntoParam<'a, ::wi
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn SetupGetLineCountW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, section: Param1) -> i32 {
+pub unsafe fn SetupGetLineCountW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, section: Param1) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetLineCountW(infhandle: *const ::core::ffi::c_void, section: ::windows::core::PCWSTR) -> i32;
+            fn SetupGetLineCountW(infhandle: *const ::core::ffi::c_void, section: ::windows_core::PCWSTR) -> i32;
         }
         ::core::mem::transmute(SetupGetLineCountW(::core::mem::transmute(infhandle), section.into_param().abi()))
     }
@@ -16003,14 +16003,14 @@ pub unsafe fn SetupGetLineCountW<'a, Param1: ::windows::core::IntoParam<'a, ::wi
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetLineTextA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(context: *const INFCONTEXT, infhandle: *const ::core::ffi::c_void, section: Param2, key: Param3, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetLineTextA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(context: *const INFCONTEXT, infhandle: *const ::core::ffi::c_void, section: Param2, key: Param3, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetLineTextA(context: *const INFCONTEXT, infhandle: *const ::core::ffi::c_void, section: ::windows::core::PCSTR, key: ::windows::core::PCSTR, returnbuffer: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetLineTextA(context: *const INFCONTEXT, infhandle: *const ::core::ffi::c_void, section: ::windows_core::PCSTR, key: ::windows_core::PCSTR, returnbuffer: ::windows_core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetLineTextA(::core::mem::transmute(context), ::core::mem::transmute(infhandle), section.into_param().abi(), key.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetLineTextA(::core::mem::transmute(context), ::core::mem::transmute(infhandle), section.into_param().abi(), key.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16018,14 +16018,14 @@ pub unsafe fn SetupGetLineTextA<'a, Param2: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetLineTextW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(context: *const INFCONTEXT, infhandle: *const ::core::ffi::c_void, section: Param2, key: Param3, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetLineTextW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(context: *const INFCONTEXT, infhandle: *const ::core::ffi::c_void, section: Param2, key: Param3, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetLineTextW(context: *const INFCONTEXT, infhandle: *const ::core::ffi::c_void, section: ::windows::core::PCWSTR, key: ::windows::core::PCWSTR, returnbuffer: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetLineTextW(context: *const INFCONTEXT, infhandle: *const ::core::ffi::c_void, section: ::windows_core::PCWSTR, key: ::windows_core::PCWSTR, returnbuffer: ::windows_core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetLineTextW(::core::mem::transmute(context), ::core::mem::transmute(infhandle), section.into_param().abi(), key.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetLineTextW(::core::mem::transmute(context), ::core::mem::transmute(infhandle), section.into_param().abi(), key.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16038,9 +16038,9 @@ pub unsafe fn SetupGetMultiSzFieldA(context: *const INFCONTEXT, fieldindex: u32,
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetMultiSzFieldA(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetMultiSzFieldA(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows_core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetMultiSzFieldA(::core::mem::transmute(context), ::core::mem::transmute(fieldindex), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetMultiSzFieldA(::core::mem::transmute(context), ::core::mem::transmute(fieldindex), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16053,9 +16053,9 @@ pub unsafe fn SetupGetMultiSzFieldW(context: *const INFCONTEXT, fieldindex: u32,
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetMultiSzFieldW(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetMultiSzFieldW(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows_core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetMultiSzFieldW(::core::mem::transmute(context), ::core::mem::transmute(fieldindex), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetMultiSzFieldW(::core::mem::transmute(context), ::core::mem::transmute(fieldindex), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16078,14 +16078,14 @@ pub unsafe fn SetupGetNonInteractiveMode() -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetSourceFileLocationA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: Param2, sourceid: *mut u32, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetSourceFileLocationA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: Param2, sourceid: *mut u32, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetSourceFileLocationA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows::core::PCSTR, sourceid: *mut u32, returnbuffer: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetSourceFileLocationA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows_core::PCSTR, sourceid: *mut u32, returnbuffer: ::windows_core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetSourceFileLocationA(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), filename.into_param().abi(), ::core::mem::transmute(sourceid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetSourceFileLocationA(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), filename.into_param().abi(), ::core::mem::transmute(sourceid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16093,14 +16093,14 @@ pub unsafe fn SetupGetSourceFileLocationA<'a, Param2: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetSourceFileLocationW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: Param2, sourceid: *mut u32, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetSourceFileLocationW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: Param2, sourceid: *mut u32, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetSourceFileLocationW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows::core::PCWSTR, sourceid: *mut u32, returnbuffer: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetSourceFileLocationW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows_core::PCWSTR, sourceid: *mut u32, returnbuffer: ::windows_core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetSourceFileLocationW(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), filename.into_param().abi(), ::core::mem::transmute(sourceid), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetSourceFileLocationW(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), filename.into_param().abi(), ::core::mem::transmute(sourceid), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16108,12 +16108,12 @@ pub unsafe fn SetupGetSourceFileLocationW<'a, Param2: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetSourceFileSizeA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: Param2, section: Param3, filesize: *mut u32, roundingfactor: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetSourceFileSizeA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: Param2, section: Param3, filesize: *mut u32, roundingfactor: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetSourceFileSizeA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows::core::PCSTR, section: ::windows::core::PCSTR, filesize: *mut u32, roundingfactor: u32) -> super::super::Foundation::BOOL;
+            fn SetupGetSourceFileSizeA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows_core::PCSTR, section: ::windows_core::PCSTR, filesize: *mut u32, roundingfactor: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupGetSourceFileSizeA(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), filename.into_param().abi(), section.into_param().abi(), ::core::mem::transmute(filesize), ::core::mem::transmute(roundingfactor)))
     }
@@ -16123,12 +16123,12 @@ pub unsafe fn SetupGetSourceFileSizeA<'a, Param2: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetSourceFileSizeW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: Param2, section: Param3, filesize: *mut u32, roundingfactor: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetSourceFileSizeW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: Param2, section: Param3, filesize: *mut u32, roundingfactor: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetSourceFileSizeW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows::core::PCWSTR, section: ::windows::core::PCWSTR, filesize: *mut u32, roundingfactor: u32) -> super::super::Foundation::BOOL;
+            fn SetupGetSourceFileSizeW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows_core::PCWSTR, section: ::windows_core::PCWSTR, filesize: *mut u32, roundingfactor: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupGetSourceFileSizeW(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), filename.into_param().abi(), section.into_param().abi(), ::core::mem::transmute(filesize), ::core::mem::transmute(roundingfactor)))
     }
@@ -16143,9 +16143,9 @@ pub unsafe fn SetupGetSourceInfoA(infhandle: *const ::core::ffi::c_void, sourcei
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetSourceInfoA(infhandle: *const ::core::ffi::c_void, sourceid: u32, infodesired: u32, returnbuffer: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetSourceInfoA(infhandle: *const ::core::ffi::c_void, sourceid: u32, infodesired: u32, returnbuffer: ::windows_core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetSourceInfoA(::core::mem::transmute(infhandle), ::core::mem::transmute(sourceid), ::core::mem::transmute(infodesired), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetSourceInfoA(::core::mem::transmute(infhandle), ::core::mem::transmute(sourceid), ::core::mem::transmute(infodesired), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16158,9 +16158,9 @@ pub unsafe fn SetupGetSourceInfoW(infhandle: *const ::core::ffi::c_void, sourcei
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetSourceInfoW(infhandle: *const ::core::ffi::c_void, sourceid: u32, infodesired: u32, returnbuffer: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetSourceInfoW(infhandle: *const ::core::ffi::c_void, sourceid: u32, infodesired: u32, returnbuffer: ::windows_core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetSourceInfoW(::core::mem::transmute(infhandle), ::core::mem::transmute(sourceid), ::core::mem::transmute(infodesired), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetSourceInfoW(::core::mem::transmute(infhandle), ::core::mem::transmute(sourceid), ::core::mem::transmute(infodesired), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16173,9 +16173,9 @@ pub unsafe fn SetupGetStringFieldA(context: *const INFCONTEXT, fieldindex: u32, 
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetStringFieldA(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetStringFieldA(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows_core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetStringFieldA(::core::mem::transmute(context), ::core::mem::transmute(fieldindex), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetStringFieldA(::core::mem::transmute(context), ::core::mem::transmute(fieldindex), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16188,9 +16188,9 @@ pub unsafe fn SetupGetStringFieldW(context: *const INFCONTEXT, fieldindex: u32, 
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetStringFieldW(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetStringFieldW(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows_core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetStringFieldW(::core::mem::transmute(context), ::core::mem::transmute(fieldindex), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetStringFieldW(::core::mem::transmute(context), ::core::mem::transmute(fieldindex), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16198,14 +16198,14 @@ pub unsafe fn SetupGetStringFieldW(context: *const INFCONTEXT, fieldindex: u32, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetTargetPathA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, section: Param2, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetTargetPathA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, section: Param2, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetTargetPathA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, section: ::windows::core::PCSTR, returnbuffer: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetTargetPathA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, section: ::windows_core::PCSTR, returnbuffer: ::windows_core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetTargetPathA(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), section.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetTargetPathA(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), section.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16213,14 +16213,14 @@ pub unsafe fn SetupGetTargetPathA<'a, Param2: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupGetTargetPathW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, section: Param2, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupGetTargetPathW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, section: Param2, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupGetTargetPathW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, section: ::windows::core::PCWSTR, returnbuffer: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupGetTargetPathW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, section: ::windows_core::PCWSTR, returnbuffer: ::windows_core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupGetTargetPathW(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), section.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupGetTargetPathW(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), section.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16242,7 +16242,7 @@ pub unsafe fn SetupGetThreadLogToken() -> u64 {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInitDefaultQueueCallback<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(ownerwindow: Param0) -> *mut ::core::ffi::c_void {
+pub unsafe fn SetupInitDefaultQueueCallback<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(ownerwindow: Param0) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16257,7 +16257,7 @@ pub unsafe fn SetupInitDefaultQueueCallback<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInitDefaultQueueCallbackEx<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(ownerwindow: Param0, alternateprogresswindow: Param1, progressmessage: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void {
+pub unsafe fn SetupInitDefaultQueueCallbackEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(ownerwindow: Param0, alternateprogresswindow: Param1, progressmessage: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16271,12 +16271,12 @@ pub unsafe fn SetupInitDefaultQueueCallbackEx<'a, Param0: ::windows::core::IntoP
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn SetupInitializeFileLogA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(logfilename: Param0, flags: u32) -> *mut ::core::ffi::c_void {
+pub unsafe fn SetupInitializeFileLogA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(logfilename: Param0, flags: u32) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInitializeFileLogA(logfilename: ::windows::core::PCSTR, flags: u32) -> *mut ::core::ffi::c_void;
+            fn SetupInitializeFileLogA(logfilename: ::windows_core::PCSTR, flags: u32) -> *mut ::core::ffi::c_void;
         }
         ::core::mem::transmute(SetupInitializeFileLogA(logfilename.into_param().abi(), ::core::mem::transmute(flags)))
     }
@@ -16285,12 +16285,12 @@ pub unsafe fn SetupInitializeFileLogA<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn SetupInitializeFileLogW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(logfilename: Param0, flags: u32) -> *mut ::core::ffi::c_void {
+pub unsafe fn SetupInitializeFileLogW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(logfilename: Param0, flags: u32) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInitializeFileLogW(logfilename: ::windows::core::PCWSTR, flags: u32) -> *mut ::core::ffi::c_void;
+            fn SetupInitializeFileLogW(logfilename: ::windows_core::PCWSTR, flags: u32) -> *mut ::core::ffi::c_void;
         }
         ::core::mem::transmute(SetupInitializeFileLogW(logfilename.into_param().abi(), ::core::mem::transmute(flags)))
     }
@@ -16300,12 +16300,12 @@ pub unsafe fn SetupInitializeFileLogW<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallFileA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: Param2, sourcepathroot: Param3, destinationname: Param4, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFileA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: Param2, sourcepathroot: Param3, destinationname: Param4, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInstallFileA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCSTR, sourcepathroot: ::windows::core::PCSTR, destinationname: ::windows::core::PCSTR, copystyle: SP_COPY_STYLE, copymsghandler: ::windows::core::RawPtr, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupInstallFileA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows_core::PCSTR, sourcepathroot: ::windows_core::PCSTR, destinationname: ::windows_core::PCSTR, copystyle: SP_COPY_STYLE, copymsghandler: ::windows_core::RawPtr, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupInstallFileA(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), sourcefile.into_param().abi(), sourcepathroot.into_param().abi(), destinationname.into_param().abi(), ::core::mem::transmute(copystyle), ::core::mem::transmute(copymsghandler), ::core::mem::transmute(context)))
     }
@@ -16315,12 +16315,12 @@ pub unsafe fn SetupInstallFileA<'a, Param2: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallFileExA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: Param2, sourcepathroot: Param3, destinationname: Param4, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFileExA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: Param2, sourcepathroot: Param3, destinationname: Param4, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInstallFileExA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCSTR, sourcepathroot: ::windows::core::PCSTR, destinationname: ::windows::core::PCSTR, copystyle: SP_COPY_STYLE, copymsghandler: ::windows::core::RawPtr, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn SetupInstallFileExA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows_core::PCSTR, sourcepathroot: ::windows_core::PCSTR, destinationname: ::windows_core::PCSTR, copystyle: SP_COPY_STYLE, copymsghandler: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupInstallFileExA(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), sourcefile.into_param().abi(), sourcepathroot.into_param().abi(), destinationname.into_param().abi(), ::core::mem::transmute(copystyle), ::core::mem::transmute(copymsghandler), ::core::mem::transmute(context), ::core::mem::transmute(filewasinuse)))
     }
@@ -16330,12 +16330,12 @@ pub unsafe fn SetupInstallFileExA<'a, Param2: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallFileExW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: Param2, sourcepathroot: Param3, destinationname: Param4, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFileExW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: Param2, sourcepathroot: Param3, destinationname: Param4, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInstallFileExW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCWSTR, sourcepathroot: ::windows::core::PCWSTR, destinationname: ::windows::core::PCWSTR, copystyle: SP_COPY_STYLE, copymsghandler: ::windows::core::RawPtr, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn SetupInstallFileExW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows_core::PCWSTR, sourcepathroot: ::windows_core::PCWSTR, destinationname: ::windows_core::PCWSTR, copystyle: SP_COPY_STYLE, copymsghandler: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupInstallFileExW(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), sourcefile.into_param().abi(), sourcepathroot.into_param().abi(), destinationname.into_param().abi(), ::core::mem::transmute(copystyle), ::core::mem::transmute(copymsghandler), ::core::mem::transmute(context), ::core::mem::transmute(filewasinuse)))
     }
@@ -16345,12 +16345,12 @@ pub unsafe fn SetupInstallFileExW<'a, Param2: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallFileW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: Param2, sourcepathroot: Param3, destinationname: Param4, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFileW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: Param2, sourcepathroot: Param3, destinationname: Param4, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInstallFileW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCWSTR, sourcepathroot: ::windows::core::PCWSTR, destinationname: ::windows::core::PCWSTR, copystyle: SP_COPY_STYLE, copymsghandler: ::windows::core::RawPtr, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupInstallFileW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows_core::PCWSTR, sourcepathroot: ::windows_core::PCWSTR, destinationname: ::windows_core::PCWSTR, copystyle: SP_COPY_STYLE, copymsghandler: ::windows_core::RawPtr, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupInstallFileW(::core::mem::transmute(infhandle), ::core::mem::transmute(infcontext), sourcefile.into_param().abi(), sourcepathroot.into_param().abi(), destinationname.into_param().abi(), ::core::mem::transmute(copystyle), ::core::mem::transmute(copymsghandler), ::core::mem::transmute(context)))
     }
@@ -16360,12 +16360,12 @@ pub unsafe fn SetupInstallFileW<'a, Param2: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallFilesFromInfSectionA<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, filequeue: *const ::core::ffi::c_void, sectionname: Param3, sourcerootpath: Param4, copyflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFilesFromInfSectionA<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, filequeue: *const ::core::ffi::c_void, sectionname: Param3, sourcerootpath: Param4, copyflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInstallFilesFromInfSectionA(infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, filequeue: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, sourcerootpath: ::windows::core::PCSTR, copyflags: u32) -> super::super::Foundation::BOOL;
+            fn SetupInstallFilesFromInfSectionA(infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, filequeue: *const ::core::ffi::c_void, sectionname: ::windows_core::PCSTR, sourcerootpath: ::windows_core::PCSTR, copyflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupInstallFilesFromInfSectionA(::core::mem::transmute(infhandle), ::core::mem::transmute(layoutinfhandle), ::core::mem::transmute(filequeue), sectionname.into_param().abi(), sourcerootpath.into_param().abi(), ::core::mem::transmute(copyflags)))
     }
@@ -16375,12 +16375,12 @@ pub unsafe fn SetupInstallFilesFromInfSectionA<'a, Param3: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallFilesFromInfSectionW<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, filequeue: *const ::core::ffi::c_void, sectionname: Param3, sourcerootpath: Param4, copyflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFilesFromInfSectionW<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, filequeue: *const ::core::ffi::c_void, sectionname: Param3, sourcerootpath: Param4, copyflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInstallFilesFromInfSectionW(infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, filequeue: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, sourcerootpath: ::windows::core::PCWSTR, copyflags: u32) -> super::super::Foundation::BOOL;
+            fn SetupInstallFilesFromInfSectionW(infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, filequeue: *const ::core::ffi::c_void, sectionname: ::windows_core::PCWSTR, sourcerootpath: ::windows_core::PCWSTR, copyflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupInstallFilesFromInfSectionW(::core::mem::transmute(infhandle), ::core::mem::transmute(layoutinfhandle), ::core::mem::transmute(filequeue), sectionname.into_param().abi(), sourcerootpath.into_param().abi(), ::core::mem::transmute(copyflags)))
     }
@@ -16390,12 +16390,12 @@ pub unsafe fn SetupInstallFilesFromInfSectionW<'a, Param3: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 #[inline]
-pub unsafe fn SetupInstallFromInfSectionA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param4: ::windows::core::IntoParam<'a, super::super::System::Registry::HKEY>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param9: ::windows::core::IntoParam<'a, HDEVINFO>>(owner: Param0, infhandle: *const ::core::ffi::c_void, sectionname: Param2, flags: u32, relativekeyroot: Param4, sourcerootpath: Param5, copyflags: u32, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void, deviceinfoset: Param9, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFromInfSectionA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, super::super::System::Registry::HKEY>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param9: ::windows_core::IntoParam<'a, HDEVINFO>>(owner: Param0, infhandle: *const ::core::ffi::c_void, sectionname: Param2, flags: u32, relativekeyroot: Param4, sourcerootpath: Param5, copyflags: u32, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void, deviceinfoset: Param9, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInstallFromInfSectionA(owner: super::super::Foundation::HWND, infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, flags: u32, relativekeyroot: super::super::System::Registry::HKEY, sourcerootpath: ::windows::core::PCSTR, copyflags: u32, msghandler: ::windows::core::RawPtr, context: *const ::core::ffi::c_void, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
+            fn SetupInstallFromInfSectionA(owner: super::super::Foundation::HWND, infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCSTR, flags: u32, relativekeyroot: super::super::System::Registry::HKEY, sourcerootpath: ::windows_core::PCSTR, copyflags: u32, msghandler: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupInstallFromInfSectionA(owner.into_param().abi(), ::core::mem::transmute(infhandle), sectionname.into_param().abi(), ::core::mem::transmute(flags), relativekeyroot.into_param().abi(), sourcerootpath.into_param().abi(), ::core::mem::transmute(copyflags), ::core::mem::transmute(msghandler), ::core::mem::transmute(context), deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata)))
     }
@@ -16405,12 +16405,12 @@ pub unsafe fn SetupInstallFromInfSectionA<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 #[inline]
-pub unsafe fn SetupInstallFromInfSectionW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, super::super::System::Registry::HKEY>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param9: ::windows::core::IntoParam<'a, HDEVINFO>>(owner: Param0, infhandle: *const ::core::ffi::c_void, sectionname: Param2, flags: u32, relativekeyroot: Param4, sourcerootpath: Param5, copyflags: u32, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void, deviceinfoset: Param9, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFromInfSectionW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, super::super::System::Registry::HKEY>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param9: ::windows_core::IntoParam<'a, HDEVINFO>>(owner: Param0, infhandle: *const ::core::ffi::c_void, sectionname: Param2, flags: u32, relativekeyroot: Param4, sourcerootpath: Param5, copyflags: u32, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void, deviceinfoset: Param9, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInstallFromInfSectionW(owner: super::super::Foundation::HWND, infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, flags: u32, relativekeyroot: super::super::System::Registry::HKEY, sourcerootpath: ::windows::core::PCWSTR, copyflags: u32, msghandler: ::windows::core::RawPtr, context: *const ::core::ffi::c_void, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
+            fn SetupInstallFromInfSectionW(owner: super::super::Foundation::HWND, infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCWSTR, flags: u32, relativekeyroot: super::super::System::Registry::HKEY, sourcerootpath: ::windows_core::PCWSTR, copyflags: u32, msghandler: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupInstallFromInfSectionW(owner.into_param().abi(), ::core::mem::transmute(infhandle), sectionname.into_param().abi(), ::core::mem::transmute(flags), relativekeyroot.into_param().abi(), sourcerootpath.into_param().abi(), ::core::mem::transmute(copyflags), ::core::mem::transmute(msghandler), ::core::mem::transmute(context), deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata)))
     }
@@ -16420,12 +16420,12 @@ pub unsafe fn SetupInstallFromInfSectionW<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallServicesFromInfSectionA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, sectionname: Param1, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallServicesFromInfSectionA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, sectionname: Param1, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInstallServicesFromInfSectionA(infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, flags: u32) -> super::super::Foundation::BOOL;
+            fn SetupInstallServicesFromInfSectionA(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCSTR, flags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupInstallServicesFromInfSectionA(::core::mem::transmute(infhandle), sectionname.into_param().abi(), ::core::mem::transmute(flags)))
     }
@@ -16435,12 +16435,12 @@ pub unsafe fn SetupInstallServicesFromInfSectionA<'a, Param1: ::windows::core::I
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallServicesFromInfSectionExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, HDEVINFO>>(infhandle: *const ::core::ffi::c_void, sectionname: Param1, flags: u32, deviceinfoset: Param3, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallServicesFromInfSectionExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, HDEVINFO>>(infhandle: *const ::core::ffi::c_void, sectionname: Param1, flags: u32, deviceinfoset: Param3, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInstallServicesFromInfSectionExA(infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, flags: u32, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupInstallServicesFromInfSectionExA(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCSTR, flags: u32, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupInstallServicesFromInfSectionExA(::core::mem::transmute(infhandle), sectionname.into_param().abi(), ::core::mem::transmute(flags), deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -16450,12 +16450,12 @@ pub unsafe fn SetupInstallServicesFromInfSectionExA<'a, Param1: ::windows::core:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallServicesFromInfSectionExW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, HDEVINFO>>(infhandle: *const ::core::ffi::c_void, sectionname: Param1, flags: u32, deviceinfoset: Param3, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallServicesFromInfSectionExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, HDEVINFO>>(infhandle: *const ::core::ffi::c_void, sectionname: Param1, flags: u32, deviceinfoset: Param3, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInstallServicesFromInfSectionExW(infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, flags: u32, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupInstallServicesFromInfSectionExW(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCWSTR, flags: u32, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupInstallServicesFromInfSectionExW(::core::mem::transmute(infhandle), sectionname.into_param().abi(), ::core::mem::transmute(flags), deviceinfoset.into_param().abi(), ::core::mem::transmute(deviceinfodata), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -16465,12 +16465,12 @@ pub unsafe fn SetupInstallServicesFromInfSectionExW<'a, Param1: ::windows::core:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallServicesFromInfSectionW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, sectionname: Param1, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallServicesFromInfSectionW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, sectionname: Param1, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupInstallServicesFromInfSectionW(infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
+            fn SetupInstallServicesFromInfSectionW(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupInstallServicesFromInfSectionW(::core::mem::transmute(infhandle), sectionname.into_param().abi(), ::core::mem::transmute(flags)))
     }
@@ -16480,12 +16480,12 @@ pub unsafe fn SetupInstallServicesFromInfSectionW<'a, Param1: ::windows::core::I
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupIterateCabinetA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(cabinetfile: Param0, reserved: u32, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupIterateCabinetA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(cabinetfile: Param0, reserved: u32, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupIterateCabinetA(cabinetfile: ::windows::core::PCSTR, reserved: u32, msghandler: ::windows::core::RawPtr, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupIterateCabinetA(cabinetfile: ::windows_core::PCSTR, reserved: u32, msghandler: ::windows_core::RawPtr, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupIterateCabinetA(cabinetfile.into_param().abi(), ::core::mem::transmute(reserved), ::core::mem::transmute(msghandler), ::core::mem::transmute(context)))
     }
@@ -16495,12 +16495,12 @@ pub unsafe fn SetupIterateCabinetA<'a, Param0: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupIterateCabinetW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(cabinetfile: Param0, reserved: u32, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupIterateCabinetW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(cabinetfile: Param0, reserved: u32, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupIterateCabinetW(cabinetfile: ::windows::core::PCWSTR, reserved: u32, msghandler: ::windows::core::RawPtr, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupIterateCabinetW(cabinetfile: ::windows_core::PCWSTR, reserved: u32, msghandler: ::windows_core::RawPtr, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupIterateCabinetW(cabinetfile.into_param().abi(), ::core::mem::transmute(reserved), ::core::mem::transmute(msghandler), ::core::mem::transmute(context)))
     }
@@ -16510,12 +16510,12 @@ pub unsafe fn SetupIterateCabinetW<'a, Param0: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupLogErrorA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(messagestring: Param0, severity: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupLogErrorA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(messagestring: Param0, severity: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupLogErrorA(messagestring: ::windows::core::PCSTR, severity: u32) -> super::super::Foundation::BOOL;
+            fn SetupLogErrorA(messagestring: ::windows_core::PCSTR, severity: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupLogErrorA(messagestring.into_param().abi(), ::core::mem::transmute(severity)))
     }
@@ -16525,12 +16525,12 @@ pub unsafe fn SetupLogErrorA<'a, Param0: ::windows::core::IntoParam<'a, ::window
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupLogErrorW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(messagestring: Param0, severity: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupLogErrorW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(messagestring: Param0, severity: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupLogErrorW(messagestring: ::windows::core::PCWSTR, severity: u32) -> super::super::Foundation::BOOL;
+            fn SetupLogErrorW(messagestring: ::windows_core::PCWSTR, severity: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupLogErrorW(messagestring.into_param().abi(), ::core::mem::transmute(severity)))
     }
@@ -16540,12 +16540,12 @@ pub unsafe fn SetupLogErrorW<'a, Param0: ::windows::core::IntoParam<'a, ::window
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupLogFileA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param6: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param7: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: Param1, sourcefilename: Param2, targetfilename: Param3, checksum: u32, disktagfile: Param5, diskdescription: Param6, otherinfo: Param7, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupLogFileA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: Param1, sourcefilename: Param2, targetfilename: Param3, checksum: u32, disktagfile: Param5, diskdescription: Param6, otherinfo: Param7, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupLogFileA(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows::core::PCSTR, sourcefilename: ::windows::core::PCSTR, targetfilename: ::windows::core::PCSTR, checksum: u32, disktagfile: ::windows::core::PCSTR, diskdescription: ::windows::core::PCSTR, otherinfo: ::windows::core::PCSTR, flags: u32) -> super::super::Foundation::BOOL;
+            fn SetupLogFileA(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core::PCSTR, sourcefilename: ::windows_core::PCSTR, targetfilename: ::windows_core::PCSTR, checksum: u32, disktagfile: ::windows_core::PCSTR, diskdescription: ::windows_core::PCSTR, otherinfo: ::windows_core::PCSTR, flags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupLogFileA(::core::mem::transmute(fileloghandle), logsectionname.into_param().abi(), sourcefilename.into_param().abi(), targetfilename.into_param().abi(), ::core::mem::transmute(checksum), disktagfile.into_param().abi(), diskdescription.into_param().abi(), otherinfo.into_param().abi(), ::core::mem::transmute(flags)))
     }
@@ -16555,12 +16555,12 @@ pub unsafe fn SetupLogFileA<'a, Param1: ::windows::core::IntoParam<'a, ::windows
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupLogFileW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param6: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param7: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: Param1, sourcefilename: Param2, targetfilename: Param3, checksum: u32, disktagfile: Param5, diskdescription: Param6, otherinfo: Param7, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupLogFileW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: Param1, sourcefilename: Param2, targetfilename: Param3, checksum: u32, disktagfile: Param5, diskdescription: Param6, otherinfo: Param7, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupLogFileW(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows::core::PCWSTR, sourcefilename: ::windows::core::PCWSTR, targetfilename: ::windows::core::PCWSTR, checksum: u32, disktagfile: ::windows::core::PCWSTR, diskdescription: ::windows::core::PCWSTR, otherinfo: ::windows::core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
+            fn SetupLogFileW(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core::PCWSTR, sourcefilename: ::windows_core::PCWSTR, targetfilename: ::windows_core::PCWSTR, checksum: u32, disktagfile: ::windows_core::PCWSTR, diskdescription: ::windows_core::PCWSTR, otherinfo: ::windows_core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupLogFileW(::core::mem::transmute(fileloghandle), logsectionname.into_param().abi(), sourcefilename.into_param().abi(), targetfilename.into_param().abi(), ::core::mem::transmute(checksum), disktagfile.into_param().abi(), diskdescription.into_param().abi(), otherinfo.into_param().abi(), ::core::mem::transmute(flags)))
     }
@@ -16570,12 +16570,12 @@ pub unsafe fn SetupLogFileW<'a, Param1: ::windows::core::IntoParam<'a, ::windows
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupOpenAppendInfFileA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(filename: Param0, infhandle: *const ::core::ffi::c_void, errorline: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupOpenAppendInfFileA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(filename: Param0, infhandle: *const ::core::ffi::c_void, errorline: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupOpenAppendInfFileA(filename: ::windows::core::PCSTR, infhandle: *const ::core::ffi::c_void, errorline: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupOpenAppendInfFileA(filename: ::windows_core::PCSTR, infhandle: *const ::core::ffi::c_void, errorline: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupOpenAppendInfFileA(filename.into_param().abi(), ::core::mem::transmute(infhandle), ::core::mem::transmute(errorline)))
     }
@@ -16585,12 +16585,12 @@ pub unsafe fn SetupOpenAppendInfFileA<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupOpenAppendInfFileW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(filename: Param0, infhandle: *const ::core::ffi::c_void, errorline: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupOpenAppendInfFileW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(filename: Param0, infhandle: *const ::core::ffi::c_void, errorline: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupOpenAppendInfFileW(filename: ::windows::core::PCWSTR, infhandle: *const ::core::ffi::c_void, errorline: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupOpenAppendInfFileW(filename: ::windows_core::PCWSTR, infhandle: *const ::core::ffi::c_void, errorline: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupOpenAppendInfFileW(filename.into_param().abi(), ::core::mem::transmute(infhandle), ::core::mem::transmute(errorline)))
     }
@@ -16613,12 +16613,12 @@ pub unsafe fn SetupOpenFileQueue() -> *mut ::core::ffi::c_void {
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn SetupOpenInfFileA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(filename: Param0, infclass: Param1, infstyle: u32, errorline: *mut u32) -> *mut ::core::ffi::c_void {
+pub unsafe fn SetupOpenInfFileA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(filename: Param0, infclass: Param1, infstyle: u32, errorline: *mut u32) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupOpenInfFileA(filename: ::windows::core::PCSTR, infclass: ::windows::core::PCSTR, infstyle: u32, errorline: *mut u32) -> *mut ::core::ffi::c_void;
+            fn SetupOpenInfFileA(filename: ::windows_core::PCSTR, infclass: ::windows_core::PCSTR, infstyle: u32, errorline: *mut u32) -> *mut ::core::ffi::c_void;
         }
         ::core::mem::transmute(SetupOpenInfFileA(filename.into_param().abi(), infclass.into_param().abi(), ::core::mem::transmute(infstyle), ::core::mem::transmute(errorline)))
     }
@@ -16627,12 +16627,12 @@ pub unsafe fn SetupOpenInfFileA<'a, Param0: ::windows::core::IntoParam<'a, ::win
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn SetupOpenInfFileW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(filename: Param0, infclass: Param1, infstyle: u32, errorline: *mut u32) -> *mut ::core::ffi::c_void {
+pub unsafe fn SetupOpenInfFileW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(filename: Param0, infclass: Param1, infstyle: u32, errorline: *mut u32) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupOpenInfFileW(filename: ::windows::core::PCWSTR, infclass: ::windows::core::PCWSTR, infstyle: u32, errorline: *mut u32) -> *mut ::core::ffi::c_void;
+            fn SetupOpenInfFileW(filename: ::windows_core::PCWSTR, infclass: ::windows_core::PCWSTR, infstyle: u32, errorline: *mut u32) -> *mut ::core::ffi::c_void;
         }
         ::core::mem::transmute(SetupOpenInfFileW(filename.into_param().abi(), infclass.into_param().abi(), ::core::mem::transmute(infstyle), ::core::mem::transmute(errorline)))
     }
@@ -16642,7 +16642,7 @@ pub unsafe fn SetupOpenInfFileW<'a, Param0: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupOpenLog<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(erase: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupOpenLog<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(erase: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16671,12 +16671,12 @@ pub unsafe fn SetupOpenMasterInf() -> *mut ::core::ffi::c_void {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupPrepareQueueForRestoreA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, backuppath: Param1, restoreflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupPrepareQueueForRestoreA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, backuppath: Param1, restoreflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupPrepareQueueForRestoreA(queuehandle: *const ::core::ffi::c_void, backuppath: ::windows::core::PCSTR, restoreflags: u32) -> super::super::Foundation::BOOL;
+            fn SetupPrepareQueueForRestoreA(queuehandle: *const ::core::ffi::c_void, backuppath: ::windows_core::PCSTR, restoreflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupPrepareQueueForRestoreA(::core::mem::transmute(queuehandle), backuppath.into_param().abi(), ::core::mem::transmute(restoreflags)))
     }
@@ -16686,12 +16686,12 @@ pub unsafe fn SetupPrepareQueueForRestoreA<'a, Param1: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupPrepareQueueForRestoreW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, backuppath: Param1, restoreflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupPrepareQueueForRestoreW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, backuppath: Param1, restoreflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupPrepareQueueForRestoreW(queuehandle: *const ::core::ffi::c_void, backuppath: ::windows::core::PCWSTR, restoreflags: u32) -> super::super::Foundation::BOOL;
+            fn SetupPrepareQueueForRestoreW(queuehandle: *const ::core::ffi::c_void, backuppath: ::windows_core::PCWSTR, restoreflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupPrepareQueueForRestoreW(::core::mem::transmute(queuehandle), backuppath.into_param().abi(), ::core::mem::transmute(restoreflags)))
     }
@@ -16701,14 +16701,14 @@ pub unsafe fn SetupPrepareQueueForRestoreW<'a, Param1: ::windows::core::IntoPara
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupPromptForDiskA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwndparent: Param0, dialogtitle: Param1, diskname: Param2, pathtosource: Param3, filesought: Param4, tagfile: Param5, diskpromptstyle: u32, pathbuffer: &mut [u8], pathrequiredsize: *mut u32) -> u32 {
+pub unsafe fn SetupPromptForDiskA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndparent: Param0, dialogtitle: Param1, diskname: Param2, pathtosource: Param3, filesought: Param4, tagfile: Param5, diskpromptstyle: u32, pathbuffer: &mut [u8], pathrequiredsize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupPromptForDiskA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCSTR, diskname: ::windows::core::PCSTR, pathtosource: ::windows::core::PCSTR, filesought: ::windows::core::PCSTR, tagfile: ::windows::core::PCSTR, diskpromptstyle: u32, pathbuffer: ::windows::core::PSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
+            fn SetupPromptForDiskA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core::PCSTR, diskname: ::windows_core::PCSTR, pathtosource: ::windows_core::PCSTR, filesought: ::windows_core::PCSTR, tagfile: ::windows_core::PCSTR, diskpromptstyle: u32, pathbuffer: ::windows_core::PSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
         }
-        ::core::mem::transmute(SetupPromptForDiskA(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), diskname.into_param().abi(), pathtosource.into_param().abi(), filesought.into_param().abi(), tagfile.into_param().abi(), ::core::mem::transmute(diskpromptstyle), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pathbuffer)), pathbuffer.len() as _, ::core::mem::transmute(pathrequiredsize)))
+        ::core::mem::transmute(SetupPromptForDiskA(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), diskname.into_param().abi(), pathtosource.into_param().abi(), filesought.into_param().abi(), tagfile.into_param().abi(), ::core::mem::transmute(diskpromptstyle), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pathbuffer)), pathbuffer.len() as _, ::core::mem::transmute(pathrequiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16716,14 +16716,14 @@ pub unsafe fn SetupPromptForDiskA<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupPromptForDiskW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwndparent: Param0, dialogtitle: Param1, diskname: Param2, pathtosource: Param3, filesought: Param4, tagfile: Param5, diskpromptstyle: u32, pathbuffer: &mut [u16], pathrequiredsize: *mut u32) -> u32 {
+pub unsafe fn SetupPromptForDiskW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndparent: Param0, dialogtitle: Param1, diskname: Param2, pathtosource: Param3, filesought: Param4, tagfile: Param5, diskpromptstyle: u32, pathbuffer: &mut [u16], pathrequiredsize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupPromptForDiskW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCWSTR, diskname: ::windows::core::PCWSTR, pathtosource: ::windows::core::PCWSTR, filesought: ::windows::core::PCWSTR, tagfile: ::windows::core::PCWSTR, diskpromptstyle: u32, pathbuffer: ::windows::core::PWSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
+            fn SetupPromptForDiskW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core::PCWSTR, diskname: ::windows_core::PCWSTR, pathtosource: ::windows_core::PCWSTR, filesought: ::windows_core::PCWSTR, tagfile: ::windows_core::PCWSTR, diskpromptstyle: u32, pathbuffer: ::windows_core::PWSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
         }
-        ::core::mem::transmute(SetupPromptForDiskW(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), diskname.into_param().abi(), pathtosource.into_param().abi(), filesought.into_param().abi(), tagfile.into_param().abi(), ::core::mem::transmute(diskpromptstyle), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pathbuffer)), pathbuffer.len() as _, ::core::mem::transmute(pathrequiredsize)))
+        ::core::mem::transmute(SetupPromptForDiskW(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), diskname.into_param().abi(), pathtosource.into_param().abi(), filesought.into_param().abi(), tagfile.into_param().abi(), ::core::mem::transmute(diskpromptstyle), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pathbuffer)), pathbuffer.len() as _, ::core::mem::transmute(pathrequiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16731,7 +16731,7 @@ pub unsafe fn SetupPromptForDiskW<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupPromptReboot<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(filequeue: *const ::core::ffi::c_void, owner: Param1, scanonly: Param2) -> i32 {
+pub unsafe fn SetupPromptReboot<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(filequeue: *const ::core::ffi::c_void, owner: Param1, scanonly: Param2) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16751,9 +16751,9 @@ pub unsafe fn SetupQueryDrivesInDiskSpaceListA(diskspace: *const ::core::ffi::c_
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueryDrivesInDiskSpaceListA(diskspace: *const ::core::ffi::c_void, returnbuffer: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupQueryDrivesInDiskSpaceListA(diskspace: *const ::core::ffi::c_void, returnbuffer: ::windows_core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupQueryDrivesInDiskSpaceListA(::core::mem::transmute(diskspace), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupQueryDrivesInDiskSpaceListA(::core::mem::transmute(diskspace), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16766,9 +16766,9 @@ pub unsafe fn SetupQueryDrivesInDiskSpaceListW(diskspace: *const ::core::ffi::c_
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueryDrivesInDiskSpaceListW(diskspace: *const ::core::ffi::c_void, returnbuffer: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupQueryDrivesInDiskSpaceListW(diskspace: *const ::core::ffi::c_void, returnbuffer: ::windows_core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupQueryDrivesInDiskSpaceListW(::core::mem::transmute(diskspace), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupQueryDrivesInDiskSpaceListW(::core::mem::transmute(diskspace), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16776,14 +16776,14 @@ pub unsafe fn SetupQueryDrivesInDiskSpaceListW(diskspace: *const ::core::ffi::c_
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueryFileLogA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: Param1, targetfilename: Param2, desiredinfo: SetupFileLogInfo, dataout: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueryFileLogA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: Param1, targetfilename: Param2, desiredinfo: SetupFileLogInfo, dataout: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueryFileLogA(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows::core::PCSTR, targetfilename: ::windows::core::PCSTR, desiredinfo: SetupFileLogInfo, dataout: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupQueryFileLogA(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core::PCSTR, targetfilename: ::windows_core::PCSTR, desiredinfo: SetupFileLogInfo, dataout: ::windows_core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupQueryFileLogA(::core::mem::transmute(fileloghandle), logsectionname.into_param().abi(), targetfilename.into_param().abi(), ::core::mem::transmute(desiredinfo), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(dataout)), dataout.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupQueryFileLogA(::core::mem::transmute(fileloghandle), logsectionname.into_param().abi(), targetfilename.into_param().abi(), ::core::mem::transmute(desiredinfo), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(dataout)), dataout.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16791,14 +16791,14 @@ pub unsafe fn SetupQueryFileLogA<'a, Param1: ::windows::core::IntoParam<'a, ::wi
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueryFileLogW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: Param1, targetfilename: Param2, desiredinfo: SetupFileLogInfo, dataout: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueryFileLogW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: Param1, targetfilename: Param2, desiredinfo: SetupFileLogInfo, dataout: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueryFileLogW(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows::core::PCWSTR, targetfilename: ::windows::core::PCWSTR, desiredinfo: SetupFileLogInfo, dataout: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupQueryFileLogW(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core::PCWSTR, targetfilename: ::windows_core::PCWSTR, desiredinfo: SetupFileLogInfo, dataout: ::windows_core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupQueryFileLogW(::core::mem::transmute(fileloghandle), logsectionname.into_param().abi(), targetfilename.into_param().abi(), ::core::mem::transmute(desiredinfo), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(dataout)), dataout.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupQueryFileLogW(::core::mem::transmute(fileloghandle), logsectionname.into_param().abi(), targetfilename.into_param().abi(), ::core::mem::transmute(desiredinfo), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(dataout)), dataout.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16811,9 +16811,9 @@ pub unsafe fn SetupQueryInfFileInformationA(infinformation: *const SP_INF_INFORM
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueryInfFileInformationA(infinformation: *const SP_INF_INFORMATION, infindex: u32, returnbuffer: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupQueryInfFileInformationA(infinformation: *const SP_INF_INFORMATION, infindex: u32, returnbuffer: ::windows_core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupQueryInfFileInformationA(::core::mem::transmute(infinformation), ::core::mem::transmute(infindex), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupQueryInfFileInformationA(::core::mem::transmute(infinformation), ::core::mem::transmute(infindex), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16826,9 +16826,9 @@ pub unsafe fn SetupQueryInfFileInformationW(infinformation: *const SP_INF_INFORM
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueryInfFileInformationW(infinformation: *const SP_INF_INFORMATION, infindex: u32, returnbuffer: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupQueryInfFileInformationW(infinformation: *const SP_INF_INFORMATION, infindex: u32, returnbuffer: ::windows_core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupQueryInfFileInformationW(::core::mem::transmute(infinformation), ::core::mem::transmute(infindex), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupQueryInfFileInformationW(::core::mem::transmute(infinformation), ::core::mem::transmute(infindex), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16866,14 +16866,14 @@ pub unsafe fn SetupQueryInfOriginalFileInformationW(infinformation: *const SP_IN
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueryInfVersionInformationA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infinformation: *const SP_INF_INFORMATION, infindex: u32, key: Param2, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueryInfVersionInformationA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infinformation: *const SP_INF_INFORMATION, infindex: u32, key: Param2, returnbuffer: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueryInfVersionInformationA(infinformation: *const SP_INF_INFORMATION, infindex: u32, key: ::windows::core::PCSTR, returnbuffer: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupQueryInfVersionInformationA(infinformation: *const SP_INF_INFORMATION, infindex: u32, key: ::windows_core::PCSTR, returnbuffer: ::windows_core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupQueryInfVersionInformationA(::core::mem::transmute(infinformation), ::core::mem::transmute(infindex), key.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupQueryInfVersionInformationA(::core::mem::transmute(infinformation), ::core::mem::transmute(infindex), key.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16881,14 +16881,14 @@ pub unsafe fn SetupQueryInfVersionInformationA<'a, Param2: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueryInfVersionInformationW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infinformation: *const SP_INF_INFORMATION, infindex: u32, key: Param2, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueryInfVersionInformationW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infinformation: *const SP_INF_INFORMATION, infindex: u32, key: Param2, returnbuffer: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueryInfVersionInformationW(infinformation: *const SP_INF_INFORMATION, infindex: u32, key: ::windows::core::PCWSTR, returnbuffer: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupQueryInfVersionInformationW(infinformation: *const SP_INF_INFORMATION, infindex: u32, key: ::windows_core::PCWSTR, returnbuffer: ::windows_core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupQueryInfVersionInformationW(::core::mem::transmute(infinformation), ::core::mem::transmute(infindex), key.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
+        ::core::mem::transmute(SetupQueryInfVersionInformationW(::core::mem::transmute(infinformation), ::core::mem::transmute(infindex), key.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(returnbuffer)), returnbuffer.len() as _, ::core::mem::transmute(requiredsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16896,12 +16896,12 @@ pub unsafe fn SetupQueryInfVersionInformationW<'a, Param2: ::windows::core::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQuerySourceListA(flags: u32, list: *mut *mut ::windows::core::PSTR, count: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQuerySourceListA(flags: u32, list: *mut *mut ::windows_core::PSTR, count: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQuerySourceListA(flags: u32, list: *mut *mut ::windows::core::PSTR, count: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupQuerySourceListA(flags: u32, list: *mut *mut ::windows_core::PSTR, count: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQuerySourceListA(::core::mem::transmute(flags), ::core::mem::transmute(list), ::core::mem::transmute(count)))
     }
@@ -16911,12 +16911,12 @@ pub unsafe fn SetupQuerySourceListA(flags: u32, list: *mut *mut ::windows::core:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQuerySourceListW(flags: u32, list: *mut *mut ::windows::core::PWSTR, count: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQuerySourceListW(flags: u32, list: *mut *mut ::windows_core::PWSTR, count: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQuerySourceListW(flags: u32, list: *mut *mut ::windows::core::PWSTR, count: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupQuerySourceListW(flags: u32, list: *mut *mut ::windows_core::PWSTR, count: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQuerySourceListW(::core::mem::transmute(flags), ::core::mem::transmute(list), ::core::mem::transmute(count)))
     }
@@ -16926,12 +16926,12 @@ pub unsafe fn SetupQuerySourceListW(flags: u32, list: *mut *mut ::windows::core:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQuerySpaceRequiredOnDriveA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(diskspace: *const ::core::ffi::c_void, drivespec: Param1, spacerequired: *mut i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQuerySpaceRequiredOnDriveA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(diskspace: *const ::core::ffi::c_void, drivespec: Param1, spacerequired: *mut i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQuerySpaceRequiredOnDriveA(diskspace: *const ::core::ffi::c_void, drivespec: ::windows::core::PCSTR, spacerequired: *mut i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupQuerySpaceRequiredOnDriveA(diskspace: *const ::core::ffi::c_void, drivespec: ::windows_core::PCSTR, spacerequired: *mut i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQuerySpaceRequiredOnDriveA(::core::mem::transmute(diskspace), drivespec.into_param().abi(), ::core::mem::transmute(spacerequired), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -16941,12 +16941,12 @@ pub unsafe fn SetupQuerySpaceRequiredOnDriveA<'a, Param1: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQuerySpaceRequiredOnDriveW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, drivespec: Param1, spacerequired: *mut i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQuerySpaceRequiredOnDriveW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, drivespec: Param1, spacerequired: *mut i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQuerySpaceRequiredOnDriveW(diskspace: *const ::core::ffi::c_void, drivespec: ::windows::core::PCWSTR, spacerequired: *mut i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupQuerySpaceRequiredOnDriveW(diskspace: *const ::core::ffi::c_void, drivespec: ::windows_core::PCWSTR, spacerequired: *mut i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQuerySpaceRequiredOnDriveW(::core::mem::transmute(diskspace), drivespec.into_param().abi(), ::core::mem::transmute(spacerequired), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -16956,12 +16956,12 @@ pub unsafe fn SetupQuerySpaceRequiredOnDriveW<'a, Param1: ::windows::core::IntoP
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueCopyA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param6: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param7: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, sourcerootpath: Param1, sourcepath: Param2, sourcefilename: Param3, sourcedescription: Param4, sourcetagfile: Param5, targetdirectory: Param6, targetfilename: Param7, copystyle: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueCopyA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, sourcerootpath: Param1, sourcepath: Param2, sourcefilename: Param3, sourcedescription: Param4, sourcetagfile: Param5, targetdirectory: Param6, targetfilename: Param7, copystyle: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueCopyA(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows::core::PCSTR, sourcepath: ::windows::core::PCSTR, sourcefilename: ::windows::core::PCSTR, sourcedescription: ::windows::core::PCSTR, sourcetagfile: ::windows::core::PCSTR, targetdirectory: ::windows::core::PCSTR, targetfilename: ::windows::core::PCSTR, copystyle: u32) -> super::super::Foundation::BOOL;
+            fn SetupQueueCopyA(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core::PCSTR, sourcepath: ::windows_core::PCSTR, sourcefilename: ::windows_core::PCSTR, sourcedescription: ::windows_core::PCSTR, sourcetagfile: ::windows_core::PCSTR, targetdirectory: ::windows_core::PCSTR, targetfilename: ::windows_core::PCSTR, copystyle: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueCopyA(::core::mem::transmute(queuehandle), sourcerootpath.into_param().abi(), sourcepath.into_param().abi(), sourcefilename.into_param().abi(), sourcedescription.into_param().abi(), sourcetagfile.into_param().abi(), targetdirectory.into_param().abi(), targetfilename.into_param().abi(), ::core::mem::transmute(copystyle)))
     }
@@ -17001,12 +17001,12 @@ pub unsafe fn SetupQueueCopyIndirectW(copyparams: *const SP_FILE_COPY_PARAMS_W) 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueCopySectionA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, sourcerootpath: Param1, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: Param4, copystyle: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueCopySectionA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, sourcerootpath: Param1, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: Param4, copystyle: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueCopySectionA(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows::core::PCSTR, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows::core::PCSTR, copystyle: u32) -> super::super::Foundation::BOOL;
+            fn SetupQueueCopySectionA(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core::PCSTR, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core::PCSTR, copystyle: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueCopySectionA(::core::mem::transmute(queuehandle), sourcerootpath.into_param().abi(), ::core::mem::transmute(infhandle), ::core::mem::transmute(listinfhandle), section.into_param().abi(), ::core::mem::transmute(copystyle)))
     }
@@ -17016,12 +17016,12 @@ pub unsafe fn SetupQueueCopySectionA<'a, Param1: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueCopySectionW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, sourcerootpath: Param1, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: Param4, copystyle: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueCopySectionW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, sourcerootpath: Param1, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: Param4, copystyle: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueCopySectionW(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows::core::PCWSTR, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows::core::PCWSTR, copystyle: u32) -> super::super::Foundation::BOOL;
+            fn SetupQueueCopySectionW(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core::PCWSTR, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core::PCWSTR, copystyle: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueCopySectionW(::core::mem::transmute(queuehandle), sourcerootpath.into_param().abi(), ::core::mem::transmute(infhandle), ::core::mem::transmute(listinfhandle), section.into_param().abi(), ::core::mem::transmute(copystyle)))
     }
@@ -17031,12 +17031,12 @@ pub unsafe fn SetupQueueCopySectionW<'a, Param1: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueCopyW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param5: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param6: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param7: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, sourcerootpath: Param1, sourcepath: Param2, sourcefilename: Param3, sourcedescription: Param4, sourcetagfile: Param5, targetdirectory: Param6, targetfilename: Param7, copystyle: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueCopyW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, sourcerootpath: Param1, sourcepath: Param2, sourcefilename: Param3, sourcedescription: Param4, sourcetagfile: Param5, targetdirectory: Param6, targetfilename: Param7, copystyle: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueCopyW(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows::core::PCWSTR, sourcepath: ::windows::core::PCWSTR, sourcefilename: ::windows::core::PCWSTR, sourcedescription: ::windows::core::PCWSTR, sourcetagfile: ::windows::core::PCWSTR, targetdirectory: ::windows::core::PCWSTR, targetfilename: ::windows::core::PCWSTR, copystyle: u32) -> super::super::Foundation::BOOL;
+            fn SetupQueueCopyW(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core::PCWSTR, sourcepath: ::windows_core::PCWSTR, sourcefilename: ::windows_core::PCWSTR, sourcedescription: ::windows_core::PCWSTR, sourcetagfile: ::windows_core::PCWSTR, targetdirectory: ::windows_core::PCWSTR, targetfilename: ::windows_core::PCWSTR, copystyle: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueCopyW(::core::mem::transmute(queuehandle), sourcerootpath.into_param().abi(), sourcepath.into_param().abi(), sourcefilename.into_param().abi(), sourcedescription.into_param().abi(), sourcetagfile.into_param().abi(), targetdirectory.into_param().abi(), targetfilename.into_param().abi(), ::core::mem::transmute(copystyle)))
     }
@@ -17046,12 +17046,12 @@ pub unsafe fn SetupQueueCopyW<'a, Param1: ::windows::core::IntoParam<'a, ::windo
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueDefaultCopyA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, sourcerootpath: Param2, sourcefilename: Param3, targetfilename: Param4, copystyle: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueDefaultCopyA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, sourcerootpath: Param2, sourcefilename: Param3, targetfilename: Param4, copystyle: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueDefaultCopyA(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, sourcerootpath: ::windows::core::PCSTR, sourcefilename: ::windows::core::PCSTR, targetfilename: ::windows::core::PCSTR, copystyle: u32) -> super::super::Foundation::BOOL;
+            fn SetupQueueDefaultCopyA(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core::PCSTR, sourcefilename: ::windows_core::PCSTR, targetfilename: ::windows_core::PCSTR, copystyle: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueDefaultCopyA(::core::mem::transmute(queuehandle), ::core::mem::transmute(infhandle), sourcerootpath.into_param().abi(), sourcefilename.into_param().abi(), targetfilename.into_param().abi(), ::core::mem::transmute(copystyle)))
     }
@@ -17061,12 +17061,12 @@ pub unsafe fn SetupQueueDefaultCopyA<'a, Param2: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueDefaultCopyW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, sourcerootpath: Param2, sourcefilename: Param3, targetfilename: Param4, copystyle: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueDefaultCopyW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, sourcerootpath: Param2, sourcefilename: Param3, targetfilename: Param4, copystyle: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueDefaultCopyW(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, sourcerootpath: ::windows::core::PCWSTR, sourcefilename: ::windows::core::PCWSTR, targetfilename: ::windows::core::PCWSTR, copystyle: u32) -> super::super::Foundation::BOOL;
+            fn SetupQueueDefaultCopyW(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core::PCWSTR, sourcefilename: ::windows_core::PCWSTR, targetfilename: ::windows_core::PCWSTR, copystyle: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueDefaultCopyW(::core::mem::transmute(queuehandle), ::core::mem::transmute(infhandle), sourcerootpath.into_param().abi(), sourcefilename.into_param().abi(), targetfilename.into_param().abi(), ::core::mem::transmute(copystyle)))
     }
@@ -17076,12 +17076,12 @@ pub unsafe fn SetupQueueDefaultCopyW<'a, Param2: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueDeleteA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, pathpart1: Param1, pathpart2: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueDeleteA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, pathpart1: Param1, pathpart2: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueDeleteA(queuehandle: *const ::core::ffi::c_void, pathpart1: ::windows::core::PCSTR, pathpart2: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetupQueueDeleteA(queuehandle: *const ::core::ffi::c_void, pathpart1: ::windows_core::PCSTR, pathpart2: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueDeleteA(::core::mem::transmute(queuehandle), pathpart1.into_param().abi(), pathpart2.into_param().abi()))
     }
@@ -17091,12 +17091,12 @@ pub unsafe fn SetupQueueDeleteA<'a, Param1: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueDeleteSectionA<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueDeleteSectionA<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueDeleteSectionA(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetupQueueDeleteSectionA(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueDeleteSectionA(::core::mem::transmute(queuehandle), ::core::mem::transmute(infhandle), ::core::mem::transmute(listinfhandle), section.into_param().abi()))
     }
@@ -17106,12 +17106,12 @@ pub unsafe fn SetupQueueDeleteSectionA<'a, Param3: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueDeleteSectionW<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueDeleteSectionW<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueDeleteSectionW(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetupQueueDeleteSectionW(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueDeleteSectionW(::core::mem::transmute(queuehandle), ::core::mem::transmute(infhandle), ::core::mem::transmute(listinfhandle), section.into_param().abi()))
     }
@@ -17121,12 +17121,12 @@ pub unsafe fn SetupQueueDeleteSectionW<'a, Param3: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueDeleteW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, pathpart1: Param1, pathpart2: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueDeleteW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, pathpart1: Param1, pathpart2: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueDeleteW(queuehandle: *const ::core::ffi::c_void, pathpart1: ::windows::core::PCWSTR, pathpart2: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetupQueueDeleteW(queuehandle: *const ::core::ffi::c_void, pathpart1: ::windows_core::PCWSTR, pathpart2: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueDeleteW(::core::mem::transmute(queuehandle), pathpart1.into_param().abi(), pathpart2.into_param().abi()))
     }
@@ -17136,12 +17136,12 @@ pub unsafe fn SetupQueueDeleteW<'a, Param1: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueRenameA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, sourcepath: Param1, sourcefilename: Param2, targetpath: Param3, targetfilename: Param4) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueRenameA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, sourcepath: Param1, sourcefilename: Param2, targetpath: Param3, targetfilename: Param4) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueRenameA(queuehandle: *const ::core::ffi::c_void, sourcepath: ::windows::core::PCSTR, sourcefilename: ::windows::core::PCSTR, targetpath: ::windows::core::PCSTR, targetfilename: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetupQueueRenameA(queuehandle: *const ::core::ffi::c_void, sourcepath: ::windows_core::PCSTR, sourcefilename: ::windows_core::PCSTR, targetpath: ::windows_core::PCSTR, targetfilename: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueRenameA(::core::mem::transmute(queuehandle), sourcepath.into_param().abi(), sourcefilename.into_param().abi(), targetpath.into_param().abi(), targetfilename.into_param().abi()))
     }
@@ -17151,12 +17151,12 @@ pub unsafe fn SetupQueueRenameA<'a, Param1: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueRenameSectionA<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueRenameSectionA<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueRenameSectionA(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetupQueueRenameSectionA(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueRenameSectionA(::core::mem::transmute(queuehandle), ::core::mem::transmute(infhandle), ::core::mem::transmute(listinfhandle), section.into_param().abi()))
     }
@@ -17166,12 +17166,12 @@ pub unsafe fn SetupQueueRenameSectionA<'a, Param3: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueRenameSectionW<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueRenameSectionW<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueRenameSectionW(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetupQueueRenameSectionW(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueRenameSectionW(::core::mem::transmute(queuehandle), ::core::mem::transmute(infhandle), ::core::mem::transmute(listinfhandle), section.into_param().abi()))
     }
@@ -17181,12 +17181,12 @@ pub unsafe fn SetupQueueRenameSectionW<'a, Param3: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueueRenameW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, sourcepath: Param1, sourcefilename: Param2, targetpath: Param3, targetfilename: Param4) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueueRenameW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, sourcepath: Param1, sourcefilename: Param2, targetpath: Param3, targetfilename: Param4) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupQueueRenameW(queuehandle: *const ::core::ffi::c_void, sourcepath: ::windows::core::PCWSTR, sourcefilename: ::windows::core::PCWSTR, targetpath: ::windows::core::PCWSTR, targetfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetupQueueRenameW(queuehandle: *const ::core::ffi::c_void, sourcepath: ::windows_core::PCWSTR, sourcefilename: ::windows_core::PCWSTR, targetpath: ::windows_core::PCWSTR, targetfilename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupQueueRenameW(::core::mem::transmute(queuehandle), sourcepath.into_param().abi(), sourcefilename.into_param().abi(), targetpath.into_param().abi(), targetfilename.into_param().abi()))
     }
@@ -17196,12 +17196,12 @@ pub unsafe fn SetupQueueRenameW<'a, Param1: ::windows::core::IntoParam<'a, ::win
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveFileLogEntryA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: Param1, targetfilename: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveFileLogEntryA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: Param1, targetfilename: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupRemoveFileLogEntryA(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows::core::PCSTR, targetfilename: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetupRemoveFileLogEntryA(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core::PCSTR, targetfilename: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupRemoveFileLogEntryA(::core::mem::transmute(fileloghandle), logsectionname.into_param().abi(), targetfilename.into_param().abi()))
     }
@@ -17211,12 +17211,12 @@ pub unsafe fn SetupRemoveFileLogEntryA<'a, Param1: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveFileLogEntryW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: Param1, targetfilename: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveFileLogEntryW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: Param1, targetfilename: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupRemoveFileLogEntryW(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows::core::PCWSTR, targetfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetupRemoveFileLogEntryW(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core::PCWSTR, targetfilename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupRemoveFileLogEntryW(::core::mem::transmute(fileloghandle), logsectionname.into_param().abi(), targetfilename.into_param().abi()))
     }
@@ -17226,12 +17226,12 @@ pub unsafe fn SetupRemoveFileLogEntryW<'a, Param1: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveFromDiskSpaceListA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(diskspace: *const ::core::ffi::c_void, targetfilespec: Param1, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveFromDiskSpaceListA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(diskspace: *const ::core::ffi::c_void, targetfilespec: Param1, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupRemoveFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupRemoveFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows_core::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupRemoveFromDiskSpaceListA(::core::mem::transmute(diskspace), targetfilespec.into_param().abi(), ::core::mem::transmute(operation), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -17241,12 +17241,12 @@ pub unsafe fn SetupRemoveFromDiskSpaceListA<'a, Param1: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveFromDiskSpaceListW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, targetfilespec: Param1, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveFromDiskSpaceListW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, targetfilespec: Param1, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupRemoveFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupRemoveFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows_core::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupRemoveFromDiskSpaceListW(::core::mem::transmute(diskspace), targetfilespec.into_param().abi(), ::core::mem::transmute(operation), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -17256,12 +17256,12 @@ pub unsafe fn SetupRemoveFromDiskSpaceListW<'a, Param1: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveFromSourceListA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(flags: u32, source: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveFromSourceListA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(flags: u32, source: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupRemoveFromSourceListA(flags: u32, source: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetupRemoveFromSourceListA(flags: u32, source: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupRemoveFromSourceListA(::core::mem::transmute(flags), source.into_param().abi()))
     }
@@ -17271,12 +17271,12 @@ pub unsafe fn SetupRemoveFromSourceListA<'a, Param1: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveFromSourceListW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(flags: u32, source: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveFromSourceListW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(flags: u32, source: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupRemoveFromSourceListW(flags: u32, source: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetupRemoveFromSourceListW(flags: u32, source: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupRemoveFromSourceListW(::core::mem::transmute(flags), source.into_param().abi()))
     }
@@ -17286,12 +17286,12 @@ pub unsafe fn SetupRemoveFromSourceListW<'a, Param1: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveInstallSectionFromDiskSpaceListA<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: Param3, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveInstallSectionFromDiskSpaceListA<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: Param3, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupRemoveInstallSectionFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupRemoveInstallSectionFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupRemoveInstallSectionFromDiskSpaceListA(::core::mem::transmute(diskspace), ::core::mem::transmute(infhandle), ::core::mem::transmute(layoutinfhandle), sectionname.into_param().abi(), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -17301,12 +17301,12 @@ pub unsafe fn SetupRemoveInstallSectionFromDiskSpaceListA<'a, Param3: ::windows:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveInstallSectionFromDiskSpaceListW<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: Param3, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveInstallSectionFromDiskSpaceListW<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: Param3, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupRemoveInstallSectionFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupRemoveInstallSectionFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCWSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupRemoveInstallSectionFromDiskSpaceListW(::core::mem::transmute(diskspace), ::core::mem::transmute(infhandle), ::core::mem::transmute(layoutinfhandle), sectionname.into_param().abi(), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -17316,12 +17316,12 @@ pub unsafe fn SetupRemoveInstallSectionFromDiskSpaceListW<'a, Param3: ::windows:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveSectionFromDiskSpaceListA<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: Param3, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveSectionFromDiskSpaceListA<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: Param3, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupRemoveSectionFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupRemoveSectionFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupRemoveSectionFromDiskSpaceListA(::core::mem::transmute(diskspace), ::core::mem::transmute(infhandle), ::core::mem::transmute(listinfhandle), sectionname.into_param().abi(), ::core::mem::transmute(operation), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -17331,12 +17331,12 @@ pub unsafe fn SetupRemoveSectionFromDiskSpaceListA<'a, Param3: ::windows::core::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveSectionFromDiskSpaceListW<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: Param3, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveSectionFromDiskSpaceListW<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: Param3, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupRemoveSectionFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
+            fn SetupRemoveSectionFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupRemoveSectionFromDiskSpaceListW(::core::mem::transmute(diskspace), ::core::mem::transmute(infhandle), ::core::mem::transmute(listinfhandle), sectionname.into_param().abi(), ::core::mem::transmute(operation), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -17346,12 +17346,12 @@ pub unsafe fn SetupRemoveSectionFromDiskSpaceListW<'a, Param3: ::windows::core::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRenameErrorA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwndparent: Param0, dialogtitle: Param1, sourcefile: Param2, targetfile: Param3, win32errorcode: u32, style: u32) -> u32 {
+pub unsafe fn SetupRenameErrorA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndparent: Param0, dialogtitle: Param1, sourcefile: Param2, targetfile: Param3, win32errorcode: u32, style: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupRenameErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCSTR, sourcefile: ::windows::core::PCSTR, targetfile: ::windows::core::PCSTR, win32errorcode: u32, style: u32) -> u32;
+            fn SetupRenameErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core::PCSTR, sourcefile: ::windows_core::PCSTR, targetfile: ::windows_core::PCSTR, win32errorcode: u32, style: u32) -> u32;
         }
         ::core::mem::transmute(SetupRenameErrorA(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), sourcefile.into_param().abi(), targetfile.into_param().abi(), ::core::mem::transmute(win32errorcode), ::core::mem::transmute(style)))
     }
@@ -17361,12 +17361,12 @@ pub unsafe fn SetupRenameErrorA<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRenameErrorW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwndparent: Param0, dialogtitle: Param1, sourcefile: Param2, targetfile: Param3, win32errorcode: u32, style: u32) -> u32 {
+pub unsafe fn SetupRenameErrorW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndparent: Param0, dialogtitle: Param1, sourcefile: Param2, targetfile: Param3, win32errorcode: u32, style: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupRenameErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCWSTR, sourcefile: ::windows::core::PCWSTR, targetfile: ::windows::core::PCWSTR, win32errorcode: u32, style: u32) -> u32;
+            fn SetupRenameErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core::PCWSTR, sourcefile: ::windows_core::PCWSTR, targetfile: ::windows_core::PCWSTR, win32errorcode: u32, style: u32) -> u32;
         }
         ::core::mem::transmute(SetupRenameErrorW(hwndparent.into_param().abi(), dialogtitle.into_param().abi(), sourcefile.into_param().abi(), targetfile.into_param().abi(), ::core::mem::transmute(win32errorcode), ::core::mem::transmute(style)))
     }
@@ -17376,12 +17376,12 @@ pub unsafe fn SetupRenameErrorW<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupScanFileQueueA<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(filequeue: *const ::core::ffi::c_void, flags: u32, window: Param2, callbackroutine: PSP_FILE_CALLBACK_A, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupScanFileQueueA<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(filequeue: *const ::core::ffi::c_void, flags: u32, window: Param2, callbackroutine: PSP_FILE_CALLBACK_A, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupScanFileQueueA(filequeue: *const ::core::ffi::c_void, flags: u32, window: super::super::Foundation::HWND, callbackroutine: ::windows::core::RawPtr, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupScanFileQueueA(filequeue: *const ::core::ffi::c_void, flags: u32, window: super::super::Foundation::HWND, callbackroutine: ::windows_core::RawPtr, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupScanFileQueueA(::core::mem::transmute(filequeue), ::core::mem::transmute(flags), window.into_param().abi(), ::core::mem::transmute(callbackroutine), ::core::mem::transmute(callbackcontext), ::core::mem::transmute(result)))
     }
@@ -17391,12 +17391,12 @@ pub unsafe fn SetupScanFileQueueA<'a, Param2: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupScanFileQueueW<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(filequeue: *const ::core::ffi::c_void, flags: u32, window: Param2, callbackroutine: PSP_FILE_CALLBACK_W, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupScanFileQueueW<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(filequeue: *const ::core::ffi::c_void, flags: u32, window: Param2, callbackroutine: PSP_FILE_CALLBACK_W, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupScanFileQueueW(filequeue: *const ::core::ffi::c_void, flags: u32, window: super::super::Foundation::HWND, callbackroutine: ::windows::core::RawPtr, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL;
+            fn SetupScanFileQueueW(filequeue: *const ::core::ffi::c_void, flags: u32, window: super::super::Foundation::HWND, callbackroutine: ::windows_core::RawPtr, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupScanFileQueueW(::core::mem::transmute(filequeue), ::core::mem::transmute(flags), window.into_param().abi(), ::core::mem::transmute(callbackroutine), ::core::mem::transmute(callbackcontext), ::core::mem::transmute(result)))
     }
@@ -17406,12 +17406,12 @@ pub unsafe fn SetupScanFileQueueW<'a, Param2: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupSetDirectoryIdA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, id: u32, directory: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupSetDirectoryIdA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, id: u32, directory: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupSetDirectoryIdA(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetupSetDirectoryIdA(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupSetDirectoryIdA(::core::mem::transmute(infhandle), ::core::mem::transmute(id), directory.into_param().abi()))
     }
@@ -17421,12 +17421,12 @@ pub unsafe fn SetupSetDirectoryIdA<'a, Param2: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupSetDirectoryIdExA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infhandle: *const ::core::ffi::c_void, id: u32, directory: Param2, flags: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupSetDirectoryIdExA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infhandle: *const ::core::ffi::c_void, id: u32, directory: Param2, flags: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupSetDirectoryIdExA(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows::core::PCSTR, flags: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupSetDirectoryIdExA(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows_core::PCSTR, flags: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupSetDirectoryIdExA(::core::mem::transmute(infhandle), ::core::mem::transmute(id), directory.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -17436,12 +17436,12 @@ pub unsafe fn SetupSetDirectoryIdExA<'a, Param2: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupSetDirectoryIdExW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, id: u32, directory: Param2, flags: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupSetDirectoryIdExW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, id: u32, directory: Param2, flags: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupSetDirectoryIdExW(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows::core::PCWSTR, flags: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupSetDirectoryIdExW(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows_core::PCWSTR, flags: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupSetDirectoryIdExW(::core::mem::transmute(infhandle), ::core::mem::transmute(id), directory.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(reserved1), ::core::mem::transmute(reserved2)))
     }
@@ -17451,12 +17451,12 @@ pub unsafe fn SetupSetDirectoryIdExW<'a, Param2: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupSetDirectoryIdW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, id: u32, directory: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupSetDirectoryIdW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infhandle: *const ::core::ffi::c_void, id: u32, directory: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupSetDirectoryIdW(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetupSetDirectoryIdW(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupSetDirectoryIdW(::core::mem::transmute(infhandle), ::core::mem::transmute(id), directory.into_param().abi()))
     }
@@ -17466,12 +17466,12 @@ pub unsafe fn SetupSetDirectoryIdW<'a, Param2: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
 #[inline]
-pub unsafe fn SetupSetFileQueueAlternatePlatformA<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, alternatedefaultcatalogfile: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupSetFileQueueAlternatePlatformA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(queuehandle: *const ::core::ffi::c_void, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, alternatedefaultcatalogfile: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupSetFileQueueAlternatePlatformA(queuehandle: *const ::core::ffi::c_void, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, alternatedefaultcatalogfile: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetupSetFileQueueAlternatePlatformA(queuehandle: *const ::core::ffi::c_void, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, alternatedefaultcatalogfile: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupSetFileQueueAlternatePlatformA(::core::mem::transmute(queuehandle), ::core::mem::transmute(alternateplatforminfo), alternatedefaultcatalogfile.into_param().abi()))
     }
@@ -17481,12 +17481,12 @@ pub unsafe fn SetupSetFileQueueAlternatePlatformA<'a, Param2: ::windows::core::I
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
 #[inline]
-pub unsafe fn SetupSetFileQueueAlternatePlatformW<'a, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, alternatedefaultcatalogfile: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupSetFileQueueAlternatePlatformW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(queuehandle: *const ::core::ffi::c_void, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, alternatedefaultcatalogfile: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupSetFileQueueAlternatePlatformW(queuehandle: *const ::core::ffi::c_void, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, alternatedefaultcatalogfile: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetupSetFileQueueAlternatePlatformW(queuehandle: *const ::core::ffi::c_void, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, alternatedefaultcatalogfile: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupSetFileQueueAlternatePlatformW(::core::mem::transmute(queuehandle), ::core::mem::transmute(alternateplatforminfo), alternatedefaultcatalogfile.into_param().abi()))
     }
@@ -17511,7 +17511,7 @@ pub unsafe fn SetupSetFileQueueFlags(filequeue: *const ::core::ffi::c_void, flag
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupSetNonInteractiveMode<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(noninteractiveflag: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupSetNonInteractiveMode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(noninteractiveflag: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17526,12 +17526,12 @@ pub unsafe fn SetupSetNonInteractiveMode<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupSetPlatformPathOverrideA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(r#override: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupSetPlatformPathOverrideA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(r#override: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupSetPlatformPathOverrideA(r#override: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetupSetPlatformPathOverrideA(r#override: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupSetPlatformPathOverrideA(r#override.into_param().abi()))
     }
@@ -17541,12 +17541,12 @@ pub unsafe fn SetupSetPlatformPathOverrideA<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupSetPlatformPathOverrideW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(r#override: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupSetPlatformPathOverrideW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(r#override: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupSetPlatformPathOverrideW(r#override: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetupSetPlatformPathOverrideW(r#override: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupSetPlatformPathOverrideW(r#override.into_param().abi()))
     }
@@ -17556,14 +17556,14 @@ pub unsafe fn SetupSetPlatformPathOverrideW<'a, Param0: ::windows::core::IntoPar
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupSetSourceListA(flags: u32, sourcelist: &[::windows::core::PSTR]) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupSetSourceListA(flags: u32, sourcelist: &[::windows_core::PSTR]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupSetSourceListA(flags: u32, sourcelist: *const ::windows::core::PSTR, sourcecount: u32) -> super::super::Foundation::BOOL;
+            fn SetupSetSourceListA(flags: u32, sourcelist: *const ::windows_core::PSTR, sourcecount: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupSetSourceListA(::core::mem::transmute(flags), ::core::mem::transmute(::windows::core::as_ptr_or_null(sourcelist)), sourcelist.len() as _))
+        ::core::mem::transmute(SetupSetSourceListA(::core::mem::transmute(flags), ::core::mem::transmute(::windows_core::as_ptr_or_null(sourcelist)), sourcelist.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -17571,14 +17571,14 @@ pub unsafe fn SetupSetSourceListA(flags: u32, sourcelist: &[::windows::core::PST
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupSetSourceListW(flags: u32, sourcelist: &[::windows::core::PWSTR]) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupSetSourceListW(flags: u32, sourcelist: &[::windows_core::PWSTR]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupSetSourceListW(flags: u32, sourcelist: *const ::windows::core::PWSTR, sourcecount: u32) -> super::super::Foundation::BOOL;
+            fn SetupSetSourceListW(flags: u32, sourcelist: *const ::windows_core::PWSTR, sourcecount: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(SetupSetSourceListW(::core::mem::transmute(flags), ::core::mem::transmute(::windows::core::as_ptr_or_null(sourcelist)), sourcelist.len() as _))
+        ::core::mem::transmute(SetupSetSourceListW(::core::mem::transmute(flags), ::core::mem::transmute(::windows_core::as_ptr_or_null(sourcelist)), sourcelist.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -17644,12 +17644,12 @@ pub unsafe fn SetupUninstallNewlyCopiedInfs(filequeue: *const ::core::ffi::c_voi
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupUninstallOEMInfA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(inffilename: Param0, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupUninstallOEMInfA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(inffilename: Param0, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupUninstallOEMInfA(inffilename: ::windows::core::PCSTR, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupUninstallOEMInfA(inffilename: ::windows_core::PCSTR, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupUninstallOEMInfA(inffilename.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(reserved)))
     }
@@ -17659,12 +17659,12 @@ pub unsafe fn SetupUninstallOEMInfA<'a, Param0: ::windows::core::IntoParam<'a, :
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupUninstallOEMInfW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(inffilename: Param0, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupUninstallOEMInfW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(inffilename: Param0, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupUninstallOEMInfW(inffilename: ::windows::core::PCWSTR, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SetupUninstallOEMInfW(inffilename: ::windows_core::PCWSTR, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupUninstallOEMInfW(inffilename.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(reserved)))
     }
@@ -17674,12 +17674,12 @@ pub unsafe fn SetupUninstallOEMInfW<'a, Param0: ::windows::core::IntoParam<'a, :
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
 #[inline]
-pub unsafe fn SetupVerifyInfFileA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(infname: Param0, altplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsignerinfo: *mut SP_INF_SIGNER_INFO_V2_A) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupVerifyInfFileA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(infname: Param0, altplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsignerinfo: *mut SP_INF_SIGNER_INFO_V2_A) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupVerifyInfFileA(infname: ::windows::core::PCSTR, altplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsignerinfo: *mut SP_INF_SIGNER_INFO_V2_A) -> super::super::Foundation::BOOL;
+            fn SetupVerifyInfFileA(infname: ::windows_core::PCSTR, altplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsignerinfo: *mut SP_INF_SIGNER_INFO_V2_A) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupVerifyInfFileA(infname.into_param().abi(), ::core::mem::transmute(altplatforminfo), ::core::mem::transmute(infsignerinfo)))
     }
@@ -17689,12 +17689,12 @@ pub unsafe fn SetupVerifyInfFileA<'a, Param0: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
 #[inline]
-pub unsafe fn SetupVerifyInfFileW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(infname: Param0, altplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsignerinfo: *mut SP_INF_SIGNER_INFO_V2_W) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupVerifyInfFileW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(infname: Param0, altplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsignerinfo: *mut SP_INF_SIGNER_INFO_V2_W) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupVerifyInfFileW(infname: ::windows::core::PCWSTR, altplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsignerinfo: *mut SP_INF_SIGNER_INFO_V2_W) -> super::super::Foundation::BOOL;
+            fn SetupVerifyInfFileW(infname: ::windows_core::PCWSTR, altplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsignerinfo: *mut SP_INF_SIGNER_INFO_V2_W) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetupVerifyInfFileW(infname.into_param().abi(), ::core::mem::transmute(altplatforminfo), ::core::mem::transmute(infsignerinfo)))
     }
@@ -17703,12 +17703,12 @@ pub unsafe fn SetupVerifyInfFileW<'a, Param0: ::windows::core::IntoParam<'a, ::w
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn SetupWriteTextLog<'a, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(logtoken: u64, category: u32, flags: u32, messagestr: Param3) {
+pub unsafe fn SetupWriteTextLog<'a, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(logtoken: u64, category: u32, flags: u32, messagestr: Param3) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupWriteTextLog(logtoken: u64, category: u32, flags: u32, messagestr: ::windows::core::PCSTR);
+            fn SetupWriteTextLog(logtoken: u64, category: u32, flags: u32, messagestr: ::windows_core::PCSTR);
         }
         SetupWriteTextLog(::core::mem::transmute(logtoken), ::core::mem::transmute(category), ::core::mem::transmute(flags), messagestr.into_param().abi())
     }
@@ -17717,12 +17717,12 @@ pub unsafe fn SetupWriteTextLog<'a, Param3: ::windows::core::IntoParam<'a, ::win
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn SetupWriteTextLogError<'a, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(logtoken: u64, category: u32, logflags: u32, error: u32, messagestr: Param4) {
+pub unsafe fn SetupWriteTextLogError<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(logtoken: u64, category: u32, logflags: u32, error: u32, messagestr: Param4) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupWriteTextLogError(logtoken: u64, category: u32, logflags: u32, error: u32, messagestr: ::windows::core::PCSTR);
+            fn SetupWriteTextLogError(logtoken: u64, category: u32, logflags: u32, error: u32, messagestr: ::windows_core::PCSTR);
         }
         SetupWriteTextLogError(::core::mem::transmute(logtoken), ::core::mem::transmute(category), ::core::mem::transmute(logflags), ::core::mem::transmute(error), messagestr.into_param().abi())
     }
@@ -17746,12 +17746,12 @@ pub unsafe fn SetupWriteTextLogInfLine(logtoken: u64, flags: u32, infhandle: *co
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UpdateDriverForPlugAndPlayDevicesA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwndparent: Param0, hardwareid: Param1, fullinfpath: Param2, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn UpdateDriverForPlugAndPlayDevicesA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndparent: Param0, hardwareid: Param1, fullinfpath: Param2, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UpdateDriverForPlugAndPlayDevicesA(hwndparent: super::super::Foundation::HWND, hardwareid: ::windows::core::PCSTR, fullinfpath: ::windows::core::PCSTR, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn UpdateDriverForPlugAndPlayDevicesA(hwndparent: super::super::Foundation::HWND, hardwareid: ::windows_core::PCSTR, fullinfpath: ::windows_core::PCSTR, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(UpdateDriverForPlugAndPlayDevicesA(hwndparent.into_param().abi(), hardwareid.into_param().abi(), fullinfpath.into_param().abi(), ::core::mem::transmute(installflags), ::core::mem::transmute(brebootrequired)))
     }
@@ -17761,12 +17761,12 @@ pub unsafe fn UpdateDriverForPlugAndPlayDevicesA<'a, Param0: ::windows::core::In
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UpdateDriverForPlugAndPlayDevicesW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwndparent: Param0, hardwareid: Param1, fullinfpath: Param2, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn UpdateDriverForPlugAndPlayDevicesW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndparent: Param0, hardwareid: Param1, fullinfpath: Param2, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UpdateDriverForPlugAndPlayDevicesW(hwndparent: super::super::Foundation::HWND, hardwareid: ::windows::core::PCWSTR, fullinfpath: ::windows::core::PCWSTR, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn UpdateDriverForPlugAndPlayDevicesW(hwndparent: super::super::Foundation::HWND, hardwareid: ::windows_core::PCWSTR, fullinfpath: ::windows_core::PCWSTR, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(UpdateDriverForPlugAndPlayDevicesW(hwndparent.into_param().abi(), hardwareid.into_param().abi(), fullinfpath.into_param().abi(), ::core::mem::transmute(installflags), ::core::mem::transmute(brebootrequired)))
     }

@@ -1,6 +1,6 @@
 use windows::{Foundation::Uri, Web::Syndication::SyndicationClient};
 
-fn main() -> windows::core::Result<()> {
+fn main() -> windows_core::Result<()> {
     let uri = Uri::CreateUri("https://kennykerr.ca/feed")?;
     let client = SyndicationClient::new()?;
     let feed = client.RetrieveFeedAsync(uri)?.get()?;

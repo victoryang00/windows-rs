@@ -16,12 +16,12 @@ impl ::core::fmt::Debug for ACCEL {
         f.debug_struct("ACCEL").field("fVirt", &self.fVirt).field("key", &self.key).field("cmd", &self.cmd).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ACCEL {
+unsafe impl ::windows_core::Abi for ACCEL {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ACCEL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACCEL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACCEL>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ACCEL {}
@@ -59,13 +59,13 @@ impl ::core::fmt::Debug for ALTTABINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for ALTTABINFO {
+unsafe impl ::windows_core::Abi for ALTTABINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ALTTABINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ALTTABINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ALTTABINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -109,7 +109,7 @@ impl ::core::default::Default for ANIMATE_WINDOW_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ANIMATE_WINDOW_FLAGS {
+unsafe impl ::windows_core::Abi for ANIMATE_WINDOW_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ANIMATE_WINDOW_FLAGS {
@@ -162,12 +162,12 @@ impl ::core::fmt::Debug for ANIMATIONINFO {
         f.debug_struct("ANIMATIONINFO").field("cbSize", &self.cbSize).field("iMinAnimate", &self.iMinAnimate).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ANIMATIONINFO {
+unsafe impl ::windows_core::Abi for ANIMATIONINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ANIMATIONINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ANIMATIONINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ANIMATIONINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ANIMATIONINFO {}
@@ -217,13 +217,13 @@ impl ::core::fmt::Debug for AUDIODESCRIPTION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for AUDIODESCRIPTION {
+unsafe impl ::windows_core::Abi for AUDIODESCRIPTION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for AUDIODESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUDIODESCRIPTION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUDIODESCRIPTION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -237,7 +237,7 @@ impl ::core::default::Default for AUDIODESCRIPTION {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AdjustWindowRect<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(lprect: *mut super::super::Foundation::RECT, dwstyle: WINDOW_STYLE, bmenu: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn AdjustWindowRect<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lprect: *mut super::super::Foundation::RECT, dwstyle: WINDOW_STYLE, bmenu: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -252,7 +252,7 @@ pub unsafe fn AdjustWindowRect<'a, Param2: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AdjustWindowRectEx<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(lprect: *mut super::super::Foundation::RECT, dwstyle: WINDOW_STYLE, bmenu: Param2, dwexstyle: WINDOW_EX_STYLE) -> super::super::Foundation::BOOL {
+pub unsafe fn AdjustWindowRectEx<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lprect: *mut super::super::Foundation::RECT, dwstyle: WINDOW_STYLE, bmenu: Param2, dwexstyle: WINDOW_EX_STYLE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -282,7 +282,7 @@ pub unsafe fn AllowSetForegroundWindow(dwprocessid: u32) -> super::super::Founda
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AnimateWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, dwtime: u32, dwflags: ANIMATE_WINDOW_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn AnimateWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, dwtime: u32, dwflags: ANIMATE_WINDOW_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -312,12 +312,12 @@ pub unsafe fn AnyPopup() -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AppendMenuA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hmenu: Param0, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn AppendMenuA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hmenu: Param0, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AppendMenuA(hmenu: HMENU, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn AppendMenuA(hmenu: HMENU, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(AppendMenuA(hmenu.into_param().abi(), ::core::mem::transmute(uflags), ::core::mem::transmute(uidnewitem), lpnewitem.into_param().abi()))
     }
@@ -327,12 +327,12 @@ pub unsafe fn AppendMenuA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Par
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AppendMenuW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hmenu: Param0, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn AppendMenuW<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmenu: Param0, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AppendMenuW(hmenu: HMENU, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn AppendMenuW(hmenu: HMENU, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(AppendMenuW(hmenu.into_param().abi(), ::core::mem::transmute(uflags), ::core::mem::transmute(uidnewitem), lpnewitem.into_param().abi()))
     }
@@ -342,7 +342,7 @@ pub unsafe fn AppendMenuW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Par
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ArrangeIconicWindows<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> u32 {
+pub unsafe fn ArrangeIconicWindows<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -479,7 +479,7 @@ pub unsafe fn BeginDeferWindowPos(nnumwindows: i32) -> isize {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BringWindowToTop<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn BringWindowToTop<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -512,7 +512,7 @@ impl ::core::default::Default for CASCADE_WINDOWS_HOW {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CASCADE_WINDOWS_HOW {
+unsafe impl ::windows_core::Abi for CASCADE_WINDOWS_HOW {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CASCADE_WINDOWS_HOW {
@@ -618,13 +618,13 @@ impl ::core::fmt::Debug for CBTACTIVATESTRUCT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CBTACTIVATESTRUCT {
+unsafe impl ::windows_core::Abi for CBTACTIVATESTRUCT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CBTACTIVATESTRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CBTACTIVATESTRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CBTACTIVATESTRUCT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -657,13 +657,13 @@ impl ::core::fmt::Debug for CBT_CREATEWNDA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CBT_CREATEWNDA {
+unsafe impl ::windows_core::Abi for CBT_CREATEWNDA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CBT_CREATEWNDA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CBT_CREATEWNDA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CBT_CREATEWNDA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -696,13 +696,13 @@ impl ::core::fmt::Debug for CBT_CREATEWNDW {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CBT_CREATEWNDW {
+unsafe impl ::windows_core::Abi for CBT_CREATEWNDW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CBT_CREATEWNDW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CBT_CREATEWNDW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CBT_CREATEWNDW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -814,12 +814,12 @@ impl ::core::fmt::Debug for CHANGEFILTERSTRUCT {
         f.debug_struct("CHANGEFILTERSTRUCT").field("cbSize", &self.cbSize).field("ExtStatus", &self.ExtStatus).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CHANGEFILTERSTRUCT {
+unsafe impl ::windows_core::Abi for CHANGEFILTERSTRUCT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CHANGEFILTERSTRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHANGEFILTERSTRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHANGEFILTERSTRUCT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CHANGEFILTERSTRUCT {}
@@ -847,7 +847,7 @@ impl ::core::default::Default for CHANGE_WINDOW_MESSAGE_FILTER_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CHANGE_WINDOW_MESSAGE_FILTER_FLAGS {
+unsafe impl ::windows_core::Abi for CHANGE_WINDOW_MESSAGE_FILTER_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CHANGE_WINDOW_MESSAGE_FILTER_FLAGS {
@@ -879,13 +879,13 @@ impl ::core::fmt::Debug for CLIENTCREATESTRUCT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CLIENTCREATESTRUCT {
+unsafe impl ::windows_core::Abi for CLIENTCREATESTRUCT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CLIENTCREATESTRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CLIENTCREATESTRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CLIENTCREATESTRUCT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -927,8 +927,8 @@ pub struct CREATESTRUCTA {
     pub y: i32,
     pub x: i32,
     pub style: i32,
-    pub lpszName: ::windows::core::PCSTR,
-    pub lpszClass: ::windows::core::PCSTR,
+    pub lpszName: ::windows_core::PCSTR,
+    pub lpszClass: ::windows_core::PCSTR,
     pub dwExStyle: u32,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -946,13 +946,13 @@ impl ::core::fmt::Debug for CREATESTRUCTA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CREATESTRUCTA {
+unsafe impl ::windows_core::Abi for CREATESTRUCTA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CREATESTRUCTA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CREATESTRUCTA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CREATESTRUCTA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -976,8 +976,8 @@ pub struct CREATESTRUCTW {
     pub y: i32,
     pub x: i32,
     pub style: i32,
-    pub lpszName: ::windows::core::PCWSTR,
-    pub lpszClass: ::windows::core::PCWSTR,
+    pub lpszName: ::windows_core::PCWSTR,
+    pub lpszClass: ::windows_core::PCWSTR,
     pub dwExStyle: u32,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -995,13 +995,13 @@ impl ::core::fmt::Debug for CREATESTRUCTW {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CREATESTRUCTW {
+unsafe impl ::windows_core::Abi for CREATESTRUCTW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CREATESTRUCTW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CREATESTRUCTW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CREATESTRUCTW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1054,13 +1054,13 @@ impl ::core::fmt::Debug for CURSORINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CURSORINFO {
+unsafe impl ::windows_core::Abi for CURSORINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CURSORINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CURSORINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CURSORINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1090,7 +1090,7 @@ impl ::core::default::Default for CURSORINFO_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CURSORINFO_FLAGS {
+unsafe impl ::windows_core::Abi for CURSORINFO_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CURSORINFO_FLAGS {
@@ -1120,12 +1120,12 @@ impl ::core::fmt::Debug for CURSORSHAPE {
         f.debug_struct("CURSORSHAPE").field("xHotSpot", &self.xHotSpot).field("yHotSpot", &self.yHotSpot).field("cx", &self.cx).field("cy", &self.cy).field("cbWidth", &self.cbWidth).field("Planes", &self.Planes).field("BitsPixel", &self.BitsPixel).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CURSORSHAPE {
+unsafe impl ::windows_core::Abi for CURSORSHAPE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CURSORSHAPE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CURSORSHAPE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CURSORSHAPE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CURSORSHAPE {}
@@ -1165,13 +1165,13 @@ impl ::core::fmt::Debug for CWPRETSTRUCT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CWPRETSTRUCT {
+unsafe impl ::windows_core::Abi for CWPRETSTRUCT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CWPRETSTRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CWPRETSTRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CWPRETSTRUCT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1206,13 +1206,13 @@ impl ::core::fmt::Debug for CWPSTRUCT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for CWPSTRUCT {
+unsafe impl ::windows_core::Abi for CWPSTRUCT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CWPSTRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CWPSTRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CWPSTRUCT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1246,7 +1246,7 @@ impl ::core::default::Default for CWP_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CWP_FLAGS {
+unsafe impl ::windows_core::Abi for CWP_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CWP_FLAGS {
@@ -1332,7 +1332,7 @@ pub unsafe fn CallMsgFilterW(lpmsg: *const MSG, ncode: i32) -> super::super::Fou
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CallNextHookEx<'a, Param0: ::windows::core::IntoParam<'a, HHOOK>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hhk: Param0, ncode: i32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
+pub unsafe fn CallNextHookEx<'a, Param0: ::windows_core::IntoParam<'a, HHOOK>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hhk: Param0, ncode: i32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1347,12 +1347,12 @@ pub unsafe fn CallNextHookEx<'a, Param0: ::windows::core::IntoParam<'a, HHOOK>, 
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CallWindowProcA<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(lpprevwndfunc: WNDPROC, hwnd: Param1, msg: u32, wparam: Param3, lparam: Param4) -> super::super::Foundation::LRESULT {
+pub unsafe fn CallWindowProcA<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(lpprevwndfunc: WNDPROC, hwnd: Param1, msg: u32, wparam: Param3, lparam: Param4) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CallWindowProcA(lpprevwndfunc: ::windows::core::RawPtr, hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
+            fn CallWindowProcA(lpprevwndfunc: ::windows_core::RawPtr, hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
         }
         ::core::mem::transmute(CallWindowProcA(::core::mem::transmute(lpprevwndfunc), hwnd.into_param().abi(), ::core::mem::transmute(msg), wparam.into_param().abi(), lparam.into_param().abi()))
     }
@@ -1362,12 +1362,12 @@ pub unsafe fn CallWindowProcA<'a, Param1: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CallWindowProcW<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(lpprevwndfunc: WNDPROC, hwnd: Param1, msg: u32, wparam: Param3, lparam: Param4) -> super::super::Foundation::LRESULT {
+pub unsafe fn CallWindowProcW<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(lpprevwndfunc: WNDPROC, hwnd: Param1, msg: u32, wparam: Param3, lparam: Param4) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CallWindowProcW(lpprevwndfunc: ::windows::core::RawPtr, hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
+            fn CallWindowProcW(lpprevwndfunc: ::windows_core::RawPtr, hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
         }
         ::core::mem::transmute(CallWindowProcW(::core::mem::transmute(lpprevwndfunc), hwnd.into_param().abi(), ::core::mem::transmute(msg), wparam.into_param().abi(), lparam.into_param().abi()))
     }
@@ -1392,14 +1392,14 @@ pub unsafe fn CancelShutdown() -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CascadeWindows<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwndparent: Param0, whow: CASCADE_WINDOWS_HOW, lprect: *const super::super::Foundation::RECT, lpkids: &[super::super::Foundation::HWND]) -> u16 {
+pub unsafe fn CascadeWindows<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndparent: Param0, whow: CASCADE_WINDOWS_HOW, lprect: *const super::super::Foundation::RECT, lpkids: &[super::super::Foundation::HWND]) -> u16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn CascadeWindows(hwndparent: super::super::Foundation::HWND, whow: CASCADE_WINDOWS_HOW, lprect: *const super::super::Foundation::RECT, ckids: u32, lpkids: *const super::super::Foundation::HWND) -> u16;
         }
-        ::core::mem::transmute(CascadeWindows(hwndparent.into_param().abi(), ::core::mem::transmute(whow), ::core::mem::transmute(lprect), lpkids.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(lpkids))))
+        ::core::mem::transmute(CascadeWindows(hwndparent.into_param().abi(), ::core::mem::transmute(whow), ::core::mem::transmute(lprect), lpkids.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(lpkids))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1407,12 +1407,12 @@ pub unsafe fn CascadeWindows<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ChangeMenuA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hmenu: Param0, cmd: u32, lpsznewitem: Param2, cmdinsert: u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ChangeMenuA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hmenu: Param0, cmd: u32, lpsznewitem: Param2, cmdinsert: u32, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ChangeMenuA(hmenu: HMENU, cmd: u32, lpsznewitem: ::windows::core::PCSTR, cmdinsert: u32, flags: u32) -> super::super::Foundation::BOOL;
+            fn ChangeMenuA(hmenu: HMENU, cmd: u32, lpsznewitem: ::windows_core::PCSTR, cmdinsert: u32, flags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(ChangeMenuA(hmenu.into_param().abi(), ::core::mem::transmute(cmd), lpsznewitem.into_param().abi(), ::core::mem::transmute(cmdinsert), ::core::mem::transmute(flags)))
     }
@@ -1422,12 +1422,12 @@ pub unsafe fn ChangeMenuA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Par
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ChangeMenuW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hmenu: Param0, cmd: u32, lpsznewitem: Param2, cmdinsert: u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ChangeMenuW<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmenu: Param0, cmd: u32, lpsznewitem: Param2, cmdinsert: u32, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ChangeMenuW(hmenu: HMENU, cmd: u32, lpsznewitem: ::windows::core::PCWSTR, cmdinsert: u32, flags: u32) -> super::super::Foundation::BOOL;
+            fn ChangeMenuW(hmenu: HMENU, cmd: u32, lpsznewitem: ::windows_core::PCWSTR, cmdinsert: u32, flags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(ChangeMenuW(hmenu.into_param().abi(), ::core::mem::transmute(cmd), lpsznewitem.into_param().abi(), ::core::mem::transmute(cmdinsert), ::core::mem::transmute(flags)))
     }
@@ -1452,7 +1452,7 @@ pub unsafe fn ChangeWindowMessageFilter(message: u32, dwflag: CHANGE_WINDOW_MESS
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ChangeWindowMessageFilterEx<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, message: u32, action: WINDOW_MESSAGE_FILTER_ACTION, pchangefilterstruct: *mut CHANGEFILTERSTRUCT) -> super::super::Foundation::BOOL {
+pub unsafe fn ChangeWindowMessageFilterEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, message: u32, action: WINDOW_MESSAGE_FILTER_ACTION, pchangefilterstruct: *mut CHANGEFILTERSTRUCT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1466,12 +1466,12 @@ pub unsafe fn ChangeWindowMessageFilterEx<'a, Param0: ::windows::core::IntoParam
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CharLowerA(lpsz: ::windows::core::PSTR) -> ::windows::core::PSTR {
+pub unsafe fn CharLowerA(lpsz: ::windows_core::PSTR) -> ::windows_core::PSTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharLowerA(lpsz: ::windows::core::PSTR) -> ::windows::core::PSTR;
+            fn CharLowerA(lpsz: ::windows_core::PSTR) -> ::windows_core::PSTR;
         }
         ::core::mem::transmute(CharLowerA(::core::mem::transmute(lpsz)))
     }
@@ -1485,9 +1485,9 @@ pub unsafe fn CharLowerBuffA(lpsz: &mut [u8]) -> u32 {
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharLowerBuffA(lpsz: ::windows::core::PSTR, cchlength: u32) -> u32;
+            fn CharLowerBuffA(lpsz: ::windows_core::PSTR, cchlength: u32) -> u32;
         }
-        ::core::mem::transmute(CharLowerBuffA(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpsz)), lpsz.len() as _))
+        ::core::mem::transmute(CharLowerBuffA(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpsz)), lpsz.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1499,21 +1499,21 @@ pub unsafe fn CharLowerBuffW(lpsz: &mut [u16]) -> u32 {
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharLowerBuffW(lpsz: ::windows::core::PWSTR, cchlength: u32) -> u32;
+            fn CharLowerBuffW(lpsz: ::windows_core::PWSTR, cchlength: u32) -> u32;
         }
-        ::core::mem::transmute(CharLowerBuffW(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpsz)), lpsz.len() as _))
+        ::core::mem::transmute(CharLowerBuffW(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpsz)), lpsz.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CharLowerW(lpsz: ::windows::core::PWSTR) -> ::windows::core::PWSTR {
+pub unsafe fn CharLowerW(lpsz: ::windows_core::PWSTR) -> ::windows_core::PWSTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharLowerW(lpsz: ::windows::core::PWSTR) -> ::windows::core::PWSTR;
+            fn CharLowerW(lpsz: ::windows_core::PWSTR) -> ::windows_core::PWSTR;
         }
         ::core::mem::transmute(CharLowerW(::core::mem::transmute(lpsz)))
     }
@@ -1522,12 +1522,12 @@ pub unsafe fn CharLowerW(lpsz: ::windows::core::PWSTR) -> ::windows::core::PWSTR
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CharNextA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpsz: Param0) -> ::windows::core::PSTR {
+pub unsafe fn CharNextA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpsz: Param0) -> ::windows_core::PSTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharNextA(lpsz: ::windows::core::PCSTR) -> ::windows::core::PSTR;
+            fn CharNextA(lpsz: ::windows_core::PCSTR) -> ::windows_core::PSTR;
         }
         ::core::mem::transmute(CharNextA(lpsz.into_param().abi()))
     }
@@ -1536,12 +1536,12 @@ pub unsafe fn CharNextA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::co
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CharNextExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(codepage: u16, lpcurrentchar: Param1, dwflags: u32) -> ::windows::core::PSTR {
+pub unsafe fn CharNextExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(codepage: u16, lpcurrentchar: Param1, dwflags: u32) -> ::windows_core::PSTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharNextExA(codepage: u16, lpcurrentchar: ::windows::core::PCSTR, dwflags: u32) -> ::windows::core::PSTR;
+            fn CharNextExA(codepage: u16, lpcurrentchar: ::windows_core::PCSTR, dwflags: u32) -> ::windows_core::PSTR;
         }
         ::core::mem::transmute(CharNextExA(::core::mem::transmute(codepage), lpcurrentchar.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
@@ -1550,12 +1550,12 @@ pub unsafe fn CharNextExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CharNextW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpsz: Param0) -> ::windows::core::PWSTR {
+pub unsafe fn CharNextW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpsz: Param0) -> ::windows_core::PWSTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharNextW(lpsz: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
+            fn CharNextW(lpsz: ::windows_core::PCWSTR) -> ::windows_core::PWSTR;
         }
         ::core::mem::transmute(CharNextW(lpsz.into_param().abi()))
     }
@@ -1564,12 +1564,12 @@ pub unsafe fn CharNextW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::co
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CharPrevA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpszstart: Param0, lpszcurrent: Param1) -> ::windows::core::PSTR {
+pub unsafe fn CharPrevA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszstart: Param0, lpszcurrent: Param1) -> ::windows_core::PSTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharPrevA(lpszstart: ::windows::core::PCSTR, lpszcurrent: ::windows::core::PCSTR) -> ::windows::core::PSTR;
+            fn CharPrevA(lpszstart: ::windows_core::PCSTR, lpszcurrent: ::windows_core::PCSTR) -> ::windows_core::PSTR;
         }
         ::core::mem::transmute(CharPrevA(lpszstart.into_param().abi(), lpszcurrent.into_param().abi()))
     }
@@ -1578,12 +1578,12 @@ pub unsafe fn CharPrevA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::co
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CharPrevExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(codepage: u16, lpstart: Param1, lpcurrentchar: Param2, dwflags: u32) -> ::windows::core::PSTR {
+pub unsafe fn CharPrevExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(codepage: u16, lpstart: Param1, lpcurrentchar: Param2, dwflags: u32) -> ::windows_core::PSTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharPrevExA(codepage: u16, lpstart: ::windows::core::PCSTR, lpcurrentchar: ::windows::core::PCSTR, dwflags: u32) -> ::windows::core::PSTR;
+            fn CharPrevExA(codepage: u16, lpstart: ::windows_core::PCSTR, lpcurrentchar: ::windows_core::PCSTR, dwflags: u32) -> ::windows_core::PSTR;
         }
         ::core::mem::transmute(CharPrevExA(::core::mem::transmute(codepage), lpstart.into_param().abi(), lpcurrentchar.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
@@ -1592,12 +1592,12 @@ pub unsafe fn CharPrevExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CharPrevW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpszstart: Param0, lpszcurrent: Param1) -> ::windows::core::PWSTR {
+pub unsafe fn CharPrevW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszstart: Param0, lpszcurrent: Param1) -> ::windows_core::PWSTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharPrevW(lpszstart: ::windows::core::PCWSTR, lpszcurrent: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
+            fn CharPrevW(lpszstart: ::windows_core::PCWSTR, lpszcurrent: ::windows_core::PCWSTR) -> ::windows_core::PWSTR;
         }
         ::core::mem::transmute(CharPrevW(lpszstart.into_param().abi(), lpszcurrent.into_param().abi()))
     }
@@ -1607,12 +1607,12 @@ pub unsafe fn CharPrevW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::co
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CharToOemA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(psrc: Param0, pdst: ::windows::core::PSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn CharToOemA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(psrc: Param0, pdst: ::windows_core::PSTR) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharToOemA(psrc: ::windows::core::PCSTR, pdst: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
+            fn CharToOemA(psrc: ::windows_core::PCSTR, pdst: ::windows_core::PSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CharToOemA(psrc.into_param().abi(), ::core::mem::transmute(pdst)))
     }
@@ -1622,14 +1622,14 @@ pub unsafe fn CharToOemA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::c
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CharToOemBuffA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpszsrc: Param0, lpszdst: &mut [u8]) -> super::super::Foundation::BOOL {
+pub unsafe fn CharToOemBuffA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszsrc: Param0, lpszdst: &mut [u8]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharToOemBuffA(lpszsrc: ::windows::core::PCSTR, lpszdst: ::windows::core::PSTR, cchdstlength: u32) -> super::super::Foundation::BOOL;
+            fn CharToOemBuffA(lpszsrc: ::windows_core::PCSTR, lpszdst: ::windows_core::PSTR, cchdstlength: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CharToOemBuffA(lpszsrc.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpszdst)), lpszdst.len() as _))
+        ::core::mem::transmute(CharToOemBuffA(lpszsrc.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpszdst)), lpszdst.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1637,14 +1637,14 @@ pub unsafe fn CharToOemBuffA<'a, Param0: ::windows::core::IntoParam<'a, ::window
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CharToOemBuffW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpszsrc: Param0, lpszdst: &mut [u8]) -> super::super::Foundation::BOOL {
+pub unsafe fn CharToOemBuffW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszsrc: Param0, lpszdst: &mut [u8]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharToOemBuffW(lpszsrc: ::windows::core::PCWSTR, lpszdst: ::windows::core::PSTR, cchdstlength: u32) -> super::super::Foundation::BOOL;
+            fn CharToOemBuffW(lpszsrc: ::windows_core::PCWSTR, lpszdst: ::windows_core::PSTR, cchdstlength: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(CharToOemBuffW(lpszsrc.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpszdst)), lpszdst.len() as _))
+        ::core::mem::transmute(CharToOemBuffW(lpszsrc.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpszdst)), lpszdst.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1652,12 +1652,12 @@ pub unsafe fn CharToOemBuffW<'a, Param0: ::windows::core::IntoParam<'a, ::window
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CharToOemW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(psrc: Param0, pdst: ::windows::core::PSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn CharToOemW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(psrc: Param0, pdst: ::windows_core::PSTR) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharToOemW(psrc: ::windows::core::PCWSTR, pdst: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
+            fn CharToOemW(psrc: ::windows_core::PCWSTR, pdst: ::windows_core::PSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CharToOemW(psrc.into_param().abi(), ::core::mem::transmute(pdst)))
     }
@@ -1666,12 +1666,12 @@ pub unsafe fn CharToOemW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::c
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CharUpperA(lpsz: ::windows::core::PSTR) -> ::windows::core::PSTR {
+pub unsafe fn CharUpperA(lpsz: ::windows_core::PSTR) -> ::windows_core::PSTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharUpperA(lpsz: ::windows::core::PSTR) -> ::windows::core::PSTR;
+            fn CharUpperA(lpsz: ::windows_core::PSTR) -> ::windows_core::PSTR;
         }
         ::core::mem::transmute(CharUpperA(::core::mem::transmute(lpsz)))
     }
@@ -1685,9 +1685,9 @@ pub unsafe fn CharUpperBuffA(lpsz: &mut [u8]) -> u32 {
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharUpperBuffA(lpsz: ::windows::core::PSTR, cchlength: u32) -> u32;
+            fn CharUpperBuffA(lpsz: ::windows_core::PSTR, cchlength: u32) -> u32;
         }
-        ::core::mem::transmute(CharUpperBuffA(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpsz)), lpsz.len() as _))
+        ::core::mem::transmute(CharUpperBuffA(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpsz)), lpsz.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1699,21 +1699,21 @@ pub unsafe fn CharUpperBuffW(lpsz: &mut [u16]) -> u32 {
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharUpperBuffW(lpsz: ::windows::core::PWSTR, cchlength: u32) -> u32;
+            fn CharUpperBuffW(lpsz: ::windows_core::PWSTR, cchlength: u32) -> u32;
         }
-        ::core::mem::transmute(CharUpperBuffW(::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpsz)), lpsz.len() as _))
+        ::core::mem::transmute(CharUpperBuffW(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpsz)), lpsz.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CharUpperW(lpsz: ::windows::core::PWSTR) -> ::windows::core::PWSTR {
+pub unsafe fn CharUpperW(lpsz: ::windows_core::PWSTR) -> ::windows_core::PWSTR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CharUpperW(lpsz: ::windows::core::PWSTR) -> ::windows::core::PWSTR;
+            fn CharUpperW(lpsz: ::windows_core::PWSTR) -> ::windows_core::PWSTR;
         }
         ::core::mem::transmute(CharUpperW(::core::mem::transmute(lpsz)))
     }
@@ -1722,7 +1722,7 @@ pub unsafe fn CharUpperW(lpsz: ::windows::core::PWSTR) -> ::windows::core::PWSTR
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CheckMenuItem<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0, uidcheckitem: u32, ucheck: u32) -> u32 {
+pub unsafe fn CheckMenuItem<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0, uidcheckitem: u32, ucheck: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1737,7 +1737,7 @@ pub unsafe fn CheckMenuItem<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(h
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CheckMenuRadioItem<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0, first: u32, last: u32, check: u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CheckMenuRadioItem<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0, first: u32, last: u32, check: u32, flags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1752,7 +1752,7 @@ pub unsafe fn CheckMenuRadioItem<'a, Param0: ::windows::core::IntoParam<'a, HMEN
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ChildWindowFromPoint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::POINT>>(hwndparent: Param0, point: Param1) -> super::super::Foundation::HWND {
+pub unsafe fn ChildWindowFromPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::POINT>>(hwndparent: Param0, point: Param1) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1767,7 +1767,7 @@ pub unsafe fn ChildWindowFromPoint<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ChildWindowFromPointEx<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::POINT>>(hwnd: Param0, pt: Param1, flags: CWP_FLAGS) -> super::super::Foundation::HWND {
+pub unsafe fn ChildWindowFromPointEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::POINT>>(hwnd: Param0, pt: Param1, flags: CWP_FLAGS) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1797,7 +1797,7 @@ pub unsafe fn ClipCursor(lprect: *const super::super::Foundation::RECT) -> super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CloseWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn CloseWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1811,35 +1811,35 @@ pub unsafe fn CloseWindow<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CopyAcceleratorTableA<'a, Param0: ::windows::core::IntoParam<'a, HACCEL>>(haccelsrc: Param0, lpacceldst: &mut [ACCEL]) -> i32 {
+pub unsafe fn CopyAcceleratorTableA<'a, Param0: ::windows_core::IntoParam<'a, HACCEL>>(haccelsrc: Param0, lpacceldst: &mut [ACCEL]) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn CopyAcceleratorTableA(haccelsrc: HACCEL, lpacceldst: *mut ACCEL, caccelentries: i32) -> i32;
         }
-        ::core::mem::transmute(CopyAcceleratorTableA(haccelsrc.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpacceldst)), lpacceldst.len() as _))
+        ::core::mem::transmute(CopyAcceleratorTableA(haccelsrc.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpacceldst)), lpacceldst.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CopyAcceleratorTableW<'a, Param0: ::windows::core::IntoParam<'a, HACCEL>>(haccelsrc: Param0, lpacceldst: &mut [ACCEL]) -> i32 {
+pub unsafe fn CopyAcceleratorTableW<'a, Param0: ::windows_core::IntoParam<'a, HACCEL>>(haccelsrc: Param0, lpacceldst: &mut [ACCEL]) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn CopyAcceleratorTableW(haccelsrc: HACCEL, lpacceldst: *mut ACCEL, caccelentries: i32) -> i32;
         }
-        ::core::mem::transmute(CopyAcceleratorTableW(haccelsrc.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpacceldst)), lpacceldst.len() as _))
+        ::core::mem::transmute(CopyAcceleratorTableW(haccelsrc.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpacceldst)), lpacceldst.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CopyIcon<'a, Param0: ::windows::core::IntoParam<'a, HICON>>(hicon: Param0) -> ::windows::core::Result<HICON> {
+pub unsafe fn CopyIcon<'a, Param0: ::windows_core::IntoParam<'a, HICON>>(hicon: Param0) -> ::windows_core::Result<HICON> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1847,7 +1847,7 @@ pub unsafe fn CopyIcon<'a, Param0: ::windows::core::IntoParam<'a, HICON>>(hicon:
             fn CopyIcon(hicon: HICON) -> HICON;
         }
         let result__ = CopyIcon(hicon.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1855,7 +1855,7 @@ pub unsafe fn CopyIcon<'a, Param0: ::windows::core::IntoParam<'a, HICON>>(hicon:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CopyImage<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(h: Param0, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, flags: IMAGE_FLAGS) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn CopyImage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(h: Param0, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, flags: IMAGE_FLAGS) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1863,37 +1863,37 @@ pub unsafe fn CopyImage<'a, Param0: ::windows::core::IntoParam<'a, super::super:
             fn CopyImage(h: super::super::Foundation::HANDLE, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, flags: IMAGE_FLAGS) -> super::super::Foundation::HANDLE;
         }
         let result__ = CopyImage(h.into_param().abi(), ::core::mem::transmute(r#type), ::core::mem::transmute(cx), ::core::mem::transmute(cy), ::core::mem::transmute(flags));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CreateAcceleratorTableA(paccel: &[ACCEL]) -> ::windows::core::Result<HACCEL> {
+pub unsafe fn CreateAcceleratorTableA(paccel: &[ACCEL]) -> ::windows_core::Result<HACCEL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn CreateAcceleratorTableA(paccel: *const ACCEL, caccel: i32) -> HACCEL;
         }
-        let result__ = CreateAcceleratorTableA(::core::mem::transmute(::windows::core::as_ptr_or_null(paccel)), paccel.len() as _);
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        let result__ = CreateAcceleratorTableA(::core::mem::transmute(::windows_core::as_ptr_or_null(paccel)), paccel.len() as _);
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CreateAcceleratorTableW(paccel: &[ACCEL]) -> ::windows::core::Result<HACCEL> {
+pub unsafe fn CreateAcceleratorTableW(paccel: &[ACCEL]) -> ::windows_core::Result<HACCEL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn CreateAcceleratorTableW(paccel: *const ACCEL, caccel: i32) -> HACCEL;
         }
-        let result__ = CreateAcceleratorTableW(::core::mem::transmute(::windows::core::as_ptr_or_null(paccel)), paccel.len() as _);
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        let result__ = CreateAcceleratorTableW(::core::mem::transmute(::windows_core::as_ptr_or_null(paccel)), paccel.len() as _);
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1901,7 +1901,7 @@ pub unsafe fn CreateAcceleratorTableW(paccel: &[ACCEL]) -> ::windows::core::Resu
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn CreateCaret<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Graphics::Gdi::HBITMAP>>(hwnd: Param0, hbitmap: Param1, nwidth: i32, nheight: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn CreateCaret<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HBITMAP>>(hwnd: Param0, hbitmap: Param1, nwidth: i32, nheight: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1916,7 +1916,7 @@ pub unsafe fn CreateCaret<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateCursor<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hinst: Param0, xhotspot: i32, yhotspot: i32, nwidth: i32, nheight: i32, pvandplane: *const ::core::ffi::c_void, pvxorplane: *const ::core::ffi::c_void) -> ::windows::core::Result<HCURSOR> {
+pub unsafe fn CreateCursor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hinst: Param0, xhotspot: i32, yhotspot: i32, nwidth: i32, nheight: i32, pvandplane: *const ::core::ffi::c_void, pvxorplane: *const ::core::ffi::c_void) -> ::windows_core::Result<HCURSOR> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1924,7 +1924,7 @@ pub unsafe fn CreateCursor<'a, Param0: ::windows::core::IntoParam<'a, super::sup
             fn CreateCursor(hinst: super::super::Foundation::HINSTANCE, xhotspot: i32, yhotspot: i32, nwidth: i32, nheight: i32, pvandplane: *const ::core::ffi::c_void, pvxorplane: *const ::core::ffi::c_void) -> HCURSOR;
         }
         let result__ = CreateCursor(hinst.into_param().abi(), ::core::mem::transmute(xhotspot), ::core::mem::transmute(yhotspot), ::core::mem::transmute(nwidth), ::core::mem::transmute(nheight), ::core::mem::transmute(pvandplane), ::core::mem::transmute(pvxorplane));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1932,12 +1932,12 @@ pub unsafe fn CreateCursor<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateDialogIndirectParamA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, lptemplate: *const DLGTEMPLATE, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> super::super::Foundation::HWND {
+pub unsafe fn CreateDialogIndirectParamA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, lptemplate: *const DLGTEMPLATE, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateDialogIndirectParamA(hinstance: super::super::Foundation::HINSTANCE, lptemplate: *const DLGTEMPLATE, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows::core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
+            fn CreateDialogIndirectParamA(hinstance: super::super::Foundation::HINSTANCE, lptemplate: *const DLGTEMPLATE, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows_core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
         }
         ::core::mem::transmute(CreateDialogIndirectParamA(hinstance.into_param().abi(), ::core::mem::transmute(lptemplate), hwndparent.into_param().abi(), ::core::mem::transmute(lpdialogfunc), dwinitparam.into_param().abi()))
     }
@@ -1947,12 +1947,12 @@ pub unsafe fn CreateDialogIndirectParamA<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateDialogIndirectParamW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, lptemplate: *const DLGTEMPLATE, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> super::super::Foundation::HWND {
+pub unsafe fn CreateDialogIndirectParamW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, lptemplate: *const DLGTEMPLATE, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateDialogIndirectParamW(hinstance: super::super::Foundation::HINSTANCE, lptemplate: *const DLGTEMPLATE, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows::core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
+            fn CreateDialogIndirectParamW(hinstance: super::super::Foundation::HINSTANCE, lptemplate: *const DLGTEMPLATE, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows_core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
         }
         ::core::mem::transmute(CreateDialogIndirectParamW(hinstance.into_param().abi(), ::core::mem::transmute(lptemplate), hwndparent.into_param().abi(), ::core::mem::transmute(lpdialogfunc), dwinitparam.into_param().abi()))
     }
@@ -1962,12 +1962,12 @@ pub unsafe fn CreateDialogIndirectParamW<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateDialogParamA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, lptemplatename: Param1, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> super::super::Foundation::HWND {
+pub unsafe fn CreateDialogParamA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, lptemplatename: Param1, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateDialogParamA(hinstance: super::super::Foundation::HINSTANCE, lptemplatename: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows::core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
+            fn CreateDialogParamA(hinstance: super::super::Foundation::HINSTANCE, lptemplatename: ::windows_core::PCSTR, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows_core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
         }
         ::core::mem::transmute(CreateDialogParamA(hinstance.into_param().abi(), lptemplatename.into_param().abi(), hwndparent.into_param().abi(), ::core::mem::transmute(lpdialogfunc), dwinitparam.into_param().abi()))
     }
@@ -1977,12 +1977,12 @@ pub unsafe fn CreateDialogParamA<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateDialogParamW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, lptemplatename: Param1, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> super::super::Foundation::HWND {
+pub unsafe fn CreateDialogParamW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, lptemplatename: Param1, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateDialogParamW(hinstance: super::super::Foundation::HINSTANCE, lptemplatename: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows::core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
+            fn CreateDialogParamW(hinstance: super::super::Foundation::HINSTANCE, lptemplatename: ::windows_core::PCWSTR, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows_core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
         }
         ::core::mem::transmute(CreateDialogParamW(hinstance.into_param().abi(), lptemplatename.into_param().abi(), hwndparent.into_param().abi(), ::core::mem::transmute(lpdialogfunc), dwinitparam.into_param().abi()))
     }
@@ -1992,7 +1992,7 @@ pub unsafe fn CreateDialogParamW<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateIcon<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hinstance: Param0, nwidth: i32, nheight: i32, cplanes: u8, cbitspixel: u8, lpbandbits: *const u8, lpbxorbits: *const u8) -> ::windows::core::Result<HICON> {
+pub unsafe fn CreateIcon<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hinstance: Param0, nwidth: i32, nheight: i32, cplanes: u8, cbitspixel: u8, lpbandbits: *const u8, lpbxorbits: *const u8) -> ::windows_core::Result<HICON> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2000,7 +2000,7 @@ pub unsafe fn CreateIcon<'a, Param0: ::windows::core::IntoParam<'a, super::super
             fn CreateIcon(hinstance: super::super::Foundation::HINSTANCE, nwidth: i32, nheight: i32, cplanes: u8, cbitspixel: u8, lpbandbits: *const u8, lpbxorbits: *const u8) -> HICON;
         }
         let result__ = CreateIcon(hinstance.into_param().abi(), ::core::mem::transmute(nwidth), ::core::mem::transmute(nheight), ::core::mem::transmute(cplanes), ::core::mem::transmute(cbitspixel), ::core::mem::transmute(lpbandbits), ::core::mem::transmute(lpbxorbits));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2008,7 +2008,7 @@ pub unsafe fn CreateIcon<'a, Param0: ::windows::core::IntoParam<'a, super::super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateIconFromResource<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(presbits: *const u8, dwressize: u32, ficon: Param2, dwver: u32) -> ::windows::core::Result<HICON> {
+pub unsafe fn CreateIconFromResource<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(presbits: *const u8, dwressize: u32, ficon: Param2, dwver: u32) -> ::windows_core::Result<HICON> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2016,7 +2016,7 @@ pub unsafe fn CreateIconFromResource<'a, Param2: ::windows::core::IntoParam<'a, 
             fn CreateIconFromResource(presbits: *const u8, dwressize: u32, ficon: super::super::Foundation::BOOL, dwver: u32) -> HICON;
         }
         let result__ = CreateIconFromResource(::core::mem::transmute(presbits), ::core::mem::transmute(dwressize), ficon.into_param().abi(), ::core::mem::transmute(dwver));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2024,7 +2024,7 @@ pub unsafe fn CreateIconFromResource<'a, Param2: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateIconFromResourceEx<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(presbits: *const u8, dwressize: u32, ficon: Param2, dwver: u32, cxdesired: i32, cydesired: i32, flags: IMAGE_FLAGS) -> ::windows::core::Result<HICON> {
+pub unsafe fn CreateIconFromResourceEx<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(presbits: *const u8, dwressize: u32, ficon: Param2, dwver: u32, cxdesired: i32, cydesired: i32, flags: IMAGE_FLAGS) -> ::windows_core::Result<HICON> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2032,7 +2032,7 @@ pub unsafe fn CreateIconFromResourceEx<'a, Param2: ::windows::core::IntoParam<'a
             fn CreateIconFromResourceEx(presbits: *const u8, dwressize: u32, ficon: super::super::Foundation::BOOL, dwver: u32, cxdesired: i32, cydesired: i32, flags: IMAGE_FLAGS) -> HICON;
         }
         let result__ = CreateIconFromResourceEx(::core::mem::transmute(presbits), ::core::mem::transmute(dwressize), ficon.into_param().abi(), ::core::mem::transmute(dwver), ::core::mem::transmute(cxdesired), ::core::mem::transmute(cydesired), ::core::mem::transmute(flags));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2040,7 +2040,7 @@ pub unsafe fn CreateIconFromResourceEx<'a, Param2: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn CreateIconIndirect(piconinfo: *const ICONINFO) -> ::windows::core::Result<HICON> {
+pub unsafe fn CreateIconIndirect(piconinfo: *const ICONINFO) -> ::windows_core::Result<HICON> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2048,7 +2048,7 @@ pub unsafe fn CreateIconIndirect(piconinfo: *const ICONINFO) -> ::windows::core:
             fn CreateIconIndirect(piconinfo: *const ICONINFO) -> HICON;
         }
         let result__ = CreateIconIndirect(::core::mem::transmute(piconinfo));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2056,12 +2056,12 @@ pub unsafe fn CreateIconIndirect(piconinfo: *const ICONINFO) -> ::windows::core:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateMDIWindowA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param7: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param8: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param9: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(lpclassname: Param0, lpwindowname: Param1, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: Param7, hinstance: Param8, lparam: Param9) -> super::super::Foundation::HWND {
+pub unsafe fn CreateMDIWindowA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param7: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param8: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param9: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(lpclassname: Param0, lpwindowname: Param1, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: Param7, hinstance: Param8, lparam: Param9) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateMDIWindowA(lpclassname: ::windows::core::PCSTR, lpwindowname: ::windows::core::PCSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, hinstance: super::super::Foundation::HINSTANCE, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
+            fn CreateMDIWindowA(lpclassname: ::windows_core::PCSTR, lpwindowname: ::windows_core::PCSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, hinstance: super::super::Foundation::HINSTANCE, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
         }
         ::core::mem::transmute(CreateMDIWindowA(lpclassname.into_param().abi(), lpwindowname.into_param().abi(), ::core::mem::transmute(dwstyle), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(nwidth), ::core::mem::transmute(nheight), hwndparent.into_param().abi(), hinstance.into_param().abi(), lparam.into_param().abi()))
     }
@@ -2071,12 +2071,12 @@ pub unsafe fn CreateMDIWindowA<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateMDIWindowW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param7: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param8: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param9: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(lpclassname: Param0, lpwindowname: Param1, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: Param7, hinstance: Param8, lparam: Param9) -> super::super::Foundation::HWND {
+pub unsafe fn CreateMDIWindowW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param8: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param9: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(lpclassname: Param0, lpwindowname: Param1, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: Param7, hinstance: Param8, lparam: Param9) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateMDIWindowW(lpclassname: ::windows::core::PCWSTR, lpwindowname: ::windows::core::PCWSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, hinstance: super::super::Foundation::HINSTANCE, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
+            fn CreateMDIWindowW(lpclassname: ::windows_core::PCWSTR, lpwindowname: ::windows_core::PCWSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, hinstance: super::super::Foundation::HINSTANCE, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
         }
         ::core::mem::transmute(CreateMDIWindowW(lpclassname.into_param().abi(), lpwindowname.into_param().abi(), ::core::mem::transmute(dwstyle), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(nwidth), ::core::mem::transmute(nheight), hwndparent.into_param().abi(), hinstance.into_param().abi(), lparam.into_param().abi()))
     }
@@ -2085,7 +2085,7 @@ pub unsafe fn CreateMDIWindowW<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CreateMenu() -> ::windows::core::Result<HMENU> {
+pub unsafe fn CreateMenu() -> ::windows_core::Result<HMENU> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2093,14 +2093,14 @@ pub unsafe fn CreateMenu() -> ::windows::core::Result<HMENU> {
             fn CreateMenu() -> HMENU;
         }
         let result__ = CreateMenu();
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CreatePopupMenu() -> ::windows::core::Result<HMENU> {
+pub unsafe fn CreatePopupMenu() -> ::windows_core::Result<HMENU> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2108,19 +2108,19 @@ pub unsafe fn CreatePopupMenu() -> ::windows::core::Result<HMENU> {
             fn CreatePopupMenu() -> HMENU;
         }
         let result__ = CreatePopupMenu();
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn CreateResourceIndexer<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(projectroot: Param0, extensiondllpath: Param1, ppresourceindexer: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn CreateResourceIndexer<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(projectroot: Param0, extensiondllpath: Param1, ppresourceindexer: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateResourceIndexer(projectroot: ::windows::core::PCWSTR, extensiondllpath: ::windows::core::PCWSTR, ppresourceindexer: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
+            fn CreateResourceIndexer(projectroot: ::windows_core::PCWSTR, extensiondllpath: ::windows_core::PCWSTR, ppresourceindexer: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         CreateResourceIndexer(projectroot.into_param().abi(), extensiondllpath.into_param().abi(), ::core::mem::transmute(ppresourceindexer)).ok()
     }
@@ -2130,12 +2130,12 @@ pub unsafe fn CreateResourceIndexer<'a, Param0: ::windows::core::IntoParam<'a, :
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateWindowExA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param8: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param9: ::windows::core::IntoParam<'a, HMENU>, Param10: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(dwexstyle: WINDOW_EX_STYLE, lpclassname: Param1, lpwindowname: Param2, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: Param8, hmenu: Param9, hinstance: Param10, lpparam: *const ::core::ffi::c_void) -> super::super::Foundation::HWND {
+pub unsafe fn CreateWindowExA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param8: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param9: ::windows_core::IntoParam<'a, HMENU>, Param10: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(dwexstyle: WINDOW_EX_STYLE, lpclassname: Param1, lpwindowname: Param2, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: Param8, hmenu: Param9, hinstance: Param10, lpparam: *const ::core::ffi::c_void) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateWindowExA(dwexstyle: WINDOW_EX_STYLE, lpclassname: ::windows::core::PCSTR, lpwindowname: ::windows::core::PCSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, hmenu: HMENU, hinstance: super::super::Foundation::HINSTANCE, lpparam: *const ::core::ffi::c_void) -> super::super::Foundation::HWND;
+            fn CreateWindowExA(dwexstyle: WINDOW_EX_STYLE, lpclassname: ::windows_core::PCSTR, lpwindowname: ::windows_core::PCSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, hmenu: HMENU, hinstance: super::super::Foundation::HINSTANCE, lpparam: *const ::core::ffi::c_void) -> super::super::Foundation::HWND;
         }
         ::core::mem::transmute(CreateWindowExA(::core::mem::transmute(dwexstyle), lpclassname.into_param().abi(), lpwindowname.into_param().abi(), ::core::mem::transmute(dwstyle), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(nwidth), ::core::mem::transmute(nheight), hwndparent.into_param().abi(), hmenu.into_param().abi(), hinstance.into_param().abi(), ::core::mem::transmute(lpparam)))
     }
@@ -2145,12 +2145,12 @@ pub unsafe fn CreateWindowExA<'a, Param1: ::windows::core::IntoParam<'a, ::windo
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateWindowExW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param8: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param9: ::windows::core::IntoParam<'a, HMENU>, Param10: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(dwexstyle: WINDOW_EX_STYLE, lpclassname: Param1, lpwindowname: Param2, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: Param8, hmenu: Param9, hinstance: Param10, lpparam: *const ::core::ffi::c_void) -> super::super::Foundation::HWND {
+pub unsafe fn CreateWindowExW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param8: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param9: ::windows_core::IntoParam<'a, HMENU>, Param10: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(dwexstyle: WINDOW_EX_STYLE, lpclassname: Param1, lpwindowname: Param2, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: Param8, hmenu: Param9, hinstance: Param10, lpparam: *const ::core::ffi::c_void) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateWindowExW(dwexstyle: WINDOW_EX_STYLE, lpclassname: ::windows::core::PCWSTR, lpwindowname: ::windows::core::PCWSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, hmenu: HMENU, hinstance: super::super::Foundation::HINSTANCE, lpparam: *const ::core::ffi::c_void) -> super::super::Foundation::HWND;
+            fn CreateWindowExW(dwexstyle: WINDOW_EX_STYLE, lpclassname: ::windows_core::PCWSTR, lpwindowname: ::windows_core::PCWSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, hmenu: HMENU, hinstance: super::super::Foundation::HINSTANCE, lpparam: *const ::core::ffi::c_void) -> super::super::Foundation::HWND;
         }
         ::core::mem::transmute(CreateWindowExW(::core::mem::transmute(dwexstyle), lpclassname.into_param().abi(), lpwindowname.into_param().abi(), ::core::mem::transmute(dwstyle), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(nwidth), ::core::mem::transmute(nheight), hwndparent.into_param().abi(), hmenu.into_param().abi(), hinstance.into_param().abi(), ::core::mem::transmute(lpparam)))
     }
@@ -2186,13 +2186,13 @@ impl ::core::fmt::Debug for DEBUGHOOKINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DEBUGHOOKINFO {
+unsafe impl ::windows_core::Abi for DEBUGHOOKINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEBUGHOOKINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEBUGHOOKINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEBUGHOOKINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2254,7 +2254,7 @@ impl ::core::default::Default for DI_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DI_FLAGS {
+unsafe impl ::windows_core::Abi for DI_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DI_FLAGS {
@@ -2329,12 +2329,12 @@ impl ::core::clone::Clone for DLGITEMTEMPLATE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DLGITEMTEMPLATE {
+unsafe impl ::windows_core::Abi for DLGITEMTEMPLATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DLGITEMTEMPLATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DLGITEMTEMPLATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DLGITEMTEMPLATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DLGITEMTEMPLATE {}
@@ -2363,12 +2363,12 @@ impl ::core::clone::Clone for DLGTEMPLATE {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for DLGTEMPLATE {
+unsafe impl ::windows_core::Abi for DLGTEMPLATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DLGTEMPLATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DLGTEMPLATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DLGTEMPLATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DLGTEMPLATE {}
@@ -2429,13 +2429,13 @@ impl ::core::fmt::Debug for DROPSTRUCT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DROPSTRUCT {
+unsafe impl ::windows_core::Abi for DROPSTRUCT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DROPSTRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DROPSTRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DROPSTRUCT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2487,7 +2487,7 @@ pub const DWL_USER: u32 = 8u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DefDlgProcA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdlg: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
+pub unsafe fn DefDlgProcA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdlg: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2502,7 +2502,7 @@ pub unsafe fn DefDlgProcA<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DefDlgProcW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdlg: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
+pub unsafe fn DefDlgProcW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdlg: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2517,7 +2517,7 @@ pub unsafe fn DefDlgProcW<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DefFrameProcA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, hwndmdiclient: Param1, umsg: u32, wparam: Param3, lparam: Param4) -> super::super::Foundation::LRESULT {
+pub unsafe fn DefFrameProcA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, hwndmdiclient: Param1, umsg: u32, wparam: Param3, lparam: Param4) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2532,7 +2532,7 @@ pub unsafe fn DefFrameProcA<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DefFrameProcW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, hwndmdiclient: Param1, umsg: u32, wparam: Param3, lparam: Param4) -> super::super::Foundation::LRESULT {
+pub unsafe fn DefFrameProcW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, hwndmdiclient: Param1, umsg: u32, wparam: Param3, lparam: Param4) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2547,7 +2547,7 @@ pub unsafe fn DefFrameProcW<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DefMDIChildProcA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, umsg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
+pub unsafe fn DefMDIChildProcA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, umsg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2562,7 +2562,7 @@ pub unsafe fn DefMDIChildProcA<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DefMDIChildProcW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, umsg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
+pub unsafe fn DefMDIChildProcW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, umsg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2577,7 +2577,7 @@ pub unsafe fn DefMDIChildProcW<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DefWindowProcA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
+pub unsafe fn DefWindowProcA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2592,7 +2592,7 @@ pub unsafe fn DefWindowProcA<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DefWindowProcW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
+pub unsafe fn DefWindowProcW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2607,7 +2607,7 @@ pub unsafe fn DefWindowProcW<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeferWindowPos<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwinposinfo: isize, hwnd: Param1, hwndinsertafter: Param2, x: i32, y: i32, cx: i32, cy: i32, uflags: SET_WINDOW_POS_FLAGS) -> isize {
+pub unsafe fn DeferWindowPos<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwinposinfo: isize, hwnd: Param1, hwndinsertafter: Param2, x: i32, y: i32, cx: i32, cy: i32, uflags: SET_WINDOW_POS_FLAGS) -> isize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2622,7 +2622,7 @@ pub unsafe fn DeferWindowPos<'a, Param1: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteMenu<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn DeleteMenu<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2637,7 +2637,7 @@ pub unsafe fn DeleteMenu<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmen
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeregisterShellHookWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DeregisterShellHookWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2652,7 +2652,7 @@ pub unsafe fn DeregisterShellHookWindow<'a, Param0: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DestroyAcceleratorTable<'a, Param0: ::windows::core::IntoParam<'a, HACCEL>>(haccel: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DestroyAcceleratorTable<'a, Param0: ::windows_core::IntoParam<'a, HACCEL>>(haccel: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2682,7 +2682,7 @@ pub unsafe fn DestroyCaret() -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DestroyCursor<'a, Param0: ::windows::core::IntoParam<'a, HCURSOR>>(hcursor: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DestroyCursor<'a, Param0: ::windows_core::IntoParam<'a, HCURSOR>>(hcursor: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2697,7 +2697,7 @@ pub unsafe fn DestroyCursor<'a, Param0: ::windows::core::IntoParam<'a, HCURSOR>>
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DestroyIcon<'a, Param0: ::windows::core::IntoParam<'a, HICON>>(hicon: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DestroyIcon<'a, Param0: ::windows_core::IntoParam<'a, HICON>>(hicon: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2711,14 +2711,14 @@ pub unsafe fn DestroyIcon<'a, Param0: ::windows::core::IntoParam<'a, HICON>>(hic
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn DestroyIndexedResults<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(resourceuri: Param0, qualifiers: &[IndexedResourceQualifier]) {
+pub unsafe fn DestroyIndexedResults<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(resourceuri: Param0, qualifiers: &[IndexedResourceQualifier]) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DestroyIndexedResults(resourceuri: ::windows::core::PCWSTR, qualifiercount: u32, qualifiers: *const IndexedResourceQualifier);
+            fn DestroyIndexedResults(resourceuri: ::windows_core::PCWSTR, qualifiercount: u32, qualifiers: *const IndexedResourceQualifier);
         }
-        DestroyIndexedResults(resourceuri.into_param().abi(), qualifiers.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(qualifiers)))
+        DestroyIndexedResults(resourceuri.into_param().abi(), qualifiers.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(qualifiers)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2726,7 +2726,7 @@ pub unsafe fn DestroyIndexedResults<'a, Param0: ::windows::core::IntoParam<'a, :
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DestroyMenu<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DestroyMenu<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2755,7 +2755,7 @@ pub unsafe fn DestroyResourceIndexer(resourceindexer: *const ::core::ffi::c_void
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DestroyWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DestroyWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2770,12 +2770,12 @@ pub unsafe fn DestroyWindow<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DialogBoxIndirectParamA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, hdialogtemplate: *const DLGTEMPLATE, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> isize {
+pub unsafe fn DialogBoxIndirectParamA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, hdialogtemplate: *const DLGTEMPLATE, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> isize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DialogBoxIndirectParamA(hinstance: super::super::Foundation::HINSTANCE, hdialogtemplate: *const DLGTEMPLATE, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows::core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> isize;
+            fn DialogBoxIndirectParamA(hinstance: super::super::Foundation::HINSTANCE, hdialogtemplate: *const DLGTEMPLATE, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows_core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> isize;
         }
         ::core::mem::transmute(DialogBoxIndirectParamA(hinstance.into_param().abi(), ::core::mem::transmute(hdialogtemplate), hwndparent.into_param().abi(), ::core::mem::transmute(lpdialogfunc), dwinitparam.into_param().abi()))
     }
@@ -2785,12 +2785,12 @@ pub unsafe fn DialogBoxIndirectParamA<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DialogBoxIndirectParamW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, hdialogtemplate: *const DLGTEMPLATE, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> isize {
+pub unsafe fn DialogBoxIndirectParamW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, hdialogtemplate: *const DLGTEMPLATE, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> isize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DialogBoxIndirectParamW(hinstance: super::super::Foundation::HINSTANCE, hdialogtemplate: *const DLGTEMPLATE, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows::core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> isize;
+            fn DialogBoxIndirectParamW(hinstance: super::super::Foundation::HINSTANCE, hdialogtemplate: *const DLGTEMPLATE, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows_core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> isize;
         }
         ::core::mem::transmute(DialogBoxIndirectParamW(hinstance.into_param().abi(), ::core::mem::transmute(hdialogtemplate), hwndparent.into_param().abi(), ::core::mem::transmute(lpdialogfunc), dwinitparam.into_param().abi()))
     }
@@ -2800,12 +2800,12 @@ pub unsafe fn DialogBoxIndirectParamW<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DialogBoxParamA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, lptemplatename: Param1, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> isize {
+pub unsafe fn DialogBoxParamA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, lptemplatename: Param1, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> isize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DialogBoxParamA(hinstance: super::super::Foundation::HINSTANCE, lptemplatename: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows::core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> isize;
+            fn DialogBoxParamA(hinstance: super::super::Foundation::HINSTANCE, lptemplatename: ::windows_core::PCSTR, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows_core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> isize;
         }
         ::core::mem::transmute(DialogBoxParamA(hinstance.into_param().abi(), lptemplatename.into_param().abi(), hwndparent.into_param().abi(), ::core::mem::transmute(lpdialogfunc), dwinitparam.into_param().abi()))
     }
@@ -2815,12 +2815,12 @@ pub unsafe fn DialogBoxParamA<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DialogBoxParamW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, lptemplatename: Param1, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> isize {
+pub unsafe fn DialogBoxParamW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hinstance: Param0, lptemplatename: Param1, hwndparent: Param2, lpdialogfunc: DLGPROC, dwinitparam: Param4) -> isize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DialogBoxParamW(hinstance: super::super::Foundation::HINSTANCE, lptemplatename: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows::core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> isize;
+            fn DialogBoxParamW(hinstance: super::super::Foundation::HINSTANCE, lptemplatename: ::windows_core::PCWSTR, hwndparent: super::super::Foundation::HWND, lpdialogfunc: ::windows_core::RawPtr, dwinitparam: super::super::Foundation::LPARAM) -> isize;
         }
         ::core::mem::transmute(DialogBoxParamW(hinstance.into_param().abi(), lptemplatename.into_param().abi(), hwndparent.into_param().abi(), ::core::mem::transmute(lpdialogfunc), dwinitparam.into_param().abi()))
     }
@@ -2874,7 +2874,7 @@ pub unsafe fn DispatchMessageW(lpmsg: *const MSG) -> super::super::Foundation::L
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DragObject<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows::core::IntoParam<'a, HCURSOR>>(hwndparent: Param0, hwndfrom: Param1, fmt: u32, data: usize, hcur: Param4) -> u32 {
+pub unsafe fn DragObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param4: ::windows_core::IntoParam<'a, HCURSOR>>(hwndparent: Param0, hwndfrom: Param1, fmt: u32, data: usize, hcur: Param4) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2889,7 +2889,7 @@ pub unsafe fn DragObject<'a, Param0: ::windows::core::IntoParam<'a, super::super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn DrawIcon<'a, Param0: ::windows::core::IntoParam<'a, super::super::Graphics::Gdi::HDC>, Param3: ::windows::core::IntoParam<'a, HICON>>(hdc: Param0, x: i32, y: i32, hicon: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn DrawIcon<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>, Param3: ::windows_core::IntoParam<'a, HICON>>(hdc: Param0, x: i32, y: i32, hicon: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2904,7 +2904,7 @@ pub unsafe fn DrawIcon<'a, Param0: ::windows::core::IntoParam<'a, super::super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn DrawIconEx<'a, Param0: ::windows::core::IntoParam<'a, super::super::Graphics::Gdi::HDC>, Param3: ::windows::core::IntoParam<'a, HICON>, Param7: ::windows::core::IntoParam<'a, super::super::Graphics::Gdi::HBRUSH>>(hdc: Param0, xleft: i32, ytop: i32, hicon: Param3, cxwidth: i32, cywidth: i32, istepifanicur: u32, hbrflickerfreedraw: Param7, diflags: DI_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn DrawIconEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>, Param3: ::windows_core::IntoParam<'a, HICON>, Param7: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HBRUSH>>(hdc: Param0, xleft: i32, ytop: i32, hicon: Param3, cxwidth: i32, cywidth: i32, istepifanicur: u32, hbrflickerfreedraw: Param7, diflags: DI_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2919,7 +2919,7 @@ pub unsafe fn DrawIconEx<'a, Param0: ::windows::core::IntoParam<'a, super::super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DrawMenuBar<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DrawMenuBar<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2958,7 +2958,7 @@ impl ::core::default::Default for EDIT_CONTROL_FEATURE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EDIT_CONTROL_FEATURE {
+unsafe impl ::windows_core::Abi for EDIT_CONTROL_FEATURE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EDIT_CONTROL_FEATURE {
@@ -3061,13 +3061,13 @@ impl ::core::fmt::Debug for EVENTMSG {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EVENTMSG {
+unsafe impl ::windows_core::Abi for EVENTMSG {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVENTMSG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENTMSG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVENTMSG>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3267,7 +3267,7 @@ pub const EWX_SYSTEM_INITIATED: u32 = 268435456u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnableMenuItem<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0, uidenableitem: u32, uenable: MENU_ITEM_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn EnableMenuItem<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0, uidenableitem: u32, uenable: MENU_ITEM_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -3297,7 +3297,7 @@ pub unsafe fn EndDeferWindowPos(hwinposinfo: isize) -> super::super::Foundation:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EndDialog<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, nresult: isize) -> super::super::Foundation::BOOL {
+pub unsafe fn EndDialog<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, nresult: isize) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -3327,12 +3327,12 @@ pub unsafe fn EndMenu() -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumChildWindows<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwndparent: Param0, lpenumfunc: WNDENUMPROC, lparam: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumChildWindows<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwndparent: Param0, lpenumfunc: WNDENUMPROC, lparam: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumChildWindows(hwndparent: super::super::Foundation::HWND, lpenumfunc: ::windows::core::RawPtr, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
+            fn EnumChildWindows(hwndparent: super::super::Foundation::HWND, lpenumfunc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumChildWindows(hwndparent.into_param().abi(), ::core::mem::transmute(lpenumfunc), lparam.into_param().abi()))
     }
@@ -3342,12 +3342,12 @@ pub unsafe fn EnumChildWindows<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPropsA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpenumfunc: PROPENUMPROCA) -> i32 {
+pub unsafe fn EnumPropsA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpenumfunc: PROPENUMPROCA) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPropsA(hwnd: super::super::Foundation::HWND, lpenumfunc: ::windows::core::RawPtr) -> i32;
+            fn EnumPropsA(hwnd: super::super::Foundation::HWND, lpenumfunc: ::windows_core::RawPtr) -> i32;
         }
         ::core::mem::transmute(EnumPropsA(hwnd.into_param().abi(), ::core::mem::transmute(lpenumfunc)))
     }
@@ -3357,12 +3357,12 @@ pub unsafe fn EnumPropsA<'a, Param0: ::windows::core::IntoParam<'a, super::super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPropsExA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, lpenumfunc: PROPENUMPROCEXA, lparam: Param2) -> i32 {
+pub unsafe fn EnumPropsExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, lpenumfunc: PROPENUMPROCEXA, lparam: Param2) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPropsExA(hwnd: super::super::Foundation::HWND, lpenumfunc: ::windows::core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
+            fn EnumPropsExA(hwnd: super::super::Foundation::HWND, lpenumfunc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
         }
         ::core::mem::transmute(EnumPropsExA(hwnd.into_param().abi(), ::core::mem::transmute(lpenumfunc), lparam.into_param().abi()))
     }
@@ -3372,12 +3372,12 @@ pub unsafe fn EnumPropsExA<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPropsExW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, lpenumfunc: PROPENUMPROCEXW, lparam: Param2) -> i32 {
+pub unsafe fn EnumPropsExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, lpenumfunc: PROPENUMPROCEXW, lparam: Param2) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPropsExW(hwnd: super::super::Foundation::HWND, lpenumfunc: ::windows::core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
+            fn EnumPropsExW(hwnd: super::super::Foundation::HWND, lpenumfunc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
         }
         ::core::mem::transmute(EnumPropsExW(hwnd.into_param().abi(), ::core::mem::transmute(lpenumfunc), lparam.into_param().abi()))
     }
@@ -3387,12 +3387,12 @@ pub unsafe fn EnumPropsExW<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPropsW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpenumfunc: PROPENUMPROCW) -> i32 {
+pub unsafe fn EnumPropsW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpenumfunc: PROPENUMPROCW) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPropsW(hwnd: super::super::Foundation::HWND, lpenumfunc: ::windows::core::RawPtr) -> i32;
+            fn EnumPropsW(hwnd: super::super::Foundation::HWND, lpenumfunc: ::windows_core::RawPtr) -> i32;
         }
         ::core::mem::transmute(EnumPropsW(hwnd.into_param().abi(), ::core::mem::transmute(lpenumfunc)))
     }
@@ -3402,12 +3402,12 @@ pub unsafe fn EnumPropsW<'a, Param0: ::windows::core::IntoParam<'a, super::super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumThreadWindows<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(dwthreadid: u32, lpfn: WNDENUMPROC, lparam: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumThreadWindows<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(dwthreadid: u32, lpfn: WNDENUMPROC, lparam: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumThreadWindows(dwthreadid: u32, lpfn: ::windows::core::RawPtr, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
+            fn EnumThreadWindows(dwthreadid: u32, lpfn: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumThreadWindows(::core::mem::transmute(dwthreadid), ::core::mem::transmute(lpfn), lparam.into_param().abi()))
     }
@@ -3417,12 +3417,12 @@ pub unsafe fn EnumThreadWindows<'a, Param2: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumWindows<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(lpenumfunc: WNDENUMPROC, lparam: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumWindows<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(lpenumfunc: WNDENUMPROC, lparam: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumWindows(lpenumfunc: ::windows::core::RawPtr, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
+            fn EnumWindows(lpenumfunc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumWindows(::core::mem::transmute(lpenumfunc), lparam.into_param().abi()))
     }
@@ -3488,13 +3488,13 @@ impl ::core::fmt::Debug for FLASHWINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for FLASHWINFO {
+unsafe impl ::windows_core::Abi for FLASHWINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FLASHWINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FLASHWINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FLASHWINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3532,7 +3532,7 @@ impl ::core::default::Default for FLASHWINFO_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FLASHWINFO_FLAGS {
+unsafe impl ::windows_core::Abi for FLASHWINFO_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FLASHWINFO_FLAGS {
@@ -3589,7 +3589,7 @@ impl ::core::default::Default for FOREGROUND_WINDOW_LOCK_CODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FOREGROUND_WINDOW_LOCK_CODE {
+unsafe impl ::windows_core::Abi for FOREGROUND_WINDOW_LOCK_CODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FOREGROUND_WINDOW_LOCK_CODE {
@@ -3604,12 +3604,12 @@ pub const FVIRTKEY: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindWindowA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpclassname: Param0, lpwindowname: Param1) -> super::super::Foundation::HWND {
+pub unsafe fn FindWindowA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpclassname: Param0, lpwindowname: Param1) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FindWindowA(lpclassname: ::windows::core::PCSTR, lpwindowname: ::windows::core::PCSTR) -> super::super::Foundation::HWND;
+            fn FindWindowA(lpclassname: ::windows_core::PCSTR, lpwindowname: ::windows_core::PCSTR) -> super::super::Foundation::HWND;
         }
         ::core::mem::transmute(FindWindowA(lpclassname.into_param().abi(), lpwindowname.into_param().abi()))
     }
@@ -3619,12 +3619,12 @@ pub unsafe fn FindWindowA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindWindowExA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwndparent: Param0, hwndchildafter: Param1, lpszclass: Param2, lpszwindow: Param3) -> super::super::Foundation::HWND {
+pub unsafe fn FindWindowExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndparent: Param0, hwndchildafter: Param1, lpszclass: Param2, lpszwindow: Param3) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FindWindowExA(hwndparent: super::super::Foundation::HWND, hwndchildafter: super::super::Foundation::HWND, lpszclass: ::windows::core::PCSTR, lpszwindow: ::windows::core::PCSTR) -> super::super::Foundation::HWND;
+            fn FindWindowExA(hwndparent: super::super::Foundation::HWND, hwndchildafter: super::super::Foundation::HWND, lpszclass: ::windows_core::PCSTR, lpszwindow: ::windows_core::PCSTR) -> super::super::Foundation::HWND;
         }
         ::core::mem::transmute(FindWindowExA(hwndparent.into_param().abi(), hwndchildafter.into_param().abi(), lpszclass.into_param().abi(), lpszwindow.into_param().abi()))
     }
@@ -3634,12 +3634,12 @@ pub unsafe fn FindWindowExA<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindWindowExW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwndparent: Param0, hwndchildafter: Param1, lpszclass: Param2, lpszwindow: Param3) -> super::super::Foundation::HWND {
+pub unsafe fn FindWindowExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndparent: Param0, hwndchildafter: Param1, lpszclass: Param2, lpszwindow: Param3) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FindWindowExW(hwndparent: super::super::Foundation::HWND, hwndchildafter: super::super::Foundation::HWND, lpszclass: ::windows::core::PCWSTR, lpszwindow: ::windows::core::PCWSTR) -> super::super::Foundation::HWND;
+            fn FindWindowExW(hwndparent: super::super::Foundation::HWND, hwndchildafter: super::super::Foundation::HWND, lpszclass: ::windows_core::PCWSTR, lpszwindow: ::windows_core::PCWSTR) -> super::super::Foundation::HWND;
         }
         ::core::mem::transmute(FindWindowExW(hwndparent.into_param().abi(), hwndchildafter.into_param().abi(), lpszclass.into_param().abi(), lpszwindow.into_param().abi()))
     }
@@ -3649,12 +3649,12 @@ pub unsafe fn FindWindowExW<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindWindowW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpclassname: Param0, lpwindowname: Param1) -> super::super::Foundation::HWND {
+pub unsafe fn FindWindowW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpclassname: Param0, lpwindowname: Param1) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FindWindowW(lpclassname: ::windows::core::PCWSTR, lpwindowname: ::windows::core::PCWSTR) -> super::super::Foundation::HWND;
+            fn FindWindowW(lpclassname: ::windows_core::PCWSTR, lpwindowname: ::windows_core::PCWSTR) -> super::super::Foundation::HWND;
         }
         ::core::mem::transmute(FindWindowW(lpclassname.into_param().abi(), lpwindowname.into_param().abi()))
     }
@@ -3664,7 +3664,7 @@ pub unsafe fn FindWindowW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FlashWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, binvert: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn FlashWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, binvert: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -3714,7 +3714,7 @@ impl ::core::default::Default for GDI_IMAGE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GDI_IMAGE_TYPE {
+unsafe impl ::windows_core::Abi for GDI_IMAGE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GDI_IMAGE_TYPE {
@@ -3759,7 +3759,7 @@ impl ::core::default::Default for GET_ANCESTOR_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GET_ANCESTOR_FLAGS {
+unsafe impl ::windows_core::Abi for GET_ANCESTOR_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GET_ANCESTOR_FLAGS {
@@ -3818,7 +3818,7 @@ impl ::core::default::Default for GET_CLASS_LONG_INDEX {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GET_CLASS_LONG_INDEX {
+unsafe impl ::windows_core::Abi for GET_CLASS_LONG_INDEX {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GET_CLASS_LONG_INDEX {
@@ -3845,7 +3845,7 @@ impl ::core::default::Default for GET_MENU_DEFAULT_ITEM_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GET_MENU_DEFAULT_ITEM_FLAGS {
+unsafe impl ::windows_core::Abi for GET_MENU_DEFAULT_ITEM_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GET_MENU_DEFAULT_ITEM_FLAGS {
@@ -3910,7 +3910,7 @@ impl ::core::default::Default for GET_WINDOW_CMD {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GET_WINDOW_CMD {
+unsafe impl ::windows_core::Abi for GET_WINDOW_CMD {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GET_WINDOW_CMD {
@@ -3957,13 +3957,13 @@ impl ::core::fmt::Debug for GUITHREADINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for GUITHREADINFO {
+unsafe impl ::windows_core::Abi for GUITHREADINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GUITHREADINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GUITHREADINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GUITHREADINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3999,7 +3999,7 @@ impl ::core::default::Default for GUITHREADINFO_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GUITHREADINFO_FLAGS {
+unsafe impl ::windows_core::Abi for GUITHREADINFO_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GUITHREADINFO_FLAGS {
@@ -4044,14 +4044,14 @@ pub const GW_MAX: u32 = 5u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetAltTabInfoA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, iitem: i32, pati: *mut ALTTABINFO, pszitemtext: &mut [u8]) -> super::super::Foundation::BOOL {
+pub unsafe fn GetAltTabInfoA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, iitem: i32, pati: *mut ALTTABINFO, pszitemtext: &mut [u8]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetAltTabInfoA(hwnd: super::super::Foundation::HWND, iitem: i32, pati: *mut ALTTABINFO, pszitemtext: ::windows::core::PSTR, cchitemtext: u32) -> super::super::Foundation::BOOL;
+            fn GetAltTabInfoA(hwnd: super::super::Foundation::HWND, iitem: i32, pati: *mut ALTTABINFO, pszitemtext: ::windows_core::PSTR, cchitemtext: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GetAltTabInfoA(hwnd.into_param().abi(), ::core::mem::transmute(iitem), ::core::mem::transmute(pati), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pszitemtext)), pszitemtext.len() as _))
+        ::core::mem::transmute(GetAltTabInfoA(hwnd.into_param().abi(), ::core::mem::transmute(iitem), ::core::mem::transmute(pati), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszitemtext)), pszitemtext.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4059,14 +4059,14 @@ pub unsafe fn GetAltTabInfoA<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetAltTabInfoW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, iitem: i32, pati: *mut ALTTABINFO, pszitemtext: &mut [u16]) -> super::super::Foundation::BOOL {
+pub unsafe fn GetAltTabInfoW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, iitem: i32, pati: *mut ALTTABINFO, pszitemtext: &mut [u16]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetAltTabInfoW(hwnd: super::super::Foundation::HWND, iitem: i32, pati: *mut ALTTABINFO, pszitemtext: ::windows::core::PWSTR, cchitemtext: u32) -> super::super::Foundation::BOOL;
+            fn GetAltTabInfoW(hwnd: super::super::Foundation::HWND, iitem: i32, pati: *mut ALTTABINFO, pszitemtext: ::windows_core::PWSTR, cchitemtext: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GetAltTabInfoW(hwnd.into_param().abi(), ::core::mem::transmute(iitem), ::core::mem::transmute(pati), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pszitemtext)), pszitemtext.len() as _))
+        ::core::mem::transmute(GetAltTabInfoW(hwnd.into_param().abi(), ::core::mem::transmute(iitem), ::core::mem::transmute(pati), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszitemtext)), pszitemtext.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4074,7 +4074,7 @@ pub unsafe fn GetAltTabInfoW<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetAncestor<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, gaflags: GET_ANCESTOR_FLAGS) -> super::super::Foundation::HWND {
+pub unsafe fn GetAncestor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, gaflags: GET_ANCESTOR_FLAGS) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4118,12 +4118,12 @@ pub unsafe fn GetCaretPos(lppoint: *mut super::super::Foundation::POINT) -> supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn GetClassInfoA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hinstance: Param0, lpclassname: Param1, lpwndclass: *mut WNDCLASSA) -> super::super::Foundation::BOOL {
+pub unsafe fn GetClassInfoA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hinstance: Param0, lpclassname: Param1, lpwndclass: *mut WNDCLASSA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetClassInfoA(hinstance: super::super::Foundation::HINSTANCE, lpclassname: ::windows::core::PCSTR, lpwndclass: *mut WNDCLASSA) -> super::super::Foundation::BOOL;
+            fn GetClassInfoA(hinstance: super::super::Foundation::HINSTANCE, lpclassname: ::windows_core::PCSTR, lpwndclass: *mut WNDCLASSA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(GetClassInfoA(hinstance.into_param().abi(), lpclassname.into_param().abi(), ::core::mem::transmute(lpwndclass)))
     }
@@ -4133,12 +4133,12 @@ pub unsafe fn GetClassInfoA<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn GetClassInfoExA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hinstance: Param0, lpszclass: Param1, lpwcx: *mut WNDCLASSEXA) -> super::super::Foundation::BOOL {
+pub unsafe fn GetClassInfoExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hinstance: Param0, lpszclass: Param1, lpwcx: *mut WNDCLASSEXA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetClassInfoExA(hinstance: super::super::Foundation::HINSTANCE, lpszclass: ::windows::core::PCSTR, lpwcx: *mut WNDCLASSEXA) -> super::super::Foundation::BOOL;
+            fn GetClassInfoExA(hinstance: super::super::Foundation::HINSTANCE, lpszclass: ::windows_core::PCSTR, lpwcx: *mut WNDCLASSEXA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(GetClassInfoExA(hinstance.into_param().abi(), lpszclass.into_param().abi(), ::core::mem::transmute(lpwcx)))
     }
@@ -4148,12 +4148,12 @@ pub unsafe fn GetClassInfoExA<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn GetClassInfoExW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hinstance: Param0, lpszclass: Param1, lpwcx: *mut WNDCLASSEXW) -> super::super::Foundation::BOOL {
+pub unsafe fn GetClassInfoExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hinstance: Param0, lpszclass: Param1, lpwcx: *mut WNDCLASSEXW) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetClassInfoExW(hinstance: super::super::Foundation::HINSTANCE, lpszclass: ::windows::core::PCWSTR, lpwcx: *mut WNDCLASSEXW) -> super::super::Foundation::BOOL;
+            fn GetClassInfoExW(hinstance: super::super::Foundation::HINSTANCE, lpszclass: ::windows_core::PCWSTR, lpwcx: *mut WNDCLASSEXW) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(GetClassInfoExW(hinstance.into_param().abi(), lpszclass.into_param().abi(), ::core::mem::transmute(lpwcx)))
     }
@@ -4163,12 +4163,12 @@ pub unsafe fn GetClassInfoExW<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn GetClassInfoW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hinstance: Param0, lpclassname: Param1, lpwndclass: *mut WNDCLASSW) -> super::super::Foundation::BOOL {
+pub unsafe fn GetClassInfoW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hinstance: Param0, lpclassname: Param1, lpwndclass: *mut WNDCLASSW) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetClassInfoW(hinstance: super::super::Foundation::HINSTANCE, lpclassname: ::windows::core::PCWSTR, lpwndclass: *mut WNDCLASSW) -> super::super::Foundation::BOOL;
+            fn GetClassInfoW(hinstance: super::super::Foundation::HINSTANCE, lpclassname: ::windows_core::PCWSTR, lpwndclass: *mut WNDCLASSW) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(GetClassInfoW(hinstance.into_param().abi(), lpclassname.into_param().abi(), ::core::mem::transmute(lpwndclass)))
     }
@@ -4178,7 +4178,7 @@ pub unsafe fn GetClassInfoW<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetClassLongA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX) -> u32 {
+pub unsafe fn GetClassLongA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4194,7 +4194,7 @@ pub unsafe fn GetClassLongA<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetClassLongPtrA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX) -> usize {
+pub unsafe fn GetClassLongPtrA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX) -> usize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4210,7 +4210,7 @@ pub unsafe fn GetClassLongPtrA<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetClassLongPtrW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX) -> usize {
+pub unsafe fn GetClassLongPtrW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX) -> usize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4225,7 +4225,7 @@ pub unsafe fn GetClassLongPtrW<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetClassLongW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX) -> u32 {
+pub unsafe fn GetClassLongW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4240,14 +4240,14 @@ pub unsafe fn GetClassLongW<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetClassNameA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpclassname: &mut [u8]) -> i32 {
+pub unsafe fn GetClassNameA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpclassname: &mut [u8]) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetClassNameA(hwnd: super::super::Foundation::HWND, lpclassname: ::windows::core::PSTR, nmaxcount: i32) -> i32;
+            fn GetClassNameA(hwnd: super::super::Foundation::HWND, lpclassname: ::windows_core::PSTR, nmaxcount: i32) -> i32;
         }
-        ::core::mem::transmute(GetClassNameA(hwnd.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpclassname)), lpclassname.len() as _))
+        ::core::mem::transmute(GetClassNameA(hwnd.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpclassname)), lpclassname.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4255,14 +4255,14 @@ pub unsafe fn GetClassNameA<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetClassNameW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpclassname: &mut [u16]) -> i32 {
+pub unsafe fn GetClassNameW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpclassname: &mut [u16]) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetClassNameW(hwnd: super::super::Foundation::HWND, lpclassname: ::windows::core::PWSTR, nmaxcount: i32) -> i32;
+            fn GetClassNameW(hwnd: super::super::Foundation::HWND, lpclassname: ::windows_core::PWSTR, nmaxcount: i32) -> i32;
         }
-        ::core::mem::transmute(GetClassNameW(hwnd.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpclassname)), lpclassname.len() as _))
+        ::core::mem::transmute(GetClassNameW(hwnd.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpclassname)), lpclassname.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4270,7 +4270,7 @@ pub unsafe fn GetClassNameW<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetClassWord<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: i32) -> u16 {
+pub unsafe fn GetClassWord<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: i32) -> u16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4285,7 +4285,7 @@ pub unsafe fn GetClassWord<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetClientRect<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lprect: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn GetClientRect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lprect: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4388,7 +4388,7 @@ pub unsafe fn GetDialogBaseUnits() -> i32 {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDlgCtrlID<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> i32 {
+pub unsafe fn GetDlgCtrlID<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4403,7 +4403,7 @@ pub unsafe fn GetDlgCtrlID<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDlgItem<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, niddlgitem: i32) -> super::super::Foundation::HWND {
+pub unsafe fn GetDlgItem<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, niddlgitem: i32) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4418,7 +4418,7 @@ pub unsafe fn GetDlgItem<'a, Param0: ::windows::core::IntoParam<'a, super::super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDlgItemInt<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hdlg: Param0, niddlgitem: i32, lptranslated: *mut super::super::Foundation::BOOL, bsigned: Param3) -> u32 {
+pub unsafe fn GetDlgItemInt<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hdlg: Param0, niddlgitem: i32, lptranslated: *mut super::super::Foundation::BOOL, bsigned: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4433,14 +4433,14 @@ pub unsafe fn GetDlgItemInt<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDlgItemTextA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, niddlgitem: i32, lpstring: &mut [u8]) -> u32 {
+pub unsafe fn GetDlgItemTextA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, niddlgitem: i32, lpstring: &mut [u8]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDlgItemTextA(hdlg: super::super::Foundation::HWND, niddlgitem: i32, lpstring: ::windows::core::PSTR, cchmax: i32) -> u32;
+            fn GetDlgItemTextA(hdlg: super::super::Foundation::HWND, niddlgitem: i32, lpstring: ::windows_core::PSTR, cchmax: i32) -> u32;
         }
-        ::core::mem::transmute(GetDlgItemTextA(hdlg.into_param().abi(), ::core::mem::transmute(niddlgitem), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _))
+        ::core::mem::transmute(GetDlgItemTextA(hdlg.into_param().abi(), ::core::mem::transmute(niddlgitem), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4448,14 +4448,14 @@ pub unsafe fn GetDlgItemTextA<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDlgItemTextW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, niddlgitem: i32, lpstring: &mut [u16]) -> u32 {
+pub unsafe fn GetDlgItemTextW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, niddlgitem: i32, lpstring: &mut [u16]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDlgItemTextW(hdlg: super::super::Foundation::HWND, niddlgitem: i32, lpstring: ::windows::core::PWSTR, cchmax: i32) -> u32;
+            fn GetDlgItemTextW(hdlg: super::super::Foundation::HWND, niddlgitem: i32, lpstring: ::windows_core::PWSTR, cchmax: i32) -> u32;
         }
-        ::core::mem::transmute(GetDlgItemTextW(hdlg.into_param().abi(), ::core::mem::transmute(niddlgitem), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _))
+        ::core::mem::transmute(GetDlgItemTextW(hdlg.into_param().abi(), ::core::mem::transmute(niddlgitem), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4493,7 +4493,7 @@ pub unsafe fn GetGUIThreadInfo(idthread: u32, pgui: *mut GUITHREADINFO) -> super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn GetIconInfo<'a, Param0: ::windows::core::IntoParam<'a, HICON>>(hicon: Param0, piconinfo: *mut ICONINFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetIconInfo<'a, Param0: ::windows_core::IntoParam<'a, HICON>>(hicon: Param0, piconinfo: *mut ICONINFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4508,7 +4508,7 @@ pub unsafe fn GetIconInfo<'a, Param0: ::windows::core::IntoParam<'a, HICON>>(hic
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn GetIconInfoExA<'a, Param0: ::windows::core::IntoParam<'a, HICON>>(hicon: Param0, piconinfo: *mut ICONINFOEXA) -> super::super::Foundation::BOOL {
+pub unsafe fn GetIconInfoExA<'a, Param0: ::windows_core::IntoParam<'a, HICON>>(hicon: Param0, piconinfo: *mut ICONINFOEXA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4523,7 +4523,7 @@ pub unsafe fn GetIconInfoExA<'a, Param0: ::windows::core::IntoParam<'a, HICON>>(
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn GetIconInfoExW<'a, Param0: ::windows::core::IntoParam<'a, HICON>>(hicon: Param0, piconinfo: *mut ICONINFOEXW) -> super::super::Foundation::BOOL {
+pub unsafe fn GetIconInfoExW<'a, Param0: ::windows_core::IntoParam<'a, HICON>>(hicon: Param0, piconinfo: *mut ICONINFOEXW) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4553,7 +4553,7 @@ pub unsafe fn GetInputState() -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetLastActivePopup<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::HWND {
+pub unsafe fn GetLastActivePopup<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4568,7 +4568,7 @@ pub unsafe fn GetLastActivePopup<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetLayeredWindowAttributes<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pcrkey: *mut u32, pbalpha: *mut u8, pdwflags: *mut LAYERED_WINDOW_ATTRIBUTES_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn GetLayeredWindowAttributes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pcrkey: *mut u32, pbalpha: *mut u8, pdwflags: *mut LAYERED_WINDOW_ATTRIBUTES_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4583,7 +4583,7 @@ pub unsafe fn GetLayeredWindowAttributes<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetMenu<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> HMENU {
+pub unsafe fn GetMenu<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> HMENU {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4598,7 +4598,7 @@ pub unsafe fn GetMenu<'a, Param0: ::windows::core::IntoParam<'a, super::super::F
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetMenuBarInfo<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, idobject: OBJECT_IDENTIFIER, iditem: i32, pmbi: *mut MENUBARINFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetMenuBarInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, idobject: OBJECT_IDENTIFIER, iditem: i32, pmbi: *mut MENUBARINFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4626,7 +4626,7 @@ pub unsafe fn GetMenuCheckMarkDimensions() -> i32 {
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn GetMenuDefaultItem<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0, fbypos: u32, gmdiflags: GET_MENU_DEFAULT_ITEM_FLAGS) -> u32 {
+pub unsafe fn GetMenuDefaultItem<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0, fbypos: u32, gmdiflags: GET_MENU_DEFAULT_ITEM_FLAGS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4641,7 +4641,7 @@ pub unsafe fn GetMenuDefaultItem<'a, Param0: ::windows::core::IntoParam<'a, HMEN
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn GetMenuInfo<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(param0: Param0, param1: *mut MENUINFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetMenuInfo<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(param0: Param0, param1: *mut MENUINFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4655,7 +4655,7 @@ pub unsafe fn GetMenuInfo<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(par
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn GetMenuItemCount<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0) -> i32 {
+pub unsafe fn GetMenuItemCount<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4669,7 +4669,7 @@ pub unsafe fn GetMenuItemCount<'a, Param0: ::windows::core::IntoParam<'a, HMENU>
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn GetMenuItemID<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0, npos: i32) -> u32 {
+pub unsafe fn GetMenuItemID<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0, npos: i32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4684,7 +4684,7 @@ pub unsafe fn GetMenuItemID<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(h
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn GetMenuItemInfoA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hmenu: Param0, item: u32, fbyposition: Param2, lpmii: *mut MENUITEMINFOA) -> super::super::Foundation::BOOL {
+pub unsafe fn GetMenuItemInfoA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hmenu: Param0, item: u32, fbyposition: Param2, lpmii: *mut MENUITEMINFOA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4699,7 +4699,7 @@ pub unsafe fn GetMenuItemInfoA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn GetMenuItemInfoW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hmenu: Param0, item: u32, fbyposition: Param2, lpmii: *mut MENUITEMINFOW) -> super::super::Foundation::BOOL {
+pub unsafe fn GetMenuItemInfoW<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hmenu: Param0, item: u32, fbyposition: Param2, lpmii: *mut MENUITEMINFOW) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4714,7 +4714,7 @@ pub unsafe fn GetMenuItemInfoW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetMenuItemRect<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HMENU>>(hwnd: Param0, hmenu: Param1, uitem: u32, lprcitem: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn GetMenuItemRect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HMENU>>(hwnd: Param0, hmenu: Param1, uitem: u32, lprcitem: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4728,7 +4728,7 @@ pub unsafe fn GetMenuItemRect<'a, Param0: ::windows::core::IntoParam<'a, super::
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn GetMenuState<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0, uid: u32, uflags: MENU_ITEM_FLAGS) -> u32 {
+pub unsafe fn GetMenuState<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0, uid: u32, uflags: MENU_ITEM_FLAGS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4742,28 +4742,28 @@ pub unsafe fn GetMenuState<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hm
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn GetMenuStringA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0, uiditem: u32, lpstring: &mut [u8], flags: MENU_ITEM_FLAGS) -> i32 {
+pub unsafe fn GetMenuStringA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0, uiditem: u32, lpstring: &mut [u8], flags: MENU_ITEM_FLAGS) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetMenuStringA(hmenu: HMENU, uiditem: u32, lpstring: ::windows::core::PSTR, cchmax: i32, flags: MENU_ITEM_FLAGS) -> i32;
+            fn GetMenuStringA(hmenu: HMENU, uiditem: u32, lpstring: ::windows_core::PSTR, cchmax: i32, flags: MENU_ITEM_FLAGS) -> i32;
         }
-        ::core::mem::transmute(GetMenuStringA(hmenu.into_param().abi(), ::core::mem::transmute(uiditem), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(flags)))
+        ::core::mem::transmute(GetMenuStringA(hmenu.into_param().abi(), ::core::mem::transmute(uiditem), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn GetMenuStringW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0, uiditem: u32, lpstring: &mut [u16], flags: MENU_ITEM_FLAGS) -> i32 {
+pub unsafe fn GetMenuStringW<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0, uiditem: u32, lpstring: &mut [u16], flags: MENU_ITEM_FLAGS) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetMenuStringW(hmenu: HMENU, uiditem: u32, lpstring: ::windows::core::PWSTR, cchmax: i32, flags: MENU_ITEM_FLAGS) -> i32;
+            fn GetMenuStringW(hmenu: HMENU, uiditem: u32, lpstring: ::windows_core::PWSTR, cchmax: i32, flags: MENU_ITEM_FLAGS) -> i32;
         }
-        ::core::mem::transmute(GetMenuStringW(hmenu.into_param().abi(), ::core::mem::transmute(uiditem), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(flags)))
+        ::core::mem::transmute(GetMenuStringW(hmenu.into_param().abi(), ::core::mem::transmute(uiditem), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4771,7 +4771,7 @@ pub unsafe fn GetMenuStringW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetMessageA<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(lpmsg: *mut MSG, hwnd: Param1, wmsgfiltermin: u32, wmsgfiltermax: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetMessageA<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(lpmsg: *mut MSG, hwnd: Param1, wmsgfiltermin: u32, wmsgfiltermax: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4829,7 +4829,7 @@ pub unsafe fn GetMessageTime() -> i32 {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetMessageW<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(lpmsg: *mut MSG, hwnd: Param1, wmsgfiltermin: u32, wmsgfiltermax: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetMessageW<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(lpmsg: *mut MSG, hwnd: Param1, wmsgfiltermin: u32, wmsgfiltermax: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4844,7 +4844,7 @@ pub unsafe fn GetMessageW<'a, Param1: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNextDlgGroupItem<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hdlg: Param0, hctl: Param1, bprevious: Param2) -> super::super::Foundation::HWND {
+pub unsafe fn GetNextDlgGroupItem<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hdlg: Param0, hctl: Param1, bprevious: Param2) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4859,7 +4859,7 @@ pub unsafe fn GetNextDlgGroupItem<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNextDlgTabItem<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hdlg: Param0, hctl: Param1, bprevious: Param2) -> super::super::Foundation::HWND {
+pub unsafe fn GetNextDlgTabItem<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hdlg: Param0, hctl: Param1, bprevious: Param2) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4874,7 +4874,7 @@ pub unsafe fn GetNextDlgTabItem<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetParent<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::HWND {
+pub unsafe fn GetParent<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4919,12 +4919,12 @@ pub unsafe fn GetProcessDefaultLayout(pdwdefaultlayout: *mut u32) -> super::supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPropA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwnd: Param0, lpstring: Param1) -> super::super::Foundation::HANDLE {
+pub unsafe fn GetPropA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, lpstring: Param1) -> super::super::Foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPropA(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCSTR) -> super::super::Foundation::HANDLE;
+            fn GetPropA(hwnd: super::super::Foundation::HWND, lpstring: ::windows_core::PCSTR) -> super::super::Foundation::HANDLE;
         }
         ::core::mem::transmute(GetPropA(hwnd.into_param().abi(), lpstring.into_param().abi()))
     }
@@ -4934,12 +4934,12 @@ pub unsafe fn GetPropA<'a, Param0: ::windows::core::IntoParam<'a, super::super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPropW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwnd: Param0, lpstring: Param1) -> super::super::Foundation::HANDLE {
+pub unsafe fn GetPropW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, lpstring: Param1) -> super::super::Foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPropW(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCWSTR) -> super::super::Foundation::HANDLE;
+            fn GetPropW(hwnd: super::super::Foundation::HWND, lpstring: ::windows_core::PCWSTR) -> super::super::Foundation::HANDLE;
         }
         ::core::mem::transmute(GetPropW(hwnd.into_param().abi(), lpstring.into_param().abi()))
     }
@@ -4963,7 +4963,7 @@ pub unsafe fn GetQueueStatus(flags: QUEUE_STATUS_FLAGS) -> u32 {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetScrollBarInfo<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, idobject: OBJECT_IDENTIFIER, psbi: *mut SCROLLBARINFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetScrollBarInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, idobject: OBJECT_IDENTIFIER, psbi: *mut SCROLLBARINFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4978,7 +4978,7 @@ pub unsafe fn GetScrollBarInfo<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetScrollInfo<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nbar: SCROLLBAR_CONSTANTS, lpsi: *mut SCROLLINFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetScrollInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nbar: SCROLLBAR_CONSTANTS, lpsi: *mut SCROLLINFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4993,7 +4993,7 @@ pub unsafe fn GetScrollInfo<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetScrollPos<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nbar: SCROLLBAR_CONSTANTS) -> i32 {
+pub unsafe fn GetScrollPos<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nbar: SCROLLBAR_CONSTANTS) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5008,7 +5008,7 @@ pub unsafe fn GetScrollPos<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetScrollRange<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nbar: SCROLLBAR_CONSTANTS, lpminpos: *mut i32, lpmaxpos: *mut i32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetScrollRange<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nbar: SCROLLBAR_CONSTANTS, lpminpos: *mut i32, lpmaxpos: *mut i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5037,7 +5037,7 @@ pub unsafe fn GetShellWindow() -> super::super::Foundation::HWND {
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn GetSubMenu<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0, npos: i32) -> HMENU {
+pub unsafe fn GetSubMenu<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0, npos: i32) -> HMENU {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5066,7 +5066,7 @@ pub unsafe fn GetSysColor(nindex: SYS_COLOR_INDEX) -> u32 {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetSystemMenu<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, brevert: Param1) -> HMENU {
+pub unsafe fn GetSystemMenu<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, brevert: Param1) -> HMENU {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5095,7 +5095,7 @@ pub unsafe fn GetSystemMetrics(nindex: SYSTEM_METRICS_INDEX) -> i32 {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTitleBarInfo<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pti: *mut TITLEBARINFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetTitleBarInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pti: *mut TITLEBARINFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5110,7 +5110,7 @@ pub unsafe fn GetTitleBarInfo<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTopWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::HWND {
+pub unsafe fn GetTopWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5125,7 +5125,7 @@ pub unsafe fn GetTopWindow<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, ucmd: GET_WINDOW_CMD) -> super::super::Foundation::HWND {
+pub unsafe fn GetWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, ucmd: GET_WINDOW_CMD) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5140,7 +5140,7 @@ pub unsafe fn GetWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowDisplayAffinity<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pdwaffinity: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetWindowDisplayAffinity<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pdwaffinity: *mut u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5155,7 +5155,7 @@ pub unsafe fn GetWindowDisplayAffinity<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowInfo<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pwi: *mut WINDOWINFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetWindowInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pwi: *mut WINDOWINFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5170,7 +5170,7 @@ pub unsafe fn GetWindowInfo<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowLongA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX) -> i32 {
+pub unsafe fn GetWindowLongA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5186,7 +5186,7 @@ pub unsafe fn GetWindowLongA<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowLongPtrA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX) -> isize {
+pub unsafe fn GetWindowLongPtrA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX) -> isize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5202,7 +5202,7 @@ pub unsafe fn GetWindowLongPtrA<'a, Param0: ::windows::core::IntoParam<'a, super
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowLongPtrW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX) -> isize {
+pub unsafe fn GetWindowLongPtrW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX) -> isize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5217,7 +5217,7 @@ pub unsafe fn GetWindowLongPtrW<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowLongW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX) -> i32 {
+pub unsafe fn GetWindowLongW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5232,14 +5232,14 @@ pub unsafe fn GetWindowLongW<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowModuleFileNameA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pszfilename: &mut [u8]) -> u32 {
+pub unsafe fn GetWindowModuleFileNameA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pszfilename: &mut [u8]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetWindowModuleFileNameA(hwnd: super::super::Foundation::HWND, pszfilename: ::windows::core::PSTR, cchfilenamemax: u32) -> u32;
+            fn GetWindowModuleFileNameA(hwnd: super::super::Foundation::HWND, pszfilename: ::windows_core::PSTR, cchfilenamemax: u32) -> u32;
         }
-        ::core::mem::transmute(GetWindowModuleFileNameA(hwnd.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pszfilename)), pszfilename.len() as _))
+        ::core::mem::transmute(GetWindowModuleFileNameA(hwnd.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszfilename)), pszfilename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -5247,14 +5247,14 @@ pub unsafe fn GetWindowModuleFileNameA<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowModuleFileNameW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pszfilename: &mut [u16]) -> u32 {
+pub unsafe fn GetWindowModuleFileNameW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pszfilename: &mut [u16]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetWindowModuleFileNameW(hwnd: super::super::Foundation::HWND, pszfilename: ::windows::core::PWSTR, cchfilenamemax: u32) -> u32;
+            fn GetWindowModuleFileNameW(hwnd: super::super::Foundation::HWND, pszfilename: ::windows_core::PWSTR, cchfilenamemax: u32) -> u32;
         }
-        ::core::mem::transmute(GetWindowModuleFileNameW(hwnd.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pszfilename)), pszfilename.len() as _))
+        ::core::mem::transmute(GetWindowModuleFileNameW(hwnd.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszfilename)), pszfilename.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -5262,7 +5262,7 @@ pub unsafe fn GetWindowModuleFileNameW<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowPlacement<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpwndpl: *mut WINDOWPLACEMENT) -> super::super::Foundation::BOOL {
+pub unsafe fn GetWindowPlacement<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpwndpl: *mut WINDOWPLACEMENT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5277,7 +5277,7 @@ pub unsafe fn GetWindowPlacement<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowRect<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lprect: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn GetWindowRect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lprect: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5292,14 +5292,14 @@ pub unsafe fn GetWindowRect<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowTextA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpstring: &mut [u8]) -> i32 {
+pub unsafe fn GetWindowTextA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpstring: &mut [u8]) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetWindowTextA(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PSTR, nmaxcount: i32) -> i32;
+            fn GetWindowTextA(hwnd: super::super::Foundation::HWND, lpstring: ::windows_core::PSTR, nmaxcount: i32) -> i32;
         }
-        ::core::mem::transmute(GetWindowTextA(hwnd.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _))
+        ::core::mem::transmute(GetWindowTextA(hwnd.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -5307,7 +5307,7 @@ pub unsafe fn GetWindowTextA<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowTextLengthA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> i32 {
+pub unsafe fn GetWindowTextLengthA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5322,7 +5322,7 @@ pub unsafe fn GetWindowTextLengthA<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowTextLengthW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> i32 {
+pub unsafe fn GetWindowTextLengthW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5337,14 +5337,14 @@ pub unsafe fn GetWindowTextLengthW<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowTextW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpstring: &mut [u16]) -> i32 {
+pub unsafe fn GetWindowTextW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpstring: &mut [u16]) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetWindowTextW(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PWSTR, nmaxcount: i32) -> i32;
+            fn GetWindowTextW(hwnd: super::super::Foundation::HWND, lpstring: ::windows_core::PWSTR, nmaxcount: i32) -> i32;
         }
-        ::core::mem::transmute(GetWindowTextW(hwnd.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _))
+        ::core::mem::transmute(GetWindowTextW(hwnd.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpstring)), lpstring.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -5352,7 +5352,7 @@ pub unsafe fn GetWindowTextW<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowThreadProcessId<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpdwprocessid: *mut u32) -> u32 {
+pub unsafe fn GetWindowThreadProcessId<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpdwprocessid: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5367,7 +5367,7 @@ pub unsafe fn GetWindowThreadProcessId<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowWord<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: i32) -> u16 {
+pub unsafe fn GetWindowWord<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: i32) -> u16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5403,7 +5403,7 @@ impl ::core::fmt::Debug for HACCEL {
         f.debug_tuple("HACCEL").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HACCEL {
+unsafe impl ::windows_core::Abi for HACCEL {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
@@ -5425,7 +5425,7 @@ impl ::core::default::Default for HANDEDNESS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HANDEDNESS {
+unsafe impl ::windows_core::Abi for HANDEDNESS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HANDEDNESS {
@@ -5457,13 +5457,13 @@ impl ::core::fmt::Debug for HARDWAREHOOKSTRUCT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for HARDWAREHOOKSTRUCT {
+unsafe impl ::windows_core::Abi for HARDWAREHOOKSTRUCT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HARDWAREHOOKSTRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HARDWAREHOOKSTRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HARDWAREHOOKSTRUCT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5555,12 +5555,12 @@ impl ::core::fmt::Debug for HCURSOR {
         f.debug_tuple("HCURSOR").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HCURSOR {
+unsafe impl ::windows_core::Abi for HCURSOR {
     type Abi = Self;
 }
-impl<'a> ::windows::core::IntoParam<'a, HICON> for HCURSOR {
-    fn into_param(self) -> ::windows::core::Param<'a, HICON> {
-        ::windows::core::Param::Owned(HICON(self.0))
+impl<'a> ::windows_core::IntoParam<'a, HICON> for HCURSOR {
+    fn into_param(self) -> ::windows_core::Param<'a, HICON> {
+        ::windows_core::Param::Owned(HICON(self.0))
     }
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
@@ -5647,7 +5647,7 @@ impl ::core::fmt::Debug for HHOOK {
         f.debug_tuple("HHOOK").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HHOOK {
+unsafe impl ::windows_core::Abi for HHOOK {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -5674,7 +5674,7 @@ impl ::core::fmt::Debug for HICON {
         f.debug_tuple("HICON").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HICON {
+unsafe impl ::windows_core::Abi for HICON {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
@@ -5707,7 +5707,7 @@ impl ::core::fmt::Debug for HMENU {
         f.debug_tuple("HMENU").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HMENU {
+unsafe impl ::windows_core::Abi for HMENU {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
@@ -5824,7 +5824,7 @@ pub const HWND_TOPMOST: super::super::Foundation::HWND = super::super::Foundatio
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HideCaret<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn HideCaret<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5839,7 +5839,7 @@ pub unsafe fn HideCaret<'a, Param0: ::windows::core::IntoParam<'a, super::super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HiliteMenuItem<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HMENU>>(hwnd: Param0, hmenu: Param1, uidhiliteitem: u32, uhilite: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn HiliteMenuItem<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HMENU>>(hwnd: Param0, hmenu: Param1, uidhiliteitem: u32, uhilite: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -5876,13 +5876,13 @@ impl ::core::fmt::Debug for ICONINFO {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for ICONINFO {
+unsafe impl ::windows_core::Abi for ICONINFO {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for ICONINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONINFO>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
@@ -5922,13 +5922,13 @@ impl ::core::fmt::Debug for ICONINFOEXA {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for ICONINFOEXA {
+unsafe impl ::windows_core::Abi for ICONINFOEXA {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for ICONINFOEXA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONINFOEXA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONINFOEXA>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
@@ -5968,13 +5968,13 @@ impl ::core::fmt::Debug for ICONINFOEXW {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for ICONINFOEXW {
+unsafe impl ::windows_core::Abi for ICONINFOEXW {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for ICONINFOEXW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONINFOEXW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONINFOEXW>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
@@ -6010,13 +6010,13 @@ impl ::core::fmt::Debug for ICONMETRICSA {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for ICONMETRICSA {
+unsafe impl ::windows_core::Abi for ICONMETRICSA {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for ICONMETRICSA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONMETRICSA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONMETRICSA>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
@@ -6052,13 +6052,13 @@ impl ::core::fmt::Debug for ICONMETRICSW {
     }
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
-unsafe impl ::windows::core::Abi for ICONMETRICSW {
+unsafe impl ::windows_core::Abi for ICONMETRICSW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for ICONMETRICSW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONMETRICSW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ICONMETRICSW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
@@ -6080,41 +6080,41 @@ pub const IDANI_CAPTION: u32 = 3u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub const IDANI_OPEN: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_APPSTARTING: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32650i32 as _);
+pub const IDC_APPSTARTING: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32650i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_ARROW: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32512i32 as _);
+pub const IDC_ARROW: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32512i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_CROSS: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32515i32 as _);
+pub const IDC_CROSS: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32515i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_HAND: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32649i32 as _);
+pub const IDC_HAND: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32649i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_HELP: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32651i32 as _);
+pub const IDC_HELP: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32651i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_IBEAM: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32513i32 as _);
+pub const IDC_IBEAM: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32513i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_ICON: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32641i32 as _);
+pub const IDC_ICON: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32641i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_NO: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32648i32 as _);
+pub const IDC_NO: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32648i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_PERSON: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32672i32 as _);
+pub const IDC_PERSON: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32672i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_PIN: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32671i32 as _);
+pub const IDC_PIN: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32671i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_SIZE: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32640i32 as _);
+pub const IDC_SIZE: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32640i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_SIZEALL: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32646i32 as _);
+pub const IDC_SIZEALL: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32646i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_SIZENESW: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32643i32 as _);
+pub const IDC_SIZENESW: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32643i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_SIZENS: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32645i32 as _);
+pub const IDC_SIZENS: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32645i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_SIZENWSE: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32642i32 as _);
+pub const IDC_SIZENWSE: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32642i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_SIZEWE: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32644i32 as _);
+pub const IDC_SIZEWE: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32644i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_UPARROW: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32516i32 as _);
+pub const IDC_UPARROW: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32516i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDC_WAIT: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32514i32 as _);
+pub const IDC_WAIT: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32514i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub const IDHOT_SNAPDESKTOP: i32 = -2i32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
@@ -6132,25 +6132,25 @@ pub const IDH_NO_HELP: u32 = 28440u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub const IDH_OK: u32 = 28443u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDI_APPLICATION: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32512u32 as _);
+pub const IDI_APPLICATION: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32512u32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDI_ASTERISK: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32516u32 as _);
+pub const IDI_ASTERISK: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32516u32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub const IDI_ERROR: u32 = 32513u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDI_EXCLAMATION: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32515u32 as _);
+pub const IDI_EXCLAMATION: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32515u32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDI_HAND: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32513u32 as _);
+pub const IDI_HAND: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32513u32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub const IDI_INFORMATION: u32 = 32516u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDI_QUESTION: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32514u32 as _);
+pub const IDI_QUESTION: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32514u32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDI_SHIELD: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32518u32 as _);
+pub const IDI_SHIELD: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32518u32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub const IDI_WARNING: u32 = 32515u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const IDI_WINLOGO: ::windows::core::PCWSTR = ::windows::core::PCWSTR(32517u32 as _);
+pub const IDI_WINLOGO: ::windows_core::PCWSTR = ::windows_core::PCWSTR(32517u32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub const IMAGE_ENHMETAFILE: u32 = 3u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
@@ -6192,7 +6192,7 @@ impl ::core::default::Default for IMAGE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for IMAGE_FLAGS {
+unsafe impl ::windows_core::Abi for IMAGE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for IMAGE_FLAGS {
@@ -6287,12 +6287,12 @@ pub unsafe fn InSendMessageEx(lpreserved: *mut ::core::ffi::c_void) -> u32 {
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn IndexFilePath<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(resourceindexer: *const ::core::ffi::c_void, filepath: Param1, ppresourceuri: *mut ::windows::core::PWSTR, pqualifiercount: *mut u32, ppqualifiers: *mut *mut IndexedResourceQualifier) -> ::windows::core::Result<()> {
+pub unsafe fn IndexFilePath<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(resourceindexer: *const ::core::ffi::c_void, filepath: Param1, ppresourceuri: *mut ::windows_core::PWSTR, pqualifiercount: *mut u32, ppqualifiers: *mut *mut IndexedResourceQualifier) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IndexFilePath(resourceindexer: *const ::core::ffi::c_void, filepath: ::windows::core::PCWSTR, ppresourceuri: *mut ::windows::core::PWSTR, pqualifiercount: *mut u32, ppqualifiers: *mut *mut IndexedResourceQualifier) -> ::windows::core::HRESULT;
+            fn IndexFilePath(resourceindexer: *const ::core::ffi::c_void, filepath: ::windows_core::PCWSTR, ppresourceuri: *mut ::windows_core::PWSTR, pqualifiercount: *mut u32, ppqualifiers: *mut *mut IndexedResourceQualifier) -> ::windows_core::HRESULT;
         }
         IndexFilePath(::core::mem::transmute(resourceindexer), filepath.into_param().abi(), ::core::mem::transmute(ppresourceuri), ::core::mem::transmute(pqualifiercount), ::core::mem::transmute(ppqualifiers)).ok()
     }
@@ -6302,8 +6302,8 @@ pub unsafe fn IndexFilePath<'a, Param1: ::windows::core::IntoParam<'a, ::windows
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub struct IndexedResourceQualifier {
-    pub name: ::windows::core::PWSTR,
-    pub value: ::windows::core::PWSTR,
+    pub name: ::windows_core::PWSTR,
+    pub value: ::windows_core::PWSTR,
 }
 impl ::core::marker::Copy for IndexedResourceQualifier {}
 impl ::core::clone::Clone for IndexedResourceQualifier {
@@ -6316,12 +6316,12 @@ impl ::core::fmt::Debug for IndexedResourceQualifier {
         f.debug_struct("IndexedResourceQualifier").field("name", &self.name).field("value", &self.value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for IndexedResourceQualifier {
+unsafe impl ::windows_core::Abi for IndexedResourceQualifier {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for IndexedResourceQualifier {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IndexedResourceQualifier>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IndexedResourceQualifier>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for IndexedResourceQualifier {}
@@ -6333,7 +6333,7 @@ impl ::core::default::Default for IndexedResourceQualifier {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InheritWindowMonitor<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, hwndinherit: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn InheritWindowMonitor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, hwndinherit: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6348,12 +6348,12 @@ pub unsafe fn InheritWindowMonitor<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InsertMenuA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hmenu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: Param4) -> super::super::Foundation::BOOL {
+pub unsafe fn InsertMenuA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hmenu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: Param4) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn InsertMenuA(hmenu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn InsertMenuA(hmenu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(InsertMenuA(hmenu.into_param().abi(), ::core::mem::transmute(uposition), ::core::mem::transmute(uflags), ::core::mem::transmute(uidnewitem), lpnewitem.into_param().abi()))
     }
@@ -6363,7 +6363,7 @@ pub unsafe fn InsertMenuA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Par
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn InsertMenuItemA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hmenu: Param0, item: u32, fbyposition: Param2, lpmi: *const MENUITEMINFOA) -> super::super::Foundation::BOOL {
+pub unsafe fn InsertMenuItemA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hmenu: Param0, item: u32, fbyposition: Param2, lpmi: *const MENUITEMINFOA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6378,7 +6378,7 @@ pub unsafe fn InsertMenuItemA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>,
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn InsertMenuItemW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hmenu: Param0, item: u32, fbyposition: Param2, lpmi: *const MENUITEMINFOW) -> super::super::Foundation::BOOL {
+pub unsafe fn InsertMenuItemW<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hmenu: Param0, item: u32, fbyposition: Param2, lpmi: *const MENUITEMINFOW) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6393,12 +6393,12 @@ pub unsafe fn InsertMenuItemW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>,
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InsertMenuW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hmenu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: Param4) -> super::super::Foundation::BOOL {
+pub unsafe fn InsertMenuW<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmenu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: Param4) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn InsertMenuW(hmenu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn InsertMenuW(hmenu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(InsertMenuW(hmenu.into_param().abi(), ::core::mem::transmute(uposition), ::core::mem::transmute(uflags), ::core::mem::transmute(uidnewitem), lpnewitem.into_param().abi()))
     }
@@ -6408,14 +6408,14 @@ pub unsafe fn InsertMenuW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Par
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternalGetWindowText<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pstring: &mut [u16]) -> i32 {
+pub unsafe fn InternalGetWindowText<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pstring: &mut [u16]) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn InternalGetWindowText(hwnd: super::super::Foundation::HWND, pstring: ::windows::core::PWSTR, cchmaxcount: i32) -> i32;
+            fn InternalGetWindowText(hwnd: super::super::Foundation::HWND, pstring: ::windows_core::PWSTR, cchmaxcount: i32) -> i32;
         }
-        ::core::mem::transmute(InternalGetWindowText(hwnd.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pstring)), pstring.len() as _))
+        ::core::mem::transmute(InternalGetWindowText(hwnd.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pstring)), pstring.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -6423,7 +6423,7 @@ pub unsafe fn InternalGetWindowText<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsCharAlphaA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::CHAR>>(ch: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsCharAlphaA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::CHAR>>(ch: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6438,7 +6438,7 @@ pub unsafe fn IsCharAlphaA<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsCharAlphaNumericA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::CHAR>>(ch: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsCharAlphaNumericA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::CHAR>>(ch: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6483,7 +6483,7 @@ pub unsafe fn IsCharAlphaW(ch: u16) -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsCharLowerA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::CHAR>>(ch: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsCharLowerA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::CHAR>>(ch: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6498,7 +6498,7 @@ pub unsafe fn IsCharLowerA<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsCharUpperA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::CHAR>>(ch: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsCharUpperA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::CHAR>>(ch: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6528,7 +6528,7 @@ pub unsafe fn IsCharUpperW(ch: u16) -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsChild<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwndparent: Param0, hwnd: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn IsChild<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndparent: Param0, hwnd: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6543,7 +6543,7 @@ pub unsafe fn IsChild<'a, Param0: ::windows::core::IntoParam<'a, super::super::F
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsDialogMessageA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, lpmsg: *const MSG) -> super::super::Foundation::BOOL {
+pub unsafe fn IsDialogMessageA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, lpmsg: *const MSG) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6558,7 +6558,7 @@ pub unsafe fn IsDialogMessageA<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsDialogMessageW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, lpmsg: *const MSG) -> super::super::Foundation::BOOL {
+pub unsafe fn IsDialogMessageW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, lpmsg: *const MSG) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6573,7 +6573,7 @@ pub unsafe fn IsDialogMessageW<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsGUIThread<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(bconvert: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsGUIThread<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(bconvert: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6588,7 +6588,7 @@ pub unsafe fn IsGUIThread<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsHungAppWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsHungAppWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6603,7 +6603,7 @@ pub unsafe fn IsHungAppWindow<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsIconic<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsIconic<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6618,7 +6618,7 @@ pub unsafe fn IsIconic<'a, Param0: ::windows::core::IntoParam<'a, super::super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsMenu<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsMenu<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6648,7 +6648,7 @@ pub unsafe fn IsProcessDPIAware() -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6663,7 +6663,7 @@ pub unsafe fn IsWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsWindowUnicode<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsWindowUnicode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6678,7 +6678,7 @@ pub unsafe fn IsWindowUnicode<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsWindowVisible<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsWindowVisible<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6708,7 +6708,7 @@ pub unsafe fn IsWow64Message() -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsZoomed<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsZoomed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6740,12 +6740,12 @@ impl ::core::fmt::Debug for KBDLLHOOKSTRUCT {
         f.debug_struct("KBDLLHOOKSTRUCT").field("vkCode", &self.vkCode).field("scanCode", &self.scanCode).field("flags", &self.flags).field("time", &self.time).field("dwExtraInfo", &self.dwExtraInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KBDLLHOOKSTRUCT {
+unsafe impl ::windows_core::Abi for KBDLLHOOKSTRUCT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KBDLLHOOKSTRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KBDLLHOOKSTRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KBDLLHOOKSTRUCT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KBDLLHOOKSTRUCT {}
@@ -6779,7 +6779,7 @@ impl ::core::default::Default for KBDLLHOOKSTRUCT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for KBDLLHOOKSTRUCT_FLAGS {
+unsafe impl ::windows_core::Abi for KBDLLHOOKSTRUCT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for KBDLLHOOKSTRUCT_FLAGS {
@@ -6832,7 +6832,7 @@ pub const KL_NAMELENGTH: u32 = 9u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KillTimer<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, uidevent: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn KillTimer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, uidevent: usize) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -6863,7 +6863,7 @@ impl ::core::default::Default for LAYERED_WINDOW_ATTRIBUTES_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for LAYERED_WINDOW_ATTRIBUTES_FLAGS {
+unsafe impl ::windows_core::Abi for LAYERED_WINDOW_ATTRIBUTES_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for LAYERED_WINDOW_ATTRIBUTES_FLAGS {
@@ -7048,15 +7048,15 @@ pub const LR_COLOR: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadAcceleratorsA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hinstance: Param0, lptablename: Param1) -> ::windows::core::Result<HACCEL> {
+pub unsafe fn LoadAcceleratorsA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hinstance: Param0, lptablename: Param1) -> ::windows_core::Result<HACCEL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadAcceleratorsA(hinstance: super::super::Foundation::HINSTANCE, lptablename: ::windows::core::PCSTR) -> HACCEL;
+            fn LoadAcceleratorsA(hinstance: super::super::Foundation::HINSTANCE, lptablename: ::windows_core::PCSTR) -> HACCEL;
         }
         let result__ = LoadAcceleratorsA(hinstance.into_param().abi(), lptablename.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -7064,15 +7064,15 @@ pub unsafe fn LoadAcceleratorsA<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadAcceleratorsW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hinstance: Param0, lptablename: Param1) -> ::windows::core::Result<HACCEL> {
+pub unsafe fn LoadAcceleratorsW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hinstance: Param0, lptablename: Param1) -> ::windows_core::Result<HACCEL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadAcceleratorsW(hinstance: super::super::Foundation::HINSTANCE, lptablename: ::windows::core::PCWSTR) -> HACCEL;
+            fn LoadAcceleratorsW(hinstance: super::super::Foundation::HINSTANCE, lptablename: ::windows_core::PCWSTR) -> HACCEL;
         }
         let result__ = LoadAcceleratorsW(hinstance.into_param().abi(), lptablename.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -7080,45 +7080,45 @@ pub unsafe fn LoadAcceleratorsW<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadCursorA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hinstance: Param0, lpcursorname: Param1) -> ::windows::core::Result<HCURSOR> {
+pub unsafe fn LoadCursorA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hinstance: Param0, lpcursorname: Param1) -> ::windows_core::Result<HCURSOR> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadCursorA(hinstance: super::super::Foundation::HINSTANCE, lpcursorname: ::windows::core::PCSTR) -> HCURSOR;
+            fn LoadCursorA(hinstance: super::super::Foundation::HINSTANCE, lpcursorname: ::windows_core::PCSTR) -> HCURSOR;
         }
         let result__ = LoadCursorA(hinstance.into_param().abi(), lpcursorname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn LoadCursorFromFileA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpfilename: Param0) -> ::windows::core::Result<HCURSOR> {
+pub unsafe fn LoadCursorFromFileA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpfilename: Param0) -> ::windows_core::Result<HCURSOR> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadCursorFromFileA(lpfilename: ::windows::core::PCSTR) -> HCURSOR;
+            fn LoadCursorFromFileA(lpfilename: ::windows_core::PCSTR) -> HCURSOR;
         }
         let result__ = LoadCursorFromFileA(lpfilename.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn LoadCursorFromFileW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpfilename: Param0) -> ::windows::core::Result<HCURSOR> {
+pub unsafe fn LoadCursorFromFileW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpfilename: Param0) -> ::windows_core::Result<HCURSOR> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadCursorFromFileW(lpfilename: ::windows::core::PCWSTR) -> HCURSOR;
+            fn LoadCursorFromFileW(lpfilename: ::windows_core::PCWSTR) -> HCURSOR;
         }
         let result__ = LoadCursorFromFileW(lpfilename.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -7126,15 +7126,15 @@ pub unsafe fn LoadCursorFromFileW<'a, Param0: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadCursorW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hinstance: Param0, lpcursorname: Param1) -> ::windows::core::Result<HCURSOR> {
+pub unsafe fn LoadCursorW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hinstance: Param0, lpcursorname: Param1) -> ::windows_core::Result<HCURSOR> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadCursorW(hinstance: super::super::Foundation::HINSTANCE, lpcursorname: ::windows::core::PCWSTR) -> HCURSOR;
+            fn LoadCursorW(hinstance: super::super::Foundation::HINSTANCE, lpcursorname: ::windows_core::PCWSTR) -> HCURSOR;
         }
         let result__ = LoadCursorW(hinstance.into_param().abi(), lpcursorname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -7142,15 +7142,15 @@ pub unsafe fn LoadCursorW<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadIconA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hinstance: Param0, lpiconname: Param1) -> ::windows::core::Result<HICON> {
+pub unsafe fn LoadIconA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hinstance: Param0, lpiconname: Param1) -> ::windows_core::Result<HICON> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadIconA(hinstance: super::super::Foundation::HINSTANCE, lpiconname: ::windows::core::PCSTR) -> HICON;
+            fn LoadIconA(hinstance: super::super::Foundation::HINSTANCE, lpiconname: ::windows_core::PCSTR) -> HICON;
         }
         let result__ = LoadIconA(hinstance.into_param().abi(), lpiconname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -7158,15 +7158,15 @@ pub unsafe fn LoadIconA<'a, Param0: ::windows::core::IntoParam<'a, super::super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadIconW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hinstance: Param0, lpiconname: Param1) -> ::windows::core::Result<HICON> {
+pub unsafe fn LoadIconW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hinstance: Param0, lpiconname: Param1) -> ::windows_core::Result<HICON> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadIconW(hinstance: super::super::Foundation::HINSTANCE, lpiconname: ::windows::core::PCWSTR) -> HICON;
+            fn LoadIconW(hinstance: super::super::Foundation::HINSTANCE, lpiconname: ::windows_core::PCWSTR) -> HICON;
         }
         let result__ = LoadIconW(hinstance.into_param().abi(), lpiconname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -7174,15 +7174,15 @@ pub unsafe fn LoadIconW<'a, Param0: ::windows::core::IntoParam<'a, super::super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadImageA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hinst: Param0, name: Param1, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, fuload: IMAGE_FLAGS) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn LoadImageA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hinst: Param0, name: Param1, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, fuload: IMAGE_FLAGS) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadImageA(hinst: super::super::Foundation::HINSTANCE, name: ::windows::core::PCSTR, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, fuload: IMAGE_FLAGS) -> super::super::Foundation::HANDLE;
+            fn LoadImageA(hinst: super::super::Foundation::HINSTANCE, name: ::windows_core::PCSTR, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, fuload: IMAGE_FLAGS) -> super::super::Foundation::HANDLE;
         }
         let result__ = LoadImageA(hinst.into_param().abi(), name.into_param().abi(), ::core::mem::transmute(r#type), ::core::mem::transmute(cx), ::core::mem::transmute(cy), ::core::mem::transmute(fuload));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -7190,15 +7190,15 @@ pub unsafe fn LoadImageA<'a, Param0: ::windows::core::IntoParam<'a, super::super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadImageW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hinst: Param0, name: Param1, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, fuload: IMAGE_FLAGS) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn LoadImageW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hinst: Param0, name: Param1, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, fuload: IMAGE_FLAGS) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadImageW(hinst: super::super::Foundation::HINSTANCE, name: ::windows::core::PCWSTR, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, fuload: IMAGE_FLAGS) -> super::super::Foundation::HANDLE;
+            fn LoadImageW(hinst: super::super::Foundation::HINSTANCE, name: ::windows_core::PCWSTR, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, fuload: IMAGE_FLAGS) -> super::super::Foundation::HANDLE;
         }
         let result__ = LoadImageW(hinst.into_param().abi(), name.into_param().abi(), ::core::mem::transmute(r#type), ::core::mem::transmute(cx), ::core::mem::transmute(cy), ::core::mem::transmute(fuload));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -7206,22 +7206,22 @@ pub unsafe fn LoadImageW<'a, Param0: ::windows::core::IntoParam<'a, super::super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadMenuA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hinstance: Param0, lpmenuname: Param1) -> ::windows::core::Result<HMENU> {
+pub unsafe fn LoadMenuA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hinstance: Param0, lpmenuname: Param1) -> ::windows_core::Result<HMENU> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadMenuA(hinstance: super::super::Foundation::HINSTANCE, lpmenuname: ::windows::core::PCSTR) -> HMENU;
+            fn LoadMenuA(hinstance: super::super::Foundation::HINSTANCE, lpmenuname: ::windows_core::PCSTR) -> HMENU;
         }
         let result__ = LoadMenuA(hinstance.into_param().abi(), lpmenuname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn LoadMenuIndirectA(lpmenutemplate: *const ::core::ffi::c_void) -> ::windows::core::Result<HMENU> {
+pub unsafe fn LoadMenuIndirectA(lpmenutemplate: *const ::core::ffi::c_void) -> ::windows_core::Result<HMENU> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -7229,14 +7229,14 @@ pub unsafe fn LoadMenuIndirectA(lpmenutemplate: *const ::core::ffi::c_void) -> :
             fn LoadMenuIndirectA(lpmenutemplate: *const ::core::ffi::c_void) -> HMENU;
         }
         let result__ = LoadMenuIndirectA(::core::mem::transmute(lpmenutemplate));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn LoadMenuIndirectW(lpmenutemplate: *const ::core::ffi::c_void) -> ::windows::core::Result<HMENU> {
+pub unsafe fn LoadMenuIndirectW(lpmenutemplate: *const ::core::ffi::c_void) -> ::windows_core::Result<HMENU> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -7244,7 +7244,7 @@ pub unsafe fn LoadMenuIndirectW(lpmenutemplate: *const ::core::ffi::c_void) -> :
             fn LoadMenuIndirectW(lpmenutemplate: *const ::core::ffi::c_void) -> HMENU;
         }
         let result__ = LoadMenuIndirectW(::core::mem::transmute(lpmenutemplate));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -7252,15 +7252,15 @@ pub unsafe fn LoadMenuIndirectW(lpmenutemplate: *const ::core::ffi::c_void) -> :
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadMenuW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hinstance: Param0, lpmenuname: Param1) -> ::windows::core::Result<HMENU> {
+pub unsafe fn LoadMenuW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hinstance: Param0, lpmenuname: Param1) -> ::windows_core::Result<HMENU> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadMenuW(hinstance: super::super::Foundation::HINSTANCE, lpmenuname: ::windows::core::PCWSTR) -> HMENU;
+            fn LoadMenuW(hinstance: super::super::Foundation::HINSTANCE, lpmenuname: ::windows_core::PCWSTR) -> HMENU;
         }
         let result__ = LoadMenuW(hinstance.into_param().abi(), lpmenuname.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -7268,12 +7268,12 @@ pub unsafe fn LoadMenuW<'a, Param0: ::windows::core::IntoParam<'a, super::super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadStringA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hinstance: Param0, uid: u32, lpbuffer: ::windows::core::PSTR, cchbuffermax: i32) -> i32 {
+pub unsafe fn LoadStringA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hinstance: Param0, uid: u32, lpbuffer: ::windows_core::PSTR, cchbuffermax: i32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadStringA(hinstance: super::super::Foundation::HINSTANCE, uid: u32, lpbuffer: ::windows::core::PSTR, cchbuffermax: i32) -> i32;
+            fn LoadStringA(hinstance: super::super::Foundation::HINSTANCE, uid: u32, lpbuffer: ::windows_core::PSTR, cchbuffermax: i32) -> i32;
         }
         ::core::mem::transmute(LoadStringA(hinstance.into_param().abi(), ::core::mem::transmute(uid), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(cchbuffermax)))
     }
@@ -7283,12 +7283,12 @@ pub unsafe fn LoadStringA<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadStringW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hinstance: Param0, uid: u32, lpbuffer: ::windows::core::PWSTR, cchbuffermax: i32) -> i32 {
+pub unsafe fn LoadStringW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(hinstance: Param0, uid: u32, lpbuffer: ::windows_core::PWSTR, cchbuffermax: i32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadStringW(hinstance: super::super::Foundation::HINSTANCE, uid: u32, lpbuffer: ::windows::core::PWSTR, cchbuffermax: i32) -> i32;
+            fn LoadStringW(hinstance: super::super::Foundation::HINSTANCE, uid: u32, lpbuffer: ::windows_core::PWSTR, cchbuffermax: i32) -> i32;
         }
         ::core::mem::transmute(LoadStringW(hinstance.into_param().abi(), ::core::mem::transmute(uid), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(cchbuffermax)))
     }
@@ -7313,7 +7313,7 @@ pub unsafe fn LockSetForegroundWindow(ulockcode: FOREGROUND_WINDOW_LOCK_CODE) ->
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LogicalToPhysicalPoint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn LogicalToPhysicalPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -7328,7 +7328,7 @@ pub unsafe fn LogicalToPhysicalPoint<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LookupIconIdFromDirectory<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(presbits: *const u8, ficon: Param1) -> i32 {
+pub unsafe fn LookupIconIdFromDirectory<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(presbits: *const u8, ficon: Param1) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -7343,7 +7343,7 @@ pub unsafe fn LookupIconIdFromDirectory<'a, Param1: ::windows::core::IntoParam<'
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LookupIconIdFromDirectoryEx<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(presbits: *const u8, ficon: Param1, cxdesired: i32, cydesired: i32, flags: IMAGE_FLAGS) -> i32 {
+pub unsafe fn LookupIconIdFromDirectoryEx<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(presbits: *const u8, ficon: Param1, cxdesired: i32, cydesired: i32, flags: IMAGE_FLAGS) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -7387,8 +7387,8 @@ pub const MA_NOACTIVATEANDEAT: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct MDICREATESTRUCTA {
-    pub szClass: ::windows::core::PCSTR,
-    pub szTitle: ::windows::core::PCSTR,
+    pub szClass: ::windows_core::PCSTR,
+    pub szTitle: ::windows_core::PCSTR,
     pub hOwner: super::super::Foundation::HANDLE,
     pub x: i32,
     pub y: i32,
@@ -7412,13 +7412,13 @@ impl ::core::fmt::Debug for MDICREATESTRUCTA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MDICREATESTRUCTA {
+unsafe impl ::windows_core::Abi for MDICREATESTRUCTA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MDICREATESTRUCTA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MDICREATESTRUCTA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MDICREATESTRUCTA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7433,8 +7433,8 @@ impl ::core::default::Default for MDICREATESTRUCTA {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct MDICREATESTRUCTW {
-    pub szClass: ::windows::core::PCWSTR,
-    pub szTitle: ::windows::core::PCWSTR,
+    pub szClass: ::windows_core::PCWSTR,
+    pub szTitle: ::windows_core::PCWSTR,
     pub hOwner: super::super::Foundation::HANDLE,
     pub x: i32,
     pub y: i32,
@@ -7458,13 +7458,13 @@ impl ::core::fmt::Debug for MDICREATESTRUCTW {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MDICREATESTRUCTW {
+unsafe impl ::windows_core::Abi for MDICREATESTRUCTW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MDICREATESTRUCTW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MDICREATESTRUCTW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MDICREATESTRUCTW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7498,13 +7498,13 @@ impl ::core::fmt::Debug for MDINEXTMENU {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MDINEXTMENU {
+unsafe impl ::windows_core::Abi for MDINEXTMENU {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MDINEXTMENU {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MDINEXTMENU>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MDINEXTMENU>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7542,13 +7542,13 @@ impl ::core::fmt::Debug for MENUBARINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MENUBARINFO {
+unsafe impl ::windows_core::Abi for MENUBARINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MENUBARINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUBARINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUBARINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7579,12 +7579,12 @@ impl ::core::fmt::Debug for MENUGETOBJECTINFO {
         f.debug_struct("MENUGETOBJECTINFO").field("dwFlags", &self.dwFlags).field("uPos", &self.uPos).field("hmenu", &self.hmenu).field("riid", &self.riid).field("pvObj", &self.pvObj).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MENUGETOBJECTINFO {
+unsafe impl ::windows_core::Abi for MENUGETOBJECTINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MENUGETOBJECTINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUGETOBJECTINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUGETOBJECTINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MENUGETOBJECTINFO {}
@@ -7612,7 +7612,7 @@ impl ::core::default::Default for MENUGETOBJECTINFO_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MENUGETOBJECTINFO_FLAGS {
+unsafe impl ::windows_core::Abi for MENUGETOBJECTINFO_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MENUGETOBJECTINFO_FLAGS {
@@ -7647,13 +7647,13 @@ impl ::core::fmt::Debug for MENUINFO {
     }
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
-unsafe impl ::windows::core::Abi for MENUINFO {
+unsafe impl ::windows_core::Abi for MENUINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for MENUINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
@@ -7691,7 +7691,7 @@ impl ::core::default::Default for MENUINFO_MASK {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MENUINFO_MASK {
+unsafe impl ::windows_core::Abi for MENUINFO_MASK {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MENUINFO_MASK {
@@ -7754,7 +7754,7 @@ impl ::core::default::Default for MENUINFO_STYLE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MENUINFO_STYLE {
+unsafe impl ::windows_core::Abi for MENUINFO_STYLE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MENUINFO_STYLE {
@@ -7803,7 +7803,7 @@ pub struct MENUITEMINFOA {
     pub hbmpChecked: super::super::Graphics::Gdi::HBITMAP,
     pub hbmpUnchecked: super::super::Graphics::Gdi::HBITMAP,
     pub dwItemData: usize,
-    pub dwTypeData: ::windows::core::PSTR,
+    pub dwTypeData: ::windows_core::PSTR,
     pub cch: u32,
     pub hbmpItem: super::super::Graphics::Gdi::HBITMAP,
 }
@@ -7822,13 +7822,13 @@ impl ::core::fmt::Debug for MENUITEMINFOA {
     }
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
-unsafe impl ::windows::core::Abi for MENUITEMINFOA {
+unsafe impl ::windows_core::Abi for MENUITEMINFOA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for MENUITEMINFOA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUITEMINFOA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUITEMINFOA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
@@ -7852,7 +7852,7 @@ pub struct MENUITEMINFOW {
     pub hbmpChecked: super::super::Graphics::Gdi::HBITMAP,
     pub hbmpUnchecked: super::super::Graphics::Gdi::HBITMAP,
     pub dwItemData: usize,
-    pub dwTypeData: ::windows::core::PWSTR,
+    pub dwTypeData: ::windows_core::PWSTR,
     pub cch: u32,
     pub hbmpItem: super::super::Graphics::Gdi::HBITMAP,
 }
@@ -7871,13 +7871,13 @@ impl ::core::fmt::Debug for MENUITEMINFOW {
     }
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
-unsafe impl ::windows::core::Abi for MENUITEMINFOW {
+unsafe impl ::windows_core::Abi for MENUITEMINFOW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for MENUITEMINFOW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUITEMINFOW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUITEMINFOW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
@@ -7906,12 +7906,12 @@ impl ::core::fmt::Debug for MENUITEMTEMPLATE {
         f.debug_struct("MENUITEMTEMPLATE").field("mtOption", &self.mtOption).field("mtID", &self.mtID).field("mtString", &self.mtString).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MENUITEMTEMPLATE {
+unsafe impl ::windows_core::Abi for MENUITEMTEMPLATE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MENUITEMTEMPLATE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUITEMTEMPLATE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUITEMTEMPLATE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MENUITEMTEMPLATE {}
@@ -7937,12 +7937,12 @@ impl ::core::fmt::Debug for MENUITEMTEMPLATEHEADER {
         f.debug_struct("MENUITEMTEMPLATEHEADER").field("versionNumber", &self.versionNumber).field("offset", &self.offset).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MENUITEMTEMPLATEHEADER {
+unsafe impl ::windows_core::Abi for MENUITEMTEMPLATEHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MENUITEMTEMPLATEHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUITEMTEMPLATEHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MENUITEMTEMPLATEHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MENUITEMTEMPLATEHEADER {}
@@ -8022,7 +8022,7 @@ impl ::core::default::Default for MENU_ITEM_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MENU_ITEM_FLAGS {
+unsafe impl ::windows_core::Abi for MENU_ITEM_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MENU_ITEM_FLAGS {
@@ -8091,7 +8091,7 @@ impl ::core::default::Default for MENU_ITEM_MASK {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MENU_ITEM_MASK {
+unsafe impl ::windows_core::Abi for MENU_ITEM_MASK {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MENU_ITEM_MASK {
@@ -8158,7 +8158,7 @@ impl ::core::default::Default for MENU_ITEM_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MENU_ITEM_STATE {
+unsafe impl ::windows_core::Abi for MENU_ITEM_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MENU_ITEM_STATE {
@@ -8227,7 +8227,7 @@ impl ::core::default::Default for MENU_ITEM_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MENU_ITEM_TYPE {
+unsafe impl ::windows_core::Abi for MENU_ITEM_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MENU_ITEM_TYPE {
@@ -8304,7 +8304,7 @@ impl ::core::default::Default for MESSAGEBOX_RESULT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MESSAGEBOX_RESULT {
+unsafe impl ::windows_core::Abi for MESSAGEBOX_RESULT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MESSAGEBOX_RESULT {
@@ -8401,7 +8401,7 @@ impl ::core::default::Default for MESSAGEBOX_STYLE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MESSAGEBOX_STYLE {
+unsafe impl ::windows_core::Abi for MESSAGEBOX_STYLE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MESSAGEBOX_STYLE {
@@ -8455,12 +8455,12 @@ impl ::core::fmt::Debug for MESSAGE_RESOURCE_BLOCK {
         f.debug_struct("MESSAGE_RESOURCE_BLOCK").field("LowId", &self.LowId).field("HighId", &self.HighId).field("OffsetToEntries", &self.OffsetToEntries).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MESSAGE_RESOURCE_BLOCK {
+unsafe impl ::windows_core::Abi for MESSAGE_RESOURCE_BLOCK {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MESSAGE_RESOURCE_BLOCK {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MESSAGE_RESOURCE_BLOCK>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MESSAGE_RESOURCE_BLOCK>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MESSAGE_RESOURCE_BLOCK {}
@@ -8486,12 +8486,12 @@ impl ::core::fmt::Debug for MESSAGE_RESOURCE_DATA {
         f.debug_struct("MESSAGE_RESOURCE_DATA").field("NumberOfBlocks", &self.NumberOfBlocks).field("Blocks", &self.Blocks).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MESSAGE_RESOURCE_DATA {
+unsafe impl ::windows_core::Abi for MESSAGE_RESOURCE_DATA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MESSAGE_RESOURCE_DATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MESSAGE_RESOURCE_DATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MESSAGE_RESOURCE_DATA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MESSAGE_RESOURCE_DATA {}
@@ -8518,12 +8518,12 @@ impl ::core::fmt::Debug for MESSAGE_RESOURCE_ENTRY {
         f.debug_struct("MESSAGE_RESOURCE_ENTRY").field("Length", &self.Length).field("Flags", &self.Flags).field("Text", &self.Text).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MESSAGE_RESOURCE_ENTRY {
+unsafe impl ::windows_core::Abi for MESSAGE_RESOURCE_ENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MESSAGE_RESOURCE_ENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MESSAGE_RESOURCE_ENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MESSAGE_RESOURCE_ENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MESSAGE_RESOURCE_ENTRY {}
@@ -8554,12 +8554,12 @@ impl ::core::fmt::Debug for MINIMIZEDMETRICS {
         f.debug_struct("MINIMIZEDMETRICS").field("cbSize", &self.cbSize).field("iWidth", &self.iWidth).field("iHorzGap", &self.iHorzGap).field("iVertGap", &self.iVertGap).field("iArrange", &self.iArrange).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MINIMIZEDMETRICS {
+unsafe impl ::windows_core::Abi for MINIMIZEDMETRICS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MINIMIZEDMETRICS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MINIMIZEDMETRICS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MINIMIZEDMETRICS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MINIMIZEDMETRICS {}
@@ -8591,7 +8591,7 @@ impl ::core::default::Default for MINIMIZEDMETRICS_ARRANGE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MINIMIZEDMETRICS_ARRANGE {
+unsafe impl ::windows_core::Abi for MINIMIZEDMETRICS_ARRANGE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MINIMIZEDMETRICS_ARRANGE {
@@ -8626,13 +8626,13 @@ impl ::core::fmt::Debug for MINMAXINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MINMAXINFO {
+unsafe impl ::windows_core::Abi for MINMAXINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MINMAXINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MINMAXINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MINMAXINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8729,13 +8729,13 @@ impl ::core::fmt::Debug for MOUSEHOOKSTRUCT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MOUSEHOOKSTRUCT {
+unsafe impl ::windows_core::Abi for MOUSEHOOKSTRUCT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MOUSEHOOKSTRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MOUSEHOOKSTRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MOUSEHOOKSTRUCT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8768,13 +8768,13 @@ impl ::core::fmt::Debug for MOUSEHOOKSTRUCTEX {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MOUSEHOOKSTRUCTEX {
+unsafe impl ::windows_core::Abi for MOUSEHOOKSTRUCTEX {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MOUSEHOOKSTRUCTEX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MOUSEHOOKSTRUCTEX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MOUSEHOOKSTRUCTEX>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8804,7 +8804,7 @@ impl ::core::default::Default for MOUSEHOOKSTRUCTEX_MOUSE_DATA {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MOUSEHOOKSTRUCTEX_MOUSE_DATA {
+unsafe impl ::windows_core::Abi for MOUSEHOOKSTRUCTEX_MOUSE_DATA {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MOUSEHOOKSTRUCTEX_MOUSE_DATA {
@@ -8872,13 +8872,13 @@ impl ::core::fmt::Debug for MSG {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MSG {
+unsafe impl ::windows_core::Abi for MSG {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MSG {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSG>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSG>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8899,10 +8899,10 @@ pub struct MSGBOXPARAMSA {
     pub cbSize: u32,
     pub hwndOwner: super::super::Foundation::HWND,
     pub hInstance: super::super::Foundation::HINSTANCE,
-    pub lpszText: ::windows::core::PCSTR,
-    pub lpszCaption: ::windows::core::PCSTR,
+    pub lpszText: ::windows_core::PCSTR,
+    pub lpszCaption: ::windows_core::PCSTR,
     pub dwStyle: MESSAGEBOX_STYLE,
-    pub lpszIcon: ::windows::core::PCSTR,
+    pub lpszIcon: ::windows_core::PCSTR,
     pub dwContextHelpId: usize,
     pub lpfnMsgBoxCallback: MSGBOXCALLBACK,
     pub dwLanguageId: u32,
@@ -8922,13 +8922,13 @@ impl ::core::fmt::Debug for MSGBOXPARAMSA {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell"))]
-unsafe impl ::windows::core::Abi for MSGBOXPARAMSA {
+unsafe impl ::windows_core::Abi for MSGBOXPARAMSA {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell"))]
 impl ::core::cmp::PartialEq for MSGBOXPARAMSA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSGBOXPARAMSA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSGBOXPARAMSA>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell"))]
@@ -8946,10 +8946,10 @@ pub struct MSGBOXPARAMSW {
     pub cbSize: u32,
     pub hwndOwner: super::super::Foundation::HWND,
     pub hInstance: super::super::Foundation::HINSTANCE,
-    pub lpszText: ::windows::core::PCWSTR,
-    pub lpszCaption: ::windows::core::PCWSTR,
+    pub lpszText: ::windows_core::PCWSTR,
+    pub lpszCaption: ::windows_core::PCWSTR,
     pub dwStyle: MESSAGEBOX_STYLE,
-    pub lpszIcon: ::windows::core::PCWSTR,
+    pub lpszIcon: ::windows_core::PCWSTR,
     pub dwContextHelpId: usize,
     pub lpfnMsgBoxCallback: MSGBOXCALLBACK,
     pub dwLanguageId: u32,
@@ -8969,13 +8969,13 @@ impl ::core::fmt::Debug for MSGBOXPARAMSW {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell"))]
-unsafe impl ::windows::core::Abi for MSGBOXPARAMSW {
+unsafe impl ::windows_core::Abi for MSGBOXPARAMSW {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell"))]
 impl ::core::cmp::PartialEq for MSGBOXPARAMSW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSGBOXPARAMSW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSGBOXPARAMSW>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell"))]
@@ -9009,7 +9009,7 @@ impl ::core::default::Default for MSGFLTINFO_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MSGFLTINFO_STATUS {
+unsafe impl ::windows_core::Abi for MSGFLTINFO_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MSGFLTINFO_STATUS {
@@ -9054,7 +9054,7 @@ impl ::core::default::Default for MSG_WAIT_FOR_MULTIPLE_OBJECTS_EX_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MSG_WAIT_FOR_MULTIPLE_OBJECTS_EX_FLAGS {
+unsafe impl ::windows_core::Abi for MSG_WAIT_FOR_MULTIPLE_OBJECTS_EX_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MSG_WAIT_FOR_MULTIPLE_OBJECTS_EX_FLAGS {
@@ -9115,13 +9115,13 @@ impl ::core::fmt::Debug for MSLLHOOKSTRUCT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MSLLHOOKSTRUCT {
+unsafe impl ::windows_core::Abi for MSLLHOOKSTRUCT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MSLLHOOKSTRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSLLHOOKSTRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MSLLHOOKSTRUCT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9135,7 +9135,7 @@ impl ::core::default::Default for MSLLHOOKSTRUCT {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MapDialogRect<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, lprect: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn MapDialogRect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, lprect: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -9150,7 +9150,7 @@ pub unsafe fn MapDialogRect<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MenuItemFromPoint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HMENU>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::POINT>>(hwnd: Param0, hmenu: Param1, ptscreen: Param2) -> i32 {
+pub unsafe fn MenuItemFromPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::POINT>>(hwnd: Param0, hmenu: Param1, ptscreen: Param2) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -9165,12 +9165,12 @@ pub unsafe fn MenuItemFromPoint<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MessageBoxA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwnd: Param0, lptext: Param1, lpcaption: Param2, utype: MESSAGEBOX_STYLE) -> MESSAGEBOX_RESULT {
+pub unsafe fn MessageBoxA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, lptext: Param1, lpcaption: Param2, utype: MESSAGEBOX_STYLE) -> MESSAGEBOX_RESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MessageBoxA(hwnd: super::super::Foundation::HWND, lptext: ::windows::core::PCSTR, lpcaption: ::windows::core::PCSTR, utype: MESSAGEBOX_STYLE) -> MESSAGEBOX_RESULT;
+            fn MessageBoxA(hwnd: super::super::Foundation::HWND, lptext: ::windows_core::PCSTR, lpcaption: ::windows_core::PCSTR, utype: MESSAGEBOX_STYLE) -> MESSAGEBOX_RESULT;
         }
         ::core::mem::transmute(MessageBoxA(hwnd.into_param().abi(), lptext.into_param().abi(), lpcaption.into_param().abi(), ::core::mem::transmute(utype)))
     }
@@ -9180,12 +9180,12 @@ pub unsafe fn MessageBoxA<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MessageBoxExA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwnd: Param0, lptext: Param1, lpcaption: Param2, utype: MESSAGEBOX_STYLE, wlanguageid: u16) -> MESSAGEBOX_RESULT {
+pub unsafe fn MessageBoxExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, lptext: Param1, lpcaption: Param2, utype: MESSAGEBOX_STYLE, wlanguageid: u16) -> MESSAGEBOX_RESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MessageBoxExA(hwnd: super::super::Foundation::HWND, lptext: ::windows::core::PCSTR, lpcaption: ::windows::core::PCSTR, utype: MESSAGEBOX_STYLE, wlanguageid: u16) -> MESSAGEBOX_RESULT;
+            fn MessageBoxExA(hwnd: super::super::Foundation::HWND, lptext: ::windows_core::PCSTR, lpcaption: ::windows_core::PCSTR, utype: MESSAGEBOX_STYLE, wlanguageid: u16) -> MESSAGEBOX_RESULT;
         }
         ::core::mem::transmute(MessageBoxExA(hwnd.into_param().abi(), lptext.into_param().abi(), lpcaption.into_param().abi(), ::core::mem::transmute(utype), ::core::mem::transmute(wlanguageid)))
     }
@@ -9195,12 +9195,12 @@ pub unsafe fn MessageBoxExA<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MessageBoxExW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwnd: Param0, lptext: Param1, lpcaption: Param2, utype: MESSAGEBOX_STYLE, wlanguageid: u16) -> MESSAGEBOX_RESULT {
+pub unsafe fn MessageBoxExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, lptext: Param1, lpcaption: Param2, utype: MESSAGEBOX_STYLE, wlanguageid: u16) -> MESSAGEBOX_RESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MessageBoxExW(hwnd: super::super::Foundation::HWND, lptext: ::windows::core::PCWSTR, lpcaption: ::windows::core::PCWSTR, utype: MESSAGEBOX_STYLE, wlanguageid: u16) -> MESSAGEBOX_RESULT;
+            fn MessageBoxExW(hwnd: super::super::Foundation::HWND, lptext: ::windows_core::PCWSTR, lpcaption: ::windows_core::PCWSTR, utype: MESSAGEBOX_STYLE, wlanguageid: u16) -> MESSAGEBOX_RESULT;
         }
         ::core::mem::transmute(MessageBoxExW(hwnd.into_param().abi(), lptext.into_param().abi(), lpcaption.into_param().abi(), ::core::mem::transmute(utype), ::core::mem::transmute(wlanguageid)))
     }
@@ -9240,12 +9240,12 @@ pub unsafe fn MessageBoxIndirectW(lpmbp: *const MSGBOXPARAMSW) -> MESSAGEBOX_RES
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MessageBoxW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwnd: Param0, lptext: Param1, lpcaption: Param2, utype: MESSAGEBOX_STYLE) -> MESSAGEBOX_RESULT {
+pub unsafe fn MessageBoxW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, lptext: Param1, lpcaption: Param2, utype: MESSAGEBOX_STYLE) -> MESSAGEBOX_RESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MessageBoxW(hwnd: super::super::Foundation::HWND, lptext: ::windows::core::PCWSTR, lpcaption: ::windows::core::PCWSTR, utype: MESSAGEBOX_STYLE) -> MESSAGEBOX_RESULT;
+            fn MessageBoxW(hwnd: super::super::Foundation::HWND, lptext: ::windows_core::PCWSTR, lpcaption: ::windows_core::PCWSTR, utype: MESSAGEBOX_STYLE) -> MESSAGEBOX_RESULT;
         }
         ::core::mem::transmute(MessageBoxW(hwnd.into_param().abi(), lptext.into_param().abi(), lpcaption.into_param().abi(), ::core::mem::transmute(utype)))
     }
@@ -9255,12 +9255,12 @@ pub unsafe fn MessageBoxW<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ModifyMenuA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hmnu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: Param4) -> super::super::Foundation::BOOL {
+pub unsafe fn ModifyMenuA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hmnu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: Param4) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ModifyMenuA(hmnu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn ModifyMenuA(hmnu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(ModifyMenuA(hmnu.into_param().abi(), ::core::mem::transmute(uposition), ::core::mem::transmute(uflags), ::core::mem::transmute(uidnewitem), lpnewitem.into_param().abi()))
     }
@@ -9270,12 +9270,12 @@ pub unsafe fn ModifyMenuA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Par
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ModifyMenuW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hmnu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: Param4) -> super::super::Foundation::BOOL {
+pub unsafe fn ModifyMenuW<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmnu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: Param4) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ModifyMenuW(hmnu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn ModifyMenuW(hmnu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(ModifyMenuW(hmnu.into_param().abi(), ::core::mem::transmute(uposition), ::core::mem::transmute(uflags), ::core::mem::transmute(uidnewitem), lpnewitem.into_param().abi()))
     }
@@ -9285,7 +9285,7 @@ pub unsafe fn ModifyMenuW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Par
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MoveWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param5: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, x: i32, y: i32, nwidth: i32, nheight: i32, brepaint: Param5) -> super::super::Foundation::BOOL {
+pub unsafe fn MoveWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, x: i32, y: i32, nwidth: i32, nheight: i32, brepaint: Param5) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -9299,12 +9299,12 @@ pub unsafe fn MoveWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmCreateConfig<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(platformversion: MrmPlatformVersion, defaultqualifiers: Param1, outputxmlfile: Param2) -> ::windows::core::Result<()> {
+pub unsafe fn MrmCreateConfig<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(platformversion: MrmPlatformVersion, defaultqualifiers: Param1, outputxmlfile: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmCreateConfig(platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, outputxmlfile: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn MrmCreateConfig(platformversion: MrmPlatformVersion, defaultqualifiers: ::windows_core::PCWSTR, outputxmlfile: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         MrmCreateConfig(::core::mem::transmute(platformversion), defaultqualifiers.into_param().abi(), outputxmlfile.into_param().abi()).ok()
     }
@@ -9313,12 +9313,12 @@ pub unsafe fn MrmCreateConfig<'a, Param1: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmCreateConfigInMemory<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(platformversion: MrmPlatformVersion, defaultqualifiers: Param1, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn MrmCreateConfigInMemory<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(platformversion: MrmPlatformVersion, defaultqualifiers: Param1, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmCreateConfigInMemory(platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows::core::HRESULT;
+            fn MrmCreateConfigInMemory(platformversion: MrmPlatformVersion, defaultqualifiers: ::windows_core::PCWSTR, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows_core::HRESULT;
         }
         MrmCreateConfigInMemory(::core::mem::transmute(platformversion), defaultqualifiers.into_param().abi(), ::core::mem::transmute(outputxmldata), ::core::mem::transmute(outputxmlsize)).ok()
     }
@@ -9327,12 +9327,12 @@ pub unsafe fn MrmCreateConfigInMemory<'a, Param1: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmCreateResourceFile<'a, Param0: ::windows::core::IntoParam<'a, MrmResourceIndexerHandle>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(indexer: Param0, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, outputdirectory: Param3) -> ::windows::core::Result<()> {
+pub unsafe fn MrmCreateResourceFile<'a, Param0: ::windows_core::IntoParam<'a, MrmResourceIndexerHandle>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(indexer: Param0, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, outputdirectory: Param3) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmCreateResourceFile(indexer: MrmResourceIndexerHandle, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, outputdirectory: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn MrmCreateResourceFile(indexer: MrmResourceIndexerHandle, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, outputdirectory: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         MrmCreateResourceFile(indexer.into_param().abi(), ::core::mem::transmute(packagingmode), ::core::mem::transmute(packagingoptions), outputdirectory.into_param().abi()).ok()
     }
@@ -9341,12 +9341,12 @@ pub unsafe fn MrmCreateResourceFile<'a, Param0: ::windows::core::IntoParam<'a, M
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmCreateResourceFileInMemory<'a, Param0: ::windows::core::IntoParam<'a, MrmResourceIndexerHandle>>(indexer: Param0, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, outputpridata: *mut *mut u8, outputprisize: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn MrmCreateResourceFileInMemory<'a, Param0: ::windows_core::IntoParam<'a, MrmResourceIndexerHandle>>(indexer: Param0, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, outputpridata: *mut *mut u8, outputprisize: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmCreateResourceFileInMemory(indexer: MrmResourceIndexerHandle, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, outputpridata: *mut *mut u8, outputprisize: *mut u32) -> ::windows::core::HRESULT;
+            fn MrmCreateResourceFileInMemory(indexer: MrmResourceIndexerHandle, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, outputpridata: *mut *mut u8, outputprisize: *mut u32) -> ::windows_core::HRESULT;
         }
         MrmCreateResourceFileInMemory(indexer.into_param().abi(), ::core::mem::transmute(packagingmode), ::core::mem::transmute(packagingoptions), ::core::mem::transmute(outputpridata), ::core::mem::transmute(outputprisize)).ok()
     }
@@ -9355,12 +9355,12 @@ pub unsafe fn MrmCreateResourceFileInMemory<'a, Param0: ::windows::core::IntoPar
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmCreateResourceFileWithChecksum<'a, Param0: ::windows::core::IntoParam<'a, MrmResourceIndexerHandle>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(indexer: Param0, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, checksum: u32, outputdirectory: Param4) -> ::windows::core::Result<()> {
+pub unsafe fn MrmCreateResourceFileWithChecksum<'a, Param0: ::windows_core::IntoParam<'a, MrmResourceIndexerHandle>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(indexer: Param0, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, checksum: u32, outputdirectory: Param4) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmCreateResourceFileWithChecksum(indexer: MrmResourceIndexerHandle, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, checksum: u32, outputdirectory: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn MrmCreateResourceFileWithChecksum(indexer: MrmResourceIndexerHandle, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, checksum: u32, outputdirectory: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         MrmCreateResourceFileWithChecksum(indexer.into_param().abi(), ::core::mem::transmute(packagingmode), ::core::mem::transmute(packagingoptions), ::core::mem::transmute(checksum), outputdirectory.into_param().abi()).ok()
     }
@@ -9369,12 +9369,12 @@ pub unsafe fn MrmCreateResourceFileWithChecksum<'a, Param0: ::windows::core::Int
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmCreateResourceIndexer<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(packagefamilyname: Param0, projectroot: Param1, platformversion: MrmPlatformVersion, defaultqualifiers: Param3, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::Result<()> {
+pub unsafe fn MrmCreateResourceIndexer<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(packagefamilyname: Param0, projectroot: Param1, platformversion: MrmPlatformVersion, defaultqualifiers: Param3, indexer: *mut MrmResourceIndexerHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmCreateResourceIndexer(packagefamilyname: ::windows::core::PCWSTR, projectroot: ::windows::core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
+            fn MrmCreateResourceIndexer(packagefamilyname: ::windows_core::PCWSTR, projectroot: ::windows_core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows_core::PCWSTR, indexer: *mut MrmResourceIndexerHandle) -> ::windows_core::HRESULT;
         }
         MrmCreateResourceIndexer(packagefamilyname.into_param().abi(), projectroot.into_param().abi(), ::core::mem::transmute(platformversion), defaultqualifiers.into_param().abi(), ::core::mem::transmute(indexer)).ok()
     }
@@ -9383,12 +9383,12 @@ pub unsafe fn MrmCreateResourceIndexer<'a, Param0: ::windows::core::IntoParam<'a
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmCreateResourceIndexerFromPreviousPriData<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(projectroot: Param0, platformversion: MrmPlatformVersion, defaultqualifiers: Param2, pridata: *const u8, prisize: u32, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::Result<()> {
+pub unsafe fn MrmCreateResourceIndexerFromPreviousPriData<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(projectroot: Param0, platformversion: MrmPlatformVersion, defaultqualifiers: Param2, pridata: *const u8, prisize: u32, indexer: *mut MrmResourceIndexerHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmCreateResourceIndexerFromPreviousPriData(projectroot: ::windows::core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, pridata: *const u8, prisize: u32, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
+            fn MrmCreateResourceIndexerFromPreviousPriData(projectroot: ::windows_core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows_core::PCWSTR, pridata: *const u8, prisize: u32, indexer: *mut MrmResourceIndexerHandle) -> ::windows_core::HRESULT;
         }
         MrmCreateResourceIndexerFromPreviousPriData(projectroot.into_param().abi(), ::core::mem::transmute(platformversion), defaultqualifiers.into_param().abi(), ::core::mem::transmute(pridata), ::core::mem::transmute(prisize), ::core::mem::transmute(indexer)).ok()
     }
@@ -9397,12 +9397,12 @@ pub unsafe fn MrmCreateResourceIndexerFromPreviousPriData<'a, Param0: ::windows:
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmCreateResourceIndexerFromPreviousPriFile<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(projectroot: Param0, platformversion: MrmPlatformVersion, defaultqualifiers: Param2, prifile: Param3, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::Result<()> {
+pub unsafe fn MrmCreateResourceIndexerFromPreviousPriFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(projectroot: Param0, platformversion: MrmPlatformVersion, defaultqualifiers: Param2, prifile: Param3, indexer: *mut MrmResourceIndexerHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmCreateResourceIndexerFromPreviousPriFile(projectroot: ::windows::core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, prifile: ::windows::core::PCWSTR, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
+            fn MrmCreateResourceIndexerFromPreviousPriFile(projectroot: ::windows_core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows_core::PCWSTR, prifile: ::windows_core::PCWSTR, indexer: *mut MrmResourceIndexerHandle) -> ::windows_core::HRESULT;
         }
         MrmCreateResourceIndexerFromPreviousPriFile(projectroot.into_param().abi(), ::core::mem::transmute(platformversion), defaultqualifiers.into_param().abi(), prifile.into_param().abi(), ::core::mem::transmute(indexer)).ok()
     }
@@ -9411,12 +9411,12 @@ pub unsafe fn MrmCreateResourceIndexerFromPreviousPriFile<'a, Param0: ::windows:
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmCreateResourceIndexerFromPreviousSchemaData<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(projectroot: Param0, platformversion: MrmPlatformVersion, defaultqualifiers: Param2, schemaxmldata: *const u8, schemaxmlsize: u32, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::Result<()> {
+pub unsafe fn MrmCreateResourceIndexerFromPreviousSchemaData<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(projectroot: Param0, platformversion: MrmPlatformVersion, defaultqualifiers: Param2, schemaxmldata: *const u8, schemaxmlsize: u32, indexer: *mut MrmResourceIndexerHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmCreateResourceIndexerFromPreviousSchemaData(projectroot: ::windows::core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, schemaxmldata: *const u8, schemaxmlsize: u32, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
+            fn MrmCreateResourceIndexerFromPreviousSchemaData(projectroot: ::windows_core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows_core::PCWSTR, schemaxmldata: *const u8, schemaxmlsize: u32, indexer: *mut MrmResourceIndexerHandle) -> ::windows_core::HRESULT;
         }
         MrmCreateResourceIndexerFromPreviousSchemaData(projectroot.into_param().abi(), ::core::mem::transmute(platformversion), defaultqualifiers.into_param().abi(), ::core::mem::transmute(schemaxmldata), ::core::mem::transmute(schemaxmlsize), ::core::mem::transmute(indexer)).ok()
     }
@@ -9425,12 +9425,12 @@ pub unsafe fn MrmCreateResourceIndexerFromPreviousSchemaData<'a, Param0: ::windo
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmCreateResourceIndexerFromPreviousSchemaFile<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(projectroot: Param0, platformversion: MrmPlatformVersion, defaultqualifiers: Param2, schemafile: Param3, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::Result<()> {
+pub unsafe fn MrmCreateResourceIndexerFromPreviousSchemaFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(projectroot: Param0, platformversion: MrmPlatformVersion, defaultqualifiers: Param2, schemafile: Param3, indexer: *mut MrmResourceIndexerHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmCreateResourceIndexerFromPreviousSchemaFile(projectroot: ::windows::core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, schemafile: ::windows::core::PCWSTR, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
+            fn MrmCreateResourceIndexerFromPreviousSchemaFile(projectroot: ::windows_core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows_core::PCWSTR, schemafile: ::windows_core::PCWSTR, indexer: *mut MrmResourceIndexerHandle) -> ::windows_core::HRESULT;
         }
         MrmCreateResourceIndexerFromPreviousSchemaFile(projectroot.into_param().abi(), ::core::mem::transmute(platformversion), defaultqualifiers.into_param().abi(), schemafile.into_param().abi(), ::core::mem::transmute(indexer)).ok()
     }
@@ -9439,12 +9439,12 @@ pub unsafe fn MrmCreateResourceIndexerFromPreviousSchemaFile<'a, Param0: ::windo
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmCreateResourceIndexerWithFlags<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(packagefamilyname: Param0, projectroot: Param1, platformversion: MrmPlatformVersion, defaultqualifiers: Param3, flags: MrmIndexerFlags, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::Result<()> {
+pub unsafe fn MrmCreateResourceIndexerWithFlags<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(packagefamilyname: Param0, projectroot: Param1, platformversion: MrmPlatformVersion, defaultqualifiers: Param3, flags: MrmIndexerFlags, indexer: *mut MrmResourceIndexerHandle) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmCreateResourceIndexerWithFlags(packagefamilyname: ::windows::core::PCWSTR, projectroot: ::windows::core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, flags: MrmIndexerFlags, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
+            fn MrmCreateResourceIndexerWithFlags(packagefamilyname: ::windows_core::PCWSTR, projectroot: ::windows_core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows_core::PCWSTR, flags: MrmIndexerFlags, indexer: *mut MrmResourceIndexerHandle) -> ::windows_core::HRESULT;
         }
         MrmCreateResourceIndexerWithFlags(packagefamilyname.into_param().abi(), projectroot.into_param().abi(), ::core::mem::transmute(platformversion), defaultqualifiers.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(indexer)).ok()
     }
@@ -9453,12 +9453,12 @@ pub unsafe fn MrmCreateResourceIndexerWithFlags<'a, Param0: ::windows::core::Int
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmDestroyIndexerAndMessages<'a, Param0: ::windows::core::IntoParam<'a, MrmResourceIndexerHandle>>(indexer: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn MrmDestroyIndexerAndMessages<'a, Param0: ::windows_core::IntoParam<'a, MrmResourceIndexerHandle>>(indexer: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmDestroyIndexerAndMessages(indexer: MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
+            fn MrmDestroyIndexerAndMessages(indexer: MrmResourceIndexerHandle) -> ::windows_core::HRESULT;
         }
         MrmDestroyIndexerAndMessages(indexer.into_param().abi()).ok()
     }
@@ -9467,12 +9467,12 @@ pub unsafe fn MrmDestroyIndexerAndMessages<'a, Param0: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmDumpPriDataInMemory(inputpridata: *const u8, inputprisize: u32, schemapridata: *const u8, schemaprisize: u32, dumptype: MrmDumpType, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn MrmDumpPriDataInMemory(inputpridata: *const u8, inputprisize: u32, schemapridata: *const u8, schemaprisize: u32, dumptype: MrmDumpType, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmDumpPriDataInMemory(inputpridata: *const u8, inputprisize: u32, schemapridata: *const u8, schemaprisize: u32, dumptype: MrmDumpType, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows::core::HRESULT;
+            fn MrmDumpPriDataInMemory(inputpridata: *const u8, inputprisize: u32, schemapridata: *const u8, schemaprisize: u32, dumptype: MrmDumpType, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows_core::HRESULT;
         }
         MrmDumpPriDataInMemory(::core::mem::transmute(inputpridata), ::core::mem::transmute(inputprisize), ::core::mem::transmute(schemapridata), ::core::mem::transmute(schemaprisize), ::core::mem::transmute(dumptype), ::core::mem::transmute(outputxmldata), ::core::mem::transmute(outputxmlsize)).ok()
     }
@@ -9481,12 +9481,12 @@ pub unsafe fn MrmDumpPriDataInMemory(inputpridata: *const u8, inputprisize: u32,
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmDumpPriFile<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(indexfilename: Param0, schemaprifile: Param1, dumptype: MrmDumpType, outputxmlfile: Param3) -> ::windows::core::Result<()> {
+pub unsafe fn MrmDumpPriFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(indexfilename: Param0, schemaprifile: Param1, dumptype: MrmDumpType, outputxmlfile: Param3) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmDumpPriFile(indexfilename: ::windows::core::PCWSTR, schemaprifile: ::windows::core::PCWSTR, dumptype: MrmDumpType, outputxmlfile: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn MrmDumpPriFile(indexfilename: ::windows_core::PCWSTR, schemaprifile: ::windows_core::PCWSTR, dumptype: MrmDumpType, outputxmlfile: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         MrmDumpPriFile(indexfilename.into_param().abi(), schemaprifile.into_param().abi(), ::core::mem::transmute(dumptype), outputxmlfile.into_param().abi()).ok()
     }
@@ -9495,12 +9495,12 @@ pub unsafe fn MrmDumpPriFile<'a, Param0: ::windows::core::IntoParam<'a, ::window
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmDumpPriFileInMemory<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(indexfilename: Param0, schemaprifile: Param1, dumptype: MrmDumpType, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn MrmDumpPriFileInMemory<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(indexfilename: Param0, schemaprifile: Param1, dumptype: MrmDumpType, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmDumpPriFileInMemory(indexfilename: ::windows::core::PCWSTR, schemaprifile: ::windows::core::PCWSTR, dumptype: MrmDumpType, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows::core::HRESULT;
+            fn MrmDumpPriFileInMemory(indexfilename: ::windows_core::PCWSTR, schemaprifile: ::windows_core::PCWSTR, dumptype: MrmDumpType, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows_core::HRESULT;
         }
         MrmDumpPriFileInMemory(indexfilename.into_param().abi(), schemaprifile.into_param().abi(), ::core::mem::transmute(dumptype), ::core::mem::transmute(outputxmldata), ::core::mem::transmute(outputxmlsize)).ok()
     }
@@ -9528,7 +9528,7 @@ impl ::core::default::Default for MrmDumpType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MrmDumpType {
+unsafe impl ::windows_core::Abi for MrmDumpType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MrmDumpType {
@@ -9538,12 +9538,12 @@ impl ::core::fmt::Debug for MrmDumpType {
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmFreeMemory(data: *const u8) -> ::windows::core::Result<()> {
+pub unsafe fn MrmFreeMemory(data: *const u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmFreeMemory(data: *const u8) -> ::windows::core::HRESULT;
+            fn MrmFreeMemory(data: *const u8) -> ::windows_core::HRESULT;
         }
         MrmFreeMemory(::core::mem::transmute(data)).ok()
     }
@@ -9552,12 +9552,12 @@ pub unsafe fn MrmFreeMemory(data: *const u8) -> ::windows::core::Result<()> {
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmGetPriFileContentChecksum<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(prifile: Param0) -> ::windows::core::Result<u32> {
+pub unsafe fn MrmGetPriFileContentChecksum<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(prifile: Param0) -> ::windows_core::Result<u32> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmGetPriFileContentChecksum(prifile: ::windows::core::PCWSTR, checksum: *mut u32) -> ::windows::core::HRESULT;
+            fn MrmGetPriFileContentChecksum(prifile: ::windows_core::PCWSTR, checksum: *mut u32) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         MrmGetPriFileContentChecksum(prifile.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
@@ -9567,12 +9567,12 @@ pub unsafe fn MrmGetPriFileContentChecksum<'a, Param0: ::windows::core::IntoPara
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmIndexEmbeddedData<'a, Param0: ::windows::core::IntoParam<'a, MrmResourceIndexerHandle>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param4: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(indexer: Param0, resourceuri: Param1, embeddeddata: *const u8, embeddeddatasize: u32, qualifiers: Param4) -> ::windows::core::Result<()> {
+pub unsafe fn MrmIndexEmbeddedData<'a, Param0: ::windows_core::IntoParam<'a, MrmResourceIndexerHandle>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(indexer: Param0, resourceuri: Param1, embeddeddata: *const u8, embeddeddatasize: u32, qualifiers: Param4) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmIndexEmbeddedData(indexer: MrmResourceIndexerHandle, resourceuri: ::windows::core::PCWSTR, embeddeddata: *const u8, embeddeddatasize: u32, qualifiers: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn MrmIndexEmbeddedData(indexer: MrmResourceIndexerHandle, resourceuri: ::windows_core::PCWSTR, embeddeddata: *const u8, embeddeddatasize: u32, qualifiers: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         MrmIndexEmbeddedData(indexer.into_param().abi(), resourceuri.into_param().abi(), ::core::mem::transmute(embeddeddata), ::core::mem::transmute(embeddeddatasize), qualifiers.into_param().abi()).ok()
     }
@@ -9581,12 +9581,12 @@ pub unsafe fn MrmIndexEmbeddedData<'a, Param0: ::windows::core::IntoParam<'a, Mr
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmIndexFile<'a, Param0: ::windows::core::IntoParam<'a, MrmResourceIndexerHandle>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(indexer: Param0, resourceuri: Param1, filepath: Param2, qualifiers: Param3) -> ::windows::core::Result<()> {
+pub unsafe fn MrmIndexFile<'a, Param0: ::windows_core::IntoParam<'a, MrmResourceIndexerHandle>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(indexer: Param0, resourceuri: Param1, filepath: Param2, qualifiers: Param3) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmIndexFile(indexer: MrmResourceIndexerHandle, resourceuri: ::windows::core::PCWSTR, filepath: ::windows::core::PCWSTR, qualifiers: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn MrmIndexFile(indexer: MrmResourceIndexerHandle, resourceuri: ::windows_core::PCWSTR, filepath: ::windows_core::PCWSTR, qualifiers: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         MrmIndexFile(indexer.into_param().abi(), resourceuri.into_param().abi(), filepath.into_param().abi(), qualifiers.into_param().abi()).ok()
     }
@@ -9595,12 +9595,12 @@ pub unsafe fn MrmIndexFile<'a, Param0: ::windows::core::IntoParam<'a, MrmResourc
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmIndexFileAutoQualifiers<'a, Param0: ::windows::core::IntoParam<'a, MrmResourceIndexerHandle>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(indexer: Param0, filepath: Param1) -> ::windows::core::Result<()> {
+pub unsafe fn MrmIndexFileAutoQualifiers<'a, Param0: ::windows_core::IntoParam<'a, MrmResourceIndexerHandle>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(indexer: Param0, filepath: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmIndexFileAutoQualifiers(indexer: MrmResourceIndexerHandle, filepath: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn MrmIndexFileAutoQualifiers(indexer: MrmResourceIndexerHandle, filepath: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         MrmIndexFileAutoQualifiers(indexer.into_param().abi(), filepath.into_param().abi()).ok()
     }
@@ -9609,12 +9609,12 @@ pub unsafe fn MrmIndexFileAutoQualifiers<'a, Param0: ::windows::core::IntoParam<
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmIndexResourceContainerAutoQualifiers<'a, Param0: ::windows::core::IntoParam<'a, MrmResourceIndexerHandle>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(indexer: Param0, containerpath: Param1) -> ::windows::core::Result<()> {
+pub unsafe fn MrmIndexResourceContainerAutoQualifiers<'a, Param0: ::windows_core::IntoParam<'a, MrmResourceIndexerHandle>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(indexer: Param0, containerpath: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmIndexResourceContainerAutoQualifiers(indexer: MrmResourceIndexerHandle, containerpath: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn MrmIndexResourceContainerAutoQualifiers(indexer: MrmResourceIndexerHandle, containerpath: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         MrmIndexResourceContainerAutoQualifiers(indexer.into_param().abi(), containerpath.into_param().abi()).ok()
     }
@@ -9623,12 +9623,12 @@ pub unsafe fn MrmIndexResourceContainerAutoQualifiers<'a, Param0: ::windows::cor
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmIndexString<'a, Param0: ::windows::core::IntoParam<'a, MrmResourceIndexerHandle>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(indexer: Param0, resourceuri: Param1, resourcestring: Param2, qualifiers: Param3) -> ::windows::core::Result<()> {
+pub unsafe fn MrmIndexString<'a, Param0: ::windows_core::IntoParam<'a, MrmResourceIndexerHandle>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(indexer: Param0, resourceuri: Param1, resourcestring: Param2, qualifiers: Param3) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmIndexString(indexer: MrmResourceIndexerHandle, resourceuri: ::windows::core::PCWSTR, resourcestring: ::windows::core::PCWSTR, qualifiers: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
+            fn MrmIndexString(indexer: MrmResourceIndexerHandle, resourceuri: ::windows_core::PCWSTR, resourcestring: ::windows_core::PCWSTR, qualifiers: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         MrmIndexString(indexer.into_param().abi(), resourceuri.into_param().abi(), resourcestring.into_param().abi(), qualifiers.into_param().abi()).ok()
     }
@@ -9656,7 +9656,7 @@ impl ::core::default::Default for MrmIndexerFlags {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MrmIndexerFlags {
+unsafe impl ::windows_core::Abi for MrmIndexerFlags {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MrmIndexerFlags {
@@ -9685,7 +9685,7 @@ impl ::core::default::Default for MrmPackagingMode {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MrmPackagingMode {
+unsafe impl ::windows_core::Abi for MrmPackagingMode {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MrmPackagingMode {
@@ -9714,7 +9714,7 @@ impl ::core::default::Default for MrmPackagingOptions {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MrmPackagingOptions {
+unsafe impl ::windows_core::Abi for MrmPackagingOptions {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MrmPackagingOptions {
@@ -9724,12 +9724,12 @@ impl ::core::fmt::Debug for MrmPackagingOptions {
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn MrmPeekResourceIndexerMessages<'a, Param0: ::windows::core::IntoParam<'a, MrmResourceIndexerHandle>>(handle: Param0, messages: *mut *mut MrmResourceIndexerMessage, nummsgs: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn MrmPeekResourceIndexerMessages<'a, Param0: ::windows_core::IntoParam<'a, MrmResourceIndexerHandle>>(handle: Param0, messages: *mut *mut MrmResourceIndexerMessage, nummsgs: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MrmPeekResourceIndexerMessages(handle: MrmResourceIndexerHandle, messages: *mut *mut MrmResourceIndexerMessage, nummsgs: *mut u32) -> ::windows::core::HRESULT;
+            fn MrmPeekResourceIndexerMessages(handle: MrmResourceIndexerHandle, messages: *mut *mut MrmResourceIndexerMessage, nummsgs: *mut u32) -> ::windows_core::HRESULT;
         }
         MrmPeekResourceIndexerMessages(handle.into_param().abi(), ::core::mem::transmute(messages), ::core::mem::transmute(nummsgs)).ok()
     }
@@ -9757,7 +9757,7 @@ impl ::core::default::Default for MrmPlatformVersion {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MrmPlatformVersion {
+unsafe impl ::windows_core::Abi for MrmPlatformVersion {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MrmPlatformVersion {
@@ -9781,12 +9781,12 @@ impl ::core::fmt::Debug for MrmResourceIndexerHandle {
         f.debug_struct("MrmResourceIndexerHandle").field("handle", &self.handle).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MrmResourceIndexerHandle {
+unsafe impl ::windows_core::Abi for MrmResourceIndexerHandle {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MrmResourceIndexerHandle {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MrmResourceIndexerHandle>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MrmResourceIndexerHandle>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MrmResourceIndexerHandle {}
@@ -9800,7 +9800,7 @@ impl ::core::default::Default for MrmResourceIndexerHandle {
 pub struct MrmResourceIndexerMessage {
     pub severity: MrmResourceIndexerMessageSeverity,
     pub id: u32,
-    pub text: ::windows::core::PCWSTR,
+    pub text: ::windows_core::PCWSTR,
 }
 impl ::core::marker::Copy for MrmResourceIndexerMessage {}
 impl ::core::clone::Clone for MrmResourceIndexerMessage {
@@ -9813,12 +9813,12 @@ impl ::core::fmt::Debug for MrmResourceIndexerMessage {
         f.debug_struct("MrmResourceIndexerMessage").field("severity", &self.severity).field("id", &self.id).field("text", &self.text).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MrmResourceIndexerMessage {
+unsafe impl ::windows_core::Abi for MrmResourceIndexerMessage {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MrmResourceIndexerMessage {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MrmResourceIndexerMessage>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MrmResourceIndexerMessage>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MrmResourceIndexerMessage {}
@@ -9850,7 +9850,7 @@ impl ::core::default::Default for MrmResourceIndexerMessageSeverity {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MrmResourceIndexerMessageSeverity {
+unsafe impl ::windows_core::Abi for MrmResourceIndexerMessageSeverity {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MrmResourceIndexerMessageSeverity {
@@ -9861,14 +9861,14 @@ impl ::core::fmt::Debug for MrmResourceIndexerMessageSeverity {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MsgWaitForMultipleObjects<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(phandles: &[super::super::Foundation::HANDLE], fwaitall: Param2, dwmilliseconds: u32, dwwakemask: QUEUE_STATUS_FLAGS) -> u32 {
+pub unsafe fn MsgWaitForMultipleObjects<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(phandles: &[super::super::Foundation::HANDLE], fwaitall: Param2, dwmilliseconds: u32, dwwakemask: QUEUE_STATUS_FLAGS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn MsgWaitForMultipleObjects(ncount: u32, phandles: *const super::super::Foundation::HANDLE, fwaitall: super::super::Foundation::BOOL, dwmilliseconds: u32, dwwakemask: QUEUE_STATUS_FLAGS) -> u32;
         }
-        ::core::mem::transmute(MsgWaitForMultipleObjects(phandles.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(phandles)), fwaitall.into_param().abi(), ::core::mem::transmute(dwmilliseconds), ::core::mem::transmute(dwwakemask)))
+        ::core::mem::transmute(MsgWaitForMultipleObjects(phandles.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(phandles)), fwaitall.into_param().abi(), ::core::mem::transmute(dwmilliseconds), ::core::mem::transmute(dwwakemask)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -9883,17 +9883,17 @@ pub unsafe fn MsgWaitForMultipleObjectsEx(phandles: &[super::super::Foundation::
         extern "system" {
             fn MsgWaitForMultipleObjectsEx(ncount: u32, phandles: *const super::super::Foundation::HANDLE, dwmilliseconds: u32, dwwakemask: QUEUE_STATUS_FLAGS, dwflags: MSG_WAIT_FOR_MULTIPLE_OBJECTS_EX_FLAGS) -> u32;
         }
-        ::core::mem::transmute(MsgWaitForMultipleObjectsEx(phandles.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(phandles)), ::core::mem::transmute(dwmilliseconds), ::core::mem::transmute(dwwakemask), ::core::mem::transmute(dwflags)))
+        ::core::mem::transmute(MsgWaitForMultipleObjectsEx(phandles.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(phandles)), ::core::mem::transmute(dwmilliseconds), ::core::mem::transmute(dwwakemask), ::core::mem::transmute(dwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type NAMEENUMPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows::core::PCSTR, param1: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL>;
+pub type NAMEENUMPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCSTR, param1: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type NAMEENUMPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows::core::PCWSTR, param1: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL>;
+pub type NAMEENUMPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -9916,13 +9916,13 @@ impl ::core::fmt::Debug for NCCALCSIZE_PARAMS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for NCCALCSIZE_PARAMS {
+unsafe impl ::windows_core::Abi for NCCALCSIZE_PARAMS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NCCALCSIZE_PARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCCALCSIZE_PARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NCCALCSIZE_PARAMS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -10006,13 +10006,13 @@ impl ::core::fmt::Debug for NONCLIENTMETRICSA {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for NONCLIENTMETRICSA {
+unsafe impl ::windows_core::Abi for NONCLIENTMETRICSA {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for NONCLIENTMETRICSA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NONCLIENTMETRICSA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NONCLIENTMETRICSA>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
@@ -10076,13 +10076,13 @@ impl ::core::fmt::Debug for NONCLIENTMETRICSW {
     }
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
-unsafe impl ::windows::core::Abi for NONCLIENTMETRICSW {
+unsafe impl ::windows_core::Abi for NONCLIENTMETRICSW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for NONCLIENTMETRICSW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NONCLIENTMETRICSW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NONCLIENTMETRICSW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
@@ -10136,7 +10136,7 @@ impl ::core::default::Default for OBJECT_IDENTIFIER {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for OBJECT_IDENTIFIER {
+unsafe impl ::windows_core::Abi for OBJECT_IDENTIFIER {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for OBJECT_IDENTIFIER {
@@ -10271,12 +10271,12 @@ pub const ORD_LANGDRIVER: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OemToCharA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(psrc: Param0, pdst: ::windows::core::PSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn OemToCharA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(psrc: Param0, pdst: ::windows_core::PSTR) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OemToCharA(psrc: ::windows::core::PCSTR, pdst: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
+            fn OemToCharA(psrc: ::windows_core::PCSTR, pdst: ::windows_core::PSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(OemToCharA(psrc.into_param().abi(), ::core::mem::transmute(pdst)))
     }
@@ -10286,14 +10286,14 @@ pub unsafe fn OemToCharA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::c
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OemToCharBuffA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpszsrc: Param0, lpszdst: &mut [u8]) -> super::super::Foundation::BOOL {
+pub unsafe fn OemToCharBuffA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszsrc: Param0, lpszdst: &mut [u8]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OemToCharBuffA(lpszsrc: ::windows::core::PCSTR, lpszdst: ::windows::core::PSTR, cchdstlength: u32) -> super::super::Foundation::BOOL;
+            fn OemToCharBuffA(lpszsrc: ::windows_core::PCSTR, lpszdst: ::windows_core::PSTR, cchdstlength: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(OemToCharBuffA(lpszsrc.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpszdst)), lpszdst.len() as _))
+        ::core::mem::transmute(OemToCharBuffA(lpszsrc.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpszdst)), lpszdst.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -10301,14 +10301,14 @@ pub unsafe fn OemToCharBuffA<'a, Param0: ::windows::core::IntoParam<'a, ::window
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OemToCharBuffW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpszsrc: Param0, lpszdst: &mut [u16]) -> super::super::Foundation::BOOL {
+pub unsafe fn OemToCharBuffW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszsrc: Param0, lpszdst: &mut [u16]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OemToCharBuffW(lpszsrc: ::windows::core::PCSTR, lpszdst: ::windows::core::PWSTR, cchdstlength: u32) -> super::super::Foundation::BOOL;
+            fn OemToCharBuffW(lpszsrc: ::windows_core::PCSTR, lpszdst: ::windows_core::PWSTR, cchdstlength: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(OemToCharBuffW(lpszsrc.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpszdst)), lpszdst.len() as _))
+        ::core::mem::transmute(OemToCharBuffW(lpszsrc.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpszdst)), lpszdst.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -10316,12 +10316,12 @@ pub unsafe fn OemToCharBuffW<'a, Param0: ::windows::core::IntoParam<'a, ::window
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OemToCharW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(psrc: Param0, pdst: ::windows::core::PWSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn OemToCharW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(psrc: Param0, pdst: ::windows_core::PWSTR) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OemToCharW(psrc: ::windows::core::PCSTR, pdst: ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
+            fn OemToCharW(psrc: ::windows_core::PCSTR, pdst: ::windows_core::PWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(OemToCharW(psrc.into_param().abi(), ::core::mem::transmute(pdst)))
     }
@@ -10331,7 +10331,7 @@ pub unsafe fn OemToCharW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::c
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenIcon<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn OpenIcon<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10430,7 +10430,7 @@ impl ::core::default::Default for PEEK_MESSAGE_REMOVE_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PEEK_MESSAGE_REMOVE_TYPE {
+unsafe impl ::windows_core::Abi for PEEK_MESSAGE_REMOVE_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PEEK_MESSAGE_REMOVE_TYPE {
@@ -10533,7 +10533,7 @@ impl ::core::default::Default for POINTER_INPUT_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for POINTER_INPUT_TYPE {
+unsafe impl ::windows_core::Abi for POINTER_INPUT_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for POINTER_INPUT_TYPE {
@@ -10569,7 +10569,7 @@ pub const POINTER_MOD_CTRL: u32 = 8u32;
 pub const POINTER_MOD_SHIFT: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PREGISTERCLASSNAMEW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows::core::PCWSTR) -> super::super::Foundation::BOOLEAN>;
+pub type PREGISTERCLASSNAMEW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR) -> super::super::Foundation::BOOLEAN>;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub const PRF_CHECKVISIBLE: i32 = 1i32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
@@ -10584,16 +10584,16 @@ pub const PRF_NONCLIENT: i32 = 2i32;
 pub const PRF_OWNED: i32 = 32i32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PROPENUMPROCA = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HWND, param1: ::windows::core::PCSTR, param2: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
+pub type PROPENUMPROCA = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HWND, param1: ::windows_core::PCSTR, param2: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PROPENUMPROCEXA = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HWND, param1: ::windows::core::PCSTR, param2: super::super::Foundation::HANDLE, param3: usize) -> super::super::Foundation::BOOL>;
+pub type PROPENUMPROCEXA = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HWND, param1: ::windows_core::PCSTR, param2: super::super::Foundation::HANDLE, param3: usize) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PROPENUMPROCEXW = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HWND, param1: ::windows::core::PCWSTR, param2: super::super::Foundation::HANDLE, param3: usize) -> super::super::Foundation::BOOL>;
+pub type PROPENUMPROCEXW = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HWND, param1: ::windows_core::PCWSTR, param2: super::super::Foundation::HANDLE, param3: usize) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type PROPENUMPROCW = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HWND, param1: ::windows::core::PCWSTR, param2: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
+pub type PROPENUMPROCW = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HWND, param1: ::windows_core::PCWSTR, param2: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub const PWR_CRITICALRESUME: u32 = 3u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
@@ -10609,7 +10609,7 @@ pub const PW_RENDERFULLCONTENT: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PeekMessageA<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(lpmsg: *mut MSG, hwnd: Param1, wmsgfiltermin: u32, wmsgfiltermax: u32, wremovemsg: PEEK_MESSAGE_REMOVE_TYPE) -> super::super::Foundation::BOOL {
+pub unsafe fn PeekMessageA<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(lpmsg: *mut MSG, hwnd: Param1, wmsgfiltermin: u32, wmsgfiltermax: u32, wremovemsg: PEEK_MESSAGE_REMOVE_TYPE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10624,7 +10624,7 @@ pub unsafe fn PeekMessageA<'a, Param1: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PeekMessageW<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(lpmsg: *mut MSG, hwnd: Param1, wmsgfiltermin: u32, wmsgfiltermax: u32, wremovemsg: PEEK_MESSAGE_REMOVE_TYPE) -> super::super::Foundation::BOOL {
+pub unsafe fn PeekMessageW<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(lpmsg: *mut MSG, hwnd: Param1, wmsgfiltermin: u32, wmsgfiltermax: u32, wremovemsg: PEEK_MESSAGE_REMOVE_TYPE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10639,7 +10639,7 @@ pub unsafe fn PeekMessageW<'a, Param1: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PhysicalToLogicalPoint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn PhysicalToLogicalPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10654,7 +10654,7 @@ pub unsafe fn PhysicalToLogicalPoint<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PostMessageA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn PostMessageA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10669,7 +10669,7 @@ pub unsafe fn PostMessageA<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PostMessageW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn PostMessageW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10698,7 +10698,7 @@ pub unsafe fn PostQuitMessage(nexitcode: i32) {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PostThreadMessageA<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(idthread: u32, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn PostThreadMessageA<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(idthread: u32, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10713,7 +10713,7 @@ pub unsafe fn PostThreadMessageA<'a, Param2: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PostThreadMessageW<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(idthread: u32, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn PostThreadMessageW<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(idthread: u32, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10732,9 +10732,9 @@ pub unsafe fn PrivateExtractIconsA(szfilename: &[u8; 260], niconindex: i32, cxic
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PrivateExtractIconsA(szfilename: ::windows::core::PCSTR, niconindex: i32, cxicon: i32, cyicon: i32, phicon: *mut HICON, piconid: *mut u32, nicons: u32, flags: u32) -> u32;
+            fn PrivateExtractIconsA(szfilename: ::windows_core::PCSTR, niconindex: i32, cxicon: i32, cyicon: i32, phicon: *mut HICON, piconid: *mut u32, nicons: u32, flags: u32) -> u32;
         }
-        ::core::mem::transmute(PrivateExtractIconsA(::core::mem::transmute(::windows::core::as_ptr_or_null(szfilename)), ::core::mem::transmute(niconindex), ::core::mem::transmute(cxicon), ::core::mem::transmute(cyicon), ::core::mem::transmute(phicon), ::core::mem::transmute(piconid), ::core::mem::transmute(nicons), ::core::mem::transmute(flags)))
+        ::core::mem::transmute(PrivateExtractIconsA(::core::mem::transmute(::windows_core::as_ptr_or_null(szfilename)), ::core::mem::transmute(niconindex), ::core::mem::transmute(cxicon), ::core::mem::transmute(cyicon), ::core::mem::transmute(phicon), ::core::mem::transmute(piconid), ::core::mem::transmute(nicons), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -10746,9 +10746,9 @@ pub unsafe fn PrivateExtractIconsW(szfilename: &[u16; 260], niconindex: i32, cxi
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PrivateExtractIconsW(szfilename: ::windows::core::PCWSTR, niconindex: i32, cxicon: i32, cyicon: i32, phicon: *mut HICON, piconid: *mut u32, nicons: u32, flags: u32) -> u32;
+            fn PrivateExtractIconsW(szfilename: ::windows_core::PCWSTR, niconindex: i32, cxicon: i32, cyicon: i32, phicon: *mut HICON, piconid: *mut u32, nicons: u32, flags: u32) -> u32;
         }
-        ::core::mem::transmute(PrivateExtractIconsW(::core::mem::transmute(::windows::core::as_ptr_or_null(szfilename)), ::core::mem::transmute(niconindex), ::core::mem::transmute(cxicon), ::core::mem::transmute(cyicon), ::core::mem::transmute(phicon), ::core::mem::transmute(piconid), ::core::mem::transmute(nicons), ::core::mem::transmute(flags)))
+        ::core::mem::transmute(PrivateExtractIconsW(::core::mem::transmute(::windows_core::as_ptr_or_null(szfilename)), ::core::mem::transmute(niconindex), ::core::mem::transmute(cxicon), ::core::mem::transmute(cyicon), ::core::mem::transmute(phicon), ::core::mem::transmute(piconid), ::core::mem::transmute(nicons), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -10800,7 +10800,7 @@ impl ::core::default::Default for QUEUE_STATUS_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for QUEUE_STATUS_FLAGS {
+unsafe impl ::windows_core::Abi for QUEUE_STATUS_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for QUEUE_STATUS_FLAGS {
@@ -10897,43 +10897,43 @@ pub const RI_MOUSE_RIGHT_BUTTON_UP: u32 = 8u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub const RI_MOUSE_WHEEL: u32 = 1024u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_ACCELERATOR: ::windows::core::PCWSTR = ::windows::core::PCWSTR(9i32 as _);
+pub const RT_ACCELERATOR: ::windows_core::PCWSTR = ::windows_core::PCWSTR(9i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_ANICURSOR: ::windows::core::PCWSTR = ::windows::core::PCWSTR(21i32 as _);
+pub const RT_ANICURSOR: ::windows_core::PCWSTR = ::windows_core::PCWSTR(21i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_ANIICON: ::windows::core::PCWSTR = ::windows::core::PCWSTR(22i32 as _);
+pub const RT_ANIICON: ::windows_core::PCWSTR = ::windows_core::PCWSTR(22i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_BITMAP: ::windows::core::PCWSTR = ::windows::core::PCWSTR(2i32 as _);
+pub const RT_BITMAP: ::windows_core::PCWSTR = ::windows_core::PCWSTR(2i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_CURSOR: ::windows::core::PCWSTR = ::windows::core::PCWSTR(1i32 as _);
+pub const RT_CURSOR: ::windows_core::PCWSTR = ::windows_core::PCWSTR(1i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_DIALOG: ::windows::core::PCWSTR = ::windows::core::PCWSTR(5i32 as _);
+pub const RT_DIALOG: ::windows_core::PCWSTR = ::windows_core::PCWSTR(5i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_DLGINCLUDE: ::windows::core::PCWSTR = ::windows::core::PCWSTR(17i32 as _);
+pub const RT_DLGINCLUDE: ::windows_core::PCWSTR = ::windows_core::PCWSTR(17i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_FONT: ::windows::core::PCWSTR = ::windows::core::PCWSTR(8i32 as _);
+pub const RT_FONT: ::windows_core::PCWSTR = ::windows_core::PCWSTR(8i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_FONTDIR: ::windows::core::PCWSTR = ::windows::core::PCWSTR(7i32 as _);
+pub const RT_FONTDIR: ::windows_core::PCWSTR = ::windows_core::PCWSTR(7i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_HTML: ::windows::core::PCWSTR = ::windows::core::PCWSTR(23i32 as _);
+pub const RT_HTML: ::windows_core::PCWSTR = ::windows_core::PCWSTR(23i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_ICON: ::windows::core::PCWSTR = ::windows::core::PCWSTR(3i32 as _);
+pub const RT_ICON: ::windows_core::PCWSTR = ::windows_core::PCWSTR(3i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub const RT_MANIFEST: u32 = 24u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_MENU: ::windows::core::PCWSTR = ::windows::core::PCWSTR(4i32 as _);
+pub const RT_MENU: ::windows_core::PCWSTR = ::windows_core::PCWSTR(4i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_MESSAGETABLE: ::windows::core::PCWSTR = ::windows::core::PCWSTR(11i32 as _);
+pub const RT_MESSAGETABLE: ::windows_core::PCWSTR = ::windows_core::PCWSTR(11i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_PLUGPLAY: ::windows::core::PCWSTR = ::windows::core::PCWSTR(19i32 as _);
+pub const RT_PLUGPLAY: ::windows_core::PCWSTR = ::windows_core::PCWSTR(19i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_VERSION: ::windows::core::PCWSTR = ::windows::core::PCWSTR(16i32 as _);
+pub const RT_VERSION: ::windows_core::PCWSTR = ::windows_core::PCWSTR(16i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const RT_VXD: ::windows::core::PCWSTR = ::windows::core::PCWSTR(20i32 as _);
+pub const RT_VXD: ::windows_core::PCWSTR = ::windows_core::PCWSTR(20i32 as _);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RealChildWindowFromPoint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::POINT>>(hwndparent: Param0, ptparentclientcoords: Param1) -> super::super::Foundation::HWND {
+pub unsafe fn RealChildWindowFromPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::POINT>>(hwndparent: Param0, ptparentclientcoords: Param1) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10948,14 +10948,14 @@ pub unsafe fn RealChildWindowFromPoint<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RealGetWindowClassA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, ptszclassname: &mut [u8]) -> u32 {
+pub unsafe fn RealGetWindowClassA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, ptszclassname: &mut [u8]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RealGetWindowClassA(hwnd: super::super::Foundation::HWND, ptszclassname: ::windows::core::PSTR, cchclassnamemax: u32) -> u32;
+            fn RealGetWindowClassA(hwnd: super::super::Foundation::HWND, ptszclassname: ::windows_core::PSTR, cchclassnamemax: u32) -> u32;
         }
-        ::core::mem::transmute(RealGetWindowClassA(hwnd.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(ptszclassname)), ptszclassname.len() as _))
+        ::core::mem::transmute(RealGetWindowClassA(hwnd.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(ptszclassname)), ptszclassname.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -10963,14 +10963,14 @@ pub unsafe fn RealGetWindowClassA<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RealGetWindowClassW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, ptszclassname: &mut [u16]) -> u32 {
+pub unsafe fn RealGetWindowClassW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, ptszclassname: &mut [u16]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RealGetWindowClassW(hwnd: super::super::Foundation::HWND, ptszclassname: ::windows::core::PWSTR, cchclassnamemax: u32) -> u32;
+            fn RealGetWindowClassW(hwnd: super::super::Foundation::HWND, ptszclassname: ::windows_core::PWSTR, cchclassnamemax: u32) -> u32;
         }
-        ::core::mem::transmute(RealGetWindowClassW(hwnd.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(ptszclassname)), ptszclassname.len() as _))
+        ::core::mem::transmute(RealGetWindowClassW(hwnd.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(ptszclassname)), ptszclassname.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11038,7 +11038,7 @@ pub unsafe fn RegisterClassW(lpwndclass: *const WNDCLASSW) -> u16 {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_System_Power\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Power"))]
 #[inline]
-pub unsafe fn RegisterDeviceNotificationA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrecipient: Param0, notificationfilter: *const ::core::ffi::c_void, flags: super::super::System::Power::POWER_SETTING_REGISTER_NOTIFICATION_FLAGS) -> *mut ::core::ffi::c_void {
+pub unsafe fn RegisterDeviceNotificationA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrecipient: Param0, notificationfilter: *const ::core::ffi::c_void, flags: super::super::System::Power::POWER_SETTING_REGISTER_NOTIFICATION_FLAGS) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11053,7 +11053,7 @@ pub unsafe fn RegisterDeviceNotificationA<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_System_Power\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Power"))]
 #[inline]
-pub unsafe fn RegisterDeviceNotificationW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrecipient: Param0, notificationfilter: *const ::core::ffi::c_void, flags: super::super::System::Power::POWER_SETTING_REGISTER_NOTIFICATION_FLAGS) -> *mut ::core::ffi::c_void {
+pub unsafe fn RegisterDeviceNotificationW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrecipient: Param0, notificationfilter: *const ::core::ffi::c_void, flags: super::super::System::Power::POWER_SETTING_REGISTER_NOTIFICATION_FLAGS) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11068,7 +11068,7 @@ pub unsafe fn RegisterDeviceNotificationW<'a, Param0: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegisterShellHookWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn RegisterShellHookWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11082,12 +11082,12 @@ pub unsafe fn RegisterShellHookWindow<'a, Param0: ::windows::core::IntoParam<'a,
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn RegisterWindowMessageA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpstring: Param0) -> u32 {
+pub unsafe fn RegisterWindowMessageA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpstring: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterWindowMessageA(lpstring: ::windows::core::PCSTR) -> u32;
+            fn RegisterWindowMessageA(lpstring: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(RegisterWindowMessageA(lpstring.into_param().abi()))
     }
@@ -11096,12 +11096,12 @@ pub unsafe fn RegisterWindowMessageA<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn RegisterWindowMessageW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpstring: Param0) -> u32 {
+pub unsafe fn RegisterWindowMessageW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpstring: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterWindowMessageW(lpstring: ::windows::core::PCWSTR) -> u32;
+            fn RegisterWindowMessageW(lpstring: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(RegisterWindowMessageW(lpstring.into_param().abi()))
     }
@@ -11111,7 +11111,7 @@ pub unsafe fn RegisterWindowMessageW<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RemoveMenu<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn RemoveMenu<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11126,15 +11126,15 @@ pub unsafe fn RemoveMenu<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmen
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RemovePropA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwnd: Param0, lpstring: Param1) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn RemovePropA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, lpstring: Param1) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemovePropA(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCSTR) -> super::super::Foundation::HANDLE;
+            fn RemovePropA(hwnd: super::super::Foundation::HWND, lpstring: ::windows_core::PCSTR) -> super::super::Foundation::HANDLE;
         }
         let result__ = RemovePropA(hwnd.into_param().abi(), lpstring.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11142,15 +11142,15 @@ pub unsafe fn RemovePropA<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RemovePropW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwnd: Param0, lpstring: Param1) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn RemovePropW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, lpstring: Param1) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemovePropW(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCWSTR) -> super::super::Foundation::HANDLE;
+            fn RemovePropW(hwnd: super::super::Foundation::HWND, lpstring: ::windows_core::PCWSTR) -> super::super::Foundation::HANDLE;
         }
         let result__ = RemovePropW(hwnd.into_param().abi(), lpstring.into_param().abi());
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11158,7 +11158,7 @@ pub unsafe fn RemovePropW<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReplyMessage<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::LRESULT>>(lresult: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn ReplyMessage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::LRESULT>>(lresult: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11267,13 +11267,13 @@ impl ::core::fmt::Debug for SCROLLBARINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SCROLLBARINFO {
+unsafe impl ::windows_core::Abi for SCROLLBARINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SCROLLBARINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCROLLBARINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCROLLBARINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11307,7 +11307,7 @@ impl ::core::default::Default for SCROLLBAR_CONSTANTS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SCROLLBAR_CONSTANTS {
+unsafe impl ::windows_core::Abi for SCROLLBAR_CONSTANTS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SCROLLBAR_CONSTANTS {
@@ -11365,12 +11365,12 @@ impl ::core::fmt::Debug for SCROLLINFO {
         f.debug_struct("SCROLLINFO").field("cbSize", &self.cbSize).field("fMask", &self.fMask).field("nMin", &self.nMin).field("nMax", &self.nMax).field("nPage", &self.nPage).field("nPos", &self.nPos).field("nTrackPos", &self.nTrackPos).finish()
     }
 }
-unsafe impl ::windows::core::Abi for SCROLLINFO {
+unsafe impl ::windows_core::Abi for SCROLLINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for SCROLLINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCROLLINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SCROLLINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for SCROLLINFO {}
@@ -11406,7 +11406,7 @@ impl ::core::default::Default for SCROLLINFO_MASK {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SCROLLINFO_MASK {
+unsafe impl ::windows_core::Abi for SCROLLINFO_MASK {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SCROLLINFO_MASK {
@@ -11512,7 +11512,7 @@ impl ::core::default::Default for SEND_MESSAGE_TIMEOUT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SEND_MESSAGE_TIMEOUT_FLAGS {
+unsafe impl ::windows_core::Abi for SEND_MESSAGE_TIMEOUT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SEND_MESSAGE_TIMEOUT_FLAGS {
@@ -11595,7 +11595,7 @@ impl ::core::default::Default for SET_WINDOW_POS_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SET_WINDOW_POS_FLAGS {
+unsafe impl ::windows_core::Abi for SET_WINDOW_POS_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SET_WINDOW_POS_FLAGS {
@@ -11653,13 +11653,13 @@ impl ::core::fmt::Debug for SHELLHOOKINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for SHELLHOOKINFO {
+unsafe impl ::windows_core::Abi for SHELLHOOKINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SHELLHOOKINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SHELLHOOKINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SHELLHOOKINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -11739,7 +11739,7 @@ impl ::core::default::Default for SHOW_WINDOW_CMD {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SHOW_WINDOW_CMD {
+unsafe impl ::windows_core::Abi for SHOW_WINDOW_CMD {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SHOW_WINDOW_CMD {
@@ -11976,11 +11976,11 @@ pub const STN_DISABLE: u32 = 3u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub const STN_ENABLE: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const STRSAFE_E_END_OF_FILE: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147024858i32);
+pub const STRSAFE_E_END_OF_FILE: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147024858i32);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const STRSAFE_E_INSUFFICIENT_BUFFER: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147024774i32);
+pub const STRSAFE_E_INSUFFICIENT_BUFFER: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147024774i32);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
-pub const STRSAFE_E_INVALID_PARAMETER: ::windows::core::HRESULT = ::windows::core::HRESULT(-2147024809i32);
+pub const STRSAFE_E_INVALID_PARAMETER: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147024809i32);
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 pub const STRSAFE_FILL_BEHIND_NULL: u32 = 512u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
@@ -12012,12 +12012,12 @@ impl ::core::fmt::Debug for STYLESTRUCT {
         f.debug_struct("STYLESTRUCT").field("styleOld", &self.styleOld).field("styleNew", &self.styleNew).finish()
     }
 }
-unsafe impl ::windows::core::Abi for STYLESTRUCT {
+unsafe impl ::windows_core::Abi for STYLESTRUCT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for STYLESTRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STYLESTRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STYLESTRUCT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for STYLESTRUCT {}
@@ -12069,7 +12069,7 @@ impl ::core::default::Default for SYSTEM_CURSOR_ID {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SYSTEM_CURSOR_ID {
+unsafe impl ::windows_core::Abi for SYSTEM_CURSOR_ID {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SYSTEM_CURSOR_ID {
@@ -12282,7 +12282,7 @@ impl ::core::default::Default for SYSTEM_METRICS_INDEX {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SYSTEM_METRICS_INDEX {
+unsafe impl ::windows_core::Abi for SYSTEM_METRICS_INDEX {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SYSTEM_METRICS_INDEX {
@@ -12787,7 +12787,7 @@ impl ::core::default::Default for SYSTEM_PARAMETERS_INFO_ACTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SYSTEM_PARAMETERS_INFO_ACTION {
+unsafe impl ::windows_core::Abi for SYSTEM_PARAMETERS_INFO_ACTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SYSTEM_PARAMETERS_INFO_ACTION {
@@ -12844,7 +12844,7 @@ impl ::core::default::Default for SYSTEM_PARAMETERS_INFO_UPDATE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SYSTEM_PARAMETERS_INFO_UPDATE_FLAGS {
+unsafe impl ::windows_core::Abi for SYSTEM_PARAMETERS_INFO_UPDATE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SYSTEM_PARAMETERS_INFO_UPDATE_FLAGS {
@@ -12967,7 +12967,7 @@ impl ::core::default::Default for SYS_COLOR_INDEX {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SYS_COLOR_INDEX {
+unsafe impl ::windows_core::Abi for SYS_COLOR_INDEX {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SYS_COLOR_INDEX {
@@ -12978,7 +12978,7 @@ impl ::core::fmt::Debug for SYS_COLOR_INDEX {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn ScrollDC<'a, Param0: ::windows::core::IntoParam<'a, super::super::Graphics::Gdi::HDC>, Param5: ::windows::core::IntoParam<'a, super::super::Graphics::Gdi::HRGN>>(hdc: Param0, dx: i32, dy: i32, lprcscroll: *const super::super::Foundation::RECT, lprcclip: *const super::super::Foundation::RECT, hrgnupdate: Param5, lprcupdate: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn ScrollDC<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>, Param5: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HRGN>>(hdc: Param0, dx: i32, dy: i32, lprcscroll: *const super::super::Foundation::RECT, lprcclip: *const super::super::Foundation::RECT, hrgnupdate: Param5, lprcupdate: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -12993,7 +12993,7 @@ pub unsafe fn ScrollDC<'a, Param0: ::windows::core::IntoParam<'a, super::super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ScrollWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, xamount: i32, yamount: i32, lprect: *const super::super::Foundation::RECT, lpcliprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn ScrollWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, xamount: i32, yamount: i32, lprect: *const super::super::Foundation::RECT, lpcliprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13008,7 +13008,7 @@ pub unsafe fn ScrollWindow<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn ScrollWindowEx<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param5: ::windows::core::IntoParam<'a, super::super::Graphics::Gdi::HRGN>>(hwnd: Param0, dx: i32, dy: i32, prcscroll: *const super::super::Foundation::RECT, prcclip: *const super::super::Foundation::RECT, hrgnupdate: Param5, prcupdate: *mut super::super::Foundation::RECT, flags: SHOW_WINDOW_CMD) -> i32 {
+pub unsafe fn ScrollWindowEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param5: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HRGN>>(hwnd: Param0, dx: i32, dy: i32, prcscroll: *const super::super::Foundation::RECT, prcclip: *const super::super::Foundation::RECT, hrgnupdate: Param5, prcupdate: *mut super::super::Foundation::RECT, flags: SHOW_WINDOW_CMD) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13023,7 +13023,7 @@ pub unsafe fn ScrollWindowEx<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SendDlgItemMessageA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdlg: Param0, niddlgitem: i32, msg: u32, wparam: Param3, lparam: Param4) -> super::super::Foundation::LRESULT {
+pub unsafe fn SendDlgItemMessageA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdlg: Param0, niddlgitem: i32, msg: u32, wparam: Param3, lparam: Param4) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13038,7 +13038,7 @@ pub unsafe fn SendDlgItemMessageA<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SendDlgItemMessageW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdlg: Param0, niddlgitem: i32, msg: u32, wparam: Param3, lparam: Param4) -> super::super::Foundation::LRESULT {
+pub unsafe fn SendDlgItemMessageW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdlg: Param0, niddlgitem: i32, msg: u32, wparam: Param3, lparam: Param4) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13053,7 +13053,7 @@ pub unsafe fn SendDlgItemMessageW<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SendMessageA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT {
+pub unsafe fn SendMessageA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13068,12 +13068,12 @@ pub unsafe fn SendMessageA<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SendMessageCallbackA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3, lpresultcallback: SENDASYNCPROC, dwdata: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn SendMessageCallbackA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3, lpresultcallback: SENDASYNCPROC, dwdata: usize) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SendMessageCallbackA(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, lpresultcallback: ::windows::core::RawPtr, dwdata: usize) -> super::super::Foundation::BOOL;
+            fn SendMessageCallbackA(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, lpresultcallback: ::windows_core::RawPtr, dwdata: usize) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SendMessageCallbackA(hwnd.into_param().abi(), ::core::mem::transmute(msg), wparam.into_param().abi(), lparam.into_param().abi(), ::core::mem::transmute(lpresultcallback), ::core::mem::transmute(dwdata)))
     }
@@ -13083,12 +13083,12 @@ pub unsafe fn SendMessageCallbackA<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SendMessageCallbackW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3, lpresultcallback: SENDASYNCPROC, dwdata: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn SendMessageCallbackW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3, lpresultcallback: SENDASYNCPROC, dwdata: usize) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SendMessageCallbackW(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, lpresultcallback: ::windows::core::RawPtr, dwdata: usize) -> super::super::Foundation::BOOL;
+            fn SendMessageCallbackW(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, lpresultcallback: ::windows_core::RawPtr, dwdata: usize) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SendMessageCallbackW(hwnd.into_param().abi(), ::core::mem::transmute(msg), wparam.into_param().abi(), lparam.into_param().abi(), ::core::mem::transmute(lpresultcallback), ::core::mem::transmute(dwdata)))
     }
@@ -13098,7 +13098,7 @@ pub unsafe fn SendMessageCallbackW<'a, Param0: ::windows::core::IntoParam<'a, su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SendMessageTimeoutA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3, fuflags: SEND_MESSAGE_TIMEOUT_FLAGS, utimeout: u32, lpdwresult: *mut usize) -> super::super::Foundation::LRESULT {
+pub unsafe fn SendMessageTimeoutA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3, fuflags: SEND_MESSAGE_TIMEOUT_FLAGS, utimeout: u32, lpdwresult: *mut usize) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13113,7 +13113,7 @@ pub unsafe fn SendMessageTimeoutA<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SendMessageTimeoutW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3, fuflags: SEND_MESSAGE_TIMEOUT_FLAGS, utimeout: u32, lpdwresult: *mut usize) -> super::super::Foundation::LRESULT {
+pub unsafe fn SendMessageTimeoutW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3, fuflags: SEND_MESSAGE_TIMEOUT_FLAGS, utimeout: u32, lpdwresult: *mut usize) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13128,7 +13128,7 @@ pub unsafe fn SendMessageTimeoutW<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SendMessageW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT {
+pub unsafe fn SendMessageW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13143,7 +13143,7 @@ pub unsafe fn SendMessageW<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SendNotifyMessageA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn SendNotifyMessageA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13158,7 +13158,7 @@ pub unsafe fn SendNotifyMessageA<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SendNotifyMessageW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn SendNotifyMessageW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwnd: Param0, msg: u32, wparam: Param2, lparam: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13203,7 +13203,7 @@ pub unsafe fn SetCaretPos(x: i32, y: i32) -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetClassLongA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX, dwnewlong: i32) -> u32 {
+pub unsafe fn SetClassLongA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX, dwnewlong: i32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13219,7 +13219,7 @@ pub unsafe fn SetClassLongA<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetClassLongPtrA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX, dwnewlong: isize) -> usize {
+pub unsafe fn SetClassLongPtrA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX, dwnewlong: isize) -> usize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13235,7 +13235,7 @@ pub unsafe fn SetClassLongPtrA<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetClassLongPtrW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX, dwnewlong: isize) -> usize {
+pub unsafe fn SetClassLongPtrW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX, dwnewlong: isize) -> usize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13250,7 +13250,7 @@ pub unsafe fn SetClassLongPtrW<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetClassLongW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX, dwnewlong: i32) -> u32 {
+pub unsafe fn SetClassLongW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: GET_CLASS_LONG_INDEX, dwnewlong: i32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13265,7 +13265,7 @@ pub unsafe fn SetClassLongW<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetClassWord<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: i32, wnewword: u16) -> u16 {
+pub unsafe fn SetClassWord<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: i32, wnewword: u16) -> u16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13280,12 +13280,12 @@ pub unsafe fn SetClassWord<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCoalescableTimer<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nidevent: usize, uelapse: u32, lptimerfunc: TIMERPROC, utolerancedelay: u32) -> usize {
+pub unsafe fn SetCoalescableTimer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nidevent: usize, uelapse: u32, lptimerfunc: TIMERPROC, utolerancedelay: u32) -> usize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetCoalescableTimer(hwnd: super::super::Foundation::HWND, nidevent: usize, uelapse: u32, lptimerfunc: ::windows::core::RawPtr, utolerancedelay: u32) -> usize;
+            fn SetCoalescableTimer(hwnd: super::super::Foundation::HWND, nidevent: usize, uelapse: u32, lptimerfunc: ::windows_core::RawPtr, utolerancedelay: u32) -> usize;
         }
         ::core::mem::transmute(SetCoalescableTimer(hwnd.into_param().abi(), ::core::mem::transmute(nidevent), ::core::mem::transmute(uelapse), ::core::mem::transmute(lptimerfunc), ::core::mem::transmute(utolerancedelay)))
     }
@@ -13294,7 +13294,7 @@ pub unsafe fn SetCoalescableTimer<'a, Param0: ::windows::core::IntoParam<'a, sup
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn SetCursor<'a, Param0: ::windows::core::IntoParam<'a, HCURSOR>>(hcursor: Param0) -> HCURSOR {
+pub unsafe fn SetCursor<'a, Param0: ::windows_core::IntoParam<'a, HCURSOR>>(hcursor: Param0) -> HCURSOR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13338,7 +13338,7 @@ pub unsafe fn SetDebugErrorLevel(dwlevel: u32) {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetDlgItemInt<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hdlg: Param0, niddlgitem: i32, uvalue: u32, bsigned: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn SetDlgItemInt<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hdlg: Param0, niddlgitem: i32, uvalue: u32, bsigned: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13353,12 +13353,12 @@ pub unsafe fn SetDlgItemInt<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetDlgItemTextA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hdlg: Param0, niddlgitem: i32, lpstring: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetDlgItemTextA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hdlg: Param0, niddlgitem: i32, lpstring: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetDlgItemTextA(hdlg: super::super::Foundation::HWND, niddlgitem: i32, lpstring: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetDlgItemTextA(hdlg: super::super::Foundation::HWND, niddlgitem: i32, lpstring: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetDlgItemTextA(hdlg.into_param().abi(), ::core::mem::transmute(niddlgitem), lpstring.into_param().abi()))
     }
@@ -13368,12 +13368,12 @@ pub unsafe fn SetDlgItemTextA<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetDlgItemTextW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hdlg: Param0, niddlgitem: i32, lpstring: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetDlgItemTextW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hdlg: Param0, niddlgitem: i32, lpstring: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetDlgItemTextW(hdlg: super::super::Foundation::HWND, niddlgitem: i32, lpstring: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetDlgItemTextW(hdlg: super::super::Foundation::HWND, niddlgitem: i32, lpstring: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetDlgItemTextW(hdlg.into_param().abi(), ::core::mem::transmute(niddlgitem), lpstring.into_param().abi()))
     }
@@ -13383,7 +13383,7 @@ pub unsafe fn SetDlgItemTextW<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetForegroundWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetForegroundWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13398,7 +13398,7 @@ pub unsafe fn SetForegroundWindow<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetLayeredWindowAttributes<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, crkey: u32, balpha: u8, dwflags: LAYERED_WINDOW_ATTRIBUTES_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetLayeredWindowAttributes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, crkey: u32, balpha: u8, dwflags: LAYERED_WINDOW_ATTRIBUTES_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13413,7 +13413,7 @@ pub unsafe fn SetLayeredWindowAttributes<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetMenu<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HMENU>>(hwnd: Param0, hmenu: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetMenu<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HMENU>>(hwnd: Param0, hmenu: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13428,7 +13428,7 @@ pub unsafe fn SetMenu<'a, Param0: ::windows::core::IntoParam<'a, super::super::F
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetMenuDefaultItem<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(hmenu: Param0, uitem: u32, fbypos: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetMenuDefaultItem<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(hmenu: Param0, uitem: u32, fbypos: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13443,7 +13443,7 @@ pub unsafe fn SetMenuDefaultItem<'a, Param0: ::windows::core::IntoParam<'a, HMEN
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn SetMenuInfo<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(param0: Param0, param1: *const MENUINFO) -> super::super::Foundation::BOOL {
+pub unsafe fn SetMenuInfo<'a, Param0: ::windows_core::IntoParam<'a, HMENU>>(param0: Param0, param1: *const MENUINFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13458,7 +13458,7 @@ pub unsafe fn SetMenuInfo<'a, Param0: ::windows::core::IntoParam<'a, HMENU>>(par
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn SetMenuItemBitmaps<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param3: ::windows::core::IntoParam<'a, super::super::Graphics::Gdi::HBITMAP>, Param4: ::windows::core::IntoParam<'a, super::super::Graphics::Gdi::HBITMAP>>(hmenu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS, hbitmapunchecked: Param3, hbitmapchecked: Param4) -> super::super::Foundation::BOOL {
+pub unsafe fn SetMenuItemBitmaps<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param3: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HBITMAP>, Param4: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HBITMAP>>(hmenu: Param0, uposition: u32, uflags: MENU_ITEM_FLAGS, hbitmapunchecked: Param3, hbitmapchecked: Param4) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13473,7 +13473,7 @@ pub unsafe fn SetMenuItemBitmaps<'a, Param0: ::windows::core::IntoParam<'a, HMEN
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn SetMenuItemInfoA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hmenu: Param0, item: u32, fbypositon: Param2, lpmii: *const MENUITEMINFOA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetMenuItemInfoA<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hmenu: Param0, item: u32, fbypositon: Param2, lpmii: *const MENUITEMINFOA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13488,7 +13488,7 @@ pub unsafe fn SetMenuItemInfoA<'a, Param0: ::windows::core::IntoParam<'a, HMENU>
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn SetMenuItemInfoW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hmenu: Param0, item: u32, fbypositon: Param2, lpmii: *const MENUITEMINFOW) -> super::super::Foundation::BOOL {
+pub unsafe fn SetMenuItemInfoW<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hmenu: Param0, item: u32, fbypositon: Param2, lpmii: *const MENUITEMINFOW) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13503,7 +13503,7 @@ pub unsafe fn SetMenuItemInfoW<'a, Param0: ::windows::core::IntoParam<'a, HMENU>
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetMessageExtraInfo<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(lparam: Param0) -> super::super::Foundation::LPARAM {
+pub unsafe fn SetMessageExtraInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(lparam: Param0) -> super::super::Foundation::LPARAM {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13533,7 +13533,7 @@ pub unsafe fn SetMessageQueue(cmessagesmax: i32) -> super::super::Foundation::BO
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetParent<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwndchild: Param0, hwndnewparent: Param1) -> super::super::Foundation::HWND {
+pub unsafe fn SetParent<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndchild: Param0, hwndnewparent: Param1) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13593,12 +13593,12 @@ pub unsafe fn SetProcessDefaultLayout(dwdefaultlayout: u32) -> super::super::Fou
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetPropA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hwnd: Param0, lpstring: Param1, hdata: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetPropA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hwnd: Param0, lpstring: Param1, hdata: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetPropA(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCSTR, hdata: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn SetPropA(hwnd: super::super::Foundation::HWND, lpstring: ::windows_core::PCSTR, hdata: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetPropA(hwnd.into_param().abi(), lpstring.into_param().abi(), hdata.into_param().abi()))
     }
@@ -13608,12 +13608,12 @@ pub unsafe fn SetPropA<'a, Param0: ::windows::core::IntoParam<'a, super::super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetPropW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hwnd: Param0, lpstring: Param1, hdata: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetPropW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hwnd: Param0, lpstring: Param1, hdata: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetPropW(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCWSTR, hdata: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn SetPropW(hwnd: super::super::Foundation::HWND, lpstring: ::windows_core::PCWSTR, hdata: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetPropW(hwnd.into_param().abi(), lpstring.into_param().abi(), hdata.into_param().abi()))
     }
@@ -13638,7 +13638,7 @@ pub unsafe fn SetSysColors(celements: i32, lpaelements: *const i32, lpargbvalues
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetSystemCursor<'a, Param0: ::windows::core::IntoParam<'a, HCURSOR>>(hcur: Param0, id: SYSTEM_CURSOR_ID) -> super::super::Foundation::BOOL {
+pub unsafe fn SetSystemCursor<'a, Param0: ::windows_core::IntoParam<'a, HCURSOR>>(hcur: Param0, id: SYSTEM_CURSOR_ID) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13653,12 +13653,12 @@ pub unsafe fn SetSystemCursor<'a, Param0: ::windows::core::IntoParam<'a, HCURSOR
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetTimer<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nidevent: usize, uelapse: u32, lptimerfunc: TIMERPROC) -> usize {
+pub unsafe fn SetTimer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nidevent: usize, uelapse: u32, lptimerfunc: TIMERPROC) -> usize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetTimer(hwnd: super::super::Foundation::HWND, nidevent: usize, uelapse: u32, lptimerfunc: ::windows::core::RawPtr) -> usize;
+            fn SetTimer(hwnd: super::super::Foundation::HWND, nidevent: usize, uelapse: u32, lptimerfunc: ::windows_core::RawPtr) -> usize;
         }
         ::core::mem::transmute(SetTimer(hwnd.into_param().abi(), ::core::mem::transmute(nidevent), ::core::mem::transmute(uelapse), ::core::mem::transmute(lptimerfunc)))
     }
@@ -13668,7 +13668,7 @@ pub unsafe fn SetTimer<'a, Param0: ::windows::core::IntoParam<'a, super::super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowDisplayAffinity<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, dwaffinity: WINDOW_DISPLAY_AFFINITY) -> super::super::Foundation::BOOL {
+pub unsafe fn SetWindowDisplayAffinity<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, dwaffinity: WINDOW_DISPLAY_AFFINITY) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13683,7 +13683,7 @@ pub unsafe fn SetWindowDisplayAffinity<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowLongA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX, dwnewlong: i32) -> i32 {
+pub unsafe fn SetWindowLongA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX, dwnewlong: i32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13699,7 +13699,7 @@ pub unsafe fn SetWindowLongA<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowLongPtrA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX, dwnewlong: isize) -> isize {
+pub unsafe fn SetWindowLongPtrA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX, dwnewlong: isize) -> isize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13715,7 +13715,7 @@ pub unsafe fn SetWindowLongPtrA<'a, Param0: ::windows::core::IntoParam<'a, super
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowLongPtrW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX, dwnewlong: isize) -> isize {
+pub unsafe fn SetWindowLongPtrW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX, dwnewlong: isize) -> isize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13730,7 +13730,7 @@ pub unsafe fn SetWindowLongPtrW<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowLongW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX, dwnewlong: i32) -> i32 {
+pub unsafe fn SetWindowLongW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: WINDOW_LONG_PTR_INDEX, dwnewlong: i32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13745,7 +13745,7 @@ pub unsafe fn SetWindowLongW<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowPlacement<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpwndpl: *const WINDOWPLACEMENT) -> super::super::Foundation::BOOL {
+pub unsafe fn SetWindowPlacement<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lpwndpl: *const WINDOWPLACEMENT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13760,7 +13760,7 @@ pub unsafe fn SetWindowPlacement<'a, Param0: ::windows::core::IntoParam<'a, supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowPos<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, hwndinsertafter: Param1, x: i32, y: i32, cx: i32, cy: i32, uflags: SET_WINDOW_POS_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetWindowPos<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, hwndinsertafter: Param1, x: i32, y: i32, cx: i32, cy: i32, uflags: SET_WINDOW_POS_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13775,12 +13775,12 @@ pub unsafe fn SetWindowPos<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowTextA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hwnd: Param0, lpstring: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetWindowTextA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, lpstring: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetWindowTextA(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetWindowTextA(hwnd: super::super::Foundation::HWND, lpstring: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetWindowTextA(hwnd.into_param().abi(), lpstring.into_param().abi()))
     }
@@ -13790,12 +13790,12 @@ pub unsafe fn SetWindowTextA<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowTextW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hwnd: Param0, lpstring: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetWindowTextW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, lpstring: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetWindowTextW(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetWindowTextW(hwnd: super::super::Foundation::HWND, lpstring: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(SetWindowTextW(hwnd.into_param().abi(), lpstring.into_param().abi()))
     }
@@ -13805,7 +13805,7 @@ pub unsafe fn SetWindowTextW<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowWord<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: i32, wnewword: u16) -> u16 {
+pub unsafe fn SetWindowWord<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, nindex: i32, wnewword: u16) -> u16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13825,7 +13825,7 @@ pub unsafe fn SetWindowsHookA(nfiltertype: i32, pfnfilterproc: HOOKPROC) -> HHOO
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetWindowsHookA(nfiltertype: i32, pfnfilterproc: ::windows::core::RawPtr) -> HHOOK;
+            fn SetWindowsHookA(nfiltertype: i32, pfnfilterproc: ::windows_core::RawPtr) -> HHOOK;
         }
         ::core::mem::transmute(SetWindowsHookA(::core::mem::transmute(nfiltertype), ::core::mem::transmute(pfnfilterproc)))
     }
@@ -13835,15 +13835,15 @@ pub unsafe fn SetWindowsHookA(nfiltertype: i32, pfnfilterproc: HOOKPROC) -> HHOO
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowsHookExA<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(idhook: WINDOWS_HOOK_ID, lpfn: HOOKPROC, hmod: Param2, dwthreadid: u32) -> ::windows::core::Result<HHOOK> {
+pub unsafe fn SetWindowsHookExA<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(idhook: WINDOWS_HOOK_ID, lpfn: HOOKPROC, hmod: Param2, dwthreadid: u32) -> ::windows_core::Result<HHOOK> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetWindowsHookExA(idhook: WINDOWS_HOOK_ID, lpfn: ::windows::core::RawPtr, hmod: super::super::Foundation::HINSTANCE, dwthreadid: u32) -> HHOOK;
+            fn SetWindowsHookExA(idhook: WINDOWS_HOOK_ID, lpfn: ::windows_core::RawPtr, hmod: super::super::Foundation::HINSTANCE, dwthreadid: u32) -> HHOOK;
         }
         let result__ = SetWindowsHookExA(::core::mem::transmute(idhook), ::core::mem::transmute(lpfn), hmod.into_param().abi(), ::core::mem::transmute(dwthreadid));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13851,15 +13851,15 @@ pub unsafe fn SetWindowsHookExA<'a, Param2: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowsHookExW<'a, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(idhook: WINDOWS_HOOK_ID, lpfn: HOOKPROC, hmod: Param2, dwthreadid: u32) -> ::windows::core::Result<HHOOK> {
+pub unsafe fn SetWindowsHookExW<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(idhook: WINDOWS_HOOK_ID, lpfn: HOOKPROC, hmod: Param2, dwthreadid: u32) -> ::windows_core::Result<HHOOK> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetWindowsHookExW(idhook: WINDOWS_HOOK_ID, lpfn: ::windows::core::RawPtr, hmod: super::super::Foundation::HINSTANCE, dwthreadid: u32) -> HHOOK;
+            fn SetWindowsHookExW(idhook: WINDOWS_HOOK_ID, lpfn: ::windows_core::RawPtr, hmod: super::super::Foundation::HINSTANCE, dwthreadid: u32) -> HHOOK;
         }
         let result__ = SetWindowsHookExW(::core::mem::transmute(idhook), ::core::mem::transmute(lpfn), hmod.into_param().abi(), ::core::mem::transmute(dwthreadid));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13872,7 +13872,7 @@ pub unsafe fn SetWindowsHookW(nfiltertype: i32, pfnfilterproc: HOOKPROC) -> HHOO
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetWindowsHookW(nfiltertype: i32, pfnfilterproc: ::windows::core::RawPtr) -> HHOOK;
+            fn SetWindowsHookW(nfiltertype: i32, pfnfilterproc: ::windows_core::RawPtr) -> HHOOK;
         }
         ::core::mem::transmute(SetWindowsHookW(::core::mem::transmute(nfiltertype), ::core::mem::transmute(pfnfilterproc)))
     }
@@ -13882,7 +13882,7 @@ pub unsafe fn SetWindowsHookW(nfiltertype: i32, pfnfilterproc: HOOKPROC) -> HHOO
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ShowCaret<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn ShowCaret<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13897,7 +13897,7 @@ pub unsafe fn ShowCaret<'a, Param0: ::windows::core::IntoParam<'a, super::super:
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ShowCursor<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(bshow: Param0) -> i32 {
+pub unsafe fn ShowCursor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(bshow: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13912,7 +13912,7 @@ pub unsafe fn ShowCursor<'a, Param0: ::windows::core::IntoParam<'a, super::super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ShowOwnedPopups<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, fshow: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn ShowOwnedPopups<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, fshow: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13927,7 +13927,7 @@ pub unsafe fn ShowOwnedPopups<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ShowWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, ncmdshow: SHOW_WINDOW_CMD) -> super::super::Foundation::BOOL {
+pub unsafe fn ShowWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, ncmdshow: SHOW_WINDOW_CMD) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13942,7 +13942,7 @@ pub unsafe fn ShowWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ShowWindowAsync<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, ncmdshow: SHOW_WINDOW_CMD) -> super::super::Foundation::BOOL {
+pub unsafe fn ShowWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, ncmdshow: SHOW_WINDOW_CMD) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13972,7 +13972,7 @@ pub unsafe fn SoundSentry() -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SwitchToThisWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, funknown: Param1) {
+pub unsafe fn SwitchToThisWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, funknown: Param1) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14033,7 +14033,7 @@ impl ::core::default::Default for TILE_WINDOWS_HOW {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TILE_WINDOWS_HOW {
+unsafe impl ::windows_core::Abi for TILE_WINDOWS_HOW {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TILE_WINDOWS_HOW {
@@ -14075,13 +14075,13 @@ impl ::core::fmt::Debug for TITLEBARINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TITLEBARINFO {
+unsafe impl ::windows_core::Abi for TITLEBARINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TITLEBARINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TITLEBARINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TITLEBARINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14116,13 +14116,13 @@ impl ::core::fmt::Debug for TITLEBARINFOEX {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TITLEBARINFOEX {
+unsafe impl ::windows_core::Abi for TITLEBARINFOEX {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TITLEBARINFOEX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TITLEBARINFOEX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TITLEBARINFOEX>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14203,13 +14203,13 @@ impl ::core::fmt::Debug for TPMPARAMS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for TPMPARAMS {
+unsafe impl ::windows_core::Abi for TPMPARAMS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TPMPARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TPMPARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TPMPARAMS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14275,7 +14275,7 @@ impl ::core::default::Default for TRACK_POPUP_MENU_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TRACK_POPUP_MENU_FLAGS {
+unsafe impl ::windows_core::Abi for TRACK_POPUP_MENU_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TRACK_POPUP_MENU_FLAGS {
@@ -14314,14 +14314,14 @@ impl ::core::ops::Not for TRACK_POPUP_MENU_FLAGS {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TileWindows<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwndparent: Param0, whow: TILE_WINDOWS_HOW, lprect: *const super::super::Foundation::RECT, lpkids: &[super::super::Foundation::HWND]) -> u16 {
+pub unsafe fn TileWindows<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndparent: Param0, whow: TILE_WINDOWS_HOW, lprect: *const super::super::Foundation::RECT, lpkids: &[super::super::Foundation::HWND]) -> u16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn TileWindows(hwndparent: super::super::Foundation::HWND, whow: TILE_WINDOWS_HOW, lprect: *const super::super::Foundation::RECT, ckids: u32, lpkids: *const super::super::Foundation::HWND) -> u16;
         }
-        ::core::mem::transmute(TileWindows(hwndparent.into_param().abi(), ::core::mem::transmute(whow), ::core::mem::transmute(lprect), lpkids.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(lpkids))))
+        ::core::mem::transmute(TileWindows(hwndparent.into_param().abi(), ::core::mem::transmute(whow), ::core::mem::transmute(lprect), lpkids.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(lpkids))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14345,12 +14345,12 @@ impl ::core::fmt::Debug for TouchPredictionParameters {
         f.debug_struct("TouchPredictionParameters").field("cbSize", &self.cbSize).field("dwLatency", &self.dwLatency).field("dwSampleTime", &self.dwSampleTime).field("bUseHWTimeStamp", &self.bUseHWTimeStamp).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TouchPredictionParameters {
+unsafe impl ::windows_core::Abi for TouchPredictionParameters {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TouchPredictionParameters {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TouchPredictionParameters>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TouchPredictionParameters>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TouchPredictionParameters {}
@@ -14362,7 +14362,7 @@ impl ::core::default::Default for TouchPredictionParameters {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TrackPopupMenu<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param5: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hmenu: Param0, uflags: TRACK_POPUP_MENU_FLAGS, x: i32, y: i32, nreserved: i32, hwnd: Param5, prcrect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn TrackPopupMenu<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hmenu: Param0, uflags: TRACK_POPUP_MENU_FLAGS, x: i32, y: i32, nreserved: i32, hwnd: Param5, prcrect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14377,7 +14377,7 @@ pub unsafe fn TrackPopupMenu<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, 
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TrackPopupMenuEx<'a, Param0: ::windows::core::IntoParam<'a, HMENU>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hmenu: Param0, uflags: u32, x: i32, y: i32, hwnd: Param4, lptpm: *const TPMPARAMS) -> super::super::Foundation::BOOL {
+pub unsafe fn TrackPopupMenuEx<'a, Param0: ::windows_core::IntoParam<'a, HMENU>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hmenu: Param0, uflags: u32, x: i32, y: i32, hwnd: Param4, lptpm: *const TPMPARAMS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14392,7 +14392,7 @@ pub unsafe fn TrackPopupMenuEx<'a, Param0: ::windows::core::IntoParam<'a, HMENU>
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TranslateAcceleratorA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HACCEL>>(hwnd: Param0, hacctable: Param1, lpmsg: *const MSG) -> i32 {
+pub unsafe fn TranslateAcceleratorA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HACCEL>>(hwnd: Param0, hacctable: Param1, lpmsg: *const MSG) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14407,7 +14407,7 @@ pub unsafe fn TranslateAcceleratorA<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TranslateAcceleratorW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HACCEL>>(hwnd: Param0, hacctable: Param1, lpmsg: *const MSG) -> i32 {
+pub unsafe fn TranslateAcceleratorW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HACCEL>>(hwnd: Param0, hacctable: Param1, lpmsg: *const MSG) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14422,7 +14422,7 @@ pub unsafe fn TranslateAcceleratorW<'a, Param0: ::windows::core::IntoParam<'a, s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TranslateMDISysAccel<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwndclient: Param0, lpmsg: *const MSG) -> super::super::Foundation::BOOL {
+pub unsafe fn TranslateMDISysAccel<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndclient: Param0, lpmsg: *const MSG) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14495,13 +14495,13 @@ impl ::core::fmt::Debug for UPDATELAYEREDWINDOWINFO {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for UPDATELAYEREDWINDOWINFO {
+unsafe impl ::windows_core::Abi for UPDATELAYEREDWINDOWINFO {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for UPDATELAYEREDWINDOWINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<UPDATELAYEREDWINDOWINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<UPDATELAYEREDWINDOWINFO>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
@@ -14535,7 +14535,7 @@ impl ::core::default::Default for UPDATE_LAYERED_WINDOW_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for UPDATE_LAYERED_WINDOW_FLAGS {
+unsafe impl ::windows_core::Abi for UPDATE_LAYERED_WINDOW_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for UPDATE_LAYERED_WINDOW_FLAGS {
@@ -14557,7 +14557,7 @@ pub unsafe fn UnhookWindowsHook(ncode: i32, pfnfilterproc: HOOKPROC) -> super::s
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UnhookWindowsHook(ncode: i32, pfnfilterproc: ::windows::core::RawPtr) -> super::super::Foundation::BOOL;
+            fn UnhookWindowsHook(ncode: i32, pfnfilterproc: ::windows_core::RawPtr) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(UnhookWindowsHook(::core::mem::transmute(ncode), ::core::mem::transmute(pfnfilterproc)))
     }
@@ -14567,7 +14567,7 @@ pub unsafe fn UnhookWindowsHook(ncode: i32, pfnfilterproc: HOOKPROC) -> super::s
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnhookWindowsHookEx<'a, Param0: ::windows::core::IntoParam<'a, HHOOK>>(hhk: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn UnhookWindowsHookEx<'a, Param0: ::windows_core::IntoParam<'a, HHOOK>>(hhk: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14582,12 +14582,12 @@ pub unsafe fn UnhookWindowsHookEx<'a, Param0: ::windows::core::IntoParam<'a, HHO
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnregisterClassA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(lpclassname: Param0, hinstance: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn UnregisterClassA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(lpclassname: Param0, hinstance: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UnregisterClassA(lpclassname: ::windows::core::PCSTR, hinstance: super::super::Foundation::HINSTANCE) -> super::super::Foundation::BOOL;
+            fn UnregisterClassA(lpclassname: ::windows_core::PCSTR, hinstance: super::super::Foundation::HINSTANCE) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(UnregisterClassA(lpclassname.into_param().abi(), hinstance.into_param().abi()))
     }
@@ -14597,12 +14597,12 @@ pub unsafe fn UnregisterClassA<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnregisterClassW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(lpclassname: Param0, hinstance: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn UnregisterClassW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(lpclassname: Param0, hinstance: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UnregisterClassW(lpclassname: ::windows::core::PCWSTR, hinstance: super::super::Foundation::HINSTANCE) -> super::super::Foundation::BOOL;
+            fn UnregisterClassW(lpclassname: ::windows_core::PCWSTR, hinstance: super::super::Foundation::HINSTANCE) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(UnregisterClassW(lpclassname.into_param().abi(), hinstance.into_param().abi()))
     }
@@ -14612,7 +14612,7 @@ pub unsafe fn UnregisterClassW<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn UpdateLayeredWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Graphics::Gdi::HDC>, Param4: ::windows::core::IntoParam<'a, super::super::Graphics::Gdi::HDC>>(hwnd: Param0, hdcdst: Param1, pptdst: *const super::super::Foundation::POINT, psize: *const super::super::Foundation::SIZE, hdcsrc: Param4, pptsrc: *const super::super::Foundation::POINT, crkey: u32, pblend: *const super::super::Graphics::Gdi::BLENDFUNCTION, dwflags: UPDATE_LAYERED_WINDOW_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn UpdateLayeredWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>, Param4: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>>(hwnd: Param0, hdcdst: Param1, pptdst: *const super::super::Foundation::POINT, psize: *const super::super::Foundation::SIZE, hdcsrc: Param4, pptsrc: *const super::super::Foundation::POINT, crkey: u32, pblend: *const super::super::Graphics::Gdi::BLENDFUNCTION, dwflags: UPDATE_LAYERED_WINDOW_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14627,7 +14627,7 @@ pub unsafe fn UpdateLayeredWindow<'a, Param0: ::windows::core::IntoParam<'a, sup
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn UpdateLayeredWindowIndirect<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pulwinfo: *const UPDATELAYEREDWINDOWINFO) -> super::super::Foundation::BOOL {
+pub unsafe fn UpdateLayeredWindowIndirect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, pulwinfo: *const UPDATELAYEREDWINDOWINFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14687,13 +14687,13 @@ impl ::core::fmt::Debug for WINDOWINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WINDOWINFO {
+unsafe impl ::windows_core::Abi for WINDOWINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WINDOWINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WINDOWINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WINDOWINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14730,13 +14730,13 @@ impl ::core::fmt::Debug for WINDOWPLACEMENT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WINDOWPLACEMENT {
+unsafe impl ::windows_core::Abi for WINDOWPLACEMENT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WINDOWPLACEMENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WINDOWPLACEMENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WINDOWPLACEMENT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14768,7 +14768,7 @@ impl ::core::default::Default for WINDOWPLACEMENT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WINDOWPLACEMENT_FLAGS {
+unsafe impl ::windows_core::Abi for WINDOWPLACEMENT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WINDOWPLACEMENT_FLAGS {
@@ -14831,13 +14831,13 @@ impl ::core::fmt::Debug for WINDOWPOS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for WINDOWPOS {
+unsafe impl ::windows_core::Abi for WINDOWPOS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WINDOWPOS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WINDOWPOS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WINDOWPOS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14893,7 +14893,7 @@ impl ::core::default::Default for WINDOWS_HOOK_ID {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WINDOWS_HOOK_ID {
+unsafe impl ::windows_core::Abi for WINDOWS_HOOK_ID {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WINDOWS_HOOK_ID {
@@ -14922,7 +14922,7 @@ impl ::core::default::Default for WINDOW_DISPLAY_AFFINITY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WINDOW_DISPLAY_AFFINITY {
+unsafe impl ::windows_core::Abi for WINDOW_DISPLAY_AFFINITY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WINDOW_DISPLAY_AFFINITY {
@@ -14999,7 +14999,7 @@ impl ::core::default::Default for WINDOW_EX_STYLE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WINDOW_EX_STYLE {
+unsafe impl ::windows_core::Abi for WINDOW_EX_STYLE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WINDOW_EX_STYLE {
@@ -15074,7 +15074,7 @@ impl ::core::default::Default for WINDOW_LONG_PTR_INDEX {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WINDOW_LONG_PTR_INDEX {
+unsafe impl ::windows_core::Abi for WINDOW_LONG_PTR_INDEX {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WINDOW_LONG_PTR_INDEX {
@@ -15103,7 +15103,7 @@ impl ::core::default::Default for WINDOW_MESSAGE_FILTER_ACTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WINDOW_MESSAGE_FILTER_ACTION {
+unsafe impl ::windows_core::Abi for WINDOW_MESSAGE_FILTER_ACTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WINDOW_MESSAGE_FILTER_ACTION {
@@ -15182,7 +15182,7 @@ impl ::core::default::Default for WINDOW_STYLE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WINDOW_STYLE {
+unsafe impl ::windows_core::Abi for WINDOW_STYLE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WINDOW_STYLE {
@@ -15780,8 +15780,8 @@ pub struct WNDCLASSA {
     pub hIcon: HICON,
     pub hCursor: HCURSOR,
     pub hbrBackground: super::super::Graphics::Gdi::HBRUSH,
-    pub lpszMenuName: ::windows::core::PCSTR,
-    pub lpszClassName: ::windows::core::PCSTR,
+    pub lpszMenuName: ::windows_core::PCSTR,
+    pub lpszClassName: ::windows_core::PCSTR,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::marker::Copy for WNDCLASSA {}
@@ -15798,13 +15798,13 @@ impl ::core::fmt::Debug for WNDCLASSA {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for WNDCLASSA {
+unsafe impl ::windows_core::Abi for WNDCLASSA {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for WNDCLASSA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNDCLASSA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNDCLASSA>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
@@ -15828,8 +15828,8 @@ pub struct WNDCLASSEXA {
     pub hIcon: HICON,
     pub hCursor: HCURSOR,
     pub hbrBackground: super::super::Graphics::Gdi::HBRUSH,
-    pub lpszMenuName: ::windows::core::PCSTR,
-    pub lpszClassName: ::windows::core::PCSTR,
+    pub lpszMenuName: ::windows_core::PCSTR,
+    pub lpszClassName: ::windows_core::PCSTR,
     pub hIconSm: HICON,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
@@ -15860,13 +15860,13 @@ impl ::core::fmt::Debug for WNDCLASSEXA {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for WNDCLASSEXA {
+unsafe impl ::windows_core::Abi for WNDCLASSEXA {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for WNDCLASSEXA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNDCLASSEXA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNDCLASSEXA>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
@@ -15890,8 +15890,8 @@ pub struct WNDCLASSEXW {
     pub hIcon: HICON,
     pub hCursor: HCURSOR,
     pub hbrBackground: super::super::Graphics::Gdi::HBRUSH,
-    pub lpszMenuName: ::windows::core::PCWSTR,
-    pub lpszClassName: ::windows::core::PCWSTR,
+    pub lpszMenuName: ::windows_core::PCWSTR,
+    pub lpszClassName: ::windows_core::PCWSTR,
     pub hIconSm: HICON,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
@@ -15922,13 +15922,13 @@ impl ::core::fmt::Debug for WNDCLASSEXW {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for WNDCLASSEXW {
+unsafe impl ::windows_core::Abi for WNDCLASSEXW {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for WNDCLASSEXW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNDCLASSEXW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNDCLASSEXW>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
@@ -15951,8 +15951,8 @@ pub struct WNDCLASSW {
     pub hIcon: HICON,
     pub hCursor: HCURSOR,
     pub hbrBackground: super::super::Graphics::Gdi::HBRUSH,
-    pub lpszMenuName: ::windows::core::PCWSTR,
-    pub lpszClassName: ::windows::core::PCWSTR,
+    pub lpszMenuName: ::windows_core::PCWSTR,
+    pub lpszClassName: ::windows_core::PCWSTR,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::marker::Copy for WNDCLASSW {}
@@ -15969,13 +15969,13 @@ impl ::core::fmt::Debug for WNDCLASSW {
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-unsafe impl ::windows::core::Abi for WNDCLASSW {
+unsafe impl ::windows_core::Abi for WNDCLASSW {
     type Abi = Self;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::cmp::PartialEq for WNDCLASSW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNDCLASSW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WNDCLASSW>()) == 0 }
     }
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
@@ -16027,7 +16027,7 @@ impl ::core::default::Default for WNDCLASS_STYLES {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for WNDCLASS_STYLES {
+unsafe impl ::windows_core::Abi for WNDCLASS_STYLES {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for WNDCLASS_STYLES {
@@ -16125,7 +16125,7 @@ pub unsafe fn WaitMessage() -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WindowFromPhysicalPoint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::POINT>>(point: Param0) -> super::super::Foundation::HWND {
+pub unsafe fn WindowFromPhysicalPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::POINT>>(point: Param0) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16140,7 +16140,7 @@ pub unsafe fn WindowFromPhysicalPoint<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WindowFromPoint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::POINT>>(point: Param0) -> super::super::Foundation::HWND {
+pub unsafe fn WindowFromPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::POINT>>(point: Param0) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16188,12 +16188,12 @@ pub const __WARNING_RETURN_UNINIT_VAR: u32 = 6101u32;
 pub const __WARNING_USING_UNINIT_VAR: u32 = 6001u32;
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn wsprintfA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(param0: ::windows::core::PSTR, param1: Param1) -> i32 {
+pub unsafe fn wsprintfA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: ::windows_core::PSTR, param1: Param1) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wsprintfA(param0: ::windows::core::PSTR, param1: ::windows::core::PCSTR) -> i32;
+            fn wsprintfA(param0: ::windows_core::PSTR, param1: ::windows_core::PCSTR) -> i32;
         }
         ::core::mem::transmute(wsprintfA(::core::mem::transmute(param0), param1.into_param().abi()))
     }
@@ -16202,12 +16202,12 @@ pub unsafe fn wsprintfA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::co
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn wsprintfW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(param0: ::windows::core::PWSTR, param1: Param1) -> i32 {
+pub unsafe fn wsprintfW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: ::windows_core::PWSTR, param1: Param1) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wsprintfW(param0: ::windows::core::PWSTR, param1: ::windows::core::PCWSTR) -> i32;
+            fn wsprintfW(param0: ::windows_core::PWSTR, param1: ::windows_core::PCWSTR) -> i32;
         }
         ::core::mem::transmute(wsprintfW(::core::mem::transmute(param0), param1.into_param().abi()))
     }
@@ -16216,12 +16216,12 @@ pub unsafe fn wsprintfW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::co
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn wvsprintfA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(param0: ::windows::core::PSTR, param1: Param1, arglist: *const i8) -> i32 {
+pub unsafe fn wvsprintfA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: ::windows_core::PSTR, param1: Param1, arglist: *const i8) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wvsprintfA(param0: ::windows::core::PSTR, param1: ::windows::core::PCSTR, arglist: *const i8) -> i32;
+            fn wvsprintfA(param0: ::windows_core::PSTR, param1: ::windows_core::PCSTR, arglist: *const i8) -> i32;
         }
         ::core::mem::transmute(wvsprintfA(::core::mem::transmute(param0), param1.into_param().abi(), ::core::mem::transmute(arglist)))
     }
@@ -16230,12 +16230,12 @@ pub unsafe fn wvsprintfA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::c
 }
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
-pub unsafe fn wvsprintfW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(param0: ::windows::core::PWSTR, param1: Param1, arglist: *const i8) -> i32 {
+pub unsafe fn wvsprintfW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: ::windows_core::PWSTR, param1: Param1, arglist: *const i8) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wvsprintfW(param0: ::windows::core::PWSTR, param1: ::windows::core::PCWSTR, arglist: *const i8) -> i32;
+            fn wvsprintfW(param0: ::windows_core::PWSTR, param1: ::windows_core::PCWSTR, arglist: *const i8) -> i32;
         }
         ::core::mem::transmute(wvsprintfW(::core::mem::transmute(param0), param1.into_param().abi(), ::core::mem::transmute(arglist)))
     }

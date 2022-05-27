@@ -16,47 +16,47 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn DestroyEnvironmentBlock(lpenvironment: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn EnclaveGetAttestationReport(enclavedata: *const u8, report: *mut ::core::ffi::c_void, buffersize: u32, outputsize: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn EnclaveGetAttestationReport(enclavedata: *const u8, report: *mut ::core::ffi::c_void, buffersize: u32, outputsize: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn EnclaveGetEnclaveInformation(informationsize: u32, enclaveinformation: *mut ENCLAVE_INFORMATION) -> ::windows_sys::core::HRESULT;
+    pub fn EnclaveGetEnclaveInformation(informationsize: u32, enclaveinformation: *mut ENCLAVE_INFORMATION) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn EnclaveSealData(datatoencrypt: *const ::core::ffi::c_void, datatoencryptsize: u32, identitypolicy: ENCLAVE_SEALING_IDENTITY_POLICY, runtimepolicy: u32, protectedblob: *mut ::core::ffi::c_void, buffersize: u32, protectedblobsize: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn EnclaveSealData(datatoencrypt: *const ::core::ffi::c_void, datatoencryptsize: u32, identitypolicy: ENCLAVE_SEALING_IDENTITY_POLICY, runtimepolicy: u32, protectedblob: *mut ::core::ffi::c_void, buffersize: u32, protectedblobsize: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn EnclaveUnsealData(protectedblob: *const ::core::ffi::c_void, protectedblobsize: u32, decrypteddata: *mut ::core::ffi::c_void, buffersize: u32, decrypteddatasize: *mut u32, sealingidentity: *mut ENCLAVE_IDENTITY, unsealingflags: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn EnclaveUnsealData(protectedblob: *const ::core::ffi::c_void, protectedblobsize: u32, decrypteddata: *mut ::core::ffi::c_void, buffersize: u32, decrypteddatasize: *mut u32, sealingidentity: *mut ENCLAVE_IDENTITY, unsealingflags: *mut u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn EnclaveVerifyAttestationReport(enclavetype: u32, report: *const ::core::ffi::c_void, reportsize: u32) -> ::windows_sys::core::HRESULT;
+    pub fn EnclaveVerifyAttestationReport(enclavetype: u32, report: *const ::core::ffi::c_void, reportsize: u32) -> ::windows_sys_core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn ExpandEnvironmentStringsA(lpsrc: ::windows_sys::core::PCSTR, lpdst: ::windows_sys::core::PSTR, nsize: u32) -> u32;
+    pub fn ExpandEnvironmentStringsA(lpsrc: ::windows_sys_core::PCSTR, lpdst: ::windows_sys_core::PSTR, nsize: u32) -> u32;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ExpandEnvironmentStringsForUserA(htoken: super::super::Foundation::HANDLE, lpsrc: ::windows_sys::core::PCSTR, lpdest: ::windows_sys::core::PSTR, dwsize: u32) -> super::super::Foundation::BOOL;
+    pub fn ExpandEnvironmentStringsForUserA(htoken: super::super::Foundation::HANDLE, lpsrc: ::windows_sys_core::PCSTR, lpdest: ::windows_sys_core::PSTR, dwsize: u32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ExpandEnvironmentStringsForUserW(htoken: super::super::Foundation::HANDLE, lpsrc: ::windows_sys::core::PCWSTR, lpdest: ::windows_sys::core::PWSTR, dwsize: u32) -> super::super::Foundation::BOOL;
+    pub fn ExpandEnvironmentStringsForUserW(htoken: super::super::Foundation::HANDLE, lpsrc: ::windows_sys_core::PCWSTR, lpdest: ::windows_sys_core::PWSTR, dwsize: u32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn ExpandEnvironmentStringsW(lpsrc: ::windows_sys::core::PCWSTR, lpdst: ::windows_sys::core::PWSTR, nsize: u32) -> u32;
+    pub fn ExpandEnvironmentStringsW(lpsrc: ::windows_sys_core::PCWSTR, lpdst: ::windows_sys_core::PWSTR, nsize: u32) -> u32;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn FreeEnvironmentStringsA(penv: ::windows_sys::core::PCSTR) -> super::super::Foundation::BOOL;
+    pub fn FreeEnvironmentStringsA(penv: ::windows_sys_core::PCSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn FreeEnvironmentStringsW(penv: ::windows_sys::core::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn FreeEnvironmentStringsW(penv: ::windows_sys_core::PCWSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn GetCommandLineA() -> ::windows_sys::core::PSTR;
+    pub fn GetCommandLineA() -> ::windows_sys_core::PSTR;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn GetCommandLineW() -> ::windows_sys::core::PWSTR;
+    pub fn GetCommandLineW() -> ::windows_sys_core::PWSTR;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn GetCurrentDirectoryA(nbufferlength: u32, lpbuffer: ::windows_sys::core::PSTR) -> u32;
+    pub fn GetCurrentDirectoryA(nbufferlength: u32, lpbuffer: ::windows_sys_core::PSTR) -> u32;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn GetCurrentDirectoryW(nbufferlength: u32, lpbuffer: ::windows_sys::core::PWSTR) -> u32;
+    pub fn GetCurrentDirectoryW(nbufferlength: u32, lpbuffer: ::windows_sys_core::PWSTR) -> u32;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn GetEnvironmentStrings() -> ::windows_sys::core::PSTR;
+    pub fn GetEnvironmentStrings() -> ::windows_sys_core::PSTR;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn GetEnvironmentStringsW() -> ::windows_sys::core::PWSTR;
+    pub fn GetEnvironmentStringsW() -> ::windows_sys_core::PWSTR;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn GetEnvironmentVariableA(lpname: ::windows_sys::core::PCSTR, lpbuffer: ::windows_sys::core::PSTR, nsize: u32) -> u32;
+    pub fn GetEnvironmentVariableA(lpname: ::windows_sys_core::PCSTR, lpbuffer: ::windows_sys_core::PSTR, nsize: u32) -> u32;
     #[doc = "*Required features: `\"Win32_System_Environment\"`*"]
-    pub fn GetEnvironmentVariableW(lpname: ::windows_sys::core::PCWSTR, lpbuffer: ::windows_sys::core::PWSTR, nsize: u32) -> u32;
+    pub fn GetEnvironmentVariableW(lpname: ::windows_sys_core::PCWSTR, lpbuffer: ::windows_sys_core::PWSTR, nsize: u32) -> u32;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn InitializeEnclave(hprocess: super::super::Foundation::HANDLE, lpaddress: *const ::core::ffi::c_void, lpenclaveinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpenclaveerror: *mut u32) -> super::super::Foundation::BOOL;
@@ -68,31 +68,31 @@ extern "system" {
     pub fn LoadEnclaveData(hprocess: super::super::Foundation::HANDLE, lpaddress: *const ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nsize: usize, flprotect: u32, lppageinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpnumberofbyteswritten: *mut usize, lpenclaveerror: *mut u32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LoadEnclaveImageA(lpenclaveaddress: *const ::core::ffi::c_void, lpimagename: ::windows_sys::core::PCSTR) -> super::super::Foundation::BOOL;
+    pub fn LoadEnclaveImageA(lpenclaveaddress: *const ::core::ffi::c_void, lpimagename: ::windows_sys_core::PCSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LoadEnclaveImageW(lpenclaveaddress: *const ::core::ffi::c_void, lpimagename: ::windows_sys::core::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn LoadEnclaveImageW(lpenclaveaddress: *const ::core::ffi::c_void, lpimagename: ::windows_sys_core::PCWSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn NeedCurrentDirectoryForExePathA(exename: ::windows_sys::core::PCSTR) -> super::super::Foundation::BOOL;
+    pub fn NeedCurrentDirectoryForExePathA(exename: ::windows_sys_core::PCSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn NeedCurrentDirectoryForExePathW(exename: ::windows_sys::core::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn NeedCurrentDirectoryForExePathW(exename: ::windows_sys_core::PCWSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SetCurrentDirectoryA(lppathname: ::windows_sys::core::PCSTR) -> super::super::Foundation::BOOL;
+    pub fn SetCurrentDirectoryA(lppathname: ::windows_sys_core::PCSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SetCurrentDirectoryW(lppathname: ::windows_sys::core::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn SetCurrentDirectoryW(lppathname: ::windows_sys_core::PCWSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SetEnvironmentStringsW(newenvironment: ::windows_sys::core::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn SetEnvironmentStringsW(newenvironment: ::windows_sys_core::PCWSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SetEnvironmentVariableA(lpname: ::windows_sys::core::PCSTR, lpvalue: ::windows_sys::core::PCSTR) -> super::super::Foundation::BOOL;
+    pub fn SetEnvironmentVariableA(lpname: ::windows_sys_core::PCSTR, lpvalue: ::windows_sys_core::PCSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SetEnvironmentVariableW(lpname: ::windows_sys::core::PCWSTR, lpvalue: ::windows_sys::core::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn SetEnvironmentVariableW(lpname: ::windows_sys_core::PCWSTR, lpvalue: ::windows_sys_core::PCWSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Environment\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn TerminateEnclave(lpaddress: *const ::core::ffi::c_void, fwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;

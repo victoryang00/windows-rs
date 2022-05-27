@@ -16,12 +16,12 @@ impl ::core::fmt::Debug for ABC {
         f.debug_struct("ABC").field("abcA", &self.abcA).field("abcB", &self.abcB).field("abcC", &self.abcC).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ABC {
+unsafe impl ::windows_core::Abi for ABC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ABC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ABC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ABC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ABC {}
@@ -48,12 +48,12 @@ impl ::core::fmt::Debug for ABCFLOAT {
         f.debug_struct("ABCFLOAT").field("abcfA", &self.abcfA).field("abcfB", &self.abcfB).field("abcfC", &self.abcfC).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ABCFLOAT {
+unsafe impl ::windows_core::Abi for ABCFLOAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ABCFLOAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ABCFLOAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ABCFLOAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ABCFLOAT {}
@@ -80,12 +80,12 @@ impl ::core::fmt::Debug for ABORTPATH {
         f.debug_struct("ABORTPATH").field("emr", &self.emr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ABORTPATH {
+unsafe impl ::windows_core::Abi for ABORTPATH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ABORTPATH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ABORTPATH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ABORTPATH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ABORTPATH {}
@@ -123,7 +123,7 @@ impl ::core::default::Default for ARC_DIRECTION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ARC_DIRECTION {
+unsafe impl ::windows_core::Abi for ARC_DIRECTION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ARC_DIRECTION {
@@ -151,12 +151,12 @@ impl ::core::fmt::Debug for AXESLISTA {
         f.debug_struct("AXESLISTA").field("axlReserved", &self.axlReserved).field("axlNumAxes", &self.axlNumAxes).field("axlAxisInfo", &self.axlAxisInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AXESLISTA {
+unsafe impl ::windows_core::Abi for AXESLISTA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AXESLISTA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AXESLISTA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AXESLISTA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AXESLISTA {}
@@ -183,12 +183,12 @@ impl ::core::fmt::Debug for AXESLISTW {
         f.debug_struct("AXESLISTW").field("axlReserved", &self.axlReserved).field("axlNumAxes", &self.axlNumAxes).field("axlAxisInfo", &self.axlAxisInfo).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AXESLISTW {
+unsafe impl ::windows_core::Abi for AXESLISTW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AXESLISTW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AXESLISTW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AXESLISTW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AXESLISTW {}
@@ -215,12 +215,12 @@ impl ::core::fmt::Debug for AXISINFOA {
         f.debug_struct("AXISINFOA").field("axMinValue", &self.axMinValue).field("axMaxValue", &self.axMaxValue).field("axAxisName", &self.axAxisName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AXISINFOA {
+unsafe impl ::windows_core::Abi for AXISINFOA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AXISINFOA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AXISINFOA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AXISINFOA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AXISINFOA {}
@@ -247,12 +247,12 @@ impl ::core::fmt::Debug for AXISINFOW {
         f.debug_struct("AXISINFOW").field("axMinValue", &self.axMinValue).field("axMaxValue", &self.axMaxValue).field("axAxisName", &self.axAxisName).finish()
     }
 }
-unsafe impl ::windows::core::Abi for AXISINFOW {
+unsafe impl ::windows_core::Abi for AXISINFOW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for AXISINFOW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AXISINFOW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AXISINFOW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for AXISINFOW {}
@@ -264,7 +264,7 @@ impl ::core::default::Default for AXISINFOW {
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AbortPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn AbortPath<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -293,12 +293,12 @@ pub unsafe fn AddFontMemResourceEx(pfileview: *const ::core::ffi::c_void, cjsize
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn AddFontResourceA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(param0: Param0) -> i32 {
+pub unsafe fn AddFontResourceA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddFontResourceA(param0: ::windows::core::PCSTR) -> i32;
+            fn AddFontResourceA(param0: ::windows_core::PCSTR) -> i32;
         }
         ::core::mem::transmute(AddFontResourceA(param0.into_param().abi()))
     }
@@ -307,12 +307,12 @@ pub unsafe fn AddFontResourceA<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn AddFontResourceExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(name: Param0, fl: FONT_RESOURCE_CHARACTERISTICS, res: *mut ::core::ffi::c_void) -> i32 {
+pub unsafe fn AddFontResourceExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(name: Param0, fl: FONT_RESOURCE_CHARACTERISTICS, res: *mut ::core::ffi::c_void) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddFontResourceExA(name: ::windows::core::PCSTR, fl: FONT_RESOURCE_CHARACTERISTICS, res: *mut ::core::ffi::c_void) -> i32;
+            fn AddFontResourceExA(name: ::windows_core::PCSTR, fl: FONT_RESOURCE_CHARACTERISTICS, res: *mut ::core::ffi::c_void) -> i32;
         }
         ::core::mem::transmute(AddFontResourceExA(name.into_param().abi(), ::core::mem::transmute(fl), ::core::mem::transmute(res)))
     }
@@ -321,12 +321,12 @@ pub unsafe fn AddFontResourceExA<'a, Param0: ::windows::core::IntoParam<'a, ::wi
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn AddFontResourceExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(name: Param0, fl: FONT_RESOURCE_CHARACTERISTICS, res: *mut ::core::ffi::c_void) -> i32 {
+pub unsafe fn AddFontResourceExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(name: Param0, fl: FONT_RESOURCE_CHARACTERISTICS, res: *mut ::core::ffi::c_void) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddFontResourceExW(name: ::windows::core::PCWSTR, fl: FONT_RESOURCE_CHARACTERISTICS, res: *mut ::core::ffi::c_void) -> i32;
+            fn AddFontResourceExW(name: ::windows_core::PCWSTR, fl: FONT_RESOURCE_CHARACTERISTICS, res: *mut ::core::ffi::c_void) -> i32;
         }
         ::core::mem::transmute(AddFontResourceExW(name.into_param().abi(), ::core::mem::transmute(fl), ::core::mem::transmute(res)))
     }
@@ -335,12 +335,12 @@ pub unsafe fn AddFontResourceExW<'a, Param0: ::windows::core::IntoParam<'a, ::wi
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn AddFontResourceW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(param0: Param0) -> i32 {
+pub unsafe fn AddFontResourceW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddFontResourceW(param0: ::windows::core::PCWSTR) -> i32;
+            fn AddFontResourceW(param0: ::windows_core::PCWSTR) -> i32;
         }
         ::core::mem::transmute(AddFontResourceW(param0.into_param().abi()))
     }
@@ -350,7 +350,7 @@ pub unsafe fn AddFontResourceW<'a, Param0: ::windows::core::IntoParam<'a, ::wind
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AlphaBlend<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param5: ::windows::core::IntoParam<'a, HDC>, Param10: ::windows::core::IntoParam<'a, BLENDFUNCTION>>(hdcdest: Param0, xorigindest: i32, yorigindest: i32, wdest: i32, hdest: i32, hdcsrc: Param5, xoriginsrc: i32, yoriginsrc: i32, wsrc: i32, hsrc: i32, ftn: Param10) -> super::super::Foundation::BOOL {
+pub unsafe fn AlphaBlend<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param5: ::windows_core::IntoParam<'a, HDC>, Param10: ::windows_core::IntoParam<'a, BLENDFUNCTION>>(hdcdest: Param0, xorigindest: i32, yorigindest: i32, wdest: i32, hdest: i32, hdcsrc: Param5, xoriginsrc: i32, yoriginsrc: i32, wsrc: i32, hsrc: i32, ftn: Param10) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -365,7 +365,7 @@ pub unsafe fn AlphaBlend<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param5
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AngleArc<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, r: u32, startangle: f32, sweepangle: f32) -> super::super::Foundation::BOOL {
+pub unsafe fn AngleArc<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, r: u32, startangle: f32, sweepangle: f32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -380,14 +380,14 @@ pub unsafe fn AngleArc<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Par
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AnimatePalette<'a, Param0: ::windows::core::IntoParam<'a, HPALETTE>>(hpal: Param0, istartindex: u32, ppe: &[PALETTEENTRY]) -> super::super::Foundation::BOOL {
+pub unsafe fn AnimatePalette<'a, Param0: ::windows_core::IntoParam<'a, HPALETTE>>(hpal: Param0, istartindex: u32, ppe: &[PALETTEENTRY]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn AnimatePalette(hpal: HPALETTE, istartindex: u32, centries: u32, ppe: *const PALETTEENTRY) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(AnimatePalette(hpal.into_param().abi(), ::core::mem::transmute(istartindex), ppe.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(ppe))))
+        ::core::mem::transmute(AnimatePalette(hpal.into_param().abi(), ::core::mem::transmute(istartindex), ppe.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppe))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -395,7 +395,7 @@ pub unsafe fn AnimatePalette<'a, Param0: ::windows::core::IntoParam<'a, HPALETTE
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Arc<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x1: i32, y1: i32, x2: i32, y2: i32, x3: i32, y3: i32, x4: i32, y4: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn Arc<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x1: i32, y1: i32, x2: i32, y2: i32, x3: i32, y3: i32, x4: i32, y4: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -410,7 +410,7 @@ pub unsafe fn Arc<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ArcTo<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32, xr1: i32, yr1: i32, xr2: i32, yr2: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn ArcTo<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32, xr1: i32, yr1: i32, xr2: i32, yr2: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -441,7 +441,7 @@ impl ::core::default::Default for BACKGROUND_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for BACKGROUND_MODE {
+unsafe impl ::windows_core::Abi for BACKGROUND_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for BACKGROUND_MODE {
@@ -477,12 +477,12 @@ impl ::core::fmt::Debug for BITMAP {
         f.debug_struct("BITMAP").field("bmType", &self.bmType).field("bmWidth", &self.bmWidth).field("bmHeight", &self.bmHeight).field("bmWidthBytes", &self.bmWidthBytes).field("bmPlanes", &self.bmPlanes).field("bmBitsPixel", &self.bmBitsPixel).field("bmBits", &self.bmBits).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BITMAP {
+unsafe impl ::windows_core::Abi for BITMAP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BITMAP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BITMAP {}
@@ -511,12 +511,12 @@ impl ::core::fmt::Debug for BITMAPCOREHEADER {
         f.debug_struct("BITMAPCOREHEADER").field("bcSize", &self.bcSize).field("bcWidth", &self.bcWidth).field("bcHeight", &self.bcHeight).field("bcPlanes", &self.bcPlanes).field("bcBitCount", &self.bcBitCount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BITMAPCOREHEADER {
+unsafe impl ::windows_core::Abi for BITMAPCOREHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BITMAPCOREHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPCOREHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPCOREHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BITMAPCOREHEADER {}
@@ -542,12 +542,12 @@ impl ::core::fmt::Debug for BITMAPCOREINFO {
         f.debug_struct("BITMAPCOREINFO").field("bmciHeader", &self.bmciHeader).field("bmciColors", &self.bmciColors).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BITMAPCOREINFO {
+unsafe impl ::windows_core::Abi for BITMAPCOREINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BITMAPCOREINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPCOREINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPCOREINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BITMAPCOREINFO {}
@@ -571,12 +571,12 @@ impl ::core::clone::Clone for BITMAPFILEHEADER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for BITMAPFILEHEADER {
+unsafe impl ::windows_core::Abi for BITMAPFILEHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BITMAPFILEHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPFILEHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPFILEHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BITMAPFILEHEADER {}
@@ -602,12 +602,12 @@ impl ::core::fmt::Debug for BITMAPINFO {
         f.debug_struct("BITMAPINFO").field("bmiHeader", &self.bmiHeader).field("bmiColors", &self.bmiColors).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BITMAPINFO {
+unsafe impl ::windows_core::Abi for BITMAPINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BITMAPINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BITMAPINFO {}
@@ -642,12 +642,12 @@ impl ::core::fmt::Debug for BITMAPINFOHEADER {
         f.debug_struct("BITMAPINFOHEADER").field("biSize", &self.biSize).field("biWidth", &self.biWidth).field("biHeight", &self.biHeight).field("biPlanes", &self.biPlanes).field("biBitCount", &self.biBitCount).field("biCompression", &self.biCompression).field("biSizeImage", &self.biSizeImage).field("biXPelsPerMeter", &self.biXPelsPerMeter).field("biYPelsPerMeter", &self.biYPelsPerMeter).field("biClrUsed", &self.biClrUsed).field("biClrImportant", &self.biClrImportant).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BITMAPINFOHEADER {
+unsafe impl ::windows_core::Abi for BITMAPINFOHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BITMAPINFOHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPINFOHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPINFOHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BITMAPINFOHEADER {}
@@ -712,12 +712,12 @@ impl ::core::fmt::Debug for BITMAPV4HEADER {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for BITMAPV4HEADER {
+unsafe impl ::windows_core::Abi for BITMAPV4HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BITMAPV4HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPV4HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPV4HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BITMAPV4HEADER {}
@@ -790,12 +790,12 @@ impl ::core::fmt::Debug for BITMAPV5HEADER {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for BITMAPV5HEADER {
+unsafe impl ::windows_core::Abi for BITMAPV5HEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BITMAPV5HEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPV5HEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITMAPV5HEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BITMAPV5HEADER {}
@@ -837,12 +837,12 @@ impl ::core::fmt::Debug for BLENDFUNCTION {
         f.debug_struct("BLENDFUNCTION").field("BlendOp", &self.BlendOp).field("BlendFlags", &self.BlendFlags).field("SourceConstantAlpha", &self.SourceConstantAlpha).field("AlphaFormat", &self.AlphaFormat).finish()
     }
 }
-unsafe impl ::windows::core::Abi for BLENDFUNCTION {
+unsafe impl ::windows_core::Abi for BLENDFUNCTION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for BLENDFUNCTION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BLENDFUNCTION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BLENDFUNCTION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for BLENDFUNCTION {}
@@ -876,7 +876,7 @@ pub const BS_SOLID: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BeginPaint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppaint: *mut PAINTSTRUCT) -> HDC {
+pub unsafe fn BeginPaint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppaint: *mut PAINTSTRUCT) -> HDC {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -891,7 +891,7 @@ pub unsafe fn BeginPaint<'a, Param0: ::windows::core::IntoParam<'a, super::super
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BeginPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn BeginPath<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -906,7 +906,7 @@ pub unsafe fn BeginPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Pa
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BitBlt<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param5: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, cx: i32, cy: i32, hdcsrc: Param5, x1: i32, y1: i32, rop: ROP_CODE) -> super::super::Foundation::BOOL {
+pub unsafe fn BitBlt<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param5: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, cx: i32, cy: i32, hdcsrc: Param5, x1: i32, y1: i32, rop: ROP_CODE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -983,7 +983,7 @@ impl ::core::default::Default for CDS_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CDS_TYPE {
+unsafe impl ::windows_core::Abi for CDS_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CDS_TYPE {
@@ -1053,12 +1053,12 @@ impl ::core::fmt::Debug for CIEXYZ {
         f.debug_struct("CIEXYZ").field("ciexyzX", &self.ciexyzX).field("ciexyzY", &self.ciexyzY).field("ciexyzZ", &self.ciexyzZ).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CIEXYZ {
+unsafe impl ::windows_core::Abi for CIEXYZ {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CIEXYZ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CIEXYZ>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CIEXYZ>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CIEXYZ {}
@@ -1085,12 +1085,12 @@ impl ::core::fmt::Debug for CIEXYZTRIPLE {
         f.debug_struct("CIEXYZTRIPLE").field("ciexyzRed", &self.ciexyzRed).field("ciexyzGreen", &self.ciexyzGreen).field("ciexyzBlue", &self.ciexyzBlue).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CIEXYZTRIPLE {
+unsafe impl ::windows_core::Abi for CIEXYZTRIPLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for CIEXYZTRIPLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CIEXYZTRIPLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CIEXYZTRIPLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for CIEXYZTRIPLE {}
@@ -1159,12 +1159,12 @@ impl ::core::fmt::Debug for COLORADJUSTMENT {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for COLORADJUSTMENT {
+unsafe impl ::windows_core::Abi for COLORADJUSTMENT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for COLORADJUSTMENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COLORADJUSTMENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COLORADJUSTMENT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for COLORADJUSTMENT {}
@@ -1193,12 +1193,12 @@ impl ::core::fmt::Debug for COLORCORRECTPALETTE {
         f.debug_struct("COLORCORRECTPALETTE").field("emr", &self.emr).field("ihPalette", &self.ihPalette).field("nFirstEntry", &self.nFirstEntry).field("nPalEntries", &self.nPalEntries).field("nReserved", &self.nReserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for COLORCORRECTPALETTE {
+unsafe impl ::windows_core::Abi for COLORCORRECTPALETTE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for COLORCORRECTPALETTE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COLORCORRECTPALETTE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COLORCORRECTPALETTE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for COLORCORRECTPALETTE {}
@@ -1228,12 +1228,12 @@ impl ::core::fmt::Debug for COLORMATCHTOTARGET {
         f.debug_struct("COLORMATCHTOTARGET").field("emr", &self.emr).field("dwAction", &self.dwAction).field("dwFlags", &self.dwFlags).field("cbName", &self.cbName).field("cbData", &self.cbData).field("Data", &self.Data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for COLORMATCHTOTARGET {
+unsafe impl ::windows_core::Abi for COLORMATCHTOTARGET {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for COLORMATCHTOTARGET {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COLORMATCHTOTARGET>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COLORMATCHTOTARGET>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for COLORMATCHTOTARGET {}
@@ -1275,7 +1275,7 @@ impl ::core::default::Default for CREATE_FONT_PACKAGE_SUBSET_ENCODING {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CREATE_FONT_PACKAGE_SUBSET_ENCODING {
+unsafe impl ::windows_core::Abi for CREATE_FONT_PACKAGE_SUBSET_ENCODING {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CREATE_FONT_PACKAGE_SUBSET_ENCODING {
@@ -1302,7 +1302,7 @@ impl ::core::default::Default for CREATE_FONT_PACKAGE_SUBSET_PLATFORM {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CREATE_FONT_PACKAGE_SUBSET_PLATFORM {
+unsafe impl ::windows_core::Abi for CREATE_FONT_PACKAGE_SUBSET_PLATFORM {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CREATE_FONT_PACKAGE_SUBSET_PLATFORM {
@@ -1329,7 +1329,7 @@ impl ::core::default::Default for CREATE_POLYGON_RGN_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CREATE_POLYGON_RGN_MODE {
+unsafe impl ::windows_core::Abi for CREATE_POLYGON_RGN_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for CREATE_POLYGON_RGN_MODE {
@@ -1340,7 +1340,7 @@ impl ::core::fmt::Debug for CREATE_POLYGON_RGN_MODE {
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CancelDC<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn CancelDC<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1370,12 +1370,12 @@ pub unsafe fn ChangeDisplaySettingsA(lpdevmode: *const DEVMODEA, dwflags: CDS_TY
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ChangeDisplaySettingsExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(lpszdevicename: Param0, lpdevmode: *const DEVMODEA, hwnd: Param2, dwflags: CDS_TYPE, lparam: *const ::core::ffi::c_void) -> DISP_CHANGE {
+pub unsafe fn ChangeDisplaySettingsExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(lpszdevicename: Param0, lpdevmode: *const DEVMODEA, hwnd: Param2, dwflags: CDS_TYPE, lparam: *const ::core::ffi::c_void) -> DISP_CHANGE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ChangeDisplaySettingsExA(lpszdevicename: ::windows::core::PCSTR, lpdevmode: *const DEVMODEA, hwnd: super::super::Foundation::HWND, dwflags: CDS_TYPE, lparam: *const ::core::ffi::c_void) -> DISP_CHANGE;
+            fn ChangeDisplaySettingsExA(lpszdevicename: ::windows_core::PCSTR, lpdevmode: *const DEVMODEA, hwnd: super::super::Foundation::HWND, dwflags: CDS_TYPE, lparam: *const ::core::ffi::c_void) -> DISP_CHANGE;
         }
         ::core::mem::transmute(ChangeDisplaySettingsExA(lpszdevicename.into_param().abi(), ::core::mem::transmute(lpdevmode), hwnd.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(lparam)))
     }
@@ -1385,12 +1385,12 @@ pub unsafe fn ChangeDisplaySettingsExA<'a, Param0: ::windows::core::IntoParam<'a
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ChangeDisplaySettingsExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(lpszdevicename: Param0, lpdevmode: *const DEVMODEW, hwnd: Param2, dwflags: CDS_TYPE, lparam: *const ::core::ffi::c_void) -> DISP_CHANGE {
+pub unsafe fn ChangeDisplaySettingsExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(lpszdevicename: Param0, lpdevmode: *const DEVMODEW, hwnd: Param2, dwflags: CDS_TYPE, lparam: *const ::core::ffi::c_void) -> DISP_CHANGE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ChangeDisplaySettingsExW(lpszdevicename: ::windows::core::PCWSTR, lpdevmode: *const DEVMODEW, hwnd: super::super::Foundation::HWND, dwflags: CDS_TYPE, lparam: *const ::core::ffi::c_void) -> DISP_CHANGE;
+            fn ChangeDisplaySettingsExW(lpszdevicename: ::windows_core::PCWSTR, lpdevmode: *const DEVMODEW, hwnd: super::super::Foundation::HWND, dwflags: CDS_TYPE, lparam: *const ::core::ffi::c_void) -> DISP_CHANGE;
         }
         ::core::mem::transmute(ChangeDisplaySettingsExW(lpszdevicename.into_param().abi(), ::core::mem::transmute(lpdevmode), hwnd.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(lparam)))
     }
@@ -1415,7 +1415,7 @@ pub unsafe fn ChangeDisplaySettingsW(lpdevmode: *const DEVMODEW, dwflags: CDS_TY
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Chord<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x1: i32, y1: i32, x2: i32, y2: i32, x3: i32, y3: i32, x4: i32, y4: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn Chord<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x1: i32, y1: i32, x2: i32, y2: i32, x3: i32, y3: i32, x4: i32, y4: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1430,7 +1430,7 @@ pub unsafe fn Chord<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ClientToScreen<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn ClientToScreen<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1444,7 +1444,7 @@ pub unsafe fn ClientToScreen<'a, Param0: ::windows::core::IntoParam<'a, super::s
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CloseEnhMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> HENHMETAFILE {
+pub unsafe fn CloseEnhMetaFile<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> HENHMETAFILE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1459,7 +1459,7 @@ pub unsafe fn CloseEnhMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CloseFigure<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn CloseFigure<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1473,7 +1473,7 @@ pub unsafe fn CloseFigure<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: 
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CloseMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> HMETAFILE {
+pub unsafe fn CloseMetaFile<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> HMETAFILE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1487,7 +1487,7 @@ pub unsafe fn CloseMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CombineRgn<'a, Param0: ::windows::core::IntoParam<'a, HRGN>, Param1: ::windows::core::IntoParam<'a, HRGN>, Param2: ::windows::core::IntoParam<'a, HRGN>>(hrgndst: Param0, hrgnsrc1: Param1, hrgnsrc2: Param2, imode: RGN_COMBINE_MODE) -> i32 {
+pub unsafe fn CombineRgn<'a, Param0: ::windows_core::IntoParam<'a, HRGN>, Param1: ::windows_core::IntoParam<'a, HRGN>, Param2: ::windows_core::IntoParam<'a, HRGN>>(hrgndst: Param0, hrgnsrc1: Param1, hrgnsrc2: Param2, imode: RGN_COMBINE_MODE) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1516,12 +1516,12 @@ pub unsafe fn CombineTransform(lpxfout: *mut XFORM, lpxf1: *const XFORM, lpxf2: 
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CopyEnhMetaFileA<'a, Param0: ::windows::core::IntoParam<'a, HENHMETAFILE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(henh: Param0, lpfilename: Param1) -> HENHMETAFILE {
+pub unsafe fn CopyEnhMetaFileA<'a, Param0: ::windows_core::IntoParam<'a, HENHMETAFILE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(henh: Param0, lpfilename: Param1) -> HENHMETAFILE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CopyEnhMetaFileA(henh: HENHMETAFILE, lpfilename: ::windows::core::PCSTR) -> HENHMETAFILE;
+            fn CopyEnhMetaFileA(henh: HENHMETAFILE, lpfilename: ::windows_core::PCSTR) -> HENHMETAFILE;
         }
         ::core::mem::transmute(CopyEnhMetaFileA(henh.into_param().abi(), lpfilename.into_param().abi()))
     }
@@ -1530,12 +1530,12 @@ pub unsafe fn CopyEnhMetaFileA<'a, Param0: ::windows::core::IntoParam<'a, HENHME
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CopyEnhMetaFileW<'a, Param0: ::windows::core::IntoParam<'a, HENHMETAFILE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(henh: Param0, lpfilename: Param1) -> HENHMETAFILE {
+pub unsafe fn CopyEnhMetaFileW<'a, Param0: ::windows_core::IntoParam<'a, HENHMETAFILE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(henh: Param0, lpfilename: Param1) -> HENHMETAFILE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CopyEnhMetaFileW(henh: HENHMETAFILE, lpfilename: ::windows::core::PCWSTR) -> HENHMETAFILE;
+            fn CopyEnhMetaFileW(henh: HENHMETAFILE, lpfilename: ::windows_core::PCWSTR) -> HENHMETAFILE;
         }
         ::core::mem::transmute(CopyEnhMetaFileW(henh.into_param().abi(), lpfilename.into_param().abi()))
     }
@@ -1544,12 +1544,12 @@ pub unsafe fn CopyEnhMetaFileW<'a, Param0: ::windows::core::IntoParam<'a, HENHME
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CopyMetaFileA<'a, Param0: ::windows::core::IntoParam<'a, HMETAFILE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(param0: Param0, param1: Param1) -> HMETAFILE {
+pub unsafe fn CopyMetaFileA<'a, Param0: ::windows_core::IntoParam<'a, HMETAFILE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1) -> HMETAFILE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CopyMetaFileA(param0: HMETAFILE, param1: ::windows::core::PCSTR) -> HMETAFILE;
+            fn CopyMetaFileA(param0: HMETAFILE, param1: ::windows_core::PCSTR) -> HMETAFILE;
         }
         ::core::mem::transmute(CopyMetaFileA(param0.into_param().abi(), param1.into_param().abi()))
     }
@@ -1558,12 +1558,12 @@ pub unsafe fn CopyMetaFileA<'a, Param0: ::windows::core::IntoParam<'a, HMETAFILE
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CopyMetaFileW<'a, Param0: ::windows::core::IntoParam<'a, HMETAFILE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(param0: Param0, param1: Param1) -> HMETAFILE {
+pub unsafe fn CopyMetaFileW<'a, Param0: ::windows_core::IntoParam<'a, HMETAFILE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: Param0, param1: Param1) -> HMETAFILE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CopyMetaFileW(param0: HMETAFILE, param1: ::windows::core::PCWSTR) -> HMETAFILE;
+            fn CopyMetaFileW(param0: HMETAFILE, param1: ::windows_core::PCWSTR) -> HMETAFILE;
         }
         ::core::mem::transmute(CopyMetaFileW(param0.into_param().abi(), param1.into_param().abi()))
     }
@@ -1629,7 +1629,7 @@ pub unsafe fn CreateBrushIndirect(plbrush: *const LOGBRUSH) -> HBRUSH {
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CreateCompatibleBitmap<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, cx: i32, cy: i32) -> HBITMAP {
+pub unsafe fn CreateCompatibleBitmap<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, cx: i32, cy: i32) -> HBITMAP {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1643,7 +1643,7 @@ pub unsafe fn CreateCompatibleBitmap<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CreateCompatibleDC<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> CreatedHDC {
+pub unsafe fn CreateCompatibleDC<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> CreatedHDC {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1658,12 +1658,12 @@ pub unsafe fn CreateCompatibleDC<'a, Param0: ::windows::core::IntoParam<'a, HDC>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateDCA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pwszdriver: Param0, pwszdevice: Param1, pszport: Param2, pdm: *const DEVMODEA) -> CreatedHDC {
+pub unsafe fn CreateDCA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pwszdriver: Param0, pwszdevice: Param1, pszport: Param2, pdm: *const DEVMODEA) -> CreatedHDC {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateDCA(pwszdriver: ::windows::core::PCSTR, pwszdevice: ::windows::core::PCSTR, pszport: ::windows::core::PCSTR, pdm: *const DEVMODEA) -> CreatedHDC;
+            fn CreateDCA(pwszdriver: ::windows_core::PCSTR, pwszdevice: ::windows_core::PCSTR, pszport: ::windows_core::PCSTR, pdm: *const DEVMODEA) -> CreatedHDC;
         }
         ::core::mem::transmute(CreateDCA(pwszdriver.into_param().abi(), pwszdevice.into_param().abi(), pszport.into_param().abi(), ::core::mem::transmute(pdm)))
     }
@@ -1673,12 +1673,12 @@ pub unsafe fn CreateDCA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::co
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateDCW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pwszdriver: Param0, pwszdevice: Param1, pszport: Param2, pdm: *const DEVMODEW) -> CreatedHDC {
+pub unsafe fn CreateDCW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszdriver: Param0, pwszdevice: Param1, pszport: Param2, pdm: *const DEVMODEW) -> CreatedHDC {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateDCW(pwszdriver: ::windows::core::PCWSTR, pwszdevice: ::windows::core::PCWSTR, pszport: ::windows::core::PCWSTR, pdm: *const DEVMODEW) -> CreatedHDC;
+            fn CreateDCW(pwszdriver: ::windows_core::PCWSTR, pwszdevice: ::windows_core::PCWSTR, pszport: ::windows_core::PCWSTR, pdm: *const DEVMODEW) -> CreatedHDC;
         }
         ::core::mem::transmute(CreateDCW(pwszdriver.into_param().abi(), pwszdevice.into_param().abi(), pszport.into_param().abi(), ::core::mem::transmute(pdm)))
     }
@@ -1716,7 +1716,7 @@ pub unsafe fn CreateDIBPatternBrushPt(lppackeddib: *const ::core::ffi::c_void, i
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateDIBSection<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hdc: Param0, pbmi: *const BITMAPINFO, usage: DIB_USAGE, ppvbits: *mut *mut ::core::ffi::c_void, hsection: Param4, offset: u32) -> ::windows::core::Result<HBITMAP> {
+pub unsafe fn CreateDIBSection<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hdc: Param0, pbmi: *const BITMAPINFO, usage: DIB_USAGE, ppvbits: *mut *mut ::core::ffi::c_void, hsection: Param4, offset: u32) -> ::windows_core::Result<HBITMAP> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1724,14 +1724,14 @@ pub unsafe fn CreateDIBSection<'a, Param0: ::windows::core::IntoParam<'a, HDC>, 
             fn CreateDIBSection(hdc: HDC, pbmi: *const BITMAPINFO, usage: DIB_USAGE, ppvbits: *mut *mut ::core::ffi::c_void, hsection: super::super::Foundation::HANDLE, offset: u32) -> HBITMAP;
         }
         let result__ = CreateDIBSection(hdc.into_param().abi(), ::core::mem::transmute(pbmi), ::core::mem::transmute(usage), ::core::mem::transmute(ppvbits), hsection.into_param().abi(), ::core::mem::transmute(offset));
-        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows::core::Error::from_win32)
+        (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CreateDIBitmap<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, pbmih: *const BITMAPINFOHEADER, flinit: u32, pjbits: *const ::core::ffi::c_void, pbmi: *const BITMAPINFO, iusage: DIB_USAGE) -> HBITMAP {
+pub unsafe fn CreateDIBitmap<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, pbmih: *const BITMAPINFOHEADER, flinit: u32, pjbits: *const ::core::ffi::c_void, pbmi: *const BITMAPINFO, iusage: DIB_USAGE) -> HBITMAP {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1745,7 +1745,7 @@ pub unsafe fn CreateDIBitmap<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hd
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CreateDiscardableBitmap<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, cx: i32, cy: i32) -> HBITMAP {
+pub unsafe fn CreateDiscardableBitmap<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, cx: i32, cy: i32) -> HBITMAP {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1789,12 +1789,12 @@ pub unsafe fn CreateEllipticRgnIndirect(lprect: *const super::super::Foundation:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateEnhMetaFileA<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hdc: Param0, lpfilename: Param1, lprc: *const super::super::Foundation::RECT, lpdesc: Param3) -> HdcMetdataEnhFileHandle {
+pub unsafe fn CreateEnhMetaFileA<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hdc: Param0, lpfilename: Param1, lprc: *const super::super::Foundation::RECT, lpdesc: Param3) -> HdcMetdataEnhFileHandle {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateEnhMetaFileA(hdc: HDC, lpfilename: ::windows::core::PCSTR, lprc: *const super::super::Foundation::RECT, lpdesc: ::windows::core::PCSTR) -> HdcMetdataEnhFileHandle;
+            fn CreateEnhMetaFileA(hdc: HDC, lpfilename: ::windows_core::PCSTR, lprc: *const super::super::Foundation::RECT, lpdesc: ::windows_core::PCSTR) -> HdcMetdataEnhFileHandle;
         }
         ::core::mem::transmute(CreateEnhMetaFileA(hdc.into_param().abi(), lpfilename.into_param().abi(), ::core::mem::transmute(lprc), lpdesc.into_param().abi()))
     }
@@ -1804,12 +1804,12 @@ pub unsafe fn CreateEnhMetaFileA<'a, Param0: ::windows::core::IntoParam<'a, HDC>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateEnhMetaFileW<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hdc: Param0, lpfilename: Param1, lprc: *const super::super::Foundation::RECT, lpdesc: Param3) -> HdcMetdataEnhFileHandle {
+pub unsafe fn CreateEnhMetaFileW<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hdc: Param0, lpfilename: Param1, lprc: *const super::super::Foundation::RECT, lpdesc: Param3) -> HdcMetdataEnhFileHandle {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateEnhMetaFileW(hdc: HDC, lpfilename: ::windows::core::PCWSTR, lprc: *const super::super::Foundation::RECT, lpdesc: ::windows::core::PCWSTR) -> HdcMetdataEnhFileHandle;
+            fn CreateEnhMetaFileW(hdc: HDC, lpfilename: ::windows_core::PCWSTR, lprc: *const super::super::Foundation::RECT, lpdesc: ::windows_core::PCWSTR) -> HdcMetdataEnhFileHandle;
         }
         ::core::mem::transmute(CreateEnhMetaFileW(hdc.into_param().abi(), lpfilename.into_param().abi(), ::core::mem::transmute(lprc), lpdesc.into_param().abi()))
     }
@@ -1818,12 +1818,12 @@ pub unsafe fn CreateEnhMetaFileW<'a, Param0: ::windows::core::IntoParam<'a, HDC>
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CreateFontA<'a, Param13: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(cheight: i32, cwidth: i32, cescapement: i32, corientation: i32, cweight: i32, bitalic: u32, bunderline: u32, bstrikeout: u32, icharset: u32, ioutprecision: FONT_OUTPUT_PRECISION, iclipprecision: FONT_CLIP_PRECISION, iquality: FONT_QUALITY, ipitchandfamily: FONT_PITCH_AND_FAMILY, pszfacename: Param13) -> HFONT {
+pub unsafe fn CreateFontA<'a, Param13: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(cheight: i32, cwidth: i32, cescapement: i32, corientation: i32, cweight: i32, bitalic: u32, bunderline: u32, bstrikeout: u32, icharset: u32, ioutprecision: FONT_OUTPUT_PRECISION, iclipprecision: FONT_CLIP_PRECISION, iquality: FONT_QUALITY, ipitchandfamily: FONT_PITCH_AND_FAMILY, pszfacename: Param13) -> HFONT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateFontA(cheight: i32, cwidth: i32, cescapement: i32, corientation: i32, cweight: i32, bitalic: u32, bunderline: u32, bstrikeout: u32, icharset: u32, ioutprecision: FONT_OUTPUT_PRECISION, iclipprecision: FONT_CLIP_PRECISION, iquality: FONT_QUALITY, ipitchandfamily: FONT_PITCH_AND_FAMILY, pszfacename: ::windows::core::PCSTR) -> HFONT;
+            fn CreateFontA(cheight: i32, cwidth: i32, cescapement: i32, corientation: i32, cweight: i32, bitalic: u32, bunderline: u32, bstrikeout: u32, icharset: u32, ioutprecision: FONT_OUTPUT_PRECISION, iclipprecision: FONT_CLIP_PRECISION, iquality: FONT_QUALITY, ipitchandfamily: FONT_PITCH_AND_FAMILY, pszfacename: ::windows_core::PCSTR) -> HFONT;
         }
         ::core::mem::transmute(CreateFontA(
             ::core::mem::transmute(cheight),
@@ -1910,7 +1910,7 @@ pub unsafe fn CreateFontPackage(puchsrcbuffer: *const u8, ulsrcbuffersize: u32, 
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateFontPackage(puchsrcbuffer: *const u8, ulsrcbuffersize: u32, ppuchfontpackagebuffer: *mut *mut u8, pulfontpackagebuffersize: *mut u32, pulbyteswritten: *mut u32, usflag: u16, usttcindex: u16, ussubsetformat: u16, ussubsetlanguage: u16, ussubsetplatform: CREATE_FONT_PACKAGE_SUBSET_PLATFORM, ussubsetencoding: CREATE_FONT_PACKAGE_SUBSET_ENCODING, pussubsetkeeplist: *const u16, ussubsetlistcount: u16, lpfnallocate: ::windows::core::RawPtr, lpfnreallocate: ::windows::core::RawPtr, lpfnfree: ::windows::core::RawPtr, lpvreserved: *mut ::core::ffi::c_void) -> u32;
+            fn CreateFontPackage(puchsrcbuffer: *const u8, ulsrcbuffersize: u32, ppuchfontpackagebuffer: *mut *mut u8, pulfontpackagebuffersize: *mut u32, pulbyteswritten: *mut u32, usflag: u16, usttcindex: u16, ussubsetformat: u16, ussubsetlanguage: u16, ussubsetplatform: CREATE_FONT_PACKAGE_SUBSET_PLATFORM, ussubsetencoding: CREATE_FONT_PACKAGE_SUBSET_ENCODING, pussubsetkeeplist: *const u16, ussubsetlistcount: u16, lpfnallocate: ::windows_core::RawPtr, lpfnreallocate: ::windows_core::RawPtr, lpfnfree: ::windows_core::RawPtr, lpvreserved: *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(CreateFontPackage(
             ::core::mem::transmute(puchsrcbuffer),
@@ -1937,12 +1937,12 @@ pub unsafe fn CreateFontPackage(puchsrcbuffer: *const u8, ulsrcbuffersize: u32, 
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CreateFontW<'a, Param13: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(cheight: i32, cwidth: i32, cescapement: i32, corientation: i32, cweight: i32, bitalic: u32, bunderline: u32, bstrikeout: u32, icharset: u32, ioutprecision: FONT_OUTPUT_PRECISION, iclipprecision: FONT_CLIP_PRECISION, iquality: FONT_QUALITY, ipitchandfamily: FONT_PITCH_AND_FAMILY, pszfacename: Param13) -> HFONT {
+pub unsafe fn CreateFontW<'a, Param13: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(cheight: i32, cwidth: i32, cescapement: i32, corientation: i32, cweight: i32, bitalic: u32, bunderline: u32, bstrikeout: u32, icharset: u32, ioutprecision: FONT_OUTPUT_PRECISION, iclipprecision: FONT_CLIP_PRECISION, iquality: FONT_QUALITY, ipitchandfamily: FONT_PITCH_AND_FAMILY, pszfacename: Param13) -> HFONT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateFontW(cheight: i32, cwidth: i32, cescapement: i32, corientation: i32, cweight: i32, bitalic: u32, bunderline: u32, bstrikeout: u32, icharset: u32, ioutprecision: FONT_OUTPUT_PRECISION, iclipprecision: FONT_CLIP_PRECISION, iquality: FONT_QUALITY, ipitchandfamily: FONT_PITCH_AND_FAMILY, pszfacename: ::windows::core::PCWSTR) -> HFONT;
+            fn CreateFontW(cheight: i32, cwidth: i32, cescapement: i32, corientation: i32, cweight: i32, bitalic: u32, bunderline: u32, bstrikeout: u32, icharset: u32, ioutprecision: FONT_OUTPUT_PRECISION, iclipprecision: FONT_CLIP_PRECISION, iquality: FONT_QUALITY, ipitchandfamily: FONT_PITCH_AND_FAMILY, pszfacename: ::windows_core::PCWSTR) -> HFONT;
         }
         ::core::mem::transmute(CreateFontW(
             ::core::mem::transmute(cheight),
@@ -1966,7 +1966,7 @@ pub unsafe fn CreateFontW<'a, Param13: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CreateHalftonePalette<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> HPALETTE {
+pub unsafe fn CreateHalftonePalette<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> HPALETTE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -1995,12 +1995,12 @@ pub unsafe fn CreateHatchBrush(ihatch: HATCH_BRUSH_STYLE, color: u32) -> HBRUSH 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateICA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszdriver: Param0, pszdevice: Param1, pszport: Param2, pdm: *const DEVMODEA) -> CreatedHDC {
+pub unsafe fn CreateICA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszdriver: Param0, pszdevice: Param1, pszport: Param2, pdm: *const DEVMODEA) -> CreatedHDC {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateICA(pszdriver: ::windows::core::PCSTR, pszdevice: ::windows::core::PCSTR, pszport: ::windows::core::PCSTR, pdm: *const DEVMODEA) -> CreatedHDC;
+            fn CreateICA(pszdriver: ::windows_core::PCSTR, pszdevice: ::windows_core::PCSTR, pszport: ::windows_core::PCSTR, pdm: *const DEVMODEA) -> CreatedHDC;
         }
         ::core::mem::transmute(CreateICA(pszdriver.into_param().abi(), pszdevice.into_param().abi(), pszport.into_param().abi(), ::core::mem::transmute(pdm)))
     }
@@ -2010,12 +2010,12 @@ pub unsafe fn CreateICA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::co
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateICW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszdriver: Param0, pszdevice: Param1, pszport: Param2, pdm: *const DEVMODEW) -> CreatedHDC {
+pub unsafe fn CreateICW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdriver: Param0, pszdevice: Param1, pszport: Param2, pdm: *const DEVMODEW) -> CreatedHDC {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateICW(pszdriver: ::windows::core::PCWSTR, pszdevice: ::windows::core::PCWSTR, pszport: ::windows::core::PCWSTR, pdm: *const DEVMODEW) -> CreatedHDC;
+            fn CreateICW(pszdriver: ::windows_core::PCWSTR, pszdevice: ::windows_core::PCWSTR, pszport: ::windows_core::PCWSTR, pdm: *const DEVMODEW) -> CreatedHDC;
         }
         ::core::mem::transmute(CreateICW(pszdriver.into_param().abi(), pszdevice.into_param().abi(), pszport.into_param().abi(), ::core::mem::transmute(pdm)))
     }
@@ -2024,12 +2024,12 @@ pub unsafe fn CreateICW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::co
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CreateMetaFileA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(pszfile: Param0) -> HdcMetdataFileHandle {
+pub unsafe fn CreateMetaFileA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszfile: Param0) -> HdcMetdataFileHandle {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateMetaFileA(pszfile: ::windows::core::PCSTR) -> HdcMetdataFileHandle;
+            fn CreateMetaFileA(pszfile: ::windows_core::PCSTR) -> HdcMetdataFileHandle;
         }
         ::core::mem::transmute(CreateMetaFileA(pszfile.into_param().abi()))
     }
@@ -2038,12 +2038,12 @@ pub unsafe fn CreateMetaFileA<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CreateMetaFileW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(pszfile: Param0) -> HdcMetdataFileHandle {
+pub unsafe fn CreateMetaFileW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszfile: Param0) -> HdcMetdataFileHandle {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateMetaFileW(pszfile: ::windows::core::PCWSTR) -> HdcMetdataFileHandle;
+            fn CreateMetaFileW(pszfile: ::windows_core::PCWSTR) -> HdcMetdataFileHandle;
         }
         ::core::mem::transmute(CreateMetaFileW(pszfile.into_param().abi()))
     }
@@ -2066,7 +2066,7 @@ pub unsafe fn CreatePalette(plpal: *const LOGPALETTE) -> HPALETTE {
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn CreatePatternBrush<'a, Param0: ::windows::core::IntoParam<'a, HBITMAP>>(hbm: Param0) -> HBRUSH {
+pub unsafe fn CreatePatternBrush<'a, Param0: ::windows_core::IntoParam<'a, HBITMAP>>(hbm: Param0) -> HBRUSH {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -2117,7 +2117,7 @@ pub unsafe fn CreatePolyPolygonRgn(pptl: *const super::super::Foundation::POINT,
         extern "system" {
             fn CreatePolyPolygonRgn(pptl: *const super::super::Foundation::POINT, pc: *const i32, cpoly: i32, imode: CREATE_POLYGON_RGN_MODE) -> HRGN;
         }
-        ::core::mem::transmute(CreatePolyPolygonRgn(::core::mem::transmute(pptl), ::core::mem::transmute(::windows::core::as_ptr_or_null(pc)), pc.len() as _, ::core::mem::transmute(imode)))
+        ::core::mem::transmute(CreatePolyPolygonRgn(::core::mem::transmute(pptl), ::core::mem::transmute(::windows_core::as_ptr_or_null(pc)), pc.len() as _, ::core::mem::transmute(imode)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2132,7 +2132,7 @@ pub unsafe fn CreatePolygonRgn(pptl: &[super::super::Foundation::POINT], imode: 
         extern "system" {
             fn CreatePolygonRgn(pptl: *const super::super::Foundation::POINT, cpoint: i32, imode: CREATE_POLYGON_RGN_MODE) -> HRGN;
         }
-        ::core::mem::transmute(CreatePolygonRgn(::core::mem::transmute(::windows::core::as_ptr_or_null(pptl)), pptl.len() as _, ::core::mem::transmute(imode)))
+        ::core::mem::transmute(CreatePolygonRgn(::core::mem::transmute(::windows_core::as_ptr_or_null(pptl)), pptl.len() as _, ::core::mem::transmute(imode)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -2183,12 +2183,12 @@ pub unsafe fn CreateRoundRectRgn(x1: i32, y1: i32, x2: i32, y2: i32, w: i32, h: 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateScalableFontResourceA<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(fdwhidden: u32, lpszfont: Param1, lpszfile: Param2, lpszpath: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn CreateScalableFontResourceA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(fdwhidden: u32, lpszfont: Param1, lpszfile: Param2, lpszpath: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateScalableFontResourceA(fdwhidden: u32, lpszfont: ::windows::core::PCSTR, lpszfile: ::windows::core::PCSTR, lpszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn CreateScalableFontResourceA(fdwhidden: u32, lpszfont: ::windows_core::PCSTR, lpszfile: ::windows_core::PCSTR, lpszpath: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CreateScalableFontResourceA(::core::mem::transmute(fdwhidden), lpszfont.into_param().abi(), lpszfile.into_param().abi(), lpszpath.into_param().abi()))
     }
@@ -2198,12 +2198,12 @@ pub unsafe fn CreateScalableFontResourceA<'a, Param1: ::windows::core::IntoParam
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateScalableFontResourceW<'a, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(fdwhidden: u32, lpszfont: Param1, lpszfile: Param2, lpszpath: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn CreateScalableFontResourceW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(fdwhidden: u32, lpszfont: Param1, lpszfile: Param2, lpszpath: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateScalableFontResourceW(fdwhidden: u32, lpszfont: ::windows::core::PCWSTR, lpszfile: ::windows::core::PCWSTR, lpszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn CreateScalableFontResourceW(fdwhidden: u32, lpszfont: ::windows_core::PCWSTR, lpszfile: ::windows_core::PCWSTR, lpszpath: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(CreateScalableFontResourceW(::core::mem::transmute(fdwhidden), lpszfont.into_param().abi(), lpszfile.into_param().abi(), lpszpath.into_param().abi()))
     }
@@ -2248,12 +2248,12 @@ impl ::core::fmt::Debug for CreatedHDC {
         f.debug_tuple("CreatedHDC").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for CreatedHDC {
+unsafe impl ::windows_core::Abi for CreatedHDC {
     type Abi = Self;
 }
-impl<'a> ::windows::core::IntoParam<'a, HDC> for CreatedHDC {
-    fn into_param(self) -> ::windows::core::Param<'a, HDC> {
-        ::windows::core::Param::Owned(HDC(self.0))
+impl<'a> ::windows_core::IntoParam<'a, HDC> for CreatedHDC {
+    fn into_param(self) -> ::windows_core::Param<'a, HDC> {
+        ::windows_core::Param::Owned(HDC(self.0))
     }
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
@@ -2305,7 +2305,7 @@ impl ::core::default::Default for DC_LAYOUT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DC_LAYOUT {
+unsafe impl ::windows_core::Abi for DC_LAYOUT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DC_LAYOUT {
@@ -2367,12 +2367,12 @@ impl ::core::fmt::Debug for DESIGNVECTOR {
         f.debug_struct("DESIGNVECTOR").field("dvReserved", &self.dvReserved).field("dvNumAxes", &self.dvNumAxes).field("dvValues", &self.dvValues).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DESIGNVECTOR {
+unsafe impl ::windows_core::Abi for DESIGNVECTOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DESIGNVECTOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DESIGNVECTOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DESIGNVECTOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DESIGNVECTOR {}
@@ -2426,13 +2426,13 @@ impl ::core::clone::Clone for DEVMODEA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DEVMODEA {
+unsafe impl ::windows_core::Abi for DEVMODEA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEVMODEA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2459,13 +2459,13 @@ impl ::core::clone::Clone for DEVMODEA_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DEVMODEA_0 {
+unsafe impl ::windows_core::Abi for DEVMODEA_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEVMODEA_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEA_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEA_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2504,13 +2504,13 @@ impl ::core::fmt::Debug for DEVMODEA_0_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DEVMODEA_0_0 {
+unsafe impl ::windows_core::Abi for DEVMODEA_0_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEVMODEA_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEA_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEA_0_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2544,13 +2544,13 @@ impl ::core::fmt::Debug for DEVMODEA_0_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DEVMODEA_0_1 {
+unsafe impl ::windows_core::Abi for DEVMODEA_0_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEVMODEA_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEA_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEA_0_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2577,13 +2577,13 @@ impl ::core::clone::Clone for DEVMODEA_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DEVMODEA_1 {
+unsafe impl ::windows_core::Abi for DEVMODEA_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEVMODEA_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEA_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEA_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2635,13 +2635,13 @@ impl ::core::clone::Clone for DEVMODEW {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DEVMODEW {
+unsafe impl ::windows_core::Abi for DEVMODEW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEVMODEW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2668,13 +2668,13 @@ impl ::core::clone::Clone for DEVMODEW_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DEVMODEW_0 {
+unsafe impl ::windows_core::Abi for DEVMODEW_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEVMODEW_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEW_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEW_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2713,13 +2713,13 @@ impl ::core::fmt::Debug for DEVMODEW_0_0 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DEVMODEW_0_0 {
+unsafe impl ::windows_core::Abi for DEVMODEW_0_0 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEVMODEW_0_0 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEW_0_0>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEW_0_0>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2753,13 +2753,13 @@ impl ::core::fmt::Debug for DEVMODEW_0_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DEVMODEW_0_1 {
+unsafe impl ::windows_core::Abi for DEVMODEW_0_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEVMODEW_0_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEW_0_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEW_0_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2786,13 +2786,13 @@ impl ::core::clone::Clone for DEVMODEW_1 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DEVMODEW_1 {
+unsafe impl ::windows_core::Abi for DEVMODEW_1 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEVMODEW_1 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEW_1>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVMODEW_1>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2878,7 +2878,7 @@ impl ::core::default::Default for DFCS_STATE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DFCS_STATE {
+unsafe impl ::windows_core::Abi for DFCS_STATE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DFCS_STATE {
@@ -2939,7 +2939,7 @@ impl ::core::default::Default for DFC_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DFC_TYPE {
+unsafe impl ::windows_core::Abi for DFC_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DFC_TYPE {
@@ -2972,13 +2972,13 @@ impl ::core::fmt::Debug for DIBSECTION {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DIBSECTION {
+unsafe impl ::windows_core::Abi for DIBSECTION {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DIBSECTION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DIBSECTION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DIBSECTION>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3008,7 +3008,7 @@ impl ::core::default::Default for DIB_USAGE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DIB_USAGE {
+unsafe impl ::windows_core::Abi for DIB_USAGE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DIB_USAGE {
@@ -3043,7 +3043,7 @@ impl ::core::default::Default for DISPLAYCONFIG_COLOR_ENCODING {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DISPLAYCONFIG_COLOR_ENCODING {
+unsafe impl ::windows_core::Abi for DISPLAYCONFIG_COLOR_ENCODING {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DISPLAYCONFIG_COLOR_ENCODING {
@@ -3111,13 +3111,13 @@ impl ::core::fmt::Debug for DISPLAY_DEVICEA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for DISPLAY_DEVICEA {
+unsafe impl ::windows_core::Abi for DISPLAY_DEVICEA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DISPLAY_DEVICEA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DISPLAY_DEVICEA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DISPLAY_DEVICEA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3149,12 +3149,12 @@ impl ::core::fmt::Debug for DISPLAY_DEVICEW {
         f.debug_struct("DISPLAY_DEVICEW").field("cb", &self.cb).field("DeviceName", &self.DeviceName).field("DeviceString", &self.DeviceString).field("StateFlags", &self.StateFlags).field("DeviceID", &self.DeviceID).field("DeviceKey", &self.DeviceKey).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DISPLAY_DEVICEW {
+unsafe impl ::windows_core::Abi for DISPLAY_DEVICEW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DISPLAY_DEVICEW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DISPLAY_DEVICEW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DISPLAY_DEVICEW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DISPLAY_DEVICEW {}
@@ -3224,7 +3224,7 @@ impl ::core::default::Default for DISP_CHANGE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DISP_CHANGE {
+unsafe impl ::windows_core::Abi for DISP_CHANGE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DISP_CHANGE {
@@ -3683,14 +3683,14 @@ pub const DOWNLOADHEADER: u32 = 4111u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DPtoLP<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lppt: &mut [super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
+pub unsafe fn DPtoLP<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lppt: &mut [super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn DPtoLP(hdc: HDC, lppt: *mut super::super::Foundation::POINT, c: i32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(DPtoLP(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lppt)), lppt.len() as _))
+        ::core::mem::transmute(DPtoLP(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lppt)), lppt.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -3736,7 +3736,7 @@ impl ::core::default::Default for DRAWEDGE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DRAWEDGE_FLAGS {
+unsafe impl ::windows_core::Abi for DRAWEDGE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DRAWEDGE_FLAGS {
@@ -3816,7 +3816,7 @@ impl ::core::default::Default for DRAWSTATE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DRAWSTATE_FLAGS {
+unsafe impl ::windows_core::Abi for DRAWSTATE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DRAWSTATE_FLAGS {
@@ -3872,12 +3872,12 @@ impl ::core::fmt::Debug for DRAWTEXTPARAMS {
         f.debug_struct("DRAWTEXTPARAMS").field("cbSize", &self.cbSize).field("iTabLength", &self.iTabLength).field("iLeftMargin", &self.iLeftMargin).field("iRightMargin", &self.iRightMargin).field("uiLengthDrawn", &self.uiLengthDrawn).finish()
     }
 }
-unsafe impl ::windows::core::Abi for DRAWTEXTPARAMS {
+unsafe impl ::windows_core::Abi for DRAWTEXTPARAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for DRAWTEXTPARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DRAWTEXTPARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DRAWTEXTPARAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for DRAWTEXTPARAMS {}
@@ -3915,7 +3915,7 @@ impl ::core::default::Default for DRAW_CAPTION_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DRAW_CAPTION_FLAGS {
+unsafe impl ::windows_core::Abi for DRAW_CAPTION_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DRAW_CAPTION_FLAGS {
@@ -4004,7 +4004,7 @@ impl ::core::default::Default for DRAW_EDGE_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DRAW_EDGE_FLAGS {
+unsafe impl ::windows_core::Abi for DRAW_EDGE_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DRAW_EDGE_FLAGS {
@@ -4103,7 +4103,7 @@ impl ::core::default::Default for DRAW_TEXT_FORMAT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DRAW_TEXT_FORMAT {
+unsafe impl ::windows_core::Abi for DRAW_TEXT_FORMAT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for DRAW_TEXT_FORMAT {
@@ -4156,7 +4156,7 @@ pub const DT_RASPRINTER: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteDC<'a, Param0: ::windows::core::IntoParam<'a, CreatedHDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DeleteDC<'a, Param0: ::windows_core::IntoParam<'a, CreatedHDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4171,7 +4171,7 @@ pub unsafe fn DeleteDC<'a, Param0: ::windows::core::IntoParam<'a, CreatedHDC>>(h
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteEnhMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HENHMETAFILE>>(hmf: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DeleteEnhMetaFile<'a, Param0: ::windows_core::IntoParam<'a, HENHMETAFILE>>(hmf: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4186,7 +4186,7 @@ pub unsafe fn DeleteEnhMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HENHM
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HMETAFILE>>(hmf: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DeleteMetaFile<'a, Param0: ::windows_core::IntoParam<'a, HMETAFILE>>(hmf: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4201,7 +4201,7 @@ pub unsafe fn DeleteMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HMETAFIL
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteObject<'a, Param0: ::windows::core::IntoParam<'a, HGDIOBJ>>(ho: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DeleteObject<'a, Param0: ::windows_core::IntoParam<'a, HGDIOBJ>>(ho: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4216,7 +4216,7 @@ pub unsafe fn DeleteObject<'a, Param0: ::windows::core::IntoParam<'a, HGDIOBJ>>(
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DrawAnimatedRects<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, idani: i32, lprcfrom: *const super::super::Foundation::RECT, lprcto: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn DrawAnimatedRects<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, idani: i32, lprcfrom: *const super::super::Foundation::RECT, lprcto: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4231,7 +4231,7 @@ pub unsafe fn DrawAnimatedRects<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DrawCaption<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HDC>>(hwnd: Param0, hdc: Param1, lprect: *const super::super::Foundation::RECT, flags: DRAW_CAPTION_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn DrawCaption<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HDC>>(hwnd: Param0, hdc: Param1, lprect: *const super::super::Foundation::RECT, flags: DRAW_CAPTION_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4246,7 +4246,7 @@ pub unsafe fn DrawCaption<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DrawEdge<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, qrc: *mut super::super::Foundation::RECT, edge: DRAWEDGE_FLAGS, grfflags: DRAW_EDGE_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn DrawEdge<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, qrc: *mut super::super::Foundation::RECT, edge: DRAWEDGE_FLAGS, grfflags: DRAW_EDGE_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4260,12 +4260,12 @@ pub unsafe fn DrawEdge<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Par
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn DrawEscape<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hdc: Param0, iescape: i32, cjin: i32, lpin: Param3) -> i32 {
+pub unsafe fn DrawEscape<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hdc: Param0, iescape: i32, cjin: i32, lpin: Param3) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DrawEscape(hdc: HDC, iescape: i32, cjin: i32, lpin: ::windows::core::PCSTR) -> i32;
+            fn DrawEscape(hdc: HDC, iescape: i32, cjin: i32, lpin: ::windows_core::PCSTR) -> i32;
         }
         ::core::mem::transmute(DrawEscape(hdc.into_param().abi(), ::core::mem::transmute(iescape), ::core::mem::transmute(cjin), lpin.into_param().abi()))
     }
@@ -4275,7 +4275,7 @@ pub unsafe fn DrawEscape<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param3
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DrawFocusRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lprc: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn DrawFocusRect<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lprc: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4290,7 +4290,7 @@ pub unsafe fn DrawFocusRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DrawFrameControl<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(param0: Param0, param1: *mut super::super::Foundation::RECT, param2: DFC_TYPE, param3: DFCS_STATE) -> super::super::Foundation::BOOL {
+pub unsafe fn DrawFrameControl<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(param0: Param0, param1: *mut super::super::Foundation::RECT, param2: DFC_TYPE, param3: DFCS_STATE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -4305,12 +4305,12 @@ pub unsafe fn DrawFrameControl<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DrawStateA<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HBRUSH>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>>(hdc: Param0, hbrfore: Param1, qfncallback: DRAWSTATEPROC, ldata: Param3, wdata: Param4, x: i32, y: i32, cx: i32, cy: i32, uflags: DRAWSTATE_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn DrawStateA<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HBRUSH>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>>(hdc: Param0, hbrfore: Param1, qfncallback: DRAWSTATEPROC, ldata: Param3, wdata: Param4, x: i32, y: i32, cx: i32, cy: i32, uflags: DRAWSTATE_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DrawStateA(hdc: HDC, hbrfore: HBRUSH, qfncallback: ::windows::core::RawPtr, ldata: super::super::Foundation::LPARAM, wdata: super::super::Foundation::WPARAM, x: i32, y: i32, cx: i32, cy: i32, uflags: DRAWSTATE_FLAGS) -> super::super::Foundation::BOOL;
+            fn DrawStateA(hdc: HDC, hbrfore: HBRUSH, qfncallback: ::windows_core::RawPtr, ldata: super::super::Foundation::LPARAM, wdata: super::super::Foundation::WPARAM, x: i32, y: i32, cx: i32, cy: i32, uflags: DRAWSTATE_FLAGS) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(DrawStateA(hdc.into_param().abi(), hbrfore.into_param().abi(), ::core::mem::transmute(qfncallback), ldata.into_param().abi(), wdata.into_param().abi(), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(cx), ::core::mem::transmute(cy), ::core::mem::transmute(uflags)))
     }
@@ -4320,12 +4320,12 @@ pub unsafe fn DrawStateA<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DrawStateW<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HBRUSH>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>, Param4: ::windows::core::IntoParam<'a, super::super::Foundation::WPARAM>>(hdc: Param0, hbrfore: Param1, qfncallback: DRAWSTATEPROC, ldata: Param3, wdata: Param4, x: i32, y: i32, cx: i32, cy: i32, uflags: DRAWSTATE_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn DrawStateW<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HBRUSH>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>>(hdc: Param0, hbrfore: Param1, qfncallback: DRAWSTATEPROC, ldata: Param3, wdata: Param4, x: i32, y: i32, cx: i32, cy: i32, uflags: DRAWSTATE_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DrawStateW(hdc: HDC, hbrfore: HBRUSH, qfncallback: ::windows::core::RawPtr, ldata: super::super::Foundation::LPARAM, wdata: super::super::Foundation::WPARAM, x: i32, y: i32, cx: i32, cy: i32, uflags: DRAWSTATE_FLAGS) -> super::super::Foundation::BOOL;
+            fn DrawStateW(hdc: HDC, hbrfore: HBRUSH, qfncallback: ::windows_core::RawPtr, ldata: super::super::Foundation::LPARAM, wdata: super::super::Foundation::WPARAM, x: i32, y: i32, cx: i32, cy: i32, uflags: DRAWSTATE_FLAGS) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(DrawStateW(hdc.into_param().abi(), hbrfore.into_param().abi(), ::core::mem::transmute(qfncallback), ldata.into_param().abi(), wdata.into_param().abi(), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(cx), ::core::mem::transmute(cy), ::core::mem::transmute(uflags)))
     }
@@ -4335,14 +4335,14 @@ pub unsafe fn DrawStateW<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DrawTextA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpchtext: &[u8], lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT) -> i32 {
+pub unsafe fn DrawTextA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpchtext: &[u8], lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DrawTextA(hdc: HDC, lpchtext: ::windows::core::PCSTR, cchtext: i32, lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT) -> i32;
+            fn DrawTextA(hdc: HDC, lpchtext: ::windows_core::PCSTR, cchtext: i32, lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT) -> i32;
         }
-        ::core::mem::transmute(DrawTextA(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpchtext)), lpchtext.len() as _, ::core::mem::transmute(lprc), ::core::mem::transmute(format)))
+        ::core::mem::transmute(DrawTextA(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpchtext)), lpchtext.len() as _, ::core::mem::transmute(lprc), ::core::mem::transmute(format)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4350,14 +4350,14 @@ pub unsafe fn DrawTextA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Pa
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DrawTextExA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpchtext: &mut [u8], lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT, lpdtp: *const DRAWTEXTPARAMS) -> i32 {
+pub unsafe fn DrawTextExA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpchtext: &mut [u8], lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT, lpdtp: *const DRAWTEXTPARAMS) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DrawTextExA(hdc: HDC, lpchtext: ::windows::core::PSTR, cchtext: i32, lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT, lpdtp: *const DRAWTEXTPARAMS) -> i32;
+            fn DrawTextExA(hdc: HDC, lpchtext: ::windows_core::PSTR, cchtext: i32, lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT, lpdtp: *const DRAWTEXTPARAMS) -> i32;
         }
-        ::core::mem::transmute(DrawTextExA(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpchtext)), lpchtext.len() as _, ::core::mem::transmute(lprc), ::core::mem::transmute(format), ::core::mem::transmute(lpdtp)))
+        ::core::mem::transmute(DrawTextExA(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpchtext)), lpchtext.len() as _, ::core::mem::transmute(lprc), ::core::mem::transmute(format), ::core::mem::transmute(lpdtp)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4365,14 +4365,14 @@ pub unsafe fn DrawTextExA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DrawTextExW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpchtext: &mut [u16], lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT, lpdtp: *const DRAWTEXTPARAMS) -> i32 {
+pub unsafe fn DrawTextExW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpchtext: &mut [u16], lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT, lpdtp: *const DRAWTEXTPARAMS) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DrawTextExW(hdc: HDC, lpchtext: ::windows::core::PWSTR, cchtext: i32, lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT, lpdtp: *const DRAWTEXTPARAMS) -> i32;
+            fn DrawTextExW(hdc: HDC, lpchtext: ::windows_core::PWSTR, cchtext: i32, lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT, lpdtp: *const DRAWTEXTPARAMS) -> i32;
         }
-        ::core::mem::transmute(DrawTextExW(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpchtext)), lpchtext.len() as _, ::core::mem::transmute(lprc), ::core::mem::transmute(format), ::core::mem::transmute(lpdtp)))
+        ::core::mem::transmute(DrawTextExW(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpchtext)), lpchtext.len() as _, ::core::mem::transmute(lprc), ::core::mem::transmute(format), ::core::mem::transmute(lpdtp)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4380,14 +4380,14 @@ pub unsafe fn DrawTextExW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DrawTextW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpchtext: &[u16], lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT) -> i32 {
+pub unsafe fn DrawTextW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpchtext: &[u16], lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DrawTextW(hdc: HDC, lpchtext: ::windows::core::PCWSTR, cchtext: i32, lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT) -> i32;
+            fn DrawTextW(hdc: HDC, lpchtext: ::windows_core::PCWSTR, cchtext: i32, lprc: *mut super::super::Foundation::RECT, format: DRAW_TEXT_FORMAT) -> i32;
         }
-        ::core::mem::transmute(DrawTextW(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpchtext)), lpchtext.len() as _, ::core::mem::transmute(lprc), ::core::mem::transmute(format)))
+        ::core::mem::transmute(DrawTextW(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpchtext)), lpchtext.len() as _, ::core::mem::transmute(lprc), ::core::mem::transmute(format)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -4423,7 +4423,7 @@ impl ::core::default::Default for EMBEDDED_FONT_PRIV_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EMBEDDED_FONT_PRIV_STATUS {
+unsafe impl ::windows_core::Abi for EMBEDDED_FONT_PRIV_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EMBEDDED_FONT_PRIV_STATUS {
@@ -4450,7 +4450,7 @@ impl ::core::default::Default for EMBED_FONT_CHARSET {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EMBED_FONT_CHARSET {
+unsafe impl ::windows_core::Abi for EMBED_FONT_CHARSET {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EMBED_FONT_CHARSET {
@@ -4475,12 +4475,12 @@ impl ::core::fmt::Debug for EMR {
         f.debug_struct("EMR").field("iType", &self.iType).field("nSize", &self.nSize).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMR {
+unsafe impl ::windows_core::Abi for EMR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMR {}
@@ -4546,13 +4546,13 @@ impl ::core::fmt::Debug for EMRALPHABLEND {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRALPHABLEND {
+unsafe impl ::windows_core::Abi for EMRALPHABLEND {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRALPHABLEND {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRALPHABLEND>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRALPHABLEND>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4588,13 +4588,13 @@ impl ::core::fmt::Debug for EMRANGLEARC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRANGLEARC {
+unsafe impl ::windows_core::Abi for EMRANGLEARC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRANGLEARC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRANGLEARC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRANGLEARC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4629,13 +4629,13 @@ impl ::core::fmt::Debug for EMRARC {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRARC {
+unsafe impl ::windows_core::Abi for EMRARC {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRARC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRARC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRARC>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4699,13 +4699,13 @@ impl ::core::fmt::Debug for EMRBITBLT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRBITBLT {
+unsafe impl ::windows_core::Abi for EMRBITBLT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRBITBLT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRBITBLT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRBITBLT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4734,12 +4734,12 @@ impl ::core::fmt::Debug for EMRCREATEBRUSHINDIRECT {
         f.debug_struct("EMRCREATEBRUSHINDIRECT").field("emr", &self.emr).field("ihBrush", &self.ihBrush).field("lb", &self.lb).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRCREATEBRUSHINDIRECT {
+unsafe impl ::windows_core::Abi for EMRCREATEBRUSHINDIRECT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRCREATEBRUSHINDIRECT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRCREATEBRUSHINDIRECT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRCREATEBRUSHINDIRECT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRCREATEBRUSHINDIRECT {}
@@ -4770,12 +4770,12 @@ impl ::core::fmt::Debug for EMRCREATEDIBPATTERNBRUSHPT {
         f.debug_struct("EMRCREATEDIBPATTERNBRUSHPT").field("emr", &self.emr).field("ihBrush", &self.ihBrush).field("iUsage", &self.iUsage).field("offBmi", &self.offBmi).field("cbBmi", &self.cbBmi).field("offBits", &self.offBits).field("cbBits", &self.cbBits).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRCREATEDIBPATTERNBRUSHPT {
+unsafe impl ::windows_core::Abi for EMRCREATEDIBPATTERNBRUSHPT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRCREATEDIBPATTERNBRUSHPT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRCREATEDIBPATTERNBRUSHPT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRCREATEDIBPATTERNBRUSHPT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRCREATEDIBPATTERNBRUSHPT {}
@@ -4806,12 +4806,12 @@ impl ::core::fmt::Debug for EMRCREATEMONOBRUSH {
         f.debug_struct("EMRCREATEMONOBRUSH").field("emr", &self.emr).field("ihBrush", &self.ihBrush).field("iUsage", &self.iUsage).field("offBmi", &self.offBmi).field("cbBmi", &self.cbBmi).field("offBits", &self.offBits).field("cbBits", &self.cbBits).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRCREATEMONOBRUSH {
+unsafe impl ::windows_core::Abi for EMRCREATEMONOBRUSH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRCREATEMONOBRUSH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRCREATEMONOBRUSH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRCREATEMONOBRUSH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRCREATEMONOBRUSH {}
@@ -4838,12 +4838,12 @@ impl ::core::fmt::Debug for EMRCREATEPALETTE {
         f.debug_struct("EMRCREATEPALETTE").field("emr", &self.emr).field("ihPal", &self.ihPal).field("lgpl", &self.lgpl).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRCREATEPALETTE {
+unsafe impl ::windows_core::Abi for EMRCREATEPALETTE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRCREATEPALETTE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRCREATEPALETTE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRCREATEPALETTE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRCREATEPALETTE {}
@@ -4875,13 +4875,13 @@ impl ::core::fmt::Debug for EMRCREATEPEN {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRCREATEPEN {
+unsafe impl ::windows_core::Abi for EMRCREATEPEN {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRCREATEPEN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRCREATEPEN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRCREATEPEN>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4914,13 +4914,13 @@ impl ::core::fmt::Debug for EMRELLIPSE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRELLIPSE {
+unsafe impl ::windows_core::Abi for EMRELLIPSE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRELLIPSE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRELLIPSE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRELLIPSE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4950,12 +4950,12 @@ impl ::core::fmt::Debug for EMREOF {
         f.debug_struct("EMREOF").field("emr", &self.emr).field("nPalEntries", &self.nPalEntries).field("offPalEntries", &self.offPalEntries).field("nSizeLast", &self.nSizeLast).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMREOF {
+unsafe impl ::windows_core::Abi for EMREOF {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMREOF {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREOF>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREOF>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMREOF {}
@@ -4986,13 +4986,13 @@ impl ::core::fmt::Debug for EMREXCLUDECLIPRECT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMREXCLUDECLIPRECT {
+unsafe impl ::windows_core::Abi for EMREXCLUDECLIPRECT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMREXCLUDECLIPRECT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXCLUDECLIPRECT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXCLUDECLIPRECT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5021,12 +5021,12 @@ impl ::core::fmt::Debug for EMREXTCREATEFONTINDIRECTW {
         f.debug_struct("EMREXTCREATEFONTINDIRECTW").field("emr", &self.emr).field("ihFont", &self.ihFont).field("elfw", &self.elfw).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMREXTCREATEFONTINDIRECTW {
+unsafe impl ::windows_core::Abi for EMREXTCREATEFONTINDIRECTW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMREXTCREATEFONTINDIRECTW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXTCREATEFONTINDIRECTW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXTCREATEFONTINDIRECTW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMREXTCREATEFONTINDIRECTW {}
@@ -5057,12 +5057,12 @@ impl ::core::fmt::Debug for EMREXTCREATEPEN {
         f.debug_struct("EMREXTCREATEPEN").field("emr", &self.emr).field("ihPen", &self.ihPen).field("offBmi", &self.offBmi).field("cbBmi", &self.cbBmi).field("offBits", &self.offBits).field("cbBits", &self.cbBits).field("elp", &self.elp).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMREXTCREATEPEN {
+unsafe impl ::windows_core::Abi for EMREXTCREATEPEN {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMREXTCREATEPEN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXTCREATEPEN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXTCREATEPEN>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMREXTCREATEPEN {}
@@ -5090,12 +5090,12 @@ impl ::core::fmt::Debug for EMREXTESCAPE {
         f.debug_struct("EMREXTESCAPE").field("emr", &self.emr).field("iEscape", &self.iEscape).field("cbEscData", &self.cbEscData).field("EscData", &self.EscData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMREXTESCAPE {
+unsafe impl ::windows_core::Abi for EMREXTESCAPE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMREXTESCAPE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXTESCAPE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXTESCAPE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMREXTESCAPE {}
@@ -5128,13 +5128,13 @@ impl ::core::fmt::Debug for EMREXTFLOODFILL {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMREXTFLOODFILL {
+unsafe impl ::windows_core::Abi for EMREXTFLOODFILL {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMREXTFLOODFILL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXTFLOODFILL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXTFLOODFILL>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5164,12 +5164,12 @@ impl ::core::fmt::Debug for EMREXTSELECTCLIPRGN {
         f.debug_struct("EMREXTSELECTCLIPRGN").field("emr", &self.emr).field("cbRgnData", &self.cbRgnData).field("iMode", &self.iMode).field("RgnData", &self.RgnData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMREXTSELECTCLIPRGN {
+unsafe impl ::windows_core::Abi for EMREXTSELECTCLIPRGN {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMREXTSELECTCLIPRGN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXTSELECTCLIPRGN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXTSELECTCLIPRGN>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMREXTSELECTCLIPRGN {}
@@ -5204,13 +5204,13 @@ impl ::core::fmt::Debug for EMREXTTEXTOUTA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMREXTTEXTOUTA {
+unsafe impl ::windows_core::Abi for EMREXTTEXTOUTA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMREXTTEXTOUTA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXTTEXTOUTA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMREXTTEXTOUTA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5243,13 +5243,13 @@ impl ::core::fmt::Debug for EMRFILLPATH {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRFILLPATH {
+unsafe impl ::windows_core::Abi for EMRFILLPATH {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRFILLPATH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRFILLPATH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRFILLPATH>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5285,13 +5285,13 @@ impl ::core::fmt::Debug for EMRFILLRGN {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRFILLRGN {
+unsafe impl ::windows_core::Abi for EMRFILLRGN {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRFILLRGN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRFILLRGN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRFILLRGN>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5321,12 +5321,12 @@ impl ::core::fmt::Debug for EMRFORMAT {
         f.debug_struct("EMRFORMAT").field("dSignature", &self.dSignature).field("nVersion", &self.nVersion).field("cbData", &self.cbData).field("offData", &self.offData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRFORMAT {
+unsafe impl ::windows_core::Abi for EMRFORMAT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRFORMAT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRFORMAT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRFORMAT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRFORMAT {}
@@ -5361,13 +5361,13 @@ impl ::core::fmt::Debug for EMRFRAMERGN {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRFRAMERGN {
+unsafe impl ::windows_core::Abi for EMRFRAMERGN {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRFRAMERGN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRFRAMERGN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRFRAMERGN>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5396,12 +5396,12 @@ impl ::core::fmt::Debug for EMRGDICOMMENT {
         f.debug_struct("EMRGDICOMMENT").field("emr", &self.emr).field("cbData", &self.cbData).field("Data", &self.Data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRGDICOMMENT {
+unsafe impl ::windows_core::Abi for EMRGDICOMMENT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRGDICOMMENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRGDICOMMENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRGDICOMMENT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRGDICOMMENT {}
@@ -5434,13 +5434,13 @@ impl ::core::fmt::Debug for EMRGLSBOUNDEDRECORD {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRGLSBOUNDEDRECORD {
+unsafe impl ::windows_core::Abi for EMRGLSBOUNDEDRECORD {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRGLSBOUNDEDRECORD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRGLSBOUNDEDRECORD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRGLSBOUNDEDRECORD>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5469,12 +5469,12 @@ impl ::core::fmt::Debug for EMRGLSRECORD {
         f.debug_struct("EMRGLSRECORD").field("emr", &self.emr).field("cbData", &self.cbData).field("Data", &self.Data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRGLSRECORD {
+unsafe impl ::windows_core::Abi for EMRGLSRECORD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRGLSRECORD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRGLSRECORD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRGLSRECORD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRGLSRECORD {}
@@ -5509,13 +5509,13 @@ impl ::core::fmt::Debug for EMRGRADIENTFILL {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRGRADIENTFILL {
+unsafe impl ::windows_core::Abi for EMRGRADIENTFILL {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRGRADIENTFILL {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRGRADIENTFILL>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRGRADIENTFILL>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5550,13 +5550,13 @@ impl ::core::fmt::Debug for EMRINVERTRGN {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRINVERTRGN {
+unsafe impl ::windows_core::Abi for EMRINVERTRGN {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRINVERTRGN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRINVERTRGN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRINVERTRGN>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5589,13 +5589,13 @@ impl ::core::fmt::Debug for EMRLINETO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRLINETO {
+unsafe impl ::windows_core::Abi for EMRLINETO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRLINETO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRLINETO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRLINETO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5673,13 +5673,13 @@ impl ::core::fmt::Debug for EMRMASKBLT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRMASKBLT {
+unsafe impl ::windows_core::Abi for EMRMASKBLT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRMASKBLT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRMASKBLT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRMASKBLT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5708,12 +5708,12 @@ impl ::core::fmt::Debug for EMRMODIFYWORLDTRANSFORM {
         f.debug_struct("EMRMODIFYWORLDTRANSFORM").field("emr", &self.emr).field("xform", &self.xform).field("iMode", &self.iMode).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRMODIFYWORLDTRANSFORM {
+unsafe impl ::windows_core::Abi for EMRMODIFYWORLDTRANSFORM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRMODIFYWORLDTRANSFORM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRMODIFYWORLDTRANSFORM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRMODIFYWORLDTRANSFORM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRMODIFYWORLDTRANSFORM {}
@@ -5742,12 +5742,12 @@ impl ::core::fmt::Debug for EMRNAMEDESCAPE {
         f.debug_struct("EMRNAMEDESCAPE").field("emr", &self.emr).field("iEscape", &self.iEscape).field("cbDriver", &self.cbDriver).field("cbEscData", &self.cbEscData).field("EscData", &self.EscData).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRNAMEDESCAPE {
+unsafe impl ::windows_core::Abi for EMRNAMEDESCAPE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRNAMEDESCAPE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRNAMEDESCAPE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRNAMEDESCAPE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRNAMEDESCAPE {}
@@ -5778,13 +5778,13 @@ impl ::core::fmt::Debug for EMROFFSETCLIPRGN {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMROFFSETCLIPRGN {
+unsafe impl ::windows_core::Abi for EMROFFSETCLIPRGN {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMROFFSETCLIPRGN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMROFFSETCLIPRGN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMROFFSETCLIPRGN>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5858,13 +5858,13 @@ impl ::core::fmt::Debug for EMRPLGBLT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRPLGBLT {
+unsafe impl ::windows_core::Abi for EMRPLGBLT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRPLGBLT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPLGBLT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPLGBLT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5900,13 +5900,13 @@ impl ::core::fmt::Debug for EMRPOLYDRAW {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRPOLYDRAW {
+unsafe impl ::windows_core::Abi for EMRPOLYDRAW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRPOLYDRAW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYDRAW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYDRAW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5942,13 +5942,13 @@ impl ::core::fmt::Debug for EMRPOLYDRAW16 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRPOLYDRAW16 {
+unsafe impl ::windows_core::Abi for EMRPOLYDRAW16 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRPOLYDRAW16 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYDRAW16>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYDRAW16>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5983,13 +5983,13 @@ impl ::core::fmt::Debug for EMRPOLYLINE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRPOLYLINE {
+unsafe impl ::windows_core::Abi for EMRPOLYLINE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRPOLYLINE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYLINE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYLINE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6024,13 +6024,13 @@ impl ::core::fmt::Debug for EMRPOLYLINE16 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRPOLYLINE16 {
+unsafe impl ::windows_core::Abi for EMRPOLYLINE16 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRPOLYLINE16 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYLINE16>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYLINE16>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6067,13 +6067,13 @@ impl ::core::fmt::Debug for EMRPOLYPOLYLINE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRPOLYPOLYLINE {
+unsafe impl ::windows_core::Abi for EMRPOLYPOLYLINE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRPOLYPOLYLINE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYPOLYLINE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYPOLYLINE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6110,13 +6110,13 @@ impl ::core::fmt::Debug for EMRPOLYPOLYLINE16 {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRPOLYPOLYLINE16 {
+unsafe impl ::windows_core::Abi for EMRPOLYPOLYLINE16 {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRPOLYPOLYLINE16 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYPOLYLINE16>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYPOLYLINE16>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6154,13 +6154,13 @@ impl ::core::fmt::Debug for EMRPOLYTEXTOUTA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRPOLYTEXTOUTA {
+unsafe impl ::windows_core::Abi for EMRPOLYTEXTOUTA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRPOLYTEXTOUTA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYTEXTOUTA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRPOLYTEXTOUTA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6189,12 +6189,12 @@ impl ::core::fmt::Debug for EMRRESIZEPALETTE {
         f.debug_struct("EMRRESIZEPALETTE").field("emr", &self.emr).field("ihPal", &self.ihPal).field("cEntries", &self.cEntries).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRRESIZEPALETTE {
+unsafe impl ::windows_core::Abi for EMRRESIZEPALETTE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRRESIZEPALETTE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRRESIZEPALETTE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRRESIZEPALETTE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRRESIZEPALETTE {}
@@ -6220,12 +6220,12 @@ impl ::core::fmt::Debug for EMRRESTOREDC {
         f.debug_struct("EMRRESTOREDC").field("emr", &self.emr).field("iRelative", &self.iRelative).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRRESTOREDC {
+unsafe impl ::windows_core::Abi for EMRRESTOREDC {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRRESTOREDC {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRRESTOREDC>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRRESTOREDC>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRRESTOREDC {}
@@ -6257,13 +6257,13 @@ impl ::core::fmt::Debug for EMRROUNDRECT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRROUNDRECT {
+unsafe impl ::windows_core::Abi for EMRROUNDRECT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRROUNDRECT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRROUNDRECT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRROUNDRECT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6294,12 +6294,12 @@ impl ::core::fmt::Debug for EMRSCALEVIEWPORTEXTEX {
         f.debug_struct("EMRSCALEVIEWPORTEXTEX").field("emr", &self.emr).field("xNum", &self.xNum).field("xDenom", &self.xDenom).field("yNum", &self.yNum).field("yDenom", &self.yDenom).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRSCALEVIEWPORTEXTEX {
+unsafe impl ::windows_core::Abi for EMRSCALEVIEWPORTEXTEX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRSCALEVIEWPORTEXTEX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSCALEVIEWPORTEXTEX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSCALEVIEWPORTEXTEX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRSCALEVIEWPORTEXTEX {}
@@ -6325,12 +6325,12 @@ impl ::core::fmt::Debug for EMRSELECTCLIPPATH {
         f.debug_struct("EMRSELECTCLIPPATH").field("emr", &self.emr).field("iMode", &self.iMode).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRSELECTCLIPPATH {
+unsafe impl ::windows_core::Abi for EMRSELECTCLIPPATH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRSELECTCLIPPATH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSELECTCLIPPATH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSELECTCLIPPATH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRSELECTCLIPPATH {}
@@ -6356,12 +6356,12 @@ impl ::core::fmt::Debug for EMRSELECTOBJECT {
         f.debug_struct("EMRSELECTOBJECT").field("emr", &self.emr).field("ihObject", &self.ihObject).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRSELECTOBJECT {
+unsafe impl ::windows_core::Abi for EMRSELECTOBJECT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRSELECTOBJECT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSELECTOBJECT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSELECTOBJECT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRSELECTOBJECT {}
@@ -6387,12 +6387,12 @@ impl ::core::fmt::Debug for EMRSELECTPALETTE {
         f.debug_struct("EMRSELECTPALETTE").field("emr", &self.emr).field("ihPal", &self.ihPal).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRSELECTPALETTE {
+unsafe impl ::windows_core::Abi for EMRSELECTPALETTE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRSELECTPALETTE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSELECTPALETTE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSELECTPALETTE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRSELECTPALETTE {}
@@ -6418,12 +6418,12 @@ impl ::core::fmt::Debug for EMRSETARCDIRECTION {
         f.debug_struct("EMRSETARCDIRECTION").field("emr", &self.emr).field("iArcDirection", &self.iArcDirection).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRSETARCDIRECTION {
+unsafe impl ::windows_core::Abi for EMRSETARCDIRECTION {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRSETARCDIRECTION {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETARCDIRECTION>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETARCDIRECTION>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRSETARCDIRECTION {}
@@ -6449,12 +6449,12 @@ impl ::core::fmt::Debug for EMRSETCOLORADJUSTMENT {
         f.debug_struct("EMRSETCOLORADJUSTMENT").field("emr", &self.emr).field("ColorAdjustment", &self.ColorAdjustment).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRSETCOLORADJUSTMENT {
+unsafe impl ::windows_core::Abi for EMRSETCOLORADJUSTMENT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRSETCOLORADJUSTMENT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETCOLORADJUSTMENT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETCOLORADJUSTMENT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRSETCOLORADJUSTMENT {}
@@ -6480,12 +6480,12 @@ impl ::core::fmt::Debug for EMRSETCOLORSPACE {
         f.debug_struct("EMRSETCOLORSPACE").field("emr", &self.emr).field("ihCS", &self.ihCS).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRSETCOLORSPACE {
+unsafe impl ::windows_core::Abi for EMRSETCOLORSPACE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRSETCOLORSPACE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETCOLORSPACE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETCOLORSPACE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRSETCOLORSPACE {}
@@ -6545,13 +6545,13 @@ impl ::core::fmt::Debug for EMRSETDIBITSTODEVICE {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRSETDIBITSTODEVICE {
+unsafe impl ::windows_core::Abi for EMRSETDIBITSTODEVICE {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRSETDIBITSTODEVICE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETDIBITSTODEVICE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETDIBITSTODEVICE>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6582,12 +6582,12 @@ impl ::core::fmt::Debug for EMRSETICMPROFILE {
         f.debug_struct("EMRSETICMPROFILE").field("emr", &self.emr).field("dwFlags", &self.dwFlags).field("cbName", &self.cbName).field("cbData", &self.cbData).field("Data", &self.Data).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRSETICMPROFILE {
+unsafe impl ::windows_core::Abi for EMRSETICMPROFILE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRSETICMPROFILE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETICMPROFILE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETICMPROFILE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRSETICMPROFILE {}
@@ -6613,12 +6613,12 @@ impl ::core::fmt::Debug for EMRSETMAPPERFLAGS {
         f.debug_struct("EMRSETMAPPERFLAGS").field("emr", &self.emr).field("dwFlags", &self.dwFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRSETMAPPERFLAGS {
+unsafe impl ::windows_core::Abi for EMRSETMAPPERFLAGS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRSETMAPPERFLAGS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETMAPPERFLAGS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETMAPPERFLAGS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRSETMAPPERFLAGS {}
@@ -6644,12 +6644,12 @@ impl ::core::fmt::Debug for EMRSETMITERLIMIT {
         f.debug_struct("EMRSETMITERLIMIT").field("emr", &self.emr).field("eMiterLimit", &self.eMiterLimit).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRSETMITERLIMIT {
+unsafe impl ::windows_core::Abi for EMRSETMITERLIMIT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRSETMITERLIMIT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETMITERLIMIT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETMITERLIMIT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRSETMITERLIMIT {}
@@ -6678,12 +6678,12 @@ impl ::core::fmt::Debug for EMRSETPALETTEENTRIES {
         f.debug_struct("EMRSETPALETTEENTRIES").field("emr", &self.emr).field("ihPal", &self.ihPal).field("iStart", &self.iStart).field("cEntries", &self.cEntries).field("aPalEntries", &self.aPalEntries).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRSETPALETTEENTRIES {
+unsafe impl ::windows_core::Abi for EMRSETPALETTEENTRIES {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRSETPALETTEENTRIES {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETPALETTEENTRIES>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETPALETTEENTRIES>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRSETPALETTEENTRIES {}
@@ -6715,13 +6715,13 @@ impl ::core::fmt::Debug for EMRSETPIXELV {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRSETPIXELV {
+unsafe impl ::windows_core::Abi for EMRSETPIXELV {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRSETPIXELV {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETPIXELV>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETPIXELV>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6749,12 +6749,12 @@ impl ::core::fmt::Debug for EMRSETTEXTCOLOR {
         f.debug_struct("EMRSETTEXTCOLOR").field("emr", &self.emr).field("crColor", &self.crColor).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRSETTEXTCOLOR {
+unsafe impl ::windows_core::Abi for EMRSETTEXTCOLOR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRSETTEXTCOLOR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETTEXTCOLOR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETTEXTCOLOR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRSETTEXTCOLOR {}
@@ -6785,13 +6785,13 @@ impl ::core::fmt::Debug for EMRSETVIEWPORTEXTEX {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRSETVIEWPORTEXTEX {
+unsafe impl ::windows_core::Abi for EMRSETVIEWPORTEXTEX {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRSETVIEWPORTEXTEX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETVIEWPORTEXTEX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETVIEWPORTEXTEX>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6824,13 +6824,13 @@ impl ::core::fmt::Debug for EMRSETVIEWPORTORGEX {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRSETVIEWPORTORGEX {
+unsafe impl ::windows_core::Abi for EMRSETVIEWPORTORGEX {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRSETVIEWPORTORGEX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETVIEWPORTORGEX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETVIEWPORTORGEX>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6858,12 +6858,12 @@ impl ::core::fmt::Debug for EMRSETWORLDTRANSFORM {
         f.debug_struct("EMRSETWORLDTRANSFORM").field("emr", &self.emr).field("xform", &self.xform).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EMRSETWORLDTRANSFORM {
+unsafe impl ::windows_core::Abi for EMRSETWORLDTRANSFORM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EMRSETWORLDTRANSFORM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETWORLDTRANSFORM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSETWORLDTRANSFORM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EMRSETWORLDTRANSFORM {}
@@ -6929,13 +6929,13 @@ impl ::core::fmt::Debug for EMRSTRETCHBLT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRSTRETCHBLT {
+unsafe impl ::windows_core::Abi for EMRSTRETCHBLT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRSTRETCHBLT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSTRETCHBLT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSTRETCHBLT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6999,13 +6999,13 @@ impl ::core::fmt::Debug for EMRSTRETCHDIBITS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRSTRETCHDIBITS {
+unsafe impl ::windows_core::Abi for EMRSTRETCHDIBITS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRSTRETCHDIBITS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSTRETCHDIBITS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRSTRETCHDIBITS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7042,13 +7042,13 @@ impl ::core::fmt::Debug for EMRTEXT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRTEXT {
+unsafe impl ::windows_core::Abi for EMRTEXT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRTEXT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRTEXT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRTEXT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7116,13 +7116,13 @@ impl ::core::fmt::Debug for EMRTRANSPARENTBLT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EMRTRANSPARENTBLT {
+unsafe impl ::windows_core::Abi for EMRTRANSPARENTBLT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EMRTRANSPARENTBLT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRTRANSPARENTBLT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EMRTRANSPARENTBLT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7450,13 +7450,13 @@ impl ::core::fmt::Debug for ENHMETAHEADER {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for ENHMETAHEADER {
+unsafe impl ::windows_core::Abi for ENHMETAHEADER {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ENHMETAHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENHMETAHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENHMETAHEADER>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7485,12 +7485,12 @@ impl ::core::fmt::Debug for ENHMETARECORD {
         f.debug_struct("ENHMETARECORD").field("iType", &self.iType).field("nSize", &self.nSize).field("dParm", &self.dParm).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ENHMETARECORD {
+unsafe impl ::windows_core::Abi for ENHMETARECORD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ENHMETARECORD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENHMETARECORD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENHMETARECORD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ENHMETARECORD {}
@@ -7529,13 +7529,13 @@ impl ::core::fmt::Debug for ENUMLOGFONTA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for ENUMLOGFONTA {
+unsafe impl ::windows_core::Abi for ENUMLOGFONTA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ENUMLOGFONTA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUMLOGFONTA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUMLOGFONTA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7570,13 +7570,13 @@ impl ::core::fmt::Debug for ENUMLOGFONTEXA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for ENUMLOGFONTEXA {
+unsafe impl ::windows_core::Abi for ENUMLOGFONTEXA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ENUMLOGFONTEXA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUMLOGFONTEXA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUMLOGFONTEXA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7609,13 +7609,13 @@ impl ::core::fmt::Debug for ENUMLOGFONTEXDVA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for ENUMLOGFONTEXDVA {
+unsafe impl ::windows_core::Abi for ENUMLOGFONTEXDVA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ENUMLOGFONTEXDVA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUMLOGFONTEXDVA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUMLOGFONTEXDVA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -7643,12 +7643,12 @@ impl ::core::fmt::Debug for ENUMLOGFONTEXDVW {
         f.debug_struct("ENUMLOGFONTEXDVW").field("elfEnumLogfontEx", &self.elfEnumLogfontEx).field("elfDesignVector", &self.elfDesignVector).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ENUMLOGFONTEXDVW {
+unsafe impl ::windows_core::Abi for ENUMLOGFONTEXDVW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ENUMLOGFONTEXDVW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUMLOGFONTEXDVW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUMLOGFONTEXDVW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ENUMLOGFONTEXDVW {}
@@ -7676,12 +7676,12 @@ impl ::core::fmt::Debug for ENUMLOGFONTEXW {
         f.debug_struct("ENUMLOGFONTEXW").field("elfLogFont", &self.elfLogFont).field("elfFullName", &self.elfFullName).field("elfStyle", &self.elfStyle).field("elfScript", &self.elfScript).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ENUMLOGFONTEXW {
+unsafe impl ::windows_core::Abi for ENUMLOGFONTEXW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ENUMLOGFONTEXW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUMLOGFONTEXW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUMLOGFONTEXW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ENUMLOGFONTEXW {}
@@ -7708,12 +7708,12 @@ impl ::core::fmt::Debug for ENUMLOGFONTW {
         f.debug_struct("ENUMLOGFONTW").field("elfLogFont", &self.elfLogFont).field("elfFullName", &self.elfFullName).field("elfStyle", &self.elfStyle).finish()
     }
 }
-unsafe impl ::windows::core::Abi for ENUMLOGFONTW {
+unsafe impl ::windows_core::Abi for ENUMLOGFONTW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for ENUMLOGFONTW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUMLOGFONTW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ENUMLOGFONTW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for ENUMLOGFONTW {}
@@ -7745,7 +7745,7 @@ impl ::core::default::Default for ENUM_DISPLAY_SETTINGS_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ENUM_DISPLAY_SETTINGS_MODE {
+unsafe impl ::windows_core::Abi for ENUM_DISPLAY_SETTINGS_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ENUM_DISPLAY_SETTINGS_MODE {
@@ -7936,7 +7936,7 @@ impl ::core::default::Default for ETO_OPTIONS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ETO_OPTIONS {
+unsafe impl ::windows_core::Abi for ETO_OPTIONS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ETO_OPTIONS {
@@ -8002,13 +8002,13 @@ impl ::core::fmt::Debug for EXTLOGFONTA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for EXTLOGFONTA {
+unsafe impl ::windows_core::Abi for EXTLOGFONTA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EXTLOGFONTA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXTLOGFONTA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXTLOGFONTA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -8044,12 +8044,12 @@ impl ::core::fmt::Debug for EXTLOGFONTW {
         f.debug_struct("EXTLOGFONTW").field("elfLogFont", &self.elfLogFont).field("elfFullName", &self.elfFullName).field("elfStyle", &self.elfStyle).field("elfVersion", &self.elfVersion).field("elfStyleSize", &self.elfStyleSize).field("elfMatch", &self.elfMatch).field("elfReserved", &self.elfReserved).field("elfVendorId", &self.elfVendorId).field("elfCulture", &self.elfCulture).field("elfPanose", &self.elfPanose).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EXTLOGFONTW {
+unsafe impl ::windows_core::Abi for EXTLOGFONTW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EXTLOGFONTW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXTLOGFONTW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXTLOGFONTW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EXTLOGFONTW {}
@@ -8080,12 +8080,12 @@ impl ::core::fmt::Debug for EXTLOGPEN {
         f.debug_struct("EXTLOGPEN").field("elpPenStyle", &self.elpPenStyle).field("elpWidth", &self.elpWidth).field("elpBrushStyle", &self.elpBrushStyle).field("elpColor", &self.elpColor).field("elpHatch", &self.elpHatch).field("elpNumEntries", &self.elpNumEntries).field("elpStyleEntry", &self.elpStyleEntry).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EXTLOGPEN {
+unsafe impl ::windows_core::Abi for EXTLOGPEN {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EXTLOGPEN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXTLOGPEN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXTLOGPEN>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EXTLOGPEN {}
@@ -8116,12 +8116,12 @@ impl ::core::fmt::Debug for EXTLOGPEN32 {
         f.debug_struct("EXTLOGPEN32").field("elpPenStyle", &self.elpPenStyle).field("elpWidth", &self.elpWidth).field("elpBrushStyle", &self.elpBrushStyle).field("elpColor", &self.elpColor).field("elpHatch", &self.elpHatch).field("elpNumEntries", &self.elpNumEntries).field("elpStyleEntry", &self.elpStyleEntry).finish()
     }
 }
-unsafe impl ::windows::core::Abi for EXTLOGPEN32 {
+unsafe impl ::windows_core::Abi for EXTLOGPEN32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for EXTLOGPEN32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXTLOGPEN32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXTLOGPEN32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for EXTLOGPEN32 {}
@@ -8153,7 +8153,7 @@ impl ::core::default::Default for EXT_FLOOD_FILL_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for EXT_FLOOD_FILL_TYPE {
+unsafe impl ::windows_core::Abi for EXT_FLOOD_FILL_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for EXT_FLOOD_FILL_TYPE {
@@ -8278,7 +8278,7 @@ pub const E_WINDOWSAPI: i32 = 516i32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Ellipse<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn Ellipse<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -8293,7 +8293,7 @@ pub unsafe fn Ellipse<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Para
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EndPaint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppaint: *const PAINTSTRUCT) -> super::super::Foundation::BOOL {
+pub unsafe fn EndPaint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppaint: *const PAINTSTRUCT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -8308,7 +8308,7 @@ pub unsafe fn EndPaint<'a, Param0: ::windows::core::IntoParam<'a, super::super::
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EndPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn EndPath<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -8323,12 +8323,12 @@ pub unsafe fn EndPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Para
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumDisplayDevicesA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpdevice: Param0, idevnum: u32, lpdisplaydevice: *mut DISPLAY_DEVICEA, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumDisplayDevicesA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpdevice: Param0, idevnum: u32, lpdisplaydevice: *mut DISPLAY_DEVICEA, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumDisplayDevicesA(lpdevice: ::windows::core::PCSTR, idevnum: u32, lpdisplaydevice: *mut DISPLAY_DEVICEA, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn EnumDisplayDevicesA(lpdevice: ::windows_core::PCSTR, idevnum: u32, lpdisplaydevice: *mut DISPLAY_DEVICEA, dwflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumDisplayDevicesA(lpdevice.into_param().abi(), ::core::mem::transmute(idevnum), ::core::mem::transmute(lpdisplaydevice), ::core::mem::transmute(dwflags)))
     }
@@ -8338,12 +8338,12 @@ pub unsafe fn EnumDisplayDevicesA<'a, Param0: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumDisplayDevicesW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpdevice: Param0, idevnum: u32, lpdisplaydevice: *mut DISPLAY_DEVICEW, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumDisplayDevicesW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpdevice: Param0, idevnum: u32, lpdisplaydevice: *mut DISPLAY_DEVICEW, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumDisplayDevicesW(lpdevice: ::windows::core::PCWSTR, idevnum: u32, lpdisplaydevice: *mut DISPLAY_DEVICEW, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn EnumDisplayDevicesW(lpdevice: ::windows_core::PCWSTR, idevnum: u32, lpdisplaydevice: *mut DISPLAY_DEVICEW, dwflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumDisplayDevicesW(lpdevice.into_param().abi(), ::core::mem::transmute(idevnum), ::core::mem::transmute(lpdisplaydevice), ::core::mem::transmute(dwflags)))
     }
@@ -8353,12 +8353,12 @@ pub unsafe fn EnumDisplayDevicesW<'a, Param0: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumDisplayMonitors<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lprcclip: *const super::super::Foundation::RECT, lpfnenum: MONITORENUMPROC, dwdata: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumDisplayMonitors<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lprcclip: *const super::super::Foundation::RECT, lpfnenum: MONITORENUMPROC, dwdata: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumDisplayMonitors(hdc: HDC, lprcclip: *const super::super::Foundation::RECT, lpfnenum: ::windows::core::RawPtr, dwdata: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
+            fn EnumDisplayMonitors(hdc: HDC, lprcclip: *const super::super::Foundation::RECT, lpfnenum: ::windows_core::RawPtr, dwdata: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumDisplayMonitors(hdc.into_param().abi(), ::core::mem::transmute(lprcclip), ::core::mem::transmute(lpfnenum), dwdata.into_param().abi()))
     }
@@ -8368,12 +8368,12 @@ pub unsafe fn EnumDisplayMonitors<'a, Param0: ::windows::core::IntoParam<'a, HDC
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumDisplaySettingsA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpszdevicename: Param0, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEA) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumDisplaySettingsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszdevicename: Param0, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumDisplaySettingsA(lpszdevicename: ::windows::core::PCSTR, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEA) -> super::super::Foundation::BOOL;
+            fn EnumDisplaySettingsA(lpszdevicename: ::windows_core::PCSTR, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEA) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumDisplaySettingsA(lpszdevicename.into_param().abi(), ::core::mem::transmute(imodenum), ::core::mem::transmute(lpdevmode)))
     }
@@ -8383,12 +8383,12 @@ pub unsafe fn EnumDisplaySettingsA<'a, Param0: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumDisplaySettingsExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpszdevicename: Param0, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEA, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumDisplaySettingsExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszdevicename: Param0, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEA, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumDisplaySettingsExA(lpszdevicename: ::windows::core::PCSTR, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEA, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn EnumDisplaySettingsExA(lpszdevicename: ::windows_core::PCSTR, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEA, dwflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumDisplaySettingsExA(lpszdevicename.into_param().abi(), ::core::mem::transmute(imodenum), ::core::mem::transmute(lpdevmode), ::core::mem::transmute(dwflags)))
     }
@@ -8398,12 +8398,12 @@ pub unsafe fn EnumDisplaySettingsExA<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumDisplaySettingsExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpszdevicename: Param0, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEW, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumDisplaySettingsExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszdevicename: Param0, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEW, dwflags: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumDisplaySettingsExW(lpszdevicename: ::windows::core::PCWSTR, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEW, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn EnumDisplaySettingsExW(lpszdevicename: ::windows_core::PCWSTR, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEW, dwflags: u32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumDisplaySettingsExW(lpszdevicename.into_param().abi(), ::core::mem::transmute(imodenum), ::core::mem::transmute(lpdevmode), ::core::mem::transmute(dwflags)))
     }
@@ -8413,12 +8413,12 @@ pub unsafe fn EnumDisplaySettingsExW<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumDisplaySettingsW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpszdevicename: Param0, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEW) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumDisplaySettingsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszdevicename: Param0, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEW) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumDisplaySettingsW(lpszdevicename: ::windows::core::PCWSTR, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEW) -> super::super::Foundation::BOOL;
+            fn EnumDisplaySettingsW(lpszdevicename: ::windows_core::PCWSTR, imodenum: ENUM_DISPLAY_SETTINGS_MODE, lpdevmode: *mut DEVMODEW) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumDisplaySettingsW(lpszdevicename.into_param().abi(), ::core::mem::transmute(imodenum), ::core::mem::transmute(lpdevmode)))
     }
@@ -8428,12 +8428,12 @@ pub unsafe fn EnumDisplaySettingsW<'a, Param0: ::windows::core::IntoParam<'a, ::
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumEnhMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HENHMETAFILE>>(hdc: Param0, hmf: Param1, proc: ENHMFENUMPROC, param3: *const ::core::ffi::c_void, lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumEnhMetaFile<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HENHMETAFILE>>(hdc: Param0, hmf: Param1, proc: ENHMFENUMPROC, param3: *const ::core::ffi::c_void, lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumEnhMetaFile(hdc: HDC, hmf: HENHMETAFILE, proc: ::windows::core::RawPtr, param3: *const ::core::ffi::c_void, lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
+            fn EnumEnhMetaFile(hdc: HDC, hmf: HENHMETAFILE, proc: ::windows_core::RawPtr, param3: *const ::core::ffi::c_void, lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumEnhMetaFile(hdc.into_param().abi(), hmf.into_param().abi(), ::core::mem::transmute(proc), ::core::mem::transmute(param3), ::core::mem::transmute(lprect)))
     }
@@ -8443,12 +8443,12 @@ pub unsafe fn EnumEnhMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HDC>, P
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumFontFamiliesA<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lplogfont: Param1, lpproc: FONTENUMPROCA, lparam: Param3) -> i32 {
+pub unsafe fn EnumFontFamiliesA<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lplogfont: Param1, lpproc: FONTENUMPROCA, lparam: Param3) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumFontFamiliesA(hdc: HDC, lplogfont: ::windows::core::PCSTR, lpproc: ::windows::core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
+            fn EnumFontFamiliesA(hdc: HDC, lplogfont: ::windows_core::PCSTR, lpproc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
         }
         ::core::mem::transmute(EnumFontFamiliesA(hdc.into_param().abi(), lplogfont.into_param().abi(), ::core::mem::transmute(lpproc), lparam.into_param().abi()))
     }
@@ -8458,12 +8458,12 @@ pub unsafe fn EnumFontFamiliesA<'a, Param0: ::windows::core::IntoParam<'a, HDC>,
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumFontFamiliesExA<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lplogfont: *const LOGFONTA, lpproc: FONTENUMPROCA, lparam: Param3, dwflags: u32) -> i32 {
+pub unsafe fn EnumFontFamiliesExA<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lplogfont: *const LOGFONTA, lpproc: FONTENUMPROCA, lparam: Param3, dwflags: u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumFontFamiliesExA(hdc: HDC, lplogfont: *const LOGFONTA, lpproc: ::windows::core::RawPtr, lparam: super::super::Foundation::LPARAM, dwflags: u32) -> i32;
+            fn EnumFontFamiliesExA(hdc: HDC, lplogfont: *const LOGFONTA, lpproc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM, dwflags: u32) -> i32;
         }
         ::core::mem::transmute(EnumFontFamiliesExA(hdc.into_param().abi(), ::core::mem::transmute(lplogfont), ::core::mem::transmute(lpproc), lparam.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
@@ -8473,12 +8473,12 @@ pub unsafe fn EnumFontFamiliesExA<'a, Param0: ::windows::core::IntoParam<'a, HDC
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumFontFamiliesExW<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lplogfont: *const LOGFONTW, lpproc: FONTENUMPROCW, lparam: Param3, dwflags: u32) -> i32 {
+pub unsafe fn EnumFontFamiliesExW<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lplogfont: *const LOGFONTW, lpproc: FONTENUMPROCW, lparam: Param3, dwflags: u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumFontFamiliesExW(hdc: HDC, lplogfont: *const LOGFONTW, lpproc: ::windows::core::RawPtr, lparam: super::super::Foundation::LPARAM, dwflags: u32) -> i32;
+            fn EnumFontFamiliesExW(hdc: HDC, lplogfont: *const LOGFONTW, lpproc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM, dwflags: u32) -> i32;
         }
         ::core::mem::transmute(EnumFontFamiliesExW(hdc.into_param().abi(), ::core::mem::transmute(lplogfont), ::core::mem::transmute(lpproc), lparam.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
@@ -8488,12 +8488,12 @@ pub unsafe fn EnumFontFamiliesExW<'a, Param0: ::windows::core::IntoParam<'a, HDC
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumFontFamiliesW<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lplogfont: Param1, lpproc: FONTENUMPROCW, lparam: Param3) -> i32 {
+pub unsafe fn EnumFontFamiliesW<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lplogfont: Param1, lpproc: FONTENUMPROCW, lparam: Param3) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumFontFamiliesW(hdc: HDC, lplogfont: ::windows::core::PCWSTR, lpproc: ::windows::core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
+            fn EnumFontFamiliesW(hdc: HDC, lplogfont: ::windows_core::PCWSTR, lpproc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
         }
         ::core::mem::transmute(EnumFontFamiliesW(hdc.into_param().abi(), lplogfont.into_param().abi(), ::core::mem::transmute(lpproc), lparam.into_param().abi()))
     }
@@ -8503,12 +8503,12 @@ pub unsafe fn EnumFontFamiliesW<'a, Param0: ::windows::core::IntoParam<'a, HDC>,
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumFontsA<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lplogfont: Param1, lpproc: FONTENUMPROCA, lparam: Param3) -> i32 {
+pub unsafe fn EnumFontsA<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lplogfont: Param1, lpproc: FONTENUMPROCA, lparam: Param3) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumFontsA(hdc: HDC, lplogfont: ::windows::core::PCSTR, lpproc: ::windows::core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
+            fn EnumFontsA(hdc: HDC, lplogfont: ::windows_core::PCSTR, lpproc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
         }
         ::core::mem::transmute(EnumFontsA(hdc.into_param().abi(), lplogfont.into_param().abi(), ::core::mem::transmute(lpproc), lparam.into_param().abi()))
     }
@@ -8518,12 +8518,12 @@ pub unsafe fn EnumFontsA<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumFontsW<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lplogfont: Param1, lpproc: FONTENUMPROCW, lparam: Param3) -> i32 {
+pub unsafe fn EnumFontsW<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, lplogfont: Param1, lpproc: FONTENUMPROCW, lparam: Param3) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumFontsW(hdc: HDC, lplogfont: ::windows::core::PCWSTR, lpproc: ::windows::core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
+            fn EnumFontsW(hdc: HDC, lplogfont: ::windows_core::PCWSTR, lpproc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
         }
         ::core::mem::transmute(EnumFontsW(hdc.into_param().abi(), lplogfont.into_param().abi(), ::core::mem::transmute(lpproc), lparam.into_param().abi()))
     }
@@ -8533,12 +8533,12 @@ pub unsafe fn EnumFontsW<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HMETAFILE>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, hmf: Param1, proc: MFENUMPROC, param3: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumMetaFile<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HMETAFILE>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, hmf: Param1, proc: MFENUMPROC, param3: Param3) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumMetaFile(hdc: HDC, hmf: HMETAFILE, proc: ::windows::core::RawPtr, param3: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
+            fn EnumMetaFile(hdc: HDC, hmf: HMETAFILE, proc: ::windows_core::RawPtr, param3: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(EnumMetaFile(hdc.into_param().abi(), hmf.into_param().abi(), ::core::mem::transmute(proc), param3.into_param().abi()))
     }
@@ -8548,12 +8548,12 @@ pub unsafe fn EnumMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Para
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumObjects<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, ntype: OBJ_TYPE, lpfunc: GOBJENUMPROC, lparam: Param3) -> i32 {
+pub unsafe fn EnumObjects<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, ntype: OBJ_TYPE, lpfunc: GOBJENUMPROC, lparam: Param3) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumObjects(hdc: HDC, ntype: OBJ_TYPE, lpfunc: ::windows::core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
+            fn EnumObjects(hdc: HDC, ntype: OBJ_TYPE, lpfunc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> i32;
         }
         ::core::mem::transmute(EnumObjects(hdc.into_param().abi(), ::core::mem::transmute(ntype), ::core::mem::transmute(lpfunc), lparam.into_param().abi()))
     }
@@ -8578,7 +8578,7 @@ pub unsafe fn EqualRect(lprc1: *const super::super::Foundation::RECT, lprc2: *co
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EqualRgn<'a, Param0: ::windows::core::IntoParam<'a, HRGN>, Param1: ::windows::core::IntoParam<'a, HRGN>>(hrgn1: Param0, hrgn2: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn EqualRgn<'a, Param0: ::windows_core::IntoParam<'a, HRGN>, Param1: ::windows_core::IntoParam<'a, HRGN>>(hrgn1: Param0, hrgn2: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -8592,7 +8592,7 @@ pub unsafe fn EqualRgn<'a, Param0: ::windows::core::IntoParam<'a, HRGN>, Param1:
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn ExcludeClipRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32) -> i32 {
+pub unsafe fn ExcludeClipRect<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -8607,7 +8607,7 @@ pub unsafe fn ExcludeClipRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ExcludeUpdateRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hdc: Param0, hwnd: Param1) -> i32 {
+pub unsafe fn ExcludeUpdateRgn<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdc: Param0, hwnd: Param1) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -8628,7 +8628,7 @@ pub unsafe fn ExtCreatePen(ipenstyle: PEN_STYLE, cwidth: u32, plbrush: *const LO
         extern "system" {
             fn ExtCreatePen(ipenstyle: PEN_STYLE, cwidth: u32, plbrush: *const LOGBRUSH, cstyle: u32, pstyle: *const u32) -> HPEN;
         }
-        ::core::mem::transmute(ExtCreatePen(::core::mem::transmute(ipenstyle), ::core::mem::transmute(cwidth), ::core::mem::transmute(plbrush), pstyle.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pstyle))))
+        ::core::mem::transmute(ExtCreatePen(::core::mem::transmute(ipenstyle), ::core::mem::transmute(cwidth), ::core::mem::transmute(plbrush), pstyle.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pstyle))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -8651,7 +8651,7 @@ pub unsafe fn ExtCreateRegion(lpx: *const XFORM, ncount: u32, lpdata: *const RGN
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ExtFloodFill<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, color: u32, r#type: EXT_FLOOD_FILL_TYPE) -> super::super::Foundation::BOOL {
+pub unsafe fn ExtFloodFill<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, color: u32, r#type: EXT_FLOOD_FILL_TYPE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -8665,7 +8665,7 @@ pub unsafe fn ExtFloodFill<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn ExtSelectClipRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1, mode: RGN_COMBINE_MODE) -> i32 {
+pub unsafe fn ExtSelectClipRgn<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1, mode: RGN_COMBINE_MODE) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -8680,12 +8680,12 @@ pub unsafe fn ExtSelectClipRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ExtTextOutA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, options: ETO_OPTIONS, lprect: *const super::super::Foundation::RECT, lpstring: ::windows::core::PCSTR, c: u32, lpdx: *const i32) -> super::super::Foundation::BOOL {
+pub unsafe fn ExtTextOutA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, options: ETO_OPTIONS, lprect: *const super::super::Foundation::RECT, lpstring: ::windows_core::PCSTR, c: u32, lpdx: *const i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ExtTextOutA(hdc: HDC, x: i32, y: i32, options: ETO_OPTIONS, lprect: *const super::super::Foundation::RECT, lpstring: ::windows::core::PCSTR, c: u32, lpdx: *const i32) -> super::super::Foundation::BOOL;
+            fn ExtTextOutA(hdc: HDC, x: i32, y: i32, options: ETO_OPTIONS, lprect: *const super::super::Foundation::RECT, lpstring: ::windows_core::PCSTR, c: u32, lpdx: *const i32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(ExtTextOutA(hdc.into_param().abi(), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(options), ::core::mem::transmute(lprect), ::core::mem::transmute(lpstring), ::core::mem::transmute(c), ::core::mem::transmute(lpdx)))
     }
@@ -8695,12 +8695,12 @@ pub unsafe fn ExtTextOutA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ExtTextOutW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, options: ETO_OPTIONS, lprect: *const super::super::Foundation::RECT, lpstring: ::windows::core::PCWSTR, c: u32, lpdx: *const i32) -> super::super::Foundation::BOOL {
+pub unsafe fn ExtTextOutW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, options: ETO_OPTIONS, lprect: *const super::super::Foundation::RECT, lpstring: ::windows_core::PCWSTR, c: u32, lpdx: *const i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ExtTextOutW(hdc: HDC, x: i32, y: i32, options: ETO_OPTIONS, lprect: *const super::super::Foundation::RECT, lpstring: ::windows::core::PCWSTR, c: u32, lpdx: *const i32) -> super::super::Foundation::BOOL;
+            fn ExtTextOutW(hdc: HDC, x: i32, y: i32, options: ETO_OPTIONS, lprect: *const super::super::Foundation::RECT, lpstring: ::windows_core::PCWSTR, c: u32, lpdx: *const i32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(ExtTextOutW(hdc.into_param().abi(), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(options), ::core::mem::transmute(lprect), ::core::mem::transmute(lpstring), ::core::mem::transmute(c), ::core::mem::transmute(lpdx)))
     }
@@ -8742,12 +8742,12 @@ impl ::core::fmt::Debug for FIXED {
         f.debug_struct("FIXED").field("fract", &self.fract).field("value", &self.value).finish()
     }
 }
-unsafe impl ::windows::core::Abi for FIXED {
+unsafe impl ::windows_core::Abi for FIXED {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for FIXED {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FIXED>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FIXED>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for FIXED {}
@@ -8803,7 +8803,7 @@ impl ::core::default::Default for FONT_CLIP_PRECISION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FONT_CLIP_PRECISION {
+unsafe impl ::windows_core::Abi for FONT_CLIP_PRECISION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FONT_CLIP_PRECISION {
@@ -8864,7 +8864,7 @@ impl ::core::default::Default for FONT_LICENSE_PRIVS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FONT_LICENSE_PRIVS {
+unsafe impl ::windows_core::Abi for FONT_LICENSE_PRIVS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FONT_LICENSE_PRIVS {
@@ -8907,7 +8907,7 @@ impl ::core::default::Default for FONT_OUTPUT_PRECISION {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FONT_OUTPUT_PRECISION {
+unsafe impl ::windows_core::Abi for FONT_OUTPUT_PRECISION {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FONT_OUTPUT_PRECISION {
@@ -8942,7 +8942,7 @@ impl ::core::default::Default for FONT_PITCH_AND_FAMILY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FONT_PITCH_AND_FAMILY {
+unsafe impl ::windows_core::Abi for FONT_PITCH_AND_FAMILY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FONT_PITCH_AND_FAMILY {
@@ -8977,7 +8977,7 @@ impl ::core::default::Default for FONT_QUALITY {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FONT_QUALITY {
+unsafe impl ::windows_core::Abi for FONT_QUALITY {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FONT_QUALITY {
@@ -9004,7 +9004,7 @@ impl ::core::default::Default for FONT_RESOURCE_CHARACTERISTICS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for FONT_RESOURCE_CHARACTERISTICS {
+unsafe impl ::windows_core::Abi for FONT_RESOURCE_CHARACTERISTICS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for FONT_RESOURCE_CHARACTERISTICS {
@@ -9077,7 +9077,7 @@ pub const FW_ULTRALIGHT: u32 = 200u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FillPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn FillPath<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -9092,7 +9092,7 @@ pub unsafe fn FillPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Par
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FillRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param2: ::windows::core::IntoParam<'a, HBRUSH>>(hdc: Param0, lprc: *const super::super::Foundation::RECT, hbr: Param2) -> i32 {
+pub unsafe fn FillRect<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param2: ::windows_core::IntoParam<'a, HBRUSH>>(hdc: Param0, lprc: *const super::super::Foundation::RECT, hbr: Param2) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -9107,7 +9107,7 @@ pub unsafe fn FillRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param2: 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FillRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HRGN>, Param2: ::windows::core::IntoParam<'a, HBRUSH>>(hdc: Param0, hrgn: Param1, hbr: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn FillRgn<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HRGN>, Param2: ::windows_core::IntoParam<'a, HBRUSH>>(hdc: Param0, hrgn: Param1, hbr: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -9122,7 +9122,7 @@ pub unsafe fn FillRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: :
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FixBrushOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, ptl: *const super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn FixBrushOrgEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, ptl: *const super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -9137,7 +9137,7 @@ pub unsafe fn FixBrushOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FlattenPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn FlattenPath<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -9152,7 +9152,7 @@ pub unsafe fn FlattenPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FloodFill<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, color: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FloodFill<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, color: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -9167,7 +9167,7 @@ pub unsafe fn FloodFill<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Pa
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FrameRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param2: ::windows::core::IntoParam<'a, HBRUSH>>(hdc: Param0, lprc: *const super::super::Foundation::RECT, hbr: Param2) -> i32 {
+pub unsafe fn FrameRect<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param2: ::windows_core::IntoParam<'a, HBRUSH>>(hdc: Param0, lprc: *const super::super::Foundation::RECT, hbr: Param2) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -9182,7 +9182,7 @@ pub unsafe fn FrameRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param2:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FrameRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HRGN>, Param2: ::windows::core::IntoParam<'a, HBRUSH>>(hdc: Param0, hrgn: Param1, hbr: Param2, w: i32, h: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn FrameRgn<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HRGN>, Param2: ::windows_core::IntoParam<'a, HBRUSH>>(hdc: Param0, hrgn: Param1, hbr: Param2, w: i32, h: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -9236,12 +9236,12 @@ pub const GCP_JUSTIFYIN: i32 = 2097152i32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 pub struct GCP_RESULTSA {
     pub lStructSize: u32,
-    pub lpOutString: ::windows::core::PSTR,
+    pub lpOutString: ::windows_core::PSTR,
     pub lpOrder: *mut u32,
     pub lpDx: *mut i32,
     pub lpCaretPos: *mut i32,
-    pub lpClass: ::windows::core::PSTR,
-    pub lpGlyphs: ::windows::core::PWSTR,
+    pub lpClass: ::windows_core::PSTR,
+    pub lpGlyphs: ::windows_core::PWSTR,
     pub nGlyphs: u32,
     pub nMaxFit: i32,
 }
@@ -9256,12 +9256,12 @@ impl ::core::fmt::Debug for GCP_RESULTSA {
         f.debug_struct("GCP_RESULTSA").field("lStructSize", &self.lStructSize).field("lpOutString", &self.lpOutString).field("lpOrder", &self.lpOrder).field("lpDx", &self.lpDx).field("lpCaretPos", &self.lpCaretPos).field("lpClass", &self.lpClass).field("lpGlyphs", &self.lpGlyphs).field("nGlyphs", &self.nGlyphs).field("nMaxFit", &self.nMaxFit).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GCP_RESULTSA {
+unsafe impl ::windows_core::Abi for GCP_RESULTSA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GCP_RESULTSA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GCP_RESULTSA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GCP_RESULTSA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GCP_RESULTSA {}
@@ -9274,12 +9274,12 @@ impl ::core::default::Default for GCP_RESULTSA {
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 pub struct GCP_RESULTSW {
     pub lStructSize: u32,
-    pub lpOutString: ::windows::core::PWSTR,
+    pub lpOutString: ::windows_core::PWSTR,
     pub lpOrder: *mut u32,
     pub lpDx: *mut i32,
     pub lpCaretPos: *mut i32,
-    pub lpClass: ::windows::core::PSTR,
-    pub lpGlyphs: ::windows::core::PWSTR,
+    pub lpClass: ::windows_core::PSTR,
+    pub lpGlyphs: ::windows_core::PWSTR,
     pub nGlyphs: u32,
     pub nMaxFit: i32,
 }
@@ -9294,12 +9294,12 @@ impl ::core::fmt::Debug for GCP_RESULTSW {
         f.debug_struct("GCP_RESULTSW").field("lStructSize", &self.lStructSize).field("lpOutString", &self.lpOutString).field("lpOrder", &self.lpOrder).field("lpDx", &self.lpDx).field("lpCaretPos", &self.lpCaretPos).field("lpClass", &self.lpClass).field("lpGlyphs", &self.lpGlyphs).field("nGlyphs", &self.nGlyphs).field("nMaxFit", &self.nMaxFit).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GCP_RESULTSW {
+unsafe impl ::windows_core::Abi for GCP_RESULTSW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GCP_RESULTSW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GCP_RESULTSW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GCP_RESULTSW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GCP_RESULTSW {}
@@ -9413,7 +9413,7 @@ impl ::core::default::Default for GET_CHARACTER_PLACEMENT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GET_CHARACTER_PLACEMENT_FLAGS {
+unsafe impl ::windows_core::Abi for GET_CHARACTER_PLACEMENT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GET_CHARACTER_PLACEMENT_FLAGS {
@@ -9486,7 +9486,7 @@ impl ::core::default::Default for GET_DCX_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GET_DCX_FLAGS {
+unsafe impl ::windows_core::Abi for GET_DCX_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GET_DCX_FLAGS {
@@ -9617,7 +9617,7 @@ impl ::core::default::Default for GET_DEVICE_CAPS_INDEX {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GET_DEVICE_CAPS_INDEX {
+unsafe impl ::windows_core::Abi for GET_DEVICE_CAPS_INDEX {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GET_DEVICE_CAPS_INDEX {
@@ -9658,7 +9658,7 @@ impl ::core::default::Default for GET_GLYPH_OUTLINE_FORMAT {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GET_GLYPH_OUTLINE_FORMAT {
+unsafe impl ::windows_core::Abi for GET_GLYPH_OUTLINE_FORMAT {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GET_GLYPH_OUTLINE_FORMAT {
@@ -9723,7 +9723,7 @@ impl ::core::default::Default for GET_STOCK_OBJECT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GET_STOCK_OBJECT_FLAGS {
+unsafe impl ::windows_core::Abi for GET_STOCK_OBJECT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GET_STOCK_OBJECT_FLAGS {
@@ -9758,13 +9758,13 @@ impl ::core::fmt::Debug for GLYPHMETRICS {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for GLYPHMETRICS {
+unsafe impl ::windows_core::Abi for GLYPHMETRICS {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GLYPHMETRICS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GLYPHMETRICS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GLYPHMETRICS>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9795,12 +9795,12 @@ impl ::core::fmt::Debug for GLYPHSET {
         f.debug_struct("GLYPHSET").field("cbThis", &self.cbThis).field("flAccel", &self.flAccel).field("cGlyphsSupported", &self.cGlyphsSupported).field("cRanges", &self.cRanges).field("ranges", &self.ranges).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GLYPHSET {
+unsafe impl ::windows_core::Abi for GLYPHSET {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GLYPHSET {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GLYPHSET>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GLYPHSET>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GLYPHSET {}
@@ -9835,7 +9835,7 @@ impl ::core::default::Default for GRADIENT_FILL {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GRADIENT_FILL {
+unsafe impl ::windows_core::Abi for GRADIENT_FILL {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GRADIENT_FILL {
@@ -9862,12 +9862,12 @@ impl ::core::fmt::Debug for GRADIENT_RECT {
         f.debug_struct("GRADIENT_RECT").field("UpperLeft", &self.UpperLeft).field("LowerRight", &self.LowerRight).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GRADIENT_RECT {
+unsafe impl ::windows_core::Abi for GRADIENT_RECT {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GRADIENT_RECT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GRADIENT_RECT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GRADIENT_RECT>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GRADIENT_RECT {}
@@ -9894,12 +9894,12 @@ impl ::core::fmt::Debug for GRADIENT_TRIANGLE {
         f.debug_struct("GRADIENT_TRIANGLE").field("Vertex1", &self.Vertex1).field("Vertex2", &self.Vertex2).field("Vertex3", &self.Vertex3).finish()
     }
 }
-unsafe impl ::windows::core::Abi for GRADIENT_TRIANGLE {
+unsafe impl ::windows_core::Abi for GRADIENT_TRIANGLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for GRADIENT_TRIANGLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GRADIENT_TRIANGLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GRADIENT_TRIANGLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for GRADIENT_TRIANGLE {}
@@ -9927,7 +9927,7 @@ impl ::core::default::Default for GRAPHICS_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GRAPHICS_MODE {
+unsafe impl ::windows_core::Abi for GRAPHICS_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for GRAPHICS_MODE {
@@ -9945,7 +9945,7 @@ pub const GS_8BIT_INDICES: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GdiAlphaBlend<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param5: ::windows::core::IntoParam<'a, HDC>, Param10: ::windows::core::IntoParam<'a, BLENDFUNCTION>>(hdcdest: Param0, xorigindest: i32, yorigindest: i32, wdest: i32, hdest: i32, hdcsrc: Param5, xoriginsrc: i32, yoriginsrc: i32, wsrc: i32, hsrc: i32, ftn: Param10) -> super::super::Foundation::BOOL {
+pub unsafe fn GdiAlphaBlend<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param5: ::windows_core::IntoParam<'a, HDC>, Param10: ::windows_core::IntoParam<'a, BLENDFUNCTION>>(hdcdest: Param0, xorigindest: i32, yorigindest: i32, wdest: i32, hdest: i32, hdcsrc: Param5, xoriginsrc: i32, yoriginsrc: i32, wsrc: i32, hsrc: i32, ftn: Param10) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -9960,7 +9960,7 @@ pub unsafe fn GdiAlphaBlend<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Par
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GdiComment<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, nsize: u32, lpdata: *const u8) -> super::super::Foundation::BOOL {
+pub unsafe fn GdiComment<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, nsize: u32, lpdata: *const u8) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10004,14 +10004,14 @@ pub unsafe fn GdiGetBatchLimit() -> u32 {
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GdiGradientFill<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, pvertex: &[TRIVERTEX], pmesh: *const ::core::ffi::c_void, ncount: u32, ulmode: GRADIENT_FILL) -> super::super::Foundation::BOOL {
+pub unsafe fn GdiGradientFill<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, pvertex: &[TRIVERTEX], pmesh: *const ::core::ffi::c_void, ncount: u32, ulmode: GRADIENT_FILL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn GdiGradientFill(hdc: HDC, pvertex: *const TRIVERTEX, nvertex: u32, pmesh: *const ::core::ffi::c_void, ncount: u32, ulmode: GRADIENT_FILL) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GdiGradientFill(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(pvertex)), pvertex.len() as _, ::core::mem::transmute(pmesh), ::core::mem::transmute(ncount), ::core::mem::transmute(ulmode)))
+        ::core::mem::transmute(GdiGradientFill(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(pvertex)), pvertex.len() as _, ::core::mem::transmute(pmesh), ::core::mem::transmute(ncount), ::core::mem::transmute(ulmode)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -10033,7 +10033,7 @@ pub unsafe fn GdiSetBatchLimit(dw: u32) -> u32 {
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GdiTransparentBlt<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param5: ::windows::core::IntoParam<'a, HDC>>(hdcdest: Param0, xorigindest: i32, yorigindest: i32, wdest: i32, hdest: i32, hdcsrc: Param5, xoriginsrc: i32, yoriginsrc: i32, wsrc: i32, hsrc: i32, crtransparent: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GdiTransparentBlt<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param5: ::windows_core::IntoParam<'a, HDC>>(hdcdest: Param0, xorigindest: i32, yorigindest: i32, wdest: i32, hdest: i32, hdcsrc: Param5, xoriginsrc: i32, yoriginsrc: i32, wsrc: i32, hsrc: i32, crtransparent: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10047,7 +10047,7 @@ pub unsafe fn GdiTransparentBlt<'a, Param0: ::windows::core::IntoParam<'a, HDC>,
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetArcDirection<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn GetArcDirection<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10062,7 +10062,7 @@ pub unsafe fn GetArcDirection<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetAspectRatioFilterEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn GetAspectRatioFilterEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10076,7 +10076,7 @@ pub unsafe fn GetAspectRatioFilterEx<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetBitmapBits<'a, Param0: ::windows::core::IntoParam<'a, HBITMAP>>(hbit: Param0, cb: i32, lpvbits: *mut ::core::ffi::c_void) -> i32 {
+pub unsafe fn GetBitmapBits<'a, Param0: ::windows_core::IntoParam<'a, HBITMAP>>(hbit: Param0, cb: i32, lpvbits: *mut ::core::ffi::c_void) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10091,7 +10091,7 @@ pub unsafe fn GetBitmapBits<'a, Param0: ::windows::core::IntoParam<'a, HBITMAP>>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetBitmapDimensionEx<'a, Param0: ::windows::core::IntoParam<'a, HBITMAP>>(hbit: Param0, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn GetBitmapDimensionEx<'a, Param0: ::windows_core::IntoParam<'a, HBITMAP>>(hbit: Param0, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10105,7 +10105,7 @@ pub unsafe fn GetBitmapDimensionEx<'a, Param0: ::windows::core::IntoParam<'a, HB
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetBkColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
+pub unsafe fn GetBkColor<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10119,7 +10119,7 @@ pub unsafe fn GetBkColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: P
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetBkMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn GetBkMode<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10134,7 +10134,7 @@ pub unsafe fn GetBkMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Pa
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetBoundsRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lprect: *mut super::super::Foundation::RECT, flags: u32) -> u32 {
+pub unsafe fn GetBoundsRect<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lprect: *mut super::super::Foundation::RECT, flags: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10149,7 +10149,7 @@ pub unsafe fn GetBoundsRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetBrushOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn GetBrushOrgEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10164,7 +10164,7 @@ pub unsafe fn GetBrushOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCharABCWidthsA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, wfirst: u32, wlast: u32, lpabc: *mut ABC) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCharABCWidthsA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, wfirst: u32, wlast: u32, lpabc: *mut ABC) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10179,7 +10179,7 @@ pub unsafe fn GetCharABCWidthsA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCharABCWidthsFloatA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpabc: *mut ABCFLOAT) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCharABCWidthsFloatA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpabc: *mut ABCFLOAT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10194,7 +10194,7 @@ pub unsafe fn GetCharABCWidthsFloatA<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCharABCWidthsFloatW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpabc: *mut ABCFLOAT) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCharABCWidthsFloatW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpabc: *mut ABCFLOAT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10209,7 +10209,7 @@ pub unsafe fn GetCharABCWidthsFloatW<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCharABCWidthsI<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, gifirst: u32, cgi: u32, pgi: *const u16, pabc: *mut ABC) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCharABCWidthsI<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, gifirst: u32, cgi: u32, pgi: *const u16, pabc: *mut ABC) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10224,7 +10224,7 @@ pub unsafe fn GetCharABCWidthsI<'a, Param0: ::windows::core::IntoParam<'a, HDC>>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCharABCWidthsW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, wfirst: u32, wlast: u32, lpabc: *mut ABC) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCharABCWidthsW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, wfirst: u32, wlast: u32, lpabc: *mut ABC) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10239,7 +10239,7 @@ pub unsafe fn GetCharABCWidthsW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCharWidth32A<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpbuffer: *mut i32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCharWidth32A<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpbuffer: *mut i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10254,7 +10254,7 @@ pub unsafe fn GetCharWidth32A<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCharWidth32W<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpbuffer: *mut i32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCharWidth32W<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpbuffer: *mut i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10269,7 +10269,7 @@ pub unsafe fn GetCharWidth32W<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCharWidthA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpbuffer: *mut i32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCharWidthA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpbuffer: *mut i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10284,7 +10284,7 @@ pub unsafe fn GetCharWidthA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCharWidthFloatA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpbuffer: *mut f32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCharWidthFloatA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpbuffer: *mut f32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10299,7 +10299,7 @@ pub unsafe fn GetCharWidthFloatA<'a, Param0: ::windows::core::IntoParam<'a, HDC>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCharWidthFloatW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpbuffer: *mut f32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCharWidthFloatW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpbuffer: *mut f32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10314,7 +10314,7 @@ pub unsafe fn GetCharWidthFloatW<'a, Param0: ::windows::core::IntoParam<'a, HDC>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCharWidthI<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, gifirst: u32, cgi: u32, pgi: *const u16, piwidths: *mut i32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCharWidthI<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, gifirst: u32, cgi: u32, pgi: *const u16, piwidths: *mut i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10329,7 +10329,7 @@ pub unsafe fn GetCharWidthI<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCharWidthW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpbuffer: *mut i32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCharWidthW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ifirst: u32, ilast: u32, lpbuffer: *mut i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10343,28 +10343,28 @@ pub unsafe fn GetCharWidthW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetCharacterPlacementA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u8], nmexextent: i32, lpresults: *mut GCP_RESULTSA, dwflags: GET_CHARACTER_PLACEMENT_FLAGS) -> u32 {
+pub unsafe fn GetCharacterPlacementA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u8], nmexextent: i32, lpresults: *mut GCP_RESULTSA, dwflags: GET_CHARACTER_PLACEMENT_FLAGS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCharacterPlacementA(hdc: HDC, lpstring: ::windows::core::PCSTR, ncount: i32, nmexextent: i32, lpresults: *mut GCP_RESULTSA, dwflags: GET_CHARACTER_PLACEMENT_FLAGS) -> u32;
+            fn GetCharacterPlacementA(hdc: HDC, lpstring: ::windows_core::PCSTR, ncount: i32, nmexextent: i32, lpresults: *mut GCP_RESULTSA, dwflags: GET_CHARACTER_PLACEMENT_FLAGS) -> u32;
         }
-        ::core::mem::transmute(GetCharacterPlacementA(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(nmexextent), ::core::mem::transmute(lpresults), ::core::mem::transmute(dwflags)))
+        ::core::mem::transmute(GetCharacterPlacementA(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(nmexextent), ::core::mem::transmute(lpresults), ::core::mem::transmute(dwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetCharacterPlacementW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u16], nmexextent: i32, lpresults: *mut GCP_RESULTSW, dwflags: GET_CHARACTER_PLACEMENT_FLAGS) -> u32 {
+pub unsafe fn GetCharacterPlacementW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u16], nmexextent: i32, lpresults: *mut GCP_RESULTSW, dwflags: GET_CHARACTER_PLACEMENT_FLAGS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCharacterPlacementW(hdc: HDC, lpstring: ::windows::core::PCWSTR, ncount: i32, nmexextent: i32, lpresults: *mut GCP_RESULTSW, dwflags: GET_CHARACTER_PLACEMENT_FLAGS) -> u32;
+            fn GetCharacterPlacementW(hdc: HDC, lpstring: ::windows_core::PCWSTR, ncount: i32, nmexextent: i32, lpresults: *mut GCP_RESULTSW, dwflags: GET_CHARACTER_PLACEMENT_FLAGS) -> u32;
         }
-        ::core::mem::transmute(GetCharacterPlacementW(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(nmexextent), ::core::mem::transmute(lpresults), ::core::mem::transmute(dwflags)))
+        ::core::mem::transmute(GetCharacterPlacementW(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(nmexextent), ::core::mem::transmute(lpresults), ::core::mem::transmute(dwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -10372,7 +10372,7 @@ pub unsafe fn GetCharacterPlacementW<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetClipBox<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lprect: *mut super::super::Foundation::RECT) -> i32 {
+pub unsafe fn GetClipBox<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lprect: *mut super::super::Foundation::RECT) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10386,7 +10386,7 @@ pub unsafe fn GetClipBox<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: P
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetClipRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1) -> i32 {
+pub unsafe fn GetClipRgn<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10401,7 +10401,7 @@ pub unsafe fn GetClipRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetColorAdjustment<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpca: *mut COLORADJUSTMENT) -> super::super::Foundation::BOOL {
+pub unsafe fn GetColorAdjustment<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpca: *mut COLORADJUSTMENT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10415,7 +10415,7 @@ pub unsafe fn GetColorAdjustment<'a, Param0: ::windows::core::IntoParam<'a, HDC>
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetCurrentObject<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, r#type: OBJ_TYPE) -> HGDIOBJ {
+pub unsafe fn GetCurrentObject<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, r#type: OBJ_TYPE) -> HGDIOBJ {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10430,7 +10430,7 @@ pub unsafe fn GetCurrentObject<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCurrentPositionEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCurrentPositionEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10445,7 +10445,7 @@ pub unsafe fn GetCurrentPositionEx<'a, Param0: ::windows::core::IntoParam<'a, HD
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDC<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> HDC {
+pub unsafe fn GetDC<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> HDC {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10459,7 +10459,7 @@ pub unsafe fn GetDC<'a, Param0: ::windows::core::IntoParam<'a, super::super::Fou
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetDCBrushColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
+pub unsafe fn GetDCBrushColor<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10474,7 +10474,7 @@ pub unsafe fn GetDCBrushColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDCEx<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HRGN>>(hwnd: Param0, hrgnclip: Param1, flags: GET_DCX_FLAGS) -> HDC {
+pub unsafe fn GetDCEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HRGN>>(hwnd: Param0, hrgnclip: Param1, flags: GET_DCX_FLAGS) -> HDC {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10489,7 +10489,7 @@ pub unsafe fn GetDCEx<'a, Param0: ::windows::core::IntoParam<'a, super::super::F
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDCOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn GetDCOrgEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10503,7 +10503,7 @@ pub unsafe fn GetDCOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: P
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetDCPenColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
+pub unsafe fn GetDCPenColor<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10517,21 +10517,21 @@ pub unsafe fn GetDCPenColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetDIBColorTable<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, istart: u32, prgbq: &mut [RGBQUAD]) -> u32 {
+pub unsafe fn GetDIBColorTable<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, istart: u32, prgbq: &mut [RGBQUAD]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn GetDIBColorTable(hdc: HDC, istart: u32, centries: u32, prgbq: *mut RGBQUAD) -> u32;
         }
-        ::core::mem::transmute(GetDIBColorTable(hdc.into_param().abi(), ::core::mem::transmute(istart), prgbq.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(prgbq))))
+        ::core::mem::transmute(GetDIBColorTable(hdc.into_param().abi(), ::core::mem::transmute(istart), prgbq.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(prgbq))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetDIBits<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HBITMAP>>(hdc: Param0, hbm: Param1, start: u32, clines: u32, lpvbits: *mut ::core::ffi::c_void, lpbmi: *mut BITMAPINFO, usage: DIB_USAGE) -> i32 {
+pub unsafe fn GetDIBits<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HBITMAP>>(hdc: Param0, hbm: Param1, start: u32, clines: u32, lpvbits: *mut ::core::ffi::c_void, lpbmi: *mut BITMAPINFO, usage: DIB_USAGE) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10545,7 +10545,7 @@ pub unsafe fn GetDIBits<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1:
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetDeviceCaps<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, index: GET_DEVICE_CAPS_INDEX) -> i32 {
+pub unsafe fn GetDeviceCaps<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, index: GET_DEVICE_CAPS_INDEX) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10559,12 +10559,12 @@ pub unsafe fn GetDeviceCaps<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetEnhMetaFileA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpname: Param0) -> HENHMETAFILE {
+pub unsafe fn GetEnhMetaFileA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpname: Param0) -> HENHMETAFILE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetEnhMetaFileA(lpname: ::windows::core::PCSTR) -> HENHMETAFILE;
+            fn GetEnhMetaFileA(lpname: ::windows_core::PCSTR) -> HENHMETAFILE;
         }
         ::core::mem::transmute(GetEnhMetaFileA(lpname.into_param().abi()))
     }
@@ -10573,7 +10573,7 @@ pub unsafe fn GetEnhMetaFileA<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetEnhMetaFileBits<'a, Param0: ::windows::core::IntoParam<'a, HENHMETAFILE>>(hemf: Param0, nsize: u32, lpdata: *mut u8) -> u32 {
+pub unsafe fn GetEnhMetaFileBits<'a, Param0: ::windows_core::IntoParam<'a, HENHMETAFILE>>(hemf: Param0, nsize: u32, lpdata: *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10587,28 +10587,28 @@ pub unsafe fn GetEnhMetaFileBits<'a, Param0: ::windows::core::IntoParam<'a, HENH
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetEnhMetaFileDescriptionA<'a, Param0: ::windows::core::IntoParam<'a, HENHMETAFILE>>(hemf: Param0, lpdescription: &mut [u8]) -> u32 {
+pub unsafe fn GetEnhMetaFileDescriptionA<'a, Param0: ::windows_core::IntoParam<'a, HENHMETAFILE>>(hemf: Param0, lpdescription: &mut [u8]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetEnhMetaFileDescriptionA(hemf: HENHMETAFILE, cchbuffer: u32, lpdescription: ::windows::core::PSTR) -> u32;
+            fn GetEnhMetaFileDescriptionA(hemf: HENHMETAFILE, cchbuffer: u32, lpdescription: ::windows_core::PSTR) -> u32;
         }
-        ::core::mem::transmute(GetEnhMetaFileDescriptionA(hemf.into_param().abi(), lpdescription.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpdescription))))
+        ::core::mem::transmute(GetEnhMetaFileDescriptionA(hemf.into_param().abi(), lpdescription.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpdescription))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetEnhMetaFileDescriptionW<'a, Param0: ::windows::core::IntoParam<'a, HENHMETAFILE>>(hemf: Param0, lpdescription: &mut [u16]) -> u32 {
+pub unsafe fn GetEnhMetaFileDescriptionW<'a, Param0: ::windows_core::IntoParam<'a, HENHMETAFILE>>(hemf: Param0, lpdescription: &mut [u16]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetEnhMetaFileDescriptionW(hemf: HENHMETAFILE, cchbuffer: u32, lpdescription: ::windows::core::PWSTR) -> u32;
+            fn GetEnhMetaFileDescriptionW(hemf: HENHMETAFILE, cchbuffer: u32, lpdescription: ::windows_core::PWSTR) -> u32;
         }
-        ::core::mem::transmute(GetEnhMetaFileDescriptionW(hemf.into_param().abi(), lpdescription.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpdescription))))
+        ::core::mem::transmute(GetEnhMetaFileDescriptionW(hemf.into_param().abi(), lpdescription.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpdescription))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -10616,7 +10616,7 @@ pub unsafe fn GetEnhMetaFileDescriptionW<'a, Param0: ::windows::core::IntoParam<
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetEnhMetaFileHeader<'a, Param0: ::windows::core::IntoParam<'a, HENHMETAFILE>>(hemf: Param0, nsize: u32, lpenhmetaheader: *mut ENHMETAHEADER) -> u32 {
+pub unsafe fn GetEnhMetaFileHeader<'a, Param0: ::windows_core::IntoParam<'a, HENHMETAFILE>>(hemf: Param0, nsize: u32, lpenhmetaheader: *mut ENHMETAHEADER) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10630,26 +10630,26 @@ pub unsafe fn GetEnhMetaFileHeader<'a, Param0: ::windows::core::IntoParam<'a, HE
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetEnhMetaFilePaletteEntries<'a, Param0: ::windows::core::IntoParam<'a, HENHMETAFILE>>(hemf: Param0, lppaletteentries: &mut [PALETTEENTRY]) -> u32 {
+pub unsafe fn GetEnhMetaFilePaletteEntries<'a, Param0: ::windows_core::IntoParam<'a, HENHMETAFILE>>(hemf: Param0, lppaletteentries: &mut [PALETTEENTRY]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn GetEnhMetaFilePaletteEntries(hemf: HENHMETAFILE, nnumentries: u32, lppaletteentries: *mut PALETTEENTRY) -> u32;
         }
-        ::core::mem::transmute(GetEnhMetaFilePaletteEntries(hemf.into_param().abi(), lppaletteentries.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lppaletteentries))))
+        ::core::mem::transmute(GetEnhMetaFilePaletteEntries(hemf.into_param().abi(), lppaletteentries.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lppaletteentries))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetEnhMetaFileW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpname: Param0) -> HENHMETAFILE {
+pub unsafe fn GetEnhMetaFileW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpname: Param0) -> HENHMETAFILE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetEnhMetaFileW(lpname: ::windows::core::PCWSTR) -> HENHMETAFILE;
+            fn GetEnhMetaFileW(lpname: ::windows_core::PCWSTR) -> HENHMETAFILE;
         }
         ::core::mem::transmute(GetEnhMetaFileW(lpname.into_param().abi()))
     }
@@ -10658,7 +10658,7 @@ pub unsafe fn GetEnhMetaFileW<'a, Param0: ::windows::core::IntoParam<'a, ::windo
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetFontData<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, dwtable: u32, dwoffset: u32, pvbuffer: *mut ::core::ffi::c_void, cjbuffer: u32) -> u32 {
+pub unsafe fn GetFontData<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, dwtable: u32, dwoffset: u32, pvbuffer: *mut ::core::ffi::c_void, cjbuffer: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10672,7 +10672,7 @@ pub unsafe fn GetFontData<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: 
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetFontLanguageInfo<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
+pub unsafe fn GetFontLanguageInfo<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10686,7 +10686,7 @@ pub unsafe fn GetFontLanguageInfo<'a, Param0: ::windows::core::IntoParam<'a, HDC
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetFontUnicodeRanges<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpgs: *mut GLYPHSET) -> u32 {
+pub unsafe fn GetFontUnicodeRanges<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpgs: *mut GLYPHSET) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10700,12 +10700,12 @@ pub unsafe fn GetFontUnicodeRanges<'a, Param0: ::windows::core::IntoParam<'a, HD
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetGlyphIndicesA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpstr: ::windows::core::PCSTR, c: i32, pgi: *mut u16, fl: u32) -> u32 {
+pub unsafe fn GetGlyphIndicesA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpstr: ::windows_core::PCSTR, c: i32, pgi: *mut u16, fl: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetGlyphIndicesA(hdc: HDC, lpstr: ::windows::core::PCSTR, c: i32, pgi: *mut u16, fl: u32) -> u32;
+            fn GetGlyphIndicesA(hdc: HDC, lpstr: ::windows_core::PCSTR, c: i32, pgi: *mut u16, fl: u32) -> u32;
         }
         ::core::mem::transmute(GetGlyphIndicesA(hdc.into_param().abi(), ::core::mem::transmute(lpstr), ::core::mem::transmute(c), ::core::mem::transmute(pgi), ::core::mem::transmute(fl)))
     }
@@ -10714,12 +10714,12 @@ pub unsafe fn GetGlyphIndicesA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetGlyphIndicesW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpstr: ::windows::core::PCWSTR, c: i32, pgi: *mut u16, fl: u32) -> u32 {
+pub unsafe fn GetGlyphIndicesW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpstr: ::windows_core::PCWSTR, c: i32, pgi: *mut u16, fl: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetGlyphIndicesW(hdc: HDC, lpstr: ::windows::core::PCWSTR, c: i32, pgi: *mut u16, fl: u32) -> u32;
+            fn GetGlyphIndicesW(hdc: HDC, lpstr: ::windows_core::PCWSTR, c: i32, pgi: *mut u16, fl: u32) -> u32;
         }
         ::core::mem::transmute(GetGlyphIndicesW(hdc.into_param().abi(), ::core::mem::transmute(lpstr), ::core::mem::transmute(c), ::core::mem::transmute(pgi), ::core::mem::transmute(fl)))
     }
@@ -10729,7 +10729,7 @@ pub unsafe fn GetGlyphIndicesW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetGlyphOutlineA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, uchar: u32, fuformat: GET_GLYPH_OUTLINE_FORMAT, lpgm: *mut GLYPHMETRICS, cjbuffer: u32, pvbuffer: *mut ::core::ffi::c_void, lpmat2: *const MAT2) -> u32 {
+pub unsafe fn GetGlyphOutlineA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, uchar: u32, fuformat: GET_GLYPH_OUTLINE_FORMAT, lpgm: *mut GLYPHMETRICS, cjbuffer: u32, pvbuffer: *mut ::core::ffi::c_void, lpmat2: *const MAT2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10744,7 +10744,7 @@ pub unsafe fn GetGlyphOutlineA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetGlyphOutlineW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, uchar: u32, fuformat: GET_GLYPH_OUTLINE_FORMAT, lpgm: *mut GLYPHMETRICS, cjbuffer: u32, pvbuffer: *mut ::core::ffi::c_void, lpmat2: *const MAT2) -> u32 {
+pub unsafe fn GetGlyphOutlineW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, uchar: u32, fuformat: GET_GLYPH_OUTLINE_FORMAT, lpgm: *mut GLYPHMETRICS, cjbuffer: u32, pvbuffer: *mut ::core::ffi::c_void, lpmat2: *const MAT2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10758,7 +10758,7 @@ pub unsafe fn GetGlyphOutlineW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetGraphicsMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn GetGraphicsMode<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10772,35 +10772,35 @@ pub unsafe fn GetGraphicsMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetKerningPairsA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpkernpair: &mut [KERNINGPAIR]) -> u32 {
+pub unsafe fn GetKerningPairsA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpkernpair: &mut [KERNINGPAIR]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn GetKerningPairsA(hdc: HDC, npairs: u32, lpkernpair: *mut KERNINGPAIR) -> u32;
         }
-        ::core::mem::transmute(GetKerningPairsA(hdc.into_param().abi(), lpkernpair.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpkernpair))))
+        ::core::mem::transmute(GetKerningPairsA(hdc.into_param().abi(), lpkernpair.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpkernpair))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetKerningPairsW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpkernpair: &mut [KERNINGPAIR]) -> u32 {
+pub unsafe fn GetKerningPairsW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpkernpair: &mut [KERNINGPAIR]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn GetKerningPairsW(hdc: HDC, npairs: u32, lpkernpair: *mut KERNINGPAIR) -> u32;
         }
-        ::core::mem::transmute(GetKerningPairsW(hdc.into_param().abi(), lpkernpair.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpkernpair))))
+        ::core::mem::transmute(GetKerningPairsW(hdc.into_param().abi(), lpkernpair.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpkernpair))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetLayout<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
+pub unsafe fn GetLayout<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10814,7 +10814,7 @@ pub unsafe fn GetLayout<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Pa
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetMapMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn GetMapMode<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10828,12 +10828,12 @@ pub unsafe fn GetMapMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: P
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetMetaFileA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpname: Param0) -> HMETAFILE {
+pub unsafe fn GetMetaFileA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpname: Param0) -> HMETAFILE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetMetaFileA(lpname: ::windows::core::PCSTR) -> HMETAFILE;
+            fn GetMetaFileA(lpname: ::windows_core::PCSTR) -> HMETAFILE;
         }
         ::core::mem::transmute(GetMetaFileA(lpname.into_param().abi()))
     }
@@ -10842,7 +10842,7 @@ pub unsafe fn GetMetaFileA<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetMetaFileBitsEx<'a, Param0: ::windows::core::IntoParam<'a, HMETAFILE>>(hmf: Param0, cbbuffer: u32, lpdata: *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn GetMetaFileBitsEx<'a, Param0: ::windows_core::IntoParam<'a, HMETAFILE>>(hmf: Param0, cbbuffer: u32, lpdata: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10856,12 +10856,12 @@ pub unsafe fn GetMetaFileBitsEx<'a, Param0: ::windows::core::IntoParam<'a, HMETA
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetMetaFileW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpname: Param0) -> HMETAFILE {
+pub unsafe fn GetMetaFileW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpname: Param0) -> HMETAFILE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetMetaFileW(lpname: ::windows::core::PCWSTR) -> HMETAFILE;
+            fn GetMetaFileW(lpname: ::windows_core::PCWSTR) -> HMETAFILE;
         }
         ::core::mem::transmute(GetMetaFileW(lpname.into_param().abi()))
     }
@@ -10870,7 +10870,7 @@ pub unsafe fn GetMetaFileW<'a, Param0: ::windows::core::IntoParam<'a, ::windows:
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetMetaRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1) -> i32 {
+pub unsafe fn GetMetaRgn<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10885,7 +10885,7 @@ pub unsafe fn GetMetaRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetMiterLimit<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, plimit: *mut f32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetMiterLimit<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, plimit: *mut f32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10900,7 +10900,7 @@ pub unsafe fn GetMiterLimit<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetMonitorInfoA<'a, Param0: ::windows::core::IntoParam<'a, HMONITOR>>(hmonitor: Param0, lpmi: *mut MONITORINFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetMonitorInfoA<'a, Param0: ::windows_core::IntoParam<'a, HMONITOR>>(hmonitor: Param0, lpmi: *mut MONITORINFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10915,7 +10915,7 @@ pub unsafe fn GetMonitorInfoA<'a, Param0: ::windows::core::IntoParam<'a, HMONITO
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetMonitorInfoW<'a, Param0: ::windows::core::IntoParam<'a, HMONITOR>>(hmonitor: Param0, lpmi: *mut MONITORINFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetMonitorInfoW<'a, Param0: ::windows_core::IntoParam<'a, HMONITOR>>(hmonitor: Param0, lpmi: *mut MONITORINFO) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10929,7 +10929,7 @@ pub unsafe fn GetMonitorInfoW<'a, Param0: ::windows::core::IntoParam<'a, HMONITO
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetNearestColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, color: u32) -> u32 {
+pub unsafe fn GetNearestColor<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, color: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10943,7 +10943,7 @@ pub unsafe fn GetNearestColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetNearestPaletteIndex<'a, Param0: ::windows::core::IntoParam<'a, HPALETTE>>(h: Param0, color: u32) -> u32 {
+pub unsafe fn GetNearestPaletteIndex<'a, Param0: ::windows_core::IntoParam<'a, HPALETTE>>(h: Param0, color: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10957,7 +10957,7 @@ pub unsafe fn GetNearestPaletteIndex<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetObjectA<'a, Param0: ::windows::core::IntoParam<'a, HGDIOBJ>>(h: Param0, c: i32, pv: *mut ::core::ffi::c_void) -> i32 {
+pub unsafe fn GetObjectA<'a, Param0: ::windows_core::IntoParam<'a, HGDIOBJ>>(h: Param0, c: i32, pv: *mut ::core::ffi::c_void) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10971,7 +10971,7 @@ pub unsafe fn GetObjectA<'a, Param0: ::windows::core::IntoParam<'a, HGDIOBJ>>(h:
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetObjectType<'a, Param0: ::windows::core::IntoParam<'a, HGDIOBJ>>(h: Param0) -> u32 {
+pub unsafe fn GetObjectType<'a, Param0: ::windows_core::IntoParam<'a, HGDIOBJ>>(h: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -10985,7 +10985,7 @@ pub unsafe fn GetObjectType<'a, Param0: ::windows::core::IntoParam<'a, HGDIOBJ>>
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetObjectW<'a, Param0: ::windows::core::IntoParam<'a, HGDIOBJ>>(h: Param0, c: i32, pv: *mut ::core::ffi::c_void) -> i32 {
+pub unsafe fn GetObjectW<'a, Param0: ::windows_core::IntoParam<'a, HGDIOBJ>>(h: Param0, c: i32, pv: *mut ::core::ffi::c_void) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11000,7 +11000,7 @@ pub unsafe fn GetObjectW<'a, Param0: ::windows::core::IntoParam<'a, HGDIOBJ>>(h:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetOutlineTextMetricsA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, cjcopy: u32, potm: *mut OUTLINETEXTMETRICA) -> u32 {
+pub unsafe fn GetOutlineTextMetricsA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, cjcopy: u32, potm: *mut OUTLINETEXTMETRICA) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11015,7 +11015,7 @@ pub unsafe fn GetOutlineTextMetricsA<'a, Param0: ::windows::core::IntoParam<'a, 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetOutlineTextMetricsW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, cjcopy: u32, potm: *mut OUTLINETEXTMETRICW) -> u32 {
+pub unsafe fn GetOutlineTextMetricsW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, cjcopy: u32, potm: *mut OUTLINETEXTMETRICW) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11029,14 +11029,14 @@ pub unsafe fn GetOutlineTextMetricsW<'a, Param0: ::windows::core::IntoParam<'a, 
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetPaletteEntries<'a, Param0: ::windows::core::IntoParam<'a, HPALETTE>>(hpal: Param0, istart: u32, ppalentries: &mut [PALETTEENTRY]) -> u32 {
+pub unsafe fn GetPaletteEntries<'a, Param0: ::windows_core::IntoParam<'a, HPALETTE>>(hpal: Param0, istart: u32, ppalentries: &mut [PALETTEENTRY]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn GetPaletteEntries(hpal: HPALETTE, istart: u32, centries: u32, ppalentries: *mut PALETTEENTRY) -> u32;
         }
-        ::core::mem::transmute(GetPaletteEntries(hpal.into_param().abi(), ::core::mem::transmute(istart), ppalentries.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(ppalentries))))
+        ::core::mem::transmute(GetPaletteEntries(hpal.into_param().abi(), ::core::mem::transmute(istart), ppalentries.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(ppalentries))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11044,7 +11044,7 @@ pub unsafe fn GetPaletteEntries<'a, Param0: ::windows::core::IntoParam<'a, HPALE
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, apt: *mut super::super::Foundation::POINT, aj: *mut u8, cpt: i32) -> i32 {
+pub unsafe fn GetPath<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, apt: *mut super::super::Foundation::POINT, aj: *mut u8, cpt: i32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11058,7 +11058,7 @@ pub unsafe fn GetPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Para
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetPixel<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32) -> u32 {
+pub unsafe fn GetPixel<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11072,7 +11072,7 @@ pub unsafe fn GetPixel<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Par
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetPolyFillMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn GetPolyFillMode<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11086,7 +11086,7 @@ pub unsafe fn GetPolyFillMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetROP2<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn GetROP2<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11100,7 +11100,7 @@ pub unsafe fn GetROP2<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Para
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetRandomRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1, i: i32) -> i32 {
+pub unsafe fn GetRandomRgn<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1, i: i32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11130,7 +11130,7 @@ pub unsafe fn GetRasterizerCaps(lpraststat: *mut RASTERIZER_STATUS, cjbytes: u32
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetRegionData<'a, Param0: ::windows::core::IntoParam<'a, HRGN>>(hrgn: Param0, ncount: u32, lprgndata: *mut RGNDATA) -> u32 {
+pub unsafe fn GetRegionData<'a, Param0: ::windows_core::IntoParam<'a, HRGN>>(hrgn: Param0, ncount: u32, lprgndata: *mut RGNDATA) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11145,7 +11145,7 @@ pub unsafe fn GetRegionData<'a, Param0: ::windows::core::IntoParam<'a, HRGN>>(hr
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetRgnBox<'a, Param0: ::windows::core::IntoParam<'a, HRGN>>(hrgn: Param0, lprc: *mut super::super::Foundation::RECT) -> i32 {
+pub unsafe fn GetRgnBox<'a, Param0: ::windows_core::IntoParam<'a, HRGN>>(hrgn: Param0, lprc: *mut super::super::Foundation::RECT) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11173,7 +11173,7 @@ pub unsafe fn GetStockObject(i: GET_STOCK_OBJECT_FLAGS) -> HGDIOBJ {
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetStretchBltMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn GetStretchBltMode<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11201,21 +11201,21 @@ pub unsafe fn GetSysColorBrush(nindex: i32) -> HBRUSH {
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetSystemPaletteEntries<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, istart: u32, ppalentries: &mut [PALETTEENTRY]) -> u32 {
+pub unsafe fn GetSystemPaletteEntries<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, istart: u32, ppalentries: &mut [PALETTEENTRY]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn GetSystemPaletteEntries(hdc: HDC, istart: u32, centries: u32, ppalentries: *mut PALETTEENTRY) -> u32;
         }
-        ::core::mem::transmute(GetSystemPaletteEntries(hdc.into_param().abi(), ::core::mem::transmute(istart), ppalentries.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(ppalentries))))
+        ::core::mem::transmute(GetSystemPaletteEntries(hdc.into_param().abi(), ::core::mem::transmute(istart), ppalentries.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(ppalentries))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetSystemPaletteUse<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
+pub unsafe fn GetSystemPaletteUse<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11229,35 +11229,35 @@ pub unsafe fn GetSystemPaletteUse<'a, Param0: ::windows::core::IntoParam<'a, HDC
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetTabbedTextExtentA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u8], lpntabstoppositions: &[i32]) -> u32 {
+pub unsafe fn GetTabbedTextExtentA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u8], lpntabstoppositions: &[i32]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetTabbedTextExtentA(hdc: HDC, lpstring: ::windows::core::PCSTR, chcount: i32, ntabpositions: i32, lpntabstoppositions: *const i32) -> u32;
+            fn GetTabbedTextExtentA(hdc: HDC, lpstring: ::windows_core::PCSTR, chcount: i32, ntabpositions: i32, lpntabstoppositions: *const i32) -> u32;
         }
-        ::core::mem::transmute(GetTabbedTextExtentA(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpstring)), lpstring.len() as _, lpntabstoppositions.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(lpntabstoppositions))))
+        ::core::mem::transmute(GetTabbedTextExtentA(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstring)), lpstring.len() as _, lpntabstoppositions.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(lpntabstoppositions))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetTabbedTextExtentW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u16], lpntabstoppositions: &[i32]) -> u32 {
+pub unsafe fn GetTabbedTextExtentW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u16], lpntabstoppositions: &[i32]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetTabbedTextExtentW(hdc: HDC, lpstring: ::windows::core::PCWSTR, chcount: i32, ntabpositions: i32, lpntabstoppositions: *const i32) -> u32;
+            fn GetTabbedTextExtentW(hdc: HDC, lpstring: ::windows_core::PCWSTR, chcount: i32, ntabpositions: i32, lpntabstoppositions: *const i32) -> u32;
         }
-        ::core::mem::transmute(GetTabbedTextExtentW(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpstring)), lpstring.len() as _, lpntabstoppositions.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(lpntabstoppositions))))
+        ::core::mem::transmute(GetTabbedTextExtentW(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstring)), lpstring.len() as _, lpntabstoppositions.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(lpntabstoppositions))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetTextAlign<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
+pub unsafe fn GetTextAlign<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11271,7 +11271,7 @@ pub unsafe fn GetTextAlign<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetTextCharacterExtra<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn GetTextCharacterExtra<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11285,7 +11285,7 @@ pub unsafe fn GetTextCharacterExtra<'a, Param0: ::windows::core::IntoParam<'a, H
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetTextColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
+pub unsafe fn GetTextColor<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11300,12 +11300,12 @@ pub unsafe fn GetTextColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTextExtentExPointA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpszstring: ::windows::core::PCSTR, cchstring: i32, nmaxextent: i32, lpnfit: *mut i32, lpndx: *mut i32, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn GetTextExtentExPointA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpszstring: ::windows_core::PCSTR, cchstring: i32, nmaxextent: i32, lpnfit: *mut i32, lpndx: *mut i32, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetTextExtentExPointA(hdc: HDC, lpszstring: ::windows::core::PCSTR, cchstring: i32, nmaxextent: i32, lpnfit: *mut i32, lpndx: *mut i32, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL;
+            fn GetTextExtentExPointA(hdc: HDC, lpszstring: ::windows_core::PCSTR, cchstring: i32, nmaxextent: i32, lpnfit: *mut i32, lpndx: *mut i32, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(GetTextExtentExPointA(hdc.into_param().abi(), ::core::mem::transmute(lpszstring), ::core::mem::transmute(cchstring), ::core::mem::transmute(nmaxextent), ::core::mem::transmute(lpnfit), ::core::mem::transmute(lpndx), ::core::mem::transmute(lpsize)))
     }
@@ -11315,7 +11315,7 @@ pub unsafe fn GetTextExtentExPointA<'a, Param0: ::windows::core::IntoParam<'a, H
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTextExtentExPointI<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpwszstring: *const u16, cwchstring: i32, nmaxextent: i32, lpnfit: *mut i32, lpndx: *mut i32, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn GetTextExtentExPointI<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpwszstring: *const u16, cwchstring: i32, nmaxextent: i32, lpnfit: *mut i32, lpndx: *mut i32, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11330,12 +11330,12 @@ pub unsafe fn GetTextExtentExPointI<'a, Param0: ::windows::core::IntoParam<'a, H
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTextExtentExPointW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpszstring: ::windows::core::PCWSTR, cchstring: i32, nmaxextent: i32, lpnfit: *mut i32, lpndx: *mut i32, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn GetTextExtentExPointW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpszstring: ::windows_core::PCWSTR, cchstring: i32, nmaxextent: i32, lpnfit: *mut i32, lpndx: *mut i32, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetTextExtentExPointW(hdc: HDC, lpszstring: ::windows::core::PCWSTR, cchstring: i32, nmaxextent: i32, lpnfit: *mut i32, lpndx: *mut i32, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL;
+            fn GetTextExtentExPointW(hdc: HDC, lpszstring: ::windows_core::PCWSTR, cchstring: i32, nmaxextent: i32, lpnfit: *mut i32, lpndx: *mut i32, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(GetTextExtentExPointW(hdc.into_param().abi(), ::core::mem::transmute(lpszstring), ::core::mem::transmute(cchstring), ::core::mem::transmute(nmaxextent), ::core::mem::transmute(lpnfit), ::core::mem::transmute(lpndx), ::core::mem::transmute(lpsize)))
     }
@@ -11345,14 +11345,14 @@ pub unsafe fn GetTextExtentExPointW<'a, Param0: ::windows::core::IntoParam<'a, H
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTextExtentPoint32A<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u8], psizl: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn GetTextExtentPoint32A<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u8], psizl: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetTextExtentPoint32A(hdc: HDC, lpstring: ::windows::core::PCSTR, c: i32, psizl: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL;
+            fn GetTextExtentPoint32A(hdc: HDC, lpstring: ::windows_core::PCSTR, c: i32, psizl: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GetTextExtentPoint32A(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(psizl)))
+        ::core::mem::transmute(GetTextExtentPoint32A(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(psizl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11360,14 +11360,14 @@ pub unsafe fn GetTextExtentPoint32A<'a, Param0: ::windows::core::IntoParam<'a, H
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTextExtentPoint32W<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u16], psizl: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn GetTextExtentPoint32W<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u16], psizl: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetTextExtentPoint32W(hdc: HDC, lpstring: ::windows::core::PCWSTR, c: i32, psizl: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL;
+            fn GetTextExtentPoint32W(hdc: HDC, lpstring: ::windows_core::PCWSTR, c: i32, psizl: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GetTextExtentPoint32W(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(psizl)))
+        ::core::mem::transmute(GetTextExtentPoint32W(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(psizl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11375,14 +11375,14 @@ pub unsafe fn GetTextExtentPoint32W<'a, Param0: ::windows::core::IntoParam<'a, H
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTextExtentPointA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u8], lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn GetTextExtentPointA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u8], lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetTextExtentPointA(hdc: HDC, lpstring: ::windows::core::PCSTR, c: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL;
+            fn GetTextExtentPointA(hdc: HDC, lpstring: ::windows_core::PCSTR, c: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GetTextExtentPointA(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(lpsz)))
+        ::core::mem::transmute(GetTextExtentPointA(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(lpsz)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11390,14 +11390,14 @@ pub unsafe fn GetTextExtentPointA<'a, Param0: ::windows::core::IntoParam<'a, HDC
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTextExtentPointI<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, pgiin: &[u16], psize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn GetTextExtentPointI<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, pgiin: &[u16], psize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn GetTextExtentPointI(hdc: HDC, pgiin: *const u16, cgi: i32, psize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GetTextExtentPointI(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(pgiin)), pgiin.len() as _, ::core::mem::transmute(psize)))
+        ::core::mem::transmute(GetTextExtentPointI(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(pgiin)), pgiin.len() as _, ::core::mem::transmute(psize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11405,42 +11405,42 @@ pub unsafe fn GetTextExtentPointI<'a, Param0: ::windows::core::IntoParam<'a, HDC
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTextExtentPointW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u16], lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn GetTextExtentPointW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpstring: &[u16], lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetTextExtentPointW(hdc: HDC, lpstring: ::windows::core::PCWSTR, c: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL;
+            fn GetTextExtentPointW(hdc: HDC, lpstring: ::windows_core::PCWSTR, c: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GetTextExtentPointW(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(lpsz)))
+        ::core::mem::transmute(GetTextExtentPointW(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstring)), lpstring.len() as _, ::core::mem::transmute(lpsz)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetTextFaceA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpname: &mut [u8]) -> i32 {
+pub unsafe fn GetTextFaceA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpname: &mut [u8]) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetTextFaceA(hdc: HDC, c: i32, lpname: ::windows::core::PSTR) -> i32;
+            fn GetTextFaceA(hdc: HDC, c: i32, lpname: ::windows_core::PSTR) -> i32;
         }
-        ::core::mem::transmute(GetTextFaceA(hdc.into_param().abi(), lpname.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpname))))
+        ::core::mem::transmute(GetTextFaceA(hdc.into_param().abi(), lpname.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpname))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetTextFaceW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpname: &mut [u16]) -> i32 {
+pub unsafe fn GetTextFaceW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpname: &mut [u16]) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetTextFaceW(hdc: HDC, c: i32, lpname: ::windows::core::PWSTR) -> i32;
+            fn GetTextFaceW(hdc: HDC, c: i32, lpname: ::windows_core::PWSTR) -> i32;
         }
-        ::core::mem::transmute(GetTextFaceW(hdc.into_param().abi(), lpname.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lpname))))
+        ::core::mem::transmute(GetTextFaceW(hdc.into_param().abi(), lpname.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpname))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11448,7 +11448,7 @@ pub unsafe fn GetTextFaceW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTextMetricsA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lptm: *mut TEXTMETRICA) -> super::super::Foundation::BOOL {
+pub unsafe fn GetTextMetricsA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lptm: *mut TEXTMETRICA) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11463,7 +11463,7 @@ pub unsafe fn GetTextMetricsA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTextMetricsW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lptm: *mut TEXTMETRICW) -> super::super::Foundation::BOOL {
+pub unsafe fn GetTextMetricsW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lptm: *mut TEXTMETRICW) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11478,7 +11478,7 @@ pub unsafe fn GetTextMetricsW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetUpdateRect<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, lprect: *mut super::super::Foundation::RECT, berase: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn GetUpdateRect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, lprect: *mut super::super::Foundation::RECT, berase: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11493,7 +11493,7 @@ pub unsafe fn GetUpdateRect<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetUpdateRgn<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HRGN>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, hrgn: Param1, berase: Param2) -> i32 {
+pub unsafe fn GetUpdateRgn<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HRGN>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, hrgn: Param1, berase: Param2) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11508,7 +11508,7 @@ pub unsafe fn GetUpdateRgn<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetViewportExtEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn GetViewportExtEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11523,7 +11523,7 @@ pub unsafe fn GetViewportExtEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetViewportOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn GetViewportOrgEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11537,7 +11537,7 @@ pub unsafe fn GetViewportOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn GetWinMetaFileBits<'a, Param0: ::windows::core::IntoParam<'a, HENHMETAFILE>, Param4: ::windows::core::IntoParam<'a, HDC>>(hemf: Param0, cbdata16: u32, pdata16: *mut u8, imapmode: i32, hdcref: Param4) -> u32 {
+pub unsafe fn GetWinMetaFileBits<'a, Param0: ::windows_core::IntoParam<'a, HENHMETAFILE>, Param4: ::windows_core::IntoParam<'a, HDC>>(hemf: Param0, cbdata16: u32, pdata16: *mut u8, imapmode: i32, hdcref: Param4) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11552,7 +11552,7 @@ pub unsafe fn GetWinMetaFileBits<'a, Param0: ::windows::core::IntoParam<'a, HENH
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowDC<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> HDC {
+pub unsafe fn GetWindowDC<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> HDC {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11567,7 +11567,7 @@ pub unsafe fn GetWindowDC<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowExtEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn GetWindowExtEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpsize: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11582,7 +11582,7 @@ pub unsafe fn GetWindowExtEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hd
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn GetWindowOrgEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11597,7 +11597,7 @@ pub unsafe fn GetWindowOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hd
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowRgn<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HRGN>>(hwnd: Param0, hrgn: Param1) -> i32 {
+pub unsafe fn GetWindowRgn<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HRGN>>(hwnd: Param0, hrgn: Param1) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11612,7 +11612,7 @@ pub unsafe fn GetWindowRgn<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowRgnBox<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lprc: *mut super::super::Foundation::RECT) -> i32 {
+pub unsafe fn GetWindowRgnBox<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lprc: *mut super::super::Foundation::RECT) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11627,7 +11627,7 @@ pub unsafe fn GetWindowRgnBox<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWorldTransform<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpxf: *mut XFORM) -> super::super::Foundation::BOOL {
+pub unsafe fn GetWorldTransform<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpxf: *mut XFORM) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -11642,14 +11642,14 @@ pub unsafe fn GetWorldTransform<'a, Param0: ::windows::core::IntoParam<'a, HDC>>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GradientFill<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, pvertex: &[TRIVERTEX], pmesh: *const ::core::ffi::c_void, nmesh: u32, ulmode: GRADIENT_FILL) -> super::super::Foundation::BOOL {
+pub unsafe fn GradientFill<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, pvertex: &[TRIVERTEX], pmesh: *const ::core::ffi::c_void, nmesh: u32, ulmode: GRADIENT_FILL) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn GradientFill(hdc: HDC, pvertex: *const TRIVERTEX, nvertex: u32, pmesh: *const ::core::ffi::c_void, nmesh: u32, ulmode: GRADIENT_FILL) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(GradientFill(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(pvertex)), pvertex.len() as _, ::core::mem::transmute(pmesh), ::core::mem::transmute(nmesh), ::core::mem::transmute(ulmode)))
+        ::core::mem::transmute(GradientFill(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(pvertex)), pvertex.len() as _, ::core::mem::transmute(pmesh), ::core::mem::transmute(nmesh), ::core::mem::transmute(ulmode)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -11657,12 +11657,12 @@ pub unsafe fn GradientFill<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GrayStringA<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HBRUSH>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, hbrush: Param1, lpoutputfunc: GRAYSTRINGPROC, lpdata: Param3, ncount: i32, x: i32, y: i32, nwidth: i32, nheight: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn GrayStringA<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HBRUSH>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, hbrush: Param1, lpoutputfunc: GRAYSTRINGPROC, lpdata: Param3, ncount: i32, x: i32, y: i32, nwidth: i32, nheight: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GrayStringA(hdc: HDC, hbrush: HBRUSH, lpoutputfunc: ::windows::core::RawPtr, lpdata: super::super::Foundation::LPARAM, ncount: i32, x: i32, y: i32, nwidth: i32, nheight: i32) -> super::super::Foundation::BOOL;
+            fn GrayStringA(hdc: HDC, hbrush: HBRUSH, lpoutputfunc: ::windows_core::RawPtr, lpdata: super::super::Foundation::LPARAM, ncount: i32, x: i32, y: i32, nwidth: i32, nheight: i32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(GrayStringA(hdc.into_param().abi(), hbrush.into_param().abi(), ::core::mem::transmute(lpoutputfunc), lpdata.into_param().abi(), ::core::mem::transmute(ncount), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(nwidth), ::core::mem::transmute(nheight)))
     }
@@ -11672,12 +11672,12 @@ pub unsafe fn GrayStringA<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GrayStringW<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HBRUSH>, Param3: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, hbrush: Param1, lpoutputfunc: GRAYSTRINGPROC, lpdata: Param3, ncount: i32, x: i32, y: i32, nwidth: i32, nheight: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn GrayStringW<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HBRUSH>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdc: Param0, hbrush: Param1, lpoutputfunc: GRAYSTRINGPROC, lpdata: Param3, ncount: i32, x: i32, y: i32, nwidth: i32, nheight: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GrayStringW(hdc: HDC, hbrush: HBRUSH, lpoutputfunc: ::windows::core::RawPtr, lpdata: super::super::Foundation::LPARAM, ncount: i32, x: i32, y: i32, nwidth: i32, nheight: i32) -> super::super::Foundation::BOOL;
+            fn GrayStringW(hdc: HDC, hbrush: HBRUSH, lpoutputfunc: ::windows_core::RawPtr, lpdata: super::super::Foundation::LPARAM, ncount: i32, x: i32, y: i32, nwidth: i32, nheight: i32) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(GrayStringW(hdc.into_param().abi(), hbrush.into_param().abi(), ::core::mem::transmute(lpoutputfunc), lpdata.into_param().abi(), ::core::mem::transmute(ncount), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(nwidth), ::core::mem::transmute(nheight)))
     }
@@ -11700,12 +11700,12 @@ impl ::core::fmt::Debug for HANDLETABLE {
         f.debug_struct("HANDLETABLE").field("objectHandle", &self.objectHandle).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HANDLETABLE {
+unsafe impl ::windows_core::Abi for HANDLETABLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for HANDLETABLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HANDLETABLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HANDLETABLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for HANDLETABLE {}
@@ -11745,7 +11745,7 @@ impl ::core::default::Default for HATCH_BRUSH_STYLE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HATCH_BRUSH_STYLE {
+unsafe impl ::windows_core::Abi for HATCH_BRUSH_STYLE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HATCH_BRUSH_STYLE {
@@ -11777,12 +11777,12 @@ impl ::core::fmt::Debug for HBITMAP {
         f.debug_tuple("HBITMAP").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HBITMAP {
+unsafe impl ::windows_core::Abi for HBITMAP {
     type Abi = Self;
 }
-impl<'a> ::windows::core::IntoParam<'a, HGDIOBJ> for HBITMAP {
-    fn into_param(self) -> ::windows::core::Param<'a, HGDIOBJ> {
-        ::windows::core::Param::Owned(HGDIOBJ(self.0))
+impl<'a> ::windows_core::IntoParam<'a, HGDIOBJ> for HBITMAP {
+    fn into_param(self) -> ::windows_core::Param<'a, HGDIOBJ> {
+        ::windows_core::Param::Owned(HGDIOBJ(self.0))
     }
 }
 #[repr(transparent)]
@@ -11809,12 +11809,12 @@ impl ::core::fmt::Debug for HBRUSH {
         f.debug_tuple("HBRUSH").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HBRUSH {
+unsafe impl ::windows_core::Abi for HBRUSH {
     type Abi = Self;
 }
-impl<'a> ::windows::core::IntoParam<'a, HGDIOBJ> for HBRUSH {
-    fn into_param(self) -> ::windows::core::Param<'a, HGDIOBJ> {
-        ::windows::core::Param::Owned(HGDIOBJ(self.0))
+impl<'a> ::windows_core::IntoParam<'a, HGDIOBJ> for HBRUSH {
+    fn into_param(self) -> ::windows_core::Param<'a, HGDIOBJ> {
+        ::windows_core::Param::Owned(HGDIOBJ(self.0))
     }
 }
 #[repr(transparent)]
@@ -11841,7 +11841,7 @@ impl ::core::fmt::Debug for HDC {
         f.debug_tuple("HDC").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HDC {
+unsafe impl ::windows_core::Abi for HDC {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
@@ -11875,7 +11875,7 @@ impl ::core::default::Default for HDC_MAP_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HDC_MAP_MODE {
+unsafe impl ::windows_core::Abi for HDC_MAP_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for HDC_MAP_MODE {
@@ -11909,7 +11909,7 @@ impl ::core::fmt::Debug for HENHMETAFILE {
         f.debug_tuple("HENHMETAFILE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HENHMETAFILE {
+unsafe impl ::windows_core::Abi for HENHMETAFILE {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -11936,12 +11936,12 @@ impl ::core::fmt::Debug for HFONT {
         f.debug_tuple("HFONT").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HFONT {
+unsafe impl ::windows_core::Abi for HFONT {
     type Abi = Self;
 }
-impl<'a> ::windows::core::IntoParam<'a, HGDIOBJ> for HFONT {
-    fn into_param(self) -> ::windows::core::Param<'a, HGDIOBJ> {
-        ::windows::core::Param::Owned(HGDIOBJ(self.0))
+impl<'a> ::windows_core::IntoParam<'a, HGDIOBJ> for HFONT {
+    fn into_param(self) -> ::windows_core::Param<'a, HGDIOBJ> {
+        ::windows_core::Param::Owned(HGDIOBJ(self.0))
     }
 }
 #[repr(transparent)]
@@ -11968,7 +11968,7 @@ impl ::core::fmt::Debug for HGDIOBJ {
         f.debug_tuple("HGDIOBJ").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HGDIOBJ {
+unsafe impl ::windows_core::Abi for HGDIOBJ {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -11995,7 +11995,7 @@ impl ::core::fmt::Debug for HMETAFILE {
         f.debug_tuple("HMETAFILE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HMETAFILE {
+unsafe impl ::windows_core::Abi for HMETAFILE {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -12022,7 +12022,7 @@ impl ::core::fmt::Debug for HMONITOR {
         f.debug_tuple("HMONITOR").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HMONITOR {
+unsafe impl ::windows_core::Abi for HMONITOR {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -12049,12 +12049,12 @@ impl ::core::fmt::Debug for HPALETTE {
         f.debug_tuple("HPALETTE").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HPALETTE {
+unsafe impl ::windows_core::Abi for HPALETTE {
     type Abi = Self;
 }
-impl<'a> ::windows::core::IntoParam<'a, HGDIOBJ> for HPALETTE {
-    fn into_param(self) -> ::windows::core::Param<'a, HGDIOBJ> {
-        ::windows::core::Param::Owned(HGDIOBJ(self.0))
+impl<'a> ::windows_core::IntoParam<'a, HGDIOBJ> for HPALETTE {
+    fn into_param(self) -> ::windows_core::Param<'a, HGDIOBJ> {
+        ::windows_core::Param::Owned(HGDIOBJ(self.0))
     }
 }
 #[repr(transparent)]
@@ -12081,12 +12081,12 @@ impl ::core::fmt::Debug for HPEN {
         f.debug_tuple("HPEN").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HPEN {
+unsafe impl ::windows_core::Abi for HPEN {
     type Abi = Self;
 }
-impl<'a> ::windows::core::IntoParam<'a, HGDIOBJ> for HPEN {
-    fn into_param(self) -> ::windows::core::Param<'a, HGDIOBJ> {
-        ::windows::core::Param::Owned(HGDIOBJ(self.0))
+impl<'a> ::windows_core::IntoParam<'a, HGDIOBJ> for HPEN {
+    fn into_param(self) -> ::windows_core::Param<'a, HGDIOBJ> {
+        ::windows_core::Param::Owned(HGDIOBJ(self.0))
     }
 }
 #[repr(transparent)]
@@ -12113,12 +12113,12 @@ impl ::core::fmt::Debug for HRGN {
         f.debug_tuple("HRGN").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HRGN {
+unsafe impl ::windows_core::Abi for HRGN {
     type Abi = Self;
 }
-impl<'a> ::windows::core::IntoParam<'a, HGDIOBJ> for HRGN {
-    fn into_param(self) -> ::windows::core::Param<'a, HGDIOBJ> {
-        ::windows::core::Param::Owned(HGDIOBJ(self.0))
+impl<'a> ::windows_core::IntoParam<'a, HGDIOBJ> for HRGN {
+    fn into_param(self) -> ::windows_core::Param<'a, HGDIOBJ> {
+        ::windows_core::Param::Owned(HGDIOBJ(self.0))
     }
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
@@ -12147,7 +12147,7 @@ impl ::core::fmt::Debug for HdcMetdataEnhFileHandle {
         f.debug_tuple("HdcMetdataEnhFileHandle").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HdcMetdataEnhFileHandle {
+unsafe impl ::windows_core::Abi for HdcMetdataEnhFileHandle {
     type Abi = Self;
 }
 #[repr(transparent)]
@@ -12174,7 +12174,7 @@ impl ::core::fmt::Debug for HdcMetdataFileHandle {
         f.debug_tuple("HdcMetdataFileHandle").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::Abi for HdcMetdataFileHandle {
+unsafe impl ::windows_core::Abi for HdcMetdataFileHandle {
     type Abi = Self;
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
@@ -12222,7 +12222,7 @@ pub unsafe fn InflateRect(lprc: *mut super::super::Foundation::RECT, dx: i32, dy
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn IntersectClipRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32) -> i32 {
+pub unsafe fn IntersectClipRect<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -12252,7 +12252,7 @@ pub unsafe fn IntersectRect(lprcdst: *mut super::super::Foundation::RECT, lprcsr
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InvalidateRect<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, lprect: *const super::super::Foundation::RECT, berase: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn InvalidateRect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, lprect: *const super::super::Foundation::RECT, berase: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -12267,7 +12267,7 @@ pub unsafe fn InvalidateRect<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InvalidateRgn<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HRGN>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, hrgn: Param1, berase: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn InvalidateRgn<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HRGN>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, hrgn: Param1, berase: Param2) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -12282,7 +12282,7 @@ pub unsafe fn InvalidateRgn<'a, Param0: ::windows::core::IntoParam<'a, super::su
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InvertRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lprc: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn InvertRect<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lprc: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -12297,7 +12297,7 @@ pub unsafe fn InvertRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: P
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InvertRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn InvertRgn<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -12344,12 +12344,12 @@ impl ::core::fmt::Debug for KERNINGPAIR {
         f.debug_struct("KERNINGPAIR").field("wFirst", &self.wFirst).field("wSecond", &self.wSecond).field("iKernAmount", &self.iKernAmount).finish()
     }
 }
-unsafe impl ::windows::core::Abi for KERNINGPAIR {
+unsafe impl ::windows_core::Abi for KERNINGPAIR {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for KERNINGPAIR {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KERNINGPAIR>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KERNINGPAIR>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for KERNINGPAIR {}
@@ -12413,12 +12413,12 @@ impl ::core::fmt::Debug for LOGBRUSH {
         f.debug_struct("LOGBRUSH").field("lbStyle", &self.lbStyle).field("lbColor", &self.lbColor).field("lbHatch", &self.lbHatch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LOGBRUSH {
+unsafe impl ::windows_core::Abi for LOGBRUSH {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LOGBRUSH {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOGBRUSH>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOGBRUSH>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LOGBRUSH {}
@@ -12445,12 +12445,12 @@ impl ::core::fmt::Debug for LOGBRUSH32 {
         f.debug_struct("LOGBRUSH32").field("lbStyle", &self.lbStyle).field("lbColor", &self.lbColor).field("lbHatch", &self.lbHatch).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LOGBRUSH32 {
+unsafe impl ::windows_core::Abi for LOGBRUSH32 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LOGBRUSH32 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOGBRUSH32>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOGBRUSH32>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LOGBRUSH32 {}
@@ -12508,13 +12508,13 @@ impl ::core::fmt::Debug for LOGFONTA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for LOGFONTA {
+unsafe impl ::windows_core::Abi for LOGFONTA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for LOGFONTA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOGFONTA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOGFONTA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12569,12 +12569,12 @@ impl ::core::fmt::Debug for LOGFONTW {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for LOGFONTW {
+unsafe impl ::windows_core::Abi for LOGFONTW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LOGFONTW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOGFONTW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOGFONTW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LOGFONTW {}
@@ -12601,12 +12601,12 @@ impl ::core::fmt::Debug for LOGPALETTE {
         f.debug_struct("LOGPALETTE").field("palVersion", &self.palVersion).field("palNumEntries", &self.palNumEntries).field("palPalEntry", &self.palPalEntry).finish()
     }
 }
-unsafe impl ::windows::core::Abi for LOGPALETTE {
+unsafe impl ::windows_core::Abi for LOGPALETTE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for LOGPALETTE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOGPALETTE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOGPALETTE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for LOGPALETTE {}
@@ -12638,13 +12638,13 @@ impl ::core::fmt::Debug for LOGPEN {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for LOGPEN {
+unsafe impl ::windows_core::Abi for LOGPEN {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for LOGPEN {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOGPEN>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOGPEN>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -12681,21 +12681,21 @@ pub const LPD_TYPE_COLORINDEX: u32 = 1u32;
 pub const LPD_TYPE_RGBA: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type LPFNDEVCAPS = ::core::option::Option<unsafe extern "system" fn(param0: ::windows::core::PCSTR, param1: ::windows::core::PCSTR, param2: u32, param3: ::windows::core::PCSTR, param4: *mut DEVMODEA) -> u32>;
+pub type LPFNDEVCAPS = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCSTR, param1: ::windows_core::PCSTR, param2: u32, param3: ::windows_core::PCSTR, param4: *mut DEVMODEA) -> u32>;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type LPFNDEVMODE = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HWND, param1: super::super::Foundation::HINSTANCE, param2: *mut DEVMODEA, param3: ::windows::core::PCSTR, param4: ::windows::core::PCSTR, param5: *mut DEVMODEA, param6: ::windows::core::PCSTR, param7: u32) -> u32>;
+pub type LPFNDEVMODE = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HWND, param1: super::super::Foundation::HINSTANCE, param2: *mut DEVMODEA, param3: ::windows_core::PCSTR, param4: ::windows_core::PCSTR, param5: *mut DEVMODEA, param6: ::windows_core::PCSTR, param7: u32) -> u32>;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LPtoDP<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lppt: &mut [super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
+pub unsafe fn LPtoDP<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lppt: &mut [super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn LPtoDP(hdc: HDC, lppt: *mut super::super::Foundation::POINT, c: i32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(LPtoDP(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lppt)), lppt.len() as _))
+        ::core::mem::transmute(LPtoDP(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lppt)), lppt.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -12703,12 +12703,12 @@ pub unsafe fn LPtoDP<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LineDDA<'a, Param5: ::windows::core::IntoParam<'a, super::super::Foundation::LPARAM>>(xstart: i32, ystart: i32, xend: i32, yend: i32, lpproc: LINEDDAPROC, data: Param5) -> super::super::Foundation::BOOL {
+pub unsafe fn LineDDA<'a, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(xstart: i32, ystart: i32, xend: i32, yend: i32, lpproc: LINEDDAPROC, data: Param5) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LineDDA(xstart: i32, ystart: i32, xend: i32, yend: i32, lpproc: ::windows::core::RawPtr, data: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
+            fn LineDDA(xstart: i32, ystart: i32, xend: i32, yend: i32, lpproc: ::windows_core::RawPtr, data: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(LineDDA(::core::mem::transmute(xstart), ::core::mem::transmute(ystart), ::core::mem::transmute(xend), ::core::mem::transmute(yend), ::core::mem::transmute(lpproc), data.into_param().abi()))
     }
@@ -12718,7 +12718,7 @@ pub unsafe fn LineDDA<'a, Param5: ::windows::core::IntoParam<'a, super::super::F
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LineTo<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn LineTo<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -12733,12 +12733,12 @@ pub unsafe fn LineTo<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadBitmapA<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hinstance: Param0, lpbitmapname: Param1) -> HBITMAP {
+pub unsafe fn LoadBitmapA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hinstance: Param0, lpbitmapname: Param1) -> HBITMAP {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadBitmapA(hinstance: super::super::Foundation::HINSTANCE, lpbitmapname: ::windows::core::PCSTR) -> HBITMAP;
+            fn LoadBitmapA(hinstance: super::super::Foundation::HINSTANCE, lpbitmapname: ::windows_core::PCSTR) -> HBITMAP;
         }
         ::core::mem::transmute(LoadBitmapA(hinstance.into_param().abi(), lpbitmapname.into_param().abi()))
     }
@@ -12748,12 +12748,12 @@ pub unsafe fn LoadBitmapA<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadBitmapW<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(hinstance: Param0, lpbitmapname: Param1) -> HBITMAP {
+pub unsafe fn LoadBitmapW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hinstance: Param0, lpbitmapname: Param1) -> HBITMAP {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadBitmapW(hinstance: super::super::Foundation::HINSTANCE, lpbitmapname: ::windows::core::PCWSTR) -> HBITMAP;
+            fn LoadBitmapW(hinstance: super::super::Foundation::HINSTANCE, lpbitmapname: ::windows_core::PCWSTR) -> HBITMAP;
         }
         ::core::mem::transmute(LoadBitmapW(hinstance.into_param().abi(), lpbitmapname.into_param().abi()))
     }
@@ -12763,7 +12763,7 @@ pub unsafe fn LoadBitmapW<'a, Param0: ::windows::core::IntoParam<'a, super::supe
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LockWindowUpdate<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwndlock: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn LockWindowUpdate<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndlock: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -12796,12 +12796,12 @@ impl ::core::fmt::Debug for MAT2 {
         f.debug_struct("MAT2").field("eM11", &self.eM11).field("eM12", &self.eM12).field("eM21", &self.eM21).field("eM22", &self.eM22).finish()
     }
 }
-unsafe impl ::windows::core::Abi for MAT2 {
+unsafe impl ::windows_core::Abi for MAT2 {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for MAT2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MAT2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MAT2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for MAT2 {}
@@ -12831,12 +12831,12 @@ impl ::core::clone::Clone for METAHEADER {
         *self
     }
 }
-unsafe impl ::windows::core::Abi for METAHEADER {
+unsafe impl ::windows_core::Abi for METAHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for METAHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<METAHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<METAHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for METAHEADER {}
@@ -12863,12 +12863,12 @@ impl ::core::fmt::Debug for METARECORD {
         f.debug_struct("METARECORD").field("rdSize", &self.rdSize).field("rdFunction", &self.rdFunction).field("rdParm", &self.rdParm).finish()
     }
 }
-unsafe impl ::windows::core::Abi for METARECORD {
+unsafe impl ::windows_core::Abi for METARECORD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for METARECORD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<METARECORD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<METARECORD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for METARECORD {}
@@ -13049,7 +13049,7 @@ impl ::core::default::Default for MODIFY_WORLD_TRANSFORM_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MODIFY_WORLD_TRANSFORM_MODE {
+unsafe impl ::windows_core::Abi for MODIFY_WORLD_TRANSFORM_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MODIFY_WORLD_TRANSFORM_MODE {
@@ -13084,13 +13084,13 @@ impl ::core::fmt::Debug for MONITORINFO {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MONITORINFO {
+unsafe impl ::windows_core::Abi for MONITORINFO {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MONITORINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MONITORINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MONITORINFO>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -13123,13 +13123,13 @@ impl ::core::fmt::Debug for MONITORINFOEXA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MONITORINFOEXA {
+unsafe impl ::windows_core::Abi for MONITORINFOEXA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MONITORINFOEXA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MONITORINFOEXA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MONITORINFOEXA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -13162,13 +13162,13 @@ impl ::core::fmt::Debug for MONITORINFOEXW {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for MONITORINFOEXW {
+unsafe impl ::windows_core::Abi for MONITORINFOEXW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MONITORINFOEXW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MONITORINFOEXW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MONITORINFOEXW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -13200,7 +13200,7 @@ impl ::core::default::Default for MONITOR_FROM_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for MONITOR_FROM_FLAGS {
+unsafe impl ::windows_core::Abi for MONITOR_FROM_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for MONITOR_FROM_FLAGS {
@@ -13215,14 +13215,14 @@ pub const MOUSETRAILS: u32 = 39u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MapWindowPoints<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwndfrom: Param0, hwndto: Param1, lppoints: &mut [super::super::Foundation::POINT]) -> i32 {
+pub unsafe fn MapWindowPoints<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndfrom: Param0, hwndto: Param1, lppoints: &mut [super::super::Foundation::POINT]) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn MapWindowPoints(hwndfrom: super::super::Foundation::HWND, hwndto: super::super::Foundation::HWND, lppoints: *mut super::super::Foundation::POINT, cpoints: u32) -> i32;
         }
-        ::core::mem::transmute(MapWindowPoints(hwndfrom.into_param().abi(), hwndto.into_param().abi(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(lppoints)), lppoints.len() as _))
+        ::core::mem::transmute(MapWindowPoints(hwndfrom.into_param().abi(), hwndto.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lppoints)), lppoints.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -13230,7 +13230,7 @@ pub unsafe fn MapWindowPoints<'a, Param0: ::windows::core::IntoParam<'a, super::
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MaskBlt<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param5: ::windows::core::IntoParam<'a, HDC>, Param8: ::windows::core::IntoParam<'a, HBITMAP>>(hdcdest: Param0, xdest: i32, ydest: i32, width: i32, height: i32, hdcsrc: Param5, xsrc: i32, ysrc: i32, hbmmask: Param8, xmask: i32, ymask: i32, rop: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn MaskBlt<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param5: ::windows_core::IntoParam<'a, HDC>, Param8: ::windows_core::IntoParam<'a, HBITMAP>>(hdcdest: Param0, xdest: i32, ydest: i32, width: i32, height: i32, hdcsrc: Param5, xsrc: i32, ysrc: i32, hbmmask: Param8, xmask: i32, ymask: i32, rop: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13249,7 +13249,7 @@ pub unsafe fn MergeFontPackage(puchmergefontbuffer: *const u8, ulmergefontbuffer
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MergeFontPackage(puchmergefontbuffer: *const u8, ulmergefontbuffersize: u32, puchfontpackagebuffer: *const u8, ulfontpackagebuffersize: u32, ppuchdestbuffer: *mut *mut u8, puldestbuffersize: *mut u32, pulbyteswritten: *mut u32, usmode: u16, lpfnallocate: ::windows::core::RawPtr, lpfnreallocate: ::windows::core::RawPtr, lpfnfree: ::windows::core::RawPtr, lpvreserved: *mut ::core::ffi::c_void) -> u32;
+            fn MergeFontPackage(puchmergefontbuffer: *const u8, ulmergefontbuffersize: u32, puchfontpackagebuffer: *const u8, ulfontpackagebuffersize: u32, ppuchdestbuffer: *mut *mut u8, puldestbuffersize: *mut u32, pulbyteswritten: *mut u32, usmode: u16, lpfnallocate: ::windows_core::RawPtr, lpfnreallocate: ::windows_core::RawPtr, lpfnfree: ::windows_core::RawPtr, lpvreserved: *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(MergeFontPackage(
             ::core::mem::transmute(puchmergefontbuffer),
@@ -13272,7 +13272,7 @@ pub unsafe fn MergeFontPackage(puchmergefontbuffer: *const u8, ulmergefontbuffer
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ModifyWorldTransform<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpxf: *const XFORM, mode: MODIFY_WORLD_TRANSFORM_MODE) -> super::super::Foundation::BOOL {
+pub unsafe fn ModifyWorldTransform<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpxf: *const XFORM, mode: MODIFY_WORLD_TRANSFORM_MODE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13287,7 +13287,7 @@ pub unsafe fn ModifyWorldTransform<'a, Param0: ::windows::core::IntoParam<'a, HD
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MonitorFromPoint<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::POINT>>(pt: Param0, dwflags: MONITOR_FROM_FLAGS) -> HMONITOR {
+pub unsafe fn MonitorFromPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::POINT>>(pt: Param0, dwflags: MONITOR_FROM_FLAGS) -> HMONITOR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13317,7 +13317,7 @@ pub unsafe fn MonitorFromRect(lprc: *const super::super::Foundation::RECT, dwfla
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MonitorFromWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, dwflags: MONITOR_FROM_FLAGS) -> HMONITOR {
+pub unsafe fn MonitorFromWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, dwflags: MONITOR_FROM_FLAGS) -> HMONITOR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13332,7 +13332,7 @@ pub unsafe fn MonitorFromWindow<'a, Param0: ::windows::core::IntoParam<'a, super
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MoveToEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn MoveToEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13410,12 +13410,12 @@ impl ::core::fmt::Debug for NEWTEXTMETRICA {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for NEWTEXTMETRICA {
+unsafe impl ::windows_core::Abi for NEWTEXTMETRICA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NEWTEXTMETRICA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NEWTEXTMETRICA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NEWTEXTMETRICA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NEWTEXTMETRICA {}
@@ -13488,12 +13488,12 @@ impl ::core::fmt::Debug for NEWTEXTMETRICW {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for NEWTEXTMETRICW {
+unsafe impl ::windows_core::Abi for NEWTEXTMETRICW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for NEWTEXTMETRICW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NEWTEXTMETRICW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NEWTEXTMETRICW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for NEWTEXTMETRICW {}
@@ -13569,7 +13569,7 @@ impl ::core::default::Default for OBJ_TYPE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for OBJ_TYPE {
+unsafe impl ::windows_core::Abi for OBJ_TYPE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for OBJ_TYPE {
@@ -13613,10 +13613,10 @@ pub struct OUTLINETEXTMETRICA {
     pub otmsStrikeoutPosition: i32,
     pub otmsUnderscoreSize: i32,
     pub otmsUnderscorePosition: i32,
-    pub otmpFamilyName: ::windows::core::PSTR,
-    pub otmpFaceName: ::windows::core::PSTR,
-    pub otmpStyleName: ::windows::core::PSTR,
-    pub otmpFullName: ::windows::core::PSTR,
+    pub otmpFamilyName: ::windows_core::PSTR,
+    pub otmpFaceName: ::windows_core::PSTR,
+    pub otmpStyleName: ::windows_core::PSTR,
+    pub otmpFullName: ::windows_core::PSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OUTLINETEXTMETRICA {}
@@ -13666,13 +13666,13 @@ impl ::core::fmt::Debug for OUTLINETEXTMETRICA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OUTLINETEXTMETRICA {
+unsafe impl ::windows_core::Abi for OUTLINETEXTMETRICA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OUTLINETEXTMETRICA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OUTLINETEXTMETRICA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OUTLINETEXTMETRICA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -13715,10 +13715,10 @@ pub struct OUTLINETEXTMETRICW {
     pub otmsStrikeoutPosition: i32,
     pub otmsUnderscoreSize: i32,
     pub otmsUnderscorePosition: i32,
-    pub otmpFamilyName: ::windows::core::PSTR,
-    pub otmpFaceName: ::windows::core::PSTR,
-    pub otmpStyleName: ::windows::core::PSTR,
-    pub otmpFullName: ::windows::core::PSTR,
+    pub otmpFamilyName: ::windows_core::PSTR,
+    pub otmpFaceName: ::windows_core::PSTR,
+    pub otmpStyleName: ::windows_core::PSTR,
+    pub otmpFullName: ::windows_core::PSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OUTLINETEXTMETRICW {}
@@ -13768,13 +13768,13 @@ impl ::core::fmt::Debug for OUTLINETEXTMETRICW {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for OUTLINETEXTMETRICW {
+unsafe impl ::windows_core::Abi for OUTLINETEXTMETRICW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OUTLINETEXTMETRICW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OUTLINETEXTMETRICW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OUTLINETEXTMETRICW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -13789,7 +13789,7 @@ impl ::core::default::Default for OUTLINETEXTMETRICW {
 pub const OUT_SCREEN_OUTLINE_PRECIS: u32 = 9u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn OffsetClipRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32) -> i32 {
+pub unsafe fn OffsetClipRgn<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13818,7 +13818,7 @@ pub unsafe fn OffsetRect(lprc: *mut super::super::Foundation::RECT, dx: i32, dy:
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn OffsetRgn<'a, Param0: ::windows::core::IntoParam<'a, HRGN>>(hrgn: Param0, x: i32, y: i32) -> i32 {
+pub unsafe fn OffsetRgn<'a, Param0: ::windows_core::IntoParam<'a, HRGN>>(hrgn: Param0, x: i32, y: i32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13833,7 +13833,7 @@ pub unsafe fn OffsetRgn<'a, Param0: ::windows::core::IntoParam<'a, HRGN>>(hrgn: 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OffsetViewportOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn OffsetViewportOrgEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13848,7 +13848,7 @@ pub unsafe fn OffsetViewportOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OffsetWindowOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn OffsetWindowOrgEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -13886,13 +13886,13 @@ impl ::core::fmt::Debug for PAINTSTRUCT {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for PAINTSTRUCT {
+unsafe impl ::windows_core::Abi for PAINTSTRUCT {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PAINTSTRUCT {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PAINTSTRUCT>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PAINTSTRUCT>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -13922,12 +13922,12 @@ impl ::core::fmt::Debug for PALETTEENTRY {
         f.debug_struct("PALETTEENTRY").field("peRed", &self.peRed).field("peGreen", &self.peGreen).field("peBlue", &self.peBlue).field("peFlags", &self.peFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PALETTEENTRY {
+unsafe impl ::windows_core::Abi for PALETTEENTRY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PALETTEENTRY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PALETTEENTRY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PALETTEENTRY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PALETTEENTRY {}
@@ -13961,12 +13961,12 @@ impl ::core::fmt::Debug for PANOSE {
         f.debug_struct("PANOSE").field("bFamilyType", &self.bFamilyType).field("bSerifStyle", &self.bSerifStyle).field("bWeight", &self.bWeight).field("bProportion", &self.bProportion).field("bContrast", &self.bContrast).field("bStrokeVariation", &self.bStrokeVariation).field("bArmStyle", &self.bArmStyle).field("bLetterform", &self.bLetterform).field("bMidline", &self.bMidline).field("bXHeight", &self.bXHeight).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PANOSE {
+unsafe impl ::windows_core::Abi for PANOSE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PANOSE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PANOSE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PANOSE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PANOSE {}
@@ -14241,12 +14241,12 @@ impl ::core::fmt::Debug for PELARRAY {
         f.debug_struct("PELARRAY").field("paXCount", &self.paXCount).field("paYCount", &self.paYCount).field("paXExt", &self.paXExt).field("paYExt", &self.paYExt).field("paRGBs", &self.paRGBs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for PELARRAY {
+unsafe impl ::windows_core::Abi for PELARRAY {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for PELARRAY {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PELARRAY>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PELARRAY>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for PELARRAY {}
@@ -14312,7 +14312,7 @@ impl ::core::default::Default for PEN_STYLE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PEN_STYLE {
+unsafe impl ::windows_core::Abi for PEN_STYLE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for PEN_STYLE {
@@ -14365,12 +14365,12 @@ impl ::core::fmt::Debug for POINTFX {
         f.debug_struct("POINTFX").field("x", &self.x).field("y", &self.y).finish()
     }
 }
-unsafe impl ::windows::core::Abi for POINTFX {
+unsafe impl ::windows_core::Abi for POINTFX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for POINTFX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POINTFX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POINTFX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for POINTFX {}
@@ -14388,7 +14388,7 @@ pub struct POLYTEXTA {
     pub x: i32,
     pub y: i32,
     pub n: u32,
-    pub lpstr: ::windows::core::PCSTR,
+    pub lpstr: ::windows_core::PCSTR,
     pub uiFlags: u32,
     pub rcl: super::super::Foundation::RECT,
     pub pdx: *mut i32,
@@ -14408,13 +14408,13 @@ impl ::core::fmt::Debug for POLYTEXTA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for POLYTEXTA {
+unsafe impl ::windows_core::Abi for POLYTEXTA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for POLYTEXTA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POLYTEXTA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POLYTEXTA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14432,7 +14432,7 @@ pub struct POLYTEXTW {
     pub x: i32,
     pub y: i32,
     pub n: u32,
-    pub lpstr: ::windows::core::PCWSTR,
+    pub lpstr: ::windows_core::PCWSTR,
     pub uiFlags: u32,
     pub rcl: super::super::Foundation::RECT,
     pub pdx: *mut i32,
@@ -14452,13 +14452,13 @@ impl ::core::fmt::Debug for POLYTEXTW {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for POLYTEXTW {
+unsafe impl ::windows_core::Abi for POLYTEXTW {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for POLYTEXTW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POLYTEXTW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POLYTEXTW>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -14514,7 +14514,7 @@ pub const PT_MOVETO: u32 = 6u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PaintDesktop<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn PaintDesktop<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14529,7 +14529,7 @@ pub unsafe fn PaintDesktop<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PaintRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn PaintRgn<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14544,7 +14544,7 @@ pub unsafe fn PaintRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PatBlt<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, w: i32, h: i32, rop: ROP_CODE) -> super::super::Foundation::BOOL {
+pub unsafe fn PatBlt<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, w: i32, h: i32, rop: ROP_CODE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14558,7 +14558,7 @@ pub unsafe fn PatBlt<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn PathToRegion<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> HRGN {
+pub unsafe fn PathToRegion<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> HRGN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14573,7 +14573,7 @@ pub unsafe fn PathToRegion<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Pie<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32, xr1: i32, yr1: i32, xr2: i32, yr2: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn Pie<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32, xr1: i32, yr1: i32, xr2: i32, yr2: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14588,7 +14588,7 @@ pub unsafe fn Pie<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PlayEnhMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HENHMETAFILE>>(hdc: Param0, hmf: Param1, lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn PlayEnhMetaFile<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HENHMETAFILE>>(hdc: Param0, hmf: Param1, lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14603,14 +14603,14 @@ pub unsafe fn PlayEnhMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HDC>, P
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PlayEnhMetaFileRecord<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, pht: &[HANDLETABLE], pmr: *const ENHMETARECORD) -> super::super::Foundation::BOOL {
+pub unsafe fn PlayEnhMetaFileRecord<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, pht: &[HANDLETABLE], pmr: *const ENHMETARECORD) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn PlayEnhMetaFileRecord(hdc: HDC, pht: *const HANDLETABLE, pmr: *const ENHMETARECORD, cht: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(PlayEnhMetaFileRecord(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(pht)), ::core::mem::transmute(pmr), pht.len() as _))
+        ::core::mem::transmute(PlayEnhMetaFileRecord(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(pht)), ::core::mem::transmute(pmr), pht.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14618,7 +14618,7 @@ pub unsafe fn PlayEnhMetaFileRecord<'a, Param0: ::windows::core::IntoParam<'a, H
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PlayMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HMETAFILE>>(hdc: Param0, hmf: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn PlayMetaFile<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HMETAFILE>>(hdc: Param0, hmf: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14633,14 +14633,14 @@ pub unsafe fn PlayMetaFile<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Para
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PlayMetaFileRecord<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lphandletable: &[HANDLETABLE], lpmr: *const METARECORD) -> super::super::Foundation::BOOL {
+pub unsafe fn PlayMetaFileRecord<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lphandletable: &[HANDLETABLE], lpmr: *const METARECORD) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn PlayMetaFileRecord(hdc: HDC, lphandletable: *const HANDLETABLE, lpmr: *const METARECORD, noobjs: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(PlayMetaFileRecord(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(lphandletable)), ::core::mem::transmute(lpmr), lphandletable.len() as _))
+        ::core::mem::transmute(PlayMetaFileRecord(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lphandletable)), ::core::mem::transmute(lpmr), lphandletable.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14648,14 +14648,14 @@ pub unsafe fn PlayMetaFileRecord<'a, Param0: ::windows::core::IntoParam<'a, HDC>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PlgBlt<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param2: ::windows::core::IntoParam<'a, HDC>, Param7: ::windows::core::IntoParam<'a, HBITMAP>>(hdcdest: Param0, lppoint: &[super::super::Foundation::POINT; 3], hdcsrc: Param2, xsrc: i32, ysrc: i32, width: i32, height: i32, hbmmask: Param7, xmask: i32, ymask: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn PlgBlt<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param2: ::windows_core::IntoParam<'a, HDC>, Param7: ::windows_core::IntoParam<'a, HBITMAP>>(hdcdest: Param0, lppoint: &[super::super::Foundation::POINT; 3], hdcsrc: Param2, xsrc: i32, ysrc: i32, width: i32, height: i32, hbmmask: Param7, xmask: i32, ymask: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn PlgBlt(hdcdest: HDC, lppoint: *const super::super::Foundation::POINT, hdcsrc: HDC, xsrc: i32, ysrc: i32, width: i32, height: i32, hbmmask: HBITMAP, xmask: i32, ymask: i32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(PlgBlt(hdcdest.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(lppoint)), hdcsrc.into_param().abi(), ::core::mem::transmute(xsrc), ::core::mem::transmute(ysrc), ::core::mem::transmute(width), ::core::mem::transmute(height), hbmmask.into_param().abi(), ::core::mem::transmute(xmask), ::core::mem::transmute(ymask)))
+        ::core::mem::transmute(PlgBlt(hdcdest.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lppoint)), hdcsrc.into_param().abi(), ::core::mem::transmute(xsrc), ::core::mem::transmute(ysrc), ::core::mem::transmute(width), ::core::mem::transmute(height), hbmmask.into_param().abi(), ::core::mem::transmute(xmask), ::core::mem::transmute(ymask)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14663,14 +14663,14 @@ pub unsafe fn PlgBlt<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param2: ::
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PolyBezier<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, apt: &[super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
+pub unsafe fn PolyBezier<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, apt: &[super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn PolyBezier(hdc: HDC, apt: *const super::super::Foundation::POINT, cpt: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(PolyBezier(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(apt)), apt.len() as _))
+        ::core::mem::transmute(PolyBezier(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(apt)), apt.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14678,14 +14678,14 @@ pub unsafe fn PolyBezier<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: P
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PolyBezierTo<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, apt: &[super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
+pub unsafe fn PolyBezierTo<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, apt: &[super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn PolyBezierTo(hdc: HDC, apt: *const super::super::Foundation::POINT, cpt: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(PolyBezierTo(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(apt)), apt.len() as _))
+        ::core::mem::transmute(PolyBezierTo(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(apt)), apt.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14693,7 +14693,7 @@ pub unsafe fn PolyBezierTo<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PolyDraw<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, apt: *const super::super::Foundation::POINT, aj: *const u8, cpt: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn PolyDraw<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, apt: *const super::super::Foundation::POINT, aj: *const u8, cpt: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14708,14 +14708,14 @@ pub unsafe fn PolyDraw<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Par
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PolyPolygon<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, apt: *const super::super::Foundation::POINT, asz: &[i32]) -> super::super::Foundation::BOOL {
+pub unsafe fn PolyPolygon<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, apt: *const super::super::Foundation::POINT, asz: &[i32]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn PolyPolygon(hdc: HDC, apt: *const super::super::Foundation::POINT, asz: *const i32, csz: i32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(PolyPolygon(hdc.into_param().abi(), ::core::mem::transmute(apt), ::core::mem::transmute(::windows::core::as_ptr_or_null(asz)), asz.len() as _))
+        ::core::mem::transmute(PolyPolygon(hdc.into_param().abi(), ::core::mem::transmute(apt), ::core::mem::transmute(::windows_core::as_ptr_or_null(asz)), asz.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14723,14 +14723,14 @@ pub unsafe fn PolyPolygon<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PolyPolyline<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, apt: *const super::super::Foundation::POINT, asz: &[u32]) -> super::super::Foundation::BOOL {
+pub unsafe fn PolyPolyline<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, apt: *const super::super::Foundation::POINT, asz: &[u32]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn PolyPolyline(hdc: HDC, apt: *const super::super::Foundation::POINT, asz: *const u32, csz: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(PolyPolyline(hdc.into_param().abi(), ::core::mem::transmute(apt), ::core::mem::transmute(::windows::core::as_ptr_or_null(asz)), asz.len() as _))
+        ::core::mem::transmute(PolyPolyline(hdc.into_param().abi(), ::core::mem::transmute(apt), ::core::mem::transmute(::windows_core::as_ptr_or_null(asz)), asz.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14738,14 +14738,14 @@ pub unsafe fn PolyPolyline<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PolyTextOutA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ppt: &[POLYTEXTA]) -> super::super::Foundation::BOOL {
+pub unsafe fn PolyTextOutA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ppt: &[POLYTEXTA]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn PolyTextOutA(hdc: HDC, ppt: *const POLYTEXTA, nstrings: i32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(PolyTextOutA(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(ppt)), ppt.len() as _))
+        ::core::mem::transmute(PolyTextOutA(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(ppt)), ppt.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14753,14 +14753,14 @@ pub unsafe fn PolyTextOutA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PolyTextOutW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ppt: &[POLYTEXTW]) -> super::super::Foundation::BOOL {
+pub unsafe fn PolyTextOutW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ppt: &[POLYTEXTW]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn PolyTextOutW(hdc: HDC, ppt: *const POLYTEXTW, nstrings: i32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(PolyTextOutW(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(ppt)), ppt.len() as _))
+        ::core::mem::transmute(PolyTextOutW(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(ppt)), ppt.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14768,14 +14768,14 @@ pub unsafe fn PolyTextOutW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Polygon<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, apt: &[super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
+pub unsafe fn Polygon<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, apt: &[super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn Polygon(hdc: HDC, apt: *const super::super::Foundation::POINT, cpt: i32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(Polygon(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(apt)), apt.len() as _))
+        ::core::mem::transmute(Polygon(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(apt)), apt.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14783,14 +14783,14 @@ pub unsafe fn Polygon<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Para
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Polyline<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, apt: &[super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
+pub unsafe fn Polyline<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, apt: &[super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn Polyline(hdc: HDC, apt: *const super::super::Foundation::POINT, cpt: i32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(Polyline(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(apt)), apt.len() as _))
+        ::core::mem::transmute(Polyline(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(apt)), apt.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14798,14 +14798,14 @@ pub unsafe fn Polyline<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Par
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PolylineTo<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, apt: &[super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
+pub unsafe fn PolylineTo<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, apt: &[super::super::Foundation::POINT]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn PolylineTo(hdc: HDC, apt: *const super::super::Foundation::POINT, cpt: u32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(PolylineTo(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(apt)), apt.len() as _))
+        ::core::mem::transmute(PolylineTo(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(apt)), apt.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -14813,7 +14813,7 @@ pub unsafe fn PolylineTo<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: P
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PtInRect<'a, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::POINT>>(lprc: *const super::super::Foundation::RECT, pt: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn PtInRect<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::POINT>>(lprc: *const super::super::Foundation::RECT, pt: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14828,7 +14828,7 @@ pub unsafe fn PtInRect<'a, Param1: ::windows::core::IntoParam<'a, super::super::
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PtInRegion<'a, Param0: ::windows::core::IntoParam<'a, HRGN>>(hrgn: Param0, x: i32, y: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn PtInRegion<'a, Param0: ::windows_core::IntoParam<'a, HRGN>>(hrgn: Param0, x: i32, y: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14843,7 +14843,7 @@ pub unsafe fn PtInRegion<'a, Param0: ::windows::core::IntoParam<'a, HRGN>>(hrgn:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PtVisible<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn PtVisible<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14930,7 +14930,7 @@ impl ::core::default::Default for R2_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for R2_MODE {
+unsafe impl ::windows_core::Abi for R2_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for R2_MODE {
@@ -14956,12 +14956,12 @@ impl ::core::fmt::Debug for RASTERIZER_STATUS {
         f.debug_struct("RASTERIZER_STATUS").field("nSize", &self.nSize).field("wFlags", &self.wFlags).field("nLanguageID", &self.nLanguageID).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RASTERIZER_STATUS {
+unsafe impl ::windows_core::Abi for RASTERIZER_STATUS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RASTERIZER_STATUS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASTERIZER_STATUS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASTERIZER_STATUS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RASTERIZER_STATUS {}
@@ -15047,7 +15047,7 @@ impl ::core::default::Default for REDRAW_WINDOW_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for REDRAW_WINDOW_FLAGS {
+unsafe impl ::windows_core::Abi for REDRAW_WINDOW_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for REDRAW_WINDOW_FLAGS {
@@ -15106,12 +15106,12 @@ impl ::core::fmt::Debug for RGBQUAD {
         f.debug_struct("RGBQUAD").field("rgbBlue", &self.rgbBlue).field("rgbGreen", &self.rgbGreen).field("rgbRed", &self.rgbRed).field("rgbReserved", &self.rgbReserved).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RGBQUAD {
+unsafe impl ::windows_core::Abi for RGBQUAD {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RGBQUAD {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RGBQUAD>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RGBQUAD>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RGBQUAD {}
@@ -15138,12 +15138,12 @@ impl ::core::fmt::Debug for RGBTRIPLE {
         f.debug_struct("RGBTRIPLE").field("rgbtBlue", &self.rgbtBlue).field("rgbtGreen", &self.rgbtGreen).field("rgbtRed", &self.rgbtRed).finish()
     }
 }
-unsafe impl ::windows::core::Abi for RGBTRIPLE {
+unsafe impl ::windows_core::Abi for RGBTRIPLE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for RGBTRIPLE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RGBTRIPLE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RGBTRIPLE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for RGBTRIPLE {}
@@ -15174,13 +15174,13 @@ impl ::core::fmt::Debug for RGNDATA {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RGNDATA {
+unsafe impl ::windows_core::Abi for RGNDATA {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RGNDATA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RGNDATA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RGNDATA>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -15216,13 +15216,13 @@ impl ::core::fmt::Debug for RGNDATAHEADER {
     }
 }
 #[cfg(feature = "Win32_Foundation")]
-unsafe impl ::windows::core::Abi for RGNDATAHEADER {
+unsafe impl ::windows_core::Abi for RGNDATAHEADER {
     type Abi = Self;
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RGNDATAHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RGNDATAHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RGNDATAHEADER>()) == 0 }
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -15262,7 +15262,7 @@ impl ::core::default::Default for RGN_COMBINE_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for RGN_COMBINE_MODE {
+unsafe impl ::windows_core::Abi for RGN_COMBINE_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for RGN_COMBINE_MODE {
@@ -15321,7 +15321,7 @@ impl ::core::default::Default for ROP_CODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ROP_CODE {
+unsafe impl ::windows_core::Abi for ROP_CODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for ROP_CODE {
@@ -15333,7 +15333,7 @@ impl ::core::fmt::Debug for ROP_CODE {
 pub const RUSSIAN_CHARSET: u32 = 204u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn RealizePalette<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
+pub unsafe fn RealizePalette<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15348,7 +15348,7 @@ pub unsafe fn RealizePalette<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hd
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RectInRegion<'a, Param0: ::windows::core::IntoParam<'a, HRGN>>(hrgn: Param0, lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn RectInRegion<'a, Param0: ::windows_core::IntoParam<'a, HRGN>>(hrgn: Param0, lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15363,7 +15363,7 @@ pub unsafe fn RectInRegion<'a, Param0: ::windows::core::IntoParam<'a, HRGN>>(hrg
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RectVisible<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn RectVisible<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15378,7 +15378,7 @@ pub unsafe fn RectVisible<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Rectangle<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn Rectangle<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15393,7 +15393,7 @@ pub unsafe fn Rectangle<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Pa
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RedrawWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows::core::IntoParam<'a, HRGN>>(hwnd: Param0, lprcupdate: *const super::super::Foundation::RECT, hrgnupdate: Param2, flags: REDRAW_WINDOW_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn RedrawWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, HRGN>>(hwnd: Param0, lprcupdate: *const super::super::Foundation::RECT, hrgnupdate: Param2, flags: REDRAW_WINDOW_FLAGS) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15408,7 +15408,7 @@ pub unsafe fn RedrawWindow<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReleaseDC<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HDC>>(hwnd: Param0, hdc: Param1) -> i32 {
+pub unsafe fn ReleaseDC<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HDC>>(hwnd: Param0, hdc: Param1) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15423,7 +15423,7 @@ pub unsafe fn ReleaseDC<'a, Param0: ::windows::core::IntoParam<'a, super::super:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RemoveFontMemResourceEx<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(h: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn RemoveFontMemResourceEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(h: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15438,12 +15438,12 @@ pub unsafe fn RemoveFontMemResourceEx<'a, Param0: ::windows::core::IntoParam<'a,
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RemoveFontResourceA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpfilename: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn RemoveFontResourceA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpfilename: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveFontResourceA(lpfilename: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
+            fn RemoveFontResourceA(lpfilename: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(RemoveFontResourceA(lpfilename.into_param().abi()))
     }
@@ -15453,12 +15453,12 @@ pub unsafe fn RemoveFontResourceA<'a, Param0: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RemoveFontResourceExA<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(name: Param0, fl: u32, pdv: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn RemoveFontResourceExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(name: Param0, fl: u32, pdv: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveFontResourceExA(name: ::windows::core::PCSTR, fl: u32, pdv: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn RemoveFontResourceExA(name: ::windows_core::PCSTR, fl: u32, pdv: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(RemoveFontResourceExA(name.into_param().abi(), ::core::mem::transmute(fl), ::core::mem::transmute(pdv)))
     }
@@ -15468,12 +15468,12 @@ pub unsafe fn RemoveFontResourceExA<'a, Param0: ::windows::core::IntoParam<'a, :
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RemoveFontResourceExW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(name: Param0, fl: u32, pdv: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn RemoveFontResourceExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(name: Param0, fl: u32, pdv: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveFontResourceExW(name: ::windows::core::PCWSTR, fl: u32, pdv: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn RemoveFontResourceExW(name: ::windows_core::PCWSTR, fl: u32, pdv: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(RemoveFontResourceExW(name.into_param().abi(), ::core::mem::transmute(fl), ::core::mem::transmute(pdv)))
     }
@@ -15483,12 +15483,12 @@ pub unsafe fn RemoveFontResourceExW<'a, Param0: ::windows::core::IntoParam<'a, :
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RemoveFontResourceW<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(lpfilename: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn RemoveFontResourceW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpfilename: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemoveFontResourceW(lpfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn RemoveFontResourceW(lpfilename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
         }
         ::core::mem::transmute(RemoveFontResourceW(lpfilename.into_param().abi()))
     }
@@ -15498,7 +15498,7 @@ pub unsafe fn RemoveFontResourceW<'a, Param0: ::windows::core::IntoParam<'a, ::w
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ResetDCA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpdm: *const DEVMODEA) -> HDC {
+pub unsafe fn ResetDCA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpdm: *const DEVMODEA) -> HDC {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15513,7 +15513,7 @@ pub unsafe fn ResetDCA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Par
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ResetDCW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpdm: *const DEVMODEW) -> HDC {
+pub unsafe fn ResetDCW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpdm: *const DEVMODEW) -> HDC {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15528,7 +15528,7 @@ pub unsafe fn ResetDCW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Par
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ResizePalette<'a, Param0: ::windows::core::IntoParam<'a, HPALETTE>>(hpal: Param0, n: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ResizePalette<'a, Param0: ::windows_core::IntoParam<'a, HPALETTE>>(hpal: Param0, n: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15543,7 +15543,7 @@ pub unsafe fn ResizePalette<'a, Param0: ::windows::core::IntoParam<'a, HPALETTE>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RestoreDC<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, nsaveddc: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn RestoreDC<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, nsaveddc: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15558,7 +15558,7 @@ pub unsafe fn RestoreDC<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Pa
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RoundRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32, width: i32, height: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn RoundRect<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, left: i32, top: i32, right: i32, bottom: i32, width: i32, height: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15673,7 +15673,7 @@ impl ::core::default::Default for SET_BOUNDS_RECT_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SET_BOUNDS_RECT_FLAGS {
+unsafe impl ::windows_core::Abi for SET_BOUNDS_RECT_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SET_BOUNDS_RECT_FLAGS {
@@ -15746,7 +15746,7 @@ impl ::core::default::Default for STRETCH_BLT_MODE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for STRETCH_BLT_MODE {
+unsafe impl ::windows_core::Abi for STRETCH_BLT_MODE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for STRETCH_BLT_MODE {
@@ -15781,7 +15781,7 @@ impl ::core::default::Default for SYSTEM_PALETTE_USE {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for SYSTEM_PALETTE_USE {
+unsafe impl ::windows_core::Abi for SYSTEM_PALETTE_USE {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for SYSTEM_PALETTE_USE {
@@ -15791,7 +15791,7 @@ impl ::core::fmt::Debug for SYSTEM_PALETTE_USE {
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SaveDC<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn SaveDC<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15806,7 +15806,7 @@ pub unsafe fn SaveDC<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ScaleViewportExtEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, xn: i32, dx: i32, yn: i32, yd: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn ScaleViewportExtEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, xn: i32, dx: i32, yn: i32, yd: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15821,7 +15821,7 @@ pub unsafe fn ScaleViewportExtEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ScaleWindowExtEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, xn: i32, xd: i32, yn: i32, yd: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn ScaleWindowExtEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, xn: i32, xd: i32, yn: i32, yd: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15836,7 +15836,7 @@ pub unsafe fn ScaleWindowExtEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ScreenToClient<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn ScreenToClient<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15851,7 +15851,7 @@ pub unsafe fn ScreenToClient<'a, Param0: ::windows::core::IntoParam<'a, super::s
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SelectClipPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, mode: RGN_COMBINE_MODE) -> super::super::Foundation::BOOL {
+pub unsafe fn SelectClipPath<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, mode: RGN_COMBINE_MODE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15865,7 +15865,7 @@ pub unsafe fn SelectClipPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hd
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SelectClipRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1) -> i32 {
+pub unsafe fn SelectClipRgn<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HRGN>>(hdc: Param0, hrgn: Param1) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15879,7 +15879,7 @@ pub unsafe fn SelectClipRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Par
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SelectObject<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HGDIOBJ>>(hdc: Param0, h: Param1) -> HGDIOBJ {
+pub unsafe fn SelectObject<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HGDIOBJ>>(hdc: Param0, h: Param1) -> HGDIOBJ {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15894,7 +15894,7 @@ pub unsafe fn SelectObject<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Para
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SelectPalette<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HPALETTE>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hdc: Param0, hpal: Param1, bforcebkgd: Param2) -> HPALETTE {
+pub unsafe fn SelectPalette<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HPALETTE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hdc: Param0, hpal: Param1, bforcebkgd: Param2) -> HPALETTE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15908,7 +15908,7 @@ pub unsafe fn SelectPalette<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Par
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetArcDirection<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, dir: ARC_DIRECTION) -> i32 {
+pub unsafe fn SetArcDirection<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, dir: ARC_DIRECTION) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15922,7 +15922,7 @@ pub unsafe fn SetArcDirection<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetBitmapBits<'a, Param0: ::windows::core::IntoParam<'a, HBITMAP>>(hbm: Param0, cb: u32, pvbits: *const ::core::ffi::c_void) -> i32 {
+pub unsafe fn SetBitmapBits<'a, Param0: ::windows_core::IntoParam<'a, HBITMAP>>(hbm: Param0, cb: u32, pvbits: *const ::core::ffi::c_void) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15937,7 +15937,7 @@ pub unsafe fn SetBitmapBits<'a, Param0: ::windows::core::IntoParam<'a, HBITMAP>>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetBitmapDimensionEx<'a, Param0: ::windows::core::IntoParam<'a, HBITMAP>>(hbm: Param0, w: i32, h: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn SetBitmapDimensionEx<'a, Param0: ::windows_core::IntoParam<'a, HBITMAP>>(hbm: Param0, w: i32, h: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15951,7 +15951,7 @@ pub unsafe fn SetBitmapDimensionEx<'a, Param0: ::windows::core::IntoParam<'a, HB
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetBkColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, color: u32) -> u32 {
+pub unsafe fn SetBkColor<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, color: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15965,7 +15965,7 @@ pub unsafe fn SetBkColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: P
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetBkMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, mode: BACKGROUND_MODE) -> i32 {
+pub unsafe fn SetBkMode<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, mode: BACKGROUND_MODE) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15980,7 +15980,7 @@ pub unsafe fn SetBkMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Pa
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetBoundsRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lprect: *const super::super::Foundation::RECT, flags: SET_BOUNDS_RECT_FLAGS) -> u32 {
+pub unsafe fn SetBoundsRect<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lprect: *const super::super::Foundation::RECT, flags: SET_BOUNDS_RECT_FLAGS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15995,7 +15995,7 @@ pub unsafe fn SetBoundsRect<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetBrushOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn SetBrushOrgEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16010,7 +16010,7 @@ pub unsafe fn SetBrushOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetColorAdjustment<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpca: *const COLORADJUSTMENT) -> super::super::Foundation::BOOL {
+pub unsafe fn SetColorAdjustment<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpca: *const COLORADJUSTMENT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16024,7 +16024,7 @@ pub unsafe fn SetColorAdjustment<'a, Param0: ::windows::core::IntoParam<'a, HDC>
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetDCBrushColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, color: u32) -> u32 {
+pub unsafe fn SetDCBrushColor<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, color: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16038,7 +16038,7 @@ pub unsafe fn SetDCBrushColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetDCPenColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, color: u32) -> u32 {
+pub unsafe fn SetDCPenColor<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, color: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16052,21 +16052,21 @@ pub unsafe fn SetDCPenColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetDIBColorTable<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, istart: u32, prgbq: &[RGBQUAD]) -> u32 {
+pub unsafe fn SetDIBColorTable<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, istart: u32, prgbq: &[RGBQUAD]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn SetDIBColorTable(hdc: HDC, istart: u32, centries: u32, prgbq: *const RGBQUAD) -> u32;
         }
-        ::core::mem::transmute(SetDIBColorTable(hdc.into_param().abi(), ::core::mem::transmute(istart), prgbq.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(prgbq))))
+        ::core::mem::transmute(SetDIBColorTable(hdc.into_param().abi(), ::core::mem::transmute(istart), prgbq.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(prgbq))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetDIBits<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, HBITMAP>>(hdc: Param0, hbm: Param1, start: u32, clines: u32, lpbits: *const ::core::ffi::c_void, lpbmi: *const BITMAPINFO, coloruse: DIB_USAGE) -> i32 {
+pub unsafe fn SetDIBits<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, HBITMAP>>(hdc: Param0, hbm: Param1, start: u32, clines: u32, lpbits: *const ::core::ffi::c_void, lpbmi: *const BITMAPINFO, coloruse: DIB_USAGE) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16080,7 +16080,7 @@ pub unsafe fn SetDIBits<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1:
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetDIBitsToDevice<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, xdest: i32, ydest: i32, w: u32, h: u32, xsrc: i32, ysrc: i32, startscan: u32, clines: u32, lpvbits: *const ::core::ffi::c_void, lpbmi: *const BITMAPINFO, coloruse: DIB_USAGE) -> i32 {
+pub unsafe fn SetDIBitsToDevice<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, xdest: i32, ydest: i32, w: u32, h: u32, xsrc: i32, ysrc: i32, startscan: u32, clines: u32, lpvbits: *const ::core::ffi::c_void, lpbmi: *const BITMAPINFO, coloruse: DIB_USAGE) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16108,7 +16108,7 @@ pub unsafe fn SetEnhMetaFileBits(nsize: u32, pb: *const u8) -> HENHMETAFILE {
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetGraphicsMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, imode: GRAPHICS_MODE) -> i32 {
+pub unsafe fn SetGraphicsMode<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, imode: GRAPHICS_MODE) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16122,7 +16122,7 @@ pub unsafe fn SetGraphicsMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetLayout<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, l: DC_LAYOUT) -> u32 {
+pub unsafe fn SetLayout<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, l: DC_LAYOUT) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16136,7 +16136,7 @@ pub unsafe fn SetLayout<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Pa
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetMapMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, imode: HDC_MAP_MODE) -> i32 {
+pub unsafe fn SetMapMode<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, imode: HDC_MAP_MODE) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16150,7 +16150,7 @@ pub unsafe fn SetMapMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: P
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetMapperFlags<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, flags: u32) -> u32 {
+pub unsafe fn SetMapperFlags<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, flags: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16178,7 +16178,7 @@ pub unsafe fn SetMetaFileBitsEx(cbbuffer: u32, lpdata: *const u8) -> HMETAFILE {
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetMetaRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn SetMetaRgn<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16193,7 +16193,7 @@ pub unsafe fn SetMetaRgn<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: P
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetMiterLimit<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, limit: f32, old: *mut f32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetMiterLimit<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, limit: f32, old: *mut f32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16207,21 +16207,21 @@ pub unsafe fn SetMiterLimit<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetPaletteEntries<'a, Param0: ::windows::core::IntoParam<'a, HPALETTE>>(hpal: Param0, istart: u32, ppalentries: &[PALETTEENTRY]) -> u32 {
+pub unsafe fn SetPaletteEntries<'a, Param0: ::windows_core::IntoParam<'a, HPALETTE>>(hpal: Param0, istart: u32, ppalentries: &[PALETTEENTRY]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn SetPaletteEntries(hpal: HPALETTE, istart: u32, centries: u32, ppalentries: *const PALETTEENTRY) -> u32;
         }
-        ::core::mem::transmute(SetPaletteEntries(hpal.into_param().abi(), ::core::mem::transmute(istart), ppalentries.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(ppalentries))))
+        ::core::mem::transmute(SetPaletteEntries(hpal.into_param().abi(), ::core::mem::transmute(istart), ppalentries.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppalentries))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetPixel<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, color: u32) -> u32 {
+pub unsafe fn SetPixel<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, color: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16236,7 +16236,7 @@ pub unsafe fn SetPixel<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Par
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetPixelV<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, color: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetPixelV<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, color: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16250,7 +16250,7 @@ pub unsafe fn SetPixelV<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Pa
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetPolyFillMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, mode: CREATE_POLYGON_RGN_MODE) -> i32 {
+pub unsafe fn SetPolyFillMode<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, mode: CREATE_POLYGON_RGN_MODE) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16264,7 +16264,7 @@ pub unsafe fn SetPolyFillMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(h
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetROP2<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, rop2: R2_MODE) -> i32 {
+pub unsafe fn SetROP2<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, rop2: R2_MODE) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16309,7 +16309,7 @@ pub unsafe fn SetRectEmpty(lprc: *mut super::super::Foundation::RECT) -> super::
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetRectRgn<'a, Param0: ::windows::core::IntoParam<'a, HRGN>>(hrgn: Param0, left: i32, top: i32, right: i32, bottom: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetRectRgn<'a, Param0: ::windows_core::IntoParam<'a, HRGN>>(hrgn: Param0, left: i32, top: i32, right: i32, bottom: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16323,7 +16323,7 @@ pub unsafe fn SetRectRgn<'a, Param0: ::windows::core::IntoParam<'a, HRGN>>(hrgn:
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetStretchBltMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, mode: STRETCH_BLT_MODE) -> i32 {
+pub unsafe fn SetStretchBltMode<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, mode: STRETCH_BLT_MODE) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16337,7 +16337,7 @@ pub unsafe fn SetStretchBltMode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetSystemPaletteUse<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, r#use: SYSTEM_PALETTE_USE) -> u32 {
+pub unsafe fn SetSystemPaletteUse<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, r#use: SYSTEM_PALETTE_USE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16351,7 +16351,7 @@ pub unsafe fn SetSystemPaletteUse<'a, Param0: ::windows::core::IntoParam<'a, HDC
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetTextAlign<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, align: TEXT_ALIGN_OPTIONS) -> u32 {
+pub unsafe fn SetTextAlign<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, align: TEXT_ALIGN_OPTIONS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16365,7 +16365,7 @@ pub unsafe fn SetTextAlign<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetTextCharacterExtra<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, extra: i32) -> i32 {
+pub unsafe fn SetTextCharacterExtra<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, extra: i32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16379,7 +16379,7 @@ pub unsafe fn SetTextCharacterExtra<'a, Param0: ::windows::core::IntoParam<'a, H
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn SetTextColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, color: u32) -> u32 {
+pub unsafe fn SetTextColor<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, color: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16394,7 +16394,7 @@ pub unsafe fn SetTextColor<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetTextJustification<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, extra: i32, count: i32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetTextJustification<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, extra: i32, count: i32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16409,7 +16409,7 @@ pub unsafe fn SetTextJustification<'a, Param0: ::windows::core::IntoParam<'a, HD
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetViewportExtEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn SetViewportExtEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16424,7 +16424,7 @@ pub unsafe fn SetViewportExtEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetViewportOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn SetViewportOrgEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16439,7 +16439,7 @@ pub unsafe fn SetViewportOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowExtEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
+pub unsafe fn SetWindowExtEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lpsz: *mut super::super::Foundation::SIZE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16454,7 +16454,7 @@ pub unsafe fn SetWindowExtEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hd
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn SetWindowOrgEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16469,7 +16469,7 @@ pub unsafe fn SetWindowOrgEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hd
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWindowRgn<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HRGN>, Param2: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, hrgn: Param1, bredraw: Param2) -> i32 {
+pub unsafe fn SetWindowRgn<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HRGN>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hwnd: Param0, hrgn: Param1, bredraw: Param2) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16484,7 +16484,7 @@ pub unsafe fn SetWindowRgn<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetWorldTransform<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, lpxf: *const XFORM) -> super::super::Foundation::BOOL {
+pub unsafe fn SetWorldTransform<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, lpxf: *const XFORM) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16499,7 +16499,7 @@ pub unsafe fn SetWorldTransform<'a, Param0: ::windows::core::IntoParam<'a, HDC>>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StretchBlt<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param5: ::windows::core::IntoParam<'a, HDC>>(hdcdest: Param0, xdest: i32, ydest: i32, wdest: i32, hdest: i32, hdcsrc: Param5, xsrc: i32, ysrc: i32, wsrc: i32, hsrc: i32, rop: ROP_CODE) -> super::super::Foundation::BOOL {
+pub unsafe fn StretchBlt<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param5: ::windows_core::IntoParam<'a, HDC>>(hdcdest: Param0, xdest: i32, ydest: i32, wdest: i32, hdest: i32, hdcsrc: Param5, xsrc: i32, ysrc: i32, wsrc: i32, hsrc: i32, rop: ROP_CODE) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16513,7 +16513,7 @@ pub unsafe fn StretchBlt<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param5
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn StretchDIBits<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, xdest: i32, ydest: i32, destwidth: i32, destheight: i32, xsrc: i32, ysrc: i32, srcwidth: i32, srcheight: i32, lpbits: *const ::core::ffi::c_void, lpbmi: *const BITMAPINFO, iusage: DIB_USAGE, rop: ROP_CODE) -> i32 {
+pub unsafe fn StretchDIBits<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, xdest: i32, ydest: i32, destwidth: i32, destheight: i32, xsrc: i32, ysrc: i32, srcwidth: i32, srcheight: i32, lpbits: *const ::core::ffi::c_void, lpbmi: *const BITMAPINFO, iusage: DIB_USAGE, rop: ROP_CODE) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16528,7 +16528,7 @@ pub unsafe fn StretchDIBits<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StrokeAndFillPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn StrokeAndFillPath<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16543,7 +16543,7 @@ pub unsafe fn StrokeAndFillPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StrokePath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn StrokePath<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16660,12 +16660,12 @@ impl ::core::fmt::Debug for TEXTMETRICA {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for TEXTMETRICA {
+unsafe impl ::windows_core::Abi for TEXTMETRICA {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TEXTMETRICA {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TEXTMETRICA>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TEXTMETRICA>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TEXTMETRICA {}
@@ -16730,12 +16730,12 @@ impl ::core::fmt::Debug for TEXTMETRICW {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for TEXTMETRICW {
+unsafe impl ::windows_core::Abi for TEXTMETRICW {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TEXTMETRICW {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TEXTMETRICW>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TEXTMETRICW>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TEXTMETRICW {}
@@ -16791,7 +16791,7 @@ impl ::core::default::Default for TEXT_ALIGN_OPTIONS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TEXT_ALIGN_OPTIONS {
+unsafe impl ::windows_core::Abi for TEXT_ALIGN_OPTIONS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TEXT_ALIGN_OPTIONS {
@@ -16832,12 +16832,12 @@ impl ::core::fmt::Debug for TRIVERTEX {
         f.debug_struct("TRIVERTEX").field("x", &self.x).field("y", &self.y).field("Red", &self.Red).field("Green", &self.Green).field("Blue", &self.Blue).field("Alpha", &self.Alpha).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TRIVERTEX {
+unsafe impl ::windows_core::Abi for TRIVERTEX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TRIVERTEX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRIVERTEX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRIVERTEX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TRIVERTEX {}
@@ -16850,14 +16850,14 @@ impl ::core::default::Default for TRIVERTEX {
 pub const TRUETYPE_FONTTYPE: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn TTCharToUnicode<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, puccharcodes: &[u8], pusshortcodes: &mut [u16], ulflags: u32) -> i32 {
+pub unsafe fn TTCharToUnicode<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, puccharcodes: &[u8], pusshortcodes: &mut [u16], ulflags: u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
             fn TTCharToUnicode(hdc: HDC, puccharcodes: *const u8, ulcharcodesize: u32, pusshortcodes: *mut u16, ulshortcodesize: u32, ulflags: u32) -> i32;
         }
-        ::core::mem::transmute(TTCharToUnicode(hdc.into_param().abi(), ::core::mem::transmute(::windows::core::as_ptr_or_null(puccharcodes)), puccharcodes.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pusshortcodes)), pusshortcodes.len() as _, ::core::mem::transmute(ulflags)))
+        ::core::mem::transmute(TTCharToUnicode(hdc.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(puccharcodes)), puccharcodes.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pusshortcodes)), pusshortcodes.len() as _, ::core::mem::transmute(ulflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -16867,7 +16867,7 @@ pub const TTDELETE_DONTREMOVEFONT: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TTDeleteEmbeddedFont<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfontreference: Param0, ulflags: u32, pulstatus: *mut u32) -> i32 {
+pub unsafe fn TTDeleteEmbeddedFont<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfontreference: Param0, ulflags: u32, pulstatus: *mut u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -16897,12 +16897,12 @@ impl ::core::fmt::Debug for TTEMBEDINFO {
         f.debug_struct("TTEMBEDINFO").field("usStructSize", &self.usStructSize).field("usRootStrSize", &self.usRootStrSize).field("pusRootStr", &self.pusRootStr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TTEMBEDINFO {
+unsafe impl ::windows_core::Abi for TTEMBEDINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TTEMBEDINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TTEMBEDINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TTEMBEDINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TTEMBEDINFO {}
@@ -16938,7 +16938,7 @@ impl ::core::default::Default for TTEMBED_FLAGS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TTEMBED_FLAGS {
+unsafe impl ::windows_core::Abi for TTEMBED_FLAGS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TTEMBED_FLAGS {
@@ -16984,40 +16984,40 @@ pub const TTEMBED_WEBOBJECT: u32 = 128u32;
 pub const TTEMBED_XORENCRYPTDATA: u32 = 268435456u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn TTEmbedFont<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ulflags: TTEMBED_FLAGS, ulcharset: EMBED_FONT_CHARSET, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, pulstatus: *mut u32, lpfnwritetostream: WRITEEMBEDPROC, lpvwritestream: *const ::core::ffi::c_void, puscharcodeset: &[u16], uslanguage: u16, pttembedinfo: *const TTEMBEDINFO) -> i32 {
+pub unsafe fn TTEmbedFont<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ulflags: TTEMBED_FLAGS, ulcharset: EMBED_FONT_CHARSET, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, pulstatus: *mut u32, lpfnwritetostream: WRITEEMBEDPROC, lpvwritestream: *const ::core::ffi::c_void, puscharcodeset: &[u16], uslanguage: u16, pttembedinfo: *const TTEMBEDINFO) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TTEmbedFont(hdc: HDC, ulflags: TTEMBED_FLAGS, ulcharset: EMBED_FONT_CHARSET, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, pulstatus: *mut u32, lpfnwritetostream: ::windows::core::RawPtr, lpvwritestream: *const ::core::ffi::c_void, puscharcodeset: *const u16, uscharcodecount: u16, uslanguage: u16, pttembedinfo: *const TTEMBEDINFO) -> i32;
+            fn TTEmbedFont(hdc: HDC, ulflags: TTEMBED_FLAGS, ulcharset: EMBED_FONT_CHARSET, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, pulstatus: *mut u32, lpfnwritetostream: ::windows_core::RawPtr, lpvwritestream: *const ::core::ffi::c_void, puscharcodeset: *const u16, uscharcodecount: u16, uslanguage: u16, pttembedinfo: *const TTEMBEDINFO) -> i32;
         }
-        ::core::mem::transmute(TTEmbedFont(hdc.into_param().abi(), ::core::mem::transmute(ulflags), ::core::mem::transmute(ulcharset), ::core::mem::transmute(pulprivstatus), ::core::mem::transmute(pulstatus), ::core::mem::transmute(lpfnwritetostream), ::core::mem::transmute(lpvwritestream), ::core::mem::transmute(::windows::core::as_ptr_or_null(puscharcodeset)), puscharcodeset.len() as _, ::core::mem::transmute(uslanguage), ::core::mem::transmute(pttembedinfo)))
+        ::core::mem::transmute(TTEmbedFont(hdc.into_param().abi(), ::core::mem::transmute(ulflags), ::core::mem::transmute(ulcharset), ::core::mem::transmute(pulprivstatus), ::core::mem::transmute(pulstatus), ::core::mem::transmute(lpfnwritetostream), ::core::mem::transmute(lpvwritestream), ::core::mem::transmute(::windows_core::as_ptr_or_null(puscharcodeset)), puscharcodeset.len() as _, ::core::mem::transmute(uslanguage), ::core::mem::transmute(pttembedinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn TTEmbedFontEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ulflags: TTEMBED_FLAGS, ulcharset: EMBED_FONT_CHARSET, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, pulstatus: *mut u32, lpfnwritetostream: WRITEEMBEDPROC, lpvwritestream: *const ::core::ffi::c_void, pulcharcodeset: &[u32], uslanguage: u16, pttembedinfo: *const TTEMBEDINFO) -> i32 {
+pub unsafe fn TTEmbedFontEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ulflags: TTEMBED_FLAGS, ulcharset: EMBED_FONT_CHARSET, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, pulstatus: *mut u32, lpfnwritetostream: WRITEEMBEDPROC, lpvwritestream: *const ::core::ffi::c_void, pulcharcodeset: &[u32], uslanguage: u16, pttembedinfo: *const TTEMBEDINFO) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TTEmbedFontEx(hdc: HDC, ulflags: TTEMBED_FLAGS, ulcharset: EMBED_FONT_CHARSET, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, pulstatus: *mut u32, lpfnwritetostream: ::windows::core::RawPtr, lpvwritestream: *const ::core::ffi::c_void, pulcharcodeset: *const u32, uscharcodecount: u16, uslanguage: u16, pttembedinfo: *const TTEMBEDINFO) -> i32;
+            fn TTEmbedFontEx(hdc: HDC, ulflags: TTEMBED_FLAGS, ulcharset: EMBED_FONT_CHARSET, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, pulstatus: *mut u32, lpfnwritetostream: ::windows_core::RawPtr, lpvwritestream: *const ::core::ffi::c_void, pulcharcodeset: *const u32, uscharcodecount: u16, uslanguage: u16, pttembedinfo: *const TTEMBEDINFO) -> i32;
         }
-        ::core::mem::transmute(TTEmbedFontEx(hdc.into_param().abi(), ::core::mem::transmute(ulflags), ::core::mem::transmute(ulcharset), ::core::mem::transmute(pulprivstatus), ::core::mem::transmute(pulstatus), ::core::mem::transmute(lpfnwritetostream), ::core::mem::transmute(lpvwritestream), ::core::mem::transmute(::windows::core::as_ptr_or_null(pulcharcodeset)), pulcharcodeset.len() as _, ::core::mem::transmute(uslanguage), ::core::mem::transmute(pttembedinfo)))
+        ::core::mem::transmute(TTEmbedFontEx(hdc.into_param().abi(), ::core::mem::transmute(ulflags), ::core::mem::transmute(ulcharset), ::core::mem::transmute(pulprivstatus), ::core::mem::transmute(pulstatus), ::core::mem::transmute(lpfnwritetostream), ::core::mem::transmute(lpvwritestream), ::core::mem::transmute(::windows_core::as_ptr_or_null(pulcharcodeset)), pulcharcodeset.len() as _, ::core::mem::transmute(uslanguage), ::core::mem::transmute(pttembedinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn TTEmbedFontFromFileA<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param1: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(hdc: Param0, szfontfilename: Param1, usttcindex: u16, ulflags: TTEMBED_FLAGS, ulcharset: EMBED_FONT_CHARSET, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, pulstatus: *mut u32, lpfnwritetostream: WRITEEMBEDPROC, lpvwritestream: *const ::core::ffi::c_void, puscharcodeset: &[u16], uslanguage: u16, pttembedinfo: *const TTEMBEDINFO) -> i32 {
+pub unsafe fn TTEmbedFontFromFileA<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hdc: Param0, szfontfilename: Param1, usttcindex: u16, ulflags: TTEMBED_FLAGS, ulcharset: EMBED_FONT_CHARSET, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, pulstatus: *mut u32, lpfnwritetostream: WRITEEMBEDPROC, lpvwritestream: *const ::core::ffi::c_void, puscharcodeset: &[u16], uslanguage: u16, pttembedinfo: *const TTEMBEDINFO) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TTEmbedFontFromFileA(hdc: HDC, szfontfilename: ::windows::core::PCSTR, usttcindex: u16, ulflags: TTEMBED_FLAGS, ulcharset: EMBED_FONT_CHARSET, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, pulstatus: *mut u32, lpfnwritetostream: ::windows::core::RawPtr, lpvwritestream: *const ::core::ffi::c_void, puscharcodeset: *const u16, uscharcodecount: u16, uslanguage: u16, pttembedinfo: *const TTEMBEDINFO) -> i32;
+            fn TTEmbedFontFromFileA(hdc: HDC, szfontfilename: ::windows_core::PCSTR, usttcindex: u16, ulflags: TTEMBED_FLAGS, ulcharset: EMBED_FONT_CHARSET, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, pulstatus: *mut u32, lpfnwritetostream: ::windows_core::RawPtr, lpvwritestream: *const ::core::ffi::c_void, puscharcodeset: *const u16, uscharcodecount: u16, uslanguage: u16, pttembedinfo: *const TTEMBEDINFO) -> i32;
         }
         ::core::mem::transmute(TTEmbedFontFromFileA(
             hdc.into_param().abi(),
@@ -17029,7 +17029,7 @@ pub unsafe fn TTEmbedFontFromFileA<'a, Param0: ::windows::core::IntoParam<'a, HD
             ::core::mem::transmute(pulstatus),
             ::core::mem::transmute(lpfnwritetostream),
             ::core::mem::transmute(lpvwritestream),
-            ::core::mem::transmute(::windows::core::as_ptr_or_null(puscharcodeset)),
+            ::core::mem::transmute(::windows_core::as_ptr_or_null(puscharcodeset)),
             puscharcodeset.len() as _,
             ::core::mem::transmute(uslanguage),
             ::core::mem::transmute(pttembedinfo),
@@ -17041,12 +17041,12 @@ pub unsafe fn TTEmbedFontFromFileA<'a, Param0: ::windows::core::IntoParam<'a, HD
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TTEnableEmbeddingForFacename<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>, Param1: ::windows::core::IntoParam<'a, super::super::Foundation::BOOL>>(lpszfacename: Param0, benable: Param1) -> i32 {
+pub unsafe fn TTEnableEmbeddingForFacename<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpszfacename: Param0, benable: Param1) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TTEnableEmbeddingForFacename(lpszfacename: ::windows::core::PCSTR, benable: super::super::Foundation::BOOL) -> i32;
+            fn TTEnableEmbeddingForFacename(lpszfacename: ::windows_core::PCSTR, benable: super::super::Foundation::BOOL) -> i32;
         }
         ::core::mem::transmute(TTEnableEmbeddingForFacename(lpszfacename.into_param().abi(), benable.into_param().abi()))
     }
@@ -17088,7 +17088,7 @@ pub unsafe fn TTGetEmbeddedFontInfo(ulflags: TTEMBED_FLAGS, pulprivstatus: *mut 
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TTGetEmbeddedFontInfo(ulflags: TTEMBED_FLAGS, pulprivstatus: *mut u32, ulprivs: FONT_LICENSE_PRIVS, pulstatus: *mut u32, lpfnreadfromstream: ::windows::core::RawPtr, lpvreadstream: *const ::core::ffi::c_void, pttloadinfo: *const TTLOADINFO) -> i32;
+            fn TTGetEmbeddedFontInfo(ulflags: TTEMBED_FLAGS, pulprivstatus: *mut u32, ulprivs: FONT_LICENSE_PRIVS, pulstatus: *mut u32, lpfnreadfromstream: ::windows_core::RawPtr, lpvreadstream: *const ::core::ffi::c_void, pttloadinfo: *const TTLOADINFO) -> i32;
         }
         ::core::mem::transmute(TTGetEmbeddedFontInfo(::core::mem::transmute(ulflags), ::core::mem::transmute(pulprivstatus), ::core::mem::transmute(ulprivs), ::core::mem::transmute(pulstatus), ::core::mem::transmute(lpfnreadfromstream), ::core::mem::transmute(lpvreadstream), ::core::mem::transmute(pttloadinfo)))
     }
@@ -17097,7 +17097,7 @@ pub unsafe fn TTGetEmbeddedFontInfo(ulflags: TTEMBED_FLAGS, pulprivstatus: *mut 
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn TTGetEmbeddingType<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, pulembedtype: *mut EMBEDDED_FONT_PRIV_STATUS) -> i32 {
+pub unsafe fn TTGetEmbeddingType<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, pulembedtype: *mut EMBEDDED_FONT_PRIV_STATUS) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17117,9 +17117,9 @@ pub unsafe fn TTGetNewFontName(phfontreference: *const super::super::Foundation:
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TTGetNewFontName(phfontreference: *const super::super::Foundation::HANDLE, wzwinfamilyname: ::windows::core::PWSTR, cchmaxwinname: i32, szmacfamilyname: ::windows::core::PSTR, cchmaxmacname: i32) -> i32;
+            fn TTGetNewFontName(phfontreference: *const super::super::Foundation::HANDLE, wzwinfamilyname: ::windows_core::PWSTR, cchmaxwinname: i32, szmacfamilyname: ::windows_core::PSTR, cchmaxmacname: i32) -> i32;
         }
-        ::core::mem::transmute(TTGetNewFontName(::core::mem::transmute(phfontreference), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(wzwinfamilyname)), wzwinfamilyname.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(szmacfamilyname)), szmacfamilyname.len() as _))
+        ::core::mem::transmute(TTGetNewFontName(::core::mem::transmute(phfontreference), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(wzwinfamilyname)), wzwinfamilyname.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(szmacfamilyname)), szmacfamilyname.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -17127,7 +17127,7 @@ pub unsafe fn TTGetNewFontName(phfontreference: *const super::super::Foundation:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TTIsEmbeddingEnabled<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, pbenabled: *mut super::super::Foundation::BOOL) -> i32 {
+pub unsafe fn TTIsEmbeddingEnabled<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, pbenabled: *mut super::super::Foundation::BOOL) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17142,12 +17142,12 @@ pub unsafe fn TTIsEmbeddingEnabled<'a, Param0: ::windows::core::IntoParam<'a, HD
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TTIsEmbeddingEnabledForFacename<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(lpszfacename: Param0, pbenabled: *mut super::super::Foundation::BOOL) -> i32 {
+pub unsafe fn TTIsEmbeddingEnabledForFacename<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszfacename: Param0, pbenabled: *mut super::super::Foundation::BOOL) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TTIsEmbeddingEnabledForFacename(lpszfacename: ::windows::core::PCSTR, pbenabled: *mut super::super::Foundation::BOOL) -> i32;
+            fn TTIsEmbeddingEnabledForFacename(lpszfacename: ::windows_core::PCSTR, pbenabled: *mut super::super::Foundation::BOOL) -> i32;
         }
         ::core::mem::transmute(TTIsEmbeddingEnabledForFacename(lpszfacename.into_param().abi(), ::core::mem::transmute(pbenabled)))
     }
@@ -17172,12 +17172,12 @@ impl ::core::fmt::Debug for TTLOADINFO {
         f.debug_struct("TTLOADINFO").field("usStructSize", &self.usStructSize).field("usRefStrSize", &self.usRefStrSize).field("pusRefStr", &self.pusRefStr).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TTLOADINFO {
+unsafe impl ::windows_core::Abi for TTLOADINFO {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TTLOADINFO {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TTLOADINFO>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TTLOADINFO>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TTLOADINFO {}
@@ -17205,7 +17205,7 @@ impl ::core::default::Default for TTLOAD_EMBEDDED_FONT_STATUS {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TTLOAD_EMBEDDED_FONT_STATUS {
+unsafe impl ::windows_core::Abi for TTLOAD_EMBEDDED_FONT_STATUS {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for TTLOAD_EMBEDDED_FONT_STATUS {
@@ -17250,12 +17250,12 @@ pub const TTLOAD_PRIVATE: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TTLoadEmbeddedFont<'a, Param7: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param8: ::windows::core::IntoParam<'a, ::windows::core::PCSTR>>(phfontreference: *mut super::super::Foundation::HANDLE, ulflags: u32, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, ulprivs: FONT_LICENSE_PRIVS, pulstatus: *mut TTLOAD_EMBEDDED_FONT_STATUS, lpfnreadfromstream: READEMBEDPROC, lpvreadstream: *const ::core::ffi::c_void, szwinfamilyname: Param7, szmacfamilyname: Param8, pttloadinfo: *const TTLOADINFO) -> i32 {
+pub unsafe fn TTLoadEmbeddedFont<'a, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param8: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(phfontreference: *mut super::super::Foundation::HANDLE, ulflags: u32, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, ulprivs: FONT_LICENSE_PRIVS, pulstatus: *mut TTLOAD_EMBEDDED_FONT_STATUS, lpfnreadfromstream: READEMBEDPROC, lpvreadstream: *const ::core::ffi::c_void, szwinfamilyname: Param7, szmacfamilyname: Param8, pttloadinfo: *const TTLOADINFO) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TTLoadEmbeddedFont(phfontreference: *mut super::super::Foundation::HANDLE, ulflags: u32, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, ulprivs: FONT_LICENSE_PRIVS, pulstatus: *mut TTLOAD_EMBEDDED_FONT_STATUS, lpfnreadfromstream: ::windows::core::RawPtr, lpvreadstream: *const ::core::ffi::c_void, szwinfamilyname: ::windows::core::PCWSTR, szmacfamilyname: ::windows::core::PCSTR, pttloadinfo: *const TTLOADINFO) -> i32;
+            fn TTLoadEmbeddedFont(phfontreference: *mut super::super::Foundation::HANDLE, ulflags: u32, pulprivstatus: *mut EMBEDDED_FONT_PRIV_STATUS, ulprivs: FONT_LICENSE_PRIVS, pulstatus: *mut TTLOAD_EMBEDDED_FONT_STATUS, lpfnreadfromstream: ::windows_core::RawPtr, lpvreadstream: *const ::core::ffi::c_void, szwinfamilyname: ::windows_core::PCWSTR, szmacfamilyname: ::windows_core::PCSTR, pttloadinfo: *const TTLOADINFO) -> i32;
         }
         ::core::mem::transmute(TTLoadEmbeddedFont(::core::mem::transmute(phfontreference), ::core::mem::transmute(ulflags), ::core::mem::transmute(pulprivstatus), ::core::mem::transmute(ulprivs), ::core::mem::transmute(pulstatus), ::core::mem::transmute(lpfnreadfromstream), ::core::mem::transmute(lpvreadstream), szwinfamilyname.into_param().abi(), szmacfamilyname.into_param().abi(), ::core::mem::transmute(pttloadinfo)))
     }
@@ -17280,12 +17280,12 @@ impl ::core::fmt::Debug for TTPOLYCURVE {
         f.debug_struct("TTPOLYCURVE").field("wType", &self.wType).field("cpfx", &self.cpfx).field("apfx", &self.apfx).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TTPOLYCURVE {
+unsafe impl ::windows_core::Abi for TTPOLYCURVE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TTPOLYCURVE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TTPOLYCURVE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TTPOLYCURVE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TTPOLYCURVE {}
@@ -17312,12 +17312,12 @@ impl ::core::fmt::Debug for TTPOLYGONHEADER {
         f.debug_struct("TTPOLYGONHEADER").field("cb", &self.cb).field("dwType", &self.dwType).field("pfxStart", &self.pfxStart).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TTPOLYGONHEADER {
+unsafe impl ::windows_core::Abi for TTPOLYGONHEADER {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TTPOLYGONHEADER {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TTPOLYGONHEADER>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TTPOLYGONHEADER>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TTPOLYGONHEADER {}
@@ -17328,7 +17328,7 @@ impl ::core::default::Default for TTPOLYGONHEADER {
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn TTRunValidationTests<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ptestparam: *const TTVALIDATIONTESTSPARAMS) -> i32 {
+pub unsafe fn TTRunValidationTests<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ptestparam: *const TTVALIDATIONTESTSPARAMS) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17342,7 +17342,7 @@ pub unsafe fn TTRunValidationTests<'a, Param0: ::windows::core::IntoParam<'a, HD
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn TTRunValidationTestsEx<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, ptestparam: *const TTVALIDATIONTESTSPARAMSEX) -> i32 {
+pub unsafe fn TTRunValidationTestsEx<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, ptestparam: *const TTVALIDATIONTESTSPARAMSEX) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17376,12 +17376,12 @@ impl ::core::fmt::Debug for TTVALIDATIONTESTSPARAMS {
         f.debug_struct("TTVALIDATIONTESTSPARAMS").field("ulStructSize", &self.ulStructSize).field("lTestFromSize", &self.lTestFromSize).field("lTestToSize", &self.lTestToSize).field("ulCharSet", &self.ulCharSet).field("usReserved1", &self.usReserved1).field("usCharCodeCount", &self.usCharCodeCount).field("pusCharCodeSet", &self.pusCharCodeSet).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TTVALIDATIONTESTSPARAMS {
+unsafe impl ::windows_core::Abi for TTVALIDATIONTESTSPARAMS {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TTVALIDATIONTESTSPARAMS {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TTVALIDATIONTESTSPARAMS>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TTVALIDATIONTESTSPARAMS>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TTVALIDATIONTESTSPARAMS {}
@@ -17412,12 +17412,12 @@ impl ::core::fmt::Debug for TTVALIDATIONTESTSPARAMSEX {
         f.debug_struct("TTVALIDATIONTESTSPARAMSEX").field("ulStructSize", &self.ulStructSize).field("lTestFromSize", &self.lTestFromSize).field("lTestToSize", &self.lTestToSize).field("ulCharSet", &self.ulCharSet).field("usReserved1", &self.usReserved1).field("usCharCodeCount", &self.usCharCodeCount).field("pulCharCodeSet", &self.pulCharCodeSet).finish()
     }
 }
-unsafe impl ::windows::core::Abi for TTVALIDATIONTESTSPARAMSEX {
+unsafe impl ::windows_core::Abi for TTVALIDATIONTESTSPARAMSEX {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for TTVALIDATIONTESTSPARAMSEX {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TTVALIDATIONTESTSPARAMSEX>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TTVALIDATIONTESTSPARAMSEX>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for TTVALIDATIONTESTSPARAMSEX {}
@@ -17442,28 +17442,28 @@ pub const TT_PRIM_QSPLINE: u32 = 2u32;
 pub const TURKISH_CHARSET: u32 = 162u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn TabbedTextOutA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lpstring: &[u8], lpntabstoppositions: &[i32], ntaborigin: i32) -> i32 {
+pub unsafe fn TabbedTextOutA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lpstring: &[u8], lpntabstoppositions: &[i32], ntaborigin: i32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TabbedTextOutA(hdc: HDC, x: i32, y: i32, lpstring: ::windows::core::PCSTR, chcount: i32, ntabpositions: i32, lpntabstoppositions: *const i32, ntaborigin: i32) -> i32;
+            fn TabbedTextOutA(hdc: HDC, x: i32, y: i32, lpstring: ::windows_core::PCSTR, chcount: i32, ntabpositions: i32, lpntabstoppositions: *const i32, ntaborigin: i32) -> i32;
         }
-        ::core::mem::transmute(TabbedTextOutA(hdc.into_param().abi(), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpstring)), lpstring.len() as _, lpntabstoppositions.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(lpntabstoppositions)), ::core::mem::transmute(ntaborigin)))
+        ::core::mem::transmute(TabbedTextOutA(hdc.into_param().abi(), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstring)), lpstring.len() as _, lpntabstoppositions.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(lpntabstoppositions)), ::core::mem::transmute(ntaborigin)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`*"]
 #[inline]
-pub unsafe fn TabbedTextOutW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lpstring: &[u16], lpntabstoppositions: &[i32], ntaborigin: i32) -> i32 {
+pub unsafe fn TabbedTextOutW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lpstring: &[u16], lpntabstoppositions: &[i32], ntaborigin: i32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TabbedTextOutW(hdc: HDC, x: i32, y: i32, lpstring: ::windows::core::PCWSTR, chcount: i32, ntabpositions: i32, lpntabstoppositions: *const i32, ntaborigin: i32) -> i32;
+            fn TabbedTextOutW(hdc: HDC, x: i32, y: i32, lpstring: ::windows_core::PCWSTR, chcount: i32, ntabpositions: i32, lpntabstoppositions: *const i32, ntaborigin: i32) -> i32;
         }
-        ::core::mem::transmute(TabbedTextOutW(hdc.into_param().abi(), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpstring)), lpstring.len() as _, lpntabstoppositions.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(lpntabstoppositions)), ::core::mem::transmute(ntaborigin)))
+        ::core::mem::transmute(TabbedTextOutW(hdc.into_param().abi(), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstring)), lpstring.len() as _, lpntabstoppositions.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(lpntabstoppositions)), ::core::mem::transmute(ntaborigin)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -17471,14 +17471,14 @@ pub unsafe fn TabbedTextOutW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hd
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TextOutA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lpstring: &[u8]) -> super::super::Foundation::BOOL {
+pub unsafe fn TextOutA<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lpstring: &[u8]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TextOutA(hdc: HDC, x: i32, y: i32, lpstring: ::windows::core::PCSTR, c: i32) -> super::super::Foundation::BOOL;
+            fn TextOutA(hdc: HDC, x: i32, y: i32, lpstring: ::windows_core::PCSTR, c: i32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(TextOutA(hdc.into_param().abi(), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpstring)), lpstring.len() as _))
+        ::core::mem::transmute(TextOutA(hdc.into_param().abi(), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstring)), lpstring.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -17486,14 +17486,14 @@ pub unsafe fn TextOutA<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Par
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TextOutW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lpstring: &[u16]) -> super::super::Foundation::BOOL {
+pub unsafe fn TextOutW<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0, x: i32, y: i32, lpstring: &[u16]) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TextOutW(hdc: HDC, x: i32, y: i32, lpstring: ::windows::core::PCWSTR, c: i32) -> super::super::Foundation::BOOL;
+            fn TextOutW(hdc: HDC, x: i32, y: i32, lpstring: ::windows_core::PCWSTR, c: i32) -> super::super::Foundation::BOOL;
         }
-        ::core::mem::transmute(TextOutW(hdc.into_param().abi(), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(::windows::core::as_ptr_or_null(lpstring)), lpstring.len() as _))
+        ::core::mem::transmute(TextOutW(hdc.into_param().abi(), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstring)), lpstring.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -17501,7 +17501,7 @@ pub unsafe fn TextOutW<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Par
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TransparentBlt<'a, Param0: ::windows::core::IntoParam<'a, HDC>, Param5: ::windows::core::IntoParam<'a, HDC>>(hdcdest: Param0, xorigindest: i32, yorigindest: i32, wdest: i32, hdest: i32, hdcsrc: Param5, xoriginsrc: i32, yoriginsrc: i32, wsrc: i32, hsrc: i32, crtransparent: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn TransparentBlt<'a, Param0: ::windows_core::IntoParam<'a, HDC>, Param5: ::windows_core::IntoParam<'a, HDC>>(hdcdest: Param0, xorigindest: i32, yorigindest: i32, wdest: i32, hdest: i32, hdcsrc: Param5, xoriginsrc: i32, yoriginsrc: i32, wsrc: i32, hsrc: i32, crtransparent: u32) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17531,7 +17531,7 @@ pub unsafe fn UnionRect(lprcdst: *mut super::super::Foundation::RECT, lprcsrc1: 
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnrealizeObject<'a, Param0: ::windows::core::IntoParam<'a, HGDIOBJ>>(h: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn UnrealizeObject<'a, Param0: ::windows_core::IntoParam<'a, HGDIOBJ>>(h: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17546,7 +17546,7 @@ pub unsafe fn UnrealizeObject<'a, Param0: ::windows::core::IntoParam<'a, HGDIOBJ
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UpdateColors<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn UpdateColors<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17561,7 +17561,7 @@ pub unsafe fn UpdateColors<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc:
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UpdateWindow<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn UpdateWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17580,7 +17580,7 @@ pub const VIETNAMESE_CHARSET: u32 = 163u32;
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ValidateRect<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn ValidateRect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17595,7 +17595,7 @@ pub unsafe fn ValidateRect<'a, Param0: ::windows::core::IntoParam<'a, super::sup
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ValidateRgn<'a, Param0: ::windows::core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows::core::IntoParam<'a, HRGN>>(hwnd: Param0, hrgn: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn ValidateRgn<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, HRGN>>(hwnd: Param0, hrgn: Param1) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17624,12 +17624,12 @@ impl ::core::fmt::Debug for WCRANGE {
         f.debug_struct("WCRANGE").field("wcLow", &self.wcLow).field("cGlyphs", &self.cGlyphs).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WCRANGE {
+unsafe impl ::windows_core::Abi for WCRANGE {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WCRANGE {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WCRANGE>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WCRANGE>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WCRANGE {}
@@ -17655,12 +17655,12 @@ impl ::core::fmt::Debug for WGLSWAP {
         f.debug_struct("WGLSWAP").field("hdc", &self.hdc).field("uiFlags", &self.uiFlags).finish()
     }
 }
-unsafe impl ::windows::core::Abi for WGLSWAP {
+unsafe impl ::windows_core::Abi for WGLSWAP {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for WGLSWAP {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WGLSWAP>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WGLSWAP>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for WGLSWAP {}
@@ -17742,7 +17742,7 @@ pub type WRITEEMBEDPROC = ::core::option::Option<unsafe extern "system" fn(param
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WidenPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn WidenPath<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17757,7 +17757,7 @@ pub unsafe fn WidenPath<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Pa
 #[doc = "*Required features: `\"Win32_Graphics_Gdi\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WindowFromDC<'a, Param0: ::windows::core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::HWND {
+pub unsafe fn WindowFromDC<'a, Param0: ::windows_core::IntoParam<'a, HDC>>(hdc: Param0) -> super::super::Foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -17790,12 +17790,12 @@ impl ::core::fmt::Debug for XFORM {
         f.debug_struct("XFORM").field("eM11", &self.eM11).field("eM12", &self.eM12).field("eM21", &self.eM21).field("eM22", &self.eM22).field("eDx", &self.eDx).field("eDy", &self.eDy).finish()
     }
 }
-unsafe impl ::windows::core::Abi for XFORM {
+unsafe impl ::windows_core::Abi for XFORM {
     type Abi = Self;
 }
 impl ::core::cmp::PartialEq for XFORM {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XFORM>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<XFORM>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for XFORM {}

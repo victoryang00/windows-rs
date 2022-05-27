@@ -55,7 +55,7 @@ pub unsafe fn JsCallFunction(function: *const ::core::ffi::c_void, arguments: &[
         extern "system" {
             fn JsCallFunction(function: *const ::core::ffi::c_void, arguments: *const *const ::core::ffi::c_void, argumentcount: u16, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
         }
-        ::core::mem::transmute(JsCallFunction(::core::mem::transmute(function), ::core::mem::transmute(::windows::core::as_ptr_or_null(arguments)), arguments.len() as _, ::core::mem::transmute(result)))
+        ::core::mem::transmute(JsCallFunction(::core::mem::transmute(function), ::core::mem::transmute(::windows_core::as_ptr_or_null(arguments)), arguments.len() as _, ::core::mem::transmute(result)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -83,7 +83,7 @@ pub unsafe fn JsConstructObject(function: *const ::core::ffi::c_void, arguments:
         extern "system" {
             fn JsConstructObject(function: *const ::core::ffi::c_void, arguments: *const *const ::core::ffi::c_void, argumentcount: u16, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
         }
-        ::core::mem::transmute(JsConstructObject(::core::mem::transmute(function), ::core::mem::transmute(::windows::core::as_ptr_or_null(arguments)), arguments.len() as _, ::core::mem::transmute(result)))
+        ::core::mem::transmute(JsConstructObject(::core::mem::transmute(function), ::core::mem::transmute(::windows_core::as_ptr_or_null(arguments)), arguments.len() as _, ::core::mem::transmute(result)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -162,12 +162,12 @@ pub unsafe fn JsCreateArray(length: u32, result: *mut *mut ::core::ffi::c_void) 
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 #[inline]
-pub unsafe fn JsCreateContext<'a, Param1: ::windows::core::IntoParam<'a, super::Diagnostics::Debug::IDebugApplication64>>(runtime: *const ::core::ffi::c_void, debugapplication: Param1, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
+pub unsafe fn JsCreateContext<'a, Param1: ::windows_core::IntoParam<'a, super::Diagnostics::Debug::IDebugApplication64>>(runtime: *const ::core::ffi::c_void, debugapplication: Param1, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsCreateContext(runtime: *const ::core::ffi::c_void, debugapplication: ::windows::core::RawPtr, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+            fn JsCreateContext(runtime: *const ::core::ffi::c_void, debugapplication: ::windows_core::RawPtr, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
         }
         ::core::mem::transmute(JsCreateContext(::core::mem::transmute(runtime), debugapplication.into_param().abi(), ::core::mem::transmute(newcontext)))
     }
@@ -178,12 +178,12 @@ pub unsafe fn JsCreateContext<'a, Param1: ::windows::core::IntoParam<'a, super::
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 #[inline]
-pub unsafe fn JsCreateContext<'a, Param1: ::windows::core::IntoParam<'a, super::Diagnostics::Debug::IDebugApplication32>>(runtime: *const ::core::ffi::c_void, debugapplication: Param1, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
+pub unsafe fn JsCreateContext<'a, Param1: ::windows_core::IntoParam<'a, super::Diagnostics::Debug::IDebugApplication32>>(runtime: *const ::core::ffi::c_void, debugapplication: Param1, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsCreateContext(runtime: *const ::core::ffi::c_void, debugapplication: ::windows::core::RawPtr, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+            fn JsCreateContext(runtime: *const ::core::ffi::c_void, debugapplication: ::windows_core::RawPtr, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
         }
         ::core::mem::transmute(JsCreateContext(::core::mem::transmute(runtime), debugapplication.into_param().abi(), ::core::mem::transmute(newcontext)))
     }
@@ -211,7 +211,7 @@ pub unsafe fn JsCreateExternalObject(data: *const ::core::ffi::c_void, finalizec
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsCreateExternalObject(data: *const ::core::ffi::c_void, finalizecallback: ::windows::core::RawPtr, object: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+            fn JsCreateExternalObject(data: *const ::core::ffi::c_void, finalizecallback: ::windows_core::RawPtr, object: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
         }
         ::core::mem::transmute(JsCreateExternalObject(::core::mem::transmute(data), ::core::mem::transmute(finalizecallback), ::core::mem::transmute(object)))
     }
@@ -225,7 +225,7 @@ pub unsafe fn JsCreateFunction(nativefunction: JsNativeFunction, callbackstate: 
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsCreateFunction(nativefunction: ::windows::core::RawPtr, callbackstate: *const ::core::ffi::c_void, function: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+            fn JsCreateFunction(nativefunction: ::windows_core::RawPtr, callbackstate: *const ::core::ffi::c_void, function: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
         }
         ::core::mem::transmute(JsCreateFunction(::core::mem::transmute(nativefunction), ::core::mem::transmute(callbackstate), ::core::mem::transmute(function)))
     }
@@ -281,7 +281,7 @@ pub unsafe fn JsCreateRuntime(attributes: JsRuntimeAttributes, runtimeversion: J
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsCreateRuntime(attributes: JsRuntimeAttributes, runtimeversion: JsRuntimeVersion, threadservice: ::windows::core::RawPtr, runtime: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+            fn JsCreateRuntime(attributes: JsRuntimeAttributes, runtimeversion: JsRuntimeVersion, threadservice: ::windows_core::RawPtr, runtime: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
         }
         ::core::mem::transmute(JsCreateRuntime(::core::mem::transmute(attributes), ::core::mem::transmute(runtimeversion), ::core::mem::transmute(threadservice), ::core::mem::transmute(runtime)))
     }
@@ -436,7 +436,7 @@ pub unsafe fn JsEnumerateHeap(enumerator: *mut ::core::option::Option<super::Dia
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsEnumerateHeap(enumerator: *mut ::windows::core::RawPtr) -> JsErrorCode;
+            fn JsEnumerateHeap(enumerator: *mut ::windows_core::RawPtr) -> JsErrorCode;
         }
         ::core::mem::transmute(JsEnumerateHeap(::core::mem::transmute(enumerator)))
     }
@@ -530,7 +530,7 @@ impl ::core::default::Default for JsErrorCode {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JsErrorCode {
+unsafe impl ::windows_core::Abi for JsErrorCode {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JsErrorCode {
@@ -696,12 +696,12 @@ pub unsafe fn JsGetProperty(object: *const ::core::ffi::c_void, propertyid: *con
 }
 #[doc = "*Required features: `\"Win32_System_Js\"`*"]
 #[inline]
-pub unsafe fn JsGetPropertyIdFromName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(name: Param0, propertyid: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
+pub unsafe fn JsGetPropertyIdFromName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(name: Param0, propertyid: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsGetPropertyIdFromName(name: ::windows::core::PCWSTR, propertyid: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+            fn JsGetPropertyIdFromName(name: ::windows_core::PCWSTR, propertyid: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
         }
         ::core::mem::transmute(JsGetPropertyIdFromName(name.into_param().abi(), ::core::mem::transmute(propertyid)))
     }
@@ -969,7 +969,7 @@ impl ::core::default::Default for JsMemoryEventType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JsMemoryEventType {
+unsafe impl ::windows_core::Abi for JsMemoryEventType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JsMemoryEventType {
@@ -995,12 +995,12 @@ pub unsafe fn JsNumberToDouble(value: *const ::core::ffi::c_void, doublevalue: *
 }
 #[doc = "*Required features: `\"Win32_System_Js\"`*"]
 #[inline]
-pub unsafe fn JsParseScript<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(script: Param0, sourcecontext: usize, sourceurl: Param2, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
+pub unsafe fn JsParseScript<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(script: Param0, sourcecontext: usize, sourceurl: Param2, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsParseScript(script: ::windows::core::PCWSTR, sourcecontext: usize, sourceurl: ::windows::core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+            fn JsParseScript(script: ::windows_core::PCWSTR, sourcecontext: usize, sourceurl: ::windows_core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
         }
         ::core::mem::transmute(JsParseScript(script.into_param().abi(), ::core::mem::transmute(sourcecontext), sourceurl.into_param().abi(), ::core::mem::transmute(result)))
     }
@@ -1009,12 +1009,12 @@ pub unsafe fn JsParseScript<'a, Param0: ::windows::core::IntoParam<'a, ::windows
 }
 #[doc = "*Required features: `\"Win32_System_Js\"`*"]
 #[inline]
-pub unsafe fn JsParseSerializedScript<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(script: Param0, buffer: *const u8, sourcecontext: usize, sourceurl: Param3, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
+pub unsafe fn JsParseSerializedScript<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(script: Param0, buffer: *const u8, sourcecontext: usize, sourceurl: Param3, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsParseSerializedScript(script: ::windows::core::PCWSTR, buffer: *const u8, sourcecontext: usize, sourceurl: ::windows::core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+            fn JsParseSerializedScript(script: ::windows_core::PCWSTR, buffer: *const u8, sourcecontext: usize, sourceurl: ::windows_core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
         }
         ::core::mem::transmute(JsParseSerializedScript(script.into_param().abi(), ::core::mem::transmute(buffer), ::core::mem::transmute(sourcecontext), sourceurl.into_param().abi(), ::core::mem::transmute(result)))
     }
@@ -1028,9 +1028,9 @@ pub unsafe fn JsPointerToString(stringvalue: &[u16], value: *mut *mut ::core::ff
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsPointerToString(stringvalue: ::windows::core::PCWSTR, stringlength: usize, value: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+            fn JsPointerToString(stringvalue: ::windows_core::PCWSTR, stringlength: usize, value: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
         }
-        ::core::mem::transmute(JsPointerToString(::core::mem::transmute(::windows::core::as_ptr_or_null(stringvalue)), stringvalue.len() as _, ::core::mem::transmute(value)))
+        ::core::mem::transmute(JsPointerToString(::core::mem::transmute(::windows_core::as_ptr_or_null(stringvalue)), stringvalue.len() as _, ::core::mem::transmute(value)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1065,12 +1065,12 @@ pub unsafe fn JsRelease(r#ref: *const ::core::ffi::c_void, count: *mut u32) -> J
 }
 #[doc = "*Required features: `\"Win32_System_Js\"`*"]
 #[inline]
-pub unsafe fn JsRunScript<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param2: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(script: Param0, sourcecontext: usize, sourceurl: Param2, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
+pub unsafe fn JsRunScript<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(script: Param0, sourcecontext: usize, sourceurl: Param2, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsRunScript(script: ::windows::core::PCWSTR, sourcecontext: usize, sourceurl: ::windows::core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+            fn JsRunScript(script: ::windows_core::PCWSTR, sourcecontext: usize, sourceurl: ::windows_core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
         }
         ::core::mem::transmute(JsRunScript(script.into_param().abi(), ::core::mem::transmute(sourcecontext), sourceurl.into_param().abi(), ::core::mem::transmute(result)))
     }
@@ -1079,12 +1079,12 @@ pub unsafe fn JsRunScript<'a, Param0: ::windows::core::IntoParam<'a, ::windows::
 }
 #[doc = "*Required features: `\"Win32_System_Js\"`*"]
 #[inline]
-pub unsafe fn JsRunSerializedScript<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>, Param3: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(script: Param0, buffer: *const u8, sourcecontext: usize, sourceurl: Param3, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
+pub unsafe fn JsRunSerializedScript<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(script: Param0, buffer: *const u8, sourcecontext: usize, sourceurl: Param3, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsRunSerializedScript(script: ::windows::core::PCWSTR, buffer: *const u8, sourcecontext: usize, sourceurl: ::windows::core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+            fn JsRunSerializedScript(script: ::windows_core::PCWSTR, buffer: *const u8, sourcecontext: usize, sourceurl: ::windows_core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
         }
         ::core::mem::transmute(JsRunSerializedScript(script.into_param().abi(), ::core::mem::transmute(buffer), ::core::mem::transmute(sourcecontext), sourceurl.into_param().abi(), ::core::mem::transmute(result)))
     }
@@ -1118,7 +1118,7 @@ impl ::core::default::Default for JsRuntimeAttributes {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JsRuntimeAttributes {
+unsafe impl ::windows_core::Abi for JsRuntimeAttributes {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JsRuntimeAttributes {
@@ -1147,7 +1147,7 @@ impl ::core::default::Default for JsRuntimeVersion {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JsRuntimeVersion {
+unsafe impl ::windows_core::Abi for JsRuntimeVersion {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JsRuntimeVersion {
@@ -1157,12 +1157,12 @@ impl ::core::fmt::Debug for JsRuntimeVersion {
 }
 #[doc = "*Required features: `\"Win32_System_Js\"`*"]
 #[inline]
-pub unsafe fn JsSerializeScript<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::PCWSTR>>(script: Param0, buffer: *mut u8, buffersize: *mut u32) -> JsErrorCode {
+pub unsafe fn JsSerializeScript<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(script: Param0, buffer: *mut u8, buffersize: *mut u32) -> JsErrorCode {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsSerializeScript(script: ::windows::core::PCWSTR, buffer: *mut u8, buffersize: *mut u32) -> JsErrorCode;
+            fn JsSerializeScript(script: ::windows_core::PCWSTR, buffer: *mut u8, buffersize: *mut u32) -> JsErrorCode;
         }
         ::core::mem::transmute(JsSerializeScript(script.into_param().abi(), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize)))
     }
@@ -1260,7 +1260,7 @@ pub unsafe fn JsSetRuntimeBeforeCollectCallback(runtime: *const ::core::ffi::c_v
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsSetRuntimeBeforeCollectCallback(runtime: *const ::core::ffi::c_void, callbackstate: *const ::core::ffi::c_void, beforecollectcallback: ::windows::core::RawPtr) -> JsErrorCode;
+            fn JsSetRuntimeBeforeCollectCallback(runtime: *const ::core::ffi::c_void, callbackstate: *const ::core::ffi::c_void, beforecollectcallback: ::windows_core::RawPtr) -> JsErrorCode;
         }
         ::core::mem::transmute(JsSetRuntimeBeforeCollectCallback(::core::mem::transmute(runtime), ::core::mem::transmute(callbackstate), ::core::mem::transmute(beforecollectcallback)))
     }
@@ -1274,7 +1274,7 @@ pub unsafe fn JsSetRuntimeMemoryAllocationCallback(runtime: *const ::core::ffi::
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsSetRuntimeMemoryAllocationCallback(runtime: *const ::core::ffi::c_void, callbackstate: *const ::core::ffi::c_void, allocationcallback: ::windows::core::RawPtr) -> JsErrorCode;
+            fn JsSetRuntimeMemoryAllocationCallback(runtime: *const ::core::ffi::c_void, callbackstate: *const ::core::ffi::c_void, allocationcallback: ::windows_core::RawPtr) -> JsErrorCode;
         }
         ::core::mem::transmute(JsSetRuntimeMemoryAllocationCallback(::core::mem::transmute(runtime), ::core::mem::transmute(callbackstate), ::core::mem::transmute(allocationcallback)))
     }
@@ -1299,12 +1299,12 @@ pub unsafe fn JsSetRuntimeMemoryLimit(runtime: *const ::core::ffi::c_void, memor
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 #[inline]
-pub unsafe fn JsStartDebugging<'a, Param0: ::windows::core::IntoParam<'a, super::Diagnostics::Debug::IDebugApplication64>>(debugapplication: Param0) -> JsErrorCode {
+pub unsafe fn JsStartDebugging<'a, Param0: ::windows_core::IntoParam<'a, super::Diagnostics::Debug::IDebugApplication64>>(debugapplication: Param0) -> JsErrorCode {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsStartDebugging(debugapplication: ::windows::core::RawPtr) -> JsErrorCode;
+            fn JsStartDebugging(debugapplication: ::windows_core::RawPtr) -> JsErrorCode;
         }
         ::core::mem::transmute(JsStartDebugging(debugapplication.into_param().abi()))
     }
@@ -1315,12 +1315,12 @@ pub unsafe fn JsStartDebugging<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 #[inline]
-pub unsafe fn JsStartDebugging<'a, Param0: ::windows::core::IntoParam<'a, super::Diagnostics::Debug::IDebugApplication32>>(debugapplication: Param0) -> JsErrorCode {
+pub unsafe fn JsStartDebugging<'a, Param0: ::windows_core::IntoParam<'a, super::Diagnostics::Debug::IDebugApplication32>>(debugapplication: Param0) -> JsErrorCode {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsStartDebugging(debugapplication: ::windows::core::RawPtr) -> JsErrorCode;
+            fn JsStartDebugging(debugapplication: ::windows_core::RawPtr) -> JsErrorCode;
         }
         ::core::mem::transmute(JsStartDebugging(debugapplication.into_param().abi()))
     }
@@ -1330,12 +1330,12 @@ pub unsafe fn JsStartDebugging<'a, Param0: ::windows::core::IntoParam<'a, super:
 #[doc = "*Required features: `\"Win32_System_Js\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 #[inline]
-pub unsafe fn JsStartProfiling<'a, Param0: ::windows::core::IntoParam<'a, super::Diagnostics::Debug::IActiveScriptProfilerCallback>>(callback: Param0, eventmask: super::Diagnostics::Debug::PROFILER_EVENT_MASK, context: u32) -> JsErrorCode {
+pub unsafe fn JsStartProfiling<'a, Param0: ::windows_core::IntoParam<'a, super::Diagnostics::Debug::IActiveScriptProfilerCallback>>(callback: Param0, eventmask: super::Diagnostics::Debug::PROFILER_EVENT_MASK, context: u32) -> JsErrorCode {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsStartProfiling(callback: ::windows::core::RawPtr, eventmask: super::Diagnostics::Debug::PROFILER_EVENT_MASK, context: u32) -> JsErrorCode;
+            fn JsStartProfiling(callback: ::windows_core::RawPtr, eventmask: super::Diagnostics::Debug::PROFILER_EVENT_MASK, context: u32) -> JsErrorCode;
         }
         ::core::mem::transmute(JsStartProfiling(callback.into_param().abi(), ::core::mem::transmute(eventmask), ::core::mem::transmute(context)))
     }
@@ -1344,12 +1344,12 @@ pub unsafe fn JsStartProfiling<'a, Param0: ::windows::core::IntoParam<'a, super:
 }
 #[doc = "*Required features: `\"Win32_System_Js\"`*"]
 #[inline]
-pub unsafe fn JsStopProfiling(reason: ::windows::core::HRESULT) -> JsErrorCode {
+pub unsafe fn JsStopProfiling(reason: ::windows_core::HRESULT) -> JsErrorCode {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn JsStopProfiling(reason: ::windows::core::HRESULT) -> JsErrorCode;
+            fn JsStopProfiling(reason: ::windows_core::HRESULT) -> JsErrorCode;
         }
         ::core::mem::transmute(JsStopProfiling(::core::mem::transmute(reason)))
     }
@@ -1434,7 +1434,7 @@ impl ::core::default::Default for JsValueType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for JsValueType {
+unsafe impl ::windows_core::Abi for JsValueType {
     type Abi = Self;
 }
 impl ::core::fmt::Debug for JsValueType {

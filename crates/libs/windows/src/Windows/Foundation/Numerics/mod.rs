@@ -19,19 +19,19 @@ impl ::core::fmt::Debug for Matrix3x2 {
         f.debug_struct("Matrix3x2").field("M11", &self.M11).field("M12", &self.M12).field("M21", &self.M21).field("M22", &self.M22).field("M31", &self.M31).field("M32", &self.M32).finish()
     }
 }
-unsafe impl ::windows::core::Abi for Matrix3x2 {
+unsafe impl ::windows_core::Abi for Matrix3x2 {
     type Abi = Self;
 }
-unsafe impl ::windows::core::RuntimeType for Matrix3x2 {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Matrix3x2;f4;f4;f4;f4;f4;f4)");
+unsafe impl ::windows_core::RuntimeType for Matrix3x2 {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Matrix3x2;f4;f4;f4;f4;f4;f4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 impl ::core::cmp::PartialEq for Matrix3x2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Matrix3x2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Matrix3x2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Matrix3x2 {}
@@ -212,19 +212,19 @@ impl ::core::fmt::Debug for Matrix4x4 {
         f.debug_struct("Matrix4x4").field("M11", &self.M11).field("M12", &self.M12).field("M13", &self.M13).field("M14", &self.M14).field("M21", &self.M21).field("M22", &self.M22).field("M23", &self.M23).field("M24", &self.M24).field("M31", &self.M31).field("M32", &self.M32).field("M33", &self.M33).field("M34", &self.M34).field("M41", &self.M41).field("M42", &self.M42).field("M43", &self.M43).field("M44", &self.M44).finish()
     }
 }
-unsafe impl ::windows::core::Abi for Matrix4x4 {
+unsafe impl ::windows_core::Abi for Matrix4x4 {
     type Abi = Self;
 }
-unsafe impl ::windows::core::RuntimeType for Matrix4x4 {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Matrix4x4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4)");
+unsafe impl ::windows_core::RuntimeType for Matrix4x4 {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Matrix4x4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4;f4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 impl ::core::cmp::PartialEq for Matrix4x4 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Matrix4x4>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Matrix4x4>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Matrix4x4 {}
@@ -416,19 +416,19 @@ impl ::core::fmt::Debug for Plane {
         f.debug_struct("Plane").field("Normal", &self.Normal).field("D", &self.D).finish()
     }
 }
-unsafe impl ::windows::core::Abi for Plane {
+unsafe impl ::windows_core::Abi for Plane {
     type Abi = Self;
 }
-unsafe impl ::windows::core::RuntimeType for Plane {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Plane;struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);f4)");
+unsafe impl ::windows_core::RuntimeType for Plane {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Plane;struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4);f4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 impl ::core::cmp::PartialEq for Plane {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Plane>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Plane>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Plane {}
@@ -456,19 +456,19 @@ impl ::core::fmt::Debug for Quaternion {
         f.debug_struct("Quaternion").field("X", &self.X).field("Y", &self.Y).field("Z", &self.Z).field("W", &self.W).finish()
     }
 }
-unsafe impl ::windows::core::Abi for Quaternion {
+unsafe impl ::windows_core::Abi for Quaternion {
     type Abi = Self;
 }
-unsafe impl ::windows::core::RuntimeType for Quaternion {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Quaternion;f4;f4;f4;f4)");
+unsafe impl ::windows_core::RuntimeType for Quaternion {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Quaternion;f4;f4;f4;f4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 impl ::core::cmp::PartialEq for Quaternion {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Quaternion>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Quaternion>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Quaternion {}
@@ -494,19 +494,19 @@ impl ::core::fmt::Debug for Rational {
         f.debug_struct("Rational").field("Numerator", &self.Numerator).field("Denominator", &self.Denominator).finish()
     }
 }
-unsafe impl ::windows::core::Abi for Rational {
+unsafe impl ::windows_core::Abi for Rational {
     type Abi = Self;
 }
-unsafe impl ::windows::core::RuntimeType for Rational {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Rational;u4;u4)");
+unsafe impl ::windows_core::RuntimeType for Rational {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Rational;u4;u4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 impl ::core::cmp::PartialEq for Rational {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Rational>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Rational>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Rational {}
@@ -532,19 +532,19 @@ impl ::core::fmt::Debug for Vector2 {
         f.debug_struct("Vector2").field("X", &self.X).field("Y", &self.Y).finish()
     }
 }
-unsafe impl ::windows::core::Abi for Vector2 {
+unsafe impl ::windows_core::Abi for Vector2 {
     type Abi = Self;
 }
-unsafe impl ::windows::core::RuntimeType for Vector2 {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Vector2;f4;f4)");
+unsafe impl ::windows_core::RuntimeType for Vector2 {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Vector2;f4;f4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 impl ::core::cmp::PartialEq for Vector2 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Vector2>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Vector2>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Vector2 {}
@@ -744,19 +744,19 @@ impl ::core::fmt::Debug for Vector3 {
         f.debug_struct("Vector3").field("X", &self.X).field("Y", &self.Y).field("Z", &self.Z).finish()
     }
 }
-unsafe impl ::windows::core::Abi for Vector3 {
+unsafe impl ::windows_core::Abi for Vector3 {
     type Abi = Self;
 }
-unsafe impl ::windows::core::RuntimeType for Vector3 {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4)");
+unsafe impl ::windows_core::RuntimeType for Vector3 {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Vector3;f4;f4;f4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 impl ::core::cmp::PartialEq for Vector3 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Vector3>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Vector3>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Vector3 {}
@@ -960,19 +960,19 @@ impl ::core::fmt::Debug for Vector4 {
         f.debug_struct("Vector4").field("X", &self.X).field("Y", &self.Y).field("Z", &self.Z).field("W", &self.W).finish()
     }
 }
-unsafe impl ::windows::core::Abi for Vector4 {
+unsafe impl ::windows_core::Abi for Vector4 {
     type Abi = Self;
 }
-unsafe impl ::windows::core::RuntimeType for Vector4 {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Vector4;f4;f4;f4;f4)");
+unsafe impl ::windows_core::RuntimeType for Vector4 {
+    const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Foundation.Numerics.Vector4;f4;f4;f4;f4)");
     type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+    fn from_default(from: &Self::DefaultType) -> ::windows_core::Result<Self> {
         Ok(*from)
     }
 }
 impl ::core::cmp::PartialEq for Vector4 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Vector4>()) == 0 }
+        unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<Vector4>()) == 0 }
     }
 }
 impl ::core::cmp::Eq for Vector4 {}
